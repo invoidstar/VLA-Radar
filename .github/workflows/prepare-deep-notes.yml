@@ -1,0 +1,49 @@
+name: Prepare source-linked deep notes
+on:
+  push:
+    branches: [release/deep-notes-2026-09-17]
+    paths:
+      - maintenance/release-notes/**
+      - scripts/apply_deep_notes.py
+      - scripts/note_quality.py
+      - scripts/install_reading_ui.py
+      - .github/workflows/prepare-deep-notes.yml
+permissions:
+  contents: write
+concurrency:
+  group: prepare-deep-notes
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/release/deep-notes-2026-09-17'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/deep-notes-2026-09-17
+          fetch-depth: 2
+      - name: Import authored evidence, build canonical data, run regression tests
+        run: |
+          python scripts/apply_deep_notes.py
+          python scripts/build_catalog.py
+          python scripts/maintenance_queue.py
+          python scripts/validate_all.py
+      - name: Commit validated output on release branch only
+        run: |
+          test "${GITHUB_REF}" = 'refs/heads/release/deep-notes-2026-09-17'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog data scripts/catalog_core.py scripts/test_research.cjs research.js research.css maintenance/deep-notes-progress.json maintenance/work-queue.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build validated source-linked reading notes and evidence UI'
+            git push origin HEAD:refs/heads/release/deep-notes-2026-09-17
+          fi
+      - name: Package recoverable source, excluding git credentials and temporary source evidence
+        run: |
+          git archive --format=zip -o /tmp/radar-deep-source.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: radar-deep-source
+          path: /tmp/radar-deep-source.zip
+          retention-days: 3
