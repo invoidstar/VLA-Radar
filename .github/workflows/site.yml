@@ -34,6 +34,9 @@ jobs:
           python validate.py
           python scripts/check_catalog.py
           node --check app.js
+          node --check dates.js
+          node scripts/test_dates.cjs
+          node scripts/test_urls.cjs
       - name: Check Pages enablement
         if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
         id: pages
@@ -49,7 +52,7 @@ jobs:
         if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
         run: |
           mkdir -p _site/data
-          cp index.html styles.css app.js favicon.svg _site/
+          cp index.html styles.css app.js dates.js favicon.svg _site/
           cp data/papers.json _site/data/
           touch _site/.nojekyll
       - name: Upload static site
