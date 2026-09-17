@@ -1,0 +1,39 @@
+{
+  "sourceRepository": "invoidstar/invoidstar.github.io",
+  "sourceCommit": "b853d96b0a85462be4bea4c0b7d942cd0b15723c",
+  "sourceDirectory": "vla-radar",
+  "importedAt": "2026-09-17T09:18:19.773637+00:00",
+  "paperCount": 46,
+  "paperDataByteIdentical": true,
+  "files": {
+    "README.md": {
+      "sourceBlob": "a8c036f80d38d58db39ff584b1a55ab0fde31fd0",
+      "importedBlob": "7775ec1a90b4524a46923b6414752acf049cde19"
+    },
+    "app.js": {
+      "sourceBlob": "92b8cef6411dcc9ad585a36c83717586fc58853e",
+      "importedBlob": "0857f5fa20ba90976d1d8d2b6c275a00f481d7b5"
+    },
+    "styles.css": {
+      "sourceBlob": "0e411ff7d31f63d5c7e35ecb9a6384893c56a9cf",
+      "importedBlob": "0e411ff7d31f63d5c7e35ecb9a6384893c56a9cf"
+    },
+    "favicon.svg": {
+      "sourceBlob": "b373ca9ea17fa2775432bab123ab78922dbee313",
+      "importedBlob": "b373ca9ea17fa2775432bab123ab78922dbee313"
+    },
+    "index.html": {
+      "sourceBlob": "d8310e9a156b1f1f2440be919f37c584964b4424",
+      "importedBlob": "e659e0af9804676f71451ea1032c9064ffadc620"
+    },
+    "data/papers.json": {
+      "sourceBlob": "a2fd3e7008552e31302de735ff9d6f178231fa86",
+      "importedBlob": "a2fd3e7008552e31302de735ff9d6f178231fa86"
+    },
+    "validate.py": {
+      "sourceBlob": "d38db6e03a26c059307dee7f654ece9b26be13e7",
+      "importedBlob": "d38db6e03a26c059307dee7f654ece9b26be13e7"
+    }
+  },
+  "note": "Only site/repository links and README maintenance instructions were adapted. No research claim or evidence grade was changed."
+}

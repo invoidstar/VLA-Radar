@@ -1,0 +1,2100 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-17",
+  "title": "VLA Research Radar",
+  "collection": "2026年7—8月 · 首批文献",
+  "description": "围绕公开论文整理方法、量化结论与证据边界。",
+  "topics": [
+    {
+      "id": "pretraining",
+      "name": "基础模型与预训练",
+      "en": "Foundations & Pretraining",
+      "description": "数据、语义先验与可迁移表征。关注模型从什么数据中获得了什么能力。",
+      "color": "indigo"
+    },
+    {
+      "id": "spatial",
+      "name": "空间感知与几何",
+      "en": "Spatial & Geometry",
+      "description": "三维坐标、跨视角一致性与局部动态。区分几何先验和部署期感知。",
+      "color": "teal"
+    },
+    {
+      "id": "memory",
+      "name": "记忆与长程执行",
+      "en": "Memory & Long Horizon",
+      "description": "历史检索、阶段交接、执行验证与长程控制。重点阅读失败与恢复的证据。",
+      "color": "purple"
+    },
+    {
+      "id": "world",
+      "name": "WAM 与世界动态",
+      "en": "World & Action Models",
+      "description": "动作、未来与世界变化。区分辅助预测、动作后果建模和测试时规划。",
+      "color": "blue"
+    },
+    {
+      "id": "tactile",
+      "name": "触觉与多模态",
+      "en": "Tactile & Multimodal",
+      "description": "接触反馈和多传感器融合。把额外观测的信息收益与模型收益分开看。",
+      "color": "rose"
+    },
+    {
+      "id": "efficiency",
+      "name": "轻量模型与推理加速",
+      "en": "Efficient VLA & Systems",
+      "description": "轻量结构、缓存、采样与运行时。仔细区分端到端时延与局部加速。",
+      "color": "amber"
+    },
+    {
+      "id": "action",
+      "name": "动作表示与策略优化",
+      "en": "Action & Policy Learning",
+      "description": "动作片段、连续执行与策略后训练。关注平滑性、反应性和计算成本。",
+      "color": "orange"
+    },
+    {
+      "id": "evaluation",
+      "name": "评测与人机协作",
+      "en": "Evaluation & Interaction",
+      "description": "能力维度、统计有效性和人类介入。避免仅靠一个平均成功率下判断。",
+      "color": "slate"
+    }
+  ],
+  "papers": [
+    {
+      "id": "p001",
+      "name": "VLAct",
+      "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models",
+      "team": "StarVLA / VLAct 作者团队\nSenqiao Yang、Chengyao Wang等；Shu Liu通讯\n所查作者页面未完整列出机构",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.27550\n技术预印本",
+      "firstPublished": "2026-08-27",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "cross-embodiment",
+        "freezing"
+      ],
+      "priority": "deep",
+      "contribution": "以可迁移表征而非动作头拟合为持续预训练目标；保护VLM先验，使用多个连续动作头和部分统一的跨本体动作布局，下游可更换动作头。",
+      "findings": "LIBERO-Plus：82.6%，对照Qwen3-VL-OFT为75.0%（+7.6个百分点）。\nRoboCasa-GR1仅用20%后训练数据取得49.5%，高于使用全量数据的GR00T-N1.6的47.6%。",
+      "limitations": "低数据结果仍有后训练，并非零样本；不同初始化/预训练数据的横向比较不能全部归因于单个模块。\n作者团队机构未完全核验。",
+      "insight": "持续预训练的价值应体现在表征迁移，而非只继承某个动作头。低数据适配与零样本泛化是不同能力。",
+      "readingFocus": "表征中心定位；先验保护；跨本体动作布局；动作头迁移与冻结消融。",
+      "evidence": "checked",
+      "evidenceNote": "本次发布已复核原文相关结果片段；不代表独立复现。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.27550v1"
+        },
+        {
+          "label": "官方 / 作者来源",
+          "url": "https://starvla.github.io/VLAct/"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.27550"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.27550",
+      "arxiv": "2608.27550",
+      "doi": ""
+    },
+    {
+      "id": "p002",
+      "name": "VLAFlow",
+      "title": "VLAFlow: A Unified Training Framework for Vision-Language-Action Models via Co-training and Future Latent Alignment",
+      "team": "理想汽车（Li Auto）／北京邮电大学／香港中文大学（深圳）\nGuoyang Xia、Fengfa Li、Lei Ren等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.01586\n技术预印本",
+      "firstPublished": "2026-07-02",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首发；8月4日v2｜阅读v2",
+      "topics": [
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "co-training",
+        "latent future"
+      ],
+      "priority": "deep",
+      "contribution": "在统一数据和训练框架下拆分动作训练、语言联合训练、未来隐空间对齐及其组合，揭示预训练目标之间的收益与冲突。",
+      "findings": "未来对齐版Mind-WPI在RT-1 Visual Matching / Variant Aggregation分别为86.7% / 71.1%；语言+未来版为84.4% / 69.8%。\n但组合版LIBERO-Plus为74.8%，高于未来版72.6%。",
+      "limitations": "同一新增目标在不同基准上收益不同；不能用单一总榜分数证明多目标普遍互补。这里引用同文统一框架下的结果。",
+      "insight": "联合目标并非越多越好。未来对齐与语言监督的收益依赖基准，保留负迁移结果比只看最高总分更有价值。",
+      "readingFocus": "统一训练设置；Table 2；负迁移与语言/未来目标的交互。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v2",
+          "url": "https://arxiv.org/html/2607.01586v2"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.01586"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.01586",
+      "arxiv": "2607.01586",
+      "doi": ""
+    },
+    {
+      "id": "p035",
+      "name": "Co-training Study",
+      "title": "A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation",
+      "team": "Fanqi Lin、Kushal Arora、Jean Mercat、Haruki Nishimura、Jose Barreiros等\nTRI相关研究团队；完整机构列表未核验",
+      "venue": "RSS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2026，论文007\nDOI:10.15607/RSS.2026.XXII.007\narXiv:2602.01067",
+      "firstPublished": "2026-02-01",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；2月已有预印本",
+      "topics": [
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "co-training",
+        "negative results"
+      ],
+      "priority": "deep",
+      "contribution": "系统拆解视觉语言、跨机器人数据、动作离散化和推理文本等联合训练选择，为大行为模型的数据与目标取舍提供控制变量证据。",
+      "findings": "研究覆盖89种策略、58,000次仿真和2,835次真实评测，数据超过4,000小时机器人轨迹及5,000万图文样本。\n部分离散动作联合训练没有统计显著增益；显式CoT条件在其仿真设置中也未改善。",
+      "limitations": "负结论只覆盖论文具体策略/数据/统计检验，不代表离散动作或CoT普遍无效。多种方法收益不宜压成一个成功率。",
+      "insight": "方法复杂度应由有统计支持的收益来支撑。离散动作和显式推理等合理设计也可能没有稳定额外收益。",
+      "readingFocus": "各数据模态的控制比较；负面结果；统计支持；作者讨论。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2602.01067v1"
+        },
+        {
+          "label": "会议正式页面",
+          "url": "https://www.roboticsproceedings.org/rss22/p007.html"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2602.01067"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2602.01067",
+      "arxiv": "2602.01067",
+      "doi": "10.15607/RSS.2026.XXII.007"
+    },
+    {
+      "id": "p003",
+      "name": "Lumo-2",
+      "title": "Towards Predictive, Aligned, and Scalable Robot Learning",
+      "team": "Astribot 星尘智能团队",
+      "venue": "技术报告",
+      "publicationType": "report",
+      "publicationStatus": "arXiv:2607.11270\n公司技术报告",
+      "firstPublished": "2026-07-13",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "action representation"
+      ],
+      "priority": "selective",
+      "contribution": "把动作表示与视觉、语言、世界动态对齐；通过分阶段学习形成兼具预测性和语义判别力的动作表征。",
+      "findings": "18类原子动作、7,200个样本的语义分类中：DINO视觉基线84.10%；加入Stage 1动作表示92.85%；加入Stage 2语义动作表示95.00%。\nStage 2还降低下游解码误差。",
+      "limitations": "分类输入包含初始图像，不是纯动作识别；属于表征诊断，不可直接等同机器人成功率。原文称linear probing，但分类器实际为两层MLP。",
+      "insight": "动作表示需要兼顾语义判别和可解码性。分类或重建指标应与闭环控制表现分开理解。",
+      "readingFocus": "Stage 1/2表示差异；Table 7；动作语义与下游解码分析。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.11270v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.11270"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.11270",
+      "arxiv": "2607.11270",
+      "doi": ""
+    },
+    {
+      "id": "p004",
+      "name": "Xiaomi-Robotics-1",
+      "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+      "team": "小米机器人团队（Xiaomi Robotics）",
+      "venue": "技术报告",
+      "publicationType": "report",
+      "publicationStatus": "arXiv:2607.15330\n公司技术报告",
+      "firstPublished": "2026-07-16",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "scaling",
+        "state transition"
+      ],
+      "priority": "selective",
+      "contribution": "超过10万小时真实轨迹预训练；自动构建状态转移语言描述，再以本体与命令式指令后训练对齐实际机器人。",
+      "findings": "4个真实任务、每任务10次评测：平均成功率75%，π0.5为40%；平均进度90%，对照66%。\n这些任务合计使用36小时后训练数据；打印机任务20%→70%。",
+      "limitations": "36小时仅为后训练数据，不能忽略10万小时级预训练。每任务10次，样本量较小；公司报告而非独立复现。",
+      "insight": "描述状态转移的语言监督比仅重复任务名提供更细的行为信息。阅读数据效率时必须同时计入预训练资源。",
+      "readingFocus": "自动状态转移描述；预训练/后训练分工；真实任务数据口径。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.15330v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.15330"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.15330",
+      "arxiv": "2607.15330",
+      "doi": ""
+    },
+    {
+      "id": "p005",
+      "name": "Dyna-2",
+      "title": "Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models",
+      "team": "Dyna Robotics",
+      "venue": "技术报告",
+      "publicationType": "report",
+      "publicationStatus": "公司官网技术报告\n非已核验期刊/会议论文",
+      "firstPublished": "2026-08",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月报告｜按官网版本阅读",
+      "topics": [
+        "pretraining",
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "human video",
+        "scaling"
+      ],
+      "priority": "selective",
+      "contribution": "利用百万小时第一视角人类视频及手姿派生伪动作，研究世界—动作联合学习的规模规律与跨本体迁移。",
+      "findings": "规模研究覆盖1千、1万、10万、100万小时数据及14个真实机器人任务。\n报告展示：以约10分钟遥操作后训练适配双五指手开瓶盖；部署策略可只输出动作、不生成未来视频。",
+      "limitations": "10分钟为特定案例，不是14任务平均适配成本/成功率；监督含手姿伪动作，并非纯无动作视频。官网曲线未核验出统一平均成功率，不补造数值。",
+      "insight": "从人类视频迁移时应明确伪动作来源。训练时联合生成未来，不意味着部署时必须生成视频。",
+      "readingFocus": "监督来源；规模曲线口径；跨本体案例；训练目标与部署路径的区别。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "官方 / 作者来源",
+          "url": "https://www.dyna.co/dyna-2"
+        }
+      ],
+      "paperUrl": "https://www.dyna.co/dyna-2",
+      "arxiv": "",
+      "doi": ""
+    },
+    {
+      "id": "p006",
+      "name": "VLA-Talker",
+      "title": "In-Context VLA: Endowing Vision-Language-Action Models with Language via In-Context Post-Training and Agentic Tool Use",
+      "team": "南开大学／清华大学／EPFL等\nJiarui Yang、Wen Huang、Jiale Zhang等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.05738\n技术预印本",
+      "firstPublished": "2026-08-06",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "language",
+        "tool use"
+      ],
+      "priority": "selective",
+      "contribution": "将视觉落点明确的结构化上下文和工具信息接入动作策略，研究如何让语言真正帮助控制，而不是单纯增加自由形式推理。",
+      "findings": "LIBERO平均：GenCoT 96.2%→VLA-Talker 97.4%；Long：91.6%→93.6%。\n论文发现自由形式推理并非总有收益，结构化上下文与动作监督组织更重要。",
+      "limitations": "这里只引用可核对的LIBERO表；RoboCasa表的部分汇总口径不清，未纳入。工具调用、监督与RL设置需分开阅读。",
+      "insight": "结构化、具备视觉落点的上下文可能比冗长自由推理更有效。语言接口的组织方式是独立的学习因素。",
+      "readingFocus": "上下文结构；动作监督方式；自由推理与工具上下文的消融。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.05738v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.05738"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.05738",
+      "arxiv": "2608.05738",
+      "doi": ""
+    },
+    {
+      "id": "p038",
+      "name": "mimic-video",
+      "title": "mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs",
+      "team": "mimic robotics／Microsoft Zurich／ETH Zurich／UC Berkeley\nJonas Pai、Liam Achenbach、Victoriano Montesinos、Oier Mees、Elvis Nava等",
+      "venue": "RSS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2026，论文077\nDOI:10.15607/RSS.2026.XXII.077\narXiv:2512.15692",
+      "firstPublished": "2025-12-17",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；2025年12月已有预印本｜阅读v2",
+      "topics": [
+        "pretraining",
+        "world"
+      ],
+      "tags": [
+        "VA",
+        "video pretraining",
+        "sample efficiency"
+      ],
+      "priority": "selective",
+      "contribution": "从视频预训练获得动态先验，先生成潜在视频计划，再以动作解码/逆动力学获得机器人控制，提供非VLM中心的Video-Action路线。",
+      "findings": "作者在其对照设置中报告约10×样本效率、2×收敛速度提升；通过预训练视频表征和动作接口连接机器人。",
+      "limitations": "倍数来自特定学习曲线/基线，不是所有VLA普遍需要10倍数据；视频模型预训练成本仍存在。Video-Action名称不等于系统完全不使用语言。",
+      "insight": "视频预训练提供不同于VLM的动态先验。样本效率倍数必须绑定具体基线和学习曲线。",
+      "readingFocus": "视频先验与动作接口；样本效率口径；VLM路线的互补性。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v2",
+          "url": "https://arxiv.org/html/2512.15692v2"
+        },
+        {
+          "label": "会议正式页面",
+          "url": "https://www.roboticsproceedings.org/rss22/p077.html"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2512.15692"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2512.15692",
+      "arxiv": "2512.15692",
+      "doi": "10.15607/RSS.2026.XXII.077"
+    },
+    {
+      "id": "p007",
+      "name": "Track4Action",
+      "title": "Track4Action: Distilling World-Centric 3D Tracker into Vision-Language-Action Policies",
+      "team": "浙江大学／上海交通大学／上海创智学院／Noematrix\nChenyi Wang、Xinkai Wang、Bokai Lin等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.03727\n技术预印本",
+      "firstPublished": "2026-08-04",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "spatial",
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "3D tracking",
+        "distillation"
+      ],
+      "priority": "deep",
+      "contribution": "把世界坐标系三维跟踪知识蒸馏到VLA，以真实时序运动而非单帧几何提供监督；教师及未来片段仅在训练期使用。",
+      "findings": "LIBERO-Plus：无对齐74.7%→Track4Action 82.3%（+7.6个百分点）。\n4个真实双臂任务：基线42.5%→67.5%（+25个百分点）。",
+      "limitations": "需要三维跟踪教师和时序数据。真实结果覆盖4任务；训练期几何知识有效，不等于必须在部署时运行三维跟踪器。",
+      "insight": "世界坐标中的时序轨迹可作为训练期监督，而不必成为部署期昂贵模块。动态监督与静态几何不应混同。",
+      "readingFocus": "世界坐标轨迹目标；训练期信息流；几何与动态蒸馏的贡献。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.03727v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.03727"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.03727",
+      "arxiv": "2608.03727",
+      "doi": ""
+    },
+    {
+      "id": "p008",
+      "name": "MECo-WAM",
+      "title": "Learning 4D Geometric Priors for Inference-Efficient World Action Models",
+      "team": "同济大学／美的AI研究院\nJianjun Zhang、Jian Zhu、Taiyi Su等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.05468\n技术预印本",
+      "firstPublished": "2026-07-06",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "spatial",
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "4D geometry",
+        "training-only"
+      ],
+      "priority": "selective",
+      "contribution": "冻结几何教师监督四维几何专家，以空间/时间关系约束辅助世界动作学习；训练中逐渐减弱几何读取，部署移除辅助分支。",
+      "findings": "LIBERO平均98.2%；RoboTwin平均92.6%。\n作者报告部署不保留辅助几何专家，因此该几何监督不增加对应分支的推理开销。",
+      "limitations": "两项总分不能单独证明全部来自几何目标；需结合原文消融理解。移除辅助分支不意味着完整WAM与轻量VLA开销相同。",
+      "insight": "辅助几何专家可用于塑造表示后退出推理路径。训练成本和部署成本应分别评价。",
+      "readingFocus": "几何教师目标；关系约束；耦合衰减与部署删支路机制。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.05468v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.05468"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.05468",
+      "arxiv": "2607.05468",
+      "doi": ""
+    },
+    {
+      "id": "p009",
+      "name": "GWM-VLA",
+      "title": "GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning",
+      "team": "同济大学团队\nYanping Zhao、Hang Yu、Yiwei Wang、Guang Chen等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.07619\n技术预印本",
+      "firstPublished": "2026-08-07",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "spatial",
+        "world"
+      ],
+      "tags": [
+        "VLA",
+        "latent future",
+        "wrist"
+      ],
+      "priority": "selective",
+      "contribution": "联合多视角几何特征与未来隐空间监督；未来目标聚焦腕部局部patch，未来损失用于训练而不要求部署生成未来。",
+      "findings": "LIBERO 97.1%，与表中OpenVLA-OFT的97.1%持平；LIBERO-Plus 76.9%，VLA-JEPA（无额外人类视频）为62.9%。",
+      "limitations": "含约7.6万条DROID轨迹预训练；不同方法的主干/数据不完全相同，14个百分点差距不能全归因于局部未来目标。收益主要体现在分布外测试。",
+      "insight": "局部未来目标能够减少与操作无关的预测负担。标准基准持平时，分布外表现可能更有区分度。",
+      "readingFocus": "未来目标区域；几何融合；训练辅助与推理路径分离。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.07619v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.07619"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.07619",
+      "arxiv": "2608.07619",
+      "doi": ""
+    },
+    {
+      "id": "p010",
+      "name": "World-to-Wrist",
+      "title": "World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation",
+      "team": "香港科技大学／新加坡国立大学／南洋理工大学／东南大学等\nYuhao Pan、Haosong Peng；Wenchao Xu等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.05369\n技术预印本",
+      "firstPublished": "2026-08-05",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "spatial",
+        "memory",
+        "world"
+      ],
+      "tags": [
+        "VLA",
+        "wrist",
+        "future prediction"
+      ],
+      "priority": "selective",
+      "contribution": "全局任务上下文指导未来腕部表示；以局部预测连接任务进度和细粒度动作，辅以结构化子任务/腕部监督。",
+      "findings": "LIBERO：98.5%，StarVLA为96.5%。\nRoboTwin Easy / Hard：60.71% / 18.21%，UP-VLA为52.92% / 15.16%。",
+      "limitations": "RoboTwin采用仅2,500条示范等特定协议，不能与混入大量随机场景训练数据的90%级结果直接比。与GWM-VLA不同，未来表示路径仍参与部署。",
+      "insight": "任务级上下文与腕部局部变化的连接有助于理解细操作。优先核对示范数量和未来分支是否参与部署。",
+      "readingFocus": "全局到腕部的信息连接；结构化状态；局部未来的部署位置。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.05369v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.05369"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.05369",
+      "arxiv": "2608.05369",
+      "doi": ""
+    },
+    {
+      "id": "p011",
+      "name": "See like a Robot",
+      "title": "See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models",
+      "team": "KAIST／Holiday Robotics\nByungkun Lee、Dongyoon Hwang、Dongjin Kim等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.11498\n技术预印本",
+      "firstPublished": "2026-07-13",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "spatial"
+      ],
+      "tags": [
+        "VLA",
+        "pointmap",
+        "coordinates"
+      ],
+      "priority": "selective",
+      "contribution": "把像素三维点映射到机器人坐标系，保持图像网格结构，并用末端中心化缓解视觉坐标与动作坐标的不一致。",
+      "findings": "RoboCasa 24任务：π0.5 55.3%→62.9%；SmolVLA 37.2%→41.4%。\n相机变化增大时，RGB版本34.5%→24.9%，RGB+pointmap为37.6%→35.8%。",
+      "limitations": "涉及相机/机器人几何标定与点图质量；每任务50示范、50评测。不同容量策略都获益不代表标定误差可忽略。",
+      "insight": "统一视觉几何与机器人动作的坐标系本身就有价值。鲁棒性收益需要连同标定和点图质量一起看。",
+      "readingFocus": "坐标系选择；末端中心化；相机变化下的退化幅度。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.11498v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.11498"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.11498",
+      "arxiv": "2607.11498",
+      "doi": ""
+    },
+    {
+      "id": "p012",
+      "name": "OC-VLA++",
+      "title": "OC-VLA++: Monocular Geometry-Guided Cross-View Consistency for Viewpoint-Robust Robotic Manipulation",
+      "team": "浙江大学／上海交通大学／香港大学／中国人民大学／NVIDIA\nTianyi Zhang、Ziyang Gong等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.01066\n技术预印本",
+      "firstPublished": "2026-08-02",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "spatial"
+      ],
+      "tags": [
+        "VLA",
+        "viewpoint",
+        "consistency"
+      ],
+      "priority": "selective",
+      "contribution": "通过单目几何构造跨视角对应，并把不同相机下的动作一致性约束到统一机器人坐标；几何增强主要在训练期使用。",
+      "findings": "最大视角变化、6任务：Dita系40.8%→48.3%；Qwen系37.5%→43.3%。\n固定视角分别68.3%→68.3%、60.0%→59.2%。",
+      "limitations": "每任务10示范，每相机配置/任务20次评测。主要收益是视角泛化，不是所有原始场景都提高。",
+      "insight": "跨视角一致性的价值主要在视角变化条件下体现。原视角持平或略降也是应保留的结论。",
+      "readingFocus": "跨视角动作一致性；固定视角与大偏移结果；离线几何成本。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.01066v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.01066"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.01066",
+      "arxiv": "2608.01066",
+      "doi": ""
+    },
+    {
+      "id": "p013",
+      "name": "BridgeVLA++",
+      "title": "BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation",
+      "team": "中科院自动化所NLPR／中国科学院大学／FiveAges\nByteDance Seed相关作者（论文注明工作期间归属）\nPeiyan Li、Yuze Zhu等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.05042\n作者标注投稿TPAMI；非已录用",
+      "firstPublished": "2026-08-05",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "memory",
+        "spatial"
+      ],
+      "tags": [
+        "VLA",
+        "3D",
+        "memory"
+      ],
+      "priority": "deep",
+      "contribution": "在BridgeVLA二维输入—输出空间对齐基础上，加入时间关键帧记忆与可重渲染空间记忆，分别支持阶段推理与遮挡定位。",
+      "findings": "RMBench 9个记忆任务：BridgeVLA 18.9%→BridgeVLA++ 96.0%；MemoryWAM为83.0%。\nRLBench 90.5%→93.7%；COLOSSEUM均值64.0%→65.2%。",
+      "limitations": "RMBench每任务50示范、100评测；部分外部基线取自其他论文。子目标门控依赖标注，不是无额外监督；大增益集中记忆任务。",
+      "insight": "记忆增强可能在专门记忆任务上产生大幅收益，但未必等幅提升一般操作。额外子目标标注应计入成本。",
+      "readingFocus": "新增长期记忆部分；RMBench主表；子目标门控；训练标注依赖。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.05042v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.05042"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.05042",
+      "arxiv": "2608.05042",
+      "doi": ""
+    },
+    {
+      "id": "p014",
+      "name": "TemporalFlow-VLA",
+      "title": "TemporalFlow-VLA: Learning Physically Grounded Execution History for Long-Horizon Robot Manipulation",
+      "team": "智元机器人／香港科技大学（广州）／浙江大学／Simon Fraser University\nJiarui Yang、Yehao Lu、Yuning Su等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.26821\n技术预印本",
+      "firstPublished": "2026-08-27",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "memory"
+      ],
+      "tags": [
+        "VLA",
+        "temporal flow",
+        "history"
+      ],
+      "priority": "deep",
+      "contribution": "将机器人表面运动作为历史监督，用少量时序查询压缩物理执行历史；监督由运动学与标定信息构造，部署不需要未来运动标签。",
+      "findings": "LIBERO平均97.63%±0.26；Long为96.60%±0.87。\nRoboTwin的12任务子集：Clean 85.5%、Random 84.2%；核心压缩仅使用2个时序查询。",
+      "limitations": "RoboTwin是12任务子集，不能与50任务平均直接比较。物理运动历史并不自动等同抓取成功、接触成立或任务条件满足。",
+      "insight": "少量具备物理监督的历史查询可以替代原始多帧堆叠。对历史顺序敏感与真正完成任务仍是不同证据。",
+      "readingFocus": "历史表示监督；两查询压缩；历史依赖分析；与普通时序模块的区别。",
+      "evidence": "checked",
+      "evidenceNote": "本次发布已复核原文相关结果片段；不代表独立复现。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.26821v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.26821"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.26821",
+      "arxiv": "2608.26821",
+      "doi": ""
+    },
+    {
+      "id": "p016",
+      "name": "BATON",
+      "title": "Don’t Drop the Baton: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-Aware Memory",
+      "team": "南加州大学／中佛罗里达大学\nBingxin Xu、Yuzhang Shang、Emilio Ferrara",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.16889\n技术预印本",
+      "firstPublished": "2026-08-17",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "memory"
+      ],
+      "tags": [
+        "long-horizon",
+        "transition",
+        "agent"
+      ],
+      "priority": "deep",
+      "contribution": "以子任务探索和转移感知记忆维护前序操作留下的状态；既验证阶段入口，也考虑后续阶段前置条件。",
+      "findings": "作者摘要报告，相对其比较方案，任务成功率提升11.6%、累计成功指标提升14.9%。\n核心收益来自对子任务交接条件的显式处理，而不只是任务拆解。",
+      "limitations": "11.6%/14.9%沿用作者摘要表述，未将其擅自换算为百分点；基线与汇总口径需阅读全文。智能体探索与外部工具并非无成本。",
+      "insight": "子任务完成不等于下一阶段的前置条件满足。阶段交接本身值得作为独立能力来阅读和分析。",
+      "readingFocus": "子任务入口验证；转移记忆字段；失败交接案例；收益统计口径。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.16889v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.16889"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.16889",
+      "arxiv": "2608.16889",
+      "doi": ""
+    },
+    {
+      "id": "p036",
+      "name": "HALO",
+      "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control",
+      "team": "得克萨斯大学奥斯汀分校\nRutav Shah、Yisu Li、Femi Bello、Yuke Zhu、Roberto Martín-Martín",
+      "venue": "RSS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2026，论文010\nDOI:10.15607/RSS.2026.XXII.010\narXiv:2606.25136",
+      "firstPublished": "2026-06-23",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；6月已有预印本｜数据取v1",
+      "topics": [
+        "memory"
+      ],
+      "tags": [
+        "VA",
+        "memory",
+        "VQA"
+      ],
+      "priority": "deep",
+      "contribution": "以任务相关VQA监督学习检索内容，通过稀疏注意力抑制无关历史导致的伪相关与策略漂移。",
+      "findings": "4类仿真任务平均：标准Transformer 22%→HALO 41%；去VQA为31%。\n5类真实任务：36%→55%（+19个百分点）；分别每任务50/20次评测。",
+      "limitations": "记忆任务覆盖空间、关系、数量与事件时间，不只目标位置。会议摘要与预印本的最长时长表述不同，此表不混用时长数字。",
+      "insight": "记忆价值不仅在于保存历史，还在于从无关内容中检索关键事实。检索监督可减少长历史引发的漂移。",
+      "readingFocus": "VQA如何指导检索；稀疏读；Tables I–II；无关历史导致的漂移。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2606.25136v1"
+        },
+        {
+          "label": "会议正式页面",
+          "url": "https://www.roboticsproceedings.org/rss22/p010.html"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2606.25136"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2606.25136",
+      "arxiv": "2606.25136",
+      "doi": "10.15607/RSS.2026.XXII.010"
+    },
+    {
+      "id": "p039",
+      "name": "VERITAS",
+      "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
+      "team": "普林斯顿大学\nMingtong Zhang、Dhruv Shah",
+      "venue": "RSS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2026，论文079\nDOI:10.15607/RSS.2026.XXII.079\narXiv:2606.18247",
+      "firstPublished": "2026-06-16",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；6月已有预印本｜阅读v1",
+      "topics": [
+        "memory",
+        "evaluation"
+      ],
+      "tags": [
+        "verification",
+        "test-time",
+        "self-improvement"
+      ],
+      "priority": "deep",
+      "contribution": "策略提出多个动作候选，视觉验证器依据状态与后果线索进行筛选；经过验证的自主轨迹还可用于后续策略改进。",
+      "findings": "覆盖3种策略、合计1,160次评测：作者报告免策略微调的验证引导使仿真成功率平均提升12.6%、真实提升35%。\n简单启发式验证器也有收益；约20条筛选轨迹可用于后续改进。",
+      "limitations": "增幅沿用正文百分比表述，不擅自解释为相对增幅或百分点。免微调引导仍有多候选推理成本；后续训练需要新增自主轨迹。",
+      "insight": "生成与验证可以解耦，简单验证器也可能有用。免策略微调不等于没有额外推理或数据成本。",
+      "readingFocus": "生成—验证分工；视觉落点；简单验证器结果；在线引导与离线改进区别。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2606.18247v1"
+        },
+        {
+          "label": "会议正式页面",
+          "url": "https://www.roboticsproceedings.org/rss22/p079.html"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2606.18247"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2606.18247",
+      "arxiv": "2606.18247",
+      "doi": "10.15607/RSS.2026.XXII.079"
+    },
+    {
+      "id": "p015",
+      "name": "OnEvoMemory",
+      "title": "OnEvoMemory: Evolving Memory through Online Robot Rollouts for Pretrained Robot Policies",
+      "team": "上海交通大学／清华大学\nZhongxi Chen、Shenqi Zong",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.08749\nECCV 2026 EMR Workshop poster（非主会）",
+      "firstPublished": "2026-08-09",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "memory"
+      ],
+      "tags": [
+        "VLA",
+        "online memory"
+      ],
+      "priority": "selective",
+      "contribution": "冻结预训练策略，利用近期、高价值和转移记忆库选择历史信息，再从在线成功/失败轨迹改进记忆选择。",
+      "findings": "LIBERO-Long：基线86.2%→离线记忆88.6%→在线更新90.2%。\nRMBench Swap Blocks：0%→10%→14%；Swap T：0%→8%→10%。",
+      "limitations": "在线提升使用额外交互：LIBERO每任务20条、RMBench每任务10条在线轨迹。属于初步结果，不能称完全免训练/零额外数据。",
+      "insight": "离线记忆与在线演化的增益应分开理解。在线成功和失败轨迹带来了额外信息，不属于零额外数据。",
+      "readingFocus": "多记忆库职责；离线/在线增益拆分；在线数据预算。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.08749v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.08749"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.08749",
+      "arxiv": "2608.08749",
+      "doi": ""
+    },
+    {
+      "id": "p017",
+      "name": "τ0-VLA",
+      "title": "τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation",
+      "team": "智元机器人Finch团队／上海创智学院／香港中文大学等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.16885\n技术预印本",
+      "firstPublished": "2026-08-17",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "memory",
+        "world"
+      ],
+      "tags": [
+        "VLA",
+        "planning",
+        "test-time"
+      ],
+      "priority": "selective",
+      "contribution": "高层维护任务与历史，在不确定时调用世界模型进行测试时搜索；低层策略负责跨本体执行，分离推理与动作频率。",
+      "findings": "每任务10次真实评测：Plan-Once→τ0-VLA，制奶茶5/10→7/10，整理书籍6/10→9/10，清理房间5/10→7/10。\n分布外子任务选择准确率50%→74%。",
+      "limitations": "子任务选择准确率不是整任务成功率；真实样本较少。含约40,115小时训练数据及额外搜索计算，不能归因于单个高层模块。",
+      "insight": "高层搜索可按不确定性分配计算。真实执行历史与假想未来不应混作已经发生的状态。",
+      "readingFocus": "高低层分工；不确定性触发；世界模型搜索与任务记忆。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.16885v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.16885"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.16885",
+      "arxiv": "2608.16885",
+      "doi": ""
+    },
+    {
+      "id": "p018",
+      "name": "PonderPounce",
+      "title": "PonderPounce: A Pretrained MLLM as an Episode Context Engine for Robot Control",
+      "team": "MAUM.AI／首尔大学\nSuhwan Choi、Jaeyoon Jung、Sungkyung Kim、Yunsung Lee、Youngjae Yu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.24115\n技术预印本",
+      "firstPublished": "2026-08-25",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "memory",
+        "efficiency"
+      ],
+      "tags": [
+        "VLA",
+        "continuous tokens",
+        "asynchronous"
+      ],
+      "priority": "selective",
+      "contribution": "利用多模态大模型原生上下文形成episode信息引擎，以连续认知token和信息年龄连接异步快慢两层。",
+      "findings": "RoboMME：完整方案60.83%，去演示推理48.21%，去语言落地监督27.96%。\n连续接口60.83% vs单独适配的文本接口59.96%；输出p50约78ms vs强制45-token文本约820ms。",
+      "limitations": "连续/文本准确率仅差0.87个百分点，小于论文报告的2.63个百分点运行波动，不能宣称连续接口准确率显著更好。延迟比较受输出长度约束。",
+      "insight": "连续接口的突出优势可能是延迟，而非显著更高的准确率。异步系统还需处理上下文陈旧的问题。",
+      "readingFocus": "连续vs文本接口；上下文年龄；异步失配；认知监督消融。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.24115v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.24115"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.24115",
+      "arxiv": "2608.24115",
+      "doi": ""
+    },
+    {
+      "id": "p019",
+      "name": "SparkVLA",
+      "title": "SparkVLA: Stop-Aware Hierarchical VLA with Adaptive Action Chunking for Long-Horizon Manipulation",
+      "team": "北京理工大学／清华大学\nXunyao Lei、Renjun Wu、Tianlin Huo、Xuesong Li",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.16172\n技术预印本",
+      "firstPublished": "2026-08-17",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "memory",
+        "action"
+      ],
+      "tags": [
+        "VLA",
+        "stop",
+        "action chunking"
+      ],
+      "priority": "selective",
+      "contribution": "让停止与不同长度的动作前缀统一竞争，结合阶段锚点历史和任务目标，动态决定继续执行多少步。",
+      "findings": "RoboCerebra：独立停止+动作排序为42.53%成功率、80.37%停止准确率；统一决策提升至47.12%、96.65%。\n固定动作长度成功率34.26%。",
+      "limitations": "低层模型调用约4.14Hz，不能将41.4动作/秒当成41.4Hz模型调用。提高停止准确率不等于无额外层级开销。",
+      "insight": "停止与动作长度是相互关联的决策。模型调用频率和输出动作频率不能互换。",
+      "readingFocus": "停止与前缀的统一排序；阶段锚点；调用频率与动作频率。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.16172v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.16172"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.16172",
+      "arxiv": "2608.16172",
+      "doi": ""
+    },
+    {
+      "id": "p045",
+      "name": "GF-VLA",
+      "title": "Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy Reasoning and Dual Robotic Control",
+      "team": "杭州电子科技大学／新墨西哥大学／牛津大学／乔治华盛顿大学／TUM等\nShunlei Li、Longsen Gao、Jin Wang、Jiuwen Cao等",
+      "venue": "Information Fusion",
+      "publicationType": "journal",
+      "publicationStatus": "Elsevier Information Fusion 131:104193\nDOI:10.1016/j.inffus.2026.104193\narXiv:2508.05342",
+      "firstPublished": "2025-08-07",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "2026年7月卷期；2025年8月已有预印本｜数据取v1",
+      "topics": [
+        "memory",
+        "evaluation"
+      ],
+      "tags": [
+        "graph",
+        "dual-arm",
+        "reasoning"
+      ],
+      "priority": "selective",
+      "contribution": "以信息论筛选的场景/交互图组织时间关系，再转换为可执行的结构化策略和双机器人分工。",
+      "findings": "4个结构化双臂积木任务：图构建准确率>95%、分割93%、抓取94%、放置89%，整体任务成功率约90%。",
+      "limitations": "限定结构化双臂任务，不是通用基础模型大规模泛化结论；图、分割、抓取和整体成功率是不同指标。量化结果来自所链预印本。",
+      "insight": "显式图结构适合描述关系和阶段，但结构化场景的高成功率不能直接等同开放任务泛化。",
+      "readingFocus": "状态图字段；行为树/动作接口；指标层级与任务范围。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2508.05342v1"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.inffus.2026.104193"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2508.05342"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2508.05342",
+      "arxiv": "2508.05342",
+      "doi": "10.1016/j.inffus.2026.104193"
+    },
+    {
+      "id": "p021",
+      "name": "SelfWAM",
+      "title": "SelfWAM: A Self-Grounded Unified World Action Model for Fast Robot Control",
+      "team": "上海科技大学（ShanghaiTech University）／InstAdapt\nBikang Pan、Fan Liu、Haotao Lu、Jingya Wang、Ye Shi",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.00725\n技术预印本",
+      "firstPublished": "2026-08-01",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "self-mask",
+        "action-conditioned"
+      ],
+      "priority": "deep",
+      "contribution": "让未来视觉分支读取干净示范动作，并增加机器人自身掩码预测，使未来学习依赖具体动作；保持动作单独推理路径。",
+      "findings": "RoboTwin平均：FastWAM 91.84%→仅动作条件化RGB预测90.80%→再加自身掩码92.62%。\n完整模型Clean 92.16%、Random 93.08%。",
+      "limitations": "关键是负面消融：动作条件本身不保证提升；完整方案较基线仅+0.78个百分点。自身运动监督不等于已理解物体后果/任务成功。",
+      "insight": "动作条件化本身不保证控制提升。预测目标是否聚焦动作相关变化，比单纯增加未来RGB监督更关键。",
+      "readingFocus": "动作条件与预测目标拆分；自身掩码；不增加动作推理负担的结构。",
+      "evidence": "checked",
+      "evidenceNote": "本次发布已复核原文相关结果片段；不代表独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.00725v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.00725"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.00725",
+      "arxiv": "2608.00725",
+      "doi": ""
+    },
+    {
+      "id": "p022",
+      "name": "ST-WAM",
+      "title": "ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts",
+      "team": "清华大学／阿里高德视觉团队／上海交通大学／西安交通大学／曼彻斯特大学／伦敦国王学院等\nMingxin Wang、Bin Hu等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.28993\n技术预印本",
+      "firstPublished": "2026-07-31",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "OOD",
+        "semantics"
+      ],
+      "priority": "deep",
+      "contribution": "把外观潜变量、语义表征与历史分工，缓解世界模型把新场景预测回训练外观的问题；未来监督主要在训练期提供。",
+      "findings": "LIBERO 98.7%、RoboTwin 92.8%；LIBERO-Plus较FastWAM提高21.3个百分点。\n真实视觉变化场景：基线25.8%→61.5%。",
+      "limitations": "重点是特定外观分布变化下的鲁棒性，不是全面物理泛化。不同外观与接触/动力学变化不能混为同一种分布外能力。",
+      "insight": "将语义与外观变化分开建模有助于视觉鲁棒性，但不能据此推断对动力学变化也同样稳健。",
+      "readingFocus": "视觉分布偏移诊断；语义/外观职责；历史与未来监督。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.28993v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.28993"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.28993",
+      "arxiv": "2607.28993",
+      "doi": ""
+    },
+    {
+      "id": "p026",
+      "name": "WAM Capability Separation",
+      "title": "On the Capability Separation Between World-Model Policy Learning and Imitated World-Action Models",
+      "team": "南京大学\nYang Yu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.22197\n理论预印本",
+      "firstPublished": "2026-08-23",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "theory",
+        "imitation"
+      ],
+      "priority": "deep",
+      "contribution": "在明确的信息、可实现性和优化假设下，区分模仿式世界动作联合学习与真正利用世界模型进行策略学习的能力边界。",
+      "findings": "理论结论：在匹配部署信息、无限制条件核、可实现性与精确总体优化等假设下，联合WAM与动作模仿的最优策略均等于示范行为条件分布。\n没有成功率实验；不能给出经验提升百分比。",
+      "limitations": "这是理想化定理，不否定有限数据下的表征、正则化或优化收益。其结论依赖假设，不能泛化成“WAM无用”。",
+      "insight": "联合世界—动作建模不自动等于获得新的规划能力。理论边界依赖假设，有限数据下的表征收益仍可能存在。",
+      "readingFocus": "定理假设；部署信息集合；反例与不可辨识性；结论不覆盖的情形。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.22197v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.22197"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.22197",
+      "arxiv": "2608.22197",
+      "doi": ""
+    },
+    {
+      "id": "p023",
+      "name": "DSWAM",
+      "title": "DSWAM: A Dual-System World Action Foundation Model for Fine-Grained Robot Manipulation",
+      "team": "美的AI研究院／同济大学\nJian Zhu、Jianjun Zhang、Taiyi Su、Yi Xu等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.04927\n公司/学术联合技术报告",
+      "firstPublished": "2026-07-06",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读所查v1",
+      "topics": [
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "dual-system"
+      ],
+      "priority": "selective",
+      "contribution": "快速世界—动作控制与可选高层规划分工，配合异步执行和推理优化；用细粒度操作验证WAM价值。",
+      "findings": "匹配设置下的折衣任务：DeMa-VLA 92.5%→DSWAM 96.3%；平均时间2分18秒→1分44秒。\n该项比较未开启高层规划器。",
+      "limitations": "该数字是具体折衣任务，不是所有任务均值；规划器关闭的结果不能用于证明层级规划收益。",
+      "insight": "匹配数据与关闭高层规划器的对照，更能说明世界动作建模本身的贡献。执行耗时也是重要结果。",
+      "readingFocus": "VLA/WAM匹配比较；规划器开关；真实细操作与执行耗时。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.04927v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.04927"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.04927",
+      "arxiv": "2607.04927",
+      "doi": ""
+    },
+    {
+      "id": "p024",
+      "name": "ABot-M0.5",
+      "title": "ABot-M0.5: Unified Mobility-and-Manipulation World Action Model",
+      "team": "阿里巴巴高德视觉团队（AMAP CV）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.00678\n公司技术报告",
+      "firstPublished": "2026-07-01",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "mobility",
+        "compositional"
+      ],
+      "priority": "overview",
+      "contribution": "统一移动与操作的多时间尺度动作；Dream Forcing让逆动力学逐步适应模型自身预测的未来，缓解训练/部署条件失配。",
+      "findings": "RoboCasa365全量Target后训练：54.2%，FastWAM为43.5%；10%Target数据：30.1%。\n预训练直接评测均值40.4%，但未见组合任务仅2.7%。",
+      "limitations": "Target后训练与预训练直接评测不是同一口径。较高平均分掩盖未见组合泛化短板；+Condensed Memory的完整细节留待后续工作，不能当成熟可移植模块。",
+      "insight": "统一移动与操作需要适配多时间尺度。较高平均分可能掩盖未见任务组合上的明显短板。",
+      "readingFocus": "Dream Forcing；预测误差适应；RoboCasa已见/未见任务差异。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.00678v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.00678"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.00678",
+      "arxiv": "2607.00678",
+      "doi": ""
+    },
+    {
+      "id": "p037",
+      "name": "CauVA / LingBot-VA",
+      "title": "Causal World Modeling for Robot Control",
+      "team": "Robbyant 灵波科技（作者项目发布团队）\nLin Li、Qihang Zhang、Yiming Luo、Yujun Shen、Yinghao Xu等",
+      "venue": "RSS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2026，论文016\nDOI:10.15607/RSS.2026.XXII.016\narXiv:2601.21998",
+      "firstPublished": "2026-01-29",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；1月已有预印本｜数据取LingBot-VA v1",
+      "topics": [
+        "world",
+        "efficiency"
+      ],
+      "tags": [
+        "VA",
+        "WAM",
+        "causal attention"
+      ],
+      "priority": "selective",
+      "contribution": "视频/动作交错自回归与MoT联合，使用真实观测刷新缓存；通过前向动力学重定位过时预测，支持闭环异步执行。",
+      "findings": "RoboTwin 50任务Easy/Hard：92.93%/91.55%，Motus为88.7%/87.0%。\nLIBERO均值98.5%；异步版本在相近成功率下任务完成约快2×。",
+      "limitations": "RoboTwin使用2,500条干净+25,000条随机场景示范。会议与预印本模型命名有变化，数字按所链v1。因果注意力不等同完成干预因果识别。",
+      "insight": "真实观测缓存与视频动作解码可以兼顾效率。因果注意力结构不能直接解释为干预因果推理能力。",
+      "readingFocus": "真实观测缓存；过时预测问题；前向动力学校正；异步数据流。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2601.21998v1"
+        },
+        {
+          "label": "会议正式页面",
+          "url": "https://www.roboticsproceedings.org/rss22/p016.html"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2601.21998"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2601.21998",
+      "arxiv": "2601.21998",
+      "doi": "10.15607/RSS.2026.XXII.016"
+    },
+    {
+      "id": "p025",
+      "name": "VT-WAM",
+      "title": "VT-WAM: Visual-Tactile World Action Model for Contact-Rich Manipulation",
+      "team": "中科院自动化所／中国科学院大学／新加坡国立大学／复旦大学／TARS等\nShuai Tian、Yupeng Zheng、Songen Gu等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.02503\n技术预印本",
+      "firstPublished": "2026-07-02",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "tactile",
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "tactile",
+        "contact"
+      ],
+      "priority": "overview",
+      "contribution": "联合视觉、触觉未来与动作建模，通过接触相关的信息交互与门控，补充视觉难以观测的物理状态。",
+      "findings": "6个真实接触密集任务平均成功率71.67%。\n论文报告显著优于视觉WAM和已有视触策略；此处不将摘要增幅擅自换算为百分点。",
+      "limitations": "收益依赖真实触觉传感与对应数据，不能按同等观测条件归因于网络。6任务结果不代表无触觉机械臂可直接获得同等收益。",
+      "insight": "触觉为视觉难以判断的接触提供新证据。结构收益与额外传感器的信息收益必须分开理解。",
+      "readingFocus": "接触阶段门控；视觉/触觉职责；传感器与数据依赖。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.02503v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.02503"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.02503",
+      "arxiv": "2607.02503",
+      "doi": ""
+    },
+    {
+      "id": "p044",
+      "name": "VLA-Touch",
+      "title": "VLA-Touch: Enhancing Vision-Language-Action Models with Dual-Level Tactile Feedback",
+      "team": "新加坡国立大学CLeAR／Show Lab\nJianxin Bi、Kevin Yuchen Ma、Ce Hao、Mike Zheng Shou、Harold Soh",
+      "venue": "IEEE RA-L",
+      "publicationType": "journal",
+      "publicationStatus": "IEEE RA-L 11(7):8487–8494\nDOI:10.1109/LRA.2026.3692345\narXiv:2507.17294",
+      "firstPublished": "2025-07-23",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "2026年7月卷期；5月在线；数据取2025预印本v1",
+      "topics": [
+        "tactile"
+      ],
+      "tags": [
+        "VLA",
+        "tactile",
+        "feedback"
+      ],
+      "priority": "selective",
+      "contribution": "高层将触觉转为规划可用信息，低层用触觉条件插值控制器细化动作，保持预训练VLA本体不必重训。",
+      "findings": "各20次真实评测，RDT→插值控制器：放杯7/20→10/20；擦拭完成5/20→12/20；削皮完成6/20→10/20。\n触觉语言使力判断50%→90%、硬度判断60%→75%。",
+      "limitations": "需要GelSight传感器、触觉模型及训练过的控制器；不重训VLA不等于整系统免训练。引用的是预印本v1，不冒充已逐项核对期刊最终版。",
+      "insight": "高层触觉解释与低层反馈控制承担不同职责。不更新VLA并不意味着整个系统无需训练。",
+      "readingFocus": "高低层反馈分工；Table 1；语言化触觉与原始触觉图；训练成本。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2507.17294v1"
+        },
+        {
+          "label": "官方 / 作者来源",
+          "url": "https://clear-nus.github.io/blog/vla-touch"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2507.17294"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2507.17294",
+      "arxiv": "2507.17294",
+      "doi": "10.1109/LRA.2026.3692345"
+    },
+    {
+      "id": "p027",
+      "name": "TurboVLA",
+      "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
+      "team": "华中科技大学\nHengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.27205\n技术预印本",
+      "firstPublished": "2026-07-29",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首发；8月16日v2｜阅读v2",
+      "topics": [
+        "efficiency"
+      ],
+      "tags": [
+        "VLA",
+        "lightweight",
+        "real-time"
+      ],
+      "priority": "selective",
+      "contribution": "用独立视觉/语言编码器与轻量跨模态交互代替大语言模型控制瓶颈，直接生成连续动作片段。",
+      "findings": "0.2B参数；LIBERO平均97.7%；RTX 4090上延迟31.2ms、显存约0.9GB（约32Hz模型推理）。",
+      "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
+      "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
+      "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v2",
+          "url": "https://arxiv.org/html/2607.27205v2"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.27205"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.27205",
+      "arxiv": "2607.27205",
+      "doi": ""
+    },
+    {
+      "id": "p028",
+      "name": "ActionCache",
+      "title": "ActionCache: Training-Free Acceleration for Vision-Language-Action Models with Action Caching and Refinement",
+      "team": "东京科学大学（Institute of Science Tokyo）\nRyuji Oi、Hikari Otsuka、Kosuke Matsushima、Daichi Fujiki等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.06370\n技术预印本",
+      "firstPublished": "2026-07-07",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首发；8月3日v2｜阅读v2",
+      "topics": [
+        "efficiency"
+      ],
+      "tags": [
+        "VLA",
+        "cache",
+        "training-free"
+      ],
+      "priority": "selective",
+      "contribution": "以多模态上下文检索缓存的中间噪声动作，再细化而非从纯噪声生成；无需重新训练策略。",
+      "findings": "作者报告动作头最高加速：π0.5为10.44×，GR00T-N1.6为40.17×。\n分析中动作头占完整推理时间约37%—66%。",
+      "limitations": "最高加速针对动作头，不是端到端系统；受命中率、任务相似度与缓存构建影响。不能将缓存动作直接等同已验证可执行命令。",
+      "insight": "缓存能减少重复动作生成，但实际收益由命中率和动作头占比共同决定。不要把最高局部加速当作整机加速。",
+      "readingFocus": "缓存键/噪声状态；命中与细化；动作头vs端到端收益。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v2",
+          "url": "https://arxiv.org/html/2607.06370v2"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.06370"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.06370",
+      "arxiv": "2607.06370",
+      "doi": ""
+    },
+    {
+      "id": "p029",
+      "name": "FlashVLA",
+      "title": "FlashVLA: Streaming Action Decoding for Fast and Asynchronous VLA Inference",
+      "team": "加州大学圣迭戈分校／麻省理工学院\nZekai Li、Jiaming Tang、Zhijian Liu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.27384\n技术预印本（注意同名工作）",
+      "firstPublished": "2026-08-27",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "efficiency",
+        "action"
+      ],
+      "tags": [
+        "VLA",
+        "streaming",
+        "asynchronous"
+      ],
+      "priority": "selective",
+      "contribution": "多噪声动作缓冲与片段级因果注意力联合，预热后流式产出动作片段，使生成与执行异步衔接。",
+      "findings": "作者报告单GPU真实部署达到至少30Hz；动作解码墙钟加速19.9×、GPU计算工作量降低约9.3×。",
+      "limitations": "需要对应缓冲/噪声结构的微调，不是training-free。动作解码加速不是所有视觉前处理、通信与机器人执行的总加速。",
+      "insight": "流式解码改变了计算和执行的调度方式。预热、稳态、必要微调和通信开销应分别阅读。",
+      "readingFocus": "缓冲噪声调度；预热和稳态；微调需求；异步动作接口。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.27384v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.27384"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.27384",
+      "arxiv": "2608.27384",
+      "doi": ""
+    },
+    {
+      "id": "p030",
+      "name": "AdaVLA",
+      "title": "AdaVLA: Adaptive Step Flow Matching for Training-free Acceleration of Vision-Language-Action Models",
+      "team": "西江大学（Sogang University）\nSunghwan Han、Youngtae Han、Youngmin Yi",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.29208\n此表按8月预印本记载",
+      "firstPublished": "2026-08-29",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1；不混入9月新增结果",
+      "topics": [
+        "efficiency"
+      ],
+      "tags": [
+        "VLA",
+        "flow matching",
+        "training-free"
+      ],
+      "priority": "selective",
+      "contribution": "利用流轨迹几何自适应分配采样步数，并按在线重要性裁剪部分MLP计算，无需重训或额外校准。",
+      "findings": "Jetson AGX Orin上LIBERO：π0.5加速1.87×、X-VLA加速2.24×；作者报告成功率变化很小。",
+      "limitations": "“很小”沿用作者描述，此处未补造下降百分比。结论限于指定硬件与策略；流曲率不等于任务失败概率。",
+      "insight": "可按动作轨迹特点分配采样预算。自适应少步化的可信价值是成功率—时延取舍，而非仅减少步数。",
+      "readingFocus": "自适应步长依据；通道裁剪；成功率—时延取舍。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.29208v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.29208"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.29208",
+      "arxiv": "2608.29208",
+      "doi": ""
+    },
+    {
+      "id": "p031",
+      "name": "Embodied.cpp",
+      "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+      "team": "东南大学／南京大学／微软研究院／清华大学智能产业研究院\nLing Xu、Chuyu Han、Borui Li等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.02501\n系统技术报告",
+      "firstPublished": "2026-07-02",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首发；7月3日v2｜阅读v2",
+      "topics": [
+        "efficiency"
+      ],
+      "tags": [
+        "runtime",
+        "quantization",
+        "C++"
+      ],
+      "priority": "selective",
+      "contribution": "用分层C++运行时统一输入适配、序列管理、主干、动作头和输出接口，面向异构设备与多频率机器人部署。",
+      "findings": "LingBot-VA单个Transformer块：内存312.2→88.1MiB，延迟3.236→3.171ms。\n比较条件分别为Python BF16与C++ Q4_K，内存下降主要伴随精度变化。",
+      "limitations": "这是单块而非完整WAM的机器人闭环结果；量化与运行时同时改变，不能宣称C++单独带来同等压缩或显著整机加速。",
+      "insight": "运行时与量化是不同因素。单个模块的内存下降和时延变化不能直接外推完整系统的性能。",
+      "readingFocus": "五层运行时职责；多频率接口；单块与整机数据范围；量化设置。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v2",
+          "url": "https://arxiv.org/html/2607.02501v2"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.02501"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.02501",
+      "arxiv": "2607.02501",
+      "doi": ""
+    },
+    {
+      "id": "p042",
+      "name": "VLA-InfoEntropy",
+      "title": "VLA-InfoEntropy: A Training-Free Vision-Attention Information Entropy Approach for Vision-Language-Action Models Inference Acceleration and Success",
+      "team": "平安科技／清华大学深圳国际研究生院\nChuhang Liu、Yayun He、Zuheng Kang、Xiaoyang Qu、Jianzong Wang",
+      "venue": "ICME 2026",
+      "publicationType": "conference",
+      "publicationStatus": "ICME 2026（作者发表页确认）\narXiv:2604.05323",
+      "firstPublished": "2026-04-07",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；4月已有预印本｜阅读v1",
+      "topics": [
+        "efficiency"
+      ],
+      "tags": [
+        "token pruning",
+        "training-free",
+        "entropy"
+      ],
+      "priority": "selective",
+      "contribution": "融合视觉熵、任务注意力与执行时间，区分需重新计算的关键视觉token和可复用的静态KV缓存。",
+      "findings": "RTX 4090、OpenVLA/LIBERO：75.0%→76.4%；延迟51.91→31.25（作者报告下降39.8%）；FLOPs下降34.9%。\n仅视觉熵为69.8%，视觉+注意力75.8%。",
+      "limitations": "论文表中的1.53×对应FLOPs比，不应误写为实测时延比；Long由53.2%降到52.2%，并非每个子集都提高。",
+      "insight": "视觉信息量和任务相关性不可等同。仅按熵选取内容可能损害动作决策，负面消融很重要。",
+      "readingFocus": "Table II负面消融；任务注意力；缓存与重算划分；速度定义。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2604.05323v1"
+        },
+        {
+          "label": "官方 / 作者来源",
+          "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2604.05323"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2604.05323",
+      "arxiv": "2604.05323",
+      "doi": ""
+    },
+    {
+      "id": "p032",
+      "name": "Deltoris",
+      "title": "Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference",
+      "team": "上海交通大学／上海期智研究院／中科院计算所\nZheng Liu、Zeyu Guo、Han Zhao、Jingwen Leng等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.04428\n算法—硬件协同预印本",
+      "firstPublished": "2026-08-05",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "efficiency"
+      ],
+      "tags": [
+        "hardware",
+        "sparsity",
+        "speculation"
+      ],
+      "priority": "overview",
+      "contribution": "利用位级时序稀疏与推测执行，配合专用脉动阵列和硬件数据流优化VLA推理。",
+      "findings": "作者报告最高加速：相对移动GPU为34.2×，相对已有专用加速器为6.1×，对应设置下保持接近的任务表现。",
+      "limitations": "核心收益依赖专用硬件协同，不是普通GPU上安装软件即可获得。最高值不是全部模型/任务平均值。",
+      "insight": "软硬件协同设计的峰值加速有明确设备前提。将其作为硬件路线参考，而非普通GPU的即插即用收益。",
+      "readingFocus": "硬件依赖；位级复用；比较设备与峰值口径。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.04428v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.04428"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.04428",
+      "arxiv": "2608.04428",
+      "doi": ""
+    },
+    {
+      "id": "p043",
+      "name": "DMS-VLA",
+      "title": "Dynamic Maclaurin-Series-Based Vision-Language-Action Model",
+      "team": "Chong Yu、Zhongxue Gan作者团队\n完整署名机构未从原始全文核验",
+      "venue": "IEEE RA-L",
+      "publicationType": "journal",
+      "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259\nDOI:10.1109/LRA.2026.3683324",
+      "firstPublished": null,
+      "dateNote": "未核验首发；已查到2026-04上线",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月卷期；非7月才首次提出",
+      "topics": [
+        "efficiency"
+      ],
+      "tags": [
+        "VLA",
+        "compression"
+      ],
+      "priority": "overview",
+      "contribution": "通过Maclaurin级数式参数化共享权重/动态计算，探索VLA结构压缩与推理效率。",
+      "findings": "未填写未经原文核验的压缩率、成功率或加速比。\n当前仅核验出版条目及摘要层面的结构设计；IEEE原始全文受访问限制。",
+      "limitations": "量化结论证据不足，不能依据二手宣传数字调整主干。期刊卷期与首次上线时间分开记录。",
+      "insight": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
+      "readingFocus": "摘要与结构动机；有全文后再看量化口径。",
+      "evidence": "metadata",
+      "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "官方 / 作者来源",
+          "url": "https://ieeexplore.ieee.org/document/11479850/"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/LRA.2026.3683324"
+        }
+      ],
+      "paperUrl": "https://doi.org/10.1109/LRA.2026.3683324",
+      "arxiv": "",
+      "doi": "10.1109/LRA.2026.3683324"
+    },
+    {
+      "id": "p020",
+      "name": "SMILE",
+      "title": "SMILE: Smooth Motion for Improved Long-Horizon VLA Execution",
+      "team": "Stony Brook University／Salesforce AI Research\nJongwoo Park、E-Ro Nguyen、Kanchana Ranasinghe等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2608.29432\n作者标注投稿RA-L；非已录用",
+      "firstPublished": "2026-08-29",
+      "dateNote": "",
+      "collectionMonth": "2026-08",
+      "versionNote": "8月首次公开｜阅读v1",
+      "topics": [
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "B-spline",
+        "action chunking",
+        "smoothness"
+      ],
+      "priority": "selective",
+      "contribution": "保留策略主干，以B样条系数参数化动作片段，从输出表示改善平滑性、连续性和长程控制。",
+      "findings": "SMILE-Evo1在LIBERO达到98.0%、约1.1×加速；SMILE-VPP在CALVIN平均完成链长4.42、约1.5×加速。\n对应SmolVLA设置下，非边界加速度下降78.6%，速度符号翻转下降42.3%。",
+      "limitations": "不同数字对应不同基座，不能拼成同一模型结果；链长不是成功率。平滑性收益不自动代表所有接触精度提升。",
+      "insight": "动作参数化会影响连续性与速度。平滑指标改善并不自动代表精细接触或恢复能力改善。",
+      "readingFocus": "样条参数化；不同基座结果；平滑性指标定义。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2608.29432v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2608.29432"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.29432",
+      "arxiv": "2608.29432",
+      "doi": ""
+    },
+    {
+      "id": "p033",
+      "name": "Optimal Transport Q-Learning",
+      "title": "Optimal Transport Q-Learning for Flow Policy Steering and Acceleration",
+      "team": "爱丁堡大学／Honda Research Institute Europe\nAndreas Sochopoulos、Esmeralda Whitammer、Nikolaos Tsagkas等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.06262\n强化学习后训练预印本",
+      "firstPublished": "2026-07-07",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "RL",
+        "flow matching",
+        "optimal transport"
+      ],
+      "priority": "selective",
+      "contribution": "通过优势加权的最优传输流匹配进行策略改进，并同时拉直流轨迹、减少采样步数。",
+      "findings": "约50—60条在线交互轨迹预算下：单策略成功率36%→86%；预训练VLA为38%→76%。\n推理采样步数减少约70%。",
+      "limitations": "需要额外交互和RL后训练，不是免训练加速。不同起点对应不同结果；采样步数下降不等于整机时延同幅下降。",
+      "insight": "流策略的提升与少步化可以结合，但需要计入在线交互和后训练。采样步数减少不等于整机同比加速。",
+      "readingFocus": "优势权重与流轨迹；交互预算；策略提升和少步化的关系。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.06262v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.06262"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.06262",
+      "arxiv": "2607.06262",
+      "doi": ""
+    },
+    {
+      "id": "p041",
+      "name": "Legato",
+      "title": "Learning Native Continuation for Action Chunking Flow Policies",
+      "team": "Spirit AI／上海交通大学／清华大学／同济大学／中国科学技术大学\nYufeng Liu、Hang Yu、Juntu Zhao、Junliang Guo等",
+      "venue": "RSS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2026，论文058（作者发表页确认）\narXiv:2602.12978",
+      "firstPublished": "2026-02-13",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；2月已有预印本｜阅读v1",
+      "topics": [
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "flow matching",
+        "action chunking",
+        "continuation"
+      ],
+      "priority": "selective",
+      "contribution": "把已知动作前缀与噪声调度纳入训练，使流策略原生学习动作片段续接，兼顾持续执行与不同推理延迟。",
+      "findings": "作者在5个真实任务中报告，相对Real-Time Chunking，运动平滑性与完成时间约改善10%。",
+      "limitations": "约10%为作者汇总描述，不是成功率+10个百分点。需要训练分布支持原生续接，不是简单推理后处理。",
+      "insight": "连续执行能力可以进入训练分布，而非全部依赖推理后处理。平滑续接与快速纠正之间仍需权衡。",
+      "readingFocus": "原生续接；已知动作条件；延迟适应；与RTC的本质区别。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2602.12978v1"
+        },
+        {
+          "label": "官方 / 作者来源",
+          "url": "https://lemmonation.github.io/publications/"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2602.12978"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2602.12978",
+      "arxiv": "2602.12978",
+      "doi": ""
+    },
+    {
+      "id": "p034",
+      "name": "RoboDojo",
+      "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+      "team": "香港大学MMLab／UC Berkeley／清华大学／北京大学／MIT等联合团队\nTianxing Chen、Yue Chen、Zixuan Li、Junyuan Tang等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2607.04434\n基准论文",
+      "firstPublished": "2026-07-05",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月首次公开｜阅读v1",
+      "topics": [
+        "evaluation"
+      ],
+      "tags": [
+        "benchmark",
+        "sim-to-real",
+        "long-horizon"
+      ],
+      "priority": "deep",
+      "contribution": "统一42个仿真和18个真实任务、30种策略，从泛化、记忆、精度、长程、开放词汇拆解通用操作能力。",
+      "findings": "最佳长程成功率仍仅14.92%；最佳精度成功率12.00%。\nHy-Embodied-0.5-VLA标准/随机场景Score为21.98/1.57，相对下降92.9%；π0.5为20.92/5.82，下降72.2%。",
+      "limitations": "Score与成功率不是同一指标；使用其统一协议，不可与各模型原论文的专门微调结果横向混比。失败分类比单一总榜更有参考价值。",
+      "insight": "高饱和标准基准可能掩盖精度和长程短板。能力分项与随机化退化比单一总榜更有解释力。",
+      "readingFocus": "五维能力定义；随机化退化；精度失败与阶段前置条件分析。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2607.04434v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2607.04434"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2607.04434",
+      "arxiv": "2607.04434",
+      "doi": ""
+    },
+    {
+      "id": "p040",
+      "name": "Beyond Binary Success",
+      "title": "Beyond Binary Success: Sample-Efficient and Statistically Rigorous Robot Policy Comparison",
+      "team": "宾夕法尼亚大学／Toyota Research Institute／普林斯顿大学\nDavid Snyder、Apurva Badithela、Nikolai Matni、George Pappas等",
+      "venue": "RSS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2026，论文076\nDOI:10.15607/RSS.2026.XXII.076\narXiv:2603.13616",
+      "firstPublished": "2026-03-13",
+      "dateNote": "",
+      "collectionMonth": "2026-07",
+      "versionNote": "7月正式会议发表；3月已有预印本｜阅读v1",
+      "topics": [
+        "evaluation"
+      ],
+      "tags": [
+        "benchmark",
+        "statistics",
+        "progress"
+      ],
+      "priority": "deep",
+      "contribution": "利用任务进度而非仅二元成功信号，并结合统计有效的序贯比较，提高机器人策略比较的信息效率。",
+      "findings": "作者报告相对固定批量评测最多减少70%所需样本；相对只用二元成功的序贯方法最多减少50%。",
+      "limitations": "数字是评测样本节省，不是机器人性能提升；依赖论文的统计有效性条件，不能用普通显著性检验反复查看后提前停止替代。",
+      "insight": "连续任务进度可提高策略比较效率。序贯判断依赖有效统计协议，而非反复查看普通显著性检验。",
+      "readingFocus": "连续进度指标；统计假设；样本效率收益的定义。",
+      "evidence": "notes",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "原文 · v1",
+          "url": "https://arxiv.org/html/2603.13616v1"
+        },
+        {
+          "label": "会议正式页面",
+          "url": "https://www.roboticsproceedings.org/rss22/p076.html"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2603.13616"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2603.13616",
+      "arxiv": "2603.13616",
+      "doi": "10.15607/RSS.2026.XXII.076"
+    },
+    {
+      "id": "p046",
+      "name": "VLAbot",
+      "title": "VLAbot: A human Vision–Language–Action models interaction framework for robotic assembly",
+      "team": "香港理工大学相关工业合作团队\nXueting Wang、Xiwen Dengxiong、Shi Bai、Pai Zheng、Yunbo Zhang",
+      "venue": "RCIM",
+      "publicationType": "journal",
+      "publicationStatus": "Elsevier Robotics and Computer-Integrated Manufacturing 100:103268\nDOI:10.1016/j.rcim.2026.103268",
+      "firstPublished": null,
+      "dateNote": "首次在线日期未核验",
+      "collectionMonth": "2026-08",
+      "versionNote": "2026年8月卷期｜依据机构出版页/摘要",
+      "topics": [
+        "evaluation"
+      ],
+      "tags": [
+        "assembly",
+        "human-in-the-loop",
+        "AR"
+      ],
+      "priority": "overview",
+      "contribution": "结合多专家模型、增强现实和人类指导，组织工业装配的任务解释、反馈和执行协作。",
+      "findings": "作者在齿轮装配与插销案例中报告，机器人可在5次尝试内学习目标操作；随交互推进，完成耗时降低。\n公开摘要未给出统一成功率/耗时数值，不补造。",
+      "limitations": "包含人类提示、指导与交互，不是5条无人干预示范实现自主泛化；证据以两个装配案例和公开摘要为主。",
+      "insight": "人机协作的少次尝试应连同人类指导和纠正一起计量。不要把交互式学习误当成纯自主少样本泛化。",
+      "readingFocus": "人类介入点；增强现实反馈；5次尝试包含的监督成本。",
+      "evidence": "metadata",
+      "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "官方 / 作者来源",
+          "url": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+        }
+      ],
+      "paperUrl": "https://doi.org/10.1016/j.rcim.2026.103268",
+      "arxiv": "",
+      "doi": "10.1016/j.rcim.2026.103268"
+    }
+  ]
+}
