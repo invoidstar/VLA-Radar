@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p059",
+    "name": "Open X-Embodiment / RT-X",
+    "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models",
+    "team": "Open X-Embodiment Collaboration；多机构协作，Abby O’Neill 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-10-13",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "pretraining",
+      "evaluation"
+    ],
+    "tags": [
+      "关键文献",
+      "基础资源",
+      "cross-embodiment",
+      "RT-X"
+    ],
+    "priority": "deep",
+    "contribution": "组织跨机器人数据集与统一格式，训练 RT-1-X / RT-2-X，验证跨本体数据池是否带来正迁移，而不是仅扩大单一机器人数据。",
+    "findings": "原始路线覆盖 22 种机器人本体、100 万余轨迹。官方项目页报告 RT-1-X 在小数据场景平均改善约 50%，RT-2-X 的指定涌现技能测试约为原 RT-2 的 3 倍；均为相对或特定测试口径。",
+    "limitations": "不同数据混合、机器人控制频率及评测集合并不一致；不能把所有 OXE 子集预训练模型视作相同训练预算，也不能把相对改善写作百分点。",
+    "insight": "共享动作语义、规范化与混合策略是跨本体迁移的前提；数据规模不能脱离覆盖范围阅读。",
+    "readingFocus": "数据统一格式、RT-X 迁移实验及数据混合的适用条件。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2310.08864"
+      },
+      {
+        "label": "官方项目页 · Results",
+        "url": "https://robotics-transformer-x.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2310.08864",
+    "arxiv": "2310.08864",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-10-13",
+    "firstArxivSource": "https://arxiv.org/abs/2310.08864v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2310.08864",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "组织跨机器人数据集与统一格式，训练 RT-1-X / RT-2-X，验证跨本体数据池是否带来正迁移，而不是仅扩大单一机器人数据。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2310.08864"
+          },
+          {
+            "label": "官方项目页 · Results",
+            "url": "https://robotics-transformer-x.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原始路线覆盖 22 种机器人本体、100 万余轨迹。官方项目页报告 RT-1-X 在小数据场景平均改善约 50%，RT-2-X 的指定涌现技能测试约为原 RT-2 的 3 倍；均为相对或特定测试口径。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2310.08864"
+          },
+          {
+            "label": "官方项目页 · Results",
+            "url": "https://robotics-transformer-x.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "不同数据混合、机器人控制频率及评测集合并不一致；不能把所有 OXE 子集预训练模型视作相同训练预算，也不能把相对改善写作百分点。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2310.08864"
+          },
+          {
+            "label": "官方项目页 · Results",
+            "url": "https://robotics-transformer-x.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "共享动作语义、规范化与混合策略是跨本体迁移的前提；数据规模不能脱离覆盖范围阅读。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2310.08864"
+          },
+          {
+            "label": "官方项目页 · Results",
+            "url": "https://robotics-transformer-x.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "数据统一格式、RT-X 迁移实验及数据混合的适用条件。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2310.08864"
+          },
+          {
+            "label": "官方项目页 · Results",
+            "url": "https://robotics-transformer-x.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p064",
+    "name": "OpenVLA",
+    "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+    "team": "OpenVLA 团队；Moo Jin Kim、Karl Pertsch、Siddharth Karamcheti 等",
+    "venue": "CoRL 2024",
+    "publicationType": "conference",
+    "publicationStatus": "CoRL 2024 · 正式论文集",
+    "firstPublished": "2024-06-13",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "open-source VLA",
+      "fine-tuning"
+    ],
+    "priority": "deep",
+    "contribution": "开源 7B VLA，用通用 VLM 与混合视觉表征接收图像 / 指令并生成离散动作，同时提供参数高效微调路线。",
+    "findings": "摘要：97 万条机器人示范预训练；在 2 种本体、29 个任务的规定评价中，相对 55B RT-2-X 平均提高 16.5 个百分点。官方页同时指出，窄域单指令任务上从头训练的 Diffusion Policy 可能更好。",
+    "limitations": "不能将该 16.5 个百分点外推为任意基准提升；多物体、语言接地任务与窄域任务的优劣不同。",
+    "insight": "通用语义迁移优势具有任务条件；强预训练模型与专用策略各有适用边界。",
+    "readingFocus": "视觉表征组合、离散动作接口、低秩微调与负面任务例外。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2406.09246"
+      },
+      {
+        "label": "官方项目页 · Results / Limitations",
+        "url": "https://openvla.github.io/"
+      },
+      {
+        "label": "CoRL 2024 正式论文页",
+        "url": "https://proceedings.mlr.press/v270/kim25c.html"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2406.09246",
+    "arxiv": "2406.09246",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2024-06-13",
+    "firstArxivSource": "https://arxiv.org/abs/2406.09246v1",
+    "latestArxivVersion": "v3",
+    "latestArxivAt": "2024-09-05",
+    "status": "published",
+    "venue": "CoRL 2024",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": "2025-01-12",
+    "lastCheckedAt": "2026-09-17",
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2406.09246",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2024-06-13",
+        "observedAt": "2026-09-17",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2406.09246v1",
+        "note": "arXiv submission history v1"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2024-09-05",
+        "observedAt": "2026-09-17",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2406.09246v3",
+        "note": "v3"
+      },
+      {
+        "kind": "published",
+        "date": "2025-01-12",
+        "observedAt": "2026-09-17",
+        "venue": "CoRL 2024",
+        "source": "https://proceedings.mlr.press/v270/kim25c.html",
+        "note": "正式论文集；出版日期与会议年份分开，未推断录用日期。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": "2026-09-17",
+    "version": "作者项目页；2026-09-17 核验",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题与方法定位",
+        "body": "OpenVLA 关注可开放获取、可适配的通用视觉语言动作模型。它将视觉语言预训练模型连接到跨机器人动作数据，使机器人策略的预训练、微调和部署能够沿同一开放实现进行。",
+        "sources": [
+          {
+            "label": "作者项目页；2026-09-17 核验 · 方法／实验与附录",
+            "url": "https://openvla.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "contributions",
+        "title": "主要贡献",
+        "body": "贡献包括开放的 7B 级策略与训练实现、跨机器人示范上的动作学习，以及实际新任务适配分析。开放权重和数据处理链路本身是复现价值的一部分，但不应与某个单独模块的精度增益等同。",
+        "sources": [
+          {
+            "label": "作者项目页；2026-09-17 核验 · 方法／实验与附录",
+            "url": "https://openvla.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "mechanism",
+        "title": "视觉表征与动作输出",
+        "body": "视觉侧结合 DINOv2 与 SigLIP 特征，再与语言骨干共同处理图像和指令；动作通过离散 token 表达。理解这一路径，有助于区分原始 OpenVLA 与后续连续动作、并行输出配方。",
+        "sources": [
+          {
+            "label": "作者项目页；2026-09-17 核验 · 方法／实验与附录",
+            "url": "https://openvla.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "adaptation",
+        "title": "微调与计算效率",
+        "body": "作者研究低秩适配与量化，以降低新机器人／任务的微调和部署门槛。评估“高效”时要同时看显存、训练设置、推理速度和任务成功率，不能仅凭参数可训练比例判断部署成本。",
+        "sources": [
+          {
+            "label": "作者项目页；2026-09-17 核验 · 方法／实验与附录",
+            "url": "https://openvla.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "能力与限制",
+        "body": "公开项目页也讨论窄任务分布下专用策略可能更强的情况。跨本体预训练和开放实现不意味着任意机器人零样本可用；动作规范、观测输入和下游示范仍影响适配结果。",
+        "sources": [
+          {
+            "label": "作者项目页；2026-09-17 核验 · 方法／实验与附录",
+            "url": "https://openvla.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "publication",
+        "title": "发表状态与阅读路线",
+        "body": "先读视觉与动作接口，再读新任务适配和失败案例。该工作已收入 CoRL 2024 的 PMLR 270 论文集；会议年份与论文集的 2025 年出版信息分开记录，最早 arXiv 日期仍为 2024-06-13。",
+        "sources": [
+          {
+            "label": "CoRL 2024 · PMLR 270",
+            "url": "https://proceedings.mlr.press/v270/kim25c.html"
+          },
+          {
+            "label": "arXiv 版本历史",
+            "url": "https://arxiv.org/abs/2406.09246"
+          }
+        ]
+      }
+    ]
+  }
+}

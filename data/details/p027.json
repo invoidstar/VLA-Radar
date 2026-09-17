@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p027",
+    "name": "TurboVLA",
+    "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
+    "team": "华中科技大学\nHengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.27205\n技术预印本",
+    "firstPublished": "2026-07-29",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首发；8月16日v2｜阅读v2",
+    "topics": [
+      "efficiency"
+    ],
+    "tags": [
+      "VLA",
+      "lightweight",
+      "real-time"
+    ],
+    "priority": "selective",
+    "contribution": "用独立视觉/语言编码器与轻量跨模态交互代替大语言模型控制瓶颈，直接生成连续动作片段。",
+    "findings": "0.2B参数；LIBERO平均97.7%；RTX 4090上延迟31.2ms、显存约0.9GB（约32Hz模型推理）。",
+    "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
+    "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
+    "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v2",
+        "url": "https://arxiv.org/html/2607.27205v2"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.27205"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.27205",
+    "arxiv": "2607.27205",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.27205",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首发；8月16日v2｜阅读v2",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "用独立视觉/语言编码器与轻量跨模态交互代替大语言模型控制瓶颈，直接生成连续动作片段。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.27205v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.27205"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "0.2B参数；LIBERO平均97.7%；RTX 4090上延迟31.2ms、显存约0.9GB（约32Hz模型推理）。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.27205v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.27205"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.27205v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.27205"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.27205v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.27205"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.27205v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.27205"
+          }
+        ]
+      }
+    ]
+  }
+}

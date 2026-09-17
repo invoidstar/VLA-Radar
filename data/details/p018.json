@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p018",
+    "name": "PonderPounce",
+    "title": "PonderPounce: A Pretrained MLLM as an Episode Context Engine for Robot Control",
+    "team": "MAUM.AI／首尔大学\nSuhwan Choi、Jaeyoon Jung、Sungkyung Kim、Yunsung Lee、Youngjae Yu",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.24115\n技术预印本",
+    "firstPublished": "2026-08-25",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "memory",
+      "efficiency"
+    ],
+    "tags": [
+      "VLA",
+      "continuous tokens",
+      "asynchronous"
+    ],
+    "priority": "selective",
+    "contribution": "利用多模态大模型原生上下文形成episode信息引擎，以连续认知token和信息年龄连接异步快慢两层。",
+    "findings": "RoboMME：完整方案60.83%，去演示推理48.21%，去语言落地监督27.96%。\n连续接口60.83% vs单独适配的文本接口59.96%；输出p50约78ms vs强制45-token文本约820ms。",
+    "limitations": "连续/文本准确率仅差0.87个百分点，小于论文报告的2.63个百分点运行波动，不能宣称连续接口准确率显著更好。延迟比较受输出长度约束。",
+    "insight": "连续接口的突出优势可能是延迟，而非显著更高的准确率。异步系统还需处理上下文陈旧的问题。",
+    "readingFocus": "连续vs文本接口；上下文年龄；异步失配；认知监督消融。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.24115v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.24115"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.24115",
+    "arxiv": "2608.24115",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.24115",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "利用多模态大模型原生上下文形成episode信息引擎，以连续认知token和信息年龄连接异步快慢两层。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.24115v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.24115"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "RoboMME：完整方案60.83%，去演示推理48.21%，去语言落地监督27.96%。\n连续接口60.83% vs单独适配的文本接口59.96%；输出p50约78ms vs强制45-token文本约820ms。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.24115v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.24115"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "连续/文本准确率仅差0.87个百分点，小于论文报告的2.63个百分点运行波动，不能宣称连续接口准确率显著更好。延迟比较受输出长度约束。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.24115v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.24115"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "连续接口的突出优势可能是延迟，而非显著更高的准确率。异步系统还需处理上下文陈旧的问题。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.24115v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.24115"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "连续vs文本接口；上下文年龄；异步失配；认知监督消融。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.24115v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.24115"
+          }
+        ]
+      }
+    ]
+  }
+}

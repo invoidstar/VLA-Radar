@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p010",
+    "name": "World-to-Wrist",
+    "title": "World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation",
+    "team": "香港科技大学／新加坡国立大学／南洋理工大学／东南大学等\nYuhao Pan、Haosong Peng；Wenchao Xu等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.05369\n技术预印本",
+    "firstPublished": "2026-08-05",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "spatial",
+      "memory",
+      "world"
+    ],
+    "tags": [
+      "VLA",
+      "wrist",
+      "future prediction"
+    ],
+    "priority": "selective",
+    "contribution": "全局任务上下文指导未来腕部表示；以局部预测连接任务进度和细粒度动作，辅以结构化子任务/腕部监督。",
+    "findings": "LIBERO：98.5%，StarVLA为96.5%。\nRoboTwin Easy / Hard：60.71% / 18.21%，UP-VLA为52.92% / 15.16%。",
+    "limitations": "RoboTwin采用仅2,500条示范等特定协议，不能与混入大量随机场景训练数据的90%级结果直接比。与GWM-VLA不同，未来表示路径仍参与部署。",
+    "insight": "任务级上下文与腕部局部变化的连接有助于理解细操作。优先核对示范数量和未来分支是否参与部署。",
+    "readingFocus": "全局到腕部的信息连接；结构化状态；局部未来的部署位置。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.05369v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.05369"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.05369",
+    "arxiv": "2608.05369",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.05369",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "全局任务上下文指导未来腕部表示；以局部预测连接任务进度和细粒度动作，辅以结构化子任务/腕部监督。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05369v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05369"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO：98.5%，StarVLA为96.5%。\nRoboTwin Easy / Hard：60.71% / 18.21%，UP-VLA为52.92% / 15.16%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05369v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05369"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "RoboTwin采用仅2,500条示范等特定协议，不能与混入大量随机场景训练数据的90%级结果直接比。与GWM-VLA不同，未来表示路径仍参与部署。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05369v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05369"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "任务级上下文与腕部局部变化的连接有助于理解细操作。优先核对示范数量和未来分支是否参与部署。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05369v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05369"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "全局到腕部的信息连接；结构化状态；局部未来的部署位置。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05369v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05369"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p024",
+    "name": "ABot-M0.5",
+    "title": "ABot-M0.5: Unified Mobility-and-Manipulation World Action Model",
+    "team": "阿里巴巴高德视觉团队（AMAP CV）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.00678\n公司技术报告",
+    "firstPublished": "2026-07-01",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "mobility",
+      "compositional"
+    ],
+    "priority": "overview",
+    "contribution": "统一移动与操作的多时间尺度动作；Dream Forcing让逆动力学逐步适应模型自身预测的未来，缓解训练/部署条件失配。",
+    "findings": "RoboCasa365全量Target后训练：54.2%，FastWAM为43.5%；10%Target数据：30.1%。\n预训练直接评测均值40.4%，但未见组合任务仅2.7%。",
+    "limitations": "Target后训练与预训练直接评测不是同一口径。较高平均分掩盖未见组合泛化短板；+Condensed Memory的完整细节留待后续工作，不能当成熟可移植模块。",
+    "insight": "统一移动与操作需要适配多时间尺度。较高平均分可能掩盖未见任务组合上的明显短板。",
+    "readingFocus": "Dream Forcing；预测误差适应；RoboCasa已见/未见任务差异。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.00678v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.00678"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.00678",
+    "arxiv": "2607.00678",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.00678",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "统一移动与操作的多时间尺度动作；Dream Forcing让逆动力学逐步适应模型自身预测的未来，缓解训练/部署条件失配。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.00678v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.00678"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "RoboCasa365全量Target后训练：54.2%，FastWAM为43.5%；10%Target数据：30.1%。\n预训练直接评测均值40.4%，但未见组合任务仅2.7%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.00678v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.00678"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "Target后训练与预训练直接评测不是同一口径。较高平均分掩盖未见组合泛化短板；+Condensed Memory的完整细节留待后续工作，不能当成熟可移植模块。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.00678v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.00678"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "统一移动与操作需要适配多时间尺度。较高平均分可能掩盖未见任务组合上的明显短板。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.00678v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.00678"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "Dream Forcing；预测误差适应；RoboCasa已见/未见任务差异。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.00678v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.00678"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p054",
+    "name": "PaLM-E",
+    "title": "PaLM-E: An Embodied Multimodal Language Model",
+    "team": "Danny Driess、Fei Xia、Mehdi S. M. Sajjadi 等；Google / TU Berlin 合作",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-03-06",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "pretraining",
+      "memory"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "embodied reasoning",
+      "multimodal language"
+    ],
+    "priority": "selective",
+    "contribution": "把图像、连续状态和文本交错输入语言模型，联合训练具身规划、视觉问答及语言任务；输出文本计划而非统一的底层动作接口。",
+    "findings": "最大模型为 562B 参数。官方项目展示同一模型在 2 种真实机器人本体上进行多阶段规划；咖啡杯泛化示例仅有 3 条包含咖啡杯的训练示范，但这是案例证据，不是 3-shot 全任务成功率。",
+    "limitations": "大模型多模态推理成绩不等于低层控制成功；项目页示例不能替代总体统计，也不代表所有实验都使用最大模型。",
+    "insight": "语言模型可以通过连续传感器 token 获得具身输入；阅读时应辨别“给出计划”和“执行动作”的模型边界。",
+    "readingFocus": "连续模态注入、联合训练与正迁移、文本规划如何连接底层策略。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2303.03378"
+      },
+      {
+        "label": "官方项目页 · Approach / Results",
+        "url": "https://palm-e.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2303.03378",
+    "arxiv": "2303.03378",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-03-06",
+    "firstArxivSource": "https://arxiv.org/abs/2303.03378v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2303.03378",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把图像、连续状态和文本交错输入语言模型，联合训练具身规划、视觉问答及语言任务；输出文本计划而非统一的底层动作接口。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.03378"
+          },
+          {
+            "label": "官方项目页 · Approach / Results",
+            "url": "https://palm-e.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "最大模型为 562B 参数。官方项目展示同一模型在 2 种真实机器人本体上进行多阶段规划；咖啡杯泛化示例仅有 3 条包含咖啡杯的训练示范，但这是案例证据，不是 3-shot 全任务成功率。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.03378"
+          },
+          {
+            "label": "官方项目页 · Approach / Results",
+            "url": "https://palm-e.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "大模型多模态推理成绩不等于低层控制成功；项目页示例不能替代总体统计，也不代表所有实验都使用最大模型。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.03378"
+          },
+          {
+            "label": "官方项目页 · Approach / Results",
+            "url": "https://palm-e.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "语言模型可以通过连续传感器 token 获得具身输入；阅读时应辨别“给出计划”和“执行动作”的模型边界。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.03378"
+          },
+          {
+            "label": "官方项目页 · Approach / Results",
+            "url": "https://palm-e.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "连续模态注入、联合训练与正迁移、文本规划如何连接底层策略。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.03378"
+          },
+          {
+            "label": "官方项目页 · Approach / Results",
+            "url": "https://palm-e.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p061",
+    "name": "GR-1",
+    "title": "Unleashing Large-Scale Video Generative Pre-training for Visual Robot Manipulation",
+    "team": "ByteDance Research；Hongtao Wu、Ya Jing 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-12-20",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v2；摘要、引言与 CALVIN 结果",
+    "topics": [
+      "world",
+      "pretraining",
+      "memory"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "video pretraining",
+      "future prediction"
+    ],
+    "priority": "deep",
+    "contribution": "统一 GPT 式模型读入语言、观察历史和状态，同时预测动作与未来图像；先学习视频生成，再使用机器人数据微调。",
+    "findings": "原文 v2 引言与实验：CALVIN ABCD→D 平均完成链长由强基线 3.06 提升到 4.21（上限 5）；摘要中 88.9%→94.9% 是另一个成功率口径，不可当作五任务全链成功率。",
+    "limitations": "数据划分、预训练视频和历史长度会影响比较；联合未来预测的收益不自动证明推理阶段必须生成未来。",
+    "insight": "视频时序先验可以迁移到控制；应把预训练、未来辅助监督与历史建模的作用分别理解。",
+    "readingFocus": "视频预训练目标、CALVIN 分组、平均链长与单任务成功率的区别。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2312.13139"
+      },
+      {
+        "label": "原文 v2 · Introduction / Experiments",
+        "url": "https://arxiv.org/html/2312.13139v2"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://gr1-manipulation.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2312.13139",
+    "arxiv": "2312.13139",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-12-20",
+    "firstArxivSource": "https://arxiv.org/abs/2312.13139v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2312.13139",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v2；摘要、引言与 CALVIN 结果",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "统一 GPT 式模型读入语言、观察历史和状态，同时预测动作与未来图像；先学习视频生成，再使用机器人数据微调。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2312.13139"
+          },
+          {
+            "label": "原文 v2 · Introduction / Experiments",
+            "url": "https://arxiv.org/html/2312.13139v2"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://gr1-manipulation.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v2 引言与实验：CALVIN ABCD→D 平均完成链长由强基线 3.06 提升到 4.21（上限 5）；摘要中 88.9%→94.9% 是另一个成功率口径，不可当作五任务全链成功率。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2312.13139"
+          },
+          {
+            "label": "原文 v2 · Introduction / Experiments",
+            "url": "https://arxiv.org/html/2312.13139v2"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://gr1-manipulation.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "数据划分、预训练视频和历史长度会影响比较；联合未来预测的收益不自动证明推理阶段必须生成未来。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2312.13139"
+          },
+          {
+            "label": "原文 v2 · Introduction / Experiments",
+            "url": "https://arxiv.org/html/2312.13139v2"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://gr1-manipulation.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "视频时序先验可以迁移到控制；应把预训练、未来辅助监督与历史建模的作用分别理解。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2312.13139"
+          },
+          {
+            "label": "原文 v2 · Introduction / Experiments",
+            "url": "https://arxiv.org/html/2312.13139v2"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://gr1-manipulation.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "视频预训练目标、CALVIN 分组、平均链长与单任务成功率的区别。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2312.13139"
+          },
+          {
+            "label": "原文 v2 · Introduction / Experiments",
+            "url": "https://arxiv.org/html/2312.13139v2"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://gr1-manipulation.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

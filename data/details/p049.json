@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p049",
+    "name": "BC-Z",
+    "title": "BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning",
+    "team": "Eric Jang、Alex Irpan、Mohi Khansari、Daniel Kappler、Frederik Ebert、Corey Lynch、Sergey Levine、Chelsea Finn（署名作者；本条未逐机构核对）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2022-02-04",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "zero-shot",
+      "imitation learning"
+    ],
+    "priority": "selective",
+    "contribution": "以语言或人类视频定义任务，将多任务模仿学习、任务表征和人类干预数据结合，研究未示范任务的零样本组合泛化。",
+    "findings": "摘要报告：训练覆盖 100 余种任务，在 24 个未见操作任务上平均成功率 44%；这些评测任务没有专门提供机器人示范。",
+    "limitations": "零样本指目标任务没有示范，不意味着没有大量源任务数据、人类干预或预训练表示；结论限于论文规定的任务分布。",
+    "insight": "语言条件控制在大 VLM 之前已经能产生任务组合泛化；“零样本”应始终说明到底缺少哪类数据。",
+    "readingFocus": "任务嵌入、训练任务覆盖、未见任务定义以及失败分布。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2202.02005"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2202.02005",
+    "arxiv": "2202.02005",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2022-02-04",
+    "firstArxivSource": "https://arxiv.org/abs/2202.02005v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2202.02005",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以语言或人类视频定义任务，将多任务模仿学习、任务表征和人类干预数据结合，研究未示范任务的零样本组合泛化。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2202.02005"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "摘要报告：训练覆盖 100 余种任务，在 24 个未见操作任务上平均成功率 44%；这些评测任务没有专门提供机器人示范。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2202.02005"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "零样本指目标任务没有示范，不意味着没有大量源任务数据、人类干预或预训练表示；结论限于论文规定的任务分布。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2202.02005"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "语言条件控制在大 VLM 之前已经能产生任务组合泛化；“零样本”应始终说明到底缺少哪类数据。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2202.02005"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "任务嵌入、训练任务覆盖、未见任务定义以及失败分布。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2202.02005"
+          }
+        ]
+      }
+    ]
+  }
+}

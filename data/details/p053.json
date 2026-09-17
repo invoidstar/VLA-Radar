@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p053",
+    "name": "UniPi",
+    "title": "Learning Universal Policies via Text-Guided Video Generation",
+    "team": "Yilun Du、Mengjiao Yang、Bo Dai、Hanjun Dai、Ofir Nachum、Joshua B. Tenenbaum、Dale Schuurmans、Pieter Abbeel（署名作者）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-01-31",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "world",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "video planning",
+      "inverse dynamics"
+    ],
+    "priority": "selective",
+    "contribution": "以文本条件视频生成表示高层计划，再由逆动力学模型把视频转成可执行动作，是视频先验连接机器人控制的重要路线。",
+    "findings": "摘要报告跨任务与跨环境的组合泛化，并探索使用互联网视频。当前核对材料未提供可直接摘录、口径完整的统一成功率，本条不补造分数。",
+    "limitations": "生成视频计划不等于生成可执行的关节轨迹；逆动力学模型、视频质量和测试时生成成本共同限制落地。",
+    "insight": "视频可以成为跨本体的计划表示，但从视觉预测到真实控制仍需要动作落地环节。",
+    "readingFocus": "视频规划和逆动力学的分工、跨本体假设、训练与推理开销。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2302.00111"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2302.00111",
+    "arxiv": "2302.00111",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-01-31",
+    "firstArxivSource": "https://arxiv.org/abs/2302.00111v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2302.00111",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以文本条件视频生成表示高层计划，再由逆动力学模型把视频转成可执行动作，是视频先验连接机器人控制的重要路线。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2302.00111"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "摘要报告跨任务与跨环境的组合泛化，并探索使用互联网视频。当前核对材料未提供可直接摘录、口径完整的统一成功率，本条不补造分数。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2302.00111"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "生成视频计划不等于生成可执行的关节轨迹；逆动力学模型、视频质量和测试时生成成本共同限制落地。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2302.00111"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "视频可以成为跨本体的计划表示，但从视觉预测到真实控制仍需要动作落地环节。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2302.00111"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "视频规划和逆动力学的分工、跨本体假设、训练与推理开销。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2302.00111"
+          }
+        ]
+      }
+    ]
+  }
+}

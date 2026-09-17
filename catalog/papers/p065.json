@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p065",
+    "name": "RDT-1B",
+    "title": "RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation",
+    "team": "Tsinghua University；Songming Liu、Lingxuan Wu、Bangguo Li 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2024-10-10",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v2；摘要、Section 3–4",
+    "topics": [
+      "action",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "bimanual",
+      "unified action space"
+    ],
+    "priority": "deep",
+    "contribution": "用扩散 Transformer 表示高维双臂动作，并提出保留物理意义的统一动作空间，使多机器人预训练服务于双臂控制迁移。",
+    "findings": "原文 v2：模型扩展到 1.2B 参数，以 6,000 余条双臂 episodes 微调；展示用 1–5 条目标技能示范适配新技能。此少样本结论建立在预训练和已有双臂数据之上。",
+    "limitations": "作者明确目标是借助多机器人数据提升双臂泛化，而非保证一个模型零样本控制所有本体。统一维度不等于统一物理语义。",
+    "insight": "动作空间设计及物理语义对齐是跨机器人学习的重要组成，不能简单以补零代替。",
+    "readingFocus": "Physically Interpretable Unified Action Space、不同模态编码、少样本数据口径。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2410.07864"
+      },
+      {
+        "label": "原文 v2 · 动作空间 / 数据",
+        "url": "https://arxiv.org/html/2410.07864v2"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2410.07864",
+    "arxiv": "2410.07864",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2024-10-10",
+    "firstArxivSource": "https://arxiv.org/abs/2410.07864v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2410.07864",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v2；摘要、Section 3–4",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "用扩散 Transformer 表示高维双臂动作，并提出保留物理意义的统一动作空间，使多机器人预训练服务于双臂控制迁移。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.07864"
+          },
+          {
+            "label": "原文 v2 · 动作空间 / 数据",
+            "url": "https://arxiv.org/html/2410.07864v2"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v2：模型扩展到 1.2B 参数，以 6,000 余条双臂 episodes 微调；展示用 1–5 条目标技能示范适配新技能。此少样本结论建立在预训练和已有双臂数据之上。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.07864"
+          },
+          {
+            "label": "原文 v2 · 动作空间 / 数据",
+            "url": "https://arxiv.org/html/2410.07864v2"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "作者明确目标是借助多机器人数据提升双臂泛化，而非保证一个模型零样本控制所有本体。统一维度不等于统一物理语义。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.07864"
+          },
+          {
+            "label": "原文 v2 · 动作空间 / 数据",
+            "url": "https://arxiv.org/html/2410.07864v2"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "动作空间设计及物理语义对齐是跨机器人学习的重要组成，不能简单以补零代替。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.07864"
+          },
+          {
+            "label": "原文 v2 · 动作空间 / 数据",
+            "url": "https://arxiv.org/html/2410.07864v2"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "Physically Interpretable Unified Action Space、不同模态编码、少样本数据口径。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.07864"
+          },
+          {
+            "label": "原文 v2 · 动作空间 / 数据",
+            "url": "https://arxiv.org/html/2410.07864v2"
+          }
+        ]
+      }
+    ]
+  }
+}

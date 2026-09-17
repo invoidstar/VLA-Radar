@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p022",
+    "name": "ST-WAM",
+    "title": "ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts",
+    "team": "清华大学／阿里高德视觉团队／上海交通大学／西安交通大学／曼彻斯特大学／伦敦国王学院等\nMingxin Wang、Bin Hu等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.28993\n技术预印本",
+    "firstPublished": "2026-07-31",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "OOD",
+      "semantics"
+    ],
+    "priority": "deep",
+    "contribution": "把外观潜变量、语义表征与历史分工，缓解世界模型把新场景预测回训练外观的问题；未来监督主要在训练期提供。",
+    "findings": "LIBERO 98.7%、RoboTwin 92.8%；LIBERO-Plus较FastWAM提高21.3个百分点。\n真实视觉变化场景：基线25.8%→61.5%。",
+    "limitations": "重点是特定外观分布变化下的鲁棒性，不是全面物理泛化。不同外观与接触/动力学变化不能混为同一种分布外能力。",
+    "insight": "将语义与外观变化分开建模有助于视觉鲁棒性，但不能据此推断对动力学变化也同样稳健。",
+    "readingFocus": "视觉分布偏移诊断；语义/外观职责；历史与未来监督。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.28993v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.28993"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.28993",
+    "arxiv": "2607.28993",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.28993",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把外观潜变量、语义表征与历史分工，缓解世界模型把新场景预测回训练外观的问题；未来监督主要在训练期提供。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.28993v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.28993"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO 98.7%、RoboTwin 92.8%；LIBERO-Plus较FastWAM提高21.3个百分点。\n真实视觉变化场景：基线25.8%→61.5%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.28993v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.28993"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "重点是特定外观分布变化下的鲁棒性，不是全面物理泛化。不同外观与接触/动力学变化不能混为同一种分布外能力。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.28993v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.28993"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "将语义与外观变化分开建模有助于视觉鲁棒性，但不能据此推断对动力学变化也同样稳健。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.28993v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.28993"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "视觉分布偏移诊断；语义/外观职责；历史与未来监督。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.28993v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.28993"
+          }
+        ]
+      }
+    ]
+  }
+}

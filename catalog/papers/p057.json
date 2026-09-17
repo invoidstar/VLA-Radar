@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p057",
+    "name": "LIBERO",
+    "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
+    "team": "Bo Liu、Yifeng Zhu、Chongkai Gao、Yihao Feng、Qiang Liu、Yuke Zhu、Peter Stone（署名作者）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-06-05",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "evaluation",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "基础资源",
+      "benchmark",
+      "lifelong learning"
+    ],
+    "priority": "deep",
+    "contribution": "为终身机器人学习构建分离空间、物体、目标等迁移因素的任务集，并比较表征与持续学习方法的前向、后向迁移。",
+    "findings": "原始摘要说明 4 个套件及 130 个任务；结果指出简单顺序微调可能具备更好的前向迁移，且没有一个视觉编码器在全部任务上最优，朴素监督预训练也可能损害终身学习。",
+    "limitations": "原始 130 任务资源与后来 VLA 常用的 Spatial / Object / Goal / Long 40 任务评价口径应区分；不能将不同任务集合的均值直接比较。",
+    "insight": "评价指标、任务集合和知识迁移定义决定结论；“预训练有效”并不意味着每一种初始化都改善持续学习。",
+    "readingFocus": "四类任务设计、迁移指标、任务顺序和预训练负面发现。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2306.03310"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://libero-project.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2306.03310",
+    "arxiv": "2306.03310",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-06-05",
+    "firstArxivSource": "https://arxiv.org/abs/2306.03310v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2306.03310",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "为终身机器人学习构建分离空间、物体、目标等迁移因素的任务集，并比较表征与持续学习方法的前向、后向迁移。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2306.03310"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://libero-project.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原始摘要说明 4 个套件及 130 个任务；结果指出简单顺序微调可能具备更好的前向迁移，且没有一个视觉编码器在全部任务上最优，朴素监督预训练也可能损害终身学习。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2306.03310"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://libero-project.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "原始 130 任务资源与后来 VLA 常用的 Spatial / Object / Goal / Long 40 任务评价口径应区分；不能将不同任务集合的均值直接比较。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2306.03310"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://libero-project.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "评价指标、任务集合和知识迁移定义决定结论；“预训练有效”并不意味着每一种初始化都改善持续学习。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2306.03310"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://libero-project.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "四类任务设计、迁移指标、任务顺序和预训练负面发现。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2306.03310"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://libero-project.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

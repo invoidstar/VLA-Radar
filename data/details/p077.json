@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p077",
+    "name": "DreamZero",
+    "title": "World Action Models are Zero-shot Policies",
+    "team": "NVIDIA 等；Seonghyeon Ye、Yunhao Ge 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2026-02-17",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1；Introduction / Contributions",
+    "topics": [
+      "world",
+      "pretraining",
+      "efficiency"
+    ],
+    "tags": [
+      "关键文献",
+      "近期代表",
+      "WAM",
+      "video-action"
+    ],
+    "priority": "deep",
+    "contribution": "从 14B 自回归视频扩散模型出发联合建模世界与动作，利用异构机器人数据、视频迁移和推理系统优化研究未见技能泛化。",
+    "findings": "原文 v1 引言：相比所选 VLA，未见动作 / 环境泛化改善超过 2 倍；加入约 12 分钟人类视频或 20 分钟其他机器人视频，在对应未见任务上改善超过 42%（相对值）；新本体适配使用约 30 分钟 play 数据。",
+    "limitations": "“零样本”针对未见任务，不表示新本体完全无适配数据；相对提升与百分点不同，14B 视频模型系统成本不可忽略。",
+    "insight": "视频先验可补充动作数据覆盖，但需要区分任务泛化、跨本体适配与部署成本。",
+    "readingFocus": "视频 / 动作联合建模、跨本体设置与 DreamZero-Flash。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2602.15922"
+      },
+      {
+        "label": "原文 v1 · 跨本体与零样本定义",
+        "url": "https://arxiv.org/html/2602.15922v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2602.15922",
+    "arxiv": "2602.15922",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-02-17",
+    "firstArxivSource": "https://arxiv.org/abs/2602.15922v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2602.15922",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1；Introduction / Contributions",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "从 14B 自回归视频扩散模型出发联合建模世界与动作，利用异构机器人数据、视频迁移和推理系统优化研究未见技能泛化。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2602.15922"
+          },
+          {
+            "label": "原文 v1 · 跨本体与零样本定义",
+            "url": "https://arxiv.org/html/2602.15922v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v1 引言：相比所选 VLA，未见动作 / 环境泛化改善超过 2 倍；加入约 12 分钟人类视频或 20 分钟其他机器人视频，在对应未见任务上改善超过 42%（相对值）；新本体适配使用约 30 分钟 play 数据。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2602.15922"
+          },
+          {
+            "label": "原文 v1 · 跨本体与零样本定义",
+            "url": "https://arxiv.org/html/2602.15922v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "“零样本”针对未见任务，不表示新本体完全无适配数据；相对提升与百分点不同，14B 视频模型系统成本不可忽略。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2602.15922"
+          },
+          {
+            "label": "原文 v1 · 跨本体与零样本定义",
+            "url": "https://arxiv.org/html/2602.15922v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "视频先验可补充动作数据覆盖，但需要区分任务泛化、跨本体适配与部署成本。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2602.15922"
+          },
+          {
+            "label": "原文 v1 · 跨本体与零样本定义",
+            "url": "https://arxiv.org/html/2602.15922v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "视频 / 动作联合建模、跨本体设置与 DreamZero-Flash。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2602.15922"
+          },
+          {
+            "label": "原文 v1 · 跨本体与零样本定义",
+            "url": "https://arxiv.org/html/2602.15922v1"
+          }
+        ]
+      }
+    ]
+  }
+}

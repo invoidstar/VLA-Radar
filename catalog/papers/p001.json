@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p001",
+    "name": "VLAct",
+    "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models",
+    "team": "StarVLA / VLAct 作者团队\nSenqiao Yang、Chengyao Wang等；Shu Liu通讯\n所查作者页面未完整列出机构",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.27550\n技术预印本",
+    "firstPublished": "2026-08-27",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "pretraining"
+    ],
+    "tags": [
+      "VLA",
+      "cross-embodiment",
+      "freezing"
+    ],
+    "priority": "deep",
+    "contribution": "以可迁移表征而非动作头拟合为持续预训练目标；保护VLM先验，使用多个连续动作头和部分统一的跨本体动作布局，下游可更换动作头。",
+    "findings": "LIBERO-Plus：82.6%，对照Qwen3-VL-OFT为75.0%（+7.6个百分点）。\nRoboCasa-GR1仅用20%后训练数据取得49.5%，高于使用全量数据的GR00T-N1.6的47.6%。",
+    "limitations": "低数据结果仍有后训练，并非零样本；不同初始化/预训练数据的横向比较不能全部归因于单个模块。\n作者团队机构未完全核验。",
+    "insight": "持续预训练的价值应体现在表征迁移，而非只继承某个动作头。低数据适配与零样本泛化是不同能力。",
+    "readingFocus": "表征中心定位；先验保护；跨本体动作布局；动作头迁移与冻结消融。",
+    "evidence": "checked",
+    "evidenceNote": "本次发布已复核原文相关结果片段；不代表独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.27550v1"
+      },
+      {
+        "label": "官方 / 作者来源",
+        "url": "https://starvla.github.io/VLAct/"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.27550"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.27550",
+    "arxiv": "2608.27550",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.27550",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": "2026-09-17",
+    "version": "arXiv v1",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究问题：迁移表征，而非固定策略",
+        "body": "论文把持续预训练的目标从拟合一个动作头，转为得到可迁移的视觉语言骨干。判断收益时，需要固定下游动作头、初始化方式、数据与训练预算，再比较骨干；只看预训练动作损失不能回答迁移是否改善。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.27550v1"
+          }
+        ]
+      },
+      {
+        "id": "contributions",
+        "title": "主要贡献与创新",
+        "body": "三个设计相互配合：保留 VLM 先验、多种连续动作头共同监督、跨本体部分统一的动作布局。区别不只是增加数据，而是减少骨干对某一种机器人接口和动作头的过度专门化。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.27550v1"
+          }
+        ]
+      },
+      {
+        "id": "mechanism",
+        "title": "方法机制与训练路径",
+        "body": "持续预训练冻结视觉编码器和 LLM 的较低层，图像描述联合训练为可训练层提供语义约束；机器人数据提供动作监督。下游再放开模型适配，并允许重新连接任务动作头，不能将“冻结预训练”误读为“下游始终冻结”。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.27550v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence",
+        "title": "关键结果应怎样阅读",
+        "body": "§4 的 LIBERO-Plus 是扰动鲁棒性测试，不是标准 LIBERO 总分；Table 1 中 VLAct 为 82.6%，内部 Qwen3VL-OFT 对照为 75.0%。这组控制比较比不同数据规模模型之间的横向比较更能解释配方的贡献。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.27550v1"
+          }
+        ]
+      },
+      {
+        "id": "transfer",
+        "title": "跨本体迁移的含义",
+        "body": "RoboCasa-GR1 的结果关注预训练未见的人形本体：使用 20% 下游轨迹达到 49.5%，全数据 GR00T-N1.6 对照为 47.6%。这是低数据适配，仍需要后训练，不能写成零样本操控。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.27550v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "证据边界与阅读重点",
+        "body": "优先核对冻结、动作头和动作布局消融，以及下游固定配置的范围。RoboTwin 的少量 clean 训练与增加 randomized 专家示范属于不同赛道；训练算力和检查点选择也不一定跨论文一致。本文结论来自作者报告，不代表本站独立复现。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.27550v1"
+          }
+        ]
+      }
+    ]
+  }
+}

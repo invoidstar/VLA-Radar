@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p066",
+    "name": "π0",
+    "title": "π0: A Vision-Language-Action Flow Model for General Robot Control",
+    "team": "Physical Intelligence；Kevin Black、Noah Brown、Danny Driess 等",
+    "venue": "RSS 2025",
+    "publicationType": "conference",
+    "publicationStatus": "arXiv 元数据标注 RSS 2025；按 v4 阅读",
+    "firstPublished": "2024-10-31",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v4（2026-01-08），Sections III–V；RSS 2025",
+    "topics": [
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "flow matching",
+      "action expert"
+    ],
+    "priority": "deep",
+    "contribution": "把预训练 VLM 与连续流匹配动作专家结合，通过多机器人预训练及高质量任务后训练覆盖灵巧、双臂和移动操作。",
+    "findings": "原文 v4：自采数据覆盖 7 类机器人配置、68 类任务，总训练规模超过 1 万小时；动作专家约 300M，动作块长 50，采用 10 步流积分。机器人命令最高 50 Hz，不是每秒 50 次完整主干推理。",
+    "limitations": "复杂任务需要后训练，部分语义任务借助高层策略；数据规模、任务定义和系统组件必须一并比较。",
+    "insight": "控制表现来自 VLM 先验、动作分布与数据配方的组合；预训练覆盖和后训练执行质量承担不同作用。",
+    "readingFocus": "动作专家与 attention、预训练 / 后训练数据差异、推理缓存及控制频率。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2410.24164"
+      },
+      {
+        "label": "原文 v4 · Sections III–V",
+        "url": "https://arxiv.org/html/2410.24164v4"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2410.24164",
+    "arxiv": "2410.24164",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2024-10-31",
+    "firstArxivSource": "https://arxiv.org/abs/2410.24164v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2025",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2025",
+        "source": "https://arxiv.org/abs/2410.24164",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v4（2026-01-08），Sections III–V；RSS 2025",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把预训练 VLM 与连续流匹配动作专家结合，通过多机器人预训练及高质量任务后训练覆盖灵巧、双臂和移动操作。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.24164"
+          },
+          {
+            "label": "原文 v4 · Sections III–V",
+            "url": "https://arxiv.org/html/2410.24164v4"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v4：自采数据覆盖 7 类机器人配置、68 类任务，总训练规模超过 1 万小时；动作专家约 300M，动作块长 50，采用 10 步流积分。机器人命令最高 50 Hz，不是每秒 50 次完整主干推理。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.24164"
+          },
+          {
+            "label": "原文 v4 · Sections III–V",
+            "url": "https://arxiv.org/html/2410.24164v4"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "复杂任务需要后训练，部分语义任务借助高层策略；数据规模、任务定义和系统组件必须一并比较。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.24164"
+          },
+          {
+            "label": "原文 v4 · Sections III–V",
+            "url": "https://arxiv.org/html/2410.24164v4"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "控制表现来自 VLM 先验、动作分布与数据配方的组合；预训练覆盖和后训练执行质量承担不同作用。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.24164"
+          },
+          {
+            "label": "原文 v4 · Sections III–V",
+            "url": "https://arxiv.org/html/2410.24164v4"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "动作专家与 attention、预训练 / 后训练数据差异、推理缓存及控制频率。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2410.24164"
+          },
+          {
+            "label": "原文 v4 · Sections III–V",
+            "url": "https://arxiv.org/html/2410.24164v4"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "migratedAt": "2026-09-17",
+  "papers": 78,
+  "expandedNotes": [
+    "p001",
+    "p004",
+    "p021",
+    "p064",
+    "p069",
+    "p076"
+  ],
+  "results": 27,
+  "tracks": 8,
+  "fullLibraryReverified": false,
+  "firstPublicDatesChanged": 0,
+  "keyResultsChanged": 0,
+  "notes": "旧笔记未冒充重新读全文；新版本元数据与笔记核验分开。"
+}

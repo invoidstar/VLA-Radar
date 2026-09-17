@@ -2862,9 +2862,9 @@
       "name": "OpenVLA",
       "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
       "team": "OpenVLA 团队；Moo Jin Kim、Karl Pertsch、Siddharth Karamcheti 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "CoRL 2024",
+      "publicationType": "conference",
+      "publicationStatus": "CoRL 2024 · 正式论文集",
       "firstPublished": "2024-06-13",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
@@ -2896,6 +2896,10 @@
         {
           "label": "官方项目页 · Results / Limitations",
           "url": "https://openvla.github.io/"
+        },
+        {
+          "label": "CoRL 2024 正式论文页",
+          "url": "https://proceedings.mlr.press/v270/kim25c.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2406.09246",
@@ -3087,9 +3091,9 @@
       "name": "OpenVLA-OFT",
       "title": "Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success",
       "team": "Stanford University；Moo Jin Kim、Chelsea Finn、Percy Liang",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "RSS 2025",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2025 · 正式论文集",
       "firstPublished": "2025-02-27",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
@@ -3121,11 +3125,15 @@
         {
           "label": "官方项目页",
           "url": "https://openvla-oft.github.io/"
+        },
+        {
+          "label": "RSS 2025 正式论文页",
+          "url": "https://www.roboticsproceedings.org/rss21/p017.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2502.19645",
       "arxiv": "2502.19645",
-      "doi": ""
+      "doi": "10.15607/RSS.2025.XXI.017"
     },
     {
       "id": "p070",

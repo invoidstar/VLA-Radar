@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p071",
+    "name": "Gemini Robotics",
+    "title": "Gemini Robotics: Bringing AI into the Physical World",
+    "team": "Google DeepMind；Gemini Robotics Team",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2025-03-25",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1，Section 4.3 与图 26 图注 / 结果正文",
+    "topics": [
+      "pretraining",
+      "spatial",
+      "memory"
+    ],
+    "tags": [
+      "关键文献",
+      "代表报告",
+      "embodied reasoning",
+      "adaptation"
+    ],
+    "priority": "deep",
+    "contribution": "区分具身推理模型 Gemini Robotics-ER 与输出动作的 Gemini Robotics，结合 VLM 语义、空间理解、任务适配及跨本体控制。",
+    "findings": "原文 v1 §4.3 / 图 26：8 个短程适配任务中，7 个用不超过 100 条示范达到 70% 以上成功率，2 个达到 100%。作者也说明部分较容易任务中基线更省样本或略高。",
+    "limitations": "这些是特定任务适配结果，不是任意新任务的保证；完整系统、数据与模型可用性不应等同于全部开源。",
+    "insight": "具身推理与动作控制要区分，少样本结论应保留每任务难度和基线例外。",
+    "readingFocus": "ER / VLA 分工、快速适配图 26、不同本体与系统边界。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2503.20020"
+      },
+      {
+        "label": "原文 v1 · Fast adaptation",
+        "url": "https://arxiv.org/html/2503.20020v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2503.20020",
+    "arxiv": "2503.20020",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2025-03-25",
+    "firstArxivSource": "https://arxiv.org/abs/2503.20020v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2503.20020",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1，Section 4.3 与图 26 图注 / 结果正文",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "区分具身推理模型 Gemini Robotics-ER 与输出动作的 Gemini Robotics，结合 VLM 语义、空间理解、任务适配及跨本体控制。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.20020"
+          },
+          {
+            "label": "原文 v1 · Fast adaptation",
+            "url": "https://arxiv.org/html/2503.20020v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v1 §4.3 / 图 26：8 个短程适配任务中，7 个用不超过 100 条示范达到 70% 以上成功率，2 个达到 100%。作者也说明部分较容易任务中基线更省样本或略高。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.20020"
+          },
+          {
+            "label": "原文 v1 · Fast adaptation",
+            "url": "https://arxiv.org/html/2503.20020v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "这些是特定任务适配结果，不是任意新任务的保证；完整系统、数据与模型可用性不应等同于全部开源。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.20020"
+          },
+          {
+            "label": "原文 v1 · Fast adaptation",
+            "url": "https://arxiv.org/html/2503.20020v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "具身推理与动作控制要区分，少样本结论应保留每任务难度和基线例外。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.20020"
+          },
+          {
+            "label": "原文 v1 · Fast adaptation",
+            "url": "https://arxiv.org/html/2503.20020v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "ER / VLA 分工、快速适配图 26、不同本体与系统边界。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.20020"
+          },
+          {
+            "label": "原文 v1 · Fast adaptation",
+            "url": "https://arxiv.org/html/2503.20020v1"
+          }
+        ]
+      }
+    ]
+  }
+}

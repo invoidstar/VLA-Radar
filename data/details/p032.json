@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p032",
+    "name": "Deltoris",
+    "title": "Deltoris: Enabling Real-time VLA Inference in Embodied AI via Bit-level Sparsity and Speculative Inference",
+    "team": "上海交通大学／上海期智研究院／中科院计算所\nZheng Liu、Zeyu Guo、Han Zhao、Jingwen Leng等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.04428\n算法—硬件协同预印本",
+    "firstPublished": "2026-08-05",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "efficiency"
+    ],
+    "tags": [
+      "hardware",
+      "sparsity",
+      "speculation"
+    ],
+    "priority": "overview",
+    "contribution": "利用位级时序稀疏与推测执行，配合专用脉动阵列和硬件数据流优化VLA推理。",
+    "findings": "作者报告最高加速：相对移动GPU为34.2×，相对已有专用加速器为6.1×，对应设置下保持接近的任务表现。",
+    "limitations": "核心收益依赖专用硬件协同，不是普通GPU上安装软件即可获得。最高值不是全部模型/任务平均值。",
+    "insight": "软硬件协同设计的峰值加速有明确设备前提。将其作为硬件路线参考，而非普通GPU的即插即用收益。",
+    "readingFocus": "硬件依赖；位级复用；比较设备与峰值口径。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.04428v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.04428"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.04428",
+    "arxiv": "2608.04428",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.04428",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "利用位级时序稀疏与推测执行，配合专用脉动阵列和硬件数据流优化VLA推理。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.04428v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.04428"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者报告最高加速：相对移动GPU为34.2×，相对已有专用加速器为6.1×，对应设置下保持接近的任务表现。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.04428v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.04428"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "核心收益依赖专用硬件协同，不是普通GPU上安装软件即可获得。最高值不是全部模型/任务平均值。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.04428v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.04428"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "软硬件协同设计的峰值加速有明确设备前提。将其作为硬件路线参考，而非普通GPU的即插即用收益。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.04428v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.04428"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "硬件依赖；位级复用；比较设备与峰值口径。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.04428v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.04428"
+          }
+        ]
+      }
+    ]
+  }
+}

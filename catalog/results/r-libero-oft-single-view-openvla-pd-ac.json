@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-oft-single-view-openvla-pd-ac",
+  "paperId": "p069",
+  "method": "OpenVLA-PD-AC",
+  "trackId": "libero-oft-single-view",
+  "values": {
+    "Spatial": 91.3,
+    "Object": 92.7,
+    "Goal": 90.5,
+    "Long": 86.5,
+    "Average": 90.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-17",
+  "source": "https://arxiv.org/html/2502.19645v1",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I · single-view block",
+  "attribution": "author-reported",
+  "trainingData": "同文微调配方；不同动作目标／解码方式",
+  "evaluationNotes": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+  "supersedes": ""
+}

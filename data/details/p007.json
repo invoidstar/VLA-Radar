@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p007",
+    "name": "Track4Action",
+    "title": "Track4Action: Distilling World-Centric 3D Tracker into Vision-Language-Action Policies",
+    "team": "浙江大学／上海交通大学／上海创智学院／Noematrix\nChenyi Wang、Xinkai Wang、Bokai Lin等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.03727\n技术预印本",
+    "firstPublished": "2026-08-04",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "spatial",
+      "pretraining"
+    ],
+    "tags": [
+      "VLA",
+      "3D tracking",
+      "distillation"
+    ],
+    "priority": "deep",
+    "contribution": "把世界坐标系三维跟踪知识蒸馏到VLA，以真实时序运动而非单帧几何提供监督；教师及未来片段仅在训练期使用。",
+    "findings": "LIBERO-Plus：无对齐74.7%→Track4Action 82.3%（+7.6个百分点）。\n4个真实双臂任务：基线42.5%→67.5%（+25个百分点）。",
+    "limitations": "需要三维跟踪教师和时序数据。真实结果覆盖4任务；训练期几何知识有效，不等于必须在部署时运行三维跟踪器。",
+    "insight": "世界坐标中的时序轨迹可作为训练期监督，而不必成为部署期昂贵模块。动态监督与静态几何不应混同。",
+    "readingFocus": "世界坐标轨迹目标；训练期信息流；几何与动态蒸馏的贡献。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.03727v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.03727"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.03727",
+    "arxiv": "2608.03727",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.03727",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把世界坐标系三维跟踪知识蒸馏到VLA，以真实时序运动而非单帧几何提供监督；教师及未来片段仅在训练期使用。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.03727v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.03727"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO-Plus：无对齐74.7%→Track4Action 82.3%（+7.6个百分点）。\n4个真实双臂任务：基线42.5%→67.5%（+25个百分点）。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.03727v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.03727"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "需要三维跟踪教师和时序数据。真实结果覆盖4任务；训练期几何知识有效，不等于必须在部署时运行三维跟踪器。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.03727v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.03727"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "世界坐标中的时序轨迹可作为训练期监督，而不必成为部署期昂贵模块。动态监督与静态几何不应混同。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.03727v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.03727"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "世界坐标轨迹目标；训练期信息流；几何与动态蒸馏的贡献。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.03727v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.03727"
+          }
+        ]
+      }
+    ]
+  }
+}

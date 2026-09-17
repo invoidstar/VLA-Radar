@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p075",
+    "name": "π*0.6 / RECAP",
+    "title": "π*0.6: a VLA That Learns From Experience",
+    "team": "Physical Intelligence；Ali Amin 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2025-11-18",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1；摘要与 RECAP 方法说明",
+    "topics": [
+      "action",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "post-training",
+      "RL",
+      "RECAP"
+    ],
+    "priority": "deep",
+    "contribution": "使用 RECAP 将离线数据、机器人自主执行经验与专家纠正结合，利用奖励与优势条件改善已有 VLA 的执行效率和可靠性。",
+    "findings": "摘要报告：部分最困难真实任务的单位时间完成量提高超过 2 倍，失败率大约减半。原文并未主张所有任务都达到同样倍数；此处保留“部分困难任务”的范围。",
+    "limitations": "收益包含额外机器人交互、奖励标注与人类纠正，不能理解成纯离线 SFT 或完全无人工自学习。",
+    "insight": "后训练评价不应只看成功率，还应看单位时间产出和错误减少；同时记录额外交互与纠正成本。",
+    "readingFocus": "RECAP 数据流程、优势条件、失败率与任务吞吐口径。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2511.14759"
+      },
+      {
+        "label": "原文 v1",
+        "url": "https://arxiv.org/html/2511.14759v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2511.14759",
+    "arxiv": "2511.14759",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2025-11-18",
+    "firstArxivSource": "https://arxiv.org/abs/2511.14759v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2511.14759",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1；摘要与 RECAP 方法说明",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "使用 RECAP 将离线数据、机器人自主执行经验与专家纠正结合，利用奖励与优势条件改善已有 VLA 的执行效率和可靠性。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2511.14759"
+          },
+          {
+            "label": "原文 v1",
+            "url": "https://arxiv.org/html/2511.14759v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "摘要报告：部分最困难真实任务的单位时间完成量提高超过 2 倍，失败率大约减半。原文并未主张所有任务都达到同样倍数；此处保留“部分困难任务”的范围。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2511.14759"
+          },
+          {
+            "label": "原文 v1",
+            "url": "https://arxiv.org/html/2511.14759v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "收益包含额外机器人交互、奖励标注与人类纠正，不能理解成纯离线 SFT 或完全无人工自学习。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2511.14759"
+          },
+          {
+            "label": "原文 v1",
+            "url": "https://arxiv.org/html/2511.14759v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "后训练评价不应只看成功率，还应看单位时间产出和错误减少；同时记录额外交互与纠正成本。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2511.14759"
+          },
+          {
+            "label": "原文 v1",
+            "url": "https://arxiv.org/html/2511.14759v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "RECAP 数据流程、优势条件、失败率与任务吞吐口径。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2511.14759"
+          },
+          {
+            "label": "原文 v1",
+            "url": "https://arxiv.org/html/2511.14759v1"
+          }
+        ]
+      }
+    ]
+  }
+}

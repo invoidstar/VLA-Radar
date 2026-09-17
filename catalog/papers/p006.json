@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p006",
+    "name": "VLA-Talker",
+    "title": "In-Context VLA: Endowing Vision-Language-Action Models with Language via In-Context Post-Training and Agentic Tool Use",
+    "team": "南开大学／清华大学／EPFL等\nJiarui Yang、Wen Huang、Jiale Zhang等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.05738\n技术预印本",
+    "firstPublished": "2026-08-06",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "pretraining"
+    ],
+    "tags": [
+      "VLA",
+      "language",
+      "tool use"
+    ],
+    "priority": "selective",
+    "contribution": "将视觉落点明确的结构化上下文和工具信息接入动作策略，研究如何让语言真正帮助控制，而不是单纯增加自由形式推理。",
+    "findings": "LIBERO平均：GenCoT 96.2%→VLA-Talker 97.4%；Long：91.6%→93.6%。\n论文发现自由形式推理并非总有收益，结构化上下文与动作监督组织更重要。",
+    "limitations": "这里只引用可核对的LIBERO表；RoboCasa表的部分汇总口径不清，未纳入。工具调用、监督与RL设置需分开阅读。",
+    "insight": "结构化、具备视觉落点的上下文可能比冗长自由推理更有效。语言接口的组织方式是独立的学习因素。",
+    "readingFocus": "上下文结构；动作监督方式；自由推理与工具上下文的消融。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.05738v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.05738"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.05738",
+    "arxiv": "2608.05738",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.05738",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将视觉落点明确的结构化上下文和工具信息接入动作策略，研究如何让语言真正帮助控制，而不是单纯增加自由形式推理。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05738v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05738"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO平均：GenCoT 96.2%→VLA-Talker 97.4%；Long：91.6%→93.6%。\n论文发现自由形式推理并非总有收益，结构化上下文与动作监督组织更重要。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05738v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05738"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "这里只引用可核对的LIBERO表；RoboCasa表的部分汇总口径不清，未纳入。工具调用、监督与RL设置需分开阅读。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05738v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05738"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "结构化、具备视觉落点的上下文可能比冗长自由推理更有效。语言接口的组织方式是独立的学习因素。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05738v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05738"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "上下文结构；动作监督方式；自由推理与工具上下文的消融。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05738v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05738"
+          }
+        ]
+      }
+    ]
+  }
+}

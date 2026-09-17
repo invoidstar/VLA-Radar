@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p048",
+    "name": "CALVIN",
+    "title": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
+    "team": "University of Freiburg / University of Technology Nuremberg；Oier Mees、Lukas Hermann 等",
+    "venue": "IEEE RA-L",
+    "publicationType": "journal",
+    "publicationStatus": "原文标注 IEEE RA-L，2022-05 接收；首发仍保留 2021 年 arXiv 日期",
+    "firstPublished": "2021-12-06",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v4（2022-07-13），第 1–2 页；第 2 页已查看 PDF",
+    "topics": [
+      "evaluation",
+      "memory"
+    ],
+    "tags": [
+      "关键文献",
+      "基础资源",
+      "benchmark",
+      "long-horizon"
+    ],
+    "priority": "deep",
+    "contribution": "提出组合语言指令、连续控制与跨场景泛化的模拟操作基准；用于区分单任务完成、连续任务链和未见环境泛化。",
+    "findings": "原文 v4 第 2 页：4 个环境、34 类子任务、约 24 小时 play 数据和 2 万条语言指令；长程协议由 5 个子任务组成。原始 MCIL 基线短程成功率最高 53.9%，长程仍明显困难。",
+    "limitations": "平均任务链长度上限为 5，不是百分比。ABCD→D 与 ABC→D 训练划分不等价；本条记录基准原始设定，而非当前模型排行榜。",
+    "insight": "短程成功、连续执行和场景迁移是不同能力；同一数字必须连同数据划分与评价长度阅读。",
+    "readingFocus": "原文第 2 页、数据划分、五任务链协议及原始 MCIL 基线。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2112.03227"
+      },
+      {
+        "label": "原文 v4 · 第 2 页",
+        "url": "https://arxiv.org/pdf/2112.03227v4"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2112.03227",
+    "arxiv": "2112.03227",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2021-12-06",
+    "firstArxivSource": "https://arxiv.org/abs/2112.03227v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "IEEE RA-L",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "IEEE RA-L",
+        "source": "https://arxiv.org/abs/2112.03227",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v4（2022-07-13），第 1–2 页；第 2 页已查看 PDF",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "提出组合语言指令、连续控制与跨场景泛化的模拟操作基准；用于区分单任务完成、连续任务链和未见环境泛化。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2112.03227"
+          },
+          {
+            "label": "原文 v4 · 第 2 页",
+            "url": "https://arxiv.org/pdf/2112.03227v4"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v4 第 2 页：4 个环境、34 类子任务、约 24 小时 play 数据和 2 万条语言指令；长程协议由 5 个子任务组成。原始 MCIL 基线短程成功率最高 53.9%，长程仍明显困难。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2112.03227"
+          },
+          {
+            "label": "原文 v4 · 第 2 页",
+            "url": "https://arxiv.org/pdf/2112.03227v4"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "平均任务链长度上限为 5，不是百分比。ABCD→D 与 ABC→D 训练划分不等价；本条记录基准原始设定，而非当前模型排行榜。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2112.03227"
+          },
+          {
+            "label": "原文 v4 · 第 2 页",
+            "url": "https://arxiv.org/pdf/2112.03227v4"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "短程成功、连续执行和场景迁移是不同能力；同一数字必须连同数据划分与评价长度阅读。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2112.03227"
+          },
+          {
+            "label": "原文 v4 · 第 2 页",
+            "url": "https://arxiv.org/pdf/2112.03227v4"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "原文第 2 页、数据划分、五任务链协议及原始 MCIL 基线。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2112.03227"
+          },
+          {
+            "label": "原文 v4 · 第 2 页",
+            "url": "https://arxiv.org/pdf/2112.03227v4"
+          }
+        ]
+      }
+    ]
+  }
+}

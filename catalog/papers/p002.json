@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p002",
+    "name": "VLAFlow",
+    "title": "VLAFlow: A Unified Training Framework for Vision-Language-Action Models via Co-training and Future Latent Alignment",
+    "team": "理想汽车（Li Auto）／北京邮电大学／香港中文大学（深圳）\nGuoyang Xia、Fengfa Li、Lei Ren等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.01586\n技术预印本",
+    "firstPublished": "2026-07-02",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首发；8月4日v2｜阅读v2",
+    "topics": [
+      "pretraining"
+    ],
+    "tags": [
+      "VLA",
+      "co-training",
+      "latent future"
+    ],
+    "priority": "deep",
+    "contribution": "在统一数据和训练框架下拆分动作训练、语言联合训练、未来隐空间对齐及其组合，揭示预训练目标之间的收益与冲突。",
+    "findings": "未来对齐版Mind-WPI在RT-1 Visual Matching / Variant Aggregation分别为86.7% / 71.1%；语言+未来版为84.4% / 69.8%。\n但组合版LIBERO-Plus为74.8%，高于未来版72.6%。",
+    "limitations": "同一新增目标在不同基准上收益不同；不能用单一总榜分数证明多目标普遍互补。这里引用同文统一框架下的结果。",
+    "insight": "联合目标并非越多越好。未来对齐与语言监督的收益依赖基准，保留负迁移结果比只看最高总分更有价值。",
+    "readingFocus": "统一训练设置；Table 2；负迁移与语言/未来目标的交互。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v2",
+        "url": "https://arxiv.org/html/2607.01586v2"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.01586"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.01586",
+    "arxiv": "2607.01586",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.01586",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首发；8月4日v2｜阅读v2",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "在统一数据和训练框架下拆分动作训练、语言联合训练、未来隐空间对齐及其组合，揭示预训练目标之间的收益与冲突。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.01586v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.01586"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "未来对齐版Mind-WPI在RT-1 Visual Matching / Variant Aggregation分别为86.7% / 71.1%；语言+未来版为84.4% / 69.8%。\n但组合版LIBERO-Plus为74.8%，高于未来版72.6%。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.01586v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.01586"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "同一新增目标在不同基准上收益不同；不能用单一总榜分数证明多目标普遍互补。这里引用同文统一框架下的结果。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.01586v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.01586"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "联合目标并非越多越好。未来对齐与语言监督的收益依赖基准，保留负迁移结果比只看最高总分更有价值。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.01586v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.01586"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "统一训练设置；Table 2；负迁移与语言/未来目标的交互。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.01586v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.01586"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p078",
+    "name": "Fast-WAM",
+    "title": "Fast-WAM: Do World Action Models Need Test-time Future Imagination?",
+    "team": "Tianyuan Yuan、Zibin Dong、Yicheng Liu、Hang Zhao（署名作者）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2026-03-17",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1，Section 4 实验 / 实时部署",
+    "topics": [
+      "world",
+      "efficiency"
+    ],
+    "tags": [
+      "关键文献",
+      "近期代表",
+      "WAM",
+      "training inference separation"
+    ],
+    "priority": "deep",
+    "contribution": "保留训练期视频联合学习，推理时直接生成动作，不生成未来视频；通过受控变体区分训练监督和测试时想象的收益。",
+    "findings": "原文 v1 §4：真实任务中去除视频联合训练的版本降至 10% 成功率；直接动作版本时延 190 ms，先想象再执行的 IDM 变体 810 ms，约相差 4.3 倍。此时延比较是论文自己的对应变体。",
+    "limitations": "没有大规模具身预训练不代表没有视频预训练；结论限于所测任务与系统，不能推断所有规划问题都不需要未来预测。",
+    "insight": "世界模型对策略的价值可能主要来自训练时表征塑造，而非部署时显式生成；两者应分开理解。",
+    "readingFocus": "no-video-co-training 对照、想象变体及真实任务时延。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2603.16666"
+      },
+      {
+        "label": "原文 v1 · 实验结果",
+        "url": "https://arxiv.org/html/2603.16666v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2603.16666",
+    "arxiv": "2603.16666",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-03-17",
+    "firstArxivSource": "https://arxiv.org/abs/2603.16666v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2603.16666",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1，Section 4 实验 / 实时部署",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "保留训练期视频联合学习，推理时直接生成动作，不生成未来视频；通过受控变体区分训练监督和测试时想象的收益。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2603.16666"
+          },
+          {
+            "label": "原文 v1 · 实验结果",
+            "url": "https://arxiv.org/html/2603.16666v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v1 §4：真实任务中去除视频联合训练的版本降至 10% 成功率；直接动作版本时延 190 ms，先想象再执行的 IDM 变体 810 ms，约相差 4.3 倍。此时延比较是论文自己的对应变体。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2603.16666"
+          },
+          {
+            "label": "原文 v1 · 实验结果",
+            "url": "https://arxiv.org/html/2603.16666v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "没有大规模具身预训练不代表没有视频预训练；结论限于所测任务与系统，不能推断所有规划问题都不需要未来预测。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2603.16666"
+          },
+          {
+            "label": "原文 v1 · 实验结果",
+            "url": "https://arxiv.org/html/2603.16666v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "世界模型对策略的价值可能主要来自训练时表征塑造，而非部署时显式生成；两者应分开理解。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2603.16666"
+          },
+          {
+            "label": "原文 v1 · 实验结果",
+            "url": "https://arxiv.org/html/2603.16666v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "no-video-co-training 对照、想象变体及真实任务时延。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2603.16666"
+          },
+          {
+            "label": "原文 v1 · 实验结果",
+            "url": "https://arxiv.org/html/2603.16666v1"
+          }
+        ]
+      }
+    ]
+  }
+}

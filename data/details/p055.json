@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p055",
+    "name": "Diffusion Policy",
+    "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+    "team": "Cheng Chi、Zhenjia Xu、Siyuan Feng、Eric Cousineau、Yilun Du、Benjamin Burchfiel、Russ Tedrake、Shuran Song（署名作者）",
+    "venue": "RSS 2023 / arXiv 扩展版",
+    "publicationType": "conference",
+    "publicationStatus": "arXiv 明确说明为 RSS 2023 论文扩展版",
+    "firstPublished": "2023-03-07",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v5（2024-03-14）摘要；RSS 2023 的扩展版本",
+    "topics": [
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "diffusion",
+      "visuomotor policy"
+    ],
+    "priority": "deep",
+    "contribution": "将条件扩散用于动作序列分布建模，结合视觉条件和滚动执行，处理连续高维动作的多峰性；是后续扩散 / 流式动作头的重要基础，不是原生语言条件 VLA。",
+    "findings": "扩展版摘要汇总 4 个机器人基准、12 项任务，报告相对既有方法的平均提升 46.9%。这是作者的聚合提升口径，不能写作所有任务都提高 46.9 个百分点。",
+    "limitations": "涉及多种任务与数据设置；扩散采样会产生计算开销。视觉控制成功不能直接证明语言理解或跨本体泛化。",
+    "insight": "把动作当成序列分布而非单步回归可保留多种可行行为；表示能力与闭环采样成本需要同时阅读。",
+    "readingFocus": "动作扩散、receding-horizon execution、时间条件与误差累积。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2303.04137"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2303.04137",
+    "arxiv": "2303.04137",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-03-07",
+    "firstArxivSource": "https://arxiv.org/abs/2303.04137v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2023 / arXiv 扩展版",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2023 / arXiv 扩展版",
+        "source": "https://arxiv.org/abs/2303.04137",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v5（2024-03-14）摘要；RSS 2023 的扩展版本",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将条件扩散用于动作序列分布建模，结合视觉条件和滚动执行，处理连续高维动作的多峰性；是后续扩散 / 流式动作头的重要基础，不是原生语言条件 VLA。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.04137"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "扩展版摘要汇总 4 个机器人基准、12 项任务，报告相对既有方法的平均提升 46.9%。这是作者的聚合提升口径，不能写作所有任务都提高 46.9 个百分点。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.04137"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "涉及多种任务与数据设置；扩散采样会产生计算开销。视觉控制成功不能直接证明语言理解或跨本体泛化。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.04137"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "把动作当成序列分布而非单步回归可保留多种可行行为；表示能力与闭环采样成本需要同时阅读。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.04137"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "动作扩散、receding-horizon execution、时间条件与误差累积。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2303.04137"
+          }
+        ]
+      }
+    ]
+  }
+}

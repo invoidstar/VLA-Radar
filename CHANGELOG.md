@@ -1,3 +1,13 @@
+
+## 2026-09-17 · V2 lifecycle, notes and evidence-scoped leaderboards
+
+- Migrated all 78 existing paper IDs to individually editable `catalog/papers/`; preserved original first-public dates and every existing KEY RESULT. Added deterministic legacy export, compact search catalog and lazy per-paper details.
+- Added arXiv revision / first-arXiv / formal-publication lifecycle records, direct DOI metadata synchronization, candidate review queues and separate note-verification versions. Recorded OpenVLA in CoRL 2024 proceedings and OpenVLA-OFT in RSS 2025; no acceptance dates guessed.
+- Expanded six public reading notes (p001, p004, p021, p064, p069, p076). Older notes retain explicit legacy status; p069's v1 note is marked for v2 review.
+- Added RoboTwin / RoboCasa / LIBERO Leaderboards: 8 protocol tracks, 27 source-located rows. Candidate detection and extraction are separate from ranked checked evidence. Heterogeneous comparison tables are unranked; no cross-protocol SOTA total.
+- Added monthly-age source health rotation, quarterly review / old-note queues, strict source/build/result tests, bounded pagination and lazy timeline. KEY RESULT and the local reading storage key remain unchanged.
+- New changes are proposed via a feature PR; no automatic main merge. See `maintenance/v2-validation.md` for completed checks and remaining verification boundaries.
+
 # Changelog
 
 ## 2026-09-17 — 关键文献补充与 ISO 周检索

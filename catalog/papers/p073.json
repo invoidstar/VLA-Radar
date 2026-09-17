@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p073",
+    "name": "SmolVLA",
+    "title": "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics",
+    "team": "Hugging Face / LeRobot；Mustafa Shukor、Dana Aubakirova 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2025-06-02",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1，Tables 3–5",
+    "topics": [
+      "efficiency",
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "small VLA",
+      "asynchronous"
+    ],
+    "priority": "deep",
+    "contribution": "使用轻量视觉语言主干和动作专家，结合社区机器人数据及异步推理 / 执行，降低训练和部署门槛。",
+    "findings": "原文 v1 表 5：SO100 三任务平均成功率，0.45B SmolVLA 无机器人预训练的单任务 / 多任务版本分别 40.0% / 51.7%，加入机器人预训练的多任务版本为 78.3%。",
+    "limitations": "这是指定硬件与三个任务上的消融，不是“轻量模型普遍超过大模型”；机器人预训练与多任务训练是不同因素。",
+    "insight": "小模型路线也依赖有效数据和条件交互；模型参数、数据成本与异步执行收益应分开解读。",
+    "readingFocus": "表 3–5、预训练 / 多任务消融及异步时延。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2506.01844"
+      },
+      {
+        "label": "原文 v1 · 表 5",
+        "url": "https://arxiv.org/html/2506.01844v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2506.01844",
+    "arxiv": "2506.01844",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2025-06-02",
+    "firstArxivSource": "https://arxiv.org/abs/2506.01844v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2506.01844",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1，Tables 3–5",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "使用轻量视觉语言主干和动作专家，结合社区机器人数据及异步推理 / 执行，降低训练和部署门槛。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2506.01844"
+          },
+          {
+            "label": "原文 v1 · 表 5",
+            "url": "https://arxiv.org/html/2506.01844v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v1 表 5：SO100 三任务平均成功率，0.45B SmolVLA 无机器人预训练的单任务 / 多任务版本分别 40.0% / 51.7%，加入机器人预训练的多任务版本为 78.3%。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2506.01844"
+          },
+          {
+            "label": "原文 v1 · 表 5",
+            "url": "https://arxiv.org/html/2506.01844v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "这是指定硬件与三个任务上的消融，不是“轻量模型普遍超过大模型”；机器人预训练与多任务训练是不同因素。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2506.01844"
+          },
+          {
+            "label": "原文 v1 · 表 5",
+            "url": "https://arxiv.org/html/2506.01844v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "小模型路线也依赖有效数据和条件交互；模型参数、数据成本与异步执行收益应分开解读。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2506.01844"
+          },
+          {
+            "label": "原文 v1 · 表 5",
+            "url": "https://arxiv.org/html/2506.01844v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "表 3–5、预训练 / 多任务消融及异步时延。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2506.01844"
+          },
+          {
+            "label": "原文 v1 · 表 5",
+            "url": "https://arxiv.org/html/2506.01844v1"
+          }
+        ]
+      }
+    ]
+  }
+}

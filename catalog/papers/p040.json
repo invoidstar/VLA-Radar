@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p040",
+    "name": "Beyond Binary Success",
+    "title": "Beyond Binary Success: Sample-Efficient and Statistically Rigorous Robot Policy Comparison",
+    "team": "宾夕法尼亚大学／Toyota Research Institute／普林斯顿大学\nDavid Snyder、Apurva Badithela、Nikolai Matni、George Pappas等",
+    "venue": "RSS 2026",
+    "publicationType": "conference",
+    "publicationStatus": "RSS 2026，论文076\nDOI:10.15607/RSS.2026.XXII.076\narXiv:2603.13616",
+    "firstPublished": "2026-03-13",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月正式会议发表；3月已有预印本｜阅读v1",
+    "topics": [
+      "evaluation"
+    ],
+    "tags": [
+      "benchmark",
+      "statistics",
+      "progress"
+    ],
+    "priority": "deep",
+    "contribution": "利用任务进度而非仅二元成功信号，并结合统计有效的序贯比较，提高机器人策略比较的信息效率。",
+    "findings": "作者报告相对固定批量评测最多减少70%所需样本；相对只用二元成功的序贯方法最多减少50%。",
+    "limitations": "数字是评测样本节省，不是机器人性能提升；依赖论文的统计有效性条件，不能用普通显著性检验反复查看后提前停止替代。",
+    "insight": "连续任务进度可提高策略比较效率。序贯判断依赖有效统计协议，而非反复查看普通显著性检验。",
+    "readingFocus": "连续进度指标；统计假设；样本效率收益的定义。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2603.13616v1"
+      },
+      {
+        "label": "会议正式页面",
+        "url": "https://www.roboticsproceedings.org/rss22/p076.html"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2603.13616"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2603.13616",
+    "arxiv": "2603.13616",
+    "doi": "10.15607/RSS.2026.XXII.076"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2026",
+    "doi": "10.15607/RSS.2026.XXII.076",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2026",
+        "source": "https://arxiv.org/abs/2603.13616",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月正式会议发表；3月已有预印本｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "利用任务进度而非仅二元成功信号，并结合统计有效的序贯比较，提高机器人策略比较的信息效率。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2603.13616v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p076.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2603.13616"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者报告相对固定批量评测最多减少70%所需样本；相对只用二元成功的序贯方法最多减少50%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2603.13616v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p076.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2603.13616"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "数字是评测样本节省，不是机器人性能提升；依赖论文的统计有效性条件，不能用普通显著性检验反复查看后提前停止替代。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2603.13616v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p076.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2603.13616"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "连续任务进度可提高策略比较效率。序贯判断依赖有效统计协议，而非反复查看普通显著性检验。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2603.13616v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p076.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2603.13616"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "连续进度指标；统计假设；样本效率收益的定义。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2603.13616v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p076.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2603.13616"
+          }
+        ]
+      }
+    ]
+  }
+}

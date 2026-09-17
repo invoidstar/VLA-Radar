@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p017",
+    "name": "τ0-VLA",
+    "title": "τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation",
+    "team": "智元机器人Finch团队／上海创智学院／香港中文大学等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.16885\n技术预印本",
+    "firstPublished": "2026-08-17",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "memory",
+      "world"
+    ],
+    "tags": [
+      "VLA",
+      "planning",
+      "test-time"
+    ],
+    "priority": "selective",
+    "contribution": "高层维护任务与历史，在不确定时调用世界模型进行测试时搜索；低层策略负责跨本体执行，分离推理与动作频率。",
+    "findings": "每任务10次真实评测：Plan-Once→τ0-VLA，制奶茶5/10→7/10，整理书籍6/10→9/10，清理房间5/10→7/10。\n分布外子任务选择准确率50%→74%。",
+    "limitations": "子任务选择准确率不是整任务成功率；真实样本较少。含约40,115小时训练数据及额外搜索计算，不能归因于单个高层模块。",
+    "insight": "高层搜索可按不确定性分配计算。真实执行历史与假想未来不应混作已经发生的状态。",
+    "readingFocus": "高低层分工；不确定性触发；世界模型搜索与任务记忆。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.16885v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.16885"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.16885",
+    "arxiv": "2608.16885",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.16885",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "高层维护任务与历史，在不确定时调用世界模型进行测试时搜索；低层策略负责跨本体执行，分离推理与动作频率。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16885v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16885"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "每任务10次真实评测：Plan-Once→τ0-VLA，制奶茶5/10→7/10，整理书籍6/10→9/10，清理房间5/10→7/10。\n分布外子任务选择准确率50%→74%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16885v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16885"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "子任务选择准确率不是整任务成功率；真实样本较少。含约40,115小时训练数据及额外搜索计算，不能归因于单个高层模块。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16885v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16885"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "高层搜索可按不确定性分配计算。真实执行历史与假想未来不应混作已经发生的状态。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16885v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16885"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "高低层分工；不确定性触发；世界模型搜索与任务记忆。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16885v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16885"
+          }
+        ]
+      }
+    ]
+  }
+}

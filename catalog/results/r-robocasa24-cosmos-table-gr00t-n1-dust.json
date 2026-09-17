@@ -1,0 +1,18 @@
+{
+  "id": "r-robocasa24-cosmos-table-gr00t-n1-dust",
+  "paperId": "p076",
+  "method": "GR00T-N1-DUST",
+  "trackId": "robocasa24-cosmos-table",
+  "values": {
+    "Average": 58.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-17",
+  "source": "https://arxiv.org/html/2601.16163v1",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table 2",
+  "attribution": "reported-baseline",
+  "trainingData": "300 demos/task",
+  "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+  "supersedes": ""
+}

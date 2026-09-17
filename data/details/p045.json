@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p045",
+    "name": "GF-VLA",
+    "title": "Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy Reasoning and Dual Robotic Control",
+    "team": "杭州电子科技大学／新墨西哥大学／牛津大学／乔治华盛顿大学／TUM等\nShunlei Li、Longsen Gao、Jin Wang、Jiuwen Cao等",
+    "venue": "Information Fusion",
+    "publicationType": "journal",
+    "publicationStatus": "Elsevier Information Fusion 131:104193\nDOI:10.1016/j.inffus.2026.104193\narXiv:2508.05342",
+    "firstPublished": "2025-08-07",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "2026年7月卷期；2025年8月已有预印本｜数据取v1",
+    "topics": [
+      "memory",
+      "evaluation"
+    ],
+    "tags": [
+      "graph",
+      "dual-arm",
+      "reasoning"
+    ],
+    "priority": "selective",
+    "contribution": "以信息论筛选的场景/交互图组织时间关系，再转换为可执行的结构化策略和双机器人分工。",
+    "findings": "4个结构化双臂积木任务：图构建准确率>95%、分割93%、抓取94%、放置89%，整体任务成功率约90%。",
+    "limitations": "限定结构化双臂任务，不是通用基础模型大规模泛化结论；图、分割、抓取和整体成功率是不同指标。量化结果来自所链预印本。",
+    "insight": "显式图结构适合描述关系和阶段，但结构化场景的高成功率不能直接等同开放任务泛化。",
+    "readingFocus": "状态图字段；行为树/动作接口；指标层级与任务范围。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2508.05342v1"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1016/j.inffus.2026.104193"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2508.05342"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2508.05342",
+    "arxiv": "2508.05342",
+    "doi": "10.1016/j.inffus.2026.104193"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "Information Fusion",
+    "doi": "10.1016/j.inffus.2026.104193",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "Information Fusion",
+        "source": "https://arxiv.org/abs/2508.05342",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "2026年7月卷期；2025年8月已有预印本｜数据取v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以信息论筛选的场景/交互图组织时间关系，再转换为可执行的结构化策略和双机器人分工。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2508.05342v1"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.inffus.2026.104193"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2508.05342"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "4个结构化双臂积木任务：图构建准确率>95%、分割93%、抓取94%、放置89%，整体任务成功率约90%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2508.05342v1"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.inffus.2026.104193"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2508.05342"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "限定结构化双臂任务，不是通用基础模型大规模泛化结论；图、分割、抓取和整体成功率是不同指标。量化结果来自所链预印本。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2508.05342v1"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.inffus.2026.104193"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2508.05342"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "显式图结构适合描述关系和阶段，但结构化场景的高成功率不能直接等同开放任务泛化。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2508.05342v1"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.inffus.2026.104193"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2508.05342"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "状态图字段；行为树/动作接口；指标层级与任务范围。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2508.05342v1"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.inffus.2026.104193"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2508.05342"
+          }
+        ]
+      }
+    ]
+  }
+}

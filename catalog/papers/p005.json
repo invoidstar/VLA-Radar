@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p005",
+    "name": "Dyna-2",
+    "title": "Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models",
+    "team": "Dyna Robotics",
+    "venue": "技术报告",
+    "publicationType": "report",
+    "publicationStatus": "公司官网技术报告\n非已核验期刊/会议论文",
+    "firstPublished": "2026-08",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月报告｜按官网版本阅读",
+    "topics": [
+      "pretraining",
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "human video",
+      "scaling"
+    ],
+    "priority": "selective",
+    "contribution": "利用百万小时第一视角人类视频及手姿派生伪动作，研究世界—动作联合学习的规模规律与跨本体迁移。",
+    "findings": "规模研究覆盖1千、1万、10万、100万小时数据及14个真实机器人任务。\n报告展示：以约10分钟遥操作后训练适配双五指手开瓶盖；部署策略可只输出动作、不生成未来视频。",
+    "limitations": "10分钟为特定案例，不是14任务平均适配成本/成功率；监督含手姿伪动作，并非纯无动作视频。官网曲线未核验出统一平均成功率，不补造数值。",
+    "insight": "从人类视频迁移时应明确伪动作来源。训练时联合生成未来，不意味着部署时必须生成视频。",
+    "readingFocus": "监督来源；规模曲线口径；跨本体案例；训练目标与部署路径的区别。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "官方 / 作者来源",
+        "url": "https://www.dyna.co/dyna-2"
+      }
+    ],
+    "paperUrl": "https://www.dyna.co/dyna-2",
+    "arxiv": "",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "技术报告",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "技术报告",
+        "source": "https://www.dyna.co/dyna-2",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月报告｜按官网版本阅读",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "利用百万小时第一视角人类视频及手姿派生伪动作，研究世界—动作联合学习的规模规律与跨本体迁移。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://www.dyna.co/dyna-2"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "规模研究覆盖1千、1万、10万、100万小时数据及14个真实机器人任务。\n报告展示：以约10分钟遥操作后训练适配双五指手开瓶盖；部署策略可只输出动作、不生成未来视频。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://www.dyna.co/dyna-2"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "10分钟为特定案例，不是14任务平均适配成本/成功率；监督含手姿伪动作，并非纯无动作视频。官网曲线未核验出统一平均成功率，不补造数值。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://www.dyna.co/dyna-2"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "从人类视频迁移时应明确伪动作来源。训练时联合生成未来，不意味着部署时必须生成视频。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://www.dyna.co/dyna-2"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "监督来源；规模曲线口径；跨本体案例；训练目标与部署路径的区别。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://www.dyna.co/dyna-2"
+          }
+        ]
+      }
+    ]
+  }
+}

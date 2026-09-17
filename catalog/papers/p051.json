@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p051",
+    "name": "PerAct",
+    "title": "Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation",
+    "team": "University of Washington / NVIDIA；Mohit Shridhar、Lucas Manuelli、Dieter Fox",
+    "venue": "CoRL 2022",
+    "publicationType": "conference",
+    "publicationStatus": "CoRL 2022（arXiv / 官方页确认）",
+    "firstPublished": "2022-09-12",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "spatial",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "3D voxel",
+      "Perceiver"
+    ],
+    "priority": "selective",
+    "contribution": "将 RGB-D 场景与动作位置统一到三维体素，利用 Perceiver 处理高维场景，并将六自由度操作转为语言条件化的体素动作预测。",
+    "findings": "官方报告覆盖 18 个 RLBench 任务及 249 种变化；7 个真实任务共使用 53 条示范。论文摘要表明其优于无结构图像—动作和三维卷积基线，数据效率与空间结构密切相关。",
+    "limitations": "需要 RGB-D、体素空间及动作执行规划器；离散关键帧动作不能与高频连续关节控制直接比较。",
+    "insight": "输入与动作坐标的结构匹配本身就是重要归纳偏置；模型规模并非数据效率的唯一来源。",
+    "readingFocus": "观测 / 动作空间统一、潜变量压缩及运动规划器边界。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2209.05451"
+      },
+      {
+        "label": "官方项目页 · 任务与数据规模",
+        "url": "https://peract.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2209.05451",
+    "arxiv": "2209.05451",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2022-09-12",
+    "firstArxivSource": "https://arxiv.org/abs/2209.05451v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "CoRL 2022",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "CoRL 2022",
+        "source": "https://arxiv.org/abs/2209.05451",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将 RGB-D 场景与动作位置统一到三维体素，利用 Perceiver 处理高维场景，并将六自由度操作转为语言条件化的体素动作预测。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2209.05451"
+          },
+          {
+            "label": "官方项目页 · 任务与数据规模",
+            "url": "https://peract.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "官方报告覆盖 18 个 RLBench 任务及 249 种变化；7 个真实任务共使用 53 条示范。论文摘要表明其优于无结构图像—动作和三维卷积基线，数据效率与空间结构密切相关。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2209.05451"
+          },
+          {
+            "label": "官方项目页 · 任务与数据规模",
+            "url": "https://peract.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "需要 RGB-D、体素空间及动作执行规划器；离散关键帧动作不能与高频连续关节控制直接比较。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2209.05451"
+          },
+          {
+            "label": "官方项目页 · 任务与数据规模",
+            "url": "https://peract.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "输入与动作坐标的结构匹配本身就是重要归纳偏置；模型规模并非数据效率的唯一来源。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2209.05451"
+          },
+          {
+            "label": "官方项目页 · 任务与数据规模",
+            "url": "https://peract.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "观测 / 动作空间统一、潜变量压缩及运动规划器边界。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2209.05451"
+          },
+          {
+            "label": "官方项目页 · 任务与数据规模",
+            "url": "https://peract.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

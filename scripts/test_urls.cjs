@@ -1,5 +1,4 @@
 'use strict';
-// Unit tests of the application's actual URL functions, using isolated browser-state fixtures.
 const assert=require('node:assert/strict');
 const fs=require('node:fs');const vm=require('node:vm');
 const source=fs.readFileSync(require.resolve('../app.js'),'utf8');
@@ -7,7 +6,7 @@ const a=source.indexOf('  function parseUrl()'), b=source.indexOf('  function sy
 assert(a>=0&&b>a,'URL function extraction must match app.js');
 function fixture(url){
  const u=new URL(url), state={};
- const c={URL,URLSearchParams,Dates:require('../dates.js'),TIME_UNKNOWN:'undated',views:{papers:'Papers',timeline:'Timeline',reading:'Reading',topics:'Topics',about:'About'},state,location:{href:u.href,search:u.search,hash:u.hash}};
+ const c={URL,URLSearchParams,Dates:require('../dates.js'),TIME_UNKNOWN:'undated',views:{papers:'Papers',timeline:'Timeline',reading:'Reading',topics:'Topics',about:'About',leaderboards:'Leaderboards'},state,location:{href:u.href,search:u.search,hash:u.hash}};
  vm.createContext(c);vm.runInContext(source.slice(a,b),c);c.parseUrl();return c;
 }
 let c=fixture('https://example.test/VLA-Radar/?year=2025&week=2026-W35');
@@ -21,4 +20,5 @@ c=fixture('https://example.test/VLA-Radar/?view=reading&q=RT-1&week=2022-W50#pap
 assert.equal(c.makeUrl(true,true).searchParams.has('view'),false);assert.equal(c.makeUrl(true,true).searchParams.has('status'),false);
 assert.equal(c.makeUrl(true,true).hash,'#paper=p052');assert.equal(c.makeUrl(false,true).hash,'');
 c=fixture('https://example.test/VLA-Radar/?year=%3Cscript%3E&week=bad');assert.equal(c.state.year,'');assert.equal(c.state.week,'');
-console.log('PASS: URL unit tests: ISO-year resolution, invalid weeks, legacy month links, timeline mode, unknown dates and public sharing. Browser navigation is not implied by these tests.');
+c=fixture('https://example.test/VLA-Radar/?view=leaderboards&dataset=RoboCasa&track=robocasa24-cosmos-table');assert.equal(c.makeUrl().searchParams.get('dataset'),'RoboCasa');assert.equal(c.makeUrl().searchParams.get('track'),'robocasa24-cosmos-table');
+console.log('PASS: URL tests: legacy weeks/months, public sharing, invalid parameters and leaderboard tracks.');

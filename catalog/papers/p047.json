@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p047",
+    "name": "CLIPort",
+    "title": "CLIPort: What and Where Pathways for Robotic Manipulation",
+    "team": "University of Washington / NVIDIA；Mohit Shridhar、Lucas Manuelli、Dieter Fox",
+    "venue": "CoRL 2021",
+    "publicationType": "conference",
+    "publicationStatus": "CoRL 2021（官方项目页标注）",
+    "firstPublished": "2021-09-24",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "spatial",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "language grounding",
+      "semantic spatial"
+    ],
+    "priority": "selective",
+    "contribution": "将 CLIP 的语义表征与 Transporter 的空间操作结构结合，分别处理“操作什么”和“在哪里操作”；是语言条件视觉操作的重要早期路线。",
+    "findings": "官方项目页报告：一个多任务策略覆盖 10 类仿真任务及 9 类真实任务；真实实验仅使用 179 个图像—动作训练对。此处 179 是配对样本，不是 179 条完整轨迹。",
+    "limitations": "主要针对桌面抓取与放置结构，不能把低样本结果直接外推到高频双臂或长程连续控制；不是大语言模型直接生成关节动作的架构。",
+    "insight": "语义迁移和精确空间定位可以由不同结构承担；阅读时应同时关注任务先验与监督量，而不只关注预训练编码器。",
+    "readingFocus": "What / Where 双流、语言组合泛化、真实数据计数口径。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2109.12098"
+      },
+      {
+        "label": "官方项目页 · 方法与真实数据说明",
+        "url": "https://cliport.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2109.12098",
+    "arxiv": "2109.12098",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2021-09-24",
+    "firstArxivSource": "https://arxiv.org/abs/2109.12098v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "CoRL 2021",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "CoRL 2021",
+        "source": "https://arxiv.org/abs/2109.12098",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将 CLIP 的语义表征与 Transporter 的空间操作结构结合，分别处理“操作什么”和“在哪里操作”；是语言条件视觉操作的重要早期路线。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2109.12098"
+          },
+          {
+            "label": "官方项目页 · 方法与真实数据说明",
+            "url": "https://cliport.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "官方项目页报告：一个多任务策略覆盖 10 类仿真任务及 9 类真实任务；真实实验仅使用 179 个图像—动作训练对。此处 179 是配对样本，不是 179 条完整轨迹。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2109.12098"
+          },
+          {
+            "label": "官方项目页 · 方法与真实数据说明",
+            "url": "https://cliport.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "主要针对桌面抓取与放置结构，不能把低样本结果直接外推到高频双臂或长程连续控制；不是大语言模型直接生成关节动作的架构。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2109.12098"
+          },
+          {
+            "label": "官方项目页 · 方法与真实数据说明",
+            "url": "https://cliport.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "语义迁移和精确空间定位可以由不同结构承担；阅读时应同时关注任务先验与监督量，而不只关注预训练编码器。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2109.12098"
+          },
+          {
+            "label": "官方项目页 · 方法与真实数据说明",
+            "url": "https://cliport.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "What / Where 双流、语言组合泛化、真实数据计数口径。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2109.12098"
+          },
+          {
+            "label": "官方项目页 · 方法与真实数据说明",
+            "url": "https://cliport.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

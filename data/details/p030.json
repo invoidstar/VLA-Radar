@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p030",
+    "name": "AdaVLA",
+    "title": "AdaVLA: Adaptive Step Flow Matching for Training-free Acceleration of Vision-Language-Action Models",
+    "team": "西江大学（Sogang University）\nSunghwan Han、Youngtae Han、Youngmin Yi",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.29208\n此表按8月预印本记载",
+    "firstPublished": "2026-08-29",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1；不混入9月新增结果",
+    "topics": [
+      "efficiency"
+    ],
+    "tags": [
+      "VLA",
+      "flow matching",
+      "training-free"
+    ],
+    "priority": "selective",
+    "contribution": "利用流轨迹几何自适应分配采样步数，并按在线重要性裁剪部分MLP计算，无需重训或额外校准。",
+    "findings": "Jetson AGX Orin上LIBERO：π0.5加速1.87×、X-VLA加速2.24×；作者报告成功率变化很小。",
+    "limitations": "“很小”沿用作者描述，此处未补造下降百分比。结论限于指定硬件与策略；流曲率不等于任务失败概率。",
+    "insight": "可按动作轨迹特点分配采样预算。自适应少步化的可信价值是成功率—时延取舍，而非仅减少步数。",
+    "readingFocus": "自适应步长依据；通道裁剪；成功率—时延取舍。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.29208v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.29208"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.29208",
+    "arxiv": "2608.29208",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.29208",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1；不混入9月新增结果",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "利用流轨迹几何自适应分配采样步数，并按在线重要性裁剪部分MLP计算，无需重训或额外校准。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29208v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29208"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "Jetson AGX Orin上LIBERO：π0.5加速1.87×、X-VLA加速2.24×；作者报告成功率变化很小。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29208v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29208"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "“很小”沿用作者描述，此处未补造下降百分比。结论限于指定硬件与策略；流曲率不等于任务失败概率。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29208v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29208"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "可按动作轨迹特点分配采样预算。自适应少步化的可信价值是成功率—时延取舍，而非仅减少步数。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29208v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29208"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "自适应步长依据；通道裁剪；成功率—时延取舍。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29208v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29208"
+          }
+        ]
+      }
+    ]
+  }
+}
