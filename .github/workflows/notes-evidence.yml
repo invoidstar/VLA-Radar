@@ -1,0 +1,89 @@
+name: Temporary public evidence for deep notes
+on:
+  push:
+    branches: [release/deep-notes-2026-09-17]
+    paths: [.github/workflows/notes-evidence.yml]
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Read public paper method and experiment evidence
+        run: |
+          mkdir -p /tmp/radar-evidence
+          cat > /tmp/read_evidence.py <<'PY'
+          import json,re,time,hashlib,concurrent.futures
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.request import Request,urlopen
+          from urllib.parse import urljoin,urlparse
+          OUT=Path('/tmp/radar-evidence')
+          class N:
+              def __init__(self,tag='',attrs=()):self.tag=tag;self.a=dict(attrs);self.c=[]
+              def text(self):return ' '.join(x.text() if isinstance(x,N) else x for x in self.c)
+              def walk(self):
+                  yield self
+                  for x in self.c:
+                      if isinstance(x,N):yield from x.walk()
+          class P(HTMLParser):
+              def __init__(self):super().__init__();self.root=N();self.stack=[self.root]
+              def handle_starttag(self,t,a):
+                  n=N(t,a);self.stack[-1].c.append(n)
+                  if t not in {'img','br','hr','meta','link','input','source','wbr','area','base','embed','param','col'}:self.stack.append(n)
+              def handle_startendtag(self,t,a):self.stack[-1].c.append(N(t,a))
+              def handle_endtag(self,t):
+                  for i in range(len(self.stack)-1,0,-1):
+                      if self.stack[i].tag==t:self.stack=self.stack[:i];break
+              def handle_data(self,d):self.stack[-1].c.append(d)
+          def clean(s):return re.sub(r'\s+',' ',s).strip()
+          def read(path):
+              rec=json.loads(path.read_text());p=rec['paper'];pid=p['id']
+              sources=[s['url'] for s in p['sources'] if '/html/' in s['url']]
+              if not sources and p['arxiv']:sources=['https://arxiv.org/html/'+p['arxiv']]
+              if not sources:sources=[p['paperUrl']]
+              url=sources[0]; report={'id':pid,'name':p['name'],'source':url,'errors':[]}
+              try:
+                  req=Request(url,headers={'User-Agent':'VLA-Radar/2.1 public literature reader (+https://github.com/invoidstar/VLA-Radar)'})
+                  with urlopen(req,timeout=35) as r:
+                      typ=r.headers.get('Content-Type',''); raw=r.read(5000000)
+                  if 'html' not in typ:raise ValueError('not HTML: '+typ)
+                  parser=P();parser.feed(raw.decode('utf-8','replace'));root=parser.root
+                  texts=[];tables=[];figures=[]
+                  for n in root.walk():
+                      cls=n.a.get('class','')
+                      if n.tag in {'h1','h2','h3','h4','h5','h6'}:texts.append('\n## '+clean(n.text()))
+                      elif n.tag=='p' and 'ltx_bib' not in cls:
+                          s=clean(n.text())
+                          if s:texts.append(s)
+                      if n.tag=='table':
+                          rows=[]
+                          for tr in n.walk():
+                              if tr.tag=='tr':rows.append([clean(x.text()) for x in tr.c if isinstance(x,N) and x.tag in {'td','th'}])
+                          if rows:tables.append({'id':n.a.get('id'),'rows':rows})
+                      if n.tag=='figure':
+                          figures.append({'id':n.a.get('id'),'caption':clean(n.text())[:3500],'images':[urljoin(url,x.a['src']) for x in n.walk() if x.tag=='img' and x.a.get('src')]})
+                  text='\n\n'.join(texts)
+                  # Ephemeral reading extracts, not a public mirror or a repository addition.
+                  refpos=text.find('\n## References')
+                  if refpos>=0:text=text[:refpos]+text[refpos+11:][text[refpos+11:].find('\n## Appendix'):] if '\n## Appendix' in text[refpos+11:] else text[:refpos]
+                  report.update({'status':'ok','bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'text':text[:100000],'tables':tables,'figures':figures,'licenseLinks':[{'label':clean(x.text()),'url':urljoin(url,x.a['href'])} for x in root.walk() if x.tag=='a' and x.a.get('href') and ('license' in x.a['href'].lower() or 'creativecommons.org' in x.a['href'])]})
+              except Exception as e:report.update({'status':'failed','errors':[str(e)]})
+              (OUT/(pid+'.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2))
+              print(pid,report['status'],url,flush=True)
+              return {k:v for k,v in report.items() if k not in {'text','tables','figures'}}
+          paths=sorted(Path('catalog/papers').glob('p*.json'))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:results=list(pool.map(read,paths))
+          (OUT/'manifest.json').write_text(json.dumps(results,ensure_ascii=False,indent=2))
+          print('OK',sum(r['status']=='ok' for r in results),'/',len(results))
+          PY
+          python /tmp/read_evidence.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: temporary-radar-public-evidence
+          path: /tmp/radar-evidence
+          retention-days: 1
