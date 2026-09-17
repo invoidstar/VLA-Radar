@@ -10,7 +10,6 @@ from install_reading_ui import install as install_ui
 
 def apply(root: Path, inputs: Path):
     install_schema(root); install_ui(root)
-    # The first import sees the pre-migration schema. Reload before checking new fields.
     importlib.invalidate_caches(); importlib.reload(catalog_core)
     when=today();seen=set();changed=[]
     results=[load(p) for p in (root/'catalog/results').glob('*.json')]
@@ -20,6 +19,11 @@ def apply(root: Path, inputs: Path):
         for x in batch:
             pid=x['id']
             if not re.fullmatch(r'p\d{3,}',pid) or pid in seen:raise ValueError('invalid or repeated staged paper: '+pid)
+            correction=inputs/'corrections'/f'{pid}.json'
+            if correction.exists():
+                x=load(correction)
+                if x['id']!=pid:raise ValueError('editorial correction ID mismatch')
+                print('Applying explicit source-reviewed correction:',pid)
             seen.add(pid);target=root/'catalog/papers'/f'{pid}.json';rec=load(target)
             if rec['paper']['id']!=pid:raise ValueError('ID mismatch')
             status='expanded';readver=re.search(r'v(\d+)(?:$|[#?])',x['source']);latest=rec['publication']['latestArxivVersion']
