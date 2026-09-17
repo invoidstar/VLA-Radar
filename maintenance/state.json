@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "timezone": "Asia/Singapore",
+  "initialBackfillFrom": "2026-09-01",
+  "lookbackDays": 14,
+  "lastSuccessfulSearchAt": null,
+  "lastAttemptAt": null,
+  "lastStatus": "not_run",
+  "lastSummary": "首批 46 篇记录来自既有 2026 年 7—8 月阅读库；迁移不表示进行过新的全网检索或全文复核。首次周更回补 2026 年 9 月。"
+}

@@ -1,0 +1,74 @@
+name: Validate and deploy VLA Radar
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      ready: ${{ steps.ready.outputs.ready }}
+      pages_enabled: ${{ steps.pages.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for the imported catalog
+        id: ready
+        run: |
+          if test -f data/papers.json && test -f index.html; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'Site import has not completed for this commit. This run does not publish a placeholder.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Validate public catalog and application syntax
+        if: steps.ready.outputs.ready == 'true'
+        run: |
+          python validate.py
+          python scripts/check_catalog.py
+          node --check app.js
+      - name: Check Pages enablement
+        if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          enabled=$(gh api "repos/$GITHUB_REPOSITORY" --jq '.has_pages')
+          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
+          if test "$enabled" != 'true'; then
+            echo 'Validation passed, but Pages is not enabled. Open Settings → Pages, select GitHub Actions as Source, then manually run this workflow. No site deployment occurred.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Stage public site files only
+        if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
+        run: |
+          mkdir -p _site/data
+          cp index.html styles.css app.js favicon.svg _site/
+          cp data/papers.json _site/data/
+          touch _site/.nojekyll
+      - name: Upload static site
+        if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.validate.outputs.ready == 'true' && needs.validate.outputs.pages_enabled == 'true'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the validated site
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,35 @@
+name: Import verified site snapshot
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-site.yml'
+      - 'scripts/import_legacy.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: one-time-site-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Import the pinned public snapshot and validate
+        run: python scripts/import_legacy.py
+      - name: Commit only the verified site files
+        run: |
+          git add README.md app.js styles.css favicon.svg index.html data/papers.json validate.py maintenance/migration.json
+          if git diff --cached --quiet; then
+            echo 'No import changes; existing catalog was not overwritten.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Migrate verified VLA Radar snapshot and preserve 46 paper records'
+          git push origin HEAD:main
+          echo 'Imported 46 records with source hash verification. See maintenance/migration.json. Pages enablement is separate from file migration.' >> "$GITHUB_STEP_SUMMARY"
