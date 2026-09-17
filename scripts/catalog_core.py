@@ -94,7 +94,7 @@ def validate_record(rec, topic_ids=None):
         keys(e,EVENT_KEYS,'event'); day(e['date'],partial=True); day(e['observedAt'],False); public_url(e['source'])
         for k in ('kind','venue','note'): require(isinstance(e[k],str),'event text')
     if pub['status'] in {'accepted','published','withdrawn'}: require(any(e['kind']==pub['status'] for e in pub['history']),'verified lifecycle status requires a source event')
-    note=rec['note']; keys(note,NOTE_KEYS,'note'); require(note['status'] in {'legacy','expanded','needs_review'},'note status')
+    note=rec['note']; keys(note,NOTE_KEYS | (set(note) & {'coverage','figures','tables','benchmarkReview'}),'note'); require(note['status'] in {'legacy','expanded','needs_review'},'note status')
     day(note['updatedAt'],False); day(note['verifiedAt']); require(isinstance(note['version'],str),'note version')
     require(isinstance(note['sections'],list) and note['sections'],'note sections')
     seen=set()
@@ -105,9 +105,13 @@ def validate_record(rec, topic_ids=None):
         if note['status']=='expanded': require(s['body'] and s['sources'],'expanded notes require content and citations')
     if note['status']=='expanded': require(note['verifiedAt'] and note['version'] and len(note['sections'])>=6,'expanded note coverage')
 
+    # source-scoped deep-note extensions
+    from note_quality import validate_note_extras
+    validate_note_extras(note, public_url, require)
+
 def validate_track(t):
     keys(t,TRACK_KEYS,'track'); require(re.fullmatch(r'[a-z0-9-]+',t['id']),'track id')
-    require(t['dataset'] in {'LIBERO','RoboTwin','RoboCasa'},'supported dataset family')
+    require(isinstance(t['dataset'],str) and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9 ._+()-]{0,59}',t['dataset']),'public benchmark family name')
     require(t['comparisonScope'] in {'protocol','paper-table'},'comparison scope')
     require(t['direction'] in {'higher','lower'},'metric direction')
     require(t['unit'] in {'percent','score','seconds'},'unit')
