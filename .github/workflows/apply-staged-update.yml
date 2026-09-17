@@ -36,15 +36,23 @@ jobs:
           node --check app.js
           node scripts/test_dates.cjs
           node scripts/test_urls.cjs
-      - name: Commit validated update to main
+      - name: Commit validated content update to main
         shell: bash
         run: |
           set -euo pipefail
+          # The Actions token may update repository content but may not modify workflow files.
+          # Keep workflow changes out of this bot push; the authenticated maintainer connector
+          # applies them separately after this validated content commit succeeds.
+          git checkout HEAD -- .github/workflows/site.yml
           rm -rf .update
-          rm -f .github/workflows/apply-staged-update.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
+          if ! git diff --cached --quiet -- .github/workflows; then
+            echo 'Refusing bot push because workflow files are staged.' >&2
+            git diff --cached -- .github/workflows >&2
+            exit 1
+          fi
           git diff --cached --check
           git commit -m "Expand landmark VLA papers and add ISO week filtering"
           git push origin HEAD:main
