@@ -1,0 +1,21 @@
+{
+  "id": "r-dp23-mh-last-lstm",
+  "paperId": "p055",
+  "method": "LSTM-GMM",
+  "trackId": "robomimic-dp23-image-mh-last10",
+  "values": {
+    "Lift": 95,
+    "Can": 90,
+    "Square": 38,
+    "Transport": 24
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table II, mh, last10 side",
+  "attribution": "reported-baseline",
+  "trainingData": "300MH demos/task; reproduced baseline",
+  "evaluationNotes": "Velocity control;3 seeds; actual22 initializations footnote retained.",
+  "supersedes": ""
+}

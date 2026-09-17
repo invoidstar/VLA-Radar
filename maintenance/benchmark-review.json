@@ -1,0 +1,13 @@
+{
+  "schemaVersion":1,
+  "reviewedAt":"2026-09-18",
+  "scope":"Only the six papers actually deepened in batches 1 and 2; not a full-catalog audit",
+  "papers":{
+    "p051":{"status":"extracted","trackIds":["rlbench-peract-100d"],"note":"PerAct Table1 full-task columns visually verified;100 demos/task only"},
+    "p061":{"status":"extracted","trackIds":["calvin-gr1-v2-abcd-chain","calvin-gr1-v2-abc-chain"],"note":"GR1 v2 Table1, average length only; split separated"},
+    "p068":{"status":"extracted","trackIds":["simpler-spatialvla-v1-google-vm","simpler-spatialvla-v1-google-va","simpler-spatialvla-v1-widowx"],"note":"SpatialVLA v1 TablesI–II, direct-eval rows; full-success columns"},
+    "p055":{"status":"extracted","trackIds":["robomimic-dp23-image-ph-last10","robomimic-dp23-image-ph-best","robomimic-dp23-image-mh-last10","pusht-dp23-image-coverage-last10","kitchen-dp23-state-last10"],"note":"RSS2023 TablesII/IV; original22-init footnote and566/656 demo-count conflict preserved"},
+    "p056":{"status":"extracted","trackIds":["aloha-act-v1-scripted50","aloha-act-v1-human50"],"note":"ACT v1 TableI final-stage values, scripted vs human separated"},
+    "p067":{"status":"deferred","trackIds":[],"note":"FAST v1 reports policy results primarily in plots; exact scores and full protocol require author data or explicit source values. Token counts are included in note only, not invented success-rate entries."}
+  }
+}

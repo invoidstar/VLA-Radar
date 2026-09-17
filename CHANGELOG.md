@@ -1,3 +1,7 @@
+## 2026-09-18 — 2026-09-18-action-models
+
+第二批：深入重写 Diffusion Policy、ACT/ALOHA、FAST 三篇阅读笔记，补充算法步骤、训练部署差异、真实消融、量化结果与原图定位。新增 RoboMimic、Push-T、Franka Kitchen、ALOHA-Sim 四个数据集系列，7个协议、21条核验结果；明确区分checkpoint、示范来源、图像/状态、覆盖率/成功率。Diffusion Policy原文22初始化更正脚注与Kitchen示范数冲突均保留。
+
 ## 2026-09-18 — 2026-09-18-spatial-memory
 
 第一批可验证增量：重写 PerAct、SpatialVLA、GR-1 深入笔记；新增 RLBench、SimplerEnv、CALVIN 三个数据集系列及六个独立协议，共18条来源定位结果。新增安全笔记表格、动态数据集导航，修复非百分比指标的详情显示。保留全部论文 ID、最早公开日期、KEY RESULT；不声明全库已深化或已完成本周检索。

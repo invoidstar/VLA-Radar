@@ -1,0 +1,19 @@
+{
+  "id": "r-act-v1-human-bet",
+  "paperId": "p056",
+  "method": "BeT (ACT paper implementation)",
+  "trackId": "aloha-act-v1-human50",
+  "values": {
+    "Cube Transfer": 1,
+    "Bimanual Insertion": 0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I: human right side, final columns",
+  "attribution": "reported-baseline",
+  "trainingData": "50 human demos/task; tuned baseline",
+  "evaluationNotes": "Evaluated zero retained; not missing. 3 seeds/50 episodes.",
+  "supersedes": ""
+}

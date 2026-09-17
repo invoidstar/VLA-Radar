@@ -69,83 +69,128 @@
     "alerts": []
   },
   "note": {
-    "status": "legacy",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": null,
-    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "status": "expanded",
+    "updatedAt": "2026-09-18",
+    "verifiedAt": "2026-09-18",
+    "version": "arXiv:2501.09747v1，Sec.III–VII、Algorithm 1、Table I及Appendix；官方FAST技术说明；不混用后续推理优化版本",
     "sections": [
       {
-        "id": "contribution",
-        "title": "核心贡献与方法概览",
-        "body": "使用频域压缩与字节对编码压缩连续动作块，避免逐时间步 / 逐维离散化产生冗长序列；FAST+ 使用跨机器人动作数据学习通用 tokenizer。",
+        "id": "question",
+        "title": "研究问题：为什么动作token越多，学习反而可能越差？",
+        "body": "传统动作离散化对每个时间、每个维度独立分箱。高频控制下相邻动作很接近，模型可以靠重复前一个token获得较低预测损失，却未必真正利用图像和语言决定轨迹。FAST通过先压缩动作时间序列，改变下一token预测的学习问题，而不是只为传输数据节省文件空间。\n这与减少机器人控制频率不同：输出仍可还原为原来的密集动作片段，只是模型在更紧凑的表示上预测。我的解读是，它把连续信号的时间相关性作为可利用结构；论证重点应是压缩如何影响表示、学习和部署，而不是把“token越少越好”当成无条件规律。",
         "sources": [
           {
-            "label": "arXiv · 元数据 / 首发记录",
-            "url": "https://arxiv.org/abs/2501.09747"
+            "label": "Sec.III–IV：独立分箱与插值案例",
+            "url": "https://arxiv.org/html/2501.09747v1#S4"
           },
           {
-            "label": "作者出版页 · RSS 2025",
-            "url": "https://www.oiermees.com/publication/fast/"
+            "label": "官方技术说明：动作冗余与训练",
+            "url": "https://www.pi.website/research/fast"
           }
         ]
       },
       {
-        "id": "results",
-        "title": "结果与实验结论",
-        "body": "摘要报告 FAST+ 使用约 100 万条动作轨迹；在约 1 万小时机器人数据上，FAST 训练的策略达到与扩散 VLA 相当的表现，训练速度最高约 5 倍。这里是训练加速，不是闭环控制频率提升 5 倍。",
+        "id": "encoding",
+        "title": "编码步骤：归一化→DCT→量化→按频率展开→BPE",
+        "body": "先按动作各维度的训练分位数归一化，再分别沿时间轴做离散余弦变换。接着把频域系数缩放并取整，使不重要的小系数变为零；把各动作维度的低频系数先排列，再训练BPE合并常见整数子序列。模型最终预测的是这些合并后的符号。\n其中DCT是解析变换，BPE词表才是需要从动作数据学习的部分。低频通常描述整段的总体变化，高频承载更快的细节，但不应理解成所有高频都会被固定删除。取整尺度决定哪些细节保留；尺度、动作归一化和片段时长一起影响误差，不能只复用一个词表却忽略前后处理。",
         "sources": [
           {
-            "label": "arXiv · 元数据 / 首发记录",
-            "url": "https://arxiv.org/abs/2501.09747"
-          },
-          {
-            "label": "作者出版页 · RSS 2025",
-            "url": "https://www.oiermees.com/publication/fast/"
+            "label": "Sec.V-A–B、Algorithm 1、Fig.4",
+            "url": "https://arxiv.org/html/2501.09747v1#S5"
           }
         ]
       },
       {
-        "id": "limits",
-        "title": "适用范围与限制",
-        "body": "自回归推理仍需逐 token 解码；token 压缩和训练吞吐收益不能直接替代部署时延结论。",
+        "id": "decoding",
+        "title": "解码与误差：BPE可逆，不代表整个动作编码无损",
+        "body": "预测出的token先经BPE逆变换还原量化系数，再恢复矩阵、反缩放、逆DCT、反归一化，得到连续动作。BPE对其输入整数序列可以无损还原，但之前的系数量化已经丢弃部分信息；因此整个动作管线存在压缩率与重建误差的权衡。\n一个重要阅读检查是分别报告离线重建质量与闭环任务成功。重建均方误差很小，不保证接触关键时刻的微小动作误差无害；反之，某些轨迹差异不一定影响任务。我的分析是，通用tokenizer应当以控制相关的误差验证，而不能仅用压缩比定义好坏；本文实验也没有把离线压缩等同于所有本体的控制能力。",
         "sources": [
           {
-            "label": "arXiv · 元数据 / 首发记录",
-            "url": "https://arxiv.org/abs/2501.09747"
+            "label": "Sec.V-B：编码/解码与量化",
+            "url": "https://arxiv.org/html/2501.09747v1#S5.SS2"
           },
           {
-            "label": "作者出版页 · RSS 2025",
-            "url": "https://www.oiermees.com/publication/fast/"
+            "label": "Appendix B：压缩与重建权衡",
+            "url": "https://arxiv.org/html/2501.09747v1#A2"
           }
         ]
       },
       {
-        "id": "insight",
-        "title": "阅读启示",
-        "body": "动作序列的编码方式会同时改变学习难度和计算量；训练效率与推理效率应拆开评价。",
+        "id": "training",
+        "title": "FAST、FAST+与策略训练：三种学习对象别混淆",
+        "body": "FAST是动作编码方法；FAST+是在跨本体数据上得到的可复用词表；π0-FAST则是使用这种动作目标训练的策略。复用tokenizer不会自动得到训练好的视觉语言控制策略。原文约百万个样本在方法段明确为一秒动作片段，不应误写成百万次独立完整任务演示。\n策略仍需用图像、语言和目标动作token学习条件预测。原文主要骨干与OpenVLA对照具有不同初始化及接口改动，因此比较时应分清更换tokenizer、扩展多图输入和训练数据变化。我的解读是，词表迁移降低了重做编码器的成本，但跨机器人动作语义、归一化和部署反馈仍然需要明确约定。",
         "sources": [
           {
-            "label": "arXiv · 元数据 / 首发记录",
-            "url": "https://arxiv.org/abs/2501.09747"
+            "label": "Sec.V-C、VI-A：FAST+与策略设置",
+            "url": "https://arxiv.org/html/2501.09747v1#S5.SS3"
           },
           {
-            "label": "作者出版页 · RSS 2025",
-            "url": "https://www.oiermees.com/publication/fast/"
+            "label": "官方说明：FAST+发布与使用边界",
+            "url": "https://www.pi.website/research/fast"
           }
         ]
       },
       {
-        "id": "focus",
-        "title": "方法、创新与消融的阅读重点",
-        "body": "DCT / BPE、动作压缩与重建、训练吞吐的比较口径。",
+        "id": "compression",
+        "title": "量化证据：节省token的程度依赖频率与动作维度",
+        "body": "下表重排v1 Table I，都是一秒动作片段的平均token数，属于表示效率，不是机器人成功率榜。\n\n| 数据 | 动作维度／频率 | 独立分箱token | FAST token |\n|---|---|---|---|\n| BridgeV2 | 7／5Hz | 35 | 20 |\n| DROID | 7／15Hz | 105 | 29 |\n| Table Bussing | 7／20Hz | 140 | 28 |\n| Shirt Folding | 14／50Hz | 700 | 53 |\n\n高频序列节省更多，与减少相邻时间冗余的动机一致，但这是在文中相近重建精度下的对照。不能把700→53直接写成推理快13.2倍，因为生成耗时还受网络大小、缓存、批量、采样方式和控制等待影响；也不能把这些token计数加入成功率排行榜。",
         "sources": [
           {
-            "label": "arXiv · 元数据 / 首发记录",
-            "url": "https://arxiv.org/abs/2501.09747"
+            "label": "Table I：token数量及重建精度说明",
+            "url": "https://arxiv.org/html/2501.09747v1#S6.SS2"
+          }
+        ]
+      },
+      {
+        "id": "speed",
+        "title": "最容易误读的结果：训练更快，但原版推理更慢",
+        "body": "原文报告大规模训练达到相近表现所需GPU小时最高减少约5倍；另一个单数据集对照是约3倍更少训练步，两者不是同一统计。v1还明确报告：在RTX4090上生成一秒动作，扩散π0约100毫秒，π0-FAST约750毫秒。它使用完整语言骨干进行更多自回归步骤，而扩散版本使用较小动作专家。\n因此，FAST名称不能直接等同于更快的控制反馈。训练成本、单片段生成延迟和机器人实际频率必须分别看。我的分析是，这篇论文最有价值的取舍之一恰是训练效率与部署效率不一致：对静态操作可接受的等待，未必适用于快速动态接触；不能用后来优化版本的延迟替换本论文的原始证据。",
+        "sources": [
+          {
+            "label": "Sec.VI-E：RTX4090推理延迟比较",
+            "url": "https://arxiv.org/html/2501.09747v1#S6.SS5"
           },
           {
-            "label": "作者出版页 · RSS 2025",
-            "url": "https://www.oiermees.com/publication/fast/"
+            "label": "Sec.VI-F：大规模训练GPU小时",
+            "url": "https://arxiv.org/html/2501.09747v1#S6.SS6"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "消融与泛化：少token不是唯一变量，离线跨本体也不等于闭环泛化",
+        "body": "作者用合成曲线改变采样频率，保持底层信号任务不变，展示独立分箱在高相关序列中的学习问题。真实实验进一步比较FAST、FAST+、无BPE和学习式量化，并在OpenVLA骨干上测试动作编码。无BPE保留大量零系数token，仍有较长序列，因此DCT和压缩组合各自承担不同作用。\n需要区分两种“未见”：FAST+离线压缩测试使用未参与tokenizer训练的数据；部分真实策略评测的数据则出现在词表训练混合中。前者证明编码迁移，后者衡量策略行为，不能互相替代。原文对移动机器人、灵巧手等离线结果也没有宣称已完成同等范围的真实闭环控制。",
+        "sources": [
+          {
+            "label": "Sec.IV：受控插值实验",
+            "url": "https://arxiv.org/html/2501.09747v1#S4"
+          },
+          {
+            "label": "Sec.VI-C–D：通用编码及消融",
+            "url": "https://arxiv.org/html/2501.09747v1#S6.SS3"
+          },
+          {
+            "label": "Sec.VII：本体与推理局限",
+            "url": "https://arxiv.org/html/2501.09747v1#S7"
+          }
+        ]
+      },
+      {
+        "id": "reading",
+        "title": "图表导读与榜单处理：不从曲线猜出精确成功率",
+        "body": "先看Fig.4和Algorithm 1逐步检查编码，再用Table I理解压缩率，接着看Fig.6与Fig.9–11区分tokenizer对照、单数据集训练与大规模策略。本文把很多成功率绘成曲线或柱图；本次只摘取正文和表格明确给出的数字，没有靠估读像素造出两位小数的榜单条目。\nFAST本轮榜单处理状态为“策略分数待取得精确表值或作者数据”，不是“没有做评测”。后续取得明确数值时，还要标明LIBERO套件、DROID具体评测环境与控制设置。可迁移思想是让动作目标承载更高有效信息，但它不自动解决语言可靠性、因果推理、实时闭环或任务级记忆。",
+        "sources": [
+          {
+            "label": "Fig.4与Algorithm 1：原图/算法入口",
+            "url": "https://arxiv.org/html/2501.09747v1#S5"
+          },
+          {
+            "label": "Fig.6、9–11：实验设置与结果图",
+            "url": "https://arxiv.org/html/2501.09747v1#S6"
+          },
+          {
+            "label": "作者技术页及结果视频",
+            "url": "https://www.pi.website/research/fast"
           }
         ]
       }

@@ -1,0 +1,21 @@
+{
+  "id": "r-dp23-kitchen-lstm",
+  "paperId": "p055",
+  "method": "LSTM-GMM",
+  "trackId": "kitchen-dp23-state-last10",
+  "values": {
+    "At least 1": 100,
+    "At least 2": 90,
+    "At least 3": 74,
+    "At least 4": 34
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=7",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table IV, Kitchen p1–p4",
+  "attribution": "reported-baseline",
+  "trainingData": "Authors' baseline;source demonstration count conflict retained",
+  "evaluationNotes": "Different action-space settings; no fairness ranks; three seeds and last10 aggregation.",
+  "supersedes": ""
+}

@@ -1,0 +1,22 @@
+{
+  "id": "r-dp23-ph-last-t",
+  "paperId": "p055",
+  "method": "DiffusionPolicy-T",
+  "trackId": "robomimic-dp23-image-ph-last10",
+  "values": {
+    "Lift": 100,
+    "Can": 98,
+    "Square": 90,
+    "Transport": 81,
+    "ToolHang": 47
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table II, ph, last10 side",
+  "attribution": "author-reported",
+  "trainingData": "200PH demos/task; visual Transformer; 3000epochs",
+  "evaluationNotes": "Actual22 initializations per footnote; ToolHang underperforms LSTM-GMM on this aggregate, retained.",
+  "supersedes": ""
+}

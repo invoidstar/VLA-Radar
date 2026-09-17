@@ -19,6 +19,26 @@
         "calvin-gr1-v2-abc-chain"
       ],
       "results": 18
+    },
+    {
+      "id": "2026-09-18-action-models",
+      "sha256": "8c4c1a2c7c6efa2887e2c045e1966a320a7b95e42820fe6bb7635cb659537e2d",
+      "date": "2026-09-18",
+      "notes": [
+        "p055",
+        "p056",
+        "p067"
+      ],
+      "tracks": [
+        "robomimic-dp23-image-ph-last10",
+        "robomimic-dp23-image-ph-best",
+        "robomimic-dp23-image-mh-last10",
+        "pusht-dp23-image-coverage-last10",
+        "kitchen-dp23-state-last10",
+        "aloha-act-v1-scripted50",
+        "aloha-act-v1-human50"
+      ],
+      "results": 21
     }
   ]
 }

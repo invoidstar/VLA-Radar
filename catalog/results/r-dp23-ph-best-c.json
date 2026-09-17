@@ -1,0 +1,22 @@
+{
+  "id": "r-dp23-ph-best-c",
+  "paperId": "p055",
+  "method": "DiffusionPolicy-C",
+  "trackId": "robomimic-dp23-image-ph-best",
+  "values": {
+    "Lift": 100,
+    "Can": 100,
+    "Square": 98,
+    "Transport": 100,
+    "ToolHang": 95
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table II, ph, left of slash (best)",
+  "attribution": "author-reported",
+  "trainingData": "200PH demos/task; image 3000epochs",
+  "evaluationNotes": "Best-checkpoint selection; actual22 initializations per footnote; not last checkpoint.",
+  "supersedes": ""
+}

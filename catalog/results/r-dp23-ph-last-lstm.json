@@ -1,0 +1,22 @@
+{
+  "id": "r-dp23-ph-last-lstm",
+  "paperId": "p055",
+  "method": "LSTM-GMM",
+  "trackId": "robomimic-dp23-image-ph-last10",
+  "values": {
+    "Lift": 96,
+    "Can": 88,
+    "Square": 59,
+    "Transport": 62,
+    "ToolHang": 49
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table II, ph, last10 side",
+  "attribution": "reported-baseline",
+  "trainingData": "200PH demos/task; authors' reproduced BC-RNN/LSTM-GMM",
+  "evaluationNotes": "Velocity control differs from DP position control;3 seeds; actual22 initializations noted.",
+  "supersedes": ""
+}
