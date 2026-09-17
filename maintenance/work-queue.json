@@ -9,24 +9,6 @@
       "latestVersion": "v2"
     },
     {
-      "paperId": "p034",
-      "reason": "legacy",
-      "readVersion": "7月首次公开｜阅读v1",
-      "latestVersion": null
-    },
-    {
-      "paperId": "p035",
-      "reason": "legacy",
-      "readVersion": "7月正式会议发表；2月已有预印本",
-      "latestVersion": null
-    },
-    {
-      "paperId": "p036",
-      "reason": "legacy",
-      "readVersion": "7月正式会议发表；6月已有预印本｜数据取v1",
-      "latestVersion": null
-    },
-    {
       "paperId": "p039",
       "reason": "legacy",
       "readVersion": "7月正式会议发表；6月已有预印本｜阅读v1",
@@ -49,6 +31,24 @@
       "reason": "legacy",
       "readVersion": "arXiv 元数据；官方项目页 2022-08 更新结果",
       "latestVersion": null
+    },
+    {
+      "paperId": "p052",
+      "reason": "legacy",
+      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p055",
+      "reason": "legacy",
+      "readVersion": "arXiv v5（2024-03-14）摘要；RSS 2023 的扩展版本",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p056",
+      "reason": "legacy",
+      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "latestVersion": null
     }
   ],
   "metadata": {
@@ -59,7 +59,7 @@
       "p046"
     ]
   },
-  "remainingNotes": 46,
+  "remainingNotes": 40,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."
