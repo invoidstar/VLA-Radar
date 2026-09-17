@@ -9,6 +9,7 @@
 - 新增日期模块和日期回归测试；发布制品加入 dates.js。
 - 本次为历史关键文献定向补充，不是 9 月全量检索；不推进 maintenance/state.json 的周更检查点。
 - 文献清单和证据边界见 maintenance/landmarks-2026-09.md；周检索维护说明见 maintenance/week-search.md。
+- 周日定时维护调整为人工审核流程：自动任务只创建 `weekly-update-YYYY-MM-DD` 分支和 PR，不直接修改 `main`，不自动合并；维护者审核后手动合并。交互式明确要求的即时更新仍可在完整验证后直接 fast-forward 到 `main`。
 
 ## 2026-09-17 — 独立仓库迁移
 
