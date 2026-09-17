@@ -1,0 +1,21 @@
+{
+  "id": "r-spatialvla-v1-vm",
+  "paperId": "p068",
+  "method": "SpatialVLA zero-shot",
+  "trackId": "simpler-spatialvla-v1-google-vm",
+  "values": {
+    "Pick Coke Can": 81.0,
+    "Move Near": 69.6,
+    "Open/Close Drawer": 59.3,
+    "Average": 71.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2501.15830v1#S4",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I: Visual Matching, zero-shot row",
+  "attribution": "author-reported",
+  "trainingData": "OXE+RH20T mixture; no Fractal fine-tuning for this row",
+  "evaluationNotes": "Average retained exactly as reported; not recomputed from three displayed columns",
+  "supersedes": ""
+}

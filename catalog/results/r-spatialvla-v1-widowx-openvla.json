@@ -1,0 +1,22 @@
+{
+  "id": "r-spatialvla-v1-widowx-openvla",
+  "paperId": "p068",
+  "method": "OpenVLA",
+  "trackId": "simpler-spatialvla-v1-widowx",
+  "values": {
+    "Spoon on towel": 0.0,
+    "Carrot on plate": 0.0,
+    "Stack block": 0.0,
+    "Eggplant in basket": 4.1,
+    "Average": 1.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2501.15830v1#S4",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table II: OpenVLA Success columns",
+  "attribution": "reported-baseline",
+  "trainingData": "Referenced OpenVLA pretraining recipe",
+  "evaluationNotes": "Reported zeros are evaluated failures, not missing entries",
+  "supersedes": ""
+}

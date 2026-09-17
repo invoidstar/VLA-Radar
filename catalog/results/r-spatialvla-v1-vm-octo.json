@@ -1,0 +1,21 @@
+{
+  "id": "r-spatialvla-v1-vm-octo",
+  "paperId": "p068",
+  "method": "Octo-Base",
+  "trackId": "simpler-spatialvla-v1-google-vm",
+  "values": {
+    "Pick Coke Can": 17.0,
+    "Move Near": 4.2,
+    "Open/Close Drawer": 22.7,
+    "Average": 16.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2501.15830v1#S4",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I: Visual Matching, Octo-Base row",
+  "attribution": "reported-baseline",
+  "trainingData": "Octo OXE pretraining; different model and mixture budget",
+  "evaluationNotes": "Original reported average; not inferred arithmetic mean",
+  "supersedes": ""
+}

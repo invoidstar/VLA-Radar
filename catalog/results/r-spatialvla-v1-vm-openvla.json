@@ -1,0 +1,21 @@
+{
+  "id": "r-spatialvla-v1-vm-openvla",
+  "paperId": "p068",
+  "method": "OpenVLA",
+  "trackId": "simpler-spatialvla-v1-google-vm",
+  "values": {
+    "Pick Coke Can": 16.3,
+    "Move Near": 46.2,
+    "Open/Close Drawer": 35.6,
+    "Average": 27.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2501.15830v1#S4",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I: Visual Matching, OpenVLA row",
+  "attribution": "reported-baseline",
+  "trainingData": "OpenVLA pretraining recipe as referenced by reporting paper; not budget matched",
+  "evaluationNotes": "Reporting paper's simulator/configuration; not a global model score",
+  "supersedes": ""
+}

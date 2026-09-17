@@ -1,0 +1,18 @@
+{
+  "id": "r-gr1-abcd-length",
+  "paperId": "p061",
+  "method": "GR-1",
+  "trackId": "calvin-gr1-v2-abcd-chain",
+  "values": {
+    "Average length": 4.21
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/pdf/2312.13139v2#page=6",
+  "sourceVersion": "arXiv v2",
+  "locator": "Table 1, ABCD→D, Avg. Len.",
+  "attribution": "author-reported",
+  "trainingData": "Video pretraining then full ABCD robot-language data",
+  "evaluationNotes": "Average tasks completed out of five; not percent; Table 1 visually checked",
+  "supersedes": ""
+}

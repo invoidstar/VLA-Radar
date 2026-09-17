@@ -1,0 +1,18 @@
+{
+  "id": "r-gr1-abcd-hulc",
+  "paperId": "p061",
+  "method": "HULC",
+  "trackId": "calvin-gr1-v2-abcd-chain",
+  "values": {
+    "Average length": 3.06
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/pdf/2312.13139v2#page=6",
+  "sourceVersion": "arXiv v2",
+  "locator": "Table 1, ABCD→D, HULC Avg. Len.",
+  "attribution": "reported-baseline",
+  "trainingData": "Baseline training recipe in reporting paper; ABCD split",
+  "evaluationNotes": "Includes seen D training environment; not ABC→D",
+  "supersedes": ""
+}

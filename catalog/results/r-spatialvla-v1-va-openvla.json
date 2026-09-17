@@ -1,0 +1,21 @@
+{
+  "id": "r-spatialvla-v1-va-openvla",
+  "paperId": "p068",
+  "method": "OpenVLA",
+  "trackId": "simpler-spatialvla-v1-google-va",
+  "values": {
+    "Pick Coke Can": 54.5,
+    "Move Near": 47.7,
+    "Open/Close Drawer": 17.7,
+    "Average": 39.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2501.15830v1#S4",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I: Variant Aggregation, OpenVLA row",
+  "attribution": "reported-baseline",
+  "trainingData": "Referenced OpenVLA recipe; not budget matched",
+  "evaluationNotes": "Different visual-variation protocol from VM; not combined into one ranking",
+  "supersedes": ""
+}

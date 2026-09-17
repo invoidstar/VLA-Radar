@@ -107,7 +107,7 @@ def validate_record(rec, topic_ids=None):
 
 def validate_track(t):
     keys(t,TRACK_KEYS,'track'); require(re.fullmatch(r'[a-z0-9-]+',t['id']),'track id')
-    require(t['dataset'] in {'LIBERO','RoboTwin','RoboCasa'},'supported dataset family')
+    require(isinstance(t['dataset'],str) and re.fullmatch(r'[A-Za-z][A-Za-z0-9 +._-]{1,50}',t['dataset']),'invalid dataset family')
     require(t['comparisonScope'] in {'protocol','paper-table'},'comparison scope')
     require(t['direction'] in {'higher','lower'},'metric direction')
     require(t['unit'] in {'percent','score','seconds'},'unit')
