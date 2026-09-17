@@ -1,0 +1,50 @@
+name: Materialize reviewed VLA Radar v2 migration
+on:
+  push:
+    branches: [feature/vla-radar-v2-2026-09-17]
+    paths: [maintenance/v2-ready.json]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: vla-radar-v2-migration
+  cancel-in-progress: false
+jobs:
+  materialize:
+    if: github.ref == 'refs/heads/feature/vla-radar-v2-2026-09-17'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/vla-radar-v2-2026-09-17
+          fetch-depth: 0
+      - name: Materialize the reviewed migration on this feature branch only
+        run: |
+          test "$(git branch --show-current)" = 'feature/vla-radar-v2-2026-09-17'
+          test -f maintenance/v2-ready.json
+          python scripts/upgrade_v2.py
+          python scripts/build_catalog.py
+          python validate.py
+          python -m unittest discover -s tests -p 'test_*.py'
+          node scripts/test_v2.cjs
+          node scripts/test_dates.cjs
+          node scripts/test_urls.cjs
+          node --check app.js
+          node --check radar.js
+          git add catalog data app.js index.html maintenance/catalog-migration.json maintenance/v2-migration.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Materialize lossless v2 paper sources and validated static artifacts'
+            git push origin HEAD:refs/heads/feature/vla-radar-v2-2026-09-17
+          fi
+      - name: Export the resulting public repository for verification
+        run: git archive --format=tar HEAD > vla-radar-v2-source.tar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vla-radar-v2-source
+          path: vla-radar-v2-source.tar
+          retention-days: 7
