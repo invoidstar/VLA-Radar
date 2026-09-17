@@ -1,0 +1,56 @@
+name: Prepare validated content batch
+on:
+  push:
+    branches: ['release/batch-*']
+    paths: ['maintenance/batches/*.json']
+permissions:
+  contents: write
+concurrency:
+  group: content-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply pending public batches and rebuild
+        run: |
+          set -eu
+          python scripts/upgrade_batch_ui.py
+          for batch in maintenance/batches/*.json; do
+            python scripts/apply_content_batch.py "$batch"
+          done
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Commit validated outputs to this release branch only
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          case "$BRANCH" in release/batch-*) ;; *) exit 1 ;; esac
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; refusing overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog/papers catalog/results catalog/benchmarks.json catalog/manifest.json data maintenance/work-queue.json maintenance/applied-batches.json CHANGELOG.md research.js research.css scripts/catalog_core.py scripts/validate_all.py
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build and validate sourced content batch'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-content-batch
+          path: |
+            catalog/
+            data/
+            maintenance/
+            scripts/
+            tests/
+            *.js
+            *.css
+            *.html
+            *.md
+            *.py
+            *.svg
