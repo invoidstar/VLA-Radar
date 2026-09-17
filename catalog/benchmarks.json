@@ -161,6 +161,141 @@
         "Average"
       ],
       "source": "https://arxiv.org/html/2607.15330v2"
+    },
+    {
+      "id": "rlbench-peract-100d",
+      "dataset": "RLBench",
+      "name": "RLBench · PerAct原文 · 18任务/100示范",
+      "version": "PerAct CoRL2022 task setup",
+      "tasks": "18 tasks / 249 variations",
+      "split": "100 demonstrations per task",
+      "metric": "Full task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "四视角RGB-D；每任务25回合，共450回合；关键帧动作与规划器。保留原文18任务列，不新增未经报告的平均分；本次为同文方法/消融对照。",
+      "trainingRegime": "每任务100示范；原文多任务训练；seed数不作推断",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Open drawer",
+        "Slide block",
+        "Sweep",
+        "Meat off grill",
+        "Turn tap",
+        "Put in drawer",
+        "Close jar",
+        "Drag stick",
+        "Stack blocks",
+        "Screw bulb",
+        "Put in safe",
+        "Place wine",
+        "Put in cupboard",
+        "Sort shape",
+        "Push buttons",
+        "Insert peg",
+        "Stack cups",
+        "Place cups"
+      ],
+      "source": "https://peract.github.io/paper/peract_corl2022.pdf#page=7"
+    },
+    {
+      "id": "simpler-spatialvla-v1-google-vm",
+      "dataset": "SimplerEnv",
+      "name": "SimplerEnv · Google VM · SpatialVLA v1直接评测",
+      "version": "SpatialVLA v1 Table I",
+      "tasks": "Google: Pick Coke Can / Move Near / Open-Close Drawer",
+      "split": "Visual Matching; no additional target-dataset fine-tuning rows",
+      "metric": "Success rate; original reported aggregation",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "仅收录直接评测行，VM与VA拆开。Average保留原文聚合，不用可见三列算术平均代替。不是跨版本全量榜。",
+      "trainingRegime": "各方法机器人预训练混合不同；SpatialVLA为OXE+RH20T；不认为算力或数据完全相同",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Pick Coke Can",
+        "Move Near",
+        "Open/Close Drawer",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2501.15830v1#S4"
+    },
+    {
+      "id": "simpler-spatialvla-v1-google-va",
+      "dataset": "SimplerEnv",
+      "name": "SimplerEnv · Google VA · SpatialVLA v1直接评测",
+      "version": "SpatialVLA v1 Table I",
+      "tasks": "Google: Pick Coke Can / Move Near / Open-Close Drawer",
+      "split": "Variant Aggregation; no additional target-dataset fine-tuning rows",
+      "metric": "Success rate; original reported aggregation",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "外观变体聚合，与Visual Matching独立；Average按原表记录。未从摘要推断评测次数或种子。",
+      "trainingRegime": "方法间预训练数据和预算不同；仅作为原文对照表",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Pick Coke Can",
+        "Move Near",
+        "Open/Close Drawer",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2501.15830v1#S4"
+    },
+    {
+      "id": "simpler-spatialvla-v1-widowx",
+      "dataset": "SimplerEnv",
+      "name": "SimplerEnv · WidowX · SpatialVLA v1直接评测",
+      "version": "SpatialVLA v1 Table II",
+      "tasks": "Spoon / Carrot / Stack block / Eggplant",
+      "split": "Zero-shot rows from Table II",
+      "metric": "Full task success rate, not intermediate grasp success",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "只记录完整任务Success子列；Grasp中间子列不替代完整成功。不同机器人不合榜。",
+      "trainingRegime": "不同预训练数据预算；不包含Bridge微调行",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spoon on towel",
+        "Carrot on plate",
+        "Stack block",
+        "Eggplant in basket",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2501.15830v1#S4"
+    },
+    {
+      "id": "calvin-gr1-v2-abcd-chain",
+      "dataset": "CALVIN",
+      "name": "CALVIN · ABCD→D · GR-1 v2平均链长",
+      "version": "GR-1 v2 Table 1",
+      "tasks": "34 skill types; chains of up to five instructions",
+      "split": "ABCD train -> D evaluation",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "D场景包含于训练；每步成功才继续下一步；平均链长范围0–5，不是百分数。只保留同文报告配置。",
+      "trainingRegime": "完整语言标注训练划分；各模型预训练不同，原文对照不声称统一预算",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/pdf/2312.13139v2#page=6"
+    },
+    {
+      "id": "calvin-gr1-v2-abc-chain",
+      "dataset": "CALVIN",
+      "name": "CALVIN · ABC→D · GR-1 v2未见场景平均链长",
+      "version": "GR-1 v2 Table 1",
+      "tasks": "34 skill types; chains of up to five instructions",
+      "split": "ABC train -> unseen D evaluation",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "D不参与机器人训练；与ABCD→D单独展示；平均链长0–5，不能与百分比直接比较。",
+      "trainingRegime": "完整ABC语言标注数据；不同骨干预训练来源，非统一预算排名",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/pdf/2312.13139v2#page=6"
     }
   ]
 }

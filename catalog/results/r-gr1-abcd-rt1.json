@@ -1,0 +1,18 @@
+{
+  "id": "r-gr1-abcd-rt1",
+  "paperId": "p061",
+  "method": "RT-1 (GR-1 paper implementation)",
+  "trackId": "calvin-gr1-v2-abcd-chain",
+  "values": {
+    "Average length": 2.45
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/pdf/2312.13139v2#page=6",
+  "sourceVersion": "arXiv v2",
+  "locator": "Table 1, ABCD→D, RT-1 Avg. Len.",
+  "attribution": "reported-baseline",
+  "trainingData": "CALVIN RT-1 baseline implementation; not original Google robot checkpoint",
+  "evaluationNotes": "Model-name provenance explicitly retained; no cross-dataset score substitution",
+  "supersedes": ""
+}

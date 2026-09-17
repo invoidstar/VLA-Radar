@@ -1,0 +1,18 @@
+{
+  "id": "r-gr1-abc-hulc",
+  "paperId": "p061",
+  "method": "HULC",
+  "trackId": "calvin-gr1-v2-abc-chain",
+  "values": {
+    "Average length": 0.67
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/pdf/2312.13139v2#page=6",
+  "sourceVersion": "arXiv v2",
+  "locator": "Table 1, ABC→D, HULC Avg. Len.",
+  "attribution": "reported-baseline",
+  "trainingData": "Baseline recipe using ABC split",
+  "evaluationNotes": "Different benchmark setup from later HULC reports; original row retained",
+  "supersedes": ""
+}

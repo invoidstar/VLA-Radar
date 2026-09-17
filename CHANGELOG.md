@@ -1,3 +1,7 @@
+## 2026-09-18 — 2026-09-18-spatial-memory
+
+第一批可验证增量：重写 PerAct、SpatialVLA、GR-1 深入笔记；新增 RLBench、SimplerEnv、CALVIN 三个数据集系列及六个独立协议，共18条来源定位结果。新增安全笔记表格、动态数据集导航，修复非百分比指标的详情显示。保留全部论文 ID、最早公开日期、KEY RESULT；不声明全库已深化或已完成本周检索。
+
 
 ## 2026-09-17 · V2 lifecycle, notes and evidence-scoped leaderboards
 

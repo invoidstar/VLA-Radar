@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "batches": [
+    {
+      "id": "2026-09-18-spatial-memory",
+      "sha256": "cb8a24c0a3bb8dbff9a14099647539ec9d5d94a7176e4f0365d568bd4dd541c8",
+      "date": "2026-09-18",
+      "notes": [
+        "p051",
+        "p068",
+        "p061"
+      ],
+      "tracks": [
+        "rlbench-peract-100d",
+        "simpler-spatialvla-v1-google-vm",
+        "simpler-spatialvla-v1-google-va",
+        "simpler-spatialvla-v1-widowx",
+        "calvin-gr1-v2-abcd-chain",
+        "calvin-gr1-v2-abc-chain"
+      ],
+      "results": 18
+    }
+  ]
+}

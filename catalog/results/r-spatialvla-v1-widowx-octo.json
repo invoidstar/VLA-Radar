@@ -1,0 +1,22 @@
+{
+  "id": "r-spatialvla-v1-widowx-octo",
+  "paperId": "p068",
+  "method": "Octo-Base",
+  "trackId": "simpler-spatialvla-v1-widowx",
+  "values": {
+    "Spoon on towel": 12.5,
+    "Carrot on plate": 8.3,
+    "Stack block": 0.0,
+    "Eggplant in basket": 43.1,
+    "Average": 16.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2501.15830v1#S4",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table II: Octo-Base Success columns",
+  "attribution": "reported-baseline",
+  "trainingData": "Referenced Octo pretraining recipe",
+  "evaluationNotes": "Not Octo-Small; full completion only",
+  "supersedes": ""
+}
