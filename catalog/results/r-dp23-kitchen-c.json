@@ -1,0 +1,21 @@
+{
+  "id": "r-dp23-kitchen-c",
+  "paperId": "p055",
+  "method": "DiffusionPolicy-C",
+  "trackId": "kitchen-dp23-state-last10",
+  "values": {
+    "At least 1": 100,
+    "At least 2": 100,
+    "At least 3": 100,
+    "At least 4": 99
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=7",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table IV, Kitchen p1–p4",
+  "attribution": "author-reported",
+  "trainingData": "State 4500epochs; source demo count inconsistent: text566/TableIII656",
+  "evaluationNotes": "At least k object interactions; last10 checkpoints;3 seeds/50 initializations; not average chain length.",
+  "supersedes": ""
+}

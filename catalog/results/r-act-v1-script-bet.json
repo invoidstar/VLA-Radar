@@ -1,0 +1,19 @@
+{
+  "id": "r-act-v1-script-bet",
+  "paperId": "p056",
+  "method": "BeT (ACT paper implementation)",
+  "trackId": "aloha-act-v1-scripted50",
+  "values": {
+    "Cube Transfer": 27,
+    "Bimanual Insertion": 4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I: scripted left side, final columns",
+  "attribution": "reported-baseline",
+  "trainingData": "50 scripted demos/task; reporting paper's tuned baseline",
+  "evaluationNotes": "3seeds/50episodes; not an official universal BeT score.",
+  "supersedes": ""
+}

@@ -1,0 +1,22 @@
+{
+  "id": "r-dp23-ph-last-c",
+  "paperId": "p055",
+  "method": "DiffusionPolicy-C",
+  "trackId": "robomimic-dp23-image-ph-last10",
+  "values": {
+    "Lift": 100,
+    "Can": 97,
+    "Square": 92,
+    "Transport": 93,
+    "ToolHang": 73
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table II, ph, right of slash (last10)",
+  "attribution": "author-reported",
+  "trainingData": "200PH demos/task; visual policy; 3000epochs",
+  "evaluationNotes": "3 seeds; SecV-B footnote says actual22 initializations for RoboMimic, not table-caption50. Source fractions multiplied by100; position control.",
+  "supersedes": ""
+}

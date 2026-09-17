@@ -1,0 +1,22 @@
+{
+  "id": "r-dp23-ph-best-lstm",
+  "paperId": "p055",
+  "method": "LSTM-GMM",
+  "trackId": "robomimic-dp23-image-ph-best",
+  "values": {
+    "Lift": 100,
+    "Can": 100,
+    "Square": 82,
+    "Transport": 88,
+    "ToolHang": 68
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table II, ph, best side",
+  "attribution": "reported-baseline",
+  "trainingData": "200PH demos/task; reproduced baseline",
+  "evaluationNotes": "Different action space; source best-checkpoint values only; actual22 initializations.",
+  "supersedes": ""
+}

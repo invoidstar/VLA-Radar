@@ -297,9 +297,577 @@
         "Average length"
       ],
       "source": "https://arxiv.org/pdf/2312.13139v2#page=6"
+    },
+    {
+      "id": "robomimic-dp23-image-ph-last10",
+      "dataset": "RoboMimic",
+      "name": "RoboMimic · 图像/PH · DP23末10检查点",
+      "version": "Diffusion Policy RSS2023 Table II",
+      "tasks": "Lift / Can / Square / Transport / ToolHang",
+      "split": "Proficient-human demos; visual policy",
+      "metric": "Success rate, mean of last 10 checkpoints",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务200条PH示范；3训练种子；末10检查点。原表注称50初始化，但Sec.V-B脚注更正RoboMimic实际22，保留更正。DP位置控制与基线速度控制不同，作为原文对照不排名。",
+      "trainingRegime": "图像策略3000epochs；原文200PH示范/任务；非算力与控制空间完全匹配",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Lift",
+        "Can",
+        "Square",
+        "Transport",
+        "ToolHang"
+      ],
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6"
+    },
+    {
+      "id": "robomimic-dp23-image-ph-best",
+      "dataset": "RoboMimic",
+      "name": "RoboMimic · 图像/PH · DP23最佳检查点",
+      "version": "Diffusion Policy RSS2023 Table II",
+      "tasks": "Lift / Can / Square / Transport / ToolHang",
+      "split": "Proficient-human demos; visual policy",
+      "metric": "Best-checkpoint success rate, averaged across seeds",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "取TableII斜线左侧，不与末10检查点混排。3种子；实际22初始化见正文脚注。最佳检查点依赖选择方式，不视为最后模型的无偏测试保证。",
+      "trainingRegime": "200条PH/任务；图像3000epochs；动作空间按各方法最佳配置，非同接口控制消融",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Lift",
+        "Can",
+        "Square",
+        "Transport",
+        "ToolHang"
+      ],
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6"
+    },
+    {
+      "id": "robomimic-dp23-image-mh-last10",
+      "dataset": "RoboMimic",
+      "name": "RoboMimic · 图像/MH · DP23末10检查点",
+      "version": "Diffusion Policy RSS2023 Table II",
+      "tasks": "Lift / Can / Square / Transport",
+      "split": "Multi-human demonstration mixture; visual policy",
+      "metric": "Success rate, mean of last 10 checkpoints",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "MH与PH独立；300条多操作者示范/任务；没有MH ToolHang值，不补0。3种子、实际22初始化见Sec.V-B脚注，末10检查点。",
+      "trainingRegime": "图像3000epochs；300MH示范/任务；控制空间存在方法差异",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Lift",
+        "Can",
+        "Square",
+        "Transport"
+      ],
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6"
+    },
+    {
+      "id": "pusht-dp23-image-coverage-last10",
+      "dataset": "Push-T",
+      "name": "Push-T · 仿真图像 · 目标覆盖率/末10检查点",
+      "version": "Diffusion Policy RSS2023 Table II / Sec.V-B",
+      "tasks": "Simulated Push-T, fixed target shape",
+      "split": "Visual policy; 200 demonstrations",
+      "metric": "Target-area coverage ratio, not binary success",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "覆盖率0–1；只收图像策略末10检查点平均；3种子、每次50初始条件；不与状态策略、最佳检查点或真实Push-T的终止成功混排。",
+      "trainingRegime": "200示范；3000epochs；DP与基线控制空间不同",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Coverage ratio"
+      ],
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6"
+    },
+    {
+      "id": "kitchen-dp23-state-last10",
+      "dataset": "Franka Kitchen",
+      "name": "Franka Kitchen · 状态输入 · DP23阶段完成比例",
+      "version": "Diffusion Policy RSS2023 Table IV",
+      "tasks": "7 interactable objects; up to four completed subgoals",
+      "split": "Human demonstrations; state observation",
+      "metric": "Fraction completing at least k subgoals",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "p1–p4分别表示至少完成对应数量目标；末10检查点，3种子/50初始化。不是语言条件CALVIN，不与其平均链长混排。原文示范数正文566与TableIII656冲突，暂不裁定。",
+      "trainingRegime": "状态策略4500epochs；示范数存在566/656原文冲突；控制空间及架构未完全统一",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "At least 1",
+        "At least 2",
+        "At least 3",
+        "At least 4"
+      ],
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=7"
+    },
+    {
+      "id": "aloha-act-v1-scripted50",
+      "dataset": "ALOHA-Sim",
+      "name": "ALOHA-Sim · ACT原文 · 脚本50示范",
+      "version": "ACT arXiv2304.13705v1 Table I",
+      "tasks": "Cube Transfer / Bimanual Insertion",
+      "split": "50 successful scripted demos per task",
+      "metric": "Full task success, final substage",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "MuJoCo双臂任务；3种子，每种子50次测试；只取Transfer与Insert最终列，不取Touched/Grasp等中间完成率；与人类示范独立。",
+      "trainingRegime": "50脚本示范/任务；作者各方法基线实现；输入/动作参数化不同，使用不排名对照",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Cube Transfer",
+        "Bimanual Insertion"
+      ],
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8"
+    },
+    {
+      "id": "aloha-act-v1-human50",
+      "dataset": "ALOHA-Sim",
+      "name": "ALOHA-Sim · ACT原文 · 人类50示范",
+      "version": "ACT arXiv2304.13705v1 Table I",
+      "tasks": "Cube Transfer / Bimanual Insertion",
+      "split": "50 successful human demos per task",
+      "metric": "Full task success, final substage",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "TableI分隔符右侧；3种子，每种子50次测试；不与脚本示范、真实机器人或中间抓取成功合并。",
+      "trainingRegime": "50人类示范/任务；基线使用论文实现，非各模型发布权重统一榜",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Cube Transfer",
+        "Bimanual Insertion"
+      ],
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8"
     }
   ],
   "results": [
+    {
+      "id": "r-act-v1-human-bet",
+      "paperId": "p056",
+      "method": "BeT (ACT paper implementation)",
+      "trackId": "aloha-act-v1-human50",
+      "values": {
+        "Cube Transfer": 1,
+        "Bimanual Insertion": 0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I: human right side, final columns",
+      "attribution": "reported-baseline",
+      "trainingData": "50 human demos/task; tuned baseline",
+      "evaluationNotes": "Evaluated zero retained; not missing. 3 seeds/50 episodes.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-act-v1-human-main",
+      "paperId": "p056",
+      "method": "ACT",
+      "trackId": "aloha-act-v1-human50",
+      "values": {
+        "Cube Transfer": 50,
+        "Bimanual Insertion": 20
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I: human-data right side, final columns",
+      "attribution": "author-reported",
+      "trainingData": "50 successful human demos per simulated task",
+      "evaluationNotes": "3seeds/50episodes; human-data condition separate from scripted condition.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-act-v1-human-vinn",
+      "paperId": "p056",
+      "method": "VINN",
+      "trackId": "aloha-act-v1-human50",
+      "values": {
+        "Cube Transfer": 0,
+        "Bimanual Insertion": 0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I: human right side, final columns",
+      "attribution": "reported-baseline",
+      "trainingData": "50 human demos/task; retrieval policy",
+      "evaluationNotes": "Actual evaluated zeros;3 seeds/50 episodes; not omitted evaluations.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-act-v1-script-bet",
+      "paperId": "p056",
+      "method": "BeT (ACT paper implementation)",
+      "trackId": "aloha-act-v1-scripted50",
+      "values": {
+        "Cube Transfer": 27,
+        "Bimanual Insertion": 4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I: scripted left side, final columns",
+      "attribution": "reported-baseline",
+      "trainingData": "50 scripted demos/task; reporting paper's tuned baseline",
+      "evaluationNotes": "3seeds/50episodes; not an official universal BeT score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-act-v1-script-main",
+      "paperId": "p056",
+      "method": "ACT",
+      "trackId": "aloha-act-v1-scripted50",
+      "values": {
+        "Cube Transfer": 86,
+        "Bimanual Insertion": 32
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I: scripted-data left side, final Transfer/Insert columns",
+      "attribution": "author-reported",
+      "trainingData": "50 scripted demos per simulated task",
+      "evaluationNotes": "3 training seeds,50 evaluations each;150/task. Not intermediate grasp success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-act-v1-script-vinn",
+      "paperId": "p056",
+      "method": "VINN",
+      "trackId": "aloha-act-v1-scripted50",
+      "values": {
+        "Cube Transfer": 3,
+        "Bimanual Insertion": 1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I: scripted left side, final columns",
+      "attribution": "reported-baseline",
+      "trainingData": "50 scripted demos/task; retrieval baseline",
+      "evaluationNotes": "3seeds/50episodes; demonstration access at inference retained as baseline distinction.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-kitchen-c",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-C",
+      "trackId": "kitchen-dp23-state-last10",
+      "values": {
+        "At least 1": 100,
+        "At least 2": 100,
+        "At least 3": 100,
+        "At least 4": 99
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=7",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table IV, Kitchen p1–p4",
+      "attribution": "author-reported",
+      "trainingData": "State 4500epochs; source demo count inconsistent: text566/TableIII656",
+      "evaluationNotes": "At least k object interactions; last10 checkpoints;3 seeds/50 initializations; not average chain length.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-kitchen-lstm",
+      "paperId": "p055",
+      "method": "LSTM-GMM",
+      "trackId": "kitchen-dp23-state-last10",
+      "values": {
+        "At least 1": 100,
+        "At least 2": 90,
+        "At least 3": 74,
+        "At least 4": 34
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=7",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table IV, Kitchen p1–p4",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors' baseline;source demonstration count conflict retained",
+      "evaluationNotes": "Different action-space settings; no fairness ranks; three seeds and last10 aggregation.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-kitchen-t",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-T",
+      "trackId": "kitchen-dp23-state-last10",
+      "values": {
+        "At least 1": 100,
+        "At least 2": 99,
+        "At least 3": 99,
+        "At least 4": 96
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=7",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table IV, Kitchen p1–p4",
+      "attribution": "author-reported",
+      "trainingData": "State4500epochs; unresolved566/656 source demo-count conflict",
+      "evaluationNotes": "Subgoal completion fractions multiplied100; not merged with CALVIN.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-mh-last-c",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-C",
+      "trackId": "robomimic-dp23-image-mh-last10",
+      "values": {
+        "Lift": 100,
+        "Can": 96,
+        "Square": 84,
+        "Transport": 69
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, mh, last10 side",
+      "attribution": "author-reported",
+      "trainingData": "300MH demos/task; image 3000epochs",
+      "evaluationNotes": "No MH ToolHang result invented; actual22 initializations; 3 seeds.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-mh-last-lstm",
+      "paperId": "p055",
+      "method": "LSTM-GMM",
+      "trackId": "robomimic-dp23-image-mh-last10",
+      "values": {
+        "Lift": 95,
+        "Can": 90,
+        "Square": 38,
+        "Transport": 24
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, mh, last10 side",
+      "attribution": "reported-baseline",
+      "trainingData": "300MH demos/task; reproduced baseline",
+      "evaluationNotes": "Velocity control;3 seeds; actual22 initializations footnote retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-mh-last-t",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-T",
+      "trackId": "robomimic-dp23-image-mh-last10",
+      "values": {
+        "Lift": 99,
+        "Can": 98,
+        "Square": 80,
+        "Transport": 50
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, mh, last10 side",
+      "attribution": "author-reported",
+      "trainingData": "300MH demos/task; image 3000epochs",
+      "evaluationNotes": "Multi-human is different from PH; 3 seeds, actual22 initializations.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-ph-best-c",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-C",
+      "trackId": "robomimic-dp23-image-ph-best",
+      "values": {
+        "Lift": 100,
+        "Can": 100,
+        "Square": 98,
+        "Transport": 100,
+        "ToolHang": 95
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, ph, left of slash (best)",
+      "attribution": "author-reported",
+      "trainingData": "200PH demos/task; image 3000epochs",
+      "evaluationNotes": "Best-checkpoint selection; actual22 initializations per footnote; not last checkpoint.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-ph-best-lstm",
+      "paperId": "p055",
+      "method": "LSTM-GMM",
+      "trackId": "robomimic-dp23-image-ph-best",
+      "values": {
+        "Lift": 100,
+        "Can": 100,
+        "Square": 82,
+        "Transport": 88,
+        "ToolHang": 68
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, ph, best side",
+      "attribution": "reported-baseline",
+      "trainingData": "200PH demos/task; reproduced baseline",
+      "evaluationNotes": "Different action space; source best-checkpoint values only; actual22 initializations.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-ph-best-t",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-T",
+      "trackId": "robomimic-dp23-image-ph-best",
+      "values": {
+        "Lift": 100,
+        "Can": 100,
+        "Square": 100,
+        "Transport": 98,
+        "ToolHang": 76
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, ph, best side",
+      "attribution": "author-reported",
+      "trainingData": "200PH demos/task; image 3000epochs",
+      "evaluationNotes": "Best selection distinct from last10; actual22 initializations; no best-per-task C/T fused method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-ph-last-c",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-C",
+      "trackId": "robomimic-dp23-image-ph-last10",
+      "values": {
+        "Lift": 100,
+        "Can": 97,
+        "Square": 92,
+        "Transport": 93,
+        "ToolHang": 73
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, ph, right of slash (last10)",
+      "attribution": "author-reported",
+      "trainingData": "200PH demos/task; visual policy; 3000epochs",
+      "evaluationNotes": "3 seeds; SecV-B footnote says actual22 initializations for RoboMimic, not table-caption50. Source fractions multiplied by100; position control.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-ph-last-lstm",
+      "paperId": "p055",
+      "method": "LSTM-GMM",
+      "trackId": "robomimic-dp23-image-ph-last10",
+      "values": {
+        "Lift": 96,
+        "Can": 88,
+        "Square": 59,
+        "Transport": 62,
+        "ToolHang": 49
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, ph, last10 side",
+      "attribution": "reported-baseline",
+      "trainingData": "200PH demos/task; authors' reproduced BC-RNN/LSTM-GMM",
+      "evaluationNotes": "Velocity control differs from DP position control;3 seeds; actual22 initializations noted.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-ph-last-t",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-T",
+      "trackId": "robomimic-dp23-image-ph-last10",
+      "values": {
+        "Lift": 100,
+        "Can": 98,
+        "Square": 90,
+        "Transport": 81,
+        "ToolHang": 47
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, ph, last10 side",
+      "attribution": "author-reported",
+      "trainingData": "200PH demos/task; visual Transformer; 3000epochs",
+      "evaluationNotes": "Actual22 initializations per footnote; ToolHang underperforms LSTM-GMM on this aggregate, retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-pusht-last-c",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-C",
+      "trackId": "pusht-dp23-image-coverage-last10",
+      "values": {
+        "Coverage ratio": 0.84
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, Push-T visual, last10 side",
+      "attribution": "author-reported",
+      "trainingData": "200 simulated Push-T demos; image 3000epochs",
+      "evaluationNotes": "Target area coverage 0–1 per SecV-B, not success probability. 3 seeds/50 initializations; not real Push-T.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-pusht-last-lstm",
+      "paperId": "p055",
+      "method": "LSTM-GMM",
+      "trackId": "pusht-dp23-image-coverage-last10",
+      "values": {
+        "Coverage ratio": 0.54
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, Push-T visual, last10 side",
+      "attribution": "reported-baseline",
+      "trainingData": "200 simulated Push-T demos; reproduced baseline",
+      "evaluationNotes": "Control-space differences retained; coverage not success; 3 seeds/50 initializations.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dp23-pusht-last-t",
+      "paperId": "p055",
+      "method": "DiffusionPolicy-T",
+      "trackId": "pusht-dp23-image-coverage-last10",
+      "values": {
+        "Coverage ratio": 0.66
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-18",
+      "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+      "sourceVersion": "Author RSS2023 PDF",
+      "locator": "Table II, Push-T visual, last10 side",
+      "attribution": "author-reported",
+      "trainingData": "200 simulated Push-T demos; image 3000epochs",
+      "evaluationNotes": "Coverage ratio, not binary success; best-checkpoint0.78 deliberately not substituted.",
+      "supersedes": ""
+    },
     {
       "id": "r-gr1-abc-hulc",
       "paperId": "p061",

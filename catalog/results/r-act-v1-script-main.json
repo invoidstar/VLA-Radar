@@ -1,0 +1,19 @@
+{
+  "id": "r-act-v1-script-main",
+  "paperId": "p056",
+  "method": "ACT",
+  "trackId": "aloha-act-v1-scripted50",
+  "values": {
+    "Cube Transfer": 86,
+    "Bimanual Insertion": 32
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/pdf/2304.13705v1#page=8",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I: scripted-data left side, final Transfer/Insert columns",
+  "attribution": "author-reported",
+  "trainingData": "50 scripted demos per simulated task",
+  "evaluationNotes": "3 training seeds,50 evaluations each;150/task. Not intermediate grasp success.",
+  "supersedes": ""
+}

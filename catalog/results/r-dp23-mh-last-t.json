@@ -1,0 +1,21 @@
+{
+  "id": "r-dp23-mh-last-t",
+  "paperId": "p055",
+  "method": "DiffusionPolicy-T",
+  "trackId": "robomimic-dp23-image-mh-last10",
+  "values": {
+    "Lift": 99,
+    "Can": 98,
+    "Square": 80,
+    "Transport": 50
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf#page=6",
+  "sourceVersion": "Author RSS2023 PDF",
+  "locator": "Table II, mh, last10 side",
+  "attribution": "author-reported",
+  "trainingData": "300MH demos/task; image 3000epochs",
+  "evaluationNotes": "Multi-human is different from PH; 3 seeds, actual22 initializations.",
+  "supersedes": ""
+}
