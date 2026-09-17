@@ -72,106 +72,150 @@
     "alerts": []
   },
   "note": {
-    "status": "legacy",
+    "status": "expanded",
     "updatedAt": "2026-09-17",
-    "verifiedAt": null,
-    "version": "7月正式会议发表；2025年12月已有预印本｜阅读v2",
+    "verifiedAt": "2026-09-17",
+    "version": "arXiv 2512.15692 v1；§III–VI、Tables I–III",
     "sections": [
       {
-        "id": "contribution",
-        "title": "核心贡献与方法概览",
-        "body": "从视频预训练获得动态先验，先生成潜在视频计划，再以动作解码/逆动力学获得机器人控制，提供非VLM中心的Video-Action路线。",
+        "id": "problem",
+        "title": "研究问题：动作真的需要一段高清未来视频吗？",
+        "body": "mimic-video将视频模型作为可供策略读取的表征模型，而不把完整视觉重建当作动作前必须完成的终点。作者通过案例区分真实未来提供的信息与生成未来中的误差：画面更清晰并不保证动作更准确，生成伪影还可能造成条件分布偏移。\n它从Cosmos-Predict2的内部隐藏状态解码动作，而非对最终RGB运行另一个逆动力学网络。这个区别解释了为什么部分去噪、甚至高噪声输入下的一次前向，也可能提供足够的任务相关结构。",
         "sources": [
           {
-            "label": "原文 · v2",
-            "url": "https://arxiv.org/html/2512.15692v2"
-          },
+            "label": "§III；§IV-A–B · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "两个flow模型，但不进行完整端到端共同训练",
+        "body": "2B视频DiT接收5帧干净上下文、带噪未来latent及T5语言；动作DiT以本体状态和未来动作token为输入，交叉注意力读取视频骨干某一层隐藏状态，再在动作序列内部建模时间关系。\n动作AdaLN同时编码视频与动作的flow时刻，使它知道当前视觉表示的噪声水平。状态token训练时随机替换为可学习mask，减轻过度依赖低维状态。这个接口保留视频先验，同时避免把最终图像解码成本强加给动作头。",
+        "sources": [
           {
-            "label": "会议正式页面",
-            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
-          },
+            "label": "§IV-B–D；Figure 2 · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "两阶段参数更新与独立噪声采样",
+        "body": "第一阶段用机器人视频LoRA适配视频骨干，保留其预训练知识；第二阶段冻结整个视频骨干，从零训练动作解码器。视频和动作噪声时刻独立采样，让动作头学会消费不同清晰程度的视觉隐藏状态。\n因此“动作从零训练”不等于整个系统随机初始化，也不等于视频骨干只见了用于动作的那几条示范。样本效率应区分视频适配数据和带动作数据；两阶段分离也意味着动作loss不会反向把视频骨干改造成完全不同的控制表示。",
+        "sources": [
           {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2512.15692"
+            "label": "§IV-F；Algorithm 2 · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
+          }
+        ]
+      },
+      {
+        "id": "inference",
+        "title": "默认τv=1：未来输入是噪声，但网络仍读到真实上下文",
+        "body": "论文的τv=1表示未来latent尚未去噪。该默认配置只需视频骨干一次前向，隐藏状态仍可通过注意力读取干净历史、任务语言和预训练结构，所以不能说动作只根据纯随机噪声执行。\n较小τv允许先生成部分未来，再取隐藏状态，计算更贵，最优值因任务而异。动作分支始终完成自身去噪。逐任务调节τv是一种额外选择预算，必须与统一默认参数的结果分开，不用其最高成绩替换默认模型。",
+        "sources": [
+          {
+            "label": "§IV-E；§V-C；Algorithm 1 · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "LIBERO只有三套件，真实动作数据少但视频预训练更多",
+        "body": "LIBERO评测Spatial、Object、Goal共30任务，不含Long，因此93.9%不是常见四套件平均。SIMPLER-Bridge采用四个WidowX任务；真实使用双Franka加16自由度灵巧手，策略主要读取固定工作区视角。\n真实视频骨干适配约200小时数据，而两项动作解码训练分别512条约1小时33分、480条约2小时14分。相比多腕视角DiT参考的收益有意义，但不能把系统表述为只靠两小时全部数据就训练出完整大模型。",
+        "sources": [
+          {
+            "label": "§V Evaluation setups；Tables I–III · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
           }
         ]
       },
       {
         "id": "results",
-        "title": "结果与实验结论",
-        "body": "作者在其对照设置中报告约10×样本效率、2×收敛速度提升；通过预训练视频表征和动作接口连接机器人。",
+        "title": "样本效率和默认表现：强内部对照，不是所有外部基线都超过",
+        "body": "SIMPLER默认46.9%，逐任务τv调节56.3%，π0.5-style从头动作头参考35.4%；LIBERO三套件93.9%，优于同式参考85.9%，但低于OpenVLA-OFT96.9%。因此不能概括为全部VLA都被视频先验超过。\n动作示范降到每任务1条时，作者报告三套件平均约77%，但视频骨干仍保留相应预训练与适配。它证明特定表征下的动作标注效率，不等于没有任何任务相关视觉数据的真正one-shot学习。",
         "sources": [
           {
-            "label": "原文 · v2",
-            "url": "https://arxiv.org/html/2512.15692v2"
-          },
-          {
-            "label": "会议正式页面",
-            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2512.15692"
+            "label": "Tables I–II；§V-B · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
           }
         ]
       },
       {
-        "id": "limits",
-        "title": "适用范围与限制",
-        "body": "倍数来自特定学习曲线/基线，不是所有VLA普遍需要10倍数据；视频模型预训练成本仍存在。Video-Action名称不等于系统完全不使用语言。",
+        "id": "fidelity",
+        "title": "为什么更多去噪未必更好：两个实验回答不同问题",
+        "body": "真实生成未来作为条件时，平均控制表现常在最高噪声τv=1最佳；改用加噪真实未来做离线动作重建，误差在约0.4更低。这表明生成误差和隐藏表征随噪声的变化共同影响控制，不能仅以最终视频和动作的互信息推断中间隐藏层质量。\n真实未来离线试验是特权条件诊断，不是可部署策略。单视角骨干限制多视角几何，且尚未训练统一的大规模跨本体政策；少数真实任务也不覆盖全部灵巧控制和长程记忆。",
         "sources": [
           {
-            "label": "原文 · v2",
-            "url": "https://arxiv.org/html/2512.15692v2"
-          },
-          {
-            "label": "会议正式页面",
-            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2512.15692"
+            "label": "§V-C；Figures 6–7；§VI · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
           }
         ]
       },
       {
-        "id": "insight",
-        "title": "阅读启示",
-        "body": "视频预训练提供不同于VLM的动态先验。样本效率倍数必须绑定具体基线和学习曲线。",
+        "id": "reading",
+        "title": "阅读路线：按“视频表征—动作解码”而非“高清视频—动作”理解",
+        "body": "Figure 2中找到截取内部层的位置，确认没有必要先完成像素重建，再用Algorithm 1区分τv=1与部分去噪。随后看两个不同未来条件的曲线，不把加噪真值试验误认为正常推理。\n最后核对LIBERO三套件和视频/动作两套数据预算。读完应能解释默认模型为什么一次视频前向也有信息，以及为何视频生成模型有用不等于它必须生成准确、清晰、完整的未来视频才能控制机器人。",
         "sources": [
           {
-            "label": "原文 · v2",
-            "url": "https://arxiv.org/html/2512.15692v2"
-          },
-          {
-            "label": "会议正式页面",
-            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2512.15692"
-          }
-        ]
-      },
-      {
-        "id": "focus",
-        "title": "方法、创新与消融的阅读重点",
-        "body": "视频先验与动作接口；样本效率口径；VLM路线的互补性。",
-        "sources": [
-          {
-            "label": "原文 · v2",
-            "url": "https://arxiv.org/html/2512.15692v2"
-          },
-          {
-            "label": "会议正式页面",
-            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2512.15692"
+            "label": "Figure 2；Algorithms 1–2；Figures 4–7 · 指定版本原文",
+            "url": "https://arxiv.org/html/2512.15692v1"
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2512.15692v1"
+    },
+    "figures": [
+      {
+        "title": "Figure 2：读取视频骨干中间隐藏状态",
+        "url": "https://arxiv.org/html/2512.15692v1#S4.F2",
+        "caption": "动作头读取指定视频层特征，并条件化两个噪声时刻；默认不必完整生成或解码未来视频。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "默认配置与额外逐任务调参分开",
+        "columns": [
+          "配置",
+          "SIMPLER四任务平均",
+          "LIBERO三套件平均"
+        ],
+        "rows": [
+          [
+            "π0.5-style内部参考",
+            "35.4%",
+            "85.9%"
+          ],
+          [
+            "mimic-video默认",
+            "46.9%",
+            "93.9%"
+          ],
+          [
+            "mimic-video逐任务τv调节",
+            "56.3%",
+            "该表未报告"
+          ],
+          [
+            "OpenVLA-OFT外部参考",
+            "该表未报告",
+            "96.9%"
+          ]
+        ],
+        "locator": "Tables I–II",
+        "caption": "LIBERO不含Long；未报告项不是零，逐任务调参不与统一默认参数混用。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "pending",
+      "checkedAt": null,
+      "note": "深入笔记已整理；标准基准结果仍需逐表核对任务集合、预算与指标，再加入对应赛道。缺失记录不按零分处理。"
+    }
   }
 }

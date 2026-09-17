@@ -71,106 +71,155 @@
     "alerts": []
   },
   "note": {
-    "status": "legacy",
+    "status": "expanded",
     "updatedAt": "2026-09-17",
-    "verifiedAt": null,
-    "version": "7月正式会议发表；4月已有预印本｜阅读v1",
+    "verifiedAt": "2026-09-17",
+    "version": "arXiv 2604.05323 v1；§III–IV、附录算法与Tables I–III",
     "sections": [
       {
-        "id": "contribution",
-        "title": "核心贡献与方法概览",
-        "body": "融合视觉熵、任务注意力与执行时间，区分需重新计算的关键视觉token和可复用的静态KV缓存。",
+        "id": "problem",
+        "title": "研究问题：静止的像素，是否就可以不重新计算？",
+        "body": "VLA-InfoEntropy沿用视觉KV缓存思想：跨帧变化小的patch可能复用，但其中也包含任务目标、夹爪或关键边缘。仅按图像变化或单个注意力分数决定，会错过静态却重要的信息。\n方法为不可复用的重要token同时考虑局部视觉复杂度和语言相关性，并随执行步数改变二者比例。它不裁剪整个输入图像，也不训练新的动作头；主要改变OpenVLA推理时哪些视觉token沿原缓存路径重算。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "§III-A；Figure 2 · 指定版本原文",
             "url": "https://arxiv.org/html/2604.05323v1"
-          },
+          }
+        ]
+      },
+      {
+        "id": "visual",
+        "title": "视觉熵：复杂纹理的代理，而非机器人价值函数",
+        "body": "每个patch将像素转成灰度分布，计算直方图Shannon熵，再按最大熵归一化。纹理丰富或边缘区域通常得分高，均匀背景较低，计算不需要额外大模型或标注。\n但高纹理可能只是无关海报，透明目标或平滑插孔反而可能低熵，所以视觉熵不能单独等同于“这个区域影响成功”。它提供一种廉价外观线索，必须与语义和缓存静态判定结合；论文的理论化措辞不应被读成任务充分信息的证明。",
+        "sources": [
           {
-            "label": "官方 / 作者来源",
-            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
-          },
+            "label": "§III-B · 指定版本原文",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          }
+        ]
+      },
+      {
+        "id": "semantic",
+        "title": "注意力熵：看哪些词集中关注某个视觉token",
+        "body": "作者对前一帧跨层、跨头的文字到视觉注意力取平均，再沿文字token维度归一化，计算每个视觉token对应词分布的熵。较集中意味着可能与少数具体任务词关联，以相对均匀分布的熵减少量作为语义得分。\n这不是“高注意力熵越重要”：实际重要性来自低熵的集中分布。该量可理解为相对均匀参考的集中程度，未给出完整联合随机变量定义时，不宜把它直接宣称为严格估计了视觉与任务真实互信息。",
+        "sources": [
           {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2604.05323"
+            "label": "§III-B；相关定义公式 · 指定版本原文",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          }
+        ]
+      },
+      {
+        "id": "schedule",
+        "title": "时间调度：从全局外观逐步转向任务细节",
+        "body": "默认T=100、视觉预算40和语义预算60，随执行时刻线性改变重要token的分配。早期较重视环境与对象全局线索，后期较侧重与任务文字关联的区域；重要集合从可复用静态集合中排除，余下token才缓存。\n调度依据经过多少步，并不直接检测子任务完成或真实接触阶段。因此长短不一、反复重试或阶段回退的任务可能不符合该时间假设。语言注意力复用上一帧也可能过时，训练免费并不消除这些经验超参数与缓存状态管理。",
+        "sources": [
+          {
+            "label": "§III-C；§IV-B · 指定版本原文",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          }
+        ]
+      },
+      {
+        "id": "implementation",
+        "title": "部署范围与原文表述中需要核对的细节",
+        "body": "论文在RTX4090、OpenVLA和LIBERO四套件上评估，不代表已经适配所有多视角flow专家。原文缓存回顾一处将static写作低余弦相似，但静态对应通常应为高相似或低差异；实现应以实际算法判定为准，不能照一句文字直接反转条件。\n完整时延还包含直方图、重要集合更新与缓存管理。FLOPs下降与CUDA测量下降是不同量，后者取决于硬件、kernel和缓存命中；不应把算力节省比例作为机器人端到端完成任务时间的固定下降。",
+        "sources": [
+          {
+            "label": "§III-A；§IV-B；附录算法 · 指定版本原文",
+            "url": "https://arxiv.org/html/2604.05323v1"
           }
         ]
       },
       {
         "id": "results",
-        "title": "结果与实验结论",
-        "body": "RTX 4090、OpenVLA/LIBERO：75.0%→76.4%；延迟51.91→31.25（作者报告下降39.8%）；FLOPs下降34.9%。\n仅视觉熵为69.8%，视觉+注意力75.8%。",
+        "title": "结果：接近基础性能下压缩，而非普遍提高能力",
+        "body": "作者报告四套件平均SR76.4%、Spatial86.4%，FLOPs下降34.9%、CUDA延迟下降39.8%。这是对应OpenVLA与硬件设置的测量，不能和OFT等已接近饱和的不同策略直接按相同能力水平理解。\n重要token数量60、80、100、120、140时平均SR分别71.6%、75.2%、76.4%、75.4%、76.8%，显示预算存在非单调变化。140虽略高但时延更大，因此100是性能—成本取舍而非在所有指标上严格最优。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "§IV-C–E；Tables I、III · 指定版本原文",
             "url": "https://arxiv.org/html/2604.05323v1"
-          },
-          {
-            "label": "官方 / 作者来源",
-            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2604.05323"
           }
         ]
       },
       {
-        "id": "limits",
-        "title": "适用范围与限制",
-        "body": "论文表中的1.53×对应FLOPs比，不应误写为实测时延比；Long由53.2%降到52.2%，并非每个子集都提高。",
+        "id": "ablation",
+        "title": "单独视觉或语义不足，但消融不等于普遍机制证明",
+        "body": "固定100重要token时比较仅视觉熵、仅注意力熵、静态组合与时间变化组合，有助于隔离信息来源和调度作用。它支持在所测任务里两类线索互补，而不是证明任何高熵区域都值得保留或所有任务都应在第100步转向局部。\n可视化提供哪些patch被保护的直观解释，却不能替代控制统计；接近的平均分还需要重复试验与方差判断。现有验证集中单一基础架构及一个基准，跨本体、新相机或动态场景仍需要重新测量。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "§IV-D–F；Figures 3–5 · 指定版本原文",
             "url": "https://arxiv.org/html/2604.05323v1"
-          },
-          {
-            "label": "官方 / 作者来源",
-            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2604.05323"
           }
         ]
       },
       {
-        "id": "insight",
-        "title": "阅读启示",
-        "body": "视觉信息量和任务相关性不可等同。仅按熵选取内容可能损害动作决策，负面消融很重要。",
+        "id": "reading",
+        "title": "读图路线：先判可复用，再保护重要token，最后计算缓存",
+        "body": "Figure 2中先找跨帧静态集合，再看视觉与语义两个重要性分支，最后确认重要token被排除出复用集。不要把选择重要token理解为直接丢弃所有其他视觉信息，后者可能仍通过缓存参与推理。\n读完应能清楚区分灰度熵、注意力集中度与真实任务价值，以及动态比例的时间假设。再分别看SR、FLOPs与CUDA时间，才不会把一个有用的缓存启发式描述成通用的信息论最优压缩或完全无损加速。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "Figure 2；Tables I–III · 指定版本原文",
             "url": "https://arxiv.org/html/2604.05323v1"
-          },
-          {
-            "label": "官方 / 作者来源",
-            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2604.05323"
-          }
-        ]
-      },
-      {
-        "id": "focus",
-        "title": "方法、创新与消融的阅读重点",
-        "body": "Table II负面消融；任务注意力；缓存与重算划分；速度定义。",
-        "sources": [
-          {
-            "label": "原文 · v1",
-            "url": "https://arxiv.org/html/2604.05323v1"
-          },
-          {
-            "label": "官方 / 作者来源",
-            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2604.05323"
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2604.05323v1"
+    },
+    "figures": [
+      {
+        "title": "Figure 2：视觉与语义共同保护重要token",
+        "url": "https://arxiv.org/html/2604.05323v1#S3.F2",
+        "caption": "重要集合从可缓存静态token中排除；注意力分支使用集中程度，而非简单奖励更高注意力熵。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "重要token预算与成功率的权衡",
+        "columns": [
+          "重要token数量",
+          "LIBERO平均SR",
+          "原表时延数值"
+        ],
+        "rows": [
+          [
+            "60",
+            "71.6%",
+            "30.89"
+          ],
+          [
+            "80",
+            "75.2%",
+            "31.00"
+          ],
+          [
+            "100",
+            "76.4%",
+            "31.25"
+          ],
+          [
+            "120",
+            "75.4%",
+            "34.49"
+          ],
+          [
+            "140",
+            "76.8%",
+            "36.64"
+          ]
+        ],
+        "locator": "Table III",
+        "caption": "本表表头未在转录范围标明时延单位，保留原数值而不擅自改成端到端毫秒；不同预算不同时最优。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "pending",
+      "checkedAt": null,
+      "note": "深入笔记已整理；标准基准结果仍需逐表核对任务集合、预算与指标，再加入对应赛道。缺失记录不按零分处理。"
+    }
   }
 }

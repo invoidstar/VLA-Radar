@@ -9,18 +9,6 @@
       "latestVersion": "v2"
     },
     {
-      "paperId": "p039",
-      "reason": "legacy",
-      "readVersion": "7月正式会议发表；6月已有预印本｜阅读v1",
-      "latestVersion": null
-    },
-    {
-      "paperId": "p040",
-      "reason": "legacy",
-      "readVersion": "7月正式会议发表；3月已有预印本｜阅读v1",
-      "latestVersion": null
-    },
-    {
       "paperId": "p048",
       "reason": "legacy",
       "readVersion": "arXiv v4（2022-07-13），第 1–2 页；第 2 页已查看 PDF",
@@ -49,6 +37,18 @@
       "reason": "legacy",
       "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
       "latestVersion": null
+    },
+    {
+      "paperId": "p057",
+      "reason": "legacy",
+      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p058",
+      "reason": "legacy",
+      "readVersion": "arXiv v1 元数据；Google 2023-07-28 官方报告的 A brighter future for robotics 段落",
+      "latestVersion": null
     }
   ],
   "metadata": {
@@ -59,7 +59,7 @@
       "p046"
     ]
   },
-  "remainingNotes": 40,
+  "remainingNotes": 34,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."
