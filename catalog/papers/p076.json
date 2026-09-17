@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p076",
+    "name": "Cosmos Policy",
+    "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+    "team": "NVIDIA 等；Moo Jin Kim、Yihuai Gao、Tsung-Yi Lin 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2026-01-22",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1；RoboCasa 表 2、附录 A.4.1 表 4",
+    "topics": [
+      "world",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "近期代表",
+      "video policy",
+      "planning"
+    ],
+    "priority": "deep",
+    "contribution": "把预训练视频模型微调为动作、未来状态和价值的联合模型，既支持直接控制，也探索基于后果与价值的规划。",
+    "findings": "原文 v1：LIBERO 平均 98.5%；RoboCasa 24 任务、每任务 50 示范、50 次评价 × 3 种子，共 3600 次，平均 67.1%。附录表 4：去辅助损失 97.0%，去视频预训练 94.6%。",
+    "limitations": "这些是特定版本 / 任务集合；直接策略分数与需要额外 rollout 数据的规划分数不同，不能合并为一个无额外代价的结论。",
+    "insight": "联合预测与部署时规划是不同层次；辅助损失和预训练先验各自带来多少收益值得分别阅读。",
+    "readingFocus": "动作 / 状态 / 价值的建模分工、表 2 与附录表 4。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2601.16163"
+      },
+      {
+        "label": "原文 v1 · 结果与消融",
+        "url": "https://arxiv.org/html/2601.16163v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2601.16163",
+    "arxiv": "2601.16163",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-01-22",
+    "firstArxivSource": "https://arxiv.org/abs/2601.16163v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2601.16163",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": "2026-09-17",
+    "version": "arXiv v1",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究问题与贡献定位",
+        "body": "Cosmos Policy 研究如何把视频生成基础模型转化为直接控制策略，同时获得世界模型与价值预测能力。核心不是把视频预测作为外接展示，而是将动作、未来状态与价值纳入同一建模体系。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2601.16163v1"
+          }
+        ]
+      },
+      {
+        "id": "mechanism",
+        "title": "联合预测机制",
+        "body": "方法从 Cosmos 视频模型初始化，将连续动作与状态／价值目标接入生成过程。可分别用于条件动作生成、给定动作的后果预测和价值估计；这些功能共享训练框架，但部署时的输入条件不同。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2601.16163v1"
+          }
+        ]
+      },
+      {
+        "id": "planning",
+        "title": "直接策略与规划不可混淆",
+        "body": "仿真主表报告直接策略。更强的基于模型规划还使用额外策略 rollout 数据对世界模型和价值函数后训练，再评估候选动作。不能把规划收益全部归到最初的示范学习检查点。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2601.16163v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "评测预算与任务定义",
+        "body": "LIBERO 为四套共 40 项任务，每任务 50 回合、三个随机种子；RoboCasa 为旧版 24 项厨房任务，每任务 50 回合、三个种子。RoboCasa 仅使用每任务 50 条人工示范，需单列训练预算。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2601.16163v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "主要证据与消融",
+        "body": "直接策略平均成功率在 LIBERO 为 98.5%，RoboCasa 为 67.1%。移除辅助监督下降 1.5 个百分点、随机初始化下降 3.9 个百分点；这支持联合目标和视频先验的作用，但不是所有组件相互独立的证明。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2601.16163v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "局限与阅读重点",
+        "body": "世界模型可能难以预测遮挡下的抓取失败，额外 rollout 后训练与规划开销也属于成本。主表中引用的其他工作未必使用同样示范数量和种子，所以提供论文对照表与独立协议赛道，不宣称跨论文公平总榜。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2601.16163v1"
+          }
+        ]
+      }
+    ]
+  }
+}

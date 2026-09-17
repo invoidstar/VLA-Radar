@@ -12,7 +12,7 @@
   const priorityOrder = {deep:0,selective:1,overview:2};
   const statusText = {unread:'未读',reading:'阅读中',read:'已读'};
   const evidenceText = {checked:'已复核片段',notes:'笔记待复核',metadata:'出版 / 摘要证据'};
-  const views = {papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',about:'关于与维护'};
+  const views = {papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',about:'关于与维护'};
   const paths = {
     library:'<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l3-1 4 15-3 1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -53,6 +53,7 @@
   ];
   let data, index=[], topicMap={}, reading={}, storageAvailable=true;
   let state={view:'papers',q:'',topic:'',month:'',year:'',week:'',venue:'',priority:'',status:'',sort:'recommended',layout:'cards',timeline:'week',page:1};
+  let timelineLimit=80;
   let filtered=[], toastTimer, queryTimer, lastFocused=null;
   function readState(){try{const raw=JSON.parse(localStorage.getItem(STORE)||'{}');reading=cleanReading(raw);}catch{reading={};}}
   function cleanReading(raw){
@@ -74,6 +75,7 @@
     for(const k of ['q','topic','month','year','week','venue','priority'])if(state[k])u.searchParams.set(k,state[k]);
     if(state.sort!=='recommended')u.searchParams.set('sort',state.sort);
     if(view==='timeline'&&state.timeline==='month')u.searchParams.set('timeline','month');
+    if(view==='leaderboards'){const params=new URLSearchParams(location.search);for(const k of ['dataset','track']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
     if(includePaper)u.hash=location.hash;
     return u;
   }
@@ -91,10 +93,10 @@
   function showView(){
     $('#hero').classList.toggle('hidden',state.view!=='papers');$('#stats').classList.toggle('hidden',state.view!=='papers');
     $('#library-section').classList.toggle('hidden',!['papers','reading'].includes(state.view));
-    for(const v of ['topics','timeline','about'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
+    for(const v of ['topics','timeline','about','leaderboards'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
     $('#reading-notice').classList.toggle('hidden',state.view!=='reading');
     $('#section-title').textContent=state.view==='reading'?'我的阅读清单':'论文文库';
-    updateControls();renderResults();if(state.view==='timeline')renderTimeline();
+    updateControls();renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
     document.title=`${views[state.view]} · VLA Research Radar`;
   }
   function goView(view){state.view=view;state.page=1;if(!['papers','reading'].includes(view)){state.q='';state.topic='';state.month='';state.year='';state.week='';state.venue='';state.priority='';state.status='';}syncUrl(true);showView();closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}
@@ -111,7 +113,7 @@
     addOptions('#filter-month',[...new Set(data.papers.map(p=>p.collectionMonth))].sort().reverse().map(m=>[m,m]));
     addOptions('#filter-venue',[...new Set(data.papers.map(p=>p.venue))].sort().map(v=>[v,v]));
     index=data.papers.map(p=>({paper:p,fields:[[p.name,9],[p.title,6],[p.team,4],[p.tags.join(' ')+' '+p.topics.map(t=>topicMap[t].name+' '+topicMap[t].en).join(' '),5],[p.contribution,2],[p.findings,2],[p.insight,2],[p.limitations,1],[p.venue+' '+p.publicationStatus+' '+p.arxiv,3],[p.firstPublished+' '+(Dates.isoWeek(p.firstPublished)?.key||'日期未精确到日'),4]].map(([s,w])=>[norm(s),w]),words:norm(p.name+' '+p.title+' '+p.tags.join(' ')).match(/[a-z][a-z0-9+-]{2,}/g)||[]}));
-    populateTimeControls();renderTopics();renderTimeline();
+    populateTimeControls();renderTopics();
   }
 
   // Week-year is ISO 8601: Monday–Sunday, week 01 contains January 4.
@@ -213,12 +215,13 @@
     if(!filtered.length){const isReading=state.view==='reading'&&!Object.keys(reading).some(id=>local(id).saved||local(id).status!=='unread');$('#results').innerHTML=`<div class="empty-state">${icon(isReading?'bookmark':'search')}<h3>${isReading?'从一篇感兴趣的论文开始':'没有找到匹配的文献'}</h3><p>${isReading?'在文献卡片上点击收藏，或在详情中标记阅读状态。清单只保存在当前浏览器。':'试试减少关键词、改用方法名或清除筛选。搜索仅覆盖当前文献库，不代表外部没有相关研究。'}</p><button class="btn" ${isReading?'data-view="papers"':'data-reset="true"'}>${isReading?'去浏览文献':'清除筛选'}</button></div>`;$('#pagination').innerHTML='';return;}
     const page=filtered.slice((state.page-1)*PAGE_SIZE,state.page*PAGE_SIZE);
     $('#results').innerHTML=state.layout==='table'?table(page):`<div class="paper-list">${page.map(card).join('')}</div>`;
-    $('#pagination').innerHTML=pages<=1?`<span>已显示全部 ${filtered.length} 篇</span>`:`<button data-page="${state.page-1}" ${state.page===1?'disabled':''} aria-label="上一页">←</button>${Array.from({length:pages},(_,i)=>`<button data-page="${i+1}" class="${state.page===i+1?'active':''}" ${state.page===i+1?'aria-current="page"':''}>${i+1}</button>`).join('')}<button data-page="${state.page+1}" ${state.page===pages?'disabled':''} aria-label="下一页">→</button><span>每页 ${PAGE_SIZE} 篇 · 共 ${filtered.length} 篇</span>`;
+    $('#pagination').innerHTML=pages<=1?`<span>已显示全部 ${filtered.length} 篇</span>`:`<button data-page="${state.page-1}" ${state.page===1?'disabled':''} aria-label="上一页">←</button>${window.RadarResearch.pageWindow(state.page,pages).map(n=>n===null?'<span>…</span>':`<button data-page="${n}" class="${state.page===n?'active':''}" ${state.page===n?'aria-current="page"':''}>${n}</button>`).join('')}<button data-page="${state.page+1}" ${state.page===pages?'disabled':''} aria-label="下一页">→</button><span>每页 ${PAGE_SIZE} 篇 · 共 ${filtered.length} 篇</span>`;
   }
   function renderTopics(){$('#topic-cards').innerHTML=data.topics.map(t=>{const papers=data.papers.filter(p=>p.topics.includes(t.id));return `<button class="topic-card ${esc(t.color)}" data-topic="${esc(t.id)}"><div class="topic-card-top"><span class="topic-initial">${esc(t.en.toUpperCase())}</span><span class="topic-total">${papers.length.toString().padStart(2,'0')}</span></div><h2>${esc(t.name)}</h2><p>${esc(t.description)}</p><div class="topic-card-foot"><span>${papers.filter(p=>p.priority==='deep').length} 篇建议精读</span><span>进入方向 ${icon('arrow')}</span></div></button>`;}).join('');}
   function renderTimeline(){
     const groups={};const weekly=state.timeline==='week';
-    for(const p of data.papers){const key=weekly?(Dates.isoWeek(p.firstPublished)?.key||TIME_UNKNOWN):(p.firstPublished?.slice(0,7)||TIME_UNKNOWN);(groups[key]??=[]).push(p);}
+    const timelinePapers=[...data.papers].sort((a,b)=>(b.firstPublished||'').localeCompare(a.firstPublished||''));
+    for(const p of timelinePapers.slice(0,timelineLimit)){const key=weekly?(Dates.isoWeek(p.firstPublished)?.key||TIME_UNKNOWN):(p.firstPublished?.slice(0,7)||TIME_UNKNOWN);(groups[key]??=[]).push(p);}
     $('#timeline-week').classList.toggle('active',weekly);$('#timeline-month').classList.toggle('active',!weekly);
     $('#timeline-week').setAttribute('aria-pressed',String(weekly));$('#timeline-month').setAttribute('aria-pressed',String(!weekly));
     $('#timeline-mode-note').textContent=weekly?'按首发 ISO 周分组；日期不足一天精度的条目单独列出。点击周次可检索该周。':'按首次公开月份分组；保留月精度条目，不把收录批次当作首发月份。';
@@ -226,7 +229,7 @@
       const info=weekly&&key!==TIME_UNKNOWN?Dates.fromKey(key):null;
       const title=key===TIME_UNKNOWN?(weekly?'日期未精确到日':'首次公开待核验'):key;
       return `<section class="timeline-group" data-period="${esc(key)}"><h2>${weekly?`<button class="timeline-week-link" data-week="${esc(key)}">${esc(title)}</button>`:esc(title)}<span>${groups[key].length} PAPERS</span></h2>${info?`<p class="timeline-range">${esc(info.start)} — ${esc(info.end)} · 周一至周日</p>`:key===TIME_UNKNOWN?'<p class="timeline-range">保留已知月份或待核验说明，不补造日期。</p>':''}${groups[key].sort((a,b)=>(b.firstPublished||'').localeCompare(a.firstPublished||'')).map(p=>`<div class="timeline-entry"><div><button class="paper-name" data-paper="${p.id}">${esc(p.name)}</button><p>${esc(p.venue)} · ${esc(p.versionNote)}</p></div><span class="timeline-date">${esc(p.firstPublished||'日期待核验')}</span></div>`).join('')}</section>`;
-    }).join('');
+    }).join('')+(timelinePapers.length>timelineLimit?`<button class="btn timeline-more" data-timeline-more="true">继续查看更早的记录（已显示 ${Math.min(timelineLimit,timelinePapers.length)} / ${timelinePapers.length}）</button>`:'');
   }
   function setSearch(q){state.q=q;state.view='papers';state.page=1;syncUrl();showView();$('#search').focus();}
   function resetFilters(){for(const key of ['q','topic','month','year','week','venue','priority','status'])state[key]='';state.page=1;syncUrl();updateControls();renderResults();}
@@ -242,6 +245,7 @@
       <div class="evidence-status"><strong>${evidenceText[p.evidence]||'待核验'}</strong> · ${esc(p.evidenceNote)}</div>
       <div class="source-links">${p.sources.map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('')}</div>
       <div class="dialog-actions"><div class="action-group"><a class="btn primary" href="${esc(safeUrl(p.paperUrl))}" target="_blank" rel="noopener noreferrer">阅读原文 ${icon('external')}</a><button class="btn" data-save="${p.id}">${icon('bookmark')}${l.saved?'已收藏':'收藏'}</button><button class="btn" data-bib="${p.id}">BibTeX</button><button class="btn" data-share-paper="${p.id}">${icon('link')}分享</button></div><label class="status-label">本地进度<select class="status-select" id="detail-status" data-id="${p.id}">${Object.entries(statusText).map(([v,t])=>`<option value="${v}" ${l.status===v?'selected':''}>${t}</option>`).join('')}</select></label></div>`;
+    window.RadarResearch.enhance(p,$('#paper-detail'));
   }
   function openPaper(id,update=true){if(!data.papers.some(p=>p.id===id)){notify('文献记录不存在或已移除');return;}lastFocused=document.activeElement;renderDetail(id);const d=$('#paper-dialog');if(!d.open)d.showModal();$('#paper-detail').parentElement.scrollTop=0;if(update){const u=makeUrl(false);u.hash='paper='+encodeURIComponent(id);try{history.pushState({},'',u);}catch{}}document.title=data.papers.find(p=>p.id===id).name+' · VLA Research Radar';}
   function closePaper(){const d=$('#paper-dialog');if(d.open)d.close();if(location.hash.startsWith('#paper=')){const u=new URL(location.href);u.hash='';try{history.replaceState({},'',u);}catch{}}document.title=`${views[state.view]} · VLA Research Radar`;if(lastFocused?.isConnected)lastFocused.focus();}
@@ -276,6 +280,7 @@
       else if(el.dataset.week)goWeek(el.dataset.week);
       else if(el.dataset.paper)openPaper(el.dataset.paper);
       else if(el.dataset.save)toggleSave(el.dataset.save);
+      else if(el.dataset.timelineMore){timelineLimit+=80;renderTimeline();}
       else if(el.dataset.page){state.page=Number(el.dataset.page);renderResults();$('#library-section').scrollIntoView({behavior:'smooth',block:'start'});}
       else if(el.dataset.clear){state[el.dataset.clear]='';if(el.dataset.clear==='year')state.week='';state.page=1;syncUrl();updateControls();renderResults();}
       else if(el.dataset.reset)resetFilters();
@@ -284,12 +289,12 @@
     });
     $('#search').addEventListener('input',e=>{clearTimeout(queryTimer);queryTimer=setTimeout(()=>{state.q=e.target.value;state.page=1;syncUrl();renderResults();},160);});
     for(const key of ['topic','month','year','week','venue','priority','status'])$('#filter-'+key).addEventListener('change',e=>{state[key]=e.target.value;if(key==='year')state.week='';if(key==='week'&&Dates.fromKey(state.week))state.year=Dates.fromKey(state.week).year;state.page=1;syncUrl();updateControls();renderResults();});
-    for(const mode of ['week','month'])$('#timeline-'+mode).addEventListener('click',()=>{state.timeline=mode;syncUrl();renderTimeline();});
+    for(const mode of ['week','month'])$('#timeline-'+mode).addEventListener('click',()=>{state.timeline=mode;timelineLimit=80;syncUrl();renderTimeline();});
     $('#sort').addEventListener('change',e=>{state.sort=e.target.value;state.page=1;syncUrl();renderResults();});
     for(const layout of ['cards','table'])$('#layout-'+layout).addEventListener('click',()=>{state.layout=layout;updateControls();renderResults();});
     $('#reset-filters').addEventListener('click',resetFilters);$('#export-csv').addEventListener('click',exportCsv);
     $('#share-search').addEventListener('click',()=>copy(makeUrl(false,true).href,'已复制筛选链接；不包含收藏或阅读状态。'));
-    $('#export-all-json').addEventListener('click',()=>download('papers.json',JSON.stringify(data,null,2)+'\n'));
+    $('#export-all-json').addEventListener('click',async()=>{try{const r=await fetch('data/papers.json',{credentials:'omit'});if(!r.ok)throw new Error();download('papers.json',await r.text());}catch{notify('公开导出暂不可用，请刷新重试。');}});
     $('#export-reading').addEventListener('click',exportReading);$('#import-reading').addEventListener('click',()=>$('#reading-file').click());$('#reading-file').addEventListener('change',e=>importReading(e.target.files[0]));
     $('#close-dialog').addEventListener('click',closePaper);$('#paper-dialog').addEventListener('cancel',e=>{e.preventDefault();closePaper();});$('#paper-dialog').addEventListener('click',e=>{if(e.target===e.currentTarget){const r=e.currentTarget.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closePaper();}});
     $('#paper-detail').addEventListener('change',e=>{if(e.target.id==='detail-status'){const id=e.target.dataset.id;reading[id]={...local(id),status:e.target.value};saveState();renderResults();notify('阅读状态已保存在当前浏览器。');}});
@@ -303,13 +308,13 @@
     $$('[data-icon]').forEach(el=>el.innerHTML=icon(el.dataset.icon));
     try{
       if(window.__RADAR_DATA__)data=window.__RADAR_DATA__;
-      else{const response=await fetch('data/papers.json',{cache:'no-store',credentials:'omit'});if(!response.ok)throw new Error('HTTP '+response.status);data=await response.json();}
+      else{const response=await fetch('data/catalog.json',{cache:'no-store',credentials:'omit'});if(!response.ok)throw new Error('HTTP '+response.status);data=await response.json();}
       if(!Dates)throw new Error('Week date module failed to load');
       if(data.schemaVersion!==1||!Array.isArray(data.papers)||!Array.isArray(data.topics))throw new Error('Unsupported data format');
       for(const p of data.papers)if(!p.id||!p.name||!p.title||!Array.isArray(p.topics)||!Array.isArray(p.sources))throw new Error('Invalid paper record');
       readState();parseUrl();populate();bind();showView();hashPaper();
       window.RadarTest={search:q=>index.filter(e=>score(e,norm(q).split(/\s+/).filter(Boolean))>0).map(e=>e.paper.id),count:data.papers.length};
-    }catch(error){console.error('VLA Radar could not load:',error);$('#updated-at').textContent='数据暂未载入';$('#result-count').textContent='载入失败';$('#results').innerHTML=`<div class="empty-state">${icon('info')}<h3>暂时无法读取文献数据</h3><p>请刷新页面，或检查 data/papers.json 是否为有效 JSON。本地打开请运行 python -m http.server，或使用离线预览文件。</p><a class="btn" href="${REPO}" target="_blank" rel="noopener noreferrer">前往 GitHub 查看数据</a></div>`;}
+    }catch(error){console.error('VLA Radar could not load:',error);$('#updated-at').textContent='数据暂未载入';$('#result-count').textContent='载入失败';$('#results').innerHTML=`<div class="empty-state">${icon('info')}<h3>暂时无法读取文献数据</h3><p>请刷新页面，或检查 data/catalog.json 是否为有效 JSON。本地打开请运行 python -m http.server，或使用离线预览文件。</p><a class="btn" href="${REPO}" target="_blank" rel="noopener noreferrer">前往 GitHub 查看数据</a></div>`;}
   }
   start();
 })();

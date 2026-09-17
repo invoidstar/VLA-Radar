@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p033",
+    "name": "Optimal Transport Q-Learning",
+    "title": "Optimal Transport Q-Learning for Flow Policy Steering and Acceleration",
+    "team": "爱丁堡大学／Honda Research Institute Europe\nAndreas Sochopoulos、Esmeralda Whitammer、Nikolaos Tsagkas等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.06262\n强化学习后训练预印本",
+    "firstPublished": "2026-07-07",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "action",
+      "efficiency"
+    ],
+    "tags": [
+      "RL",
+      "flow matching",
+      "optimal transport"
+    ],
+    "priority": "selective",
+    "contribution": "通过优势加权的最优传输流匹配进行策略改进，并同时拉直流轨迹、减少采样步数。",
+    "findings": "约50—60条在线交互轨迹预算下：单策略成功率36%→86%；预训练VLA为38%→76%。\n推理采样步数减少约70%。",
+    "limitations": "需要额外交互和RL后训练，不是免训练加速。不同起点对应不同结果；采样步数下降不等于整机时延同幅下降。",
+    "insight": "流策略的提升与少步化可以结合，但需要计入在线交互和后训练。采样步数减少不等于整机同比加速。",
+    "readingFocus": "优势权重与流轨迹；交互预算；策略提升和少步化的关系。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.06262v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.06262"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.06262",
+    "arxiv": "2607.06262",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.06262",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "通过优势加权的最优传输流匹配进行策略改进，并同时拉直流轨迹、减少采样步数。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.06262v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06262"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "约50—60条在线交互轨迹预算下：单策略成功率36%→86%；预训练VLA为38%→76%。\n推理采样步数减少约70%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.06262v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06262"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "需要额外交互和RL后训练，不是免训练加速。不同起点对应不同结果；采样步数下降不等于整机时延同幅下降。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.06262v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06262"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "流策略的提升与少步化可以结合，但需要计入在线交互和后训练。采样步数减少不等于整机同比加速。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.06262v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06262"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "优势权重与流轨迹；交互预算；策略提升和少步化的关系。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.06262v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06262"
+          }
+        ]
+      }
+    ]
+  }
+}

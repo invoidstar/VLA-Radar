@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-oft-multi-view-openvla-oft",
+  "paperId": "p069",
+  "method": "OpenVLA-OFT",
+  "trackId": "libero-oft-multi-view",
+  "values": {
+    "Spatial": 97.6,
+    "Object": 98.4,
+    "Goal": 97.9,
+    "Long": 94.5,
+    "Average": 97.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-17",
+  "source": "https://arxiv.org/html/2502.19645v1",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table I · multi-view block",
+  "attribution": "author-reported",
+  "trainingData": "每任务 50 示范；采用论文描述的过滤",
+  "evaluationNotes": "第三人称 + 腕部图像和状态；每套 500 回合；不与单视角合榜。",
+  "supersedes": ""
+}

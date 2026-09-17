@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p016",
+    "name": "BATON",
+    "title": "Don’t Drop the Baton: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-Aware Memory",
+    "team": "南加州大学／中佛罗里达大学\nBingxin Xu、Yuzhang Shang、Emilio Ferrara",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.16889\n技术预印本",
+    "firstPublished": "2026-08-17",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "memory"
+    ],
+    "tags": [
+      "long-horizon",
+      "transition",
+      "agent"
+    ],
+    "priority": "deep",
+    "contribution": "以子任务探索和转移感知记忆维护前序操作留下的状态；既验证阶段入口，也考虑后续阶段前置条件。",
+    "findings": "作者摘要报告，相对其比较方案，任务成功率提升11.6%、累计成功指标提升14.9%。\n核心收益来自对子任务交接条件的显式处理，而不只是任务拆解。",
+    "limitations": "11.6%/14.9%沿用作者摘要表述，未将其擅自换算为百分点；基线与汇总口径需阅读全文。智能体探索与外部工具并非无成本。",
+    "insight": "子任务完成不等于下一阶段的前置条件满足。阶段交接本身值得作为独立能力来阅读和分析。",
+    "readingFocus": "子任务入口验证；转移记忆字段；失败交接案例；收益统计口径。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.16889v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.16889"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.16889",
+    "arxiv": "2608.16889",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.16889",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以子任务探索和转移感知记忆维护前序操作留下的状态；既验证阶段入口，也考虑后续阶段前置条件。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16889v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16889"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者摘要报告，相对其比较方案，任务成功率提升11.6%、累计成功指标提升14.9%。\n核心收益来自对子任务交接条件的显式处理，而不只是任务拆解。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16889v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16889"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "11.6%/14.9%沿用作者摘要表述，未将其擅自换算为百分点；基线与汇总口径需阅读全文。智能体探索与外部工具并非无成本。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16889v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16889"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "子任务完成不等于下一阶段的前置条件满足。阶段交接本身值得作为独立能力来阅读和分析。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16889v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16889"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "子任务入口验证；转移记忆字段；失败交接案例；收益统计口径。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.16889v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.16889"
+          }
+        ]
+      }
+    ]
+  }
+}

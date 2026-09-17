@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p008",
+    "name": "MECo-WAM",
+    "title": "Learning 4D Geometric Priors for Inference-Efficient World Action Models",
+    "team": "同济大学／美的AI研究院\nJianjun Zhang、Jian Zhu、Taiyi Su等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.05468\n技术预印本",
+    "firstPublished": "2026-07-06",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "spatial",
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "4D geometry",
+      "training-only"
+    ],
+    "priority": "selective",
+    "contribution": "冻结几何教师监督四维几何专家，以空间/时间关系约束辅助世界动作学习；训练中逐渐减弱几何读取，部署移除辅助分支。",
+    "findings": "LIBERO平均98.2%；RoboTwin平均92.6%。\n作者报告部署不保留辅助几何专家，因此该几何监督不增加对应分支的推理开销。",
+    "limitations": "两项总分不能单独证明全部来自几何目标；需结合原文消融理解。移除辅助分支不意味着完整WAM与轻量VLA开销相同。",
+    "insight": "辅助几何专家可用于塑造表示后退出推理路径。训练成本和部署成本应分别评价。",
+    "readingFocus": "几何教师目标；关系约束；耦合衰减与部署删支路机制。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.05468v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.05468"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.05468",
+    "arxiv": "2607.05468",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.05468",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "冻结几何教师监督四维几何专家，以空间/时间关系约束辅助世界动作学习；训练中逐渐减弱几何读取，部署移除辅助分支。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.05468v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.05468"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO平均98.2%；RoboTwin平均92.6%。\n作者报告部署不保留辅助几何专家，因此该几何监督不增加对应分支的推理开销。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.05468v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.05468"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "两项总分不能单独证明全部来自几何目标；需结合原文消融理解。移除辅助分支不意味着完整WAM与轻量VLA开销相同。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.05468v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.05468"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "辅助几何专家可用于塑造表示后退出推理路径。训练成本和部署成本应分别评价。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.05468v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.05468"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "几何教师目标；关系约束；耦合衰减与部署删支路机制。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.05468v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.05468"
+          }
+        ]
+      }
+    ]
+  }
+}

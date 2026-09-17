@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p068",
+    "name": "SpatialVLA",
+    "title": "SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models",
+    "team": "Shanghai AI Laboratory；Delin Qu、Haoming Song、Qizhi Chen 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2025-01-27",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1，Section III、IV 与表 I",
+    "topics": [
+      "spatial",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "Ego3D",
+      "adaptive action grids"
+    ],
+    "priority": "deep",
+    "contribution": "通过相机自中心三维位置编码增强观测，使用自适应动作网格表示空间动作，并在新机器人微调时调整网格分布。",
+    "findings": "原文 v1 表 I：Google Robot 的 SimplerEnv 零样本 Visual Matching / Variant Aggregation 平均 71.9% / 68.8%；表内 RT-2-X 为 60.7% / 64.3%。预训练用约 110 万条真实 episodes。",
+    "limitations": "表内模型预训练规模和数据混合不同，不能把全部优势归于单个三维模块；相机坐标系不等同于机器人世界坐标系。",
+    "insight": "空间表示需要同时考虑输入坐标和输出动作分布，几何增强应连同其数据及标定假设阅读。",
+    "readingFocus": "Ego3D 坐标定义、动作网格适配、表 I 和模块消融。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2501.15830"
+      },
+      {
+        "label": "原文 v1 · 表 I",
+        "url": "https://arxiv.org/html/2501.15830v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2501.15830",
+    "arxiv": "2501.15830",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2025-01-27",
+    "firstArxivSource": "https://arxiv.org/abs/2501.15830v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2501.15830",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1，Section III、IV 与表 I",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "通过相机自中心三维位置编码增强观测，使用自适应动作网格表示空间动作，并在新机器人微调时调整网格分布。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2501.15830"
+          },
+          {
+            "label": "原文 v1 · 表 I",
+            "url": "https://arxiv.org/html/2501.15830v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v1 表 I：Google Robot 的 SimplerEnv 零样本 Visual Matching / Variant Aggregation 平均 71.9% / 68.8%；表内 RT-2-X 为 60.7% / 64.3%。预训练用约 110 万条真实 episodes。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2501.15830"
+          },
+          {
+            "label": "原文 v1 · 表 I",
+            "url": "https://arxiv.org/html/2501.15830v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "表内模型预训练规模和数据混合不同，不能把全部优势归于单个三维模块；相机坐标系不等同于机器人世界坐标系。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2501.15830"
+          },
+          {
+            "label": "原文 v1 · 表 I",
+            "url": "https://arxiv.org/html/2501.15830v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "空间表示需要同时考虑输入坐标和输出动作分布，几何增强应连同其数据及标定假设阅读。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2501.15830"
+          },
+          {
+            "label": "原文 v1 · 表 I",
+            "url": "https://arxiv.org/html/2501.15830v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "Ego3D 坐标定义、动作网格适配、表 I 和模块消融。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2501.15830"
+          },
+          {
+            "label": "原文 v1 · 表 I",
+            "url": "https://arxiv.org/html/2501.15830v1"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p011",
+    "name": "See like a Robot",
+    "title": "See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models",
+    "team": "KAIST／Holiday Robotics\nByungkun Lee、Dongyoon Hwang、Dongjin Kim等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.11498\n技术预印本",
+    "firstPublished": "2026-07-13",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "spatial"
+    ],
+    "tags": [
+      "VLA",
+      "pointmap",
+      "coordinates"
+    ],
+    "priority": "selective",
+    "contribution": "把像素三维点映射到机器人坐标系，保持图像网格结构，并用末端中心化缓解视觉坐标与动作坐标的不一致。",
+    "findings": "RoboCasa 24任务：π0.5 55.3%→62.9%；SmolVLA 37.2%→41.4%。\n相机变化增大时，RGB版本34.5%→24.9%，RGB+pointmap为37.6%→35.8%。",
+    "limitations": "涉及相机/机器人几何标定与点图质量；每任务50示范、50评测。不同容量策略都获益不代表标定误差可忽略。",
+    "insight": "统一视觉几何与机器人动作的坐标系本身就有价值。鲁棒性收益需要连同标定和点图质量一起看。",
+    "readingFocus": "坐标系选择；末端中心化；相机变化下的退化幅度。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.11498v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.11498"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.11498",
+    "arxiv": "2607.11498",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.11498",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把像素三维点映射到机器人坐标系，保持图像网格结构，并用末端中心化缓解视觉坐标与动作坐标的不一致。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11498v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11498"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "RoboCasa 24任务：π0.5 55.3%→62.9%；SmolVLA 37.2%→41.4%。\n相机变化增大时，RGB版本34.5%→24.9%，RGB+pointmap为37.6%→35.8%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11498v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11498"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "涉及相机/机器人几何标定与点图质量；每任务50示范、50评测。不同容量策略都获益不代表标定误差可忽略。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11498v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11498"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "统一视觉几何与机器人动作的坐标系本身就有价值。鲁棒性收益需要连同标定和点图质量一起看。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11498v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11498"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "坐标系选择；末端中心化；相机变化下的退化幅度。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11498v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11498"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p036",
+    "name": "HALO",
+    "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control",
+    "team": "得克萨斯大学奥斯汀分校\nRutav Shah、Yisu Li、Femi Bello、Yuke Zhu、Roberto Martín-Martín",
+    "venue": "RSS 2026",
+    "publicationType": "conference",
+    "publicationStatus": "RSS 2026，论文010\nDOI:10.15607/RSS.2026.XXII.010\narXiv:2606.25136",
+    "firstPublished": "2026-06-23",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月正式会议发表；6月已有预印本｜数据取v1",
+    "topics": [
+      "memory"
+    ],
+    "tags": [
+      "VA",
+      "memory",
+      "VQA"
+    ],
+    "priority": "deep",
+    "contribution": "以任务相关VQA监督学习检索内容，通过稀疏注意力抑制无关历史导致的伪相关与策略漂移。",
+    "findings": "4类仿真任务平均：标准Transformer 22%→HALO 41%；去VQA为31%。\n5类真实任务：36%→55%（+19个百分点）；分别每任务50/20次评测。",
+    "limitations": "记忆任务覆盖空间、关系、数量与事件时间，不只目标位置。会议摘要与预印本的最长时长表述不同，此表不混用时长数字。",
+    "insight": "记忆价值不仅在于保存历史，还在于从无关内容中检索关键事实。检索监督可减少长历史引发的漂移。",
+    "readingFocus": "VQA如何指导检索；稀疏读；Tables I–II；无关历史导致的漂移。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2606.25136v1"
+      },
+      {
+        "label": "会议正式页面",
+        "url": "https://www.roboticsproceedings.org/rss22/p010.html"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2606.25136"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2606.25136",
+    "arxiv": "2606.25136",
+    "doi": "10.15607/RSS.2026.XXII.010"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2026",
+    "doi": "10.15607/RSS.2026.XXII.010",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2026",
+        "source": "https://arxiv.org/abs/2606.25136",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月正式会议发表；6月已有预印本｜数据取v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以任务相关VQA监督学习检索内容，通过稀疏注意力抑制无关历史导致的伪相关与策略漂移。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.25136v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p010.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.25136"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "4类仿真任务平均：标准Transformer 22%→HALO 41%；去VQA为31%。\n5类真实任务：36%→55%（+19个百分点）；分别每任务50/20次评测。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.25136v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p010.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.25136"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "记忆任务覆盖空间、关系、数量与事件时间，不只目标位置。会议摘要与预印本的最长时长表述不同，此表不混用时长数字。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.25136v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p010.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.25136"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "记忆价值不仅在于保存历史，还在于从无关内容中检索关键事实。检索监督可减少长历史引发的漂移。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.25136v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p010.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.25136"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "VQA如何指导检索；稀疏读；Tables I–II；无关历史导致的漂移。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.25136v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p010.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.25136"
+          }
+        ]
+      }
+    ]
+  }
+}

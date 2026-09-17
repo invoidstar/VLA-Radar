@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p050",
+    "name": "SayCan",
+    "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+    "team": "Robotics at Google / Everyday Robots；Michael Ahn 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2022-04-04",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 元数据；官方项目页 2022-08 更新结果",
+    "topics": [
+      "memory",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "affordance",
+      "hierarchical planning"
+    ],
+    "priority": "deep",
+    "contribution": "把语言模型对技能的语义评分与机器人价值函数的可执行性评分结合，为长程指令选择低层技能；属于语言规划与控制连接的前驱工作。",
+    "findings": "官方更新结果在 101 条任务、2 个厨房中报告 PaLM-SayCan 规划正确率 84%、实际执行成功率 74%。两者是不同指标，不能把规划正确率写成机器人成功率。",
+    "limitations": "输出的是预定义技能序列，不是端到端低层 VLA。执行能力受技能库和可执行性估计约束；官方说明中反馈不等同于完整的失败结果理解。",
+    "insight": "语义上合理不等于物理上可执行；任务分解、技能选择与技能执行应分别阅读。",
+    "readingFocus": "语言得分 × 可执行性、101 任务协议、规划与执行的差距。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2204.01691"
+      },
+      {
+        "label": "官方项目页 · Results / Limitations",
+        "url": "https://say-can.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2204.01691",
+    "arxiv": "2204.01691",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2022-04-04",
+    "firstArxivSource": "https://arxiv.org/abs/2204.01691v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2204.01691",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 元数据；官方项目页 2022-08 更新结果",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把语言模型对技能的语义评分与机器人价值函数的可执行性评分结合，为长程指令选择低层技能；属于语言规划与控制连接的前驱工作。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2204.01691"
+          },
+          {
+            "label": "官方项目页 · Results / Limitations",
+            "url": "https://say-can.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "官方更新结果在 101 条任务、2 个厨房中报告 PaLM-SayCan 规划正确率 84%、实际执行成功率 74%。两者是不同指标，不能把规划正确率写成机器人成功率。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2204.01691"
+          },
+          {
+            "label": "官方项目页 · Results / Limitations",
+            "url": "https://say-can.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "输出的是预定义技能序列，不是端到端低层 VLA。执行能力受技能库和可执行性估计约束；官方说明中反馈不等同于完整的失败结果理解。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2204.01691"
+          },
+          {
+            "label": "官方项目页 · Results / Limitations",
+            "url": "https://say-can.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "语义上合理不等于物理上可执行；任务分解、技能选择与技能执行应分别阅读。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2204.01691"
+          },
+          {
+            "label": "官方项目页 · Results / Limitations",
+            "url": "https://say-can.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "语言得分 × 可执行性、101 任务协议、规划与执行的差距。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2204.01691"
+          },
+          {
+            "label": "官方项目页 · Results / Limitations",
+            "url": "https://say-can.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p014",
+    "name": "TemporalFlow-VLA",
+    "title": "TemporalFlow-VLA: Learning Physically Grounded Execution History for Long-Horizon Robot Manipulation",
+    "team": "智元机器人／香港科技大学（广州）／浙江大学／Simon Fraser University\nJiarui Yang、Yehao Lu、Yuning Su等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.26821\n技术预印本",
+    "firstPublished": "2026-08-27",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "memory"
+    ],
+    "tags": [
+      "VLA",
+      "temporal flow",
+      "history"
+    ],
+    "priority": "deep",
+    "contribution": "将机器人表面运动作为历史监督，用少量时序查询压缩物理执行历史；监督由运动学与标定信息构造，部署不需要未来运动标签。",
+    "findings": "LIBERO平均97.63%±0.26；Long为96.60%±0.87。\nRoboTwin的12任务子集：Clean 85.5%、Random 84.2%；核心压缩仅使用2个时序查询。",
+    "limitations": "RoboTwin是12任务子集，不能与50任务平均直接比较。物理运动历史并不自动等同抓取成功、接触成立或任务条件满足。",
+    "insight": "少量具备物理监督的历史查询可以替代原始多帧堆叠。对历史顺序敏感与真正完成任务仍是不同证据。",
+    "readingFocus": "历史表示监督；两查询压缩；历史依赖分析；与普通时序模块的区别。",
+    "evidence": "checked",
+    "evidenceNote": "本次发布已复核原文相关结果片段；不代表独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.26821v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.26821"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.26821",
+    "arxiv": "2608.26821",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.26821",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将机器人表面运动作为历史监督，用少量时序查询压缩物理执行历史；监督由运动学与标定信息构造，部署不需要未来运动标签。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.26821v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.26821"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO平均97.63%±0.26；Long为96.60%±0.87。\nRoboTwin的12任务子集：Clean 85.5%、Random 84.2%；核心压缩仅使用2个时序查询。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.26821v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.26821"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "RoboTwin是12任务子集，不能与50任务平均直接比较。物理运动历史并不自动等同抓取成功、接触成立或任务条件满足。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.26821v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.26821"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "少量具备物理监督的历史查询可以替代原始多帧堆叠。对历史顺序敏感与真正完成任务仍是不同证据。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.26821v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.26821"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "历史表示监督；两查询压缩；历史依赖分析；与普通时序模块的区别。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.26821v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.26821"
+          }
+        ]
+      }
+    ]
+  }
+}

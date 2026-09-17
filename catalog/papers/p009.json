@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p009",
+    "name": "GWM-VLA",
+    "title": "GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning",
+    "team": "同济大学团队\nYanping Zhao、Hang Yu、Yiwei Wang、Guang Chen等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.07619\n技术预印本",
+    "firstPublished": "2026-08-07",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "spatial",
+      "world"
+    ],
+    "tags": [
+      "VLA",
+      "latent future",
+      "wrist"
+    ],
+    "priority": "selective",
+    "contribution": "联合多视角几何特征与未来隐空间监督；未来目标聚焦腕部局部patch，未来损失用于训练而不要求部署生成未来。",
+    "findings": "LIBERO 97.1%，与表中OpenVLA-OFT的97.1%持平；LIBERO-Plus 76.9%，VLA-JEPA（无额外人类视频）为62.9%。",
+    "limitations": "含约7.6万条DROID轨迹预训练；不同方法的主干/数据不完全相同，14个百分点差距不能全归因于局部未来目标。收益主要体现在分布外测试。",
+    "insight": "局部未来目标能够减少与操作无关的预测负担。标准基准持平时，分布外表现可能更有区分度。",
+    "readingFocus": "未来目标区域；几何融合；训练辅助与推理路径分离。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.07619v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.07619"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.07619",
+    "arxiv": "2608.07619",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.07619",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "联合多视角几何特征与未来隐空间监督；未来目标聚焦腕部局部patch，未来损失用于训练而不要求部署生成未来。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.07619v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.07619"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO 97.1%，与表中OpenVLA-OFT的97.1%持平；LIBERO-Plus 76.9%，VLA-JEPA（无额外人类视频）为62.9%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.07619v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.07619"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "含约7.6万条DROID轨迹预训练；不同方法的主干/数据不完全相同，14个百分点差距不能全归因于局部未来目标。收益主要体现在分布外测试。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.07619v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.07619"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "局部未来目标能够减少与操作无关的预测负担。标准基准持平时，分布外表现可能更有区分度。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.07619v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.07619"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "未来目标区域；几何融合；训练辅助与推理路径分离。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.07619v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.07619"
+          }
+        ]
+      }
+    ]
+  }
+}

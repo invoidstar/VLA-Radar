@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p021",
+    "name": "SelfWAM",
+    "title": "SelfWAM: A Self-Grounded Unified World Action Model for Fast Robot Control",
+    "team": "上海科技大学（ShanghaiTech University）／InstAdapt\nBikang Pan、Fan Liu、Haotao Lu、Jingya Wang、Ye Shi",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.00725\n技术预印本",
+    "firstPublished": "2026-08-01",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "self-mask",
+      "action-conditioned"
+    ],
+    "priority": "deep",
+    "contribution": "让未来视觉分支读取干净示范动作，并增加机器人自身掩码预测，使未来学习依赖具体动作；保持动作单独推理路径。",
+    "findings": "RoboTwin平均：FastWAM 91.84%→仅动作条件化RGB预测90.80%→再加自身掩码92.62%。\n完整模型Clean 92.16%、Random 93.08%。",
+    "limitations": "关键是负面消融：动作条件本身不保证提升；完整方案较基线仅+0.78个百分点。自身运动监督不等于已理解物体后果/任务成功。",
+    "insight": "动作条件化本身不保证控制提升。预测目标是否聚焦动作相关变化，比单纯增加未来RGB监督更关键。",
+    "readingFocus": "动作条件与预测目标拆分；自身掩码；不增加动作推理负担的结构。",
+    "evidence": "checked",
+    "evidenceNote": "本次发布已复核原文相关结果片段；不代表独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.00725v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.00725"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.00725",
+    "arxiv": "2608.00725",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.00725",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": "2026-09-17",
+    "version": "arXiv v1",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究问题：未来是否真正受动作控制",
+        "body": "仅预测当前场景后续视频，可能学到观察相关性，而不是给定动作造成的后果。SelfWAM 在统一世界动作模型中加入明确动作条件，并用机器人自身的运动区域强化这种关联。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.00725v1"
+          }
+        ]
+      },
+      {
+        "id": "contributions",
+        "title": "主要贡献与差异",
+        "body": "一是给未来视觉分支提供干净的示范动作；二是预测未来机器人 self-mask，强调可控制的自身运动。定向信息流使视觉预测可读动作，但动作策略不能读取干净动作标签或未来观测，防止训练信息泄漏。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.00725v1"
+          }
+        ]
+      },
+      {
+        "id": "mechanism",
+        "title": "训练目标与部署流程",
+        "body": "训练联合动作和视觉 flow matching，视觉任务在 RGB 与 self-mask 之间切换。部署默认只去噪动作块，不生成未来视频；世界模型的诊断／反事实预测是可选路径，不能把两条路径的时延混写。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.00725v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "数据与评测口径",
+        "body": "RoboTwin 2.0 使用 2,500 条 clean 与 25,000 条场景随机化专家示范，分别评测 clean/random，每任务 100 次。Table 1 的比较属于这一配方，不可与只使用 50 条 clean 示范的结果合并排名。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.00725v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "消融比最高分更重要",
+        "body": "Table 4：FastWAM 平均 91.84%；仅加动作条件未来 RGB 为 90.80%；再加 self-mask 为 92.62%。因此不能总结成“动作条件本身就提升策略”，增益需要结合 self-mask 和具体实验解释。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.00725v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "有效性边界与阅读重点",
+        "body": "动作扰动实验检验预测是否随干预方向变化，比仅看视频逼真度更直接。真机只有四项任务、每任务十次，95% 是这组作者实验的平均，不能视为广泛泛化保证。部署时延、遮罩来源及动作信息隔离应单独核对。",
+        "sources": [
+          {
+            "label": "arXiv v1 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2608.00725v1"
+          }
+        ]
+      }
+    ]
+  }
+}

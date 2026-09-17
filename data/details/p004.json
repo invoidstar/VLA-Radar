@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p004",
+    "name": "Xiaomi-Robotics-1",
+    "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+    "team": "小米机器人团队（Xiaomi Robotics）",
+    "venue": "技术报告",
+    "publicationType": "report",
+    "publicationStatus": "arXiv:2607.15330\n公司技术报告",
+    "firstPublished": "2026-07-16",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "pretraining"
+    ],
+    "tags": [
+      "VLA",
+      "scaling",
+      "state transition"
+    ],
+    "priority": "selective",
+    "contribution": "超过10万小时真实轨迹预训练；自动构建状态转移语言描述，再以本体与命令式指令后训练对齐实际机器人。",
+    "findings": "4个真实任务、每任务10次评测：平均成功率75%，π0.5为40%；平均进度90%，对照66%。\n这些任务合计使用36小时后训练数据；打印机任务20%→70%。",
+    "limitations": "36小时仅为后训练数据，不能忽略10万小时级预训练。每任务10次，样本量较小；公司报告而非独立复现。",
+    "insight": "描述状态转移的语言监督比仅重复任务名提供更细的行为信息。阅读数据效率时必须同时计入预训练资源。",
+    "readingFocus": "自动状态转移描述；预训练/后训练分工；真实任务数据口径。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.15330v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.15330"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.15330",
+    "arxiv": "2607.15330",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "技术报告",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "技术报告",
+        "source": "https://arxiv.org/abs/2607.15330",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": [
+      "arXiv v2 的 RoboCasa365 引言为 57.6%，Table 3 为 57.4%；榜单采用 Table 3，冲突尚待作者澄清。"
+    ]
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": "2026-09-17",
+    "version": "arXiv v2",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究问题与整体定位",
+        "body": "论文研究大规模真实操控数据如何转化为可迁移的机器人基础模型。主线同时涉及 UMI 轨迹规模、视觉语言标注、模型训练和跨本体适配，不能把整体结果直接归因于某一个新增模块。",
+        "sources": [
+          {
+            "label": "arXiv v2 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2607.15330v2"
+          }
+        ]
+      },
+      {
+        "id": "contributions",
+        "title": "主要贡献与创新",
+        "body": "核心组合是规模化 UMI 数据采集、基于状态变化的自动描述，以及与机器人策略联合训练的视觉语言／动作专家体系。它试图连接数据覆盖、语义理解与连续动作生成，而不是只替换动作解码器。",
+        "sources": [
+          {
+            "label": "arXiv v2 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2607.15330v2"
+          }
+        ]
+      },
+      {
+        "id": "mechanism",
+        "title": "模型与两阶段训练",
+        "body": "骨干采用 Qwen3-VL 与 DiT 动作专家的组合。预训练使用状态转移描述获得语义与动作联系；后训练再对齐面向执行的指令和混合本体数据。注意文本描述监督与实际部署指令不是同一种输入分布。",
+        "sources": [
+          {
+            "label": "arXiv v2 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2607.15330v2"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "实验设置与可比性",
+        "body": "§3.4 的 RoboCasa 使用 24 项任务、每任务 300 条合成示范，并在五种场景中评测每任务 100 个回合。RoboCasa365 另用 50 项评测任务：18 项原子、16 项已见组合和16项未见组合；不能称为“365 项任务的平均”。",
+        "sources": [
+          {
+            "label": "arXiv v2 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2607.15330v2"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主要结果与原文不一致",
+        "body": "RoboCasa365 Table 3 的平均成功率为 57.4%，三个子集为 80.2%、57.1%、32.1%。引言中另出现 57.6%；本站保留冲突提示并采用具体表格值，不取较高数字。该结果单独建赛道，不与旧版 RoboCasa 24 任务混排。",
+        "sources": [
+          {
+            "label": "arXiv v2 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2607.15330v2"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "局限与优先阅读内容",
+        "body": "先分别阅读数据构建、训练输入、跨本体控制空间和未见组合任务，再评价泛化。更大数据、不同初始化与不同评测预算同时变化时，领先结果不等于架构改动的纯增益。既有 KEY RESULT 保持不变，本笔记补充 v2 的设置与证据定位。",
+        "sources": [
+          {
+            "label": "arXiv v2 · 方法／实验与附录",
+            "url": "https://arxiv.org/html/2607.15330v2"
+          }
+        ]
+      }
+    ]
+  }
+}

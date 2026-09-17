@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p023",
+    "name": "DSWAM",
+    "title": "DSWAM: A Dual-System World Action Foundation Model for Fine-Grained Robot Manipulation",
+    "team": "美的AI研究院／同济大学\nJian Zhu、Jianjun Zhang、Taiyi Su、Yi Xu等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.04927\n公司/学术联合技术报告",
+    "firstPublished": "2026-07-06",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读所查v1",
+    "topics": [
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "dual-system"
+    ],
+    "priority": "selective",
+    "contribution": "快速世界—动作控制与可选高层规划分工，配合异步执行和推理优化；用细粒度操作验证WAM价值。",
+    "findings": "匹配设置下的折衣任务：DeMa-VLA 92.5%→DSWAM 96.3%；平均时间2分18秒→1分44秒。\n该项比较未开启高层规划器。",
+    "limitations": "该数字是具体折衣任务，不是所有任务均值；规划器关闭的结果不能用于证明层级规划收益。",
+    "insight": "匹配数据与关闭高层规划器的对照，更能说明世界动作建模本身的贡献。执行耗时也是重要结果。",
+    "readingFocus": "VLA/WAM匹配比较；规划器开关；真实细操作与执行耗时。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.04927v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.04927"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.04927",
+    "arxiv": "2607.04927",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.04927",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读所查v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "快速世界—动作控制与可选高层规划分工，配合异步执行和推理优化；用细粒度操作验证WAM价值。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04927v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04927"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "匹配设置下的折衣任务：DeMa-VLA 92.5%→DSWAM 96.3%；平均时间2分18秒→1分44秒。\n该项比较未开启高层规划器。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04927v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04927"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "该数字是具体折衣任务，不是所有任务均值；规划器关闭的结果不能用于证明层级规划收益。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04927v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04927"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "匹配数据与关闭高层规划器的对照，更能说明世界动作建模本身的贡献。执行耗时也是重要结果。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04927v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04927"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "VLA/WAM匹配比较；规划器开关；真实细操作与执行耗时。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04927v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04927"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "tracks": [
+    {
+      "id": "robotwin2-selfwam-27500",
+      "dataset": "RoboTwin",
+      "name": "RoboTwin 2.0 · 27,500 示范 · SelfWAM 协议",
+      "version": "2.0",
+      "tasks": "50",
+      "split": "clean + randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "trainingRegime": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.00725v1"
+    },
+    {
+      "id": "libero-oft-single-view",
+      "dataset": "LIBERO",
+      "name": "LIBERO · 单视角 · OFT 控制比较",
+      "version": "standard four suites",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+      "trainingRegime": "同文微调配方；不同动作目标／解码方式",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2502.19645v1"
+    },
+    {
+      "id": "libero-oft-multi-view",
+      "dataset": "LIBERO",
+      "name": "LIBERO · 多视角 · OpenVLA-OFT",
+      "version": "standard four suites",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "第三人称 + 腕部图像和状态；每套 500 回合；不与单视角合榜。",
+      "trainingRegime": "每任务 50 示范；采用论文描述的过滤",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2502.19645v1"
+    },
+    {
+      "id": "libero-cosmos-3seeds",
+      "dataset": "LIBERO",
+      "name": "LIBERO · Cosmos Policy · 三种子",
+      "version": "standard four suites",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "10任务×50回合×4套×3种子=6000回合；直接策略，非额外规划模型。",
+      "trainingRegime": "每任务50条示范；策略训练过滤失败轨迹",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2601.16163v1"
+    },
+    {
+      "id": "robocasa24-cosmos-50demos",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa 24 · 50 条人工示范",
+      "version": "24-task Panda benchmark",
+      "tasks": "24",
+      "split": "five scenes; unseen object instances",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务50回合×3种子=3600回合；五场景，其中两种未见风格；直接策略。",
+      "trainingRegime": "每任务50条人工示范",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2601.16163v1"
+    },
+    {
+      "id": "robocasa24-cosmos-table",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa 24 · 论文对照表（不同训练预算）",
+      "version": "24-task Panda benchmark",
+      "tasks": "24",
+      "split": "paper-reported comparison",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "trainingRegime": "50 / 300 / 1000 / 3000 示范等，逐行标注",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2601.16163v1"
+    },
+    {
+      "id": "robocasa24-xiaomi-300demos",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa 24 · 300 条合成示范",
+      "version": "24-task benchmark",
+      "tasks": "24",
+      "split": "five scenes",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务100回合；五评测场景；不得与50示范/三种子赛道直接合并。",
+      "trainingRegime": "每任务300条合成示范",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.15330v2"
+    },
+    {
+      "id": "robocasa365-xiaomi-50tasks",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa365 · 50 项评测任务",
+      "version": "365-task collection; evaluated subset of 50",
+      "tasks": "50 = 18 atomic + 16 seen-composite + 16 unseen-composite",
+      "split": "atomic / seen composite / unseen composite",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "依 Table 3 的50任务子集；并非365任务总平均。完整种子设置仍以原文为准。",
+      "trainingRegime": "每任务100条示范",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Atomic",
+        "Seen composite",
+        "Unseen composite",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.15330v2"
+    }
+  ]
+}

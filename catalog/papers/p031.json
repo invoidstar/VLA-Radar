@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p031",
+    "name": "Embodied.cpp",
+    "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+    "team": "东南大学／南京大学／微软研究院／清华大学智能产业研究院\nLing Xu、Chuyu Han、Borui Li等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.02501\n系统技术报告",
+    "firstPublished": "2026-07-02",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首发；7月3日v2｜阅读v2",
+    "topics": [
+      "efficiency"
+    ],
+    "tags": [
+      "runtime",
+      "quantization",
+      "C++"
+    ],
+    "priority": "selective",
+    "contribution": "用分层C++运行时统一输入适配、序列管理、主干、动作头和输出接口，面向异构设备与多频率机器人部署。",
+    "findings": "LingBot-VA单个Transformer块：内存312.2→88.1MiB，延迟3.236→3.171ms。\n比较条件分别为Python BF16与C++ Q4_K，内存下降主要伴随精度变化。",
+    "limitations": "这是单块而非完整WAM的机器人闭环结果；量化与运行时同时改变，不能宣称C++单独带来同等压缩或显著整机加速。",
+    "insight": "运行时与量化是不同因素。单个模块的内存下降和时延变化不能直接外推完整系统的性能。",
+    "readingFocus": "五层运行时职责；多频率接口；单块与整机数据范围；量化设置。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v2",
+        "url": "https://arxiv.org/html/2607.02501v2"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.02501"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.02501",
+    "arxiv": "2607.02501",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.02501",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首发；7月3日v2｜阅读v2",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "用分层C++运行时统一输入适配、序列管理、主干、动作头和输出接口，面向异构设备与多频率机器人部署。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.02501v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02501"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LingBot-VA单个Transformer块：内存312.2→88.1MiB，延迟3.236→3.171ms。\n比较条件分别为Python BF16与C++ Q4_K，内存下降主要伴随精度变化。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.02501v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02501"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "这是单块而非完整WAM的机器人闭环结果；量化与运行时同时改变，不能宣称C++单独带来同等压缩或显著整机加速。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.02501v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02501"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "运行时与量化是不同因素。单个模块的内存下降和时延变化不能直接外推完整系统的性能。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.02501v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02501"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "五层运行时职责；多频率接口；单块与整机数据范围；量化设置。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.02501v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02501"
+          }
+        ]
+      }
+    ]
+  }
+}

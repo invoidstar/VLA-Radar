@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p056",
+    "name": "ACT / ALOHA",
+    "title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+    "team": "Tony Z. Zhao、Vikash Kumar、Sergey Levine、Chelsea Finn（署名作者）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-04-23",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "action",
+      "memory"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "action chunking",
+      "bimanual"
+    ],
+    "priority": "deep",
+    "contribution": "提出低成本双臂遥操作系统 ALOHA 与 Action Chunking with Transformers，将条件生成式动作分块用于精细双臂模仿学习。",
+    "findings": "摘要报告在 6 个真实任务上评估；所展示的精细操作可用约 10 分钟示范达到 80%–90% 成功率。这个范围不是每个任务、每种预算都适用的统一均值。",
+    "limitations": "原始 ACT 不是通用语言条件 VLA；成绩与目标任务示范、机器人配置相关。动作块长度和时间融合也影响反应速度。",
+    "insight": "动作分块既是输出表示也是控制节奏设计，后续 VLA 的强表现可能部分来自动作接口而非仅来自语义主干。",
+    "readingFocus": "条件生成、动作分块、时间融合与 ALOHA 数据采集。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2304.13705"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://tonyzhaozh.github.io/aloha/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2304.13705",
+    "arxiv": "2304.13705",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-04-23",
+    "firstArxivSource": "https://arxiv.org/abs/2304.13705v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2304.13705",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "提出低成本双臂遥操作系统 ALOHA 与 Action Chunking with Transformers，将条件生成式动作分块用于精细双臂模仿学习。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2304.13705"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://tonyzhaozh.github.io/aloha/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "摘要报告在 6 个真实任务上评估；所展示的精细操作可用约 10 分钟示范达到 80%–90% 成功率。这个范围不是每个任务、每种预算都适用的统一均值。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2304.13705"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://tonyzhaozh.github.io/aloha/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "原始 ACT 不是通用语言条件 VLA；成绩与目标任务示范、机器人配置相关。动作块长度和时间融合也影响反应速度。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2304.13705"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://tonyzhaozh.github.io/aloha/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "动作分块既是输出表示也是控制节奏设计，后续 VLA 的强表现可能部分来自动作接口而非仅来自语义主干。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2304.13705"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://tonyzhaozh.github.io/aloha/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "条件生成、动作分块、时间融合与 ALOHA 数据采集。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2304.13705"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://tonyzhaozh.github.io/aloha/"
+          }
+        ]
+      }
+    ]
+  }
+}

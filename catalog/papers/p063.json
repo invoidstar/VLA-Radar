@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p063",
+    "name": "Octo",
+    "title": "Octo: An Open-Source Generalist Robot Policy",
+    "team": "UC Berkeley / Stanford / CMU / Google DeepMind；Octo Model Team",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2024-05-20",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "generalist policy",
+      "diffusion"
+    ],
+    "priority": "deep",
+    "contribution": "以可扩展 Transformer 与扩散动作头统一多种观察、目标和动作空间；支持语言 / 目标图像条件及新机器人接口微调。",
+    "findings": "官方说明：基于 OXE 约 80 万条机器人 episodes 预训练，发布 27M 与 93M 两种模型；论文摘要报告在 9 类机器人平台上评估迁移。不能由参数更少直接推断任何硬件上更快。",
+    "limitations": "其通用性依赖目标数据与接口适配；本条不把不同机器人、不同示范预算的成绩压成一个全局成功率。",
+    "insight": "通用策略的价值也包括易于适配传感器和动作接口；语言条件控制不必一律采用超大自回归语言主干。",
+    "readingFocus": "可变 token / attention 结构、扩散动作头与新观察 / 动作空间适配。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2405.12213"
+      },
+      {
+        "label": "官方项目页 · Model / Model sizes",
+        "url": "https://octo-models.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2405.12213",
+    "arxiv": "2405.12213",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2024-05-20",
+    "firstArxivSource": "https://arxiv.org/abs/2405.12213v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2405.12213",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以可扩展 Transformer 与扩散动作头统一多种观察、目标和动作空间；支持语言 / 目标图像条件及新机器人接口微调。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2405.12213"
+          },
+          {
+            "label": "官方项目页 · Model / Model sizes",
+            "url": "https://octo-models.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "官方说明：基于 OXE 约 80 万条机器人 episodes 预训练，发布 27M 与 93M 两种模型；论文摘要报告在 9 类机器人平台上评估迁移。不能由参数更少直接推断任何硬件上更快。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2405.12213"
+          },
+          {
+            "label": "官方项目页 · Model / Model sizes",
+            "url": "https://octo-models.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "其通用性依赖目标数据与接口适配；本条不把不同机器人、不同示范预算的成绩压成一个全局成功率。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2405.12213"
+          },
+          {
+            "label": "官方项目页 · Model / Model sizes",
+            "url": "https://octo-models.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "通用策略的价值也包括易于适配传感器和动作接口；语言条件控制不必一律采用超大自回归语言主干。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2405.12213"
+          },
+          {
+            "label": "官方项目页 · Model / Model sizes",
+            "url": "https://octo-models.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "可变 token / attention 结构、扩散动作头与新观察 / 动作空间适配。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2405.12213"
+          },
+          {
+            "label": "官方项目页 · Model / Model sizes",
+            "url": "https://octo-models.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

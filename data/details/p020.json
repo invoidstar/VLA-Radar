@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p020",
+    "name": "SMILE",
+    "title": "SMILE: Smooth Motion for Improved Long-Horizon VLA Execution",
+    "team": "Stony Brook University／Salesforce AI Research\nJongwoo Park、E-Ro Nguyen、Kanchana Ranasinghe等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.29432\n作者标注投稿RA-L；非已录用",
+    "firstPublished": "2026-08-29",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "action",
+      "efficiency"
+    ],
+    "tags": [
+      "B-spline",
+      "action chunking",
+      "smoothness"
+    ],
+    "priority": "selective",
+    "contribution": "保留策略主干，以B样条系数参数化动作片段，从输出表示改善平滑性、连续性和长程控制。",
+    "findings": "SMILE-Evo1在LIBERO达到98.0%、约1.1×加速；SMILE-VPP在CALVIN平均完成链长4.42、约1.5×加速。\n对应SmolVLA设置下，非边界加速度下降78.6%，速度符号翻转下降42.3%。",
+    "limitations": "不同数字对应不同基座，不能拼成同一模型结果；链长不是成功率。平滑性收益不自动代表所有接触精度提升。",
+    "insight": "动作参数化会影响连续性与速度。平滑指标改善并不自动代表精细接触或恢复能力改善。",
+    "readingFocus": "样条参数化；不同基座结果；平滑性指标定义。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.29432v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.29432"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.29432",
+    "arxiv": "2608.29432",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.29432",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "保留策略主干，以B样条系数参数化动作片段，从输出表示改善平滑性、连续性和长程控制。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29432v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29432"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "SMILE-Evo1在LIBERO达到98.0%、约1.1×加速；SMILE-VPP在CALVIN平均完成链长4.42、约1.5×加速。\n对应SmolVLA设置下，非边界加速度下降78.6%，速度符号翻转下降42.3%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29432v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29432"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "不同数字对应不同基座，不能拼成同一模型结果；链长不是成功率。平滑性收益不自动代表所有接触精度提升。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29432v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29432"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "动作参数化会影响连续性与速度。平滑指标改善并不自动代表精细接触或恢复能力改善。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29432v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29432"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "样条参数化；不同基座结果；平滑性指标定义。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.29432v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.29432"
+          }
+        ]
+      }
+    ]
+  }
+}

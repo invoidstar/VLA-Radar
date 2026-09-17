@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p028",
+    "name": "ActionCache",
+    "title": "ActionCache: Training-Free Acceleration for Vision-Language-Action Models with Action Caching and Refinement",
+    "team": "东京科学大学（Institute of Science Tokyo）\nRyuji Oi、Hikari Otsuka、Kosuke Matsushima、Daichi Fujiki等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.06370\n技术预印本",
+    "firstPublished": "2026-07-07",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首发；8月3日v2｜阅读v2",
+    "topics": [
+      "efficiency"
+    ],
+    "tags": [
+      "VLA",
+      "cache",
+      "training-free"
+    ],
+    "priority": "selective",
+    "contribution": "以多模态上下文检索缓存的中间噪声动作，再细化而非从纯噪声生成；无需重新训练策略。",
+    "findings": "作者报告动作头最高加速：π0.5为10.44×，GR00T-N1.6为40.17×。\n分析中动作头占完整推理时间约37%—66%。",
+    "limitations": "最高加速针对动作头，不是端到端系统；受命中率、任务相似度与缓存构建影响。不能将缓存动作直接等同已验证可执行命令。",
+    "insight": "缓存能减少重复动作生成，但实际收益由命中率和动作头占比共同决定。不要把最高局部加速当作整机加速。",
+    "readingFocus": "缓存键/噪声状态；命中与细化；动作头vs端到端收益。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v2",
+        "url": "https://arxiv.org/html/2607.06370v2"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.06370"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.06370",
+    "arxiv": "2607.06370",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.06370",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首发；8月3日v2｜阅读v2",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以多模态上下文检索缓存的中间噪声动作，再细化而非从纯噪声生成；无需重新训练策略。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.06370v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06370"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者报告动作头最高加速：π0.5为10.44×，GR00T-N1.6为40.17×。\n分析中动作头占完整推理时间约37%—66%。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.06370v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06370"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "最高加速针对动作头，不是端到端系统；受命中率、任务相似度与缓存构建影响。不能将缓存动作直接等同已验证可执行命令。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.06370v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06370"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "缓存能减少重复动作生成，但实际收益由命中率和动作头占比共同决定。不要把最高局部加速当作整机加速。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.06370v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06370"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "缓存键/噪声状态；命中与细化；动作头vs端到端收益。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2607.06370v2"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.06370"
+          }
+        ]
+      }
+    ]
+  }
+}

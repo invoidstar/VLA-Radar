@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p043",
+    "name": "DMS-VLA",
+    "title": "Dynamic Maclaurin-Series-Based Vision-Language-Action Model",
+    "team": "Chong Yu、Zhongxue Gan作者团队\n完整署名机构未从原始全文核验",
+    "venue": "IEEE RA-L",
+    "publicationType": "journal",
+    "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259\nDOI:10.1109/LRA.2026.3683324",
+    "firstPublished": null,
+    "dateNote": "未核验首发；已查到2026-04上线",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月卷期；非7月才首次提出",
+    "topics": [
+      "efficiency"
+    ],
+    "tags": [
+      "VLA",
+      "compression"
+    ],
+    "priority": "overview",
+    "contribution": "通过Maclaurin级数式参数化共享权重/动态计算，探索VLA结构压缩与推理效率。",
+    "findings": "未填写未经原文核验的压缩率、成功率或加速比。\n当前仅核验出版条目及摘要层面的结构设计；IEEE原始全文受访问限制。",
+    "limitations": "量化结论证据不足，不能依据二手宣传数字调整主干。期刊卷期与首次上线时间分开记录。",
+    "insight": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
+    "readingFocus": "摘要与结构动机；有全文后再看量化口径。",
+    "evidence": "metadata",
+    "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "官方 / 作者来源",
+        "url": "https://ieeexplore.ieee.org/document/11479850/"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/LRA.2026.3683324"
+      }
+    ],
+    "paperUrl": "https://doi.org/10.1109/LRA.2026.3683324",
+    "arxiv": "",
+    "doi": "10.1109/LRA.2026.3683324"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "IEEE RA-L",
+    "doi": "10.1109/LRA.2026.3683324",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "IEEE RA-L",
+        "source": "https://doi.org/10.1109/LRA.2026.3683324",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月卷期；非7月才首次提出",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "通过Maclaurin级数式参数化共享权重/动态计算，探索VLA结构压缩与推理效率。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://ieeexplore.ieee.org/document/11479850/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "未填写未经原文核验的压缩率、成功率或加速比。\n当前仅核验出版条目及摘要层面的结构设计；IEEE原始全文受访问限制。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://ieeexplore.ieee.org/document/11479850/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "量化结论证据不足，不能依据二手宣传数字调整主干。期刊卷期与首次上线时间分开记录。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://ieeexplore.ieee.org/document/11479850/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://ieeexplore.ieee.org/document/11479850/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "摘要与结构动机；有全文后再看量化口径。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://ieeexplore.ieee.org/document/11479850/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+          }
+        ]
+      }
+    ]
+  }
+}

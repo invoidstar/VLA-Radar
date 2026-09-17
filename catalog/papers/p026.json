@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p026",
+    "name": "WAM Capability Separation",
+    "title": "On the Capability Separation Between World-Model Policy Learning and Imitated World-Action Models",
+    "team": "南京大学\nYang Yu",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.22197\n理论预印本",
+    "firstPublished": "2026-08-23",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "theory",
+      "imitation"
+    ],
+    "priority": "deep",
+    "contribution": "在明确的信息、可实现性和优化假设下，区分模仿式世界动作联合学习与真正利用世界模型进行策略学习的能力边界。",
+    "findings": "理论结论：在匹配部署信息、无限制条件核、可实现性与精确总体优化等假设下，联合WAM与动作模仿的最优策略均等于示范行为条件分布。\n没有成功率实验；不能给出经验提升百分比。",
+    "limitations": "这是理想化定理，不否定有限数据下的表征、正则化或优化收益。其结论依赖假设，不能泛化成“WAM无用”。",
+    "insight": "联合世界—动作建模不自动等于获得新的规划能力。理论边界依赖假设，有限数据下的表征收益仍可能存在。",
+    "readingFocus": "定理假设；部署信息集合；反例与不可辨识性；结论不覆盖的情形。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.22197v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.22197"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.22197",
+    "arxiv": "2608.22197",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.22197",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "在明确的信息、可实现性和优化假设下，区分模仿式世界动作联合学习与真正利用世界模型进行策略学习的能力边界。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.22197v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.22197"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "理论结论：在匹配部署信息、无限制条件核、可实现性与精确总体优化等假设下，联合WAM与动作模仿的最优策略均等于示范行为条件分布。\n没有成功率实验；不能给出经验提升百分比。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.22197v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.22197"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "这是理想化定理，不否定有限数据下的表征、正则化或优化收益。其结论依赖假设，不能泛化成“WAM无用”。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.22197v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.22197"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "联合世界—动作建模不自动等于获得新的规划能力。理论边界依赖假设，有限数据下的表征收益仍可能存在。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.22197v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.22197"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "定理假设；部署信息集合；反例与不可辨识性；结论不覆盖的情形。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.22197v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.22197"
+          }
+        ]
+      }
+    ]
+  }
+}

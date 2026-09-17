@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p042",
+    "name": "VLA-InfoEntropy",
+    "title": "VLA-InfoEntropy: A Training-Free Vision-Attention Information Entropy Approach for Vision-Language-Action Models Inference Acceleration and Success",
+    "team": "平安科技／清华大学深圳国际研究生院\nChuhang Liu、Yayun He、Zuheng Kang、Xiaoyang Qu、Jianzong Wang",
+    "venue": "ICME 2026",
+    "publicationType": "conference",
+    "publicationStatus": "ICME 2026（作者发表页确认）\narXiv:2604.05323",
+    "firstPublished": "2026-04-07",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月正式会议发表；4月已有预印本｜阅读v1",
+    "topics": [
+      "efficiency"
+    ],
+    "tags": [
+      "token pruning",
+      "training-free",
+      "entropy"
+    ],
+    "priority": "selective",
+    "contribution": "融合视觉熵、任务注意力与执行时间，区分需重新计算的关键视觉token和可复用的静态KV缓存。",
+    "findings": "RTX 4090、OpenVLA/LIBERO：75.0%→76.4%；延迟51.91→31.25（作者报告下降39.8%）；FLOPs下降34.9%。\n仅视觉熵为69.8%，视觉+注意力75.8%。",
+    "limitations": "论文表中的1.53×对应FLOPs比，不应误写为实测时延比；Long由53.2%降到52.2%，并非每个子集都提高。",
+    "insight": "视觉信息量和任务相关性不可等同。仅按熵选取内容可能损害动作决策，负面消融很重要。",
+    "readingFocus": "Table II负面消融；任务注意力；缓存与重算划分；速度定义。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2604.05323v1"
+      },
+      {
+        "label": "官方 / 作者来源",
+        "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2604.05323"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2604.05323",
+    "arxiv": "2604.05323",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "ICME 2026",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "ICME 2026",
+        "source": "https://arxiv.org/abs/2604.05323",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月正式会议发表；4月已有预印本｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "融合视觉熵、任务注意力与执行时间，区分需重新计算的关键视觉token和可复用的静态KV缓存。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2604.05323"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "RTX 4090、OpenVLA/LIBERO：75.0%→76.4%；延迟51.91→31.25（作者报告下降39.8%）；FLOPs下降34.9%。\n仅视觉熵为69.8%，视觉+注意力75.8%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2604.05323"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "论文表中的1.53×对应FLOPs比，不应误写为实测时延比；Long由53.2%降到52.2%，并非每个子集都提高。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2604.05323"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "视觉信息量和任务相关性不可等同。仅按熵选取内容可能损害动作决策，负面消融很重要。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2604.05323"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "Table II负面消融；任务注意力；缓存与重算划分；速度定义。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2604.05323v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2604.05323"
+          }
+        ]
+      }
+    ]
+  }
+}

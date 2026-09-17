@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p012",
+    "name": "OC-VLA++",
+    "title": "OC-VLA++: Monocular Geometry-Guided Cross-View Consistency for Viewpoint-Robust Robotic Manipulation",
+    "team": "浙江大学／上海交通大学／香港大学／中国人民大学／NVIDIA\nTianyi Zhang、Ziyang Gong等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.01066\n技术预印本",
+    "firstPublished": "2026-08-02",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "spatial"
+    ],
+    "tags": [
+      "VLA",
+      "viewpoint",
+      "consistency"
+    ],
+    "priority": "selective",
+    "contribution": "通过单目几何构造跨视角对应，并把不同相机下的动作一致性约束到统一机器人坐标；几何增强主要在训练期使用。",
+    "findings": "最大视角变化、6任务：Dita系40.8%→48.3%；Qwen系37.5%→43.3%。\n固定视角分别68.3%→68.3%、60.0%→59.2%。",
+    "limitations": "每任务10示范，每相机配置/任务20次评测。主要收益是视角泛化，不是所有原始场景都提高。",
+    "insight": "跨视角一致性的价值主要在视角变化条件下体现。原视角持平或略降也是应保留的结论。",
+    "readingFocus": "跨视角动作一致性；固定视角与大偏移结果；离线几何成本。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.01066v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.01066"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.01066",
+    "arxiv": "2608.01066",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.01066",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "通过单目几何构造跨视角对应，并把不同相机下的动作一致性约束到统一机器人坐标；几何增强主要在训练期使用。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.01066"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "最大视角变化、6任务：Dita系40.8%→48.3%；Qwen系37.5%→43.3%。\n固定视角分别68.3%→68.3%、60.0%→59.2%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.01066"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "每任务10示范，每相机配置/任务20次评测。主要收益是视角泛化，不是所有原始场景都提高。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.01066"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "跨视角一致性的价值主要在视角变化条件下体现。原视角持平或略降也是应保留的结论。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.01066"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "跨视角动作一致性；固定视角与大偏移结果；离线几何成本。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.01066"
+          }
+        ]
+      }
+    ]
+  }
+}

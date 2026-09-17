@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "plannedAt": "2026-09-17",
+  "notes": [
+    {
+      "paperId": "p069",
+      "reason": "needs_review",
+      "readVersion": "arXiv v1",
+      "latestVersion": "v2"
+    },
+    {
+      "paperId": "p002",
+      "reason": "legacy",
+      "readVersion": "7月首发；8月4日v2｜阅读v2",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p007",
+      "reason": "legacy",
+      "readVersion": "8月首次公开｜阅读v1",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p013",
+      "reason": "legacy",
+      "readVersion": "8月首次公开｜阅读v1",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p014",
+      "reason": "legacy",
+      "readVersion": "8月首次公开｜阅读v1",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p016",
+      "reason": "legacy",
+      "readVersion": "8月首次公开｜阅读v1",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p022",
+      "reason": "legacy",
+      "readVersion": "7月首次公开｜阅读v1",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p026",
+      "reason": "legacy",
+      "readVersion": "8月首次公开｜阅读v1",
+      "latestVersion": null
+    }
+  ],
+  "metadata": {
+    "allArxiv": true,
+    "withoutArxiv": [
+      "p005",
+      "p043",
+      "p046"
+    ]
+  },
+  "remainingNotes": 73,
+  "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
+  "quarterlyReview": "2026-Q3",
+  "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."
+}

@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p044",
+    "name": "VLA-Touch",
+    "title": "VLA-Touch: Enhancing Vision-Language-Action Models with Dual-Level Tactile Feedback",
+    "team": "新加坡国立大学CLeAR／Show Lab\nJianxin Bi、Kevin Yuchen Ma、Ce Hao、Mike Zheng Shou、Harold Soh",
+    "venue": "IEEE RA-L",
+    "publicationType": "journal",
+    "publicationStatus": "IEEE RA-L 11(7):8487–8494\nDOI:10.1109/LRA.2026.3692345\narXiv:2507.17294",
+    "firstPublished": "2025-07-23",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "2026年7月卷期；5月在线；数据取2025预印本v1",
+    "topics": [
+      "tactile"
+    ],
+    "tags": [
+      "VLA",
+      "tactile",
+      "feedback"
+    ],
+    "priority": "selective",
+    "contribution": "高层将触觉转为规划可用信息，低层用触觉条件插值控制器细化动作，保持预训练VLA本体不必重训。",
+    "findings": "各20次真实评测，RDT→插值控制器：放杯7/20→10/20；擦拭完成5/20→12/20；削皮完成6/20→10/20。\n触觉语言使力判断50%→90%、硬度判断60%→75%。",
+    "limitations": "需要GelSight传感器、触觉模型及训练过的控制器；不重训VLA不等于整系统免训练。引用的是预印本v1，不冒充已逐项核对期刊最终版。",
+    "insight": "高层触觉解释与低层反馈控制承担不同职责。不更新VLA并不意味着整个系统无需训练。",
+    "readingFocus": "高低层反馈分工；Table 1；语言化触觉与原始触觉图；训练成本。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2507.17294v1"
+      },
+      {
+        "label": "官方 / 作者来源",
+        "url": "https://clear-nus.github.io/blog/vla-touch"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2507.17294"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2507.17294",
+    "arxiv": "2507.17294",
+    "doi": "10.1109/LRA.2026.3692345"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "IEEE RA-L",
+    "doi": "10.1109/LRA.2026.3692345",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "IEEE RA-L",
+        "source": "https://arxiv.org/abs/2507.17294",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "2026年7月卷期；5月在线；数据取2025预印本v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "高层将触觉转为规划可用信息，低层用触觉条件插值控制器细化动作，保持预训练VLA本体不必重训。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2507.17294v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://clear-nus.github.io/blog/vla-touch"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2507.17294"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "各20次真实评测，RDT→插值控制器：放杯7/20→10/20；擦拭完成5/20→12/20；削皮完成6/20→10/20。\n触觉语言使力判断50%→90%、硬度判断60%→75%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2507.17294v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://clear-nus.github.io/blog/vla-touch"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2507.17294"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "需要GelSight传感器、触觉模型及训练过的控制器；不重训VLA不等于整系统免训练。引用的是预印本v1，不冒充已逐项核对期刊最终版。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2507.17294v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://clear-nus.github.io/blog/vla-touch"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2507.17294"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "高层触觉解释与低层反馈控制承担不同职责。不更新VLA并不意味着整个系统无需训练。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2507.17294v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://clear-nus.github.io/blog/vla-touch"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2507.17294"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "高低层反馈分工；Table 1；语言化触觉与原始触觉图；训练成本。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2507.17294v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://clear-nus.github.io/blog/vla-touch"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2507.17294"
+          }
+        ]
+      }
+    ]
+  }
+}

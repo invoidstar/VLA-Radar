@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p025",
+    "name": "VT-WAM",
+    "title": "VT-WAM: Visual-Tactile World Action Model for Contact-Rich Manipulation",
+    "team": "中科院自动化所／中国科学院大学／新加坡国立大学／复旦大学／TARS等\nShuai Tian、Yupeng Zheng、Songen Gu等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.02503\n技术预印本",
+    "firstPublished": "2026-07-02",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "tactile",
+      "world"
+    ],
+    "tags": [
+      "WAM",
+      "tactile",
+      "contact"
+    ],
+    "priority": "overview",
+    "contribution": "联合视觉、触觉未来与动作建模，通过接触相关的信息交互与门控，补充视觉难以观测的物理状态。",
+    "findings": "6个真实接触密集任务平均成功率71.67%。\n论文报告显著优于视觉WAM和已有视触策略；此处不将摘要增幅擅自换算为百分点。",
+    "limitations": "收益依赖真实触觉传感与对应数据，不能按同等观测条件归因于网络。6任务结果不代表无触觉机械臂可直接获得同等收益。",
+    "insight": "触觉为视觉难以判断的接触提供新证据。结构收益与额外传感器的信息收益必须分开理解。",
+    "readingFocus": "接触阶段门控；视觉/触觉职责；传感器与数据依赖。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.02503v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.02503"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.02503",
+    "arxiv": "2607.02503",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.02503",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "联合视觉、触觉未来与动作建模，通过接触相关的信息交互与门控，补充视觉难以观测的物理状态。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.02503v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02503"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "6个真实接触密集任务平均成功率71.67%。\n论文报告显著优于视觉WAM和已有视触策略；此处不将摘要增幅擅自换算为百分点。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.02503v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02503"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "收益依赖真实触觉传感与对应数据，不能按同等观测条件归因于网络。6任务结果不代表无触觉机械臂可直接获得同等收益。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.02503v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02503"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "触觉为视觉难以判断的接触提供新证据。结构收益与额外传感器的信息收益必须分开理解。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.02503v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02503"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "接触阶段门控；视觉/触觉职责；传感器与数据依赖。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.02503v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.02503"
+          }
+        ]
+      }
+    ]
+  }
+}

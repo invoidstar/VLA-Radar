@@ -1,0 +1,20 @@
+{
+  "id": "r-robotwin2-selfwam-27500-pi0",
+  "paperId": "p021",
+  "method": "pi0",
+  "trackId": "robotwin2-selfwam-27500",
+  "values": {
+    "Clean": 65.92,
+    "Random": 58.4,
+    "Average": 62.16
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-17",
+  "source": "https://arxiv.org/html/2608.00725v1",
+  "sourceVersion": "arXiv v1",
+  "locator": "Table 1; §4 Benchmarks",
+  "attribution": "reported-baseline",
+  "trainingData": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+  "evaluationNotes": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+  "supersedes": ""
+}

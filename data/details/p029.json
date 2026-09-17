@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p029",
+    "name": "FlashVLA",
+    "title": "FlashVLA: Streaming Action Decoding for Fast and Asynchronous VLA Inference",
+    "team": "加州大学圣迭戈分校／麻省理工学院\nZekai Li、Jiaming Tang、Zhijian Liu",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.27384\n技术预印本（注意同名工作）",
+    "firstPublished": "2026-08-27",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "efficiency",
+      "action"
+    ],
+    "tags": [
+      "VLA",
+      "streaming",
+      "asynchronous"
+    ],
+    "priority": "selective",
+    "contribution": "多噪声动作缓冲与片段级因果注意力联合，预热后流式产出动作片段，使生成与执行异步衔接。",
+    "findings": "作者报告单GPU真实部署达到至少30Hz；动作解码墙钟加速19.9×、GPU计算工作量降低约9.3×。",
+    "limitations": "需要对应缓冲/噪声结构的微调，不是training-free。动作解码加速不是所有视觉前处理、通信与机器人执行的总加速。",
+    "insight": "流式解码改变了计算和执行的调度方式。预热、稳态、必要微调和通信开销应分别阅读。",
+    "readingFocus": "缓冲噪声调度；预热和稳态；微调需求；异步动作接口。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.27384v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.27384"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.27384",
+    "arxiv": "2608.27384",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.27384",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "多噪声动作缓冲与片段级因果注意力联合，预热后流式产出动作片段，使生成与执行异步衔接。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.27384v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.27384"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者报告单GPU真实部署达到至少30Hz；动作解码墙钟加速19.9×、GPU计算工作量降低约9.3×。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.27384v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.27384"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "需要对应缓冲/噪声结构的微调，不是training-free。动作解码加速不是所有视觉前处理、通信与机器人执行的总加速。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.27384v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.27384"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "流式解码改变了计算和执行的调度方式。预热、稳态、必要微调和通信开销应分别阅读。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.27384v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.27384"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "缓冲噪声调度；预热和稳态；微调需求；异步动作接口。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.27384v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.27384"
+          }
+        ]
+      }
+    ]
+  }
+}

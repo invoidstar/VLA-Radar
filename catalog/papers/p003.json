@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p003",
+    "name": "Lumo-2",
+    "title": "Towards Predictive, Aligned, and Scalable Robot Learning",
+    "team": "Astribot 星尘智能团队",
+    "venue": "技术报告",
+    "publicationType": "report",
+    "publicationStatus": "arXiv:2607.11270\n公司技术报告",
+    "firstPublished": "2026-07-13",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "pretraining"
+    ],
+    "tags": [
+      "VLA",
+      "action representation"
+    ],
+    "priority": "selective",
+    "contribution": "把动作表示与视觉、语言、世界动态对齐；通过分阶段学习形成兼具预测性和语义判别力的动作表征。",
+    "findings": "18类原子动作、7,200个样本的语义分类中：DINO视觉基线84.10%；加入Stage 1动作表示92.85%；加入Stage 2语义动作表示95.00%。\nStage 2还降低下游解码误差。",
+    "limitations": "分类输入包含初始图像，不是纯动作识别；属于表征诊断，不可直接等同机器人成功率。原文称linear probing，但分类器实际为两层MLP。",
+    "insight": "动作表示需要兼顾语义判别和可解码性。分类或重建指标应与闭环控制表现分开理解。",
+    "readingFocus": "Stage 1/2表示差异；Table 7；动作语义与下游解码分析。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.11270v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.11270"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.11270",
+    "arxiv": "2607.11270",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "技术报告",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "技术报告",
+        "source": "https://arxiv.org/abs/2607.11270",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把动作表示与视觉、语言、世界动态对齐；通过分阶段学习形成兼具预测性和语义判别力的动作表征。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11270v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11270"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "18类原子动作、7,200个样本的语义分类中：DINO视觉基线84.10%；加入Stage 1动作表示92.85%；加入Stage 2语义动作表示95.00%。\nStage 2还降低下游解码误差。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11270v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11270"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "分类输入包含初始图像，不是纯动作识别；属于表征诊断，不可直接等同机器人成功率。原文称linear probing，但分类器实际为两层MLP。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11270v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11270"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "动作表示需要兼顾语义判别和可解码性。分类或重建指标应与闭环控制表现分开理解。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11270v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11270"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "Stage 1/2表示差异；Table 7；动作语义与下游解码分析。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.11270v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.11270"
+          }
+        ]
+      }
+    ]
+  }
+}

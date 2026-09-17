@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p013",
+    "name": "BridgeVLA++",
+    "title": "BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation",
+    "team": "中科院自动化所NLPR／中国科学院大学／FiveAges\nByteDance Seed相关作者（论文注明工作期间归属）\nPeiyan Li、Yuze Zhu等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.05042\n作者标注投稿TPAMI；非已录用",
+    "firstPublished": "2026-08-05",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "memory",
+      "spatial"
+    ],
+    "tags": [
+      "VLA",
+      "3D",
+      "memory"
+    ],
+    "priority": "deep",
+    "contribution": "在BridgeVLA二维输入—输出空间对齐基础上，加入时间关键帧记忆与可重渲染空间记忆，分别支持阶段推理与遮挡定位。",
+    "findings": "RMBench 9个记忆任务：BridgeVLA 18.9%→BridgeVLA++ 96.0%；MemoryWAM为83.0%。\nRLBench 90.5%→93.7%；COLOSSEUM均值64.0%→65.2%。",
+    "limitations": "RMBench每任务50示范、100评测；部分外部基线取自其他论文。子目标门控依赖标注，不是无额外监督；大增益集中记忆任务。",
+    "insight": "记忆增强可能在专门记忆任务上产生大幅收益，但未必等幅提升一般操作。额外子目标标注应计入成本。",
+    "readingFocus": "新增长期记忆部分；RMBench主表；子目标门控；训练标注依赖。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.05042v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.05042"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.05042",
+    "arxiv": "2608.05042",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.05042",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "在BridgeVLA二维输入—输出空间对齐基础上，加入时间关键帧记忆与可重渲染空间记忆，分别支持阶段推理与遮挡定位。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05042v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05042"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "RMBench 9个记忆任务：BridgeVLA 18.9%→BridgeVLA++ 96.0%；MemoryWAM为83.0%。\nRLBench 90.5%→93.7%；COLOSSEUM均值64.0%→65.2%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05042v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05042"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "RMBench每任务50示范、100评测；部分外部基线取自其他论文。子目标门控依赖标注，不是无额外监督；大增益集中记忆任务。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05042v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05042"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "记忆增强可能在专门记忆任务上产生大幅收益，但未必等幅提升一般操作。额外子目标标注应计入成本。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05042v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05042"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "新增长期记忆部分；RMBench主表；子目标门控；训练标注依赖。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.05042v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.05042"
+          }
+        ]
+      }
+    ]
+  }
+}

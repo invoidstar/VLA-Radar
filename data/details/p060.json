@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p060",
+    "name": "RoboFlamingo",
+    "title": "Vision-Language Foundation Models as Effective Robot Imitators",
+    "team": "ByteDance Research / Tsinghua / Shanghai Jiao Tong / NUS；Xinghang Li、Minghuan Liu 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-11-02",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "pretraining",
+      "memory"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "recurrent policy",
+      "OpenFlamingo"
+    ],
+    "priority": "selective",
+    "contribution": "将预训练视觉语言模型的图文理解与显式循环动作头分开，研究 VLM 特征如何通过模仿学习转成具有时序状态的控制策略。",
+    "findings": "官方项目给出 CALVIN 上不同基础模型、策略头与微调方式的比较图。当前可访问文本未完整列出表内数值，未据二手榜单转录链长或成功率。",
+    "limitations": "证据层级为摘要 / 项目说明，不是定量表格复核。循环动作头的作用不应直接等同于长期事件记忆或执行结果验证。",
+    "insight": "视觉语言编码和时序动作决策可以分工；比较这类工作需要留意动作头容量与历史输入差异。",
+    "readingFocus": "VLM / 策略头拆分、循环状态、冻结与微调方式。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2311.01378"
+      },
+      {
+        "label": "官方项目页 · 方法 / 实验图",
+        "url": "https://roboflamingo.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2311.01378",
+    "arxiv": "2311.01378",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-11-02",
+    "firstArxivSource": "https://arxiv.org/abs/2311.01378v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2311.01378",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将预训练视觉语言模型的图文理解与显式循环动作头分开，研究 VLM 特征如何通过模仿学习转成具有时序状态的控制策略。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2311.01378"
+          },
+          {
+            "label": "官方项目页 · 方法 / 实验图",
+            "url": "https://roboflamingo.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "官方项目给出 CALVIN 上不同基础模型、策略头与微调方式的比较图。当前可访问文本未完整列出表内数值，未据二手榜单转录链长或成功率。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2311.01378"
+          },
+          {
+            "label": "官方项目页 · 方法 / 实验图",
+            "url": "https://roboflamingo.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "证据层级为摘要 / 项目说明，不是定量表格复核。循环动作头的作用不应直接等同于长期事件记忆或执行结果验证。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2311.01378"
+          },
+          {
+            "label": "官方项目页 · 方法 / 实验图",
+            "url": "https://roboflamingo.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "视觉语言编码和时序动作决策可以分工；比较这类工作需要留意动作头容量与历史输入差异。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2311.01378"
+          },
+          {
+            "label": "官方项目页 · 方法 / 实验图",
+            "url": "https://roboflamingo.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "VLM / 策略头拆分、循环状态、冻结与微调方式。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2311.01378"
+          },
+          {
+            "label": "官方项目页 · 方法 / 实验图",
+            "url": "https://roboflamingo.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

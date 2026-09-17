@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p041",
+    "name": "Legato",
+    "title": "Learning Native Continuation for Action Chunking Flow Policies",
+    "team": "Spirit AI／上海交通大学／清华大学／同济大学／中国科学技术大学\nYufeng Liu、Hang Yu、Juntu Zhao、Junliang Guo等",
+    "venue": "RSS 2026",
+    "publicationType": "conference",
+    "publicationStatus": "RSS 2026，论文058（作者发表页确认）\narXiv:2602.12978",
+    "firstPublished": "2026-02-13",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月正式会议发表；2月已有预印本｜阅读v1",
+    "topics": [
+      "action",
+      "efficiency"
+    ],
+    "tags": [
+      "flow matching",
+      "action chunking",
+      "continuation"
+    ],
+    "priority": "selective",
+    "contribution": "把已知动作前缀与噪声调度纳入训练，使流策略原生学习动作片段续接，兼顾持续执行与不同推理延迟。",
+    "findings": "作者在5个真实任务中报告，相对Real-Time Chunking，运动平滑性与完成时间约改善10%。",
+    "limitations": "约10%为作者汇总描述，不是成功率+10个百分点。需要训练分布支持原生续接，不是简单推理后处理。",
+    "insight": "连续执行能力可以进入训练分布，而非全部依赖推理后处理。平滑续接与快速纠正之间仍需权衡。",
+    "readingFocus": "原生续接；已知动作条件；延迟适应；与RTC的本质区别。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2602.12978v1"
+      },
+      {
+        "label": "官方 / 作者来源",
+        "url": "https://lemmonation.github.io/publications/"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2602.12978"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2602.12978",
+    "arxiv": "2602.12978",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2026",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2026",
+        "source": "https://arxiv.org/abs/2602.12978",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月正式会议发表；2月已有预印本｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把已知动作前缀与噪声调度纳入训练，使流策略原生学习动作片段续接，兼顾持续执行与不同推理延迟。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2602.12978v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://lemmonation.github.io/publications/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2602.12978"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者在5个真实任务中报告，相对Real-Time Chunking，运动平滑性与完成时间约改善10%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2602.12978v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://lemmonation.github.io/publications/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2602.12978"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "约10%为作者汇总描述，不是成功率+10个百分点。需要训练分布支持原生续接，不是简单推理后处理。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2602.12978v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://lemmonation.github.io/publications/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2602.12978"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "连续执行能力可以进入训练分布，而非全部依赖推理后处理。平滑续接与快速纠正之间仍需权衡。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2602.12978v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://lemmonation.github.io/publications/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2602.12978"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "原生续接；已知动作条件；延迟适应；与RTC的本质区别。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2602.12978v1"
+          },
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://lemmonation.github.io/publications/"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2602.12978"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p074",
+    "name": "VLA-Adapter",
+    "title": "VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model",
+    "team": "OpenHelix Team；Yihao Wang、Pengxiang Ding 等（具体机构以原文署名为准）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2025-09-11",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1；LIBERO 主表与摘要",
+    "topics": [
+      "efficiency",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "adapter",
+      "Bridge Attention"
+    ],
+    "priority": "deep",
+    "contribution": "利用 Bridge Attention 连接轻量视觉语言表征与动作生成，研究不进行额外大规模机器人预训练时的小型 VLA 适配。",
+    "findings": "原文 v1 LIBERO 主表：0.5B VLA-Adapter 的 Spatial / Object / Goal / Long 为 97.8 / 99.2 / 97.2 / 95.0%，平均 97.3%。摘要报告单消费级 GPU 约 8 小时训练。",
+    "limitations": "“无机器人预训练”不等于没有 VLM 预训练或目标任务示范；后续 Pro 版本、不同预算和本论文 v1 不能混记。",
+    "insight": "轻量化值得关注条件传递效率，而非只压缩参数；高饱和仿真成绩并不自动代表开放世界优势。",
+    "readingFocus": "Bridge Attention、v1 主表、训练前提与版本差异。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2509.09372"
+      },
+      {
+        "label": "原文 v1 · LIBERO",
+        "url": "https://arxiv.org/html/2509.09372v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2509.09372",
+    "arxiv": "2509.09372",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2025-09-11",
+    "firstArxivSource": "https://arxiv.org/abs/2509.09372v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2509.09372",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1；LIBERO 主表与摘要",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "利用 Bridge Attention 连接轻量视觉语言表征与动作生成，研究不进行额外大规模机器人预训练时的小型 VLA 适配。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2509.09372"
+          },
+          {
+            "label": "原文 v1 · LIBERO",
+            "url": "https://arxiv.org/html/2509.09372v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v1 LIBERO 主表：0.5B VLA-Adapter 的 Spatial / Object / Goal / Long 为 97.8 / 99.2 / 97.2 / 95.0%，平均 97.3%。摘要报告单消费级 GPU 约 8 小时训练。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2509.09372"
+          },
+          {
+            "label": "原文 v1 · LIBERO",
+            "url": "https://arxiv.org/html/2509.09372v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "“无机器人预训练”不等于没有 VLM 预训练或目标任务示范；后续 Pro 版本、不同预算和本论文 v1 不能混记。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2509.09372"
+          },
+          {
+            "label": "原文 v1 · LIBERO",
+            "url": "https://arxiv.org/html/2509.09372v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "轻量化值得关注条件传递效率，而非只压缩参数；高饱和仿真成绩并不自动代表开放世界优势。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2509.09372"
+          },
+          {
+            "label": "原文 v1 · LIBERO",
+            "url": "https://arxiv.org/html/2509.09372v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "Bridge Attention、v1 主表、训练前提与版本差异。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2509.09372"
+          },
+          {
+            "label": "原文 v1 · LIBERO",
+            "url": "https://arxiv.org/html/2509.09372v1"
+          }
+        ]
+      }
+    ]
+  }
+}

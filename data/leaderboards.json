@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-17",
+  "tracks": [
+    {
+      "id": "robotwin2-selfwam-27500",
+      "dataset": "RoboTwin",
+      "name": "RoboTwin 2.0 · 27,500 示范 · SelfWAM 协议",
+      "version": "2.0",
+      "tasks": "50",
+      "split": "clean + randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "trainingRegime": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.00725v1"
+    },
+    {
+      "id": "libero-oft-single-view",
+      "dataset": "LIBERO",
+      "name": "LIBERO · 单视角 · OFT 控制比较",
+      "version": "standard four suites",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+      "trainingRegime": "同文微调配方；不同动作目标／解码方式",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2502.19645v1"
+    },
+    {
+      "id": "libero-oft-multi-view",
+      "dataset": "LIBERO",
+      "name": "LIBERO · 多视角 · OpenVLA-OFT",
+      "version": "standard four suites",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "第三人称 + 腕部图像和状态；每套 500 回合；不与单视角合榜。",
+      "trainingRegime": "每任务 50 示范；采用论文描述的过滤",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2502.19645v1"
+    },
+    {
+      "id": "libero-cosmos-3seeds",
+      "dataset": "LIBERO",
+      "name": "LIBERO · Cosmos Policy · 三种子",
+      "version": "standard four suites",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "10任务×50回合×4套×3种子=6000回合；直接策略，非额外规划模型。",
+      "trainingRegime": "每任务50条示范；策略训练过滤失败轨迹",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2601.16163v1"
+    },
+    {
+      "id": "robocasa24-cosmos-50demos",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa 24 · 50 条人工示范",
+      "version": "24-task Panda benchmark",
+      "tasks": "24",
+      "split": "five scenes; unseen object instances",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务50回合×3种子=3600回合；五场景，其中两种未见风格；直接策略。",
+      "trainingRegime": "每任务50条人工示范",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2601.16163v1"
+    },
+    {
+      "id": "robocasa24-cosmos-table",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa 24 · 论文对照表（不同训练预算）",
+      "version": "24-task Panda benchmark",
+      "tasks": "24",
+      "split": "paper-reported comparison",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "trainingRegime": "50 / 300 / 1000 / 3000 示范等，逐行标注",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2601.16163v1"
+    },
+    {
+      "id": "robocasa24-xiaomi-300demos",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa 24 · 300 条合成示范",
+      "version": "24-task benchmark",
+      "tasks": "24",
+      "split": "five scenes",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务100回合；五评测场景；不得与50示范/三种子赛道直接合并。",
+      "trainingRegime": "每任务300条合成示范",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.15330v2"
+    },
+    {
+      "id": "robocasa365-xiaomi-50tasks",
+      "dataset": "RoboCasa",
+      "name": "RoboCasa365 · 50 项评测任务",
+      "version": "365-task collection; evaluated subset of 50",
+      "tasks": "50 = 18 atomic + 16 seen-composite + 16 unseen-composite",
+      "split": "atomic / seen composite / unseen composite",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "依 Table 3 的50任务子集；并非365任务总平均。完整种子设置仍以原文为准。",
+      "trainingRegime": "每任务100条示范",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Atomic",
+        "Seen composite",
+        "Unseen composite",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.15330v2"
+    }
+  ],
+  "results": [
+    {
+      "id": "r-libero-cosmos-3seeds-cosmos-policy",
+      "paperId": "p076",
+      "method": "Cosmos Policy",
+      "trackId": "libero-cosmos-3seeds",
+      "values": {
+        "Spatial": 98.1,
+        "Object": 100,
+        "Goal": 98.2,
+        "Long": 97.6,
+        "Average": 98.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 1; §5.1",
+      "attribution": "author-reported",
+      "trainingData": "每任务50条示范；策略训练过滤失败轨迹",
+      "evaluationNotes": "10任务×50回合×4套×3种子=6000回合；直接策略，非额外规划模型。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-oft-multi-view-openvla-oft",
+      "paperId": "p069",
+      "method": "OpenVLA-OFT",
+      "trackId": "libero-oft-multi-view",
+      "values": {
+        "Spatial": 97.6,
+        "Object": 98.4,
+        "Goal": 97.9,
+        "Long": 94.5,
+        "Average": 97.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2502.19645v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I · multi-view block",
+      "attribution": "author-reported",
+      "trainingData": "每任务 50 示范；采用论文描述的过滤",
+      "evaluationNotes": "第三人称 + 腕部图像和状态；每套 500 回合；不与单视角合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-oft-single-view-openvla-pd-ac-diffusion",
+      "paperId": "p069",
+      "method": "OpenVLA-PD-AC-Diffusion",
+      "trackId": "libero-oft-single-view",
+      "values": {
+        "Spatial": 96.9,
+        "Object": 98.1,
+        "Goal": 95.5,
+        "Long": 91.1,
+        "Average": 95.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2502.19645v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I · single-view block",
+      "attribution": "author-reported",
+      "trainingData": "同文微调配方；不同动作目标／解码方式",
+      "evaluationNotes": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-oft-single-view-openvla-pd-ac-l1",
+      "paperId": "p069",
+      "method": "OpenVLA-PD-AC-L1",
+      "trackId": "libero-oft-single-view",
+      "values": {
+        "Spatial": 96.2,
+        "Object": 98.3,
+        "Goal": 96.2,
+        "Long": 90.7,
+        "Average": 95.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2502.19645v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I · single-view block",
+      "attribution": "author-reported",
+      "trainingData": "同文微调配方；不同动作目标／解码方式",
+      "evaluationNotes": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-oft-single-view-openvla-pd-ac",
+      "paperId": "p069",
+      "method": "OpenVLA-PD-AC",
+      "trackId": "libero-oft-single-view",
+      "values": {
+        "Spatial": 91.3,
+        "Object": 92.7,
+        "Goal": 90.5,
+        "Long": 86.5,
+        "Average": 90.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2502.19645v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I · single-view block",
+      "attribution": "author-reported",
+      "trainingData": "同文微调配方；不同动作目标／解码方式",
+      "evaluationNotes": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-oft-single-view-openvla",
+      "paperId": "p069",
+      "method": "OpenVLA",
+      "trackId": "libero-oft-single-view",
+      "values": {
+        "Spatial": 84.7,
+        "Object": 88.4,
+        "Goal": 79.2,
+        "Long": 53.7,
+        "Average": 76.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2502.19645v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table I · single-view block",
+      "attribution": "author-reported",
+      "trainingData": "同文微调配方；不同动作目标／解码方式",
+      "evaluationNotes": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-50demos-cosmos-policy",
+      "paperId": "p076",
+      "method": "Cosmos Policy",
+      "trackId": "robocasa24-cosmos-50demos",
+      "values": {
+        "Average": 67.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2; §5.1",
+      "attribution": "author-reported",
+      "trainingData": "每任务50条人工示范",
+      "evaluationNotes": "每任务50回合×3种子=3600回合；五场景，其中两种未见风格；直接策略。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-cosmos-policy",
+      "paperId": "p076",
+      "method": "Cosmos Policy",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 67.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "author-reported",
+      "trainingData": "50 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-dp-vla",
+      "paperId": "p076",
+      "method": "DP-VLA",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 57.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "3000 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-flare",
+      "paperId": "p076",
+      "method": "FLARE",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 66.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-gr00t-n1-5-hamlet",
+      "paperId": "p076",
+      "method": "GR00T-N1.5-HAMLET",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 66.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-gr00t-n1-5",
+      "paperId": "p076",
+      "method": "GR00T-N1.5",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 64.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-gr00t-n1-dreamgen",
+      "paperId": "p076",
+      "method": "GR00T-N1-DreamGen",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 57.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 + 10000 synthetic demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-gr00t-n1-dust",
+      "paperId": "p076",
+      "method": "GR00T-N1-DUST",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 58.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-gr00t-n1",
+      "paperId": "p076",
+      "method": "GR00T-N1",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 49.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-pi0",
+      "paperId": "p076",
+      "method": "pi0",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 62.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-uva",
+      "paperId": "p076",
+      "method": "UVA",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 50.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "50 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-uwm",
+      "paperId": "p076",
+      "method": "UWM",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 60.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "1000 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-cosmos-table-video-policy",
+      "paperId": "p076",
+      "method": "Video Policy",
+      "trackId": "robocasa24-cosmos-table",
+      "values": {
+        "Average": 66.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2601.16163v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 2",
+      "attribution": "reported-baseline",
+      "trainingData": "300 demos/task",
+      "evaluationNotes": "原文 Table 2 汇总。基线评测种子和训练预算并非统一；只列来源表，不生成公平名次。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa24-xiaomi-300demos-xiaomi-robotics-1",
+      "paperId": "p004",
+      "method": "Xiaomi-Robotics-1",
+      "trackId": "robocasa24-xiaomi-300demos",
+      "values": {
+        "Average": 74.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2607.15330v2",
+      "sourceVersion": "arXiv v2",
+      "locator": "Table 2; §3.4",
+      "attribution": "author-reported",
+      "trainingData": "每任务300条合成示范",
+      "evaluationNotes": "每任务100回合；五评测场景；不得与50示范/三种子赛道直接合并。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robocasa365-xiaomi-50tasks-xiaomi-robotics-1",
+      "paperId": "p004",
+      "method": "Xiaomi-Robotics-1",
+      "trackId": "robocasa365-xiaomi-50tasks",
+      "values": {
+        "Atomic": 80.2,
+        "Seen composite": 57.1,
+        "Unseen composite": 32.1,
+        "Average": 57.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2607.15330v2",
+      "sourceVersion": "arXiv v2",
+      "locator": "Table 3; §3.4",
+      "attribution": "author-reported",
+      "trainingData": "每任务100条示范",
+      "evaluationNotes": "依 Table 3 的50任务子集；并非365任务总平均。完整种子设置仍以原文为准。 引言57.6与表格57.4不一致，此处使用表格。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin2-selfwam-27500-fastwam",
+      "paperId": "p021",
+      "method": "FastWAM",
+      "trackId": "robotwin2-selfwam-27500",
+      "values": {
+        "Clean": 91.82,
+        "Random": 91.86,
+        "Average": 91.84
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2608.00725v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 1; §4 Benchmarks",
+      "attribution": "reported-baseline",
+      "trainingData": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "evaluationNotes": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin2-selfwam-27500-gigaworld-policy",
+      "paperId": "p021",
+      "method": "GigaWorld-Policy",
+      "trackId": "robotwin2-selfwam-27500",
+      "values": {
+        "Clean": 86.36,
+        "Random": 85.04,
+        "Average": 85.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2608.00725v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 1; §4 Benchmarks",
+      "attribution": "reported-baseline",
+      "trainingData": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "evaluationNotes": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin2-selfwam-27500-motus",
+      "paperId": "p021",
+      "method": "Motus",
+      "trackId": "robotwin2-selfwam-27500",
+      "values": {
+        "Clean": 88.66,
+        "Random": 87.02,
+        "Average": 87.84
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2608.00725v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 1; §4 Benchmarks",
+      "attribution": "reported-baseline",
+      "trainingData": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "evaluationNotes": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin2-selfwam-27500-pi0-5",
+      "paperId": "p021",
+      "method": "pi0.5",
+      "trackId": "robotwin2-selfwam-27500",
+      "values": {
+        "Clean": 82.74,
+        "Random": 76.76,
+        "Average": 79.75
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2608.00725v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 1; §4 Benchmarks",
+      "attribution": "reported-baseline",
+      "trainingData": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "evaluationNotes": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin2-selfwam-27500-pi0",
+      "paperId": "p021",
+      "method": "pi0",
+      "trackId": "robotwin2-selfwam-27500",
+      "values": {
+        "Clean": 65.92,
+        "Random": 58.4,
+        "Average": 62.16
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2608.00725v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 1; §4 Benchmarks",
+      "attribution": "reported-baseline",
+      "trainingData": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "evaluationNotes": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin2-selfwam-27500-selfwam",
+      "paperId": "p021",
+      "method": "SelfWAM",
+      "trackId": "robotwin2-selfwam-27500",
+      "values": {
+        "Clean": 92.16,
+        "Random": 93.08,
+        "Average": 92.62
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-17",
+      "source": "https://arxiv.org/html/2608.00725v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "Table 1; §4 Benchmarks",
+      "attribution": "author-reported",
+      "trainingData": "2,500 clean + 25,000 randomized 专家示范；不同方法预训练基础不同",
+      "evaluationNotes": "每任务、每设置 100 回合；两种设置分别平均。作者同文比较，不是本站复现。",
+      "supersedes": ""
+    }
+  ]
+}

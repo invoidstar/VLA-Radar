@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p072",
+    "name": "π0.5",
+    "title": "π0.5: a Vision-Language-Action Model with Open-World Generalization",
+    "team": "Physical Intelligence",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2025-04-22",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1，Sections V-A / V-B 与 Appendix C",
+    "topics": [
+      "pretraining",
+      "memory",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "open-world",
+      "co-training"
+    ],
+    "priority": "deep",
+    "contribution": "将跨本体数据、多环境移动操作、高层语义与一般视觉语言任务联合训练；结合高层子任务推断、离散动作监督和连续流动作执行。",
+    "findings": "原文 v1 §V：在 3 个训练未见真实家庭评价，每类任务 / 环境平均 10 次试验，任务约 2–5 分钟；场景数量消融取 3、12、22、53、82、104 个地点，并固定 40k 后训练步数控制样本暴露。",
+    "limitations": "家庭结果包含任务进度评分，不能直接当作二元全程成功率；场景消融不是每个版本都重新完成全部预训练。",
+    "insight": "开放环境泛化需要多环境、语义与动作监督互补；评价场景分布和进度量表比笼统“开放世界成功”更有解释力。",
+    "readingFocus": "异构联合训练、FAST / flow 信息隔离、未见家庭与场景规模消融。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2504.16054"
+      },
+      {
+        "label": "原文 v1 · 泛化评价和场景消融",
+        "url": "https://arxiv.org/html/2504.16054v1"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2504.16054",
+    "arxiv": "2504.16054",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2025-04-22",
+    "firstArxivSource": "https://arxiv.org/abs/2504.16054v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2504.16054",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1，Sections V-A / V-B 与 Appendix C",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将跨本体数据、多环境移动操作、高层语义与一般视觉语言任务联合训练；结合高层子任务推断、离散动作监督和连续流动作执行。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2504.16054"
+          },
+          {
+            "label": "原文 v1 · 泛化评价和场景消融",
+            "url": "https://arxiv.org/html/2504.16054v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v1 §V：在 3 个训练未见真实家庭评价，每类任务 / 环境平均 10 次试验，任务约 2–5 分钟；场景数量消融取 3、12、22、53、82、104 个地点，并固定 40k 后训练步数控制样本暴露。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2504.16054"
+          },
+          {
+            "label": "原文 v1 · 泛化评价和场景消融",
+            "url": "https://arxiv.org/html/2504.16054v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "家庭结果包含任务进度评分，不能直接当作二元全程成功率；场景消融不是每个版本都重新完成全部预训练。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2504.16054"
+          },
+          {
+            "label": "原文 v1 · 泛化评价和场景消融",
+            "url": "https://arxiv.org/html/2504.16054v1"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "开放环境泛化需要多环境、语义与动作监督互补；评价场景分布和进度量表比笼统“开放世界成功”更有解释力。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2504.16054"
+          },
+          {
+            "label": "原文 v1 · 泛化评价和场景消融",
+            "url": "https://arxiv.org/html/2504.16054v1"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "异构联合训练、FAST / flow 信息隔离、未见家庭与场景规模消融。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2504.16054"
+          },
+          {
+            "label": "原文 v1 · 泛化评价和场景消融",
+            "url": "https://arxiv.org/html/2504.16054v1"
+          }
+        ]
+      }
+    ]
+  }
+}

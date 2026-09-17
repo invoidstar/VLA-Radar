@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p058",
+    "name": "RT-2",
+    "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control",
+    "team": "Google DeepMind；Anthony Brohan 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2023-07-28",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v1 元数据；Google 2023-07-28 官方报告的 A brighter future for robotics 段落",
+    "topics": [
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "VLA",
+      "web knowledge"
+    ],
+    "priority": "deep",
+    "contribution": "把机器人动作编码为文本 token，与互联网视觉语言任务共同微调 VLM，使同一模型输出低层动作并迁移语义知识，是现代 VLA 路线的代表起点。",
+    "findings": "Google 官方技术说明：在 6,000 余次机器人试验中，未见场景的成功率由 RT-1 的 32% 提高至 RT-2 的 62%（+30 个百分点）；已见任务表现与 RT-1 接近。此为指定泛化设置，不是所有任务平均提高 30 个百分点。",
+    "limitations": "网络语义迁移不等于从未示范过的物理技能凭空出现；模型体量、远程推理和机器人数据共同影响效果。",
+    "insight": "将动作放入 VLM 的监督接口后，保留一般视觉语言能力与获取控制能力可在同一训练框架下讨论。",
+    "readingFocus": "动作 token 化、机器人 / 网络数据混训、语义泛化与技能边界。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对 Google 官方报告中 6,000 余次试验及 32% / 62% 的原始表述；未声称重现全部实验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2307.15818"
+      },
+      {
+        "label": "官方项目页 · Abstract / Approach",
+        "url": "https://robotics-transformer2.github.io/"
+      },
+      {
+        "label": "Google 官方报告 · 未见场景 32%→62%",
+        "url": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2307.15818",
+    "arxiv": "2307.15818",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-07-28",
+    "firstArxivSource": "https://arxiv.org/abs/2307.15818v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2307.15818",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v1 元数据；Google 2023-07-28 官方报告的 A brighter future for robotics 段落",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "把机器人动作编码为文本 token，与互联网视觉语言任务共同微调 VLM，使同一模型输出低层动作并迁移语义知识，是现代 VLA 路线的代表起点。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2307.15818"
+          },
+          {
+            "label": "官方项目页 · Abstract / Approach",
+            "url": "https://robotics-transformer2.github.io/"
+          },
+          {
+            "label": "Google 官方报告 · 未见场景 32%→62%",
+            "url": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "Google 官方技术说明：在 6,000 余次机器人试验中，未见场景的成功率由 RT-1 的 32% 提高至 RT-2 的 62%（+30 个百分点）；已见任务表现与 RT-1 接近。此为指定泛化设置，不是所有任务平均提高 30 个百分点。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2307.15818"
+          },
+          {
+            "label": "官方项目页 · Abstract / Approach",
+            "url": "https://robotics-transformer2.github.io/"
+          },
+          {
+            "label": "Google 官方报告 · 未见场景 32%→62%",
+            "url": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "网络语义迁移不等于从未示范过的物理技能凭空出现；模型体量、远程推理和机器人数据共同影响效果。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2307.15818"
+          },
+          {
+            "label": "官方项目页 · Abstract / Approach",
+            "url": "https://robotics-transformer2.github.io/"
+          },
+          {
+            "label": "Google 官方报告 · 未见场景 32%→62%",
+            "url": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "将动作放入 VLM 的监督接口后，保留一般视觉语言能力与获取控制能力可在同一训练框架下讨论。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2307.15818"
+          },
+          {
+            "label": "官方项目页 · Abstract / Approach",
+            "url": "https://robotics-transformer2.github.io/"
+          },
+          {
+            "label": "Google 官方报告 · 未见场景 32%→62%",
+            "url": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "动作 token 化、机器人 / 网络数据混训、语义泛化与技能边界。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2307.15818"
+          },
+          {
+            "label": "官方项目页 · Abstract / Approach",
+            "url": "https://robotics-transformer2.github.io/"
+          },
+          {
+            "label": "Google 官方报告 · 未见场景 32%→62%",
+            "url": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/"
+          }
+        ]
+      }
+    ]
+  }
+}

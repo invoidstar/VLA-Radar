@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p070",
+    "name": "GR00T N1",
+    "title": "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots",
+    "team": "NVIDIA；Johan Bjorck 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2025-03-18",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv v2（2025-03-27），表 2–3",
+    "topics": [
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "代表方法",
+      "humanoid",
+      "synthetic data"
+    ],
+    "priority": "deep",
+    "contribution": "将视觉语言模块与扩散动作模块端到端耦合，结合真实机器人、人类视频和生成 / 模拟轨迹，面向通用人形机器人操作。",
+    "findings": "原文 v2 表 3：GR-1 真实机器人任务中，全量目标数据下 GR00T-N1-2B 平均 76.8%，从头训练 Diffusion Policy 为 46.4%；10% 数据下分别 42.6% 与 10.2%。",
+    "limitations": "比较方法的预训练数据不同；10% 指下游示范比例，不是总训练成本的 10%。双系统是架构分工，不等于两个独立推理智能体。",
+    "insight": "目标数据效率必须连同上游数据成本阅读；生成轨迹的动作标签质量会影响正迁移。",
+    "readingFocus": "双系统交互、数据金字塔、表 2–3 和生成轨迹消融。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2503.14734"
+      },
+      {
+        "label": "原文 v2 · Real-World Results",
+        "url": "https://arxiv.org/html/2503.14734v2"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2503.14734",
+    "arxiv": "2503.14734",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2025-03-18",
+    "firstArxivSource": "https://arxiv.org/abs/2503.14734v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2503.14734",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv v2（2025-03-27），表 2–3",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "将视觉语言模块与扩散动作模块端到端耦合，结合真实机器人、人类视频和生成 / 模拟轨迹，面向通用人形机器人操作。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.14734"
+          },
+          {
+            "label": "原文 v2 · Real-World Results",
+            "url": "https://arxiv.org/html/2503.14734v2"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "原文 v2 表 3：GR-1 真实机器人任务中，全量目标数据下 GR00T-N1-2B 平均 76.8%，从头训练 Diffusion Policy 为 46.4%；10% 数据下分别 42.6% 与 10.2%。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.14734"
+          },
+          {
+            "label": "原文 v2 · Real-World Results",
+            "url": "https://arxiv.org/html/2503.14734v2"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "比较方法的预训练数据不同；10% 指下游示范比例，不是总训练成本的 10%。双系统是架构分工，不等于两个独立推理智能体。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.14734"
+          },
+          {
+            "label": "原文 v2 · Real-World Results",
+            "url": "https://arxiv.org/html/2503.14734v2"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "目标数据效率必须连同上游数据成本阅读；生成轨迹的动作标签质量会影响正迁移。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.14734"
+          },
+          {
+            "label": "原文 v2 · Real-World Results",
+            "url": "https://arxiv.org/html/2503.14734v2"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "双系统交互、数据金字塔、表 2–3 和生成轨迹消融。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2503.14734"
+          },
+          {
+            "label": "原文 v2 · Real-World Results",
+            "url": "https://arxiv.org/html/2503.14734v2"
+          }
+        ]
+      }
+    ]
+  }
+}

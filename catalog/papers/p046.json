@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p046",
+    "name": "VLAbot",
+    "title": "VLAbot: A human Vision–Language–Action models interaction framework for robotic assembly",
+    "team": "香港理工大学相关工业合作团队\nXueting Wang、Xiwen Dengxiong、Shi Bai、Pai Zheng、Yunbo Zhang",
+    "venue": "RCIM",
+    "publicationType": "journal",
+    "publicationStatus": "Elsevier Robotics and Computer-Integrated Manufacturing 100:103268\nDOI:10.1016/j.rcim.2026.103268",
+    "firstPublished": null,
+    "dateNote": "首次在线日期未核验",
+    "collectionMonth": "2026-08",
+    "versionNote": "2026年8月卷期｜依据机构出版页/摘要",
+    "topics": [
+      "evaluation"
+    ],
+    "tags": [
+      "assembly",
+      "human-in-the-loop",
+      "AR"
+    ],
+    "priority": "overview",
+    "contribution": "结合多专家模型、增强现实和人类指导，组织工业装配的任务解释、反馈和执行协作。",
+    "findings": "作者在齿轮装配与插销案例中报告，机器人可在5次尝试内学习目标操作；随交互推进，完成耗时降低。\n公开摘要未给出统一成功率/耗时数值，不补造。",
+    "limitations": "包含人类提示、指导与交互，不是5条无人干预示范实现自主泛化；证据以两个装配案例和公开摘要为主。",
+    "insight": "人机协作的少次尝试应连同人类指导和纠正一起计量。不要把交互式学习误当成纯自主少样本泛化。",
+    "readingFocus": "人类介入点；增强现实反馈；5次尝试包含的监督成本。",
+    "evidence": "metadata",
+    "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "官方 / 作者来源",
+        "url": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+      }
+    ],
+    "paperUrl": "https://doi.org/10.1016/j.rcim.2026.103268",
+    "arxiv": "",
+    "doi": "10.1016/j.rcim.2026.103268"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RCIM",
+    "doi": "10.1016/j.rcim.2026.103268",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RCIM",
+        "source": "https://doi.org/10.1016/j.rcim.2026.103268",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "2026年8月卷期｜依据机构出版页/摘要",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "结合多专家模型、增强现实和人类指导，组织工业装配的任务解释、反馈和执行协作。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者在齿轮装配与插销案例中报告，机器人可在5次尝试内学习目标操作；随交互推进，完成耗时降低。\n公开摘要未给出统一成功率/耗时数值，不补造。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "包含人类提示、指导与交互，不是5条无人干预示范实现自主泛化；证据以两个装配案例和公开摘要为主。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "人机协作的少次尝试应连同人类指导和纠正一起计量。不要把交互式学习误当成纯自主少样本泛化。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "人类介入点；增强现实反馈；5次尝试包含的监督成本。",
+        "sources": [
+          {
+            "label": "官方 / 作者来源",
+            "url": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+          }
+        ]
+      }
+    ]
+  }
+}

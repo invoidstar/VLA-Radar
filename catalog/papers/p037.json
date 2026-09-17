@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p037",
+    "name": "CauVA / LingBot-VA",
+    "title": "Causal World Modeling for Robot Control",
+    "team": "Robbyant 灵波科技（作者项目发布团队）\nLin Li、Qihang Zhang、Yiming Luo、Yujun Shen、Yinghao Xu等",
+    "venue": "RSS 2026",
+    "publicationType": "conference",
+    "publicationStatus": "RSS 2026，论文016\nDOI:10.15607/RSS.2026.XXII.016\narXiv:2601.21998",
+    "firstPublished": "2026-01-29",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月正式会议发表；1月已有预印本｜数据取LingBot-VA v1",
+    "topics": [
+      "world",
+      "efficiency"
+    ],
+    "tags": [
+      "VA",
+      "WAM",
+      "causal attention"
+    ],
+    "priority": "selective",
+    "contribution": "视频/动作交错自回归与MoT联合，使用真实观测刷新缓存；通过前向动力学重定位过时预测，支持闭环异步执行。",
+    "findings": "RoboTwin 50任务Easy/Hard：92.93%/91.55%，Motus为88.7%/87.0%。\nLIBERO均值98.5%；异步版本在相近成功率下任务完成约快2×。",
+    "limitations": "RoboTwin使用2,500条干净+25,000条随机场景示范。会议与预印本模型命名有变化，数字按所链v1。因果注意力不等同完成干预因果识别。",
+    "insight": "真实观测缓存与视频动作解码可以兼顾效率。因果注意力结构不能直接解释为干预因果推理能力。",
+    "readingFocus": "真实观测缓存；过时预测问题；前向动力学校正；异步数据流。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2601.21998v1"
+      },
+      {
+        "label": "会议正式页面",
+        "url": "https://www.roboticsproceedings.org/rss22/p016.html"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2601.21998"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2601.21998",
+    "arxiv": "2601.21998",
+    "doi": "10.15607/RSS.2026.XXII.016"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2026",
+    "doi": "10.15607/RSS.2026.XXII.016",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2026",
+        "source": "https://arxiv.org/abs/2601.21998",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月正式会议发表；1月已有预印本｜数据取LingBot-VA v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "视频/动作交错自回归与MoT联合，使用真实观测刷新缓存；通过前向动力学重定位过时预测，支持闭环异步执行。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2601.21998v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p016.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2601.21998"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "RoboTwin 50任务Easy/Hard：92.93%/91.55%，Motus为88.7%/87.0%。\nLIBERO均值98.5%；异步版本在相近成功率下任务完成约快2×。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2601.21998v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p016.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2601.21998"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "RoboTwin使用2,500条干净+25,000条随机场景示范。会议与预印本模型命名有变化，数字按所链v1。因果注意力不等同完成干预因果识别。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2601.21998v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p016.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2601.21998"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "真实观测缓存与视频动作解码可以兼顾效率。因果注意力结构不能直接解释为干预因果推理能力。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2601.21998v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p016.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2601.21998"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "真实观测缓存；过时预测问题；前向动力学校正；异步数据流。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2601.21998v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p016.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2601.21998"
+          }
+        ]
+      }
+    ]
+  }
+}

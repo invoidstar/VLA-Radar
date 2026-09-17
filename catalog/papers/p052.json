@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p052",
+    "name": "RT-1",
+    "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
+    "team": "Robotics at Google / Everyday Robots；Anthony Brohan 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2022-12-13",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "关键文献",
+      "奠基工作",
+      "Robotics Transformer",
+      "multi-task"
+    ],
+    "priority": "deep",
+    "contribution": "以语言条件视觉编码、TokenLearner 与 Transformer 预测离散机器人动作，系统验证多任务真实机器人数据规模及多源数据吸收能力。",
+    "findings": "官方 Results：已见任务成功率 97%，未见指令 76%；数据为 13 台机器人、17 个月采集的 13 万余 episodes、700 余任务。加入另一机器人数据的指定迁移测试由 22% 升到 39%（+17 个百分点）。",
+    "limitations": "97% 与 76% 来自不同测试分布。官方控制频率为 3 Hz；不能将该架构等同于之后的大 VLM 动作解码，也不能将任务组合数理解为独立技能数。",
+    "insight": "大规模机器人学习既需要数据多样性，也需要能有效利用数据的结构；跨本体收益要连同任务范围理解。",
+    "readingFocus": "TokenLearner、已见 / 未见 / 干扰物分组、跨机器人数据混合。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2212.06817"
+      },
+      {
+        "label": "官方项目页 · Data / Results",
+        "url": "https://robotics-transformer1.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2212.06817",
+    "arxiv": "2212.06817",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2022-12-13",
+    "firstArxivSource": "https://arxiv.org/abs/2212.06817v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2212.06817",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以语言条件视觉编码、TokenLearner 与 Transformer 预测离散机器人动作，系统验证多任务真实机器人数据规模及多源数据吸收能力。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2212.06817"
+          },
+          {
+            "label": "官方项目页 · Data / Results",
+            "url": "https://robotics-transformer1.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "官方 Results：已见任务成功率 97%，未见指令 76%；数据为 13 台机器人、17 个月采集的 13 万余 episodes、700 余任务。加入另一机器人数据的指定迁移测试由 22% 升到 39%（+17 个百分点）。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2212.06817"
+          },
+          {
+            "label": "官方项目页 · Data / Results",
+            "url": "https://robotics-transformer1.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "97% 与 76% 来自不同测试分布。官方控制频率为 3 Hz；不能将该架构等同于之后的大 VLM 动作解码，也不能将任务组合数理解为独立技能数。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2212.06817"
+          },
+          {
+            "label": "官方项目页 · Data / Results",
+            "url": "https://robotics-transformer1.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "大规模机器人学习既需要数据多样性，也需要能有效利用数据的结构；跨本体收益要连同任务范围理解。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2212.06817"
+          },
+          {
+            "label": "官方项目页 · Data / Results",
+            "url": "https://robotics-transformer1.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "TokenLearner、已见 / 未见 / 干扰物分组、跨机器人数据混合。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2212.06817"
+          },
+          {
+            "label": "官方项目页 · Data / Results",
+            "url": "https://robotics-transformer1.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

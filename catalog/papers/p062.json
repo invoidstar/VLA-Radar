@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p062",
+    "name": "DROID",
+    "title": "DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset",
+    "team": "DROID 多机构合作；Alexander Khazatsky、Karl Pertsch 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "firstPublished": "2024-03-19",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "topics": [
+      "evaluation",
+      "pretraining"
+    ],
+    "tags": [
+      "关键文献",
+      "基础资源",
+      "in-the-wild",
+      "robot dataset"
+    ],
+    "priority": "selective",
+    "contribution": "以分布式真实场景采集降低单实验室环境偏差，为通用机器人策略提供更广的物体、背景与操作分布。",
+    "findings": "摘要报告约 76,000 条示范、350 小时、564 个场景，由约 50 名采集者在 12 个月内收集。这里统计的是轨迹 / 时长 / 场景覆盖，不是模型成功率。",
+    "limitations": "更多场景不代表每个任务都具有相同示范密度；数据还涉及不同相机、标定、质量和动作分布。",
+    "insight": "数据的场景多样性与总样本量是不同维度，理解泛化必须保留采集结构。",
+    "readingFocus": "采集协议、场景覆盖、数据清洗及下游迁移评价。",
+    "evidence": "metadata",
+    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv · 元数据 / 首发记录",
+        "url": "https://arxiv.org/abs/2403.12945"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://droid-dataset.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2403.12945",
+    "arxiv": "2403.12945",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2024-03-19",
+    "firstArxivSource": "https://arxiv.org/abs/2403.12945v1",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2403.12945",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "以分布式真实场景采集降低单实验室环境偏差，为通用机器人策略提供更广的物体、背景与操作分布。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2403.12945"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://droid-dataset.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "摘要报告约 76,000 条示范、350 小时、564 个场景，由约 50 名采集者在 12 个月内收集。这里统计的是轨迹 / 时长 / 场景覆盖，不是模型成功率。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2403.12945"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://droid-dataset.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "更多场景不代表每个任务都具有相同示范密度；数据还涉及不同相机、标定、质量和动作分布。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2403.12945"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://droid-dataset.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "数据的场景多样性与总样本量是不同维度，理解泛化必须保留采集结构。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2403.12945"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://droid-dataset.github.io/"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "采集协议、场景覆盖、数据清洗及下游迁移评价。",
+        "sources": [
+          {
+            "label": "arXiv · 元数据 / 首发记录",
+            "url": "https://arxiv.org/abs/2403.12945"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://droid-dataset.github.io/"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -15,30 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
-      ready: ${{ steps.ready.outputs.ready }}
       pages_enabled: ${{ steps.pages.outputs.enabled }}
     steps:
       - uses: actions/checkout@v4
-      - name: Check for the imported catalog
-        id: ready
-        run: |
-          if test -f data/papers.json && test -f index.html; then
-            echo 'ready=true' >> "$GITHUB_OUTPUT"
-          else
-            echo 'ready=false' >> "$GITHUB_OUTPUT"
-            echo 'Site import has not completed for this commit. This run does not publish a placeholder.' >> "$GITHUB_STEP_SUMMARY"
-          fi
-      - name: Validate public catalog and application syntax
-        if: steps.ready.outputs.ready == 'true'
-        run: |
-          python validate.py
-          python scripts/check_catalog.py
-          node --check app.js
-          node --check dates.js
-          node scripts/test_dates.cjs
-          node scripts/test_urls.cjs
+      - name: Validate canonical records, generated files and regression tests
+        run: python scripts/validate_all.py
       - name: Check Pages enablement
-        if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         id: pages
         env:
           GH_TOKEN: ${{ github.token }}
@@ -46,22 +29,22 @@ jobs:
           enabled=$(gh api "repos/$GITHUB_REPOSITORY" --jq '.has_pages')
           echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
           if test "$enabled" != 'true'; then
-            echo 'Validation passed, but Pages is not enabled. Open Settings → Pages, select GitHub Actions as Source, then manually run this workflow. No site deployment occurred.' >> "$GITHUB_STEP_SUMMARY"
+            echo 'Validation passed. Pages is disabled; no deployment occurred.' >> "$GITHUB_STEP_SUMMARY"
           fi
-      - name: Stage public site files only
-        if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
+      - name: Stage public website only
+        if: github.event_name != 'pull_request'
         run: |
           mkdir -p _site/data
-          cp index.html styles.css app.js dates.js favicon.svg _site/
-          cp data/papers.json _site/data/
+          cp index.html styles.css research.css app.js research.js dates.js favicon.svg _site/
+          cp data/papers.json data/catalog.json data/leaderboards.json _site/data/
+          cp -R data/details _site/data/
           touch _site/.nojekyll
-      - name: Upload static site
-        if: steps.ready.outputs.ready == 'true' && github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: _site
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.validate.outputs.ready == 'true' && needs.validate.outputs.pages_enabled == 'true'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.validate.outputs.pages_enabled == 'true'
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -72,6 +55,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy the validated site
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4

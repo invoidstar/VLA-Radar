@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "lastAttemptAt": "2026-09-17",
+  "scope": "link reachability only, not correctness or publication verification",
+  "dueRemaining": 149,
+  "sources": {
+    "https://arxiv.org/abs/2109.12098": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2109.12098",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2112.03227": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2112.03227",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2202.02005": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2202.02005",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2204.01691": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2204.01691",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2209.05451": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2209.05451",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2212.06817": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2212.06817",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2302.00111": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2302.00111",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2303.03378": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2303.03378",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2303.04137": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2303.04137",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2304.13705": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2304.13705",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2306.03310": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2306.03310",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2307.15818": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2307.15818",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2310.08864": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2310.08864",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2311.01378": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2311.01378",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2312.13139": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2312.13139",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2403.12945": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2403.12945",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2405.12213": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2405.12213",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2406.09246": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2406.09246",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2410.07864": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2410.07864",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2410.24164": {
+      "checkedAt": "2026-09-17",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2410.24164",
+      "error": ""
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p015",
+    "name": "OnEvoMemory",
+    "title": "OnEvoMemory: Evolving Memory through Online Robot Rollouts for Pretrained Robot Policies",
+    "team": "上海交通大学／清华大学\nZhongxi Chen、Shenqi Zong",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2608.08749\nECCV 2026 EMR Workshop poster（非主会）",
+    "firstPublished": "2026-08-09",
+    "dateNote": "",
+    "collectionMonth": "2026-08",
+    "versionNote": "8月首次公开｜阅读v1",
+    "topics": [
+      "memory"
+    ],
+    "tags": [
+      "VLA",
+      "online memory"
+    ],
+    "priority": "selective",
+    "contribution": "冻结预训练策略，利用近期、高价值和转移记忆库选择历史信息，再从在线成功/失败轨迹改进记忆选择。",
+    "findings": "LIBERO-Long：基线86.2%→离线记忆88.6%→在线更新90.2%。\nRMBench Swap Blocks：0%→10%→14%；Swap T：0%→8%→10%。",
+    "limitations": "在线提升使用额外交互：LIBERO每任务20条、RMBench每任务10条在线轨迹。属于初步结果，不能称完全免训练/零额外数据。",
+    "insight": "离线记忆与在线演化的增益应分开理解。在线成功和失败轨迹带来了额外信息，不属于零额外数据。",
+    "readingFocus": "多记忆库职责；离线/在线增益拆分；在线数据预算。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2608.08749v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2608.08749"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.08749",
+    "arxiv": "2608.08749",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.08749",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "8月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "冻结预训练策略，利用近期、高价值和转移记忆库选择历史信息，再从在线成功/失败轨迹改进记忆选择。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.08749v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.08749"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "LIBERO-Long：基线86.2%→离线记忆88.6%→在线更新90.2%。\nRMBench Swap Blocks：0%→10%→14%；Swap T：0%→8%→10%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.08749v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.08749"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "在线提升使用额外交互：LIBERO每任务20条、RMBench每任务10条在线轨迹。属于初步结果，不能称完全免训练/零额外数据。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.08749v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.08749"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "离线记忆与在线演化的增益应分开理解。在线成功和失败轨迹带来了额外信息，不属于零额外数据。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.08749v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.08749"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "多记忆库职责；离线/在线增益拆分；在线数据预算。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2608.08749v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2608.08749"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p034",
+    "name": "RoboDojo",
+    "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+    "team": "香港大学MMLab／UC Berkeley／清华大学／北京大学／MIT等联合团队\nTianxing Chen、Yue Chen、Zixuan Li、Junyuan Tang等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2607.04434\n基准论文",
+    "firstPublished": "2026-07-05",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月首次公开｜阅读v1",
+    "topics": [
+      "evaluation"
+    ],
+    "tags": [
+      "benchmark",
+      "sim-to-real",
+      "long-horizon"
+    ],
+    "priority": "deep",
+    "contribution": "统一42个仿真和18个真实任务、30种策略，从泛化、记忆、精度、长程、开放词汇拆解通用操作能力。",
+    "findings": "最佳长程成功率仍仅14.92%；最佳精度成功率12.00%。\nHy-Embodied-0.5-VLA标准/随机场景Score为21.98/1.57，相对下降92.9%；π0.5为20.92/5.82，下降72.2%。",
+    "limitations": "Score与成功率不是同一指标；使用其统一协议，不可与各模型原论文的专门微调结果横向混比。失败分类比单一总榜更有参考价值。",
+    "insight": "高饱和标准基准可能掩盖精度和长程短板。能力分项与随机化退化比单一总榜更有解释力。",
+    "readingFocus": "五维能力定义；随机化退化；精度失败与阶段前置条件分析。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2607.04434v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2607.04434"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2607.04434",
+    "arxiv": "2607.04434",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.04434",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月首次公开｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "统一42个仿真和18个真实任务、30种策略，从泛化、记忆、精度、长程、开放词汇拆解通用操作能力。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04434v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04434"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "最佳长程成功率仍仅14.92%；最佳精度成功率12.00%。\nHy-Embodied-0.5-VLA标准/随机场景Score为21.98/1.57，相对下降92.9%；π0.5为20.92/5.82，下降72.2%。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04434v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04434"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "Score与成功率不是同一指标；使用其统一协议，不可与各模型原论文的专门微调结果横向混比。失败分类比单一总榜更有参考价值。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04434v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04434"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "高饱和标准基准可能掩盖精度和长程短板。能力分项与随机化退化比单一总榜更有解释力。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04434v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04434"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "五维能力定义；随机化退化；精度失败与阶段前置条件分析。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2607.04434v1"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2607.04434"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p039",
+    "name": "VERITAS",
+    "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
+    "team": "普林斯顿大学\nMingtong Zhang、Dhruv Shah",
+    "venue": "RSS 2026",
+    "publicationType": "conference",
+    "publicationStatus": "RSS 2026，论文079\nDOI:10.15607/RSS.2026.XXII.079\narXiv:2606.18247",
+    "firstPublished": "2026-06-16",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月正式会议发表；6月已有预印本｜阅读v1",
+    "topics": [
+      "memory",
+      "evaluation"
+    ],
+    "tags": [
+      "verification",
+      "test-time",
+      "self-improvement"
+    ],
+    "priority": "deep",
+    "contribution": "策略提出多个动作候选，视觉验证器依据状态与后果线索进行筛选；经过验证的自主轨迹还可用于后续策略改进。",
+    "findings": "覆盖3种策略、合计1,160次评测：作者报告免策略微调的验证引导使仿真成功率平均提升12.6%、真实提升35%。\n简单启发式验证器也有收益；约20条筛选轨迹可用于后续改进。",
+    "limitations": "增幅沿用正文百分比表述，不擅自解释为相对增幅或百分点。免微调引导仍有多候选推理成本；后续训练需要新增自主轨迹。",
+    "insight": "生成与验证可以解耦，简单验证器也可能有用。免策略微调不等于没有额外推理或数据成本。",
+    "readingFocus": "生成—验证分工；视觉落点；简单验证器结果；在线引导与离线改进区别。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v1",
+        "url": "https://arxiv.org/html/2606.18247v1"
+      },
+      {
+        "label": "会议正式页面",
+        "url": "https://www.roboticsproceedings.org/rss22/p079.html"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2606.18247"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2606.18247",
+    "arxiv": "2606.18247",
+    "doi": "10.15607/RSS.2026.XXII.079"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2026",
+    "doi": "10.15607/RSS.2026.XXII.079",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2026",
+        "source": "https://arxiv.org/abs/2606.18247",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月正式会议发表；6月已有预印本｜阅读v1",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "策略提出多个动作候选，视觉验证器依据状态与后果线索进行筛选；经过验证的自主轨迹还可用于后续策略改进。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.18247v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p079.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.18247"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "覆盖3种策略、合计1,160次评测：作者报告免策略微调的验证引导使仿真成功率平均提升12.6%、真实提升35%。\n简单启发式验证器也有收益；约20条筛选轨迹可用于后续改进。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.18247v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p079.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.18247"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "增幅沿用正文百分比表述，不擅自解释为相对增幅或百分点。免微调引导仍有多候选推理成本；后续训练需要新增自主轨迹。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.18247v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p079.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.18247"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "生成与验证可以解耦，简单验证器也可能有用。免策略微调不等于没有额外推理或数据成本。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.18247v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p079.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.18247"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "生成—验证分工；视觉落点；简单验证器结果；在线引导与离线改进区别。",
+        "sources": [
+          {
+            "label": "原文 · v1",
+            "url": "https://arxiv.org/html/2606.18247v1"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p079.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2606.18247"
+          }
+        ]
+      }
+    ]
+  }
+}

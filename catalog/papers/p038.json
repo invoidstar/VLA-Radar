@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p038",
+    "name": "mimic-video",
+    "title": "mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs",
+    "team": "mimic robotics／Microsoft Zurich／ETH Zurich／UC Berkeley\nJonas Pai、Liam Achenbach、Victoriano Montesinos、Oier Mees、Elvis Nava等",
+    "venue": "RSS 2026",
+    "publicationType": "conference",
+    "publicationStatus": "RSS 2026，论文077\nDOI:10.15607/RSS.2026.XXII.077\narXiv:2512.15692",
+    "firstPublished": "2025-12-17",
+    "dateNote": "",
+    "collectionMonth": "2026-07",
+    "versionNote": "7月正式会议发表；2025年12月已有预印本｜阅读v2",
+    "topics": [
+      "pretraining",
+      "world"
+    ],
+    "tags": [
+      "VA",
+      "video pretraining",
+      "sample efficiency"
+    ],
+    "priority": "selective",
+    "contribution": "从视频预训练获得动态先验，先生成潜在视频计划，再以动作解码/逆动力学获得机器人控制，提供非VLM中心的Video-Action路线。",
+    "findings": "作者在其对照设置中报告约10×样本效率、2×收敛速度提升；通过预训练视频表征和动作接口连接机器人。",
+    "limitations": "倍数来自特定学习曲线/基线，不是所有VLA普遍需要10倍数据；视频模型预训练成本仍存在。Video-Action名称不等于系统完全不使用语言。",
+    "insight": "视频预训练提供不同于VLM的动态先验。样本效率倍数必须绑定具体基线和学习曲线。",
+    "readingFocus": "视频先验与动作接口；样本效率口径；VLM路线的互补性。",
+    "evidence": "notes",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "原文 · v2",
+        "url": "https://arxiv.org/html/2512.15692v2"
+      },
+      {
+        "label": "会议正式页面",
+        "url": "https://www.roboticsproceedings.org/rss22/p077.html"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2512.15692"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2512.15692",
+    "arxiv": "2512.15692",
+    "doi": "10.15607/RSS.2026.XXII.077"
+  },
+  "publication": {
+    "firstArxivAt": null,
+    "firstArxivSource": "",
+    "latestArxivVersion": null,
+    "latestArxivAt": null,
+    "status": "legacy",
+    "venue": "RSS 2026",
+    "doi": "10.15607/RSS.2026.XXII.077",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": null,
+    "history": [
+      {
+        "kind": "imported",
+        "date": null,
+        "observedAt": "2026-09-17",
+        "venue": "RSS 2026",
+        "source": "https://arxiv.org/abs/2512.15692",
+        "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "legacy",
+    "updatedAt": "2026-09-17",
+    "verifiedAt": null,
+    "version": "7月正式会议发表；2025年12月已有预印本｜阅读v2",
+    "sections": [
+      {
+        "id": "contribution",
+        "title": "核心贡献与方法概览",
+        "body": "从视频预训练获得动态先验，先生成潜在视频计划，再以动作解码/逆动力学获得机器人控制，提供非VLM中心的Video-Action路线。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2512.15692v2"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2512.15692"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果与实验结论",
+        "body": "作者在其对照设置中报告约10×样本效率、2×收敛速度提升；通过预训练视频表征和动作接口连接机器人。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2512.15692v2"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2512.15692"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用范围与限制",
+        "body": "倍数来自特定学习曲线/基线，不是所有VLA普遍需要10倍数据；视频模型预训练成本仍存在。Video-Action名称不等于系统完全不使用语言。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2512.15692v2"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2512.15692"
+          }
+        ]
+      },
+      {
+        "id": "insight",
+        "title": "阅读启示",
+        "body": "视频预训练提供不同于VLM的动态先验。样本效率倍数必须绑定具体基线和学习曲线。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2512.15692v2"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2512.15692"
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "title": "方法、创新与消融的阅读重点",
+        "body": "视频先验与动作接口；样本效率口径；VLM路线的互补性。",
+        "sources": [
+          {
+            "label": "原文 · v2",
+            "url": "https://arxiv.org/html/2512.15692v2"
+          },
+          {
+            "label": "会议正式页面",
+            "url": "https://www.roboticsproceedings.org/rss22/p077.html"
+          },
+          {
+            "label": "arXiv 元数据",
+            "url": "https://arxiv.org/abs/2512.15692"
+          }
+        ]
+      }
+    ]
+  }
+}
