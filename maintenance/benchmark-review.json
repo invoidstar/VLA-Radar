@@ -437,14 +437,10 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p008": {
-      "status": "extracted",
-      "trackIds": [
-        "robotwin2-official-2500clean-cotrain"
-      ],
-      "resultIds": [
-        "r-robotwin2-official-2500clean-cotrain-cotrain-4d-wam"
-      ],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。"
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p069": {
       "status": "extracted",
