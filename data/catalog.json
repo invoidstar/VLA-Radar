@@ -592,8 +592,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.05468",
       "arxiv": "2607.05468",
       "doi": "",
-      "detailUrl": "data/details/p008.json?v=f2bd1e07ee55617d",
-      "resultUrl": "data/paper-results/p008.6d1a7487593c51fb.json",
+      "detailUrl": "data/details/p008.json?v=4d6f3d2803c82ede",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
@@ -4302,7 +4302,7 @@
       "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
       "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
       "evidence": "checked",
-      "evidenceNote": "已核对 2406.02523v1 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "evidenceNote": "已核对 2406.02523v1 HTML 正文、完整原子任务表和复合迁移表；图号按所引HTML标注，作者报告而非本站独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -4321,8 +4321,8 @@
       "paperUrl": "https://arxiv.org/abs/2406.02523",
       "arxiv": "2406.02523",
       "doi": "10.15607/RSS.2024.XX.050",
-      "detailUrl": "data/details/p079.json?v=7f312f1a4f556a03",
-      "resultUrl": "data/paper-results/p079.0e87c5eb1745e85c.json",
+      "detailUrl": "data/details/p079.json?v=98d0939e2a2bb5c5",
+      "resultUrl": "data/paper-results/p079.42e730235e79cfea.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-06-04",
