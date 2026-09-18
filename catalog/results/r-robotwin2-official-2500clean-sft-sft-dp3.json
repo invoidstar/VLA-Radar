@@ -1,0 +1,20 @@
+{
+  "id": "r-robotwin2-official-2500clean-sft-sft-dp3",
+  "paperId": "p085",
+  "method": "DP3",
+  "trackId": "robotwin2-official-2500clean-sft",
+  "values": {
+    "Clean": 55.24,
+    "Random": 4.96,
+    "Average": 30.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+  "sourceVersion": "official JSON updated 2026-09-01",
+  "locator": "entries[id=sft:DP3];easy_mean/hard_mean",
+  "attribution": "reported-baseline",
+  "trainingData": "50 demo_clean x 50 tasks (2,500 demos); sft",
+  "evaluationNotes": "由RoboTwin Team提供；XPolicyLab接口；listed_at=25.08.04；源码快照核验2026-09-18，不是实际评测日期。",
+  "supersedes": ""
+}

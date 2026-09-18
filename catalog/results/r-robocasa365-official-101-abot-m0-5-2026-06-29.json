@@ -1,0 +1,21 @@
+{
+  "id": "r-robocasa365-official-101-abot-m0-5-2026-06-29",
+  "paperId": "p024",
+  "method": "ABot-M0.5",
+  "trackId": "robocasa365-official-101",
+  "values": {
+    "Atomic": 75.6,
+    "Seen composite": 37.7,
+    "Unseen composite": 3.3,
+    "Average": 40.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/abot-m0.5_2026_06_29.json",
+  "sourceVersion": "official snapshot 2026-09-18; RoboCasa 1.0.1",
+  "locator": "abot-m0.5_2026_06_29.json; atomic_seen_success/composite_seen_success/composite_unseen_success",
+  "attribution": "reported-baseline",
+  "trainingData": "Human300=30,000 demos; global batch 64; steps 100000; checkpoints按提交原链接，未读取任何私人日志/凭证。",
+  "evaluationNotes": "官方提交日期2026-06-29；报告/提交方AMAP CV Lab；训练代码commit 916de8a。Average由已公开分组均值按18/16/16加权后四舍五入，保留分组舍入误差。不是本站复现。 Results of ABot-M0.5. Evaluated by RoboCasa team with private access to model weights and code.",
+  "supersedes": ""
+}

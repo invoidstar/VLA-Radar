@@ -109,8 +109,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.27550",
       "arxiv": "2608.27550",
       "doi": "",
-      "detailUrl": "data/details/p001.json?v=c6682ab4b5bd5fe2",
-      "resultUrl": "data/paper-results/p001.f77f6c22b3b6a860.json",
+      "detailUrl": "data/details/p001.json?v=48b4f4cde427d775",
+      "resultUrl": "data/paper-results/p001.eb1d49191aa1a96e.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
@@ -324,8 +324,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.15330",
       "arxiv": "2607.15330",
       "doi": "",
-      "detailUrl": "data/details/p004.json?v=7f468fc15ab4dbe7",
-      "resultUrl": "data/paper-results/p004.1d18903fad4d8f42.json",
+      "detailUrl": "data/details/p004.json?v=aa86db072fb1fec9",
+      "resultUrl": "data/paper-results/p004.0702eaa6b2980776.json",
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2026-07-16",
@@ -592,8 +592,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.05468",
       "arxiv": "2607.05468",
       "doi": "",
-      "detailUrl": "data/details/p008.json?v=4d6f3d2803c82ede",
-      "resultUrl": null,
+      "detailUrl": "data/details/p008.json?v=f2bd1e07ee55617d",
+      "resultUrl": "data/paper-results/p008.6d1a7487593c51fb.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
@@ -1607,8 +1607,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.00678",
       "arxiv": "2607.00678",
       "doi": "",
-      "detailUrl": "data/details/p024.json?v=958369d7e8a1a792",
-      "resultUrl": null,
+      "detailUrl": "data/details/p024.json?v=675702e75fea0562",
+      "resultUrl": "data/paper-results/p024.6cb9248de73341ee.json",
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2026-07-01",
@@ -3001,8 +3001,8 @@
       "paperUrl": "https://arxiv.org/abs/2303.04137",
       "arxiv": "2303.04137",
       "doi": "",
-      "detailUrl": "data/details/p055.json?v=f7796132be5ccc93",
-      "resultUrl": "data/paper-results/p055.b48eaeceaa4a7cc6.json",
+      "detailUrl": "data/details/p055.json?v=adc7f2d0ab329c6e",
+      "resultUrl": "data/paper-results/p055.5d5ebaf5069bc060.json",
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2023-03-07",
@@ -3055,8 +3055,8 @@
       "paperUrl": "https://arxiv.org/abs/2304.13705",
       "arxiv": "2304.13705",
       "doi": "",
-      "detailUrl": "data/details/p056.json?v=e43591b4c6be6031",
-      "resultUrl": "data/paper-results/p056.0826e536978873c4.json",
+      "detailUrl": "data/details/p056.json?v=40342835e6225a37",
+      "resultUrl": "data/paper-results/p056.f3474a51a8abe99c.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-04-23",
@@ -3554,8 +3554,8 @@
       "paperUrl": "https://arxiv.org/abs/2410.07864",
       "arxiv": "2410.07864",
       "doi": "",
-      "detailUrl": "data/details/p065.json?v=684d5bc17ec767d8",
-      "resultUrl": null,
+      "detailUrl": "data/details/p065.json?v=49b08ed795b750a1",
+      "resultUrl": "data/paper-results/p065.4e22f2f96dabc39f.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-10-10",
@@ -3608,8 +3608,8 @@
       "paperUrl": "https://arxiv.org/abs/2410.24164",
       "arxiv": "2410.24164",
       "doi": "",
-      "detailUrl": "data/details/p066.json?v=3ed770eb87d142a1",
-      "resultUrl": null,
+      "detailUrl": "data/details/p066.json?v=d9101fbbb5f6ae86",
+      "resultUrl": "data/paper-results/p066.935c54ba4d57dd61.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-10-31",
@@ -3774,8 +3774,8 @@
       "paperUrl": "https://arxiv.org/abs/2502.19645",
       "arxiv": "2502.19645",
       "doi": "10.15607/RSS.2025.XXI.017",
-      "detailUrl": "data/details/p069.json?v=e03dc5a1b2512eb6",
-      "resultUrl": "data/paper-results/p069.5872bbd03422dd64.json",
+      "detailUrl": "data/details/p069.json?v=3a2383289f6267de",
+      "resultUrl": "data/paper-results/p069.0364b2ff76a84478.json",
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2025-02-27",
@@ -3828,8 +3828,8 @@
       "paperUrl": "https://arxiv.org/abs/2503.14734",
       "arxiv": "2503.14734",
       "doi": "",
-      "detailUrl": "data/details/p070.json?v=ba756c157a228a74",
-      "resultUrl": "data/paper-results/p070.eb0c1df5223d9043.json",
+      "detailUrl": "data/details/p070.json?v=16ca70c169939220",
+      "resultUrl": "data/paper-results/p070.2d14c2e5396dd037.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-03-18",
@@ -3938,8 +3938,8 @@
       "paperUrl": "https://arxiv.org/abs/2504.16054",
       "arxiv": "2504.16054",
       "doi": "",
-      "detailUrl": "data/details/p072.json?v=c6acf87bc3d81998",
-      "resultUrl": null,
+      "detailUrl": "data/details/p072.json?v=0f07641ea6e39973",
+      "resultUrl": "data/paper-results/p072.4005656cbc3f24af.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-04-22",
@@ -3993,8 +3993,8 @@
       "paperUrl": "https://arxiv.org/abs/2506.01844",
       "arxiv": "2506.01844",
       "doi": "",
-      "detailUrl": "data/details/p073.json?v=c5b4f329623e7f08",
-      "resultUrl": "data/paper-results/p073.4bef2477ea754e58.json",
+      "detailUrl": "data/details/p073.json?v=8e1a11c9f1cdd487",
+      "resultUrl": "data/paper-results/p073.f3dd8c3ea348d7c0.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-06-02",
@@ -4265,13 +4265,394 @@
       "paperUrl": "https://arxiv.org/abs/2603.16666",
       "arxiv": "2603.16666",
       "doi": "",
-      "detailUrl": "data/details/p078.json?v=0303155e6e414670",
-      "resultUrl": null,
+      "detailUrl": "data/details/p078.json?v=b8271f272c79e3fc",
+      "resultUrl": "data/paper-results/p078.83e1ca456810d613.json",
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2026-03-17",
         "latestArxivVersion": "v2",
         "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p079",
+      "name": "RoboCasa",
+      "title": "RoboCasa: Large-Scale Simulation of Household Tasks for Generalist Robots",
+      "team": "Soroush Nasiriany 等；UT Austin 与 NVIDIA",
+      "venue": "RSS 2024",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式会议论文集；出版日期按来源精度保留，不推测录用日。",
+      "firstPublished": "2024-06-04",
+      "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
+      "collectionMonth": "2026-09",
+      "versionNote": "阅读 v1；2026-09-18 官网反向检索与正文/附录核验；arXiv标题Everyday Tasks与RSS标题Household Tasks归于同篇，不重复收录。",
+      "topics": [
+        "evaluation",
+        "pretraining"
+      ],
+      "tags": [
+        "RoboCasa",
+        "benchmark-source-audit"
+      ],
+      "priority": "deep",
+      "contribution": "把多样化厨房场景、100 项日常任务、人工示范和 MimicGen 轨迹扩增组成可训练、可评测的仿真体系；不是 RoboCasa365。",
+      "findings": "作者报告：原版 RoboCasa 的 24 原子任务评测中，人类示范策略平均成功率 28.8%，生成示范策略 47.6%；5 个复合任务迁移仍大多处于 0–12%。两者训练数据量不同。",
+      "limitations": "生成示范依赖物体状态与可复用运动片段；数据规模比较不等于同预算算法比较，原子技能提升不保证复合任务成功。",
+      "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
+      "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
+      "evidence": "checked",
+      "evidenceNote": "已核对 2406.02523v1 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读版本",
+          "url": "https://arxiv.org/html/2406.02523v1"
+        },
+        {
+          "label": "arXiv Submission history",
+          "url": "https://arxiv.org/abs/2406.02523"
+        },
+        {
+          "label": "正式会议论文集与书目",
+          "url": "https://www.roboticsproceedings.org/rss20/p050.html"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2406.02523",
+      "arxiv": "2406.02523",
+      "doi": "10.15607/RSS.2024.XX.050",
+      "detailUrl": "data/details/p079.json?v=7f312f1a4f556a03",
+      "resultUrl": "data/paper-results/p079.0e87c5eb1745e85c.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2024-06-04",
+        "latestArxivVersion": "v1",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p080",
+      "name": "RoboCasa365",
+      "title": "RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots",
+      "team": "Soroush Nasiriany、Sepehr Nasiriany、Abhiram Maddukuri、Yuke Zhu；UT Austin / NVIDIA合作",
+      "venue": "ICLR 2026",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式会议论文集；出版日期按来源精度保留，不推测录用日。",
+      "firstPublished": "2026-03-04",
+      "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
+      "collectionMonth": "2026-09",
+      "versionNote": "阅读 v1；2026-09-18 官网反向检索与正文/附录核验",
+      "topics": [
+        "evaluation",
+        "pretraining"
+      ],
+      "tags": [
+        "RoboCasa365",
+        "benchmark-source-audit"
+      ],
+      "priority": "deep",
+      "contribution": "提供365项厨房任务、分离预训练/目标厨房、可扩展示范与多任务/基础模型/终身学习三类协议，检验规模、迁移和遗忘。",
+      "findings": "作者报告：50任务目标厨房协议中，GR00T-N1.5预训练后使用50条/任务微调达到35.9%，仅目标数据150条/任务为34.3%。Table 4中Human300-only的部分设置反而优于加入MimicGen；不可与原版RoboCasa24混排。",
+      "limitations": "50任务榜单只是365任务的子集；原论文与后续1.0.1时长变更需分开。混合合成数据并非单调增益，现实试验的回合数与部分百分数存在待澄清之处。",
+      "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
+      "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
+      "evidence": "checked",
+      "evidenceNote": "已核对 2603.04356v1 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读版本",
+          "url": "https://arxiv.org/html/2603.04356v1"
+        },
+        {
+          "label": "arXiv Submission history",
+          "url": "https://arxiv.org/abs/2603.04356"
+        },
+        {
+          "label": "正式会议论文集与书目",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05003fdb1e9562ab0c0a9719ea4de10-Abstract-Conference.html"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2603.04356",
+      "arxiv": "2603.04356",
+      "doi": "",
+      "detailUrl": "data/details/p080.json?v=6fb45c31d5119510",
+      "resultUrl": "data/paper-results/p080.cb3eb222ec5559a8.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2026-03-04",
+        "latestArxivVersion": "v1",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p081",
+      "name": "RLDX-1",
+      "title": "RLDX-1 Technical Report",
+      "team": "RLDX / RLWRLD 与合作研究团队；Dongyoung Kim 等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本；本次未取得可确认正式录用的独立出版证据。",
+      "firstPublished": "2026-05-05",
+      "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
+      "collectionMonth": "2026-09",
+      "versionNote": "阅读 v2；2026-09-18 官网反向检索与正文/附录核验",
+      "topics": [
+        "pretraining",
+        "memory",
+        "tactile",
+        "action"
+      ],
+      "tags": [
+        "RLDX-1",
+        "benchmark-source-audit"
+      ],
+      "priority": "deep",
+      "contribution": "以Qwen3-VL认知骨干和多流动作Transformer连接多帧观察、认知缓存及力觉/触觉；通过预训练、中期能力注入和目标后训练构成系统配方。",
+      "findings": "作者v2报告：LIBERO四套平均97.8%、LIBERO-Plus86.7%、旧RoboCasa24为70.6%、RoboCasa365为32.1%。官网后续RoboCasa365 1.0.1提交的成绩和checkpoint单独保存，不覆盖原表。",
+      "limitations": "训练数据与大batch也是重要因素；物理传感及记忆分支并非所有仿真设置都有。真实ALLEX总均值混合成功率和进度，不能当作统一二元SR。",
+      "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
+      "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
+      "evidence": "checked",
+      "evidenceNote": "已核对 2605.03269v2 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读版本",
+          "url": "https://arxiv.org/html/2605.03269v2"
+        },
+        {
+          "label": "arXiv Submission history",
+          "url": "https://arxiv.org/abs/2605.03269"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2605.03269",
+      "arxiv": "2605.03269",
+      "doi": "",
+      "detailUrl": "data/details/p081.json?v=582c5b501cbfed7c",
+      "resultUrl": "data/paper-results/p081.f38e8dbe4fc1ce28.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2026-05-05",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p082",
+      "name": "PRTS",
+      "title": "PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations",
+      "team": "Yang Zhang 等；TeleAI（中国电信）与合作高校团队",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本；本次未取得可确认正式录用的独立出版证据。",
+      "firstPublished": "2026-04-30",
+      "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
+      "collectionMonth": "2026-09",
+      "versionNote": "阅读 v1；2026-09-18 官网反向检索与正文/附录核验",
+      "topics": [
+        "pretraining",
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "PRTS",
+        "benchmark-source-audit"
+      ],
+      "priority": "deep",
+      "contribution": "在VLA预训练中联合动作语言建模与双向、时间加权的状态动作—目标对比学习，通过角色注意力掩码避免目标文本直接泄漏到动作表征。",
+      "findings": "作者matched消融：加入对比表征学习后，LIBERO均值97.8%→98.4%、LIBERO-Plus76.5%→81.4%、LIBERO-PRO53.8%→58.8%；并非所有分项提高。",
+      "limitations": "理论价值对应依赖专家轨迹与目标分布假设，不是校准成功概率；部分原表均值与分项不一致，后续RoboCasa365官方提交也不是v1原文实验。",
+      "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
+      "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
+      "evidence": "checked",
+      "evidenceNote": "已核对 2604.27472v1 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读版本",
+          "url": "https://arxiv.org/html/2604.27472v1"
+        },
+        {
+          "label": "arXiv Submission history",
+          "url": "https://arxiv.org/abs/2604.27472"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2604.27472",
+      "arxiv": "2604.27472",
+      "doi": "",
+      "detailUrl": "data/details/p082.json?v=16fcb3e7db238872",
+      "resultUrl": "data/paper-results/p082.5dae83bb41ca736d.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2026-04-30",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p083",
+      "name": "GigaWorld-Policy",
+      "title": "GigaWorld-Policy: An Efficient Action-Centered World–Action Model",
+      "team": "GigaAI / GigaWorld Team",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本；本次未取得可确认正式录用的独立出版证据。",
+      "firstPublished": "2026-03-18",
+      "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
+      "collectionMonth": "2026-09",
+      "versionNote": "阅读 v2；2026-09-18 官网反向检索与正文/附录核验",
+      "topics": [
+        "world",
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "GigaWorld-Policy",
+        "benchmark-source-audit"
+      ],
+      "priority": "deep",
+      "contribution": "采用动作优先的非对称注意力：未来视频学习读取动作信息，但动作不读取未来视频，因此训练保留世界变化监督，部署可完全省略未来视频采样。",
+      "findings": "作者v2报告：A100上动作推理360ms，Motus为3231ms；RoboTwin2.0完整Table8均值Clean86%、Random85%。主文Table2的Clean为87%，两表冲突保留。真实表使用包含部分进度的评分，不当作纯SR。",
+      "limitations": "速度依赖A100与动作窗口；仿真数据为50 clean+500 random/任务，不能与官网50 clean的设置混排。原表存在均值及设置措辞差异。",
+      "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
+      "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
+      "evidence": "checked",
+      "evidenceNote": "已核对 2603.17240v2 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读版本",
+          "url": "https://arxiv.org/html/2603.17240v2"
+        },
+        {
+          "label": "arXiv Submission history",
+          "url": "https://arxiv.org/abs/2603.17240"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2603.17240",
+      "arxiv": "2603.17240",
+      "doi": "",
+      "detailUrl": "data/details/p083.json?v=f7ab75e08bf108d7",
+      "resultUrl": "data/paper-results/p083.bb25b0b57859aa8f.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2026-03-18",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p084",
+      "name": "XPolicyLab",
+      "title": "XPolicyLab: A Unified Standard and Open Ecosystem for Robot Policy Evaluation and Deployment",
+      "team": "XPolicyLab 开源社区；Tianxing Chen 等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本；本次未取得可确认正式录用的独立出版证据。",
+      "firstPublished": "2026-08-10",
+      "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
+      "collectionMonth": "2026-09",
+      "versionNote": "阅读 v3；2026-09-18 官网反向检索与正文/附录核验",
+      "topics": [
+        "evaluation",
+        "efficiency"
+      ],
+      "tags": [
+        "XPolicyLab",
+        "benchmark-source-audit"
+      ],
+      "priority": "deep",
+      "contribution": "用稳定策略适配器、观察/动作语义和隔离服务协议，分离模型内部实现与模拟器/实体执行，使每个策略或环境只需维护一侧适配。",
+      "findings": "作者v3记录42种策略接入；6名工程师的案例中，从零接入首条成功rollout中位时间超过5小时，按标准手动约2小时，使用agent skills约30分钟（不含权重下载）。榜单体现执行覆盖，不证明框架提升策略准确率。",
+      "limitations": "统一接口不等于相同预训练、计算预算或安全能力；小样本工程接入案例不宜外推所有模型，也不能把历史榜单快照当最新成绩。",
+      "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
+      "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
+      "evidence": "checked",
+      "evidenceNote": "已核对 2608.09892v3 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读版本",
+          "url": "https://arxiv.org/html/2608.09892v3"
+        },
+        {
+          "label": "arXiv Submission history",
+          "url": "https://arxiv.org/abs/2608.09892"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.09892",
+      "arxiv": "2608.09892",
+      "doi": "",
+      "detailUrl": "data/details/p084.json?v=c26d9e8e9ff6c18f",
+      "resultUrl": "data/paper-results/p084.40353f616f7ea545.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2026-08-10",
+        "latestArxivVersion": "v3",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p085",
+      "name": "3D Diffusion Policy (DP3)",
+      "title": "3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations",
+      "team": "Yanjie Ze、Gu Zhang、Kangning Zhang、Chenyuan Hu、Muhan Wang、Huazhe Xu",
+      "venue": "RSS 2024",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式会议论文集；出版日期按来源精度保留，不推测录用日。",
+      "firstPublished": "2024-03-06",
+      "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
+      "collectionMonth": "2026-09",
+      "versionNote": "阅读 v7；2026-09-18 官网反向检索与正文/附录核验",
+      "topics": [
+        "spatial",
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "3D Diffusion Policy (DP3)",
+        "benchmark-source-audit"
+      ],
+      "priority": "deep",
+      "contribution": "用裁剪、稀疏采样的无颜色点云和轻量MLP获得紧凑几何特征，再条件化连续动作扩散；在低示范量、多本体任务上检验几何表征的作用。",
+      "findings": "作者v7在Meta-World难度分组报告DP3为90.9/61.6/31.7/49.0%，图像Diffusion Policy为83.6/31.1/9.0/26.6%；3种子、最高5次评估均值，不是最后checkpoint。主文与附录部分分项有冲突，按来源分别保留。",
+      "limitations": "原始任务多为单任务、单深度视角，并非通用语言VLA；深度标定、裁剪与最佳检查点选择影响结果，少量安全观察不构成安全保证。",
+      "insight": "按具体训练数据、输入条件和评测协议阅读结果；下方分节解释机制、证据与负面结果。",
+      "readingFocus": "方法/资源的实际新颖处；训练与部署边界；协议、预算、消融和原始图表。",
+      "evidence": "checked",
+      "evidenceNote": "已核对 2403.03954v7 正文、所引原表及相关附录；作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读版本",
+          "url": "https://arxiv.org/html/2403.03954v7"
+        },
+        {
+          "label": "arXiv Submission history",
+          "url": "https://arxiv.org/abs/2403.03954"
+        },
+        {
+          "label": "正式会议论文集与书目",
+          "url": "https://www.roboticsproceedings.org/rss20/p067.html"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2403.03954",
+      "arxiv": "2403.03954",
+      "doi": "10.15607/RSS.2024.XX.067",
+      "detailUrl": "data/details/p085.json?v=0e42651cb803d6c7",
+      "resultUrl": "data/paper-results/p085.e68010641a8b50d5.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2024-03-06",
+        "latestArxivVersion": "v7",
+        "status": "published",
         "lastCheckedAt": "2026-09-18"
       }
     }

@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-pro-prts-crl-v1-prts-with-crl",
+  "paperId": "p082",
+  "method": "PRTS · with CRL",
+  "trackId": "libero-pro-prts-crl-v1",
+  "values": {
+    "Semantic": 97,
+    "Object": 82.3,
+    "Position": 24.3,
+    "Task": 31.5,
+    "Average": 58.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2604.27472v1#S6.T6",
+  "sourceVersion": "2604.27472v1",
+  "locator": "Table4 and Table6",
+  "attribution": "author-reported",
+  "trainingData": "LIBERO30k/batch32/window20",
+  "evaluationNotes": "作者报告；Object-PRO CRL后82.3低于84.5，保留负结果。",
+  "supersedes": ""
+}

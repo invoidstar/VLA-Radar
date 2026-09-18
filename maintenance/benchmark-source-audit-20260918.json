@@ -1,0 +1,1148 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-18",
+  "baseCommit": "1d71d5081305cf3dd0ac3c939cd578fc24bf4ca1",
+  "status": "partial-content-backfill",
+  "scope": "14既有数据集系列官网/官方代码入口检查；RoboCasa365拆为独立系列。不是全网穷尽检索，不推进论文lastSuccessfulSearchAt。",
+  "newPapers": [
+    "p079",
+    "p080",
+    "p081",
+    "p082",
+    "p083",
+    "p084",
+    "p085"
+  ],
+  "newTracks": [
+    "robocasa-original-24atomic-v1",
+    "robocasa-original-5composite-v1",
+    "robocasa365-paper-v1-human300",
+    "robocasa365-paper-v1-target-50",
+    "robocasa365-paper-v1-target-150",
+    "robocasa365-paper-v1-target-500",
+    "robocasa365-official-100",
+    "robocasa365-official-101",
+    "libero-rldx-v2",
+    "libero-plus-rldx-v2",
+    "simpler-google-rldx-vm",
+    "simpler-google-rldx-va",
+    "simpler-widowx-rldx-v2",
+    "robocasa24-rldx-v2",
+    "robocasa365-rldx-paper-v2",
+    "libero-prts-crl-v1",
+    "libero-plus-prts-crl-v1",
+    "libero-pro-prts-crl-v1",
+    "simpler-widowx-prts-v1",
+    "robotwin2-gwp-v2-27500",
+    "metaworld-dp3-v7-10demo",
+    "robodojo-real-xpolicylab-v3-score",
+    "robodojo-real-xpolicylab-v3-sr",
+    "robotwin2-official-2500clean-cotrain",
+    "robotwin2-official-2500clean-sft",
+    "robodojo-official-sim-multi-score",
+    "robodojo-official-sim-multi-sr",
+    "robodojo-official-sim-single-score",
+    "robodojo-official-sim-single-sr"
+  ],
+  "newResults": [
+    "r-robocasa-original-24atomic-v1-bc-transformer-human-50",
+    "r-robocasa-original-24atomic-v1-bc-transformer-generated-100",
+    "r-robocasa-original-24atomic-v1-bc-transformer-generated-300",
+    "r-robocasa-original-24atomic-v1-bc-transformer-generated-3000",
+    "r-robocasa-original-5composite-v1-bc-transformer-scratch",
+    "r-robocasa-original-5composite-v1-bc-transformer-atomic-pretrain-fine-tune",
+    "r-robocasa365-paper-v1-human300-diffusion-policy",
+    "r-robocasa365-paper-v1-human300-0",
+    "r-robocasa365-paper-v1-human300-0-5",
+    "r-robocasa365-paper-v1-human300-gr00t-n1-5",
+    "r-robocasa365-paper-v1-target-50-gr00t-n1-5-target-only",
+    "r-robocasa365-paper-v1-target-50-gr00t-n1-5-simulation-pretrain-target",
+    "r-robocasa365-paper-v1-target-150-gr00t-n1-5-target-only",
+    "r-robocasa365-paper-v1-target-150-gr00t-n1-5-simulation-pretrain-target",
+    "r-robocasa365-paper-v1-target-500-gr00t-n1-5-target-only",
+    "r-robocasa365-paper-v1-target-500-gr00t-n1-5-simulation-pretrain-target",
+    "r-robocasa365-official-101-prts-2026-08-18",
+    "r-robocasa365-official-101-xiaomi-robotics-2026-07-08",
+    "r-robocasa365-official-101-abot-m0-5-2026-06-29",
+    "r-robocasa365-official-100-dp-2026-04-02",
+    "r-robocasa365-official-101-gr00t-n1-5-2026-05-19",
+    "r-robocasa365-official-101-gr00t-n1-6-2026-05-14",
+    "r-robocasa365-official-101-gwp01-2026-05-11",
+    "r-robocasa365-official-100-pi05-2026-04-02",
+    "r-robocasa365-official-100-pi0-2026-04-02",
+    "r-robocasa365-official-101-rldx-1-2026-05-20",
+    "r-libero-rldx-v2-rldx-1",
+    "r-libero-plus-rldx-v2-rldx-1",
+    "r-simpler-google-rldx-vm-rldx-1",
+    "r-simpler-google-rldx-va-rldx-1",
+    "r-simpler-widowx-rldx-v2-rldx-1",
+    "r-robocasa24-rldx-v2-rldx-1",
+    "r-robocasa24-rldx-v2-0-5",
+    "r-robocasa24-rldx-v2-0",
+    "r-robocasa365-rldx-paper-v2-rldx-1",
+    "r-libero-prts-crl-v1-prts-with-crl",
+    "r-libero-prts-crl-v1-prts-without-crl",
+    "r-libero-plus-prts-crl-v1-prts-with-crl",
+    "r-libero-plus-prts-crl-v1-prts-without-crl",
+    "r-libero-pro-prts-crl-v1-prts-with-crl",
+    "r-libero-pro-prts-crl-v1-prts-without-crl",
+    "r-simpler-widowx-prts-v1-prts",
+    "r-simpler-widowx-prts-v1-0",
+    "r-simpler-widowx-prts-v1-0-5",
+    "r-robotwin2-gwp-v2-27500-gigaworld-policy",
+    "r-robotwin2-gwp-v2-27500-0-5",
+    "r-metaworld-dp3-v7-10demo-dp3",
+    "r-metaworld-dp3-v7-10demo-diffusion-policy",
+    "r-robodojo-real-xpolicylab-v3-score-0-5",
+    "r-robodojo-real-xpolicylab-v3-score-0",
+    "r-robodojo-real-xpolicylab-v3-sr-0-5",
+    "r-robodojo-real-xpolicylab-v3-sr-0",
+    "r-robotwin2-official-2500clean-cotrain-cotrain-pi-05",
+    "r-robotwin2-official-2500clean-cotrain-cotrain-fastwam",
+    "r-robotwin2-official-2500clean-cotrain-cotrain-4d-wam",
+    "r-robotwin2-official-2500clean-sft-sft-rdt",
+    "r-robotwin2-official-2500clean-sft-sft-pi0",
+    "r-robotwin2-official-2500clean-sft-sft-act",
+    "r-robotwin2-official-2500clean-sft-sft-dp",
+    "r-robotwin2-official-2500clean-sft-sft-dp3",
+    "r-robodojo-official-sim-multi-score-xiaomi-robotics-1",
+    "r-robodojo-official-sim-multi-sr-xiaomi-robotics-1",
+    "r-robodojo-official-sim-multi-score-pi-05",
+    "r-robodojo-official-sim-multi-sr-pi-05",
+    "r-robodojo-official-sim-multi-score-vlact",
+    "r-robodojo-official-sim-multi-sr-vlact",
+    "r-robodojo-official-sim-multi-score-fast-wam",
+    "r-robodojo-official-sim-multi-sr-fast-wam",
+    "r-robodojo-official-sim-multi-score-pi-0",
+    "r-robodojo-official-sim-multi-sr-pi-0",
+    "r-robodojo-official-sim-single-score-smolvla-single-task",
+    "r-robodojo-official-sim-single-sr-smolvla-single-task",
+    "r-robodojo-official-sim-single-score-act-single-task",
+    "r-robodojo-official-sim-single-sr-act-single-task",
+    "r-robodojo-official-sim-multi-score-rdt",
+    "r-robodojo-official-sim-multi-sr-rdt",
+    "r-robodojo-official-sim-multi-score-openvla-oft",
+    "r-robodojo-official-sim-multi-sr-openvla-oft"
+  ],
+  "robocasaOfficial": [
+    {
+      "method": "PRTS",
+      "paperId": "p082",
+      "version": "1.0.1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/PRTS-2026_08_18.json",
+      "values": [
+        66.3,
+        30.3,
+        18.8,
+        39.6
+      ]
+    },
+    {
+      "method": "Xiaomi-Robotics-1",
+      "paperId": "p004",
+      "version": "1.0.1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/Xiaomi-Robotics_2026_07_08.json",
+      "values": [
+        80.2,
+        57.1,
+        32.1,
+        57.4
+      ]
+    },
+    {
+      "method": "ABot-M0.5",
+      "paperId": "p024",
+      "version": "1.0.1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/abot-m0.5_2026_06_29.json",
+      "values": [
+        75.6,
+        37.7,
+        3.3,
+        40.3
+      ]
+    },
+    {
+      "method": "Diffusion Policy",
+      "paperId": "p055",
+      "version": "1.0.0",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/dp_2026_04_02.json",
+      "values": [
+        15.7,
+        0.2,
+        1.3,
+        6.1
+      ]
+    },
+    {
+      "method": "GR00T N1.5",
+      "paperId": "p070",
+      "version": "1.0.1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.5_2026_05_19.json",
+      "values": [
+        50.7,
+        14.8,
+        2.7,
+        23.9
+      ]
+    },
+    {
+      "method": "GR00T N1.6",
+      "paperId": "p070",
+      "version": "1.0.1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.6_2026_05_14.json",
+      "values": [
+        51.1,
+        9.4,
+        1.7,
+        21.9
+      ]
+    },
+    {
+      "method": "GigaWorld-Policy 0.1",
+      "paperId": "p083",
+      "version": "1.0.1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gwp01_2026_05_11.json",
+      "values": [
+        44.4,
+        11.8,
+        2.9,
+        20.7
+      ]
+    },
+    {
+      "method": "π0.5",
+      "paperId": "p072",
+      "version": "1.0.0",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi05_2026-04-02.json",
+      "values": [
+        39.6,
+        7.1,
+        1.2,
+        16.9
+      ]
+    },
+    {
+      "method": "π0",
+      "paperId": "p066",
+      "version": "1.0.0",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi0_2026-04-02.json",
+      "values": [
+        34.6,
+        6.1,
+        1.1,
+        14.8
+      ]
+    },
+    {
+      "method": "RLDX-1",
+      "paperId": "p081",
+      "version": "1.0.1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/rldx-1_2026_05_20.json",
+      "values": [
+        67.6,
+        27.9,
+        8.5,
+        36.0
+      ]
+    }
+  ],
+  "roboTwinOfficial": [
+    {
+      "id": "cotrain:Pi_05",
+      "method": "π0.5",
+      "paperId": "p072"
+    },
+    {
+      "id": "cotrain:FastWAM",
+      "method": "FastWAM",
+      "paperId": "p078"
+    },
+    {
+      "id": "cotrain:4D_WAM",
+      "method": "4D-WAM",
+      "paperId": "p008"
+    },
+    {
+      "id": "sft:RDT",
+      "method": "RDT",
+      "paperId": "p065"
+    },
+    {
+      "id": "sft:π0",
+      "method": "π0",
+      "paperId": "p066"
+    },
+    {
+      "id": "sft:ACT",
+      "method": "ACT",
+      "paperId": "p056"
+    },
+    {
+      "id": "sft:DP",
+      "method": "DP",
+      "paperId": "p055"
+    },
+    {
+      "id": "sft:DP3",
+      "method": "DP3",
+      "paperId": "p085"
+    }
+  ],
+  "roboDojoOfficial": [
+    {
+      "method": "Xiaomi-Robotics-1",
+      "paperId": "p004"
+    },
+    {
+      "method": "Pi-05",
+      "paperId": "p072"
+    },
+    {
+      "method": "VLAct",
+      "paperId": "p001"
+    },
+    {
+      "method": "Fast-WAM",
+      "paperId": "p078"
+    },
+    {
+      "method": "Pi-0",
+      "paperId": "p066"
+    },
+    {
+      "method": "SmolVLA (Single Task)",
+      "paperId": "p073"
+    },
+    {
+      "method": "ACT (Single Task)",
+      "paperId": "p056"
+    },
+    {
+      "method": "RDT",
+      "paperId": "p065"
+    },
+    {
+      "method": "OpenVLA-OFT",
+      "paperId": "p069"
+    }
+  ],
+  "deferred": [
+    {
+      "method": "Azero-Robotics-1",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/Azero-Robotics-1_2026-08-17.json",
+      "paper": "N/A",
+      "reason": "尚无可对应的完整论文，或M0/M0.6身份关系未完成核验；不以公司/底座论文冒充本方法精读。"
+    },
+    {
+      "method": "ABot-M0.6",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/abot-m0.6_2026_06_26.json",
+      "paper": "https://arxiv.org/abs/2602.11236",
+      "reason": "尚无可对应的完整论文，或M0/M0.6身份关系未完成核验；不以公司/底座论文冒充本方法精读。"
+    },
+    {
+      "method": "WorldDreamer",
+      "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/worlddreamer_2026_06_20.json",
+      "paper": "N/A",
+      "reason": "尚无可对应的完整论文，或M0/M0.6身份关系未完成核验；不以公司/底座论文冒充本方法精读。"
+    },
+    {
+      "method": "GigaBrain-0.7",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "X-WAM",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "X-VLA",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "Xiaomi Robotics-0",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "EventVLA",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "AHA-WAM",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "Spatial Forcing",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "starVLA",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "Abot-M0",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "GalaxeaVLA",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "OLA-Geo",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "OLA-Sem",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "reason": "需补方法身份/完整论文核对；不把Xiaomi0、ABotM0或StarVLA映射到名字相近的新变体。"
+    },
+    {
+      "method": "DM0.5",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "GalaxeaVLA (G0.5)",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "OpenWAM-α",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "Meituan-Robotics-0",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "Hy-Embodied-0.5-VLA",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "Spatial Forcing",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "InternVLA-A1.5",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "X-VLA",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "X-WAM",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "Xiaomi-Robotics-0",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "StarVLA",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "GigaWorld-Policy-0",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "GalaxeaVLA (G0)",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "LingBot-VLA",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "EventVLA",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "AHA-WAM",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "ABot-M0",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "GROOT-N1.7",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "InternVLA-A1",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "LDA-1B",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "MolmoAct2",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "GO-1",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "H-RDT",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "DM0",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "Dexora-1B",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "A1",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "Spirit v1.5",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "TinyVLA",
+      "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "reason": "未在本批完成对应论文/变体的完整来源核验，保留官网线索，暂不生成论文记录。"
+    },
+    {
+      "method": "RLBench",
+      "source": "https://sites.google.com/view/rlbench",
+      "paper": "https://arxiv.org/abs/1909.12271",
+      "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+    },
+    {
+      "method": "SIMPLER",
+      "source": "https://simpler-env.github.io/",
+      "paper": "https://arxiv.org/abs/2405.05941",
+      "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+    },
+    {
+      "method": "RoboMimic study",
+      "source": "https://robomimic.github.io/",
+      "paper": "https://arxiv.org/abs/2108.03298",
+      "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+    },
+    {
+      "method": "Meta-World",
+      "source": "https://meta-world.github.io/",
+      "paper": "https://arxiv.org/abs/1910.10897",
+      "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+    },
+    {
+      "method": "COLOSSEUM",
+      "source": "https://robot-colosseum.github.io/",
+      "paper": "https://arxiv.org/abs/2402.08191",
+      "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+    },
+    {
+      "method": "DexMimicGen",
+      "source": "https://dexmimicgen.github.io/",
+      "paper": "https://arxiv.org/abs/2410.24185",
+      "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+    }
+  ],
+  "notes": [
+    "RoboCasa原版、RoboCasa365、365的1.0.0/1.0.1、目标厨房/预训练厨房分别保存；保留旧赛道ID。",
+    "既有论文阅读正文/verifiedAt不因新增官网结果而重写；只更新benchmarkReview。",
+    "官方分数并非本站复现，外部预训练与步数不同的对照不排名；原表/官网快照不是独立重复试验。",
+    "RLDX混合真实指标、PRTS平均冲突、GWP clean87/86冲突与DP3 v1/v7差异均可见。",
+    "本批仅补已完成全文及原表核验项目；未对应完整论文者保留候选，不凑数。"
+  ],
+  "sourceSnapshots": [
+    {
+      "name": "robocasa-home",
+      "url": "https://robocasa.ai/",
+      "status": 200,
+      "finalUrl": "https://robocasa.ai/",
+      "bytes": 33588,
+      "sha256": "ba07c253fd2f69fbb5126c7d2a15e339b9ac741ba70aa0622b92d688fc70778f"
+    },
+    {
+      "name": "robocasa-board",
+      "url": "https://robocasa.ai/leaderboard.html",
+      "status": 200,
+      "finalUrl": "https://robocasa.ai/leaderboard.html",
+      "bytes": 31296,
+      "sha256": "8bf99260ca8dfe9dbb4242e2dd907d8345cffd3647344a605bb78bb019df909c"
+    },
+    {
+      "name": "robocasa-protocol",
+      "url": "https://robocasa.ai/docs/benchmarking/benchmarking.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "robotwin-board",
+      "url": "https://robotwin-platform.github.io/leaderboard",
+      "status": 200,
+      "finalUrl": "https://robotwin-platform.github.io/leaderboard",
+      "bytes": 64946,
+      "sha256": "52246bfac97ffd1eabd1cc2c2b41662a76e8798c60ab65003e93d62a39b2c278"
+    },
+    {
+      "name": "robotwin-data",
+      "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/data/robotwin_leaderboard.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/data/robotwin_leaderboard.json",
+      "bytes": 36888,
+      "sha256": "b49311c0254a86e5614fc0808dbfdd1464340e370c281c8b19c56cdcdf05385a"
+    },
+    {
+      "name": "robodojo-data",
+      "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/data/robodojo_leaderboard.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/data/robodojo_leaderboard.json",
+      "bytes": 19223,
+      "sha256": "25b25458b4d45e36cfdfe83bca47f60e23e67da1841c8817fe6b99474446bb1a"
+    },
+    {
+      "name": "robodojo-real-data",
+      "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/data/robodojo_real_leaderboard.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/data/robodojo_real_leaderboard.json",
+      "bytes": 4481,
+      "sha256": "62f56518a34964941f9839755de712095a81b1c7b04692b6b311e64db5a924d0"
+    },
+    {
+      "name": "robodojo-home",
+      "url": "https://robodojo-benchmark.com/",
+      "status": 200,
+      "finalUrl": "https://robodojo-benchmark.com/",
+      "bytes": 3815,
+      "sha256": "00b8ec51ad2015659adcc46a4ecf5dae519d07db5eaa13ea77ecc915b4463094"
+    },
+    {
+      "name": "libero-home",
+      "url": "https://libero-project.github.io/",
+      "status": 200,
+      "finalUrl": "https://libero-project.github.io/",
+      "bytes": 125,
+      "sha256": "d154e1eeaea5f8f249b01e79cc83d06b0dfb2c3c9d9c7f280ab0769ce1545fa6"
+    },
+    {
+      "name": "calvin-home",
+      "url": "https://calvin.cs.uni-freiburg.de/",
+      "error": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "name": "rlbench-home",
+      "url": "https://sites.google.com/view/rlbench",
+      "status": 200,
+      "finalUrl": "https://sites.google.com/view/rlbench",
+      "bytes": 125610,
+      "sha256": "7c0918cd7f47daf6eeb03b60570c390d120e9a663cae372d973770fe8204a323"
+    },
+    {
+      "name": "simpler-home",
+      "url": "https://simpler-env.github.io/",
+      "status": 200,
+      "finalUrl": "https://simpler-env.github.io/",
+      "bytes": 32757,
+      "sha256": "64d7f47aec883c14e733921c4a19544e0a5a399693a208716be52dfd2146de25"
+    },
+    {
+      "name": "robomimic-home",
+      "url": "https://robomimic.github.io/",
+      "status": 200,
+      "finalUrl": "https://robomimic.github.io/",
+      "bytes": 7023,
+      "sha256": "908e5e3744304484f199c22835b99125bb7297a506b23069652f3246e087bb41"
+    },
+    {
+      "name": "pusht-diffusion-home",
+      "url": "https://diffusion-policy.cs.columbia.edu/",
+      "status": 200,
+      "finalUrl": "https://diffusion-policy.cs.columbia.edu/",
+      "bytes": 35723,
+      "sha256": "361b244003e973cefe369dc0b448a8ef7c5c2892f1a7567b8ddc603954bb584a"
+    },
+    {
+      "name": "kitchen-d4rl",
+      "url": "https://raw.githubusercontent.com/Farama-Foundation/D4RL/master/README.md",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/Farama-Foundation/D4RL/master/README.md",
+      "bytes": 7198,
+      "sha256": "8373cb0f9b3426c6da4ac246232a6dc54005574f3fbfc4d8631fb19075306553"
+    },
+    {
+      "name": "aloha-home",
+      "url": "https://tonyzhaozh.github.io/aloha/",
+      "status": 200,
+      "finalUrl": "https://tonyzhaozh.github.io/aloha/",
+      "bytes": 24358,
+      "sha256": "61caeeef121e9a5d114a9b22cfe382452c8d9b0eac9afaf7ab4cf447c3d74eec"
+    },
+    {
+      "name": "metaworld-home",
+      "url": "https://meta-world.github.io/",
+      "status": 200,
+      "finalUrl": "https://meta-world.github.io/",
+      "bytes": 11418,
+      "sha256": "a222fa24385b338b1897da1c7410e6f32d6b9df75cff234ba9a7961e9aaef9cf"
+    },
+    {
+      "name": "colosseum-home",
+      "url": "https://robot-colosseum.github.io/",
+      "status": 200,
+      "finalUrl": "https://robot-colosseum.github.io/",
+      "bytes": 50473,
+      "sha256": "c46dcddd28a969911ee2c28358d43a90e34ad1d9b5f5f3e3b6111642aa693323"
+    },
+    {
+      "name": "dexmimicgen-home",
+      "url": "https://dexmimicgen.github.io/",
+      "status": 200,
+      "finalUrl": "https://dexmimicgen.github.io/",
+      "bytes": 27922,
+      "sha256": "423af08354b949af275e9ffa6bb6fc193fac9ef04dfb65e64c5760b64dbd3bca"
+    },
+    {
+      "name": "robocasa-submission-index",
+      "url": "https://api.github.com/repos/robocasa-benchmark/leaderboard/contents/submissions",
+      "status": 200,
+      "finalUrl": "https://api.github.com/repos/robocasa-benchmark/leaderboard/contents/submissions",
+      "bytes": 12957,
+      "sha256": "628b0521465be6dcbc97d6127f425533a94a1f4a084f6efaf5dac131eba1c1b1"
+    },
+    {
+      "name": "rcsubmission-Azero-Robotics-1_2026-08-17.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/Azero-Robotics-1_2026-08-17.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/Azero-Robotics-1_2026-08-17.json",
+      "bytes": 1266,
+      "sha256": "b989e90848c236424720984067ee1c51523ade722c079bce23bcf43424f16436"
+    },
+    {
+      "name": "rcsubmission-PRTS-2026_08_18.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/PRTS-2026_08_18.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/PRTS-2026_08_18.json",
+      "bytes": 963,
+      "sha256": "11e04140e0a5701aaa1405252e6a21f0b877504ac2efae71bb34d2655e81544e"
+    },
+    {
+      "name": "rcsubmission-Xiaomi-Robotics_2026_07_08.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/Xiaomi-Robotics_2026_07_08.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/Xiaomi-Robotics_2026_07_08.json",
+      "bytes": 808,
+      "sha256": "03fe3cb2af6db63fb5f793aaa3dd532dc68c540975673a1dace68efa467341cf"
+    },
+    {
+      "name": "rcsubmission-abot-m0.5_2026_06_29.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/abot-m0.5_2026_06_29.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/abot-m0.5_2026_06_29.json",
+      "bytes": 739,
+      "sha256": "c293ca032887deadac0f92b58b4f87b819904c4160e11f24b77d6a4f82092b84"
+    },
+    {
+      "name": "rcsubmission-abot-m0.6_2026_06_26.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/abot-m0.6_2026_06_26.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/abot-m0.6_2026_06_26.json",
+      "bytes": 811,
+      "sha256": "9f285e870e92d4c1beb53b555deaf69781cb820d5ed8a232323f429aef4a6dfe"
+    },
+    {
+      "name": "rcsubmission-dp_2026_04_02.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/dp_2026_04_02.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/dp_2026_04_02.json",
+      "bytes": 819,
+      "sha256": "94251bc06d4b798dc11ef3d9ec4bbba09d46f92458c74793521cdfd3518d24c4"
+    },
+    {
+      "name": "rcsubmission-gr00t_n1.5_2026_05_19.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/gr00t_n1.5_2026_05_19.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/gr00t_n1.5_2026_05_19.json",
+      "bytes": 875,
+      "sha256": "905f6a7688a396cb5392be4642f25c4a239f7c80a62e5da9378538f06facdd1f"
+    },
+    {
+      "name": "rcsubmission-gr00t_n1.6_2026_05_14.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/gr00t_n1.6_2026_05_14.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/gr00t_n1.6_2026_05_14.json",
+      "bytes": 679,
+      "sha256": "72755d0dd49ca6949f80a83bb10d9383205d9b2ebd4f2db85611e04153ca20a2"
+    },
+    {
+      "name": "rcsubmission-gwp01_2026_05_11.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/gwp01_2026_05_11.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/gwp01_2026_05_11.json",
+      "bytes": 810,
+      "sha256": "2172bd8b8a78d772ebe2cd4c234c6c96cbfeb33dc4b0555da80839c2ef5973ff"
+    },
+    {
+      "name": "rcsubmission-pi05_2026-04-02.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/pi05_2026-04-02.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/pi05_2026-04-02.json",
+      "bytes": 820,
+      "sha256": "d680866c527037aa5981c96dd889fa003318eba5e5de726fc614d2133f0c7dee"
+    },
+    {
+      "name": "rcsubmission-pi0_2026-04-02.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/pi0_2026-04-02.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/pi0_2026-04-02.json",
+      "bytes": 830,
+      "sha256": "976a71954f7fa92b29582186e682a6b21548d21199b9dca2cffeb10a90b147d1"
+    },
+    {
+      "name": "rcsubmission-rldx-1_2026_05_20.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/rldx-1_2026_05_20.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/rldx-1_2026_05_20.json",
+      "bytes": 761,
+      "sha256": "ffb80d3e34b20c1ac0da50d0b6f790a3eb42e290f21deff048ff47aadc8efc5f"
+    },
+    {
+      "name": "rcsubmission-worlddreamer_2026_06_20.json",
+      "url": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/worlddreamer_2026_06_20.json",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/robocasa-benchmark/leaderboard/main/submissions/worlddreamer_2026_06_20.json",
+      "bytes": 681,
+      "sha256": "a501e92003609860b1017b4ad38f61f30057eea9fed336e342c0053801875966"
+    },
+    {
+      "name": "rc365-html",
+      "url": "https://arxiv.org/html/2603.04356v1",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2603.04356v1",
+      "sha256": "cb0814774d6590e29f13ada2013e49be057b9631ba3df19f7b84e1269eb866bb",
+      "bytes": 345885
+    },
+    {
+      "name": "rc365-abs",
+      "url": "https://arxiv.org/abs/2603.04356",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2603.04356",
+      "sha256": "6739af7ff81c9378ac8e8ea5b21e11dc52ae3fa5d2f30c88a7d8a570c47d7bef",
+      "bytes": 42185
+    },
+    {
+      "name": "rc-original-html",
+      "url": "https://arxiv.org/html/2406.02523v1",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2406.02523v1",
+      "sha256": "d0ac7056c20cd4a69a1f8e0c93160753990a29b9c5680d004fa8eadd801062a4",
+      "bytes": 273150
+    },
+    {
+      "name": "rc-original-abs",
+      "url": "https://arxiv.org/abs/2406.02523",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2406.02523",
+      "sha256": "17f3000c519309363f466c9bc9fa79862152653f5a144c79bcd9dc427e0bae6f",
+      "bytes": 42951
+    },
+    {
+      "name": "rldx-html",
+      "url": "https://arxiv.org/html/2605.03269v2",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2605.03269v2",
+      "sha256": "89b9fe8b5081b4ee7e361a3f918023f1b0a1a0ac203a019a678f82d65516f985",
+      "bytes": 737392
+    },
+    {
+      "name": "rldx-abs",
+      "url": "https://arxiv.org/abs/2605.03269",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2605.03269",
+      "sha256": "996823501899d6c3081ade2dea722bfa31141946b8fd0bc380738eb1c02a9772",
+      "bytes": 53133
+    },
+    {
+      "name": "prts-html",
+      "url": "https://arxiv.org/html/2604.27472v1",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2604.27472v1",
+      "sha256": "869dd9545ce3607ecaabacef48fc836e41a8341ab3b069f2ba9a88b64237c6de",
+      "bytes": 589809
+    },
+    {
+      "name": "prts-abs",
+      "url": "https://arxiv.org/abs/2604.27472",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2604.27472",
+      "sha256": "3cd83d72278089c5c08c9039f65f088c5e33c7e4a16f68bfa6f48608214b998a",
+      "bytes": 45294
+    },
+    {
+      "name": "gwp-html",
+      "url": "https://arxiv.org/html/2603.17240v1",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2603.17240v1",
+      "sha256": "8205c463242b5b3221d058c74fe107d611ab00b795fd444ff10cb50bd2d0becf",
+      "bytes": 492791
+    },
+    {
+      "name": "gwp-abs",
+      "url": "https://arxiv.org/abs/2603.17240",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2603.17240",
+      "sha256": "64d4016ffa89a8ff6bc3254abfab9a09de0ad79e0315228686ac7c48da696d92",
+      "bytes": 46591
+    },
+    {
+      "name": "xpolicylab-html",
+      "url": "https://arxiv.org/html/2608.09892v1",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2608.09892v1",
+      "sha256": "8a3f7dfd70cd383d83547331de9b9fe7e9cdb1df179d42d03be296c88e646c8f",
+      "bytes": 191950
+    },
+    {
+      "name": "xpolicylab-abs",
+      "url": "https://arxiv.org/abs/2608.09892",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2608.09892",
+      "sha256": "d639b48e0e4d9117409c301329f8b8c2b1161cf13ae4b57beb43e5642362ff51",
+      "bytes": 53798
+    },
+    {
+      "name": "dp3-html",
+      "url": "https://arxiv.org/html/2403.03954v1",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2403.03954v1",
+      "sha256": "67afab2b80472215b3138a5ea932d08b39294ce705697b923a272be167136da2",
+      "bytes": 632819
+    },
+    {
+      "name": "dp3-abs",
+      "url": "https://arxiv.org/abs/2403.03954",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2403.03954",
+      "sha256": "0f481cca7e64ea54e7979f5e8d6ce13ea8e3d97920ab072e05254d62a8ae4f95",
+      "bytes": 43873
+    },
+    {
+      "name": "robotwin-model-sources",
+      "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/sources.js",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/sources.js",
+      "sha256": "0ae2e93aa39c26630353fc1679b90d5aa0f3b9e7499455ad4b95fd6cefab7cab",
+      "bytes": 1745
+    },
+    {
+      "name": "robotwin-board-script",
+      "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/robotwin-board.js",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/robotwin-board.js",
+      "sha256": "4c1d44968195e8473762f38308dca19c76333ab540a722303a76ceb8e8cc8070",
+      "bytes": 6703
+    },
+    {
+      "name": "robodojo-board-script",
+      "url": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/robodojo-board.js",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/robodojo-board.js",
+      "sha256": "49edea5737d9efc296f64dd370a4e82e6e788a4d6e950816dfa05a641fc782f3",
+      "bytes": 3876
+    },
+    {
+      "name": "robocasa-protocol",
+      "url": "https://robocasa.ai/docs/build/html/datasets/datasets_overview.html",
+      "status": 200,
+      "finalUrl": "https://robocasa.ai/docs/build/html/datasets/datasets_overview.html",
+      "sha256": "0c96da14f1f579129a0c4990e0ca765e1f54b66ed4c4d22f6c6438afbc7e6da0",
+      "bytes": 29524
+    },
+    {
+      "name": "robocasa-benchmark-guide",
+      "url": "https://robocasa.ai/docs/build/html/benchmarking/overview.html",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "libero-intro",
+      "url": "https://libero-project.github.io/intro.html",
+      "status": 200,
+      "finalUrl": "https://libero-project.github.io/intro.html",
+      "sha256": "98ab6d9317aa3115f17b35fc54cfd6c209b0387f82741baf6a600a0f54d38faf",
+      "bytes": 2167
+    },
+    {
+      "name": "calvin-readme",
+      "url": "https://raw.githubusercontent.com/mees/calvin/main/README.md",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/mees/calvin/main/README.md",
+      "sha256": "ade3f2d224f5f299be858681ab117524b6457e371963718518718529b2fd12f2",
+      "bytes": 21081
+    },
+    {
+      "name": "robocasa-original-project",
+      "url": "https://robocasa.ai/2024/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "gwp-v2",
+      "url": "https://arxiv.org/html/2603.17240v2",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2603.17240v2",
+      "bytes": 493255,
+      "sha256": "130c24e20c61e97fa2257971af7dfa08ce3ef0725d3d4ee05597850e7a5c1858"
+    },
+    {
+      "name": "xpolicylab-v3",
+      "url": "https://arxiv.org/html/2608.09892v3",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2608.09892v3",
+      "bytes": 191923,
+      "sha256": "bcde4aaae6a199ac5ea18cd68a07d0b55e56224b5e2b2a17e2e7b4290c38c14a"
+    },
+    {
+      "name": "dp3-v7",
+      "url": "https://arxiv.org/html/2403.03954v7",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2403.03954v7",
+      "bytes": 552049,
+      "sha256": "202617ae8281319d37d910d562b6d49bfe29d3ee1227608b4bc0075c14360a3b"
+    },
+    {
+      "name": "robodojo-v3",
+      "url": "https://arxiv.org/html/2607.04434v3",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/html/2607.04434v3",
+      "bytes": 966429,
+      "sha256": "02bc15655463d6c69c24b378b4c8f09ba14a24b6aaa0480d247f26efe3a9f82d"
+    }
+  ],
+  "families": [
+    {
+      "dataset": "RoboCasa",
+      "officialUrl": "https://robocasa.ai/",
+      "checkedScope": "当前官网引用原版论文；用arXiv v1和正式RSS论文集核验旧协议（/2024/页面不可用）",
+      "disposition": "Added original p079 and 6 paper-table results."
+    },
+    {
+      "dataset": "RoboCasa365",
+      "officialUrl": "https://robocasa.ai/leaderboard.html",
+      "checkedScope": "官网50任务榜单+13提交JSON+ICLR论文",
+      "disposition": "Added p080; runtime1.0.0/1.0.1 and target budgets split; identity-incomplete submissions deferred."
+    },
+    {
+      "dataset": "RoboTwin",
+      "officialUrl": "https://robotwin-platform.github.io/leaderboard",
+      "checkedScope": "官网机器可读榜单与XPolicyLab关联报告",
+      "disposition": "Added p083,p084,p085 and 2.5k-clean co-train/single tracks; 27.5k mixed paper track separate."
+    },
+    {
+      "dataset": "RoboDojo",
+      "officialUrl": "https://robodojo-benchmark.com/",
+      "checkedScope": "官方网页、官方镜像JSON、v3协议",
+      "disposition": "Added source-attributed sim scores/SR and real-report rows. Full old p034 note remains its previously checked version."
+    },
+    {
+      "dataset": "LIBERO",
+      "officialUrl": "https://libero-project.github.io/",
+      "checkedScope": "官网HTML为重定向壳；已读相关论文实验并独立拆分Plus/PRO",
+      "disposition": "Original homepage/intro shell insufficient to certify a complete current leaderboard. Added RLDX/PRTS exact source tables."
+    },
+    {
+      "dataset": "CALVIN",
+      "officialUrl": "https://calvin.cs.uni-freiburg.de/",
+      "checkedScope": "官网连接被拒绝；改读mees/calvin官方README",
+      "disposition": "Source access limitation retained; no fabricated refreshed results."
+    },
+    {
+      "dataset": "RLBench",
+      "officialUrl": "https://sites.google.com/view/rlbench",
+      "checkedScope": "官方项目页",
+      "disposition": "Identified foundational1909.12271; full new notes and score extraction remain queued."
+    },
+    {
+      "dataset": "SimplerEnv",
+      "officialUrl": "https://simpler-env.github.io/",
+      "checkedScope": "官方项目页及RLDX/PRTS原表",
+      "disposition": "Added Google VM/VA and WidowX paper-specific settings; foundational2405.05941 queued."
+    },
+    {
+      "dataset": "RoboMimic",
+      "officialUrl": "https://robomimic.github.io/",
+      "checkedScope": "官方项目页",
+      "disposition": "Identified study2108.03298; do not re-add existing DiffusionPolicy rows as a new evaluation."
+    },
+    {
+      "dataset": "Push-T",
+      "officialUrl": "https://diffusion-policy.cs.columbia.edu/",
+      "checkedScope": "作者任务/论文项目页",
+      "disposition": "Existingp055; no duplicate result imported without different verified protocol."
+    },
+    {
+      "dataset": "Franka Kitchen",
+      "officialUrl": "https://github.com/Farama-Foundation/D4RL",
+      "checkedScope": "官方D4RL README",
+      "disposition": "Existing paper-table results preserved; task completion score is not binarySR."
+    },
+    {
+      "dataset": "ALOHA-Sim",
+      "officialUrl": "https://tonyzhaozh.github.io/aloha/",
+      "checkedScope": "作者官方项目页",
+      "disposition": "Existingp056; no model-revision/date inference from website render time."
+    },
+    {
+      "dataset": "Meta-World",
+      "officialUrl": "https://meta-world.github.io/",
+      "checkedScope": "官方项目页+DP3v7实验",
+      "disposition": "Added DP3/DP50-task difficulty groups; original1910.10897 study queued."
+    },
+    {
+      "dataset": "COLOSSEUM",
+      "officialUrl": "https://robot-colosseum.github.io/",
+      "checkedScope": "官方项目页",
+      "disposition": "Identified2402.08191; full-source notes/extraction queued, not reported as completed."
+    },
+    {
+      "dataset": "DexMimicGen",
+      "officialUrl": "https://dexmimicgen.github.io/",
+      "checkedScope": "官方项目页",
+      "disposition": "Identified2410.24185; new deep notes/extraction queued; existing reported baselines preserved."
+    }
+  ],
+  "calvinOfficialExcerptScope": "Official README retrieved; leaderboard and additional implementation links discovered, no claim of complete paper-level audit.",
+  "deferredCount": 49
+}

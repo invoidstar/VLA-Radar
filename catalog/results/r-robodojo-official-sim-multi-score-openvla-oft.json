@@ -1,0 +1,24 @@
+{
+  "id": "r-robodojo-official-sim-multi-score-openvla-oft",
+  "paperId": "p069",
+  "method": "OpenVLA-OFT",
+  "trackId": "robodojo-official-sim-multi-score",
+  "values": {
+    "Gen standard": 0.03,
+    "Gen randomized": 0.06,
+    "Precision": 0.2,
+    "Long-horizon": 0.7,
+    "Memory": 0.0,
+    "Open": 0.08,
+    "Average": 0.21
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+  "sourceVersion": "official JSON updated 2026-09-05",
+  "locator": "entries[model=OpenVLA-OFT]; pairs index0",
+  "attribution": "reported-baseline",
+  "trainingData": "官网训练设置；个别行预算未披露，不依据模型大小猜训练量。",
+  "evaluationNotes": "贡献方RoboDojo Team；官方来源镜像；分组与平均原样保留。协议补充依据arXiv2607.04434v3 §3.1，未宣称每个提交都独立验证了完整配置。score不是成功率；v3协议核对不使旧论文笔记冒充新版全文重读。",
+  "supersedes": ""
+}

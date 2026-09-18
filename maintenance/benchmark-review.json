@@ -40,10 +40,20 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table I。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p066": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV；Appendix A-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-100",
+        "robotwin2-official-2500clean-sft",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-100-pi0-2026-04-02",
+        "r-robotwin2-official-2500clean-sft-sft-pi0",
+        "r-robodojo-official-sim-multi-score-pi-0",
+        "r-robodojo-official-sim-multi-sr-pi-0"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV；Appendix A-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p062": {
       "status": "deferred",
@@ -154,7 +164,9 @@
       "status": "extracted",
       "trackIds": [
         "robodojo-20260824-score",
-        "robodojo-20260824-sr"
+        "robodojo-20260824-sr",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
       ],
       "resultIds": [
         "r-robodojo-20260824-score-dm",
@@ -166,9 +178,11 @@
         "r-robodojo-20260824-sr-g05",
         "r-robodojo-20260824-sr-pi05",
         "r-robodojo-20260824-sr-vlact",
-        "r-robodojo-20260824-sr-xiaomi"
+        "r-robodojo-20260824-sr-xiaomi",
+        "r-robodojo-official-sim-multi-score-vlact",
+        "r-robodojo-official-sim-multi-sr-vlact"
       ],
-      "note": "保留10条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留10条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p074": {
       "status": "extracted",
@@ -196,13 +210,19 @@
       "status": "extracted",
       "trackIds": [
         "robocasa24-xiaomi-300demos",
-        "robocasa365-xiaomi-50tasks"
+        "robocasa365-xiaomi-50tasks",
+        "robocasa365-official-101",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
       ],
       "resultIds": [
         "r-robocasa24-xiaomi-300demos-xiaomi-robotics-1",
-        "r-robocasa365-xiaomi-50tasks-xiaomi-robotics-1"
+        "r-robocasa365-xiaomi-50tasks-xiaomi-robotics-1",
+        "r-robocasa365-official-101-xiaomi-robotics-2026-07-08",
+        "r-robodojo-official-sim-multi-score-xiaomi-robotics-1",
+        "r-robodojo-official-sim-multi-sr-xiaomi-robotics-1"
       ],
-      "note": "保留2条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留2条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p060": {
       "status": "deferred",
@@ -239,10 +259,18 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§6–7，2508.05342v1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p078": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robotwin2-official-2500clean-cotrain",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robotwin2-official-2500clean-cotrain-cotrain-fastwam",
+        "r-robodojo-official-sim-multi-score-fast-wam",
+        "r-robodojo-official-sim-multi-sr-fast-wam"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p009": {
       "status": "deferred",
@@ -377,7 +405,9 @@
         "pusht-dp23-image-coverage-last10",
         "robomimic-dp23-image-mh-last10",
         "robomimic-dp23-image-ph-best",
-        "robomimic-dp23-image-ph-last10"
+        "robomimic-dp23-image-ph-last10",
+        "robocasa365-official-100",
+        "robotwin2-official-2500clean-sft"
       ],
       "resultIds": [
         "r-dp23-kitchen-c",
@@ -394,9 +424,11 @@
         "r-dp23-ph-last-t",
         "r-dp23-pusht-last-c",
         "r-dp23-pusht-last-lstm",
-        "r-dp23-pusht-last-t"
+        "r-dp23-pusht-last-t",
+        "r-robocasa365-official-100-dp-2026-04-02",
+        "r-robotwin2-official-2500clean-sft-sft-dp"
       ],
-      "note": "保留15条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留15条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p042": {
       "status": "deferred",
@@ -405,31 +437,43 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p008": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robotwin2-official-2500clean-cotrain"
+      ],
+      "resultIds": [
+        "r-robotwin2-official-2500clean-cotrain-cotrain-4d-wam"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p069": {
       "status": "extracted",
       "trackIds": [
         "libero-oft-multi-view",
-        "libero-oft-single-view"
+        "libero-oft-single-view",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
       ],
       "resultIds": [
         "r-libero-oft-multi-view-openvla-oft",
         "r-libero-oft-single-view-openvla",
         "r-libero-oft-single-view-openvla-pd-ac",
         "r-libero-oft-single-view-openvla-pd-ac-diffusion",
-        "r-libero-oft-single-view-openvla-pd-ac-l1"
+        "r-libero-oft-single-view-openvla-pd-ac-l1",
+        "r-robodojo-official-sim-multi-score-openvla-oft",
+        "r-robodojo-official-sim-multi-sr-openvla-oft"
       ],
-      "note": "保留5条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留5条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p024": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-101"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-101-abot-m0-5-2026-06-29"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p071": {
       "status": "deferred",
@@ -486,16 +530,34 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables I–II。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p072": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-100",
+        "robotwin2-official-2500clean-cotrain",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-100-pi05-2026-04-02",
+        "r-robotwin2-official-2500clean-cotrain-cotrain-pi-05",
+        "r-robodojo-official-sim-multi-score-pi-05",
+        "r-robodojo-official-sim-multi-sr-pi-05"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p065": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robotwin2-official-2500clean-sft",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robotwin2-official-2500clean-sft-sft-rdt",
+        "r-robodojo-official-sim-multi-score-rdt",
+        "r-robodojo-official-sim-multi-sr-rdt"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p059": {
       "status": "deferred",
@@ -573,7 +635,10 @@
       "status": "extracted",
       "trackIds": [
         "aloha-act-v1-human50",
-        "aloha-act-v1-scripted50"
+        "aloha-act-v1-scripted50",
+        "robotwin2-official-2500clean-sft",
+        "robodojo-official-sim-single-score",
+        "robodojo-official-sim-single-sr"
       ],
       "resultIds": [
         "r-act-v1-human-bet",
@@ -581,9 +646,12 @@
         "r-act-v1-human-vinn",
         "r-act-v1-script-bet",
         "r-act-v1-script-main",
-        "r-act-v1-script-vinn"
+        "r-act-v1-script-vinn",
+        "r-robotwin2-official-2500clean-sft-sft-act",
+        "r-robodojo-official-sim-single-score-act-single-task",
+        "r-robodojo-official-sim-single-sr-act-single-task"
       ],
-      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p034": {
       "status": "deferred",
@@ -601,20 +669,25 @@
       "status": "extracted",
       "trackIds": [
         "dexmg-gr00t-appendix-30",
-        "dexmg-gr00t-appendix-300"
+        "dexmg-gr00t-appendix-300",
+        "robocasa365-official-101"
       ],
       "resultIds": [
         "r-dexmg-gr00t-appendix-30-dp",
         "r-dexmg-gr00t-appendix-30-gr00t",
         "r-dexmg-gr00t-appendix-300-dp",
-        "r-dexmg-gr00t-appendix-300-gr00t"
+        "r-dexmg-gr00t-appendix-300-gr00t",
+        "r-robocasa365-official-101-gr00t-n1-5-2026-05-19",
+        "r-robocasa365-official-101-gr00t-n1-6-2026-05-14"
       ],
-      "note": "保留4条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留4条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p073": {
       "status": "extracted",
       "trackIds": [
-        "metaworld-smolvla-table2"
+        "metaworld-smolvla-table2",
+        "robodojo-official-sim-single-score",
+        "robodojo-official-sim-single-sr"
       ],
       "resultIds": [
         "r-metaworld-smolvla-table2-dp",
@@ -623,15 +696,144 @@
         "r-metaworld-smolvla-table2-smol024",
         "r-metaworld-smolvla-table2-smol045",
         "r-metaworld-smolvla-table2-smol225",
-        "r-metaworld-smolvla-table2-tiny"
+        "r-metaworld-smolvla-table2-tiny",
+        "r-robodojo-official-sim-single-score-smolvla-single-task",
+        "r-robodojo-official-sim-single-sr-smolvla-single-task"
       ],
-      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p037": {
       "status": "deferred",
       "trackIds": [],
       "resultIds": [],
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p079": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa-original-24atomic-v1",
+        "robocasa-original-5composite-v1"
+      ],
+      "resultIds": [
+        "r-robocasa-original-24atomic-v1-bc-transformer-human-50",
+        "r-robocasa-original-24atomic-v1-bc-transformer-generated-100",
+        "r-robocasa-original-24atomic-v1-bc-transformer-generated-300",
+        "r-robocasa-original-24atomic-v1-bc-transformer-generated-3000",
+        "r-robocasa-original-5composite-v1-bc-transformer-scratch",
+        "r-robocasa-original-5composite-v1-bc-transformer-atomic-pretrain-fine-tune"
+      ],
+      "note": "2026-09-18官网/原表回补：新增6条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p080": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-paper-v1-human300",
+        "robocasa365-paper-v1-target-50",
+        "robocasa365-paper-v1-target-150",
+        "robocasa365-paper-v1-target-500"
+      ],
+      "resultIds": [
+        "r-robocasa365-paper-v1-human300-diffusion-policy",
+        "r-robocasa365-paper-v1-human300-0",
+        "r-robocasa365-paper-v1-human300-0-5",
+        "r-robocasa365-paper-v1-human300-gr00t-n1-5",
+        "r-robocasa365-paper-v1-target-50-gr00t-n1-5-target-only",
+        "r-robocasa365-paper-v1-target-50-gr00t-n1-5-simulation-pretrain-target",
+        "r-robocasa365-paper-v1-target-150-gr00t-n1-5-target-only",
+        "r-robocasa365-paper-v1-target-150-gr00t-n1-5-simulation-pretrain-target",
+        "r-robocasa365-paper-v1-target-500-gr00t-n1-5-target-only",
+        "r-robocasa365-paper-v1-target-500-gr00t-n1-5-simulation-pretrain-target"
+      ],
+      "note": "2026-09-18官网/原表回补：新增10条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p082": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-101",
+        "libero-prts-crl-v1",
+        "libero-plus-prts-crl-v1",
+        "libero-pro-prts-crl-v1",
+        "simpler-widowx-prts-v1"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-101-prts-2026-08-18",
+        "r-libero-prts-crl-v1-prts-with-crl",
+        "r-libero-prts-crl-v1-prts-without-crl",
+        "r-libero-plus-prts-crl-v1-prts-with-crl",
+        "r-libero-plus-prts-crl-v1-prts-without-crl",
+        "r-libero-pro-prts-crl-v1-prts-with-crl",
+        "r-libero-pro-prts-crl-v1-prts-without-crl",
+        "r-simpler-widowx-prts-v1-prts",
+        "r-simpler-widowx-prts-v1-0",
+        "r-simpler-widowx-prts-v1-0-5"
+      ],
+      "note": "2026-09-18官网/原表回补：新增10条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p083": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-101",
+        "robotwin2-gwp-v2-27500"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-101-gwp01-2026-05-11",
+        "r-robotwin2-gwp-v2-27500-gigaworld-policy",
+        "r-robotwin2-gwp-v2-27500-0-5"
+      ],
+      "note": "2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p081": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-101",
+        "libero-rldx-v2",
+        "libero-plus-rldx-v2",
+        "simpler-google-rldx-vm",
+        "simpler-google-rldx-va",
+        "simpler-widowx-rldx-v2",
+        "robocasa24-rldx-v2",
+        "robocasa365-rldx-paper-v2"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-101-rldx-1-2026-05-20",
+        "r-libero-rldx-v2-rldx-1",
+        "r-libero-plus-rldx-v2-rldx-1",
+        "r-simpler-google-rldx-vm-rldx-1",
+        "r-simpler-google-rldx-va-rldx-1",
+        "r-simpler-widowx-rldx-v2-rldx-1",
+        "r-robocasa24-rldx-v2-rldx-1",
+        "r-robocasa24-rldx-v2-0-5",
+        "r-robocasa24-rldx-v2-0",
+        "r-robocasa365-rldx-paper-v2-rldx-1"
+      ],
+      "note": "2026-09-18官网/原表回补：新增10条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p085": {
+      "status": "extracted",
+      "trackIds": [
+        "metaworld-dp3-v7-10demo",
+        "robotwin2-official-2500clean-sft"
+      ],
+      "resultIds": [
+        "r-metaworld-dp3-v7-10demo-dp3",
+        "r-metaworld-dp3-v7-10demo-diffusion-policy",
+        "r-robotwin2-official-2500clean-sft-sft-dp3"
+      ],
+      "note": "2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p084": {
+      "status": "extracted",
+      "trackIds": [
+        "robodojo-real-xpolicylab-v3-score",
+        "robodojo-real-xpolicylab-v3-sr"
+      ],
+      "resultIds": [
+        "r-robodojo-real-xpolicylab-v3-score-0-5",
+        "r-robodojo-real-xpolicylab-v3-score-0",
+        "r-robodojo-real-xpolicylab-v3-sr-0-5",
+        "r-robodojo-real-xpolicylab-v3-sr-0"
+      ],
+      "note": "2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
     }
   }
 }

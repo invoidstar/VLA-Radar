@@ -1,0 +1,19 @@
+{
+  "id": "r-robotwin2-gwp-v2-27500-0-5",
+  "paperId": "p083",
+  "method": "π0.5",
+  "trackId": "robotwin2-gwp-v2-27500",
+  "values": {
+    "Clean": 43,
+    "Random": 44
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2603.17240v2#S4.T8",
+  "sourceVersion": "2603.17240v2",
+  "locator": "Table8, mean row",
+  "attribution": "reported-baseline",
+  "trainingData": "原文对照行，基座与训练预算并不相同",
+  "evaluationNotes": "由GWP作者汇报的比较，不是本站复现。",
+  "supersedes": ""
+}

@@ -1,0 +1,19 @@
+{
+  "id": "r-robotwin2-gwp-v2-27500-gigaworld-policy",
+  "paperId": "p083",
+  "method": "GigaWorld-Policy",
+  "trackId": "robotwin2-gwp-v2-27500",
+  "values": {
+    "Clean": 86,
+    "Random": 85
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2603.17240v2#S4.T8",
+  "sourceVersion": "2603.17240v2",
+  "locator": "Table8, mean row; contrast with Table2",
+  "attribution": "author-reported",
+  "trainingData": "27,500 demos; action48, future spacing12; report recipe",
+  "evaluationNotes": "Table2 clean写87，而Table8完整结果mean及Table3写86；使用完整表86并保留冲突，不选最大值。",
+  "supersedes": ""
+}

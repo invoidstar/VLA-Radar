@@ -1,0 +1,18 @@
+{
+  "id": "r-robocasa24-rldx-v2-0",
+  "paperId": "p081",
+  "method": "π0",
+  "trackId": "robocasa24-rldx-v2",
+  "values": {
+    "Average": 62.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2605.03269v2#S6.T1",
+  "sourceVersion": "2605.03269v2",
+  "locator": "Table1, RoboCasa24; Appendix G",
+  "attribution": "reported-baseline",
+  "trainingData": "RLDX配方见Table8；引用基线训练预算未统一",
+  "evaluationNotes": "基线由该报告汇总，非本站重跑；缺少匹配预算，不给公平名次。",
+  "supersedes": ""
+}
