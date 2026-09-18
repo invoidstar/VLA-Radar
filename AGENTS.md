@@ -56,3 +56,8 @@ Read maintenance/workspace.md. Before canonical content edits, preserve the exac
 ## Embodied AI Weekly / 具身智能周报
 
 详见 `maintenance/news-policy.md`。新闻独立于论文和榜单；维护实际来源、事件/报道日期、公告与材料开放边界、背景/对应论文关系。原有每周任务同时检索过去14天的重要具身智能动态，重点最近7天，3–5条编辑精选，不凑数、不重报旧闻。状态和候选分别保存在news-state/news-candidates，部分检索不能推进完整成功检查点。只编辑catalog/news，构建哈希分片；News代码、样式与数据按需加载。发布前执行browser_news.py与既有完整CI，正常PR自检合并后核实Pages。
+
+
+## 功能收口与日常工具（2026-09-18）
+
+详见 `maintenance/daily-tools.md`。My Radar、全局快捷搜索和多格式引用导出为本轮最后的功能增量，不新增 RSS。此后默认不大改功能或架构：只有明确的实际痛点、性能瓶颈或安全/兼容性问题才做必要变更；日常持续提高内容质量、覆盖率和稳定性。每周保留论文深入阅读、原表核验榜单、发表状态、具身智能周报、活动捕获、来源检查和安全分支清理。新增公开工具索引由正常构建自动同步，浏览器关注和已看标记绝不进入公开数据。书目扩展须有一手来源、身份核对及真实日期，未知作者/卷期不猜补。保持按需加载、原阅读存储键和所有既有测试；新增browser_tools.py也必须通过后才正常自检合并发布。
