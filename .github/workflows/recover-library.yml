@@ -1,0 +1,95 @@
+name: Recover and validate retained library notes
+on:
+  push:
+    branches: [release/batch-2026-09-18-library-recovery]
+    paths: ['scripts/recover_library.py', '.github/workflows/recover-library.yml']
+permissions:
+  contents: write
+concurrency:
+  group: recover-library-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover immutable source-scoped notes and preserve current results
+        run: |
+          set -eu
+          git fetch --no-tags origin 0f8d8938457f169bcb4a92da9c3df89f1945d3aa
+          python scripts/recover_library.py
+          python scripts/maintenance_queue.py
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Commit only validated outputs to the release branch
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          test "$BRANCH" = 'release/batch-2026-09-18-library-recovery'
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; refusing overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog/papers catalog/manifest.json data maintenance/library-recovery.json maintenance/work-queue.json scripts/note_quality.py scripts/catalog_core.py scripts/test_research.cjs research.js research.css CHANGELOG.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Recover 42 source-linked notes, preserve current-main results and validate reading UI'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recovered-library-source
+          retention-days: 7
+          path: |
+            catalog/
+            data/
+            maintenance/
+            scripts/
+            tests/
+            *.js
+            *.css
+            *.html
+            *.md
+            *.py
+            *.svg
+  public-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: read
+    steps:
+      - name: Attempt bounded official full-text endpoints without credentials
+        run: |
+          mkdir -p /tmp/reading-evidence
+          python - <<'PY'
+          import concurrent.futures,json,hashlib
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          urls={
+            'vlabot-html':'https://www.sciencedirect.com/science/article/pii/S0736584526000475',
+            'vlabot-xml':'https://api.elsevier.com/content/article/pii/S0736584526000475?httpAccept=text/xml',
+            'vlabot-pdf':'https://www.sciencedirect.com/science/article/pii/S0736584526000475/pdfft?isDTMRedir=true&download=true',
+            'dms-metadata':'https://ieeexplore.ieee.org/document/11479850/',
+            'dms-public-pdf':'https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=11479850',
+            'dms-author-report':'https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D'
+          }
+          out=Path('/tmp/reading-evidence')
+          def get(item):
+              name,url=item;r={'name':name,'url':url}
+              try:
+                  with urlopen(Request(url,headers={'User-Agent':'VLA-Radar/2.2 public scholarly reader'}),timeout=25) as f:
+                      data=f.read(12000000);r.update(status=f.status,contentType=f.headers.get('Content-Type'),bytes=len(data),sha256=hashlib.sha256(data).hexdigest())
+                  (out/(name+'.source')).write_bytes(data)
+              except Exception as e:r['error']=str(e)
+              return r
+          with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:rows=list(pool.map(get,urls.items()))
+          (out/'report.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          print(json.dumps(rows,ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: temporary-official-reading-evidence
+          retention-days: 1
+          path: /tmp/reading-evidence/
