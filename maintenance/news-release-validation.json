@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "base": "87539bdedaaa507f64d900f674fee1f1f687c365",
+  "sourceHashChecks": 28,
+  "preservedScientificAndStateFiles": 187,
+  "scope": "Pre/postimage and scientific source invariance. Full CI and real browser checks are separate workflow steps.",
+  "newsCount": 6,
+  "newsSearchStatus": "partial"
+}

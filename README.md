@@ -37,3 +37,8 @@ Public sources only. No private research plans, personal reading data, accounts 
 ## Research workspace
 
 Focused reading (`?view=reader&paper=p001`), cited two-to-four-paper comparison, observed change streams, library evidence coverage, single-protocol charts, and public BibTeX/Markdown/CSV exports are available. Optional code and data load on use. See `maintenance/workspace.md` for semantic boundaries, local preferences and the weekly activity-capture command. Basic BibTeX intentionally does not guess missing authors or final venue metadata.
+
+
+## Embodied AI Weekly / 具身智能周报
+
+详见 `maintenance/news-policy.md`。新闻独立于论文和榜单；维护实际来源、事件/报道日期、公告与材料开放边界、背景/对应论文关系。原有每周任务同时检索过去14天的重要具身智能动态，重点最近7天，3–5条编辑精选，不凑数、不重报旧闻。状态和候选分别保存在news-state/news-candidates，部分检索不能推进完整成功检查点。只编辑catalog/news，构建哈希分片；News代码、样式与数据按需加载。发布前执行browser_news.py与既有完整CI，正常PR自检合并后核实Pages。

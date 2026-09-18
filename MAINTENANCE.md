@@ -104,3 +104,8 @@ python scripts/validate_all.py
 ## 阅读工作台与周更变更记录
 
 详见 maintenance/workspace.md。保存变更前最新main精确SHA后，完成论文/笔记/结果修改，再运行capture_activity.py --base该SHA、build_catalog.py、validate_all.py。只记录实际差异；旧快照不补造首次收录，元数据检查不冒充精读更新。每周继续同步榜单、全文笔记、发表状态与安全分支清理；新工具不降低来源或发布门槛。HTTP浏览器回归还包括reader、compare、updates、coverage、当前协议图表及导出。
+
+
+## Embodied AI Weekly / 具身智能周报
+
+详见 `maintenance/news-policy.md`。新闻独立于论文和榜单；维护实际来源、事件/报道日期、公告与材料开放边界、背景/对应论文关系。原有每周任务同时检索过去14天的重要具身智能动态，重点最近7天，3–5条编辑精选，不凑数、不重报旧闻。状态和候选分别保存在news-state/news-candidates，部分检索不能推进完整成功检查点。只编辑catalog/news，构建哈希分片；News代码、样式与数据按需加载。发布前执行browser_news.py与既有完整CI，正常PR自检合并后核实Pages。

@@ -25,7 +25,7 @@ class NewsTests(unittest.TestCase):
  def test_official_requires_primary(self):self.records[0]['evidence']='official';[s.update(kind='media') for s in self.records[0]['sources']];self.fails()
  def test_paper_backed_requires_full_read(self):self.records[0]['evidence']='paper-backed';self.fails()
  def test_correction_must_retain_history(self):self.records[0]['status']='corrected';self.fails()
- def test_partial_does_not_claim_success(self):self.state['lastSuccessfulSearchAt']=self.state['asOf'];self.fails()
+ def test_partial_does_not_claim_success(self):self.state['status']='partial';self.state['lastSuccessfulSearchAt']=self.state['asOf'];self.fails()
  def test_future_checkpoint(self):self.state['asOf']=(self.today+timedelta(days=15)).isoformat();self.fails()
  def test_no_hype_without_limits(self):self.records[0]['limits']='';self.fails()
  def test_unknown_category(self):self.records[0]['primaryCategory']='misc';self.fails()
