@@ -1,0 +1,188 @@
+name: Prepare official benchmark content
+on:
+  push:
+    branches: [weekly-update-2026-09-18-benchmark-audit]
+    paths: [.github/workflows/prepare-benchmark-content.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-benchmark-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify transport and exact baseline before applying reviewed content
+        env:
+          BASE_SHA: 1d71d5081305cf3dd0ac3c939cd578fc24bf4ca1
+        run: |
+          python - <<'PY'
+          import base64,hashlib,json,lzma,os,re,subprocess
+          from pathlib import Path,PurePosixPath
+          base=os.environ['BASE_SHA'];root=Path.cwd();out=Path('/tmp/benchmark-publish');out.mkdir(exist_ok=True)
+          main=subprocess.check_output(['git','ls-remote','origin','refs/heads/main'],text=True).split()[0]
+          assert main==base, 'main moved; reconcile rather than overwrite'
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          expected_parts=['7cf2a3fee45afc383f78f662de82b94b99995e4fba2b3ef870c870a4fddba5c7','56eb605ebcc7e0837641dff0519c0a46cdb17177b789b8b6edb71e3430c4df3d','4f181ec9b711d78b5bbe45c34a373cb19a18e57a0097c7e4c30906600c7cb528','e59ce88b32c8444831eebc81f0abac793be79f0b8342ab2cd896c36d9e45d982','58f00142901f4775e55794d007d3614db26942f683dda88250aeb99b10231a9b']
+          parts=[]
+          for i,sha in enumerate(expected_parts,1):
+              b=Path(f'maintenance/benchmark-content.part{i}').read_bytes()
+              actual=hashlib.sha256(b).hexdigest();print('Part',i,len(b),actual)
+              assert actual==sha, f'Part {i} transport checksum mismatch'
+              parts.append(b)
+          text=b''.join(parts);assert len(text)==71256
+          raw=base64.b64decode(text,validate=True)
+          assert len(raw)==53440 and hashlib.sha256(raw).hexdigest()=='7651df52ecf96696dd8df98ae654924e80fd8ea78c99bd59740fc3e437dba1a4'
+          decoded=lzma.decompress(raw,memlimit=128*1024*1024);assert len(decoded)==341203
+          obj=json.loads(decoded);assert obj['baseCommit']==base
+          hashes=obj['expectedSha256'];new=obj['newFiles']
+          assert len(hashes)==110 and len(new)==89
+          def allowed(path):
+              p=PurePosixPath(path)
+              return not p.is_absolute() and '..' not in p.parts and '\\' not in path and (path in {'AGENTS.md','MAINTENANCE.md','CHANGELOG.md'} or p.parts[0] in {'catalog','maintenance','tests'})
+          for path,sha in hashes.items():
+              assert allowed(path), 'Unexpected content path '+path
+              p=Path(path);assert not p.is_symlink()
+              if sha is None:assert not p.exists(), 'New file already exists '+path
+              else:assert p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==sha, 'Changed base '+path
+          assert set(new)=={p for p,h in hashes.items() if h is None}
+          changed=set()
+          for line in obj['patch'].splitlines():
+              if line.startswith(('--- a/','+++ b/')):
+                  path=line[6:];assert path in hashes and hashes[path] is not None and allowed(path);changed.add(path)
+          assert changed=={p for p,h in hashes.items() if h is not None}
+          patch=out/'content.patch';patch.write_text(obj['patch'],encoding='utf-8')
+          subprocess.run(['git','apply','--check',str(patch)],check=True)
+          subprocess.run(['git','apply',str(patch)],check=True)
+          for path,content in new.items():
+              p=Path(path);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content,encoding='utf-8')
+          print('Applied 110 reviewed canonical/document/test paths; generated data will be built.')
+          PY
+          python scripts/capture_activity.py --base "$BASE_SHA"
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Verify preservation of all old scientific and news content
+        env:
+          BASE_SHA: 1d71d5081305cf3dd0ac3c939cd578fc24bf4ca1
+        run: |
+          python - <<'PY'
+          import json,subprocess,os
+          from pathlib import Path
+          base=os.environ['BASE_SHA']
+          def prior(path):return subprocess.check_output(['git','show',base+':'+path])
+          def files(prefix):return subprocess.check_output(['git','ls-tree','-r','--name-only',base,'--',prefix],text=True).splitlines()
+          papers=files('catalog/papers');results=files('catalog/results');news=files('catalog/news')
+          for path in papers:
+              old=json.loads(prior(path));new=json.loads(Path(path).read_text())
+              old['note'].pop('benchmarkReview',None);new['note'].pop('benchmarkReview',None)
+              assert old==new,'Changed old paper or read version '+path
+          for path in results+news+['maintenance/state.json','maintenance/news-state.json']:
+              assert prior(path)==Path(path).read_bytes(),'Changed old data '+path
+          locks=json.loads(Path('catalog/first-public.json').read_text())
+          assert all(locks[k]==v for k,v in json.loads(prior('catalog/first-public.json')).items())
+          tracks={t['id']:t for t in json.loads(Path('catalog/benchmarks.json').read_text())['tracks']}
+          for old in json.loads(prior('catalog/benchmarks.json'))['tracks']:
+              new=tracks[old['id']]
+              if old['id']=='robocasa365-xiaomi-50tasks':old['dataset']='RoboCasa365'
+              assert old==new,'Unexpected old protocol modification '+old['id']
+          manifest=json.loads(Path('catalog/manifest.json').read_text());old=json.loads(prior('catalog/manifest.json'))
+          assert manifest['paperOrder'][:len(old['paperOrder'])]==old['paperOrder']
+          summary={'baseCommit':base,'oldPapersPreserved':len(papers),'oldResultsPreserved':len(results),'oldNewsPreserved':len(news),'papers':len(manifest['paperOrder']),'tracks':len(tracks),'results':len(list(Path('catalog/results').glob('r-*.json'))),'datasetFamilies':sorted({t['dataset'] for t in tracks.values()}),'scope':'Canonical preservation and structure checks, not independent scientific reproduction.'}
+          Path('/tmp/benchmark-publish/invariance.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2))
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
+          PY
+      - name: Browser testing tools
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq; sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Actual HTTP regression for all existing website features
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+          python scripts/browser_sidebar.py
+          python scripts/browser_tools.py
+      - name: Actual HTTP RoboCasa identity and new deep reading check
+        run: |
+          python - <<'PY'
+          import json,shutil,socket,subprocess,sys,time
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright,expect
+          out=Path('/tmp/benchmark-publish');sock=socket.socket();sock.bind(('127.0.0.1',0));port=sock.getsockname()[1];sock.close()
+          server=subprocess.Popen([sys.executable,'-m','http.server',str(port),'--bind','127.0.0.1'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+          checks=[];errors=[]
+          try:
+              time.sleep(.4)
+              with sync_playwright() as p:
+                  b=p.chromium.launch(executable_path=shutil.which('chromium') or shutil.which('google-chrome'),headless=True,args=['--no-sandbox'])
+                  page=b.new_page(viewport={'width':1440,'height':1000});page.on('pageerror',lambda e:errors.append(str(e)))
+                  base=f'http://127.0.0.1:{port}/'
+                  page.goto(base+'?view=leaderboards&dataset=RoboCasa365&track=robocasa365-official-101',wait_until='networkidle')
+                  page.wait_for_selector('#lb-track');expect(page.locator('[data-dataset="RoboCasa365"]')).to_have_attribute('aria-pressed','true')
+                  expect(page.locator('[data-dataset="RoboCasa"]')).to_have_attribute('aria-pressed','false')
+                  assert page.locator('#lb-track').input_value()=='robocasa365-official-101';assert page.locator('.board-table tbody tr').count()>0;checks.append('RoboCasa365 1.0.1 separate populated entry')
+                  page.screenshot(path=str(out/'robocasa365.png'))
+                  page.locator('#lb-track').select_option('robocasa365-official-100');expect(page.locator('.protocol-card')).to_contain_text('1.0.0');checks.append('1.0.0 and 1.0.1 stay separate')
+                  page.locator('[data-dataset="RoboCasa"]').click();expect(page.locator('[data-dataset="RoboCasa"]')).to_have_attribute('aria-pressed','true')
+                  opts=page.locator('#lb-track option').evaluate_all('(els)=>els.map(e=>e.value)');assert all(not x.startswith('robocasa365-') for x in opts);checks.append('Original RoboCasa never includes 365 tracks')
+                  page.screenshot(path=str(out/'robocasa-original.png'))
+                  for i in range(79,86):
+                      pid=f'p{i:03d}';page.goto(base+'?view=reader&paper='+pid,wait_until='networkidle');page.wait_for_selector('.reader-chapter')
+                      assert page.locator('.reader-chapter').count()>=8;checks.append(pid+' deep note renders with at least eight chapters')
+                  page.screenshot(path=str(out/'new-paper-reader.png'))
+                  assert not errors
+                  (out/'benchmark-browser.json').write_text(json.dumps({'status':'pass','checks':checks,'errors':errors,'scope':'CI real HTTP Chromium; not physical phone or production network'},ensure_ascii=False,indent=2));b.close()
+          finally:server.terminate();server.wait()
+          PY
+      - name: Commit validated content to this branch only
+        env:
+          BRANCH: ${{ github.ref_name }}
+          EXPECTED_SHA: ${{ github.sha }}
+          BASE_SHA: 1d71d5081305cf3dd0ac3c939cd578fc24bf4ca1
+        run: |
+          set -eu
+          test "$BRANCH" = 'weekly-update-2026-09-18-benchmark-audit'
+          test "$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)" = "$EXPECTED_SHA" || { echo 'Branch moved'; exit 1; }
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE_SHA" || { echo 'Main moved'; exit 1; }
+          git diff --exit-code -- .github
+          git rm maintenance/benchmark-content.part1 maintenance/benchmark-content.part2 maintenance/benchmark-content.part3 maintenance/benchmark-content.part4 maintenance/benchmark-content.part5
+          git add AGENTS.md MAINTENANCE.md CHANGELOG.md catalog data maintenance tests
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add seven deeply read benchmark papers, 78 sourced results and separate RoboCasa365'
+          git push origin "HEAD:refs/heads/$BRANCH"
+          git rev-parse HEAD > /tmp/benchmark-publish/content-commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-content-browser-audit
+          path: |
+            /tmp/benchmark-publish/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+          retention-days: 14
+      - name: Retain reviewed source snapshot
+        if: always()
+        run: |
+          mkdir -p /tmp/benchmark-recovery
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile,ZIP_DEFLATED
+          with ZipFile('/tmp/benchmark-recovery/source.zip','w',ZIP_DEFLATED) as z:
+              for p in Path('.').rglob('*'):
+                  if p.is_file() and not any(x in p.parts for x in ['.git','__pycache__','node_modules']) and '.part' not in p.name:z.write(p,p.as_posix())
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-content-recovery
+          path: /tmp/benchmark-recovery/
+          retention-days: 14
