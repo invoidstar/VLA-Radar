@@ -1,0 +1,41 @@
+/* Keep labels legible; all panes share --sidebar, including toasts. */
+@media (min-width:701px) {
+  :root { --sidebar:clamp(244px,var(--sidebar-user-width,260px),min(380px,calc(100vw - 400px))); }
+}
+.sidebar { overflow-x:hidden; }
+.sidebar .nav-link { white-space:nowrap; }
+.sidebar .nav-link > [data-icon],
+.sidebar .nav-count,
+.sidebar .local-indicator,
+.sidebar #compare-count { flex-shrink:0; }
+.sidebar-resizer {
+  position:fixed; z-index:35; top:0; bottom:0;
+  left:calc(var(--sidebar) - 5px); width:10px;
+  cursor:col-resize; touch-action:none; user-select:none;
+  display:flex; align-items:center; justify-content:center;
+}
+.sidebar-resizer::before {
+  content:""; position:absolute; top:0; bottom:0; width:2px;
+  background:var(--line); transition:background-color .15s;
+}
+.sidebar-resizer::after {
+  content:""; position:relative; width:4px; height:44px;
+  border-radius:4px; background:#b7b1e3;
+}
+.sidebar-resizer:hover::before,
+.sidebar-resizer:focus-visible::before,
+.sidebar-resizing .sidebar-resizer::before { background:var(--accent); }
+.sidebar-resizer:hover::after,
+.sidebar-resizer:focus-visible::after,
+.sidebar-resizing .sidebar-resizer::after { background:var(--accent); }
+.sidebar-resizer:focus-visible { outline:2px solid #b9b3fa; outline-offset:-2px; }
+.sidebar-resizing, .sidebar-resizing * { cursor:col-resize!important; user-select:none!important; }
+@media (max-width:700px) {
+  /* The existing mobile drawer stays independent of the desktop preference. */
+  .sidebar { width:min(280px,calc(100vw - 40px)); }
+  .sidebar-resizer { display:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .sidebar-resizer::before { transition:none; }
+}
+@media print { .sidebar-resizer { display:none!important; } }
