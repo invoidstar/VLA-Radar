@@ -1,0 +1,96 @@
+name: Validate maintenance and runtime upgrade
+on:
+  push:
+    branches: [release/batch-2026-09-18-maintenance-performance]
+    paths:
+      - 'maintenance/runtime-staging/**'
+      - 'scripts/apply_runtime_upgrade.py'
+      - '.github/workflows/runtime-upgrade.yml'
+permissions:
+  contents: write
+  pull-requests: read
+  actions: read
+concurrency:
+  group: runtime-upgrade-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply verified source patches without replacing scientific records
+        run: |
+          set -eu
+          python scripts/apply_runtime_upgrade.py
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Real browser HTTP and worker verification
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then
+            python -m playwright install --with-deps chromium
+          fi
+          python scripts/browser_smoke.py
+      - name: Bounded official metadata and source checks
+        run: |
+          set -eu
+          python scripts/sync_publications.py --apply-safe --limit 100 --due-days 7 > /tmp/radar-publications.json
+          python scripts/check_sources.py --limit 100 --due-days 30 --max-seconds 180
+          python scripts/maintenance_queue.py
+      - name: Audit and attempt only missing main protection; preview branch cleanup
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/configure_main_protection.py --apply --output /tmp/radar-protection-audit.json
+          python scripts/repo_housekeeping.py --output /tmp/radar-branch-audit.json
+      - name: Verify invariants and capture actual results
+        run: |
+          set -eu
+          python scripts/build_catalog.py
+          python scripts/validate_all.py > /tmp/radar-validation.log 2>&1
+          python - <<'PY'
+          import json,hashlib,sys
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          from check_performance import check
+          def sha(b):return hashlib.sha256(b).hexdigest()
+          before=json.loads(Path('/tmp/radar-invariants-before.json').read_text())
+          for f in Path('catalog/papers').glob('p*.json'):
+              r=json.loads(f.read_text());a=r['paper'];n=r['note'];old=before['papers'][a['id']]
+              assert {k:a[k] for k in old['stable']}==old['stable'],a['id']+' scientific metadata changed'
+              assert {k:n.get(k) for k in old['notes']}==old['notes'],a['id']+' note evidence changed'
+          assert {p.name:sha(p.read_bytes()) for p in Path('catalog/results').glob('*.json')}==before['results']
+          assert sha(Path('catalog/first-public.json').read_bytes())==before['firstPublic']
+          assert sha(Path('maintenance/state.json').read_bytes())==before['discovery']
+          publication=json.loads(Path('maintenance/publication-check.json').read_text())
+          health=json.loads(Path('maintenance/source-health.json').read_text())
+          report={'schemaVersion':1,'checkedAt':'2026-09-18','invariants':'pass','performance':check(),'browser':json.loads(Path('/tmp/radar-browser/audit.json').read_text()),'publications':{k:publication.get(k) for k in ['status','selected','metadataChecked','changed','dueRemaining','providers','warnings']},'sourceHealth':{k:health.get(k) for k in ['checkedThisRun','totalSources','dueRemaining']},'protection':json.loads(Path('/tmp/radar-protection-audit.json').read_text()),'cleanupPreview':json.loads(Path('/tmp/radar-branch-audit.json').read_text()),'limits':'Metadata checks are not full-paper verification or new-paper discovery. Browser tests use CI desktop Chromium, not a physical phone. Cleanup preview is not deletion.'}
+          Path('maintenance/runtime-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit validated source and generated files to this release branch only
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          test "$BRANCH" = 'release/batch-2026-09-18-maintenance-performance'
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; refusing overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- . ':!.github'
+          if ! git diff --cached --quiet; then
+            git commit -m 'Implement verified publication fallback, safe housekeeping and scalable static delivery'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: runtime-validation-${{ github.run_id }}
+          path: |
+            /tmp/radar-browser/
+            /tmp/radar-*.json
+            /tmp/radar-validation.log
+          retention-days: 14
