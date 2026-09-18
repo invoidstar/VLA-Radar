@@ -194,6 +194,13 @@
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2501.09747v1#S4"
+    },
+    "figures": [],
+    "tables": []
   }
 }

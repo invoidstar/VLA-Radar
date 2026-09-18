@@ -67,86 +67,145 @@
     "alerts": []
   },
   "note": {
-    "status": "legacy",
+    "status": "expanded",
     "updatedAt": "2026-09-17",
-    "verifiedAt": null,
-    "version": "8月首次公开｜阅读v1",
+    "verifiedAt": "2026-09-17",
+    "version": "arXiv 2608.01066 v1；Method、Experiments、Appendix",
     "sections": [
       {
-        "id": "contribution",
-        "title": "核心贡献与方法概览",
-        "body": "通过单目几何构造跨视角对应，并把不同相机下的动作一致性约束到统一机器人坐标；几何增强主要在训练期使用。",
+        "id": "problem",
+        "title": "研究问题：相机坐标动作对齐以后，为什么还会过拟合视角？",
+        "body": "OC-VLA把动作转到相机坐标，减少视觉与动作的坐标不一致，但如果训练仅覆盖一两个视角，模型仍可能记住局部外观。OC-VLA++因此构造同一场景的几何相关视角，并显式要求两种观察产生的动作在共同机器人坐标中一致。\n它约束的是随视角变化而按几何规则变换的动作，即等变性，而不是要求两个相机中的原始动作向量数值相同。把这种目标误写成简单不变性，会丢失这篇方法最核心的坐标逻辑。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "Introduction；Overview · 指定版本原文",
             "url": "https://arxiv.org/html/2608.01066v1"
-          },
+          }
+        ]
+      },
+      {
+        "id": "novelty",
+        "title": "贡献：增强图像时，也要同步改变动作标签",
+        "body": "真实数据用冻结MoGe-2从单目观察估计几何，在附近相机位姿重投影生成配对视图；每个视图都有自己的相机空间动作标签。仿真则直接从相同物理状态渲染另一相机，避免几何估计误差。\n除分别拟合两边标签外，模型还从生成输出恢复干净动作，反归一化并变回机器人坐标，再施加动作一致性损失。这个步骤使新增监督真正作用于物理控制量，而不是仅把图像增强后的特征拉近。",
+        "sources": [
           {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2608.01066"
+            "label": "Geometry-Guided Paired-View Construction；Cross-View Action Equivariance · 指定版本原文",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          }
+        ]
+      },
+      {
+        "id": "generation",
+        "title": "配对视角如何产生，哪些变化不能随便合成",
+        "body": "每张真实训练图离线生成10个附近视角，位移限制15厘米、旋转限制10度，并通过深度可见性解析和有效像素覆盖率筛选。训练随机选一个合成视图与原图配对；这些工作不在部署时进行。\n局部重投影不能恢复原视图完全看不见的物体背面，范围越大，空洞与遮挡错误越明显，因此方法采用局部邻域而非声称可任意改变相机。相机标定仍用于动作变换，单目几何不意味着无需知道相机与机器人关系。",
+        "sources": [
+          {
+            "label": "Paired-View Construction；Synthesized View Pool Configuration · 指定版本原文",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          }
+        ]
+      },
+      {
+        "id": "objective",
+        "title": "为什么不能直接比较噪声预测或flow速度",
+        "body": "扩散模型输出的噪声、flow模型输出的速度，都不是干净动作本身。方法先按对应噪声路径恢复可微的动作估计，再反归一化，分别转换到机器人坐标，比较平移、单位四元数的测地旋转差和夹爪动作。\n原始视图在一致性分支停止梯度，使合成视图向较可靠的真实视图靠近；但原视图仍接受自己的标准生成损失。平移和旋转差设有鲁棒限制，以减弱重投影伪影造成的大误差，而不是让合成数据对真实支路无限制反向牵引。",
+        "sources": [
+          {
+            "label": "Clean-action recovery；Robot-frame alignment；Equivariance loss · 指定版本原文",
+            "url": "https://arxiv.org/html/2608.01066v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "实验设置：两种生成架构与有限相机覆盖",
+        "body": "论文在Dita扩散模型和Qwen3-VL-2B加flow动作专家两类架构上验证，说明一致性目标不依赖一种输出参数化。真实Franka使用单一固定相机收集数据，每任务10条示范，移动相机只用于测试；每任务每相机配置20次rollout。\n模拟实验采用ManiSkill2的五类任务和多视角训练。Dita有其对应预训练流程，Qwen版本直接微调，因此两种架构的绝对分数不应被当成只改变loss的同初始化对照；同架构OC-VLA与++之间的比较更直接。",
+        "sources": [
+          {
+            "label": "Model Architectures；Real-Robot Experiments；Simulation Experiments · 指定版本原文",
+            "url": "https://arxiv.org/html/2608.01066v1"
           }
         ]
       },
       {
         "id": "results",
-        "title": "结果与实验结论",
-        "body": "最大视角变化、6任务：Dita系40.8%→48.3%；Qwen系37.5%→43.3%。\n固定视角分别68.3%→68.3%、60.0%→59.2%。",
+        "title": "结果与消融：收益主要在视角外推而非固定视角",
+        "body": "固定视角下Dita版OC-VLA与++都为68.3%，Qwen版从60.0%到59.2%，没有普遍提高；最大测试相机位移约30.48厘米、旋转23.40度时，Dita版从40.8%到48.3%，Qwen版从37.5%到43.3%。\nManiSkill2内部消融为：OC-VLA52.4%，仅合成视图53.4%，仅等变损失54.2%，完整56.8%。这支持两种监督互补，但不说明任何视角下都更好。固定视角的小幅下降必须保留，不能只报道外推增益。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "Tables 1–3；Appendix Tables 5–6 · 指定版本原文",
             "url": "https://arxiv.org/html/2608.01066v1"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2608.01066"
           }
         ]
       },
       {
         "id": "limits",
-        "title": "适用范围与限制",
-        "body": "每任务10示范，每相机配置/任务20次评测。主要收益是视角泛化，不是所有原始场景都提高。",
+        "title": "局限：等变监督依赖配对与几何可靠性",
+        "body": "若两个视图实际上并非同一物理状态、相机外参错误或重投影遮挡不可靠，强迫动作一致可能制造错误监督。原图停止梯度和鲁棒损失只能减轻这些问题，不能保证其全部消失。\n方法没有修改最终策略结构，也不在线生成新视角，但训练增加配对图像与生成前向。测试覆盖的是有限移动相机路径和任务集合，不能据此宣称任意360度视角或动态未标定相机完全鲁棒。相关范围应与实际位移、旋转和示范数量一起报告。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "Paired-View Generation Details；Conclusions；Appendix · 指定版本原文",
             "url": "https://arxiv.org/html/2608.01066v1"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2608.01066"
           }
         ]
       },
       {
-        "id": "insight",
-        "title": "阅读启示",
-        "body": "跨视角一致性的价值主要在视角变化条件下体现。原视角持平或略降也是应保留的结论。",
+        "id": "reading",
+        "title": "图表阅读：两种相机动作，最后回到同一机器人动作",
+        "body": "Figure 2中按原图与合成图两条分支分别追踪，先确认相机动作标签不同，再确认恢复、反归一化和坐标变换之后才计算一致性。这样就不会把等变损失写成“两个输出向量直接相等”。\n再看固定视角表与移动相机曲线：前者证明没有明显损坏原有控制，后者检验真正的泛化目标。最后读仅增强、仅一致性和完整目标的消融，区分增加数据覆盖与增加几何约束的作用。",
         "sources": [
           {
-            "label": "原文 · v1",
+            "label": "Figure 2；Tables 1–3；Figure 4 · 指定版本原文",
             "url": "https://arxiv.org/html/2608.01066v1"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2608.01066"
-          }
-        ]
-      },
-      {
-        "id": "focus",
-        "title": "方法、创新与消融的阅读重点",
-        "body": "跨视角动作一致性；固定视角与大偏移结果；离线几何成本。",
-        "sources": [
-          {
-            "label": "原文 · v1",
-            "url": "https://arxiv.org/html/2608.01066v1"
-          },
-          {
-            "label": "arXiv 元数据",
-            "url": "https://arxiv.org/abs/2608.01066"
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2608.01066v1"
+    },
+    "figures": [
+      {
+        "title": "Figure 2：配对视角与动作等变训练",
+        "url": "https://arxiv.org/html/2608.01066v1#Sx1.F2",
+        "caption": "两边先分别预测各自相机坐标中的动作，恢复干净动作并变回共同机器人坐标以后，再比较一致性；原图在该一致性路径停止梯度。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "ManiSkill2内同架构消融",
+        "columns": [
+          "配置",
+          "平均成功率"
+        ],
+        "rows": [
+          [
+            "OC-VLA（Dita）",
+            "52.4%"
+          ],
+          [
+            "仅新增合成视图监督",
+            "53.4%"
+          ],
+          [
+            "仅新增等变监督",
+            "54.2%"
+          ],
+          [
+            "OC-VLA++完整",
+            "56.8%"
+          ]
+        ],
+        "locator": "Table 3",
+        "caption": "五类任务的论文内部对照；不与其他版本或其他示范预算的ManiSkill结果混排。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "pending",
+      "checkedAt": null,
+      "note": "深入笔记已整理；标准基准结果仍需逐表核对任务集合、预算与指标，再加入对应赛道。缺失记录不按零分处理。"
+    }
   }
 }

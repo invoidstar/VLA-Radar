@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy, hashlib, ipaddress, json, math, re, unicodedata
 from datetime import date, datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.parse import urlparse
 
 LEGACY_KEYS = set('id name title team venue publicationType publicationStatus firstPublished dateNote collectionMonth versionNote topics tags priority contribution findings limitations insight readingFocus evidence evidenceNote hasCautionaryResult sources paperUrl arxiv doi'.split())
@@ -18,7 +19,10 @@ def load(path): return json.loads(Path(path).read_text(encoding='utf-8'))
 def write(path, data):
     p=Path(path); p.parent.mkdir(parents=True, exist_ok=True)
     tmp=p.with_suffix(p.suffix+'.tmp'); tmp.write_text(dumps(data), encoding='utf-8'); tmp.replace(p)
-def today(): return datetime.now(timezone.utc).date().isoformat()
+def today(at=None):
+    now=at if at is not None else datetime.now(timezone.utc)
+    if now.tzinfo is None: raise ValueError('Editorial clock must be timezone-aware')
+    return now.astimezone(ZoneInfo('Asia/Singapore')).date().isoformat()
 def require(ok, message):
     if not ok: raise ValueError(message)
 def keys(obj, expected, context):
@@ -94,7 +98,7 @@ def validate_record(rec, topic_ids=None):
         keys(e,EVENT_KEYS,'event'); day(e['date'],partial=True); day(e['observedAt'],False); public_url(e['source'])
         for k in ('kind','venue','note'): require(isinstance(e[k],str),'event text')
     if pub['status'] in {'accepted','published','withdrawn'}: require(any(e['kind']==pub['status'] for e in pub['history']),'verified lifecycle status requires a source event')
-    note=rec['note']; keys(note,NOTE_KEYS,'note'); require(note['status'] in {'legacy','expanded','needs_review'},'note status')
+    note=rec['note']; keys(note,NOTE_KEYS | (set(note) & {'coverage','figures','tables','benchmarkReview'}),'note'); require(note['status'] in {'legacy','expanded','needs_review'},'note status')
     day(note['updatedAt'],False); day(note['verifiedAt']); require(isinstance(note['version'],str),'note version')
     require(isinstance(note['sections'],list) and note['sections'],'note sections')
     seen=set()
@@ -105,9 +109,13 @@ def validate_record(rec, topic_ids=None):
         if note['status']=='expanded': require(s['body'] and s['sources'],'expanded notes require content and citations')
     if note['status']=='expanded': require(note['verifiedAt'] and note['version'] and len(note['sections'])>=6,'expanded note coverage')
 
+    # source-scoped deep-note extensions
+    from note_quality import validate_note_extras
+    validate_note_extras(note, public_url, require)
+
 def validate_track(t):
     keys(t,TRACK_KEYS,'track'); require(re.fullmatch(r'[a-z0-9-]+',t['id']),'track id')
-    require(isinstance(t['dataset'],str) and re.fullmatch(r'[A-Za-z][A-Za-z0-9 +._-]{1,50}',t['dataset']),'invalid dataset family')
+    require(isinstance(t['dataset'],str) and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9 ._+()-]{0,59}',t['dataset']),'public benchmark family name')
     require(t['comparisonScope'] in {'protocol','paper-table'},'comparison scope')
     require(t['direction'] in {'higher','lower'},'metric direction')
     require(t['unit'] in {'percent','score','seconds'},'unit')

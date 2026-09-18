@@ -185,6 +185,13 @@
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://diffusion-policy.cs.columbia.edu/"
+    },
+    "figures": [],
+    "tables": []
   }
 }

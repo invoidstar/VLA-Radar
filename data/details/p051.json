@@ -178,6 +178,13 @@
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://proceedings.mlr.press/v205/shridhar23a.html"
+    },
+    "figures": [],
+    "tables": []
   }
 }
