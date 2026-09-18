@@ -12,7 +12,7 @@
   const priorityOrder = {deep:0,selective:1,overview:2};
   const statusText = {unread:'未读',reading:'阅读中',read:'已读'};
   const evidenceText = {checked:'已复核片段',notes:'笔记待复核',metadata:'出版 / 摘要证据'};
-  const views = {papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',about:'关于与维护'};
+  const views = {papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',about:'关于与维护'};
   const paths = {
     library:'<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l3-1 4 15-3 1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -68,6 +68,7 @@
     if(state.sort!=='recommended')u.searchParams.set('sort',state.sort);
     if(view==='timeline'&&state.timeline==='month')u.searchParams.set('timeline','month');
     if(view==='leaderboards'){const params=new URLSearchParams(location.search);for(const k of ['dataset','track']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
+    if(['reader','compare'].includes(view)){const params=new URLSearchParams(location.search);for(const k of ['paper','compare']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
     if(includePaper)u.hash=location.hash;
     return u;
   }
@@ -83,12 +84,14 @@
     $('#breadcrumb').textContent=views[state.view];
   }
   function showView(){
+    if(state.view!=='leaderboards')window.RadarResearch.cancelBoards();
     $('#hero').classList.toggle('hidden',state.view!=='papers');$('#stats').classList.toggle('hidden',state.view!=='papers');
     $('#library-section').classList.toggle('hidden',!['papers','reading'].includes(state.view));
-    for(const v of ['topics','timeline','about','leaderboards'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
+    for(const v of ['topics','timeline','about','leaderboards','reader','compare','updates','coverage'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
     $('#reading-notice').classList.toggle('hidden',state.view!=='reading');
     $('#section-title').textContent=state.view==='reading'?'我的阅读清单':'论文文库';
     updateControls();renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
+    if(['reader','compare','updates','coverage'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
     document.title=`${views[state.view]} · VLA Research Radar`;
   }
   function goView(view){state.view=view;state.page=1;if(!['papers','reading'].includes(view)){state.q='';state.topic='';state.month='';state.year='';state.week='';state.venue='';state.priority='';state.status='';}syncUrl(true);showView();closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}
@@ -106,6 +109,7 @@
     addOptions('#filter-venue',[...new Set(data.papers.map(p=>p.venue))].sort().map(v=>[v,v]));
     index=data.papers.map(p=>({paper:p,year:Dates.yearOf(p.firstPublished),week:Dates.isoWeek(p.firstPublished)}));
     window.RadarResearch.configure(data);
+    window.RadarWorkspace.configure(data,{notify,closePaper,navigate:(view,params={})=>{if($('#paper-dialog').open)closePaper();const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('view',view);for(const [k,v]of Object.entries(params))if(v)u.searchParams.set(k,v);history.pushState({},'',u);parseUrl();showView();closeSidebar();window.scrollTo({top:0,behavior:'instant'});},filtered:()=>filtered,local,setStatus:(id,status)=>{if(!['unread','reading','read'].includes(status))return;reading[id]={...local(id),status};saveState();renderResults();},copy,download});
     searchClient=window.RadarSearchClient.create(data.searchUrl,window.__RADAR_DATA__?data:null);
     populateTimeControls();renderTopics();
   }
@@ -177,7 +181,7 @@
   function saveButton(p){const saved=local(p.id).saved;return `<button class="save-btn ${saved?'saved':''}" data-save="${p.id}" aria-label="${saved?'取消收藏':'收藏'} ${esc(p.name)}" aria-pressed="${saved}">${icon('bookmark')}</button>`;}
   function card(p){const t=topicMap[p.topics[0]],l=local(p.id);return `<article class="paper-card">
     <div class="paper-card-main"><div class="paper-card-top"><button class="paper-name" data-paper="${p.id}">${highlight(p.name)}</button>${badge(p)}</div><p class="paper-title">${highlight(p.title)}</p><div class="paper-meta"><span class="venue-label">${esc(p.venue)}</span><span class="meta-sep">/</span><time>${esc(p.firstPublished||'首发待核验')}</time>${weekBadge(p)}<span class="meta-sep">/</span><span class="team-short" title="${esc(p.team)}">${highlight(p.team.split('\n')[0])}</span></div><div class="finding-preview"><span class="finding-label">KEY RESULT</span><span class="finding-text">${highlight(p.findings)}</span></div></div>
-    <div class="paper-card-right"><div><span class="topic-label ${esc(t.color)}"><i class="topic-dot"></i>${esc(t.name)}</span><div class="paper-tags">${p.tags.slice(0,3).map(tag=>`<button class="tag" data-query="${esc(tag)}">${esc(tag)}</button>`).join('')}</div>${l.status!=='unread'?`<div class="read-badge">${l.status==='read'?'✓ ':''}${statusText[l.status]} · 本地</div>`:''}</div><div class="paper-card-actions"><button class="detail-btn" data-paper="${p.id}">阅读笔记 ${icon('arrow')}</button>${saveButton(p)}</div></div></article>`;}
+    <div class="paper-card-right"><div><span class="topic-label ${esc(t.color)}"><i class="topic-dot"></i>${esc(t.name)}</span><div class="paper-tags">${p.tags.slice(0,3).map(tag=>`<button class="tag" data-query="${esc(tag)}">${esc(tag)}</button>`).join('')}</div>${l.status!=='unread'?`<div class="read-badge">${l.status==='read'?'✓ ':''}${statusText[l.status]} · 本地</div>`:''}</div><div class="paper-card-actions"><button class="detail-btn" data-paper="${p.id}">阅读笔记 ${icon('arrow')}</button><button class="compare-pick" data-compare="${p.id}" aria-label="加入对比 ${esc(p.name)}">＋ 对比</button><button class="focus-pick" data-focus="${p.id}">专注阅读</button>${saveButton(p)}</div></div></article>`;}
   function table(papers){return `<div class="table-scroll"><table class="papers-table"><thead><tr><th>论文 / 团队</th><th>方向</th><th>首发 / 出处</th><th>具体结论 · 作者报告</th><th>阅读建议</th><th>收藏</th></tr></thead><tbody>${papers.map(p=>`<tr><td class="table-name"><button class="paper-name" data-paper="${p.id}">${highlight(p.name)}</button><div class="table-sub">${highlight(p.team.split('\n')[0])}</div></td><td>${esc(topicMap[p.topics[0]].name)}</td><td class="table-small">${esc(p.firstPublished||'待核验')}<div>${weekBadge(p)}</div><div>${esc(p.venue)}</div></td><td class="table-finding">${highlight(p.findings)}</td><td>${badge(p)}</td><td>${saveButton(p)}</td></tr>`).join('')}</tbody></table></div>`;}
   async function renderResults(){
     const request=++renderSequence,query=norm(state.q);
@@ -194,6 +198,7 @@
     if(!filtered.length){const isReading=state.view==='reading'&&!Object.keys(reading).some(id=>local(id).saved||local(id).status!=='unread');$('#results').innerHTML=`<div class="empty-state">${icon(isReading?'bookmark':'search')}<h3>${isReading?'从一篇感兴趣的论文开始':'没有找到匹配的文献'}</h3><p>${isReading?'在文献卡片上点击收藏，或在详情中标记阅读状态。清单只保存在当前浏览器。':'试试减少关键词、改用方法名或清除筛选。搜索仅覆盖当前文献库，不代表外部没有相关研究。'}</p><button class="btn" ${isReading?'data-view="papers"':'data-reset="true"'}>${isReading?'去浏览文献':'清除筛选'}</button></div>`;$('#pagination').innerHTML='';return;}
     const page=filtered.slice((state.page-1)*PAGE_SIZE,state.page*PAGE_SIZE);
     $('#results').innerHTML=state.layout==='table'?table(page):`<div class="paper-list">${page.map(card).join('')}</div>`;
+    window.RadarExperience?.refreshPicks();
     $('#pagination').innerHTML=pages<=1?`<span>已显示全部 ${filtered.length} 篇</span>`:`<button data-page="${state.page-1}" ${state.page===1?'disabled':''} aria-label="上一页">←</button>${window.RadarResearch.pageWindow(state.page,pages).map(n=>n===null?'<span>…</span>':`<button data-page="${n}" class="${state.page===n?'active':''}" ${state.page===n?'aria-current="page"':''}>${n}</button>`).join('')}<button data-page="${state.page+1}" ${state.page===pages?'disabled':''} aria-label="下一页">→</button><span>每页 ${PAGE_SIZE} 篇 · 共 ${filtered.length} 篇</span>`;
   }
   function renderTopics(){$('#topic-cards').innerHTML=data.topics.map(t=>{const papers=data.papers.filter(p=>p.topics.includes(t.id));return `<button class="topic-card ${esc(t.color)}" data-topic="${esc(t.id)}"><div class="topic-card-top"><span class="topic-initial">${esc(t.en.toUpperCase())}</span><span class="topic-total">${papers.length.toString().padStart(2,'0')}</span></div><h2>${esc(t.name)}</h2><p>${esc(t.description)}</p><div class="topic-card-foot"><span>${papers.filter(p=>p.priority==='deep').length} 篇建议精读</span><span>进入方向 ${icon('arrow')}</span></div></button>`;}).join('');}
@@ -230,6 +235,7 @@
       <div class="evidence-status"><strong>${evidenceText[p.evidence]||'待核验'}</strong> · ${esc(p.evidenceNote)}</div>
       <div class="source-links">${p.sources.map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('')}</div>
       <div class="dialog-actions"><div class="action-group"><a class="btn primary" href="${esc(safeUrl(p.paperUrl))}" target="_blank" rel="noopener noreferrer">阅读原文 ${icon('external')}</a><button class="btn" data-save="${p.id}">${icon('bookmark')}${l.saved?'已收藏':'收藏'}</button><button class="btn" data-bib="${p.id}">BibTeX</button><button class="btn" data-share-paper="${p.id}">${icon('link')}分享</button></div><label class="status-label">本地进度<select class="status-select" id="detail-status" data-id="${p.id}">${Object.entries(statusText).map(([v,t])=>`<option value="${v}" ${l.status===v?'selected':''}>${t}</option>`).join('')}</select></label></div>`;
+    $('#paper-detail').insertAdjacentHTML('afterbegin',`<div class="quick-note-tools"><button class="btn primary" data-focus="${p.id}">进入专注阅读 ↗</button><button class="btn" data-compare="${p.id}">＋ 加入对比</button><span>先看结论，再沿章节深入。</span></div>`);
     window.RadarResearch.enhance(p,$('#paper-detail'));
   }
   function openPaper(id,update=true){if(!data.papers.some(p=>p.id===id)){notify('文献记录不存在或已移除');return;}lastFocused=document.activeElement;renderDetail(id);const d=$('#paper-dialog');if(!d.open)d.showModal();$('#paper-detail').parentElement.scrollTop=0;if(update){const u=makeUrl(false);u.hash='paper='+encodeURIComponent(id);try{history.pushState({},'',u);}catch{}}document.title=data.papers.find(p=>p.id===id).name+' · VLA Research Radar';}
@@ -262,7 +268,10 @@
   function bind(){
     document.addEventListener('click',e=>{
       const el=e.target.closest('button,a');if(!el)return;
-      if(el.dataset.view){e.preventDefault();if($('#paper-dialog').open)closePaper();goView(el.dataset.view);}
+      if(el.dataset.focus){e.preventDefault();window.RadarWorkspace.action('focus',el.dataset.focus);}
+      else if(el.dataset.compare){e.preventDefault();window.RadarWorkspace.action('compare',el.dataset.compare);}
+      else if(el.dataset.workspaceExport){window.RadarWorkspace.action('export');}
+      else if(el.dataset.view){e.preventDefault();if($('#paper-dialog').open)closePaper();goView(el.dataset.view);}
       else if(el.hasAttribute('data-query')){setSearch(el.dataset.query);}
       else if(el.dataset.topic){if($('#paper-dialog').open)closePaper();state.topic=el.dataset.topic;state.view='papers';state.page=1;syncUrl(true);showView();closeSidebar();$('#library-section').scrollIntoView({behavior:'smooth',block:'start'});}
       else if(el.dataset.week)goWeek(el.dataset.week);
@@ -272,7 +281,7 @@
       else if(el.dataset.page){state.page=Number(el.dataset.page);renderResults();$('#library-section').scrollIntoView({behavior:'smooth',block:'start'});}
       else if(el.dataset.clear){state[el.dataset.clear]='';if(el.dataset.clear==='year')state.week='';state.page=1;syncUrl();updateControls();renderResults();}
       else if(el.dataset.reset)resetFilters();
-      else if(el.dataset.bib)bibtex(el.dataset.bib);
+      else if(el.dataset.bib)window.RadarWorkspace.action('cite',el.dataset.bib);
       else if(el.dataset.sharePaper){const u=makeUrl(false,true);u.hash='paper='+el.dataset.sharePaper;copy(u.href,'已复制论文链接，不含本地阅读状态。');}
     });
     $('#search').addEventListener('input',e=>{clearTimeout(queryTimer);queryTimer=setTimeout(()=>{state.q=e.target.value;state.page=1;syncUrl();renderResults();},160);});
