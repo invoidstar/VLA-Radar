@@ -1,0 +1,25 @@
+name: Batch two source snapshot
+on:
+  push:
+    branches: [weekly-update-2026-09-18-benchmark-batch2]
+    paths: [.github/workflows/batch2-source.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: afc42b3e053eb2c2964fae648481c86939e2e77f
+          persist-credentials: false
+      - name: Export public tracked files only
+        run: |
+          test "$(git rev-parse HEAD)" = afc42b3e053eb2c2964fae648481c86939e2e77f
+          git archive --format=zip --output=/tmp/batch2-base.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: batch2-exact-base
+          path: /tmp/batch2-base.zip
+          retention-days: 7
