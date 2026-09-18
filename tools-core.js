@@ -1,0 +1,25 @@
+/* Pure helpers for local follows, palette ranking and portable bibliographic formats. */
+'use strict';
+(function(g){
+ const norm=v=>String(v??'').normalize('NFKC').toLowerCase().replace(/π/g,'pi').replace(/[‐‑–—]/g,'-').trim();
+ const line=v=>String(v??'').replace(/[\u0000-\u001f\u007f\u2028\u2029]/g,' ').trim();
+ const fields=['papers','topics','datasets','categories'];
+ function clean(raw,allow){const o={schemaVersion:1,seenAt:null};for(const k of fields)o[k]=[...new Set(Array.isArray(raw?.[k])?raw[k].filter(x=>typeof x==='string'&&allow[k].has(x)):[])].slice(0,1000);if(typeof raw?.seenAt==='string'&&/^\d{4}-\d{2}-\d{2}T/.test(raw.seenAt)&&Number.isFinite(Date.parse(raw.seenAt))&&Date.parse(raw.seenAt)<=Date.now())o.seenAt=raw.seenAt;return o;}
+ function matches(e,f){return (e.paperId&&f.papers.includes(e.paperId))||['topics','datasets','categories'].some(k=>(e[k]||[]).some(v=>f[k].includes(v)));}
+ function isNew(e,since){if(!e.observedAt||e.mode==='snapshot')return false;if(!since)return true;const d=e.observedAt;if(d.length===10){const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date(since)).map(x=>[x.type,x.value]));return d>[parts.year,parts.month,parts.day].join('-');}return Date.parse(d)>Date.parse(since);}
+ function rank(items,query,max=30){const q=norm(query).slice(0,240),tokens=q.split(/\s+/).filter(Boolean);return items.map((x,i)=>{const title=norm(x.title),s=norm(x.search||x.title);let score=0;for(const t of tokens){if(!s.includes(t))return null;score+=title===t?100:title.startsWith(t)?50:title.includes(t)?25:5;}return {x,i,score};}).filter(Boolean).sort((a,b)=>b.score-a.score||a.i-b.i).slice(0,max).map(x=>x.x);}
+ const url=s=>{try{const u=new URL(s);return ['https:','http:'].includes(u.protocol)&&!u.username&&!u.password?u.href:'';}catch{return '';}};
+ function dateParts(v){if(!/^\d{4}(?:-\d{2}(?:-\d{2})?)?$/.test(v||''))return null;const d=v.split('-').map(Number),y=d[0],m=d[1]||1,n=d[2]||1,x=new Date(Date.UTC(y,m-1,n));return x.getUTCFullYear()===y&&x.getUTCMonth()===m-1&&x.getUTCDate()===n?d:null;}
+ function citation(r,b){const p=r.paper,n=r.note;const verified=b?.item;const item=verified?JSON.parse(JSON.stringify(verified)):{type:'article',title:p.title};item.id='vlaradar_'+p.id;item.title=item.title||p.title;item.URL=url(item.URL||p.paperUrl)||undefined;item.DOI=line(item.DOI||p.doi||r.publication?.doi)||undefined;
+  if(!item.issued){const d=dateParts(p.firstPublished);if(d)item.issued={'date-parts':[d]};}
+  if(!item.author?.length)delete item.author;
+  item.note=`VLA-Radar reading version: ${line(n?.version)||'unknown'}; reading verified: ${line(n?.verifiedAt)||'unknown'}; first public: ${line(p.firstPublished)||'unknown'}. `+(verified?'Source-checked bibliographic fields. ':'Basic metadata; formal publication details and complete authors are not verified. ')+(p.arxiv?`arXiv: ${line(p.arxiv)}. `:'')+(item.author?'':'Author list missing; verify at the primary source.');
+  return item;
+ }
+ const tex=v=>line(v).replace(/[\\{}%&#_$~^]/g,c=>({'\\':'\\textbackslash{}','{':'\\{','}':'\\}','%':'\\%','&':'\\&','#':'\\#','_':'\\_','$':'\\$','~':'\\textasciitilde{}','^':'\\textasciicircum{}'}[c]));
+ function bibtex(r,b){const c=citation(r,b),d=c.issued?.['date-parts']?.[0],a=c.author||[],type={'article-journal':'article','paper-conference':'inproceedings',report:'techreport'}[c.type]||'misc';const fs=[['title',c.title],['author',a.length?a.map(x=>x.literal?'{'+tex(x.literal)+'}':tex(x.family||'')+(x.given?', '+tex(x.given):'')).join(' and '):null,true],['year',d?.[0]],['month',d?.[1]],['journal',c.type==='article-journal'?c['container-title']:null],['booktitle',c.type==='paper-conference'?c['container-title']:null],['publisher',c.publisher],['volume',c.volume],['number',c.issue],['pages',c.page],['doi',c.DOI],['url',c.URL],['eprint',r.paper.arxiv],['archivePrefix',r.paper.arxiv?'arXiv':null],['note',c.note]];
+  return '@'+type+'{'+c.id+',\n'+fs.filter(([,v])=>v!==null&&v!==undefined&&v!=='').map(([k,v,escaped])=>'  '+k+' = {'+(escaped?v:tex(v))+'}').join(',\n')+'\n}\n';}
+ function ris(r,b){const c=citation(r,b),d=c.issued?.['date-parts']?.[0];const fs=[['TY',{'article-journal':'JOUR','paper-conference':'CONF',report:'RPRT'}[c.type]||'GEN'],['ID',c.id],['TI',c.title],...(c.author||[]).map(a=>['AU',a.literal||[a.family,a.given].filter(Boolean).join(', ')]),['PY',d?.[0]],['DA',d?.join('/')],['T2',c['container-title']],['VL',c.volume],['IS',c.issue],['SP',c.page?.match(/^(\d+)[–-](\d+)$/)?.[1]||c.page],['EP',c.page?.match(/^(\d+)[–-](\d+)$/)?.[2]],['PB',c.publisher],['DO',c.DOI],['UR',c.URL],['N1',c.note],['ER','']];return fs.filter(([k,v])=>k==='ER'||(v!==undefined&&v!==null&&v!=='')).map(([k,v])=>k+'  - '+line(v)).join('\r\n')+'\r\n';}
+ g.RadarToolsCore={norm,line,fields,clean,matches,isNew,rank,citation,bibtex,ris,dateParts,url};
+ if(typeof module!=='undefined')module.exports=g.RadarToolsCore;
+})(typeof window!=='undefined'?window:globalThis);

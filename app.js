@@ -12,7 +12,7 @@
   const priorityOrder = {deep:0,selective:1,overview:2};
   const statusText = {unread:'未读',reading:'阅读中',read:'已读'};
   const evidenceText = {checked:'已复核片段',notes:'笔记待复核',metadata:'出版 / 摘要证据'};
-  const views = {papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',news:'具身智能周报',about:'关于与维护'};
+  const views = {radar:'My Radar',papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',news:'具身智能周报',about:'关于与维护'};
   const paths = {
     library:'<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l3-1 4 15-3 1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -88,11 +88,11 @@
     if(state.view!=='leaderboards')window.RadarResearch.cancelBoards();
     $('#hero').classList.toggle('hidden',state.view!=='papers');$('#stats').classList.toggle('hidden',state.view!=='papers');
     $('#library-section').classList.toggle('hidden',!['papers','reading'].includes(state.view));
-    for(const v of ['topics','timeline','about','leaderboards','reader','compare','updates','coverage','news'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
+    for(const v of ['radar','topics','timeline','about','leaderboards','reader','compare','updates','coverage','news'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
     $('#reading-notice').classList.toggle('hidden',state.view!=='reading');
     $('#section-title').textContent=state.view==='reading'?'我的阅读清单':'论文文库';
     updateControls();renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
-    if(['reader','compare','updates','coverage','news'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
+    if(state.view==='radar'){window.RadarWorkspace.leave();window.RadarTools.show($('#radar-content'));}else if(['reader','compare','updates','coverage','news'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
     document.title=`${views[state.view]} · VLA Research Radar`;
   }
   function goView(view){state.view=view;state.page=1;if(!['papers','reading'].includes(view)){state.q='';state.topic='';state.month='';state.year='';state.week='';state.venue='';state.priority='';state.status='';}syncUrl(true);showView();closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}
@@ -182,7 +182,7 @@
   function saveButton(p){const saved=local(p.id).saved;return `<button class="save-btn ${saved?'saved':''}" data-save="${p.id}" aria-label="${saved?'取消收藏':'收藏'} ${esc(p.name)}" aria-pressed="${saved}">${icon('bookmark')}</button>`;}
   function card(p){const t=topicMap[p.topics[0]],l=local(p.id);return `<article class="paper-card">
     <div class="paper-card-main"><div class="paper-card-top"><button class="paper-name" data-paper="${p.id}">${highlight(p.name)}</button>${badge(p)}</div><p class="paper-title">${highlight(p.title)}</p><div class="paper-meta"><span class="venue-label">${esc(p.venue)}</span><span class="meta-sep">/</span><time>${esc(p.firstPublished||'首发待核验')}</time>${weekBadge(p)}<span class="meta-sep">/</span><span class="team-short" title="${esc(p.team)}">${highlight(p.team.split('\n')[0])}</span></div><div class="finding-preview"><span class="finding-label">KEY RESULT</span><span class="finding-text">${highlight(p.findings)}</span></div></div>
-    <div class="paper-card-right"><div><span class="topic-label ${esc(t.color)}"><i class="topic-dot"></i>${esc(t.name)}</span><div class="paper-tags">${p.tags.slice(0,3).map(tag=>`<button class="tag" data-query="${esc(tag)}">${esc(tag)}</button>`).join('')}</div>${l.status!=='unread'?`<div class="read-badge">${l.status==='read'?'✓ ':''}${statusText[l.status]} · 本地</div>`:''}</div><div class="paper-card-actions"><button class="detail-btn" data-paper="${p.id}">阅读笔记 ${icon('arrow')}</button><button class="compare-pick" data-compare="${p.id}" aria-label="加入对比 ${esc(p.name)}">＋ 对比</button><button class="focus-pick" data-focus="${p.id}">专注阅读</button>${saveButton(p)}</div></div></article>`;}
+    <div class="paper-card-right"><div><span class="topic-label ${esc(t.color)}"><i class="topic-dot"></i>${esc(t.name)}</span><div class="paper-tags">${p.tags.slice(0,3).map(tag=>`<button class="tag" data-query="${esc(tag)}">${esc(tag)}</button>`).join('')}</div>${l.status!=='unread'?`<div class="read-badge">${l.status==='read'?'✓ ':''}${statusText[l.status]} · 本地</div>`:''}</div><div class="paper-card-actions"><button class="detail-btn" data-paper="${p.id}">阅读笔记 ${icon('arrow')}</button><button class="compare-pick" data-compare="${p.id}" aria-label="加入对比 ${esc(p.name)}">＋ 对比</button><button class="focus-pick" data-focus="${p.id}">专注阅读</button><button class="follow-pick" data-follow-paper="${p.id}" aria-pressed="false">＋ 关注</button>${saveButton(p)}</div></div></article>`;}
   function table(papers){return `<div class="table-scroll"><table class="papers-table"><thead><tr><th>论文 / 团队</th><th>方向</th><th>首发 / 出处</th><th>具体结论 · 作者报告</th><th>阅读建议</th><th>收藏</th></tr></thead><tbody>${papers.map(p=>`<tr><td class="table-name"><button class="paper-name" data-paper="${p.id}">${highlight(p.name)}</button><div class="table-sub">${highlight(p.team.split('\n')[0])}</div></td><td>${esc(topicMap[p.topics[0]].name)}</td><td class="table-small">${esc(p.firstPublished||'待核验')}<div>${weekBadge(p)}</div><div>${esc(p.venue)}</div></td><td class="table-finding">${highlight(p.findings)}</td><td>${badge(p)}</td><td>${saveButton(p)}</td></tr>`).join('')}</tbody></table></div>`;}
   async function renderResults(){
     const request=++renderSequence,query=norm(state.q);
@@ -298,7 +298,7 @@
     $('#paper-detail').addEventListener('change',e=>{if(e.target.id==='detail-status'){const id=e.target.dataset.id;reading[id]={...local(id),status:e.target.value};saveState();renderResults();notify('阅读状态已保存在当前浏览器。');}});
     $('#mobile-menu').addEventListener('click',()=>{const open=$('#sidebar').classList.toggle('open');$('#mobile-menu').setAttribute('aria-expanded',String(open));});
     document.addEventListener('click',e=>{if($('#sidebar').classList.contains('open')&&!e.target.closest('#sidebar')&&!e.target.closest('#mobile-menu'))closeSidebar();});
-    document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();if($('#paper-dialog').open)closePaper();if(!['papers','reading'].includes(state.view))goView('papers');$('#search').focus();$('#search').select();}if(e.key==='Escape')closeSidebar();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar();});
     window.addEventListener('popstate',()=>{parseUrl();showView();hashPaper();});
     window.addEventListener('storage',e=>{if(e.key===STORE){readState();renderResults();const m=location.hash.match(/^#paper=(p\d+)$/);if(m&&$('#paper-dialog').open)renderDetail(m[1]);}});
   }

@@ -11,15 +11,16 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sidebar.css?v=sidebar-20260918">
   <script src="sidebar.js?v=sidebar-20260918" defer></script>
+  <script src="tools-loader.js?v=final-20260918" defer></script>
   <script src="runtime.js?v=maintenance-20260918" defer></script>
   <script src="search-core.js?v=maintenance-20260918" defer></script>
   <script src="search-client.js?v=maintenance-20260918" defer></script>
   <script src="dates.js?v=maintenance-20260918" defer></script>
   <link rel="stylesheet" href="research.css">
   <link rel="stylesheet" href="experience.css">
-  <script src="experience-loader.js?v=news-20260918" defer></script>
+  <script src="experience-loader.js?v=final-20260918" defer></script>
   <script src="research.js?v=workspace-20260918" defer></script>
-  <script src="app.js?v=news-20260918" defer></script>
+  <script src="app.js?v=final-20260918" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要内容</a>
@@ -27,6 +28,7 @@
   <a class="brand" href="?view=papers" data-view="papers" aria-label="VLA Radar 首页"><span class="brand-icon" aria-hidden="true"><i></i></span><span>VLA <b>RADAR</b><small>RESEARCH LIBRARY</small></span></a>
   <div class="side-heading">EXPLORE</div>
   <nav class="nav-main">
+    <button class="nav-link" data-view="radar"><span data-icon="spark"></span>My Radar<span class="local-indicator">本地</span></button>
     <button class="nav-link active" data-view="papers"><span data-icon="library"></span>文献总览<span class="nav-count" id="nav-total">—</span></button>
     <button class="nav-link" data-view="topics"><span data-icon="grid"></span>研究方向</button>
     <button class="nav-link" data-view="timeline"><span data-icon="clock"></span>发表时间线</button>
@@ -46,9 +48,10 @@
   <header class="topbar">
     <button class="icon-btn menu-toggle" id="mobile-menu" aria-label="展开导航" aria-expanded="false"><span data-icon="menu"></span></button>
     <div class="breadcrumb">LIBRARY <span>/</span> <b id="breadcrumb">文献总览</b></div>
-    <div class="top-actions"><span class="update-stamp"><i></i><span id="updated-at">正在读取文献</span></span><a class="github-link" href="https://github.com/invoidstar/VLA-Radar/tree/main" target="_blank" rel="noopener noreferrer"><span data-icon="github"></span><span>GitHub</span><span data-icon="external"></span></a></div>
+    <div class="top-actions"><button class="btn subtle command-launch" data-command="true" aria-label="全局快捷搜索 Ctrl 或 Command 加 K"><span>⌕ 搜索</span><kbd>⌘ / Ctrl K</kbd></button><span class="update-stamp"><i></i><span id="updated-at">正在读取文献</span></span><a class="github-link" href="https://github.com/invoidstar/VLA-Radar/tree/main" target="_blank" rel="noopener noreferrer"><span data-icon="github"></span><span>GitHub</span><span data-icon="external"></span></a></div>
   </header>
   <main id="main" tabindex="-1">
+    <section id="radar-section" class="page-section hidden"><div id="radar-content"></div></section>
     <section class="hero" id="hero">
       <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span>AN OPEN MAP OF ROBOT LEARNING</div><h1>从论文，<span>读到结论。</span></h1><p>追踪 VLA、VA 与世界动作模型。<br class="mobile-break">不止收藏标题，更看清贡献、数据与边界。</p><div class="hero-labels"><span>开放文献</span><i></i><span>证据优先</span><i></i><span>持续积累</span></div></div>
       <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><span class="orbit-center">VLA</span><span class="orbit-node node-one">ACTION</span><span class="orbit-node node-two">WORLD</span><span class="orbit-node node-three">VISION</span><span class="orbit-dot dot-one"></span><span class="orbit-dot dot-two"></span><span class="art-caption">OBSERVE → UNDERSTAND → ACT</span></div>
