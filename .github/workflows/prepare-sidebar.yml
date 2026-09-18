@@ -19,19 +19,18 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import hashlib
-          expected={'index.html':'2625cb106fa046e16863a1d30a94a3d31eab5bf2','.github/workflows/site.yml':'2532c6fa0327bd63ec62c3803ac6229f110d89c1','scripts/validate_all.py':'c102ddaddc4b0e036fe5b28e16dc4366337a4c9a','CHANGELOG.md':'13ad423edc11301cf985adc6438ead0ddaa5d935'}
+          expected={'index.html':'2625cb106fa046e16863a1d30a94a3d31eab5bf2','.github/workflows/site.yml':'318deb809f684f2627fba8e6dffde0113500e155','scripts/validate_all.py':'c102ddaddc4b0e036fe5b28e16dc4366337a4c9a','CHANGELOG.md':'13ad423edc11301cf985adc6438ead0ddaa5d935'}
           for path,sha in expected.items():
               b=Path(path).read_bytes()
               assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==sha, 'Changed base: '+path
           p=Path('index.html');s=p.read_text();needle='  <link rel="stylesheet" href="styles.css">';assert s.count(needle)==1
           p.write_text(s.replace(needle,needle+'\n  <link rel="stylesheet" href="sidebar.css?v=sidebar-20260918">\n  <script src="sidebar.js?v=sidebar-20260918" defer></script>'))
-          p=Path('.github/workflows/site.yml');s=p.read_text();s=s.replace('          python scripts/browser_news.py','          python scripts/browser_news.py\n          python scripts/browser_sidebar.py');s=s.replace('            /tmp/radar-news-browser/','            /tmp/radar-news-browser/\n            /tmp/radar-sidebar/');s=s.replace('news-core.js news.js news.css _site/','news-core.js news.js news.css sidebar.js sidebar.css _site/');p.write_text(s)
           p=Path('scripts/validate_all.py');s=p.read_text();p.write_text(s.replace('commands=[',"commands=[['node','--check','sidebar.js'],",1))
           p=Path('CHANGELOG.md');p.write_text('## 2026-09-18 — 可拖拽导航宽度\n\n左侧导航加入鼠标/指针拖拽、双击或Enter复位、方向键微调和本地宽度记忆。桌面默认260px，可调244–380px并为正文保留至少400px；手机仍使用独立抽屉。导航标题与徽标不换行，修复小屏“具身智能周报”拥挤。加入真实HTTP拖拽、取消、边界、刷新恢复、存储禁用及窄屏回归；不修改论文、新闻或评测数据。\n\n'+p.read_text())
           PY
           python scripts/build_catalog.py
           python scripts/validate_all.py
-          git diff --exit-code -- catalog data
+          git diff --exit-code -- catalog data .github/workflows
       - name: Browser tools
         run: |
           python -m pip install --disable-pip-version-check playwright==1.57.0
@@ -39,7 +38,7 @@ jobs:
           if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq; sudo apt-get install -y fonts-noto-cjk; fi
       - name: Actual HTTP sidebar regression
         run: python scripts/browser_sidebar.py
-      - name: Commit tested integration to this branch only
+      - name: Commit tested ordinary content to this branch only
         env:
           BRANCH: ${{ github.ref_name }}
           EXPECTED_SHA: ${{ github.sha }}
@@ -48,11 +47,10 @@ jobs:
           test "$BRANCH" = 'release/batch-2026-09-18-sidebar-resize'
           actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
           test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; stopping'; exit 1; }
-          git diff --exit-code -- catalog data
+          git diff --exit-code -- catalog data .github/workflows
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git rm .github/workflows/prepare-sidebar.yml
-          git add index.html .github/workflows/site.yml scripts/validate_all.py CHANGELOG.md
+          git add index.html scripts/validate_all.py CHANGELOG.md
           git commit -m 'Integrate tested resizable sidebar without changing research data'
           git push origin "HEAD:refs/heads/$BRANCH"
       - uses: actions/upload-artifact@v4
