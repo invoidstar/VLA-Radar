@@ -2,7 +2,7 @@ name: Prepare final daily tools
 on:
   push:
     branches: [release/batch-2026-09-18-final-daily-tools]
-    paths: [scripts/install_daily_tools_release.py, .github/workflows/prepare-daily-tools.yml]
+    paths: [scripts/install_daily_tools_release.py, scripts/fix_daily_tools_release.py, .github/workflows/prepare-daily-tools.yml]
 permissions:
   contents: write
 concurrency:
@@ -17,6 +17,7 @@ jobs:
       - name: Integrate exact reviewed source payload
         run: |
           python scripts/install_daily_tools_release.py
+          python scripts/fix_daily_tools_release.py
           python scripts/build_catalog.py
           python scripts/validate_all.py
       - name: Browser testing tools
@@ -56,7 +57,7 @@ jobs:
           git diff --exit-code -- .github
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git rm maintenance/daily-tools.part0 maintenance/daily-tools.part1 maintenance/daily-tools.part2 scripts/install_daily_tools_release.py
+          git rm maintenance/daily-tools.part0 maintenance/daily-tools.part1 maintenance/daily-tools.part2 scripts/install_daily_tools_release.py scripts/fix_daily_tools_release.py
           git add tools-core.js tools-loader.js tools.js tools.css scripts/tools_build.py scripts/test_tools.cjs scripts/browser_tools.py tests/test_tools.py catalog/bibliography.json maintenance/daily-tools.md index.html app.js experience-loader.js experience.js scripts/build_catalog.py scripts/validate_all.py styles.css AGENTS.md MAINTENANCE.md CHANGELOG.md data
           git commit -m 'Integrate verified My Radar, command search and citation formats; freeze feature growth'
           git push origin "HEAD:refs/heads/$BRANCH"
