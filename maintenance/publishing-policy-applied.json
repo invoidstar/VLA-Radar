@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "effectiveAt": "2026-09-18",
+  "weeklyMode": "source-self-review-ci-pr-merge-pages",
+  "independentReview": false,
+  "bypassProtection": false
+}

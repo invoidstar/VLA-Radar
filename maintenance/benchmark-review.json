@@ -1,13 +1,637 @@
 {
-  "schemaVersion":1,
-  "reviewedAt":"2026-09-18",
-  "scope":"Only the six papers actually deepened in batches 1 and 2; not a full-catalog audit",
-  "papers":{
-    "p051":{"status":"extracted","trackIds":["rlbench-peract-100d"],"note":"PerAct Table1 full-task columns visually verified;100 demos/task only"},
-    "p061":{"status":"extracted","trackIds":["calvin-gr1-v2-abcd-chain","calvin-gr1-v2-abc-chain"],"note":"GR1 v2 Table1, average length only; split separated"},
-    "p068":{"status":"extracted","trackIds":["simpler-spatialvla-v1-google-vm","simpler-spatialvla-v1-google-va","simpler-spatialvla-v1-widowx"],"note":"SpatialVLA v1 TablesI–II, direct-eval rows; full-success columns"},
-    "p055":{"status":"extracted","trackIds":["robomimic-dp23-image-ph-last10","robomimic-dp23-image-ph-best","robomimic-dp23-image-mh-last10","pusht-dp23-image-coverage-last10","kitchen-dp23-state-last10"],"note":"RSS2023 TablesII/IV; original22-init footnote and566/656 demo-count conflict preserved"},
-    "p056":{"status":"extracted","trackIds":["aloha-act-v1-scripted50","aloha-act-v1-human50"],"note":"ACT v1 TableI final-stage values, scripted vs human separated"},
-    "p067":{"status":"deferred","trackIds":[],"note":"FAST v1 reports policy results primarily in plots; exact scores and full protocol require author data or explicit source values. Token counts are included in note only, not invented success-rate entries."}
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-18",
+  "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
+  "papers": {
+    "p064": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Appendix E，Table 12。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p017": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p035": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§III-B、§III-F。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p052": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p047": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Appendix F，Table 5，2026-09-17 HTML快照。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p036": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table I。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p066": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV；Appendix A-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p062": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§V-C，Figure 8。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p067": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "FAST策略结果主要在图中；未获得完整精确值与协议，不从柱高猜分。token数不冒充任务成功率。"
+    },
+    "p023": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2；§4.1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p039": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4–6。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p012": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p021": {
+      "status": "extracted",
+      "trackIds": [
+        "robotwin2-selfwam-27500"
+      ],
+      "resultIds": [
+        "r-robotwin2-selfwam-27500-fastwam",
+        "r-robotwin2-selfwam-27500-gigaworld-policy",
+        "r-robotwin2-selfwam-27500-motus",
+        "r-robotwin2-selfwam-27500-pi0",
+        "r-robotwin2-selfwam-27500-pi0-5",
+        "r-robotwin2-selfwam-27500-selfwam"
+      ],
+      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p032": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4–8；Abstract。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p014": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p044": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2，2507.17294v1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p025": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III；§IV-B计分规则。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p003": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 7；§4.5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p027": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 3、5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p031": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§3–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p058": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 6。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p002": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p011": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1、3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p001": {
+      "status": "extracted",
+      "trackIds": [
+        "robodojo-20260824-score",
+        "robodojo-20260824-sr"
+      ],
+      "resultIds": [
+        "r-robodojo-20260824-score-dm",
+        "r-robodojo-20260824-score-g05",
+        "r-robodojo-20260824-score-pi05",
+        "r-robodojo-20260824-score-vlact",
+        "r-robodojo-20260824-score-xiaomi",
+        "r-robodojo-20260824-sr-dm",
+        "r-robodojo-20260824-sr-g05",
+        "r-robodojo-20260824-sr-pi05",
+        "r-robodojo-20260824-sr-vlact",
+        "r-robodojo-20260824-sr-xiaomi"
+      ],
+      "note": "保留10条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p074": {
+      "status": "extracted",
+      "trackIds": [
+        "calvin-abc-d-adapter-table6"
+      ],
+      "resultIds": [
+        "r-calvin-abc-d-adapter-table6-adapter",
+        "r-calvin-abc-d-adapter-table6-mode",
+        "r-calvin-abc-d-adapter-table6-oft",
+        "r-calvin-abc-d-adapter-table6-openvla",
+        "r-calvin-abc-d-adapter-table6-roboflamingo",
+        "r-calvin-abc-d-adapter-table6-seer-large",
+        "r-calvin-abc-d-adapter-table6-vpp"
+      ],
+      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p015": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p004": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa24-xiaomi-300demos",
+        "robocasa365-xiaomi-50tasks"
+      ],
+      "resultIds": [
+        "r-robocasa24-xiaomi-300demos-xiaomi-robotics-1",
+        "r-robocasa365-xiaomi-50tasks-xiaomi-robotics-1"
+      ],
+      "note": "保留2条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p060": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p048": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Figure 8，2026-09-17 HTML快照。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p061": {
+      "status": "extracted",
+      "trackIds": [
+        "calvin-gr1-v2-abc-chain",
+        "calvin-gr1-v2-abcd-chain"
+      ],
+      "resultIds": [
+        "r-gr1-abc-hulc",
+        "r-gr1-abc-length",
+        "r-gr1-abc-rt1",
+        "r-gr1-abcd-hulc",
+        "r-gr1-abcd-length",
+        "r-gr1-abcd-rt1"
+      ],
+      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p045": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§6–7，2508.05342v1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p078": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p009": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p020": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table II。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p076": {
+      "status": "extracted",
+      "trackIds": [
+        "libero-cosmos-3seeds",
+        "robocasa24-cosmos-50demos",
+        "robocasa24-cosmos-table"
+      ],
+      "resultIds": [
+        "r-libero-cosmos-3seeds-cosmos-policy",
+        "r-robocasa24-cosmos-50demos-cosmos-policy",
+        "r-robocasa24-cosmos-table-cosmos-policy",
+        "r-robocasa24-cosmos-table-dp-vla",
+        "r-robocasa24-cosmos-table-flare",
+        "r-robocasa24-cosmos-table-gr00t-n1",
+        "r-robocasa24-cosmos-table-gr00t-n1-5",
+        "r-robocasa24-cosmos-table-gr00t-n1-5-hamlet",
+        "r-robocasa24-cosmos-table-gr00t-n1-dreamgen",
+        "r-robocasa24-cosmos-table-gr00t-n1-dust",
+        "r-robocasa24-cosmos-table-pi0",
+        "r-robocasa24-cosmos-table-uva",
+        "r-robocasa24-cosmos-table-uwm",
+        "r-robocasa24-cosmos-table-video-policy"
+      ],
+      "note": "保留14条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p049": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p029": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p043": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
+    },
+    "p022": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p013": {
+      "status": "extracted",
+      "trackIds": [
+        "colosseum-bridgepp-table3",
+        "rlbench-18-bridgepp-table1"
+      ],
+      "resultIds": [
+        "r-colosseum-bridgepp-table3-bridge",
+        "r-colosseum-bridgepp-table3-bridgepp",
+        "r-colosseum-bridgepp-table3-rvt2",
+        "r-rlbench-18-bridgepp-table1-3d-diffuser",
+        "r-rlbench-18-bridgepp-table1-act3d",
+        "r-rlbench-18-bridgepp-table1-bridge",
+        "r-rlbench-18-bridgepp-table1-bridgepp",
+        "r-rlbench-18-bridgepp-table1-peract",
+        "r-rlbench-18-bridgepp-table1-rvt",
+        "r-rlbench-18-bridgepp-table1-rvt2",
+        "r-rlbench-18-bridgepp-table1-sam2act"
+      ],
+      "note": "保留11条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p063": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§III-A–III-C。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p018": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 3、5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p075": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–C、V-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p026": {
+      "status": "not-applicable",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "本页为理论与证明范围解读；不从理论命题推导或补造机器人成功率。"
+    },
+    "p068": {
+      "status": "extracted",
+      "trackIds": [
+        "simpler-spatialvla-v1-google-va",
+        "simpler-spatialvla-v1-google-vm",
+        "simpler-spatialvla-v1-widowx"
+      ],
+      "resultIds": [
+        "r-spatialvla-v1-va",
+        "r-spatialvla-v1-va-octo",
+        "r-spatialvla-v1-va-openvla",
+        "r-spatialvla-v1-vm",
+        "r-spatialvla-v1-vm-octo",
+        "r-spatialvla-v1-vm-openvla",
+        "r-spatialvla-v1-widowx",
+        "r-spatialvla-v1-widowx-octo",
+        "r-spatialvla-v1-widowx-openvla"
+      ],
+      "note": "保留9条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p055": {
+      "status": "extracted",
+      "trackIds": [
+        "kitchen-dp23-state-last10",
+        "pusht-dp23-image-coverage-last10",
+        "robomimic-dp23-image-mh-last10",
+        "robomimic-dp23-image-ph-best",
+        "robomimic-dp23-image-ph-last10"
+      ],
+      "resultIds": [
+        "r-dp23-kitchen-c",
+        "r-dp23-kitchen-lstm",
+        "r-dp23-kitchen-t",
+        "r-dp23-mh-last-c",
+        "r-dp23-mh-last-lstm",
+        "r-dp23-mh-last-t",
+        "r-dp23-ph-best-c",
+        "r-dp23-ph-best-lstm",
+        "r-dp23-ph-best-t",
+        "r-dp23-ph-last-c",
+        "r-dp23-ph-last-lstm",
+        "r-dp23-ph-last-t",
+        "r-dp23-pusht-last-c",
+        "r-dp23-pusht-last-lstm",
+        "r-dp23-pusht-last-t"
+      ],
+      "note": "保留15条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p042": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p008": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p069": {
+      "status": "extracted",
+      "trackIds": [
+        "libero-oft-multi-view",
+        "libero-oft-single-view"
+      ],
+      "resultIds": [
+        "r-libero-oft-multi-view-openvla-oft",
+        "r-libero-oft-single-view-openvla",
+        "r-libero-oft-single-view-openvla-pd-ac",
+        "r-libero-oft-single-view-openvla-pd-ac-diffusion",
+        "r-libero-oft-single-view-openvla-pd-ac-l1"
+      ],
+      "note": "保留5条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p024": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p071": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p077": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p057": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p030": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p005": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§1–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p028": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 7。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p051": {
+      "status": "extracted",
+      "trackIds": [
+        "rlbench-peract-100d"
+      ],
+      "resultIds": [
+        "r-peract-100-c2farm",
+        "r-peract-100-main",
+        "r-peract-100-no-language"
+      ],
+      "note": "保留3条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p038": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables I–II。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p072": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p065": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p059": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§III-A、IV-C、V。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p006": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2；Experiments协议说明。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p019": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p053": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p033": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§3–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p041": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables I–II。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p007": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4主要结果。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p050": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p040": {
+      "status": "not-applicable",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "本页为理论与证明范围解读；不从理论命题推导或补造机器人成功率。"
+    },
+    "p010": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；附录D.3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p046": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
+    },
+    "p054": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p056": {
+      "status": "extracted",
+      "trackIds": [
+        "aloha-act-v1-human50",
+        "aloha-act-v1-scripted50"
+      ],
+      "resultIds": [
+        "r-act-v1-human-bet",
+        "r-act-v1-human-main",
+        "r-act-v1-human-vinn",
+        "r-act-v1-script-bet",
+        "r-act-v1-script-main",
+        "r-act-v1-script-vinn"
+      ],
+      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p034": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p016": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    },
+    "p070": {
+      "status": "extracted",
+      "trackIds": [
+        "dexmg-gr00t-appendix-30",
+        "dexmg-gr00t-appendix-300"
+      ],
+      "resultIds": [
+        "r-dexmg-gr00t-appendix-30-dp",
+        "r-dexmg-gr00t-appendix-30-gr00t",
+        "r-dexmg-gr00t-appendix-300-dp",
+        "r-dexmg-gr00t-appendix-300-gr00t"
+      ],
+      "note": "保留4条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p073": {
+      "status": "extracted",
+      "trackIds": [
+        "metaworld-smolvla-table2"
+      ],
+      "resultIds": [
+        "r-metaworld-smolvla-table2-dp",
+        "r-metaworld-smolvla-table2-pi0",
+        "r-metaworld-smolvla-table2-pi0-vlm",
+        "r-metaworld-smolvla-table2-smol024",
+        "r-metaworld-smolvla-table2-smol045",
+        "r-metaworld-smolvla-table2-smol225",
+        "r-metaworld-smolvla-table2-tiny"
+      ],
+      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p037": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+    }
   }
 }

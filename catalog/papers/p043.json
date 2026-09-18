@@ -66,86 +66,182 @@
     "alerts": []
   },
   "note": {
-    "status": "legacy",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": null,
-    "version": "7月卷期；非7月才首次提出",
+    "status": "needs_review",
+    "updatedAt": "2026-09-18",
+    "verifiedAt": "2026-09-18",
+    "version": "2026-03-30作者供稿技术说明＋IEEE正式摘要；2026-09-18核读；未取得期刊完整正文",
     "sections": [
       {
-        "id": "contribution",
-        "title": "核心贡献与方法概览",
-        "body": "通过Maclaurin级数式参数化共享权重/动态计算，探索VLA结构压缩与推理效率。",
+        "id": "scope",
+        "title": "证据范围：作者说明可解释机制，但不是期刊全文",
+        "body": "目前可核读的材料包括IEEE正式摘要，以及署名“余翀（复旦大学、眸深智能）等投稿”的2026年3月30日技术说明。说明中的标题为Dynamic Maclaurin-Series-Based Embodied Model，期刊题名为Dynamic Maclaurin-Series-Based Vision-Language-Action Model；两者围绕同类动态共享模板机制，但不能据此认定所有实验与最终版本逐项一致。\n以下机制解释主要依据作者供稿，正式摘要只支持共享权重、动态项数和部署评估等概括。精确训练配方、完整消融与误差条尚未核验，因此本页保留“受限材料导读”，不作为期刊全文已完成精读的记录。",
         "sources": [
           {
-            "label": "官方 / 作者来源",
-            "url": "https://ieeexplore.ieee.org/document/11479850/"
+            "label": "作者供稿题名、署名与方法介绍；IEEE正式摘要",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
           },
           {
-            "label": "DOI",
-            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
+          }
+        ]
+      },
+      {
+        "id": "problem",
+        "title": "问题定位：层间参数存储与每次推理计算不是一件事",
+        "body": "常规Transformer每层保存独立的投影和前馈权重。DMS的思路是让多个层共用少量权重模板，各层只保留较小的系数集合；进一步根据输入复杂度选择需要参与计算的模板项数。它分别针对存储冗余与输入无关的固定计算预算。\n这和把所有层直接替换成同一组权重不同，因为层相关系数仍然保留差异；也不等同于量化，量化主要改变数值精度。理解工作时先区分“少存多少参数”和“少执行多少运算”，不能从压缩比例直接推出相同的端到端加速比例。",
+        "sources": [
+          {
+            "label": "作者供稿§02–03；IEEE摘要",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
+          },
+          {
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
+          }
+        ]
+      },
+      {
+        "id": "templates",
+        "title": "共享模板怎样保留层与投影之间的差异",
+        "body": "作者说明用全局共享模板和每层专属的可学习标量进行组合，在形状兼容的Q、K、V投影之间进一步复用模板。可以把它理解为给原来每层独立的权重族加上一个共享基底：层之间共享大块参数，但通过组合系数表达不同功能。\n这种理解有助于看清结构，却不能替代正文中的精确张量运算。模板是否按矩阵形状分组、FFN不同投影如何处理、是否显式物化组合后的权重、模板数变化是否需要重新训练，现有材料没有足够细节，不能据常见低秩分解配方补造实现。",
+        "sources": [
+          {
+            "label": "作者供稿§02、图2",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
+          },
+          {
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
+          }
+        ]
+      },
+      {
+        "id": "dynamic",
+        "title": "动态项数：根据任务相关观察分配计算，而非知道未来动作",
+        "body": "供稿称target-action-diff先利用语言中的目标对象与动作信息，减少无关背景和视觉token的影响，再对相关区域计算帧间变化，据此调节参与计算的级数项数。简单、变化较小的输入使用较少项，复杂变化使用更多项。\n这里的“action”来自任务语义或已观测信息，不应理解成部署前就知道真实未来专家动作。作为机制分析，任何复杂度估计都可能漏掉关键接触变化，因此需要分别评估估计开销、项数策略与动作误差；现有摘要没有给出足以复刻阈值或动态调度的公式。",
+        "sources": [
+          {
+            "label": "作者供稿§03、图3–4；IEEE摘要",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
+          },
+          {
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "训练与数学边界：级数动机不能代替近似误差证明",
+        "body": "供稿明确提到模板与层系数可学习，但没有完整交代初始化、监督目标、蒸馏或联合微调流程。不能因其用于已有VLA就假定完全免训练，也不能假定动态项数在所有任务上严格无损。训练成本与部署节省需要分别报告。\n数学上，无限可微本身并不足以保证函数等于其麦克劳林级数；还需要相应解析性或余项收敛条件。更不能直接从标量函数展开推出任意Transformer权重族都可由有限模板精确表示。该处应把级数看作建模动机，并等待正式正文的假设与近似分析。",
+        "sources": [
+          {
+            "label": "作者供稿§02；本节末段为数学边界分析，不是作者实验结论",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
+          },
+          {
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
           }
         ]
       },
       {
         "id": "results",
-        "title": "结果与实验结论",
-        "body": "未填写未经原文核验的压缩率、成功率或加速比。\n当前仅核验出版条目及摘要层面的结构设计；IEEE原始全文受访问限制。",
+        "title": "实验材料：保留指标语义，不沿用宣传式全面领先",
+        "body": "IEEE摘要确认研究涉及LIBERO、SIMPLER及ALOHA、Emergen真实平台，并在H100、RTX4090和Jetson AGX Orin上检查部署。作者供稿给出若干接近原模型的成功率及更低内存占用，但没有同时提供所有行的版本、示范预算、种子和完整评测协议。\n因此这些材料足以说明作者主张的性能—资源折中，尚不足以在本站新建正式排名记录。尤其0.1个百分点的差异不能在缺少重复实验与统计信息时解释成稳定优越；“保留任务表现”也不意味着每个样本、每种分布或全部动态场景都完全无损。",
         "sources": [
           {
-            "label": "官方 / 作者来源",
-            "url": "https://ieeexplore.ieee.org/document/11479850/"
+            "label": "IEEE正式摘要；作者供稿§04",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
           },
           {
-            "label": "DOI",
-            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
           }
         ]
       },
       {
-        "id": "limits",
-        "title": "适用范围与限制",
-        "body": "量化结论证据不足，不能依据二手宣传数字调整主干。期刊卷期与首次上线时间分开记录。",
+        "id": "runtime",
+        "title": "速度与内存数字为何需要更谨慎地读取",
+        "body": "作者供稿将不同硬件、不同模板数与INT4量化混合展示，而IEEE摘要的加速百分比还存在排版歧义。模型常驻参数、峰值运行显存、缓存占用和额外工作区不是同一项测量，极限压缩配置也不应与另一个配置的最好速度拼成一个系统。\n正确的比较应固定输入视角、动作片段、精度、硬件和批量，再区分模型前向时间、吞吐、观察到动作延迟与实际闭环成功。以上是对证据的分析要求，不表示这些条件已经在本站全部核验；因此本页不从供稿中选最大的倍率填入榜单。",
         "sources": [
           {
-            "label": "官方 / 作者来源",
-            "url": "https://ieeexplore.ieee.org/document/11479850/"
+            "label": "作者供稿硬件对照表；IEEE摘要；指标解释为编辑分析",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
           },
           {
-            "label": "DOI",
-            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
           }
         ]
       },
       {
-        "id": "insight",
-        "title": "阅读启示",
-        "body": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
+        "id": "reading",
+        "title": "读图路线与结论：已能理解结构，尚不能复现完整实验",
+        "body": "先沿供稿图2找共享模板与层系数，再沿图3–4找项数选择所依赖的观察和语言信息。读者可以用两个问题检查理解：固定全部系数时还保留了多少层差异？即使省下模板运算，区域筛选与调度是否会抵消一部分节省？这两个问题分别对应表示容量与运行时收益。\n目前可以支持的总结是：工作尝试通过共享权重表达和输入相关计算改善VLA部署成本。正式期刊版训练细节、严格近似条件、消融和全协议数值仍需正文补充；本页不把作者技术供稿冒充独立复现或完整同行评审证据。",
         "sources": [
           {
-            "label": "官方 / 作者来源",
-            "url": "https://ieeexplore.ieee.org/document/11479850/"
+            "label": "作者供稿图2–4；IEEE正式摘要",
+            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
           },
           {
-            "label": "DOI",
-            "url": "https://doi.org/10.1109/LRA.2026.3683324"
-          }
-        ]
-      },
-      {
-        "id": "focus",
-        "title": "方法、创新与消融的阅读重点",
-        "body": "摘要与结构动机；有全文后再看量化口径。",
-        "sources": [
-          {
-            "label": "官方 / 作者来源",
-            "url": "https://ieeexplore.ieee.org/document/11479850/"
-          },
-          {
-            "label": "DOI",
-            "url": "https://doi.org/10.1109/LRA.2026.3683324"
+            "label": "IEEE正式摘要；非全文",
+            "url": "https://xplorestaging.ieee.org/document/11479850/"
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "limited",
+      "scope": "author-materials-partial",
+      "source": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
+    },
+    "figures": [
+      {
+        "title": "作者供稿图2–4：共享模板与动态调用",
+        "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D",
+        "caption": "仅链接作者供稿中的原图，不镜像图片；该材料题名与期刊题名有差别，不能认定图号与最终期刊版本完全相同。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "已经明确的机制与仍待正文核验的部分",
+        "columns": [
+          "问题",
+          "可确认的描述",
+          "尚未确认"
+        ],
+        "rows": [
+          [
+            "层间表达",
+            "共享模板＋层相关系数",
+            "全部张量公式、近似误差条件"
+          ],
+          [
+            "动态计算",
+            "语言目标与相关观察差分参与项数选择",
+            "阈值、调度开销与失败检测"
+          ],
+          [
+            "实验",
+            "仿真与真实平台均有作者报告",
+            "完整版本、预算、种子、误差条"
+          ],
+          [
+            "部署",
+            "多类GPU与边缘平台检查",
+            "同配置峰值显存与闭环时延"
+          ]
+        ],
+        "locator": "IEEE摘要与2026-03-30作者供稿",
+        "caption": "证据范围表，不是性能排名。数学与工程分析已显式区别于作者报告。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-18",
+      "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
+    }
   }
 }

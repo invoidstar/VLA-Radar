@@ -201,6 +201,11 @@
       "source": "https://arxiv.org/html/2501.09747v1#S4"
     },
     "figures": [],
-    "tables": []
+    "tables": [],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-18",
+      "note": "FAST策略结果主要在图中；未获得完整精确值与协议，不从柱高猜分。token数不冒充任务成功率。"
+    }
   }
 }

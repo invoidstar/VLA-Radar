@@ -26,7 +26,7 @@ Edit `catalog/papers/pNNN.json`, not generated `data/` files. Use `catalog/bench
 
 Lifecycle refresh: `python scripts/sync_publications.py --apply-safe` on an update branch. Candidate table discovery: `scripts/discover_results.py`; explicit extraction: `scripts/extract_results.py`. These identify evidence for review, not guaranteed acceptance or automatic scientifically fair rankings. Monthly-age source checks: `python scripts/check_sources.py`; old-note queue: `python scripts/maintenance_queue.py`.
 
-See [MAINTENANCE.md](MAINTENANCE.md) for data semantics, source quality, cadence, API limitations and complete commands; see [AGENTS.md](AGENTS.md) for public-only automated maintenance rules. Weekly updates are proposed as PRs; no automated merge or direct scheduled write to main. GitHub Actions validates PRs and publishes only merged main commits.
+See [MAINTENANCE.md](MAINTENANCE.md) for data semantics, source quality, cadence, API limitations and complete commands; see [AGENTS.md](AGENTS.md) for public-only automated maintenance rules. Weekly updates use source self-review and passing CI, then a normal expected-head PR merge under the maintainer-authorized publication policy; repository protections are never bypassed. GitHub Actions validates PRs and publishes only merged main commits.
 
 ## Initial v2 coverage and evidence boundary
 

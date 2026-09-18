@@ -5,49 +5,49 @@
     {
       "paperId": "p069",
       "reason": "needs_review",
-      "readVersion": "arXiv v1",
+      "readVersion": "2502.19645；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
       "latestVersion": "v2"
     },
     {
-      "paperId": "p048",
-      "reason": "legacy",
-      "readVersion": "arXiv v4（2022-07-13），第 1–2 页；第 2 页已查看 PDF",
+      "paperId": "p043",
+      "reason": "needs_review",
+      "readVersion": "2026-03-30作者供稿技术说明＋IEEE正式摘要；2026-09-18核读；未取得期刊完整正文",
       "latestVersion": null
     },
     {
-      "paperId": "p050",
-      "reason": "legacy",
-      "readVersion": "arXiv 元数据；官方项目页 2022-08 更新结果",
+      "paperId": "p046",
+      "reason": "needs_review",
+      "readVersion": "PolyU机构摘要与Elsevier出版信息；2026-09-18核读；未取得完整方法与实验正文",
       "latestVersion": null
     },
     {
-      "paperId": "p052",
-      "reason": "legacy",
-      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "paperId": "p001",
+      "reason": "expanded",
+      "readVersion": "arXiv 2608.27550 v1；§2–4、附录C–I",
       "latestVersion": null
     },
     {
-      "paperId": "p057",
-      "reason": "legacy",
-      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "paperId": "p002",
+      "reason": "expanded",
+      "readVersion": "arXiv 2607.01586 v2；§3–4、附录A–F",
       "latestVersion": null
     },
     {
-      "paperId": "p058",
-      "reason": "legacy",
-      "readVersion": "arXiv v1 元数据；Google 2023-07-28 官方报告的 A brighter future for robotics 段落",
+      "paperId": "p007",
+      "reason": "expanded",
+      "readVersion": "arXiv 2608.03727 v1；§3–4、实现说明",
       "latestVersion": null
     },
     {
-      "paperId": "p059",
-      "reason": "legacy",
-      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "paperId": "p013",
+      "reason": "expanded",
+      "readVersion": "arXiv 2608.05042 v1；§III–V、附录结果",
       "latestVersion": null
     },
     {
-      "paperId": "p063",
-      "reason": "legacy",
-      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "paperId": "p014",
+      "reason": "expanded",
+      "readVersion": "arXiv 2608.26821 v1；§III–IV、Tables I–III",
       "latestVersion": null
     }
   ],
@@ -59,7 +59,7 @@
       "p046"
     ]
   },
-  "remainingNotes": 28,
+  "remainingNotes": 3,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."

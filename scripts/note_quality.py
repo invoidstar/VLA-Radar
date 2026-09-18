@@ -4,14 +4,14 @@ import re
 from datetime import date
 
 EXTRA_KEYS = {'coverage', 'figures', 'tables', 'benchmarkReview'}
-SCOPES = {'primary-methods-experiments', 'primary-theory', 'official-technical-report', 'official-abstract-only'}
+SCOPES = {'primary-methods-experiments', 'primary-theory', 'official-technical-report', 'official-abstract-only', 'author-materials-partial'}
 
 def validate_note_extras(note, public_url, require):
     cov = note.get('coverage')
     if cov is not None:
         require(set(cov) == {'level', 'scope', 'source'}, 'note coverage fields')
         require(cov['level'] in {'deep','limited'} and cov['scope'] in SCOPES, 'note coverage level/scope')
-        require((cov['level']=='limited') == (cov['scope']=='official-abstract-only'), 'abstract-only cannot be promoted to full-source notes')
+        require((cov['level']=='limited') == (cov['scope'] in {'official-abstract-only','author-materials-partial'}), 'abstract-only cannot be promoted to full-source notes')
         public_url(cov['source'])
         require(len(note['sections']) >= (8 if cov['level']=='deep' else 3), 'source-scoped section count')
         require(sum(len(s['body']) for s in note['sections']) >= (1200 if cov['level']=='deep' else 300), 'source-scoped note is too short')

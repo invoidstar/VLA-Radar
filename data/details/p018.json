@@ -208,9 +208,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "pending",
-      "checkedAt": null,
-      "note": "深入笔记已整理；标准基准结果仍需逐表核对任务集合、预算与指标，再加入对应赛道。缺失记录不按零分处理。"
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-18",
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 3、5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     }
   }
 }

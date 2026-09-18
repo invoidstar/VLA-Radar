@@ -1,0 +1,18 @@
+{
+  "paperId": "p074",
+  "trackId": "calvin-abc-d-adapter-table6",
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2509.09372v1",
+  "sourceVersion": "指定URL版本；保留的2026-09-17公开HTML快照及2026-09-18原表核验记录",
+  "locator": "Table 6; §4.3; Appendix E",
+  "trainingData": "引用方法预训练和模型规模不同；OFT为本文作者训练150k步后选最佳，非OFT原论文报告。",
+  "supersedes": "",
+  "id": "r-calvin-abc-d-adapter-table6-adapter",
+  "method": "VLA-Adapter",
+  "values": {
+    "Average length": 4.42
+  },
+  "attribution": "author-reported",
+  "evaluationNotes": "每链最多5个连续任务；0–5不是百分比。原文引用表只展示，不作同预算排名。"
+}
