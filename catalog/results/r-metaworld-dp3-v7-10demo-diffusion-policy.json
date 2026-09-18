@@ -1,0 +1,21 @@
+{
+  "id": "r-metaworld-dp3-v7-10demo-diffusion-policy",
+  "paperId": "p085",
+  "method": "Diffusion Policy",
+  "trackId": "metaworld-dp3-v7-10demo",
+  "values": {
+    "Easy (28)": 83.6,
+    "Medium (11)": 31.1,
+    "Hard (6)": 9,
+    "Very hard (5)": 26.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2403.03954v7#S3.T1",
+  "sourceVersion": "2403.03954v7",
+  "locator": "TableI; §IV-A / Appendix C",
+  "attribution": "reported-baseline",
+  "trainingData": "10 demos/task;1000epochs;batch128;3seeds;top5 eval average",
+  "evaluationNotes": "这里只录Meta-World难度组成功率；不把含HORA归一化return的72任务汇总当成功率；不混入v1结果。",
+  "supersedes": ""
+}

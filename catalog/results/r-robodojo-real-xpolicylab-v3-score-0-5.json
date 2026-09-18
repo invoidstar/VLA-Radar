@@ -1,0 +1,21 @@
+{
+  "id": "r-robodojo-real-xpolicylab-v3-score-0-5",
+  "paperId": "p084",
+  "method": "π0.5",
+  "trackId": "robodojo-real-xpolicylab-v3-score",
+  "values": {
+    "ARX X5": 27.7,
+    "Piper": 32,
+    "Piper X": 9.1,
+    "Average": 22.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2608.09892v3#S5.T4",
+  "sourceVersion": "2608.09892v3",
+  "locator": "TableIV, board snapshot 2026-08-04",
+  "attribution": "reported-baseline",
+  "trainingData": "原报告所列模型；不是XPolicyLab新策略网络",
+  "evaluationNotes": "XPolicyLab作者汇报的基线评测，不将框架效率解释为策略精度提升；和官网后续相同值并非两次独立证据。",
+  "supersedes": ""
+}

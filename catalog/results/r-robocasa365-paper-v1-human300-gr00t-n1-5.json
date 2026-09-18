@@ -1,0 +1,21 @@
+{
+  "id": "r-robocasa365-paper-v1-human300-gr00t-n1-5",
+  "paperId": "p080",
+  "method": "GR00T N1.5",
+  "trackId": "robocasa365-paper-v1-human300",
+  "values": {
+    "Atomic": 43,
+    "Seen composite": 9.6,
+    "Unseen composite": 4.4,
+    "Average": 20
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2603.04356v1#S4.T1",
+  "sourceVersion": "2603.04356v1",
+  "locator": "Table1; Appendix G.1–G.2",
+  "attribution": "reported-baseline",
+  "trainingData": "Human300; batch128 / 120k steps",
+  "evaluationNotes": "基准论文作者训练/报告的基线；与官网重测或修订值分别保存；不冒充对应方法首篇论文直接测量。",
+  "supersedes": ""
+}

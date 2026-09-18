@@ -1,0 +1,22 @@
+{
+  "id": "r-robocasa-original-5composite-v1-bc-transformer-atomic-pretrain-fine-tune",
+  "paperId": "p079",
+  "method": "BC-Transformer · atomic pretrain + fine-tune",
+  "trackId": "robocasa-original-5composite-v1",
+  "values": {
+    "Arrange vegetables": 12,
+    "Microwave thawing": 2,
+    "Restock pantry": 6,
+    "Pre-soak pan": 4,
+    "Prepare coffee": 0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2406.02523v1",
+  "sourceVersion": "2406.02523v1",
+  "locator": "arXiv 2406.02523v1 HTML · §V-B, Learning Results on Composite Tasks（Figure 6），Scratch / Fine-tuning两列",
+  "attribution": "author-reported",
+  "trainingData": "50 human demos per composite task; pretraining differs",
+  "evaluationNotes": "原文精确表格值；咖啡任务零成功保留；未提供统一多随机种子不据此宣称显著。",
+  "supersedes": ""
+}

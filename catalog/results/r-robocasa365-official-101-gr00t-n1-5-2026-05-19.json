@@ -1,0 +1,21 @@
+{
+  "id": "r-robocasa365-official-101-gr00t-n1-5-2026-05-19",
+  "paperId": "p070",
+  "method": "GR00T N1.5",
+  "trackId": "robocasa365-official-101",
+  "values": {
+    "Atomic": 50.7,
+    "Seen composite": 14.8,
+    "Unseen composite": 2.7,
+    "Average": 23.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.5_2026_05_19.json",
+  "sourceVersion": "official snapshot 2026-09-18; RoboCasa 1.0.1",
+  "locator": "gr00t_n1.5_2026_05_19.json; atomic_seen_success/composite_seen_success/composite_unseen_success",
+  "attribution": "reported-baseline",
+  "trainingData": "Human300=30,000 demos; global batch 128; steps 120000; checkpoints按提交原链接，未读取任何私人日志/凭证。",
+  "evaluationNotes": "官方提交日期2026-05-19；报告/提交方RoboCasa Team；训练代码commit 9d7d7a9eb7ad30bd8ce30448d9ab53a918b45b10。Average由已公开分组均值按18/16/16加权后四舍五入，保留分组舍入误差。不是本站复现。 re-evaluated with 1.5x longer horizon after RoboCasa 1.0.1 update for consistency 官网将此变体链接到N1原论文；关联是模型家族背景，不表示N1论文原表含N1.5/N1.6或本次成绩。",
+  "supersedes": ""
+}

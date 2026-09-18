@@ -1,0 +1,22 @@
+{
+  "id": "r-simpler-widowx-prts-v1-0",
+  "paperId": "p082",
+  "method": "π0",
+  "trackId": "simpler-widowx-prts-v1",
+  "values": {
+    "Put spoon": 29.1,
+    "Put carrot": 0,
+    "Stack cube": 16.6,
+    "Put eggplant": 62.5,
+    "Average": 27.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2604.27472v1#S6.T5",
+  "sourceVersion": "2604.27472v1",
+  "locator": "Table5; §6.1",
+  "attribution": "reported-baseline",
+  "trainingData": "PRTS20k/batch1024/window16；其他基线遵循该原表",
+  "evaluationNotes": "原表π0-FAST分组均值与其Average不一致，暂不导入该矛盾行。",
+  "supersedes": ""
+}

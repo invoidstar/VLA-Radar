@@ -1,0 +1,22 @@
+{
+  "id": "r-robocasa-original-5composite-v1-bc-transformer-scratch",
+  "paperId": "p079",
+  "method": "BC-Transformer · scratch",
+  "trackId": "robocasa-original-5composite-v1",
+  "values": {
+    "Arrange vegetables": 2,
+    "Microwave thawing": 0,
+    "Restock pantry": 0,
+    "Pre-soak pan": 0,
+    "Prepare coffee": 0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2406.02523v1",
+  "sourceVersion": "2406.02523v1",
+  "locator": "arXiv 2406.02523v1 HTML · §V-B, Learning Results on Composite Tasks（Figure 6），Scratch / Fine-tuning两列",
+  "attribution": "author-reported",
+  "trainingData": "50 human demos per composite task; pretraining differs",
+  "evaluationNotes": "原文精确表格值；咖啡任务零成功保留；未提供统一多随机种子不据此宣称显著。",
+  "supersedes": ""
+}

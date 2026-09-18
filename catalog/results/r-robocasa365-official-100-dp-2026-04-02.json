@@ -1,0 +1,21 @@
+{
+  "id": "r-robocasa365-official-100-dp-2026-04-02",
+  "paperId": "p055",
+  "method": "Diffusion Policy",
+  "trackId": "robocasa365-official-100",
+  "values": {
+    "Atomic": 15.7,
+    "Seen composite": 0.2,
+    "Unseen composite": 1.3,
+    "Average": 6.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/dp_2026_04_02.json",
+  "sourceVersion": "official snapshot 2026-09-18; RoboCasa 1.0.0",
+  "locator": "dp_2026_04_02.json; atomic_seen_success/composite_seen_success/composite_unseen_success",
+  "attribution": "reported-baseline",
+  "trainingData": "Human300=30,000 demos; global batch 192; steps 250000; checkpoints按提交原链接，未读取任何私人日志/凭证。",
+  "evaluationNotes": "官方提交日期2026-04-02；报告/提交方RoboCasa Team；训练代码commit da6996f475572a3e37da16fef27b375732a612b4。Average由已公开分组均值按18/16/16加权后四舍五入，保留分组舍入误差。不是本站复现。 Example submission file. JSON备注保留Example submission file字样；该文件已实际用于官方榜单展示，未据备注扩展其他能力结论。",
+  "supersedes": ""
+}

@@ -1,0 +1,21 @@
+{
+  "id": "r-robocasa365-paper-v1-target-50-gr00t-n1-5-target-only",
+  "paperId": "p080",
+  "method": "GR00T N1.5 · target only",
+  "trackId": "robocasa365-paper-v1-target-50",
+  "values": {
+    "Atomic": 38.7,
+    "Seen composite": 11,
+    "Unseen composite": 11.2,
+    "Average": 21
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2603.04356v1#S4.T2",
+  "sourceVersion": "2603.04356v1",
+  "locator": "Table2; Appendix G",
+  "attribution": "reported-baseline",
+  "trainingData": "50 target demos/task; pretraining condition in method",
+  "evaluationNotes": "原子/已见复合/未见复合是论文定义的任务分组，不将目标厨房已微调模型当未见任务零样本模型。",
+  "supersedes": ""
+}

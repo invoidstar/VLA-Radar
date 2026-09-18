@@ -1,0 +1,21 @@
+{
+  "id": "r-robocasa365-paper-v1-human300-0",
+  "paperId": "p080",
+  "method": "π0",
+  "trackId": "robocasa365-paper-v1-human300",
+  "values": {
+    "Atomic": 36.3,
+    "Seen composite": 5.2,
+    "Unseen composite": 0.7,
+    "Average": 15
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2603.04356v1#S4.T1",
+  "sourceVersion": "2603.04356v1",
+  "locator": "Table1; Appendix G.1–G.2",
+  "attribution": "reported-baseline",
+  "trainingData": "Human300; batch64 / 75k steps",
+  "evaluationNotes": "基准论文作者训练/报告的基线；与官网重测或修订值分别保存；不冒充对应方法首篇论文直接测量。",
+  "supersedes": ""
+}

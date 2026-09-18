@@ -1,0 +1,25 @@
+{
+  "id": "r-libero-plus-prts-crl-v1-prts-with-crl",
+  "paperId": "p082",
+  "method": "PRTS · with CRL",
+  "trackId": "libero-plus-prts-crl-v1",
+  "values": {
+    "Camera": 59.5,
+    "Robot": 72.4,
+    "Language": 89.6,
+    "Light": 96.5,
+    "Background": 96.7,
+    "Noise": 81.3,
+    "Layout": 83.3,
+    "Average": 81.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2604.27472v1#S6.T6",
+  "sourceVersion": "2604.27472v1",
+  "locator": "Table3 and Table6",
+  "attribution": "author-reported",
+  "trainingData": "LIBERO30k/batch32/window20",
+  "evaluationNotes": "作者报告；Object-PRO CRL后82.3低于84.5，保留负结果。",
+  "supersedes": ""
+}

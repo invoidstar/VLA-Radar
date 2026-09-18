@@ -1,0 +1,14 @@
+{
+  "baseCommit": "1d71d5081305cf3dd0ac3c939cd578fc24bf4ca1",
+  "checkedAt": "2026-09-18",
+  "oldPaperCount": 78,
+  "oldResultCount": 105,
+  "invariants": [
+    "All old paper fields and note body/source/read version/verifiedAt unchanged; only benchmarkReview amended.",
+    "All old result source files unchanged.",
+    "Original first-public values unchanged; seven new locks appended.",
+    "Existing RoboCasa365 Xiaomi track ID retained; dataset label corrected.",
+    "Complete discovery checkpoint unchanged."
+  ],
+  "scope": "Local canonical comparison to the exact captured main; final CI repeats comparison against upstream SHA."
+}

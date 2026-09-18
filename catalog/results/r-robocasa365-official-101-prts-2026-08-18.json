@@ -1,0 +1,21 @@
+{
+  "id": "r-robocasa365-official-101-prts-2026-08-18",
+  "paperId": "p082",
+  "method": "PRTS",
+  "trackId": "robocasa365-official-101",
+  "values": {
+    "Atomic": 66.3,
+    "Seen composite": 30.3,
+    "Unseen composite": 18.8,
+    "Average": 39.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/PRTS-2026_08_18.json",
+  "sourceVersion": "official snapshot 2026-09-18; RoboCasa 1.0.1",
+  "locator": "PRTS-2026_08_18.json; atomic_seen_success/composite_seen_success/composite_unseen_success",
+  "attribution": "reported-baseline",
+  "trainingData": "Human300=30,000 demos; global batch 192; steps 250000; checkpoints按提交原链接，未读取任何私人日志/凭证。",
+  "evaluationNotes": "官方提交日期2026-08-18；报告/提交方TeleAI；训练代码commit 15cd007afed891c1f28c69ec54dcb2d164805a2b。Average由已公开分组均值按18/16/16加权后四舍五入，保留分组舍入误差。不是本站复现。 Results of PRTS fine-tuned on RoboCasa365. Evaluated by TeleAI Rhodes team. We release the model, deploy the policy server following our open-sourced repo, and execute the whole predicted action chunk of horizon = 32 everytime the model performs inference.",
+  "supersedes": ""
+}
