@@ -43,14 +43,14 @@
   "publication": {
     "firstArxivAt": "2023-03-07",
     "firstArxivSource": "https://arxiv.org/abs/2303.04137v1",
-    "latestArxivVersion": null,
-    "latestArxivAt": null,
+    "latestArxivVersion": "v5",
+    "latestArxivAt": "2024-03-14",
     "status": "legacy",
     "venue": "RSS 2023 / arXiv 扩展版",
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": null,
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -59,12 +59,28 @@
         "venue": "RSS 2023 / arXiv 扩展版",
         "source": "https://arxiv.org/abs/2303.04137",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2023-03-07",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2303.04137v1",
+        "note": "arXiv Submission history v1（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2024-03-14",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2303.04137v5",
+        "note": "元数据版本 v5；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-18",
     "verifiedAt": "2026-09-18",
     "version": "作者提供 diffusion_policy_2023.pdf（16页，RSS 2023），Sec.II–V、VIII、Appendix与Table I–IV；KEY RESULT原有v5摘要保持不变，本笔记不混用期刊扩展版实验",

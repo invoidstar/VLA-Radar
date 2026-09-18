@@ -38,3 +38,12 @@ Every newly admitted paper must have full-source deep notes and an explicit benc
 No real content changes: do not create an empty literature PR. Record actual discovery, publication, note and source-check progress independently. Failed/partial discovery must NOT advance `maintenance/state.json.lastSuccessfulSearchAt`; content `updatedAt` is not a run heartbeat. A queue or metadata refresh is not completed literature review.
 
 Use `python scripts/build_catalog.py` and `python scripts/validate_all.py`. Structural checks do not certify research truth. Distinguish committed branch, PR, CI pass, merge and successful Pages deployment; only retained canonical records count as completed content. Preserve private-data boundaries, original paper IDs/dates, KEY RESULT and browser reading-state keys.
+
+
+## Weekly operations and performance
+
+Read maintenance/operations.md and maintenance/branch-policy.json. Run due-only publication refresh (`--limit 100 --due-days 7`) and bounded source health (`--limit 100 --max-seconds 180`). Preserve the actual remaining queue; failed providers do not mark all papers current. Use only official public metadata endpoints, source-specific Accept headers and documented fallback; never work around access-control/throttling responses.
+
+After a successful Pages deployment, perform or inspect the safe housekeeping workflow. Unmerged/backup/protected/open-PR branches must never be deleted based only on age. Eligible same-repository merged heads get a six-hour recovery window and exact-SHA conditional deletion, at most ten per run. The cleanup-only force-with-lease ref deletion is an atomic compare-and-delete, not permission to force-update branch history. Keep its audit artifact and report protected/changed/unmerged skips. Do not attempt administrative branch changes without an administration-capable credential; preserve existing protection.
+
+Use build_catalog.py; do not hand-edit hashes or generated shards. Startup uses data/library.json; lazy search/notes/track results and bounded caches must remain. Run performance payload budgets and 1000/5000/10000 synthetic search tests in validate_all.py. New visualizations must not force full-catalog result or image downloads on the landing page. Report measured local/CI results separately from real-network/real-device tests.

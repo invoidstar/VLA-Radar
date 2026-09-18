@@ -5,9 +5,9 @@
     "name": "HALO",
     "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control",
     "team": "得克萨斯大学奥斯汀分校\nRutav Shah、Yisu Li、Femi Bello、Yuke Zhu、Roberto Martín-Martín",
-    "venue": "RSS 2026",
+    "venue": "Robotics: Science and Systems XXII",
     "publicationType": "conference",
-    "publicationStatus": "RSS 2026，论文010\nDOI:10.15607/RSS.2026.XXII.010\narXiv:2606.25136",
+    "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.010",
     "firstPublished": "2026-06-23",
     "dateNote": "",
     "collectionMonth": "2026-07",
@@ -41,23 +41,27 @@
       {
         "label": "arXiv 元数据",
         "url": "https://arxiv.org/abs/2606.25136"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.15607/rss.2026.xxii.010"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2606.25136",
     "arxiv": "2606.25136",
-    "doi": "10.15607/RSS.2026.XXII.010"
+    "doi": "10.15607/rss.2026.xxii.010"
   },
   "publication": {
-    "firstArxivAt": null,
-    "firstArxivSource": "",
-    "latestArxivVersion": null,
-    "latestArxivAt": null,
-    "status": "legacy",
-    "venue": "RSS 2026",
-    "doi": "10.15607/RSS.2026.XXII.010",
+    "firstArxivAt": "2026-06-23",
+    "firstArxivSource": "https://arxiv.org/abs/2606.25136v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-06-23",
+    "status": "published",
+    "venue": "Robotics: Science and Systems XXII",
+    "doi": "10.15607/rss.2026.xxii.010",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": null,
+    "publishedAt": "2026-07-13",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -66,6 +70,30 @@
         "venue": "RSS 2026",
         "source": "https://arxiv.org/abs/2606.25136",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2026-06-23",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2606.25136v1",
+        "note": "arXiv Submission history v1（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-06-23",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2606.25136v1",
+        "note": "元数据版本 v1；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2026-07-13",
+        "observedAt": "2026-09-18",
+        "venue": "Robotics: Science and Systems XXII",
+        "source": "https://doi.org/10.15607/rss.2026.xxii.010",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []

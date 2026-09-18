@@ -48,14 +48,14 @@
   "publication": {
     "firstArxivAt": "2025-01-27",
     "firstArxivSource": "https://arxiv.org/abs/2501.15830v1",
-    "latestArxivVersion": null,
-    "latestArxivAt": null,
-    "status": "legacy",
+    "latestArxivVersion": "v5",
+    "latestArxivAt": "2025-05-19",
+    "status": "preprint",
     "venue": "arXiv",
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": null,
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -64,12 +64,28 @@
         "venue": "arXiv",
         "source": "https://arxiv.org/abs/2501.15830",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2025-01-27",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2501.15830v1",
+        "note": "arXiv Submission history v1（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2025-05-19",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2501.15830v5",
+        "note": "元数据版本 v5；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-18",
     "verifiedAt": "2026-09-18",
     "version": "arXiv:2501.15830v1，Sec.III–V、Table I–V；明确保留v1口径，不代表最新修订全量核验",

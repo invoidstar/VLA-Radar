@@ -49,16 +49,16 @@
     "doi": ""
   },
   "publication": {
-    "firstArxivAt": null,
-    "firstArxivSource": "",
-    "latestArxivVersion": null,
-    "latestArxivAt": null,
+    "firstArxivAt": "2026-02-13",
+    "firstArxivSource": "https://arxiv.org/abs/2602.12978v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-05-17",
     "status": "legacy",
     "venue": "RSS 2026",
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": null,
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -67,12 +67,28 @@
         "venue": "RSS 2026",
         "source": "https://arxiv.org/abs/2602.12978",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2026-02-13",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2602.12978v1",
+        "note": "arXiv Submission history v1（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-05-17",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2602.12978v2",
+        "note": "元数据版本 v2；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-17",
     "verifiedAt": "2026-09-17",
     "version": "arXiv 2602.12978 v1；§III–IV、公式6–16、Tables I–V",

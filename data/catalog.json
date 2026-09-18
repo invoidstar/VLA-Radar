@@ -109,13 +109,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.27550",
       "arxiv": "2608.27550",
       "doi": "",
-      "detailUrl": "data/details/p001.json?v=93e87dfe734a3f5a",
+      "detailUrl": "data/details/p001.json?v=c6682ab4b5bd5fe2",
+      "resultUrl": "data/paper-results/p001.f77f6c22b3b6a860.json",
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-27",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -160,13 +161,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.01586",
       "arxiv": "2607.01586",
       "doi": "",
-      "detailUrl": "data/details/p002.json?v=d1b55a1d27d69491",
+      "detailUrl": "data/details/p002.json?v=252dac0fa4a75ceb",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-02",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -174,9 +176,9 @@
       "name": "Co-training Study",
       "title": "A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation",
       "team": "Fanqi Lin、Kushal Arora、Jean Mercat、Haruki Nishimura、Jose Barreiros等\nTRI相关研究团队；完整机构列表未核验",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文007\nDOI:10.15607/RSS.2026.XXII.007\narXiv:2602.01067",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.007",
       "firstPublished": "2026-02-01",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -210,18 +212,23 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2602.01067"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.007"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2602.01067",
       "arxiv": "2602.01067",
-      "doi": "10.15607/RSS.2026.XXII.007",
-      "detailUrl": "data/details/p035.json?v=398702bf20810bf3",
+      "doi": "10.15607/rss.2026.xxii.007",
+      "detailUrl": "data/details/p035.json?v=c949b6b8f725ca13",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-02-01",
+        "latestArxivVersion": "v1",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -265,13 +272,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.11270",
       "arxiv": "2607.11270",
       "doi": "",
-      "detailUrl": "data/details/p003.json?v=22f759957cd56108",
+      "detailUrl": "data/details/p003.json?v=6df25e4f99b11329",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
+        "firstArxivAt": "2026-07-13",
+        "latestArxivVersion": "v1",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -316,13 +324,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.15330",
       "arxiv": "2607.15330",
       "doi": "",
-      "detailUrl": "data/details/p004.json?v=2adb345f2db3e536",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p004.json?v=7f468fc15ab4dbe7",
+      "resultUrl": "data/paper-results/p004.1d18903fad4d8f42.json",
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
+        "firstArxivAt": "2026-07-16",
+        "latestArxivVersion": "v2",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -365,6 +374,7 @@
       "arxiv": "",
       "doi": "",
       "detailUrl": "data/details/p005.json?v=787df73099b3fa71",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": null,
@@ -415,13 +425,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.05738",
       "arxiv": "2608.05738",
       "doi": "",
-      "detailUrl": "data/details/p006.json?v=628adf9c98f6a5ac",
+      "detailUrl": "data/details/p006.json?v=50dfd5c58aed08a4",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-06",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -429,9 +440,9 @@
       "name": "mimic-video",
       "title": "mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs",
       "team": "mimic robotics／Microsoft Zurich／ETH Zurich／UC Berkeley\nJonas Pai、Liam Achenbach、Victoriano Montesinos、Oier Mees、Elvis Nava等",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文077\nDOI:10.15607/RSS.2026.XXII.077\narXiv:2512.15692",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.077",
       "firstPublished": "2025-12-17",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -466,18 +477,23 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2512.15692"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.077"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2512.15692",
       "arxiv": "2512.15692",
-      "doi": "10.15607/RSS.2026.XXII.077",
-      "detailUrl": "data/details/p038.json?v=480e52d9383e48c6",
-      "noteStatus": "expanded",
+      "doi": "10.15607/rss.2026.xxii.077",
+      "detailUrl": "data/details/p038.json?v=35a2c877459004c6",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2025-12-17",
+        "latestArxivVersion": "v2",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -523,13 +539,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.03727",
       "arxiv": "2608.03727",
       "doi": "",
-      "detailUrl": "data/details/p007.json?v=d7e40321fa6c4f36",
+      "detailUrl": "data/details/p007.json?v=c12bc80342c5117c",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-04",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -575,13 +592,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.05468",
       "arxiv": "2607.05468",
       "doi": "",
-      "detailUrl": "data/details/p008.json?v=c388a8ed516fd43a",
+      "detailUrl": "data/details/p008.json?v=4d6f3d2803c82ede",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-06",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -627,13 +645,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.07619",
       "arxiv": "2608.07619",
       "doi": "",
-      "detailUrl": "data/details/p009.json?v=fb886c2497564a6c",
+      "detailUrl": "data/details/p009.json?v=5aed998154c54683",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-07",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -680,13 +699,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.05369",
       "arxiv": "2608.05369",
       "doi": "",
-      "detailUrl": "data/details/p010.json?v=262980a8446de60e",
+      "detailUrl": "data/details/p010.json?v=7df7bce2349feb57",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-05",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -731,13 +751,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.11498",
       "arxiv": "2607.11498",
       "doi": "",
-      "detailUrl": "data/details/p011.json?v=8ba2f93ff75f60c5",
+      "detailUrl": "data/details/p011.json?v=77c4d982fce51677",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-13",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -782,13 +803,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.01066",
       "arxiv": "2608.01066",
       "doi": "",
-      "detailUrl": "data/details/p012.json?v=07b3563e797adfda",
+      "detailUrl": "data/details/p012.json?v=98ef9c7c8835d439",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-02",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -834,13 +856,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.05042",
       "arxiv": "2608.05042",
       "doi": "",
-      "detailUrl": "data/details/p013.json?v=e751f63266bbe52b",
+      "detailUrl": "data/details/p013.json?v=5a715e4b60ac3d7b",
+      "resultUrl": "data/paper-results/p013.b2edcecf913ebe5b.json",
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-05",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -885,13 +908,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.26821",
       "arxiv": "2608.26821",
       "doi": "",
-      "detailUrl": "data/details/p014.json?v=b2b57565a89acdfb",
+      "detailUrl": "data/details/p014.json?v=caa139f63982d4a4",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-27",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -936,13 +960,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.16889",
       "arxiv": "2608.16889",
       "doi": "",
-      "detailUrl": "data/details/p016.json?v=7c70d86c29c603f2",
+      "detailUrl": "data/details/p016.json?v=1dca6ce4612186ee",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-17",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -950,9 +975,9 @@
       "name": "HALO",
       "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control",
       "team": "得克萨斯大学奥斯汀分校\nRutav Shah、Yisu Li、Femi Bello、Yuke Zhu、Roberto Martín-Martín",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文010\nDOI:10.15607/RSS.2026.XXII.010\narXiv:2606.25136",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.010",
       "firstPublished": "2026-06-23",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -986,18 +1011,23 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2606.25136"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.010"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2606.25136",
       "arxiv": "2606.25136",
-      "doi": "10.15607/RSS.2026.XXII.010",
-      "detailUrl": "data/details/p036.json?v=7e548a77a974eaab",
+      "doi": "10.15607/rss.2026.xxii.010",
+      "detailUrl": "data/details/p036.json?v=4e0d8dfba9e31af5",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-06-23",
+        "latestArxivVersion": "v1",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1005,9 +1035,9 @@
       "name": "VERITAS",
       "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
       "team": "普林斯顿大学\nMingtong Zhang、Dhruv Shah",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文079\nDOI:10.15607/RSS.2026.XXII.079\narXiv:2606.18247",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.079",
       "firstPublished": "2026-06-16",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -1042,18 +1072,23 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2606.18247"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.079"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2606.18247",
       "arxiv": "2606.18247",
-      "doi": "10.15607/RSS.2026.XXII.079",
-      "detailUrl": "data/details/p039.json?v=d0151cc1df73d53a",
+      "doi": "10.15607/rss.2026.xxii.079",
+      "detailUrl": "data/details/p039.json?v=c531fbb65f41750b",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-06-16",
+        "latestArxivVersion": "v1",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1097,13 +1132,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.08749",
       "arxiv": "2608.08749",
       "doi": "",
-      "detailUrl": "data/details/p015.json?v=590dce69e8098405",
+      "detailUrl": "data/details/p015.json?v=4e9347f5ae90e3e5",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-09",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1149,13 +1185,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.16885",
       "arxiv": "2608.16885",
       "doi": "",
-      "detailUrl": "data/details/p017.json?v=84643e16f6167376",
+      "detailUrl": "data/details/p017.json?v=8a6ae71b6155033a",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-17",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1201,13 +1238,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.24115",
       "arxiv": "2608.24115",
       "doi": "",
-      "detailUrl": "data/details/p018.json?v=adb36d8979bf3ba7",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p018.json?v=5dad3b2c8b802f00",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-25",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1253,13 +1291,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.16172",
       "arxiv": "2608.16172",
       "doi": "",
-      "detailUrl": "data/details/p019.json?v=7ea53309f1a6475e",
+      "detailUrl": "data/details/p019.json?v=ce3ca65d6acb20d6",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-17",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1269,7 +1308,7 @@
       "team": "杭州电子科技大学／新墨西哥大学／牛津大学／乔治华盛顿大学／TUM等\nShunlei Li、Longsen Gao、Jin Wang、Jiuwen Cao等",
       "venue": "Information Fusion",
       "publicationType": "journal",
-      "publicationStatus": "Elsevier Information Fusion 131:104193\nDOI:10.1016/j.inffus.2026.104193\narXiv:2508.05342",
+      "publicationStatus": "正式发表于 Information Fusion；出版日期 2026-07；DOI:10.1016/j.inffus.2026.104193",
       "firstPublished": "2025-08-07",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -1309,13 +1348,14 @@
       "paperUrl": "https://arxiv.org/abs/2508.05342",
       "arxiv": "2508.05342",
       "doi": "10.1016/j.inffus.2026.104193",
-      "detailUrl": "data/details/p045.json?v=5db9210afcf7e333",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p045.json?v=090790f9828e4858",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2025-08-07",
+        "latestArxivVersion": "v2",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1360,13 +1400,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.00725",
       "arxiv": "2608.00725",
       "doi": "",
-      "detailUrl": "data/details/p021.json?v=364488266699f171",
+      "detailUrl": "data/details/p021.json?v=2f6f3b1aa55347a5",
+      "resultUrl": "data/paper-results/p021.fc66f017db4b9c7f.json",
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-01",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1411,13 +1452,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.28993",
       "arxiv": "2607.28993",
       "doi": "",
-      "detailUrl": "data/details/p022.json?v=c70de97e6eb7eabb",
+      "detailUrl": "data/details/p022.json?v=cbd1e22948dad480",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-31",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1462,13 +1504,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.22197",
       "arxiv": "2608.22197",
       "doi": "",
-      "detailUrl": "data/details/p026.json?v=9ce8a9ae79c3e1ce",
+      "detailUrl": "data/details/p026.json?v=e9bc530cf13e66bb",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-23",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1512,13 +1555,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.04927",
       "arxiv": "2607.04927",
       "doi": "",
-      "detailUrl": "data/details/p023.json?v=793eaa9adbe2a163",
+      "detailUrl": "data/details/p023.json?v=69e7b999b0e74302",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-06",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1563,13 +1607,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.00678",
       "arxiv": "2607.00678",
       "doi": "",
-      "detailUrl": "data/details/p024.json?v=14316c666606b0db",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p024.json?v=958369d7e8a1a792",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-01",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1577,9 +1622,9 @@
       "name": "CauVA / LingBot-VA",
       "title": "Causal World Modeling for Robot Control",
       "team": "Robbyant 灵波科技（作者项目发布团队）\nLin Li、Qihang Zhang、Yiming Luo、Yujun Shen、Yinghao Xu等",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文016\nDOI:10.15607/RSS.2026.XXII.016\narXiv:2601.21998",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.016",
       "firstPublished": "2026-01-29",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -1614,18 +1659,23 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2601.21998"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.016"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2601.21998",
       "arxiv": "2601.21998",
-      "doi": "10.15607/RSS.2026.XXII.016",
-      "detailUrl": "data/details/p037.json?v=2544bb05228e84a5",
-      "noteStatus": "expanded",
+      "doi": "10.15607/rss.2026.xxii.016",
+      "detailUrl": "data/details/p037.json?v=6e9d3ae0f086d809",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-01-29",
+        "latestArxivVersion": "v2",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1671,13 +1721,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.02503",
       "arxiv": "2607.02503",
       "doi": "",
-      "detailUrl": "data/details/p025.json?v=8d8b131f58233dca",
+      "detailUrl": "data/details/p025.json?v=ce9a0c19ee8d15f4",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-02",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1685,9 +1736,9 @@
       "name": "VLA-Touch",
       "title": "VLA-Touch: Enhancing Vision-Language-Action Models with Dual-Level Tactile Feedback",
       "team": "新加坡国立大学CLeAR／Show Lab\nJianxin Bi、Kevin Yuchen Ma、Ce Hao、Mike Zheng Shou、Harold Soh",
-      "venue": "IEEE RA-L",
+      "venue": "IEEE Robotics and Automation Letters",
       "publicationType": "journal",
-      "publicationStatus": "IEEE RA-L 11(7):8487–8494\nDOI:10.1109/LRA.2026.3692345\narXiv:2507.17294",
+      "publicationStatus": "正式发表于 IEEE Robotics and Automation Letters；出版日期 2026-07；DOI:10.1109/lra.2026.3692345",
       "firstPublished": "2025-07-23",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -1721,18 +1772,23 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2507.17294"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.1109/lra.2026.3692345"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2507.17294",
       "arxiv": "2507.17294",
-      "doi": "10.1109/LRA.2026.3692345",
-      "detailUrl": "data/details/p044.json?v=cedfd9926a104cc7",
-      "noteStatus": "expanded",
+      "doi": "10.1109/lra.2026.3692345",
+      "detailUrl": "data/details/p044.json?v=c3057d6835c78058",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2025-07-23",
+        "latestArxivVersion": "v2",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1777,13 +1833,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.27205",
       "arxiv": "2607.27205",
       "doi": "",
-      "detailUrl": "data/details/p027.json?v=93774874fd9f9dc6",
+      "detailUrl": "data/details/p027.json?v=7339281af4ee396b",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-29",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1828,13 +1885,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.06370",
       "arxiv": "2607.06370",
       "doi": "",
-      "detailUrl": "data/details/p028.json?v=342137fdc445759f",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p028.json?v=e3d61540c9140014",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-07",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1880,13 +1938,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.27384",
       "arxiv": "2608.27384",
       "doi": "",
-      "detailUrl": "data/details/p029.json?v=6a5cb8ce3a11e5a3",
+      "detailUrl": "data/details/p029.json?v=9d9b296a6bb75051",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-27",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1931,13 +1990,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.29208",
       "arxiv": "2608.29208",
       "doi": "",
-      "detailUrl": "data/details/p030.json?v=18ca568342548d97",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p030.json?v=1ce407d5d1c56322",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-29",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -1982,13 +2042,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.02501",
       "arxiv": "2607.02501",
       "doi": "",
-      "detailUrl": "data/details/p031.json?v=a383fbf3bbb84755",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p031.json?v=0f72370899b6668d",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-02",
+        "latestArxivVersion": "v3",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2037,13 +2098,14 @@
       "paperUrl": "https://arxiv.org/abs/2604.05323",
       "arxiv": "2604.05323",
       "doi": "",
-      "detailUrl": "data/details/p042.json?v=51f2edbdf0cf06ff",
+      "detailUrl": "data/details/p042.json?v=853c6f574b575e57",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
+        "firstArxivAt": "2026-04-07",
+        "latestArxivVersion": "v1",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2088,13 +2150,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.04428",
       "arxiv": "2608.04428",
       "doi": "",
-      "detailUrl": "data/details/p032.json?v=4a4121ae59846458",
+      "detailUrl": "data/details/p032.json?v=0b0f2ef2f53bcffa",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-05",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2139,6 +2202,7 @@
       "arxiv": "",
       "doi": "10.1109/LRA.2026.3683324",
       "detailUrl": "data/details/p043.json?v=d2c8d5f068c5a737",
+      "resultUrl": null,
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": null,
@@ -2190,13 +2254,14 @@
       "paperUrl": "https://arxiv.org/abs/2608.29432",
       "arxiv": "2608.29432",
       "doi": "",
-      "detailUrl": "data/details/p020.json?v=7e582727541f8f8b",
+      "detailUrl": "data/details/p020.json?v=ec4bdc032f0a0ea1",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-08-29",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2242,13 +2307,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.06262",
       "arxiv": "2607.06262",
       "doi": "",
-      "detailUrl": "data/details/p033.json?v=469e779d775d9c5b",
+      "detailUrl": "data/details/p033.json?v=1e7151b2961c1e6d",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-07",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2298,13 +2364,14 @@
       "paperUrl": "https://arxiv.org/abs/2602.12978",
       "arxiv": "2602.12978",
       "doi": "",
-      "detailUrl": "data/details/p041.json?v=23771194e39bf2ac",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p041.json?v=8b8be73859b5c976",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
+        "firstArxivAt": "2026-02-13",
+        "latestArxivVersion": "v2",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2349,13 +2416,14 @@
       "paperUrl": "https://arxiv.org/abs/2607.04434",
       "arxiv": "2607.04434",
       "doi": "",
-      "detailUrl": "data/details/p034.json?v=23f7fcd226610a98",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p034.json?v=e0b77e4aaa273269",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-07-05",
+        "latestArxivVersion": "v3",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2363,9 +2431,9 @@
       "name": "Beyond Binary Success",
       "title": "Beyond Binary Success: Sample-Efficient and Statistically Rigorous Robot Policy Comparison",
       "team": "宾夕法尼亚大学／Toyota Research Institute／普林斯顿大学\nDavid Snyder、Apurva Badithela、Nikolai Matni、George Pappas等",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文076\nDOI:10.15607/RSS.2026.XXII.076\narXiv:2603.13616",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.076",
       "firstPublished": "2026-03-13",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -2399,18 +2467,23 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2603.13616"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.076"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2603.13616",
       "arxiv": "2603.13616",
-      "doi": "10.15607/RSS.2026.XXII.076",
-      "detailUrl": "data/details/p040.json?v=c9e2889fdc60d458",
+      "doi": "10.15607/rss.2026.xxii.076",
+      "detailUrl": "data/details/p040.json?v=0fd20d15ed84c4a2",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
-        "firstArxivAt": null,
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "firstArxivAt": "2026-03-13",
+        "latestArxivVersion": "v1",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2456,6 +2529,7 @@
       "arxiv": "",
       "doi": "10.1016/j.rcim.2026.103268",
       "detailUrl": "data/details/p046.json?v=432b9cb13a1f41f6",
+      "resultUrl": null,
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": null,
@@ -2508,13 +2582,14 @@
       "paperUrl": "https://arxiv.org/abs/2109.12098",
       "arxiv": "2109.12098",
       "doi": "",
-      "detailUrl": "data/details/p047.json?v=319d999280dedf69",
+      "detailUrl": "data/details/p047.json?v=ed3a1fb36f15fdab",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2021-09-24",
-        "latestArxivVersion": null,
+        "latestArxivVersion": "v1",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2561,13 +2636,14 @@
       "paperUrl": "https://arxiv.org/abs/2112.03227",
       "arxiv": "2112.03227",
       "doi": "",
-      "detailUrl": "data/details/p048.json?v=82f655d317f4b6b8",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p048.json?v=4ba0f0daa93050ea",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2021-12-06",
-        "latestArxivVersion": null,
+        "latestArxivVersion": "v4",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2610,13 +2686,14 @@
       "paperUrl": "https://arxiv.org/abs/2202.02005",
       "arxiv": "2202.02005",
       "doi": "",
-      "detailUrl": "data/details/p049.json?v=bca2ce31a4e9ca04",
+      "detailUrl": "data/details/p049.json?v=a13de4d610ed5342",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2022-02-04",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2663,13 +2740,14 @@
       "paperUrl": "https://arxiv.org/abs/2204.01691",
       "arxiv": "2204.01691",
       "doi": "",
-      "detailUrl": "data/details/p050.json?v=fc0049d92de1e486",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p050.json?v=38401c159a6463b2",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2022-04-04",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2716,13 +2794,14 @@
       "paperUrl": "https://arxiv.org/abs/2209.05451",
       "arxiv": "2209.05451",
       "doi": "",
-      "detailUrl": "data/details/p051.json?v=68b2320a819c757c",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p051.json?v=9d6a1d4cac1f3a6d",
+      "resultUrl": "data/paper-results/p051.18f22c9ebae17e04.json",
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2022-09-12",
-        "latestArxivVersion": null,
+        "latestArxivVersion": "v2",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2769,13 +2848,14 @@
       "paperUrl": "https://arxiv.org/abs/2212.06817",
       "arxiv": "2212.06817",
       "doi": "",
-      "detailUrl": "data/details/p052.json?v=7f75e8462ebb4967",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p052.json?v=4613618c53a31acc",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2022-12-13",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2818,13 +2898,14 @@
       "paperUrl": "https://arxiv.org/abs/2302.00111",
       "arxiv": "2302.00111",
       "doi": "",
-      "detailUrl": "data/details/p053.json?v=2dfe7b5f0b70b8c5",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p053.json?v=d024d7b6674dc7f0",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2023-01-31",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v3",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2871,13 +2952,14 @@
       "paperUrl": "https://arxiv.org/abs/2303.03378",
       "arxiv": "2303.03378",
       "doi": "",
-      "detailUrl": "data/details/p054.json?v=fab07496e1de953c",
+      "detailUrl": "data/details/p054.json?v=2ba1bd7fc31c5bda",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-03-06",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2919,13 +3001,14 @@
       "paperUrl": "https://arxiv.org/abs/2303.04137",
       "arxiv": "2303.04137",
       "doi": "",
-      "detailUrl": "data/details/p055.json?v=444b375409936d7b",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p055.json?v=f7796132be5ccc93",
+      "resultUrl": "data/paper-results/p055.b48eaeceaa4a7cc6.json",
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2023-03-07",
-        "latestArxivVersion": null,
+        "latestArxivVersion": "v5",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -2972,13 +3055,14 @@
       "paperUrl": "https://arxiv.org/abs/2304.13705",
       "arxiv": "2304.13705",
       "doi": "",
-      "detailUrl": "data/details/p056.json?v=c22dcea6319b7099",
+      "detailUrl": "data/details/p056.json?v=e43591b4c6be6031",
+      "resultUrl": "data/paper-results/p056.0826e536978873c4.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-04-23",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3025,13 +3109,14 @@
       "paperUrl": "https://arxiv.org/abs/2306.03310",
       "arxiv": "2306.03310",
       "doi": "",
-      "detailUrl": "data/details/p057.json?v=3ec3f87af52e1d99",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p057.json?v=f42a6df9c03a55c1",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2023-06-05",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3082,13 +3167,14 @@
       "paperUrl": "https://arxiv.org/abs/2307.15818",
       "arxiv": "2307.15818",
       "doi": "",
-      "detailUrl": "data/details/p058.json?v=471e2d693ea0c32c",
+      "detailUrl": "data/details/p058.json?v=28e2e02b1db05531",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-07-28",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3135,13 +3221,14 @@
       "paperUrl": "https://arxiv.org/abs/2310.08864",
       "arxiv": "2310.08864",
       "doi": "",
-      "detailUrl": "data/details/p059.json?v=570c3fbc606bf9ea",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p059.json?v=0de5fb5e22eda5cc",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2023-10-13",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v9",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3188,13 +3275,14 @@
       "paperUrl": "https://arxiv.org/abs/2311.01378",
       "arxiv": "2311.01378",
       "doi": "",
-      "detailUrl": "data/details/p060.json?v=4aed38bfece92157",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p060.json?v=c107fd960379dd06",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2023-11-02",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v3",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3246,13 +3334,14 @@
       "paperUrl": "https://arxiv.org/abs/2312.13139",
       "arxiv": "2312.13139",
       "doi": "",
-      "detailUrl": "data/details/p061.json?v=f2d5a629b91015e8",
+      "detailUrl": "data/details/p061.json?v=3e7b94235062c96d",
+      "resultUrl": "data/paper-results/p061.27edd801846e41ac.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-12-20",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3299,13 +3388,14 @@
       "paperUrl": "https://arxiv.org/abs/2403.12945",
       "arxiv": "2403.12945",
       "doi": "",
-      "detailUrl": "data/details/p062.json?v=63ffe7df0facc831",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p062.json?v=a409694889d03959",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2024-03-19",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3352,13 +3442,14 @@
       "paperUrl": "https://arxiv.org/abs/2405.12213",
       "arxiv": "2405.12213",
       "doi": "",
-      "detailUrl": "data/details/p063.json?v=06c938066d2c45ac",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p063.json?v=298a7cd86d0ae4f9",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2024-05-20",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3410,6 +3501,7 @@
       "arxiv": "2406.09246",
       "doi": "",
       "detailUrl": "data/details/p064.json?v=5b712565325dd338",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-06-13",
@@ -3462,13 +3554,14 @@
       "paperUrl": "https://arxiv.org/abs/2410.07864",
       "arxiv": "2410.07864",
       "doi": "",
-      "detailUrl": "data/details/p065.json?v=ad21c91838099463",
+      "detailUrl": "data/details/p065.json?v=684d5bc17ec767d8",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-10-10",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3515,13 +3608,14 @@
       "paperUrl": "https://arxiv.org/abs/2410.24164",
       "arxiv": "2410.24164",
       "doi": "",
-      "detailUrl": "data/details/p066.json?v=1ba1b7b8952c0a1e",
+      "detailUrl": "data/details/p066.json?v=3ed770eb87d142a1",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-10-31",
-        "latestArxivVersion": null,
+        "latestArxivVersion": "v4",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3568,13 +3662,14 @@
       "paperUrl": "https://arxiv.org/abs/2501.09747",
       "arxiv": "2501.09747",
       "doi": "",
-      "detailUrl": "data/details/p067.json?v=44c8e9414b99db32",
+      "detailUrl": "data/details/p067.json?v=679789278b7add74",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-01-16",
-        "latestArxivVersion": null,
+        "latestArxivVersion": "v1",
         "status": "legacy",
-        "lastCheckedAt": null
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3621,13 +3716,14 @@
       "paperUrl": "https://arxiv.org/abs/2501.15830",
       "arxiv": "2501.15830",
       "doi": "",
-      "detailUrl": "data/details/p068.json?v=21f1b325f6f62936",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p068.json?v=a1fd1b5f4fac6fad",
+      "resultUrl": "data/paper-results/p068.51ef96d6c55d867d.json",
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2025-01-27",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v5",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3679,6 +3775,7 @@
       "arxiv": "2502.19645",
       "doi": "10.15607/RSS.2025.XXI.017",
       "detailUrl": "data/details/p069.json?v=e03dc5a1b2512eb6",
+      "resultUrl": "data/paper-results/p069.5872bbd03422dd64.json",
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2025-02-27",
@@ -3731,13 +3828,14 @@
       "paperUrl": "https://arxiv.org/abs/2503.14734",
       "arxiv": "2503.14734",
       "doi": "",
-      "detailUrl": "data/details/p070.json?v=8528503df32e8e2d",
+      "detailUrl": "data/details/p070.json?v=ba756c157a228a74",
+      "resultUrl": "data/paper-results/p070.eb0c1df5223d9043.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-03-18",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3785,13 +3883,14 @@
       "paperUrl": "https://arxiv.org/abs/2503.20020",
       "arxiv": "2503.20020",
       "doi": "",
-      "detailUrl": "data/details/p071.json?v=fb78751d6065d0ab",
+      "detailUrl": "data/details/p071.json?v=90ac163cdd8cb0cf",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-03-25",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3839,13 +3938,14 @@
       "paperUrl": "https://arxiv.org/abs/2504.16054",
       "arxiv": "2504.16054",
       "doi": "",
-      "detailUrl": "data/details/p072.json?v=d131ac6b05fec8d9",
+      "detailUrl": "data/details/p072.json?v=c6acf87bc3d81998",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-04-22",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3893,13 +3993,14 @@
       "paperUrl": "https://arxiv.org/abs/2506.01844",
       "arxiv": "2506.01844",
       "doi": "",
-      "detailUrl": "data/details/p073.json?v=34a616d0ecad79c8",
+      "detailUrl": "data/details/p073.json?v=c5b4f329623e7f08",
+      "resultUrl": "data/paper-results/p073.4bef2477ea754e58.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-06-02",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -3946,13 +4047,14 @@
       "paperUrl": "https://arxiv.org/abs/2509.09372",
       "arxiv": "2509.09372",
       "doi": "",
-      "detailUrl": "data/details/p074.json?v=36da263ed679ffec",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p074.json?v=61ff64e47a91c553",
+      "resultUrl": "data/paper-results/p074.5a1b92bf249b9f07.json",
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2025-09-11",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -4000,13 +4102,14 @@
       "paperUrl": "https://arxiv.org/abs/2511.14759",
       "arxiv": "2511.14759",
       "doi": "",
-      "detailUrl": "data/details/p075.json?v=b334a7cf382b715c",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p075.json?v=e563e484fd18acce",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2025-11-18",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -4053,13 +4156,14 @@
       "paperUrl": "https://arxiv.org/abs/2601.16163",
       "arxiv": "2601.16163",
       "doi": "",
-      "detailUrl": "data/details/p076.json?v=328b08acb610045b",
+      "detailUrl": "data/details/p076.json?v=a397f4cdaeb7bb77",
+      "resultUrl": "data/paper-results/p076.79a95f4986dd60bd.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-01-22",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -4107,13 +4211,14 @@
       "paperUrl": "https://arxiv.org/abs/2602.15922",
       "arxiv": "2602.15922",
       "doi": "",
-      "detailUrl": "data/details/p077.json?v=84239be591058daa",
+      "detailUrl": "data/details/p077.json?v=4b98b7156c7b9404",
+      "resultUrl": null,
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-02-17",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     },
     {
@@ -4160,13 +4265,14 @@
       "paperUrl": "https://arxiv.org/abs/2603.16666",
       "arxiv": "2603.16666",
       "doi": "",
-      "detailUrl": "data/details/p078.json?v=7f629ebf4fcc28d8",
-      "noteStatus": "expanded",
+      "detailUrl": "data/details/p078.json?v=0303155e6e414670",
+      "resultUrl": null,
+      "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2026-03-17",
-        "latestArxivVersion": null,
-        "status": "legacy",
-        "lastCheckedAt": null
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-18"
       }
     }
   ]

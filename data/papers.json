@@ -158,9 +158,9 @@
       "name": "Co-training Study",
       "title": "A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation",
       "team": "Fanqi Lin、Kushal Arora、Jean Mercat、Haruki Nishimura、Jose Barreiros等\nTRI相关研究团队；完整机构列表未核验",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文007\nDOI:10.15607/RSS.2026.XXII.007\narXiv:2602.01067",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.007",
       "firstPublished": "2026-02-01",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -194,11 +194,15 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2602.01067"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.007"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2602.01067",
       "arxiv": "2602.01067",
-      "doi": "10.15607/RSS.2026.XXII.007"
+      "doi": "10.15607/rss.2026.xxii.007"
     },
     {
       "id": "p003",
@@ -373,9 +377,9 @@
       "name": "mimic-video",
       "title": "mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs",
       "team": "mimic robotics／Microsoft Zurich／ETH Zurich／UC Berkeley\nJonas Pai、Liam Achenbach、Victoriano Montesinos、Oier Mees、Elvis Nava等",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文077\nDOI:10.15607/RSS.2026.XXII.077\narXiv:2512.15692",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.077",
       "firstPublished": "2025-12-17",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -410,11 +414,15 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2512.15692"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.077"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2512.15692",
       "arxiv": "2512.15692",
-      "doi": "10.15607/RSS.2026.XXII.077"
+      "doi": "10.15607/rss.2026.xxii.077"
     },
     {
       "id": "p007",
@@ -814,9 +822,9 @@
       "name": "HALO",
       "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control",
       "team": "得克萨斯大学奥斯汀分校\nRutav Shah、Yisu Li、Femi Bello、Yuke Zhu、Roberto Martín-Martín",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文010\nDOI:10.15607/RSS.2026.XXII.010\narXiv:2606.25136",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.010",
       "firstPublished": "2026-06-23",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -850,20 +858,24 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2606.25136"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.010"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2606.25136",
       "arxiv": "2606.25136",
-      "doi": "10.15607/RSS.2026.XXII.010"
+      "doi": "10.15607/rss.2026.xxii.010"
     },
     {
       "id": "p039",
       "name": "VERITAS",
       "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
       "team": "普林斯顿大学\nMingtong Zhang、Dhruv Shah",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文079\nDOI:10.15607/RSS.2026.XXII.079\narXiv:2606.18247",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.079",
       "firstPublished": "2026-06-16",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -898,11 +910,15 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2606.18247"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.079"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2606.18247",
       "arxiv": "2606.18247",
-      "doi": "10.15607/RSS.2026.XXII.079"
+      "doi": "10.15607/rss.2026.xxii.079"
     },
     {
       "id": "p015",
@@ -1085,7 +1101,7 @@
       "team": "杭州电子科技大学／新墨西哥大学／牛津大学／乔治华盛顿大学／TUM等\nShunlei Li、Longsen Gao、Jin Wang、Jiuwen Cao等",
       "venue": "Information Fusion",
       "publicationType": "journal",
-      "publicationStatus": "Elsevier Information Fusion 131:104193\nDOI:10.1016/j.inffus.2026.104193\narXiv:2508.05342",
+      "publicationStatus": "正式发表于 Information Fusion；出版日期 2026-07；DOI:10.1016/j.inffus.2026.104193",
       "firstPublished": "2025-08-07",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -1345,9 +1361,9 @@
       "name": "CauVA / LingBot-VA",
       "title": "Causal World Modeling for Robot Control",
       "team": "Robbyant 灵波科技（作者项目发布团队）\nLin Li、Qihang Zhang、Yiming Luo、Yujun Shen、Yinghao Xu等",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文016\nDOI:10.15607/RSS.2026.XXII.016\narXiv:2601.21998",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.016",
       "firstPublished": "2026-01-29",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -1382,11 +1398,15 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2601.21998"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.016"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2601.21998",
       "arxiv": "2601.21998",
-      "doi": "10.15607/RSS.2026.XXII.016"
+      "doi": "10.15607/rss.2026.xxii.016"
     },
     {
       "id": "p025",
@@ -1437,9 +1457,9 @@
       "name": "VLA-Touch",
       "title": "VLA-Touch: Enhancing Vision-Language-Action Models with Dual-Level Tactile Feedback",
       "team": "新加坡国立大学CLeAR／Show Lab\nJianxin Bi、Kevin Yuchen Ma、Ce Hao、Mike Zheng Shou、Harold Soh",
-      "venue": "IEEE RA-L",
+      "venue": "IEEE Robotics and Automation Letters",
       "publicationType": "journal",
-      "publicationStatus": "IEEE RA-L 11(7):8487–8494\nDOI:10.1109/LRA.2026.3692345\narXiv:2507.17294",
+      "publicationStatus": "正式发表于 IEEE Robotics and Automation Letters；出版日期 2026-07；DOI:10.1109/lra.2026.3692345",
       "firstPublished": "2025-07-23",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -1473,11 +1493,15 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2507.17294"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.1109/lra.2026.3692345"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2507.17294",
       "arxiv": "2507.17294",
-      "doi": "10.1109/LRA.2026.3692345"
+      "doi": "10.1109/lra.2026.3692345"
     },
     {
       "id": "p027",
@@ -2011,9 +2035,9 @@
       "name": "Beyond Binary Success",
       "title": "Beyond Binary Success: Sample-Efficient and Statistically Rigorous Robot Policy Comparison",
       "team": "宾夕法尼亚大学／Toyota Research Institute／普林斯顿大学\nDavid Snyder、Apurva Badithela、Nikolai Matni、George Pappas等",
-      "venue": "RSS 2026",
+      "venue": "Robotics: Science and Systems XXII",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文076\nDOI:10.15607/RSS.2026.XXII.076\narXiv:2603.13616",
+      "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.076",
       "firstPublished": "2026-03-13",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -2047,11 +2071,15 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2603.13616"
+        },
+        {
+          "label": "出版方 DOI",
+          "url": "https://doi.org/10.15607/rss.2026.xxii.076"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2603.13616",
       "arxiv": "2603.13616",
-      "doi": "10.15607/RSS.2026.XXII.076"
+      "doi": "10.15607/rss.2026.xxii.076"
     },
     {
       "id": "p046",

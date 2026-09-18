@@ -1,21 +1,169 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-09-17",
+  "checkedAt": "2026-09-18",
   "mode": "apply-safe",
-  "selected": 75,
-  "metadataChecked": [],
-  "changed": [],
-  "status": "partial",
-  "errors": [
+  "selected": 73,
+  "metadataChecked": [
+    "p001",
+    "p002",
+    "p003",
+    "p004",
+    "p006",
+    "p007",
+    "p008",
+    "p009",
+    "p010",
+    "p011",
+    "p012",
+    "p013",
+    "p014",
+    "p015",
+    "p016",
+    "p017",
+    "p018",
+    "p019",
+    "p020",
+    "p021",
+    "p022",
+    "p023",
+    "p024",
+    "p025",
+    "p026",
+    "p027",
+    "p028",
+    "p029",
+    "p030",
+    "p031",
+    "p032",
+    "p033",
+    "p034",
+    "p035",
+    "p036",
+    "p037",
+    "p038",
+    "p039",
+    "p040",
+    "p041",
+    "p042",
+    "p044",
+    "p045",
+    "p047",
+    "p048",
+    "p049",
+    "p050",
+    "p051",
+    "p052",
+    "p053",
+    "p054",
+    "p055",
+    "p056",
+    "p057",
+    "p058",
+    "p059",
+    "p060",
+    "p061",
+    "p062",
+    "p063",
+    "p065",
+    "p066",
+    "p067",
+    "p068",
+    "p070",
+    "p071",
+    "p072",
+    "p073",
+    "p074",
+    "p075",
+    "p076",
+    "p077",
+    "p078"
+  ],
+  "changed": [
+    "p001",
+    "p002",
+    "p003",
+    "p004",
+    "p006",
+    "p007",
+    "p008",
+    "p009",
+    "p010",
+    "p011",
+    "p012",
+    "p013",
+    "p014",
+    "p015",
+    "p016",
+    "p017",
+    "p018",
+    "p019",
+    "p020",
+    "p021",
+    "p022",
+    "p023",
+    "p024",
+    "p025",
+    "p026",
+    "p027",
+    "p028",
+    "p029",
+    "p030",
+    "p031",
+    "p032",
+    "p033",
+    "p034",
+    "p035",
+    "p036",
+    "p037",
+    "p038",
+    "p039",
+    "p040",
+    "p041",
+    "p042",
+    "p044",
+    "p045",
+    "p047",
+    "p048",
+    "p049",
+    "p050",
+    "p051",
+    "p052",
+    "p053",
+    "p054",
+    "p055",
+    "p056",
+    "p057",
+    "p058",
+    "p059",
+    "p060",
+    "p061",
+    "p062",
+    "p063",
+    "p065",
+    "p066",
+    "p067",
+    "p068",
+    "p070",
+    "p071",
+    "p072",
+    "p073",
+    "p074",
+    "p075",
+    "p076",
+    "p077",
+    "p078"
+  ],
+  "status": "success",
+  "errors": [],
+  "warnings": [
     {
+      "provider": "arxiv-api",
       "paperIds": [
         "p001",
         "p002",
-        "p035",
         "p003",
         "p004",
         "p006",
-        "p038",
         "p007",
         "p008",
         "p009",
@@ -24,40 +172,42 @@
         "p012",
         "p013",
         "p014",
-        "p016",
-        "p036",
-        "p039",
         "p015",
+        "p016",
         "p017",
         "p018",
         "p019",
-        "p045",
+        "p020",
         "p021",
         "p022",
-        "p026",
         "p023",
         "p024",
-        "p037",
         "p025",
-        "p044",
+        "p026",
         "p027",
         "p028",
         "p029",
         "p030",
         "p031",
-        "p042",
         "p032",
-        "p020",
-        "p033"
+        "p033",
+        "p034",
+        "p035",
+        "p036",
+        "p037",
+        "p038",
+        "p039",
+        "p040",
+        "p041"
       ],
-      "provider": "arxiv",
       "error": "HTTP Error 406: Not Acceptable"
     },
     {
+      "provider": "arxiv-api",
       "paperIds": [
-        "p041",
-        "p034",
-        "p040",
+        "p042",
+        "p044",
+        "p045",
         "p047",
         "p048",
         "p049",
@@ -75,12 +225,10 @@
         "p061",
         "p062",
         "p063",
-        "p064",
         "p065",
         "p066",
         "p067",
         "p068",
-        "p069",
         "p070",
         "p071",
         "p072",
@@ -91,535 +239,89 @@
         "p077",
         "p078"
       ],
-      "provider": "arxiv",
       "error": "HTTP Error 406: Not Acceptable"
-    },
-    {
-      "paperIds": [
-        "p001"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p002"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p035"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p003"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p004"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p006"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p038"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p007"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p008"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p009"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p010"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p011"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p012"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p013"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p014"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p016"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p036"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p039"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p015"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p017"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p018"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p019"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p045"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p021"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p022"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p026"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p023"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p024"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p037"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p025"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p044"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p027"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p028"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p029"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p030"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p031"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p042"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p032"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p020"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p033"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p041"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p034"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p040"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p047"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p048"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p049"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p050"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p051"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p052"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p053"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p054"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p055"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p056"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p057"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p058"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p059"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p060"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p061"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p062"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p063"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p064"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p065"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p066"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p067"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p068"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p069"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p070"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p071"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p072"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p073"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p074"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p075"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p076"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p077"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
-    },
-    {
-      "paperIds": [
-        "p078"
-      ],
-      "provider": "arxiv",
-      "error": "No usable exact-ID metadata returned"
     }
   ],
+  "providers": {
+    "2608.27550": "arxiv-abstract",
+    "2607.01586": "arxiv-abstract",
+    "2607.11270": "arxiv-abstract",
+    "2607.15330": "arxiv-abstract",
+    "2608.05738": "arxiv-abstract",
+    "2608.03727": "arxiv-abstract",
+    "2607.05468": "arxiv-abstract",
+    "2608.07619": "arxiv-abstract",
+    "2608.05369": "arxiv-abstract",
+    "2607.11498": "arxiv-abstract",
+    "2608.01066": "arxiv-abstract",
+    "2608.05042": "arxiv-abstract",
+    "2608.26821": "arxiv-abstract",
+    "2608.08749": "arxiv-abstract",
+    "2608.16889": "arxiv-abstract",
+    "2608.16885": "arxiv-abstract",
+    "2608.24115": "arxiv-abstract",
+    "2608.16172": "arxiv-abstract",
+    "2608.29432": "arxiv-abstract",
+    "2608.00725": "arxiv-abstract",
+    "2607.28993": "arxiv-abstract",
+    "2607.04927": "arxiv-abstract",
+    "2607.00678": "arxiv-abstract",
+    "2607.02503": "arxiv-abstract",
+    "2608.22197": "arxiv-abstract",
+    "2607.27205": "arxiv-abstract",
+    "2607.06370": "arxiv-abstract",
+    "2608.27384": "arxiv-abstract",
+    "2608.29208": "arxiv-abstract",
+    "2607.02501": "arxiv-abstract",
+    "2608.04428": "arxiv-abstract",
+    "2607.06262": "arxiv-abstract",
+    "2607.04434": "arxiv-abstract",
+    "2602.01067": "arxiv-abstract",
+    "2606.25136": "arxiv-abstract",
+    "2601.21998": "arxiv-abstract",
+    "2512.15692": "arxiv-abstract",
+    "2606.18247": "arxiv-abstract",
+    "2603.13616": "arxiv-abstract",
+    "2602.12978": "arxiv-abstract",
+    "2604.05323": "arxiv-abstract",
+    "2507.17294": "arxiv-abstract",
+    "2508.05342": "arxiv-abstract",
+    "2109.12098": "arxiv-abstract",
+    "2112.03227": "arxiv-abstract",
+    "2202.02005": "arxiv-abstract",
+    "2204.01691": "arxiv-abstract",
+    "2209.05451": "arxiv-abstract",
+    "2212.06817": "arxiv-abstract",
+    "2302.00111": "arxiv-abstract",
+    "2303.03378": "arxiv-abstract",
+    "2303.04137": "arxiv-abstract",
+    "2304.13705": "arxiv-abstract",
+    "2306.03310": "arxiv-abstract",
+    "2307.15818": "arxiv-abstract",
+    "2310.08864": "arxiv-abstract",
+    "2311.01378": "arxiv-abstract",
+    "2312.13139": "arxiv-abstract",
+    "2403.12945": "arxiv-abstract",
+    "2405.12213": "arxiv-abstract",
+    "2410.07864": "arxiv-abstract",
+    "2410.24164": "arxiv-abstract",
+    "2501.09747": "arxiv-abstract",
+    "2501.15830": "arxiv-abstract",
+    "2503.14734": "arxiv-abstract",
+    "2503.20020": "arxiv-abstract",
+    "2504.16054": "arxiv-abstract",
+    "2506.01844": "arxiv-abstract",
+    "2509.09372": "arxiv-abstract",
+    "2511.14759": "arxiv-abstract",
+    "2601.16163": "arxiv-abstract",
+    "2602.15922": "arxiv-abstract",
+    "2603.16666": "arxiv-abstract"
+  },
+  "totalTracked": 75,
+  "dueCount": 73,
+  "dueRemaining": 0,
+  "dueDays": 7,
+  "checkedScope": "due subset, not discovery or acceptance certification",
   "manualSourceReview": [
     "p005",
     "p043",

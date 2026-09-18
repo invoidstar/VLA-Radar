@@ -7,7 +7,7 @@
     "team": "杭州电子科技大学／新墨西哥大学／牛津大学／乔治华盛顿大学／TUM等\nShunlei Li、Longsen Gao、Jin Wang、Jiuwen Cao等",
     "venue": "Information Fusion",
     "publicationType": "journal",
-    "publicationStatus": "Elsevier Information Fusion 131:104193\nDOI:10.1016/j.inffus.2026.104193\narXiv:2508.05342",
+    "publicationStatus": "正式发表于 Information Fusion；出版日期 2026-07；DOI:10.1016/j.inffus.2026.104193",
     "firstPublished": "2025-08-07",
     "dateNote": "",
     "collectionMonth": "2026-07",
@@ -49,16 +49,16 @@
     "doi": "10.1016/j.inffus.2026.104193"
   },
   "publication": {
-    "firstArxivAt": null,
-    "firstArxivSource": "",
-    "latestArxivVersion": null,
-    "latestArxivAt": null,
-    "status": "legacy",
+    "firstArxivAt": "2025-08-07",
+    "firstArxivSource": "https://arxiv.org/abs/2508.05342v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-02-06",
+    "status": "published",
     "venue": "Information Fusion",
     "doi": "10.1016/j.inffus.2026.104193",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": null,
+    "publishedAt": "2026-07",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -67,12 +67,36 @@
         "venue": "Information Fusion",
         "source": "https://arxiv.org/abs/2508.05342",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2025-08-07",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2508.05342v1",
+        "note": "arXiv Submission history v1（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-02-06",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2508.05342v2",
+        "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2026-07",
+        "observedAt": "2026-09-18",
+        "venue": "Information Fusion",
+        "source": "https://doi.org/10.1016/j.inffus.2026.104193",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-18",
     "verifiedAt": "2026-09-18",
     "version": "2508.05342v1；保留的公开HTML阅读快照，2026-09-18整理",

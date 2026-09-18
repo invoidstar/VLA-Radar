@@ -5,9 +5,9 @@
     "name": "VERITAS",
     "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
     "team": "普林斯顿大学\nMingtong Zhang、Dhruv Shah",
-    "venue": "RSS 2026",
+    "venue": "Robotics: Science and Systems XXII",
     "publicationType": "conference",
-    "publicationStatus": "RSS 2026，论文079\nDOI:10.15607/RSS.2026.XXII.079\narXiv:2606.18247",
+    "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.079",
     "firstPublished": "2026-06-16",
     "dateNote": "",
     "collectionMonth": "2026-07",
@@ -42,23 +42,27 @@
       {
         "label": "arXiv 元数据",
         "url": "https://arxiv.org/abs/2606.18247"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.15607/rss.2026.xxii.079"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2606.18247",
     "arxiv": "2606.18247",
-    "doi": "10.15607/RSS.2026.XXII.079"
+    "doi": "10.15607/rss.2026.xxii.079"
   },
   "publication": {
-    "firstArxivAt": null,
-    "firstArxivSource": "",
-    "latestArxivVersion": null,
-    "latestArxivAt": null,
-    "status": "legacy",
-    "venue": "RSS 2026",
-    "doi": "10.15607/RSS.2026.XXII.079",
+    "firstArxivAt": "2026-06-16",
+    "firstArxivSource": "https://arxiv.org/abs/2606.18247v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-06-16",
+    "status": "published",
+    "venue": "Robotics: Science and Systems XXII",
+    "doi": "10.15607/rss.2026.xxii.079",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": null,
+    "publishedAt": "2026-07-13",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -67,6 +71,30 @@
         "venue": "RSS 2026",
         "source": "https://arxiv.org/abs/2606.18247",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2026-06-16",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2606.18247v1",
+        "note": "arXiv Submission history v1（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-06-16",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2606.18247v1",
+        "note": "元数据版本 v1；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2026-07-13",
+        "observedAt": "2026-09-18",
+        "venue": "Robotics: Science and Systems XXII",
+        "source": "https://doi.org/10.15607/rss.2026.xxii.079",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
