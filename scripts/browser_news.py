@@ -27,7 +27,12 @@ try:
   while page.locator('#news-more').is_visible():
    old=page.locator('#news-match-count').inner_text();page.locator('#news-more').click();page.wait_for_function('(old)=>document.querySelector("#news-match-count").textContent!==old',arg=old)
   page.locator('#news-evidence').select_option('reported');yes('source filter isolates media',page.locator('.news-story').count()>=1 and page.locator('#news-20260915-heron-cra').count()==1);page.locator('#news-evidence').select_option('')
-  page.locator('#news-query').fill('不存在的新闻关键词');page.wait_for_timeout(250);yes('empty state honest and usable',page.locator('.news-empty').count()==1);page.locator('#news-reset').click();yes('reset restores current issue',page.locator('.news-story').count()>=3)
+  # Search is debounced; assert the observable result, not runner scheduling within 250ms.
+  page.locator('#news-query').fill('不存在的新闻关键词')
+  page.locator('#news-timeline .news-empty').wait_for(state='visible',timeout=5000)
+  yes('empty state honest and usable',page.locator('.news-empty').count()==1)
+  page.locator('#news-reset').click();page.locator('.news-story').first.wait_for(state='visible',timeout=5000)
+  yes('reset restores current issue',page.locator('.news-story').count()>=3)
   page.locator('#news-week').select_option('2026-W37');page.wait_for_selector('#news-20260911-unitree-er');yes('archive replaces not appends',page.locator('#news-20260916-xplanner').count()==0);yes('older issue explicitly marked','归档' in page.locator('#news-stale').inner_text());yes('partial release shown','部分开放' in page.locator('#news-20260911-unitree-er').inner_text())
   while page.locator('#news-more').is_visible():
    old=page.locator('#news-match-count').inner_text();page.locator('#news-more').click();page.wait_for_function('(old)=>document.querySelector("#news-match-count").textContent!==old',arg=old)
