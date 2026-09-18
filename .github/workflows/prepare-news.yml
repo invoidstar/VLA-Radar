@@ -1,0 +1,88 @@
+name: Prepare embodied weekly release
+on:
+  push:
+    branches: [release/batch-2026-09-18-embodied-weekly]
+    paths:
+      - 'maintenance/news-integration.json'
+      - 'maintenance/news-source-hashes.json'
+      - 'scripts/install_news_release.py'
+      - '.github/workflows/prepare-news.yml'
+permissions:
+  contents: write
+concurrency:
+  group: news-prepare-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Guarded integration and deterministic validation
+        run: |
+          set -eu
+          test "$GITHUB_REPOSITORY" = 'invoidstar/VLA-Radar'
+          python scripts/install_news_release.py
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Install browser test driver and CJK fonts
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then
+            python -m playwright install --with-deps chromium
+          fi
+          if ! fc-list :lang=zh | grep -q .; then
+            sudo apt-get update -qq
+            sudo apt-get install -y fonts-noto-cjk
+          fi
+      - name: Real HTTP existing and news browser regression
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+      - name: Preserve scientific sources and commit only validated release-branch outputs
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          test "$BRANCH" = 'release/batch-2026-09-18-embodied-weekly'
+          git diff --exit-code 87539bdedaaa507f64d900f674fee1f1f687c365 -- catalog/papers catalog/results catalog/benchmarks.json catalog/first-public.json catalog/manifest.json maintenance/state.json
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED_SHA" || { echo 'Branch changed; refusing overwrite'; exit 1; }
+          rm scripts/install_news_release.py maintenance/news-integration.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app.js index.html experience-loader.js experience.js README.md AGENTS.md MAINTENANCE.md CHANGELOG.md scripts tests maintenance catalog/news catalog/activity.json data news.js news-core.js news.css
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build and validate source-scoped weekly news without modifying papers or results'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: news-browser-${{ github.run_id }}
+          retention-days: 14
+          path: |
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: news-validated-source
+          retention-days: 14
+          path: |
+            catalog/
+            data/
+            maintenance/
+            scripts/
+            tests/
+            *.js
+            *.css
+            *.html
+            *.md
+            *.py
+            *.svg
