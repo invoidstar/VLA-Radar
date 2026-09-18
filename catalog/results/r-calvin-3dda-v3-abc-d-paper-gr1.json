@@ -1,0 +1,18 @@
+{
+  "id": "r-calvin-3dda-v3-abc-d-paper-gr1",
+  "paperId": "p088",
+  "method": "GR-1（引用）",
+  "trackId": "calvin-3dda-v3-abc-d-paper",
+  "values": {
+    "Average": 3.06
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2402.10885v3",
+  "sourceVersion": "arXiv 2402.10885v3 HTML",
+  "locator": "Table 4; §4.2 data scope and termination horizon",
+  "attribution": "reported-baseline",
+  "trainingData": "Lang；另有原方法视频预训练，按原论文引用。",
+  "evaluationNotes": "与本站GR-1源表属于同源引用，不是此次独立复现；前作单动作时限与轨迹控制不同。",
+  "supersedes": ""
+}

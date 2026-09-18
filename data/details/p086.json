@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p086",
+    "name": "RVT",
+    "title": "RVT: Robotic View Transformer for 3D Object Manipulation",
+    "team": "Ankit Goyal 等；NVIDIA",
+    "venue": "CoRL 2023",
+    "publicationType": "conference",
+    "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
+    "firstPublished": "2023-06-26",
+    "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
+    "collectionMonth": "2026-09",
+    "versionNote": "CoRL 2023 PMLR正式PDF（229:694–710）；§3–4、Tables 1–2、附录A；arXiv身份2306.14896v1",
+    "topics": [
+      "spatial",
+      "action",
+      "efficiency"
+    ],
+    "tags": [
+      "benchmark-source-audit",
+      "batch-2",
+      "full-source-reading"
+    ],
+    "priority": "deep",
+    "contribution": "将RGB-D重建点云重渲染为固定正交虚拟视图，用跨视图Transformer预测二维热图，再反投影选择下一关键位姿；避开直接对密集三维体素执行高成本特征推理。",
+    "findings": "CoRL 2023正式PDF Table 1：RLBench 18任务、100示范/任务，RVT平均成功率62.9%，作者重评PerAct为49.4%；RTX3090策略推理11.6与4.9 fps。36×指达到可比表现的训练加速，并非表中最终总训练时长之比。",
+    "limitations": "依赖深度、标定与外部运动规划；不是连续关节控制。Close Jar和Open Drawer未优于PerAct；Place Cups为4.0%。真机5任务平均56%，带细小marker任务为0，去除marker场景的82.5%不能替代完整结果。",
+    "insight": "核心是把空间决策变成多视图中可定位的预测，再明确还原回三维；收益既来自表征和投影，也来自可以利用的图像算子。它没有自动补全被遮挡几何或解决长程记忆。",
+    "readingFocus": "按§3的点云→虚拟视图→热图→三维位置链路读Figure 2，再核对Table 1的最终模型与重复评测；Table 2分开看视图、投影、深度和真机失败，不能把所有差值归因于Transformer。",
+    "evidence": "checked",
+    "evidenceNote": "已读取所标版本的方法、主实验、所引消融和附录；榜单数值按原表核对，均非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "实际阅读版本与原表",
+        "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+      },
+      {
+        "label": "正式发表与书目",
+        "url": "https://proceedings.mlr.press/v229/goyal23a.html"
+      },
+      {
+        "label": "arXiv版本历史",
+        "url": "https://arxiv.org/abs/2306.14896"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2306.14896",
+    "arxiv": "2306.14896",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-06-26",
+    "firstArxivSource": "https://arxiv.org/abs/2306.14896v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2023-06-26",
+    "status": "published",
+    "venue": "CoRL 2023",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": "2023-12-02",
+    "lastCheckedAt": "2026-09-18",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2023-06-26",
+        "observedAt": "2026-09-18",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2306.14896v1",
+        "note": "依据官方Submission history保留v1日期；与正式论文集出版时间分开。"
+      },
+      {
+        "kind": "published",
+        "date": "2023-12-02",
+        "observedAt": "2026-09-18",
+        "venue": "CoRL 2023",
+        "source": "https://proceedings.mlr.press/v229/goyal23a.html",
+        "note": "已核对正式会议论文集；仅保留来源给出的日期精度，不推测录用日。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-18",
+    "verifiedAt": "2026-09-18",
+    "version": "CoRL 2023 PMLR正式PDF（229:694–710）；§3–4、Tables 1–2、附录A；arXiv身份2306.14896v1",
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "title": "问题定位：像素理解之后，还要知道机械臂去哪里",
+        "body": "RVT讨论的是带语言目标的多任务三维操作：输入当前场景，输出接下来应该到达的末端位姿，而不是生成一段解释文本。PerAct已经说明三维空间表征有用，但密集体素上的特征编码会占用较多计算。RVT提出把同一份观测转换到若干固定虚拟视角，在二维网格上学习可定位的动作，再把多个预测投回三维。\n这里的“多视图”是表征方式，不等于必须安装五台真实相机，更不等于使用视频生成器凭空画出未看见的物体。模型仍只利用输入RGB-D能重建的几何。阅读时应分别问：语言是否选对目标、位置是否准确、姿态是否可执行、规划器能否抵达。一个总体成功率不能独自定位这四类错误。",
+        "sources": [
+          {
+            "label": "§1、§3；Figure 2（正式PDF p.3）",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "场景输入：真实相机与虚拟相机是两层不同的东西",
+        "body": "先用真实相机的深度和标定参数把像素反投影成机器人坐标系中的点云，再从机器人周围的前、后、左、右、上方渲染五幅正交视图。每幅虚拟图不仅有RGB，还带深度及三维坐标通道，共同让不同视角的像素能指向同一空间位置。正交投影还减少了远近尺度变化与透视畸变。\n真实传感器的覆盖、点云噪声和遮挡不会被这一步消除。比如细长物体的深度缺失会直接影响后续热图定位；把一个错误点投到五个视角，只会重复该错误而非新增独立观测。作者把机器人基座附近的固定视角作为空间归纳偏置，而不是依赖某台相机恰好处在最佳拍摄位置。",
+        "sources": [
+          {
+            "label": "§3 Multi-view Representation；Figure 2；Table 2",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "特征融合：先处理单视图，再让语言和视图互相校正",
+        "body": "虚拟图像被切成patch；220×220图像以11像素patch形成20×20的token网格，语言使用CLIP文本特征，夹爪状态也编码到输入中。不要将这误写为“整个视觉策略直接使用CLIP视觉主干”：RVT的主要视觉推理由多视图Transformer承担。附录说明，前四层先在每个图像内部进行注意力，后四层才进行跨视图及语言交互。\n这种分层先保留局部图像结构，再建立跨视图对应关系。三维坐标通道减轻了网络自行发现对应点的负担，语言则帮助从多个相似物体中选出当前目标。我的理解是，性能收益来自几何、标定和任务语义配合，而非单纯增加注意力层数；单视图前处理被移除时的退化，为这一结构安排提供了局部实验支持。",
+        "sources": [
+          {
+            "label": "§3 Multi-view Transformer；附录A网络结构；Table 2",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "title": "动作输出：二维热图不是终点，规划器也不是模型的一层",
+        "body": "网络为每个虚拟视图预测位置热图，随后在工作空间的三维网格上查询各视图的投影分数并汇总，选出下一关键帧的末端位置。候选位置不必局限于物体表面已有的点云点，因为末端可能需要悬停或经过空中。旋转按欧拉角离散为5度间隔，另有夹爪开闭与碰撞处理指示。\n旋转等输出还利用各视图的全局特征，包括最大池化和热图加权的空间聚合。预测关键位姿之后，外部采样式运动规划器负责生成到达该位姿的关节动作；到达后再观察并预测下一点。因此，策略网络的fps不等于真实机器人包含规划、执行和相机延迟的闭环频率，轨迹失败也可能发生在规划阶段。",
+        "sources": [
+          {
+            "label": "§3 Action Prediction、Loss Function；§4.1执行设置",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "title": "监督与预算：关键帧行为克隆，而不是在线强化学习",
+        "body": "训练样本来自示范轨迹及自动提取的关键帧，监督包括目标三维位置在各视图的高斯热图、旋转类别、夹爪状态和碰撞标志。相应使用热图交叉熵、旋转分类损失与二元分类损失；本文主策略不是靠在线交互奖励优化。平移和绕竖直轴旋转的数据增强在三维重渲染前执行。\nRLBench训练为18任务各100条示范，共1800条；四台真实模拟相机提供128×128无噪RGB-D。RVT在八张V100上训练约100k步、批量24，论文给出总时长约一天。最终模型在每任务25个测试episode上重复运行五次，以反映采样规划器造成的随机性。这五次不能改写成五个独立训练种子。",
+        "sources": [
+          {
+            "label": "§4.1 Training and Evaluation Details；正式PDF pp.5–6",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s6",
+        "title": "主结果如何读：平均提高，不代表每项任务都领先",
+        "body": "正式论文Table 1给出RVT平均成功率62.9%，作者使用公开最终模型重评的PerAct为49.4%，相差13.5个百分点。对应RTX3090推理为11.6与4.9 fps。文中的36倍训练加速比较的是达到相近表现所需时间；表中完整训练是1天与16天，二者不是同一个分母，不能混用。\n逐任务看，RVT在Close Jar为52.0%，低于PerAct的55.2%；Open Drawer为71.2%，低于88.0%。插孔只有11.2%，放杯子4.0%，说明精细接触和连续步骤仍明显受限。本批保存完整18任务列及原表平均值，不从后续论文替换表现不好的任务，也不把引用相同成绩的另一张表当作第二次独立实验。",
+        "sources": [
+          {
+            "label": "Table 1（已查看正式PDF p.5原表）；§4.1",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "title": "消融归因：固定视角、空间对应和分辨率共同起作用",
+        "body": "Table 2中完整RVT为62.9%，降低图像分辨率到100后为51.1%；去掉三维对应通道为59.7%，去深度为60.3%，去单视图前处理为58.4%。正交改为透视投影后为40.2%。这些对照说明空间表征细节不是无关实现，不能把提升全都概括为“Transformer融合更好”。\n五个虚拟视图改成三个为60.2%，只用一个前视图为35.8%；这测试的是模型使用的虚拟表征，不是任意相机数量定律。直接使用传感器透视视图为10.4%，同时改变了投影、对齐及增强便利性，因此不是一个只隔离渲染成本的实验。单因素结果也不足以证明多个改动的贡献可以简单相加。",
+        "sources": [
+          {
+            "label": "Table 2左（已查看正式PDF p.7原表）；§4.1消融",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "title": "真机与负结果：细小物体和场景组成改变结论",
+        "body": "真机实验共五类任务、51条训练示范、50次测试；完整设置的RVT平均为56%，PerAct为28%。其中堆块RVT为100%，按压消毒液为80%，放marker进入杯碗为0%，抽屉与架子放置各50%。这些小样本结果能支持可部署性探索，却不足以推出对任意家庭物体都可靠。\n原表另给出去掉marker物体后的场景结果，RVT为82.5%。这不只是从原平均里删去一个0分任务：其余任务的场景对象也发生变化。因此本站保留完整设置，不拿更高的子设置替代56%。作者讨论深度难以处理细小或薄物体；附录点云噪声实验还同时在训练和测试加入噪声，不应与仅测试期扰动的鲁棒性成绩直接比较。",
+        "sources": [
+          {
+            "label": "Table 2右、§4.2；附录A点云噪声与真实传感器局限",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "title": "贡献边界与阅读路线：高效空间策略，不是通用机器人解法",
+        "body": "RVT的核心可借鉴点，是用可逆投影关系把三维动作定位转化为二维学习问题，并保留跨视图一致性；它不是单纯将多幅RGB拼接，也没有通过预训练获得开放世界任务覆盖。输出仍是关键位姿，长期任务记忆、失败后的系统性重规划和动态接触控制并未在这一架构中完整解决。\n建议先沿Figure 2逐步跟踪一个目标点如何投影与反投影，再看Table 1的逐任务失败，最后读Table 2区分数据、几何和系统效率。本站使用CoRL正式PDF的表号和数字，arXiv v1首发日单独保留。之后的RVT-2、COLOSSEUM重评和其他论文引用属于不同报告上下文，不能悄悄覆盖这一历史记录。",
+        "sources": [
+          {
+            "label": "§3–5；Figure 2；Tables 1–2；附录A",
+            "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+          }
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "title": "从点云到虚拟视图再到动作",
+        "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf#page=3",
+        "caption": "作者Figure 2；注意真实RGB-D输入与五个虚拟视角的区别，并追踪热图回到三维关键位姿的位置。仅链接原图。"
+      },
+      {
+        "title": "逐任务结果与消融",
+        "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf#page=7",
+        "caption": "作者Table 2；左侧是视图/投影等消融，右侧包含marker失败及改变场景后的真机结果，不能只看较高的子设置均值。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "原表中的总体收益与局部退化",
+        "columns": [
+          "指标/任务",
+          "PerAct",
+          "RVT"
+        ],
+        "rows": [
+          [
+            "RLBench 18任务平均成功率",
+            "49.4%",
+            "62.9%"
+          ],
+          [
+            "Close Jar",
+            "55.2%",
+            "52.0%"
+          ],
+          [
+            "Open Drawer",
+            "88.0%",
+            "71.2%"
+          ],
+          [
+            "Place Cups",
+            "2.4%",
+            "4.0%"
+          ],
+          [
+            "策略推理 RTX3090",
+            "4.9 fps",
+            "11.6 fps"
+          ]
+        ],
+        "locator": "CoRL 2023正式PDF Table 1, p.5",
+        "caption": "作者报告；PerAct最终模型由RVT作者重评。fps不含真实系统的完整闭环；不同指标不组成综合排名。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-18",
+      "note": "本批已完成原表、任务集合、观测和执行条件核验；对应track/result ID见公开维护台账，作者报告而非本站复现。"
+    }
+  }
+}

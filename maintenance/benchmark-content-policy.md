@@ -25,3 +25,7 @@ RoboTwin50×50clean的co-train与每任务独立checkpoint分开；2,500clean与
 ## 同名或近名方法的身份核验
 
 官网方法名不能靠关键词或相似标题直接绑定paperId。须核对原始论文链接、arXiv/DOI、作者和明确的版本/变体关系；例如4D-WAM与MECo-WAM不能因为都含4D几何就归为同篇。缺少对应全文或身份映射的结果先保存在候选审计，不进入正式榜单，也不能据此把旧论文的benchmarkReview提升为extracted。
+
+## 第二批已完成范围
+
+`maintenance/benchmark-source-audit-20260918-batch2.json` 记录RVT、RVT-2、3D Diffuser Actor和THE COLOSSEUM的正文级回补与来源链。先按现有arXiv/DOI去重再处理历史候选；旧审计是当时快照，不能将已收录条目再作为新论文重复添加。RVT/RVT-2的重复规划执行不是独立训练种子；3D Diffuser Actor不是DP3；CALVIN轨迹时限不等于单动作时限；COLOSSEUM原始20任务与后续子协议分开。所有引用基线归属实际报告论文，不因新增原表行而宣称增加了同等数量的方法论文。

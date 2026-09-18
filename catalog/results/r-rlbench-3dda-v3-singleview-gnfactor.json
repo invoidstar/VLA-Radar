@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-3dda-v3-singleview-gnfactor",
+  "paperId": "p088",
+  "method": "GNFactor（引用）",
+  "trackId": "rlbench-3dda-v3-singleview",
+  "values": {
+    "Average": 31.7,
+    "Close Jar": 25.3,
+    "Open Drawer": 76,
+    "Sweep to Dustpan": 28,
+    "Meat off Grill": 57.3,
+    "Turn Tap": 50.7,
+    "Slide Block": 20,
+    "Put in Drawer": 0,
+    "Drag Stick": 37.3,
+    "Push Buttons": 18.7,
+    "Stack Blocks": 4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2402.10885v3",
+  "sourceVersion": "arXiv 2402.10885v3 HTML",
+  "locator": "Table 2; §4.1 single-view setup",
+  "attribution": "reported-baseline",
+  "trainingData": "10任务×100示范；单前方RGB-D；详见所引方法配方。",
+  "evaluationNotes": "按GNFactor论文引用的单视图基线，非本站复现，标准差未报告处不补造。",
+  "supersedes": ""
+}

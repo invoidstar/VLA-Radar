@@ -1,0 +1,18 @@
+{
+  "id": "r-calvin-3dda-v3-abc-d-paper-chaineddiffuser",
+  "paperId": "p088",
+  "method": "ChainedDiffuser（本文作者适配）",
+  "trackId": "calvin-3dda-v3-abc-d-paper",
+  "values": {
+    "Average": 0.84
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2402.10885v3",
+  "sourceVersion": "arXiv 2402.10885v3 HTML",
+  "locator": "Table 4; §4.2 data scope and termination horizon",
+  "attribution": "reported-baseline",
+  "trainingData": "Lang；60 keyposes设置；最终checkpoint、3种子。",
+  "evaluationNotes": "原表0.84±0.02；与程序生成关键点相比，CALVIN人类play关键点更不规则，这是作者提出的局部解释。",
+  "supersedes": ""
+}

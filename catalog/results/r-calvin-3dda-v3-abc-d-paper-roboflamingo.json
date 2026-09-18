@@ -1,0 +1,18 @@
+{
+  "id": "r-calvin-3dda-v3-abc-d-paper-roboflamingo",
+  "paperId": "p088",
+  "method": "RoboFlamingo（引用）",
+  "trackId": "calvin-3dda-v3-abc-d-paper",
+  "values": {
+    "Average": 2.48
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2402.10885v3",
+  "sourceVersion": "arXiv 2402.10885v3 HTML",
+  "locator": "Table 4; §4.2 data scope and termination horizon",
+  "attribution": "reported-baseline",
+  "trainingData": "Lang；原方法视觉语言预训练与控制配方，按原论文引用。",
+  "evaluationNotes": "不同预训练、控制及终止预算；不从本表替换原论文版本，方差未给不补造。",
+  "supersedes": ""
+}

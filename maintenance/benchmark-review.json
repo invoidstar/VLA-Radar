@@ -830,6 +830,72 @@
         "r-robodojo-real-xpolicylab-v3-sr-0"
       ],
       "note": "2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p086": {
+      "status": "extracted",
+      "trackIds": [
+        "rlbench-rvt-corl2023-table1"
+      ],
+      "resultIds": [
+        "r-rlbench-rvt-corl2023-table1-rvt",
+        "r-rlbench-rvt-corl2023-table1-peract"
+      ],
+      "note": "第二批完成2条原表结果核验；按观测、任务集合、时限与报告版本分轨，不是2篇新论文或独立复现。"
+    },
+    "p087": {
+      "status": "extracted",
+      "trackIds": [
+        "rlbench-rvt2-v1-table1"
+      ],
+      "resultIds": [
+        "r-rlbench-rvt2-v1-table1-rvt2",
+        "r-rlbench-rvt2-v1-table1-rvt",
+        "r-rlbench-rvt2-v1-table1-peract",
+        "r-rlbench-rvt2-v1-table1-act3d"
+      ],
+      "note": "第二批完成4条原表结果核验；按观测、任务集合、时限与报告版本分轨，不是4篇新论文或独立复现。"
+    },
+    "p088": {
+      "status": "extracted",
+      "trackIds": [
+        "rlbench-3dda-v3-multiview",
+        "rlbench-3dda-v3-singleview",
+        "calvin-3dda-v3-abc-d-paper"
+      ],
+      "resultIds": [
+        "r-rlbench-3dda-v3-multiview-3dda",
+        "r-rlbench-3dda-v3-multiview-act3d-retrained",
+        "r-rlbench-3dda-v3-multiview-rvt",
+        "r-rlbench-3dda-v3-multiview-peract",
+        "r-rlbench-3dda-v3-singleview-3dda",
+        "r-rlbench-3dda-v3-singleview-act3d",
+        "r-rlbench-3dda-v3-singleview-gnfactor",
+        "r-calvin-3dda-v3-abc-d-paper-3dda",
+        "r-calvin-3dda-v3-abc-d-paper-dp3-adapted",
+        "r-calvin-3dda-v3-abc-d-paper-chaineddiffuser",
+        "r-calvin-3dda-v3-abc-d-paper-gr1",
+        "r-calvin-3dda-v3-abc-d-paper-roboflamingo",
+        "r-calvin-3dda-v3-abc-d-paper-susie"
+      ],
+      "note": "第二批完成13条原表结果核验；按观测、任务集合、时限与报告版本分轨，不是13篇新论文或独立复现。"
+    },
+    "p089": {
+      "status": "extracted",
+      "trackIds": [
+        "colosseum-original-v2-no-variations",
+        "colosseum-original-v2-all-variations"
+      ],
+      "resultIds": [
+        "r-colosseum-original-v2-no-variations-peract",
+        "r-colosseum-original-v2-no-variations-r3m-mlp",
+        "r-colosseum-original-v2-no-variations-mvp-mlp",
+        "r-colosseum-original-v2-no-variations-rvt",
+        "r-colosseum-original-v2-all-variations-peract",
+        "r-colosseum-original-v2-all-variations-r3m-mlp",
+        "r-colosseum-original-v2-all-variations-mvp-mlp",
+        "r-colosseum-original-v2-all-variations-rvt"
+      ],
+      "note": "第二批完成8条原表结果核验；按观测、任务集合、时限与报告版本分轨，不是8篇新论文或独立复现。"
     }
   }
 }
