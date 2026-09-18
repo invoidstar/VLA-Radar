@@ -5,6 +5,7 @@ on:
     paths:
       - 'maintenance/runtime-staging/**'
       - 'scripts/apply_runtime_upgrade.py'
+      - 'scripts/finalize_runtime_compat.py'
       - '.github/workflows/runtime-upgrade.yml'
 permissions:
   contents: write
@@ -23,6 +24,7 @@ jobs:
         run: |
           set -eu
           python scripts/apply_runtime_upgrade.py
+          python scripts/finalize_runtime_compat.py
           python scripts/build_catalog.py
           python scripts/validate_all.py
       - name: Real browser HTTP and worker verification
@@ -48,7 +50,7 @@ jobs:
         run: |
           set -eu
           python scripts/build_catalog.py
-          python scripts/validate_all.py > /tmp/radar-validation.log 2>&1
+          python scripts/validate_all.py > /tmp/radar-validation.log 2>&1 || { cat /tmp/radar-validation.log; exit 1; }
           python - <<'PY'
           import json,hashlib,sys
           from pathlib import Path
@@ -93,4 +95,12 @@ jobs:
             /tmp/radar-browser/
             /tmp/radar-*.json
             /tmp/radar-validation.log
+            catalog/
+            data/
+            maintenance/
+            scripts/
+            tests/
+            *.js
+            *.css
+            *.html
           retention-days: 14
