@@ -99,7 +99,6 @@
     "r-robodojo-real-xpolicylab-v3-sr-0",
     "r-robotwin2-official-2500clean-cotrain-cotrain-pi-05",
     "r-robotwin2-official-2500clean-cotrain-cotrain-fastwam",
-    "r-robotwin2-official-2500clean-cotrain-cotrain-4d-wam",
     "r-robotwin2-official-2500clean-sft-sft-rdt",
     "r-robotwin2-official-2500clean-sft-sft-pi0",
     "r-robotwin2-official-2500clean-sft-sft-act",
@@ -242,7 +241,7 @@
         67.6,
         27.9,
         8.5,
-        36.0
+        36
       ]
     }
   ],
@@ -580,6 +579,34 @@
       "source": "https://dexmimicgen.github.io/",
       "paper": "https://arxiv.org/abs/2410.24185",
       "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+    },
+    {
+      "method": "4D-WAM",
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "paper": "https://arxiv.org/abs/2608.08023",
+      "reason": "官网4D-WAM成绩不能仅按4D关键词关联到p008 MECo-WAM（arXiv:2607.05468）。检索到具不同作者/标题的4D-WAM（arXiv:2608.08023），但本次未取得可阅读全文并核对提交身份的材料，暂回候选。数字不因身份未核对而变成MECo-WAM的成绩。",
+      "status": "identity-and-full-reading-pending",
+      "excludedPaperId": "p008",
+      "pendingResult": {
+        "id": "r-robotwin2-official-2500clean-cotrain-cotrain-4d-wam",
+        "paperId": "p008",
+        "method": "4D-WAM",
+        "trackId": "robotwin2-official-2500clean-cotrain",
+        "values": {
+          "Clean": 81.5,
+          "Random": 41.8,
+          "Average": 61.65
+        },
+        "evidence": "checked",
+        "verifiedAt": "2026-09-18",
+        "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+        "sourceVersion": "official JSON updated 2026-09-01",
+        "locator": "entries[id=cotrain:4D_WAM];easy_mean/hard_mean",
+        "attribution": "reported-baseline",
+        "trainingData": "50 demo_clean x 50 tasks (2,500 demos); cotrain",
+        "evaluationNotes": "由OpenHelix Robotics提供；XPolicyLab接口；listed_at=26.08.18；源码快照核验2026-09-18，不是实际评测日期。",
+        "supersedes": ""
+      }
     }
   ],
   "notes": [
@@ -587,7 +614,8 @@
     "既有论文阅读正文/verifiedAt不因新增官网结果而重写；只更新benchmarkReview。",
     "官方分数并非本站复现，外部预训练与步数不同的对照不排名；原表/官网快照不是独立重复试验。",
     "RLDX混合真实指标、PRTS平均冲突、GWP clean87/86冲突与DP3 v1/v7差异均可见。",
-    "本批仅补已完成全文及原表核验项目；未对应完整论文者保留候选，不凑数。"
+    "本批仅补已完成全文及原表核验项目；未对应完整论文者保留候选，不凑数。",
+    "发布前续审：修正RoboCasa v1 HTML图号和原表定位，并将误关联MECo-WAM的4D-WAM一行退回候选。保留85篇论文、58赛道，正式候选结果182条（相对main新增77）；未重命名原成绩为其他论文，不声称183条全部已审核可发布。"
   ],
   "sourceSnapshots": [
     {
@@ -1144,5 +1172,5 @@
     }
   ],
   "calvinOfficialExcerptScope": "Official README retrieved; leaderboard and additional implementation links discovered, no claim of complete paper-level audit.",
-  "deferredCount": 49
+  "deferredCount": 50
 }
