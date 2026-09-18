@@ -132,11 +132,14 @@ jobs:
                   page=browser.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
                   for pid,name in [('p090','Act3D'),('p091','GNFactor'),('p092','ChainedDiffuser')]:
                       page.goto(f'http://127.0.0.1:{port}/?view=reader&paper={pid}',wait_until='networkidle')
-                      expect(page.locator('.reader-chapter')).to_have_count(9)
+                      expect(page.locator('.reader-chapter:not(#reader-evidence)')).to_have_count(9)
+                      expect(page.locator('#reader-evidence')).to_have_count(1)
+                      expect(page.locator('.reader-chapter:not(#reader-evidence) .chapter-sources')).to_have_count(9)
                       assert name in page.locator('body').inner_text()
+                      if pid=='p092':assert '首次公开 未核验' in page.locator('.reader-meta').inner_text()
                       page.screenshot(path=f'/tmp/radar-batch3/{pid}-reader.png')
                   assert not errors
-                  Path('/tmp/radar-batch3/new-readers.json').write_text(json.dumps({'status':'pass','papers':['p090','p091','p092'],'chaptersPerPaper':9,'uncaughtErrors':errors,'scope':'Actual HTTP Chromium, not physical-device/public-network measurements'}))
+                  Path('/tmp/radar-batch3/new-readers.json').write_text(json.dumps({'status':'pass','papers':['p090','p091','p092'],'chaptersPerPaper':9,'supplementaryEvidenceSectionsPerPaper':1,'uncaughtErrors':errors,'scope':'Actual HTTP Chromium, not physical-device/public-network measurements'}))
                   browser.close()
           finally:server.terminate();server.wait()
           PY
