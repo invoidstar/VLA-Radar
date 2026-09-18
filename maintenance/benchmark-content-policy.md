@@ -29,3 +29,7 @@ RoboTwin50×50clean的co-train与每任务独立checkpoint分开；2,500clean与
 ## 第二批已完成范围
 
 `maintenance/benchmark-source-audit-20260918-batch2.json` 记录RVT、RVT-2、3D Diffuser Actor和THE COLOSSEUM的正文级回补与来源链。先按现有arXiv/DOI去重再处理历史候选；旧审计是当时快照，不能将已收录条目再作为新论文重复添加。RVT/RVT-2的重复规划执行不是独立训练种子；3D Diffuser Actor不是DP3；CALVIN轨迹时限不等于单动作时限；COLOSSEUM原始20任务与后续子协议分开。所有引用基线归属实际报告论文，不因新增原表行而宣称增加了同等数量的方法论文。
+
+## 第三批原方法回补记录
+
+`benchmark-source-audit-20260918-batch3.json`记录Act3D、GNFactor、ChainedDiffuser三篇原报告的完成范围。历史审计保留发现过程，后续候选去重应同时对照最新paperOrder、arXiv/DOI/规范标题与各批resolved字段，而非仅因旧deferred数组仍有名称就再次新增。GNFactor的20示范最终/最佳检查点、额外训练视角，以及Act3D和ChainedDiffuser的不同任务规模与执行接口必须保留。未知最早公开日可以留null；正式出版日期有证据也不能自动代填为首次公开日。

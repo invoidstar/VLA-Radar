@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-gnfactor-v3-best20-peract",
+  "paperId": "p091",
+  "method": "PerAct",
+  "trackId": "rlbench-gnfactor-v3-best20",
+  "values": {
+    "close_jar": 22.7,
+    "open_drawer": 62.7,
+    "sweep_to_dustpan": 0,
+    "meat_off_grill": 46.7,
+    "turn_tap": 36,
+    "slide_block": 22.7,
+    "put_in_drawer": 9.3,
+    "drag_stick": 12,
+    "push_buttons": 18.7,
+    "stack_blocks": 5.3,
+    "Average": 23.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2308.16891v3",
+  "sourceVersion": "arXiv2308.16891v3; cross-checked formal PMLR PDF",
+  "locator": "Appendix E, Table 7; formal PDF p.17",
+  "attribution": "reported-baseline",
+  "trainingData": "20 demos/task; 10-task joint model;100k steps,batch2,2 RTX3090; GNFactor adds 19 training RGB views and pretrained SD semantic teacher.",
+  "evaluationNotes": "这是作者明确标为参考的最佳检查点选择，不能覆盖Table 1的最终31.7/20.4，也不以消融36.8替换。",
+  "supersedes": ""
+}

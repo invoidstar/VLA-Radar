@@ -1,0 +1,18 @@
+{
+  "id": "r-rlbench-act3d-corl2023-74single-hiveformer",
+  "paperId": "p090",
+  "method": "HiveFormer",
+  "trackId": "rlbench-act3d-corl2023-74single",
+  "values": {
+    "Average": 65
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://proceedings.mlr.press/v229/gervet23a/gervet23a.pdf",
+  "sourceVersion": "CoRL2023 PMLR229 formal PDF",
+  "locator": "Figure 3, Average bar numeric label; §4.1; PDF p.6",
+  "attribution": "reported-baseline",
+  "trainingData": "100 demos/task; single-task models",
+  "evaluationNotes": "作者图中明确标注的整数均值，未从柱高估计；跨方法预训练/预算和原引用评测不完全统一。非18任务联合训练，也非五任务消融。",
+  "supersedes": ""
+}

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p091",
+    "name": "GNFactor",
+    "title": "GNFactor: Multi-Task Real Robot Learning with Generalizable Neural Feature Fields",
+    "team": "Yanjie Ze 等；SJTU、UC San Diego、HKU、AWS AI",
+    "venue": "CoRL 2023",
+    "publicationType": "conference",
+    "publicationStatus": "正式会议论文集已核对；PMLR出版日2023-12-02，具体录用日未核实。",
+    "firstPublished": "2023-08-31",
+    "dateNote": "按arXiv v1 Submission history保留首发UTC日期；与正式出版和新版更新时间分开。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 2308.16891v3完整HTML，§3–5、Appendices C–G及Tables 1–4、7–9；主要表格另对照CoRL正式PDF",
+    "topics": [
+      "spatial",
+      "pretraining",
+      "action"
+    ],
+    "tags": [
+      "benchmark-source-audit",
+      "batch-3",
+      "full-source-reading"
+    ],
+    "priority": "deep",
+    "contribution": "用可泛化神经特征场联合重建RGB和视觉教师语义，与PerAct式策略共享三维体积，使少示范动作监督同时获得跨视角结构约束。",
+    "findings": "arXiv v3 Table 1：RLBench 10任务、20示范/任务、最终检查点31.7%，单视图PerAct20.4%；六种泛化变化28.3%对18.0%。最佳检查点40.0%另列。",
+    "limitations": "推理单前视RGB-D，但模拟训练使用19个额外RGB视角；最终31.7、消融36.8、最佳40.0不可混用。部分任务零成功或退化。",
+    "insight": "重点是训练期几何与语义辅助监督如何塑造动作读取的共享表示，而非把NeRF重建质量当作控制能力。",
+    "readingFocus": "沿Figure 3区分两条训练路径，先数清训练与部署相机，再分别读Tables 1、2、4、7。",
+    "evidence": "checked",
+    "evidenceNote": "已读取所标正文、方法、实验与相关附录，核对原生表格或正式PDF表格图像；作者报告及引用基线，不是本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "实际阅读版本与原表",
+        "url": "https://arxiv.org/html/2308.16891v3"
+      },
+      {
+        "label": "正式发表与作者书目",
+        "url": "https://proceedings.mlr.press/v229/ze23a.html"
+      },
+      {
+        "label": "arXiv提交历史",
+        "url": "https://arxiv.org/abs/2308.16891"
+      },
+      {
+        "label": "PMLR官方issued元数据；不是录用日",
+        "url": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-ze23a.md"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2308.16891",
+    "arxiv": "2308.16891",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2023-08-31",
+    "firstArxivSource": "https://arxiv.org/abs/2308.16891v1",
+    "latestArxivVersion": "v3",
+    "latestArxivAt": "2024-07-28",
+    "status": "published",
+    "venue": "CoRL 2023",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": "2023-12-02",
+    "lastCheckedAt": "2026-09-18",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2023-08-31",
+        "observedAt": "2026-09-18",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2308.16891v1",
+        "note": "v1提交历史，最新修订不覆盖首发。"
+      },
+      {
+        "kind": "published",
+        "date": "2023-12-02",
+        "observedAt": "2026-09-18",
+        "venue": "CoRL 2023",
+        "source": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-ze23a.md",
+        "note": "官方PMLR源记录date与issued字段；会议年份不是录用或最早公开日。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-18",
+    "verifiedAt": "2026-09-18",
+    "version": "arXiv 2308.16891v3完整HTML，§3–5、Appendices C–G及Tables 1–4、7–9；主要表格另对照CoRL正式PDF",
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2308.16891v3"
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "title": "研究问题：少示范下的动作标签不足以学好场景表征",
+        "body": "GNFactor关注语言条件多任务行为克隆：仅用少量机器人示范，如何同时理解场景结构、物体语义和下一步动作。它沿用PerAct式关键位姿决策，但为共享三维表示加入可泛化神经特征场，用其他视角的RGB和预训练视觉语义作为辅助监督，补充动作标签没有覆盖的场景信息。\n贡献重点并不是重新发明Perceiver动作头，而是让三维体积同时服务于视图重建、语义特征重建和动作预测。这里的可泛化，是同一个编码器对新观测前向生成场景表示，不是在测试时为每个新场景重新优化NeRF。也不应把这类场景重建误写成显式预测动作导致的未来状态。",
+        "sources": [
+          {
+            "label": "§1–3；Figure 3；Appendix C",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "训练与推理输入：单视角部署不等于训练只用单视角",
+        "body": "推理时输入一个已标定前视RGB-D图像、语言和机器人状态，将点云体素化后供策略使用。但神经特征场的训练还收集额外RGB视图：模拟中19个，真实环境中2个；这些视图不必都带深度。论文中的单相机优势应理解为部署传感器需求，而不是没有使用额外训练监督。\n共享场景编码器从100×100×100体素生成每体素128维表示；方法概述突出RGB通道，附录实现还描述坐标、索引和占据信息，因此不能把示意图简化输入当完整实现。额外相机位置、外参精度和采集成本是方法的组成条件，与原始单视角PerAct比较时必须可见，不能把全部差异归因于一个网络模块。",
+        "sources": [
+          {
+            "label": "§3.1–3.2；Appendix C；Figure 2；正式PDF pp.4、15–16",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "神经特征场：把二维教师语义约束到共享三维体积",
+        "body": "对任意三维查询点，模型从离散体积中三线性插值获得128维特征，结合坐标与观察方向预测密度、颜色和512维视觉语义。沿相机射线进行体渲染，得到目标视角RGB及教师特征；教师使用Stable Diffusion提取的视觉表示，而不是生成一幅想象图再当作真实观测。\n训练将重建损失反传到场景编码器，促使同一三维表示同时保持跨视角结构和语义。粗采样均匀取点，细采样混合深度引导和均匀点，提高表面附近监督效率。该表示可能仍然模糊：联合动作学习并不保证像素重建最优。作者也观察到移除行为克隆、只学重建会改善画质，因此重建好坏不能直接当作策略成功的替代指标。",
+        "sources": [
+          {
+            "label": "§3.2；Figure 3；§4.3；Appendices C、G",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "title": "动作读取与损失：Q头命名并不意味着在做强化学习",
+        "body": "深层体积被切成patch后，与CLIP语言token和机器人自身状态送入Perceiver，以少量潜在token读取较大的三维输入。输出包括下一关键位姿的位置、离散旋转、夹爪开闭和碰撞避免标志；其中Q_trans等名称表示动作位置或类别的预测分数，训练来自示范监督，不是通过Bellman目标或在线奖励进行价值学习。\n论文用360/5的旋转输出形式，表示按5度间隔编码；正文又写R=5 bins，表述有歧义，不能照抄成每轴仅五类。预测的关键位姿在模拟由RRT-connect、真机xArm7由线性规划器执行。GNF重建分支是训练辅助，不需要测试时逐场景拟合，外部路径生成与控制依然属于完整系统开销。",
+        "sources": [
+          {
+            "label": "§3.1、§3.3；动作输出维数与Appendix C；Figure 3",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "title": "训练预算与检查点：31.7、36.8、40.0不是同一结果",
+        "body": "主实验为10个RLBench任务、166种变化，每任务20条示范；训练100k步、批量2，使用两张RTX3090约两天。模拟中重建和特征损失权重均为0.01，射线批量512；真实实验调整了重建和动作损失权重，不能直接套用模拟配方。教师模型已预训练，GNF与策略联合从头优化不等于整个系统没有外部预训练知识。\n主表评测最后的检查点：每任务25次、三个训练种子；10任务合计750次执行。Table 1平均31.7%，Table 7从多个保存点选最佳为40.0%，而Table 4消融参考行36.8%。本文没有把三者建立为完全相同统计口径，因此本批将最终与最佳分开，36.8只用于消融讨论，不拿最大数字覆盖主结果。",
+        "sources": [
+          {
+            "label": "§4.1；Tables 1、4、7、9；Appendices E、G",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s6",
+        "title": "主表与泛化：平均更高，仍有任务退化和零成功",
+        "body": "Table 1中GNFactor平均31.7%，单视图PerAct20.4%，四相机PerAct22.7%。扫物入簸箕从0提高到28.0%，开抽屉从54.7提高到76.0%；但放入抽屉GNFactor仍为0，堆块4.0低于单视图PerAct6.7，取烤架肉也低于四相机PerAct。原文按任务给出标准差，这些均值不是每个任务都稳定领先的证据。\nTable 2另有六种泛化变化，每项20次、三个种子，平均为28.3%与18.0%。改变大方块的slide条件下GNFactor25.0低于PerAct33.3，小方块则两者都低。这里的新任务主要是物体大小、位置或干扰变化，不代表获得全新动作技能。本站保存原表的舍入值，不把从原始计数重算的末位小数静默替换进去。",
+        "sources": [
+          {
+            "label": "Tables 1–2（已对照正式PDF p.7）；Table 8每种子原始计数",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "title": "消融归因：几何、语义和监督强度要一起解释",
+        "body": "Table 4以36.8作为同表参考，移除GNF目标降到24.2，去RGB重建27.2，去Diffusion特征30.0，去深度引导采样29.2；把教师换为DINO或CLIP分别30.4、32.0。结果支持联合结构与语义监督有效，但不支持把收益简化为只要更大的视觉教师就一定更好。\n额外视图从19降到9为33.2，去跳连27.6，改变特征或重建权重也影响表现。部分改动会同时影响梯度尺度和优化稳定性，差值不能当作可直接相加的独立贡献。保留不同损失项及训练信息的成本，也有助于判断能否迁移到只有单视角历史数据的场景：不能不经验证就假设这些额外监督可以完全省掉。",
+        "sources": [
+          {
+            "label": "Table 4及§4.2 Ablations；Appendix G",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "title": "真实机器人：小样本可行性与未解决的遮挡问题",
+        "body": "真实实验在两个厨房布置上执行开门、转水龙头和移动茶壶三类任务，另加入干扰物；每个条件10次试验，Table 3总共12种条件汇总为GNFactor43.3%、PerAct22.5%。不能把三类任务说成覆盖所有家庭操作，也不能把已训练过的两个厨房简单写成零样本跨厨房迁移。作者强调每任务仅少量示范，同时仍依赖额外视图重建监督。\n真机点云来自深度相机而非完美仿真真值，遮挡、噪声和标定仍可能限制三维表示。作者明确承认多视角训练采集不易扩展，建议探索其他拍摄方式，但这还不是完成的解决方案。图中去干扰与带干扰的子汇总和Table 3全条件平均含义不同，本批引用43.3时锁定完整表，不把较好子场景代替整体。",
+        "sources": [
+          {
+            "label": "§4.3、Table 3（正式PDF p.8）；§5；Appendix D",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "title": "理解路线：先数清相机，再看表征怎样被动作使用",
+        "body": "阅读时先沿Figure 3画出共享体积的两条训练路径，再从§3.1核对哪些相机只在训练出现，最后依次比较Table 1最终模型、Table 2泛化与Table 7最佳检查点。这样才能判断一个提升到底来自额外观测、语义教师、场景编码还是选择了更有利的评测口径。Perceiver动作头沿用前作这一点也应明确，避免把整套系统每个组件都列为新发明。\n本站使用arXiv v3全文与正式PDF原表交叉核对，保留2023-08-31首发、2024-07-28修订和PMLR出版时间。后续论文在100示范或其他单视角子集上引用的GNFactor成绩仍是另一来源；本批只新增这篇原报告下的20示范协议与结果，不反向修改那些引用表，也不宣称独立复现。",
+        "sources": [
+          {
+            "label": "全文、Appendices C–G；Tables 1–4、7–9；官方提交历史",
+            "url": "https://arxiv.org/html/2308.16891v3"
+          }
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "title": "共享体积的重建与动作两条路径",
+        "url": "https://proceedings.mlr.press/v229/ze23a/ze23a.pdf#page=4",
+        "caption": "作者Figure 3及§3.1：推理单视角与训练额外视角是不同条件，辅助分支不是未来视频预测。"
+      },
+      {
+        "title": "最终与最佳检查点分开",
+        "url": "https://proceedings.mlr.press/v229/ze23a/ze23a.pdf#page=17",
+        "caption": "作者Table 7及Appendix E：最佳检查点仅作参考，不能替代主表最终检查点成绩。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "GNFactor结果的评测口径",
+        "columns": [
+          "来源/口径",
+          "PerAct",
+          "GNFactor"
+        ],
+        "rows": [
+          [
+            "Table 1：最终，10任务",
+            "20.4%",
+            "31.7%"
+          ],
+          [
+            "Table 2：6泛化条件",
+            "18.0%",
+            "28.3%"
+          ],
+          [
+            "Table 7：最佳检查点",
+            "23.6%",
+            "40.0%"
+          ],
+          [
+            "Table 1：put in drawer",
+            "2.7%",
+            "0%"
+          ]
+        ],
+        "locator": "arXiv2308.16891v3 Tables 1、2、7；正式PDF pp.7、17",
+        "caption": "作者报告；额外训练视角与最终/最佳检查点分别说明，不把三行变成同一个排行榜。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-18",
+      "note": "已核对本批原表与协议；具体track/result ID见逐篇台账。其他论文引用或重评结果保持原报告归属，不替换既有证据。"
+    }
+  }
+}

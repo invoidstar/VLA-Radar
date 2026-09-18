@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-chained-corl2023-contact10-trajectory-regression",
+  "paperId": "p092",
+  "method": "Act3D + trajectory regression",
+  "trackId": "rlbench-chained-corl2023-contact10",
+  "values": {
+    "unplug_charger": 95,
+    "close_door": 5,
+    "open_box": 95,
+    "open_fridge": 60,
+    "frame_off_hanger": 77,
+    "open_oven": 17,
+    "books_on_shelf": 68,
+    "wipe_desk": 70,
+    "cup_in_cabinet": 40,
+    "shoes_out_of_box": 67,
+    "Average": 59.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf",
+  "sourceVersion": "CoRL2023 PMLR229 formal PDF",
+  "locator": "Table 2; formal PDF p.8; §4.1",
+  "attribution": "author-reported",
+  "trainingData": "100 demos/task, single-task models; ChainedDiffuser batch24,AdamW1e-4,1 A100~1 day; pretrained CLIP visual/text. Cited baseline training differs.",
+  "evaluationNotes": "同文系统消融/基线，不等于不同论文。80.9对21.0相差59.9个百分点；wipe65低于回归70。整段扩散基线不是未经适配的Diffusion Policy原始成绩。",
+  "supersedes": ""
+}

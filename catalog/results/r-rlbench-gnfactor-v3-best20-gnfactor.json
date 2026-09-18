@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-gnfactor-v3-best20-gnfactor",
+  "paperId": "p091",
+  "method": "GNFactor",
+  "trackId": "rlbench-gnfactor-v3-best20",
+  "values": {
+    "close_jar": 40,
+    "open_drawer": 77.3,
+    "sweep_to_dustpan": 40,
+    "meat_off_grill": 66.7,
+    "turn_tap": 45.3,
+    "slide_block": 18.7,
+    "put_in_drawer": 10.7,
+    "drag_stick": 73.3,
+    "push_buttons": 20,
+    "stack_blocks": 8,
+    "Average": 40
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2308.16891v3",
+  "sourceVersion": "arXiv2308.16891v3; cross-checked formal PMLR PDF",
+  "locator": "Appendix E, Table 7; formal PDF p.17",
+  "attribution": "author-reported",
+  "trainingData": "20 demos/task; 10-task joint model;100k steps,batch2,2 RTX3090; GNFactor adds 19 training RGB views and pretrained SD semantic teacher.",
+  "evaluationNotes": "这是作者明确标为参考的最佳检查点选择，不能覆盖Table 1的最终31.7/20.4，也不以消融36.8替换。",
+  "supersedes": ""
+}

@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-chained-corl2023-viewshift10-hiveformer",
+  "paperId": "p092",
+  "method": "HiveFormer",
+  "trackId": "rlbench-chained-corl2023-viewshift10",
+  "values": {
+    "pick_and_lift": 26,
+    "pick_up_cup": 74,
+    "push_button": 98,
+    "put_knife": 43,
+    "put_money": 63,
+    "reach_target": 98,
+    "slide_block": 13,
+    "stack_wine": 45,
+    "take_money": 77,
+    "take_umbrella": 85,
+    "Average": 62.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf",
+  "sourceVersion": "CoRL2023 PMLR229 formal PDF",
+  "locator": "Appendix7.6; Table 4; formal PDF p.16",
+  "attribution": "reported-baseline",
+  "trainingData": "100 demos/task, single-task models; ChainedDiffuser batch24,AdamW1e-4,1 A100~1 day; pretrained CLIP visual/text. Cited baseline training differs.",
+  "evaluationNotes": "原表报告相对标准设置的绝对变化HiveFormer-26.2、ChainedDiffuser-13.1个百分点；不把此10任务扰动成绩外推全RLBench或严格视角不变。",
+  "supersedes": ""
+}

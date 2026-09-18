@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-chained-corl2023-contact10-act3d",
+  "paperId": "p092",
+  "method": "Act3D + motion planner",
+  "trackId": "rlbench-chained-corl2023-contact10",
+  "values": {
+    "unplug_charger": 48,
+    "close_door": 9,
+    "open_box": 9,
+    "open_fridge": 19,
+    "frame_off_hanger": 66,
+    "open_oven": 2,
+    "books_on_shelf": 34,
+    "wipe_desk": 4,
+    "cup_in_cabinet": 0,
+    "shoes_out_of_box": 19,
+    "Average": 21
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf",
+  "sourceVersion": "CoRL2023 PMLR229 formal PDF",
+  "locator": "Table 2; formal PDF p.8; §4.1",
+  "attribution": "reported-baseline",
+  "trainingData": "100 demos/task, single-task models; ChainedDiffuser batch24,AdamW1e-4,1 A100~1 day; pretrained CLIP visual/text. Cited baseline training differs.",
+  "evaluationNotes": "同文系统消融/基线，不等于不同论文。80.9对21.0相差59.9个百分点；wipe65低于回归70。整段扩散基线不是未经适配的Diffusion Policy原始成绩。",
+  "supersedes": ""
+}

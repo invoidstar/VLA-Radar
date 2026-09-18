@@ -1,0 +1,18 @@
+{
+  "id": "r-rlbench-act3d-corl2023-18multi-peract-10",
+  "paperId": "p090",
+  "method": "PerAct (10 demos)",
+  "trackId": "rlbench-act3d-corl2023-18multi",
+  "values": {
+    "Average": 30
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://proceedings.mlr.press/v229/gervet23a/gervet23a.pdf",
+  "sourceVersion": "CoRL2023 PMLR229 formal PDF",
+  "locator": "Figure 4, Average labelled bars; §4.1; PDF p.6",
+  "attribution": "reported-baseline",
+  "trainingData": "10 demos/task; joint model",
+  "evaluationNotes": "保留原图整数精度；Table 2主干消融的65.1另有上下文，不能补回主图。其他论文中的PerAct49.4/Act3D63.2等不是本表。",
+  "supersedes": ""
+}

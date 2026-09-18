@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-18",
+  "baseCommit": "330ec0a4c0d9399e749bbf2e663ba5405b0e78f9",
+  "status": "partial-content-backfill",
+  "scope": "第三批补齐此前引用表涉及的Act3D、GNFactor、ChainedDiffuser原论文与RLBench结果；不是全网检索或新增功能。",
+  "newPapers": [
+    "p090",
+    "p091",
+    "p092"
+  ],
+  "newTracks": [
+    "rlbench-act3d-corl2023-74single",
+    "rlbench-act3d-corl2023-18multi",
+    "rlbench-gnfactor-v3-final20",
+    "rlbench-gnfactor-v3-generalization20",
+    "rlbench-gnfactor-v3-best20",
+    "rlbench-chained-corl2023-standard10",
+    "rlbench-chained-corl2023-contact10",
+    "rlbench-chained-corl2023-viewshift10"
+  ],
+  "newResults": [
+    "r-rlbench-act3d-corl2023-74single-auto-lambda",
+    "r-rlbench-act3d-corl2023-74single-hiveformer",
+    "r-rlbench-act3d-corl2023-74single-instructrl",
+    "r-rlbench-act3d-corl2023-74single-act3d-10",
+    "r-rlbench-act3d-corl2023-74single-act3d-100",
+    "r-rlbench-act3d-corl2023-18multi-peract-10",
+    "r-rlbench-act3d-corl2023-18multi-peract-100",
+    "r-rlbench-act3d-corl2023-18multi-act3d-10",
+    "r-rlbench-act3d-corl2023-18multi-act3d-100",
+    "r-rlbench-gnfactor-v3-final20-peract-single",
+    "r-rlbench-gnfactor-v3-final20-peract-four",
+    "r-rlbench-gnfactor-v3-final20-gnfactor",
+    "r-rlbench-gnfactor-v3-generalization20-peract",
+    "r-rlbench-gnfactor-v3-generalization20-gnfactor",
+    "r-rlbench-gnfactor-v3-best20-peract",
+    "r-rlbench-gnfactor-v3-best20-gnfactor",
+    "r-rlbench-chained-corl2023-standard10-auto-lambda",
+    "r-rlbench-chained-corl2023-standard10-hiveformer",
+    "r-rlbench-chained-corl2023-standard10-instructrl",
+    "r-rlbench-chained-corl2023-standard10-chained",
+    "r-rlbench-chained-corl2023-contact10-act3d",
+    "r-rlbench-chained-corl2023-contact10-open-loop",
+    "r-rlbench-chained-corl2023-contact10-trajectory-regression",
+    "r-rlbench-chained-corl2023-contact10-chained",
+    "r-rlbench-chained-corl2023-viewshift10-hiveformer",
+    "r-rlbench-chained-corl2023-viewshift10-chained"
+  ],
+  "discovery": [
+    {
+      "source": "https://robot-colosseum.github.io/",
+      "kind": "previous-benchmark-discovery",
+      "usedFor": "沿已审计官网关联论文与第二批原文参考文献继续反查原方法；不声称官网直接列出本批所有方法。"
+    },
+    {
+      "source": "https://act3d.github.io/",
+      "kind": "author-project",
+      "usedFor": "核对Act3D身份与论文入口，数值采用正式PDF"
+    },
+    {
+      "source": "https://yanjieze.com/projects/GNFactor/",
+      "kind": "author-project",
+      "usedFor": "核对GNFactor与单视角部署边界"
+    },
+    {
+      "source": "https://chained-diffuser.github.io/",
+      "kind": "author-project",
+      "usedFor": "关联正式论文；项目74任务说法不替代PDF两个10任务原表"
+    }
+  ],
+  "readSources": [
+    {
+      "paperId": "p090",
+      "url": "https://proceedings.mlr.press/v229/gervet23a/gervet23a.pdf",
+      "sha256": "a521bf1cc27e671ddbc80e565c8bb02b524cf07980c94a8ac447ed660a512991",
+      "scope": "正式17页PDF全部文本、Figures3–4/Table2图像；正文及相关附录；网页PDF通道失败后经正常公开请求读取"
+    },
+    {
+      "paperId": "p091",
+      "url": "https://arxiv.org/html/2308.16891v3",
+      "scope": "v3完整HTML正文/附录；Tables1、2、4、7与正式PDF pp.7、17视觉交叉核对；非本站复现"
+    },
+    {
+      "paperId": "p092",
+      "url": "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf",
+      "sha256": "e59491ec6f742ef2d279ca8fdf855ef71f58b6aa9e8e5ae2170e5003694345a3",
+      "scope": "正式17页PDF完整文本、Figure1及Tables1–4图像；不从摘要扩写方法。"
+    }
+  ],
+  "boundaries": [
+    "Act3D74单任务、18联合任务与5任务消融分开；Figure4整数65不加Table2的65.1精度。",
+    "Act3D主干对照65.1-53.4=11.7，与正文8.7不一致，保留提示。",
+    "GNFactor最终31.7、最佳40.0、消融36.8不同上下文；单视角部署不抹去额外19个训练RGB视角。",
+    "ChainedDiffuser只在宏动作级视觉闭环，局部轨迹10Hz开环；1kHz是硬件PID。",
+    "ChainedDiffuser正文/附录训练天数和Figure5细特征尺寸差异明确保留；原始主表是两组10单任务，不把网页74任务或后续CALVIN数值写入同一赛道。",
+    "ChainedDiffuser最早公开日与arXiv身份未核实，保留null/空值；PMLR2023-12-02是独立出版日期。",
+    "原89篇论文、209条结果、6条新闻保持；RoboCasa/RoboCasa365分组不变。"
+  ],
+  "resolvedFromBatch2": [
+    "Act3D",
+    "GNFactor",
+    "ChainedDiffuser"
+  ],
+  "remaining": "R3M、MVP与第一批其余候选仍未完成；已有论文57项deferred结果提取仍需分批核对，不在此批假装解决。",
+  "searchCheckpoints": "未推进论文/新闻完整周更成功检查点。",
+  "notes": {
+    "sections": {
+      "p090": 9,
+      "p091": 9,
+      "p092": 9
+    },
+    "bodyCharacters": {
+      "p090": 2615,
+      "p091": 2626,
+      "p092": 2711
+    }
+  }
+}
