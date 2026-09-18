@@ -21,3 +21,7 @@ RoboTwin50×50clean的co-train与每任务独立checkpoint分开；2,500clean与
 在既有周更中检查官网新增条目，按3–8篇完成组交付，允许轮转已覆盖基准。候选保存明确原因，记录成功/失败和实际覆盖范围；本类局部审计不前移完整文献检索lastSuccessfulSearchAt。新增论文满足8节/2000字以上的深读标准，逐节指向实际版本，配表/读图说明保留原文定位。新增结果更新逐篇benchmark-review；没有重新阅读全文不提升旧笔记verifiedAt。正式发表状态另查会议/出版商，首版日期永久保留。
 
 完成canonical修改后，以修改前真实main SHA运行capture_activity.py，再build_catalog.py、validate_all.py和既有浏览器测试。完整CI通过后正常自检PR合并，并核实对应提交的Pages部署。仍保持不大改功能、不过度堆测试门槛的维护原则。
+
+## 同名或近名方法的身份核验
+
+官网方法名不能靠关键词或相似标题直接绑定paperId。须核对原始论文链接、arXiv/DOI、作者和明确的版本/变体关系；例如4D-WAM与MECo-WAM不能因为都含4D几何就归为同篇。缺少对应全文或身份映射的结果先保存在候选审计，不进入正式榜单，也不能据此把旧论文的benchmarkReview提升为extracted。
