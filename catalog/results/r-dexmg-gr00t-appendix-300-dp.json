@@ -1,0 +1,18 @@
+{
+  "paperId": "p070",
+  "trackId": "dexmg-gr00t-appendix-300",
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2503.14734v2",
+  "sourceVersion": "指定URL版本；保留的2026-09-17公开HTML快照及2026-09-18原表核验记录",
+  "locator": "Appendix B, Table 4: DexMimicGen Cross-Embodiment Suite",
+  "trainingData": "300示范/任务；GR00T预训练，Diffusion Policy从头训练，数据基础不相等。",
+  "evaluationNotes": "取附录Table 4对应预算；100示范主表与附录有冲突，不将其加入本赛道。",
+  "supersedes": "",
+  "id": "r-dexmg-gr00t-appendix-300-dp",
+  "method": "Diffusion Policy",
+  "values": {
+    "Average": 68.4
+  },
+  "attribution": "reported-baseline"
+}

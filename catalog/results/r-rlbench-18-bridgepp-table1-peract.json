@@ -1,0 +1,18 @@
+{
+  "paperId": "p013",
+  "trackId": "rlbench-18-bridgepp-table1",
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2608.05042v1",
+  "sourceVersion": "指定URL版本；保留的2026-09-17公开HTML快照及2026-09-18原表核验记录",
+  "locator": "Table I; §V-A; Appendices C/E",
+  "trainingData": "100示范/任务；预训练/初始化和模型结构不等；引用方法依照原表保留。",
+  "evaluationNotes": "作者五种子、每种子每任务25回合；均值见原表；不是所有基线统一重训。",
+  "supersedes": "",
+  "id": "r-rlbench-18-bridgepp-table1-peract",
+  "method": "PerAct",
+  "values": {
+    "Average": 49.4
+  },
+  "attribution": "reported-baseline"
+}

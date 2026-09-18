@@ -77,6 +77,8 @@ python scripts/validate_all.py
 
 ## PR、CI 与发布
 
-周更分支 `weekly-update-YYYY-MM-DD`，内容/工程变更都先PR，由用户手动合并。不得自动合并、force push或修改其他仓库；直接main写入需要交互式明确授权。PR校验离线、可重现，不依赖arXiv实时可用。`site.yml` 只在合并入main后发布白名单静态文件；源记录与维护说明不进入Pages制品。创建PR与验证成功均不等于网站已经发布。
+详见 `maintenance/publishing-policy.md`。维护者已授权本轮及每周维护在来源自检和CI全部通过后，经PR正常合并并发布，无需重复确认。必须对精确head检查、写明助手自检而非独立评审，不绕过任何分支或环境保护；阻塞时保留PR并报告，不伪造批准。
 
-`python scripts/validate_all.py` 检查所有源记录、生成一致性、不可变日期、协议与证据约束，运行Python单测和Node日期、URL、分页/名次回归。它不能验证科学结论或确保文献全覆盖。浏览器冒烟测试另见 `maintenance/v2-validation.md`，不可用步骤必须明确披露。
+`python scripts/validate_all.py` 包括全库分节笔记、来源范围、新论文深度和逐篇榜单引用检查，以及生成一致性、不可变日期、协议与证据约束、Python与Node回归。结构验证不能认证科学结论。
+
+合并后必须核实对应main提交的Pages deploy成功。创建PR、CI通过和artifact上传均不等于上线；浏览器交互未测试时另行注明。来源访问失败只影响对应未核验内容，不阻止其他可靠内容的小批次交付。

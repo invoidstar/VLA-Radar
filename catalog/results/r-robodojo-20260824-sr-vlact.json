@@ -1,0 +1,18 @@
+{
+  "paperId": "p001",
+  "trackId": "robodojo-20260824-sr",
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2608.27550v1",
+  "sourceVersion": "指定URL版本；保留的2026-09-17公开HTML快照及2026-09-18原表核验记录",
+  "locator": "Table 3: official leaderboard snapshot dated 2026-08-24",
+  "trainingData": "不同政策数据预算与检查点不等；只摘录VLAct原表五个方法，不是完整官方榜。",
+  "evaluationNotes": "部分完成Score与SR分开；平均直接取原表，不表示当前官方排名。",
+  "supersedes": "",
+  "id": "r-robodojo-20260824-sr-vlact",
+  "method": "VLAct",
+  "values": {
+    "Average": 7.6
+  },
+  "attribution": "author-reported"
+}

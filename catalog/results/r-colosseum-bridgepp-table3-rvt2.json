@@ -1,0 +1,19 @@
+{
+  "paperId": "p013",
+  "trackId": "colosseum-bridgepp-table3",
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2608.05042v1",
+  "sourceVersion": "指定URL版本；保留的2026-09-17公开HTML快照及2026-09-18原表核验记录",
+  "locator": "Table III; §V-B; Appendix E",
+  "trainingData": "RLBench示范训练；RVT-2、BridgeVLA和BridgeVLA++由来源论文作者训练测试。",
+  "evaluationNotes": "14条件平均与All perturbations联合扰动单列分开；原文mean±variance不改为标准差。",
+  "supersedes": "",
+  "id": "r-colosseum-bridgepp-table3-rvt2",
+  "method": "RVT-2",
+  "values": {
+    "Average": 56.7,
+    "All perturbations": 15.6
+  },
+  "attribution": "reported-baseline"
+}

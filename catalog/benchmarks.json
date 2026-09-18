@@ -438,6 +438,155 @@
         "Bimanual Insertion"
       ],
       "source": "https://arxiv.org/pdf/2304.13705v1#page=8"
+    },
+    {
+      "id": "calvin-abc-d-adapter-table6",
+      "dataset": "CALVIN",
+      "name": "CALVIN ABC→D · VLA-Adapter 原表",
+      "version": "ABC→D",
+      "tasks": "34 subtasks; 1,000 chains",
+      "split": "train A/B/C; evaluate D",
+      "metric": "Mean consecutive tasks completed",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "每链最多5个连续任务；数值范围0–5，不是百分比。原文引用表只展示，不作同预算排名。",
+      "trainingRegime": "引用方法预训练和模型规模不同；OFT为本文作者训练150k步后选最佳，非OFT原论文报告。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/html/2509.09372v1"
+    },
+    {
+      "id": "colosseum-bridgepp-table3",
+      "dataset": "COLOSSEUM",
+      "name": "COLOSSEUM · 14条件与联合扰动",
+      "version": "RLBench-derived perturbations",
+      "tasks": "14 evaluation conditions (not 14 tasks)",
+      "split": "12 individual axes + original + joint perturbations",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "平均覆盖14条件，All perturbations为联合扰动单列，不能互换；原文三次测试报告mean±variance，不改写为标准差。",
+      "trainingRegime": "RLBench示范训练；RVT-2、BridgeVLA和BridgeVLA++由来源论文作者训练测试。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average",
+        "All perturbations"
+      ],
+      "source": "https://arxiv.org/html/2608.05042v1"
+    },
+    {
+      "id": "dexmg-gr00t-appendix-30",
+      "dataset": "DexMimicGen",
+      "name": "DexMimicGen 9任务 · 30示范/任务",
+      "version": "Cross-Embodiment Suite",
+      "tasks": "9 tasks across 3 bimanual embodiments",
+      "split": "novel object configurations",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "明确取附录Table 4对应预算平均，不从主表挑最大值。主表与附录100示范DexMG均值不一致，该预算暂不纳入，需作者/版本进一步核验。",
+      "trainingRegime": "30示范/任务；GR00T预训练，Diffusion Policy从头训练，数据基础不相等。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2503.14734v2"
+    },
+    {
+      "id": "dexmg-gr00t-appendix-300",
+      "dataset": "DexMimicGen",
+      "name": "DexMimicGen 9任务 · 300示范/任务",
+      "version": "Cross-Embodiment Suite",
+      "tasks": "9 tasks across 3 bimanual embodiments",
+      "split": "novel object configurations",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "明确取附录Table 4对应预算平均，不从主表挑最大值。主表与附录100示范DexMG均值不一致，该预算暂不纳入，需作者/版本进一步核验。",
+      "trainingRegime": "300示范/任务；GR00T预训练，Diffusion Policy从头训练，数据基础不相等。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2503.14734v2"
+    },
+    {
+      "id": "metaworld-smolvla-table2",
+      "dataset": "Meta-World",
+      "name": "Meta-World MT50 · SmolVLA 原表",
+      "version": "MT50",
+      "tasks": "50",
+      "split": "multitask simulation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "作者说明每任务10次，二值完成；Average按原表任务加权汇总，不把四个难度均值做简单平均。引用表，不作同预算统一排名。",
+      "trainingRegime": "2,500示范，50/任务；SmolVLA各变体为VLM初始化、无机器人预训练；其他行注明是否机器人预训练。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Medium",
+        "Hard",
+        "Very hard",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2506.01844v1"
+    },
+    {
+      "id": "rlbench-18-bridgepp-table1",
+      "dataset": "RLBench",
+      "name": "RLBench 18任务 · BridgeVLA++ 原表",
+      "version": "18-task protocol",
+      "tasks": "18",
+      "split": "multitask",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "作者方法五种子，每种子每任务25回合；展示均值，原表标准差保留在阅读笔记/来源中。不是所有基线重新统一复现。",
+      "trainingRegime": "100示范/任务；预训练/初始化和模型结构不等；引用方法依照原表保留。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.05042v1"
+    },
+    {
+      "id": "robodojo-20260824-score",
+      "dataset": "RoboDojo",
+      "name": "RoboDojo 2026-08-24快照 · 部分完成得分",
+      "version": "2026-08-24 snapshot",
+      "tasks": "Generalization-Std/Rand, Precision, Long-Horizon, Memory, Open",
+      "split": "simulation historical snapshot",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "表中部分完成Score与Success Rate分别建赛道；Average直接取作者原表，权重不自行推断；不表示2026-09-18或当前最新官方排名。",
+      "trainingRegime": "不同政策数据预算与检查点不等；本页只摘录VLAct论文原表五个方法，不是完整官方榜。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.27550v1"
+    },
+    {
+      "id": "robodojo-20260824-sr",
+      "dataset": "RoboDojo",
+      "name": "RoboDojo 2026-08-24快照 · 任务成功率",
+      "version": "2026-08-24 snapshot",
+      "tasks": "Generalization-Std/Rand, Precision, Long-Horizon, Memory, Open",
+      "split": "simulation historical snapshot",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "表中部分完成Score与Success Rate分别建赛道；Average直接取作者原表，权重不自行推断；不表示2026-09-18或当前最新官方排名。",
+      "trainingRegime": "不同政策数据预算与检查点不等；本页只摘录VLAct论文原表五个方法，不是完整官方榜。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.27550v1"
     }
   ]
 }

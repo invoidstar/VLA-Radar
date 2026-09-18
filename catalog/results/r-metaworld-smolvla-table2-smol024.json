@@ -1,0 +1,22 @@
+{
+  "paperId": "p073",
+  "trackId": "metaworld-smolvla-table2",
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2506.01844v1",
+  "sourceVersion": "指定URL版本；保留的2026-09-17公开HTML快照及2026-09-18原表核验记录",
+  "locator": "Table 2; §4 (simulation); dataset protocol",
+  "trainingData": "2,500示范，50/任务；SmolVLA各变体为VLM初始化、无机器人预训练；其他行注明是否机器人预训练。",
+  "evaluationNotes": "作者每任务10次，二值完成；平均按原表，不简单平均四个难度列；引用方法预算不完全相同。",
+  "supersedes": "",
+  "id": "r-metaworld-smolvla-table2-smol024",
+  "method": "SmolVLA 0.24B (no robot PT)",
+  "values": {
+    "Easy": 86.43,
+    "Medium": 46.36,
+    "Hard": 35,
+    "Very hard": 60,
+    "Average": 56.95
+  },
+  "attribution": "author-reported"
+}

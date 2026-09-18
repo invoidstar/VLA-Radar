@@ -185,6 +185,11 @@
       "source": "https://proceedings.mlr.press/v205/shridhar23a.html"
     },
     "figures": [],
-    "tables": []
+    "tables": [],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-18",
+      "note": "保留3条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    }
   }
 }
