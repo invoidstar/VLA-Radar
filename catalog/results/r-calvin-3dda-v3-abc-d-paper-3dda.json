@@ -1,0 +1,18 @@
+{
+  "id": "r-calvin-3dda-v3-abc-d-paper-3dda",
+  "paperId": "p088",
+  "method": "3D Diffuser Actor",
+  "trackId": "calvin-3dda-v3-abc-d-paper",
+  "values": {
+    "Average": 3.35
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2402.10885v3",
+  "sourceVersion": "arXiv 2402.10885v3 HTML",
+  "locator": "Table 4; §4.2 data scope and termination horizon",
+  "attribution": "author-reported",
+  "trainingData": "Lang；最终checkpoint，3种子；每任务60条轨迹。",
+  "evaluationNotes": "原表3.35±0.04；60轨迹并非60单动作，不把延长可重试时限解释为纯网络增益。",
+  "supersedes": ""
+}

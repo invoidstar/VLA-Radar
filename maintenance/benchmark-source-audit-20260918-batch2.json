@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-18",
+  "baseCommit": "afc42b3e053eb2c2964fae648481c86939e2e77f",
+  "status": "partial-content-backfill",
+  "scope": "第二批聚焦已有RLBench、CALVIN、COLOSSEUM中的论文覆盖；不增加数据集系列、不扩大功能、不声称全官网或全网覆盖。",
+  "newPapers": [
+    "p086",
+    "p087",
+    "p088",
+    "p089"
+  ],
+  "newTracks": [
+    "rlbench-rvt-corl2023-table1",
+    "rlbench-rvt2-v1-table1",
+    "rlbench-3dda-v3-multiview",
+    "rlbench-3dda-v3-singleview",
+    "calvin-3dda-v3-abc-d-paper",
+    "colosseum-original-v2-no-variations",
+    "colosseum-original-v2-all-variations"
+  ],
+  "newResults": [
+    "r-rlbench-rvt-corl2023-table1-rvt",
+    "r-rlbench-rvt-corl2023-table1-peract",
+    "r-rlbench-rvt2-v1-table1-rvt2",
+    "r-rlbench-rvt2-v1-table1-rvt",
+    "r-rlbench-rvt2-v1-table1-peract",
+    "r-rlbench-rvt2-v1-table1-act3d",
+    "r-rlbench-3dda-v3-multiview-3dda",
+    "r-rlbench-3dda-v3-multiview-act3d-retrained",
+    "r-rlbench-3dda-v3-multiview-rvt",
+    "r-rlbench-3dda-v3-multiview-peract",
+    "r-rlbench-3dda-v3-singleview-3dda",
+    "r-rlbench-3dda-v3-singleview-act3d",
+    "r-rlbench-3dda-v3-singleview-gnfactor",
+    "r-calvin-3dda-v3-abc-d-paper-3dda",
+    "r-calvin-3dda-v3-abc-d-paper-dp3-adapted",
+    "r-calvin-3dda-v3-abc-d-paper-chaineddiffuser",
+    "r-calvin-3dda-v3-abc-d-paper-gr1",
+    "r-calvin-3dda-v3-abc-d-paper-roboflamingo",
+    "r-calvin-3dda-v3-abc-d-paper-susie",
+    "r-colosseum-original-v2-no-variations-peract",
+    "r-colosseum-original-v2-no-variations-r3m-mlp",
+    "r-colosseum-original-v2-no-variations-mvp-mlp",
+    "r-colosseum-original-v2-no-variations-rvt",
+    "r-colosseum-original-v2-all-variations-peract",
+    "r-colosseum-original-v2-all-variations-r3m-mlp",
+    "r-colosseum-original-v2-all-variations-mvp-mlp",
+    "r-colosseum-original-v2-all-variations-rvt"
+  ],
+  "discovery": [
+    {
+      "source": "https://robot-colosseum.github.io/",
+      "kind": "official-benchmark-project",
+      "usedFor": "官网列出的RVT/PerAct等基线及COLOSSEUM论文；作者源反向核对。"
+    },
+    {
+      "source": "https://sites.google.com/view/rlbench",
+      "kind": "official-benchmark-site",
+      "usedFor": "确认RLBench框架及官方代码入口；该页不是现代18任务方法排名表，不宣称其直接列全本批方法。"
+    },
+    {
+      "source": "https://github.com/stepjam/RLBench/blob/master/README.md",
+      "kind": "official-code-readme",
+      "usedFor": "任务、默认Franka和视觉评测边界；经GitHub连接只读。"
+    },
+    {
+      "source": "https://robotic-view-transformer.github.io/",
+      "kind": "author-project",
+      "usedFor": "RVT正式论文/代码与后续作者项目；不以演示视频估算成绩。"
+    },
+    {
+      "source": "https://robotic-view-transformer-2.github.io/",
+      "kind": "author-followup",
+      "usedFor": "RVT-2方法身份；版本对应arXiv v1、RSS p055。"
+    },
+    {
+      "source": "https://3d-diffuser-actor.github.io/",
+      "kind": "author-project",
+      "usedFor": "确认100示范/任务与相机设定；成绩锁定v3主表，不混用官网较早摘要。"
+    }
+  ],
+  "readSources": [
+    {
+      "paperId": "p086",
+      "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf",
+      "scope": "正式PDF方法/实验/附录；Tables1–2与Figure2已查看PDF截图；原图不镜像。",
+      "formal": "https://proceedings.mlr.press/v229/goyal23a.html"
+    },
+    {
+      "paperId": "p087",
+      "url": "https://arxiv.org/html/2406.08545v1",
+      "scope": "v1完整HTML方法、TablesI–III和讨论；PDF截图通道失败，数字依据可读取原生HTML表格，不声称PDF视觉核验。",
+      "formal": "https://www.roboticsproceedings.org/rss20/p055.html"
+    },
+    {
+      "paperId": "p088",
+      "url": "https://arxiv.org/html/2402.10885v3",
+      "scope": "v3完整HTML正文与附录，Tables1–7；正文和项目版本分开。",
+      "formal": "https://proceedings.mlr.press/v270/ke25a.html"
+    },
+    {
+      "paperId": "p089",
+      "url": "https://arxiv.org/html/2402.08191v2",
+      "scope": "v2完整HTML正文与附录TablesI–VII，No/All两列逐任务核对；不由柱图猜分。",
+      "formal": "https://www.roboticsproceedings.org/rss20/p133.html"
+    }
+  ],
+  "boundaries": [
+    "RVT五次及RVT-2四次为同一训练模型的重复规划执行，不能标为独立训练种子。",
+    "RVT-2引言77.6和TableI81.4冲突；锁定明确原表并可见提示，联合消融不当单因素。",
+    "3D Diffuser Actor并非DP3；Act3D在不同报告的65.0和63.2为不同来源/划分重训，不覆盖。",
+    "CALVIN平均链长不加百分号；60条轨迹与360单动作、Lang与All数据不同，按paper-table展示不排名。",
+    "COLOSSEUM原版20任务与后续评测分开，单种子与原表异常精度保留；没有自造跨因素/任务均分。",
+    "本批四篇新增记录的paperId是对应报告论文；引用基线行不计为额外新增论文、本站复现或新的独立证据。",
+    "RoboCasa与RoboCasa365已有分组、版本及所有旧结果保持；不重新引入4D-WAM错误关联。"
+  ],
+  "previousQueueReferences": [
+    {
+      "priorEntryIndex": 47,
+      "entry": {
+        "method": "COLOSSEUM",
+        "source": "https://robot-colosseum.github.io/",
+        "paper": "https://arxiv.org/abs/2402.08191",
+        "reason": "官网确认关联论文；本批未完成正文级笔记与新原表提取，留待后续分批核验；不是已收录或已验证新成绩。"
+      },
+      "resolution": "本批仅对应p086–p089实际读过的论文；原入口下其他方法仍待核验。"
+    }
+  ],
+  "remaining": "第一批其余候选继续保留；Act3D/GNFactor/ChainedDiffuser/R3M/MVP的原方法论文未在本批单独收录，基线数字只归属于所读报告论文。",
+  "searchCheckpoints": "未修改论文或新闻的完整周更成功检查点；这里只是官网反向文献小批次回补。",
+  "notes": {
+    "sections": {
+      "p086": 9,
+      "p087": 9,
+      "p088": 9,
+      "p089": 9
+    },
+    "bodyCharacters": {
+      "p086": 2488,
+      "p087": 2469,
+      "p088": 2646,
+      "p089": 2450
+    }
+  }
+}

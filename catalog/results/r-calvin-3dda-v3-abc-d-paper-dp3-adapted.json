@@ -1,0 +1,18 @@
+{
+  "id": "r-calvin-3dda-v3-abc-d-paper-dp3-adapted",
+  "paperId": "p088",
+  "method": "DP3（本文作者适配）",
+  "trackId": "calvin-3dda-v3-abc-d-paper",
+  "values": {
+    "Average": 0.31
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2402.10885v3",
+  "sourceVersion": "arXiv 2402.10885v3 HTML",
+  "locator": "Table 4; §4.2 data scope and termination horizon",
+  "attribution": "reported-baseline",
+  "trainingData": "Lang；由本文作者适配并训练，最终checkpoint、3种子。",
+  "evaluationNotes": "原表0.31±0.04；不是DP3原论文或所有适配版本的普遍表现，不推断其具身泛化能力为0。",
+  "supersedes": ""
+}

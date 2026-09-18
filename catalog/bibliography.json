@@ -770,6 +770,208 @@
         }
       ],
       "verifiedAt": "2026-09-18"
+    },
+    "p086": {
+      "item": {
+        "type": "paper-conference",
+        "title": "RVT: Robotic View Transformer for 3D Object Manipulation",
+        "author": [
+          {
+            "given": "Ankit",
+            "family": "Goyal"
+          },
+          {
+            "given": "Jie",
+            "family": "Xu"
+          },
+          {
+            "given": "Yijie",
+            "family": "Guo"
+          },
+          {
+            "given": "Valts",
+            "family": "Blukis"
+          },
+          {
+            "given": "Yu-Wei",
+            "family": "Chao"
+          },
+          {
+            "given": "Dieter",
+            "family": "Fox"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              2
+            ]
+          ]
+        },
+        "URL": "https://proceedings.mlr.press/v229/goyal23a.html",
+        "container-title": "Proceedings of The 7th Conference on Robot Learning",
+        "volume": "229",
+        "page": "694-710",
+        "publisher": "PMLR"
+      },
+      "sources": [
+        {
+          "label": "正式会议论文集的作者、卷页与日期；与arXiv首发分开",
+          "url": "https://proceedings.mlr.press/v229/goyal23a.html"
+        },
+        {
+          "label": "PMLR 229正式出版日期：2023-12-02；与CoRL会议日不同",
+          "url": "https://proceedings.mlr.press/v229/"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
+    },
+    "p087": {
+      "item": {
+        "type": "paper-conference",
+        "title": "RVT-2: Learning Precise Manipulation from Few Demonstrations",
+        "author": [
+          {
+            "given": "Ankit",
+            "family": "Goyal"
+          },
+          {
+            "given": "Valts",
+            "family": "Blukis"
+          },
+          {
+            "given": "Jie",
+            "family": "Xu"
+          },
+          {
+            "given": "Yijie",
+            "family": "Guo"
+          },
+          {
+            "given": "Yu-Wei",
+            "family": "Chao"
+          },
+          {
+            "given": "Dieter",
+            "family": "Fox"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              7
+            ]
+          ]
+        },
+        "URL": "https://www.roboticsproceedings.org/rss20/p055.html",
+        "container-title": "Robotics: Science and Systems XX",
+        "DOI": "10.15607/RSS.2024.XX.055"
+      },
+      "sources": [
+        {
+          "label": "正式会议论文集的作者、卷页与日期；与arXiv首发分开",
+          "url": "https://www.roboticsproceedings.org/rss20/p055.html"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
+    },
+    "p088": {
+      "item": {
+        "type": "paper-conference",
+        "title": "3D Diffuser Actor: Policy Diffusion with 3D Scene Representations",
+        "author": [
+          {
+            "given": "Tsung-Wei",
+            "family": "Ke"
+          },
+          {
+            "given": "Nikolaos",
+            "family": "Gkanatsios"
+          },
+          {
+            "given": "Katerina",
+            "family": "Fragkiadaki"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              1,
+              12
+            ]
+          ]
+        },
+        "URL": "https://proceedings.mlr.press/v270/ke25a.html",
+        "container-title": "Proceedings of The 8th Conference on Robot Learning",
+        "volume": "270",
+        "page": "1949-1974",
+        "publisher": "PMLR"
+      },
+      "sources": [
+        {
+          "label": "正式会议论文集的作者、卷页与日期；与arXiv首发分开",
+          "url": "https://proceedings.mlr.press/v270/ke25a.html"
+        },
+        {
+          "label": "PMLR 270正式出版日期：2025-01-12；会议为CoRL2024",
+          "url": "https://proceedings.mlr.press/v270/"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
+    },
+    "p089": {
+      "item": {
+        "type": "paper-conference",
+        "title": "THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation",
+        "author": [
+          {
+            "given": "Wilbert",
+            "family": "Pumacay"
+          },
+          {
+            "given": "Ishika",
+            "family": "Singh"
+          },
+          {
+            "given": "Jiafei",
+            "family": "Duan"
+          },
+          {
+            "given": "Ranjay",
+            "family": "Krishna"
+          },
+          {
+            "given": "Jesse",
+            "family": "Thomason"
+          },
+          {
+            "given": "Dieter",
+            "family": "Fox"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              7
+            ]
+          ]
+        },
+        "URL": "https://www.roboticsproceedings.org/rss20/p133.html",
+        "container-title": "Robotics: Science and Systems XX",
+        "DOI": "10.15607/RSS.2024.XX.133"
+      },
+      "sources": [
+        {
+          "label": "正式会议论文集的作者、卷页与日期；与arXiv首发分开",
+          "url": "https://www.roboticsproceedings.org/rss20/p133.html"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
     }
   }
 }

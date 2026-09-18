@@ -3890,6 +3890,201 @@
       "paperUrl": "https://arxiv.org/abs/2403.03954",
       "arxiv": "2403.03954",
       "doi": "10.15607/RSS.2024.XX.067"
+    },
+    {
+      "id": "p086",
+      "name": "RVT",
+      "title": "RVT: Robotic View Transformer for 3D Object Manipulation",
+      "team": "Ankit Goyal 等；NVIDIA",
+      "venue": "CoRL 2023",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
+      "firstPublished": "2023-06-26",
+      "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
+      "collectionMonth": "2026-09",
+      "versionNote": "CoRL 2023 PMLR正式PDF（229:694–710）；§3–4、Tables 1–2、附录A；arXiv身份2306.14896v1",
+      "topics": [
+        "spatial",
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-2",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "将RGB-D重建点云重渲染为固定正交虚拟视图，用跨视图Transformer预测二维热图，再反投影选择下一关键位姿；避开直接对密集三维体素执行高成本特征推理。",
+      "findings": "CoRL 2023正式PDF Table 1：RLBench 18任务、100示范/任务，RVT平均成功率62.9%，作者重评PerAct为49.4%；RTX3090策略推理11.6与4.9 fps。36×指达到可比表现的训练加速，并非表中最终总训练时长之比。",
+      "limitations": "依赖深度、标定与外部运动规划；不是连续关节控制。Close Jar和Open Drawer未优于PerAct；Place Cups为4.0%。真机5任务平均56%，带细小marker任务为0，去除marker场景的82.5%不能替代完整结果。",
+      "insight": "核心是把空间决策变成多视图中可定位的预测，再明确还原回三维；收益既来自表征和投影，也来自可以利用的图像算子。它没有自动补全被遮挡几何或解决长程记忆。",
+      "readingFocus": "按§3的点云→虚拟视图→热图→三维位置链路读Figure 2，再核对Table 1的最终模型与重复评测；Table 2分开看视图、投影、深度和真机失败，不能把所有差值归因于Transformer。",
+      "evidence": "checked",
+      "evidenceNote": "已读取所标版本的方法、主实验、所引消融和附录；榜单数值按原表核对，均非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读版本与原表",
+          "url": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf"
+        },
+        {
+          "label": "正式发表与书目",
+          "url": "https://proceedings.mlr.press/v229/goyal23a.html"
+        },
+        {
+          "label": "arXiv版本历史",
+          "url": "https://arxiv.org/abs/2306.14896"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2306.14896",
+      "arxiv": "2306.14896",
+      "doi": ""
+    },
+    {
+      "id": "p087",
+      "name": "RVT-2",
+      "title": "RVT-2: Learning Precise Manipulation from Few Demonstrations",
+      "team": "Ankit Goyal 等；NVIDIA",
+      "venue": "RSS 2024",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
+      "firstPublished": "2024-06-12",
+      "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2406.08545v1 HTML；§III–IV、Tables I–III与结论；RSS 2024正式发表元数据单独核对",
+      "topics": [
+        "spatial",
+        "efficiency",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-2",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "在RVT上结合粗到细局部重渲染、位置条件旋转、凸上采样和点云渲染/训练管线优化，使关键位姿预测更精细且更高吞吐；作者明确贡献是系统性组合而非宣称每个组件首创。",
+      "findings": "2406.08545v1 Table I报告RLBench 18任务平均81.4%、RTX3090推理20.6 fps；同表RVT62.9%。Table III去两阶段为63.9%。引言仍写77.6，与主表冲突；本记录锁定Table I，不静默拼接不同数值。",
+      "limitations": "较高吞吐被用于更多训练样本，6×不等于最终全流程用时减少6×。原表无凸上采样/无混精为82.0%，略高于完整模型81.4%但更慢；真机8任务每任务仅10次测试，不能宣称普遍稳健。",
+      "insight": "精细几何建模与系统优化可以互相使能：省下显存允许更大批量或局部重观察；但评估需分别报告样本吞吐、最终训练预算、精度及端到端控制开销。",
+      "readingFocus": "Figure 2粗定位/放大/精定位；§III区分网络与渲染优化；Tables I–III保留版本冲突、联合消融及真机小样本，关键帧加规划器不是连续策略。",
+      "evidence": "checked",
+      "evidenceNote": "已读取所标版本的方法、主实验、所引消融和附录；榜单数值按原表核对，均非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读版本与原表",
+          "url": "https://arxiv.org/html/2406.08545v1"
+        },
+        {
+          "label": "正式发表与书目",
+          "url": "https://www.roboticsproceedings.org/rss20/p055.html"
+        },
+        {
+          "label": "arXiv版本历史",
+          "url": "https://arxiv.org/abs/2406.08545"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2406.08545",
+      "arxiv": "2406.08545",
+      "doi": "10.15607/RSS.2024.XX.055"
+    },
+    {
+      "id": "p088",
+      "name": "3D Diffuser Actor",
+      "title": "3D Diffuser Actor: Policy Diffusion with 3D Scene Representations",
+      "team": "Tsung-Wei Ke、Nikolaos Gkanatsios、Katerina Fragkiadaki；Carnegie Mellon University",
+      "venue": "CoRL 2024",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
+      "firstPublished": "2024-02-16",
+      "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2402.10885v3 HTML（2024-07-25）；§3–4、Tables 1–7和附录A/B；CoRL2024论文集于2025年出版",
+      "topics": [
+        "spatial",
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-2",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "把动作扩散放在带三维位置的场景特征云中，用相对几何注意力将含噪末端位姿与语言、场景及机器人状态交互；同一框架支持关键位姿或到下一关键点的轨迹预测。",
+      "findings": "2402.10885v3原表：RLBench四视图18任务平均81.3%，作者重训Act3D63.2%；单前视图10任务78.4%。CALVIN ABC→D平均链长3.35±0.04，但每任务60条轨迹的限时单位与部分基线360个单动作不同，保留为非统一预算原表。",
+      "limitations": "需要深度和相机参数；RLBench及真机采用外部BiRRT。CALVIN动作时限、数据范围和训练配方不统一；DP3低分属于本文作者适配。推理600ms/6位姿是轨迹级耗时，不能解释成10Hz独立观测闭环。",
+      "insight": "局部三维场景特征与多模态动作分布需要同时建模；只把点云池化成向量与动作token逐点关注几何不是同一方案。评测必须进一步区分轨迹生成、重规划间隔及允许重试的时间。",
+      "readingFocus": "§3和附录B追踪语言/场景/含噪动作的数据流；Tables 1–3分别看多视图、单视图和结构消融；Table 4连同§4.2时限一起读，Table 6保留噪声定义歧义。",
+      "evidence": "checked",
+      "evidenceNote": "已读取所标版本的方法、主实验、所引消融和附录；榜单数值按原表核对，均非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读版本与原表",
+          "url": "https://arxiv.org/html/2402.10885v3"
+        },
+        {
+          "label": "正式发表与书目",
+          "url": "https://proceedings.mlr.press/v270/ke25a.html"
+        },
+        {
+          "label": "arXiv版本历史",
+          "url": "https://arxiv.org/abs/2402.10885"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2402.10885",
+      "arxiv": "2402.10885",
+      "doi": ""
+    },
+    {
+      "id": "p089",
+      "name": "THE COLOSSEUM",
+      "title": "THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation",
+      "team": "Wilbert Pumacay、Ishika Singh、Jiafei Duan 等；UCSP、USC、UW、AI2、NVIDIA",
+      "venue": "RSS 2024",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
+      "firstPublished": "2024-02-13",
+      "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2402.08191v2 HTML；§III–IV、附录Tables I–VII及逐任务扰动配置；RSS 2024元数据单独核对",
+      "topics": [
+        "evaluation",
+        "spatial"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-2",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "在RLBench上构造可配置、可组合的14类外观/几何/物理扰动，对20个操作任务进行分布外压力测试，并用少量对应真机任务检查趋势；贡献是评测拆解与证据，不是新的动作策略。",
+      "findings": "2402.08191v2 Tables IV–VII保存20任务的No variations与All variations原值。例如RVT投篮84%→4%、拖拽84%→0%，但烤架放肉12%→40%。本文不是“所有扰动必然降低每项成绩”，本批不自造跨因素总平均。",
+      "limitations": "主仿真每模型仅一个训练和评测种子；RGB预训练MLP与RGB-D空间策略并非同观测/算力。部分原表值如65%与25次episode的4%步长不一致，保留疑点而不改数。真机相关性只覆盖四任务和PerAct。",
+      "insight": "应先看无扰动基线是否会任务，再谈相对退化；有的因素不适用，缺失不是零。逐轴和联合压力测试能定位脆弱性，但高sim-real相关性不能替代目标部署场景实测。",
+      "readingFocus": "§III先理解MO/RO和因素有效性，§IV核对训练/测试变化；附录Tables IV–VII对照相同任务No/All两列，最后检查真机相关性和低相关组合。",
+      "evidence": "checked",
+      "evidenceNote": "已读取所标版本的方法、主实验、所引消融和附录；榜单数值按原表核对，均非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读版本与原表",
+          "url": "https://arxiv.org/html/2402.08191v2"
+        },
+        {
+          "label": "正式发表与书目",
+          "url": "https://www.roboticsproceedings.org/rss20/p133.html"
+        },
+        {
+          "label": "arXiv版本历史",
+          "url": "https://arxiv.org/abs/2402.08191"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2402.08191",
+      "arxiv": "2402.08191",
+      "doi": "10.15607/RSS.2024.XX.133"
     }
   ]
 }

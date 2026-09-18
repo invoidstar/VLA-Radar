@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p089",
+    "name": "THE COLOSSEUM",
+    "title": "THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation",
+    "team": "Wilbert Pumacay、Ishika Singh、Jiafei Duan 等；UCSP、USC、UW、AI2、NVIDIA",
+    "venue": "RSS 2024",
+    "publicationType": "conference",
+    "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
+    "firstPublished": "2024-02-13",
+    "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
+    "collectionMonth": "2026-09",
+    "versionNote": "arXiv 2402.08191v2 HTML；§III–IV、附录Tables I–VII及逐任务扰动配置；RSS 2024元数据单独核对",
+    "topics": [
+      "evaluation",
+      "spatial"
+    ],
+    "tags": [
+      "benchmark-source-audit",
+      "batch-2",
+      "full-source-reading"
+    ],
+    "priority": "deep",
+    "contribution": "在RLBench上构造可配置、可组合的14类外观/几何/物理扰动，对20个操作任务进行分布外压力测试，并用少量对应真机任务检查趋势；贡献是评测拆解与证据，不是新的动作策略。",
+    "findings": "2402.08191v2 Tables IV–VII保存20任务的No variations与All variations原值。例如RVT投篮84%→4%、拖拽84%→0%，但烤架放肉12%→40%。本文不是“所有扰动必然降低每项成绩”，本批不自造跨因素总平均。",
+    "limitations": "主仿真每模型仅一个训练和评测种子；RGB预训练MLP与RGB-D空间策略并非同观测/算力。部分原表值如65%与25次episode的4%步长不一致，保留疑点而不改数。真机相关性只覆盖四任务和PerAct。",
+    "insight": "应先看无扰动基线是否会任务，再谈相对退化；有的因素不适用，缺失不是零。逐轴和联合压力测试能定位脆弱性，但高sim-real相关性不能替代目标部署场景实测。",
+    "readingFocus": "§III先理解MO/RO和因素有效性，§IV核对训练/测试变化；附录Tables IV–VII对照相同任务No/All两列，最后检查真机相关性和低相关组合。",
+    "evidence": "checked",
+    "evidenceNote": "已读取所标版本的方法、主实验、所引消融和附录；榜单数值按原表核对，均非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "实际阅读版本与原表",
+        "url": "https://arxiv.org/html/2402.08191v2"
+      },
+      {
+        "label": "正式发表与书目",
+        "url": "https://www.roboticsproceedings.org/rss20/p133.html"
+      },
+      {
+        "label": "arXiv版本历史",
+        "url": "https://arxiv.org/abs/2402.08191"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2402.08191",
+    "arxiv": "2402.08191",
+    "doi": "10.15607/RSS.2024.XX.133"
+  },
+  "publication": {
+    "firstArxivAt": "2024-02-13",
+    "firstArxivSource": "https://arxiv.org/abs/2402.08191v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2024-05-28",
+    "status": "published",
+    "venue": "RSS 2024",
+    "doi": "10.15607/RSS.2024.XX.133",
+    "acceptedAt": null,
+    "publishedAt": "2024-07",
+    "lastCheckedAt": "2026-09-18",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2024-02-13",
+        "observedAt": "2026-09-18",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2402.08191v1",
+        "note": "依据官方Submission history保留v1日期；与正式论文集出版时间分开。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2024-05-28",
+        "observedAt": "2026-09-18",
+        "venue": "arXiv v2",
+        "source": "https://arxiv.org/abs/2402.08191v2",
+        "note": "本次读取的公开修订；不覆盖v1首发时间。"
+      },
+      {
+        "kind": "published",
+        "date": "2024-07",
+        "observedAt": "2026-09-18",
+        "venue": "RSS 2024",
+        "source": "https://www.roboticsproceedings.org/rss20/p133.html",
+        "note": "已核对正式会议论文集；仅保留来源给出的日期精度，不推测录用日。"
+      }
+    ],
+    "alerts": [
+      "主实验单训练/评测种子；部分原表数值精度与25episode步长不一致，按原文保存并提示。"
+    ]
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-18",
+    "verifiedAt": "2026-09-18",
+    "version": "arXiv 2402.08191v2 HTML；§III–IV、附录Tables I–VII及逐任务扰动配置；RSS 2024元数据单独核对",
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2402.08191v2"
+    },
+    "sections": [
+      {
+        "id": "s1",
+        "title": "研究问题：学会训练任务，不等于对环境变化稳健",
+        "body": "THE COLOSSEUM是一套泛化评测，不是一种新的控制网络。它关注机器人已经会做某个任务后，物体颜色、尺寸、背景、视角或物理属性发生变化时，成功率是否仍能保持。只统计标准测试集的一个平均值，容易把语言选择、外观偏移、接触几何和动力学敏感性混在一起。\n作者以RLBench为基础选择20个任务，提供14类可配置扰动，并报告可形成20371种任务实例。这是环境变化的实例空间，不等于20371条人工示范，也不表示本文把全部组合逐一作为统一测试集穷举。其贡献在于让因素与任务配置可追踪，从“某方法泛化差”推进到“在哪种变化和哪个任务上变差”。",
+        "sources": [
+          {
+            "label": "§I、§III；基准定义与任务选择",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "title": "因素定义：操作物体、接收物体与环境不要混为一类",
+        "body": "MO表示被操作的物体，RO表示接收或配合操作的物体，二者各有颜色、纹理和尺寸变化。其他因素包含灯光颜色、桌面颜色与纹理、干扰物、背景纹理、相机位姿，以及物体摩擦和质量。它们既包含感知层变化，也包含可能改变最优抓取点、接触过程或动力学的变化。\n因此把所有因素都称为“仅外观干扰”并不准确。模型在尺寸变化下失败，可能是位置推断、碰撞路径或抓取控制不适配，而不是颜色识别错误。我的阅读建议是先按因素改变的信息和执行要求分组，再判断方法对哪一层敏感；这比给整个模型贴一个笼统“鲁棒/不鲁棒”标签更可操作。",
+        "sources": [
+          {
+            "label": "§III Perturbation Factors；附录Table III有效因素与参数",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "title": "配置与任务可解性：不是把所有开关对所有任务一起打开",
+        "body": "每个任务通过配置文件定义可作用对象、因素范围及兼容关系，并允许选择单因素或联合扰动。部分任务没有接收物体，某些复合形状不支持特定纹理或尺寸操作，物理因素也只在适用任务中启用。原表中的短横线表示不适用或未提供结果，而不是测试成功率为零。\n设计基准时还要确认任务仍可由专家轨迹求解，否则一个失败分数可能来自不可达几何而非学习算法泛化。本文展示任务配置与示例，但不能因此认定所有后续自定义组合都已验证可解。对可比性的实际要求是同时锁定任务、扰动范围、对象定义和评测代码，而不仅仅写“使用COLOSSEUM”。",
+        "sources": [
+          {
+            "label": "§III任务与配置；附录Table III、Figure 10及逐任务扰动图",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "title": "训练与评测：原始任务变化与新增分布外扰动分开",
+        "body": "四个训练型基线在原RLBench环境上每任务100条示范，共2000条，保留原本任务/语言变化，但不在训练中加入COLOSSEUM新扰动。评测按任务与因素生成235组测试，每组25个episode，并使用最终检查点。作者主实验每模型一个训练种子和一个评测种子，不能据此写成多种子稳定性认证。\nNo variations是该论文的基准条件，不等同于RVT或PerAct原论文18任务、全部语言变化的平均设置。联合All variations按照每个任务兼容的因素施加，不是每项任务都机械叠加14个参数。本站将20任务的No与All拆为两条协议，只保留逐任务原值，不从不同有效任务集合的因素均值再算一个未经定义的“总鲁棒性分”。",
+        "sources": [
+          {
+            "label": "§IV实验设置；附录训练参数；Tables IV–VII",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "title": "基线究竟比较什么：预训练表征与三维动作策略不是同配置",
+        "body": "R3M-MLP与MVP-MLP使用冻结的预训练RGB编码器加行为克隆头，PerAct和RVT则利用RGB-D及三维空间结构。论文给出了不同参数规模、批量、训练步数和硬件安排，不能将四者结果当成只改变一个视觉主干的公平消融。低分可能来自动作头、训练适配、观测或多任务优化，而非某预训练数据单独无效。\nVoxPoser属于依赖语言模型与对象接口的零样本路线，训练与输入先验又不相同，本批先不把其全部数值混入训练型对照。四个训练型基线按COLOSSEUM作者的报告保存，paperId指向这篇报告论文，而非声称本站重新训练了原作者模型；同名方法在不同论文里的数字仍各自保留来源。",
+        "sources": [
+          {
+            "label": "§IV Baselines；附录Table I及Tables IV–VIII",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s6",
+        "title": "逐任务证据：联合变化通常困难，但反例必须留下",
+        "body": "RVT原表中，投篮由No条件84%降至All条件4%，拖拽由84%降至0%，开烤箱由88%降至8%。这说明只在熟悉外观和几何下完成任务并不足以保证分布外稳定性。但烤架放肉从12%升至40%，洗碗机任务从0%到4%，提示具体随机变化有时反而使场景更容易，不能将平均退化扩写为每项任务都下降。\nPerAct表中无扰动关盒65%等数值与25次测试通常对应的4个百分点步长不一致；R3M和MVP也有类似分数。本站不擅自修成最接近的4的倍数，也不由此反推出成功次数、方差或置信区间，而是在评测记录中明确保留原文疑点。没有这些边界，漂亮的统一条形图反而会掩盖来源的不确定性。",
+        "sources": [
+          {
+            "label": "附录Tables IV–VII，特别是No variations / All variations两列",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "title": "退化归因：基线不会的任务，不能再用相对降幅衡量泛化",
+        "body": "如果模型在无扰动条件就是0%，相对性能下降没有定义；把它当成“零退化、最稳健”会给出相反结论。不同因素只适用于部分任务，因此有效分母必须一致。原文的总体趋势和按因素分析有价值，但不能把各因素的平均下降再平均一次，就声称获得可跨方法排序的总分。\n论文也讨论某些单因素与联合因素成绩的相关关系，附录示例中“干扰物＋操作物尺寸”相关性较高，而“干扰物＋灯光颜色”只有约0.01。这说明随意选两个方便因素不一定能替代全面压力测试。相关性只是该任务/模型样本内的统计关系，不是证明一个因素造成另一个因素，也不是后续基准可以永久删减其余扰动的依据。",
+        "sources": [
+          {
+            "label": "§IV因素与联合变化分析；附录Table II相关组合",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "title": "仿真到真机：有趋势证据，但覆盖范围要讲清",
+        "body": "真机部分在四个对应任务上比较PerAct对若干扰动的变化趋势，包括插接、滑块、铲取与棋子摆放。作者使用少量真机示范、相应相机与操作配置，考察仿真与真实表现是否相关；平均R²约0.614是这组受限对照的结果，而非所有策略或所有真实场景通用的迁移保证。\n真机与仿真的训练步数、演示数量及传感器条件并不相同，因而不能将相关性解释成分数绝对可预测。即使某些因素趋势相近，未测的材质、接触动力学、视觉遮挡和长时间运行仍可能产生新失败。评测作者提供的是验证方向和实验工具，不是替代部署安全测试或直接认证工业可靠性的体系。",
+        "sources": [
+          {
+            "label": "§IV真实场景实验；对应真机与仿真训练设置、相关性图",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "title": "如何使用这篇基准论文：从单因素诊断走向有边界的比较",
+        "body": "推荐先阅读任务因素清单与配置图，选与目标场景相关且可解的变化；再确认模型在No条件能完成任务，才查看单因素及All条件退化。实际分析时保留逐任务表、失败案例和来源版本，比只争论一个总体平均更能帮助发现感知与控制的薄弱环节。原图仅给定位和阅读说明，不转载整篇论文。\n本批原始20任务结果与站内已有后续论文的12轴加联合条件等协议分开。后者即使都叫COLOSSEUM，也可能采用不同因素、训练和任务范围，不回填到此原表。首次arXiv公开日期保留2024-02-13，实际读取v2与RSS正式出版另外记录；后续版本修订可以补充证据，但不能静默改写已保存的历史实验。",
+        "sources": [
+          {
+            "label": "§III–IV；Tables III–VII；官方项目与RSS正式来源",
+            "url": "https://arxiv.org/html/2402.08191v2"
+          }
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "title": "按任务检查因素有效性与配置",
+        "url": "https://arxiv.org/html/2402.08191v2",
+        "caption": "作者Table III与Figure 10，以及逐任务扰动图；先确认MO/RO、范围和哪些因素不适用，再比较结果，短横线不等于0。"
+      },
+      {
+        "title": "原始20任务的逐任务压力测试",
+        "url": "https://arxiv.org/html/2402.08191v2",
+        "caption": "作者Tables IV–VII；把同一方法同一任务的No和All列并排读，保留RVT烤架放肉12→40等反例及原表异常精度提示。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "原表中支持结论也限制结论的任务",
+        "columns": [
+          "模型/任务",
+          "No variations",
+          "All variations"
+        ],
+        "rows": [
+          [
+            "RVT / basketball_in_hoop",
+            "84%",
+            "4%"
+          ],
+          [
+            "RVT / reach_and_drag",
+            "84%",
+            "0%"
+          ],
+          [
+            "RVT / meat_on_grill",
+            "12%",
+            "40%"
+          ],
+          [
+            "PerAct / close_box",
+            "65%",
+            "0%"
+          ],
+          [
+            "PerAct / close_laptop_lid",
+            "96%",
+            "80%"
+          ]
+        ],
+        "locator": "2402.08191v2 Tables IV、VII",
+        "caption": "作者原值；No/All为该论文20任务协议，不替代RLBench18任务平均。65%与25episode的步长存在不一致，不擅自纠正或反推置信区间。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-18",
+      "note": "本批已完成原表、任务集合、观测和执行条件核验；对应track/result ID见公开维护台账，作者报告而非本站复现。"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "r-calvin-3dda-v3-abc-d-paper-susie",
+  "paperId": "p088",
+  "method": "SuSIE（引用）",
+  "trackId": "calvin-3dda-v3-abc-d-paper",
+  "values": {
+    "Average": 2.69
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2402.10885v3",
+  "sourceVersion": "arXiv 2402.10885v3 HTML",
+  "locator": "Table 4; §4.2 data scope and termination horizon",
+  "attribution": "reported-baseline",
+  "trainingData": "All；允许利用未标注play数据，原方法图像子目标与低层策略。",
+  "evaluationNotes": "与Lang-only训练集合不同，仅作作者原表的上下文比较，不赋公平排名。",
+  "supersedes": ""
+}
