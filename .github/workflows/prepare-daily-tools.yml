@@ -1,0 +1,91 @@
+name: Prepare final daily tools
+on:
+  push:
+    branches: [release/batch-2026-09-18-final-daily-tools]
+    paths: [scripts/install_daily_tools_release.py, .github/workflows/prepare-daily-tools.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-daily-tools-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Integrate exact reviewed source payload
+        run: |
+          python scripts/install_daily_tools_release.py
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Browser testing tools
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then
+            python -m playwright install --with-deps chromium
+          fi
+          if ! fc-list :lang=zh | grep -q .; then
+            sudo apt-get update -qq
+            sudo apt-get install -y fonts-noto-cjk
+          fi
+      - name: Actual HTTP daily-tools and existing browser regression
+        run: |
+          python scripts/browser_tools.py
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+          python scripts/browser_sidebar.py
+      - name: Preserve all scientific data and commit ordinary files only
+        env:
+          BRANCH: ${{ github.ref_name }}
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          test "$BRANCH" = 'release/batch-2026-09-18-final-daily-tools'
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; stopping'; exit 1; }
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          before=json.loads(Path('/tmp/radar-tools-source/canonical-before.json').read_text())
+          for name,digest in before.items():
+              assert Path(name).is_file() and hashlib.sha256(Path(name).read_bytes()).hexdigest()==digest, 'Canonical changed: '+name
+          Path('/tmp/radar-tools-source/invariance.json').write_text(json.dumps({'status':'pass','originalCanonicalFiles':len(before),'bibliography':'new optional verified metadata ledger; no invented authors'}))
+          PY
+          git diff --exit-code -- .github
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm maintenance/daily-tools.part0 maintenance/daily-tools.part1 maintenance/daily-tools.part2 scripts/install_daily_tools_release.py
+          git add tools-core.js tools-loader.js tools.js tools.css scripts/tools_build.py scripts/test_tools.cjs scripts/browser_tools.py tests/test_tools.py catalog/bibliography.json maintenance/daily-tools.md index.html app.js experience-loader.js experience.js scripts/build_catalog.py scripts/validate_all.py styles.css AGENTS.md MAINTENANCE.md CHANGELOG.md data
+          git commit -m 'Integrate verified My Radar, command search and citation formats; freeze feature growth'
+          git push origin "HEAD:refs/heads/$BRANCH"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daily-tools-audit-${{ github.run_id }}
+          path: |
+            /tmp/radar-tools/
+            /tmp/radar-tools-source/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+          retention-days: 14
+      - name: Retain prepared source for recovery
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          with zipfile.ZipFile('/tmp/daily-tools-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in Path('.').rglob('*'):
+                  if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts and p.suffix!='.pyc':
+                      z.write(p,str(p))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daily-tools-source-${{ github.run_id }}
+          path: /tmp/daily-tools-source.zip
+          retention-days: 14
