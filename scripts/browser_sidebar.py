@@ -110,7 +110,9 @@ try:
             page.locator('#mobile-menu').click(); page.wait_for_timeout(250)
             yes(f'{viewport}px drawer label fits without overflow', label_fits(page) and page.evaluate('document.documentElement.scrollWidth <= innerWidth+1'))
             if viewport == 390: page.screenshot(path=str(OUT/'mobile.png'))
-            page.locator('#mobile-menu').click(); page.wait_for_timeout(250)
+            # The existing drawer covers the menu toggle; its public close action is outside click.
+            page.mouse.click(viewport - 8, 80); page.wait_for_timeout(250)
+            yes(f'{viewport}px drawer closes normally', page.locator('#mobile-menu').get_attribute('aria-expanded') == 'false')
         yes('mobile never overwrites desktop preference', stored(page) == '310')
         page.set_viewport_size({'width':1100, 'height':900}); page.wait_for_timeout(100)
         yes('desktop width restored after mobile', width(page) == 310)
