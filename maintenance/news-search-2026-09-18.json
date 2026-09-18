@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-18",
+  "windowFrom": "2026-09-05",
+  "windowTo": "2026-09-18",
+  "status": "partial",
+  "admittedCount": 6,
+  "queries": ["embodied AI robotics September 2026 September 18 model release", "NVIDIA robotics September 2026", "Google DeepMind robotics September 2026", "具身智能 2026年9月 模型 开源", "Agility Digit 5 September 2026", "X-Planner-9B-0916 official release", "UnifoLM-WLA-1.0 official repository", "GE-Act 2.0 September 2026 official", "AGILE 2.0 official announcement", "HERON-CRA September 2026"],
+  "primaryReadable": ["https://github.com/X-Square-Robot/Xplanner/blob/main/README.md", "https://huggingface.co/x-square-robot/X-Planner-9B-0916", "https://github.com/unitreerobotics/unifolm-wla/blob/main/README.md"],
+  "excerptOnly": ["https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale", "https://www.agilityrobotics.com/solutions/digit-5", "https://www.agibot.com/article/231/detail/120.html", "https://www.agibot.com/article/231/detail/121.html", "https://www.nbd.com.cn/articles/2026-09-15/4581924.html"],
+  "limits": "部分官网完整抓取返回Cache miss；只依据可读原始公告/记者报道摘录记录有限发布事实。未完成全部来源系统巡检，不推进完整成功检查点。没有新增论文或榜单数据；Skild S1和LightNav旧发布转载暂留候选。"
+}
