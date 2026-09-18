@@ -187,6 +187,13 @@
           }
         ]
       }
-    ]
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://gr1-manipulation.github.io/"
+    },
+    "figures": [],
+    "tables": []
   }
 }

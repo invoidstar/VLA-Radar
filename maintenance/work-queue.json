@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "plannedAt": "2026-09-17",
+  "plannedAt": "2026-09-18",
   "notes": [
     {
       "paperId": "p069",
@@ -9,45 +9,45 @@
       "latestVersion": "v2"
     },
     {
-      "paperId": "p002",
+      "paperId": "p048",
       "reason": "legacy",
-      "readVersion": "7月首发；8月4日v2｜阅读v2",
+      "readVersion": "arXiv v4（2022-07-13），第 1–2 页；第 2 页已查看 PDF",
       "latestVersion": null
     },
     {
-      "paperId": "p007",
+      "paperId": "p050",
       "reason": "legacy",
-      "readVersion": "8月首次公开｜阅读v1",
+      "readVersion": "arXiv 元数据；官方项目页 2022-08 更新结果",
       "latestVersion": null
     },
     {
-      "paperId": "p013",
+      "paperId": "p052",
       "reason": "legacy",
-      "readVersion": "8月首次公开｜阅读v1",
+      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
       "latestVersion": null
     },
     {
-      "paperId": "p014",
+      "paperId": "p057",
       "reason": "legacy",
-      "readVersion": "8月首次公开｜阅读v1",
+      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
       "latestVersion": null
     },
     {
-      "paperId": "p016",
+      "paperId": "p058",
       "reason": "legacy",
-      "readVersion": "8月首次公开｜阅读v1",
+      "readVersion": "arXiv v1 元数据；Google 2023-07-28 官方报告的 A brighter future for robotics 段落",
       "latestVersion": null
     },
     {
-      "paperId": "p022",
+      "paperId": "p059",
       "reason": "legacy",
-      "readVersion": "7月首次公开｜阅读v1",
+      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
       "latestVersion": null
     },
     {
-      "paperId": "p026",
+      "paperId": "p063",
       "reason": "legacy",
-      "readVersion": "8月首次公开｜阅读v1",
+      "readVersion": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
       "latestVersion": null
     }
   ],
@@ -59,7 +59,7 @@
       "p046"
     ]
   },
-  "remainingNotes": 67,
+  "remainingNotes": 28,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."
