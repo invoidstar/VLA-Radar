@@ -100,3 +100,7 @@ python scripts/validate_all.py
 性能：轻量目录只保留列表字段，详细笔记/搜索索引/赛道结果分离；带内容哈希文件供浏览器缓存，失败请求从缓存驱逐。详情及结果JSON缓存40项、查询缓存32项，列表12条、榜单20条，搜索在Worker执行、不可用时协作式分块回退。长期网页不无限积累已读全文。旧catalog/papers/leaderboards导出保持可用。
 
 `check_performance.py`检查首屏每篇预算和分片隔离，`test_performance.cjs`使用临时1000/5000/10000条模拟数据，不写入真实文库。记录环境与测量范围；不把Node执行时间当成手机加载速度。公开图表以后按需加载，避免给首页增加重型绘图库或整库高清图。
+
+## 阅读工作台与周更变更记录
+
+详见 maintenance/workspace.md。保存变更前最新main精确SHA后，完成论文/笔记/结果修改，再运行capture_activity.py --base该SHA、build_catalog.py、validate_all.py。只记录实际差异；旧快照不补造首次收录，元数据检查不冒充精读更新。每周继续同步榜单、全文笔记、发表状态与安全分支清理；新工具不降低来源或发布门槛。HTTP浏览器回归还包括reader、compare、updates、coverage、当前协议图表及导出。

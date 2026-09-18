@@ -33,3 +33,7 @@ See [MAINTENANCE.md](MAINTENANCE.md) for data semantics, source quality, cadence
 The v1 site contains 78 papers, including 46 initially migrated recent entries and 32 added landmarks. V2 preserves all IDs and KEY RESULT summaries, expands six source-reviewed note records and seeds 27 benchmark results across eight distinct tracks. This is not an exhaustive leaderboard or a claim that every legacy paper has been reread. Untouched notes remain explicitly labeled for progressive verification. OpenVLA/CoRL 2024 and OpenVLA-OFT/RSS 2025 lifecycle evidence is recorded independently of the original arXiv dates.
 
 Public sources only. No private research plans, personal reading data, accounts or analytics scripts are used. The static website does not contact arXiv or Crossref in the browser; maintenance tools make bounded public-source requests when run by the reviewer/agent.
+
+## Research workspace
+
+Focused reading (`?view=reader&paper=p001`), cited two-to-four-paper comparison, observed change streams, library evidence coverage, single-protocol charts, and public BibTeX/Markdown/CSV exports are available. Optional code and data load on use. See `maintenance/workspace.md` for semantic boundaries, local preferences and the weekly activity-capture command. Basic BibTeX intentionally does not guess missing authors or final venue metadata.
