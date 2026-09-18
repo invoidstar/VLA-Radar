@@ -8,53 +8,35 @@ permissions:
 jobs:
   sources:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
-      - name: Download public HTML sources with bounded requests
+      - name: Read latest public report revisions
         run: |
           python - <<'PY'
-          import urllib.request, json, hashlib, time
+          import urllib.request,json,time,hashlib
           from pathlib import Path
-          out=Path('/tmp/benchmark-reading');out.mkdir(parents=True,exist_ok=True)
+          out=Path('/tmp/benchmark-latest');out.mkdir(parents=True,exist_ok=True)
           sources={
-            'rc365-html':'https://arxiv.org/html/2603.04356v1',
-            'rc365-abs':'https://arxiv.org/abs/2603.04356',
-            'rc-original-html':'https://arxiv.org/html/2406.02523v1',
-            'rc-original-abs':'https://arxiv.org/abs/2406.02523',
-            'rldx-html':'https://arxiv.org/html/2605.03269v2',
-            'rldx-abs':'https://arxiv.org/abs/2605.03269',
-            'prts-html':'https://arxiv.org/html/2604.27472v1',
-            'prts-abs':'https://arxiv.org/abs/2604.27472',
-            'gwp-html':'https://arxiv.org/html/2603.17240v1',
-            'gwp-abs':'https://arxiv.org/abs/2603.17240',
-            'xpolicylab-html':'https://arxiv.org/html/2608.09892v1',
-            'xpolicylab-abs':'https://arxiv.org/abs/2608.09892',
-            'dp3-html':'https://arxiv.org/html/2403.03954v1',
-            'dp3-abs':'https://arxiv.org/abs/2403.03954',
-            'robotwin-model-sources':'https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/sources.js',
-            'robotwin-board-script':'https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/robotwin-board.js',
-            'robodojo-board-script':'https://raw.githubusercontent.com/RoboTwin-Platform/RoboTwin-Platform.github.io/main/assets/js/leaderboard/robodojo-board.js',
-            'robocasa-protocol':'https://robocasa.ai/docs/build/html/datasets/datasets_overview.html',
-            'robocasa-benchmark-guide':'https://robocasa.ai/docs/build/html/benchmarking/overview.html',
-            'libero-intro':'https://libero-project.github.io/intro.html',
-            'calvin-readme':'https://raw.githubusercontent.com/mees/calvin/main/README.md',
-            'robocasa-original-project':'https://robocasa.ai/2024/',
+            'gwp-v2':'https://arxiv.org/html/2603.17240v2',
+            'xpolicylab-v3':'https://arxiv.org/html/2608.09892v3',
+            'dp3-v7':'https://arxiv.org/html/2403.03954v7',
+            'robodojo-v3':'https://arxiv.org/html/2607.04434v3',
           }
           reports=[]
           for name,url in sources.items():
             try:
-              req=urllib.request.Request(url,headers={'User-Agent':'VLA-Radar-public-literature-reading/1.0','Accept':'text/html,text/plain;q=0.9'})
+              req=urllib.request.Request(url,headers={'User-Agent':'VLA-Radar-public-literature-reading/1.0','Accept':'text/html'})
               with urllib.request.urlopen(req,timeout=30) as r: data=r.read(4000001);status=r.status;final=r.url
-              if len(data)>4000000: raise ValueError('source too large')
+              if len(data)>4000000:raise ValueError('source too large')
               (out/(name+'.html')).write_bytes(data)
-              reports.append({'name':name,'url':url,'status':status,'finalUrl':final,'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)})
-            except Exception as e: reports.append({'name':name,'url':url,'error':str(e)})
-            if 'arxiv.org' in url:time.sleep(3.2)
+              reports.append({'name':name,'url':url,'status':status,'finalUrl':final,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+            except Exception as e:reports.append({'name':name,'url':url,'error':str(e)})
+            time.sleep(3.2)
           (out/'audit.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2))
           print(json.dumps(reports,ensure_ascii=False,indent=2))
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: benchmark-linked-reading-sources
-          path: /tmp/benchmark-reading/
+          name: benchmark-latest-reading-sources
+          path: /tmp/benchmark-latest/
           retention-days: 7
