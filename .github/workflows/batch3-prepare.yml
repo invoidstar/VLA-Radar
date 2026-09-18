@@ -1,0 +1,172 @@
+name: Prepare benchmark coverage batch three
+on:
+  push:
+    branches: [weekly-update-2026-09-18-benchmark-batch3]
+    paths: [.github/workflows/batch3-prepare.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-benchmark-batch3
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BASE: 330ec0a4c0d9399e749bbf2e663ba5405b0e78f9
+      BRANCH: weekly-update-2026-09-18-benchmark-batch3
+      EXPECTED_HEAD: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply exact reviewed canonical operations
+        run: |
+          set -eu
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          python - <<'PY'
+          from pathlib import Path
+          import base64,hashlib,json,lzma,os
+          sums=['a584dd463d816a7133a08ba841631eb89858816df2822e89cf2a2c556e0fabce','624a3fdc3b05c88fd49b5fc6dfd2a4bd1ec967856cb2884c4ef0c4dfb067bcee','146778463b957e245bf5c6dfb65ea341fae14c516a3e5d1194c0a82bccec8702']
+          parts=[]
+          for i,expected in enumerate(sums):
+              part=Path(f'maintenance/.batch3-part{i}').read_bytes()
+              assert hashlib.sha256(part).hexdigest()==expected, f'Transport mismatch part {i}'
+              parts.append(part)
+          compressed=base64.b64decode(b''.join(parts),validate=True)
+          assert len(compressed)==23628 and hashlib.sha256(compressed).hexdigest()=='6787a782e36ff2b75f8fee36b052f4dbc744a0c3bc642daba447e8a9fcf22ee1'
+          payload=json.loads(lzma.decompress(compressed))
+          assert payload['schemaVersion']==1 and payload['baseCommit']==os.environ['BASE'] and len(payload['ops'])==38
+          exact={'CHANGELOG.md','catalog/benchmarks.json','catalog/bibliography.json','catalog/first-public.json','catalog/manifest.json','maintenance/benchmark-content-policy.md','maintenance/benchmark-review.json','maintenance/benchmark-source-audit-20260918-batch3.json','tests/test_benchmark_batch3.py'}
+          newpapers={f'catalog/papers/p{i:03d}.json' for i in range(90,93)}
+          planned=[];seen=set()
+          for op in payload['ops']:
+              path=Path(op['path']);name=path.as_posix()
+              assert not path.is_absolute() and '..' not in path.parts and name not in seen
+              assert name in exact or name in newpapers or (name.startswith('catalog/results/r-') and name.endswith('.json'))
+              seen.add(name)
+              old=path.read_bytes() if path.exists() else None
+              assert (hashlib.sha256(old).hexdigest() if old is not None else None)==op['before'], 'Changed base: '+name
+              kind=op['op']
+              if kind=='create':
+                  assert old is None
+                  text=op['content']
+              elif kind=='prepend':text=op['content']+old.decode('utf-8')
+              elif kind=='append':text=old.decode('utf-8')+op['content']
+              else:
+                  data=json.loads(old)
+                  if kind=='append-json-list':
+                      target=data[op['key']]
+                      assert isinstance(target,list)
+                      for item in op['items']:
+                          assert item not in target
+                          if isinstance(item,dict) and 'id' in item:assert not any(x.get('id')==item['id'] for x in target)
+                          target.append(item)
+                  elif kind=='merge-json-map':
+                      target=data if op['key'] is None else data[op['key']]
+                      assert isinstance(target,dict) and not set(target).intersection(op['items'])
+                      target.update(op['items'])
+                  else:raise ValueError('Unknown operation '+kind)
+                  text=json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n'
+              final=text.encode('utf-8')
+              assert hashlib.sha256(final).hexdigest()==op['sha256'], 'Target mismatch: '+name
+              planned.append((path,final))
+          for path,data in planned:
+              path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+          print('PASS: all 38 canonical operations matched exact before/after hashes.')
+          PY
+          python scripts/capture_activity.py --base "$BASE"
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Preserve old records and actual content checkpoints
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          from pathlib import Path
+          base=os.environ['BASE']
+          def old(p):return subprocess.check_output(['git','show',base+':'+p])
+          files=subprocess.check_output(['git','ls-tree','-r','--name-only',base],text=True).splitlines()
+          protected=[p for p in files if p.startswith(('catalog/papers/','catalog/results/','catalog/news/')) or p in ['maintenance/state.json','maintenance/news-state.json']]
+          for p in protected:assert Path(p).read_bytes()==old(p), 'Old record changed: '+p
+          for path,key in [('catalog/benchmarks.json','tracks'),('catalog/manifest.json','paperOrder')]:
+              before=json.loads(old(path))[key];after=json.loads(Path(path).read_text())[key]
+              assert after[:len(before)]==before
+          for path,key in [('catalog/first-public.json',None),('catalog/bibliography.json','entries')]:
+              before=json.loads(old(path));after=json.loads(Path(path).read_text())
+              if key:before,after=before[key],after[key]
+              for k,v in before.items():assert after[k]==v
+          prior=json.loads(old('catalog/activity.json'));log=json.loads(Path('catalog/activity.json').read_text());ids={e['id'] for e in prior['events']}
+          new=[e for e in log['events'] if e['id'] not in ids]
+          assert len(new)==29 and all(e['baseCommit']==base for e in new)
+          assert sum(e['kind']=='collected' for e in new)==3 and sum(e['kind']=='result' for e in new)==26
+          boards=json.loads(Path('data/leaderboards.json').read_text());papers=json.loads(Path('data/library.json').read_text())['papers']
+          assert len(papers)==92 and len(boards['tracks'])==73 and len(boards['results'])==235
+          assert len({x['dataset'] for x in boards['tracks']})==15
+          assert len({r['paperId'] for r in boards['results'] if r['evidence']=='checked'})==33
+          assert len(list(Path('catalog/papers').glob('p*.json')))==92
+          report={'status':'pass','baseCommit':base,'papers':92,'tracks':73,'results':235,'families':15,'reportingPaperIds':33,'newActivityEvents':29,'oldRecordsUnchanged':len(protected)}
+          out=Path('/tmp/radar-batch3');out.mkdir(exist_ok=True);(out/'invariance.json').write_text(json.dumps(report,indent=2));print(json.dumps(report))
+          PY
+      - name: Install browser testing tools
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq; sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Real HTTP browser regression
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+          python scripts/browser_sidebar.py
+          python scripts/browser_tools.py
+          python - <<'PY'
+          import json,shutil,socket,subprocess,sys,time
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright,expect
+          s=socket.socket();s.bind(('127.0.0.1',0));port=s.getsockname()[1];s.close()
+          server=subprocess.Popen([sys.executable,'-m','http.server',str(port),'--bind','127.0.0.1'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+          try:
+              time.sleep(.4)
+              with sync_playwright() as p:
+                  browser=p.chromium.launch(executable_path=shutil.which('chromium') or shutil.which('google-chrome'),headless=True,args=['--no-sandbox'])
+                  page=browser.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+                  for pid,name in [('p090','Act3D'),('p091','GNFactor'),('p092','ChainedDiffuser')]:
+                      page.goto(f'http://127.0.0.1:{port}/?view=reader&paper={pid}',wait_until='networkidle')
+                      expect(page.locator('.reader-chapter')).to_have_count(9)
+                      assert name in page.locator('body').inner_text()
+                      page.screenshot(path=f'/tmp/radar-batch3/{pid}-reader.png')
+                  assert not errors
+                  Path('/tmp/radar-batch3/new-readers.json').write_text(json.dumps({'status':'pass','papers':['p090','p091','p092'],'chaptersPerPaper':9,'uncaughtErrors':errors,'scope':'Actual HTTP Chromium, not physical-device/public-network measurements'}))
+                  browser.close()
+          finally:server.terminate();server.wait()
+          PY
+      - name: Commit tested ordinary content to this branch only
+        run: |
+          set -eu
+          test "${{ github.ref_name }}" = "$BRANCH"
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$EXPECTED_HEAD"
+          git diff --exit-code -- .github
+          git rm maintenance/.batch3-part0 maintenance/.batch3-part1 maintenance/.batch3-part2
+          git add catalog data CHANGELOG.md maintenance/benchmark-content-policy.md maintenance/benchmark-review.json maintenance/benchmark-source-audit-20260918-batch3.json tests/test_benchmark_batch3.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add Act3D, GNFactor and ChainedDiffuser deep notes and 26 original result records'
+          git push origin "HEAD:refs/heads/$BRANCH"
+      - name: Retain tested candidate for recovery
+        if: always()
+        run: |
+          mkdir -p /tmp/radar-batch3
+          git archive --format=zip --output=/tmp/radar-batch3/source.zip HEAD
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-batch3-audit-${{ github.run_id }}
+          path: |
+            /tmp/radar-batch3/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+          retention-days: 14
