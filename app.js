@@ -12,7 +12,7 @@
   const priorityOrder = {deep:0,selective:1,overview:2};
   const statusText = {unread:'未读',reading:'阅读中',read:'已读'};
   const evidenceText = {checked:'已复核片段',notes:'笔记待复核',metadata:'出版 / 摘要证据'};
-  const views = {papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',about:'关于与维护'};
+  const views = {papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',news:'具身智能周报',about:'关于与维护'};
   const paths = {
     library:'<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l3-1 4 15-3 1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -69,6 +69,7 @@
     if(view==='timeline'&&state.timeline==='month')u.searchParams.set('timeline','month');
     if(view==='leaderboards'){const params=new URLSearchParams(location.search);for(const k of ['dataset','track']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
     if(['reader','compare'].includes(view)){const params=new URLSearchParams(location.search);for(const k of ['paper','compare']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
+    if(view==='news'){const params=new URLSearchParams(location.search);for(const k of ['nw','nc','ne','nq','paper','story']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
     if(includePaper)u.hash=location.hash;
     return u;
   }
@@ -87,11 +88,11 @@
     if(state.view!=='leaderboards')window.RadarResearch.cancelBoards();
     $('#hero').classList.toggle('hidden',state.view!=='papers');$('#stats').classList.toggle('hidden',state.view!=='papers');
     $('#library-section').classList.toggle('hidden',!['papers','reading'].includes(state.view));
-    for(const v of ['topics','timeline','about','leaderboards','reader','compare','updates','coverage'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
+    for(const v of ['topics','timeline','about','leaderboards','reader','compare','updates','coverage','news'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
     $('#reading-notice').classList.toggle('hidden',state.view!=='reading');
     $('#section-title').textContent=state.view==='reading'?'我的阅读清单':'论文文库';
     updateControls();renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
-    if(['reader','compare','updates','coverage'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
+    if(['reader','compare','updates','coverage','news'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
     document.title=`${views[state.view]} · VLA Research Radar`;
   }
   function goView(view){state.view=view;state.page=1;if(!['papers','reading'].includes(view)){state.q='';state.topic='';state.month='';state.year='';state.week='';state.venue='';state.priority='';state.status='';}syncUrl(true);showView();closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260909-agile2",
+  "eventKey": "agibot-agile2-announcement",
+  "title": "AGILE 2.0 发布，强调感知驱动的全身闭环控制",
+  "primaryCategory": "robot",
+  "tags": [
+    "全身控制",
+    "视觉反馈",
+    "人形机器人"
+  ],
+  "eventDate": "2026-09-09",
+  "publishedAt": "2026-09-09",
+  "dateNote": "事件日期采用所列原始公告或发布记录，不采用搜索抓取日期。",
+  "observedAt": "2026-09-18",
+  "updatedAt": "2026-09-18",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "智元9月9日官方公告发布 AGILE 2.0，将视觉感知、环境理解、全身运动与操作放到实时闭环中。公开的 Acrobat BOT 影片展示动态接触、连续运动及多机器人协作场景，使用智元X2机器人。",
+  "whyItMatters": "把持续视觉反馈与运动控制联系起来，有助于关注不稳定接触与环境变化下的控制问题。它与仅在预设轨迹上运动的演示在研究问题上不同，但需要可重复实验才能衡量差距。",
+  "vlaRelevance": "该方向位于具身感知、全身控制和操作的交界。应与高层语言规划、低层稳定控制分别分析，不能把运动演示直接等同为通用指令跟随能力。",
+  "limits": "本条确认公告与演示存在，不把剪辑影片当作无剪辑评测或独立成功率测量。官方摘录未提供可统一比较的完整协议和失败样本，因此不据视频生成榜单成绩或宣称已解决通用全身操作。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "AGIBOT Launches AGILE 2.0",
+      "publisher": "AGIBOT",
+      "url": "https://www.agibot.com/article/231/detail/121.html",
+      "kind": "official",
+      "publishedAt": "2026-09-09",
+      "access": "excerpt",
+      "note": "核对公开来源的可读取摘录；未声称完整技术报告或独立复现。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

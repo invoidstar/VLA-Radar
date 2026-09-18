@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260916-xplanner",
+  "eventKey": "x-square-xplanner-0916-release",
+  "title": "X-Planner 开放 9B 规划模型与多视角数据",
+  "primaryCategory": "opensource",
+  "tags": [
+    "任务规划",
+    "VLA",
+    "开放权重",
+    "多视角"
+  ],
+  "eventDate": "2026-09-16",
+  "publishedAt": "2026-09-16",
+  "dateNote": "事件日期采用所列原始公告或发布记录，不采用搜索抓取日期。",
+  "observedAt": "2026-09-18",
+  "updatedAt": "2026-09-18",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research-resource",
+  "whatHappened": "X Square Robot 的官方仓库记录，9月16日发布 X-Planner-9B-0916 权重和 XPlanner benchmark，后者含1,500段任务记录、3,490个视频。模型卡将它定位为长程操作的规划前端：把指令、多视角观察与可选历史转为结构化事件，再交给下游世界—动作模型。",
+  "whyItMatters": "可查看的中间规划状态，让任务分解、执行历史和底层控制之间的接口更容易研究。这次价值在于具体模型与媒体资源可获取，而不只是演示视频；但媒体数据开放与完整评测链路开放需要分开看。",
+  "vlaRelevance": "它提供“规划表示如何条件化世界—动作模型”的可研究接口。可结合高层技能选择方法理解规划与动作执行的区别，不能仅凭规划输出认定机器人闭环成功。",
+  "limits": "官方模型卡明确：本次卡片不报告该检查点的新评测；完整时序评分标注和固定端到端协议不包含在媒体发布中。权重和代码采用不同许可证，数据保留上游条款。本条不是论文精读，也没有把新模型加入现有成绩榜。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "X-Planner README · Updates",
+      "publisher": "X Square Robot",
+      "url": "https://github.com/X-Square-Robot/Xplanner/blob/main/README.md",
+      "kind": "repository",
+      "publishedAt": "2026-09-16",
+      "access": "repository",
+      "note": "核对官方README的2026-09-16发布记录；方法定位与下载范围来自README和模型卡。"
+    },
+    {
+      "id": "s2",
+      "title": "X-Planner-9B-0916 model card",
+      "publisher": "X Square Robot",
+      "url": "https://huggingface.co/x-square-robot/X-Planner-9B-0916",
+      "kind": "official",
+      "publishedAt": null,
+      "access": "excerpt",
+      "note": "核对可读取模型卡正文；评测范围与许可证限制见Benchmark and evaluation scope、License。"
+    }
+  ],
+  "paperLinks": [
+    {
+      "paperId": "p050",
+      "relation": "background",
+      "note": "SayCan 提供高层任务规划与底层技能执行的背景；不是本次X-Planner对应论文。"
+    }
+  ],
+  "revisionHistory": []
+}

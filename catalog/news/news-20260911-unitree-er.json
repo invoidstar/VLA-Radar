@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260911-unitree-er",
+  "eventKey": "unitree-unifolm-er-weights-0911",
+  "title": "宇树开放 ER-1 与 ER-Flow 权重，整体 WLA 仍分阶段发布",
+  "primaryCategory": "opensource",
+  "tags": [
+    "人形机器人",
+    "开放权重",
+    "世界模型"
+  ],
+  "eventDate": "2026-09-11",
+  "publishedAt": "2026-09-11",
+  "dateNote": "事件日期采用所列原始公告或发布记录，不采用搜索抓取日期。",
+  "observedAt": "2026-09-18",
+  "updatedAt": "2026-09-18",
+  "stage": "partial-release",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research-resource",
+  "whatHappened": "宇树 UnifoLM-WLA 官方仓库的 News 记录，9月11日发布 UnifoLM-ER-1 与 UnifoLM-ER-Flow 模型权重。它们属于通用人形基础模型计划中的推理及交互建模部件；项目同时描述了面向操作与全身协调的更大系统。",
+  "whyItMatters": "部件级开放让研究者有机会分别考察空间理解与交互表示。更值得注意的是发布颗粒度：一个系统已经展示、两个权重已经开放，与全部策略、训练代码和数据都齐备不是同一件事。",
+  "vlaRelevance": "与视觉语言理解向动作表示的衔接、跨末端执行器适配有关。可与其他通用人形模型的模块分工作背景对读，不能将不同部件的评测拼成完整WLA策略的成绩。",
+  "limits": "本条只确认官方发布记录明确列出的两个权重。UnifoLM-WLA-Base、后训练代码及各数据集需逐项检查实际可获取状态，不统称“完整系统已全开源”；模型性能仍是作者报告，不是本站复现。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "UnifoLM-WLA README · News / Open-Source Plan",
+      "publisher": "Unitree Robotics",
+      "url": "https://github.com/unitreerobotics/unifolm-wla",
+      "kind": "repository",
+      "publishedAt": "2026-09-11",
+      "access": "repository",
+      "note": "官方仓库明确列出两项9月11日权重发布；计划清单不能当作全部材料已经发布的证明。"
+    },
+    {
+      "id": "s2",
+      "title": "UnifoLM-WLA project page",
+      "publisher": "Unitree Robotics",
+      "url": "https://unigen-x.github.io/unifolm-wla.github.io/",
+      "kind": "official",
+      "publishedAt": null,
+      "access": "excerpt",
+      "note": "项目页支持系统定位；不据此声称全部权重和复现数据已可下载。"
+    }
+  ],
+  "paperLinks": [
+    {
+      "paperId": "p070",
+      "relation": "background",
+      "note": "GR00T N1 是通用人形模型的背景阅读，不是本次宇树发布的模型。"
+    }
+  ],
+  "revisionHistory": []
+}

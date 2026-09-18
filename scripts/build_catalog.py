@@ -4,6 +4,7 @@ import argparse,hashlib,json
 from pathlib import Path
 from catalog_core import dumps,read_catalog
 from experience_build import outputs as experience_outputs
+from news_core import outputs as news_outputs
 
 def compact(value):return json.dumps(value,ensure_ascii=False,separators=(',',':'))+'\n'
 def hashed(prefix,obj,out):
@@ -38,7 +39,8 @@ def outputs(root):
     searchurl=hashed('data/search-index',{'schemaVersion':1,'topics':m['topics'],'papers':[{k:r['paper'][k] for k in sorted(searchkeys)} for r in records]},out)
     boardurl=hashed('data/board-index',{'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':indexed_tracks,'resultCount':len(results)},out)
     experience,indexurl=experience_outputs(root,records,tracks,results);out.update(experience)
-    out['data/library.json']=compact({'schemaVersion':1,**meta,'searchUrl':searchurl,'boardIndexUrl':boardurl,'experienceUrl':indexurl,'papers':light})
+    news,newsurl=news_outputs(root,records);out.update(news)
+    out['data/library.json']=compact({'schemaVersion':1,**meta,'searchUrl':searchurl,'boardIndexUrl':boardurl,'experienceUrl':indexurl,'newsUrl':newsurl,'papers':light})
     out['data/leaderboards.json']=dumps({'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':tracks,'results':results})
     return out
 
@@ -49,7 +51,7 @@ def build(root,check=False):
         if not f.exists() or f.read_text(encoding='utf-8')!=text:
             stale.append(path)
             if not check:f.parent.mkdir(parents=True,exist_ok=True);f.write_text(text,encoding='utf-8')
-    patterns=['data/experience/*.json','data/details/p*.json','data/boards/*.json','data/paper-results/*.json','data/search-index.*.json','data/board-index.*.json']
+    patterns=['data/news/*.json','data/experience/*.json','data/details/p*.json','data/boards/*.json','data/paper-results/*.json','data/search-index.*.json','data/board-index.*.json']
     for pattern in patterns:
         for p in root.glob(pattern):
             if str(p.relative_to(root)) not in generated:

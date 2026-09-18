@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-18",
+  "status": "partial",
+  "lastAttemptAt": "2026-09-18",
+  "lastSuccessfulSearchAt": null,
+  "lookbackDays": 14,
+  "summary": "首期上线样本：核验6条公告／开放发布／记者报道，覆盖9月5–18日窗口。部分官网仅能读取检索摘录，未完成所有来源全量扫描；非穷尽周报。",
+  "coverage": [
+    {
+      "from": "2026-09-05",
+      "to": "2026-09-18",
+      "status": "partial",
+      "note": "公开检索及官方仓库/模型卡核验；若干官网全文抓取失败，仅据可读公告摘录记录有限事实。"
+    }
+  ]
+}

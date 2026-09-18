@@ -34,6 +34,7 @@ jobs:
         run: |
           python scripts/browser_smoke.py
           python scripts/browser_workspace.py
+          python scripts/browser_news.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -41,6 +42,7 @@ jobs:
           path: |
             /tmp/radar-browser/
             /tmp/radar-workspace/
+            /tmp/radar-news-browser/
           retention-days: 14
       - name: Check Pages enablement
         if: github.event_name != 'pull_request'
@@ -57,7 +59,7 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           mkdir -p _site/data
-          cp index.html styles.css research.css app.js research.js dates.js runtime.js search-core.js search-client.js search-worker.js favicon.svg experience-loader.js experience-core.js experience.js experience.css _site/
+          cp index.html styles.css research.css app.js research.js dates.js runtime.js search-core.js search-client.js search-worker.js favicon.svg experience-loader.js experience-core.js experience.js experience.css news-core.js news.js news.css _site/
           cp -R data/. _site/data/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3

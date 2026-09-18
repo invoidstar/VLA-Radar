@@ -23,6 +23,24 @@
           "after": "来源摘录对比、实际变化中心、证据覆盖热力图、协议内图表与公开引用导出"
         }
       ]
+    },
+    {
+      "id": "site-embodied-weekly-20260918",
+      "kind": "site",
+      "paperId": null,
+      "title": "具身智能周报上线",
+      "date": "2026-09-18",
+      "observedAt": "2026-09-18T06:46:27.573551+00:00",
+      "mode": "record",
+      "summary": "独立周报、来源核验、分类与周归档、6条首批新闻；不新增算法结果或虚构历史新闻。",
+      "source": "https://github.com/invoidstar/VLA-Radar",
+      "changes": [
+        {
+          "field": "news",
+          "before": "无独立具身智能新闻页面",
+          "after": "按需加载的具身智能周报，首批6条，检索状态partial"
+        }
+      ]
     }
   ]
 }

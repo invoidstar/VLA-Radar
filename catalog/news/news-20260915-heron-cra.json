@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260915-heron-cra",
+  "eventKey": "scalabot-heron-cra-announcement",
+  "title": "HERON-CRA 公布，聚焦记忆与经验改进",
+  "primaryCategory": "model",
+  "tags": [
+    "记忆",
+    "强化学习",
+    "跨本体"
+  ],
+  "eventDate": "2026-09-15",
+  "publishedAt": "2026-09-15",
+  "dateNote": "采用9月15日原始记者报道明确的发布日期；9月17日的转载不算新事件。",
+  "observedAt": "2026-09-18",
+  "updatedAt": "2026-09-18",
+  "stage": "reported",
+  "evidence": "reported",
+  "status": "verified",
+  "featured": true,
+  "importance": "major-release",
+  "whatHappened": "《每日经济新闻》9月15日报道，松延动力发布 Scalabot 品牌下的 HERON-Context Reinforcement Action Model（CRA）。报道转述的目标包括记忆、强化学习和跨本体泛化，使机器人从已有执行经验中改进后续行为。",
+  "whyItMatters": "这条动态值得观察的是机器人本体厂商开始明确讨论持续学习与错误恢复，而不只是运动展示。能否将“记住一次经验”转化为稳定的跨任务收益，仍要看后续公开技术证据。",
+  "vlaRelevance": "与长程VLA中的历史利用、失败恢复及跨本体适配有关。不过模型名称或宣传中的“强化学习”并不自动说明具体算法、奖励或部署时是否在线更新参数。",
+  "limits": "当前本条依据记者报道的可读内容，不是已核对完整论文、代码或标准评测。未证实的性能、训练数据量和开源范围不填入。后续若有官方技术报告，在同一事件下追加修订，避免重复制造新发布。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "松延动力发布HERON-CRA模型",
+      "publisher": "每日经济新闻",
+      "url": "https://www.nbd.com.cn/articles/2026-09-15/4581924.html",
+      "kind": "media",
+      "publishedAt": "2026-09-15",
+      "access": "excerpt",
+      "note": "核对原始记者报道摘录；官方能力表述仅按报道归属，不作本站独立验证。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

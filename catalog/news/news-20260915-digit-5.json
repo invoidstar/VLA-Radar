@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260915-digit-5",
+  "eventKey": "agility-digit5-unveiling",
+  "title": "Digit 5 发布：把近人协作安全作为产品目标",
+  "primaryCategory": "robot",
+  "tags": [
+    "人形机器人",
+    "人机协作",
+    "安全",
+    "部署"
+  ],
+  "eventDate": "2026-09-15",
+  "publishedAt": "2026-09-15",
+  "dateNote": "事件日期采用所列原始公告或发布记录，不采用搜索抓取日期。",
+  "observedAt": "2026-09-18",
+  "updatedAt": "2026-09-18",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "Agility Robotics 在9月15日公布下一代人形机器人 Digit 5，面向制造、仓储和物流中的近人协作。官方公告强调在既有部署经验基础上加入人员检测、安全动作和硬件升级，试图减少传统隔离围栏对工作流程的限制。",
+  "whyItMatters": "真实部署的约束不仅是“模型能否完成动作”，还包括人在场时如何停止、避让、维护和复位。将这些要求放在产品中心，是从实验室演示转向运营场景的重要议题。",
+  "vlaRelevance": "对具身策略研究而言，需要区分策略能力、独立安全控制和系统运营。新闻可帮助关注部署约束，但不能将产品公告转换为通用VLA算法的可比性能。",
+  "limits": "Digit 5 官方产品页仍注明处于开发阶段，规格为预生产配置内部测试的估计，部分图像为示意且部分安全功能仍在开发。不能把本次公布写成已全面交付、已经消除风险或完成所有第三方安全认证。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Agility unveils Digit 5",
+      "publisher": "Agility Robotics",
+      "url": "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale",
+      "kind": "official",
+      "publishedAt": "2026-09-15",
+      "access": "excerpt",
+      "note": "核对公开来源的可读取摘录；未声称完整技术报告或独立复现。"
+    },
+    {
+      "id": "s2",
+      "title": "Digit 5 product page · development disclaimer",
+      "publisher": "Agility Robotics",
+      "url": "https://www.agilityrobotics.com/solutions/digit-5",
+      "kind": "official",
+      "publishedAt": null,
+      "access": "excerpt",
+      "note": "核对官方产品页公开说明：in development、preliminary estimates；公告不作为安全认证证据。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

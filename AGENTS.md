@@ -51,3 +51,8 @@ Use build_catalog.py; do not hand-edit hashes or generated shards. Startup uses 
 ## Reading workspace and public change capture
 
 Read maintenance/workspace.md. Before canonical content edits, preserve the exact latest main SHA as BASE_SHA. After editing, run `python scripts/capture_activity.py --base "$BASE_SHA"`, then build_catalog.py and validate_all.py. Commit the actual public deltas and generated shards in the same PR. Never invent historical collection/change dates from firstPublished, lastCheckedAt or old note snapshots. Data/experience is generated; do not edit hashed paths. Preserve optional-module loading, zero/null separation, source limitations and original reading-state keys. Comparison uses cited note excerpts, not fabricated attributes or a global capability rank. The heatmap counts checked non-superseded evidence in this library, not field-wide research activity. Browser CI includes browser_workspace.py. Private reader preferences, comparison selections and visit history stay in the browser, never in public data.
+
+
+## Embodied AI Weekly / 具身智能周报
+
+详见 `maintenance/news-policy.md`。新闻独立于论文和榜单；维护实际来源、事件/报道日期、公告与材料开放边界、背景/对应论文关系。原有每周任务同时检索过去14天的重要具身智能动态，重点最近7天，3–5条编辑精选，不凑数、不重报旧闻。状态和候选分别保存在news-state/news-candidates，部分检索不能推进完整成功检查点。只编辑catalog/news，构建哈希分片；News代码、样式与数据按需加载。发布前执行browser_news.py与既有完整CI，正常PR自检合并后核实Pages。

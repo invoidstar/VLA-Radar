@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260910-ge-act2",
+  "eventKey": "agibot-geact2-official-announcement",
+  "title": "GE-Act 2.0 官方公告：从操作数据训练原生世界—动作模型",
+  "primaryCategory": "model",
+  "tags": [
+    "WAM",
+    "预训练",
+    "世界模型"
+  ],
+  "eventDate": "2026-09-10",
+  "publishedAt": "2026-09-10",
+  "dateNote": "事件日期采用官方英文公告9月10日；论文预印本首发及其他语言发布日另行核实，不相互覆盖。",
+  "observedAt": "2026-09-18",
+  "updatedAt": "2026-09-18",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "major-release",
+  "whatHappened": "智元9月10日英文官方公告介绍 GE-Act 2.0：不以现成视频生成模型为起点，而在具身操作数据上从随机初始化训练视觉表示、未来预测与动作预测，并报告跨数据规模和新场景的实验。",
+  "whyItMatters": "它把“机器人世界—动作模型能否从领域数据中获得可扩展能力”放到中心，而不是默认必须依赖视频生成预训练。这一研究路线值得与现有视频先验路线区分讨论。",
+  "vlaRelevance": "与VLA/WAM预训练目标、未来预测和控制表示直接相关。可以借助既有WAM论文理解未来建模为何可能辅助动作，但本次公告本身不替代统一协议下的量化对比。",
+  "limits": "日期按所列9月10日官方英文公告记录，不冒充技术报告首次公开日期。关于泛化和规模规律均为公司报告，本次新闻未重新核验全部实验表，未推导新榜单分数，也不将“发布模型”自动写成权重、训练代码与数据全部开源。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "AGIBOT Releases GE-Act 2.0",
+      "publisher": "AGIBOT",
+      "url": "https://www.agibot.com/article/231/detail/120.html",
+      "kind": "official",
+      "publishedAt": "2026-09-10",
+      "access": "excerpt",
+      "note": "核对公开来源的可读取摘录；未声称完整技术报告或独立复现。"
+    }
+  ],
+  "paperLinks": [
+    {
+      "paperId": "p078",
+      "relation": "background",
+      "note": "Fast-WAM 可作世界—动作建模的背景阅读，不是GE-Act 2.0的技术报告。"
+    }
+  ],
+  "revisionHistory": []
+}
