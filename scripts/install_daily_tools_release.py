@@ -41,6 +41,15 @@ for patch in payload['patches']:
         text = text[:edit['start']] + edit['text'] + text[edit['end']:]
     assert hashlib.sha256(text.encode()).hexdigest() == patch['afterSha256'], f'Bad postimage: {path}'
     outputs[path] = text
+# LIBERO is both a paper title and a benchmark; exercise the benchmark option,
+# without assuming it must outrank the equally exact paper title.
+p = 'scripts/browser_tools.py'
+s = outputs[p]
+assert hashlib.sha256(s.encode()).hexdigest() == 'ca52e03fc15252d4673458929f36cb5a451a04f838a9056a3690a2fd8d50c72c'
+s = s.replace('  page.wait_for_function(\'document.querySelector("#command-results [role=option] small").textContent==="基准"\')', '  page.wait_for_function(\'Array.from(document.querySelectorAll("#command-results [role=option]")).some(e=>e.querySelector("small").textContent==="基准" && e.querySelector("strong").textContent==="LIBERO")\')\n  benchmark_option=page.locator(\'#command-results [role=option]\').evaluate_all(\'(els)=>els.findIndex(e=>e.querySelector("small").textContent==="基准" && e.querySelector("strong").textContent==="LIBERO")\')')
+s = s.replace("  page.keyboard.press('ArrowUp');page.keyboard.press('Enter');page.wait_for_selector('#leaderboards-section:not(.hidden)')", "  page.keyboard.press('ArrowUp')\n  for _ in range(benchmark_option):page.keyboard.press('ArrowDown')\n  page.keyboard.press('Enter');page.wait_for_selector('#leaderboards-section:not(.hidden)')")
+assert hashlib.sha256(s.encode()).hexdigest() == 'f95ce3be4ff5b9812b3e32897da8a0f75c3a0cd8d3d9edb6b64973ec564a8304'
+outputs[p] = s
 before = {str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in Path('catalog').rglob('*') if p.is_file()}
 audit = Path('/tmp/radar-tools-source'); audit.mkdir(parents=True, exist_ok=True)
 (audit/'canonical-before.json').write_text(json.dumps(before, indent=2))
