@@ -4886,6 +4886,186 @@
         "status": "published",
         "lastCheckedAt": "2026-09-18"
       }
+    },
+    {
+      "id": "p090",
+      "name": "Act3D",
+      "title": "Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation",
+      "team": "Theophile Gervet 等；Carnegie Mellon University",
+      "venue": "CoRL 2023",
+      "publicationType": "conference",
+      "publicationStatus": "正式会议论文集已核对；PMLR出版日2023-12-02，具体录用日未核实。",
+      "firstPublished": "2023-06-30",
+      "dateNote": "按arXiv v1 Submission history保留首发UTC日期；与正式出版和新版更新时间分开。",
+      "collectionMonth": "2026-09",
+      "versionNote": "CoRL 2023 PMLR 229正式PDF，pp.3949–3965；正文与附录，Figs.1、3–4和Tables 1–3；arXiv身份2306.17817v2另记",
+      "topics": [
+        "spatial",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-3",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "以自适应粗到细三维候选采样、相对注意力和共享权重选择操作关键位姿，提升空间精度而不维持全场景密集高分辨率网格。",
+      "findings": "正式PDF Figure 3：74任务单任务平均83%（100示范/任务）；Figure 4：18任务联合平均65%。Table 2主干消融另报65.1%，不能把不同表的小数与分母混用。",
+      "limitations": "深度噪声与外部BiRRT规划限制接触/铰接任务；Table 2主干差值11.7个百分点与正文8.7不一致。5任务消融不等于18或74任务主榜。",
+      "insight": "将观测空间与可查询动作位置分开，并把高分辨率计算集中到候选区域；空间定位与路径生成是两项不同能力。",
+      "readingFocus": "先看Figure 1，再锁定Figures 3–4的任务数/预算，最后用Table 2区分采样、表征和视角条件。",
+      "evidence": "checked",
+      "evidenceNote": "已读取所标正文、方法、实验与相关附录，核对原生表格或正式PDF表格图像；作者报告及引用基线，不是本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读版本与原表",
+          "url": "https://proceedings.mlr.press/v229/gervet23a/gervet23a.pdf"
+        },
+        {
+          "label": "正式发表与作者书目",
+          "url": "https://proceedings.mlr.press/v229/gervet23a.html"
+        },
+        {
+          "label": "arXiv提交历史",
+          "url": "https://arxiv.org/abs/2306.17817"
+        },
+        {
+          "label": "PMLR官方issued元数据；不是录用日",
+          "url": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-gervet23a.md"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2306.17817",
+      "arxiv": "2306.17817",
+      "doi": "",
+      "detailUrl": "data/details/p090.json?v=39357d7dbb068933",
+      "resultUrl": "data/paper-results/p090.5a22e57ba10e5b60.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2023-06-30",
+        "latestArxivVersion": "v2",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p091",
+      "name": "GNFactor",
+      "title": "GNFactor: Multi-Task Real Robot Learning with Generalizable Neural Feature Fields",
+      "team": "Yanjie Ze 等；SJTU、UC San Diego、HKU、AWS AI",
+      "venue": "CoRL 2023",
+      "publicationType": "conference",
+      "publicationStatus": "正式会议论文集已核对；PMLR出版日2023-12-02，具体录用日未核实。",
+      "firstPublished": "2023-08-31",
+      "dateNote": "按arXiv v1 Submission history保留首发UTC日期；与正式出版和新版更新时间分开。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2308.16891v3完整HTML，§3–5、Appendices C–G及Tables 1–4、7–9；主要表格另对照CoRL正式PDF",
+      "topics": [
+        "spatial",
+        "pretraining",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-3",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "用可泛化神经特征场联合重建RGB和视觉教师语义，与PerAct式策略共享三维体积，使少示范动作监督同时获得跨视角结构约束。",
+      "findings": "arXiv v3 Table 1：RLBench 10任务、20示范/任务、最终检查点31.7%，单视图PerAct20.4%；六种泛化变化28.3%对18.0%。最佳检查点40.0%另列。",
+      "limitations": "推理单前视RGB-D，但模拟训练使用19个额外RGB视角；最终31.7、消融36.8、最佳40.0不可混用。部分任务零成功或退化。",
+      "insight": "重点是训练期几何与语义辅助监督如何塑造动作读取的共享表示，而非把NeRF重建质量当作控制能力。",
+      "readingFocus": "沿Figure 3区分两条训练路径，先数清训练与部署相机，再分别读Tables 1、2、4、7。",
+      "evidence": "checked",
+      "evidenceNote": "已读取所标正文、方法、实验与相关附录，核对原生表格或正式PDF表格图像；作者报告及引用基线，不是本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读版本与原表",
+          "url": "https://arxiv.org/html/2308.16891v3"
+        },
+        {
+          "label": "正式发表与作者书目",
+          "url": "https://proceedings.mlr.press/v229/ze23a.html"
+        },
+        {
+          "label": "arXiv提交历史",
+          "url": "https://arxiv.org/abs/2308.16891"
+        },
+        {
+          "label": "PMLR官方issued元数据；不是录用日",
+          "url": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-ze23a.md"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2308.16891",
+      "arxiv": "2308.16891",
+      "doi": "",
+      "detailUrl": "data/details/p091.json?v=c372ae37e3bbff9d",
+      "resultUrl": "data/paper-results/p091.5b353c8cb0c805fa.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2023-08-31",
+        "latestArxivVersion": "v3",
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p092",
+      "name": "ChainedDiffuser",
+      "title": "ChainedDiffuser: Unifying Trajectory Diffusion and Keypose Prediction for Robotic Manipulation",
+      "team": "Zhou Xian 等；Carnegie Mellon University",
+      "venue": "CoRL 2023",
+      "publicationType": "conference",
+      "publicationStatus": "正式会议论文集已核对；PMLR出版日2023-12-02，具体录用日未核实。",
+      "firstPublished": null,
+      "dateNote": "未核实最早公开日期或对应arXiv ID，firstPublished留空；已确认PMLR issued为2023-12-02，但不拿出版日或会议日冒充首次公开日。",
+      "collectionMonth": "2026-09",
+      "versionNote": "CoRL 2023 PMLR 229正式PDF，pp.2323–2339；§3–4、附录7及Tables 1–4，图表号按正式PDF",
+      "topics": [
+        "action",
+        "spatial"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-3",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "以全局关键位姿预测指导局部条件轨迹扩散，将语义目标选择和密集接触路径生成分工连接，避免完全依赖通用路径规划器。",
+      "findings": "CoRL正式PDF Table 1：10单任务平均95.8%；Table 2：另10个规划困难任务80.9%，Act3D21.0%，无宏动作轨迹扩散31.7%，轨迹回归59.6%。",
+      "limitations": "宏动作级闭环、微动作段开环；10Hz轨迹控制不等于1kHz策略推理。正文/附录训练时长和细特征尺寸示意有差异；首次公开日未核实留空。",
+      "insight": "评估层次动作系统要同时看目标误差、接触轨迹和反馈时间尺度；上层可复用不等于所有场景都可低层无规划执行。",
+      "readingFocus": "先追踪Figure 1交接点，按Tables 1–2锁定两个10任务子集，再读Table 4视角扰动和真机失败。",
+      "evidence": "checked",
+      "evidenceNote": "已读取所标正文、方法、实验与相关附录，核对原生表格或正式PDF表格图像；作者报告及引用基线，不是本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读版本与原表",
+          "url": "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf"
+        },
+        {
+          "label": "正式发表与作者书目",
+          "url": "https://proceedings.mlr.press/v229/xian23a.html"
+        },
+        {
+          "label": "PMLR官方issued元数据；不是录用日",
+          "url": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-xian23a.md"
+        }
+      ],
+      "paperUrl": "https://proceedings.mlr.press/v229/xian23a.html",
+      "arxiv": "",
+      "doi": "",
+      "detailUrl": "data/details/p092.json?v=bc135597b9ccd481",
+      "resultUrl": "data/paper-results/p092.335d09edbce3d0fe.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": null,
+        "latestArxivVersion": null,
+        "status": "published",
+        "lastCheckedAt": "2026-09-18"
+      }
     }
   ]
 }

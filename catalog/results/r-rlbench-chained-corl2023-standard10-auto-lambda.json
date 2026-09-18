@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-chained-corl2023-standard10-auto-lambda",
+  "paperId": "p092",
+  "method": "Auto-λ",
+  "trackId": "rlbench-chained-corl2023-standard10",
+  "values": {
+    "pick_and_lift": 87,
+    "pick_up_cup": 78,
+    "push_button": 95,
+    "put_knife": 31,
+    "put_money": 62,
+    "reach_target": 100,
+    "slide_block": 36,
+    "stack_wine": 23,
+    "take_money": 38,
+    "take_umbrella": 37,
+    "Average": 55
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf",
+  "sourceVersion": "CoRL2023 PMLR229 formal PDF",
+  "locator": "Table 1; formal PDF p.7; §4.1",
+  "attribution": "reported-baseline",
+  "trainingData": "100 demos/task, single-task models; ChainedDiffuser batch24,AdamW1e-4,1 A100~1 day; pretrained CLIP visual/text. Cited baseline training differs.",
+  "evaluationNotes": "作者主表的10单任务子集，不是项目网页提到的74任务，也不是CALVIN。引用旧基线不视为本站复现或全部统一重训。",
+  "supersedes": ""
+}

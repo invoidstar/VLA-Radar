@@ -1,0 +1,28 @@
+{
+  "id": "r-rlbench-gnfactor-v3-final20-peract-four",
+  "paperId": "p091",
+  "method": "PerAct (four cameras)",
+  "trackId": "rlbench-gnfactor-v3-final20",
+  "values": {
+    "close_jar": 21.3,
+    "open_drawer": 44,
+    "sweep_to_dustpan": 0,
+    "meat_off_grill": 65.3,
+    "turn_tap": 46.7,
+    "slide_block": 16,
+    "put_in_drawer": 6.7,
+    "drag_stick": 12,
+    "push_buttons": 9.3,
+    "stack_blocks": 5.3,
+    "Average": 22.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2308.16891v3",
+  "sourceVersion": "arXiv2308.16891v3; cross-checked formal PMLR PDF",
+  "locator": "Table 1; §4.1; formal PDF p.7",
+  "attribution": "reported-baseline",
+  "trainingData": "20 demos/task; 10-task joint model;100k steps,batch2,2 RTX3090; GNFactor adds 19 training RGB views and pretrained SD semantic teacher. Policy input: four RGB-D views",
+  "evaluationNotes": "作者报告平均值，原表各任务标准差可回原表核对；本站未推造总体置信区间。末检查点与最佳检查点不同；放抽屉0%保留真零。",
+  "supersedes": ""
+}

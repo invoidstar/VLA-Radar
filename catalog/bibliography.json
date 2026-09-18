@@ -972,6 +972,165 @@
         }
       ],
       "verifiedAt": "2026-09-18"
+    },
+    "p090": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation",
+        "author": [
+          {
+            "given": "Theophile",
+            "family": "Gervet"
+          },
+          {
+            "given": "Zhou",
+            "family": "Xian"
+          },
+          {
+            "given": "Nikolaos",
+            "family": "Gkanatsios"
+          },
+          {
+            "given": "Katerina",
+            "family": "Fragkiadaki"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              2
+            ]
+          ]
+        },
+        "container-title": "Proceedings of The 7th Conference on Robot Learning",
+        "volume": "229",
+        "page": "3949-3965",
+        "publisher": "PMLR",
+        "URL": "https://proceedings.mlr.press/v229/gervet23a.html"
+      },
+      "sources": [
+        {
+          "label": "官方作者顺序与结构化issued；不以会议年份推录用日",
+          "url": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-gervet23a.md"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
+    },
+    "p091": {
+      "item": {
+        "type": "paper-conference",
+        "title": "GNFactor: Multi-Task Real Robot Learning with Generalizable Neural Feature Fields",
+        "author": [
+          {
+            "given": "Yanjie",
+            "family": "Ze"
+          },
+          {
+            "given": "Ge",
+            "family": "Yan"
+          },
+          {
+            "given": "Yueh-Hua",
+            "family": "Wu"
+          },
+          {
+            "given": "Annabella",
+            "family": "Macaluso"
+          },
+          {
+            "given": "Yuying",
+            "family": "Ge"
+          },
+          {
+            "given": "Jianglong",
+            "family": "Ye"
+          },
+          {
+            "given": "Nicklas",
+            "family": "Hansen"
+          },
+          {
+            "given": "Li Erran",
+            "family": "Li"
+          },
+          {
+            "given": "Xiaolong",
+            "family": "Wang"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              2
+            ]
+          ]
+        },
+        "container-title": "Proceedings of The 7th Conference on Robot Learning",
+        "volume": "229",
+        "page": "284-301",
+        "publisher": "PMLR",
+        "URL": "https://proceedings.mlr.press/v229/ze23a.html"
+      },
+      "sources": [
+        {
+          "label": "官方作者顺序与结构化issued；不以会议年份推录用日",
+          "url": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-ze23a.md"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
+    },
+    "p092": {
+      "item": {
+        "type": "paper-conference",
+        "title": "ChainedDiffuser: Unifying Trajectory Diffusion and Keypose Prediction for Robotic Manipulation",
+        "author": [
+          {
+            "given": "Zhou",
+            "family": "Xian"
+          },
+          {
+            "given": "Nikolaos",
+            "family": "Gkanatsios"
+          },
+          {
+            "given": "Theophile",
+            "family": "Gervet"
+          },
+          {
+            "given": "Tsung-Wei",
+            "family": "Ke"
+          },
+          {
+            "given": "Katerina",
+            "family": "Fragkiadaki"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              2
+            ]
+          ]
+        },
+        "container-title": "Proceedings of The 7th Conference on Robot Learning",
+        "volume": "229",
+        "page": "2323-2339",
+        "publisher": "PMLR",
+        "URL": "https://proceedings.mlr.press/v229/xian23a.html"
+      },
+      "sources": [
+        {
+          "label": "官方作者顺序与结构化issued；不以会议年份推录用日",
+          "url": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-xian23a.md"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
     }
   }
 }

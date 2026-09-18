@@ -1,3 +1,7 @@
+## 2026-09-18 — 覆盖扩充第三批：原方法与执行条件
+
+新增Act3D、GNFactor、ChainedDiffuser共3篇九节深入阅读，补充26条原报告RLBench结果及8个协议。89→92篇、209→235条、65→73协议，数据集系列保持15；三篇新书目来源独立核验。保留Act3D不同任务规模和预算、GNFactor训练额外视角及final/best检查点、ChainedDiffuser宏闭环/微开环和两个10任务设置；未知首发不猜填。引用基线不改原报告paperId，不扩大功能、不推进完整周更检索时间，原内容与RoboCasa分组不变。
+
 ## 2026-09-18 — 官网论文覆盖第二批
 
 新增RVT、RVT-2、3D Diffuser Actor、THE COLOSSEUM四篇全文级九节笔记与核验书目；在RLBench、CALVIN、COLOSSEUM补充27条原表结果及7个非空来源/协议分组，不新增数据集系列或网站功能。保留关键帧与轨迹执行、观测/训练预算、CALVIN时限、COLOSSEUM逐任务No/All与原文冲突；既有RoboCasa/RoboCasa365分组和原有论文、182条结果不变。仅本批内容回补，不推进完整周更检索检查点。

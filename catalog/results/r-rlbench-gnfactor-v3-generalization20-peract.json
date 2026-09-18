@@ -1,0 +1,24 @@
+{
+  "id": "r-rlbench-gnfactor-v3-generalization20-peract",
+  "paperId": "p091",
+  "method": "PerAct",
+  "trackId": "rlbench-gnfactor-v3-generalization20",
+  "values": {
+    "drag_D": 6.6,
+    "slide_L": 33.3,
+    "slide_S": 5,
+    "open_N": 25,
+    "turn_N": 18.3,
+    "push_D": 20,
+    "Average": 18.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2308.16891v3",
+  "sourceVersion": "arXiv2308.16891v3; cross-checked formal PMLR PDF",
+  "locator": "Table 2; Appendix E Table 8 seed counts; PDF pp.7,17",
+  "attribution": "reported-baseline",
+  "trainingData": "20 demos/task; 10-task joint model;100k steps,batch2,2 RTX3090; GNFactor adds 19 training RGB views and pretrained SD semantic teacher.",
+  "evaluationNotes": "保留Table 2原始舍入，PerAct drag(D)为6.6不自行改为6.7。六条件360次执行；GNFactor大方块slide25.0低于基线33.3；不声称泛化到新技能。",
+  "supersedes": ""
+}
