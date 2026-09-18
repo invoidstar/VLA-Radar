@@ -1,0 +1,26 @@
+name: Verify daily tools transport
+on:
+  push:
+    branches: [release/batch-2026-09-18-final-daily-tools]
+    paths: [maintenance/daily-tools.part0, maintenance/daily-tools.part1, maintenance/daily-tools.part2, .github/workflows/check-daily-transport.yml]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect transport checksums
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          for p in sorted(Path('maintenance').glob('daily-tools.part*')):
+              print(p, len(p.read_text()), hashlib.sha256(p.read_bytes()).hexdigest())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: daily-tools-transport-${{ github.run_id }}
+          path: maintenance/daily-tools.part*
+          retention-days: 1
