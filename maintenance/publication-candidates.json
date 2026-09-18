@@ -1,5 +1,76 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-17",
-  "candidates": []
+  "updatedAt": "2026-09-18",
+  "candidates": [
+    {
+      "paperId": "p015",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2608.08749",
+      "value": "6 pages, 1 figure. Accepted as a poster at the ECCV 2026 Workshop on Embodied Multimodal Reasoning in Physical Environments (EMR)",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p030",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2608.29208",
+      "value": "Accepted to the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p041",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2602.12978",
+      "value": "Accepted by Robotics: Science and Systems 2026 (RSS 2026). Project page: this https URL",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p042",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2604.05323",
+      "value": "Accepted to the 2026 IEEE International Conference on Multimedia and Expo (ICME 2026)",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p045",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2508.05342",
+      "value": "Journal accepted by Information Fusion",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p048",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2112.03227",
+      "value": "Accepted for publication at IEEE Robotics and Automation Letters (RAL). Code, models and dataset available at this http URL",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p049",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2202.02005",
+      "value": "Conference on Robot Learning (pp. 991-1002). 2022 Jan 11 CoRL 2021, 23 pages",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p055",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2303.04137",
+      "value": "An extended journal version of the original RSS2023 paper",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p065",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2410.07864",
+      "value": "10 pages, conference",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    },
+    {
+      "paperId": "p068",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2501.15830",
+      "value": "Robotics: Science and Systems, 2025",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    }
+  ]
 }

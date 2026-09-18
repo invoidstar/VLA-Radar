@@ -47,11 +47,19 @@ class CatalogTests(unittest.TestCase):
         import shutil
         with tempfile.TemporaryDirectory() as tmp:
             shutil.copytree(ROOT/'catalog',Path(tmp)/'catalog');Path(tmp,'maintenance').mkdir();write(Path(tmp)/'maintenance/state.json',{'lastSuccessfulSearchAt':None});before=load(Path(tmp)/'maintenance/state.json')
-            with patch('sync_publications.fetch',side_effect=OSError('offline')):report=sync(tmp,1,True,pause=0)
+            with patch('sync_publications.fetch',side_effect=OSError('offline')):report=sync(tmp,1,True,pause=0,due_days=0)
             self.assertEqual(report['status'],'partial');self.assertFalse(report['metadataChecked']);self.assertEqual(load(Path(tmp)/'maintenance/state.json'),before)
     def meta(self,**kw):return dict(arxiv='2502.19645',version='v3',firstArxivAt='2025-02-27',latestArxivAt='2026-09-01',title=self.rec['paper']['title'],doi='',journalRef='',comment='',**kw)
     def test_arxiv_version_preserves_first_public(self):
         prior=self.rec['paper']['firstPublished'];self.rec['note']['status']='expanded';apply_arxiv(self.rec,self.meta(),'2026-09-17');self.assertEqual(self.rec['paper']['firstPublished'],prior);self.assertEqual(self.rec['publication']['status'],'published');self.assertEqual(self.rec['note']['status'],'needs_review')
+    def test_adjacent_arxiv_version_is_understood(self):
+        self.rec['note']['version']='arXiv:2502.19645v2；method sections'
+        self.rec['note']['status']='expanded';meta=self.meta();meta['version']='v2'
+        apply_arxiv(self.rec,meta,'2026-09-18');self.assertEqual(self.rec['note']['status'],'expanded')
+    def test_quoted_key_result_version_is_not_read_version(self):
+        self.rec['note']['version']='arXiv v1；KEY RESULT retained from v3'
+        self.rec['note']['status']='expanded';meta=self.meta();meta['version']='v2'
+        apply_arxiv(self.rec,meta,'2026-09-18');self.assertEqual(self.rec['note']['status'],'needs_review')
     def test_arxiv_date_conflict_queued(self):
         meta=self.meta();meta['firstArxivAt']='2025-02-28';out=apply_arxiv(self.rec,meta,'2026-09-17');self.assertEqual(self.rec['publication']['firstArxivAt'],'2025-02-27');self.assertEqual(out[0]['kind'],'first-arxiv-conflict')
     def test_arxiv_identity(self):

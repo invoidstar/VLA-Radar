@@ -5,9 +5,9 @@
     "name": "mimic-video",
     "title": "mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs",
     "team": "mimic robotics／Microsoft Zurich／ETH Zurich／UC Berkeley\nJonas Pai、Liam Achenbach、Victoriano Montesinos、Oier Mees、Elvis Nava等",
-    "venue": "RSS 2026",
+    "venue": "Robotics: Science and Systems XXII",
     "publicationType": "conference",
-    "publicationStatus": "RSS 2026，论文077\nDOI:10.15607/RSS.2026.XXII.077\narXiv:2512.15692",
+    "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.077",
     "firstPublished": "2025-12-17",
     "dateNote": "",
     "collectionMonth": "2026-07",
@@ -42,23 +42,27 @@
       {
         "label": "arXiv 元数据",
         "url": "https://arxiv.org/abs/2512.15692"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.15607/rss.2026.xxii.077"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2512.15692",
     "arxiv": "2512.15692",
-    "doi": "10.15607/RSS.2026.XXII.077"
+    "doi": "10.15607/rss.2026.xxii.077"
   },
   "publication": {
-    "firstArxivAt": null,
-    "firstArxivSource": "",
-    "latestArxivVersion": null,
-    "latestArxivAt": null,
-    "status": "legacy",
-    "venue": "RSS 2026",
-    "doi": "10.15607/RSS.2026.XXII.077",
+    "firstArxivAt": "2025-12-17",
+    "firstArxivSource": "https://arxiv.org/abs/2512.15692v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2025-12-19",
+    "status": "published",
+    "venue": "Robotics: Science and Systems XXII",
+    "doi": "10.15607/rss.2026.xxii.077",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": null,
+    "publishedAt": "2026-07-13",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -67,12 +71,36 @@
         "venue": "RSS 2026",
         "source": "https://arxiv.org/abs/2512.15692",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2025-12-17",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2512.15692v1",
+        "note": "arXiv Submission history v1（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2025-12-19",
+        "observedAt": "2026-09-18",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2512.15692v2",
+        "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2026-07-13",
+        "observedAt": "2026-09-18",
+        "venue": "Robotics: Science and Systems XXII",
+        "source": "https://doi.org/10.15607/rss.2026.xxii.077",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-17",
     "verifiedAt": "2026-09-17",
     "version": "arXiv 2512.15692 v1；§III–VI、Tables I–III",

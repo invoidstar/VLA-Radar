@@ -3,52 +3,52 @@
   "plannedAt": "2026-09-18",
   "notes": [
     {
-      "paperId": "p069",
+      "paperId": "p034",
       "reason": "needs_review",
-      "readVersion": "2502.19645；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "readVersion": "arXiv 2607.04434 v1；§3–6、Tables 1–7；榜单冻结2026-07-03",
+      "latestVersion": "v3"
+    },
+    {
+      "paperId": "p048",
+      "reason": "needs_review",
+      "readVersion": "2112.03227；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v4"
+    },
+    {
+      "paperId": "p050",
+      "reason": "needs_review",
+      "readVersion": "2204.01691；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
       "latestVersion": "v2"
     },
     {
-      "paperId": "p043",
+      "paperId": "p052",
       "reason": "needs_review",
-      "readVersion": "2026-03-30作者供稿技术说明＋IEEE正式摘要；2026-09-18核读；未取得期刊完整正文",
-      "latestVersion": null
+      "readVersion": "2212.06817；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v2"
     },
     {
-      "paperId": "p046",
+      "paperId": "p055",
       "reason": "needs_review",
-      "readVersion": "PolyU机构摘要与Elsevier出版信息；2026-09-18核读；未取得完整方法与实验正文",
-      "latestVersion": null
+      "readVersion": "作者提供 diffusion_policy_2023.pdf（16页，RSS 2023），Sec.II–V、VIII、Appendix与Table I–IV；KEY RESULT原有v5摘要保持不变，本笔记不混用期刊扩展版实验",
+      "latestVersion": "v5"
     },
     {
-      "paperId": "p001",
-      "reason": "expanded",
-      "readVersion": "arXiv 2608.27550 v1；§2–4、附录C–I",
-      "latestVersion": null
+      "paperId": "p057",
+      "reason": "needs_review",
+      "readVersion": "2306.03310；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v2"
     },
     {
-      "paperId": "p002",
-      "reason": "expanded",
-      "readVersion": "arXiv 2607.01586 v2；§3–4、附录A–F",
-      "latestVersion": null
+      "paperId": "p059",
+      "reason": "needs_review",
+      "readVersion": "2310.08864；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v9"
     },
     {
-      "paperId": "p007",
-      "reason": "expanded",
-      "readVersion": "arXiv 2608.03727 v1；§3–4、实现说明",
-      "latestVersion": null
-    },
-    {
-      "paperId": "p013",
-      "reason": "expanded",
-      "readVersion": "arXiv 2608.05042 v1；§III–V、附录结果",
-      "latestVersion": null
-    },
-    {
-      "paperId": "p014",
-      "reason": "expanded",
-      "readVersion": "arXiv 2608.26821 v1；§III–IV、Tables I–III",
-      "latestVersion": null
+      "paperId": "p063",
+      "reason": "needs_review",
+      "readVersion": "2405.12213；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v2"
     }
   ],
   "metadata": {
@@ -59,7 +59,7 @@
       "p046"
     ]
   },
-  "remainingNotes": 3,
+  "remainingNotes": 30,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."

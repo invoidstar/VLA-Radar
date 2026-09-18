@@ -14,11 +14,11 @@ class PublicRedirect(HTTPRedirectHandler):
     def redirect_request(self,req,fp,code,msg,headers,newurl):
         check_host(newurl)
         return super().redirect_request(req,fp,code,msg,headers,newurl)
-def fetch(url,timeout=18,max_bytes=6000000,method='GET',attempts=2):
+def fetch(url,timeout=18,max_bytes=6000000,method='GET',attempts=2,accept=None):
     check_host(url);last=None
     for attempt in range(attempts):
         try:
-            req=Request(url,headers={'User-Agent':AGENT,'Accept':'application/atom+xml,application/json,text/html;q=0.9,*/*;q=0.5'},method=method)
+            req=Request(url,headers={'User-Agent':AGENT,'Accept':accept or 'text/html,application/json;q=0.9,*/*;q=0.8'},method=method)
             with build_opener(PublicRedirect()).open(req,timeout=timeout) as r:
                 body=r.read(max_bytes+1)
                 if len(body)>max_bytes:raise ValueError('response exceeds size limit')
@@ -29,5 +29,11 @@ def fetch(url,timeout=18,max_bytes=6000000,method='GET',attempts=2):
         except (URLError,TimeoutError,OSError) as e:
             last=e
             if attempt+1==attempts:raise
-        time.sleep(3*(attempt+1))
+        delay=3*(attempt+1)
+        if isinstance(last,HTTPError) and last.headers:
+            retry=last.headers.get('Retry-After','')
+            if retry.isdigit():
+                if int(retry)>60: raise last
+                delay=max(delay,int(retry))
+        time.sleep(delay)
     raise last

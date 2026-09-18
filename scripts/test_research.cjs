@@ -16,3 +16,5 @@ a.deepEqual(R.benchmarkFamilies({tracks:[{dataset:'CALVIN'},{dataset:'LIBERO'},{
 const html=R.richEvidence({sections:[{sources:[{url:'https://example.com/paper'}]}],tables:[{title:'<script>',columns:['a','b'],rows:[['<img onerror=x>','2']],locator:'Table 1',caption:'Test'}]});
 a(!html.includes('<script>'));a(!html.includes('<img onerror'));a(html.includes('&lt;script&gt;'));
 console.log('PASS: deep-note escaping, dynamic benchmark families, score/seconds/percent units.');
+
+a.deepEqual(R.visibleResults({results:[row('old',89)],supersededIds:['old']},'one'),[]);

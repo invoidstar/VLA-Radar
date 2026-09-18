@@ -9,6 +9,9 @@ from pathlib import Path
 from urllib.parse import quote, urlencode
 from catalog_core import add_event, canonical_doi, day, load, normal_title, read_catalog, today, write
 from http_public import fetch
+from arxiv_metadata import parse_abstract
+from datetime import date
+from urllib.error import HTTPError
 NS={'a':'http://www.w3.org/2005/Atom','x':'http://arxiv.org/schemas/atom'}
 
 def parse_feed(text):
@@ -39,13 +42,13 @@ def apply_arxiv(rec, meta, checked_at):
         candidates.append({'paperId':p['id'],'kind':'first-arxiv-conflict','source':url,'value':meta['firstArxivAt'],'note':'既有首发日期与 API 不一致；需核对 v1，不静默覆盖。'})
     else:
         pub['firstArxivAt']=meta['firstArxivAt'];pub['firstArxivSource']=url+'v1'
-        add_event(pub,'arxiv_first',meta['firstArxivAt'],url+'v1',note='arXiv Atom published（UTC）；不替代既有首次公开日期。',observed=checked_at)
+        add_event(pub,'arxiv_first',meta['firstArxivAt'],url+'v1',note=('arXiv Submission history v1（UTC）' if meta.get('provider')=='arxiv-abstract' else 'arXiv Atom published（UTC）')+'；不替代既有首次公开日期。',observed=checked_at)
     version=meta['version']; old=pub['latestArxivVersion']
     if version and (old is None or int(version[1:])>=int(old[1:])):
         pub['latestArxivVersion']=version;pub['latestArxivAt']=meta['latestArxivAt']
         add_event(pub,'arxiv_version',meta['latestArxivAt'],url+version,note=f'元数据版本 {version}；并不表示已重读该版本。',observed=checked_at)
-        read_versions=re.findall(r'\bv(\d+)\b',rec['note']['version'])
-        if rec['note']['status']=='expanded' and read_versions and int(version[1:])>max(map(int,read_versions)): rec['note']['status']='needs_review'
+        read_versions=re.findall(r'(?<![A-Za-z])v(\d+)\b',re.split(r'[;；]',rec['note']['version'],maxsplit=1)[0])
+        if rec['note']['status']=='expanded' and ((read_versions and int(version[1:])>max(map(int,read_versions))) or (not read_versions and int(version[1:])>1)): rec['note']['status']='needs_review'
     if pub['status']=='legacy' and p['publicationType']=='preprint':pub['status']='preprint'
     if re.search(r'withdraw|retract',meta['comment'],re.I):
         candidates.append({'paperId':p['id'],'kind':'withdrawal-mention','source':url,'value':meta['comment'],'note':'作者注释提示撤稿；需核对，不直接删除记录。'})
@@ -55,6 +58,7 @@ def apply_arxiv(rec, meta, checked_at):
 
 def apply_crossref(rec,msg,linked_doi,checked_at):
     doi=canonical_doi(linked_doi);pub=rec['publication'];p=rec['paper']
+    if pub['status']=='withdrawn':return False,'Withdrawn status requires manual resolution'
     if canonical_doi(msg.get('DOI',''))!=doi: return False,'DOI identity mismatch'
     if doi.startswith('10.48550/arxiv'):return False,'arXiv DOI is not journal/conference publication'
     titles=msg.get('title',[])
@@ -72,20 +76,52 @@ def apply_crossref(rec,msg,linked_doi,checked_at):
     if not any(s['url']==url for s in p['sources']):p['sources'].append({'label':'出版方 DOI','url':url})
     return True,''
 
-def sync(root,limit=None,apply=False,pause=3.1):
+def sync(root,limit=100,apply=False,pause=3.1,due_days=7):
     if limit is not None and limit<1:raise ValueError('limit must be positive')
-    root=Path(root);m,records,_,_=read_catalog(root);eligible=[r for r in records if r['paper']['arxiv']]; selected=eligible[:limit] if limit else eligible
-    when=today();errors=[];candidates=[];changed=[];checked=[];network={}
+    root=Path(root);m,records,_,_=read_catalog(root)
+    eligible=[r for r in records if r['paper']['arxiv']]
+    when=today()
+    due=[r for r in sorted(eligible,key=lambda r:(r['publication']['lastCheckedAt'] or '',r['paper']['id']))
+         if not r['publication']['lastCheckedAt'] or (date.fromisoformat(when)-date.fromisoformat(r['publication']['lastCheckedAt'])).days>=due_days]
+    selected=due[:limit] if limit else due
+    errors=[]; warnings=[]; candidates=[]; changed=[]; checked=[]; network={}; providers={}; blocked=False
     for start in range(0,len(selected),40):
         batch=selected[start:start+40]
         if start:time.sleep(pause)
         url='https://export.arxiv.org/api/query?'+urlencode({'id_list':','.join(r['paper']['arxiv'] for r in batch),'max_results':len(batch)})
-        try:network.update(parse_feed(fetch(url)[0]))
-        except Exception as e: errors.append({'paperIds':[r['paper']['id'] for r in batch],'provider':'arxiv','error':str(e)[:400]})
+        try:
+            found=parse_feed(fetch(url,accept='application/atom+xml',attempts=1)[0])
+            for ident,meta in found.items(): network[ident]=meta;providers[ident]='arxiv-api'
+        except Exception as e:
+            warnings.append({'provider':'arxiv-api','paperIds':[r['paper']['id'] for r in batch],'error':str(e)[:300]})
+            # Do not switch endpoints to evade authorization failures or throttling.
+            if isinstance(e,HTTPError) and e.code in {401,403,429}:blocked=True;break
+    failures=0
+    for r in selected:
+        ident=r['paper']['arxiv']
+        if ident in network:continue
+        if blocked or failures>=3:
+            errors.append({'paperIds':[r['paper']['id']],'provider':'arxiv-abstract','error':'Fallback circuit open; retained for next run'})
+            continue
+        try:
+            time.sleep(pause)
+            html,_,final=fetch('https://arxiv.org/abs/'+ident,accept='text/html',attempts=1)
+            from urllib.parse import urlparse
+            if urlparse(final).hostname!='arxiv.org':raise ValueError('Unexpected abstract redirect host')
+            network[ident]=parse_abstract(html,ident);providers[ident]='arxiv-abstract';failures=0
+        except Exception as e:
+            failures+=1
+            if isinstance(e,HTTPError) and e.code in {401,403,429}:blocked=True
+            errors.append({'paperIds':[r['paper']['id']],'provider':'arxiv-abstract','error':str(e)[:300]})
     for original in selected:
         rec=copy.deepcopy(original); p=rec['paper']; pid=p['id']; meta=network.get(p['arxiv'])
         if not meta:
             errors.append({'paperIds':[pid],'provider':'arxiv','error':'No usable exact-ID metadata returned'});continue
+        if SequenceMatcher(None,normal_title(meta['title']),normal_title(p['title'])).ratio()<.85:
+            candidates.append({'paperId':pid,'kind':'title-identity-review','source':'https://arxiv.org/abs/'+p['arxiv'],'value':meta['title'],'note':'精确ID对应标题差异明显；可能改名或旧记录错误，待人工源核验。'})
+            errors.append({'paperIds':[pid],'provider':providers.get(p['arxiv']),'error':'Title identity requires review'});continue
+        if meta['firstArxivAt']>when or meta['latestArxivAt']>when:
+            errors.append({'paperIds':[pid],'provider':providers.get(p['arxiv']),'error':'Future submission timestamp rejected'});continue
         candidates.extend(apply_arxiv(rec,meta,when));complete=True
         doi=canonical_doi(meta['doi'] or rec['publication']['doi'])
         if doi and not doi.startswith('10.48550/arxiv'):
@@ -97,11 +133,15 @@ def sync(root,limit=None,apply=False,pause=3.1):
                 complete=False;errors.append({'paperIds':[pid],'provider':'crossref','error':str(e)[:400]})
         if complete:rec['publication']['lastCheckedAt']=when;checked.append(pid)
         if rec!=original:
-            changed.append(pid)
+            old_content=copy.deepcopy(original);new_content=copy.deepcopy(rec)
+            old_content['publication']['lastCheckedAt']=None;new_content['publication']['lastCheckedAt']=None
+            if old_content!=new_content:changed.append(pid)
             if apply:write(root/f'catalog/papers/{pid}.json',rec)
     no_arxiv=[r['paper']['id'] for r in records if not r['paper']['arxiv']]
     report={'schemaVersion':1,'checkedAt':when,'mode':'apply-safe' if apply else 'dry-run','selected':len(selected),'metadataChecked':checked,'changed':changed,
-        'status':'success' if not errors and len(selected)==len(eligible) else 'partial','errors':errors,
+        'status':'success' if not errors and len(selected)==len(due) else 'partial','errors':errors,
+        'warnings':warnings,'providers':providers,'totalTracked':len(eligible),'dueCount':len(due),'dueRemaining':len(due)-len(checked),
+        'dueDays':due_days,'checkedScope':'due subset, not discovery or acceptance certification',
         'manualSourceReview':no_arxiv,'scope':'arXiv IDs and directly linked Crossref DOIs only; acceptance pages and missing DOIs need source review. Not a complete publication-status certification.'}
     if apply:
         # No changes to maintenance/state.json: a metadata scan is not a literature-discovery sweep.
@@ -113,5 +153,5 @@ def sync(root,limit=None,apply=False,pause=3.1):
         if changed:m['updatedAt']=when;write(root/'catalog/manifest.json',m)
     return report
 if __name__=='__main__':
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument('--limit',type=int);ap.add_argument('--apply-safe',action='store_true');a=ap.parse_args()
-    print(json.dumps(sync(a.root,a.limit,a.apply_safe),ensure_ascii=False,indent=2))
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument('--limit',type=int,default=100);ap.add_argument('--due-days',type=int,default=7);ap.add_argument('--apply-safe',action='store_true');a=ap.parse_args()
+    print(json.dumps(sync(a.root,a.limit,a.apply_safe,due_days=a.due_days),ensure_ascii=False,indent=2))

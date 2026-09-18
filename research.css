@@ -7,3 +7,11 @@
 @media(max-width:650px){.note-toc{grid-template-columns:1fr}.note-section p{font-size:13px}.dataset-tabs button{padding:7px 10px;font-size:10px}.note-table-block h3,.note-figure h3{font-size:14px}.note-table{min-width:430px}.note-figure{margin:20px 0}}
 
 .note-data-table{font-size:.85rem}.note-section p{line-height:1.95}.note-section .board-table-scroll{max-width:100%;margin:16px 0}
+
+/* Large notes keep off-screen sections out of the initial layout work. */
+.note-section, .note-table-block, .note-figure { content-visibility:auto; contain-intrinsic-size:auto 280px; }
+@media (prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; } }
+/* Grid children must shrink on narrow viewports; do not hide real overflow. */
+.paper-card,.paper-card-main,.paper-card-right,.paper-meta,.finding-text{min-width:0;max-width:100%}
+.paper-title,.paper-name,.paper-meta,.finding-text{overflow-wrap:anywhere}
+@media(max-width:960px){.paper-card{grid-template-columns:minmax(0,1fr)}}
