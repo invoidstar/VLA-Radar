@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-18",
+  "items": [
+    {
+      "title": "Skild S1 相关9月报道",
+      "status": "deferred",
+      "source": "https://www.skild.ai/blogs/s1",
+      "reason": "官方技术页时间线称8月发布，NVIDIA的9月10日文章不应被当作S1首次发布；不把旧发布重新记为本周新闻。"
+    },
+    {
+      "title": "LightNav-0 的9月中旬转载",
+      "status": "deferred",
+      "source": "https://arxiv.org/abs/2608.30935",
+      "reason": "首发可能早于本次14天窗口；尚未核实近期是否有实质新版本，暂不收为本周事件。"
+    }
+  ]
+}
