@@ -1,0 +1,186 @@
+name: Prepare benchmark evidence batch six
+on:
+  push:
+    branches: [weekly-update-2026-09-19-benchmark-batch6]
+    paths: [.github/workflows/prepare-batch6.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-benchmark-batch6
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BASE: b0234d1842393357a8c1080b728f951832fe76da
+      BRANCH: weekly-update-2026-09-19-benchmark-batch6
+      EXPECTED_HEAD: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply reviewed canonical edits with exact before and after hashes
+        run: |
+          set -eu
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          python - <<'PY'
+          from pathlib import Path
+          import base64,hashlib,json,lzma,os
+          sums=['39fe48886c3e13bad1a725c61bb039504d0a70703563945ed7ae5d8c8d31d791','2f4584f1277341bf98406c005310e1f8f789d17a9628ce17b73aa0ddcade4234']
+          parts=[]
+          for i,expected in enumerate(sums):
+              part=Path(f'maintenance/.batch6-part{i}').read_bytes()
+              assert hashlib.sha256(part).hexdigest()==expected, f'Transport mismatch part {i}'
+              parts.append(part)
+          compressed=base64.b64decode(b''.join(parts),validate=True)
+          assert len(compressed)==23216 and hashlib.sha256(compressed).hexdigest()=='14c840f27d007685b85187658028c08c09657182bd0009157a0cc6f632731a9a'
+          payload=json.loads(lzma.decompress(compressed))
+          assert payload['schemaVersion']==1 and payload['baseCommit']==os.environ['BASE'] and len(payload['ops'])==41
+          exact={'CHANGELOG.md','catalog/benchmarks.json','catalog/bibliography.json','catalog/first-public.json','catalog/manifest.json','maintenance/benchmark-review.json','maintenance/benchmark-source-audit-20260919-batch6.json','tests/test_benchmark_batch6.py'}
+          newpapers={f'catalog/papers/p{i:03d}.json' for i in range(96,99)}
+          planned=[];seen=set()
+          for op in payload['ops']:
+              path=Path(op['path']);name=path.as_posix()
+              assert not path.is_absolute() and '..' not in path.parts and name not in seen and not path.is_symlink()
+              assert name in exact or name in newpapers or (name.startswith('catalog/results/r-') and name.endswith('.json'))
+              seen.add(name)
+              old=path.read_bytes() if path.exists() else None
+              assert (hashlib.sha256(old).hexdigest() if old is not None else None)==op['before'], 'Changed base: '+name
+              kind=op['op']
+              if kind=='create':
+                  assert old is None
+                  text=op['content']
+              elif kind=='prepend':
+                  text=op['content']+old.decode('utf-8')
+              else:
+                  data=json.loads(old)
+                  if kind=='append-json-list':
+                      target=data[op['key']]
+                      assert isinstance(target,list)
+                      for item in op['items']:
+                          assert item not in target
+                          if isinstance(item,dict) and 'id' in item: assert not any(x.get('id')==item['id'] for x in target)
+                          target.append(item)
+                  elif kind=='merge-json-map':
+                      target=data if op['key'] is None else data[op['key']]
+                      assert isinstance(target,dict) and not set(target).intersection(op['items'])
+                      target.update(op['items'])
+                  else: raise ValueError('Unknown operation '+kind)
+                  data.update(op.get('sets',{}))
+                  text=json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n'
+              final=text.encode('utf-8')
+              assert hashlib.sha256(final).hexdigest()==op['sha256'], 'Target mismatch: '+name
+              planned.append((path,final))
+          for path,data in planned:
+              path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+          print('PASS: all 41 reviewed operations match before/after hashes.')
+          PY
+          python scripts/capture_activity.py --base "$BASE"
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Verify unchanged historical records and genuine content deltas
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          from pathlib import Path
+          base=os.environ['BASE']
+          def old(p): return subprocess.check_output(['git','show',base+':'+p])
+          files=subprocess.check_output(['git','ls-tree','-r','--name-only',base],text=True).splitlines()
+          protected=[p for p in files if p.startswith(('catalog/papers/','catalog/results/','catalog/news/')) or p in ['maintenance/state.json','maintenance/news-state.json']]
+          for p in protected: assert Path(p).read_bytes()==old(p), 'Old record changed: '+p
+          for path,key in [('catalog/benchmarks.json','tracks'),('catalog/manifest.json','paperOrder')]:
+              before=json.loads(old(path))[key];after=json.loads(Path(path).read_text())[key]
+              assert after[:len(before)]==before
+          for path,key in [('catalog/first-public.json',None),('catalog/bibliography.json','entries')]:
+              before=json.loads(old(path));after=json.loads(Path(path).read_text())
+              if key: before,after=before[key],after[key]
+              for k,v in before.items(): assert after[k]==v
+          log=json.loads(Path('catalog/activity.json').read_text());prior=json.loads(old('catalog/activity.json'));ids={e['id'] for e in prior['events']}
+          new=[e for e in log['events'] if e['id'] not in ids]
+          assert len(new)==33 and all(e['baseCommit']==base for e in new)
+          boards=json.loads(Path('data/leaderboards.json').read_text())
+          papers=json.loads(Path('data/library.json').read_text())['papers']
+          assert len(papers)==98 and len(boards['tracks'])==95 and len(boards['results'])==339
+          assert len({x['dataset'] for x in boards['tracks']})==15
+          assert len({r['paperId'] for r in boards['results'] if r['evidence']=='checked'})==40
+          for pid in ['p096','p097','p098']:
+              note=json.loads(Path('catalog/papers',pid+'.json').read_text())['note']
+              assert len(note['sections'])==9 and all(x['sources'] for x in note['sections'])
+              assert len(note['figures'])==2 and len(note['tables'])==1
+          ledger=json.loads(Path('maintenance/benchmark-review.json').read_text())
+          assert ledger['papers']['p097']['status']=='deferred'
+          assert not any(r['paperId']=='p097' for r in boards['results'])
+          report={'status':'pass','baseCommit':base,'papers':98,'tracks':95,'results':339,'families':15,'reportingPaperIds':40,'newActivityEvents':len(new),'oldRecordsUnchanged':len(protected),'MVP':'full-source notes; exact numeric benchmark rows deferred'}
+          out=Path('/tmp/radar-batch6');out.mkdir(exist_ok=True);(out/'invariance.json').write_text(json.dumps(report,indent=2));print(json.dumps(report))
+          PY
+      - name: Install browser driver and CJK test fonts
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq; sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Run all established HTTP browser regression suites
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+          python scripts/browser_sidebar.py
+          python scripts/browser_tools.py
+      - name: Verify three new full reading pages
+        run: |
+          python - <<'PY'
+          import json,shutil,socket,subprocess,time
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          out=Path('/tmp/radar-batch6');out.mkdir(exist_ok=True)
+          s=socket.socket();s.bind(('127.0.0.1',0));port=s.getsockname()[1];s.close()
+          server=subprocess.Popen(['python','-m','http.server',str(port),'--bind','127.0.0.1'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL);time.sleep(.4)
+          errors=[];checks=[]
+          try:
+              with sync_playwright() as p:
+                  browser=p.chromium.launch(executable_path=shutil.which('chromium') or shutil.which('google-chrome'),headless=True,args=['--no-sandbox'])
+                  page=browser.new_page(viewport={'width':1440,'height':1000});page.on('pageerror',lambda e:errors.append(str(e)))
+                  for pid in ['p096','p097','p098']:
+                      page.goto(f'http://127.0.0.1:{port}/?view=reader&paper={pid}',wait_until='networkidle')
+                      page.wait_for_selector('.reader-chapter',timeout=15000)
+                      assert page.locator('.reader-chapter:not(#reader-evidence)').count()==9
+                      assert page.locator('.chapter-sources').count()==9
+                      assert page.locator('#reader-evidence').count()==1
+                      page.screenshot(path=str(out/(pid+'-reader.png')))
+                      checks.append(pid+' has 9 sourced chapters and separate evidence section')
+                  assert not errors,errors
+                  browser.close()
+              (out/'reader-checks.json').write_text(json.dumps({'status':'pass','checks':checks,'errors':errors,'mode':'CI HTTP Chromium; not real mobile hardware'},indent=2))
+          finally:
+              server.terminate();server.wait()
+          PY
+      - name: Commit verified content to this branch only
+        run: |
+          set -eu
+          test "${{ github.ref_name }}" = "$BRANCH"
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$EXPECTED_HEAD"
+          git diff --exit-code -- .github
+          git rm maintenance/.batch6-part0 maintenance/.batch6-part1
+          git add catalog data CHANGELOG.md maintenance/benchmark-review.json maintenance/benchmark-source-audit-20260919-batch6.json tests/test_benchmark_batch6.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add R3M, original MVP and Meta-World deep notes with 30 historical results'
+          git push origin "HEAD:refs/heads/$BRANCH"
+      - name: Retain exact candidate for recovery
+        if: always()
+        run: |
+          mkdir -p /tmp/radar-batch6
+          git archive --format=zip --output=/tmp/radar-batch6/source.zip HEAD
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-batch6-audit-${{ github.run_id }}
+          path: |
+            /tmp/radar-batch6/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+          retention-days: 14
