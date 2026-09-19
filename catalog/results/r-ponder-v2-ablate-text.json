@@ -1,0 +1,18 @@
+{
+  "id": "r-ponder-v2-ablate-text",
+  "paperId": "p018",
+  "method": "Subgoal-text reference",
+  "trackId": "ponder-v2-cognition-ablation",
+  "values": {
+    "Average": 59.96
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2608.24115v2",
+  "sourceVersion": "arXiv 2608.24115v2",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "base-scale data",
+  "evaluationNotes": "文本参考训练方式不同；60.83 vs59.96的0.87点差不宣称显著。",
+  "supersedes": ""
+}

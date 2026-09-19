@@ -1,0 +1,18 @@
+{
+  "id": "r-ponder-v2-9x-frame",
+  "paperId": "p018",
+  "method": "FrameSamp+Modul",
+  "trackId": "ponder-v2-robomme-9x",
+  "values": {
+    "Average": 57.88
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2608.24115",
+  "sourceVersion": "arXiv 2608.24115v2",
+  "locator": "Abstract",
+  "attribution": "author-reported",
+  "trainingData": "9x data",
+  "evaluationNotes": "与基础数据分轨。",
+  "supersedes": ""
+}

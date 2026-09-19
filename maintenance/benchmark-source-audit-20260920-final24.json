@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-20",
+  "batch": "benchmark-final24",
+  "baseCommit": "ae3e7510662bec68050f2ffd29fee97fba21530f",
+  "papers": [
+    {
+      "paperId": "p067",
+      "resultCount": 1,
+      "trackIds": [
+        "fast-v1-training-speedup"
+      ]
+    },
+    {
+      "paperId": "p032",
+      "resultCount": 1,
+      "trackIds": [
+        "deltoris-v1-hardware-speedup"
+      ]
+    },
+    {
+      "paperId": "p031",
+      "resultCount": 4,
+      "trackIds": [
+        "embcpp-v2-vla-success",
+        "embcpp-v2-wam-block-latency"
+      ]
+    },
+    {
+      "paperId": "p045",
+      "resultCount": 2,
+      "trackIds": [
+        "gfvla-2026-basic-ops",
+        "gfvla-2026-overall-tsr"
+      ]
+    },
+    {
+      "paperId": "p043",
+      "resultCount": 0,
+      "trackIds": []
+    },
+    {
+      "paperId": "p022",
+      "resultCount": 5,
+      "trackIds": [
+        "stwam-v1-libero-plus-ablation"
+      ]
+    },
+    {
+      "paperId": "p018",
+      "resultCount": 10,
+      "trackIds": [
+        "ponder-v2-robomme-base",
+        "ponder-v2-robomme-9x",
+        "ponder-v2-cognition-ablation"
+      ]
+    },
+    {
+      "paperId": "p075",
+      "resultCount": 2,
+      "trackIds": [
+        "recap-v2-throughput-factor",
+        "recap-v2-targeted-failure-success"
+      ]
+    },
+    {
+      "paperId": "p008",
+      "resultCount": 6,
+      "trackIds": [
+        "meco-v1-robotwin",
+        "meco-v1-real-success",
+        "meco-v1-real-corrections"
+      ]
+    },
+    {
+      "paperId": "p071",
+      "resultCount": 2,
+      "trackIds": [
+        "gemini-er-v1-aloha2-sim"
+      ]
+    },
+    {
+      "paperId": "p077",
+      "resultCount": 6,
+      "trackIds": [
+        "dreamzero-v1-progress",
+        "dreamzero-v1-latency"
+      ]
+    },
+    {
+      "paperId": "p030",
+      "resultCount": 22,
+      "trackIds": [
+        "adavla-v2-libero-sr",
+        "adavla-v2-libero-latency"
+      ]
+    },
+    {
+      "paperId": "p005",
+      "resultCount": 6,
+      "trackIds": [
+        "dyna2-2026-scaling",
+        "dyna2-2026-customer-pass"
+      ]
+    },
+    {
+      "paperId": "p038",
+      "resultCount": 6,
+      "trackIds": [
+        "mimic-v2-simpler",
+        "mimic-v2-libero3"
+      ]
+    },
+    {
+      "paperId": "p006",
+      "resultCount": 2,
+      "trackIds": [
+        "vlatalker-v1-libero"
+      ]
+    },
+    {
+      "paperId": "p019",
+      "resultCount": 8,
+      "trackIds": [
+        "sparkvla-v1-task-sr",
+        "sparkvla-v1-stop-acc"
+      ]
+    },
+    {
+      "paperId": "p033",
+      "resultCount": 4,
+      "trackIds": [
+        "otql-v1-single-policy",
+        "otql-v1-pretrained-vla"
+      ]
+    },
+    {
+      "paperId": "p007",
+      "resultCount": 5,
+      "trackIds": [
+        "track4action-v1-libero-plus",
+        "track4action-v1-real",
+        "track4action-v1-robotwin"
+      ]
+    },
+    {
+      "paperId": "p010",
+      "resultCount": 7,
+      "trackIds": [
+        "w2vla-v1-libero",
+        "w2vla-v1-robotwin2500",
+        "w2vla-v1-chunk-latency"
+      ]
+    },
+    {
+      "paperId": "p046",
+      "resultCount": 0,
+      "trackIds": []
+    },
+    {
+      "paperId": "p034",
+      "resultCount": 17,
+      "trackIds": [
+        "robodojo-v3-sim-score",
+        "robodojo-v3-sim-sr",
+        "robodojo-v3-real-score",
+        "robodojo-v3-real-sr",
+        "robodojo-v3-randomization"
+      ]
+    },
+    {
+      "paperId": "p016",
+      "resultCount": 6,
+      "trackIds": [
+        "baton-v1-task-success",
+        "baton-v1-cumulative"
+      ]
+    },
+    {
+      "paperId": "p037",
+      "resultCount": 5,
+      "trackIds": [
+        "lingbot-v2-robotwin",
+        "lingbot-v2-async"
+      ]
+    },
+    {
+      "paperId": "p097",
+      "resultCount": 1,
+      "trackIds": [
+        "mvp-v1-pixmc-textual-count"
+      ]
+    }
+  ],
+  "countsBefore": {
+    "papers": 98,
+    "results": 834,
+    "tracks": 222,
+    "extracted": 72,
+    "deferred": 24,
+    "notApplicable": 2,
+    "needsReview": 18
+  },
+  "countsAfterExpected": {
+    "papers": 98,
+    "results": 962,
+    "tracks": 267,
+    "extracted": 94,
+    "deferred": 2,
+    "notApplicable": 2,
+    "needsReview": 11
+  },
+  "batchAdded": {
+    "results": 128,
+    "tracks": 45
+  },
+  "qualityRules": [
+    "No plot-pixel estimation; FAST/MVP use exact textual efficiency/count claims rather than invented policy scores.",
+    "DMS-VLA and VLAbot remain deferred because repository editorial policy forbids promoting limited-source records without full-source reading.",
+    "DMS-VLA stores only literal published-abstract endpoints 25/55 and explicitly leaves the unusual 25%-55%x notation uninterpreted.",
+    "VLAbot stores within-five-trials as an upper bound, not an exact trial count or autonomous-demo claim.",
+    "Score, success rate, latency, throughput, correction count, task progress and representation probes remain separate tracks.",
+    "Current-version note reviews completed for p031,p018,p075,p030,p038,p034,p037; full-text-limited p043/p046 and published GF-VLA note remain needs_review."
+  ],
+  "unresolvedNoteReviews": [
+    "p045",
+    "p043",
+    "p046"
+  ],
+  "limitedSourceDeferred": [
+    "p043",
+    "p046"
+  ],
+  "sourcePolicy": "Primary/official sources prioritized; exact source-located claims only. Missing values remain missing rather than zero."
+}

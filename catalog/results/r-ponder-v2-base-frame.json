@@ -1,0 +1,18 @@
+{
+  "id": "r-ponder-v2-base-frame",
+  "paperId": "p018",
+  "method": "FrameSamp+Modul",
+  "trackId": "ponder-v2-robomme-base",
+  "values": {
+    "Average": 44.51
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2608.24115",
+  "sourceVersion": "arXiv 2608.24115v2",
+  "locator": "Abstract",
+  "attribution": "author-reported",
+  "trainingData": "base-scale data",
+  "evaluationNotes": "v2摘要精确值。",
+  "supersedes": ""
+}

@@ -1,0 +1,18 @@
+{
+  "id": "r-stwam-v1-ablate-dual",
+  "paperId": "p022",
+  "method": "Dual-space, no CAIR",
+  "trackId": "stwam-v1-libero-plus-ablation",
+  "values": {
+    "SR": 66.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2607.28993v1",
+  "sourceVersion": "arXiv 2607.28993v1",
+  "locator": "Table 5",
+  "attribution": "author-reported",
+  "trainingData": "internal ablation",
+  "evaluationNotes": "仅DINO 39.7低于FastWAM 51.5、未锚定历史56.5低于双空间66.4，负面结果保留。",
+  "supersedes": ""
+}

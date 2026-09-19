@@ -26,8 +26,8 @@
     "limitations": "“很小”沿用作者描述，此处未补造下降百分比。结论限于指定硬件与策略；流曲率不等于任务失败概率。",
     "insight": "可按动作轨迹特点分配采样预算。自适应少步化的可信价值是成功率—时延取舍，而非仅减少步数。",
     "readingFocus": "自适应步长依据；通道裁剪；成功率—时延取舍。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2608.29208v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -37,6 +37,10 @@
       {
         "label": "arXiv 元数据",
         "url": "https://arxiv.org/abs/2608.29208"
+      },
+      {
+        "label": "当前复核版本 · v2",
+        "url": "https://arxiv.org/html/2608.29208v2"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2608.29208",
@@ -83,10 +87,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2608.29208 v1；§IV–V、Tables II–IV",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2608.29208 v2；Tables II–IV；IROS 2026录用信息与当前v2复核",
     "sections": [
       {
         "id": "problem",
@@ -229,9 +233,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取22条精确记录；成功率、Task Progress、延迟、归一化分数与诊断指标严格分轨。"
     }
   }
 }

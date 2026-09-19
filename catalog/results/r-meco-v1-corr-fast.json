@@ -1,0 +1,18 @@
+{
+  "id": "r-meco-v1-corr-fast",
+  "paperId": "p008",
+  "method": "Fast-WAM",
+  "trackId": "meco-v1-real-corrections",
+  "values": {
+    "Corrections": 1.67
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2607.05468v1",
+  "sourceVersion": "arXiv 2607.05468v1",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "real stack task",
+  "evaluationNotes": "越低越好。",
+  "supersedes": ""
+}

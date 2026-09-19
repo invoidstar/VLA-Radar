@@ -27,8 +27,8 @@
     "limitations": "连续/文本准确率仅差0.87个百分点，小于论文报告的2.63个百分点运行波动，不能宣称连续接口准确率显著更好。延迟比较受输出长度约束。",
     "insight": "连续接口的突出优势可能是延迟，而非显著更高的准确率。异步系统还需处理上下文陈旧的问题。",
     "readingFocus": "连续vs文本接口；上下文年龄；异步失配；认知监督消融。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2608.24115v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
     "hasCautionaryResult": true,
     "sources": [
       {
@@ -38,6 +38,10 @@
       {
         "label": "arXiv 元数据",
         "url": "https://arxiv.org/abs/2608.24115"
+      },
+      {
+        "label": "当前复核版本 · v2",
+        "url": "https://arxiv.org/html/2608.24115v2"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2608.24115",
@@ -84,10 +88,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2608.24115 v1；§3–5、附录A–D",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2608.24115 v2；摘要、§3–5、Tables III/V/VI/IX；第十六批复核当前v2",
     "sections": [
       {
         "id": "problem",
@@ -224,9 +228,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 3、5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取10条精确源定位记录；效率/摘要边界/诊断指标不伪装成闭环成功率。"
     }
   }
 }

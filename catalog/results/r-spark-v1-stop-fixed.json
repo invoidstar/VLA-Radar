@@ -1,0 +1,18 @@
+{
+  "id": "r-spark-v1-stop-fixed",
+  "paperId": "p019",
+  "method": "Fixed length + independent Stop",
+  "trackId": "sparkvla-v1-stop-acc",
+  "values": {
+    "Accuracy": 79.52
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2608.16172v1",
+  "sourceVersion": "arXiv 2608.16172v1",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "same hierarchy",
+  "evaluationNotes": "Stop准确率不等于任务SR。",
+  "supersedes": ""
+}

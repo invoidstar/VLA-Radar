@@ -1,0 +1,18 @@
+{
+  "id": "r-robodojo-v3-simscore-hy",
+  "paperId": "p034",
+  "method": "Hy-Embodied-0.5-VLA",
+  "trackId": "robodojo-v3-sim-score",
+  "values": {
+    "Average Score": 13.07
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2607.04434v3",
+  "sourceVersion": "arXiv 2607.04434v3",
+  "locator": "Table 1",
+  "attribution": "author-reported",
+  "trainingData": "RoboDojo benchmark",
+  "evaluationNotes": "Score不是百分比。",
+  "supersedes": ""
+}

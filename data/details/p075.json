@@ -29,8 +29,8 @@
     "limitations": "收益包含额外机器人交互、奖励标注与人类纠正，不能理解成纯离线 SFT 或完全无人工自学习。",
     "insight": "后训练评价不应只看成功率，还应看单位时间产出和错误减少；同时记录额外交互与纠正成本。",
     "readingFocus": "RECAP 数据流程、优势条件、失败率与任务吞吐口径。",
-    "evidence": "metadata",
-    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2511.14759v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -40,6 +40,10 @@
       {
         "label": "原文 v1",
         "url": "https://arxiv.org/html/2511.14759v1"
+      },
+      {
+        "label": "当前复核版本 · v2",
+        "url": "https://arxiv.org/html/2511.14759v2"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2511.14759",
@@ -86,10 +90,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
-    "version": "2511.14759v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2511.14759 v2；§IV–V、部署迭代与失败消除；第十六批复核当前v2",
     "sections": [
       {
         "id": "problem",
@@ -222,9 +226,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–C、V-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取2条精确源定位记录；效率/摘要边界/诊断指标不伪装成闭环成功率。"
     }
   }
 }

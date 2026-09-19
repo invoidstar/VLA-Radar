@@ -1,0 +1,18 @@
+{
+  "id": "r-adavla-v2-sr-noprun-adp",
+  "paperId": "p030",
+  "method": "No pruning + Adaptive",
+  "trackId": "adavla-v2-libero-sr",
+  "values": {
+    "Average": 98.65
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2608.29208v2",
+  "sourceVersion": "arXiv 2608.29208v2",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "pi0.5 on Jetson AGX Orin",
+  "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+  "supersedes": ""
+}

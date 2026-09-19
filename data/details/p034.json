@@ -26,8 +26,8 @@
     "limitations": "Score与成功率不是同一指标；使用其统一协议，不可与各模型原论文的专门微调结果横向混比。失败分类比单一总榜更有参考价值。",
     "insight": "高饱和标准基准可能掩盖精度和长程短板。能力分项与随机化退化比单一总榜更有解释力。",
     "readingFocus": "五维能力定义；随机化退化；精度失败与阶段前置条件分析。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2607.04434v3 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
     "hasCautionaryResult": true,
     "sources": [
       {
@@ -37,6 +37,10 @@
       {
         "label": "arXiv 元数据",
         "url": "https://arxiv.org/abs/2607.04434"
+      },
+      {
+        "label": "当前复核版本 · v3",
+        "url": "https://arxiv.org/html/2607.04434v3"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2607.04434",
@@ -83,10 +87,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2607.04434 v1；§3–6、Tables 1–7；榜单冻结2026-07-03",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2607.04434 v3；§3–6、Tables 1–7；榜单冻结2026-07-03；第十六批复核当前v3",
     "sections": [
       {
         "id": "problem",
@@ -229,9 +233,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取17条源定位记录；无精确表格时只记录正文可确认的定量上界/任务计数，不从曲线估值。"
     }
   }
 }

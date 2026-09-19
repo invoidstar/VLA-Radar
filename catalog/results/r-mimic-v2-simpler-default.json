@@ -1,0 +1,18 @@
+{
+  "id": "r-mimic-v2-simpler-default",
+  "paperId": "p038",
+  "method": "mimic-video default",
+  "trackId": "mimic-v2-simpler",
+  "values": {
+    "Average": 46.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2512.15692v2",
+  "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "paper protocol",
+  "evaluationNotes": "逐任务调参单独标注。",
+  "supersedes": ""
+}

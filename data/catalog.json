@@ -373,8 +373,8 @@
       "paperUrl": "https://www.dyna.co/dyna-2",
       "arxiv": "",
       "doi": "",
-      "detailUrl": "data/details/p005.json?v=787df73099b3fa71",
-      "resultUrl": null,
+      "detailUrl": "data/details/p005.json?v=94eb4a40be926070",
+      "resultUrl": "data/paper-results/p005.fd6e1b7ea29c5fba.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": null,
@@ -425,8 +425,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.05738",
       "arxiv": "2608.05738",
       "doi": "",
-      "detailUrl": "data/details/p006.json?v=50dfd5c58aed08a4",
-      "resultUrl": null,
+      "detailUrl": "data/details/p006.json?v=2a68d67f0c917914",
+      "resultUrl": "data/paper-results/p006.8ac0d97ea787d80d.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-06",
@@ -462,8 +462,8 @@
       "limitations": "倍数来自特定学习曲线/基线，不是所有VLA普遍需要10倍数据；视频模型预训练成本仍存在。Video-Action名称不等于系统完全不使用语言。",
       "insight": "视频预训练提供不同于VLM的动态先验。样本效率倍数必须绑定具体基线和学习曲线。",
       "readingFocus": "视频先验与动作接口；样本效率口径；VLM路线的互补性。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2512.15692v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -486,9 +486,9 @@
       "paperUrl": "https://arxiv.org/abs/2512.15692",
       "arxiv": "2512.15692",
       "doi": "10.15607/rss.2026.xxii.077",
-      "detailUrl": "data/details/p038.json?v=35a2c877459004c6",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p038.json?v=6c1170b5ad60117d",
+      "resultUrl": "data/paper-results/p038.a020b2c84e7f8923.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-12-17",
         "latestArxivVersion": "v2",
@@ -539,8 +539,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.03727",
       "arxiv": "2608.03727",
       "doi": "",
-      "detailUrl": "data/details/p007.json?v=c12bc80342c5117c",
-      "resultUrl": null,
+      "detailUrl": "data/details/p007.json?v=828a07ab73fbe964",
+      "resultUrl": "data/paper-results/p007.719876ba67114486.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-04",
@@ -592,8 +592,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.05468",
       "arxiv": "2607.05468",
       "doi": "",
-      "detailUrl": "data/details/p008.json?v=4d6f3d2803c82ede",
-      "resultUrl": null,
+      "detailUrl": "data/details/p008.json?v=fbb614be34bf4914",
+      "resultUrl": "data/paper-results/p008.fe94cb7674addf74.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
@@ -699,8 +699,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.05369",
       "arxiv": "2608.05369",
       "doi": "",
-      "detailUrl": "data/details/p010.json?v=7df7bce2349feb57",
-      "resultUrl": null,
+      "detailUrl": "data/details/p010.json?v=04146819431b40bb",
+      "resultUrl": "data/paper-results/p010.8db6f78a5f5f8bfc.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
@@ -960,8 +960,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.16889",
       "arxiv": "2608.16889",
       "doi": "",
-      "detailUrl": "data/details/p016.json?v=1dca6ce4612186ee",
-      "resultUrl": null,
+      "detailUrl": "data/details/p016.json?v=0f2312fa1b453ef2",
+      "resultUrl": "data/paper-results/p016.37bc9b4252c8c860.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
@@ -1222,8 +1222,8 @@
       "limitations": "连续/文本准确率仅差0.87个百分点，小于论文报告的2.63个百分点运行波动，不能宣称连续接口准确率显著更好。延迟比较受输出长度约束。",
       "insight": "连续接口的突出优势可能是延迟，而非显著更高的准确率。异步系统还需处理上下文陈旧的问题。",
       "readingFocus": "连续vs文本接口；上下文年龄；异步失配；认知监督消融。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2608.24115v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -1233,14 +1233,18 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2608.24115"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2608.24115v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2608.24115",
       "arxiv": "2608.24115",
       "doi": "",
-      "detailUrl": "data/details/p018.json?v=5dad3b2c8b802f00",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p018.json?v=b8f9cfcb665e66a5",
+      "resultUrl": "data/paper-results/p018.e4eef25fa7ec74bf.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-25",
         "latestArxivVersion": "v2",
@@ -1291,8 +1295,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.16172",
       "arxiv": "2608.16172",
       "doi": "",
-      "detailUrl": "data/details/p019.json?v=ce3ca65d6acb20d6",
-      "resultUrl": null,
+      "detailUrl": "data/details/p019.json?v=670af2346290a6d4",
+      "resultUrl": "data/paper-results/p019.036bed8e22267de3.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
@@ -1348,8 +1352,8 @@
       "paperUrl": "https://arxiv.org/abs/2508.05342",
       "arxiv": "2508.05342",
       "doi": "10.1016/j.inffus.2026.104193",
-      "detailUrl": "data/details/p045.json?v=090790f9828e4858",
-      "resultUrl": null,
+      "detailUrl": "data/details/p045.json?v=24ae95c43f4de3f4",
+      "resultUrl": "data/paper-results/p045.fcbb0c62fb547b6a.json",
       "noteStatus": "needs_review",
       "lifecycle": {
         "firstArxivAt": "2025-08-07",
@@ -1452,8 +1456,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.28993",
       "arxiv": "2607.28993",
       "doi": "",
-      "detailUrl": "data/details/p022.json?v=cbd1e22948dad480",
-      "resultUrl": null,
+      "detailUrl": "data/details/p022.json?v=639d7a51a70428a5",
+      "resultUrl": "data/paper-results/p022.99049d6f9a069bd9.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-31",
@@ -1644,8 +1648,8 @@
       "limitations": "RoboTwin使用2,500条干净+25,000条随机场景示范。会议与预印本模型命名有变化，数字按所链v1。因果注意力不等同完成干预因果识别。",
       "insight": "真实观测缓存与视频动作解码可以兼顾效率。因果注意力结构不能直接解释为干预因果推理能力。",
       "readingFocus": "真实观测缓存；过时预测问题；前向动力学校正；异步数据流。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2601.21998v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -1663,14 +1667,18 @@
         {
           "label": "出版方 DOI",
           "url": "https://doi.org/10.15607/rss.2026.xxii.016"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2601.21998v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2601.21998",
       "arxiv": "2601.21998",
       "doi": "10.15607/rss.2026.xxii.016",
-      "detailUrl": "data/details/p037.json?v=6e9d3ae0f086d809",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p037.json?v=11b984f52fc5e507",
+      "resultUrl": "data/paper-results/p037.3253548d39c15075.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-01-29",
         "latestArxivVersion": "v2",
@@ -1978,8 +1986,8 @@
       "limitations": "“很小”沿用作者描述，此处未补造下降百分比。结论限于指定硬件与策略；流曲率不等于任务失败概率。",
       "insight": "可按动作轨迹特点分配采样预算。自适应少步化的可信价值是成功率—时延取舍，而非仅减少步数。",
       "readingFocus": "自适应步长依据；通道裁剪；成功率—时延取舍。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2608.29208v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -1989,14 +1997,18 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2608.29208"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2608.29208v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2608.29208",
       "arxiv": "2608.29208",
       "doi": "",
-      "detailUrl": "data/details/p030.json?v=1ce407d5d1c56322",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p030.json?v=615686a0f7db19e5",
+      "resultUrl": "data/paper-results/p030.a4ff50368879d389.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-29",
         "latestArxivVersion": "v2",
@@ -2030,8 +2042,8 @@
       "limitations": "这是单块而非完整WAM的机器人闭环结果；量化与运行时同时改变，不能宣称C++单独带来同等压缩或显著整机加速。",
       "insight": "运行时与量化是不同因素。单个模块的内存下降和时延变化不能直接外推完整系统的性能。",
       "readingFocus": "五层运行时职责；多频率接口；单块与整机数据范围；量化设置。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2607.02501v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -2046,9 +2058,9 @@
       "paperUrl": "https://arxiv.org/abs/2607.02501",
       "arxiv": "2607.02501",
       "doi": "",
-      "detailUrl": "data/details/p031.json?v=0f72370899b6668d",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p031.json?v=38dfb24924add83c",
+      "resultUrl": "data/paper-results/p031.8085f57bd469e512.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-02",
         "latestArxivVersion": "v3",
@@ -2154,8 +2166,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.04428",
       "arxiv": "2608.04428",
       "doi": "",
-      "detailUrl": "data/details/p032.json?v=0b0f2ef2f53bcffa",
-      "resultUrl": null,
+      "detailUrl": "data/details/p032.json?v=4ad2adfe3728c020",
+      "resultUrl": "data/paper-results/p032.0309004a1b53f681.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
@@ -2205,7 +2217,7 @@
       "paperUrl": "https://doi.org/10.1109/LRA.2026.3683324",
       "arxiv": "",
       "doi": "10.1109/LRA.2026.3683324",
-      "detailUrl": "data/details/p043.json?v=d2c8d5f068c5a737",
+      "detailUrl": "data/details/p043.json?v=a91bdb899ee3389b",
       "resultUrl": null,
       "noteStatus": "needs_review",
       "lifecycle": {
@@ -2311,8 +2323,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.06262",
       "arxiv": "2607.06262",
       "doi": "",
-      "detailUrl": "data/details/p033.json?v=1e7151b2961c1e6d",
-      "resultUrl": null,
+      "detailUrl": "data/details/p033.json?v=71dd8e9523903616",
+      "resultUrl": "data/paper-results/p033.76d913c941e189e7.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-07",
@@ -2404,8 +2416,8 @@
       "limitations": "Score与成功率不是同一指标；使用其统一协议，不可与各模型原论文的专门微调结果横向混比。失败分类比单一总榜更有参考价值。",
       "insight": "高饱和标准基准可能掩盖精度和长程短板。能力分项与随机化退化比单一总榜更有解释力。",
       "readingFocus": "五维能力定义；随机化退化；精度失败与阶段前置条件分析。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2607.04434v3 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -2415,14 +2427,18 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2607.04434"
+        },
+        {
+          "label": "当前复核版本 · v3",
+          "url": "https://arxiv.org/html/2607.04434v3"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2607.04434",
       "arxiv": "2607.04434",
       "doi": "",
-      "detailUrl": "data/details/p034.json?v=e0b77e4aaa273269",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p034.json?v=7020dab71990ad11",
+      "resultUrl": "data/paper-results/p034.659876f064644f7f.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-05",
         "latestArxivVersion": "v3",
@@ -2532,7 +2548,7 @@
       "paperUrl": "https://doi.org/10.1016/j.rcim.2026.103268",
       "arxiv": "",
       "doi": "10.1016/j.rcim.2026.103268",
-      "detailUrl": "data/details/p046.json?v=432b9cb13a1f41f6",
+      "detailUrl": "data/details/p046.json?v=931814c80cc59308",
       "resultUrl": null,
       "noteStatus": "needs_review",
       "lifecycle": {
@@ -3790,8 +3806,8 @@
       "paperUrl": "https://arxiv.org/abs/2501.09747",
       "arxiv": "2501.09747",
       "doi": "",
-      "detailUrl": "data/details/p067.json?v=679789278b7add74",
-      "resultUrl": null,
+      "detailUrl": "data/details/p067.json?v=baafc50ddc9543fa",
+      "resultUrl": "data/paper-results/p067.fc560f5555640bcf.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-01-16",
@@ -4011,8 +4027,8 @@
       "paperUrl": "https://arxiv.org/abs/2503.20020",
       "arxiv": "2503.20020",
       "doi": "",
-      "detailUrl": "data/details/p071.json?v=90ac163cdd8cb0cf",
-      "resultUrl": null,
+      "detailUrl": "data/details/p071.json?v=59dc6a28f8146d91",
+      "resultUrl": "data/paper-results/p071.8a8ce57537f59544.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-03-25",
@@ -4214,8 +4230,8 @@
       "limitations": "收益包含额外机器人交互、奖励标注与人类纠正，不能理解成纯离线 SFT 或完全无人工自学习。",
       "insight": "后训练评价不应只看成功率，还应看单位时间产出和错误减少；同时记录额外交互与纠正成本。",
       "readingFocus": "RECAP 数据流程、优势条件、失败率与任务吞吐口径。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2511.14759v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -4225,14 +4241,18 @@
         {
           "label": "原文 v1",
           "url": "https://arxiv.org/html/2511.14759v1"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2511.14759v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2511.14759",
       "arxiv": "2511.14759",
       "doi": "",
-      "detailUrl": "data/details/p075.json?v=e563e484fd18acce",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p075.json?v=51bdb918a6e8ddb4",
+      "resultUrl": "data/paper-results/p075.2eadde913d55386c.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-11-18",
         "latestArxivVersion": "v2",
@@ -4339,8 +4359,8 @@
       "paperUrl": "https://arxiv.org/abs/2602.15922",
       "arxiv": "2602.15922",
       "doi": "",
-      "detailUrl": "data/details/p077.json?v=4b98b7156c7b9404",
-      "resultUrl": null,
+      "detailUrl": "data/details/p077.json?v=85771468f31b74e7",
+      "resultUrl": "data/paper-results/p077.f45498740c24adf0.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-02-17",
@@ -5470,8 +5490,8 @@
       "paperUrl": "https://arxiv.org/abs/2203.06173",
       "arxiv": "2203.06173",
       "doi": "",
-      "detailUrl": "data/details/p097.json?v=4b9b7176ffc9fb87",
-      "resultUrl": null,
+      "detailUrl": "data/details/p097.json?v=a4d0936bb04d5464",
+      "resultUrl": "data/paper-results/p097.152cb928b802c3c2.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2022-03-11",

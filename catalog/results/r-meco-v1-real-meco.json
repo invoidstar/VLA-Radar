@@ -1,0 +1,19 @@
+{
+  "id": "r-meco-v1-real-meco",
+  "paperId": "p008",
+  "method": "MECo-WAM",
+  "trackId": "meco-v1-real-success",
+  "values": {
+    "Stack blocks": 60,
+    "Sort by size": 70
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2607.05468v1",
+  "sourceVersion": "arXiv 2607.05468v1",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "real robot",
+  "evaluationNotes": "叠块成功率持平60%，排序提升；非全面提升。",
+  "supersedes": ""
+}

@@ -26,8 +26,8 @@
     "limitations": "这是单块而非完整WAM的机器人闭环结果；量化与运行时同时改变，不能宣称C++单独带来同等压缩或显著整机加速。",
     "insight": "运行时与量化是不同因素。单个模块的内存下降和时延变化不能直接外推完整系统的性能。",
     "readingFocus": "五层运行时职责；多频率接口；单块与整机数据范围；量化设置。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2607.02501v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
     "hasCautionaryResult": true,
     "sources": [
       {
@@ -83,10 +83,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2607.02501 v2；§2–4、Tables 3–6",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2607.02501 v2；§2–4、Tables 3–6；第十六批复核当前v2",
     "sections": [
       {
         "id": "problem",
@@ -224,9 +224,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§3–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取4条精确源定位记录；效率/摘要边界/诊断指标不伪装成闭环成功率。"
     }
   }
 }

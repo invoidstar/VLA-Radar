@@ -1,0 +1,18 @@
+{
+  "id": "r-w2vla-v1-libero-star",
+  "paperId": "p010",
+  "method": "StarVLA",
+  "trackId": "w2vla-v1-libero",
+  "values": {
+    "Average": 96.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2608.05369",
+  "sourceVersion": "arXiv 2608.05369v1",
+  "locator": "Main results",
+  "attribution": "author-reported",
+  "trainingData": "paper protocol",
+  "evaluationNotes": "LIBERO平均。",
+  "supersedes": ""
+}

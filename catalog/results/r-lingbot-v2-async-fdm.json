@@ -1,0 +1,19 @@
+{
+  "id": "r-lingbot-v2-async-fdm",
+  "paperId": "p037",
+  "method": "FDM-grounded async",
+  "trackId": "lingbot-v2-async",
+  "values": {
+    "Easy all": 90.4,
+    "Easy horizon=3": 85.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2601.21998v2",
+  "sourceVersion": "arXiv 2601.21998v2",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "same model, deployment ablation",
+  "evaluationNotes": "FDM缓解但仍未达到同步。",
+  "supersedes": ""
+}

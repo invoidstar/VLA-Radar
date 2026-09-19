@@ -1,0 +1,19 @@
+{
+  "id": "r-w2vla-v1-rt-w2",
+  "paperId": "p010",
+  "method": "W2-VLA",
+  "trackId": "w2vla-v1-robotwin2500",
+  "values": {
+    "Easy": 60.71,
+    "Hard": 18.21
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2608.05369",
+  "sourceVersion": "arXiv 2608.05369v1",
+  "locator": "Main results",
+  "attribution": "author-reported",
+  "trainingData": "2,500-demo protocol",
+  "evaluationNotes": "不可与25k random示范协议混排。",
+  "supersedes": ""
+}
