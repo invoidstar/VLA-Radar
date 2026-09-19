@@ -1,0 +1,19 @@
+{
+  "id": "r-halo-rss26-arch-txl",
+  "paperId": "p036",
+  "method": "TransformerXL",
+  "trackId": "halo-rss26-sim-memory-arch",
+  "values": {
+    "Retrieve Object": 12,
+    "Return to Same Container": 20
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://www.roboticsproceedings.org/rss22/p010.pdf",
+  "sourceVersion": "RSS 2026 official PDF",
+  "locator": "Table III (PDF p.8)",
+  "attribution": "author-reported",
+  "trainingData": "同文仿真设置。",
+  "evaluationNotes": "50 rollouts/task；0–1原值×100。",
+  "supersedes": ""
+}

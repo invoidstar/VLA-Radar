@@ -101,9 +101,9 @@
   },
   "note": {
     "status": "expanded",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2606.18247 v1；§4–6、验证器附录",
+    "updatedAt": "2026-09-19",
+    "verifiedAt": "2026-09-19",
+    "version": "arXiv 2606.18247v1；RSS 2026；重新核验§6与项目页",
     "sections": [
       {
         "id": "problem",
@@ -235,9 +235,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4–6。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-19",
+      "note": "第十三批完成4条源定位结果；只代表明确核验的原表/正文绝对值。图中无精确文本标签、口径不明或阶段归因不清的结果不猜分。"
     }
   }
 }

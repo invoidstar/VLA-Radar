@@ -16,16 +16,40 @@
       "note": "本批核对v3 Appendix E/Table12，新增3条原报告成功率记录；单相机、清洗数量、LoRA和标准误已定位，其他真机实验未声称全部入榜。"
     },
     "p017": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "tau0-v1-long-horizon-sr",
+        "tau0-v1-cross-embodiment-sr",
+        "tau0-v1-ttc-closedloop-sr"
+      ],
+      "resultIds": [
+        "r-tau0-v1-long-gr00t",
+        "r-tau0-v1-long-lingbot",
+        "r-tau0-v1-long-pi05",
+        "r-tau0-v1-long-tau0",
+        "r-tau0-v1-long-planonce",
+        "r-tau0-v1-cross-gr00t",
+        "r-tau0-v1-cross-lingbot",
+        "r-tau0-v1-cross-pi05",
+        "r-tau0-v1-cross-tau0",
+        "r-tau0-v1-ttc-planonce",
+        "r-tau0-v1-ttc-ttc"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增11条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
     "p035": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§III-B、§III-F。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "cotrain-v1-sim-unseen-final",
+        "cotrain-v1-real-language-final",
+        "cotrain-v1-ft-long-horizon"
+      ],
+      "resultIds": [
+        "r-cotrain-v1-sim-unseen-final",
+        "r-cotrain-v1-real-language-final",
+        "r-cotrain-v1-ft-long-final"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增3条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
     "p052": {
       "status": "extracted",
@@ -84,10 +108,33 @@
       "note": "第十批：完成所列原表24行与相应协议；原作者报告，非本站复现；未入榜附加实验另见审计。"
     },
     "p036": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table I。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "halo-rss26-sim-main",
+        "halo-rss26-real-main",
+        "halo-rss26-sim-memory-arch"
+      ],
+      "resultIds": [
+        "r-halo-rss26-sim-std",
+        "r-halo-rss26-sim-scene",
+        "r-halo-rss26-sim-sam2",
+        "r-halo-rss26-sim-remember",
+        "r-halo-rss26-sim-hand",
+        "r-halo-rss26-sim-merge",
+        "r-halo-rss26-sim-novqa",
+        "r-halo-rss26-sim-halo",
+        "r-halo-rss26-real-std",
+        "r-halo-rss26-real-halo",
+        "r-halo-rss26-arch-lstm",
+        "r-halo-rss26-arch-mamba",
+        "r-halo-rss26-arch-txl",
+        "r-halo-rss26-arch-window",
+        "r-halo-rss26-arch-strided",
+        "r-halo-rss26-arch-hier",
+        "r-halo-rss26-arch-gated",
+        "r-halo-rss26-arch-halo"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增18条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
     "p066": {
       "status": "extracted",
@@ -131,16 +178,47 @@
       "note": "FAST策略结果主要在图中；未获得完整精确值与协议，不从柱高猜分。token数不冒充任务成功率。"
     },
     "p023": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2；§4.1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robotwin2-dswam-v1-paper",
+        "dswam-v1-real-folding-sr",
+        "dswam-v1-real-folding-time",
+        "dswam-v1-sorting-sr",
+        "dswam-v1-sorting-errors"
+      ],
+      "resultIds": [
+        "r-robotwin2-dswam-v1-pi0",
+        "r-robotwin2-dswam-v1-pi05",
+        "r-robotwin2-dswam-v1-demavla",
+        "r-robotwin2-dswam-v1-motus",
+        "r-robotwin2-dswam-v1-fastwam",
+        "r-robotwin2-dswam-v1-dswam",
+        "r-dswam-v1-fold-sr-pi0",
+        "r-dswam-v1-fold-sr-demavla",
+        "r-dswam-v1-fold-sr-dswam",
+        "r-dswam-v1-fold-time-pi0",
+        "r-dswam-v1-fold-time-demavla",
+        "r-dswam-v1-fold-time-dswam",
+        "r-dswam-v1-sort-sr-raw",
+        "r-dswam-v1-sort-sr-subtask",
+        "r-dswam-v1-sort-errors-raw",
+        "r-dswam-v1-sort-errors-subtask"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增16条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
     "p039": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4–6。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "veritas-v1-simpler-ft-stack",
+        "veritas-v1-real-carrot50"
+      ],
+      "resultIds": [
+        "r-veritas-v1-stack-ft-base",
+        "r-veritas-v1-stack-ft-ft",
+        "r-veritas-v1-carrot50-auto",
+        "r-veritas-v1-carrot50-human"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增4条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
     "p012": {
       "status": "deferred",

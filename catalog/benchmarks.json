@@ -3878,6 +3878,316 @@
         "RTX5090_3views"
       ],
       "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "tau0-v1-long-horizon-sr",
+      "dataset": "Tau0-VLA real robot",
+      "name": "τ0-VLA v1 · Table I · 长时程真实机器人成功率",
+      "version": "arXiv 2608.16885v1",
+      "tasks": "4 long-horizon tasks",
+      "split": "10 physical trials per method-task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每个方法-任务10次真实机器人试验；直接执行与Plan Once同表，但不视为统一训练预算排名。",
+      "trainingRegime": "作者原配置；外部基线和τ0-VLA训练来源不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean Room",
+        "Prepare Ingredients",
+        "Tomato and Egg Stir Fry",
+        "Make Milk Tea",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.16885v1#S6.T1"
+    },
+    {
+      "id": "tau0-v1-cross-embodiment-sr",
+      "dataset": "Tau0-VLA real robot",
+      "name": "τ0-VLA v1 · Table II · 跨本体直接执行",
+      "version": "arXiv 2608.16885v1",
+      "tasks": "Collect Laundry + 3 Tidy Makeup groups",
+      "split": "10 trials per group",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "全任务指令直接执行；无任务分解、执行记忆或TTC；每组10次。",
+      "trainingRegime": "不同方法预训练来源不同；仅论文原表。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Collect Laundry",
+        "Cotton Pad",
+        "Eyelash Curler",
+        "Makeup Puff"
+      ],
+      "source": "https://arxiv.org/html/2608.16885v1#S6.T2"
+    },
+    {
+      "id": "tau0-v1-ttc-closedloop-sr",
+      "dataset": "Tau0-VLA real robot",
+      "name": "τ0-VLA v1 · Table III · TTC闭环真实机器人",
+      "version": "arXiv 2608.16885v1",
+      "tasks": "3 long-horizon tasks",
+      "split": "10 trials per method-task; fixed low-level policy",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Plan Once与TTC低层策略固定；Book Organization闭环不沿用开放环ID/OOD拆分。",
+      "trainingRegime": "同一τ0-VLA层级系统，只改变高层TTC流程。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Make Milk Tea",
+        "Book Organization",
+        "Clean Room"
+      ],
+      "source": "https://arxiv.org/html/2608.16885v1#S6.T3"
+    },
+    {
+      "id": "cotrain-v1-sim-unseen-final",
+      "dataset": "TRI-Ramen",
+      "name": "Co-training Study · Final Model · 仿真未见任务",
+      "version": "arXiv 2602.01067v1 / RSS 2026",
+      "tasks": "8 unseen simulation tasks",
+      "split": "empirical mean in §III-C",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "正文明确绝对均值72.6%；不由36.4% improvement反推baseline。",
+      "trainingRegime": "Final Model组合有效共训练模态。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2602.01067v1#S3.SS3"
+    },
+    {
+      "id": "cotrain-v1-real-language-final",
+      "dataset": "TRI-Ramen real",
+      "name": "Co-training Study · Final Model · 真实语言跟随",
+      "version": "arXiv 2602.01067v1 / RSS 2026",
+      "tasks": "3 language-following settings",
+      "split": "45 rollouts per setting; reported overall mean",
+      "metric": "Average task completion",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "正文明确平均69.4%；不反推各子设置或baseline。",
+      "trainingRegime": "Final Model组合有效共训练模态。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2602.01067v1#S3.SS3"
+    },
+    {
+      "id": "cotrain-v1-ft-long-horizon",
+      "dataset": "TRI-Ramen real",
+      "name": "Co-training Study · 200示范长时程适配",
+      "version": "arXiv 2602.01067v1 / RSS 2026",
+      "tasks": "3 unseen long-horizon tasks",
+      "split": "200 demos/task; 30 rollouts/checkpoint-task",
+      "metric": "Average task completion",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "正文精确给出FT Final Model 90.2%；相对改进率不反算对照。",
+      "trainingRegime": "从Final Model微调；每任务200示范。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2602.01067v1#S3.SS4"
+    },
+    {
+      "id": "halo-rss26-sim-main",
+      "dataset": "HALO long-horizon (sim)",
+      "name": "HALO RSS 2026 · Table I · 仿真主表",
+      "version": "RSS 2026 official PDF",
+      "tasks": "4 memory-dependent tasks",
+      "split": "50 rollouts per task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "50次/任务；保留Hand-Designed Features在Retrieve Object高于HALO。",
+      "trainingRegime": "同文设置；作者报告。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Retrieve Object",
+        "Return to Same Container",
+        "Store N Objects",
+        "Heat Stove T mins",
+        "Average"
+      ],
+      "source": "https://www.roboticsproceedings.org/rss22/p010.pdf#page=7"
+    },
+    {
+      "id": "halo-rss26-real-main",
+      "dataset": "HALO long-horizon (real)",
+      "name": "HALO RSS 2026 · Table II · 真实机器人主表",
+      "version": "RSS 2026 official PDF",
+      "tasks": "5 tasks",
+      "split": "20 rollouts per task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "20次/任务；Standard Transformer与HALO。",
+      "trainingRegime": "同文真实机器人设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Retrieve Object",
+        "Return to Same Container",
+        "Store N Objects",
+        "Heat Stove T mins",
+        "Store N Objects Human-Robot",
+        "Average"
+      ],
+      "source": "https://www.roboticsproceedings.org/rss22/p010.pdf#page=7"
+    },
+    {
+      "id": "halo-rss26-sim-memory-arch",
+      "dataset": "HALO long-horizon (sim)",
+      "name": "HALO RSS 2026 · Table III · 记忆架构对照",
+      "version": "RSS 2026 official PDF",
+      "tasks": "2 tasks",
+      "split": "50 rollouts per task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "两任务原始成功率；不与Table I平均混合。",
+      "trainingRegime": "同文仿真设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Retrieve Object",
+        "Return to Same Container"
+      ],
+      "source": "https://www.roboticsproceedings.org/rss22/p010.pdf#page=8"
+    },
+    {
+      "id": "robotwin2-dswam-v1-paper",
+      "dataset": "RoboTwin",
+      "name": "DSWAM v1 · RoboTwin 2.0 50任务",
+      "version": "arXiv 2607.04927v1",
+      "tasks": "50 tasks",
+      "split": "clean / randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1的50任务平均；异构方法仅作论文表对照。",
+      "trainingRegime": "方法预训练/结构不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random"
+      ],
+      "source": "https://arxiv.org/pdf/2607.04927v1"
+    },
+    {
+      "id": "dswam-v1-real-folding-sr",
+      "dataset": "DSWAM real folding",
+      "name": "DSWAM v1 · 真实布料操作 · 成功率",
+      "version": "arXiv 2607.04927v1",
+      "tasks": "4 garment classes",
+      "split": "2 instances/class × 10 trials; System 2 off",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "匹配平台与判定；只保存总体SR，不补缺失逐衣物基线。",
+      "trainingRegime": "System 2关闭。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.04927v1"
+    },
+    {
+      "id": "dswam-v1-real-folding-time",
+      "dataset": "DSWAM real folding",
+      "name": "DSWAM v1 · 真实布料操作 · 平均完成时间",
+      "version": "arXiv 2607.04927v1",
+      "tasks": "4 garment classes",
+      "split": "same Table 2; failures count timeout",
+      "metric": "Mean task time",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "分:秒精确换算为秒；失败计超时。",
+      "trainingRegime": "System 2关闭。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.04927v1"
+    },
+    {
+      "id": "dswam-v1-sorting-sr",
+      "dataset": "DSWAM real sorting",
+      "name": "DSWAM v1 · 子任务监督分拣成功率",
+      "version": "arXiv 2607.04927v1",
+      "tasks": "sorting",
+      "split": "6000 / 18000 steps",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "训练监督形式变化，不当作纯推理开关。",
+      "trainingRegime": "同文分拣实验。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "6000 steps",
+        "18000 steps"
+      ],
+      "source": "https://arxiv.org/pdf/2607.04927v1"
+    },
+    {
+      "id": "dswam-v1-sorting-errors",
+      "dataset": "DSWAM real sorting",
+      "name": "DSWAM v1 · 子任务监督分拣错误数",
+      "version": "arXiv 2607.04927v1",
+      "tasks": "sorting",
+      "split": "6000 / 18000 steps",
+      "metric": "Mistakes per rollout",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "错误数与成功率分开建轨。",
+      "trainingRegime": "同文分拣实验。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "6000 steps",
+        "18000 steps"
+      ],
+      "source": "https://arxiv.org/pdf/2607.04927v1"
+    },
+    {
+      "id": "veritas-v1-simpler-ft-stack",
+      "dataset": "SimplerEnv",
+      "name": "VERITAS v1 · Stack Blocks自主数据微调",
+      "version": "arXiv 2606.18247v1 / RSS 2026",
+      "tasks": "Stack Blocks",
+      "split": "verified-rollout offline improvement",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "离线微调的精确例子，不与纯推理steering平均增益混写。",
+      "trainingRegime": "π0-Bridge；verified self-generated rollouts微调。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/pdf/2606.18247v1"
+    },
+    {
+      "id": "veritas-v1-real-carrot50",
+      "dataset": "DROID (real)",
+      "name": "VERITAS v1 · Carrot on Plate · 50条数据效率",
+      "version": "arXiv 2606.18247v1 / RSS 2026",
+      "tasks": "Carrot on Plate",
+      "split": "50 trajectories; 20 eval trials",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "50条自主验证轨迹与50条人工轨迹微调；20次测试。",
+      "trainingRegime": "π0-DROID基础策略。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/pdf/2606.18247v1"
     }
   ]
 }

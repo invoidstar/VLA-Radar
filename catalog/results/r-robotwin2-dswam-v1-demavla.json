@@ -1,0 +1,19 @@
+{
+  "id": "r-robotwin2-dswam-v1-demavla",
+  "paperId": "p023",
+  "method": "DeMaVLA",
+  "trackId": "robotwin2-dswam-v1-paper",
+  "values": {
+    "Clean": 88.42,
+    "Random": 86.78
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.04927v1",
+  "sourceVersion": "arXiv 2607.04927v1",
+  "locator": "Table 1",
+  "attribution": "author-reported",
+  "trainingData": "各方法原配置。",
+  "evaluationNotes": "50任务平均；方法预算不统一，单任务也非全部DSWAM最优。",
+  "supersedes": ""
+}

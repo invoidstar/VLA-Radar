@@ -1,0 +1,22 @@
+{
+  "id": "r-halo-rss26-sim-novqa",
+  "paperId": "p036",
+  "method": "HALO w/o VQA",
+  "trackId": "halo-rss26-sim-main",
+  "values": {
+    "Retrieve Object": 42,
+    "Return to Same Container": 29,
+    "Store N Objects": 17,
+    "Heat Stove T mins": 37,
+    "Average": 31
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://www.roboticsproceedings.org/rss22/p010.pdf",
+  "sourceVersion": "RSS 2026 official PDF",
+  "locator": "Table I (PDF p.7)",
+  "attribution": "author-reported",
+  "trainingData": "同文设置。",
+  "evaluationNotes": "50 rollouts/task；0–1原值×100。Hand-Designed Retrieve=68 > HALO=64，原样保留。",
+  "supersedes": ""
+}

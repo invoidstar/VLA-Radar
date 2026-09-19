@@ -1,0 +1,18 @@
+{
+  "id": "r-veritas-v1-carrot50-auto",
+  "paperId": "p039",
+  "method": "50 verified autonomous trajectories",
+  "trackId": "veritas-v1-real-carrot50",
+  "values": {
+    "Success": 70
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2606.18247v1",
+  "sourceVersion": "arXiv 2606.18247v1; RSS 2026",
+  "locator": "§6.4; data-efficiency figure",
+  "attribution": "author-reported",
+  "trainingData": "π0-DROID；分别50条自主/人工数据微调。",
+  "evaluationNotes": "每设置20次测试；5个百分点仅等于1次成功差，不宣称显著优越。",
+  "supersedes": ""
+}

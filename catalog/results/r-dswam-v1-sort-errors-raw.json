@@ -1,0 +1,19 @@
+{
+  "id": "r-dswam-v1-sort-errors-raw",
+  "paperId": "p023",
+  "method": "Global/raw instruction",
+  "trackId": "dswam-v1-sorting-errors",
+  "values": {
+    "6000 steps": 3.75,
+    "18000 steps": 3.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.04927v1",
+  "sourceVersion": "arXiv 2607.04927v1",
+  "locator": "Table 3; §4.3",
+  "attribution": "author-reported",
+  "trainingData": "分拣不同监督形式。",
+  "evaluationNotes": "Mistakes per rollout，越低越好。",
+  "supersedes": ""
+}
