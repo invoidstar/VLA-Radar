@@ -1,0 +1,18 @@
+{
+  "id": "r-dswam-v1-fold-sr-pi0",
+  "paperId": "p023",
+  "method": "π0",
+  "trackId": "dswam-v1-real-folding-sr",
+  "values": {
+    "Average": 76.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.04927v1",
+  "sourceVersion": "arXiv 2607.04927v1",
+  "locator": "Table 2; §4.1",
+  "attribution": "author-reported",
+  "trainingData": "匹配布料实验；System 2关闭。",
+  "evaluationNotes": "4类衣物×2实例×10次；不补缺失逐衣物基线。",
+  "supersedes": ""
+}

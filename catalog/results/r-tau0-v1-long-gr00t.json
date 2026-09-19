@@ -1,0 +1,22 @@
+{
+  "id": "r-tau0-v1-long-gr00t",
+  "paperId": "p017",
+  "method": "GR00T N1.7",
+  "trackId": "tau0-v1-long-horizon-sr",
+  "values": {
+    "Clean Room": 0,
+    "Prepare Ingredients": 10,
+    "Tomato and Egg Stir Fry": 0,
+    "Make Milk Tea": 0,
+    "Average": 2.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2608.16885v1",
+  "sourceVersion": "arXiv 2608.16885v1",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "原文对应方法配置；方法间训练来源不同。",
+  "evaluationNotes": "每格10次；x/10精确换算%。Progress是另一指标，未混入。",
+  "supersedes": ""
+}

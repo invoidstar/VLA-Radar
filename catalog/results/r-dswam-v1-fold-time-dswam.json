@@ -1,0 +1,18 @@
+{
+  "id": "r-dswam-v1-fold-time-dswam",
+  "paperId": "p023",
+  "method": "DSWAM",
+  "trackId": "dswam-v1-real-folding-time",
+  "values": {
+    "Average": 104
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.04927v1",
+  "sourceVersion": "arXiv 2607.04927v1",
+  "locator": "Table 2; §4.1",
+  "attribution": "author-reported",
+  "trainingData": "同一布料实验。",
+  "evaluationNotes": "原文2:26/2:18/1:44精确换算秒；失败计超时。",
+  "supersedes": ""
+}

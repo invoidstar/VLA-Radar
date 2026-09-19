@@ -1,0 +1,21 @@
+{
+  "id": "r-tau0-v1-cross-tau0",
+  "paperId": "p017",
+  "method": "τ0-VLA",
+  "trackId": "tau0-v1-cross-embodiment-sr",
+  "values": {
+    "Collect Laundry": 100,
+    "Cotton Pad": 100,
+    "Eyelash Curler": 90,
+    "Makeup Puff": 100
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2608.16885v1",
+  "sourceVersion": "arXiv 2608.16885v1",
+  "locator": "Table II",
+  "attribution": "author-reported",
+  "trainingData": "原文方法配置。",
+  "evaluationNotes": "每组10次；direct execution，无高层分解/记忆/TTC。",
+  "supersedes": ""
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-19",
+  "batch": "benchmark-batch13",
+  "baseCommit": "14f2520c942990d2b57469277c1ca92b9059b7bc",
+  "papers": [
+    {
+      "paperId": "p017",
+      "results": 11,
+      "trackIds": [
+        "tau0-v1-long-horizon-sr",
+        "tau0-v1-cross-embodiment-sr",
+        "tau0-v1-ttc-closedloop-sr"
+      ]
+    },
+    {
+      "paperId": "p035",
+      "results": 3,
+      "trackIds": [
+        "cotrain-v1-sim-unseen-final",
+        "cotrain-v1-real-language-final",
+        "cotrain-v1-ft-long-horizon"
+      ]
+    },
+    {
+      "paperId": "p036",
+      "results": 18,
+      "trackIds": [
+        "halo-rss26-sim-main",
+        "halo-rss26-real-main",
+        "halo-rss26-sim-memory-arch"
+      ]
+    },
+    {
+      "paperId": "p023",
+      "results": 16,
+      "trackIds": [
+        "robotwin2-dswam-v1-paper",
+        "dswam-v1-real-folding-sr",
+        "dswam-v1-real-folding-time",
+        "dswam-v1-sorting-sr",
+        "dswam-v1-sorting-errors"
+      ]
+    },
+    {
+      "paperId": "p039",
+      "results": 4,
+      "trackIds": [
+        "veritas-v1-simpler-ft-stack",
+        "veritas-v1-real-carrot50"
+      ]
+    }
+  ],
+  "countsBefore": {
+    "papers": 98,
+    "results": 668,
+    "tracks": 178,
+    "extracted": 57,
+    "deferred": 39,
+    "notApplicable": 2,
+    "needsReview": 19
+  },
+  "countsAfterExpected": {
+    "papers": 98,
+    "results": 720,
+    "tracks": 194,
+    "extracted": 62,
+    "deferred": 34,
+    "notApplicable": 2,
+    "needsReview": 19
+  },
+  "boundaries": [
+    "τ0-VLA SR与Progress分开；开放环图不批量猜分",
+    "Co-training只存正文明确绝对值，不反推baseline；CoT/离散token定性负结果保留",
+    "HALO保留Hand-Designed Features在Retrieve Object高于HALO",
+    "DSWAM成功率/任务时间/错误数分轨，子任务监督是训练变量",
+    "VERITAS区分inference steering与offline fine-tuning；20次测试的5点差不作显著性结论"
+  ],
+  "sourcePolicy": "Primary/official sources only for stored values; no plot-pixel estimation or reverse-calculated baselines."
+}
