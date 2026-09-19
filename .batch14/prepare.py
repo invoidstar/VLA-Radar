@@ -130,5 +130,5 @@ def test_onevomemory_real_zero_not_missing():
     x=j('catalog/results/r-onevomemory-v1-rmbench-base.json')
     assert x['values']=={'SwapBlocks':0,'SwapT':0}
 """)
-subprocess.run(['python','scripts/capture_activity.py','--base',BASE,'--at','2026-09-19T16:30:00Z'],check=True)
+subprocess.run(['python','scripts/capture_activity.py','--base',BASE,'--at','2026-09-19T16:20:00Z'],check=True)
 subprocess.run(['python','scripts/build_catalog.py'],check=True)
