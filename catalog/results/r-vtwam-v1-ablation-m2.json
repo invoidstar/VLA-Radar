@@ -1,0 +1,19 @@
+{
+  "id": "r-vtwam-v1-ablation-m2",
+  "paperId": "p025",
+  "method": "M2 + Asym. first tactile frame",
+  "trackId": "vtwam-v1-ablation",
+  "values": {
+    "Wipe Vase score": 40,
+    "Insert Tube SR": 30
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.02503v1",
+  "sourceVersion": "arXiv 2607.02503v1",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "相同任务示范；触觉设计按变体变化。",
+  "evaluationNotes": "M2擦瓶40低于视觉Fast-WAM 55，说明只加初始触觉可退化；保留负面结果。",
+  "supersedes": ""
+}

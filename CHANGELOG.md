@@ -1,3 +1,10 @@
+## 2026-09-19 · 第十四批：五篇原始证据回补
+
+- 深读/复核 OC-VLA++、TemporalFlow-VLA、VT-WAM、VLAFlow、OnEvoMemory；五篇 deferred→extracted。
+- 新增55条源定位结果、13个具体设置；视角、任务子集、混合计分、训练阶段和benchmark family严格分轨。
+- 保留固定视角退化、初始触觉退化、action-only预训练负迁移与在线额外交互等负面/成本边界。
+- 不改Leaderboard UI，不清理历史/安全分支，不从Deltoris/FAST图形或不兼容硬件指标强行提取。
+
 ## 2026-09-19 · 第十三批：五篇原始证据回补
 
 - 深读/复核 τ0-VLA、Co-training Study、HALO、DSWAM、VERITAS；五篇 deferred→extracted。

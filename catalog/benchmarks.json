@@ -4188,6 +4188,247 @@
         "Success"
       ],
       "source": "https://arxiv.org/pdf/2606.18247v1"
+    },
+    {
+      "id": "ocvlapp-v1-maniskill2-ablation",
+      "dataset": "ManiSkill2",
+      "name": "OC-VLA++ v1 · Table 3 · 同架构视角监督消融",
+      "version": "arXiv 2608.01066v1",
+      "tasks": "5 task categories",
+      "split": "multi-view simulation",
+      "metric": "Average task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "ManiSkill2五类任务论文内部消融；同Dita架构。只比较OC-VLA及监督变体。",
+      "trainingRegime": "同文Dita设置；paired-view/等变监督按行变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.01066v1"
+    },
+    {
+      "id": "ocvlapp-v1-real-dita-view",
+      "dataset": "OC-VLA++ real robot",
+      "name": "OC-VLA++ v1 · Dita · 固定/最大相机位移",
+      "version": "arXiv 2608.01066v1",
+      "tasks": "real Franka tasks",
+      "split": "fixed camera vs largest tested displacement",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "真实Franka；每任务10条示范，每任务每相机设置20次rollout；最大位移约30.48cm/23.40deg。",
+      "trainingRegime": "Dita架构内部OC-VLA与OC-VLA++对照。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Fixed view",
+        "Largest displacement"
+      ],
+      "source": "https://arxiv.org/pdf/2608.01066v1"
+    },
+    {
+      "id": "ocvlapp-v1-real-qwen-view",
+      "dataset": "OC-VLA++ real robot",
+      "name": "OC-VLA++ v1 · Qwen3-VL flow · 固定/最大相机位移",
+      "version": "arXiv 2608.01066v1",
+      "tasks": "real Franka tasks",
+      "split": "fixed camera vs largest tested displacement",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "真实Franka；每任务10条示范，每任务每相机设置20次rollout。与Dita架构分轨。",
+      "trainingRegime": "Qwen3-VL-2B + flow action expert；同架构内部比较。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Fixed view",
+        "Largest displacement"
+      ],
+      "source": "https://arxiv.org/pdf/2608.01066v1"
+    },
+    {
+      "id": "temporalflow-v1-libero-main",
+      "dataset": "LIBERO",
+      "name": "TemporalFlow-VLA v1 · 三种子主结果",
+      "version": "arXiv 2608.26821v1",
+      "tasks": "40 tasks / four suites",
+      "split": "3 seeds; 500 rollouts per suite per seed",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "四套件联合训练30k步；这里只存摘要/正文明确的Long与总体平均，不补其余套件精确值。",
+      "trainingRegime": "同文TemporalFlow-VLA主模型；3 seeds (0,2,5)。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.26821"
+    },
+    {
+      "id": "temporalflow-v1-robotwin12-ablation",
+      "dataset": "RoboTwin",
+      "name": "TemporalFlow-VLA v1 · 12任务时序接口消融",
+      "version": "arXiv 2608.26821v1",
+      "tasks": "12 tasks",
+      "split": "clean / randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "12任务子集；每任务50 clean+500 random示范，clean/random各100次评测；不是完整50任务榜。",
+      "trainingRegime": "同文π0.5基础与历史接口消融。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random"
+      ],
+      "source": "https://arxiv.org/abs/2608.26821"
+    },
+    {
+      "id": "vtwam-v1-real-main",
+      "dataset": "VT-WAM real robot",
+      "name": "VT-WAM v1 · 六任务综合报告",
+      "version": "arXiv 2607.02503v1",
+      "tasks": "6 contact-rich tasks",
+      "split": "20 trials per method-task",
+      "metric": "Paper mixed completion score",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "表面三任务允许0/0.5/1部分完成，插入三任务二值；论文称success rate，但本站标为混合完成分数。",
+      "trainingRegime": "每任务100人工示范、逐任务训练；模型预训练不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://vt-wam.github.io/"
+    },
+    {
+      "id": "vtwam-v1-ablation",
+      "dataset": "VT-WAM real robot",
+      "name": "VT-WAM v1 · Table III · 触觉时序与AVTAG消融",
+      "version": "arXiv 2607.02503v1",
+      "tasks": "Wipe Vase / Insert Tube",
+      "split": "same demonstrations",
+      "metric": "Task score / success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Wipe Vase允许部分完成得分；Insert Tube为二值SR。两列口径不同，仅作为论文内部消融并列显示。",
+      "trainingRegime": "所有变体从Fast-WAM加不同触觉建模/注意力设计。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Wipe Vase score",
+        "Insert Tube SR"
+      ],
+      "source": "https://arxiv.org/abs/2607.02503"
+    },
+    {
+      "id": "vlaflow-v2-libero",
+      "dataset": "LIBERO",
+      "name": "VLAFlow v2 · 内部训练范式 · LIBERO",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "40 tasks / four suites",
+      "split": "paper-reported average",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方表格；内部变体共享框架但预训练监督不同。",
+      "trainingRegime": "下游统一配方；Robot PT/辅助监督按行变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "vlaflow-v2-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "VLAFlow v2 · 内部训练范式 · LIBERO-Plus",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "LIBERO-Plus perturbation benchmark",
+      "split": "paper-reported total",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方表格；LIBERO-Plus与标准LIBERO分轨。",
+      "trainingRegime": "内部变体；Robot PT/辅助监督按行变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Total"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "vlaflow-v2-simpler-widowx",
+      "dataset": "SimplerEnv",
+      "name": "VLAFlow v2 · SimplerEnv WidowX",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "WidowX tasks",
+      "split": "Bridge-only downstream fine-tuning",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方README明确WidowX使用Bridge-only FT。",
+      "trainingRegime": "同文内部变体；不同预训练监督。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "WidowX Average"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "vlaflow-v2-simpler-rt1",
+      "dataset": "SimplerEnv",
+      "name": "VLAFlow v2 · SimplerEnv RT-1",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "RT-1 Google robot tasks",
+      "split": "RT-1-only downstream fine-tuning",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方README明确RT-1-only FT；VM与VA同轨不同列。",
+      "trainingRegime": "同文内部变体；不同预训练监督。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "RT-1 VM",
+        "RT-1 VA"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "onevomemory-v1-libero-long",
+      "dataset": "LIBERO",
+      "name": "OnEvoMemory v1 · LIBERO Long 10任务",
+      "version": "arXiv 2608.08749v1",
+      "tasks": "10 long-horizon tasks",
+      "split": "base / offline memory / one online round",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "冻结基础VLA；离线记忆后再用在线rollout更新记忆模块。在线阶段有额外交互，不当作同训练预算静态榜。",
+      "trainingRegime": "基于QwenOFT；base policy frozen，更新memory/value相关模块。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.08749"
+    },
+    {
+      "id": "onevomemory-v1-rmbench",
+      "dataset": "RMBench",
+      "name": "OnEvoMemory v1 · RMBench两任务",
+      "version": "arXiv 2608.08749v1",
+      "tasks": "SwapBlocks / SwapT",
+      "split": "base / offline memory / one online round",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "只覆盖两个RMBench任务；在线阶段每任务有额外rollout，不代表完整RMBench平均。",
+      "trainingRegime": "基于QwenOFT；记忆模块离线初始化并在线演化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "SwapBlocks",
+        "SwapT"
+      ],
+      "source": "https://arxiv.org/abs/2608.08749"
     }
   ]
 }

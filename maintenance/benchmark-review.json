@@ -221,10 +221,23 @@
       "note": "第十三批：明确版本原文/正式PDF复核，新增4条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
     "p012": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "ocvlapp-v1-maniskill2-ablation",
+        "ocvlapp-v1-real-dita-view",
+        "ocvlapp-v1-real-qwen-view"
+      ],
+      "resultIds": [
+        "r-ocvlapp-v1-maniskill-base",
+        "r-ocvlapp-v1-maniskill-synth",
+        "r-ocvlapp-v1-maniskill-equiv",
+        "r-ocvlapp-v1-maniskill-full",
+        "r-ocvlapp-v1-dita-ocvla",
+        "r-ocvlapp-v1-dita-plus",
+        "r-ocvlapp-v1-qwen-ocvla",
+        "r-ocvlapp-v1-qwen-plus"
+      ],
+      "note": "第十四批：新增8条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
     "p021": {
       "status": "extracted",
@@ -248,10 +261,19 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4–8；Abstract。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p014": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "temporalflow-v1-libero-main",
+        "temporalflow-v1-robotwin12-ablation"
+      ],
+      "resultIds": [
+        "r-temporalflow-v1-libero-main",
+        "r-temporalflow-v1-rt12-base",
+        "r-temporalflow-v1-rt12-multiframe",
+        "r-temporalflow-v1-rt12-queries",
+        "r-temporalflow-v1-rt12-full"
+      ],
+      "note": "第十四批：新增5条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
     "p044": {
       "status": "extracted",
@@ -276,10 +298,22 @@
       "note": "第十一批：完成所列原始结果11行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
     },
     "p025": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III；§IV-B计分规则。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "vtwam-v1-real-main",
+        "vtwam-v1-ablation"
+      ],
+      "resultIds": [
+        "r-vtwam-v1-main-omnivtla",
+        "r-vtwam-v1-main-fastwam",
+        "r-vtwam-v1-main-vtwam",
+        "r-vtwam-v1-ablation-m0",
+        "r-vtwam-v1-ablation-m1",
+        "r-vtwam-v1-ablation-m2",
+        "r-vtwam-v1-ablation-m3",
+        "r-vtwam-v1-ablation-m4"
+      ],
+      "note": "第十四批：新增8条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
     "p003": {
       "status": "deferred",
@@ -363,10 +397,44 @@
       "note": "2026-09-19原文回补10条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
     },
     "p002": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "vlaflow-v2-libero",
+        "vlaflow-v2-libero-plus",
+        "vlaflow-v2-simpler-widowx",
+        "vlaflow-v2-simpler-rt1"
+      ],
+      "resultIds": [
+        "r-vlaflow-v2-libero-pi-nopt",
+        "r-vlaflow-v2-lplus-pi-nopt",
+        "r-vlaflow-v2-widowx-pi-nopt",
+        "r-vlaflow-v2-rt1-pi-nopt",
+        "r-vlaflow-v2-libero-wpi-nopt",
+        "r-vlaflow-v2-lplus-wpi-nopt",
+        "r-vlaflow-v2-widowx-wpi-nopt",
+        "r-vlaflow-v2-rt1-wpi-nopt",
+        "r-vlaflow-v2-libero-pi-frozen",
+        "r-vlaflow-v2-lplus-pi-frozen",
+        "r-vlaflow-v2-widowx-pi-frozen",
+        "r-vlaflow-v2-rt1-pi-frozen",
+        "r-vlaflow-v2-libero-pi-full",
+        "r-vlaflow-v2-lplus-pi-full",
+        "r-vlaflow-v2-widowx-pi-full",
+        "r-vlaflow-v2-rt1-pi-full",
+        "r-vlaflow-v2-libero-lpi",
+        "r-vlaflow-v2-lplus-lpi",
+        "r-vlaflow-v2-widowx-lpi",
+        "r-vlaflow-v2-rt1-lpi",
+        "r-vlaflow-v2-libero-wpi",
+        "r-vlaflow-v2-lplus-wpi",
+        "r-vlaflow-v2-widowx-wpi",
+        "r-vlaflow-v2-rt1-wpi",
+        "r-vlaflow-v2-libero-lwpi",
+        "r-vlaflow-v2-lplus-lwpi",
+        "r-vlaflow-v2-widowx-lwpi",
+        "r-vlaflow-v2-rt1-lwpi"
+      ],
+      "note": "第十四批：新增28条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
     "p011": {
       "status": "deferred",
@@ -415,10 +483,20 @@
       "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
     },
     "p015": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "onevomemory-v1-libero-long",
+        "onevomemory-v1-rmbench"
+      ],
+      "resultIds": [
+        "r-onevomemory-v1-long-base",
+        "r-onevomemory-v1-long-offline",
+        "r-onevomemory-v1-long-online",
+        "r-onevomemory-v1-rmbench-base",
+        "r-onevomemory-v1-rmbench-offline",
+        "r-onevomemory-v1-rmbench-online"
+      ],
+      "note": "第十四批：新增6条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
     "p004": {
       "status": "extracted",

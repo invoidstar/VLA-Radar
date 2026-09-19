@@ -1,0 +1,19 @@
+{
+  "id": "r-vlaflow-v2-rt1-wpi-nopt",
+  "paperId": "p002",
+  "method": "MindWPI w/o PT",
+  "trackId": "vlaflow-v2-simpler-rt1",
+  "values": {
+    "RT-1 VM": 75.2,
+    "RT-1 VA": 51.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://github.com/MindVLA-Team/VLAFlow",
+  "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+  "locator": "Internal paradigm table",
+  "attribution": "author-reported",
+  "trainingData": "RT-1使用RT-1-only FT。",
+  "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+  "supersedes": ""
+}

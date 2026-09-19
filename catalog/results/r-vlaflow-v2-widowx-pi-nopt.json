@@ -1,0 +1,18 @@
+{
+  "id": "r-vlaflow-v2-widowx-pi-nopt",
+  "paperId": "p002",
+  "method": "MindPI w/o PT",
+  "trackId": "vlaflow-v2-simpler-widowx",
+  "values": {
+    "WidowX Average": 59.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://github.com/MindVLA-Team/VLAFlow",
+  "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+  "locator": "Internal paradigm table",
+  "attribution": "author-reported",
+  "trainingData": "WidowX使用Bridge-only FT。",
+  "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+  "supersedes": ""
+}
