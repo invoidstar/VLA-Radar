@@ -55,7 +55,7 @@ rs += [
  R('r-recap-v2-throughput','p075','Full RECAP','recap-v2-throughput-factor',{'Laundry factor':1.5,'Box-assembly factor':2.0},'https://arxiv.org/html/2511.14759v2','arXiv 2511.14759v2','Results: deployment iterations','on-robot RECAP','+50%精确转为1.5x；2x保持原表述。两个任务不同，不求平均。'),
  R('r-recap-v2-targeted97','p075','RECAP after two iterations','recap-v2-targeted-failure-success',{'Success':97.0},'https://arxiv.org/html/2511.14759v2','arXiv 2511.14759v2','Targeted failure removal','600 trajectories per iteration','97%只对应定向失败消除实验。')
 ]
-assert len(rs)==26, len(rs)
+assert len(rs)==25, len(rs)
 for r in rs: dump('catalog/results/'+r['id']+'.json',r)
 # paper/review state
 cfg={
