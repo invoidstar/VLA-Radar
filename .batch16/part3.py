@@ -140,13 +140,15 @@ audit={
  'countsAfterExpected':{'papers':98,'results':962,'tracks':267,'extracted':94,'deferred':2,'notApplicable':2,'needsReview':11},
  'batchAdded':{'results':result_count,'tracks':track_count},
  'qualityRules':[
-  'No plot-pixel estimation; FAST/MVP use exact textual efficiency/count claims rather than invented policy scores.',\n  'DMS-VLA and VLAbot remain deferred because repository editorial policy forbids promoting limited-source records without full-source reading.',
+  'No plot-pixel estimation; FAST/MVP use exact textual efficiency/count claims rather than invented policy scores.',
+  'DMS-VLA and VLAbot remain deferred because repository editorial policy forbids promoting limited-source records without full-source reading.',
   'DMS-VLA stores only literal published-abstract endpoints 25/55 and explicitly leaves the unusual 25%-55%x notation uninterpreted.',
   'VLAbot stores within-five-trials as an upper bound, not an exact trial count or autonomous-demo claim.',
   'Score, success rate, latency, throughput, correction count, task progress and representation probes remain separate tracks.',
   'Current-version note reviews completed for p031,p018,p075,p030,p038,p034,p037; full-text-limited p043/p046 and published GF-VLA note remain needs_review.'
  ],
- 'unresolvedNoteReviews':['p045','p043','p046'],\n 'limitedSourceDeferred':['p043','p046'],
+ 'unresolvedNoteReviews':['p045','p043','p046'],
+ 'limitedSourceDeferred':['p043','p046'],
  'sourcePolicy':'Primary/official sources prioritized; exact source-located claims only. Missing values remain missing rather than zero.'
 }
 assert result_count==128,(result_count,track_count)
@@ -163,7 +165,8 @@ def j(p): return json.loads((R/p).read_text())
 ALL=['p067','p032','p031','p045','p043','p022','p018','p075','p008','p071','p077','p030','p005','p038','p006','p019','p033','p007','p010','p046','p034','p016','p037','p097']
 def test_final24_counts_and_zero_deferred():
     r=j('maintenance/benchmark-review.json')['papers']
-    assert all(r[x]['status']=='extracted' for x in ALL if x not in {'p043','p046'})\n    assert r['p043']['status']=='deferred' and r['p046']['status']=='deferred'
+    assert all(r[x]['status']=='extracted' for x in ALL if x not in {'p043','p046'})
+    assert r['p043']['status']=='deferred' and r['p046']['status']=='deferred'
     assert sum(x['status']=='extracted' for x in r.values())==94
     assert sum(x['status']=='deferred' for x in r.values())==2
     assert sum(x['status']=='not-applicable' for x in r.values())==2
