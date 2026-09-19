@@ -1,0 +1,25 @@
+{
+  "id": "r-droid-v2-real-figure8-ood-target-only",
+  "paperId": "p062",
+  "method": "Diffusion Policy／仅目标示范",
+  "trackId": "droid-v2-real-figure8-ood",
+  "values": {
+    "WaffleDistractors": 40,
+    "ChipsDistractors": 10,
+    "ChipsNovel": 20,
+    "AppleDistractors": 0,
+    "ToastNovel": 20,
+    "DeskDistractors": 0,
+    "LentilsDistractorsCamera": 30,
+    "Average": 17
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2403.12945v2",
+  "sourceVersion": "arXiv2403.12945v2 PDF Figure 8",
+  "locator": "PDF第9页 Figure 8，OOD文字标签；RSS正式版第8页图8交叉核对",
+  "attribution": "author-reported",
+  "trainingData": "仅目标示范；目标示范70/50/60/150/50/50；Appendix F-B: DROID前40k已标注成功轨迹，OXE约400k；50/50混合。烘焙与华夫饼机共享目标策略；25k步，煮扁豆OOD全部方法50k；batch128/Adam1e-4。",
+  "evaluationNotes": "六任务四处真机，各方法/任务设置10次；双外部RGB＋语言＋本体，预测16/执行8；训练种子和checkpoint未完整披露。结果来自PDF文字标签×100，平均保留原标签舍入，不由柱高或误差线估分。清桌正文/附录起点和抽屉干扰定义有差异，附录称抽屉内干扰使全部方法失败。",
+  "supersedes": ""
+}

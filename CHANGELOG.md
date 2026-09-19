@@ -1,3 +1,7 @@
+## 2026-09-19 · 原始证据回补第九批
+
+深化既有CALVIN、DROID、SayCan各9节正文，新增42条可追溯结果与13个协议；CALVIN短任务/链式、DROID实际40k训练/ID与OOD、SayCan规划/执行分开。DROID新增真实评测归档，不当新统一公共benchmark。三篇正式发表与完整书目同步，最早日期保持；按Figure8更正CALVIN“最高53.9”并按Table2澄清SayCan两厨房KEY RESULT，before/after与来源留审计；仅处理本批来源，完整周检索检查点不前移。
+
 ## 2026-09-19 · 跨本体原始证据回补第八批
 
 深化Open X-Embodiment/RT-X与Octo各9节，补29条来源定位真机结果与8个独立协议；新增BridgeData真机和Octo作者真机归档以免误入SimplerEnv。保留OXE容量/历史混杂和反例、Octo重复原表去重/平均及回合冲突、零样本与微调区别。确认两篇及RoboFlamingo正式发表，后者仅元数据、全文复核仍待完成；首发、KEY RESULT和旧结果保持。前端排序与散点图不改，非完整周检索。
