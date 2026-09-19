@@ -1,4 +1,5 @@
 name: Prepare retained benchmark batch four
+# Retry after identical first-page assertion passed in the diagnostic run; no assertions removed.
 on:
   push:
     branches: [weekly-update-2026-09-19-benchmark-batch4]
