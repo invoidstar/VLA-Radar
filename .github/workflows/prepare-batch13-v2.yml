@@ -35,6 +35,7 @@ jobs:
           q=Path('catalog/benchmarks.json'); obj=__import__('json').loads(q.read_text())
           for t in obj['tracks']:
               if t['id'].startswith('tau0-v1-'): t['dataset']='Tau0-VLA real robot'
+              if t['id']=='dswam-v1-sorting-errors': t['unit']='score'
           q.write_text(__import__('json').dumps(obj,ensure_ascii=False,indent=2)+'\n')
           ch=Path('CHANGELOG.md').read_text()
           entry="\n".join([
