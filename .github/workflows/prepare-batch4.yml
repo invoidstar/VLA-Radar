@@ -1,0 +1,140 @@
+name: Prepare retained benchmark batch four
+on:
+  push:
+    branches: [weekly-update-2026-09-19-benchmark-batch4]
+    paths: [.github/workflows/prepare-batch4.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-retained-batch4
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BASE: c6ad83af947e619f577ec6f6e27cbecce90092b3
+      BRANCH: weekly-update-2026-09-19-benchmark-batch4
+      EXPECTED_HEAD: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify transport and every canonical preimage before applying
+        run: |
+          set -eu
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          python - <<'PY'
+          import base64,hashlib,json,lzma,os
+          from pathlib import Path
+          encoded=b''.join(Path(f'maintenance/.batch4-part{i}').read_bytes() for i in range(3))
+          assert len(encoded)==33360
+          packed=base64.b64decode(encoded,validate=True)
+          assert hashlib.sha256(packed).hexdigest()=='1a5fb2c13af12750c55405305cea9a93cbbedcb057d87b85f9ff36cd46c289df'
+          payload=json.loads(lzma.decompress(packed))
+          assert payload['baseCommit']==os.environ['BASE'] and len(payload['operations'])==59
+          allowed={'CHANGELOG.md','catalog/benchmarks.json','catalog/bibliography.json','catalog/first-public.json','catalog/manifest.json','maintenance/benchmark-content-policy.md','maintenance/benchmark-review.json','maintenance/benchmark-source-audit-20260918-batch4.json','tests/test_benchmark_batch4.py'}
+          planned=[];seen=set()
+          for op in payload['operations']:
+              p=Path(op['path']);n=p.as_posix()
+              assert not p.is_absolute() and '..' not in p.parts and n not in seen
+              assert n in allowed or n in {f'catalog/papers/p{i:03d}.json' for i in range(93,96)} or (n.startswith('catalog/results/r-') and n.endswith('.json'))
+              seen.add(n);old=p.read_bytes() if p.exists() else None
+              assert (hashlib.sha256(old).hexdigest() if old is not None else None)==op['before'], 'Changed base: '+n
+              kind=op['kind']
+              if kind=='create':
+                  assert old is None
+                  content=op['content']
+              elif kind=='prepend': content=op['content']+old.decode()
+              elif kind=='append': content=old.decode()+op['content']
+              elif kind=='json-add':
+                  data=json.loads(old)
+                  for change in op['changes']:
+                      keys=change['path'];target=data
+                      for k in keys[:-1]:target=target[k]
+                      k=keys[-1]
+                      if 'add' in change:
+                          assert k not in target
+                          target[k]=change['add']
+                      else:
+                          assert isinstance(target[k],list)
+                          target[k].extend(change['append'])
+                  content=json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n'
+              else:raise ValueError(kind)
+              final=content.encode()
+              assert hashlib.sha256(final).hexdigest()==op['after'], 'Target mismatch: '+n
+              planned.append((p,final))
+          for p,data in planned:p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)
+          print('PASS: 59 retained canonical operations matched exact hashes.')
+          PY
+          python scripts/capture_activity.py --base "$BASE"
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Verify old content and public checkpoints remain intact
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          from pathlib import Path
+          base=os.environ['BASE']
+          def old(p):return subprocess.check_output(['git','show',base+':'+p])
+          files=subprocess.check_output(['git','ls-tree','-r','--name-only',base],text=True).splitlines()
+          protected=[p for p in files if p.startswith(('catalog/papers/','catalog/results/','catalog/news/')) or p in ['maintenance/state.json','maintenance/news-state.json']]
+          for p in protected:assert Path(p).read_bytes()==old(p),p
+          for p,k in [('catalog/benchmarks.json','tracks'),('catalog/manifest.json','paperOrder')]:
+              a=json.loads(old(p))[k];b=json.loads(Path(p).read_text())[k];assert b[:len(a)]==a
+          for p,k in [('catalog/first-public.json',None),('catalog/bibliography.json','entries'),('maintenance/benchmark-review.json','papers')]:
+              a=json.loads(old(p));b=json.loads(Path(p).read_text())
+              if k:a,b=a[k],b[k]
+              for key,v in a.items():assert b[key]==v
+          b=json.loads(Path('data/leaderboards.json').read_text());ps=json.loads(Path('data/library.json').read_text())['papers']
+          assert (len(ps),len(b['tracks']),len(b['results']),len({t['dataset'] for t in b['tracks']}))==(95,83,282,15)
+          assert len({r['paperId'] for r in b['results'] if r['evidence']=='checked'})==36
+          prior={e['id'] for e in json.loads(old('catalog/activity.json'))['events']}
+          added=[e for e in json.loads(Path('catalog/activity.json').read_text())['events'] if e['id'] not in prior]
+          assert len(added)==50 and all(e['baseCommit']==base for e in added)
+          out=Path('/tmp/radar-batch4');out.mkdir(exist_ok=True)
+          report={'status':'pass','baseCommit':base,'protectedFiles':len(protected),'papers':95,'results':282,'tracks':83,'reportingPapers':36,'newEvents':50}
+          (out/'invariance.json').write_text(json.dumps(report,indent=2));print(report)
+          PY
+      - name: Install browser driver and fonts
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq; sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Real HTTP browser regression
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+          python scripts/browser_sidebar.py
+          python scripts/browser_tools.py
+      - name: Commit validated content to this candidate branch only
+        run: |
+          set -eu
+          test "${{ github.ref_name }}" = "$BRANCH"
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$EXPECTED_HEAD"
+          git diff --exit-code -- .github
+          git rm maintenance/.batch4-part0 maintenance/.batch4-part1 maintenance/.batch4-part2
+          git add catalog data CHANGELOG.md maintenance/benchmark-content-policy.md maintenance/benchmark-review.json maintenance/benchmark-source-audit-20260918-batch4.json tests/test_benchmark_batch4.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add RoboMimic, DexMimicGen and SIMPLER deep notes and 47 scoped results'
+          git push origin "HEAD:refs/heads/$BRANCH"
+      - name: Preserve tested candidate
+        if: always()
+        run: |
+          mkdir -p /tmp/radar-batch4
+          git archive --format=zip --output=/tmp/radar-batch4/source.zip HEAD
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: retained-batch4-audit-${{ github.run_id }}
+          path: |
+            /tmp/radar-batch4/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+          retention-days: 14
