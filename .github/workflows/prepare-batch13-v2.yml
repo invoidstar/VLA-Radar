@@ -32,6 +32,10 @@ jobs:
               q=Path('catalog/papers/'+pid+'.json'); obj=__import__('json').loads(q.read_text())
               obj['note']['benchmarkReview']['status']='extracted'
               q.write_text(__import__('json').dumps(obj,ensure_ascii=False,indent=2)+'\n')
+          q=Path('catalog/benchmarks.json'); obj=__import__('json').loads(q.read_text())
+          for t in obj['tracks']:
+              if t['id'].startswith('tau0-v1-'): t['dataset']='Tau0-VLA real robot'
+          q.write_text(__import__('json').dumps(obj,ensure_ascii=False,indent=2)+'\n')
           ch=Path('CHANGELOG.md').read_text()
           entry="\n".join([
             "## 2026-09-19 · 第十三批：五篇原始证据回补","",
