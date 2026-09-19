@@ -1,0 +1,70 @@
+name: Prepare final 24 deferred evidence sweep
+on:
+  push:
+    branches: [weekly-update-2026-09-20-benchmark-final24]
+    paths:
+      - .github/workflows/prepare-final24.yml
+      - .batch16/**
+permissions:
+  contents: write
+concurrency:
+  group: prepare-final24
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply source-checked final 24 payload
+        run: |
+          python .batch16/part1.py
+          python .batch16/part2.py
+          python .batch16/part3.py
+      - name: Full offline validation
+        run: python scripts/validate_all.py
+      - name: Install browser environment
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Run all six real HTTP browser suites
+        run: |
+          for s in browser_smoke browser_workspace browser_news browser_sidebar browser_tools browser_leaderboard; do python scripts/$s.py; done
+      - name: Verify final counts and save candidate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('maintenance/benchmark-review.json').read_text())['papers']
+          assert sum(x['status']=='extracted' for x in r.values())==96
+          assert sum(x['status']=='deferred' for x in r.values())==0
+          assert sum(x['status']=='not-applicable' for x in r.values())==2
+          assert len(json.loads(Path('catalog/benchmarks.json').read_text())['tracks'])==269
+          assert len(list(Path('catalog/results').glob('r-*.json')))==964
+          assert json.loads(Path('maintenance/work-queue.json').read_text())['remainingNotes']==11
+          audit=json.loads(Path('maintenance/benchmark-source-audit-20260920-final24.json').read_text())
+          assert audit['batchAdded']=={'results':130,'tracks':47}
+          print('final24 exact counts verified')
+          PY
+          git add CHANGELOG.md catalog maintenance tests data
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Materialize final 24 deferred evidence sweep after full validation'
+          git push origin HEAD:refs/heads/weekly-update-2026-09-20-benchmark-final24
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final24-evidence-audit
+          path: |
+            maintenance/benchmark-source-audit-20260920-final24.json
+            tests/test_benchmark_final24.py
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+            /tmp/radar-leaderboard/
+          retention-days: 14
