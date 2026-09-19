@@ -38,4 +38,23 @@ ok('10000 results bounded without silent loss',()=>{let z=C.scatterData(track,Ar
 ok('CSV retains excluded rows with explicit reason',()=>{const csv=C.scatterCSV(track,[...rows,{...row('unknown',1),paperId:'p999'}],'Average',pp);a(csv.includes('missing exact day'));a(csv.includes('missing numeric score'));a(csv.includes('not necessarily method release date'));a.equal(csv.split('\r\n').length,6);});
 ok('CSV zero preserved and formula text escaped',()=>{const csv=C.scatterCSV(track,[{...row('z',0),method:'=1+2'}],'Average',pp);a(csv.includes('"0"'));a(csv.includes('"\'=1+2"'));});
 ok('URL helper refuses executable sources',()=>a(C.scatterCSV(track,[{...row('bad',1),source:'javascript:alert(1)'}],'Average',pp).includes('"#"')));
+
+ok('arXiv variants share navigation key only',()=>a.equal(R.sourceKey('https://arxiv.org/pdf/2406.09246v3.pdf#page=2'),R.sourceKey('https://ar5iv.labs.arxiv.org/html/2406.09246')));
+ok('distinct papers stay distinct',()=>a.notEqual(R.sourceKey('https://arxiv.org/abs/2608.08023'),R.sourceKey('https://arxiv.org/abs/2607.05468')));
+ok('publisher HTML and PDF alias',()=>a.equal(R.sourceKey('https://proceedings.mlr.press/v164/shridhar22a.html'),R.sourceKey('https://proceedings.mlr.press/v164/shridhar22a/shridhar22a.pdf')));
+ok('official version query never dropped',()=>a.notEqual(R.sourceKey('https://example.org/board?v=1'),R.sourceKey('https://example.org/board?v=2')));
+ok('unsafe or invalid source absent',()=>{for(const u of ['',null,'javascript:alert(1)','https://user:pass@example.org'])a.equal(R.sourceKey(u),'');});
+const nav=[{id:'a',dataset:'RoboCasa',source:'https://arxiv.org/html/2406.02523v1',name:'Original · 1',comparisonScope:'paper-table',columns:['S']},{id:'b',dataset:'RoboCasa',source:'https://arxiv.org/html/2406.02523v2',name:'Original · 2',comparisonScope:'protocol',columns:['L']},{id:'c',dataset:'RoboCasa365',source:'https://arxiv.org/html/2406.02523v1',name:'Other',comparisonScope:'protocol'}, {id:'x',dataset:'RoboCasa',source:'',name:'Missing'}, {id:'y',dataset:'RoboCasa',source:'',name:'Missing'}];
+const navCopy=JSON.stringify(nav);
+ok('same-source multiple settings navigable as one group',()=>a.equal(R.boardGroups(nav).length,4));
+ok('RoboCasa365 cannot join RoboCasa source group',()=>a.deepEqual(R.boardGroups(nav)[1].tracks.map(t=>t.id),['c']));
+ok('unknown sources stay independent',()=>a.equal(R.boardGroups(nav).filter(g=>g.tracks[0].source==='').length,2));
+ok('group label can use verified public catalog identity',()=>a.equal(R.boardGroups(nav,[{id:'p',name:'RoboCasa',arxiv:'2406.02523'}])[0].label,'RoboCasa'));
+ok('group is not a common protocol',()=>{const g=R.boardGroups(nav)[0];a.equal(g.kind,'多类证据');a.deepEqual(g.tracks.map(t=>t.columns),[['S'],['L']]);});
+ok('navigation never mutates source tracks',()=>a.equal(JSON.stringify(nav),navCopy));
+const fs=require('fs');const actual=JSON.parse(fs.readFileSync('catalog/benchmarks.json','utf8')).tracks;
+ok('all real tracks appear exactly once',()=>a.deepEqual(R.boardGroups(actual).flatMap(g=>g.tracks.map(t=>t.id)).sort(),actual.map(t=>t.id).sort()));
+ok('grouping reduces real entry count',()=>a(R.boardGroups(actual).length<actual.length));
+ok('RoboCasa365 budget versions one source, separate settings',()=>{const g=R.boardGroups(actual.filter(t=>t.dataset==='RoboCasa365'));a(g.some(g=>g.tracks.some(t=>t.id==='robocasa365-paper-v1-target-50')&&g.tracks.some(t=>t.id==='robocasa365-paper-v1-target-500')));});
+ok('grouping 10000 tracks keeps every record',()=>{const x=Array.from({length:10000},(_,i)=>({...nav[0],id:'x'+i}));const g=R.boardGroups(x);a.equal(g.length,1);a.equal(g[0].tracks.length,10000);});
 console.log(`PASS: ${count} leaderboard sorting / scatter / source-date / scale / CSV assertions.`);

@@ -9,9 +9,9 @@
   const STATUS = {legacy:'沿用旧记录 · 待检查',preprint:'预印本',accepted:'已录用',published:'正式发表',report:'技术报告',withdrawn:'已撤回'};
   const ATTR = {'author-reported':'作者方法','reported-baseline':'同文报告基线','independent-reproduction':'独立复现'};
   const Runtime=global.RadarRuntime||(typeof require==='function'?require('./runtime.js'):null);
-  let boardPromise, boardToken=0, boardIndexUrl='data/leaderboards.json';
+  let boardPromise, boardToken=0, boardIndexUrl='data/leaderboards.json', boardPapers=[];
   const getJson=path=>Runtime.loadJson(path);
-  function configure(catalog){boardIndexUrl=catalog.boardIndexUrl||'data/leaderboards.json';boardPromise=null;}
+  function configure(catalog){boardPapers=Array.isArray(catalog.papers)?catalog.papers:[];boardIndexUrl=catalog.boardIndexUrl||'data/leaderboards.json';boardPromise=null;}
   function loadBoards(){if(!boardPromise)boardPromise=getJson(boardIndexUrl).then(x=>{if(x.schemaVersion!==1||!Array.isArray(x.tracks))throw new Error('榜单格式不支持');return x;}).catch(e=>{boardPromise=null;throw e;});return boardPromise;}
   async function loadTrack(t,data){if(Array.isArray(data.results))return data;const x=await getJson(t.resultUrl);if(x.trackId!==t.id||!Array.isArray(x.results))throw new Error('赛道数据不一致');return {...data,results:x.results};}
   async function loadPaperResults(p){if(!p.resultUrl)return {tracks:[],results:[]};const x=await getJson(p.resultUrl);if(x.paperId!==p.id||!Array.isArray(x.results))throw new Error('论文结果不一致');return x;}
@@ -38,6 +38,46 @@
     const ranked=rankRows(rows,column,metricDirection(track,column)),ranks=new Map(ranked.map(r=>[r.id,r.rank]));
     const ordered=order==='source'?[...rows]:sortRows(rows,column,sortDirection(track,column,order));
     return ordered.map(r=>({...r,rank:track.comparisonScope==='protocol'?ranks.get(r.id):null}));
+  }
+
+  // Navigation families never combine results, metrics, versions or fair ranks.
+  function sourceKey(value){
+    try{
+      const u=new URL(value);if(!['https:','http:'].includes(u.protocol)||u.username||u.password)return '';
+      const host=u.hostname.toLowerCase(),path=u.pathname;
+      if(['arxiv.org','www.arxiv.org','export.arxiv.org','ar5iv.labs.arxiv.org','ar5iv.org'].includes(host)){
+        const m=path.match(/\/(?:abs|html|pdf)\/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?\/?$/);
+        if(m)return 'arxiv:'+m[1];
+      }
+      if(host==='doi.org'||host==='dx.doi.org')return 'doi:'+path.slice(1).toLowerCase();
+      if(host==='proceedings.mlr.press')return 'pmlr:'+path.replace(/\.pdf$/i,'.html').replace(/\/([^/]+)\/\1\.html$/,'/$1.html');
+      if(['proceedings.neurips.cc','papers.nips.cc','proceedings.iclr.cc'].includes(host)){
+        const m=path.match(/\/([a-f0-9]{32})-/i);if(m)return host+':'+m[1].toLowerCase();
+      }
+      if(host==='openreview.net'&&u.searchParams.get('id'))return 'openreview:'+u.searchParams.get('id');
+      u.hash='';for(const k of [...u.searchParams.keys()])if(k.startsWith('utm_'))u.searchParams.delete(k);
+      return u.href;
+    }catch{return '';}
+  }
+  function boardGroups(tracks,papers=[]){
+    const names=new Map();
+    for(const p of papers){
+      if(p.arxiv)names.set('arxiv:'+p.arxiv.replace(/v\d+$/,''),p.name||p.title||p.id);
+      if(p.doi)names.set('doi:'+p.doi.toLowerCase(),p.name||p.title||p.id);
+      const key=sourceKey(p.paperUrl);if(key)names.set(key,p.name||p.title||p.id);
+    }
+    const grouped=new Map();
+    for(const t of tracks){
+      const key=JSON.stringify([t.dataset,sourceKey(t.source)||'track:'+t.id]);
+      if(!grouped.has(key))grouped.set(key,{id:key,tracks:[],label:''});
+      grouped.get(key).tracks.push(t);
+    }
+    return [...grouped.values()].map(g=>{
+      const t=g.tracks[0],name=names.get(sourceKey(t.source));
+      const short=String(t.name||t.id).split(/\s*[·｜|]\s*/)[0];
+      g.label=name||short;g.kind=g.tracks.every(t=>t.comparisonScope==='protocol')?'协议内结果':g.tracks.every(t=>t.comparisonScope==='paper-table')?'原文证据':'多类证据';
+      return g;
+    });
   }
   async function detail(p){
     if(!p.detailUrl)return null;
@@ -112,11 +152,13 @@
       let order=['auto','asc','desc','source'].includes(query.get('lbOrder'))?query.get('lbOrder'):'auto';
       let chartType=['bar','scatter'].includes(query.get('lbChart'))?query.get('lbChart'):'';
       let dateBasis=query.get('lbTime')==='verifiedAt'?'verifiedAt':'firstPublished';
+      let browseAll=query.get('lbBrowse')==='all';
       const selected=(v,x)=>v===x?'selected':'';
       function updateUrl(){
         if(token!==boardToken)return;
         const u=new URL(location.href);u.searchParams.set('dataset',dataset);u.searchParams.set('track',trackId);
         u.searchParams.set('lbMetric',metric);u.searchParams.set('lbOrder',order);
+        if(browseAll)u.searchParams.set('lbBrowse','all');else u.searchParams.delete('lbBrowse');
         if(chartType)u.searchParams.set('lbChart',chartType);else u.searchParams.delete('lbChart');
         if(chartType==='scatter')u.searchParams.set('lbTime',dateBasis);else u.searchParams.delete('lbTime');
         history.replaceState({},'',u);
@@ -124,6 +166,8 @@
       async function draw(focus){
         const drawId=++drawVersion,scrollLeft=host.querySelector('.board-table-scroll')?.scrollLeft||0;
         const tracks=data.tracks.filter(t=>t.dataset===dataset);if(!tracks.some(t=>t.id===trackId))trackId=tracks[0]?.id||'';
+        const groups=boardGroups(tracks,boardPapers),group=groups.find(g=>g.tracks.some(x=>x.id===trackId));
+        const choices=browseAll?tracks:(group?.tracks||tracks);
         const t=tracks.find(t=>t.id===trackId);if(!t){host.innerHTML='<p>暂时没有此数据集的已定义赛道。</p>';return;}
         if(!t.columns.includes(metric))metric=t.columns.includes('Average')?'Average':t.columns[0];
         let loaded;
@@ -139,8 +183,9 @@
         const direction=sortDirection(t,metric,order),directionLabel=direction==='asc'?'升序':'降序';
         const header=c=>`<th scope="col" ${c===metric&&order!=='source'?`aria-sort="${direction==='asc'?'ascending':'descending'}"`:''}><button class="board-sort-button" data-sort-column="${esc(c)}" aria-label="按 ${esc(c)} 排序，重复点击切换升降序">${esc(c)} <span aria-hidden="true">${c===metric&&order!=='source'?(direction==='asc'?'▲':'▼'):'↕'}</span></button></th>`;
         host.innerHTML=`<div class="leaderboard-top"><div class="dataset-tabs" role="group" aria-label="数据集">${families.map(d=>`<button data-dataset="${esc(d)}" aria-pressed="${d===dataset}">${esc(d)}</button>`).join('')}</div><div class="board-update">目录更新 ${esc(data.updatedAt)} · <a href="data/leaderboards.json" download>公开 JSON ↗</a></div></div>
-          <div class="board-controls board-sort-controls"><label>评测赛道 / 协议<select id="lb-track">${tracks.map(x=>`<option value="${esc(x.id)}" ${selected(x.id,trackId)}>${esc(x.name)}</option>`).join('')}</select></label><label>排序 / 图表指标<select id="lb-metric">${t.columns.map(x=>`<option ${selected(x,metric)}>${esc(x)}</option>`).join('')}</select></label><label>排列方式<select id="lb-order"><option value="auto" ${selected(order,'auto')}>优先较优值（自动）</option><option value="desc" ${selected(order,'desc')}>数值降序 ↓</option><option value="asc" ${selected(order,'asc')}>数值升序 ↑</option><option value="source" ${selected(order,'source')}>原记录顺序</option></select></label></div>
-          <div class="protocol-card"><div><span class="note-badge">${t.comparisonScope==='protocol'?'协议内结果榜':'论文对照表 · 不给名次'}</span><h2>${esc(t.name)}</h2><p>${esc(t.protocol)}</p></div><div class="protocol-facts"><span>版本 <b>${esc(t.version)}</b></span><span>任务 <b>${esc(t.tasks)}</b></span><span>训练 <b>${esc(t.trainingRegime)}</b></span></div>${links([{label:'协议原始来源',url:t.source}])}</div>
+          <div class="board-browse-card"><div class="board-browse-heading"><div><strong>先选来源，再选设置</strong><p>${tracks.length} 项具体设置，整理为 ${groups.length} 个来源组；分组只简化入口，不合并成绩。</p></div><button class="btn" id="lb-all" aria-pressed="${browseAll}">${browseAll?'返回来源分组':'查看全部 '+tracks.length+' 项设置'}</button></div><div class="board-controls board-group-controls"><label>来源论文 / 官方榜单<select id="lb-group" ${browseAll?'disabled':''}>${groups.map((g,i)=>`<option value="${i}" ${selected(g.id,group?.id)}>${esc(g.label)} · ${g.tracks.length} 项设置 · ${esc(g.kind)}</option>`).join('')}</select></label><p class="board-group-help">${browseAll?'当前列出该数据集全部设置，原链接仍可直接定位。':'同一来源的预算、划分、版本和指标放在下方切换，具体设置仍独立保存。'}</p></div></div>
+          <div class="board-controls board-sort-controls"><label>${browseAll?'全部具体设置':'当前来源的具体设置'}<select id="lb-track">${choices.map(x=>`<option value="${esc(x.id)}" ${selected(x.id,trackId)}>${esc(x.name)}</option>`).join('')}</select></label><label>排序 / 图表指标<select id="lb-metric">${t.columns.map(x=>`<option ${selected(x,metric)}>${esc(x)}</option>`).join('')}</select></label><label>排列方式<select id="lb-order"><option value="auto" ${selected(order,'auto')}>优先较优值（自动）</option><option value="desc" ${selected(order,'desc')}>数值降序 ↓</option><option value="asc" ${selected(order,'asc')}>数值升序 ↑</option><option value="source" ${selected(order,'source')}>原记录顺序</option></select></label></div>
+          <div class="protocol-card"><div><span class="note-badge">${t.comparisonScope==='protocol'?'协议内结果榜':'论文对照表 · 不给名次'}</span><h2>${esc(t.name)}</h2><p class="protocol-brief">${esc(t.version)} · ${esc(t.metric)} (${esc(t.unit)}) · ${esc(t.split)}</p></div><details class="protocol-details"><summary>展开完整协议、训练预算与原始来源</summary><p>${esc(t.protocol)}</p><div class="protocol-facts"><span>版本 <b>${esc(t.version)}</b></span><span>任务 <b>${esc(t.tasks)}</b></span><span>训练 <b>${esc(t.trainingRegime)}</b></span></div>${links([{label:'协议原始来源',url:t.source}])}</details></div>
           <div class="research-warning">${t.comparisonScope==='protocol'?'名次按所选指标的优劣方向计算；改变显示升降序不颠倒名次。仅覆盖本赛道已核验报告，不是官方全量榜、统计显著性结论或本站复现。预训练数据与计算预算仍可能不同。':'支持按数值整理原文记录，但训练预算或评测细节未统一，不将排列顺序解释为公平名次。'} 未核验候选 ${candidates} 条，不参与排序或绘图。</div>
           <div class="board-visual-tools"><button class="btn" id="show-protocol-chart" aria-expanded="${chartType==='bar'}" aria-controls="protocol-chart">查看当前协议图表</button><button class="btn" id="show-time-scatter" aria-expanded="${chartType==='scatter'}" aria-controls="protocol-chart">时间—成绩散点图</button><button class="btn" id="export-protocol-csv">导出当前协议 CSV</button><span>点开列名可排序；图表与表格使用同一指标。</span></div><div id="protocol-chart" hidden></div>
           <p class="board-sort-status" role="status">${order==='source'?'按原记录顺序展示':`${esc(metric)} · ${directionLabel}`} · 指标${metricDirection(t,metric)==='lower'?'越低越好':'越高越好'} · 数值排序时缺失值置后，真实零分保留。</p>
@@ -150,6 +195,8 @@
         host.querySelector('#show-time-scatter').onclick=()=>toggleChart('scatter');
         host.querySelector('#export-protocol-csv').onclick=()=>global.RadarWorkspace.action('csv',{track:t,rows});
         host.querySelectorAll('[data-dataset]').forEach(b=>b.onclick=()=>{dataset=b.dataset.dataset;trackId='';metric='';order='auto';page=1;draw();});
+        host.querySelector('#lb-all').onclick=()=>{browseAll=!browseAll;draw('#lb-all');};
+        host.querySelector('#lb-group').onchange=e=>{const g=groups[Number(e.target.value)];if(!g)return;trackId=g.tracks[0].id;metric='';order='auto';page=1;draw('#lb-group');};
         host.querySelector('#lb-track').onchange=e=>{trackId=e.target.value;metric='';order='auto';page=1;draw('#lb-track');};
         host.querySelector('#lb-metric').onchange=e=>{metric=e.target.value;if(order==='source')order='auto';page=1;draw('#lb-metric');};
         host.querySelector('#lb-order').onchange=e=>{order=e.target.value;page=1;draw('#lb-order');};
@@ -174,6 +221,6 @@
       await draw();
     }catch(err){if(token!==boardToken)return;host.innerHTML='<div class="research-empty"><h2>榜单暂未载入</h2><p>请刷新重试。未载入不代表没有结果或分数为零。</p><button id="retry-board" class="btn">重试</button></div>';host.querySelector('#retry-board').onclick=()=>renderBoards(host);console.warn('Leaderboard:',err.message);}
   }
-  global.RadarResearch={cancelBoards:()=>{boardToken++;},loadBoards,loadTrack,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,pageWindow,rankRows,sortRows,boardRows,sortDirection,metricDirection,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks};
+  global.RadarResearch={cancelBoards:()=>{boardToken++;},loadBoards,loadTrack,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,sourceKey,boardGroups,pageWindow,rankRows,sortRows,boardRows,sortDirection,metricDirection,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks};
   if(typeof module!=='undefined')module.exports=global.RadarResearch;
 })(typeof window!=='undefined'?window:globalThis);
