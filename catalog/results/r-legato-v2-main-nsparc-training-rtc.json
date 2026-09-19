@@ -1,0 +1,22 @@
+{
+  "id": "r-legato-v2-main-nsparc-training-rtc",
+  "paperId": "p041",
+  "method": "Training-time RTC",
+  "trackId": "legato-v2-main-nsparc",
+  "values": {
+    "Bowls": null,
+    "Pour": 2.46,
+    "PickPlace": null,
+    "Drawer": null,
+    "Towel": null
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2602.12978v2",
+  "sourceVersion": "arXiv 2602.12978v2",
+  "locator": "Table II (PDF p.7)",
+  "attribution": "reported-baseline",
+  "trainingData": "RTC与Legato均从相同π0.5预训练检查点、相同任务数据和相同训练步数适配；具体示范条数/步数及最终检查点选择未明确。训练H=60、N=5，d均匀0–10、r均匀0–50；不是training-free。",
+  "evaluationNotes": "只报告Pour；其余任务null。mean±SE=2.46±0.14；d=8,s=30,r=22；未借用后续月份的Legato重测行。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

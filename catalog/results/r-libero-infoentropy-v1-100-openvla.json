@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-infoentropy-v1-100-openvla",
+  "paperId": "p042",
+  "method": "OpenVLA",
+  "trackId": "libero-infoentropy-v1-100",
+  "values": {
+    "Spatial": 84.4,
+    "Object": 86.6,
+    "Goal": 75.6,
+    "Long": 53.2,
+    "Average": 75
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2604.05323v1",
+  "sourceVersion": "arXiv 2604.05323v1",
+  "locator": "Table I (PDF p.4)",
+  "attribution": "reported-baseline",
+  "trainingData": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+  "evaluationNotes": "各列原表±=[0.9, 0.8, 1, 1.4, 0.6]（定义未明）。原始CUDA latency=51.91、FLOPs=1.864、FLOPs speedup=1；latency单位/FLOPs量级未给，不能换算。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

@@ -1,0 +1,20 @@
+{
+  "id": "r-robotwin2-flashvla-v1-pi05-all-base",
+  "paperId": "p029",
+  "method": "π0.5",
+  "trackId": "robotwin2-flashvla-v1-pi05-all",
+  "values": {
+    "Clean": 86.1,
+    "Random": 85.8,
+    "Average": 86
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2608.27384v1",
+  "sourceVersion": "arXiv 2608.27384v1",
+  "locator": "Table 3 (PDF p.7)",
+  "attribution": "reported-baseline",
+  "trainingData": "RoboTwin2.0全50任务clean与random示范并集联合训练；100k步（约4.5epochs）、lr5e-5、globalbatch256、8×H200、gradient accumulation4，99百分位归一化。π0.5 H50，Flash C20/N4，执行16；不同于TurboVLA仅clean训练55k步。",
+  "evaluationNotes": "原报告Average不重算。短组93.9→93.2负结果保留；长组53→89.6只说明该子集，不当作全库平均。各组任务数不由分数倒推。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

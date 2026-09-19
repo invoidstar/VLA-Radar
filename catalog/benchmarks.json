@@ -3095,6 +3095,789 @@
         "Hardness"
       ],
       "source": "https://arxiv.org/pdf/2507.17294v2"
+    },
+    {
+      "id": "legato-v2-main-score",
+      "dataset": "Legato (real)",
+      "name": "主实验批次 · Task completion score",
+      "version": "2602.12978v2 原文设置",
+      "tasks": "Bowls, Pour, PickPlace, Drawer, Towel",
+      "split": "5项主任务；Table I/II/A.2原始实验批次",
+      "metric": "Task completion score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "双臂真机、头部与两腕三路RGB、14维末端动作、30 Hz、H=60、N=5；任务上限120 s。Table I/II与A.2为同一实验批次；Pour补充对照d=8,s=30,r=22。主表每任务试次数未明确，不借用附加任务20次。统计为mean±standard error。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RTC与Legato均从相同π0.5预训练检查点、相同任务数据和相同训练步数适配；具体示范条数/步数及最终检查点选择未明确。训练H=60、N=5，d均匀0–10、r均匀0–50；不是training-free。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Bowls",
+        "Pour",
+        "PickPlace",
+        "Drawer",
+        "Towel"
+      ],
+      "source": "https://arxiv.org/pdf/2602.12978v2"
+    },
+    {
+      "id": "legato-v2-main-time",
+      "dataset": "Legato (real)",
+      "name": "主实验批次 · Completion time",
+      "version": "2602.12978v2 原文设置",
+      "tasks": "Bowls, Pour, PickPlace, Drawer, Towel",
+      "split": "5项主任务；Table I/II/A.2原始实验批次",
+      "metric": "Completion time",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "双臂真机、头部与两腕三路RGB、14维末端动作、30 Hz、H=60、N=5；任务上限120 s。Table I/II与A.2为同一实验批次；Pour补充对照d=8,s=30,r=22。主表每任务试次数未明确，不借用附加任务20次。统计为mean±standard error。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RTC与Legato均从相同π0.5预训练检查点、相同任务数据和相同训练步数适配；具体示范条数/步数及最终检查点选择未明确。训练H=60、N=5，d均匀0–10、r均匀0–50；不是training-free。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Bowls",
+        "Pour",
+        "PickPlace",
+        "Drawer",
+        "Towel"
+      ],
+      "source": "https://arxiv.org/pdf/2602.12978v2"
+    },
+    {
+      "id": "legato-v2-main-nldlj",
+      "dataset": "Legato (real)",
+      "name": "主实验批次 · NLDLJ",
+      "version": "2602.12978v2 原文设置",
+      "tasks": "Bowls, Pour, PickPlace, Drawer, Towel",
+      "split": "5项主任务；Table I/II/A.2原始实验批次",
+      "metric": "NLDLJ",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "双臂真机、头部与两腕三路RGB、14维末端动作、30 Hz、H=60、N=5；任务上限120 s。Table I/II与A.2为同一实验批次；Pour补充对照d=8,s=30,r=22。主表每任务试次数未明确，不借用附加任务20次。统计为mean±standard error。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RTC与Legato均从相同π0.5预训练检查点、相同任务数据和相同训练步数适配；具体示范条数/步数及最终检查点选择未明确。训练H=60、N=5，d均匀0–10、r均匀0–50；不是training-free。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Bowls",
+        "Pour",
+        "PickPlace",
+        "Drawer",
+        "Towel"
+      ],
+      "source": "https://arxiv.org/pdf/2602.12978v2"
+    },
+    {
+      "id": "legato-v2-main-nsparc",
+      "dataset": "Legato (real)",
+      "name": "主实验批次 · NSPARC",
+      "version": "2602.12978v2 原文设置",
+      "tasks": "Bowls, Pour, PickPlace, Drawer, Towel",
+      "split": "5项主任务；Table I/II/A.2原始实验批次",
+      "metric": "NSPARC",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "双臂真机、头部与两腕三路RGB、14维末端动作、30 Hz、H=60、N=5；任务上限120 s。Table I/II与A.2为同一实验批次；Pour补充对照d=8,s=30,r=22。主表每任务试次数未明确，不借用附加任务20次。统计为mean±standard error。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RTC与Legato均从相同π0.5预训练检查点、相同任务数据和相同训练步数适配；具体示范条数/步数及最终检查点选择未明确。训练H=60、N=5，d均匀0–10、r均匀0–50；不是training-free。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Bowls",
+        "Pour",
+        "PickPlace",
+        "Drawer",
+        "Towel"
+      ],
+      "source": "https://arxiv.org/pdf/2602.12978v2"
+    },
+    {
+      "id": "legato-v2-main-rmse",
+      "dataset": "Legato (real)",
+      "name": "主实验批次 · Overlap RMSE (reported x10^3)",
+      "version": "2602.12978v2 原文设置",
+      "tasks": "Bowls, Pour, PickPlace, Drawer, Towel",
+      "split": "5项主任务；Table I/II/A.2原始实验批次",
+      "metric": "Overlap RMSE (reported x10^3)",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "双臂真机、头部与两腕三路RGB、14维末端动作、30 Hz、H=60、N=5；任务上限120 s。Table I/II与A.2为同一实验批次；Pour补充对照d=8,s=30,r=22。主表每任务试次数未明确，不借用附加任务20次。统计为mean±standard error。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RTC与Legato均从相同π0.5预训练检查点、相同任务数据和相同训练步数适配；具体示范条数/步数及最终检查点选择未明确。训练H=60、N=5，d均匀0–10、r均匀0–50；不是training-free。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Bowls",
+        "Pour",
+        "PickPlace",
+        "Drawer",
+        "Towel"
+      ],
+      "source": "https://arxiv.org/pdf/2602.12978v2"
+    },
+    {
+      "id": "legato-v2-later-n-sensitivity",
+      "dataset": "Legato (real)",
+      "name": "后续批次 · 去噪步数敏感性",
+      "version": "2602.12978v2 原文设置",
+      "tasks": "N1, N3, N10, N15",
+      "split": "Pour后续月份消融；不得与主表Pour重测值混用",
+      "metric": "NSPARC",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "双臂真机、头部与两腕三路RGB、14维末端动作、30 Hz、H=60、N=5；任务上限120 s。Table I/II与A.2为同一实验批次；Pour补充对照d=8,s=30,r=22。主表每任务试次数未明确，不借用附加任务20次。统计为mean±standard error。 Table VII后续实验批次；训练N=5，推理采用启发式ω重缩放；不同N为敏感性列，不是平均任务组。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RTC与Legato均从相同π0.5预训练检查点、相同任务数据和相同训练步数适配；具体示范条数/步数及最终检查点选择未明确。训练H=60、N=5，d均匀0–10、r均匀0–50；不是training-free。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "N1",
+        "N3",
+        "N10",
+        "N15"
+      ],
+      "source": "https://arxiv.org/pdf/2602.12978v2"
+    },
+    {
+      "id": "libero-infoentropy-v1-100",
+      "dataset": "LIBERO",
+      "name": "100-token主结果与组件消融",
+      "version": "2604.05323v1 原文设置",
+      "tasks": "Spatial, Object, Goal, Long, Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件；100重要token默认预算；按论文原表的异质比较记录，不自动公平排名。±统计含义未明确，不称SD/SE。CUDA latency与FLOPs表头缺单位/量级，仅保留原始报告，不生成秒数/FLOPs榜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2604.05323v1"
+    },
+    {
+      "id": "libero-infoentropy-v1-budget60",
+      "dataset": "LIBERO",
+      "name": "重要token预算 60",
+      "version": "2604.05323v1 原文设置",
+      "tasks": "Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件；60重要token敏感性预算；未披露分套件分数；按论文原表的异质比较记录，不自动公平排名。±统计含义未明确，不称SD/SE。CUDA latency与FLOPs表头缺单位/量级，仅保留原始报告，不生成秒数/FLOPs榜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2604.05323v1"
+    },
+    {
+      "id": "libero-infoentropy-v1-budget80",
+      "dataset": "LIBERO",
+      "name": "重要token预算 80",
+      "version": "2604.05323v1 原文设置",
+      "tasks": "Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件；80重要token敏感性预算；未披露分套件分数；按论文原表的异质比较记录，不自动公平排名。±统计含义未明确，不称SD/SE。CUDA latency与FLOPs表头缺单位/量级，仅保留原始报告，不生成秒数/FLOPs榜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2604.05323v1"
+    },
+    {
+      "id": "libero-infoentropy-v1-budget120",
+      "dataset": "LIBERO",
+      "name": "重要token预算 120",
+      "version": "2604.05323v1 原文设置",
+      "tasks": "Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件；120重要token敏感性预算；未披露分套件分数；按论文原表的异质比较记录，不自动公平排名。±统计含义未明确，不称SD/SE。CUDA latency与FLOPs表头缺单位/量级，仅保留原始报告，不生成秒数/FLOPs榜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2604.05323v1"
+    },
+    {
+      "id": "libero-infoentropy-v1-budget140",
+      "dataset": "LIBERO",
+      "name": "重要token预算 140",
+      "version": "2604.05323v1 原文设置",
+      "tasks": "Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件；140重要token敏感性预算；未披露分套件分数；按论文原表的异质比较记录，不自动公平排名。±统计含义未明确，不称SD/SE。CUDA latency与FLOPs表头缺单位/量级，仅保留原始报告，不生成秒数/FLOPs榜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2604.05323v1"
+    },
+    {
+      "id": "libero-turbovla-v2",
+      "dataset": "LIBERO",
+      "name": "主表与模型组件消融",
+      "version": "2607.27205v2 原文设置",
+      "tasks": "Spatial, Object, Goal, Long, Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件，每任务50次，共2000rollout；Table1基线成绩按原论文汇总，不能视为同预算复现；延迟另在RTX4090 batch1测多模态输入到完整action chunk。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "LIBERO no_noops RLDS，40任务联合；DINOv3 ViT-B+BERT、256维6层双向交互；H=12、7维动作；80k步，warmup10k，batch256，4×RTX4090，lr5e-5；未披露最终检查点选择。外部方法的预训练、大小和训练条件各异。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.27205v2"
+    },
+    {
+      "id": "robotwin2-turbovla-v2-clean-per-task",
+      "dataset": "RoboTwin",
+      "name": "Clean · per-task",
+      "version": "RoboTwin2.0 / TurboVLA arXiv v2",
+      "tasks": "Average",
+      "split": "50 clean任务；per-task训练类别",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin2.0 clean评测，作者方法每任务100次；不是clean/random混合训练，不与FlashVLA的100k混合训练直接比较。Table2原报告设置；未知的其他基线episode数/检查点不补猜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "TurboVLA: RoboTwin2.0全部50任务clean示范联合训练，ViT-L、H50、14维绝对关节动作，55k步、warmup1k、batch192；只评clean。各基线训练与预训练不同，分离per-task和multi-task。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.27205v2"
+    },
+    {
+      "id": "robotwin2-turbovla-v2-clean-multi-task",
+      "dataset": "RoboTwin",
+      "name": "Clean · multi-task",
+      "version": "RoboTwin2.0 / TurboVLA arXiv v2",
+      "tasks": "Average",
+      "split": "50 clean任务；multi-task训练类别",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin2.0 clean评测，作者方法每任务100次；不是clean/random混合训练，不与FlashVLA的100k混合训练直接比较。Table2原报告设置；未知的其他基线episode数/检查点不补猜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "TurboVLA: RoboTwin2.0全部50任务clean示范联合训练，ViT-L、H50、14维绝对关节动作，55k步、warmup1k、batch192；只评clean。各基线训练与预训练不同，分离per-task和multi-task。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.27205v2"
+    },
+    {
+      "id": "vlabench-actioncache-v2-pi05",
+      "dataset": "VLABench",
+      "name": "10原子任务 · π0.5",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Average",
+      "split": "10原子任务；round-robin；π0.5",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "VLABench的10个原子任务、稳态预填充缓存；π0.5/GR00T分别C=10000/30000。四个随机噪声种子各200episode，共800；EfficientVLA/Falcon仅200，差异不隐藏。RTX5090动作头延迟包含key投影/查找，不含VLM整条链。测试与预填充不复用相同episode seed ID。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "vlabench-actioncache-v2-pi05-head",
+      "dataset": "VLABench",
+      "name": "动作头延迟 · π0.5",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Average",
+      "split": "10原子任务；round-robin；π0.5",
+      "metric": "Latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "VLABench的10个原子任务、稳态预填充缓存；π0.5/GR00T分别C=10000/30000。四个随机噪声种子各200episode，共800；EfficientVLA/Falcon仅200，差异不隐藏。RTX5090动作头延迟包含key投影/查找，不含VLM整条链。测试与预填充不复用相同episode seed ID。 原表ms除1000存seconds；与成功率为两个独立指标，非端到端时延。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "vlabench-actioncache-v2-gr00t",
+      "dataset": "VLABench",
+      "name": "10原子任务 · GR00T-N1.6",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Average",
+      "split": "10原子任务；round-robin；GR00T-N1.6",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "VLABench的10个原子任务、稳态预填充缓存；π0.5/GR00T分别C=10000/30000。四个随机噪声种子各200episode，共800；EfficientVLA/Falcon仅200，差异不隐藏。RTX5090动作头延迟包含key投影/查找，不含VLM整条链。测试与预填充不复用相同episode seed ID。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "vlabench-actioncache-v2-gr00t-head",
+      "dataset": "VLABench",
+      "name": "动作头延迟 · GR00T-N1.6",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Average",
+      "split": "10原子任务；round-robin；GR00T-N1.6",
+      "metric": "Latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "VLABench的10个原子任务、稳态预填充缓存；π0.5/GR00T分别C=10000/30000。四个随机噪声种子各200episode，共800；EfficientVLA/Falcon仅200，差异不隐藏。RTX5090动作头延迟包含key投影/查找，不含VLM整条链。测试与预填充不复用相同episode seed ID。 原表ms除1000存seconds；与成功率为两个独立指标，非端到端时延。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "libero-actioncache-v2-pi05",
+      "dataset": "LIBERO",
+      "name": "π0.5 LIBERO专用检查点 · NFE/缓存消融",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Spatial, Object, Goal, Long, Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table7每套件每NFE设置500episode；π0.5 H10，执行10步；C10000、阈值0.85；原表平均值。附录B与F重复次数口径不强行相乘。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "lerobot/pi05_libero_finetuned_v044，基础检查点不重新训练；成功预填充缓存。校准/缓存数据不当免费训练数据；checkpoint selection未另披露。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "libero-actioncache-v2-pi05-head",
+      "dataset": "LIBERO",
+      "name": "LIBERO动作头延迟",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "与本论文Table7完全同设置；原表明确ms，换算seconds；不含端到端VLM与环境开销。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "lerobot/pi05_libero_finetuned_v044，基础检查点不重新训练；成功预填充缓存。校准/缓存数据不当免费训练数据；checkpoint selection未另披露。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "actioncache-v2-real-sausage",
+      "dataset": "ActionCache (real)",
+      "name": "pick_sausage",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Success",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "SO-101两路相机（上方与腕部）；任务pick_sausage，50次评测；C=1000，T_hit=0.875，缓存命中N_hit=1；H=50且执行50。训练100成功+50恢复示范，回退与预填充明确。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "actioncache-v2-real-sausage-latency",
+      "dataset": "ActionCache (real)",
+      "name": "pick_sausage · 延迟分解",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "ActionHead, Overall",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "SO-101两路相机（上方与腕部）；任务pick_sausage，50次评测；C=1000，T_hit=0.875，缓存命中N_hit=1；H=50且执行50。训练100成功+50恢复示范，回退与预填充明确。 两列均seconds；head与overall不可相加；overall包含编码、VLM、查询等。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "ActionHead",
+        "Overall"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "actioncache-v2-real-close",
+      "dataset": "ActionCache (real)",
+      "name": "pick_and_close",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Success",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "SO-101两路相机（上方与腕部）；任务pick_and_close，50次评测；C=1000，T_hit=0.85，缓存命中N_hit=1；H=50且执行50。训练100成功+50恢复示范，回退与预填充明确。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "actioncache-v2-real-close-latency",
+      "dataset": "ActionCache (real)",
+      "name": "pick_and_close · 延迟分解",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "ActionHead, Overall",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "SO-101两路相机（上方与腕部）；任务pick_and_close，50次评测；C=1000，T_hit=0.85，缓存命中N_hit=1；H=50且执行50。训练100成功+50恢复示范，回退与预填充明确。 两列均seconds；head与overall不可相加；overall包含编码、VLM、查询等。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "ActionHead",
+        "Overall"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "actioncache-v2-real-button",
+      "dataset": "ActionCache (real)",
+      "name": "push_button",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Success",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "SO-101两路相机（上方与腕部）；任务push_button，50次评测；C=300，T_hit=0.85，缓存命中N_hit=1；H=50且执行50。训练100成功+50恢复示范，回退与预填充明确。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "actioncache-v2-real-button-latency",
+      "dataset": "ActionCache (real)",
+      "name": "push_button · 延迟分解",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "ActionHead, Overall",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "SO-101两路相机（上方与腕部）；任务push_button，50次评测；C=300，T_hit=0.85，缓存命中N_hit=1；H=50且执行50。训练100成功+50恢复示范，回退与预填充明确。 两列均seconds；head与overall不可相加；overall包含编码、VLM、查询等。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "ActionHead",
+        "Overall"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "vlabench-actioncache-v2-combination",
+      "dataset": "VLABench",
+      "name": "3任务 · 与VLA-Cache组合",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "Average",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "仅select_tube、select_painting、add_condiment三任务；C=3000；与10任务主表分开，组合时使用更严格相似阈值并调节VLA-Cache，不假设独立收益可相加。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "vlabench-actioncache-v2-combination-latency",
+      "dataset": "VLABench",
+      "name": "3任务 · 延迟分解",
+      "version": "2607.06370v2 原文设置",
+      "tasks": "VLM, ActionHead, Overall",
+      "split": "仅本论文明确列出的任务/条件；不与其他来源自动对齐",
+      "metric": "Latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "Table3单独三任务组合试验；各列seconds，由ms/1000。不是10任务主实验的端到端延迟。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "VLM",
+        "ActionHead",
+        "Overall"
+      ],
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "id": "libero-flashvla-v1-pi05-d0",
+      "dataset": "LIBERO",
+      "name": "π0.5 · 同步",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "Spatial, Object, Goal, Long, Average",
+      "split": "40任务；d=0",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件，原表报告2000episode平均；五次重复的说明不擅自换成每单元格1万次；Table1/3 baseline重复去重。Time/Step含环境渲染，不是一次推理调用。 d=0低层动作步预测-执行偏移；不同d不混排。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5下游LIBERO合并40任务训练50k步，lr1e-4、warmup1k、cosine，8×H200每卡batch32；mean/std归一化；基准H50。FlashVLA C10、N4；均执行5步后重新规划。不是training-free；checkpoint选择未明。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "libero-flashvla-v1-pi05-d1",
+      "dataset": "LIBERO",
+      "name": "π0.5 · 异步延迟d=1",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "Spatial, Object, Goal, Long, Average",
+      "split": "40任务；d=1",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件，原表报告2000episode平均；五次重复的说明不擅自换成每单元格1万次；Table1/3 baseline重复去重。Time/Step含环境渲染，不是一次推理调用。 d=1低层动作步预测-执行偏移；不同d不混排。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5下游LIBERO合并40任务训练50k步，lr1e-4、warmup1k、cosine，8×H200每卡batch32；mean/std归一化；基准H50。FlashVLA C10、N4；均执行5步后重新规划。不是training-free；checkpoint选择未明。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "libero-flashvla-v1-pi05-d4",
+      "dataset": "LIBERO",
+      "name": "π0.5 · 异步延迟d=4",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "Spatial, Object, Goal, Long, Average",
+      "split": "40任务；d=4",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "LIBERO四套件，原表报告2000episode平均；五次重复的说明不擅自换成每单元格1万次；Table1/3 baseline重复去重。Time/Step含环境渲染，不是一次推理调用。 d=4低层动作步预测-执行偏移；不同d不混排。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "π0.5下游LIBERO合并40任务训练50k步，lr1e-4、warmup1k、cosine，8×H200每卡batch32；mean/std归一化；基准H50。FlashVLA C10、N4；均执行5步后重新规划。不是training-free；checkpoint选择未明。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "robotwin2-flashvla-v1-pi05-all",
+      "dataset": "RoboTwin",
+      "name": "混合示范训练 · 同步 · 全部50任务",
+      "version": "RoboTwin2.0 / FlashVLA v1",
+      "tasks": "Clean, Random, Average",
+      "split": "全部50任务；Clean与Random分别显示",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin2.0同步d=0，多任务；表列Clean/Random为评测设置。原文任务子集划分依赖任务时长，不由组均值再平均。具体软件补丁版本/最佳检查点未公开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RoboTwin2.0全50任务clean与random示范并集联合训练；100k步（约4.5epochs）、lr5e-5、globalbatch256、8×H200、gradient accumulation4，99百分位归一化。π0.5 H50，Flash C20/N4，执行16；不同于TurboVLA仅clean训练55k步。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "robotwin2-flashvla-v1-pi05-short",
+      "dataset": "RoboTwin",
+      "name": "混合示范训练 · 同步 · 短时长任务子集",
+      "version": "RoboTwin2.0 / FlashVLA v1",
+      "tasks": "Clean, Random, Average",
+      "split": "短时长任务子集；Clean与Random分别显示",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin2.0同步d=0，多任务；表列Clean/Random为评测设置。原文任务子集划分依赖任务时长，不由组均值再平均。具体软件补丁版本/最佳检查点未公开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RoboTwin2.0全50任务clean与random示范并集联合训练；100k步（约4.5epochs）、lr5e-5、globalbatch256、8×H200、gradient accumulation4，99百分位归一化。π0.5 H50，Flash C20/N4，执行16；不同于TurboVLA仅clean训练55k步。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "robotwin2-flashvla-v1-pi05-medium",
+      "dataset": "RoboTwin",
+      "name": "混合示范训练 · 同步 · 中时长任务子集",
+      "version": "RoboTwin2.0 / FlashVLA v1",
+      "tasks": "Clean, Random, Average",
+      "split": "中时长任务子集；Clean与Random分别显示",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin2.0同步d=0，多任务；表列Clean/Random为评测设置。原文任务子集划分依赖任务时长，不由组均值再平均。具体软件补丁版本/最佳检查点未公开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RoboTwin2.0全50任务clean与random示范并集联合训练；100k步（约4.5epochs）、lr5e-5、globalbatch256、8×H200、gradient accumulation4，99百分位归一化。π0.5 H50，Flash C20/N4，执行16；不同于TurboVLA仅clean训练55k步。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "robotwin2-flashvla-v1-pi05-long",
+      "dataset": "RoboTwin",
+      "name": "混合示范训练 · 同步 · 长时长任务子集",
+      "version": "RoboTwin2.0 / FlashVLA v1",
+      "tasks": "Clean, Random, Average",
+      "split": "长时长任务子集；Clean与Random分别显示",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin2.0同步d=0，多任务；表列Clean/Random为评测设置。原文任务子集划分依赖任务时长，不由组均值再平均。具体软件补丁版本/最佳检查点未公开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "RoboTwin2.0全50任务clean与random示范并集联合训练；100k步（约4.5epochs）、lr5e-5、globalbatch256、8×H200、gradient accumulation4，99百分位归一化。π0.5 H50，Flash C20/N4，执行16；不同于TurboVLA仅clean训练55k步。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "libero-flashvla-v1-smol-d0",
+      "dataset": "LIBERO",
+      "name": "smol · d=0",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "Average",
+      "split": "smol、d=0；独立训练/评测配置",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table5跨架构实验；d=0。缺失分套件值不借用π0.5；Time/Step与policy invocation latency分开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "SmolVLA: 20k步，C10/N5，每卡batch64，执行5。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "libero-flashvla-v1-smol-d1",
+      "dataset": "LIBERO",
+      "name": "smol · d=1",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "Average",
+      "split": "smol、d=1；独立训练/评测配置",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table5跨架构实验；d=1。缺失分套件值不借用π0.5；Time/Step与policy invocation latency分开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "SmolVLA: 20k步，C10/N5，每卡batch64，执行5。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "robotwin-flashvla-v1-lingbot-d0",
+      "dataset": "RoboTwin",
+      "name": "lingbot · d=0",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "Average",
+      "split": "lingbot、d=0；独立训练/评测配置",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table5跨架构实验；d=0。缺失分套件值不借用π0.5；Time/Step与policy invocation latency分开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "LingBot-VLA 4B: 100k步，clean/random混合50任务，C20/N4，执行16。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "robotwin-flashvla-v1-lingbot-d1",
+      "dataset": "RoboTwin",
+      "name": "lingbot · d=1",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "Average",
+      "split": "lingbot、d=1；独立训练/评测配置",
+      "metric": "Success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table5跨架构实验；d=1。缺失分套件值不借用π0.5；Time/Step与policy invocation latency分开。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "LingBot-VLA 4B: 100k步，clean/random混合50任务，C20/N4，执行16。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    },
+    {
+      "id": "flashvla-v1-inference-latency",
+      "dataset": "FlashVLA inference",
+      "name": "GPU/视角分项 · 单次调用延迟",
+      "version": "2608.27384v1 原文设置",
+      "tasks": "RTX4090_2views, RTX4090_3views, RTX5090_2views, RTX5090_3views",
+      "split": "4种硬件/相机条件分别报告",
+      "metric": "Policy invocation latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "Table2每路1帧；10次warmup后100次测量；π0.5与FlashVLA均CUDA Graph及kernel fusion。四列是硬件/视角测量条件，不合成跨硬件平均；不是任务成功率、控制频率或Time/Step。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "trainingRegime": "采用本文已微调策略；不把微调、缓存冷启动与系统优化成本隐去；运行条件仅对应本表。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "RTX4090_2views",
+        "RTX4090_3views",
+        "RTX5090_2views",
+        "RTX5090_3views"
+      ],
+      "source": "https://arxiv.org/pdf/2608.27384v1"
     }
   ]
 }

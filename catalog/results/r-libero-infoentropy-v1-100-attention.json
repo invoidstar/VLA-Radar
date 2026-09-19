@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-infoentropy-v1-100-attention",
+  "paperId": "p042",
+  "method": "Attention entropy only",
+  "trackId": "libero-infoentropy-v1-100",
+  "values": {
+    "Spatial": 83.4,
+    "Object": 87.6,
+    "Goal": 76.4,
+    "Long": 50.2,
+    "Average": 73.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2604.05323v1",
+  "sourceVersion": "arXiv 2604.05323v1",
+  "locator": "Table II (PDF p.5)",
+  "attribution": "author-reported",
+  "trainingData": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+  "evaluationNotes": "组件消融无±；不借用主表误差。原始CUDA latency=33.24, FLOPs=1.311，单位未明确。Table II完整模型/基线与I重复，仅保留一次。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

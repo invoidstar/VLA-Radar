@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-turbovla-v2-vla-adapter",
+  "paperId": "p027",
+  "method": "VLA-Adapter",
+  "trackId": "libero-turbovla-v2",
+  "values": {
+    "Spatial": 97.8,
+    "Object": 99.2,
+    "Goal": 97.2,
+    "Long": 95,
+    "Average": 97.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.27205v2",
+  "sourceVersion": "arXiv 2607.27205v2",
+  "locator": "Table 1 (PDF p.9)",
+  "attribution": "reported-baseline",
+  "trainingData": "LIBERO no_noops RLDS，40任务联合；DINOv3 ViT-B+BERT、256维6层双向交互；H=12、7维动作；80k步，warmup10k，batch256，4×RTX4090，lr5e-5；未披露最终检查点选择。外部方法的预训练、大小和训练条件各异。",
+  "evaluationNotes": "原表平均不重算；原报告推理延迟87.3 ms（RTX4090 batch1）只适用于该配置；无±。各外部方法成绩不声称由本站或本批独立复现。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

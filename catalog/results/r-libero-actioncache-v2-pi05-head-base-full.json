@@ -1,0 +1,18 @@
+{
+  "id": "r-libero-actioncache-v2-pi05-head-base-full",
+  "paperId": "p028",
+  "method": "Base NFE=10",
+  "trackId": "libero-actioncache-v2-pi05-head",
+  "values": {
+    "Average": 0.05407
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.06370v2",
+  "sourceVersion": "arXiv 2607.06370v2",
+  "locator": "Table 7 (PDF p.15)",
+  "attribution": "reported-baseline",
+  "trainingData": "lerobot/pi05_libero_finetuned_v044，基础检查点不重新训练；成功预填充缓存。校准/缓存数据不当免费训练数据；checkpoint selection未另披露。",
+  "evaluationNotes": "动作头原值54.07 ms；cache hit rate=None%（None未报告），命中率不是SR。零步Long=83.4、平均92.1的下降不隐藏；基础NFE1平均96.9且5.84ms优于若干缓存配置。未报告±。 原始ms除1000。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

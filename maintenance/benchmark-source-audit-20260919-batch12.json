@@ -1,0 +1,1431 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "ccb22c7b78de0326660cbb5ba91301ac6ab8c228",
+  "status": "source-checked-five-paper-backfill",
+  "scope": "五篇已有论文深读与结果回补；不推进完整论文检索、新闻或发表状态全库检查点；不清理历史分支。",
+  "newPapers": [],
+  "papers": [
+    "p041",
+    "p042",
+    "p027",
+    "p028",
+    "p029"
+  ],
+  "newTracks": [
+    "legato-v2-main-score",
+    "legato-v2-main-time",
+    "legato-v2-main-nldlj",
+    "legato-v2-main-nsparc",
+    "legato-v2-main-rmse",
+    "legato-v2-later-n-sensitivity",
+    "libero-infoentropy-v1-100",
+    "libero-infoentropy-v1-budget60",
+    "libero-infoentropy-v1-budget80",
+    "libero-infoentropy-v1-budget120",
+    "libero-infoentropy-v1-budget140",
+    "libero-turbovla-v2",
+    "robotwin2-turbovla-v2-clean-per-task",
+    "robotwin2-turbovla-v2-clean-multi-task",
+    "vlabench-actioncache-v2-pi05",
+    "vlabench-actioncache-v2-pi05-head",
+    "vlabench-actioncache-v2-gr00t",
+    "vlabench-actioncache-v2-gr00t-head",
+    "libero-actioncache-v2-pi05",
+    "libero-actioncache-v2-pi05-head",
+    "actioncache-v2-real-sausage",
+    "actioncache-v2-real-sausage-latency",
+    "actioncache-v2-real-close",
+    "actioncache-v2-real-close-latency",
+    "actioncache-v2-real-button",
+    "actioncache-v2-real-button-latency",
+    "vlabench-actioncache-v2-combination",
+    "vlabench-actioncache-v2-combination-latency",
+    "libero-flashvla-v1-pi05-d0",
+    "libero-flashvla-v1-pi05-d1",
+    "libero-flashvla-v1-pi05-d4",
+    "robotwin2-flashvla-v1-pi05-all",
+    "robotwin2-flashvla-v1-pi05-short",
+    "robotwin2-flashvla-v1-pi05-medium",
+    "robotwin2-flashvla-v1-pi05-long",
+    "libero-flashvla-v1-smol-d0",
+    "libero-flashvla-v1-smol-d1",
+    "robotwin-flashvla-v1-lingbot-d0",
+    "robotwin-flashvla-v1-lingbot-d1",
+    "flashvla-v1-inference-latency"
+  ],
+  "newResults": [
+    "r-legato-v2-main-score-rtc",
+    "r-legato-v2-main-score-legato",
+    "r-legato-v2-main-time-rtc",
+    "r-legato-v2-main-time-legato",
+    "r-legato-v2-main-nldlj-rtc",
+    "r-legato-v2-main-nldlj-legato",
+    "r-legato-v2-main-nsparc-rtc",
+    "r-legato-v2-main-nsparc-legato",
+    "r-legato-v2-main-rmse-rtc",
+    "r-legato-v2-main-rmse-legato",
+    "r-legato-v2-main-score-training-rtc",
+    "r-legato-v2-main-time-training-rtc",
+    "r-legato-v2-main-nsparc-training-rtc",
+    "r-legato-v2-main-nldlj-training-rtc",
+    "r-legato-v2-main-time-one-shot",
+    "r-legato-v2-main-nsparc-one-shot",
+    "r-legato-v2-main-nldlj-one-shot",
+    "r-legato-v2-main-rmse-one-shot",
+    "r-legato-v2-later-n-sensitivity-no-cond",
+    "r-legato-v2-later-n-sensitivity-with-cond",
+    "r-libero-infoentropy-v1-100-openvla",
+    "r-libero-infoentropy-v1-100-sparsevlm",
+    "r-libero-infoentropy-v1-100-fastv",
+    "r-libero-infoentropy-v1-100-vla-cache",
+    "r-libero-infoentropy-v1-100-sp-vla",
+    "r-libero-infoentropy-v1-100-spec-vla",
+    "r-libero-infoentropy-v1-100-ours",
+    "r-libero-infoentropy-v1-100-visual",
+    "r-libero-infoentropy-v1-100-attention",
+    "r-libero-infoentropy-v1-100-static",
+    "r-libero-infoentropy-v1-budget60-ours",
+    "r-libero-infoentropy-v1-budget80-ours",
+    "r-libero-infoentropy-v1-budget120-ours",
+    "r-libero-infoentropy-v1-budget140-ours",
+    "r-libero-turbovla-v2-dp",
+    "r-libero-turbovla-v2-openvla",
+    "r-libero-turbovla-v2-pi0",
+    "r-libero-turbovla-v2-univla",
+    "r-libero-turbovla-v2-pi05",
+    "r-libero-turbovla-v2-cogvla",
+    "r-libero-turbovla-v2-mantis",
+    "r-libero-turbovla-v2-mm-act",
+    "r-libero-turbovla-v2-vla-jepa",
+    "r-libero-turbovla-v2-vega3d",
+    "r-libero-turbovla-v2-openvla-oft",
+    "r-libero-turbovla-v2-dd-vla",
+    "r-libero-turbovla-v2-smolvla",
+    "r-libero-turbovla-v2-dreamvla",
+    "r-libero-turbovla-v2-vla-adapter",
+    "r-libero-turbovla-v2-evo1",
+    "r-libero-turbovla-v2-ours",
+    "r-libero-turbovla-v2-no-language",
+    "r-libero-turbovla-v2-task-id",
+    "r-libero-turbovla-v2-siglip",
+    "r-libero-turbovla-v2-t5",
+    "r-libero-turbovla-v2-no-fusion",
+    "r-libero-turbovla-v2-language-query",
+    "r-libero-turbovla-v2-vision-query",
+    "r-libero-turbovla-v2-depth2",
+    "r-libero-turbovla-v2-depth4",
+    "r-libero-turbovla-v2-depth8",
+    "r-robotwin2-turbovla-v2-clean-per-task-dp",
+    "r-robotwin2-turbovla-v2-clean-per-task-act",
+    "r-robotwin2-turbovla-v2-clean-per-task-dp3",
+    "r-robotwin2-turbovla-v2-clean-per-task-pi0",
+    "r-robotwin2-turbovla-v2-clean-per-task-flow",
+    "r-robotwin2-turbovla-v2-clean-per-task-rdt",
+    "r-robotwin2-turbovla-v2-clean-per-task-seed",
+    "r-robotwin2-turbovla-v2-clean-multi-task-upvla",
+    "r-robotwin2-turbovla-v2-clean-multi-task-pi05",
+    "r-robotwin2-turbovla-v2-clean-multi-task-starvla",
+    "r-robotwin2-turbovla-v2-clean-multi-task-ours",
+    "r-vlabench-actioncache-v2-pi05-base-full",
+    "r-vlabench-actioncache-v2-pi05-head-base-full",
+    "r-vlabench-actioncache-v2-pi05-base-one",
+    "r-vlabench-actioncache-v2-pi05-head-base-one",
+    "r-vlabench-actioncache-v2-pi05-efficient-two",
+    "r-vlabench-actioncache-v2-pi05-head-efficient-two",
+    "r-vlabench-actioncache-v2-pi05-efficient-one",
+    "r-vlabench-actioncache-v2-pi05-head-efficient-one",
+    "r-vlabench-actioncache-v2-pi05-falcon-first",
+    "r-vlabench-actioncache-v2-pi05-head-falcon-first",
+    "r-vlabench-actioncache-v2-pi05-falcon-second",
+    "r-vlabench-actioncache-v2-pi05-head-falcon-second",
+    "r-vlabench-actioncache-v2-pi05-cache-two",
+    "r-vlabench-actioncache-v2-pi05-head-cache-two",
+    "r-vlabench-actioncache-v2-pi05-cache-one",
+    "r-vlabench-actioncache-v2-pi05-head-cache-one",
+    "r-vlabench-actioncache-v2-pi05-cache-zero",
+    "r-vlabench-actioncache-v2-pi05-head-cache-zero",
+    "r-vlabench-actioncache-v2-gr00t-base-full",
+    "r-vlabench-actioncache-v2-gr00t-head-base-full",
+    "r-vlabench-actioncache-v2-gr00t-base-one",
+    "r-vlabench-actioncache-v2-gr00t-head-base-one",
+    "r-vlabench-actioncache-v2-gr00t-efficient-two",
+    "r-vlabench-actioncache-v2-gr00t-head-efficient-two",
+    "r-vlabench-actioncache-v2-gr00t-efficient-one",
+    "r-vlabench-actioncache-v2-gr00t-head-efficient-one",
+    "r-vlabench-actioncache-v2-gr00t-falcon-first",
+    "r-vlabench-actioncache-v2-gr00t-head-falcon-first",
+    "r-vlabench-actioncache-v2-gr00t-falcon-second",
+    "r-vlabench-actioncache-v2-gr00t-head-falcon-second",
+    "r-vlabench-actioncache-v2-gr00t-cache-two",
+    "r-vlabench-actioncache-v2-gr00t-head-cache-two",
+    "r-vlabench-actioncache-v2-gr00t-cache-one",
+    "r-vlabench-actioncache-v2-gr00t-head-cache-one",
+    "r-vlabench-actioncache-v2-gr00t-cache-zero",
+    "r-vlabench-actioncache-v2-gr00t-head-cache-zero",
+    "r-libero-actioncache-v2-pi05-base-full",
+    "r-libero-actioncache-v2-pi05-head-base-full",
+    "r-libero-actioncache-v2-pi05-base-one",
+    "r-libero-actioncache-v2-pi05-head-base-one",
+    "r-libero-actioncache-v2-pi05-cache-two",
+    "r-libero-actioncache-v2-pi05-head-cache-two",
+    "r-libero-actioncache-v2-pi05-cache-one",
+    "r-libero-actioncache-v2-pi05-head-cache-one",
+    "r-libero-actioncache-v2-pi05-cache-zero",
+    "r-libero-actioncache-v2-pi05-head-cache-zero",
+    "r-actioncache-v2-real-sausage-base",
+    "r-actioncache-v2-real-sausage-cache",
+    "r-actioncache-v2-real-sausage-latency-base",
+    "r-actioncache-v2-real-sausage-latency-cache",
+    "r-actioncache-v2-real-close-base",
+    "r-actioncache-v2-real-close-cache",
+    "r-actioncache-v2-real-close-latency-base",
+    "r-actioncache-v2-real-close-latency-cache",
+    "r-actioncache-v2-real-button-base",
+    "r-actioncache-v2-real-button-cache",
+    "r-actioncache-v2-real-button-latency-base",
+    "r-actioncache-v2-real-button-latency-cache",
+    "r-vlabench-actioncache-v2-combination-base",
+    "r-vlabench-actioncache-v2-combination-latency-base",
+    "r-vlabench-actioncache-v2-combination-vla-cache",
+    "r-vlabench-actioncache-v2-combination-latency-vla-cache",
+    "r-vlabench-actioncache-v2-combination-actioncache",
+    "r-vlabench-actioncache-v2-combination-latency-actioncache",
+    "r-vlabench-actioncache-v2-combination-both",
+    "r-vlabench-actioncache-v2-combination-latency-both",
+    "r-libero-flashvla-v1-pi05-d0-base",
+    "r-libero-flashvla-v1-pi05-d0-flash",
+    "r-libero-flashvla-v1-pi05-d1-vlash",
+    "r-libero-flashvla-v1-pi05-d1-stream",
+    "r-libero-flashvla-v1-pi05-d1-flash",
+    "r-libero-flashvla-v1-pi05-d4-vlash",
+    "r-robotwin2-flashvla-v1-pi05-all-base",
+    "r-robotwin2-flashvla-v1-pi05-all-flash",
+    "r-robotwin2-flashvla-v1-pi05-short-base",
+    "r-robotwin2-flashvla-v1-pi05-short-flash",
+    "r-robotwin2-flashvla-v1-pi05-medium-base",
+    "r-robotwin2-flashvla-v1-pi05-medium-flash",
+    "r-robotwin2-flashvla-v1-pi05-long-base",
+    "r-robotwin2-flashvla-v1-pi05-long-flash",
+    "r-libero-flashvla-v1-smol-d0-base",
+    "r-libero-flashvla-v1-smol-d0-flash",
+    "r-libero-flashvla-v1-smol-d1-flash",
+    "r-robotwin-flashvla-v1-lingbot-d0-base",
+    "r-robotwin-flashvla-v1-lingbot-d0-flash",
+    "r-robotwin-flashvla-v1-lingbot-d1-flash",
+    "r-flashvla-v1-inference-latency-pi05",
+    "r-flashvla-v1-inference-latency-realtime",
+    "r-flashvla-v1-inference-latency-flash"
+  ],
+  "resultCountByPaper": {
+    "p041": 20,
+    "p042": 14,
+    "p027": 38,
+    "p028": 66,
+    "p029": 23
+  },
+  "sources": {
+    "p041": {
+      "pdf": "https://arxiv.org/pdf/2602.12978v2",
+      "html": "https://arxiv.org/html/2602.12978v2",
+      "version": "v2",
+      "read": "正文方法、实验和实际可获取附录；原生PDF数表已逐页视觉核验；InfoEntropy正文6页无附录。"
+    },
+    "p042": {
+      "pdf": "https://arxiv.org/pdf/2604.05323v1",
+      "html": "https://arxiv.org/html/2604.05323v1",
+      "version": "v1",
+      "read": "正文方法、实验和实际可获取附录；原生PDF数表已逐页视觉核验；InfoEntropy正文6页无附录。"
+    },
+    "p027": {
+      "pdf": "https://arxiv.org/pdf/2607.27205v2",
+      "html": "https://arxiv.org/html/2607.27205v2",
+      "version": "v2",
+      "read": "16页PDF正文§4方法、§5实验、§6结论与参考文献；Figures2–6、Tables1–6；无独立附录阅读声明。"
+    },
+    "p028": {
+      "pdf": "https://arxiv.org/pdf/2607.06370v2",
+      "html": "https://arxiv.org/html/2607.06370v2",
+      "version": "v2",
+      "read": "正文方法、实验和实际可获取附录；原生PDF数表已逐页视觉核验；InfoEntropy正文6页无附录。"
+    },
+    "p029": {
+      "pdf": "https://arxiv.org/pdf/2608.27384v1",
+      "html": "https://arxiv.org/html/2608.27384v1",
+      "version": "v1",
+      "read": "正文方法、实验和实际可获取附录；原生PDF数表已逐页视觉核验；InfoEntropy正文6页无附录。"
+    }
+  },
+  "rawEvidence": {
+    "p041": {
+      "mainSE": {
+        "score": {
+          "RTC": [
+            0.35,
+            0.18,
+            0.15,
+            0.16,
+            0.62
+          ],
+          "Legato": [
+            0.33,
+            0.13,
+            0.12,
+            0.13,
+            0.56
+          ]
+        },
+        "time": {
+          "RTC": [
+            3.54,
+            2.86,
+            1.24,
+            0.74,
+            0.98
+          ],
+          "Legato": [
+            2.68,
+            1.51,
+            0.65,
+            0.72,
+            0.78
+          ]
+        },
+        "nldlj": {
+          "RTC": [
+            0.34,
+            0.15,
+            0.18,
+            0.13,
+            0.2
+          ],
+          "Legato": [
+            0.38,
+            0.13,
+            0.14,
+            0.26,
+            0.24
+          ]
+        },
+        "nsparc": {
+          "RTC": [
+            0.04,
+            0.24,
+            0.08,
+            0.05,
+            0.07
+          ],
+          "Legato": [
+            0.02,
+            0.08,
+            0.05,
+            0.08,
+            0.05
+          ]
+        },
+        "rmse": {
+          "RTC": [
+            0.5,
+            0.7,
+            0.66,
+            0.66,
+            0.55
+          ],
+          "Legato": [
+            0.17,
+            0.17,
+            0.4,
+            0.55,
+            0.66
+          ]
+        }
+      },
+      "excluded": "Tables III–VI的新设置、Kinetix曲线、附加精细任务曲线和反应任务不声称全量入榜；在笔记说明新版范围及负面结果。"
+    },
+    "p042": {
+      "tableI": [
+        [
+          "openvla",
+          "OpenVLA",
+          [
+            84.4,
+            86.6,
+            75.6,
+            53.2,
+            75
+          ],
+          [
+            0.9,
+            0.8,
+            1,
+            1.4,
+            0.6
+          ],
+          51.91,
+          1.864,
+          1
+        ],
+        [
+          "sparsevlm",
+          "SparseVLM",
+          [
+            79.8,
+            67,
+            72.6,
+            39.4,
+            64.7
+          ],
+          [
+            0.6,
+            1.2,
+            1.4,
+            0.8,
+            1
+          ],
+          83.39,
+          1.407,
+          1.32
+        ],
+        [
+          "fastv",
+          "FastV",
+          [
+            83.4,
+            84,
+            74.2,
+            51.6,
+            73.3
+          ],
+          [
+            1.2,
+            0.6,
+            1.4,
+            0.8,
+            1.1
+          ],
+          53.28,
+          1.864,
+          1
+        ],
+        [
+          "vla-cache",
+          "VLA-Cache",
+          [
+            83.8,
+            85.8,
+            76.4,
+            52.8,
+            74.7
+          ],
+          [
+            0.9,
+            0.7,
+            0.6,
+            1.3,
+            0.8
+          ],
+          34.38,
+          1.355,
+          1.38
+        ],
+        [
+          "sp-vla",
+          "SP-VLA",
+          [
+            84.4,
+            85.6,
+            75.4,
+            54.2,
+            74.9
+          ],
+          [
+            1,
+            1.6,
+            1.8,
+            1.4,
+            1.3
+          ],
+          null,
+          3.1,
+          1.35
+        ],
+        [
+          "spec-vla",
+          "Spec-VLA",
+          [
+            85.8,
+            85,
+            74.4,
+            55,
+            75
+          ],
+          [
+            0.8,
+            2,
+            1.4,
+            1.2,
+            1.4
+          ],
+          null,
+          null,
+          1.32
+        ],
+        [
+          "ours",
+          "VLA-InfoEntropy",
+          [
+            86.4,
+            87.6,
+            79.4,
+            52.2,
+            76.4
+          ],
+          [
+            1,
+            1.4,
+            0.8,
+            1,
+            1
+          ],
+          31.25,
+          1.214,
+          1.53
+        ]
+      ],
+      "tableIII_100": {
+        "AverageSR": 76.4,
+        "CUDA_latency_raw": 31.25,
+        "FLOPs_raw": 1.205
+      },
+      "conflicts": [
+        "Table I 1.214 vs Table III 1.205 at 100 tokens",
+        "SP-VLA FLOPs3.100及其1.35 speedup与baseline1.864不自洽，未修写原值",
+        "正文指向附录，但实际6页PDF未包含该附录，不声称读过。"
+      ]
+    },
+    "p027": {
+      "table1": [
+        [
+          "dp",
+          "Diffusion Policy",
+          [
+            78.3,
+            92.5,
+            68.3,
+            50.5,
+            72.4
+          ],
+          924.8
+        ],
+        [
+          "openvla",
+          "OpenVLA",
+          [
+            84.7,
+            88.4,
+            79.2,
+            53.7,
+            76.5
+          ],
+          202.9
+        ],
+        [
+          "pi0",
+          "π0",
+          [
+            96.8,
+            98.8,
+            95.8,
+            85.2,
+            94.2
+          ],
+          84.2
+        ],
+        [
+          "univla",
+          "UniVLA",
+          [
+            96.5,
+            96.8,
+            95.6,
+            92,
+            95.2
+          ],
+          173.8
+        ],
+        [
+          "pi05",
+          "π0.5",
+          [
+            98.8,
+            98.2,
+            98,
+            92.4,
+            96.9
+          ],
+          93.6
+        ],
+        [
+          "cogvla",
+          "CogVLA",
+          [
+            98.6,
+            98.8,
+            96.6,
+            95.4,
+            97.4
+          ],
+          115.5
+        ],
+        [
+          "mantis",
+          "Mantis",
+          [
+            98.8,
+            99.2,
+            94.4,
+            94.2,
+            96.7
+          ],
+          198.7
+        ],
+        [
+          "mm-act",
+          "MM-ACT",
+          [
+            97.8,
+            99.4,
+            94.8,
+            93,
+            96.3
+          ],
+          723.2
+        ],
+        [
+          "vla-jepa",
+          "VLA-JEPA",
+          [
+            96.2,
+            99.6,
+            97.2,
+            95.8,
+            97.2
+          ],
+          108.7
+        ],
+        [
+          "vega3d",
+          "VEGA3D",
+          [
+            97.4,
+            99.4,
+            97,
+            95.2,
+            97.3
+          ],
+          546.4
+        ],
+        [
+          "openvla-oft",
+          "OpenVLA-OFT",
+          [
+            97.6,
+            98.4,
+            97.9,
+            94.5,
+            97.1
+          ],
+          112.2
+        ],
+        [
+          "dd-vla",
+          "DD-VLA",
+          [
+            97.2,
+            99.4,
+            96.8,
+            92.2,
+            96.4
+          ],
+          60.8
+        ],
+        [
+          "smolvla",
+          "SmolVLA (paper-reported configuration)",
+          [
+            93,
+            94,
+            91,
+            77,
+            88.8
+          ],
+          203.1
+        ],
+        [
+          "dreamvla",
+          "DreamVLA",
+          [
+            97.5,
+            94,
+            89.5,
+            89.5,
+            92.6
+          ],
+          128
+        ],
+        [
+          "vla-adapter",
+          "VLA-Adapter",
+          [
+            97.8,
+            99.2,
+            97.2,
+            95,
+            97.3
+          ],
+          87.3
+        ],
+        [
+          "evo1",
+          "Evo1",
+          [
+            92.7,
+            97.7,
+            96.3,
+            92.3,
+            94.8
+          ],
+          137.2
+        ],
+        [
+          "ours",
+          "TurboVLA",
+          [
+            99.2,
+            99.8,
+            97.4,
+            94.2,
+            97.7
+          ],
+          31.2
+        ]
+      ],
+      "table2": {
+        "per-task": [
+          [
+            "dp",
+            "Diffusion Policy",
+            28,
+            794.1
+          ],
+          [
+            "act",
+            "ACT",
+            29.7,
+            20.4
+          ],
+          [
+            "dp3",
+            "DP3",
+            55.2,
+            78.4
+          ],
+          [
+            "pi0",
+            "π0",
+            46.4,
+            87.6
+          ],
+          [
+            "flow",
+            "FlowPolicy",
+            41.0,
+            null
+          ],
+          [
+            "rdt",
+            "RDT",
+            34.5,
+            204.8
+          ],
+          [
+            "seed",
+            "SeedPolicy",
+            42.8,
+            823.9
+          ]
+        ],
+        "multi-task": [
+          [
+            "upvla",
+            "UP-VLA",
+            52.9,
+            74.3
+          ],
+          [
+            "pi05",
+            "π0.5",
+            57,
+            95.6
+          ],
+          [
+            "starvla",
+            "StarVLA-α",
+            50.3,
+            74.9
+          ],
+          [
+            "ours",
+            "TurboVLA",
+            60.2,
+            43.4
+          ]
+        ]
+      },
+      "ablations": [
+        [
+          "no-language",
+          "No language",
+          [
+            87,
+            99.4,
+            11.6,
+            85,
+            70.8
+          ],
+          "3"
+        ],
+        [
+          "task-id",
+          "Task-ID embedding",
+          [
+            95.6,
+            98.6,
+            95.8,
+            91.6,
+            95.4
+          ],
+          "3"
+        ],
+        [
+          "siglip",
+          "SigLIP-Base instruction encoder",
+          [
+            98.6,
+            99.6,
+            94.8,
+            89,
+            95.5
+          ],
+          "4"
+        ],
+        [
+          "t5",
+          "T5-Base instruction encoder",
+          [
+            98.8,
+            99.8,
+            96.8,
+            92.8,
+            97.1
+          ],
+          "4"
+        ],
+        [
+          "no-fusion",
+          "Without interaction",
+          [
+            97.4,
+            99.8,
+            90.8,
+            92.8,
+            95.2
+          ],
+          "5"
+        ],
+        [
+          "language-query",
+          "Language queries vision",
+          [
+            98.4,
+            99.4,
+            94.2,
+            92.4,
+            96.1
+          ],
+          "5"
+        ],
+        [
+          "vision-query",
+          "Vision queries language",
+          [
+            98.6,
+            100,
+            94.4,
+            93,
+            96.5
+          ],
+          "5"
+        ],
+        [
+          "depth2",
+          "Interaction depth 2",
+          [
+            96.6,
+            99.6,
+            88.4,
+            89.4,
+            93.5
+          ],
+          "6"
+        ],
+        [
+          "depth4",
+          "Interaction depth 4",
+          [
+            98,
+            99.4,
+            93.2,
+            92.2,
+            95.7
+          ],
+          "6"
+        ],
+        [
+          "depth8",
+          "Interaction depth 8",
+          [
+            98.2,
+            99.6,
+            95.8,
+            92.8,
+            96.6
+          ],
+          "6"
+        ]
+      ],
+      "excluded": "实际真机四任务92.5/80/90/87.5%保留笔记；图中无精确标注的对照不估柱高。本批入库Tables1–6，不声称所有Figure5/6敏感性点均结构化。"
+    },
+    "p028": {
+      "table1": [
+        [
+          "base-full",
+          "Base full steps",
+          [
+            38.8,
+            34
+          ],
+          [
+            3,
+            1.2
+          ],
+          [
+            18.8,
+            24.1
+          ]
+        ],
+        [
+          "base-one",
+          "Base NFE=1",
+          [
+            6.8,
+            24.6
+          ],
+          [
+            2.9,
+            1.4
+          ],
+          [
+            2.5,
+            6.9
+          ]
+        ],
+        [
+          "efficient-two",
+          "EfficientVLA NFE=2",
+          [
+            17.9,
+            19.7
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            5.2,
+            15.3
+          ]
+        ],
+        [
+          "efficient-one",
+          "EfficientVLA NFE=1",
+          [
+            7.3,
+            8.2
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            3.6,
+            9.2
+          ]
+        ],
+        [
+          "falcon-first",
+          "Falcon table row 1",
+          [
+            13.1,
+            26.1
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            13,
+            18.8
+          ]
+        ],
+        [
+          "falcon-second",
+          "Falcon table row 2",
+          [
+            7.6,
+            19.3
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            6.8,
+            15.6
+          ]
+        ],
+        [
+          "cache-two",
+          "ActionCache N_hit=2",
+          [
+            39.4,
+            33.9
+          ],
+          [
+            2.8,
+            0.9
+          ],
+          [
+            5.5,
+            13.6
+          ]
+        ],
+        [
+          "cache-one",
+          "ActionCache N_hit=1",
+          [
+            41,
+            32.1
+          ],
+          [
+            1.2,
+            3.2
+          ],
+          [
+            3.6,
+            7.5
+          ]
+        ],
+        [
+          "cache-zero",
+          "ActionCache N_hit=0",
+          [
+            40.9,
+            30.8
+          ],
+          [
+            2.8,
+            1.8
+          ],
+          [
+            1.8,
+            0.6
+          ]
+        ]
+      ],
+      "table2": [
+        [
+          "sausage",
+          "pick_sausage",
+          90,
+          88,
+          56.7,
+          35.06,
+          103.13,
+          81.9,
+          1000,
+          0.875
+        ],
+        [
+          "close",
+          "pick_and_close",
+          88,
+          90,
+          55.79,
+          14.67,
+          102.24,
+          61.56,
+          1000,
+          0.85
+        ],
+        [
+          "button",
+          "push_button",
+          100,
+          100,
+          59.65,
+          9.53,
+          106.26,
+          56.46,
+          300,
+          0.85
+        ]
+      ],
+      "table3": [
+        [
+          "base",
+          "π0.5",
+          40.7,
+          [
+            27.6,
+            58.4,
+            97.4
+          ]
+        ],
+        [
+          "vla-cache",
+          "VLA-Cache",
+          41.4,
+          [
+            24,
+            58.8,
+            94.2
+          ]
+        ],
+        [
+          "actioncache",
+          "ActionCache",
+          41.2,
+          [
+            27.6,
+            6.8,
+            45.9
+          ]
+        ],
+        [
+          "both",
+          "VLA-Cache + ActionCache",
+          39.1,
+          [
+            23.9,
+            21.6,
+            57
+          ]
+        ]
+      ],
+      "table7": [
+        [
+          "base-full",
+          "Base NFE=10",
+          [
+            97.4,
+            99,
+            96.6,
+            95.4,
+            97.1
+          ],
+          54.07,
+          null
+        ],
+        [
+          "base-one",
+          "Base NFE=1",
+          [
+            97.6,
+            98,
+            97.4,
+            94.6,
+            96.9
+          ],
+          5.84,
+          null
+        ],
+        [
+          "cache-two",
+          "ActionCache N_hit=2",
+          [
+            96,
+            98.4,
+            97.6,
+            96,
+            97
+          ],
+          14.25,
+          92.57
+        ],
+        [
+          "cache-one",
+          "ActionCache N_hit=1",
+          [
+            96.4,
+            99,
+            96.2,
+            93.6,
+            96.3
+          ],
+          11.31,
+          91.88
+        ],
+        [
+          "cache-zero",
+          "ActionCache N_hit=0",
+          [
+            89.4,
+            99,
+            96.4,
+            83.4,
+            92.1
+          ],
+          6.57,
+          87.73
+        ]
+      ],
+      "versionHandling": "不带版本PDF解析与页面截图不一致，截图首页曾为v1；本批重新打开并逐页核对明确2607.06370v2 PDF首页、Tables1/2/3/7；只采用明确v2数值。",
+      "excluded": "Figure3/4/6密集曲线不读柱高；跨任务Figure5为progress score而非SR；Table4–6检索键/校准消融保留笔记分析，不声称全部原表数值已入榜。"
+    },
+    "p029": {
+      "libero": [
+        [
+          0,
+          "base",
+          "π0.5",
+          [
+            98.8,
+            98.2,
+            98,
+            92.4,
+            96.9
+          ],
+          156,
+          8.4,
+          53.8
+        ],
+        [
+          0,
+          "flash",
+          "FlashVLA",
+          [
+            98.6,
+            99,
+            97.8,
+            96.2,
+            97.9
+          ],
+          null,
+          null,
+          null
+        ],
+        [
+          1,
+          "vlash",
+          "VLASH",
+          [
+            98.8,
+            99.2,
+            96.7,
+            94.4,
+            97.2
+          ],
+          153.9,
+          7.2,
+          46.8
+        ],
+        [
+          1,
+          "stream",
+          "StreamingVLA",
+          [
+            96.6,
+            96.6,
+            95.4,
+            91,
+            94.9
+          ],
+          null,
+          null,
+          31.6
+        ],
+        [
+          1,
+          "flash",
+          "FlashVLA",
+          [
+            98.8,
+            99.6,
+            97.6,
+            95.4,
+            97.8
+          ],
+          158,
+          3.5,
+          22.1
+        ],
+        [
+          4,
+          "vlash",
+          "VLASH",
+          [
+            92.5,
+            96.9,
+            93.3,
+            89.6,
+            93.1
+          ],
+          176.7,
+          5.8,
+          32.8
+        ]
+      ],
+      "excluded": "真实Franka三点任务评分并非二值SR；保留正文和图指引，不把84.4归作成功率。Figure3/6–8全量曲线不估点；RoboTwin异步及超参数曲线未声称全量提取。",
+      "latencyBoundary": "Time/Step为episode总时长/动作数，含仿真渲染/通信。一次模型调用、摊销每动作时间、TTFA/TTR、真实成功试次完成时间分别解释。"
+    }
+  },
+  "preservation": "仅追加新tracks/results，保留原138 tracks/507结果、其他论文及首次公开日期。原KEY RESULT不改；笔记版本纠正与新反例单独更新。所有测量是作者/引用基线报告；不是本站复现。",
+  "countsBefore": {
+    "papers": 98,
+    "results": 507,
+    "tracks": 138,
+    "extracted": 52,
+    "deferred": 44,
+    "notApplicable": 2
+  },
+  "countsAfter": {
+    "papers": 98,
+    "results": 668,
+    "tracks": 178,
+    "extracted": 57,
+    "deferred": 39,
+    "notApplicable": 2,
+    "needsReview": 19,
+    "datasetLabels": 27
+  },
+  "noteCorrections": [
+    {
+      "paperId": "p041",
+      "beforeVersion": "arXiv 2602.12978 v1；§III–IV、公式6–16、Tables I–V",
+      "afterVersion": "arXiv 2602.12978v2；明确版本PDF正文方法、实验与可获取附录；原生表页核验（本批审计限定提取范围）",
+      "beforeStatus": "needs_review",
+      "afterStatus": "expanded",
+      "source": "https://arxiv.org/pdf/2602.12978v2"
+    },
+    {
+      "paperId": "p042",
+      "beforeVersion": "arXiv 2604.05323 v1；§III–IV、附录算法与Tables I–III",
+      "afterVersion": "arXiv 2604.05323v1；6页PDF正文§III–V、Figures1–4、TablesI–III；正文所称附录不在本次可获取PDF中，未声称阅读",
+      "beforeStatus": "expanded",
+      "afterStatus": "expanded",
+      "source": "https://arxiv.org/pdf/2604.05323v1"
+    },
+    {
+      "paperId": "p027",
+      "beforeVersion": "arXiv 2607.27205 v2；§4–5、Tables 1–6",
+      "afterVersion": "arXiv 2607.27205v2；16页PDF正文§4方法、§5实验与§6结论；Figures 2–6、Tables 1–6原生表页核验；未声称有独立附录",
+      "beforeStatus": "expanded",
+      "afterStatus": "expanded",
+      "source": "https://arxiv.org/pdf/2607.27205v2"
+    },
+    {
+      "paperId": "p028",
+      "beforeVersion": "arXiv 2607.06370 v1；§3–4、附录A–F",
+      "afterVersion": "arXiv 2607.06370v2；明确版本PDF正文方法、实验与可获取附录；原生表页核验（本批审计限定提取范围）",
+      "beforeStatus": "needs_review",
+      "afterStatus": "expanded",
+      "source": "https://arxiv.org/pdf/2607.06370v2"
+    },
+    {
+      "paperId": "p029",
+      "beforeVersion": "arXiv 2608.27384 v1；§3–5、附录A",
+      "afterVersion": "arXiv 2608.27384v1；明确版本PDF正文方法、实验与可获取附录；原生表页核验（本批审计限定提取范围）",
+      "beforeStatus": "expanded",
+      "afterStatus": "expanded",
+      "source": "https://arxiv.org/pdf/2608.27384v1"
+    }
+  ],
+  "sourcePagesViewed": {
+    "p041": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      14
+    ],
+    "p042": [
+      2,
+      4,
+      5
+    ],
+    "p027": [
+      1,
+      5,
+      9,
+      10,
+      11
+    ],
+    "p028": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      15
+    ],
+    "p029": [
+      4,
+      5,
+      7,
+      8,
+      9
+    ]
+  },
+  "noteCorrectionDetails": [
+    "Legato v2新增变N启发式、GR00T/TE/Kinetix；更正旧图号与训练推理N绝对表述。",
+    "InfoEntropy真实PDF不含正文所称附录；删除未读附录声明；按公式7明确视觉60→40、注意力40→60；并集不保证恰100。",
+    "ActionCache使用明确v2页面解决无版本PDF陈旧页面；旧v1标签下的新数字重新核验；加入基础1步强对照。",
+    "所有五篇保留原始KEY RESULT和生命周期，不因阅读升级改首次公开日期。",
+    {
+      "paperId": "p027",
+      "correction": "Table4的SigLIP-Base为指令文本编码器对照，不是DINOv3视觉编码器替换；按明确v2修正章节定位为§4方法、§5实验。",
+      "source": "https://arxiv.org/pdf/2607.27205v2#page=11"
+    }
+  ],
+  "noteCharacterCounts": {
+    "p041": 2766,
+    "p042": 2699,
+    "p027": 2943,
+    "p028": 3065,
+    "p029": 2791
+  },
+  "preservationAudit": {
+    "baseTree": "69e6a7383f9aecef62a2b4570654a7cc19aea941",
+    "unchangedCanonicalAndCodeFiles": 763,
+    "sha256ManifestDigest": "0a662cca28374be960329514e7dc6d5466a78a71e6ed4779c46d39cddd9738e4",
+    "originalResults": 507,
+    "originalTracks": 138,
+    "unchangedNonTargetPapers": 93,
+    "keyResultAndPublicationObjectsUnchanged": true,
+    "scope": "逐字节核查原科学记录、其他论文、来源/首发/检索/新闻检查点与全部UI/CI代码；不把生成分片哈希变化计为原始科学事实变化。"
+  }
+}
