@@ -92,6 +92,9 @@ for pid,(n,tids) in cfg.items():
     dump('catalog/papers/'+pid+'.json',p)
     review['papers'][pid]={'status':'extracted','trackIds':tids,'resultIds':by[pid],'note':f'第十五批：新增{n}条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。'}
 dump('maintenance/benchmark-review.json',review)
+workq=load('maintenance/work-queue.json')
+workq['remainingNotes']=18
+dump('maintenance/work-queue.json',workq)
 audit={
  'schemaVersion':1,'reviewedAt':day,'batch':'benchmark-batch15','baseCommit':BASE,
  'papers':[{'paperId':p,'results':cfg[p][0],'trackIds':cfg[p][1]} for p in cfg],
