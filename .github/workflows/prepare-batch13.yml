@@ -1,0 +1,177 @@
+name: Prepare source-checked benchmark batch thirteen
+on:
+  push:
+    branches: [weekly-update-2026-09-19-benchmark-batch13]
+    paths: [.github/workflows/prepare-batch13.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-batch13
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply five source-checked papers
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          BASE='14f2520c942990d2b57469277c1ca92b9059b7bc'
+          assert subprocess.check_output(['git','rev-parse','origin/main'],text=True).strip()==BASE, 'main moved'
+          root=Path('.'); day='2026-09-19'
+          def load(p): return json.loads((root/p).read_text())
+          def dump(p,obj):
+              q=root/p; q.parent.mkdir(parents=True,exist_ok=True)
+              q.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+          def T(id,dataset,name,version,tasks,split,metric,unit,cols,src,protocol,train,direction='higher'):
+              return dict(id=id,dataset=dataset,name=name,version=version,tasks=tasks,split=split,metric=metric,unit=unit,direction=direction,protocol=protocol,trainingRegime=train,comparisonScope='paper-table',columns=cols,source=src)
+          tracks=[
+          T('tau0-v1-long-horizon-sr','τ0-VLA real robot','τ0-VLA v1 · Table I · 长时程真实机器人成功率','arXiv 2608.16885v1','4 long-horizon tasks','10 physical trials per method-task','Task success rate','percent',['Clean Room','Prepare Ingredients','Tomato and Egg Stir Fry','Make Milk Tea','Average'],'https://arxiv.org/html/2608.16885v1#S6.T1','每个方法-任务10次真实机器人试验；直接执行与Plan Once同表，但不视为统一训练预算排名。','作者原配置；外部基线和τ0-VLA训练来源不同。'),
+          T('tau0-v1-cross-embodiment-sr','τ0-VLA real robot','τ0-VLA v1 · Table II · 跨本体直接执行','arXiv 2608.16885v1','Collect Laundry + 3 Tidy Makeup groups','10 trials per group','Task success rate','percent',['Collect Laundry','Cotton Pad','Eyelash Curler','Makeup Puff'],'https://arxiv.org/html/2608.16885v1#S6.T2','全任务指令直接执行；无任务分解、执行记忆或TTC；每组10次。','不同方法预训练来源不同；仅论文原表。'),
+          T('tau0-v1-ttc-closedloop-sr','τ0-VLA real robot','τ0-VLA v1 · Table III · TTC闭环真实机器人','arXiv 2608.16885v1','3 long-horizon tasks','10 trials per method-task; fixed low-level policy','Task success rate','percent',['Make Milk Tea','Book Organization','Clean Room'],'https://arxiv.org/html/2608.16885v1#S6.T3','Plan Once与TTC低层策略固定；Book Organization闭环不沿用开放环ID/OOD拆分。','同一τ0-VLA层级系统，只改变高层TTC流程。'),
+          T('cotrain-v1-sim-unseen-final','TRI-Ramen','Co-training Study · Final Model · 仿真未见任务','arXiv 2602.01067v1 / RSS 2026','8 unseen simulation tasks','empirical mean in §III-C','Task success rate','percent',['Average'],'https://arxiv.org/html/2602.01067v1#S3.SS3','正文明确绝对均值72.6%；不由36.4% improvement反推baseline。','Final Model组合有效共训练模态。'),
+          T('cotrain-v1-real-language-final','TRI-Ramen real','Co-training Study · Final Model · 真实语言跟随','arXiv 2602.01067v1 / RSS 2026','3 language-following settings','45 rollouts per setting; reported overall mean','Average task completion','percent',['Average'],'https://arxiv.org/html/2602.01067v1#S3.SS3','正文明确平均69.4%；不反推各子设置或baseline。','Final Model组合有效共训练模态。'),
+          T('cotrain-v1-ft-long-horizon','TRI-Ramen real','Co-training Study · 200示范长时程适配','arXiv 2602.01067v1 / RSS 2026','3 unseen long-horizon tasks','200 demos/task; 30 rollouts/checkpoint-task','Average task completion','percent',['Average'],'https://arxiv.org/html/2602.01067v1#S3.SS4','正文精确给出FT Final Model 90.2%；相对改进率不反算对照。','从Final Model微调；每任务200示范。'),
+          T('halo-rss26-sim-main','HALO long-horizon (sim)','HALO RSS 2026 · Table I · 仿真主表','RSS 2026 official PDF','4 memory-dependent tasks','50 rollouts per task','Task success rate','percent',['Retrieve Object','Return to Same Container','Store N Objects','Heat Stove T mins','Average'],'https://www.roboticsproceedings.org/rss22/p010.pdf#page=7','50次/任务；保留Hand-Designed Features在Retrieve Object高于HALO。','同文设置；作者报告。'),
+          T('halo-rss26-real-main','HALO long-horizon (real)','HALO RSS 2026 · Table II · 真实机器人主表','RSS 2026 official PDF','5 tasks','20 rollouts per task','Task success rate','percent',['Retrieve Object','Return to Same Container','Store N Objects','Heat Stove T mins','Store N Objects Human-Robot','Average'],'https://www.roboticsproceedings.org/rss22/p010.pdf#page=7','20次/任务；Standard Transformer与HALO。','同文真实机器人设置。'),
+          T('halo-rss26-sim-memory-arch','HALO long-horizon (sim)','HALO RSS 2026 · Table III · 记忆架构对照','RSS 2026 official PDF','2 tasks','50 rollouts per task','Task success rate','percent',['Retrieve Object','Return to Same Container'],'https://www.roboticsproceedings.org/rss22/p010.pdf#page=8','两任务原始成功率；不与Table I平均混合。','同文仿真设置。'),
+          T('robotwin2-dswam-v1-paper','RoboTwin','DSWAM v1 · RoboTwin 2.0 50任务','arXiv 2607.04927v1','50 tasks','clean / randomized','Task success rate','percent',['Clean','Random'],'https://arxiv.org/pdf/2607.04927v1','Table 1的50任务平均；异构方法仅作论文表对照。','方法预训练/结构不同。'),
+          T('dswam-v1-real-folding-sr','DSWAM real folding','DSWAM v1 · 真实布料操作 · 成功率','arXiv 2607.04927v1','4 garment classes','2 instances/class × 10 trials; System 2 off','Task success rate','percent',['Average'],'https://arxiv.org/pdf/2607.04927v1','匹配平台与判定；只保存总体SR，不补缺失逐衣物基线。','System 2关闭。'),
+          T('dswam-v1-real-folding-time','DSWAM real folding','DSWAM v1 · 真实布料操作 · 平均完成时间','arXiv 2607.04927v1','4 garment classes','same Table 2; failures count timeout','Mean task time','seconds',['Average'],'https://arxiv.org/pdf/2607.04927v1','分:秒精确换算为秒；失败计超时。','System 2关闭。','lower'),
+          T('dswam-v1-sorting-sr','DSWAM real sorting','DSWAM v1 · 子任务监督分拣成功率','arXiv 2607.04927v1','sorting','6000 / 18000 steps','Task success rate','percent',['6000 steps','18000 steps'],'https://arxiv.org/pdf/2607.04927v1','训练监督形式变化，不当作纯推理开关。','同文分拣实验。'),
+          T('dswam-v1-sorting-errors','DSWAM real sorting','DSWAM v1 · 子任务监督分拣错误数','arXiv 2607.04927v1','sorting','6000 / 18000 steps','Mistakes per rollout','count',['6000 steps','18000 steps'],'https://arxiv.org/pdf/2607.04927v1','错误数与成功率分开建轨。','同文分拣实验。','lower'),
+          T('veritas-v1-simpler-ft-stack','SimplerEnv','VERITAS v1 · Stack Blocks自主数据微调','arXiv 2606.18247v1 / RSS 2026','Stack Blocks','verified-rollout offline improvement','Task success rate','percent',['Success'],'https://arxiv.org/pdf/2606.18247v1','离线微调的精确例子，不与纯推理steering平均增益混写。','π0-Bridge；verified self-generated rollouts微调。'),
+          T('veritas-v1-real-carrot50','DROID (real)','VERITAS v1 · Carrot on Plate · 50条数据效率','arXiv 2606.18247v1 / RSS 2026','Carrot on Plate','50 trajectories; 20 eval trials','Task success rate','percent',['Success'],'https://arxiv.org/pdf/2606.18247v1','50条自主验证轨迹与50条人工轨迹微调；20次测试。','π0-DROID基础策略。')]
+          bench=load('catalog/benchmarks.json'); old={x['id'] for x in bench['tracks']}
+          bench['tracks'].extend(x for x in tracks if x['id'] not in old); dump('catalog/benchmarks.json',bench)
+          def R(id,pid,method,tid,values,src,ver,loc,train,note):
+              return dict(id=id,paperId=pid,method=method,trackId=tid,values=values,evidence='checked',verifiedAt=day,source=src,sourceVersion=ver,locator=loc,attribution='author-reported',trainingData=train,evaluationNotes=note,supersedes='')
+          rs=[]; s017='https://arxiv.org/html/2608.16885v1'
+          for slug,m,v in [('gr00t','GR00T N1.7',[0,10,0,0,2.5]),('lingbot','LingBot-VLA',[0,0,0,0,0]),('pi05','π0.5',[40,20,0,30,22.5]),('tau0','τ0-VLA (direct)',[40,20,0,50,27.5]),('planonce','τ0-VLA (Hierarchical, Plan Once)',[50,40,40,50,45])]:
+              rs.append(R(f'r-tau0-v1-long-{slug}','p017',m,'tau0-v1-long-horizon-sr',dict(zip(['Clean Room','Prepare Ingredients','Tomato and Egg Stir Fry','Make Milk Tea','Average'],v)),s017,'arXiv 2608.16885v1','Table I','原文对应方法配置；方法间训练来源不同。','每格10次；x/10精确换算%。Progress是另一指标，未混入。'))
+          for slug,m,v in [('gr00t','GR00T N1.7',[40,100,80,70]),('lingbot','LingBot-VLA',[20,90,30,30]),('pi05','π0.5',[90,90,80,70]),('tau0','τ0-VLA',[100,100,90,100])]:
+              rs.append(R(f'r-tau0-v1-cross-{slug}','p017',m,'tau0-v1-cross-embodiment-sr',dict(zip(['Collect Laundry','Cotton Pad','Eyelash Curler','Makeup Puff'],v)),s017,'arXiv 2608.16885v1','Table II','原文方法配置。','每组10次；direct execution，无高层分解/记忆/TTC。'))
+          for slug,m,v in [('planonce','Plan Once',[50,60,50]),('ttc','TTC',[70,90,70])]:
+              rs.append(R(f'r-tau0-v1-ttc-{slug}','p017',m,'tau0-v1-ttc-closedloop-sr',dict(zip(['Make Milk Tea','Book Organization','Clean Room'],v)),s017,'arXiv 2608.16885v1','Table III','同一层级系统、低层固定。','每格10次；闭环Book Organization不沿用开放环ID/OOD拆分。'))
+          s035='https://arxiv.org/html/2602.01067v1'
+          rs += [R('r-cotrain-v1-sim-unseen-final','p035','Final Model','cotrain-v1-sim-unseen-final',{'Average':72.6},s035,'arXiv 2602.01067v1; RSS 2026','§III-C; Fig.10','Final Model组合有效共训练模态。','正文明确绝对均值；不由36.4% improvement反推baseline。'),
+                 R('r-cotrain-v1-real-language-final','p035','Final Model','cotrain-v1-real-language-final',{'Average':69.4},s035,'arXiv 2602.01067v1; RSS 2026','§III-C; Fig.10','Final Model组合有效共训练模态。','不由45.3% improvement反推baseline或子设置。'),
+                 R('r-cotrain-v1-ft-long-final','p035','FT Final Model','cotrain-v1-ft-long-horizon',{'Average':90.2},s035,'arXiv 2602.01067v1; RSS 2026','§III-D; Fig.11','每新任务200示范。','22.8%/42.9%为相对改进率，不反算对照绝对值。')]
+          s036='https://www.roboticsproceedings.org/rss22/p010.pdf'
+          for slug,m,v in [('std','Standard Transformer',[26,23,12,27,22]),('scene','Scene Memory Transformer',[53,25,17,40,34]),('sam2','SAM2Act++',[39,11,27,4,20]),('remember','ReMemBer',[36,13,21,0,18]),('hand','Hand-Designed Features',[68,15,21,13,29]),('merge','Token Merging',[29,24,25,38,29]),('novqa','HALO w/o VQA',[42,29,17,37,31]),('halo','HALO',[64,32,26,40,41])]:
+              rs.append(R(f'r-halo-rss26-sim-{slug}','p036',m,'halo-rss26-sim-main',dict(zip(['Retrieve Object','Return to Same Container','Store N Objects','Heat Stove T mins','Average'],v)),s036,'RSS 2026 official PDF','Table I (PDF p.7)','同文设置。','50 rollouts/task；0–1原值×100。Hand-Designed Retrieve=68 > HALO=64，原样保留。'))
+          for slug,m,v in [('std','Standard Transformer',[40,30,20,40,50,36]),('halo','HALO',[55,40,55,60,65,55])]:
+              rs.append(R(f'r-halo-rss26-real-{slug}','p036',m,'halo-rss26-real-main',dict(zip(['Retrieve Object','Return to Same Container','Store N Objects','Heat Stove T mins','Store N Objects Human-Robot','Average'],v)),s036,'RSS 2026 official PDF','Table II (PDF p.7)','同文真实设置。','20 rollouts/task；0–1原值×100。'))
+          for slug,m,v in [('lstm','LSTM',[14,12]),('mamba','Mamba',[20,18]),('txl','TransformerXL',[12,20]),('window','Window Attention',[13,16]),('strided','Strided Attention',[20,28]),('hier','Hierarchical Attention',[28,22]),('gated','Gated Attention',[45,28]),('halo','HALO',[64,32])]:
+              rs.append(R(f'r-halo-rss26-arch-{slug}','p036',m,'halo-rss26-sim-memory-arch',dict(zip(['Retrieve Object','Return to Same Container'],v)),s036,'RSS 2026 official PDF','Table III (PDF p.8)','同文仿真设置。','50 rollouts/task；0–1原值×100。'))
+          s023='https://arxiv.org/pdf/2607.04927v1'
+          for slug,m,v in [('pi0','π0',[65.92,58.40]),('pi05','π0.5',[82.74,76.76]),('demavla','DeMaVLA',[88.42,86.78]),('motus','Motus',[88.66,87.02]),('fastwam','Fast-WAM',[91.88,91.78]),('dswam','DSWAM',[92.38,91.90])]:
+              rs.append(R(f'r-robotwin2-dswam-v1-{slug}','p023',m,'robotwin2-dswam-v1-paper',dict(zip(['Clean','Random'],v)),s023,'arXiv 2607.04927v1','Table 1','各方法原配置。','50任务平均；方法预算不统一，单任务也非全部DSWAM最优。'))
+          for slug,m,v in [('pi0','π0',76.3),('demavla','DeMaVLA',92.5),('dswam','DSWAM',96.3)]:
+              rs.append(R(f'r-dswam-v1-fold-sr-{slug}','p023',m,'dswam-v1-real-folding-sr',{'Average':v},s023,'arXiv 2607.04927v1','Table 2; §4.1','匹配布料实验；System 2关闭。','4类衣物×2实例×10次；不补缺失逐衣物基线。'))
+          for slug,m,v in [('pi0','π0',146),('demavla','DeMaVLA',138),('dswam','DSWAM',104)]:
+              rs.append(R(f'r-dswam-v1-fold-time-{slug}','p023',m,'dswam-v1-real-folding-time',{'Average':v},s023,'arXiv 2607.04927v1','Table 2; §4.1','同一布料实验。','原文2:26/2:18/1:44精确换算秒；失败计超时。'))
+          for slug,m,v in [('raw','Global/raw instruction',[71.4,80]),('subtask','Subtask supervision',[100,100])]:
+              rs.append(R(f'r-dswam-v1-sort-sr-{slug}','p023',m,'dswam-v1-sorting-sr',dict(zip(['6000 steps','18000 steps'],v)),s023,'arXiv 2607.04927v1','Table 3; §4.3','分拣不同监督形式。','训练监督改变，不是固定执行器只开关规划；试验次数不补猜。'))
+          for slug,m,v in [('raw','Global/raw instruction',[3.75,3.30]),('subtask','Subtask supervision',[1,0.30])]:
+              rs.append(R(f'r-dswam-v1-sort-errors-{slug}','p023',m,'dswam-v1-sorting-errors',dict(zip(['6000 steps','18000 steps'],v)),s023,'arXiv 2607.04927v1','Table 3; §4.3','分拣不同监督形式。','Mistakes per rollout，越低越好。'))
+          s039='https://arxiv.org/pdf/2606.18247v1'
+          for slug,m,v in [('base','π0-Bridge base',31.3),('ft','Fine-tuned on verified autonomous rollouts',59.2)]:
+              rs.append(R(f'r-veritas-v1-stack-ft-{slug}','p039',m,'veritas-v1-simpler-ft-stack',{'Success':v},s039,'arXiv 2606.18247v1; RSS 2026','§6.3–6.4; Figures 5–7','π0-Bridge；verified rollout离线微调。','离线改进精确例子；不与纯inference steering平均12.6%混写。'))
+          for slug,m,v in [('auto','50 verified autonomous trajectories',70),('human','50 human demonstrations',65)]:
+              rs.append(R(f'r-veritas-v1-carrot50-{slug}','p039',m,'veritas-v1-real-carrot50',{'Success':v},s039,'arXiv 2606.18247v1; RSS 2026','§6.4; data-efficiency figure','π0-DROID；分别50条自主/人工数据微调。','每设置20次测试；5个百分点仅等于1次成功差，不宣称显著优越。'))
+          assert len(rs)==52
+          for x in rs: dump('catalog/results/'+x['id']+'.json',x)
+          cfg={'p017':(11,['tau0-v1-long-horizon-sr','tau0-v1-cross-embodiment-sr','tau0-v1-ttc-closedloop-sr'],'arXiv 2608.16885v1；重新核验Tables I–III与§VI'),
+               'p035':(3,['cotrain-v1-sim-unseen-final','cotrain-v1-real-language-final','cotrain-v1-ft-long-horizon'],'arXiv 2602.01067v1；RSS 2026；重新核验§III-C–F'),
+               'p036':(18,['halo-rss26-sim-main','halo-rss26-real-main','halo-rss26-sim-memory-arch'],'RSS 2026 official PDF；重新核验Tables I–III'),
+               'p023':(16,['robotwin2-dswam-v1-paper','dswam-v1-real-folding-sr','dswam-v1-real-folding-time','dswam-v1-sorting-sr','dswam-v1-sorting-errors'],'arXiv 2607.04927v1；重新核验Tables 1–3与§4.1–4.3'),
+               'p039':(4,['veritas-v1-simpler-ft-stack','veritas-v1-real-carrot50'],'arXiv 2606.18247v1；RSS 2026；重新核验§6与项目页')}
+          by={k:[] for k in cfg}
+          for x in rs: by[x['paperId']].append(x['id'])
+          review=load('maintenance/benchmark-review.json')
+          for pid,(n,tids,ver) in cfg.items():
+              p=load('catalog/papers/'+pid+'.json')
+              p['note']['verifiedAt']=day; p['note']['updatedAt']=day; p['note']['version']=ver
+              p['note']['benchmarkReview']={'status':'source-checked-results','checkedAt':day,'note':f'第十三批完成{n}条源定位结果；只代表明确核验的原表/正文绝对值。图中无精确文本标签、口径不明或阶段归因不清的结果不猜分。'}
+              dump('catalog/papers/'+pid+'.json',p)
+              review['papers'][pid]={'status':'extracted','trackIds':tids,'resultIds':by[pid],'note':f'第十三批：明确版本原文/正式PDF复核，新增{n}条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。'}
+          dump('maintenance/benchmark-review.json',review)
+          audit={'schemaVersion':1,'reviewedAt':day,'batch':'benchmark-batch13','baseCommit':BASE,'papers':[{'paperId':p,'results':cfg[p][0],'trackIds':cfg[p][1]} for p in cfg],
+                 'countsBefore':{'papers':98,'results':668,'tracks':178,'extracted':57,'deferred':39,'notApplicable':2,'needsReview':19},
+                 'countsAfterExpected':{'papers':98,'results':720,'tracks':194,'extracted':62,'deferred':34,'notApplicable':2,'needsReview':19},
+                 'boundaries':['τ0-VLA SR与Progress分开；开放环图不批量猜分','Co-training只存正文明确绝对值，不反推baseline；CoT/离散token定性负结果保留','HALO保留Hand-Designed Features在Retrieve Object高于HALO','DSWAM成功率/任务时间/错误数分轨，子任务监督是训练变量','VERITAS区分inference steering与offline fine-tuning；20次测试的5点差不作显著性结论'],
+                 'sourcePolicy':'Primary/official sources only for stored values; no plot-pixel estimation or reverse-calculated baselines.'}
+          dump('maintenance/benchmark-source-audit-20260919-batch13.json',audit)
+          ch=Path('CHANGELOG.md').read_text()
+          entry='## 2026-09-19 · 第十三批：五篇原始证据回补\n\n- 深读/复核 τ0-VLA、Co-training Study、HALO、DSWAM、VERITAS；五篇 deferred→extracted。\n- 新增52条源定位结果、16个明确设置；成功率、时间、错误数与训练阶段分开；不从图高或相对增益反推精确值。\n- 保留HALO非逐项最优、CoT/离散token无显著收益、DSWAM单任务非全优、VERITAS小样本差异等边界。\n- 不改UI/导航，不清理历史/安全分支，不推进完整周检索检查点。\n\n'
+          if '第十三批：五篇原始证据回补' not in ch: Path('CHANGELOG.md').write_text(entry+ch)
+          Path('tests/test_benchmark_batch13.py').write_text("""import json
+from pathlib import Path
+R=Path(__file__).resolve().parents[1]
+def j(p): return json.loads((R/p).read_text())
+def test_batch13_counts():
+    r=j('maintenance/benchmark-review.json')['papers']
+    assert all(r[x]['status']=='extracted' for x in ['p017','p035','p036','p023','p039'])
+    assert sum(x['status']=='extracted' for x in r.values())==62
+    assert sum(x['status']=='deferred' for x in r.values())==34
+    assert len(j('catalog/benchmarks.json')['tracks'])==194
+    assert len(list((R/'catalog/results').glob('r-*.json')))==720
+def test_tau0_ttc():
+    assert j('catalog/results/r-tau0-v1-ttc-ttc.json')['values']=={'Make Milk Tea':70,'Book Organization':90,'Clean Room':70}
+def test_cotrain_no_reverse():
+    x=j('catalog/results/r-cotrain-v1-sim-unseen-final.json'); assert x['values']['Average']==72.6 and '不由36.4' in x['evaluationNotes']
+def test_halo_negative_boundary():
+    assert j('catalog/results/r-halo-rss26-sim-hand.json')['values']['Retrieve Object']==68
+    assert j('catalog/results/r-halo-rss26-sim-halo.json')['values']['Retrieve Object']==64
+def test_dswam_units():
+    t={x['id']:x for x in j('catalog/benchmarks.json')['tracks']}
+    assert t['dswam-v1-real-folding-time']['unit']=='seconds' and t['dswam-v1-sorting-errors']['direction']=='lower'
+    assert j('catalog/results/r-dswam-v1-fold-time-dswam.json')['values']['Average']==104
+def test_veritas_small_n():
+    x=j('catalog/results/r-veritas-v1-carrot50-auto.json'); assert x['values']['Success']==70 and '20' in x['evaluationNotes']
+""")
+          subprocess.run(['python','scripts/capture_activity.py','--base',BASE,'--at','2026-09-19T15:45:00Z'],check=True)
+          subprocess.run(['python','scripts/build_catalog.py'],check=True)
+          PY
+      - name: Full validation
+        run: |
+          python scripts/validate_all.py
+      - name: Install browser environment
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Run all browser suites
+        run: |
+          for s in browser_smoke browser_workspace browser_news browser_sidebar browser_tools browser_leaderboard; do python scripts/$s.py; done
+      - name: Verify counts and commit candidate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('maintenance/benchmark-review.json').read_text())['papers']
+          assert sum(x['status']=='extracted' for x in r.values())==62
+          assert sum(x['status']=='deferred' for x in r.values())==34
+          assert len(json.loads(Path('catalog/benchmarks.json').read_text())['tracks'])==194
+          assert len(list(Path('catalog/results').glob('r-*.json')))==720
+          print('batch13 counts verified')
+          PY
+          git add CHANGELOG.md catalog maintenance tests data
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Materialize batch thirteen generated data after full validation'
+          git push origin HEAD:refs/heads/weekly-update-2026-09-19-benchmark-batch13
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-batch13-audit
+          path: |
+            maintenance/benchmark-source-audit-20260919-batch13.json
+            tests/test_benchmark_batch13.py
+          retention-days: 14
