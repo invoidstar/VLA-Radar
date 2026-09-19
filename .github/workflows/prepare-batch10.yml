@@ -1,0 +1,166 @@
+name: Prepare benchmark evidence batch ten
+on:
+  push:
+    branches: [weekly-update-2026-09-19-benchmark-batch10]
+    paths: [.github/workflows/prepare-batch10.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-benchmark-batch10
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BASE: 044823caf92651327ade05c80c85601b75af1839
+      BRANCH: weekly-update-2026-09-19-benchmark-batch10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply fully checksum-verified source deltas
+        run: |
+          set -eu
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          mkdir -p /tmp/radar-batch10
+          python - <<'PY'
+          import base64,hashlib,json,lzma,os
+          from pathlib import Path
+          sums=['61ad06544121bd130669cd9aae41d8d5b8f6375176629411b24da85e43da126d','ac1ef8d53efdfc646bad5cbfeccf2445dae1ff1cccfac2a2d08cb5fca563a0da','bd8a786c70c2c56380f7bf4924433caacdd8e4b504c3da75caa3ad5634b5e40b']
+          parts=[]
+          for i,expected in enumerate(sums):
+              b=Path(f'maintenance/.batch10-part{i}').read_bytes()
+              assert hashlib.sha256(b).hexdigest()==expected, f'Transport hash mismatch: {i}'
+              parts.append(b)
+          compressed=base64.b64decode(b''.join(parts),validate=True)
+          assert len(compressed)==21828
+          assert hashlib.sha256(compressed).hexdigest()=='5b1d2af25b121d0a0a6759bfaba4147b9bba1cb29c2b13bc630005a6753c585d'
+          payload=json.loads(lzma.decompress(compressed))
+          assert payload['schemaVersion']==1 and payload['baseCommit']==os.environ['BASE']
+          allowed={'CHANGELOG.md','catalog/benchmarks.json','catalog/bibliography.json','catalog/first-public.json','catalog/papers/p047.json','catalog/papers/p049.json','maintenance/benchmark-review.json','maintenance/benchmark-source-audit-20260919-batch10.json','maintenance/publication-candidates.json','tests/test_benchmark_batch10.py'}
+          for budget in [1,10,100,1000]:
+              for method in ['clip-only','multi-attr','multi','rn50-bert','single','transporter']:
+                  allowed.add(f'catalog/results/r-ravens-cliport-corl21-test-{budget}d-{method}.json')
+          bcz=['bottle-ablation-multi-language','bottle-ablation-multi-onehot','bottle-ablation-no-adaptive','bottle-ablation-single','heldout-1-language','heldout-4to5-language','heldout-4to5-video','intervention-expert','intervention-mixture','train21-language','train21-onehot','train21-video']
+          allowed.update(f'catalog/results/r-google-real-bcz-{key}.json' for key in bcz)
+          assert len(payload['files'])==len(allowed)==46
+          planned=[];seen=set()
+          for f in payload['files']:
+              name=f['path'];p=Path(name)
+              assert name in allowed and name not in seen and not p.is_absolute() and '..' not in p.parts
+              seen.add(name)
+              old=p.read_bytes() if p.exists() else None
+              assert (hashlib.sha256(old).hexdigest() if old is not None else None)==f['before'], 'Changed preimage: '+name
+              lines=old.decode('utf-8').splitlines(keepends=True) if old is not None else []
+              previous_end=0
+              for start,end,replacement in f['edits']:
+                  assert isinstance(start,int) and isinstance(end,int) and isinstance(replacement,str)
+                  assert previous_end<=start<=end<=len(lines)
+                  previous_end=end
+              for start,end,replacement in reversed(f['edits']):
+                  lines[start:end]=replacement.splitlines(keepends=True)
+              final=''.join(lines).encode('utf-8')
+              assert hashlib.sha256(final).hexdigest()==f['after'], 'Target hash mismatch: '+name
+              planned.append((p,final))
+          assert seen==allowed
+          for p,data in planned:
+              p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)
+          for i in range(3):Path(f'maintenance/.batch10-part{i}').unlink()
+          Path('/tmp/radar-batch10/applied-files.json').write_text(json.dumps([{k:f[k] for k in ['path','before','after']} for f in payload['files']],indent=2))
+          print('PASS: all 46 source/test operations verified before any writes.')
+          PY
+          python scripts/capture_activity.py --base "$BASE" | tee /tmp/radar-batch10/activity.log
+          python scripts/maintenance_queue.py
+          python scripts/build_catalog.py
+          python scripts/validate_all.py 2>&1 | tee /tmp/radar-batch10/validation.log
+      - name: Check scientific preservation, corrections and real deltas
+        run: |
+          python - <<'PY'
+          import collections,json,os,subprocess
+          from pathlib import Path
+          base=os.environ['BASE']
+          def old(path):return subprocess.check_output(['git','show',base+':'+path])
+          def prior(path):return json.loads(old(path))
+          def current(path):return json.loads(Path(path).read_text())
+          paths=subprocess.check_output(['git','ls-tree','-r','--name-only',base],text=True).splitlines()
+          checked=[]
+          for path in paths:
+              immutable=(path.startswith('catalog/results/') or path.startswith('catalog/news/') or (path.startswith('catalog/papers/') and path not in ['catalog/papers/p047.json','catalog/papers/p049.json']) or path in ['catalog/manifest.json','maintenance/state.json','maintenance/news-state.json','maintenance/github-delivery.md','maintenance/publishing-policy.md','.github/workflows/site.yml'] or ('/' not in path and path.endswith(('.js','.css','.html','.svg'))))
+              if immutable:
+                  assert Path(path).read_bytes()==old(path), 'Unexpected baseline change: '+path
+                  checked.append(path)
+          before=prior('catalog/benchmarks.json')['tracks'];after=current('catalog/benchmarks.json')['tracks'];index={x['id']:x for x in after}
+          assert all(index[t['id']]==t for t in before)
+          previous_lock=prior('catalog/first-public.json');new_lock=current('catalog/first-public.json')
+          def remove_target(obj):
+              if isinstance(obj,dict):return {k:remove_target(v) for k,v in obj.items() if k!='p049'}
+              if isinstance(obj,list):return [remove_target(v) for v in obj]
+              return obj
+          assert remove_target(previous_lock)==remove_target(new_lock), 'Unrelated first-public locks changed'
+          for pid in ['p047','p049']:
+              a=prior('catalog/papers/'+pid+'.json');b=current('catalog/papers/'+pid+'.json')
+              for k in ['id','title','arxiv']:assert a['paper'][k]==b['paper'][k]
+              assert a['publication']['firstArxivAt']==b['publication']['firstArxivAt']
+              if pid=='p047':assert a['paper']['firstPublished']==b['paper']['firstPublished']
+              assert len(b['note']['sections'])==9
+              assert sum(len(s['body']) for s in b['note']['sections'])>=3000
+          audit=current('maintenance/benchmark-source-audit-20260919-batch10.json')
+          assert audit['firstPublicCorrections'], 'Date correction must have explicit evidence'
+          b=current('data/leaderboards.json');p=current('data/library.json')['papers'];ledger=current('maintenance/benchmark-review.json')
+          status=dict(collections.Counter(v['status'] for v in ledger['papers'].values()))
+          assert len(p)==98 and len(b['results'])==483 and len(b['tracks'])==133
+          assert status=={'extracted':50,'deferred':46,'not-applicable':2}
+          prior_events=prior('catalog/activity.json')['events'];now_events=current('catalog/activity.json')['events'];by_id={e['id']:e for e in now_events}
+          assert all(by_id[e['id']]==e for e in prior_events)
+          oldids={e['id'] for e in prior_events};new_events=[e for e in now_events if e['id'] not in oldids]
+          counts=dict(collections.Counter(e['kind'] for e in new_events))
+          assert counts.get('result')==36 and counts.get('note')==2 and counts.get('collected',0)==0
+          report={'papers':len(p),'results':len(b['results']),'tracks':len(b['tracks']),'groups':len({t['dataset'] for t in b['tracks']}),'benchmarkStatuses':status,'unchangedFiles':len(checked),'activityCounts':counts,'base':base}
+          Path('/tmp/radar-batch10/invariance.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+          PY
+      - name: Install browser driver and CJK fonts
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq; sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Run all six real HTTP browser suites
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+          python scripts/browser_sidebar.py
+          python scripts/browser_tools.py
+          python scripts/browser_leaderboard.py
+      - name: Commit validated content only on the authorized branch
+        run: |
+          set -eu
+          test "$GITHUB_REF_NAME" = "$BRANCH"
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog data maintenance/benchmark-review.json maintenance/benchmark-source-audit-20260919-batch10.json maintenance/publication-candidates.json maintenance/work-queue.json CHANGELOG.md tests/test_benchmark_batch10.py
+          git add -u maintenance
+          git diff --cached --check
+          git commit -m 'Deepen CLIPort and BC-Z with 36 source-scoped original results'
+          git push origin "HEAD:refs/heads/$BRANCH"
+          git rev-parse HEAD > /tmp/radar-batch10/candidate-commit.txt
+      - name: Preserve candidate and diagnostics without PDFs
+        if: always()
+        run: |
+          mkdir -p /tmp/radar-batch10
+          git archive --format=zip --output=/tmp/radar-batch10/source.zip HEAD
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-batch10-audit-${{ github.run_id }}
+          path: |
+            /tmp/radar-batch10/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+            /tmp/radar-leaderboard/
+          retention-days: 14
