@@ -24,12 +24,13 @@ jobs:
         run: |
           python -m pip install --disable-pip-version-check pyyaml
           python - <<'PY'
-          import subprocess,yaml
+          import os,subprocess,yaml
           from pathlib import Path
           steps=yaml.safe_load(Path('.github/workflows/prepare-batch4.yml').read_text())['jobs']['prepare']['steps']
           for step in steps[1:6]:
               print('RUN',step['name'],flush=True)
-              subprocess.run(['bash','-e','-c',step['run']],check=True)
+              script=step['run'].replace('$'+'{{ github.ref_name }}',os.environ['BRANCH'])
+              subprocess.run(['bash','-e','-c',script],check=True)
           PY
       - name: Preserve tested candidate
         if: always()
