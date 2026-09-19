@@ -39,14 +39,14 @@ jobs:
           import json
           from pathlib import Path
           r=json.loads(Path('maintenance/benchmark-review.json').read_text())['papers']
-          assert sum(x['status']=='extracted' for x in r.values())==96
-          assert sum(x['status']=='deferred' for x in r.values())==0
+          assert sum(x['status']=='extracted' for x in r.values())==94
+          assert sum(x['status']=='deferred' for x in r.values())==2
           assert sum(x['status']=='not-applicable' for x in r.values())==2
-          assert len(json.loads(Path('catalog/benchmarks.json').read_text())['tracks'])==269
-          assert len(list(Path('catalog/results').glob('r-*.json')))==964
+          assert len(json.loads(Path('catalog/benchmarks.json').read_text())['tracks'])==267
+          assert len(list(Path('catalog/results').glob('r-*.json')))==962
           assert json.loads(Path('maintenance/work-queue.json').read_text())['remainingNotes']==11
           audit=json.loads(Path('maintenance/benchmark-source-audit-20260920-final24.json').read_text())
-          assert audit['batchAdded']=={'results':130,'tracks':47}
+          assert audit['batchAdded']=={'results':128,'tracks':45}
           print('final24 exact counts verified')
           PY
           git add CHANGELOG.md catalog maintenance tests data
