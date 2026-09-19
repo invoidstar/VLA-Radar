@@ -9,10 +9,21 @@ server=subprocess.Popen(['python','-m','http.server',str(port),'--bind','127.0.0
 try:
  with sync_playwright() as p:
   browser=p.chromium.launch(executable_path=shutil.which('chromium') or shutil.which('google-chrome'),headless=True,args=['--no-sandbox'])
-  page=browser.new_page(viewport={'width':1440,'height':1000});errors=[];requests=[]
+  page=browser.new_page(viewport={'width':1440,'height':1000});errors=[];requests=[];console=[];failed=[]
   page.on('pageerror',lambda e:errors.append(str(e)));page.on('request',lambda r:requests.append(r.url))
+  page.on('console',lambda m:console.append({'type':m.type,'text':m.text}))
+  page.on('requestfailed',lambda r:failed.append({'url':r.url,'failure':r.failure}))
   page.goto(f'http://127.0.0.1:{port}/',wait_until='networkidle')
-  assert page.locator('.paper-card').count()==12
+  # Network idleness alone is not a guarantee that async app initialization finished.
+  # Keep the exact first-page and lazy-loading assertions; fail with useful evidence.
+  try:
+   page.wait_for_function('Boolean(window.RadarTest)',timeout=15000)
+   assert page.locator('.paper-card').count()==12
+  except Exception:
+   diagnostic={'status':'failure','stage':'initial-render','cards':page.locator('.paper-card').count(),'errors':errors,'console':console,'failedRequests':failed,'requests':requests,'body':page.locator('body').inner_text()[:12000]}
+   (out/'initial-failure.json').write_text(json.dumps(diagnostic,ensure_ascii=False,indent=2));print(json.dumps(diagnostic,ensure_ascii=False),flush=True)
+   page.screenshot(path=str(out/'initial-failure.png'),full_page=True)
+   raise
   assert not any('search-index.' in u or 'board-index.' in u or '/details/' in u for u in requests), requests
   page.locator('#search').fill('LIBERO');page.wait_for_timeout(900)
   assert any('search-index.' in u for u in requests)
