@@ -1070,6 +1070,66 @@
         "r-simpler-original-v1-widowx-vm-octo-small"
       ],
       "note": "本批原报告新增15条、3个协议；来源/示范预算/观察/检查点及缺失值分别保留，不声称已穷尽全文。"
+    },
+    "p096": {
+      "status": "extracted",
+      "trackIds": [
+        "kitchen-r3m-snapshot-aggregate",
+        "metaworld-r3m-snapshot-aggregate"
+      ],
+      "resultIds": [
+        "r-kitchen-r3m-snapshot-aggregate-r3m",
+        "r-metaworld-r3m-snapshot-aggregate-r3m",
+        "r-kitchen-r3m-snapshot-aggregate-minus-aug",
+        "r-metaworld-r3m-snapshot-aggregate-minus-aug",
+        "r-kitchen-r3m-snapshot-aggregate-minus-l1",
+        "r-metaworld-r3m-snapshot-aggregate-minus-l1",
+        "r-kitchen-r3m-snapshot-aggregate-minus-language",
+        "r-metaworld-r3m-snapshot-aggregate-minus-language",
+        "r-kitchen-r3m-snapshot-aggregate-moco-ego4d",
+        "r-kitchen-r3m-snapshot-aggregate-mvp-vitb-egosoup"
+      ],
+      "note": "本批核对原报告，新增10条、2个历史协议；保留版本、预算、来源归属及冲突。只认证这些原表记录，不代表穷尽全文/官网。"
+    },
+    "p097": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "全文已读；PixMC原报告主要为曲线，未取得完整精确成绩表及原始评测数据。保留deferred，不创建空PixMC榜，不把其他报告的MVP变体成绩改绑本篇。"
+    },
+    "p098": {
+      "status": "extracted",
+      "trackIds": [
+        "metaworld-v2-original-mt10",
+        "metaworld-v2-original-mt50",
+        "metaworld-v2-original-ml10-meta-train",
+        "metaworld-v2-original-ml10-meta-test",
+        "metaworld-v2-original-ml45-meta-train",
+        "metaworld-v2-original-ml45-meta-test"
+      ],
+      "resultIds": [
+        "r-metaworld-v2-original-mt10-ppo",
+        "r-metaworld-v2-original-mt10-trpo",
+        "r-metaworld-v2-original-mt10-task-embeddings",
+        "r-metaworld-v2-original-mt10-sac",
+        "r-metaworld-v2-original-mt50-ppo",
+        "r-metaworld-v2-original-mt50-trpo",
+        "r-metaworld-v2-original-mt50-task-embeddings",
+        "r-metaworld-v2-original-mt50-sac",
+        "r-metaworld-v2-original-ml10-meta-train-maml",
+        "r-metaworld-v2-original-ml10-meta-train-rl2",
+        "r-metaworld-v2-original-ml10-meta-train-pearl",
+        "r-metaworld-v2-original-ml10-meta-test-maml",
+        "r-metaworld-v2-original-ml10-meta-test-rl2",
+        "r-metaworld-v2-original-ml10-meta-test-pearl",
+        "r-metaworld-v2-original-ml45-meta-train-maml",
+        "r-metaworld-v2-original-ml45-meta-train-rl2",
+        "r-metaworld-v2-original-ml45-meta-train-pearl",
+        "r-metaworld-v2-original-ml45-meta-test-maml",
+        "r-metaworld-v2-original-ml45-meta-test-rl2",
+        "r-metaworld-v2-original-ml45-meta-test-pearl"
+      ],
+      "note": "本批核对原报告，新增20条、6个历史协议；保留版本、预算、来源归属及冲突。只认证这些原表记录，不代表穷尽全文/官网。"
     }
   }
 }

@@ -1947,6 +1947,150 @@
         "Long"
       ],
       "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    {
+      "id": "kitchen-r3m-snapshot-aggregate",
+      "dataset": "Franka Kitchen",
+      "name": "R3M原报告 · Kitchen五技能 · 跨示范/视角聚合",
+      "version": "R3M modified five-skill Kitchen; not D4RL long-horizon relay",
+      "tasks": "5",
+      "split": "single-skill tasks; kitchen position varied; aggregate over demo sizes and views",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "5任务；每任务3个独立视角配置、5/10/25条示范和3个BC训练种子分别运行，再按原表汇总；单视角输入不是3视图同时输入。BC 20000步，每1000步在线评测取最佳。保留跨预算/视角聚合，不与固定demo数或最后检查点直接排名；原表未在此列给逐任务值或完整在线评测回合数。 Kitchen桌台位置变化，任务为独立技能，非多步任务链。",
+      "trainingRegime": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601"
+    },
+    {
+      "id": "metaworld-r3m-snapshot-aggregate",
+      "dataset": "Meta-World",
+      "name": "R3M原报告 · Meta-World V2五任务 · 跨示范/视角聚合",
+      "version": "Meta-World V2 five-task subset used by R3M",
+      "tasks": "5",
+      "split": "assembly / bin picking / button press / drawer open / hammer",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "5任务；每任务3个独立视角配置、5/10/25条示范和3个BC训练种子分别运行，再按原表汇总；单视角输入不是3视图同时输入。BC 20000步，每1000步在线评测取最佳。保留跨预算/视角聚合，不与固定demo数或最后检查点直接排名；原表未在此列给逐任务值或完整在线评测回合数。 使用启发式专家示范，非MT10/MT50在线RL。",
+      "trainingRegime": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601"
+    },
+    {
+      "id": "metaworld-v2-original-mt10",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · MT10 · 状态型多任务RL",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "10",
+      "split": "training skills only; 500 sampled task configurations; task ID/goal available",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1最大成功率跨任务与10种子汇总；39维状态和任务编码，4维末端/夹爪动作，非像素VLA。每种环境50个预采样配置；MT评测已见技能，不是5类新技能泛化；不同算法预算按原附录保留，paper-table不排名。",
+      "trainingRegime": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs4000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-mt50",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · MT50 · 状态型多任务RL",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "50",
+      "split": "training skills only; 2500 sampled task configurations; task ID/goal available",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1最大成功率跨任务与10种子汇总；39维状态和任务编码，4维末端/夹爪动作，非像素VLA。每种环境50个预采样配置；MT评测已见技能，不是5类新技能泛化；不同算法预算按原附录保留，paper-table不排名。",
+      "trainingRegime": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml10-meta-train",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML10 · 元训练",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "10",
+      "split": "10 meta-training skill families / 5 held-out meta-test families; meta-train",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml10-meta-test",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML10 · 留出技能测试",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "5",
+      "split": "10 meta-training skill families / 5 held-out meta-test families; meta-test",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml45-meta-train",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML45 · 元训练",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "45",
+      "split": "45 meta-training skill families / 5 held-out meta-test families; meta-train",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml45-meta-test",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML45 · 留出技能测试",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "5",
+      "split": "45 meta-training skill families / 5 held-out meta-test families; meta-test",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
     }
   ],
   "results": [
@@ -3384,6 +3528,114 @@
       "supersedes": ""
     },
     {
+      "id": "r-kitchen-r3m-snapshot-aggregate-minus-aug",
+      "paperId": "p096",
+      "method": "R3M (-Aug)",
+      "trackId": "kitchen-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 51.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表51.1±2.7%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-kitchen-r3m-snapshot-aggregate-minus-l1",
+      "paperId": "p096",
+      "method": "R3M (-L1)",
+      "trackId": "kitchen-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 46.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表46.7±2.7%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-kitchen-r3m-snapshot-aggregate-minus-language",
+      "paperId": "p096",
+      "method": "R3M (-Lang)",
+      "trackId": "kitchen-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 47.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表47.2±2.9%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-kitchen-r3m-snapshot-aggregate-moco-ego4d",
+      "paperId": "p096",
+      "method": "MoCo-Ego4D (R3M evaluation)",
+      "trackId": "kitchen-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 42.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 2, Franka column; §4.4",
+      "attribution": "reported-baseline",
+      "trainingData": "MoCo on same Ego4D frames/compute as R3M; downstream same aggregate BC protocol",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表42.0 (2.8)。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-kitchen-r3m-snapshot-aggregate-mvp-vitb-egosoup",
+      "paperId": "p096",
+      "method": "MVP (ViT-B / Ego-Soup; R3M evaluation)",
+      "trackId": "kitchen-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 27.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 2, Franka column; §4.4; cited reference 70",
+      "attribution": "reported-baseline",
+      "trainingData": "ViT-B masked autoencoder on Ego-Soup, not early ViT-S / HOI MVP; same downstream aggregate BC protocol",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表27.0 (2.6)。此行为原文引用后续MVP配置；不绑定到p097原始报告，不计为独立新论文证据。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-kitchen-r3m-snapshot-aggregate-r3m",
+      "paperId": "p096",
+      "method": "R3M",
+      "trackId": "kitchen-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 53.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表53.1±2.7%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
       "id": "r-libero-cosmos-3seeds-cosmos-policy",
       "paperId": "p076",
       "method": "Cosmos Policy",
@@ -4313,6 +4565,78 @@
       "supersedes": ""
     },
     {
+      "id": "r-metaworld-r3m-snapshot-aggregate-minus-aug",
+      "paperId": "p096",
+      "method": "R3M (-Aug)",
+      "trackId": "metaworld-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 68.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表68.9±2.1%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-r3m-snapshot-aggregate-minus-l1",
+      "paperId": "p096",
+      "method": "R3M (-L1)",
+      "trackId": "metaworld-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 65.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表65.0±2.4%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-r3m-snapshot-aggregate-minus-language",
+      "paperId": "p096",
+      "method": "R3M (-Lang)",
+      "trackId": "metaworld-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 67.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表67.0±2.0%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-r3m-snapshot-aggregate-r3m",
+      "paperId": "p096",
+      "method": "R3M",
+      "trackId": "metaworld-r3m-snapshot-aggregate",
+      "values": {
+        "Average": 69.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+      "locator": "Table 1; §4.1–4.4; Appendix B",
+      "attribution": "author-reported",
+      "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表69.2±2.0%；移除组件为相应预训练变体，不是推理时删文本。",
+      "supersedes": ""
+    },
+    {
       "paperId": "p073",
       "trackId": "metaworld-smolvla-table2",
       "evidence": "checked",
@@ -4465,6 +4789,366 @@
         "Average": 31.6
       },
       "attribution": "reported-baseline"
+    },
+    {
+      "id": "r-metaworld-v2-original-ml10-meta-test-maml",
+      "paperId": "p098",
+      "method": "MAML",
+      "trackId": "metaworld-v2-original-ml10-meta-test",
+      "values": {
+        "Average": 31.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML10 meta-test; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml10-meta-test-pearl",
+      "paperId": "p098",
+      "method": "PEARL",
+      "trackId": "metaworld-v2-original-ml10-meta-test",
+      "values": {
+        "Average": 13.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML10 meta-test; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml10-meta-test-rl2",
+      "paperId": "p098",
+      "method": "RL²",
+      "trackId": "metaworld-v2-original-ml10-meta-test",
+      "values": {
+        "Average": 35.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML10 meta-test; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml10-meta-train-maml",
+      "paperId": "p098",
+      "method": "MAML",
+      "trackId": "metaworld-v2-original-ml10-meta-train",
+      "values": {
+        "Average": 44.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML10 meta-train; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml10-meta-train-pearl",
+      "paperId": "p098",
+      "method": "PEARL",
+      "trackId": "metaworld-v2-original-ml10-meta-train",
+      "values": {
+        "Average": 23.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML10 meta-train; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml10-meta-train-rl2",
+      "paperId": "p098",
+      "method": "RL²",
+      "trackId": "metaworld-v2-original-ml10-meta-train",
+      "values": {
+        "Average": 86.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML10 meta-train; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml45-meta-test-maml",
+      "paperId": "p098",
+      "method": "MAML",
+      "trackId": "metaworld-v2-original-ml45-meta-test",
+      "values": {
+        "Average": 39.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML45 meta-test; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml45-meta-test-pearl",
+      "paperId": "p098",
+      "method": "PEARL",
+      "trackId": "metaworld-v2-original-ml45-meta-test",
+      "values": {
+        "Average": 22.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML45 meta-test; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml45-meta-test-rl2",
+      "paperId": "p098",
+      "method": "RL²",
+      "trackId": "metaworld-v2-original-ml45-meta-test",
+      "values": {
+        "Average": 33.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML45 meta-test; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml45-meta-train-maml",
+      "paperId": "p098",
+      "method": "MAML",
+      "trackId": "metaworld-v2-original-ml45-meta-train",
+      "values": {
+        "Average": 40.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML45 meta-train; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml45-meta-train-pearl",
+      "paperId": "p098",
+      "method": "PEARL",
+      "trackId": "metaworld-v2-original-ml45-meta-train",
+      "values": {
+        "Average": 14.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML45 meta-train; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-ml45-meta-train-rl2",
+      "paperId": "p098",
+      "method": "RL²",
+      "trackId": "metaworld-v2-original-ml45-meta-train",
+      "values": {
+        "Average": 70.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 lower half, ML45 meta-train; §4.3 and Appendix D.7–D.9",
+      "attribution": "reported-baseline",
+      "trainingData": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt10-ppo",
+      "paperId": "p098",
+      "method": "Multi-task PPO",
+      "trackId": "metaworld-v2-original-mt10",
+      "values": {
+        "Average": 30.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT10 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs4000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt10-sac",
+      "paperId": "p098",
+      "method": "Multi-task SAC",
+      "trackId": "metaworld-v2-original-mt10",
+      "values": {
+        "Average": 68.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT10 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs4000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt10-task-embeddings",
+      "paperId": "p098",
+      "method": "Task embeddings",
+      "trackId": "metaworld-v2-original-mt10",
+      "values": {
+        "Average": 20.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT10 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs4000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt10-trpo",
+      "paperId": "p098",
+      "method": "Multi-task TRPO",
+      "trackId": "metaworld-v2-original-mt10",
+      "values": {
+        "Average": 31.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT10 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs4000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt50-ppo",
+      "paperId": "p098",
+      "method": "Multi-task PPO",
+      "trackId": "metaworld-v2-original-mt50",
+      "values": {
+        "Average": 35.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT50 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt50-sac",
+      "paperId": "p098",
+      "method": "Multi-task SAC",
+      "trackId": "metaworld-v2-original-mt50",
+      "values": {
+        "Average": 38.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT50 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt50-task-embeddings",
+      "paperId": "p098",
+      "method": "Task embeddings",
+      "trackId": "metaworld-v2-original-mt50",
+      "values": {
+        "Average": 11.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT50 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-metaworld-v2-original-mt50-trpo",
+      "paperId": "p098",
+      "method": "Multi-task TRPO",
+      "trackId": "metaworld-v2-original-mt50",
+      "values": {
+        "Average": 21.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+      "locator": "Table 1 upper half, MT50 column; §4.3 and Appendix D.3–D.6",
+      "attribution": "reported-baseline",
+      "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
     },
     {
       "id": "r-peract-100-c2farm",

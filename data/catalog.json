@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "updatedAt": "2026-09-19",
   "title": "VLA Research Radar",
-  "collection": "2021—2026 · 关键文献与近期研究",
+  "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
   "topics": [
     {
@@ -5240,6 +5240,177 @@
         "latestArxivVersion": "v1",
         "status": "published",
         "lastCheckedAt": "2026-09-18"
+      }
+    },
+    {
+      "id": "p096",
+      "name": "R3M",
+      "title": "R3M: A Universal Visual Representation for Robot Manipulation",
+      "team": "Suraj Nair 等；Stanford、Meta AI",
+      "venue": "CoRL 2022",
+      "publicationType": "conference",
+      "publicationStatus": "正式PMLR论文集确认；出版年与会议年独立，不猜录用日。",
+      "firstPublished": "2022-03-23",
+      "dateNote": "arXiv v1 Submission history核对UTC首次公开日；不以修订或出版日期覆盖。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2203.12601完整ar5iv HTML及Appendices A–C，2026-09-19快照；渲染页未明示v号，最新v3元数据单列；Tables 1–3原生表格",
+      "topics": [
+        "pretraining",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-6",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "在人类交互视频上组合时间对比、语言进展对齐与特征正则，学习可冻结迁移至低示范行为克隆的视觉表示。",
+      "findings": "Table 1：Franka Kitchen 53.1±2.7%、Meta-World 69.2±2.0%；跨视角/示范量汇总且选择最佳在线检查点，非固定预算全任务榜。",
+      "limitations": "去L1在Adroit略升；只验证低数据BC，运行时为单帧表示；Table 2的MVP为ViT-B/Ego-Soup，不能等同早期MVP。",
+      "insight": "区分数据先验、表征目标与下游控制接口，预算和读表版本比同名编码器更重要。",
+      "readingFocus": "Figure 2→§4.1→Tables 1–3→Appendices A–C；先核对跨视角/预算汇总。",
+      "evidence": "checked",
+      "evidenceNote": "核对实际标明的原文完整HTML/可解析PDF文本及原生表格；PDF截图未成功的部分不声称视觉交叉核验。数值是作者报告，不是本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读原文HTML",
+          "url": "https://ar5iv.labs.arxiv.org/html/2203.12601"
+        },
+        {
+          "label": "书目/发布身份",
+          "url": "https://proceedings.mlr.press/v205/nair23a.html"
+        },
+        {
+          "label": "arXiv提交历史",
+          "url": "https://arxiv.org/abs/2203.12601"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2203.12601",
+      "arxiv": "2203.12601",
+      "doi": "",
+      "detailUrl": "data/details/p096.json?v=561636b23853899b",
+      "resultUrl": "data/paper-results/p096.5ade49d366ba590f.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2022-03-23",
+        "latestArxivVersion": "v3",
+        "status": "published",
+        "lastCheckedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "p097",
+      "name": "MVP (Motor Control)",
+      "title": "Masked Visual Pre-training for Motor Control",
+      "team": "Tete Xiao、Ilija Radosavovic、Trevor Darrell、Jitendra Malik；UC Berkeley",
+      "venue": "arXiv / Tech report 2022",
+      "publicationType": "report",
+      "publicationStatus": "作者技术报告/arXiv预印本；不将后续同名工作的会议身份移植到本篇。",
+      "firstPublished": "2022-03-11",
+      "dateNote": "arXiv v1 Submission history核对UTC首次公开日；不以修订或出版日期覆盖。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2203.06173v1完整HTML及PDF可解析文本，§1–7与Figures 1–14；2026-09-19核对，PDF截图通道未成功",
+      "topics": [
+        "pretraining",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-6",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "用MAE在真实HOI图片上预训练并冻结ViT，连接由PPO训练的控制头，在PixMC中分析视觉表示、数据和优化稳定性。",
+      "findings": "§5.1：8个PixMC任务中7项优于监督表示、5项接近状态对照；原文主要是曲线，不从图高生成精确成绩。",
+      "limitations": "尺寸干扰失败、物体更换需重新训练控制器；解冻及初步扩大ViT在特定实验中无益，不外推成普遍结论。",
+      "insight": "预训练表示和下游控制分开评估；同名MVP不同论文/架构/数据不得混绑。",
+      "readingFocus": "先确认冻结接口和PPO预算，再读§5.2–5.4的泛化、解冻、规模与对照条件。",
+      "evidence": "checked",
+      "evidenceNote": "核对实际标明的原文完整HTML/可解析PDF文本及原生表格；PDF截图未成功的部分不声称视觉交叉核验。数值是作者报告，不是本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读原文HTML",
+          "url": "https://ar5iv.labs.arxiv.org/html/2203.06173"
+        },
+        {
+          "label": "书目/发布身份",
+          "url": "https://tetexiao.com/projects/mvp"
+        },
+        {
+          "label": "arXiv提交历史",
+          "url": "https://arxiv.org/abs/2203.06173"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2203.06173",
+      "arxiv": "2203.06173",
+      "doi": "",
+      "detailUrl": "data/details/p097.json?v=4b9b7176ffc9fb87",
+      "resultUrl": null,
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2022-03-11",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "p098",
+      "name": "Meta-World",
+      "title": "Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning",
+      "team": "Tianhe Yu 等；Stanford、UC Berkeley、Columbia、USC、Robotics at Google",
+      "venue": "CoRL 2019",
+      "publicationType": "conference",
+      "publicationStatus": "正式PMLR论文集确认；出版年与会议年独立，不猜录用日。",
+      "firstPublished": "2019-10-24",
+      "dateNote": "arXiv v1 Submission history核对UTC首次公开日；不以修订或出版日期覆盖。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 1910.10897v2正文§1–6及相关附录A–D、E公共定义；Table 1原生HTML与PDF文本；正式会议PDF仅用于版本区分",
+      "topics": [
+        "evaluation",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-6",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "构建50类共享结构但技能不同的状态型机器人任务，并将已见任务联合学习、同技能配置适应和新技能适应拆为不同评测。",
+      "findings": "v2 Table 1：MT-SAC在MT10/MT50为68.3/38.5%；RL²与MAML在ML10测试为35.8/31.6%，ML45为33.3/39.9%。按原表，不混用旧稿。",
+      "limitations": "正文/表注最佳方法表述与Table 1冲突；10种子最大成功率汇总、预算不统一；39维真值状态不等于视觉语言策略评测。",
+      "insight": "任务身份、可见目标、适应交互和测试技能集合必须成为协议字段，不用单个平均数混称泛化。",
+      "readingFocus": "先读§4.3和Figure 3，再看v2 Table 1与Appendix D；保持会议版/修订版独立。",
+      "evidence": "checked",
+      "evidenceNote": "核对实际标明的原文完整HTML/可解析PDF文本及原生表格；PDF截图未成功的部分不声称视觉交叉核验。数值是作者报告，不是本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "本次实际阅读原文HTML",
+          "url": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+        },
+        {
+          "label": "书目/发布身份",
+          "url": "https://proceedings.mlr.press/v100/yu20a.html"
+        },
+        {
+          "label": "arXiv提交历史",
+          "url": "https://arxiv.org/abs/1910.10897"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/1910.10897",
+      "arxiv": "1910.10897",
+      "doi": "",
+      "detailUrl": "data/details/p098.json?v=6eb0c2e3439a0db2",
+      "resultUrl": "data/paper-results/p098.ca698671206c9fc2.json",
+      "noteStatus": "expanded",
+      "lifecycle": {
+        "firstArxivAt": "2019-10-24",
+        "latestArxivVersion": "v2",
+        "status": "published",
+        "lastCheckedAt": "2026-09-19"
       }
     }
   ]
