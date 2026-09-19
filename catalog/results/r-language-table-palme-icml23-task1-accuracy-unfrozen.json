@@ -1,0 +1,20 @@
+{
+  "id": "r-language-table-palme-icml23-task1-accuracy-unfrozen",
+  "paperId": "p054",
+  "method": "PaLM-E-12B / full unfrozen generalist",
+  "trackId": "language-table-palme-icml23-task1-accuracy",
+  "values": {
+    "Demos10": null,
+    "Demos20": null,
+    "Demos40": 80
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf",
+  "sourceVersion": "ICML2023 PMLR202 formal PDF",
+  "locator": "Table2 (PDF p.8)；Appendix E.2 (p.18)",
+  "attribution": "author-reported",
+  "trainingData": "Full mixture；LLM+ViT预训练；LLM unfrozen；无目标Task finetune",
+  "evaluationNotes": "Task1为一步任务，Appendix E.2规定测试集验证准确率，不是80条机器人rollout。只保留Table2给出的单元格；通用模型仅原表末列有值，不复制到缺失预算。验证集数、训练种子与checkpoint选择未完整说明。",
+  "supersedes": ""
+}

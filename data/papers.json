@@ -2350,13 +2350,13 @@
       "name": "RT-1",
       "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
       "team": "Robotics at Google / Everyday Robots；Anthony Brohan 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "RSS 2023",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式论文集；仅记录明确的2023出版年，不用会议日期范围猜具体出版日或录用日。",
       "firstPublished": "2022-12-13",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "arXiv 2212.06817v2原生HTML；§1–7、Appendices B–D及Tables 2/4/5/6/7/9/10/13；RSS元数据另核对",
       "topics": [
         "pretraining",
         "action"
@@ -2374,8 +2374,8 @@
       "insight": "大规模机器人学习既需要数据多样性，也需要能有效利用数据的结构；跨本体收益要连同任务范围理解。",
       "readingFocus": "TokenLearner、已见 / 未见 / 干扰物分组、跨机器人数据混合。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
-      "hasCautionaryResult": false,
+      "evidenceNote": "2026-09-19重新核对所列正文、方法及实验来源；阅读范围见笔记，作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
@@ -2384,11 +2384,19 @@
         {
           "label": "官方项目页 · Data / Results",
           "url": "https://robotics-transformer1.github.io/"
+        },
+        {
+          "label": "本次正文与原表阅读版本（范围见笔记）",
+          "url": "https://arxiv.org/html/2212.06817v2"
+        },
+        {
+          "label": "正式论文集：作者顺序、出版年与书目",
+          "url": "https://roboticsproceedings.org/rss19/p025.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2212.06817",
       "arxiv": "2212.06817",
-      "doi": ""
+      "doi": "10.15607/RSS.2023.XIX.025"
     },
     {
       "id": "p053",
@@ -2436,13 +2444,13 @@
       "name": "PaLM-E",
       "title": "PaLM-E: An Embodied Multimodal Language Model",
       "team": "Danny Driess、Fei Xia、Mehdi S. M. Sajjadi 等；Google / TU Berlin 合作",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "ICML 2023",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式论文集；仅记录明确的2023出版年，不用会议日期范围猜具体出版日或录用日。",
       "firstPublished": "2023-03-06",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "ICML 2023 PMLR 202正式PDF（20页）；正文及相关附录B–F，Tables 1–5/8–9；pp.8/18图表页已视觉核对",
       "topics": [
         "pretraining",
         "memory"
@@ -2459,9 +2467,9 @@
       "limitations": "大模型多模态推理成绩不等于低层控制成功；项目页示例不能替代总体统计，也不代表所有实验都使用最大模型。",
       "insight": "语言模型可以通过连续传感器 token 获得具身输入；阅读时应辨别“给出计划”和“执行动作”的模型边界。",
       "readingFocus": "连续模态注入、联合训练与正迁移、文本规划如何连接底层策略。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "2026-09-19重新核对所列正文、方法及实验来源；阅读范围见笔记，作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
@@ -2470,6 +2478,14 @@
         {
           "label": "官方项目页 · Approach / Results",
           "url": "https://palm-e.github.io/"
+        },
+        {
+          "label": "本次正文与原表阅读版本（范围见笔记）",
+          "url": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf"
+        },
+        {
+          "label": "正式论文集：作者顺序、出版年与书目",
+          "url": "https://proceedings.mlr.press/v202/driess23a.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2303.03378",
@@ -2615,13 +2631,13 @@
       "name": "RT-2",
       "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control",
       "team": "Google DeepMind；Anthony Brohan 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "CoRL 2023",
+      "publicationType": "conference",
+      "publicationStatus": "已核对正式论文集；仅记录明确的2023出版年，不用会议日期范围猜具体出版日或录用日。",
       "firstPublished": "2023-07-28",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv v1 元数据；Google 2023-07-28 官方报告的 A brighter future for robotics 段落",
+      "versionNote": "arXiv 2307.15818v1原始报告HTML渲染快照（2026-09-19）；正文、Appendices B–I与Tables 3–5；Table 6表体不可读，未提取",
       "topics": [
         "pretraining",
         "action"
@@ -2639,8 +2655,8 @@
       "insight": "将动作放入 VLM 的监督接口后，保留一般视觉语言能力与获取控制能力可在同一训练框架下讨论。",
       "readingFocus": "动作 token 化、机器人 / 网络数据混训、语义泛化与技能边界。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对 Google 官方报告中 6,000 余次试验及 32% / 62% 的原始表述；未声称重现全部实验。",
-      "hasCautionaryResult": false,
+      "evidenceNote": "2026-09-19重新核对所列正文、方法及实验来源；阅读范围见笔记，作者报告而非本站独立复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
@@ -2653,6 +2669,14 @@
         {
           "label": "Google 官方报告 · 未见场景 32%→62%",
           "url": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/"
+        },
+        {
+          "label": "本次正文与原表阅读版本（范围见笔记）",
+          "url": "https://ar5iv.labs.arxiv.org/html/2307.15818"
+        },
+        {
+          "label": "正式论文集：作者顺序、出版年与书目",
+          "url": "https://proceedings.mlr.press/v229/zitkovich23a.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2307.15818",

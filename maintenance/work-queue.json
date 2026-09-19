@@ -21,12 +21,6 @@
       "latestVersion": "v2"
     },
     {
-      "paperId": "p052",
-      "reason": "needs_review",
-      "readVersion": "2212.06817；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
-      "latestVersion": "v2"
-    },
-    {
       "paperId": "p055",
       "reason": "needs_review",
       "readVersion": "作者提供 diffusion_policy_2023.pdf（16页，RSS 2023），Sec.II–V、VIII、Appendix与Table I–IV；KEY RESULT原有v5摘要保持不变，本笔记不混用期刊扩展版实验",
@@ -49,6 +43,12 @@
       "reason": "needs_review",
       "readVersion": "arXiv:2501.15830v1，Sec.III–V、Table I–V；明确保留v1口径，不代表最新修订全量核验",
       "latestVersion": "v5"
+    },
+    {
+      "paperId": "p069",
+      "reason": "needs_review",
+      "readVersion": "2502.19645；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v2"
     }
   ],
   "metadata": {
@@ -60,7 +60,7 @@
       "p092"
     ]
   },
-  "remainingNotes": 29,
+  "remainingNotes": 28,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."

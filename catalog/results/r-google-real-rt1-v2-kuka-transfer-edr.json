@@ -1,0 +1,19 @@
+{
+  "id": "r-google-real-rt1-v2-kuka-transfer-edr",
+  "paperId": "p052",
+  "method": "RT-1 / EDR only",
+  "trackId": "google-real-rt1-v2-kuka-transfer",
+  "values": {
+    "Classroom": 92,
+    "BinPicking": 22
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2212.06817v2",
+  "sourceVersion": "2212.06817v2",
+  "locator": "§6.3 Table5；Appendix D.2 Table10",
+  "attribution": "author-reported",
+  "trainingData": "EDR only",
+  "evaluationNotes": "评测机器人全部为EDR；附录说明箱内抓取72次并修改EDR外观与箱体。课堂子集为pick/move；缺独立训练种子/统一checkpoint规则。Table5与Table10同源不重计。",
+  "supersedes": ""
+}

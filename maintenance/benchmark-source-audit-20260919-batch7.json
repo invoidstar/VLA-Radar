@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "5e94eda77c0285f79c6cc6b43bd0e8ed96ff70aa",
+  "status": "partial-content-backfill",
+  "scope": "第七批：RT-1、RT-2、PaLM-E既有笔记与原论文实验。非完整领域检索；不新增前端功能。",
+  "updatedPapers": [
+    "p052",
+    "p054",
+    "p058"
+  ],
+  "newPapers": [],
+  "newTracks": [
+    "google-real-rt1-v2-table2",
+    "google-real-rt1-v2-sim-transfer",
+    "google-real-rt1-v2-kuka-transfer",
+    "google-real-rt2-v1-generalization",
+    "google-real-rt2-v1-emergent",
+    "language-table-palme-icml23-task1-accuracy",
+    "language-table-palme-icml23-task23-success",
+    "google-real-palme-icml23-perception-f1"
+  ],
+  "newResults": [
+    "r-google-real-rt1-v2-table2-gato",
+    "r-google-real-rt1-v2-table2-bcz",
+    "r-google-real-rt1-v2-table2-bcz-xl",
+    "r-google-real-rt1-v2-table2-rt1",
+    "r-google-real-rt1-v2-sim-transfer-real",
+    "r-google-real-rt1-v2-sim-transfer-real-sim",
+    "r-google-real-rt1-v2-kuka-transfer-mixed",
+    "r-google-real-rt1-v2-kuka-transfer-edr",
+    "r-google-real-rt1-v2-kuka-transfer-kuka",
+    "r-google-real-rt2-v1-generalization-r3m",
+    "r-google-real-rt2-v1-generalization-vc1",
+    "r-google-real-rt2-v1-generalization-rt1",
+    "r-google-real-rt2-v1-generalization-moo",
+    "r-google-real-rt2-v1-generalization-palix",
+    "r-google-real-rt2-v1-generalization-palme",
+    "r-google-real-rt2-v1-emergent-vc1",
+    "r-google-real-rt2-v1-emergent-rt1",
+    "r-google-real-rt2-v1-emergent-palix",
+    "r-google-real-rt2-v1-emergent-palme",
+    "r-language-table-palme-icml23-task1-accuracy-scratch",
+    "r-language-table-palme-icml23-task23-success-scratch",
+    "r-language-table-palme-icml23-task1-accuracy-frozen",
+    "r-language-table-palme-icml23-task23-success-frozen",
+    "r-language-table-palme-icml23-task1-accuracy-unfrozen",
+    "r-language-table-palme-icml23-task23-success-unfrozen",
+    "r-language-table-palme-icml23-task1-accuracy-finetuned",
+    "r-language-table-palme-icml23-task23-success-finetuned",
+    "r-language-table-palme-icml23-task1-accuracy-84b",
+    "r-language-table-palme-icml23-task23-success-84b",
+    "r-google-real-palme-icml23-perception-f1-pali",
+    "r-google-real-palme-icml23-perception-f1-clip-ft",
+    "r-google-real-palme-icml23-perception-f1-clip-hindsight",
+    "r-google-real-palme-icml23-perception-f1-qtopt",
+    "r-google-real-palme-icml23-perception-f1-scratch",
+    "r-google-real-palme-icml23-perception-f1-single-frozen",
+    "r-google-real-palme-icml23-perception-f1-full-frozen",
+    "r-google-real-palme-icml23-perception-f1-full-unfrozen"
+  ],
+  "newFamilies": {
+    "Google Robot (real)": "作者专属真机实验与场景分类证据的归档组，不是公开统一官方排行榜；成功率与F1按轨道分开，绝不并入SimplerEnv。",
+    "Language Table": "PaLM-E原文模拟高层任务，Task1验证准确率与Task2/3模拟成功分开；非全Language Table官方排名。"
+  },
+  "readSources": [
+    {
+      "paperId": "p052",
+      "source": "https://arxiv.org/html/2212.06817v2",
+      "scope": "原生HTML正文与相关附录B–D，Tables2–7/9–14；图示/标题阅读，不声称进行了PDF截图交叉核验。",
+      "formal": "https://roboticsproceedings.org/rss19/p025.html"
+    },
+    {
+      "paperId": "p058",
+      "source": "https://ar5iv.labs.arxiv.org/html/2307.15818",
+      "scope": "原始报告完整HTML渲染及Appendices B–I；Tables3–5原生表格。官方arXiv当前v1；渲染未显示Table6完整表体，因此不提取Language Table数值。",
+      "formal": "https://proceedings.mlr.press/v229/zitkovich23a.html"
+    },
+    {
+      "paperId": "p054",
+      "source": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf",
+      "scope": "20页正式PDF正文与相关附录，Tables1–5/8–9，实际查看pp.4/7/8/18页面；Table2与E.2不同指标和Table9奖励变化双重核对。",
+      "formal": "https://proceedings.mlr.press/v202/driess23a.html"
+    }
+  ],
+  "boundaries": [
+    "RT-1 §6.1已见200余/未见21与Appendix D.1的744/53范围不同，按Table2保留报告，不补样本数或独立种子。",
+    "RT-1 Table4/9、Table5/10同源只记一次；所有所录测试均在EDR真机，模拟仅为训练数据来源。",
+    "RT-2 Table3 PaLI-X未见平均62与Table5同分项63冲突，主表锁62不取最大；PaLM-E预训练含可能类似的规划图像，不称完全视觉未见。",
+    "RT-2 R3M/VC1为解冻加USE/TokenLearner/RT1式头，不改成原R3M冻结小数据记录；RT2 PaLM-E变体仍归p058，不绑定p054。",
+    "PaLM-E Table2 Task1是测试集验证准确率，Tasks2/3是80条模拟rollout成功率，二者按指标隔离。",
+    "PaLM-E Table9修改Task3奖励，77.0不得覆盖Table2的56.3；未提供检查点/种子不猜。",
+    "PaLM-E Table4是F1，非闭环成功率；未报值null不填0，0.91/0.87与0.77/0.91两冻结设置不能拼成同一模型。",
+    "Formal RSS/PMLR书目与实际阅读版本分开，RT2正式作者表不以arXiv顺序覆盖；首发锁不改。"
+  ],
+  "deferred": [
+    {
+      "paperId": "p058",
+      "scope": "Language-Table原报告Table6",
+      "reason": "当前完整HTML引用了Table6但未渲染表体；保留该部分待核验，不从图像估分。"
+    },
+    {
+      "paperId": "p052",
+      "scope": "Table6/11外部SayCan长程组合和其他全表",
+      "reason": "笔记已解释，但本批正式榜单仅录Table2/4/5，不声称全文全部数值已经提取。"
+    },
+    {
+      "paperId": "p054",
+      "scope": "TAMP Tables1/8与普通VQA Table5",
+      "reason": "笔记解释相关条件；本批不为增加数字建立额外TAMP或通用VQA榜单，不将这些指标混入机器人成功率。"
+    }
+  ],
+  "searchCheckpoints": "不修改论文/新闻完整周更成功检查点。元数据仅复核本批三篇，不声称全库已最新。",
+  "notes": {
+    "sections": {
+      "p052": 9,
+      "p058": 9,
+      "p054": 9
+    },
+    "bodyCharacters": {
+      "p052": 2873,
+      "p054": 2701,
+      "p058": 2653
+    }
+  },
+  "candidateCounts": {
+    "papers": 98,
+    "tracks": 103,
+    "results": 376,
+    "families": 17,
+    "reportingPaperIds": 43
+  },
+  "provenance": "指标来自作者原表，非本站独立复现；所有新增结果使用paper-table，不赋跨设置公平名次。"
+}
