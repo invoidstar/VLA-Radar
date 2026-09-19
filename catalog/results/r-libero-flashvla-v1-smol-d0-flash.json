@@ -1,0 +1,18 @@
+{
+  "id": "r-libero-flashvla-v1-smol-d0-flash",
+  "paperId": "p029",
+  "method": "FlashVLA",
+  "trackId": "libero-flashvla-v1-smol-d0",
+  "values": {
+    "Average": 80.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2608.27384v1",
+  "sourceVersion": "arXiv 2608.27384v1",
+  "locator": "Table 5 (PDF p.9)",
+  "attribution": "author-reported",
+  "trainingData": "SmolVLA: 20k步，C10/N5，每卡batch64，执行5。",
+  "evaluationNotes": "Time/Step=29.7ms；inference latency=10.1ms，d=1原表未单列调用延迟，保留缺失。SmolVLA异步80.1→79.5下降不能省略。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

@@ -1,0 +1,18 @@
+{
+  "id": "r-robotwin2-turbovla-v2-clean-per-task-rdt",
+  "paperId": "p027",
+  "method": "RDT",
+  "trackId": "robotwin2-turbovla-v2-clean-per-task",
+  "values": {
+    "Average": 34.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.27205v2",
+  "sourceVersion": "arXiv 2607.27205v2",
+  "locator": "Table 2 (PDF p.9)",
+  "attribution": "reported-baseline",
+  "trainingData": "TurboVLA: RoboTwin2.0全部50任务clean示范联合训练，ViT-L、H50、14维绝对关节动作，55k步、warmup1k、batch192；只评clean。各基线训练与预训练不同，分离per-task和multi-task。",
+  "evaluationNotes": "per-task类别；原表延迟=204.8 ms，未报告None不是0。原始SR平均，未另行计算clean/random总分。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

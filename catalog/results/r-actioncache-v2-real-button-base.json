@@ -1,0 +1,18 @@
+{
+  "id": "r-actioncache-v2-real-button-base",
+  "paperId": "p028",
+  "method": "π0.5",
+  "trackId": "actioncache-v2-real-button",
+  "values": {
+    "Success": 100
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.06370v2",
+  "sourceVersion": "arXiv 2607.06370v2",
+  "locator": "Table 2 (PDF p.7); Appendix B",
+  "attribution": "reported-baseline",
+  "trainingData": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
+  "evaluationNotes": "原始50次测试成功率。抓香肠90→88退化保留。head latency 59.65ms；overall 106.26ms。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

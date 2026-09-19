@@ -1,0 +1,18 @@
+{
+  "id": "r-vlabench-actioncache-v2-gr00t-efficient-two",
+  "paperId": "p028",
+  "method": "EfficientVLA NFE=2",
+  "trackId": "vlabench-actioncache-v2-gr00t",
+  "values": {
+    "Average": 19.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.06370v2",
+  "sourceVersion": "arXiv 2607.06370v2",
+  "locator": "Table 1 (PDF p.5); Appendix B",
+  "attribution": "reported-baseline",
+  "trainingData": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+  "evaluationNotes": "GR00T-N1.6；原表动作头15.3 ms；SR误差未报告。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

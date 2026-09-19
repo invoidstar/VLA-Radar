@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-flashvla-v1-pi05-d1-stream",
+  "paperId": "p029",
+  "method": "StreamingVLA",
+  "trackId": "libero-flashvla-v1-pi05-d1",
+  "values": {
+    "Spatial": 96.6,
+    "Object": 96.6,
+    "Goal": 95.4,
+    "Long": 91,
+    "Average": 94.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2608.27384v1",
+  "sourceVersion": "arXiv 2608.27384v1",
+  "locator": "Table 1 (PDF p.5); shared baseline Table3",
+  "attribution": "reported-baseline",
+  "trainingData": "π0.5下游LIBERO合并40任务训练50k步，lr1e-4、warmup1k、cosine，8×H200每卡batch32；mean/std归一化；基准H50。FlashVLA C10、N4；均执行5步后重新规划。不是training-free；checkpoint选择未明。",
+  "evaluationNotes": "原报告steps=None, episode time=Nones, Time/Step=31.6ms。None为未报告，不借用异步配置值。不同d分开；基线重复只记一次。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

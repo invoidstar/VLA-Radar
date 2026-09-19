@@ -1,0 +1,22 @@
+{
+  "id": "r-libero-turbovla-v2-vision-query",
+  "paperId": "p027",
+  "method": "Vision queries language",
+  "trackId": "libero-turbovla-v2",
+  "values": {
+    "Spatial": 98.6,
+    "Object": 100,
+    "Goal": 94.4,
+    "Long": 93,
+    "Average": 96.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.27205v2",
+  "sourceVersion": "arXiv 2607.27205v2",
+  "locator": "Table 5 (PDF p.11)",
+  "attribution": "author-reported",
+  "trainingData": "LIBERO no_noops RLDS，40任务联合；DINOv3 ViT-B+BERT、256维6层双向交互；H=12、7维动作；80k步，warmup10k，batch256，4×RTX4090，lr5e-5；未披露最终检查点选择。外部方法的预训练、大小和训练条件各异。",
+  "evaluationNotes": "相同论文组件消融；完整六层DINOv3+BERT模型在Tables3–6重复，统一引用Table1的唯一主记录。未报告消融延迟/±不借用主模型。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}

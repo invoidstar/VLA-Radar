@@ -1,0 +1,18 @@
+{
+  "id": "r-vlabench-actioncache-v2-combination-actioncache",
+  "paperId": "p028",
+  "method": "ActionCache",
+  "trackId": "vlabench-actioncache-v2-combination",
+  "values": {
+    "Average": 41.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2607.06370v2",
+  "sourceVersion": "arXiv 2607.06370v2",
+  "locator": "Table 3 (PDF p.7); Appendix D",
+  "attribution": "author-reported",
+  "trainingData": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
+  "evaluationNotes": "原表延迟分项ms=[27.6, 6.8, 45.9]；双缓存39.1%/57ms劣于ActionCache单用41.2%/45.9ms。无±不编造误差。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+  "supersedes": ""
+}
