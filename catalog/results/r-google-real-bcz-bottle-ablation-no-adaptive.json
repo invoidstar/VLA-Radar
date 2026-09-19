@@ -1,0 +1,18 @@
+{
+  "id": "r-google-real-bcz-bottle-ablation-no-adaptive",
+  "paperId": "p049",
+  "method": "BC-Z (多任务one-hot，无自适应差分)",
+  "trackId": "google-real-bcz-bottle-ablation",
+  "values": {
+    "BottleInBowl": 3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf",
+  "sourceVersion": "CoRL2021 Table4 left",
+  "locator": "正式PDF p.8 Table4 left",
+  "attribution": "author-reported",
+  "trainingData": "多任务25877总示范；单任务1000目标示范；adaptive state-diff按行区别。",
+  "evaluationNotes": "Table4 left，非100任务平均；不把异构数据预算当公平模型总榜。",
+  "supersedes": ""
+}

@@ -2131,11 +2131,11 @@
       "team": "University of Washington / NVIDIA；Mohit Shridhar、Lucas Manuelli、Dieter Fox",
       "venue": "CoRL 2021",
       "publicationType": "conference",
-      "publicationStatus": "CoRL 2021（官方项目页标注）",
+      "publicationStatus": "正式PMLR 164论文集已核对；卷首页出版2022-01-11，具体录用日未核实。",
       "firstPublished": "2021-09-24",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "正式PMLR PDF正文/主表；完整ar5iv HTML附录A–I；2026-09-19实际阅读，HTML未明示修订号",
       "topics": [
         "spatial",
         "pretraining"
@@ -2152,9 +2152,9 @@
       "limitations": "主要针对桌面抓取与放置结构，不能把低样本结果直接外推到高频双臂或长程连续控制；不是大语言模型直接生成关节动作的架构。",
       "insight": "语义迁移和精确空间定位可以由不同结构承担；阅读时应同时关注任务先验与监督量，而不只关注预训练编码器。",
       "readingFocus": "What / Where 双流、语言组合泛化、真实数据计数口径。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "已实际阅读全文与所列HTML附录，并视觉核对正式PDF主表；来源范围见笔记，非独立复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
@@ -2163,6 +2163,18 @@
         {
           "label": "官方项目页 · 方法与真实数据说明",
           "url": "https://cliport.github.io/"
+        },
+        {
+          "label": "第十批全文/原始结果",
+          "url": "https://proceedings.mlr.press/v164/shridhar22a/shridhar22a.pdf"
+        },
+        {
+          "label": "实际补读附录 · HTML阅读快照",
+          "url": "https://ar5iv.labs.arxiv.org/html/2109.12098"
+        },
+        {
+          "label": "正式书目",
+          "url": "https://proceedings.mlr.press/v164/shridhar22a.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2109.12098",
@@ -2231,13 +2243,13 @@
       "name": "BC-Z",
       "title": "BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning",
       "team": "Eric Jang、Alex Irpan、Mohi Khansari、Daniel Kappler、Frederik Ebert、Corey Lynch、Sergey Levine、Chelsea Finn（署名作者；本条未逐机构核对）",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
-      "firstPublished": "2022-02-04",
-      "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+      "venue": "CoRL 2021",
+      "publicationType": "conference",
+      "publicationStatus": "正式PMLR 164论文集已核对；卷首页出版2022-01-11，具体录用日未核实。",
+      "firstPublished": "2022-01-11",
+      "dateNote": "最早已核实公开节点据PMLR卷164首页更正为2022-01-11；arXiv v1仍单独保存2022-02-04。不是用修订日期或会议年份自动覆盖首发；未知更早项目预稿不猜补。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "正式PMLR PDF正文/主表；完整ar5iv HTML附录A–M；2026-09-19实际阅读，HTML未明示修订号",
       "topics": [
         "pretraining",
         "action"
@@ -2250,17 +2262,33 @@
       ],
       "priority": "selective",
       "contribution": "以语言或人类视频定义任务，将多任务模仿学习、任务表征和人类干预数据结合，研究未示范任务的零样本组合泛化。",
-      "findings": "摘要报告：训练覆盖 100 余种任务，在 24 个未见操作任务上平均成功率 44%；这些评测任务没有专门提供机器人示范。",
+      "findings": "原报告Table2总体：语言1干扰物38%、语言4–5干扰物32%、视频4–5干扰物4%。摘要44%在§6.2被限定为24个非零成功任务的平均，不是全体未见任务平均；正文29任务与Table2/3列出的28任务存在计数差异。测试目标任务无机器人训练示范，视频条件另用10段新的人类视频。",
       "limitations": "零样本指目标任务没有示范，不意味着没有大量源任务数据、人类干预或预训练表示；结论限于论文规定的任务分布。",
       "insight": "语言条件控制在大 VLM 之前已经能产生任务组合泛化；“零样本”应始终说明到底缺少哪类数据。",
       "readingFocus": "任务嵌入、训练任务覆盖、未见任务定义以及失败分布。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "已实际阅读全文与所列HTML附录，并视觉核对正式PDF主表；来源范围见笔记，非独立复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
           "url": "https://arxiv.org/abs/2202.02005"
+        },
+        {
+          "label": "第十批全文/原始结果",
+          "url": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf"
+        },
+        {
+          "label": "实际补读附录 · HTML阅读快照",
+          "url": "https://ar5iv.labs.arxiv.org/html/2202.02005"
+        },
+        {
+          "label": "正式书目",
+          "url": "https://proceedings.mlr.press/v164/jang22a.html"
+        },
+        {
+          "label": "KEY RESULT范围更正 · 总体与非零子集",
+          "url": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf#page=7"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2202.02005",

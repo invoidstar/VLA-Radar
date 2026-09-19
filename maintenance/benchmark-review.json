@@ -48,10 +48,40 @@
       "note": "2026-09-19原文回补9条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
     },
     "p047": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Appendix F，Table 5，2026-09-17 HTML快照。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "ravens-cliport-corl21-test-1d",
+        "ravens-cliport-corl21-test-10d",
+        "ravens-cliport-corl21-test-100d",
+        "ravens-cliport-corl21-test-1000d"
+      ],
+      "resultIds": [
+        "r-ravens-cliport-corl21-test-1d-transporter",
+        "r-ravens-cliport-corl21-test-1d-clip-only",
+        "r-ravens-cliport-corl21-test-1d-rn50-bert",
+        "r-ravens-cliport-corl21-test-1d-single",
+        "r-ravens-cliport-corl21-test-1d-multi",
+        "r-ravens-cliport-corl21-test-1d-multi-attr",
+        "r-ravens-cliport-corl21-test-10d-transporter",
+        "r-ravens-cliport-corl21-test-10d-clip-only",
+        "r-ravens-cliport-corl21-test-10d-rn50-bert",
+        "r-ravens-cliport-corl21-test-10d-single",
+        "r-ravens-cliport-corl21-test-10d-multi",
+        "r-ravens-cliport-corl21-test-10d-multi-attr",
+        "r-ravens-cliport-corl21-test-100d-transporter",
+        "r-ravens-cliport-corl21-test-100d-clip-only",
+        "r-ravens-cliport-corl21-test-100d-rn50-bert",
+        "r-ravens-cliport-corl21-test-100d-single",
+        "r-ravens-cliport-corl21-test-100d-multi",
+        "r-ravens-cliport-corl21-test-100d-multi-attr",
+        "r-ravens-cliport-corl21-test-1000d-transporter",
+        "r-ravens-cliport-corl21-test-1000d-clip-only",
+        "r-ravens-cliport-corl21-test-1000d-rn50-bert",
+        "r-ravens-cliport-corl21-test-1000d-single",
+        "r-ravens-cliport-corl21-test-1000d-multi",
+        "r-ravens-cliport-corl21-test-1000d-multi-attr"
+      ],
+      "note": "第十批：完成所列原表24行与相应协议；原作者报告，非本站复现；未入榜附加实验另见审计。"
     },
     "p036": {
       "status": "deferred",
@@ -389,10 +419,29 @@
       "note": "保留14条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
     },
     "p049": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "google-real-bcz-heldout-1",
+        "google-real-bcz-heldout-4to5",
+        "google-real-bcz-train21",
+        "google-real-bcz-bottle-ablation",
+        "google-real-bcz-intervention"
+      ],
+      "resultIds": [
+        "r-google-real-bcz-heldout-1-language",
+        "r-google-real-bcz-heldout-4to5-language",
+        "r-google-real-bcz-heldout-4to5-video",
+        "r-google-real-bcz-train21-onehot",
+        "r-google-real-bcz-train21-language",
+        "r-google-real-bcz-train21-video",
+        "r-google-real-bcz-bottle-ablation-multi-language",
+        "r-google-real-bcz-bottle-ablation-multi-onehot",
+        "r-google-real-bcz-bottle-ablation-single",
+        "r-google-real-bcz-bottle-ablation-no-adaptive",
+        "r-google-real-bcz-intervention-expert",
+        "r-google-real-bcz-intervention-mixture"
+      ],
+      "note": "第十批：完成所列原表12行与相应协议；原作者报告，非本站复现；未入榜附加实验另见审计。"
     },
     "p029": {
       "status": "deferred",

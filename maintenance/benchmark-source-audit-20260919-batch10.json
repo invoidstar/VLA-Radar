@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "044823caf92651327ade05c80c85601b75af1839",
+  "status": "partial-content-backfill",
+  "scope": "第十批：既有CLIPort、BC-Z深读与原始结果回补，不新增论文，不代表全库或完整周检索。",
+  "updatedPapers": [
+    "p047",
+    "p049"
+  ],
+  "newPapers": [],
+  "newTracks": [
+    "ravens-cliport-corl21-test-1d",
+    "ravens-cliport-corl21-test-10d",
+    "ravens-cliport-corl21-test-100d",
+    "ravens-cliport-corl21-test-1000d",
+    "google-real-bcz-heldout-1",
+    "google-real-bcz-heldout-4to5",
+    "google-real-bcz-train21",
+    "google-real-bcz-bottle-ablation",
+    "google-real-bcz-intervention"
+  ],
+  "newResults": [
+    "r-ravens-cliport-corl21-test-1d-transporter",
+    "r-ravens-cliport-corl21-test-1d-clip-only",
+    "r-ravens-cliport-corl21-test-1d-rn50-bert",
+    "r-ravens-cliport-corl21-test-1d-single",
+    "r-ravens-cliport-corl21-test-1d-multi",
+    "r-ravens-cliport-corl21-test-1d-multi-attr",
+    "r-ravens-cliport-corl21-test-10d-transporter",
+    "r-ravens-cliport-corl21-test-10d-clip-only",
+    "r-ravens-cliport-corl21-test-10d-rn50-bert",
+    "r-ravens-cliport-corl21-test-10d-single",
+    "r-ravens-cliport-corl21-test-10d-multi",
+    "r-ravens-cliport-corl21-test-10d-multi-attr",
+    "r-ravens-cliport-corl21-test-100d-transporter",
+    "r-ravens-cliport-corl21-test-100d-clip-only",
+    "r-ravens-cliport-corl21-test-100d-rn50-bert",
+    "r-ravens-cliport-corl21-test-100d-single",
+    "r-ravens-cliport-corl21-test-100d-multi",
+    "r-ravens-cliport-corl21-test-100d-multi-attr",
+    "r-ravens-cliport-corl21-test-1000d-transporter",
+    "r-ravens-cliport-corl21-test-1000d-clip-only",
+    "r-ravens-cliport-corl21-test-1000d-rn50-bert",
+    "r-ravens-cliport-corl21-test-1000d-single",
+    "r-ravens-cliport-corl21-test-1000d-multi",
+    "r-ravens-cliport-corl21-test-1000d-multi-attr",
+    "r-google-real-bcz-heldout-1-language",
+    "r-google-real-bcz-heldout-4to5-language",
+    "r-google-real-bcz-heldout-4to5-video",
+    "r-google-real-bcz-train21-onehot",
+    "r-google-real-bcz-train21-language",
+    "r-google-real-bcz-train21-video",
+    "r-google-real-bcz-bottle-ablation-multi-language",
+    "r-google-real-bcz-bottle-ablation-multi-onehot",
+    "r-google-real-bcz-bottle-ablation-single",
+    "r-google-real-bcz-bottle-ablation-no-adaptive",
+    "r-google-real-bcz-intervention-expert",
+    "r-google-real-bcz-intervention-mixture"
+  ],
+  "notes": {
+    "p047": {
+      "sections": 9,
+      "bodyCharacters": 3681
+    },
+    "p049": {
+      "sections": 9,
+      "bodyCharacters": 3538
+    }
+  },
+  "readSources": [
+    {
+      "paperId": "p047",
+      "url": "https://proceedings.mlr.press/v164/shridhar22a/shridhar22a.pdf",
+      "scope": "正式PDF正文、Figures2/4与Tables1/2原页；完整HTML附录A–I另读。"
+    },
+    {
+      "paperId": "p047",
+      "url": "https://ar5iv.labs.arxiv.org/html/2109.12098",
+      "scope": "全文与附录；验证Table4不替代测试Table1，真实评分语义不反推二元成功次数。"
+    },
+    {
+      "paperId": "p049",
+      "url": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf",
+      "scope": "正式PDF正文、Figure3与Tables2–4原页。"
+    },
+    {
+      "paperId": "p049",
+      "url": "https://ar5iv.labs.arxiv.org/html/2202.02005",
+      "scope": "完整HTML正文与附录A–M；28/29/24计数差异、视频10段平均、负结果尝试次数明确。"
+    }
+  ],
+  "keyResultCorrections": [
+    {
+      "paperId": "p049",
+      "before": "摘要报告：训练覆盖 100 余种任务，在 24 个未见操作任务上平均成功率 44%；这些评测任务没有专门提供机器人示范。",
+      "after": "原报告Table2总体：语言1干扰物38%、语言4–5干扰物32%、视频4–5干扰物4%。摘要44%在§6.2被限定为24个非零成功任务的平均，不是全体未见任务平均；正文29任务与Table2/3列出的28任务存在计数差异。测试目标任务无机器人训练示范，视频条件另用10段新的人类视频。",
+      "observedAt": "2026-09-19",
+      "source": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf#page=7",
+      "reason": "保留摘要44%的出处，同时按原表澄清总体、分母和提示条件；不由舍入值反推缺失任务。"
+    }
+  ],
+  "firstPublicCorrections": [
+    {
+      "paperId": "p049",
+      "before": "2022-02-04",
+      "after": "2022-01-11",
+      "source": "https://proceedings.mlr.press/v164/",
+      "observedAt": "2026-09-19",
+      "reason": "PMLR卷首页明确公开日期早于arXiv v1；更正最早已核实公开节点，同时永久保留firstArxivAt=2022-02-04。未声称找出全部更早项目预稿。"
+    }
+  ],
+  "resolvedPublicationCandidates": [
+    {
+      "paperId": "p049",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2202.02005",
+      "value": "Conference on Robot Learning (pp. 991-1002). 2022 Jan 11 CoRL 2021, 23 pages",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    }
+  ],
+  "publicationSources": [
+    "https://proceedings.mlr.press/v164/",
+    "https://proceedings.mlr.press/v164/jang22a.html",
+    "https://proceedings.mlr.press/v164/shridhar22a.html"
+  ],
+  "deferred": [
+    {
+      "paperId": "p047",
+      "method": "CLIPort real Table2 and Appendix Table5/6 additional ablations",
+      "source": "https://ar5iv.labs.arxiv.org/html/2109.12098",
+      "reason": "正文/附录已读；Table2真机聚合与二元完成语义未充分明确，不按10次测试反推成功整数。Table5/6非重复消融和无语言验证协议留后续，主表重复行不重计。"
+    },
+    {
+      "paperId": "p049",
+      "method": "BC-Z bin/door, detailed train-task and AppendixM video baselines",
+      "source": "https://ar5iv.labs.arxiv.org/html/2202.02005",
+      "reason": "已读并在笔记说明；吞吐率/底盘动作/不同训练数据及少任务视频比较与主操作协议分开，本批不并入。"
+    }
+  ],
+  "searchCheckpoints": "未推进论文或新闻完整搜索成功时间；原前端及排序/散点功能不变。",
+  "boundaries": [
+    "CLIPort score为0–100部分完成评分，非统一二元成功百分比；四预算分开。",
+    "BC-Z Table2的32/38/4总体与摘要44非零子集不可混用；28/29/24计数差异保留。",
+    "BC-Z Table3 Held-Out与Table2重复不重计；Table4干预固定episode但状态分布不同。",
+    "BC-Z正式论文集公开早于arXiv v1，两种日期分开保存并记录源支持更正。",
+    "本批所有结果为作者原报告或其基线，不冒充独立复现。"
+  ]
+}
