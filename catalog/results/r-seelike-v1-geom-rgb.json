@@ -1,0 +1,18 @@
+{
+  "id": "r-seelike-v1-geom-rgb",
+  "paperId": "p011",
+  "method": "RGB",
+  "trackId": "seelike-v1-geometry-ablation",
+  "values": {
+    "Average": 27.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://davian-robotics.github.io/pointmap/",
+  "sourceVersion": "arXiv 2607.11498v1 / official project",
+  "locator": "Ablation 1 / Table 1",
+  "attribution": "author-reported",
+  "trainingData": "统一受控模型，无机器人预训练。",
+  "evaluationNotes": "固定评测视角；24任务同预算。",
+  "supersedes": ""
+}

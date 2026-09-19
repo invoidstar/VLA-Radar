@@ -1,0 +1,18 @@
+{
+  "id": "r-seelike-v1-pretrained-smolvla",
+  "paperId": "p011",
+  "method": "SmolVLA",
+  "trackId": "seelike-v1-pretrained-robocasa",
+  "values": {
+    "Average": 37.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://davian-robotics.github.io/pointmap/",
+  "sourceVersion": "arXiv 2607.11498v1 / official project",
+  "locator": "Main RoboCasa table",
+  "attribution": "author-reported",
+  "trainingData": "各方法作者原配置。",
+  "evaluationNotes": "不同预训练来源不视为完全同预算排名；同基座pointmap增益可直接比较。",
+  "supersedes": ""
+}

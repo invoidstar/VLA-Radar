@@ -272,8 +272,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.11270",
       "arxiv": "2607.11270",
       "doi": "",
-      "detailUrl": "data/details/p003.json?v=6df25e4f99b11329",
-      "resultUrl": null,
+      "detailUrl": "data/details/p003.json?v=79a0282a4c6cda72",
+      "resultUrl": "data/paper-results/p003.d84a1ae32ae0bf51.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-13",
@@ -645,8 +645,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.07619",
       "arxiv": "2608.07619",
       "doi": "",
-      "detailUrl": "data/details/p009.json?v=5aed998154c54683",
-      "resultUrl": null,
+      "detailUrl": "data/details/p009.json?v=688dd491a210a2a4",
+      "resultUrl": "data/paper-results/p009.ca8ea7fc4f273865.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-07",
@@ -751,8 +751,8 @@
       "paperUrl": "https://arxiv.org/abs/2607.11498",
       "arxiv": "2607.11498",
       "doi": "",
-      "detailUrl": "data/details/p011.json?v=77c4d982fce51677",
-      "resultUrl": null,
+      "detailUrl": "data/details/p011.json?v=c81634f9d744ea37",
+      "resultUrl": "data/paper-results/p011.99e2bb699ff5d013.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-13",
@@ -2258,8 +2258,8 @@
       "paperUrl": "https://arxiv.org/abs/2608.29432",
       "arxiv": "2608.29432",
       "doi": "",
-      "detailUrl": "data/details/p020.json?v=ec4bdc032f0a0ea1",
-      "resultUrl": null,
+      "detailUrl": "data/details/p020.json?v=409432bb4c16f697",
+      "resultUrl": "data/paper-results/p020.a687120bdc77faa9.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-29",
@@ -3363,8 +3363,8 @@
       "limitations": "证据层级为摘要 / 项目说明，不是定量表格复核。循环动作头的作用不应直接等同于长期事件记忆或执行结果验证。",
       "insight": "视觉语言编码和时序动作决策可以分工；比较这类工作需要留意动作头容量与历史输入差异。",
       "readingFocus": "VLM / 策略头拆分、循环状态、冻结与微调方式。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+      "evidence": "checked",
+      "evidenceNote": "第十五批复核ICLR 2024官方正文与主实验边界；结构化数值仅来自明确表格。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -3378,14 +3378,18 @@
         {
           "label": "正式发表元数据 · 非正文自动复核",
           "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html"
+        },
+        {
+          "label": "ICLR 2024 · 官方正文PDF",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2311.01378",
       "arxiv": "2311.01378",
       "doi": "",
-      "detailUrl": "data/details/p060.json?v=ab307f95e4452d64",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p060.json?v=7b8abdffe58d171c",
+      "resultUrl": "data/paper-results/p060.5503695f0838c979.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-11-02",
         "latestArxivVersion": "v3",
