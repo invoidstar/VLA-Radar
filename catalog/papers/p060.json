@@ -28,8 +28,8 @@
     "limitations": "证据层级为摘要 / 项目说明，不是定量表格复核。循环动作头的作用不应直接等同于长期事件记忆或执行结果验证。",
     "insight": "视觉语言编码和时序动作决策可以分工；比较这类工作需要留意动作头容量与历史输入差异。",
     "readingFocus": "VLM / 策略头拆分、循环状态、冻结与微调方式。",
-    "evidence": "metadata",
-    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "evidence": "checked",
+    "evidenceNote": "第十五批复核ICLR 2024官方正文与主实验边界；结构化数值仅来自明确表格。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -43,6 +43,10 @@
       {
         "label": "正式发表元数据 · 非正文自动复核",
         "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html"
+      },
+      {
+        "label": "ICLR 2024 · 官方正文PDF",
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2311.01378",
@@ -97,10 +101,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
-    "version": "2311.01378；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "ICLR 2024 official paper；arXiv 2311.01378v3；Tables 1、5–8与附录",
     "sections": [
       {
         "id": "problem",
@@ -233,9 +237,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "第十五批完成18条源定位结果；仅录原表/官方项目明确值。不同训练域、指标和诊断任务分轨；不从图高或二手榜反推。"
     }
   }
 }

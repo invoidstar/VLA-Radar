@@ -1,0 +1,18 @@
+{
+  "id": "r-seelike-v1-fusion-rgb",
+  "paperId": "p011",
+  "method": "RGB",
+  "trackId": "seelike-v1-fusion-ablation",
+  "values": {
+    "Average": 27.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://davian-robotics.github.io/pointmap/",
+  "sourceVersion": "arXiv 2607.11498v1 / official project",
+  "locator": "Ablation 2 / Table 2",
+  "attribution": "author-reported",
+  "trainingData": "统一受控模型。",
+  "evaluationNotes": "Point cloud MLP 24.2低于RGB 27.9，保留负面结果。",
+  "supersedes": ""
+}

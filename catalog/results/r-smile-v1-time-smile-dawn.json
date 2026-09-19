@@ -1,0 +1,18 @@
+{
+  "id": "r-smile-v1-time-smile-dawn",
+  "paperId": "p020",
+  "method": "SMILE-DAWN (H=15)",
+  "trackId": "smile-v1-calvin-action-time",
+  "values": {
+    "Seconds per action": 0.0227
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/pdf/2608.29432v1",
+  "sourceVersion": "arXiv 2608.29432v1",
+  "locator": "Table II",
+  "attribution": "author-reported",
+  "trainingData": "与链长相同方法/H。",
+  "evaluationNotes": "原始32.0/22.7/19.1/13.0 ms per executed action精确×0.001为秒；不是整任务耗时。",
+  "supersedes": ""
+}

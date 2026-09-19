@@ -2832,8 +2832,8 @@
       "limitations": "证据层级为摘要 / 项目说明，不是定量表格复核。循环动作头的作用不应直接等同于长期事件记忆或执行结果验证。",
       "insight": "视觉语言编码和时序动作决策可以分工；比较这类工作需要留意动作头容量与历史输入差异。",
       "readingFocus": "VLM / 策略头拆分、循环状态、冻结与微调方式。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+      "evidence": "checked",
+      "evidenceNote": "第十五批复核ICLR 2024官方正文与主实验边界；结构化数值仅来自明确表格。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -2847,6 +2847,10 @@
         {
           "label": "正式发表元数据 · 非正文自动复核",
           "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html"
+        },
+        {
+          "label": "ICLR 2024 · 官方正文PDF",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2311.01378",

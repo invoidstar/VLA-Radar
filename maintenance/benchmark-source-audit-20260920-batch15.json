@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-20",
+  "batch": "benchmark-batch15",
+  "baseCommit": "bf2f17b10604b7c587f9842b873cfcf0bf92d759",
+  "papers": [
+    {
+      "paperId": "p011",
+      "results": 24,
+      "trackIds": [
+        "seelike-v1-geometry-ablation",
+        "seelike-v1-fusion-ablation",
+        "seelike-v1-view-robustness",
+        "seelike-v1-pretrained-robocasa",
+        "seelike-v1-real-view"
+      ]
+    },
+    {
+      "paperId": "p020",
+      "results": 8,
+      "trackIds": [
+        "smile-v1-calvin-chain",
+        "smile-v1-calvin-action-time"
+      ]
+    },
+    {
+      "paperId": "p009",
+      "results": 6,
+      "trackIds": [
+        "gwm-v1-libero",
+        "gwm-v1-libero-plus"
+      ]
+    },
+    {
+      "paperId": "p060",
+      "results": 18,
+      "trackIds": [
+        "roboflamingo-iclr24-abcd-chain",
+        "roboflamingo-iclr24-abcd-five",
+        "roboflamingo-iclr24-abc-chain",
+        "roboflamingo-iclr24-abc-five",
+        "roboflamingo-iclr24-enriched-chain"
+      ]
+    },
+    {
+      "paperId": "p003",
+      "results": 3,
+      "trackIds": [
+        "lumo2-v1-semantic-probe"
+      ]
+    }
+  ],
+  "countsBefore": {
+    "papers": 98,
+    "results": 775,
+    "tracks": 207,
+    "extracted": 67,
+    "deferred": 29,
+    "notApplicable": 2,
+    "needsReview": 19
+  },
+  "countsAfterExpected": {
+    "papers": 98,
+    "results": 834,
+    "tracks": 222,
+    "extracted": 72,
+    "deferred": 24,
+    "notApplicable": 2,
+    "needsReview": 18
+  },
+  "boundaries": [
+    "See like a Robot保留point-cloud MLP 24.2低于RGB 27.9，并区分受控消融/预训练主表/真机视角",
+    "SMILE链长0–5不是成功率；ms/action仅精确换算秒，不冒充整任务时延",
+    "GWM-VLA标准LIBERO与OpenVLA-OFT同为97.1，主要差异在LIBERO-Plus；异构预训练不作统一预算排名",
+    "RoboFlamingo平均链长与五步完成概率分轨；ABCD/ABC/扩写指令分协议，Full与Lang数据预算保留",
+    "Lumo-2 Table7为两层MLP语义表征探针，不冒充闭环控制成功率"
+  ],
+  "sourcePolicy": "Primary/official values only. ICLR official PDF fetch exceeded web parser size for screenshot, so stored RoboFlamingo values are restricted to source-located Table 1 values already cross-checked against the official proceedings and project evidence; no plot-pixel estimation."
+}

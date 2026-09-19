@@ -1,0 +1,19 @@
+{
+  "id": "r-seelike-v1-real-pi05",
+  "paperId": "p011",
+  "method": "π0.5",
+  "trackId": "seelike-v1-real-view",
+  "values": {
+    "Seen": 73.3,
+    "Unseen": 55.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://davian-robotics.github.io/pointmap/",
+  "sourceVersion": "arXiv 2607.11498v1 / official project",
+  "locator": "Real robot table",
+  "attribution": "author-reported",
+  "trainingData": "作者真机配置。",
+  "evaluationNotes": "见/未见相机分列；不由差值反推额外指标。",
+  "supersedes": ""
+}

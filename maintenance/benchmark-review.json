@@ -316,10 +316,16 @@
       "note": "第十四批：新增8条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
     "p003": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 7；§4.5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "lumo2-v1-semantic-probe"
+      ],
+      "resultIds": [
+        "r-lumo2-v1-probe-dino",
+        "r-lumo2-v1-probe-stage1",
+        "r-lumo2-v1-probe-stage2"
+      ],
+      "note": "第十五批：新增3条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
     },
     "p027": {
       "status": "extracted",
@@ -437,10 +443,41 @@
       "note": "第十四批：新增28条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
     "p011": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1、3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "seelike-v1-geometry-ablation",
+        "seelike-v1-fusion-ablation",
+        "seelike-v1-view-robustness",
+        "seelike-v1-pretrained-robocasa",
+        "seelike-v1-real-view"
+      ],
+      "resultIds": [
+        "r-seelike-v1-geom-rgb",
+        "r-seelike-v1-geom-plucker",
+        "r-seelike-v1-geom-plucker-depth",
+        "r-seelike-v1-geom-pointmap",
+        "r-seelike-v1-fusion-rgb",
+        "r-seelike-v1-fusion-pc-mlp",
+        "r-seelike-v1-fusion-pc-ptv3",
+        "r-seelike-v1-fusion-pm-concat",
+        "r-seelike-v1-fusion-pm-add",
+        "r-seelike-v1-view-rgb",
+        "r-seelike-v1-view-base",
+        "r-seelike-v1-view-ee",
+        "r-seelike-v1-pretrained-fp3",
+        "r-seelike-v1-pretrained-ocvla",
+        "r-seelike-v1-pretrained-kyc",
+        "r-seelike-v1-pretrained-geovla",
+        "r-seelike-v1-pretrained-pointvla",
+        "r-seelike-v1-pretrained-pi05",
+        "r-seelike-v1-pretrained-pi05-pm",
+        "r-seelike-v1-pretrained-smolvla",
+        "r-seelike-v1-pretrained-smolvla-pm",
+        "r-seelike-v1-real-dp3",
+        "r-seelike-v1-real-pi05",
+        "r-seelike-v1-real-pi05-pm"
+      ],
+      "note": "第十五批：新增24条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
     },
     "p001": {
       "status": "extracted",
@@ -517,10 +554,35 @@
       "note": "保留2条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p060": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "roboflamingo-iclr24-abcd-chain",
+        "roboflamingo-iclr24-abcd-five",
+        "roboflamingo-iclr24-abc-chain",
+        "roboflamingo-iclr24-abc-five",
+        "roboflamingo-iclr24-enriched-chain"
+      ],
+      "resultIds": [
+        "r-roboflamingo-abcd-chain-rf",
+        "r-roboflamingo-abcd-five-rf",
+        "r-roboflamingo-abcd-chain-hulc-full",
+        "r-roboflamingo-abcd-five-hulc-full",
+        "r-roboflamingo-abcd-chain-hulc-lang",
+        "r-roboflamingo-abcd-five-hulc-lang",
+        "r-roboflamingo-abcd-chain-rt1",
+        "r-roboflamingo-abcd-five-rt1",
+        "r-roboflamingo-abc-chain-rf",
+        "r-roboflamingo-abc-five-rf",
+        "r-roboflamingo-abc-chain-rt1",
+        "r-roboflamingo-abc-five-rt1",
+        "r-roboflamingo-abc-chain-hulc-full",
+        "r-roboflamingo-abc-five-hulc-full",
+        "r-roboflamingo-enriched-rf",
+        "r-roboflamingo-enriched-freeze",
+        "r-roboflamingo-enriched-hulc",
+        "r-roboflamingo-enriched-rt1"
+      ],
+      "note": "第十五批：新增18条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
     },
     "p048": {
       "status": "extracted",
@@ -597,16 +659,38 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p009": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "gwm-v1-libero",
+        "gwm-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-gwm-v1-libero-oft",
+        "r-gwm-v1-plus-oft",
+        "r-gwm-v1-libero-jepa",
+        "r-gwm-v1-plus-jepa",
+        "r-gwm-v1-libero-gwm",
+        "r-gwm-v1-plus-gwm"
+      ],
+      "note": "第十五批：新增6条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
     },
     "p020": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table II。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "smile-v1-calvin-chain",
+        "smile-v1-calvin-action-time"
+      ],
+      "resultIds": [
+        "r-smile-v1-chain-dawn",
+        "r-smile-v1-time-dawn",
+        "r-smile-v1-chain-smile-dawn",
+        "r-smile-v1-time-smile-dawn",
+        "r-smile-v1-chain-vpp",
+        "r-smile-v1-time-vpp",
+        "r-smile-v1-chain-smile-vpp",
+        "r-smile-v1-time-smile-vpp"
+      ],
+      "note": "第十五批：新增8条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
     },
     "p076": {
       "status": "extracted",

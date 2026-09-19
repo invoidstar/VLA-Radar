@@ -1,0 +1,18 @@
+{
+  "id": "r-roboflamingo-abc-five-rf",
+  "paperId": "p060",
+  "method": "RoboFlamingo M-3B-IFT (Lang)",
+  "trackId": "roboflamingo-iclr24-abc-five",
+  "values": {
+    "Five-task success": 23.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf",
+  "sourceVersion": "ICLR 2024 official PDF",
+  "locator": "Table 1 middle block",
+  "attribution": "author-reported",
+  "trainingData": "与ABC链长相同评测。",
+  "evaluationNotes": "原始第五前缀概率×100。",
+  "supersedes": ""
+}

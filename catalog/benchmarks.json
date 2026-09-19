@@ -4429,6 +4429,278 @@
         "SwapT"
       ],
       "source": "https://arxiv.org/abs/2608.08749"
+    },
+    {
+      "id": "seelike-v1-geometry-ablation",
+      "dataset": "RoboCasa",
+      "name": "See like a Robot v1 · 几何表示受控消融",
+      "version": "arXiv 2607.11498v1",
+      "tasks": "24 tasks",
+      "split": "fixed evaluation viewpoint",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "无机器人预训练的受控实验；基础初始化、24任务与示范预算保持一致，只改变3D输入表示。",
+      "trainingRegime": "同文受控模型；仅输入几何形式变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://davian-robotics.github.io/pointmap/"
+    },
+    {
+      "id": "seelike-v1-fusion-ablation",
+      "dataset": "RoboCasa",
+      "name": "See like a Robot v1 · 3D编码与融合消融",
+      "version": "arXiv 2607.11498v1",
+      "tasks": "24 tasks",
+      "split": "fixed evaluation viewpoint",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Point cloud/pointmap及concat/add的论文内部受控比较。",
+      "trainingRegime": "同文受控模型；3D编码器/融合方式变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://davian-robotics.github.io/pointmap/"
+    },
+    {
+      "id": "seelike-v1-view-robustness",
+      "dataset": "RoboCasa",
+      "name": "See like a Robot v1 · 固定/随机视角鲁棒性",
+      "version": "arXiv 2607.11498v1",
+      "tasks": "24 tasks",
+      "split": "fixed vs randomized evaluation camera",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "同一受控模型下比较RGB、基座pointmap、末端中心pointmap。",
+      "trainingRegime": "训练配方一致；只改变几何输入/中心。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Fixed",
+        "Randomized"
+      ],
+      "source": "https://davian-robotics.github.io/pointmap/"
+    },
+    {
+      "id": "seelike-v1-pretrained-robocasa",
+      "dataset": "RoboCasa",
+      "name": "See like a Robot v1 · 预训练VLA主表",
+      "version": "arXiv 2607.11498v1",
+      "tasks": "24 tasks",
+      "split": "fixed evaluation viewpoint",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "预训练模型/几何方法原文对照表；训练来源不同，只作paper-table，不声称统一预算排名。",
+      "trainingRegime": "各方法按作者原配置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://davian-robotics.github.io/pointmap/"
+    },
+    {
+      "id": "seelike-v1-real-view",
+      "dataset": "SeeLikeRobot real",
+      "name": "See like a Robot v1 · Franka见/未见相机",
+      "version": "arXiv 2607.11498v1",
+      "tasks": "real Franka tasks",
+      "split": "seen vs unseen camera",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "真实Franka相机泛化；方法间保持论文原配置。",
+      "trainingRegime": "作者真机设置；不同方法架构不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Seen",
+        "Unseen"
+      ],
+      "source": "https://davian-robotics.github.io/pointmap/"
+    },
+    {
+      "id": "smile-v1-calvin-chain",
+      "dataset": "CALVIN",
+      "name": "SMILE v1 · ABC→D · 平均完成链长",
+      "version": "arXiv 2608.29432v1",
+      "tasks": "five-task chains",
+      "split": "ABC train -> unseen D",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table II；链长0–5，不是成功率。H按方法记录，不与其他CALVIN训练协议混排。",
+      "trainingRegime": "各基座保持原backbone/model scale；SMILE只改变动作表示，H按行不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/abs/2608.29432"
+    },
+    {
+      "id": "smile-v1-calvin-action-time",
+      "dataset": "CALVIN",
+      "name": "SMILE v1 · ABC→D · 每执行动作摊销推理时间",
+      "version": "arXiv 2608.29432v1",
+      "tasks": "five-task chains",
+      "split": "ABC train -> unseen D",
+      "metric": "Amortized inference time per executed action",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "Table II原始单位ms/action，本站精确乘0.001转秒；不是每次重新观察延迟或完整任务时间。",
+      "trainingRegime": "与链长表相同方法/H设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Seconds per action"
+      ],
+      "source": "https://arxiv.org/abs/2608.29432"
+    },
+    {
+      "id": "gwm-v1-libero",
+      "dataset": "LIBERO",
+      "name": "GWM-VLA v1 · 标准LIBERO平均",
+      "version": "arXiv 2608.07619v1",
+      "tasks": "40 tasks / four suites",
+      "split": "paper-reported comparison",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Tables 1–2；标准LIBERO与LIBERO-Plus分轨。外部方法预训练数据不同。",
+      "trainingRegime": "GWM-VLA含约7.6万DROID轨迹预训练；外部基线预算不统一。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.07619"
+    },
+    {
+      "id": "gwm-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "GWM-VLA v1 · LIBERO-Plus平均",
+      "version": "arXiv 2608.07619v1",
+      "tasks": "LIBERO-Plus perturbations",
+      "split": "paper-reported comparison",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "扰动鲁棒性测试；不与标准LIBERO合成平均。",
+      "trainingRegime": "方法预训练数据与主干不同，原文对照不声称统一预算。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.07619"
+    },
+    {
+      "id": "roboflamingo-iclr24-abcd-chain",
+      "dataset": "CALVIN",
+      "name": "RoboFlamingo ICLR 2024 · ABCD→D平均链长",
+      "version": "ICLR 2024 official paper",
+      "tasks": "five-instruction chains",
+      "split": "ABCD train -> D eval; standard instructions",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table 1；1,000 chains；最佳检查点。Full/Language数据量区别逐行保留。",
+      "trainingRegime": "RoboFlamingo为language-annotated data；HULC Full含额外play数据；作者重训行与引用行按原表。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
+    },
+    {
+      "id": "roboflamingo-iclr24-abcd-five",
+      "dataset": "CALVIN",
+      "name": "RoboFlamingo ICLR 2024 · ABCD→D五步全完成",
+      "version": "ICLR 2024 official paper",
+      "tasks": "five-instruction chains",
+      "split": "ABCD train -> D eval; standard instructions",
+      "metric": "Probability of completing all five tasks",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1第五前缀成功率×100；不是五个独立任务平均。",
+      "trainingRegime": "与ABCD链长同一评测。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Five-task success"
+      ],
+      "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
+    },
+    {
+      "id": "roboflamingo-iclr24-abc-chain",
+      "dataset": "CALVIN",
+      "name": "RoboFlamingo ICLR 2024 · ABC→D平均链长",
+      "version": "ICLR 2024 official paper",
+      "tasks": "five-instruction chains",
+      "split": "ABC train -> unseen D; standard instructions",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table 1；D未参与训练；最佳检查点。",
+      "trainingRegime": "语言标注ABC训练；各基线数据条件逐行记录。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
+    },
+    {
+      "id": "roboflamingo-iclr24-abc-five",
+      "dataset": "CALVIN",
+      "name": "RoboFlamingo ICLR 2024 · ABC→D五步全完成",
+      "version": "ICLR 2024 official paper",
+      "tasks": "five-instruction chains",
+      "split": "ABC train -> unseen D; standard instructions",
+      "metric": "Probability of completing all five tasks",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1第五前缀成功率×100；跨环境条件与ABCD分开。",
+      "trainingRegime": "与ABC链长同一评测。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Five-task success"
+      ],
+      "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
+    },
+    {
+      "id": "roboflamingo-iclr24-enriched-chain",
+      "dataset": "CALVIN",
+      "name": "RoboFlamingo ICLR 2024 · 扩写指令平均链长",
+      "version": "ICLR 2024 official paper",
+      "tasks": "five-instruction chains",
+      "split": "ABCD train -> D eval; GPT-4 alternatives",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "每任务50个GPT-4替代表达；语言鲁棒性单列，不与标准指令合榜。",
+      "trainingRegime": "ABCD语言训练；freeze-emb为内部变体。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
+    },
+    {
+      "id": "lumo2-v1-semantic-probe",
+      "dataset": "Lumo-2 probe",
+      "name": "Lumo-2 v1 · Table 7 · 动作语义探针",
+      "version": "arXiv 2607.11270v1",
+      "tasks": "18 atomic action classes / 7,200 samples",
+      "split": "4:1 train/test",
+      "metric": "Top-1 action semantic classification accuracy",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "初始帧DINO特征加不同阶段动作表示；分类器实际为两层MLP，虽原文称linear probing。此轨是表征诊断，不是机器人任务SR。",
+      "trainingRegime": "400样本/类；两层MLP hidden1024、ReLU、dropout0.1。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Accuracy"
+      ],
+      "source": "https://arxiv.org/abs/2607.11270"
     }
   ]
 }

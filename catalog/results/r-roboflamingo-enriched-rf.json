@@ -1,0 +1,18 @@
+{
+  "id": "r-roboflamingo-enriched-rf",
+  "paperId": "p060",
+  "method": "RoboFlamingo",
+  "trackId": "roboflamingo-iclr24-enriched-chain",
+  "values": {
+    "Average length": 1.85
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf",
+  "sourceVersion": "ICLR 2024 official PDF",
+  "locator": "Table 1 bottom / language robustness",
+  "attribution": "author-reported",
+  "trainingData": "ABCD语言训练；测试替换为GPT-4扩写指令。",
+  "evaluationNotes": "标准指令RoboFlamingo为4.09；扩写1.85，显著下降；freeze-emb内部变体2.12。",
+  "supersedes": ""
+}

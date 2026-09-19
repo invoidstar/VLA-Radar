@@ -1,3 +1,10 @@
+## 2026-09-20 · 第十五批：五篇原始证据回补
+
+- 深读/复核 See like a Robot、SMILE、GWM-VLA、RoboFlamingo、Lumo-2；五篇 deferred→extracted，RoboFlamingo needs_review→expanded。
+- 新增59条源定位结果、15个具体设置；受控消融/预训练主表/真机、链长/时延、标准/扰动、平均链长/五步概率、表征探针严格分轨。
+- 保留point-cloud退化、GWM标准榜持平、RoboFlamingo扩写指令退化等负面或条件性证据；不从图高估值。
+- 不改Leaderboard UI，不清理历史/安全分支；FAST、Deltoris等继续按证据边界保持deferred。
+
 ## 2026-09-19 · 第十四批：五篇原始证据回补
 
 - 深读/复核 OC-VLA++、TemporalFlow-VLA、VT-WAM、VLAFlow、OnEvoMemory；五篇 deferred→extracted。

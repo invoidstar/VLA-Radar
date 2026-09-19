@@ -83,8 +83,8 @@
   },
   "note": {
     "status": "expanded",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
     "version": "arXiv 2607.11270 v1；§2–4",
     "sections": [
       {
@@ -223,9 +223,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 7；§4.5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "第十五批完成3条源定位结果；仅录原表/官方项目明确值。不同训练域、指标和诊断任务分轨；不从图高或二手榜反推。"
     }
   }
 }

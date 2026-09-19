@@ -1,0 +1,19 @@
+{
+  "id": "r-seelike-v1-view-rgb",
+  "paperId": "p011",
+  "method": "RGB",
+  "trackId": "seelike-v1-view-robustness",
+  "values": {
+    "Fixed": 27.9,
+    "Randomized": 25.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://davian-robotics.github.io/pointmap/",
+  "sourceVersion": "arXiv 2607.11498v1 / official project",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "同文受控模型。",
+  "evaluationNotes": "末端中心化36.9→36.6仅降0.3点；RGB 27.9→25.8。",
+  "supersedes": ""
+}
