@@ -1,0 +1,19 @@
+{
+  "id": "r-google-real-bcz-intervention-mixture",
+  "paperId": "p049",
+  "method": "BC-Z (50%专家＋50%干预)",
+  "trackId": "google-real-bcz-intervention",
+  "values": {
+    "OneTask": 53,
+    "EightTask": 47
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf",
+  "sourceVersion": "CoRL2021 Table4 right / HTML Appendix K",
+  "locator": "正式PDF p.8 Table4 right; Appendix K",
+  "attribution": "author-reported",
+  "trainingData": "100% expert-only vs 50% expert-only + 50% HG-DAgger; same number of episodes.",
+  "evaluationNotes": "Table4 right；固定episode不等于固定状态分布或完全相同交互成本。",
+  "supersedes": ""
+}

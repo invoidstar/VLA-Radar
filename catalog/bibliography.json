@@ -2954,6 +2954,114 @@
         }
       ],
       "verifiedAt": "2026-09-19"
+    },
+    "p047": {
+      "item": {
+        "type": "paper-conference",
+        "title": "CLIPort: What and Where Pathways for Robotic Manipulation",
+        "author": [
+          {
+            "given": "Mohit",
+            "family": "Shridhar"
+          },
+          {
+            "given": "Lucas",
+            "family": "Manuelli"
+          },
+          {
+            "given": "Dieter",
+            "family": "Fox"
+          }
+        ],
+        "container-title": "Proceedings of the 5th Conference on Robot Learning",
+        "volume": "164",
+        "page": "894-906",
+        "issued": {
+          "date-parts": [
+            [
+              2022,
+              1,
+              11
+            ]
+          ]
+        },
+        "URL": "https://proceedings.mlr.press/v164/shridhar22a.html"
+      },
+      "sources": [
+        {
+          "label": "PMLR正式作者、标题与卷页",
+          "url": "https://proceedings.mlr.press/v164/shridhar22a.html"
+        },
+        {
+          "label": "卷164明确公开日期，不采用BibTeX会议month作为出版日",
+          "url": "https://proceedings.mlr.press/v164/"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p049": {
+      "item": {
+        "type": "paper-conference",
+        "title": "BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning",
+        "author": [
+          {
+            "given": "Eric",
+            "family": "Jang"
+          },
+          {
+            "given": "Alex",
+            "family": "Irpan"
+          },
+          {
+            "given": "Mohi",
+            "family": "Khansari"
+          },
+          {
+            "given": "Daniel",
+            "family": "Kappler"
+          },
+          {
+            "given": "Frederik",
+            "family": "Ebert"
+          },
+          {
+            "given": "Corey",
+            "family": "Lynch"
+          },
+          {
+            "given": "Sergey",
+            "family": "Levine"
+          },
+          {
+            "given": "Chelsea",
+            "family": "Finn"
+          }
+        ],
+        "container-title": "Proceedings of the 5th Conference on Robot Learning",
+        "volume": "164",
+        "page": "991-1002",
+        "issued": {
+          "date-parts": [
+            [
+              2022,
+              1,
+              11
+            ]
+          ]
+        },
+        "URL": "https://proceedings.mlr.press/v164/jang22a.html"
+      },
+      "sources": [
+        {
+          "label": "PMLR正式作者、标题与卷页",
+          "url": "https://proceedings.mlr.press/v164/jang22a.html"
+        },
+        {
+          "label": "卷164明确公开日期，不采用BibTeX会议month作为出版日",
+          "url": "https://proceedings.mlr.press/v164/"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
     }
   }
 }

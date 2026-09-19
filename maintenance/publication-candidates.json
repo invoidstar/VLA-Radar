@@ -38,13 +38,6 @@
       "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
     },
     {
-      "paperId": "p049",
-      "kind": "venue-mention",
-      "source": "https://arxiv.org/abs/2202.02005",
-      "value": "Conference on Robot Learning (pp. 991-1002). 2022 Jan 11 CoRL 2021, 23 pages",
-      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
-    },
-    {
       "paperId": "p055",
       "kind": "venue-mention",
       "source": "https://arxiv.org/abs/2303.04137",
