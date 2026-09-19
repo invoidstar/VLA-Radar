@@ -1,0 +1,121 @@
+name: Prepare leaderboard sorting and time scatter
+on:
+  push:
+    branches: [release/batch-2026-09-19-leaderboard-analysis]
+    paths: [.github/workflows/prepare-leaderboard-analysis.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-leaderboard-analysis
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      BASE: 3cb148d463469276cf1a71385efc6ba980596104
+      BRANCH: release/batch-2026-09-19-leaderboard-analysis
+      EXPECTED_HEAD: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply exact checksum-verified UI patch
+        run: |
+          set -eu
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          python - <<'PY'
+          import base64,hashlib,json,lzma,os
+          from pathlib import Path
+          sums=['c8f249fc6342725baa8ee64806a68fc060a20413b9e00f74439d2f01f3b8285c','647b4d3b6d2adb1c1a92cf507796a63df8fbea614b2f6b52cd1f4560cc26f3fc']
+          parts=[]
+          for i,expected in enumerate(sums):
+              data=Path(f'maintenance/.leaderboard-part{i}').read_bytes()
+              assert hashlib.sha256(data).hexdigest()==expected, f'Transport mismatch part {i}'
+              parts.append(data)
+          compressed=base64.b64decode(b''.join(parts),validate=True)
+          assert len(compressed)==19568 and hashlib.sha256(compressed).hexdigest()=='7affabb1d1cf374471ff36c8713ab463dbdab75cf83972c2ead70666a680a39a'
+          payload=json.loads(lzma.decompress(compressed))
+          assert payload['schemaVersion']==1 and payload['baseCommit']==os.environ['BASE']
+          allowed={'CHANGELOG.md','MAINTENANCE.md','app.js','experience-core.js','experience-loader.js','experience.css','experience.js','index.html','maintenance/leaderboard-analysis.md','maintenance/workspace.md','research.css','research.js','scripts/browser_leaderboard.py','scripts/test_leaderboard_controls.cjs','scripts/test_urls.cjs','scripts/validate_all.py'}
+          assert len(payload['files'])==len(allowed)==16
+          planned=[];seen=set()
+          for f in payload['files']:
+              name=f['path'];path=Path(name)
+              assert name in allowed and name not in seen and not path.is_absolute() and '..' not in path.parts
+              seen.add(name)
+              old=path.read_bytes() if path.exists() else None
+              assert (hashlib.sha256(old).hexdigest() if old is not None else None)==f['before'], 'Changed preimage: '+name
+              text=old.decode('utf-8') if old is not None else ''
+              original_length=len(text);previous_end=0
+              for start,end,replacement in f['edits']:
+                  assert isinstance(start,int) and isinstance(end,int) and isinstance(replacement,str)
+                  assert previous_end<=start<=end<=original_length
+                  previous_end=end
+              for start,end,replacement in reversed(f['edits']):
+                  text=text[:start]+replacement+text[end:]
+              final=text.encode('utf-8')
+              assert hashlib.sha256(final).hexdigest()==f['after'], 'Target mismatch: '+name
+              planned.append((path,final))
+          assert seen==allowed
+          assert hashlib.sha256(Path('.github/workflows/site.yml').read_bytes()).hexdigest()=='923ad6e20c0d4fa81dcbfcc77fea6273251ae9fced6286158741073f71bf0439'
+          for path,data in planned:
+              path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+          print('PASS: all 16 UI/doc/test operations match exact preimages and target hashes.')
+          PY
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Confirm latest scientific content and checkpoints unchanged
+        run: |
+          git diff --exit-code "$BASE" -- catalog data maintenance/state.json maintenance/news-state.json maintenance/work-queue.json maintenance/benchmark-review.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          b=json.loads(Path('data/leaderboards.json').read_text());p=json.loads(Path('data/library.json').read_text())['papers']
+          report={'papers':len(p),'results':len(b['results']),'tracks':len(b['tracks']),'datasetGroups':len({t['dataset'] for t in b['tracks']}),'scientificDataUnchanged':True}
+          assert report['papers']==98 and report['results']==376 and report['tracks']==103 and report['datasetGroups']==17
+          out=Path('/tmp/radar-leaderboard');out.mkdir(exist_ok=True);(out/'invariance.json').write_text(json.dumps(report,indent=2));print(report)
+          PY
+      - name: Install browser driver and Chinese fonts
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq; sudo apt-get install -y fonts-noto-cjk; fi
+      - name: All existing and new HTTP browser tests
+        run: |
+          python scripts/browser_smoke.py
+          python scripts/browser_workspace.py
+          python scripts/browser_news.py
+          python scripts/browser_sidebar.py
+          python scripts/browser_tools.py
+          python scripts/browser_leaderboard.py
+      - name: Commit validated UI changes on this branch only
+        run: |
+          set -eu
+          test "${{ github.ref_name }}" = "$BRANCH"
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
+          test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$EXPECTED_HEAD"
+          git diff --exit-code -- .github
+          git rm maintenance/.leaderboard-part0 maintenance/.leaderboard-part1
+          git add CHANGELOG.md MAINTENANCE.md app.js experience-core.js experience-loader.js experience.css experience.js index.html maintenance/leaderboard-analysis.md maintenance/workspace.md research.css research.js scripts/browser_leaderboard.py scripts/test_leaderboard_controls.cjs scripts/test_urls.cjs scripts/validate_all.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add arbitrary leaderboard column sorting and evidence-dated score scatter'
+          git push origin "HEAD:refs/heads/$BRANCH"
+      - name: Preserve candidate source and diagnostics
+        if: always()
+        run: |
+          mkdir -p /tmp/radar-leaderboard
+          git archive --format=zip --output=/tmp/radar-leaderboard/source.zip HEAD
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: leaderboard-analysis-audit-${{ github.run_id }}
+          path: |
+            /tmp/radar-leaderboard/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+          retention-days: 14
