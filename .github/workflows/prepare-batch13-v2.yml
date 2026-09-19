@@ -71,6 +71,11 @@ jobs:
             "    x=j('catalog/results/r-veritas-v1-carrot50-auto.json'); assert x['values']['Success']==70 and '20' in x['evaluationNotes']",""
           ])
           Path('tests/test_benchmark_batch13.py').write_text(test)
+          bt=Path('scripts/browser_tools.py'); btc=bt.read_text()
+          old="page.locator('.radar-manager summary').click();page.locator('[data-manager-tab=\"datasets\"]').click();page.locator('[data-follow-value=\"LIBERO\"]').click();expect(page.locator('[data-follow-value=\"LIBERO\"]')).to_have_attribute('aria-pressed','true')"
+          new="page.locator('.radar-manager summary').click();page.locator('[data-manager-tab=\"datasets\"]').click();page.locator('#radar-manage-query').fill('LIBERO');page.locator('[data-follow-value=\"LIBERO\"]').click();expect(page.locator('[data-follow-value=\"LIBERO\"]')).to_have_attribute('aria-pressed','true');page.locator('#radar-manage-query').fill('')"
+          assert old in btc, 'browser tools dataset-follow assumption changed upstream'
+          bt.write_text(btc.replace(old,new))
           subprocess.run(['python','scripts/capture_activity.py','--base',BASE,'--at','2026-09-19T15:45:00Z'],check=True)
           subprocess.run(['python','scripts/build_catalog.py'],check=True)
           PY
