@@ -1,0 +1,18 @@
+{
+  "id": "r-robodojo-v3-simsr-pi05",
+  "paperId": "p034",
+  "method": "pi0.5",
+  "trackId": "robodojo-v3-sim-sr",
+  "values": {
+    "Average SR": 6.91
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2607.04434v3",
+  "sourceVersion": "arXiv 2607.04434v3",
+  "locator": "Table 1",
+  "attribution": "author-reported",
+  "trainingData": "RoboDojo benchmark",
+  "evaluationNotes": "五能力宏平均SR。",
+  "supersedes": ""
+}

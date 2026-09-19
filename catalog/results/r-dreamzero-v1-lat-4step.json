@@ -1,0 +1,18 @@
+{
+  "id": "r-dreamzero-v1-lat-4step",
+  "paperId": "p077",
+  "method": "Original model, 4 steps",
+  "trackId": "dreamzero-v1-latency",
+  "values": {
+    "Latency": 0.35
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2602.15922v1",
+  "sourceVersion": "arXiv 2602.15922v1",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "same evaluation",
+  "evaluationNotes": "原始ms换秒。",
+  "supersedes": ""
+}

@@ -1,0 +1,19 @@
+{
+  "id": "r-robodojo-v3-rand-hy",
+  "paperId": "p034",
+  "method": "Hy-Embodied-0.5-VLA",
+  "trackId": "robodojo-v3-randomization",
+  "values": {
+    "Standard": 21.98,
+    "Random": 1.57
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2607.04434v3",
+  "sourceVersion": "arXiv 2607.04434v3",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "standard/randomized visual settings",
+  "evaluationNotes": "随机场景性能崩塌保留，不只报相对drop。",
+  "supersedes": ""
+}

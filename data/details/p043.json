@@ -67,7 +67,7 @@
   },
   "note": {
     "status": "needs_review",
-    "updatedAt": "2026-09-18",
+    "updatedAt": "2026-09-20",
     "verifiedAt": "2026-09-18",
     "version": "2026-03-30作者供稿技术说明＋IEEE正式摘要；2026-09-18核读；未取得期刊完整正文",
     "sections": [
@@ -240,8 +240,8 @@
     ],
     "benchmarkReview": {
       "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇审计：已复核正式出版摘要与现有作者材料，但完整方法/实验正文仍不可稳定读取；按limited-source编辑政策继续deferred，不把摘要速度字符串或二手数值升格为榜单结果。"
     }
   }
 }

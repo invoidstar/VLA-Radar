@@ -4702,6 +4702,830 @@
         "Accuracy"
       ],
       "source": "https://arxiv.org/abs/2607.11270"
+    },
+    {
+      "id": "fast-v1-training-speedup",
+      "dataset": "FAST training",
+      "name": "FAST v1 · 大规模训练加速上限",
+      "version": "arXiv 2501.09747v1",
+      "tasks": "pi0 VLA on ~10k robot hours",
+      "split": "FAST vs diffusion VLA training",
+      "metric": "Maximum reported training speedup",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "摘要明确“match diffusion VLA performance while reducing training time by up to 5x”；这是训练效率而非闭环频率。",
+      "trainingRegime": "FAST tokenization + pi0；约10k小时机器人数据。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Speedup factor"
+      ],
+      "source": "https://arxiv.org/abs/2501.09747"
+    },
+    {
+      "id": "deltoris-v1-hardware-speedup",
+      "dataset": "Deltoris hardware",
+      "name": "Deltoris v1 · 摘要硬件加速上限",
+      "version": "arXiv 2608.04428v1",
+      "tasks": "diffusion VLA inference",
+      "split": "dedicated accelerator evaluation",
+      "metric": "Maximum reported inference speedup",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "摘要精确报告34.2x与6.1x；专用加速器、RTL/周期模拟条件，不解释为普通GPU软件加速。",
+      "trainingRegime": "算法-硬件协同；非统一闭环任务榜。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "vs mobile GPU",
+        "vs prior accelerator"
+      ],
+      "source": "https://arxiv.org/abs/2608.04428"
+    },
+    {
+      "id": "embcpp-v2-vla-success",
+      "dataset": "Embodied.cpp",
+      "name": "Embodied.cpp v2 · VLA闭环部署成功率",
+      "version": "arXiv 2607.02501v2",
+      "tasks": "two deployed VLA models",
+      "split": "runtime deployment evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "摘要分别报告HY-VLA 100.0%、pi0.5 91.0%；模型/任务路径不同，仅paper-table展示。",
+      "trainingRegime": "Embodied.cpp C++ runtime；模型原配置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/abs/2607.02501"
+    },
+    {
+      "id": "embcpp-v2-wam-block-latency",
+      "dataset": "Embodied.cpp",
+      "name": "Embodied.cpp v2 · LingBot-VA单Transformer块延迟",
+      "version": "arXiv 2607.02501v2",
+      "tasks": "single LingBot-VA Transformer block",
+      "split": "Python BF16 vs C++ Q4_K",
+      "metric": "Single-block latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "3.236ms与3.171ms精确换算秒；同时改变运行时与精度，不归因于C++单因素，也不是完整WAM端到端时延。",
+      "trainingRegime": "Python BF16 vs Embodied.cpp Q4_K。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Latency"
+      ],
+      "source": "https://arxiv.org/html/2607.02501v2"
+    },
+    {
+      "id": "gfvla-2026-basic-ops",
+      "dataset": "GF-VLA real",
+      "name": "GF-VLA · 基础操作成功率",
+      "version": "Information Fusion 131 (2026) 104193",
+      "tasks": "dual-arm block assembly",
+      "split": "490 real-world trials reported across experiments",
+      "metric": "Operation success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "正式摘要明确94%抓取、89%放置；与图准确率/分割准确率分开。",
+      "trainingRegime": "GF-VLA dual-arm execution。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Grasp",
+        "Placement"
+      ],
+      "source": "https://doi.org/10.1016/j.inffus.2026.104193"
+    },
+    {
+      "id": "gfvla-2026-overall-tsr",
+      "dataset": "GF-VLA real",
+      "name": "GF-VLA · 结构化双臂任务总体成功率",
+      "version": "Information Fusion 131 (2026) 104193",
+      "tasks": "four structured dual-arm assembly tasks",
+      "split": "reported overall across scenarios",
+      "metric": "Overall task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "正式摘要明确90% overall task success；不与95%图准确率或93%分割准确率求平均。",
+      "trainingRegime": "GF-VLA dual-arm execution。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Overall"
+      ],
+      "source": "https://doi.org/10.1016/j.inffus.2026.104193"
+    },
+    {
+      "id": "stwam-v1-libero-plus-ablation",
+      "dataset": "LIBERO-Plus",
+      "name": "ST-WAM v1 · Table 5 · 表征与历史消融",
+      "version": "arXiv 2607.28993v1",
+      "tasks": "LIBERO-Plus",
+      "split": "internal ablation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "同论文Table 5；语义未来、双空间和历史检索受控比较。",
+      "trainingRegime": "FastWAM/ST-WAM内部变体。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "SR"
+      ],
+      "source": "https://arxiv.org/html/2607.28993v1"
+    },
+    {
+      "id": "ponder-v2-robomme-base",
+      "dataset": "RoboMME",
+      "name": "PonderPounce v2 · RoboMME基础数据",
+      "version": "arXiv 2608.24115v2",
+      "tasks": "RoboMME",
+      "split": "base-scale training data",
+      "metric": "Average task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "v2摘要明确基础数据结果；相同Pounce接口时比较Ponder模型规模及历史基线。",
+      "trainingRegime": "base-scale data；模型/历史机制按行变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.24115"
+    },
+    {
+      "id": "ponder-v2-robomme-9x",
+      "dataset": "RoboMME",
+      "name": "PonderPounce v2 · RoboMME 9x数据",
+      "version": "arXiv 2608.24115v2",
+      "tasks": "RoboMME",
+      "split": "9x training data",
+      "metric": "Average task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "v2摘要明确PonderPounce 75.54 vs FrameSamp+Modul 57.88；与base-scale分轨。",
+      "trainingRegime": "9x data。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.24115"
+    },
+    {
+      "id": "ponder-v2-cognition-ablation",
+      "dataset": "RoboMME",
+      "name": "PonderPounce v2 · 连续认知通道消融",
+      "version": "arXiv 2608.24115v2",
+      "tasks": "RoboMME",
+      "split": "base-scale controlled ablation",
+      "metric": "Average task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table III；文本子目标采用不同训练路径，数值不单独证明连续接口显著更优。",
+      "trainingRegime": "base-scale controlled ablation。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.24115v2"
+    },
+    {
+      "id": "recap-v2-throughput-factor",
+      "dataset": "RECAP real",
+      "name": "pi*0.6 / RECAP v2 · 困难任务吞吐提升",
+      "version": "arXiv 2511.14759v2",
+      "tasks": "laundry / long-horizon box assembly",
+      "split": "real deployment iterations",
+      "metric": "Reported throughput factor relative to pre-RECAP reference",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "正文精确描述laundry +50%与box assembly 2x；分别记为1.5x与2.0x，属于不同任务，不求平均。",
+      "trainingRegime": "RECAP含on-policy数据与专家纠正。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Laundry factor",
+        "Box-assembly factor"
+      ],
+      "source": "https://arxiv.org/html/2511.14759v2"
+    },
+    {
+      "id": "recap-v2-targeted-failure-success",
+      "dataset": "RECAP real",
+      "name": "pi*0.6 / RECAP v2 · 定向失败消除成功率",
+      "version": "arXiv 2511.14759v2",
+      "tasks": "targeted failure-removal task",
+      "split": "two iterations; 600 trajectories each iteration",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "正文明确两轮后97%成功率；每轮收集600条轨迹。不是全任务统一成功率。",
+      "trainingRegime": "RECAP targeted failure-removal experiment。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2511.14759v2"
+    },
+    {
+      "id": "meco-v1-robotwin",
+      "dataset": "RoboTwin",
+      "name": "MECo-WAM v1 · RoboTwin clean/random",
+      "version": "arXiv 2607.05468v1",
+      "tasks": "RoboTwin 2.0",
+      "split": "clean / randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Fast-WAM与MECo-WAM同文比较；辅助4D专家部署时移除。",
+      "trainingRegime": "同文WAM设置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random"
+      ],
+      "source": "https://arxiv.org/abs/2607.05468"
+    },
+    {
+      "id": "meco-v1-real-success",
+      "dataset": "MECo-WAM real",
+      "name": "MECo-WAM v1 · 真实任务成功率",
+      "version": "arXiv 2607.05468v1",
+      "tasks": "stack blocks / sort by size",
+      "split": "paper real-robot trials",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "真实两任务；缺失组合不按零处理。",
+      "trainingRegime": "Fast-WAM vs MECo-WAM。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Stack blocks",
+        "Sort by size"
+      ],
+      "source": "https://arxiv.org/html/2607.05468v1"
+    },
+    {
+      "id": "meco-v1-real-corrections",
+      "dataset": "MECo-WAM real",
+      "name": "MECo-WAM v1 · 叠方块纠正次数",
+      "version": "arXiv 2607.05468v1",
+      "tasks": "stack blocks",
+      "split": "same real-robot setting",
+      "metric": "Average correction count",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "纠正次数越低越好，与成功率分轨。",
+      "trainingRegime": "Fast-WAM vs MECo-WAM。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Corrections"
+      ],
+      "source": "https://arxiv.org/html/2607.05468v1"
+    },
+    {
+      "id": "gemini-er-v1-aloha2-sim",
+      "dataset": "ALOHA2 sim",
+      "name": "Gemini Robotics-ER v1 · Table 5 · 代码控制",
+      "version": "arXiv 2503.20020v1",
+      "tasks": "7 simulation tasks",
+      "split": "50 random initializations per task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "这是Gemini Robotics-ER的ALOHA2仿真代码控制，不是主VLA真实机器人动作模型榜。",
+      "trainingRegime": "Gemini 2.0 Flash vs Gemini Robotics-ER。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Zero-shot code",
+        "In-context demos"
+      ],
+      "source": "https://arxiv.org/html/2503.20020v1"
+    },
+    {
+      "id": "dreamzero-v1-progress",
+      "dataset": "DreamZero real",
+      "name": "DreamZero v1 · Table 3 · 收桌面Task Progress",
+      "version": "arXiv 2602.15922v1",
+      "tasks": "table-clearing task",
+      "split": "4-step vs 1-step / Flash",
+      "metric": "Task progress",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Task Progress不是最终二值SR；±标准误保留在说明，不塞进主值。",
+      "trainingRegime": "原模型/Flash不同采样配置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Task Progress"
+      ],
+      "source": "https://arxiv.org/html/2602.15922v1"
+    },
+    {
+      "id": "dreamzero-v1-latency",
+      "dataset": "DreamZero real",
+      "name": "DreamZero v1 · Table 3 · 单次模型延迟",
+      "version": "arXiv 2602.15922v1",
+      "tasks": "table-clearing task",
+      "split": "same Table 3",
+      "metric": "Model latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "350/150ms精确换算秒；不是完整机器人回路端到端延迟。",
+      "trainingRegime": "原模型/Flash不同采样配置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Latency"
+      ],
+      "source": "https://arxiv.org/html/2602.15922v1"
+    },
+    {
+      "id": "adavla-v2-libero-sr",
+      "dataset": "LIBERO",
+      "name": "AdaVLA v2 · Table III · pi0.5组件/阈值成功率",
+      "version": "arXiv 2608.29208v2",
+      "tasks": "LIBERO",
+      "split": "Jetson AGX Orin; pi0.5 ablation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table III全行保存；不同ODE步数/剪枝/阈值分行。",
+      "trainingRegime": "training-free inference variants。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.29208v2"
+    },
+    {
+      "id": "adavla-v2-libero-latency",
+      "dataset": "LIBERO",
+      "name": "AdaVLA v2 · Table III · pi0.5组件/阈值片段延迟",
+      "version": "arXiv 2608.29208v2",
+      "tasks": "LIBERO",
+      "split": "Jetson AGX Orin; pi0.5 ablation",
+      "metric": "Action-chunk latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "Table III ms精确×0.001；指定Orin硬件与pi0.5配置。",
+      "trainingRegime": "training-free inference variants。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Latency"
+      ],
+      "source": "https://arxiv.org/html/2608.29208v2"
+    },
+    {
+      "id": "dyna2-2026-scaling",
+      "dataset": "Dyna-2 real",
+      "name": "Dyna-2 · 14任务人类视频预训练规模律",
+      "version": "Dyna official technical report Aug 2026",
+      "tasks": "14 real robot tasks",
+      "split": "matched post-training at four human-video scales",
+      "metric": "Mean normalized on-robot performance",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "1k/10k/100k/1M小时为嵌套人类视频集合；每级相同机器人后训练配方。",
+      "trainingRegime": "每任务最多10小时机器人后训练；14任务宏观归一化表现。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Normalized performance"
+      ],
+      "source": "https://www.dyna.co/dyna-2"
+    },
+    {
+      "id": "dyna2-2026-customer-pass",
+      "dataset": "Dyna-2 real",
+      "name": "Dyna-2 · 客户现场零样本production pass",
+      "version": "Dyna official technical report Aug 2026",
+      "tasks": "production deployment tasks",
+      "split": "matched post-training; unseen customer sites",
+      "metric": "Production pass-criteria rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方报告Dyna-1 46%、Dyna-2 87%；相同后训练预算，现场数据未参与训练。",
+      "trainingRegime": "Dyna-1 vs early Dyna-2 matched comparison。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "On-site pass"
+      ],
+      "source": "https://www.dyna.co/dyna-2"
+    },
+    {
+      "id": "mimic-v2-simpler",
+      "dataset": "SimplerEnv",
+      "name": "mimic-video v2 · SIMPLER四任务平均",
+      "version": "arXiv 2512.15692v2 / RSS 2026",
+      "tasks": "4 SIMPLER tasks",
+      "split": "default vs per-task tau_v",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "默认配置与逐任务tau_v调节分开保留；后者不是统一超参结果。",
+      "trainingRegime": "内部pi0.5-style参考与mimic-video。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2512.15692v2"
+    },
+    {
+      "id": "mimic-v2-libero3",
+      "dataset": "LIBERO",
+      "name": "mimic-video v2 · LIBERO三套件平均",
+      "version": "arXiv 2512.15692v2 / RSS 2026",
+      "tasks": "3 suites excluding Long",
+      "split": "paper-reported average",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "该表不含Long；未报告项不按零。",
+      "trainingRegime": "内部参考、mimic-video、外部OpenVLA-OFT。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2512.15692v2"
+    },
+    {
+      "id": "vlatalker-v1-libero",
+      "dataset": "LIBERO",
+      "name": "VLA-Talker v1 · Tables 1–2 · Gen-CoT对照",
+      "version": "arXiv 2608.05738v1",
+      "tasks": "LIBERO four suites",
+      "split": "paper main protocol",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "只录可核验LIBERO平均与Long；RoboCasa汇总口径不在此补造。",
+      "trainingRegime": "Gen-CoT vs VLA-Talker。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average",
+        "Long"
+      ],
+      "source": "https://arxiv.org/html/2608.05738v1"
+    },
+    {
+      "id": "sparkvla-v1-task-sr",
+      "dataset": "RoboCerebra",
+      "name": "SparkVLA v1 · Table 3 · 层级选择任务成功率",
+      "version": "arXiv 2608.16172v1",
+      "tasks": "RoboCerebra long-horizon",
+      "split": "internal decision ablation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "固定长度/AQC/配对排名/统一排名受控比较。",
+      "trainingRegime": "同文层级VLA决策接口。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "SR"
+      ],
+      "source": "https://arxiv.org/html/2608.16172v1"
+    },
+    {
+      "id": "sparkvla-v1-stop-acc",
+      "dataset": "RoboCerebra",
+      "name": "SparkVLA v1 · Table 3 · Stop准确率",
+      "version": "arXiv 2608.16172v1",
+      "tasks": "RoboCerebra long-horizon",
+      "split": "same ablation",
+      "metric": "Stop decision accuracy",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Stop准确率与整任务SR是不同指标，分轨。",
+      "trainingRegime": "同文层级VLA决策接口。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Accuracy"
+      ],
+      "source": "https://arxiv.org/html/2608.16172v1"
+    },
+    {
+      "id": "otql-v1-single-policy",
+      "dataset": "OTQL real",
+      "name": "OTQL v1 · 单任务flow policy经验后训练",
+      "version": "arXiv 2607.06262v1",
+      "tasks": "single-task policies",
+      "split": "50-60 interaction episodes",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "摘要报告平均36%→86%；需要在线交互/RL后训练，不是training-free。",
+      "trainingRegime": "same single-task policy before/after OTQL。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/abs/2607.06262"
+    },
+    {
+      "id": "otql-v1-pretrained-vla",
+      "dataset": "OTQL real",
+      "name": "OTQL v1 · 预训练VLA经验后训练",
+      "version": "arXiv 2607.06262v1",
+      "tasks": "pretrained VLA tasks",
+      "split": "50-60 interaction episodes",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "摘要报告38%→76%；与单任务policy分轨。",
+      "trainingRegime": "same pretrained VLA before/after OTQL。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/abs/2607.06262"
+    },
+    {
+      "id": "track4action-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "Track4Action v1 · 零样本LIBERO-Plus",
+      "version": "arXiv 2608.03727v1",
+      "tasks": "LIBERO-Plus",
+      "split": "zero-shot perturbation evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "无3D对齐74.7→Track4Action82.3；部署时不运行tracker。",
+      "trainingRegime": "alignment-free vs Track4Action。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.03727"
+    },
+    {
+      "id": "track4action-v1-real",
+      "dataset": "Track4Action real",
+      "name": "Track4Action v1 · 四个真实双臂任务",
+      "version": "arXiv 2608.03727v1",
+      "tasks": "4 bimanual tasks",
+      "split": "physical evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "四任务平均42.5→67.5；不是任意真实任务总体。",
+      "trainingRegime": "alignment-free vs Track4Action。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.03727"
+    },
+    {
+      "id": "track4action-v1-robotwin",
+      "dataset": "RoboTwin",
+      "name": "Track4Action v1 · RoboTwin 2.0",
+      "version": "arXiv 2608.03727v1",
+      "tasks": "RoboTwin 2.0",
+      "split": "clean / randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "摘要明确Track4Action 80.44/81.48；未取得同段精确基线时不补0。",
+      "trainingRegime": "Track4Action reported configuration。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random"
+      ],
+      "source": "https://arxiv.org/abs/2608.03727"
+    },
+    {
+      "id": "w2vla-v1-libero",
+      "dataset": "LIBERO",
+      "name": "World-to-Wrist v1 · LIBERO平均",
+      "version": "arXiv 2608.05369v1",
+      "tasks": "LIBERO",
+      "split": "paper main comparison",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "W2-VLA 98.5 vs StarVLA 96.5；论文原表对照。",
+      "trainingRegime": "各方法原配置。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.05369"
+    },
+    {
+      "id": "w2vla-v1-robotwin2500",
+      "dataset": "RoboTwin",
+      "name": "World-to-Wrist v1 · RoboTwin 2500-demo协议",
+      "version": "arXiv 2608.05369v1",
+      "tasks": "RoboTwin Easy / Hard",
+      "split": "2,500 demonstrations protocol",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "特定2,500条示范协议；不能与含大规模random训练的90%级RoboTwin结果混排。",
+      "trainingRegime": "W2-VLA vs UP-VLA。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Hard"
+      ],
+      "source": "https://arxiv.org/abs/2608.05369"
+    },
+    {
+      "id": "w2vla-v1-chunk-latency",
+      "dataset": "World-to-Wrist inference",
+      "name": "World-to-Wrist v1 · 附录D.3片段生成时间",
+      "version": "arXiv 2608.05369v1",
+      "tasks": "action chunk generation",
+      "split": "chunk lengths differ by method",
+      "metric": "Action-chunk generation time",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "183/417.55/68.55ms精确换秒；chunk长度16/50/7不同，因此不等于统一闭环Hz。",
+      "trainingRegime": "W2-VLA / pi0 / VLA-JEPA reported setups。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Latency"
+      ],
+      "source": "https://arxiv.org/abs/2608.05369"
+    },
+    {
+      "id": "robodojo-v3-sim-score",
+      "dataset": "RoboDojo",
+      "name": "RoboDojo v3 · Simulation平均Score",
+      "version": "arXiv 2607.04434v3",
+      "tasks": "42 simulation tasks / five capability dimensions",
+      "split": "leaderboard frozen 2026-07-03",
+      "metric": "RoboDojo Score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table 1平均Score；不是百分比SR。",
+      "trainingRegime": "RoboDojo统一benchmark，模型训练配方不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average Score"
+      ],
+      "source": "https://arxiv.org/html/2607.04434v3"
+    },
+    {
+      "id": "robodojo-v3-sim-sr",
+      "dataset": "RoboDojo",
+      "name": "RoboDojo v3 · Simulation平均SR",
+      "version": "arXiv 2607.04434v3",
+      "tasks": "42 simulation tasks / five capability dimensions",
+      "split": "leaderboard frozen 2026-07-03",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1平均SR，与Score分轨。",
+      "trainingRegime": "RoboDojo统一benchmark。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average SR"
+      ],
+      "source": "https://arxiv.org/html/2607.04434v3"
+    },
+    {
+      "id": "robodojo-v3-real-score",
+      "dataset": "RoboDojo real",
+      "name": "RoboDojo v3 · RealEval平均Score",
+      "version": "arXiv 2607.04434v3",
+      "tasks": "18 real tasks / three embodiments",
+      "split": "standardized real evaluation",
+      "metric": "RoboDojo real-world score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table 2 overall score；partial progress与二值成功分开。",
+      "trainingRegime": "RoboDojo-RealEval。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Overall Score"
+      ],
+      "source": "https://arxiv.org/html/2607.04434v3"
+    },
+    {
+      "id": "robodojo-v3-real-sr",
+      "dataset": "RoboDojo real",
+      "name": "RoboDojo v3 · RealEval平均SR",
+      "version": "arXiv 2607.04434v3",
+      "tasks": "18 real tasks / three embodiments",
+      "split": "standardized real evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 2 overall SR。",
+      "trainingRegime": "RoboDojo-RealEval。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Overall SR"
+      ],
+      "source": "https://arxiv.org/html/2607.04434v3"
+    },
+    {
+      "id": "robodojo-v3-randomization",
+      "dataset": "RoboDojo",
+      "name": "RoboDojo v3 · Standard/Random Score",
+      "version": "arXiv 2607.04434v3",
+      "tasks": "simulation visual shifts",
+      "split": "standard vs randomized visual settings",
+      "metric": "RoboDojo Score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table 3；scene randomization造成显著崩塌，保留绝对Random分数。",
+      "trainingRegime": "同一policy standard/random。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Standard",
+        "Random"
+      ],
+      "source": "https://arxiv.org/html/2607.04434v3"
+    },
+    {
+      "id": "baton-v1-task-success",
+      "dataset": "RoboMemArena",
+      "name": "BATON v1 · Table 1 · 任务成功与Transferring",
+      "version": "arXiv 2608.16889v1",
+      "tasks": "RoboMemArena long-horizon",
+      "split": "paper main comparison",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "BATON总体57.7最高，但Transferring 39.4低于两个基线，负面切面保留。",
+      "trainingRegime": "FrameSamp+Modul / Harness VLA / BATON。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average TSR",
+        "Transferring TSR"
+      ],
+      "source": "https://arxiv.org/html/2608.16889v1"
+    },
+    {
+      "id": "baton-v1-cumulative",
+      "dataset": "RoboMemArena",
+      "name": "BATON v1 · Table 1 · 累计成功指标",
+      "version": "arXiv 2608.16889v1",
+      "tasks": "RoboMemArena long-horizon",
+      "split": "same comparison",
+      "metric": "Cumulative success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "CSR与整任务TSR分轨。",
+      "trainingRegime": "same comparison。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average CSR"
+      ],
+      "source": "https://arxiv.org/html/2608.16889v1"
+    },
+    {
+      "id": "lingbot-v2-robotwin",
+      "dataset": "RoboTwin",
+      "name": "LingBot-VA v2 · RoboTwin 50任务主结果",
+      "version": "arXiv 2601.21998v2",
+      "tasks": "50 tasks",
+      "split": "Easy / Hard; 2500 clean + 25000 randomized demos",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "当前v2 Table主结果；训练预算明确。",
+      "trainingRegime": "Motus vs LingBot-VA。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Hard"
+      ],
+      "source": "https://arxiv.org/html/2601.21998v2"
+    },
+    {
+      "id": "lingbot-v2-async",
+      "dataset": "RoboTwin",
+      "name": "LingBot-VA v2 · Table 3 · 异步部署消融",
+      "version": "arXiv 2601.21998v2",
+      "tasks": "RoboTwin Easy",
+      "split": "all tasks / three-stage tasks",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "FDM异步90.4/85.6仍低于同步92.9/93.2；不能称严格无损。",
+      "trainingRegime": "same LingBot-VA, deployment mode changes。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy all",
+        "Easy horizon=3"
+      ],
+      "source": "https://arxiv.org/html/2601.21998v2"
+    },
+    {
+      "id": "mvp-v1-pixmc-textual-count",
+      "dataset": "PixMC",
+      "name": "MVP v1 · PixMC正文定性计数",
+      "version": "arXiv 2203.06173v1",
+      "tasks": "8 PixMC tasks",
+      "split": "frozen representation + RL control",
+      "metric": "Count of 8 tasks satisfying textual outcome",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "正文明确7/8优于监督表示、5/8接近state oracle；原论文主要曲线，不从图高生成精确任务分数。",
+      "trainingRegime": "MVP frozen visual representation。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Outperform supervised count",
+        "Near state-oracle count"
+      ],
+      "source": "https://arxiv.org/abs/2203.06173"
     }
   ],
   "results": [
@@ -5039,6 +5863,513 @@
       "attribution": "author-reported",
       "trainingData": "每任务π0.5，5000步、batch128、4×H100；150示范（100成功+50恢复），two-view480×640转224；不把恢复示范剔除出数据预算。",
       "evaluationNotes": "表头ms→seconds除1000；原始head/overall分别56.7/103.13 (base)与35.06/81.9 (cache) ms。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-b1",
+      "paperId": "p030",
+      "method": "Baseline, 1 step",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.44745
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-b10",
+      "paperId": "p030",
+      "method": "Baseline, 10 steps",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.95854
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-b5",
+      "paperId": "p030",
+      "method": "Baseline, 5 steps",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.67756
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-brand",
+      "paperId": "p030",
+      "method": "Baseline, random steps",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.69413
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-fixed-adp",
+      "paperId": "p030",
+      "method": "Fixed pruning + Adaptive",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.492
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-noprun-adp",
+      "paperId": "p030",
+      "method": "No pruning + Adaptive",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.53232
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-pr-adp15",
+      "paperId": "p030",
+      "method": "PR + Adaptive, threshold 0.15",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.51335
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-pr-adp20",
+      "paperId": "p030",
+      "method": "PR + Adaptive, threshold 0.20",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.42824
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-pr-adp25",
+      "paperId": "p030",
+      "method": "PR + Adaptive, threshold 0.25",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.41326
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-pr-noadp",
+      "paperId": "p030",
+      "method": "PR only, no Adaptive",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.92571
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-lat-svd-adp",
+      "paperId": "p030",
+      "method": "SVD + Adaptive",
+      "trackId": "adavla-v2-libero-latency",
+      "values": {
+        "Latency": 0.89478
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "原始ms精确换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-b1",
+      "paperId": "p030",
+      "method": "Baseline, 1 step",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 97.05
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-b10",
+      "paperId": "p030",
+      "method": "Baseline, 10 steps",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 98.65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-b5",
+      "paperId": "p030",
+      "method": "Baseline, 5 steps",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 98.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-brand",
+      "paperId": "p030",
+      "method": "Baseline, random steps",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 98.65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-fixed-adp",
+      "paperId": "p030",
+      "method": "Fixed pruning + Adaptive",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 99.35
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-noprun-adp",
+      "paperId": "p030",
+      "method": "No pruning + Adaptive",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 98.65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-pr-adp15",
+      "paperId": "p030",
+      "method": "PR + Adaptive, threshold 0.15",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 99.45
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-pr-adp20",
+      "paperId": "p030",
+      "method": "PR + Adaptive, threshold 0.20",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 99.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-pr-adp25",
+      "paperId": "p030",
+      "method": "PR + Adaptive, threshold 0.25",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 98.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-pr-noadp",
+      "paperId": "p030",
+      "method": "PR only, no Adaptive",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 99.25
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-adavla-v2-sr-svd-adp",
+      "paperId": "p030",
+      "method": "SVD + Adaptive",
+      "trackId": "adavla-v2-libero-sr",
+      "values": {
+        "Average": 99.65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.29208v2",
+      "sourceVersion": "arXiv 2608.29208v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "pi0.5 on Jetson AGX Orin",
+      "evaluationNotes": "成功率与延迟分轨；阈值更激进时98.40低于10步基线98.65，保留退化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-baton-v1-csr-baton",
+      "paperId": "p016",
+      "method": "BATON",
+      "trackId": "baton-v1-cumulative",
+      "values": {
+        "Average CSR": 78.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16889v1",
+      "sourceVersion": "arXiv 2608.16889v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboMemArena",
+      "evaluationNotes": "CSR非整任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-baton-v1-csr-frame",
+      "paperId": "p016",
+      "method": "FrameSamp+Modul",
+      "trackId": "baton-v1-cumulative",
+      "values": {
+        "Average CSR": 63.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16889v1",
+      "sourceVersion": "arXiv 2608.16889v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboMemArena",
+      "evaluationNotes": "CSR非整任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-baton-v1-csr-harness",
+      "paperId": "p016",
+      "method": "Harness VLA",
+      "trackId": "baton-v1-cumulative",
+      "values": {
+        "Average CSR": 38.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16889v1",
+      "sourceVersion": "arXiv 2608.16889v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboMemArena",
+      "evaluationNotes": "CSR非整任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-baton-v1-tsr-baton",
+      "paperId": "p016",
+      "method": "BATON",
+      "trackId": "baton-v1-task-success",
+      "values": {
+        "Average TSR": 57.7,
+        "Transferring TSR": 39.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16889v1",
+      "sourceVersion": "arXiv 2608.16889v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboMemArena",
+      "evaluationNotes": "BATON Transferring 39.4低于基线63.8/50.0，明确保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-baton-v1-tsr-frame",
+      "paperId": "p016",
+      "method": "FrameSamp+Modul",
+      "trackId": "baton-v1-task-success",
+      "values": {
+        "Average TSR": 46.1,
+        "Transferring TSR": 63.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16889v1",
+      "sourceVersion": "arXiv 2608.16889v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboMemArena",
+      "evaluationNotes": "BATON Transferring 39.4低于基线63.8/50.0，明确保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-baton-v1-tsr-harness",
+      "paperId": "p016",
+      "method": "Harness VLA",
+      "trackId": "baton-v1-task-success",
+      "values": {
+        "Average TSR": 26.9,
+        "Transferring TSR": 50.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16889v1",
+      "sourceVersion": "arXiv 2608.16889v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboMemArena",
+      "evaluationNotes": "BATON Transferring 39.4低于基线63.8/50.0，明确保留。",
       "supersedes": ""
     },
     {
@@ -6479,6 +7810,25 @@
       "supersedes": ""
     },
     {
+      "id": "r-deltoris-v1-speed",
+      "paperId": "p032",
+      "method": "Deltoris",
+      "trackId": "deltoris-v1-hardware-speedup",
+      "values": {
+        "vs mobile GPU": 34.2,
+        "vs prior accelerator": 6.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.04428",
+      "sourceVersion": "arXiv 2608.04428v1",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "dedicated accelerator",
+      "evaluationNotes": "摘要headline；正文另有更高局部数字冲突，本站不替换摘要口径。",
+      "supersedes": ""
+    },
+    {
       "paperId": "p070",
       "trackId": "dexmg-gr00t-appendix-30",
       "evidence": "checked",
@@ -7103,6 +8453,114 @@
       "supersedes": ""
     },
     {
+      "id": "r-dreamzero-v1-lat-1step",
+      "paperId": "p077",
+      "method": "Original model, 1 step",
+      "trackId": "dreamzero-v1-latency",
+      "values": {
+        "Latency": 0.15
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2602.15922v1",
+      "sourceVersion": "arXiv 2602.15922v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same evaluation",
+      "evaluationNotes": "原始ms换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dreamzero-v1-lat-4step",
+      "paperId": "p077",
+      "method": "Original model, 4 steps",
+      "trackId": "dreamzero-v1-latency",
+      "values": {
+        "Latency": 0.35
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2602.15922v1",
+      "sourceVersion": "arXiv 2602.15922v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same evaluation",
+      "evaluationNotes": "原始ms换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dreamzero-v1-lat-flash",
+      "paperId": "p077",
+      "method": "DreamZero-Flash, 1 step",
+      "trackId": "dreamzero-v1-latency",
+      "values": {
+        "Latency": 0.15
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2602.15922v1",
+      "sourceVersion": "arXiv 2602.15922v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same evaluation",
+      "evaluationNotes": "原始ms换秒。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dreamzero-v1-progress-1step",
+      "paperId": "p077",
+      "method": "Original model, 1 step",
+      "trackId": "dreamzero-v1-progress",
+      "values": {
+        "Task Progress": 52
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2602.15922v1",
+      "sourceVersion": "arXiv 2602.15922v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "table-clearing evaluation",
+      "evaluationNotes": "点估计；标准误不改变主值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dreamzero-v1-progress-4step",
+      "paperId": "p077",
+      "method": "Original model, 4 steps",
+      "trackId": "dreamzero-v1-progress",
+      "values": {
+        "Task Progress": 83
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2602.15922v1",
+      "sourceVersion": "arXiv 2602.15922v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "table-clearing evaluation",
+      "evaluationNotes": "点估计；标准误不改变主值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dreamzero-v1-progress-flash",
+      "paperId": "p077",
+      "method": "DreamZero-Flash, 1 step",
+      "trackId": "dreamzero-v1-progress",
+      "values": {
+        "Task Progress": 74
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2602.15922v1",
+      "sourceVersion": "arXiv 2602.15922v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "table-clearing evaluation",
+      "evaluationNotes": "点估计；标准误不改变主值。",
+      "supersedes": ""
+    },
+    {
       "id": "r-droid-v2-real-figure10-diversity-20-scenes",
       "paperId": "p062",
       "method": "Diffusion Policy／DROID 7k・20场景",
@@ -7476,6 +8934,204 @@
       "supersedes": ""
     },
     {
+      "id": "r-dyna2-scale-100k",
+      "paperId": "p005",
+      "method": "100k hours",
+      "trackId": "dyna2-2026-scaling",
+      "values": {
+        "Normalized performance": 45
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.dyna.co/dyna-2",
+      "sourceVersion": "Dyna official technical report Aug 2026",
+      "locator": "§3.3 / Figure scaling discussion",
+      "attribution": "author-reported",
+      "trainingData": "matched robot post-training",
+      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dyna2-scale-10k",
+      "paperId": "p005",
+      "method": "10k hours",
+      "trackId": "dyna2-2026-scaling",
+      "values": {
+        "Normalized performance": 28
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.dyna.co/dyna-2",
+      "sourceVersion": "Dyna official technical report Aug 2026",
+      "locator": "§3.3 / Figure scaling discussion",
+      "attribution": "author-reported",
+      "trainingData": "matched robot post-training",
+      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dyna2-scale-1k",
+      "paperId": "p005",
+      "method": "1k human-video hours",
+      "trackId": "dyna2-2026-scaling",
+      "values": {
+        "Normalized performance": 20
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.dyna.co/dyna-2",
+      "sourceVersion": "Dyna official technical report Aug 2026",
+      "locator": "§3.3 / Figure scaling discussion",
+      "attribution": "author-reported",
+      "trainingData": "matched robot post-training",
+      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dyna2-scale-1m",
+      "paperId": "p005",
+      "method": "1M hours",
+      "trackId": "dyna2-2026-scaling",
+      "values": {
+        "Normalized performance": 53
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.dyna.co/dyna-2",
+      "sourceVersion": "Dyna official technical report Aug 2026",
+      "locator": "§3.3 / Figure scaling discussion",
+      "attribution": "author-reported",
+      "trainingData": "matched robot post-training",
+      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dyna2-site-d1",
+      "paperId": "p005",
+      "method": "Dyna-1",
+      "trackId": "dyna2-2026-customer-pass",
+      "values": {
+        "On-site pass": 46
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.dyna.co/dyna-2",
+      "sourceVersion": "Dyna official technical report Aug 2026",
+      "locator": "§4.2 / Figure 14",
+      "attribution": "author-reported",
+      "trainingData": "matched pre/post-training; unseen customer sites",
+      "evaluationNotes": "官方现场验收pass rate；in-house接近100为近似值未入榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dyna2-site-d2",
+      "paperId": "p005",
+      "method": "Dyna-2",
+      "trackId": "dyna2-2026-customer-pass",
+      "values": {
+        "On-site pass": 87
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.dyna.co/dyna-2",
+      "sourceVersion": "Dyna official technical report Aug 2026",
+      "locator": "§4.2 / Figure 14",
+      "attribution": "author-reported",
+      "trainingData": "matched pre/post-training; unseen customer sites",
+      "evaluationNotes": "官方现场验收pass rate；in-house接近100为近似值未入榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-embcpp-v2-blocklat-cpp",
+      "paperId": "p031",
+      "method": "Embodied.cpp Q4_K",
+      "trackId": "embcpp-v2-wam-block-latency",
+      "values": {
+        "Latency": 0.003171
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.02501v2",
+      "sourceVersion": "arXiv 2607.02501v2",
+      "locator": "WAM block benchmark",
+      "attribution": "author-reported",
+      "trainingData": "single LingBot-VA Transformer block",
+      "evaluationNotes": "原文ms精确×0.001；量化和runtime同时变化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-embcpp-v2-blocklat-py",
+      "paperId": "p031",
+      "method": "Python BF16",
+      "trackId": "embcpp-v2-wam-block-latency",
+      "values": {
+        "Latency": 0.003236
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.02501v2",
+      "sourceVersion": "arXiv 2607.02501v2",
+      "locator": "WAM block benchmark",
+      "attribution": "author-reported",
+      "trainingData": "single LingBot-VA Transformer block",
+      "evaluationNotes": "原文ms精确×0.001；量化和runtime同时变化。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-embcpp-v2-success-hy",
+      "paperId": "p031",
+      "method": "HY-VLA",
+      "trackId": "embcpp-v2-vla-success",
+      "values": {
+        "Success": 100.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.02501",
+      "sourceVersion": "arXiv 2607.02501v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "Embodied.cpp runtime",
+      "evaluationNotes": "闭环成功率作者报告；两种VLA不是同任务/同模型配置的严格单因素消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-embcpp-v2-success-pi05",
+      "paperId": "p031",
+      "method": "pi0.5",
+      "trackId": "embcpp-v2-vla-success",
+      "values": {
+        "Success": 91.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.02501",
+      "sourceVersion": "arXiv 2607.02501v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "Embodied.cpp runtime",
+      "evaluationNotes": "闭环成功率作者报告；两种VLA不是同任务/同模型配置的严格单因素消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-fast-v1-train-speed",
+      "paperId": "p067",
+      "method": "FAST + pi0",
+      "trackId": "fast-v1-training-speedup",
+      "values": {
+        "Speedup factor": 5.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2501.09747",
+      "sourceVersion": "arXiv 2501.09747v1",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "~10k hours robot data",
+      "evaluationNotes": "“up to 5x”训练时间缩短；不是推理或控制频率。",
+      "supersedes": ""
+    },
+    {
       "id": "r-flashvla-v1-inference-latency-flash",
       "paperId": "p029",
       "method": "FlashVLA",
@@ -7536,6 +9192,81 @@
       "attribution": "reported-baseline",
       "trainingData": "采用本文已微调策略；不把微调、缓存冷启动与系统优化成本隐去；运行条件仅对应本表。",
       "evaluationNotes": "原值ms=[29.2, 38.9, 26.6, 34.2]，存seconds需除1000；基于各自列的比较，不能将四列作统一硬件排行榜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-gemini-er-v1-er",
+      "paperId": "p071",
+      "method": "Gemini Robotics-ER",
+      "trackId": "gemini-er-v1-aloha2-sim",
+      "values": {
+        "Zero-shot code": 53,
+        "In-context demos": 65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2503.20020v1",
+      "sourceVersion": "arXiv 2503.20020v1",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "ALOHA2 simulation code-control",
+      "evaluationNotes": "七任务×50随机初始条件；两列控制方式不同。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-gemini-er-v1-flash",
+      "paperId": "p071",
+      "method": "Gemini 2.0 Flash",
+      "trackId": "gemini-er-v1-aloha2-sim",
+      "values": {
+        "Zero-shot code": 27,
+        "In-context demos": 51
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2503.20020v1",
+      "sourceVersion": "arXiv 2503.20020v1",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "ALOHA2 simulation code-control",
+      "evaluationNotes": "七任务×50随机初始条件；两列控制方式不同。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-gfvla-ops",
+      "paperId": "p045",
+      "method": "GF-VLA",
+      "trackId": "gfvla-2026-basic-ops",
+      "values": {
+        "Grasp": 94.0,
+        "Placement": 89.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://doi.org/10.1016/j.inffus.2026.104193",
+      "sourceVersion": "Information Fusion 131 (2026) 104193",
+      "locator": "Published abstract",
+      "attribution": "author-reported",
+      "trainingData": "490 real-world trials across study",
+      "evaluationNotes": "抓取/放置为不同基础操作。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-gfvla-overall",
+      "paperId": "p045",
+      "method": "GF-VLA",
+      "trackId": "gfvla-2026-overall-tsr",
+      "values": {
+        "Overall": 90.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://doi.org/10.1016/j.inffus.2026.104193",
+      "sourceVersion": "Information Fusion 131 (2026) 104193",
+      "locator": "Published abstract",
+      "attribution": "author-reported",
+      "trainingData": "four structured dual-arm tasks",
+      "evaluationNotes": "正式摘要的overall task success。",
       "supersedes": ""
     },
     {
@@ -12355,6 +14086,101 @@
       "supersedes": ""
     },
     {
+      "id": "r-lingbot-v2-async-fdm",
+      "paperId": "p037",
+      "method": "FDM-grounded async",
+      "trackId": "lingbot-v2-async",
+      "values": {
+        "Easy all": 90.4,
+        "Easy horizon=3": 85.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2601.21998v2",
+      "sourceVersion": "arXiv 2601.21998v2",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same model, deployment ablation",
+      "evaluationNotes": "FDM缓解但仍未达到同步。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lingbot-v2-async-naive",
+      "paperId": "p037",
+      "method": "Naive async",
+      "trackId": "lingbot-v2-async",
+      "values": {
+        "Easy all": 74.3,
+        "Easy horizon=3": 32.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2601.21998v2",
+      "sourceVersion": "arXiv 2601.21998v2",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same model, deployment ablation",
+      "evaluationNotes": "FDM缓解但仍未达到同步。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lingbot-v2-async-sync",
+      "paperId": "p037",
+      "method": "LingBot-VA sync",
+      "trackId": "lingbot-v2-async",
+      "values": {
+        "Easy all": 92.9,
+        "Easy horizon=3": 93.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2601.21998v2",
+      "sourceVersion": "arXiv 2601.21998v2",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same model, deployment ablation",
+      "evaluationNotes": "FDM缓解但仍未达到同步。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lingbot-v2-rt-ling",
+      "paperId": "p037",
+      "method": "LingBot-VA",
+      "trackId": "lingbot-v2-robotwin",
+      "values": {
+        "Easy": 92.93,
+        "Hard": 91.55
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2601.21998v2",
+      "sourceVersion": "arXiv 2601.21998v2",
+      "locator": "RoboTwin main table",
+      "attribution": "author-reported",
+      "trainingData": "2,500 clean +25,000 randomized demos",
+      "evaluationNotes": "50任务平均。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lingbot-v2-rt-motus",
+      "paperId": "p037",
+      "method": "Motus",
+      "trackId": "lingbot-v2-robotwin",
+      "values": {
+        "Easy": 88.7,
+        "Hard": 87.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2601.21998v2",
+      "sourceVersion": "arXiv 2601.21998v2",
+      "locator": "RoboTwin main table",
+      "attribution": "author-reported",
+      "trainingData": "2,500 clean +25,000 randomized demos",
+      "evaluationNotes": "50任务平均。",
+      "supersedes": ""
+    },
+    {
       "id": "r-lumo2-v1-probe-dino",
       "paperId": "p003",
       "method": "DINO only",
@@ -12406,6 +14232,118 @@
       "attribution": "author-reported",
       "trainingData": "18类×400样本；4:1划分；两层MLP分类器。",
       "evaluationNotes": "这是语义表征探针，不是机器人任务成功率；“linear probing”标签与实际两层MLP结构有差异。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-meco-v1-corr-fast",
+      "paperId": "p008",
+      "method": "Fast-WAM",
+      "trackId": "meco-v1-real-corrections",
+      "values": {
+        "Corrections": 1.67
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.05468v1",
+      "sourceVersion": "arXiv 2607.05468v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "real stack task",
+      "evaluationNotes": "越低越好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-meco-v1-corr-meco",
+      "paperId": "p008",
+      "method": "MECo-WAM",
+      "trackId": "meco-v1-real-corrections",
+      "values": {
+        "Corrections": 0.83
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.05468v1",
+      "sourceVersion": "arXiv 2607.05468v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "real stack task",
+      "evaluationNotes": "越低越好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-meco-v1-real-fast",
+      "paperId": "p008",
+      "method": "Fast-WAM",
+      "trackId": "meco-v1-real-success",
+      "values": {
+        "Stack blocks": 60,
+        "Sort by size": 60
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.05468v1",
+      "sourceVersion": "arXiv 2607.05468v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "real robot",
+      "evaluationNotes": "叠块成功率持平60%，排序提升；非全面提升。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-meco-v1-real-meco",
+      "paperId": "p008",
+      "method": "MECo-WAM",
+      "trackId": "meco-v1-real-success",
+      "values": {
+        "Stack blocks": 60,
+        "Sort by size": 70
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.05468v1",
+      "sourceVersion": "arXiv 2607.05468v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "real robot",
+      "evaluationNotes": "叠块成功率持平60%，排序提升；非全面提升。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-meco-v1-rt-fast",
+      "paperId": "p008",
+      "method": "Fast-WAM",
+      "trackId": "meco-v1-robotwin",
+      "values": {
+        "Clean": 91.88,
+        "Random": 91.78
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.05468",
+      "sourceVersion": "arXiv 2607.05468v1",
+      "locator": "Tables 2–3",
+      "attribution": "author-reported",
+      "trainingData": "same paper setting",
+      "evaluationNotes": "RoboTwin条件分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-meco-v1-rt-meco",
+      "paperId": "p008",
+      "method": "MECo-WAM",
+      "trackId": "meco-v1-robotwin",
+      "values": {
+        "Clean": 93.26,
+        "Random": 91.98
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.05468",
+      "sourceVersion": "arXiv 2607.05468v1",
+      "locator": "Tables 2–3",
+      "attribution": "author-reported",
+      "trainingData": "same paper setting",
+      "evaluationNotes": "RoboTwin条件分开。",
       "supersedes": ""
     },
     {
@@ -13037,6 +14975,133 @@
       "supersedes": ""
     },
     {
+      "id": "r-mimic-v2-libero-mimic",
+      "paperId": "p038",
+      "method": "mimic-video",
+      "trackId": "mimic-v2-libero3",
+      "values": {
+        "Average": 93.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2512.15692v2",
+      "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "3 suites excluding Long",
+      "evaluationNotes": "外部参考预算不同，仅paper-table。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mimic-v2-libero-oft",
+      "paperId": "p038",
+      "method": "OpenVLA-OFT external",
+      "trackId": "mimic-v2-libero3",
+      "values": {
+        "Average": 96.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2512.15692v2",
+      "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "3 suites excluding Long",
+      "evaluationNotes": "外部参考预算不同，仅paper-table。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mimic-v2-libero-pi",
+      "paperId": "p038",
+      "method": "pi0.5-style internal reference",
+      "trackId": "mimic-v2-libero3",
+      "values": {
+        "Average": 85.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2512.15692v2",
+      "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "3 suites excluding Long",
+      "evaluationNotes": "外部参考预算不同，仅paper-table。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mimic-v2-simpler-default",
+      "paperId": "p038",
+      "method": "mimic-video default",
+      "trackId": "mimic-v2-simpler",
+      "values": {
+        "Average": 46.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2512.15692v2",
+      "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "逐任务调参单独标注。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mimic-v2-simpler-pi",
+      "paperId": "p038",
+      "method": "pi0.5-style internal reference",
+      "trackId": "mimic-v2-simpler",
+      "values": {
+        "Average": 35.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2512.15692v2",
+      "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "逐任务调参单独标注。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mimic-v2-simpler-tuned",
+      "paperId": "p038",
+      "method": "mimic-video per-task tau_v",
+      "trackId": "mimic-v2-simpler",
+      "values": {
+        "Average": 56.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2512.15692v2",
+      "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "逐任务调参单独标注。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mvp-v1-pixmc-count",
+      "paperId": "p097",
+      "method": "MVP frozen visual representation",
+      "trackId": "mvp-v1-pixmc-textual-count",
+      "values": {
+        "Outperform supervised count": 7,
+        "Near state-oracle count": 5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2203.06173",
+      "sourceVersion": "arXiv 2203.06173v1",
+      "locator": "§5.1 textual summary",
+      "attribution": "author-reported",
+      "trainingData": "8 PixMC tasks",
+      "evaluationNotes": "只是8任务中的正文计数；不从Figure 5–11曲线读取逐任务精确分数。",
+      "supersedes": ""
+    },
+    {
       "id": "r-octo-real-v2-finetune-octo",
       "paperId": "p063",
       "method": "Octo（本报告微调）",
@@ -13368,6 +15433,78 @@
       "supersedes": ""
     },
     {
+      "id": "r-otql-single-after",
+      "paperId": "p033",
+      "method": "After OTQL",
+      "trackId": "otql-v1-single-policy",
+      "values": {
+        "Success": 86
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.06262",
+      "sourceVersion": "arXiv 2607.06262v1",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "50-60 online episodes",
+      "evaluationNotes": "需要RL经验后训练。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-otql-single-before",
+      "paperId": "p033",
+      "method": "Before OTQL",
+      "trackId": "otql-v1-single-policy",
+      "values": {
+        "Success": 36
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.06262",
+      "sourceVersion": "arXiv 2607.06262v1",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "50-60 online episodes",
+      "evaluationNotes": "需要RL经验后训练。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-otql-vla-after",
+      "paperId": "p033",
+      "method": "Pretrained VLA after OTQL",
+      "trackId": "otql-v1-pretrained-vla",
+      "values": {
+        "Success": 76
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.06262",
+      "sourceVersion": "arXiv 2607.06262v1",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "50-60 online episodes",
+      "evaluationNotes": "与单任务policy分轨。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-otql-vla-before",
+      "paperId": "p033",
+      "method": "Pretrained VLA before OTQL",
+      "trackId": "otql-v1-pretrained-vla",
+      "values": {
+        "Success": 38
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2607.06262",
+      "sourceVersion": "arXiv 2607.06262v1",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "50-60 online episodes",
+      "evaluationNotes": "与单任务policy分轨。",
+      "supersedes": ""
+    },
+    {
       "id": "r-peract-100-c2farm",
       "paperId": "p051",
       "method": "C2FARM-BC",
@@ -13470,6 +15607,186 @@
       "attribution": "author-reported",
       "trainingData": "100 demos per task; no-language ablation",
       "evaluationNotes": "Ablation not a separate general-purpose model; 25 episodes/task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-9x-frame",
+      "paperId": "p018",
+      "method": "FrameSamp+Modul",
+      "trackId": "ponder-v2-robomme-9x",
+      "values": {
+        "Average": 57.88
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.24115",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "9x data",
+      "evaluationNotes": "与基础数据分轨。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-9x-p9",
+      "paperId": "p018",
+      "method": "PonderPounce 9B",
+      "trackId": "ponder-v2-robomme-9x",
+      "values": {
+        "Average": 75.54
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.24115",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "9x data",
+      "evaluationNotes": "与基础数据分轨。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-ablate-full",
+      "paperId": "p018",
+      "method": "Full continuous cognition",
+      "trackId": "ponder-v2-cognition-ablation",
+      "values": {
+        "Average": 60.83
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.24115v2",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "文本参考训练方式不同；60.83 vs59.96的0.87点差不宣称显著。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-ablate-nodemo",
+      "paperId": "p018",
+      "method": "w/o demonstration reasoning",
+      "trackId": "ponder-v2-cognition-ablation",
+      "values": {
+        "Average": 48.21
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.24115v2",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "文本参考训练方式不同；60.83 vs59.96的0.87点差不宣称显著。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-ablate-noground",
+      "paperId": "p018",
+      "method": "w/o LM-head grounding",
+      "trackId": "ponder-v2-cognition-ablation",
+      "values": {
+        "Average": 27.96
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.24115v2",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "文本参考训练方式不同；60.83 vs59.96的0.87点差不宣称显著。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-ablate-text",
+      "paperId": "p018",
+      "method": "Subgoal-text reference",
+      "trackId": "ponder-v2-cognition-ablation",
+      "values": {
+        "Average": 59.96
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.24115v2",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "文本参考训练方式不同；60.83 vs59.96的0.87点差不宣称显著。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-base-frame",
+      "paperId": "p018",
+      "method": "FrameSamp+Modul",
+      "trackId": "ponder-v2-robomme-base",
+      "values": {
+        "Average": 44.51
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.24115",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "v2摘要精确值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-base-p08",
+      "paperId": "p018",
+      "method": "PonderPounce 0.8B",
+      "trackId": "ponder-v2-robomme-base",
+      "values": {
+        "Average": 50.04
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.24115",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "v2摘要精确值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-base-p9",
+      "paperId": "p018",
+      "method": "PonderPounce 9B",
+      "trackId": "ponder-v2-robomme-base",
+      "values": {
+        "Average": 60.83
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.24115",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "v2摘要精确值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ponder-v2-base-pi05",
+      "paperId": "p018",
+      "method": "Current-observation pi0.5",
+      "trackId": "ponder-v2-robomme-base",
+      "values": {
+        "Average": 17.93
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.24115",
+      "sourceVersion": "arXiv 2608.24115v2",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "base-scale data",
+      "evaluationNotes": "v2摘要精确值。",
       "supersedes": ""
     },
     {
@@ -14410,6 +16727,43 @@
       "attribution": "author-reported",
       "trainingData": "200k脚本视频均有动作注释用于逆动力学；其余视频/基线训练见Appendix A。",
       "evaluationNotes": "原表±[3.6, 3.1, 3.7]按列保留，统计定义/种子未知；不生成总平均，不套用CLIPort原生操作原语、示范预算或部分完成指标。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-recap-v2-targeted97",
+      "paperId": "p075",
+      "method": "RECAP after two iterations",
+      "trackId": "recap-v2-targeted-failure-success",
+      "values": {
+        "Success": 97.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2511.14759v2",
+      "sourceVersion": "arXiv 2511.14759v2",
+      "locator": "Targeted failure removal",
+      "attribution": "author-reported",
+      "trainingData": "600 trajectories per iteration",
+      "evaluationNotes": "97%只对应定向失败消除实验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-recap-v2-throughput",
+      "paperId": "p075",
+      "method": "Full RECAP",
+      "trackId": "recap-v2-throughput-factor",
+      "values": {
+        "Laundry factor": 1.5,
+        "Box-assembly factor": 2.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2511.14759v2",
+      "sourceVersion": "arXiv 2511.14759v2",
+      "locator": "Results: deployment iterations",
+      "attribution": "author-reported",
+      "trainingData": "on-robot RECAP",
+      "evaluationNotes": "+50%精确转为1.5x；2x保持原表述。两个任务不同，不求平均。",
       "supersedes": ""
     },
     {
@@ -17211,6 +19565,315 @@
       "supersedes": ""
     },
     {
+      "id": "r-robodojo-v3-rand-hy",
+      "paperId": "p034",
+      "method": "Hy-Embodied-0.5-VLA",
+      "trackId": "robodojo-v3-randomization",
+      "values": {
+        "Standard": 21.98,
+        "Random": 1.57
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "standard/randomized visual settings",
+      "evaluationNotes": "随机场景性能崩塌保留，不只报相对drop。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-rand-pi05",
+      "paperId": "p034",
+      "method": "pi0.5",
+      "trackId": "robodojo-v3-randomization",
+      "values": {
+        "Standard": 20.92,
+        "Random": 5.82
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "standard/randomized visual settings",
+      "evaluationNotes": "随机场景性能崩塌保留，不只报相对drop。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-rand-spatial",
+      "paperId": "p034",
+      "method": "Spatial Forcing",
+      "trackId": "robodojo-v3-randomization",
+      "values": {
+        "Standard": 21.25,
+        "Random": 6.98
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "standard/randomized visual settings",
+      "evaluationNotes": "随机场景性能崩塌保留，不只报相对drop。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-realscore-galaxea",
+      "paperId": "p034",
+      "method": "GalaxeaVLA G0",
+      "trackId": "robodojo-v3-real-score",
+      "values": {
+        "Overall Score": 9.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 2",
+      "attribution": "author-reported",
+      "trainingData": "18 tasks / three embodiments",
+      "evaluationNotes": "partial progress score。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-realscore-intern",
+      "paperId": "p034",
+      "method": "InternVLA-A1",
+      "trackId": "robodojo-v3-real-score",
+      "values": {
+        "Overall Score": 12.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 2",
+      "attribution": "author-reported",
+      "trainingData": "18 tasks / three embodiments",
+      "evaluationNotes": "partial progress score。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-realscore-pi05",
+      "paperId": "p034",
+      "method": "pi0.5",
+      "trackId": "robodojo-v3-real-score",
+      "values": {
+        "Overall Score": 22.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 2",
+      "attribution": "author-reported",
+      "trainingData": "18 tasks / three embodiments",
+      "evaluationNotes": "partial progress score。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-realsr-galaxea",
+      "paperId": "p034",
+      "method": "GalaxeaVLA G0",
+      "trackId": "robodojo-v3-real-sr",
+      "values": {
+        "Overall SR": 4.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 2",
+      "attribution": "author-reported",
+      "trainingData": "18 tasks / three embodiments",
+      "evaluationNotes": "二值任务完成。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-realsr-intern",
+      "paperId": "p034",
+      "method": "InternVLA-A1",
+      "trackId": "robodojo-v3-real-sr",
+      "values": {
+        "Overall SR": 7.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 2",
+      "attribution": "author-reported",
+      "trainingData": "18 tasks / three embodiments",
+      "evaluationNotes": "二值任务完成。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-realsr-pi05",
+      "paperId": "p034",
+      "method": "pi0.5",
+      "trackId": "robodojo-v3-real-sr",
+      "values": {
+        "Overall SR": 12.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 2",
+      "attribution": "author-reported",
+      "trainingData": "18 tasks / three embodiments",
+      "evaluationNotes": "二值任务完成。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simscore-hy",
+      "paperId": "p034",
+      "method": "Hy-Embodied-0.5-VLA",
+      "trackId": "robodojo-v3-sim-score",
+      "values": {
+        "Average Score": 13.07
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "Score不是百分比。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simscore-pi05",
+      "paperId": "p034",
+      "method": "pi0.5",
+      "trackId": "robodojo-v3-sim-score",
+      "values": {
+        "Average Score": 11.41
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "Score不是百分比。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simscore-spatial",
+      "paperId": "p034",
+      "method": "Spatial Forcing",
+      "trackId": "robodojo-v3-sim-score",
+      "values": {
+        "Average Score": 12.38
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "Score不是百分比。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simscore-xvla",
+      "paperId": "p034",
+      "method": "X-VLA",
+      "trackId": "robodojo-v3-sim-score",
+      "values": {
+        "Average Score": 10.13
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "Score不是百分比。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simsr-hy",
+      "paperId": "p034",
+      "method": "Hy-Embodied-0.5-VLA",
+      "trackId": "robodojo-v3-sim-sr",
+      "values": {
+        "Average SR": 8.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "五能力宏平均SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simsr-pi05",
+      "paperId": "p034",
+      "method": "pi0.5",
+      "trackId": "robodojo-v3-sim-sr",
+      "values": {
+        "Average SR": 6.91
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "五能力宏平均SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simsr-spatial",
+      "paperId": "p034",
+      "method": "Spatial Forcing",
+      "trackId": "robodojo-v3-sim-sr",
+      "values": {
+        "Average SR": 8.04
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "五能力宏平均SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robodojo-v3-simsr-xvla",
+      "paperId": "p034",
+      "method": "X-VLA",
+      "trackId": "robodojo-v3-sim-sr",
+      "values": {
+        "Average SR": 6.52
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.04434v3",
+      "sourceVersion": "arXiv 2607.04434v3",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo benchmark",
+      "evaluationNotes": "五能力宏平均SR。",
+      "supersedes": ""
+    },
+    {
       "id": "r-roboflamingo-abc-chain-hulc-full",
       "paperId": "p060",
       "method": "HULC (Full)",
@@ -19878,6 +22541,150 @@
       "supersedes": ""
     },
     {
+      "id": "r-spark-v1-sr-aqc",
+      "paperId": "p019",
+      "method": "Adaptive length AQC",
+      "trackId": "sparkvla-v1-task-sr",
+      "values": {
+        "SR": 40.92
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-spark-v1-sr-fixed",
+      "paperId": "p019",
+      "method": "Fixed length + independent Stop",
+      "trackId": "sparkvla-v1-task-sr",
+      "values": {
+        "SR": 34.26
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-spark-v1-sr-paired",
+      "paperId": "p019",
+      "method": "Paired ranking",
+      "trackId": "sparkvla-v1-task-sr",
+      "values": {
+        "SR": 42.53
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-spark-v1-sr-unified",
+      "paperId": "p019",
+      "method": "Unified ranking",
+      "trackId": "sparkvla-v1-task-sr",
+      "values": {
+        "SR": 47.12
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-spark-v1-stop-aqc",
+      "paperId": "p019",
+      "method": "Adaptive length AQC",
+      "trackId": "sparkvla-v1-stop-acc",
+      "values": {
+        "Accuracy": 80.43
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "Stop准确率不等于任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-spark-v1-stop-fixed",
+      "paperId": "p019",
+      "method": "Fixed length + independent Stop",
+      "trackId": "sparkvla-v1-stop-acc",
+      "values": {
+        "Accuracy": 79.52
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "Stop准确率不等于任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-spark-v1-stop-paired",
+      "paperId": "p019",
+      "method": "Paired ranking",
+      "trackId": "sparkvla-v1-stop-acc",
+      "values": {
+        "Accuracy": 80.37
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "Stop准确率不等于任务SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-spark-v1-stop-unified",
+      "paperId": "p019",
+      "method": "Unified ranking",
+      "trackId": "sparkvla-v1-stop-acc",
+      "values": {
+        "Accuracy": 96.65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.16172v1",
+      "sourceVersion": "arXiv 2608.16172v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "same hierarchy",
+      "evaluationNotes": "Stop准确率不等于任务SR。",
+      "supersedes": ""
+    },
+    {
       "id": "r-spatialvla-v1-va-octo",
       "paperId": "p068",
       "method": "Octo-Base",
@@ -20067,6 +22874,96 @@
       "attribution": "author-reported",
       "trainingData": "OXE+RH20T; no added Bridge fine-tuning in this row",
       "evaluationNotes": "Only full task Success columns; Grasp is a different intermediate metric",
+      "supersedes": ""
+    },
+    {
+      "id": "r-stwam-v1-ablate-dino",
+      "paperId": "p022",
+      "method": "DINO future only",
+      "trackId": "stwam-v1-libero-plus-ablation",
+      "values": {
+        "SR": 39.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.28993v1",
+      "sourceVersion": "arXiv 2607.28993v1",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "internal ablation",
+      "evaluationNotes": "仅DINO 39.7低于FastWAM 51.5、未锚定历史56.5低于双空间66.4，负面结果保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-stwam-v1-ablate-dual",
+      "paperId": "p022",
+      "method": "Dual-space, no CAIR",
+      "trackId": "stwam-v1-libero-plus-ablation",
+      "values": {
+        "SR": 66.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.28993v1",
+      "sourceVersion": "arXiv 2607.28993v1",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "internal ablation",
+      "evaluationNotes": "仅DINO 39.7低于FastWAM 51.5、未锚定历史56.5低于双空间66.4，负面结果保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-stwam-v1-ablate-fast",
+      "paperId": "p022",
+      "method": "FastWAM: VAE future",
+      "trackId": "stwam-v1-libero-plus-ablation",
+      "values": {
+        "SR": 51.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.28993v1",
+      "sourceVersion": "arXiv 2607.28993v1",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "internal ablation",
+      "evaluationNotes": "仅DINO 39.7低于FastWAM 51.5、未锚定历史56.5低于双空间66.4，负面结果保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-stwam-v1-ablate-full",
+      "paperId": "p022",
+      "method": "ST-WAM",
+      "trackId": "stwam-v1-libero-plus-ablation",
+      "values": {
+        "SR": 72.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.28993v1",
+      "sourceVersion": "arXiv 2607.28993v1",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "internal ablation",
+      "evaluationNotes": "仅DINO 39.7低于FastWAM 51.5、未锚定历史56.5低于双空间66.4，负面结果保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-stwam-v1-ablate-history",
+      "paperId": "p022",
+      "method": "Unanchored history retrieval",
+      "trackId": "stwam-v1-libero-plus-ablation",
+      "values": {
+        "SR": 56.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2607.28993v1",
+      "sourceVersion": "arXiv 2607.28993v1",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "internal ablation",
+      "evaluationNotes": "仅DINO 39.7低于FastWAM 51.5、未锚定历史56.5低于双空间66.4，负面结果保留。",
       "supersedes": ""
     },
     {
@@ -20396,6 +23293,97 @@
       "attribution": "author-reported",
       "trainingData": "12任务；50 clean+500 random示范/任务；60k步。",
       "evaluationNotes": "12任务子集，不能并入完整50任务RoboTwin协议。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-track4-v1-plus-base",
+      "paperId": "p007",
+      "method": "Alignment-free",
+      "trackId": "track4action-v1-libero-plus",
+      "values": {
+        "Average": 74.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.03727",
+      "sourceVersion": "arXiv 2608.03727v1",
+      "locator": "Abstract / main results",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "82.3较74.7 +7.6个百分点。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-track4-v1-plus-track",
+      "paperId": "p007",
+      "method": "Track4Action",
+      "trackId": "track4action-v1-libero-plus",
+      "values": {
+        "Average": 82.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.03727",
+      "sourceVersion": "arXiv 2608.03727v1",
+      "locator": "Abstract / main results",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "82.3较74.7 +7.6个百分点。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-track4-v1-real-base",
+      "paperId": "p007",
+      "method": "Alignment-free",
+      "trackId": "track4action-v1-real",
+      "values": {
+        "Average": 42.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.03727",
+      "sourceVersion": "arXiv 2608.03727v1",
+      "locator": "Abstract / real results",
+      "attribution": "author-reported",
+      "trainingData": "4 physical bimanual tasks",
+      "evaluationNotes": "只对应所测四任务。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-track4-v1-real-track",
+      "paperId": "p007",
+      "method": "Track4Action",
+      "trackId": "track4action-v1-real",
+      "values": {
+        "Average": 67.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.03727",
+      "sourceVersion": "arXiv 2608.03727v1",
+      "locator": "Abstract / real results",
+      "attribution": "author-reported",
+      "trainingData": "4 physical bimanual tasks",
+      "evaluationNotes": "只对应所测四任务。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-track4-v1-robotwin",
+      "paperId": "p007",
+      "method": "Track4Action",
+      "trackId": "track4action-v1-robotwin",
+      "values": {
+        "Clean": 80.44,
+        "Random": 81.48
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.03727",
+      "sourceVersion": "arXiv 2608.03727v1",
+      "locator": "Abstract",
+      "attribution": "author-reported",
+      "trainingData": "paper RoboTwin setup",
+      "evaluationNotes": "缺精确对齐基线时不补0。",
       "supersedes": ""
     },
     {
@@ -21950,6 +24938,44 @@
       "supersedes": ""
     },
     {
+      "id": "r-vlatalker-v1-libero-gen",
+      "paperId": "p006",
+      "method": "Gen-CoT",
+      "trackId": "vlatalker-v1-libero",
+      "values": {
+        "Average": 96.2,
+        "Long": 91.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.05738v1",
+      "sourceVersion": "arXiv 2608.05738v1",
+      "locator": "Tables 1–2",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "自由形式推理并非所有任务都带来收益；这里只保存明确汇总。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlatalker-v1-libero-talker",
+      "paperId": "p006",
+      "method": "VLA-Talker",
+      "trackId": "vlatalker-v1-libero",
+      "values": {
+        "Average": 97.4,
+        "Long": 93.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/html/2608.05738v1",
+      "sourceVersion": "arXiv 2608.05738v1",
+      "locator": "Tables 1–2",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "自由形式推理并非所有任务都带来收益；这里只保存明确汇总。",
+      "supersedes": ""
+    },
+    {
       "id": "r-vlatouch-v2-property-decisions-no-tactile",
       "paperId": "p044",
       "method": "仅场景图像",
@@ -22316,6 +25342,134 @@
       "attribution": "author-reported",
       "trainingData": "每任务100人工示范；逐任务训练；20次测试。",
       "evaluationNotes": "综合均值混合了0/0.5/1表面任务得分与二值插入成功，不能称六任务严格二值SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-w2vla-v1-lat-jepa",
+      "paperId": "p010",
+      "method": "VLA-JEPA (chunk 7)",
+      "trackId": "w2vla-v1-chunk-latency",
+      "values": {
+        "Latency": 0.06855
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.05369",
+      "sourceVersion": "arXiv 2608.05369v1",
+      "locator": "Appendix D.3",
+      "attribution": "author-reported",
+      "trainingData": "method-specific chunk length",
+      "evaluationNotes": "不同chunk长度，因此吞吐/延迟只作原文系统对照。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-w2vla-v1-lat-pi0",
+      "paperId": "p010",
+      "method": "pi0 (chunk 50)",
+      "trackId": "w2vla-v1-chunk-latency",
+      "values": {
+        "Latency": 0.41755
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.05369",
+      "sourceVersion": "arXiv 2608.05369v1",
+      "locator": "Appendix D.3",
+      "attribution": "author-reported",
+      "trainingData": "method-specific chunk length",
+      "evaluationNotes": "不同chunk长度，因此吞吐/延迟只作原文系统对照。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-w2vla-v1-lat-w2",
+      "paperId": "p010",
+      "method": "W2-VLA (chunk 16)",
+      "trackId": "w2vla-v1-chunk-latency",
+      "values": {
+        "Latency": 0.183
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.05369",
+      "sourceVersion": "arXiv 2608.05369v1",
+      "locator": "Appendix D.3",
+      "attribution": "author-reported",
+      "trainingData": "method-specific chunk length",
+      "evaluationNotes": "不同chunk长度，因此吞吐/延迟只作原文系统对照。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-w2vla-v1-libero-star",
+      "paperId": "p010",
+      "method": "StarVLA",
+      "trackId": "w2vla-v1-libero",
+      "values": {
+        "Average": 96.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.05369",
+      "sourceVersion": "arXiv 2608.05369v1",
+      "locator": "Main results",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "LIBERO平均。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-w2vla-v1-libero-w2",
+      "paperId": "p010",
+      "method": "W2-VLA",
+      "trackId": "w2vla-v1-libero",
+      "values": {
+        "Average": 98.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.05369",
+      "sourceVersion": "arXiv 2608.05369v1",
+      "locator": "Main results",
+      "attribution": "author-reported",
+      "trainingData": "paper protocol",
+      "evaluationNotes": "LIBERO平均。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-w2vla-v1-rt-up",
+      "paperId": "p010",
+      "method": "UP-VLA",
+      "trackId": "w2vla-v1-robotwin2500",
+      "values": {
+        "Easy": 52.92,
+        "Hard": 15.16
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.05369",
+      "sourceVersion": "arXiv 2608.05369v1",
+      "locator": "Main results",
+      "attribution": "author-reported",
+      "trainingData": "2,500-demo protocol",
+      "evaluationNotes": "不可与25k random示范协议混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-w2vla-v1-rt-w2",
+      "paperId": "p010",
+      "method": "W2-VLA",
+      "trackId": "w2vla-v1-robotwin2500",
+      "values": {
+        "Easy": 60.71,
+        "Hard": 18.21
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://arxiv.org/abs/2608.05369",
+      "sourceVersion": "arXiv 2608.05369v1",
+      "locator": "Main results",
+      "attribution": "author-reported",
+      "trainingData": "2,500-demo protocol",
+      "evaluationNotes": "不可与25k random示范协议混排。",
       "supersedes": ""
     }
   ]

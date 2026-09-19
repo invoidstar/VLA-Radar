@@ -1,0 +1,18 @@
+{
+  "id": "r-gfvla-overall",
+  "paperId": "p045",
+  "method": "GF-VLA",
+  "trackId": "gfvla-2026-overall-tsr",
+  "values": {
+    "Overall": 90.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://doi.org/10.1016/j.inffus.2026.104193",
+  "sourceVersion": "Information Fusion 131 (2026) 104193",
+  "locator": "Published abstract",
+  "attribution": "author-reported",
+  "trainingData": "four structured dual-arm tasks",
+  "evaluationNotes": "正式摘要的overall task success。",
+  "supersedes": ""
+}

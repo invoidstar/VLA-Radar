@@ -1,0 +1,18 @@
+{
+  "id": "r-dyna2-site-d2",
+  "paperId": "p005",
+  "method": "Dyna-2",
+  "trackId": "dyna2-2026-customer-pass",
+  "values": {
+    "On-site pass": 87
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://www.dyna.co/dyna-2",
+  "sourceVersion": "Dyna official technical report Aug 2026",
+  "locator": "§4.2 / Figure 14",
+  "attribution": "author-reported",
+  "trainingData": "matched pre/post-training; unseen customer sites",
+  "evaluationNotes": "官方现场验收pass rate；in-house接近100为近似值未入榜。",
+  "supersedes": ""
+}

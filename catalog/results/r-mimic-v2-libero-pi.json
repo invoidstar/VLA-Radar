@@ -1,0 +1,18 @@
+{
+  "id": "r-mimic-v2-libero-pi",
+  "paperId": "p038",
+  "method": "pi0.5-style internal reference",
+  "trackId": "mimic-v2-libero3",
+  "values": {
+    "Average": 85.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2512.15692v2",
+  "sourceVersion": "arXiv 2512.15692v2 / RSS 2026",
+  "locator": "Table II",
+  "attribution": "author-reported",
+  "trainingData": "3 suites excluding Long",
+  "evaluationNotes": "外部参考预算不同，仅paper-table。",
+  "supersedes": ""
+}

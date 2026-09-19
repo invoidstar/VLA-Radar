@@ -1,0 +1,19 @@
+{
+  "id": "r-lingbot-v2-rt-ling",
+  "paperId": "p037",
+  "method": "LingBot-VA",
+  "trackId": "lingbot-v2-robotwin",
+  "values": {
+    "Easy": 92.93,
+    "Hard": 91.55
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2601.21998v2",
+  "sourceVersion": "arXiv 2601.21998v2",
+  "locator": "RoboTwin main table",
+  "attribution": "author-reported",
+  "trainingData": "2,500 clean +25,000 randomized demos",
+  "evaluationNotes": "50任务平均。",
+  "supersedes": ""
+}

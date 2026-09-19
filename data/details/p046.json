@@ -68,7 +68,7 @@
   },
   "note": {
     "status": "needs_review",
-    "updatedAt": "2026-09-18",
+    "updatedAt": "2026-09-20",
     "verifiedAt": "2026-09-18",
     "version": "PolyU机构摘要与Elsevier出版信息；2026-09-18核读；未取得完整方法与实验正文",
     "sections": [
@@ -235,8 +235,8 @@
     ],
     "benchmarkReview": {
       "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇审计：确认正式期刊Open Access身份、两个装配任务及within five trials摘要结论，但当前出版商全文入口受403限制，机构页仅公开摘要；按limited-source编辑政策继续deferred，不把“within five trials”伪造为精确试验序列或成功率。"
     }
   }
 }

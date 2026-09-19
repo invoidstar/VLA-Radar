@@ -1,3 +1,11 @@
+## 2026-09-20 · 最终24篇 deferred 证据收敛
+
+- 一次性审计剩余24篇 deferred；其中22篇具备足够一手证据转 extracted，DMS-VLA 与 VLAbot 因完整正文仍不可稳定读取，遵守limited-source编辑政策继续deferred，deferred 24→2。
+- 新增128条结果、45个paper-scoped设置；FAST/Deltoris效率与MVP正文计数明确不冒充机器人闭环SR；DMS-VLA/VLAbot不建立伪精确榜单。
+- 同步完成7篇当前版本笔记复核：Embodied.cpp、PonderPounce、pi*0.6/RECAP、AdaVLA、mimic-video、RoboDojo、CauVA/LingBot-VA；remainingNotes 18→11。
+- 保留DMS-VLA摘要符号歧义、BATON transferring退化、LingBot异步仍低于同步、AdaVLA激进阈值退化、MECo叠块SR持平等边界。
+- 不改Leaderboard UI，不清理历史/安全分支；缺失值仍不按零，异构协议仍不合榜。
+
 ## 2026-09-20 · 第十五批：五篇原始证据回补
 
 - 深读/复核 See like a Robot、SMILE、GWM-VLA、RoboFlamingo、Lumo-2；五篇 deferred→extracted，RoboFlamingo needs_review→expanded。

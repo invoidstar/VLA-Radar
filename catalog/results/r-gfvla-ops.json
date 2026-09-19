@@ -1,0 +1,19 @@
+{
+  "id": "r-gfvla-ops",
+  "paperId": "p045",
+  "method": "GF-VLA",
+  "trackId": "gfvla-2026-basic-ops",
+  "values": {
+    "Grasp": 94.0,
+    "Placement": 89.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://doi.org/10.1016/j.inffus.2026.104193",
+  "sourceVersion": "Information Fusion 131 (2026) 104193",
+  "locator": "Published abstract",
+  "attribution": "author-reported",
+  "trainingData": "490 real-world trials across study",
+  "evaluationNotes": "抓取/放置为不同基础操作。",
+  "supersedes": ""
+}

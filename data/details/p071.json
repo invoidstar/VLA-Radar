@@ -87,8 +87,8 @@
   },
   "note": {
     "status": "expanded",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
     "version": "2503.20020v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
     "sections": [
       {
@@ -217,9 +217,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取2条精确记录；成功率、Task Progress、延迟、归一化分数与诊断指标严格分轨。"
     }
   }
 }

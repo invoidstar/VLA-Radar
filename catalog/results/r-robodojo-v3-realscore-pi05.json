@@ -1,0 +1,18 @@
+{
+  "id": "r-robodojo-v3-realscore-pi05",
+  "paperId": "p034",
+  "method": "pi0.5",
+  "trackId": "robodojo-v3-real-score",
+  "values": {
+    "Overall Score": 22.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2607.04434v3",
+  "sourceVersion": "arXiv 2607.04434v3",
+  "locator": "Table 2",
+  "attribution": "author-reported",
+  "trainingData": "18 tasks / three embodiments",
+  "evaluationNotes": "partial progress score。",
+  "supersedes": ""
+}

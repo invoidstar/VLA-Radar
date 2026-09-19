@@ -1,0 +1,18 @@
+{
+  "id": "r-adavla-v2-lat-b5",
+  "paperId": "p030",
+  "method": "Baseline, 5 steps",
+  "trackId": "adavla-v2-libero-latency",
+  "values": {
+    "Latency": 0.67756
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2608.29208v2",
+  "sourceVersion": "arXiv 2608.29208v2",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "pi0.5 on Jetson AGX Orin",
+  "evaluationNotes": "原始ms精确换秒。",
+  "supersedes": ""
+}

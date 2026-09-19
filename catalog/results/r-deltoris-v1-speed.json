@@ -1,0 +1,19 @@
+{
+  "id": "r-deltoris-v1-speed",
+  "paperId": "p032",
+  "method": "Deltoris",
+  "trackId": "deltoris-v1-hardware-speedup",
+  "values": {
+    "vs mobile GPU": 34.2,
+    "vs prior accelerator": 6.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2608.04428",
+  "sourceVersion": "arXiv 2608.04428v1",
+  "locator": "Abstract",
+  "attribution": "author-reported",
+  "trainingData": "dedicated accelerator",
+  "evaluationNotes": "摘要headline；正文另有更高局部数字冲突，本站不替换摘要口径。",
+  "supersedes": ""
+}

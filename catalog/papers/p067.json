@@ -86,8 +86,8 @@
   },
   "note": {
     "status": "expanded",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
     "version": "arXiv:2501.09747v1，Sec.III–VII、Algorithm 1、Table I及Appendix；官方FAST技术说明；不混用后续推理优化版本",
     "sections": [
       {
@@ -219,9 +219,9 @@
     "figures": [],
     "tables": [],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "FAST策略结果主要在图中；未获得完整精确值与协议，不从柱高猜分。token数不冒充任务成功率。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取1条精确源定位记录；效率/摘要边界/诊断指标不伪装成闭环成功率。"
     }
   }
 }

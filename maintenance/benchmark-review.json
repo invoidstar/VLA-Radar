@@ -172,10 +172,14 @@
       "note": "第九批：重读实际版本并补8条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
     },
     "p067": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "FAST策略结果主要在图中；未获得完整精确值与协议，不从柱高猜分。token数不冒充任务成功率。"
+      "status": "extracted",
+      "trackIds": [
+        "fast-v1-training-speedup"
+      ],
+      "resultIds": [
+        "r-fast-v1-train-speed"
+      ],
+      "note": "最终24篇清理：1条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p023": {
       "status": "extracted",
@@ -255,10 +259,14 @@
       "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
     },
     "p032": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4–8；Abstract。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "deltoris-v1-hardware-speedup"
+      ],
+      "resultIds": [
+        "r-deltoris-v1-speed"
+      ],
+      "note": "最终24篇清理：1条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p014": {
       "status": "extracted",
@@ -377,10 +385,18 @@
       "note": "第十二批：明确版本原文及原表核验，新增38条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
     },
     "p031": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§3–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "embcpp-v2-vla-success",
+        "embcpp-v2-wam-block-latency"
+      ],
+      "resultIds": [
+        "r-embcpp-v2-success-hy",
+        "r-embcpp-v2-success-pi05",
+        "r-embcpp-v2-blocklat-py",
+        "r-embcpp-v2-blocklat-cpp"
+      ],
+      "note": "最终24篇清理：4条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p058": {
       "status": "extracted",
@@ -639,10 +655,16 @@
       "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
     },
     "p045": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§6–7，2508.05342v1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "gfvla-2026-basic-ops",
+        "gfvla-2026-overall-tsr"
+      ],
+      "resultIds": [
+        "r-gfvla-ops",
+        "r-gfvla-overall"
+      ],
+      "note": "最终24篇清理：2条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p078": {
       "status": "extracted",
@@ -789,13 +811,21 @@
       "status": "deferred",
       "trackIds": [],
       "resultIds": [],
-      "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
+      "note": "最终24篇审计完成；仅partial sources，按editorial policy继续deferred。未从含混的25%-55%×摘要字符串推导标准化加速成绩。"
     },
     "p022": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "stwam-v1-libero-plus-ablation"
+      ],
+      "resultIds": [
+        "r-stwam-v1-ablate-fast",
+        "r-stwam-v1-ablate-dino",
+        "r-stwam-v1-ablate-dual",
+        "r-stwam-v1-ablate-history",
+        "r-stwam-v1-ablate-full"
+      ],
+      "note": "最终24篇清理：5条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p013": {
       "status": "extracted",
@@ -842,16 +872,37 @@
       "note": "2026-09-19第八批原文回补11条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
     },
     "p018": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 3、5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "ponder-v2-robomme-base",
+        "ponder-v2-robomme-9x",
+        "ponder-v2-cognition-ablation"
+      ],
+      "resultIds": [
+        "r-ponder-v2-base-p9",
+        "r-ponder-v2-base-p08",
+        "r-ponder-v2-base-frame",
+        "r-ponder-v2-base-pi05",
+        "r-ponder-v2-9x-p9",
+        "r-ponder-v2-9x-frame",
+        "r-ponder-v2-ablate-full",
+        "r-ponder-v2-ablate-nodemo",
+        "r-ponder-v2-ablate-noground",
+        "r-ponder-v2-ablate-text"
+      ],
+      "note": "最终24篇清理：10条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p075": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–C、V-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "recap-v2-throughput-factor",
+        "recap-v2-targeted-failure-success"
+      ],
+      "resultIds": [
+        "r-recap-v2-throughput",
+        "r-recap-v2-targeted97"
+      ],
+      "note": "最终24篇清理：2条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p026": {
       "status": "not-applicable",
@@ -939,10 +990,21 @@
       "note": "第十二批：明确版本原文及原表核验，新增14条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
     },
     "p008": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "meco-v1-robotwin",
+        "meco-v1-real-success",
+        "meco-v1-real-corrections"
+      ],
+      "resultIds": [
+        "r-meco-v1-rt-fast",
+        "r-meco-v1-rt-meco",
+        "r-meco-v1-real-fast",
+        "r-meco-v1-real-meco",
+        "r-meco-v1-corr-fast",
+        "r-meco-v1-corr-meco"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p069": {
       "status": "extracted",
@@ -974,16 +1036,31 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p071": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 5。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "gemini-er-v1-aloha2-sim"
+      ],
+      "resultIds": [
+        "r-gemini-er-v1-flash",
+        "r-gemini-er-v1-er"
+      ],
+      "note": "最终24篇清理：2条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p077": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "dreamzero-v1-progress",
+        "dreamzero-v1-latency"
+      ],
+      "resultIds": [
+        "r-dreamzero-v1-progress-4step",
+        "r-dreamzero-v1-lat-4step",
+        "r-dreamzero-v1-progress-1step",
+        "r-dreamzero-v1-lat-1step",
+        "r-dreamzero-v1-progress-flash",
+        "r-dreamzero-v1-lat-flash"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p057": {
       "status": "extracted",
@@ -1021,16 +1098,52 @@
       "note": "正式PDF Tables1–2核验24条（8种架构/算法×3指标）；重复ResNet-T表项不重复收录，NBT越低越好，FWT/AUC越高越好；无自造总体平均。"
     },
     "p030": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "adavla-v2-libero-sr",
+        "adavla-v2-libero-latency"
+      ],
+      "resultIds": [
+        "r-adavla-v2-sr-b10",
+        "r-adavla-v2-lat-b10",
+        "r-adavla-v2-sr-pr-adp15",
+        "r-adavla-v2-lat-pr-adp15",
+        "r-adavla-v2-sr-svd-adp",
+        "r-adavla-v2-lat-svd-adp",
+        "r-adavla-v2-sr-fixed-adp",
+        "r-adavla-v2-lat-fixed-adp",
+        "r-adavla-v2-sr-noprun-adp",
+        "r-adavla-v2-lat-noprun-adp",
+        "r-adavla-v2-sr-pr-noadp",
+        "r-adavla-v2-lat-pr-noadp",
+        "r-adavla-v2-sr-pr-adp20",
+        "r-adavla-v2-lat-pr-adp20",
+        "r-adavla-v2-sr-pr-adp25",
+        "r-adavla-v2-lat-pr-adp25",
+        "r-adavla-v2-sr-b1",
+        "r-adavla-v2-lat-b1",
+        "r-adavla-v2-sr-b5",
+        "r-adavla-v2-lat-b5",
+        "r-adavla-v2-sr-brand",
+        "r-adavla-v2-lat-brand"
+      ],
+      "note": "最终24篇清理：22条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p005": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§1–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "dyna2-2026-scaling",
+        "dyna2-2026-customer-pass"
+      ],
+      "resultIds": [
+        "r-dyna2-scale-1k",
+        "r-dyna2-scale-10k",
+        "r-dyna2-scale-100k",
+        "r-dyna2-scale-1m",
+        "r-dyna2-site-d1",
+        "r-dyna2-site-d2"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p028": {
       "status": "extracted",
@@ -1133,10 +1246,20 @@
       "note": "保留3条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
     },
     "p038": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables I–II。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "mimic-v2-simpler",
+        "mimic-v2-libero3"
+      ],
+      "resultIds": [
+        "r-mimic-v2-simpler-pi",
+        "r-mimic-v2-simpler-default",
+        "r-mimic-v2-simpler-tuned",
+        "r-mimic-v2-libero-pi",
+        "r-mimic-v2-libero-mimic",
+        "r-mimic-v2-libero-oft"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p072": {
       "status": "extracted",
@@ -1199,16 +1322,33 @@
       "note": "2026-09-19第八批原文回补18条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
     },
     "p006": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2；Experiments协议说明。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "vlatalker-v1-libero"
+      ],
+      "resultIds": [
+        "r-vlatalker-v1-libero-gen",
+        "r-vlatalker-v1-libero-talker"
+      ],
+      "note": "最终24篇清理：2条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p019": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "sparkvla-v1-task-sr",
+        "sparkvla-v1-stop-acc"
+      ],
+      "resultIds": [
+        "r-spark-v1-sr-fixed",
+        "r-spark-v1-stop-fixed",
+        "r-spark-v1-sr-aqc",
+        "r-spark-v1-stop-aqc",
+        "r-spark-v1-sr-paired",
+        "r-spark-v1-stop-paired",
+        "r-spark-v1-sr-unified",
+        "r-spark-v1-stop-unified"
+      ],
+      "note": "最终24篇清理：8条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
     "p053": {
       "status": "extracted",
@@ -1234,10 +1374,18 @@
       "note": "第十一批：完成所列原始结果13行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
     },
     "p033": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§3–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "otql-v1-single-policy",
+        "otql-v1-pretrained-vla"
+      ],
+      "resultIds": [
+        "r-otql-single-before",
+        "r-otql-single-after",
+        "r-otql-vla-before",
+        "r-otql-vla-after"
+      ],
+      "note": "最终24篇清理：4条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p041": {
       "status": "extracted",
@@ -1274,10 +1422,20 @@
       "note": "第十二批：明确版本原文及原表核验，新增20条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
     },
     "p007": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4主要结果。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "track4action-v1-libero-plus",
+        "track4action-v1-real",
+        "track4action-v1-robotwin"
+      ],
+      "resultIds": [
+        "r-track4-v1-plus-base",
+        "r-track4-v1-plus-track",
+        "r-track4-v1-real-base",
+        "r-track4-v1-real-track",
+        "r-track4-v1-robotwin"
+      ],
+      "note": "最终24篇清理：5条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p050": {
       "status": "extracted",
@@ -1308,16 +1466,28 @@
       "note": "本页为理论与证明范围解读；不从理论命题推导或补造机器人成功率。"
     },
     "p010": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；附录D.3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "w2vla-v1-libero",
+        "w2vla-v1-robotwin2500",
+        "w2vla-v1-chunk-latency"
+      ],
+      "resultIds": [
+        "r-w2vla-v1-libero-w2",
+        "r-w2vla-v1-libero-star",
+        "r-w2vla-v1-rt-w2",
+        "r-w2vla-v1-rt-up",
+        "r-w2vla-v1-lat-w2",
+        "r-w2vla-v1-lat-pi0",
+        "r-w2vla-v1-lat-jepa"
+      ],
+      "note": "最终24篇清理：7条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p046": {
       "status": "deferred",
       "trackIds": [],
       "resultIds": [],
-      "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
+      "note": "最终24篇审计完成；仅official-abstract来源，按editorial policy继续deferred。未把within-five-trials摘要上界升格为榜单结果。"
     },
     "p054": {
       "status": "extracted",
@@ -1371,16 +1541,50 @@
       "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p034": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "robodojo-v3-sim-score",
+        "robodojo-v3-sim-sr",
+        "robodojo-v3-real-score",
+        "robodojo-v3-real-sr",
+        "robodojo-v3-randomization"
+      ],
+      "resultIds": [
+        "r-robodojo-v3-simscore-hy",
+        "r-robodojo-v3-simsr-hy",
+        "r-robodojo-v3-simscore-spatial",
+        "r-robodojo-v3-simsr-spatial",
+        "r-robodojo-v3-simscore-pi05",
+        "r-robodojo-v3-simsr-pi05",
+        "r-robodojo-v3-simscore-xvla",
+        "r-robodojo-v3-simsr-xvla",
+        "r-robodojo-v3-realscore-pi05",
+        "r-robodojo-v3-realsr-pi05",
+        "r-robodojo-v3-realscore-intern",
+        "r-robodojo-v3-realsr-intern",
+        "r-robodojo-v3-realscore-galaxea",
+        "r-robodojo-v3-realsr-galaxea",
+        "r-robodojo-v3-rand-hy",
+        "r-robodojo-v3-rand-spatial",
+        "r-robodojo-v3-rand-pi05"
+      ],
+      "note": "最终24篇清理：17条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p016": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "baton-v1-task-success",
+        "baton-v1-cumulative"
+      ],
+      "resultIds": [
+        "r-baton-v1-tsr-frame",
+        "r-baton-v1-csr-frame",
+        "r-baton-v1-tsr-harness",
+        "r-baton-v1-csr-harness",
+        "r-baton-v1-tsr-baton",
+        "r-baton-v1-csr-baton"
+      ],
+      "note": "最终24篇清理：6条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p070": {
       "status": "extracted",
@@ -1420,10 +1624,19 @@
       "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p037": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "lingbot-v2-robotwin",
+        "lingbot-v2-async"
+      ],
+      "resultIds": [
+        "r-lingbot-v2-rt-motus",
+        "r-lingbot-v2-rt-ling",
+        "r-lingbot-v2-async-sync",
+        "r-lingbot-v2-async-fdm",
+        "r-lingbot-v2-async-naive"
+      ],
+      "note": "最终24篇清理：5条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p079": {
       "status": "extracted",
@@ -1778,10 +1991,14 @@
       "note": "本批核对原报告，新增10条、2个历史协议；保留版本、预算、来源归属及冲突。只认证这些原表记录，不代表穷尽全文/官网。"
     },
     "p097": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "全文已读；PixMC原报告主要为曲线，未取得完整精确成绩表及原始评测数据。保留deferred，不创建空PixMC榜，不把其他报告的MVP变体成绩改绑本篇。"
+      "status": "extracted",
+      "trackIds": [
+        "mvp-v1-pixmc-textual-count"
+      ],
+      "resultIds": [
+        "r-mvp-v1-pixmc-count"
+      ],
+      "note": "最终24篇清理：1条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p098": {
       "status": "extracted",

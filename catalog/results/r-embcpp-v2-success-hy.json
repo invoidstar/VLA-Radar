@@ -1,0 +1,18 @@
+{
+  "id": "r-embcpp-v2-success-hy",
+  "paperId": "p031",
+  "method": "HY-VLA",
+  "trackId": "embcpp-v2-vla-success",
+  "values": {
+    "Success": 100.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2607.02501",
+  "sourceVersion": "arXiv 2607.02501v2",
+  "locator": "Abstract",
+  "attribution": "author-reported",
+  "trainingData": "Embodied.cpp runtime",
+  "evaluationNotes": "闭环成功率作者报告；两种VLA不是同任务/同模型配置的严格单因素消融。",
+  "supersedes": ""
+}

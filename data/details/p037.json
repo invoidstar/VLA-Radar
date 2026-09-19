@@ -27,8 +27,8 @@
     "limitations": "RoboTwin使用2,500条干净+25,000条随机场景示范。会议与预印本模型命名有变化，数字按所链v1。因果注意力不等同完成干预因果识别。",
     "insight": "真实观测缓存与视频动作解码可以兼顾效率。因果注意力结构不能直接解释为干预因果推理能力。",
     "readingFocus": "真实观测缓存；过时预测问题；前向动力学校正；异步数据流。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2601.21998v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -46,6 +46,10 @@
       {
         "label": "出版方 DOI",
         "url": "https://doi.org/10.15607/rss.2026.xxii.016"
+      },
+      {
+        "label": "当前复核版本 · v2",
+        "url": "https://arxiv.org/html/2601.21998v2"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2601.21998",
@@ -100,10 +104,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2601.21998 v1；§3–4、附录逐次结果",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2601.21998 v2；§3–4、Table 3与附录；第十六批复核当前v2",
     "sections": [
       {
         "id": "problem",
@@ -236,9 +240,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取5条源定位记录；无精确表格时只记录正文可确认的定量上界/任务计数，不从曲线估值。"
     }
   }
 }

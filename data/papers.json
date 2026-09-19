@@ -399,8 +399,8 @@
       "limitations": "倍数来自特定学习曲线/基线，不是所有VLA普遍需要10倍数据；视频模型预训练成本仍存在。Video-Action名称不等于系统完全不使用语言。",
       "insight": "视频预训练提供不同于VLM的动态先验。样本效率倍数必须绑定具体基线和学习曲线。",
       "readingFocus": "视频先验与动作接口；样本效率口径；VLM路线的互补性。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2512.15692v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -1033,8 +1033,8 @@
       "limitations": "连续/文本准确率仅差0.87个百分点，小于论文报告的2.63个百分点运行波动，不能宣称连续接口准确率显著更好。延迟比较受输出长度约束。",
       "insight": "连续接口的突出优势可能是延迟，而非显著更高的准确率。异步系统还需处理上下文陈旧的问题。",
       "readingFocus": "连续vs文本接口；上下文年龄；异步失配；认知监督消融。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2608.24115v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -1044,6 +1044,10 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2608.24115"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2608.24115v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2608.24115",
@@ -1383,8 +1387,8 @@
       "limitations": "RoboTwin使用2,500条干净+25,000条随机场景示范。会议与预印本模型命名有变化，数字按所链v1。因果注意力不等同完成干预因果识别。",
       "insight": "真实观测缓存与视频动作解码可以兼顾效率。因果注意力结构不能直接解释为干预因果推理能力。",
       "readingFocus": "真实观测缓存；过时预测问题；前向动力学校正；异步数据流。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2601.21998v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -1402,6 +1406,10 @@
         {
           "label": "出版方 DOI",
           "url": "https://doi.org/10.15607/rss.2026.xxii.016"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2601.21998v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2601.21998",
@@ -1663,8 +1671,8 @@
       "limitations": "“很小”沿用作者描述，此处未补造下降百分比。结论限于指定硬件与策略；流曲率不等于任务失败概率。",
       "insight": "可按动作轨迹特点分配采样预算。自适应少步化的可信价值是成功率—时延取舍，而非仅减少步数。",
       "readingFocus": "自适应步长依据；通道裁剪；成功率—时延取舍。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2608.29208v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -1674,6 +1682,10 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2608.29208"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2608.29208v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2608.29208",
@@ -1706,8 +1718,8 @@
       "limitations": "这是单块而非完整WAM的机器人闭环结果；量化与运行时同时改变，不能宣称C++单独带来同等压缩或显著整机加速。",
       "insight": "运行时与量化是不同因素。单个模块的内存下降和时延变化不能直接外推完整系统的性能。",
       "readingFocus": "五层运行时职责；多频率接口；单块与整机数据范围；量化设置。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2607.02501v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -2017,8 +2029,8 @@
       "limitations": "Score与成功率不是同一指标；使用其统一协议，不可与各模型原论文的专门微调结果横向混比。失败分类比单一总榜更有参考价值。",
       "insight": "高饱和标准基准可能掩盖精度和长程短板。能力分项与随机化退化比单一总榜更有解释力。",
       "readingFocus": "五维能力定义；随机化退化；精度失败与阶段前置条件分析。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2607.04434v3 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -2028,6 +2040,10 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2607.04434"
+        },
+        {
+          "label": "当前复核版本 · v3",
+          "url": "https://arxiv.org/html/2607.04434v3"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2607.04434",
@@ -3548,8 +3564,8 @@
       "limitations": "收益包含额外机器人交互、奖励标注与人类纠正，不能理解成纯离线 SFT 或完全无人工自学习。",
       "insight": "后训练评价不应只看成功率，还应看单位时间产出和错误减少；同时记录额外交互与纠正成本。",
       "readingFocus": "RECAP 数据流程、优势条件、失败率与任务吞吐口径。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2511.14759v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -3559,6 +3575,10 @@
         {
           "label": "原文 v1",
           "url": "https://arxiv.org/html/2511.14759v1"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2511.14759v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2511.14759",

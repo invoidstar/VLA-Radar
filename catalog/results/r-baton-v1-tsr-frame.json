@@ -1,0 +1,19 @@
+{
+  "id": "r-baton-v1-tsr-frame",
+  "paperId": "p016",
+  "method": "FrameSamp+Modul",
+  "trackId": "baton-v1-task-success",
+  "values": {
+    "Average TSR": 46.1,
+    "Transferring TSR": 63.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2608.16889v1",
+  "sourceVersion": "arXiv 2608.16889v1",
+  "locator": "Table 1",
+  "attribution": "author-reported",
+  "trainingData": "RoboMemArena",
+  "evaluationNotes": "BATON Transferring 39.4低于基线63.8/50.0，明确保留。",
+  "supersedes": ""
+}

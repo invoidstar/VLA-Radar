@@ -1,0 +1,18 @@
+{
+  "id": "r-baton-v1-csr-harness",
+  "paperId": "p016",
+  "method": "Harness VLA",
+  "trackId": "baton-v1-cumulative",
+  "values": {
+    "Average CSR": 38.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2608.16889v1",
+  "sourceVersion": "arXiv 2608.16889v1",
+  "locator": "Table 1",
+  "attribution": "author-reported",
+  "trainingData": "RoboMemArena",
+  "evaluationNotes": "CSR非整任务SR。",
+  "supersedes": ""
+}

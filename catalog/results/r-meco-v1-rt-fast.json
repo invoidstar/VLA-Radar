@@ -1,0 +1,19 @@
+{
+  "id": "r-meco-v1-rt-fast",
+  "paperId": "p008",
+  "method": "Fast-WAM",
+  "trackId": "meco-v1-robotwin",
+  "values": {
+    "Clean": 91.88,
+    "Random": 91.78
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2607.05468",
+  "sourceVersion": "arXiv 2607.05468v1",
+  "locator": "Tables 2–3",
+  "attribution": "author-reported",
+  "trainingData": "same paper setting",
+  "evaluationNotes": "RoboTwin条件分开。",
+  "supersedes": ""
+}

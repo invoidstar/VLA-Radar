@@ -27,8 +27,8 @@
     "limitations": "倍数来自特定学习曲线/基线，不是所有VLA普遍需要10倍数据；视频模型预训练成本仍存在。Video-Action名称不等于系统完全不使用语言。",
     "insight": "视频预训练提供不同于VLM的动态先验。样本效率倍数必须绑定具体基线和学习曲线。",
     "readingFocus": "视频先验与动作接口；样本效率口径；VLM路线的互补性。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2512.15692v2 / current复核方法/实验边界与本批结构化结果；不表示独立复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -100,10 +100,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2512.15692 v1；§III–VI、Tables I–III",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2512.15692 v2；Tables I–III；RSS 2026；v2修订不改变本批主表口径",
     "sections": [
       {
         "id": "problem",
@@ -241,9 +241,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables I–II。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取6条精确记录；成功率、Task Progress、延迟、归一化分数与诊断指标严格分轨。"
     }
   }
 }

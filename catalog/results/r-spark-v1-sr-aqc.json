@@ -1,0 +1,18 @@
+{
+  "id": "r-spark-v1-sr-aqc",
+  "paperId": "p019",
+  "method": "Adaptive length AQC",
+  "trackId": "sparkvla-v1-task-sr",
+  "values": {
+    "SR": 40.92
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2608.16172v1",
+  "sourceVersion": "arXiv 2608.16172v1",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "same hierarchy",
+  "evaluationNotes": "任务SR。",
+  "supersedes": ""
+}

@@ -1,0 +1,18 @@
+{
+  "id": "r-track4-v1-real-base",
+  "paperId": "p007",
+  "method": "Alignment-free",
+  "trackId": "track4action-v1-real",
+  "values": {
+    "Average": 42.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2608.03727",
+  "sourceVersion": "arXiv 2608.03727v1",
+  "locator": "Abstract / real results",
+  "attribution": "author-reported",
+  "trainingData": "4 physical bimanual tasks",
+  "evaluationNotes": "只对应所测四任务。",
+  "supersedes": ""
+}

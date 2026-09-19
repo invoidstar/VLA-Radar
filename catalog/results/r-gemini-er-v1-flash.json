@@ -1,0 +1,19 @@
+{
+  "id": "r-gemini-er-v1-flash",
+  "paperId": "p071",
+  "method": "Gemini 2.0 Flash",
+  "trackId": "gemini-er-v1-aloha2-sim",
+  "values": {
+    "Zero-shot code": 27,
+    "In-context demos": 51
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2503.20020v1",
+  "sourceVersion": "arXiv 2503.20020v1",
+  "locator": "Table 5",
+  "attribution": "author-reported",
+  "trainingData": "ALOHA2 simulation code-control",
+  "evaluationNotes": "七任务×50随机初始条件；两列控制方式不同。",
+  "supersedes": ""
+}

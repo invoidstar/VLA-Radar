@@ -1,0 +1,19 @@
+{
+  "id": "r-recap-v2-throughput",
+  "paperId": "p075",
+  "method": "Full RECAP",
+  "trackId": "recap-v2-throughput-factor",
+  "values": {
+    "Laundry factor": 1.5,
+    "Box-assembly factor": 2.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/html/2511.14759v2",
+  "sourceVersion": "arXiv 2511.14759v2",
+  "locator": "Results: deployment iterations",
+  "attribution": "author-reported",
+  "trainingData": "on-robot RECAP",
+  "evaluationNotes": "+50%精确转为1.5x；2x保持原表述。两个任务不同，不求平均。",
+  "supersedes": ""
+}

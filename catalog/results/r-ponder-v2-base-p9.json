@@ -1,0 +1,18 @@
+{
+  "id": "r-ponder-v2-base-p9",
+  "paperId": "p018",
+  "method": "PonderPounce 9B",
+  "trackId": "ponder-v2-robomme-base",
+  "values": {
+    "Average": 60.83
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://arxiv.org/abs/2608.24115",
+  "sourceVersion": "arXiv 2608.24115v2",
+  "locator": "Abstract",
+  "attribution": "author-reported",
+  "trainingData": "base-scale data",
+  "evaluationNotes": "v2摘要精确值。",
+  "supersedes": ""
+}

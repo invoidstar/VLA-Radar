@@ -81,8 +81,8 @@
   },
   "note": {
     "status": "expanded",
-    "updatedAt": "2026-09-19",
-    "verifiedAt": "2026-09-19",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
     "version": "arXiv 2203.06173v1完整HTML及PDF可解析文本，§1–7与Figures 1–14；2026-09-19核对，PDF截图通道未成功",
     "coverage": {
       "level": "deep",
@@ -237,9 +237,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-19",
-      "note": "全文已读；PixMC原报告主要为曲线，未取得完整精确成绩表及原始评测数据。保留deferred，不创建空PixMC榜，不把其他报告的MVP变体成绩改绑本篇。"
+      "status": "extracted",
+      "checkedAt": "2026-09-20",
+      "note": "最终24篇清理：提取1条源定位记录；无精确表格时只记录正文可确认的定量上界/任务计数，不从曲线估值。"
     }
   }
 }
