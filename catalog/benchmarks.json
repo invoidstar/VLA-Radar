@@ -2994,6 +2994,107 @@
         "EightTask"
       ],
       "source": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf"
+    },
+    {
+      "id": "unipi-neurips23-compositional",
+      "dataset": "UniPi compositional (sim)",
+      "name": "UniPi · 组合指令与组件消融",
+      "version": "NeurIPS2023 Tables1–2; Appendix A.4",
+      "tasks": "组合染色与空间关系任务",
+      "split": "seen / novel language x Place / Relation",
+      "metric": "Task completion accuracy",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "70/30语言指令训练/测试，环境位置随机；PyBullet六关节加接触指令，接触阈值0.5，控制器2秒超时；全实验开环执行。Table2仅已见条件，未测试列null；完整行与Table1不重复。测试次数、独立种子、checkpoint及±统计定义未完整明确。",
+      "trainingRegime": "200k脚本视频；组合任务逆动力学使用20k动作注释视频；视频模型2M步/batch2048/lr1e-4/10k warmup；各基线T5相同但容量和输入不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "SeenPlace",
+        "SeenRelation",
+        "NovelPlace",
+        "NovelRelation"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf"
+    },
+    {
+      "id": "ravens-unipi-neurips23-transfer",
+      "dataset": "Ravens (CLIPort)",
+      "name": "UniPi · 连续关节控制迁移（非原生CLIPort）",
+      "version": "NeurIPS2023 Table3; Appendix A.5",
+      "tasks": "put-block-in-bowl-seen-colors; packing-unseen-google-objects-group; packing-boxes-pairs-unseen-colors",
+      "split": "three specified transfer tasks",
+      "metric": "Task completion accuracy",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "基于CLIPort环境改为连续关节和接触控制；非CLIPort原生pick/place协议。§4.2称10训练任务，A.5列11环境名称，保留差异；测试三种环境，开环执行。回合、种子、checkpoint及±定义未完整明确，不推断。",
+      "trainingRegime": "200k脚本视频均有动作注释用于逆动力学；其余视频/基线训练见Appendix A。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PlaceBowl",
+        "PackObject",
+        "PackPair"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf"
+    },
+    {
+      "id": "vlatouch-v2-real-manipulation",
+      "dataset": "VLA-Touch (real)",
+      "name": "VLA-Touch · 控制器最终任务完成",
+      "version": "arXiv2507.17294v2 Table1",
+      "tasks": "Cup / Wipe / Peel",
+      "split": "controller-only completion; 20 trials each",
+      "metric": "Manipulation completion rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "原文Table1各项20次；只取Place/Wipe/Peel完整完成，不取Pick或Partial。Franka+Robotiq+GelSight，两RGB；RDT64步只执行细化前48步，控制器最高8Hz。独立种子、误差条和checkpoint未知；与Table2交错规划不同。",
+      "trainingRegime": "牵引示范：Cup40抓取+60放置；Wipe40抓取+60擦拭；Peel60抓取+120削皮，10Hz采集。RDT先100k步Franka动作对齐、每任务20k无触觉微调，再监督训练触觉控制器；非完全免训练。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "CupPlace",
+        "WipeComplete",
+        "PeelComplete"
+      ],
+      "source": "https://arxiv.org/pdf/2507.17294v2"
+    },
+    {
+      "id": "vlatouch-v2-real-interleaved",
+      "dataset": "VLA-Touch (real)",
+      "name": "VLA-Touch · 属性探查与操控交错系统",
+      "version": "arXiv2507.17294v2 Table2",
+      "tasks": "Cup / Wipe / Peel",
+      "split": "interleaved planning and control; 20 trials each",
+      "metric": "Interleaved task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table2各项20次，包含触觉探查、对象选择与操控；不是Table1仅控制器评测。去Planning/Control仅移除对应触觉路径；n/20转百分比，不取跨表较高值。独立训练种子与checkpoint未完整给出。",
+      "trainingRegime": "牵引示范：Cup40抓取+60放置；Wipe40抓取+60擦拭；Peel60抓取+120削皮，10Hz采集。RDT先100k步Franka动作对齐、每任务20k无触觉微调，再监督训练触觉控制器；非完全免训练。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Cup",
+        "Wipe",
+        "Peel"
+      ],
+      "source": "https://arxiv.org/pdf/2507.17294v2"
+    },
+    {
+      "id": "vlatouch-v2-property-decisions",
+      "dataset": "VLA-Touch (real)",
+      "name": "VLA-Touch · 触觉属性判断（非操作成功）",
+      "version": "arXiv2507.17294v2 Figure3",
+      "tasks": "force / roughness / hardness",
+      "split": "no tactile / raw tactile image / structured feedback",
+      "metric": "Tactile attribute decision accuracy",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Figure3每条件20次，触觉来自VLA+插值控制器抓取。准确率不等于完整任务成功；力由标记位移+参考向量，粗糙/硬度用Octopi属性，不是Octo策略。图中明确数字标签读取，非按柱高估算；未报告种子和误差。",
+      "trainingRegime": "使用已有RDT/控制器采集触觉；GPT-4o三种输入，Octopi六帧触觉；力估计不由Octopi负责。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Force",
+        "Roughness",
+        "Hardness"
+      ],
+      "source": "https://arxiv.org/pdf/2507.17294v2"
     }
   ]
 }

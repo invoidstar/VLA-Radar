@@ -1,0 +1,20 @@
+{
+  "id": "r-ravens-unipi-neurips23-transfer-state-bc",
+  "paperId": "p053",
+  "method": "State + Transformer BC",
+  "trackId": "ravens-unipi-neurips23-transfer",
+  "values": {
+    "PlaceBowl": 9.8,
+    "PackObject": 21.7,
+    "PackPair": 1.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf",
+  "sourceVersion": "NeurIPS2023 Table3; Appendix A.5",
+  "locator": "正式PDF p.8 Table3，PlaceBowl/PackObject/PackPair",
+  "attribution": "reported-baseline",
+  "trainingData": "200k脚本视频均有动作注释用于逆动力学；其余视频/基线训练见Appendix A。",
+  "evaluationNotes": "原表±[2.6, 3.5, 0.9]按列保留，统计定义/种子未知；不生成总平均，不套用CLIPort原生操作原语、示范预算或部分完成指标。",
+  "supersedes": ""
+}

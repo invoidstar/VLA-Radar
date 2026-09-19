@@ -1,0 +1,20 @@
+{
+  "id": "r-vlatouch-v2-property-decisions-no-tactile",
+  "paperId": "p044",
+  "method": "仅场景图像",
+  "trackId": "vlatouch-v2-property-decisions",
+  "values": {
+    "Force": 50,
+    "Roughness": 50,
+    "Hardness": 50
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2507.17294v2",
+  "sourceVersion": "arXiv2507.17294v2 Figure3",
+  "locator": "v2 PDF p.7 Figure3 C各柱明确百分比标签",
+  "attribution": "author-reported",
+  "trainingData": "使用已有RDT/控制器采集触觉；GPT-4o三种输入，Octopi六帧触觉；力估计不由Octopi负责。",
+  "evaluationNotes": "每项20次；反馈包含连续属性/参考力向量，并非一律离散自然语言。粗糙度raw与structured均100%，不宣称每属性都严格提升。",
+  "supersedes": ""
+}

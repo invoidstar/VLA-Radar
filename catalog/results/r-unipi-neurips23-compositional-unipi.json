@@ -1,0 +1,21 @@
+{
+  "id": "r-unipi-neurips23-compositional-unipi",
+  "paperId": "p053",
+  "method": "UniPi",
+  "trackId": "unipi-neurips23-compositional",
+  "values": {
+    "SeenPlace": 59.1,
+    "SeenRelation": 53.2,
+    "NovelPlace": 60.1,
+    "NovelRelation": 46.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf",
+  "sourceVersion": "NeurIPS2023 Tables1–2; Appendix A.4",
+  "locator": "正式PDF p.6 Table1，四个原始列；交叉HTML",
+  "attribution": "author-reported",
+  "trainingData": "200k脚本视频；组合任务逆动力学使用20k动作注释视频；视频模型2M步/batch2048/lr1e-4/10k warmup；各基线T5相同但容量和输入不同。",
+  "evaluationNotes": "原表±按列为[2.5, 2, 3.9, 3]；含义/独立重复数未明确，不转为CI。完整模型与Table2最后一行同源，未重复新增。",
+  "supersedes": ""
+}

@@ -5,13 +5,13 @@
     "name": "UniPi",
     "title": "Learning Universal Policies via Text-Guided Video Generation",
     "team": "Yilun Du、Mengjiao Yang、Bo Dai、Hanjun Dai、Ofir Nachum、Joshua B. Tenenbaum、Dale Schuurmans、Pieter Abbeel（署名作者）",
-    "venue": "arXiv",
-    "publicationType": "preprint",
-    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "venue": "NeurIPS 2023",
+    "publicationType": "conference",
+    "publicationStatus": "已核对NeurIPS2023正式论文集；仅保留来源明确的2023年精度，录用具体日期未知。",
     "firstPublished": "2023-01-31",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
-    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "versionNote": "NeurIPS2023正式17页PDF正文§1–6与附录A–B；ar5iv全文交叉；2026-09-19实际阅读",
     "topics": [
       "world",
       "pretraining"
@@ -24,34 +24,42 @@
     ],
     "priority": "selective",
     "contribution": "以文本条件视频生成表示高层计划，再由逆动力学模型把视频转成可执行动作，是视频先验连接机器人控制的重要路线。",
-    "findings": "摘要报告跨任务与跨环境的组合泛化，并探索使用互联网视频。当前核对材料未提供可直接摘录、口径完整的统一成功率，本条不补造分数。",
-    "limitations": "生成视频计划不等于生成可执行的关节轨迹；逆动力学模型、视频质量和测试时生成成本共同限制落地。",
+    "findings": "正式NeurIPS2023 Table1：UniPi已见Place/Relation为59.1/53.2%，未见为60.1/46.1%；Table3三种迁移任务为51.6/75.5/45.7%。Table4的77.1%是生成视频末帧分类器的成功代理，不是机器人真机执行成功率；不生成统一总平均。",
+    "limitations": "实际仿真动作以开环方式执行；视频生成、逆动力学误差与接触简化限制落地。Bridge实验的Success来自生成视频末帧分类器，不能当真机闭环成功率；测试种子与原表±定义未完整明确。",
     "insight": "视频可以成为跨本体的计划表示，但从视觉预测到真实控制仍需要动作落地环节。",
     "readingFocus": "视频规划和逆动力学的分工、跨本体假设、训练与推理开销。",
-    "evidence": "metadata",
-    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-    "hasCautionaryResult": false,
+    "evidence": "checked",
+    "evidenceNote": "本次实际阅读全文及附录，视觉核对所列原图表；作者报告，不是本站独立复现。版本与范围详见笔记。",
+    "hasCautionaryResult": true,
     "sources": [
       {
         "label": "arXiv · 元数据 / 首发记录",
         "url": "https://arxiv.org/abs/2302.00111"
+      },
+      {
+        "label": "第十一批实际全文与原表",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf"
+      },
+      {
+        "label": "正式发表与书目",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2302.00111",
     "arxiv": "2302.00111",
-    "doi": ""
+    "doi": "10.52202/075280-0403"
   },
   "publication": {
     "firstArxivAt": "2023-01-31",
     "firstArxivSource": "https://arxiv.org/abs/2302.00111v1",
     "latestArxivVersion": "v3",
     "latestArxivAt": "2023-11-20",
-    "status": "preprint",
-    "venue": "arXiv",
-    "doi": "",
+    "status": "published",
+    "venue": "NeurIPS 2023",
+    "doi": "10.52202/075280-0403",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "publishedAt": "2023",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -76,101 +84,120 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2302.00111v3",
         "note": "元数据版本 v3；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2023",
+        "observedAt": "2026-09-19",
+        "venue": "NeurIPS 2023",
+        "source": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html",
+        "note": "正式论文集标题、八位作者及DOI核对；仅年精度，不覆盖arXiv首发或推测录用日。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
-    "version": "2302.00111；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+    "status": "expanded",
+    "updatedAt": "2026-09-19",
+    "verifiedAt": "2026-09-19",
+    "version": "NeurIPS2023正式17页PDF正文§1–6与附录A–B；ar5iv全文交叉；2026-09-19实际阅读",
     "sections": [
       {
         "id": "problem",
-        "title": "核心想法：用视频表示计划，而不是直接统一所有动作空间",
-        "body": "UniPi把任务规划写成“给定当前画面与文字目标，生成一段未来视频”，再由独立的逆动力学模型把视频变化转成机器人动作。不同机器人可以共享图像形式的目标与过程，而不要求视频规划器直接输出同一种关节或末端控制量。\n这是一种策略表示与分工方式：视频负责描述希望发生的视觉过程，动作适配器负责具体本体如何实现。它与动作条件世界模型方向不同，主生成条件是当前观察和任务文字，不是先给定任意动作再预测其物理后果。",
+        "title": "研究问题：把计划放进视频，而不是统一所有机器人的动作词表",
+        "body": "不同机器人有不同的状态维度、动作接口与可执行约束，直接把它们塞进同一个动作空间并不自然。UniPi的切入点是让任务由语言说明，计划由未来图像序列表达：先回答环境应该怎样变化，再交给本体相关的动作适配器落实。本文把这个抽象称为UPDP；它描述的是初始图像、指令到视频轨迹的条件分布，不是给定任意动作后预测未来的动作条件世界模型。\n相对于直接行为克隆、关节轨迹扩散和只生成终点图像，核心变化在于把完整的可视行为过程作为中间表示。这让没有动作标签的影片也能监督规划器，但没有消除控制监督：视频如何转成关节指令仍要另学。编辑理解：所谓通用接口是共享表示与知识的设计，不是证明任意人类视频都能被任意机器人直接执行，也不是带有最优性保证的规划算法。",
         "sources": [
           {
-            "label": "§2；§3；Figure 2",
-            "url": "https://arxiv.org/html/2302.00111"
+            "label": "正式NeurIPS2023 PDF §1–2；UPDP定义",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=3"
           }
         ]
       },
       {
-        "id": "conditioning",
-        "title": "首帧条件化：为什么只在采样时固定第一帧不够",
-        "body": "普通文本视频生成不必严格保持真实场景，物体和背景可以随着生成发生漂移。作者发现，仅在采样时强制第一帧等于当前观察，后续帧仍容易偏离；因此训练时就把初始画面作为明确条件。\n为加强一致性，同一观察被沿时间复制，与各个带噪未来帧在通道维拼接。这个设计让每个去噪步骤都能参照真实初始状态，而不只依靠前一预测帧记忆。它改善条件约束，但不等于严格保证物体守恒或接触过程符合物理定律。",
+        "id": "planner",
+        "title": "模块数据流：首帧条件、时间复制和粗到细视频生成",
+        "body": "部署输入为当前RGB观察与任务文本。T5编码语言后，视频扩散模型从噪声生成一段未来帧，再用时间超分辨模块补足中间过程，最后输出给逆动力学网络。训练时显式提供首帧，比只在采样时固定视频第一帧更能约束后续画面；后者容易让场景从真实初态漂移。\n为保持物体和环境一致性，作者把初始观察沿时间复制，并与每个带噪帧按通道拼接；这不是记忆整个过去轨迹。时间卷积负责跨帧局部联系，稀疏视频到密集视频的层次处理降低直接一次生成长动作过程的困难。采样还可以叠加中间目标图像或分类器引导，但这属于额外测试约束，不是从单一任务文本自动获得全部控制条件。Figure2应沿视频生成、时间细化、动作解码三个阶段读，避免把图像输出本身当成机器人接口。",
         "sources": [
           {
-            "label": "§3.1；Table 2",
-            "url": "https://arxiv.org/html/2302.00111"
+            "label": "正式PDF §3.1、Figure2、Appendix A.1",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=4"
           }
         ]
       },
       {
-        "id": "hierarchy",
-        "title": "时间层级：先生成粗过程，再补中间运动",
-        "body": "规划器先在时间上稀疏生成关键画面，再通过时间超分辨率模型补充中间帧。这类似先决定粗粒度子目标，再细化运动过程，避免直接一次处理很长的高维视频序列。\n语言指导与生成约束可以在推理阶段改变计划，但它们依旧作用于视频分布。补出来的中间帧是否对应机器人可执行的动作，还需要逆动力学适配器和实际控制检验；画面平滑与动作可执行不是完全相同的目标。",
+        "id": "training",
+        "title": "训练监督：大量视频训练规划，小动作网络仍依赖带标签数据",
+        "body": "规划器学习带语言和首帧条件的视频去噪；动作适配器则用带动作注释的数据回归七维控制，二者独立训练，而不是一个端到端动作损失直接更新所有模块。附录的动作网络由卷积、残差卷积、空间均值池化和小MLP组成，动作监督是均方误差。组合任务提供20万条脚本视频，但只有2万条有动作标签用于逆动力学；多环境实验则使用20万条带动作注释视频，两个预算不能混写。\nAppendix A报告每个视频模型训练200万步、batch2048、学习率1e-4、前1万步warmup，首帧模型与时间超分辨使用256块TPU-v4。仿真中的两级视频网络各约1.7B，先生成10帧再细化为20帧。小解码器并不意味着整系统轻量。各类基线共享T5语言条件，但容量、状态或图像输入、生成空间不同，因此原文比较只能保留具体配方，不能认定为统一计算预算的公平排名。",
         "sources": [
           {
-            "label": "§3.1；Appendix A.1",
-            "url": "https://arxiv.org/html/2302.00111"
+            "label": "正式PDF Appendix A.1–A.5，训练与数据预算",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=14"
           }
         ]
       },
       {
-        "id": "control",
-        "title": "逆动力学适配：独立训练，本文实验采用开环执行",
-        "body": "动作模型在机器人或仿真动作数据上监督训练，将视觉变化转换成具体控制量。视频规划器的训练可以利用没有动作标签的影像，而动作适配仍需要本体相关数据；“视频无需动作”不能被扩大为整个系统无需动作监督。\n方法描述允许每执行一步就重新生成计划的闭环形式，但作者为了计算效率，在本文实验中采用顺序执行已生成动作的开环控制。因此不能把概念上可接入MPC，写成所有实验已经展示了高频视觉反馈与实时重规划。",
+        "id": "execution",
+        "title": "推理与控制：本文用开环动作执行，并非实测闭环重规划",
+        "body": "理论框架允许每执行一个动作就重新观察、再生成视频与动作，即模型预测控制；但§3.2明确说明，为计算效率，本文所有实验采用开环执行。实际顺序是生成未来图像、解码动作、依序交给环境控制器，而不是持续用新视觉修正整段视频。编辑分析：生成结果很合理时仍可能因动作适配误差逐步偏离，所以视频一致性与真实执行反馈是两道不同保障。\n仿真动作由六个关节量和离散接触指令组成。预测接触值大于0.5时，环境把最近积木附着到夹爪；PyBullet关节控制器尝试达到目标，不可行时最多运行两秒。这个接触简化使实验不等同于真实夹爪的接触动力学。也不能把改造后的连续关节控制与CLIPort原生抓取／放置位姿接口直接混排。附录虽列训练步数，逐表测试次数、独立种子、检查点规则及±的统计定义未完整明确，本批不从小数反推。",
         "sources": [
           {
-            "label": "§3.2；Appendix A.2",
-            "url": "https://arxiv.org/html/2302.00111"
+            "label": "正式PDF §3.2、Appendix A.4–A.5",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=15"
           }
         ]
       },
       {
-        "id": "simulation",
-        "title": "仿真结果：组合指令迁移确有证据，但不是通用机器人全集",
-        "body": "组合规划实验将指令分成70%训练与30%测试，物体位置随机化，视频训练使用脚本生成的约20万条示范。新组合的Place与Relation任务中，UniPi分别约60.1%和46.1%，明显高于表中直接行为克隆与其他生成基线。\n多环境实验也在若干桌面任务上显示收益。这里验证的是特定任务组成、生成数据和动作适配下的组合泛化，不能把这些成功率当成LIBERO、完整CLIPort套件或任意真实机器人的统一分数。",
+        "id": "compositional",
+        "title": "组合泛化原表：已见指令、未见指令和空间关系分别核对",
+        "body": "组合环境要求先把白色积木放入有色碗染色，再按语言放到指定位置或满足相对关系。70%的语言指令用于训练，30%留作测试，每次环境中的物体位置随机化。Table1分别给出已见／未见指令和Place／Relation四列，不是四个可任意合并的完整数据集，也没有作者统一Average。\nUniPi四列为59.1、53.2、60.1、46.1，原表分别附±2.5、±2.0、±3.9、±3.0。State+Transformer BC对应19.4、8.2、11.9、3.7，其他图像BC、轨迹Transformer与Diffuser均作为本文适配基线保留。未见Place略高于已见Place，并不能直接推出未见任务更容易或显著性成立，因为测试集合与不确定性定义不同。榜单保存所有原表均值与原样误差说明，不补置信区间，不把状态基线当同观察条件的复现，也不把这套染色关系任务错挂到LIBERO。",
         "sources": [
           {
-            "label": "§4.1–4.2；Tables 1、3",
-            "url": "https://arxiv.org/html/2302.00111"
-          }
-        ]
-      },
-      {
-        "id": "real",
-        "title": "真实数据实验的关键边界：“Success”评的是生成视频",
-        "body": "真实场景部分使用Bridge视频，比较互联网图文／视频预训练后适配与从头训练，报告CLIP、FID、FVD和一个成功代理指标。该Success由分类器读取生成视频的最后一帧判断任务是否完成，预训练前后为72.6%与77.1%。\n这不是让机器人执行相同计划所得的真实成功率。它支持预训练改善视觉计划质量，却不能单独证明物理执行可靠。原文还指出CLIP分数不一定反映任务是否完成，因此视觉相似度、视频末帧代理与实际闭环控制必须分开。",
-        "sources": [
-          {
-            "label": "§4.3；Table 4",
-            "url": "https://arxiv.org/html/2302.00111"
+            "label": "正式PDF §4.1、Table1，已视觉核对p.6",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=6"
           }
         ]
       },
       {
         "id": "ablation",
-        "title": "消融与计算代价：条件、一致性和层级分别有作用",
-        "body": "在已见任务消融中，增加首帧条件、跨时间初始观察复制与时间层级逐步改善成绩，完整方法Place／Relation约59.1%／53.2%。这比只展示最终视频更直接支持各设计的作用，但只对应所测任务与训练预算。\n生成高质量视频可能需要约一分钟，作者报告初步蒸馏尝试可加速，但并未据此建立通用实时控制结论。大量视频预训练、在线视频生成和本体动作适配的成本，应该与最终控制收益一起衡量。",
+        "title": "消融归因：初始状态约束先解决漂移，时间层次再补行动细节",
+        "body": "Table2只评已见Place／Relation。没有首帧条件、跨帧一致性和时间层次时为13.2／12.4；只加首帧条件到52.4／34.7；再加首帧复制到53.2／39.4；完整模型为59.1／53.2。最明显变化来自给视频一个实际初态，但不能仅凭这条递进实验断言三个组件的效果完全独立：后续组件是在前面组件存在时加入，并不是完整的三因素组合实验。\n完整模型的最后一行与Table1已见两列同源，本批不再次创建一条成绩；三条消融记录放入同一组合实验设置，未测试的Novel列留空而不是零。Appendix A还记录了Transformer历史长度从4加到8未改善，以及自回归预测动作时误差累积的尝试；这些都是本配方下的条件性发现，不是所有记忆模型或自回归策略的普遍否定。",
         "sources": [
           {
-            "label": "Table 2；§6；Appendix A",
-            "url": "https://arxiv.org/html/2302.00111"
+            "label": "正式PDF Table2、Appendix A.3；重复原表去重",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=7"
           }
         ]
       },
       {
-        "id": "reading",
-        "title": "理解检查：把“看起来会成功”与“真的执行成功”分开",
-        "body": "先沿Figure 2画出观察与文字进入视频规划器、未来帧进入逆动力学模型、动作再进入环境的顺序。其次明确哪些模块能用无动作视频训练，哪些仍需要机器人动作标签，以及开环计划为何易受真实偏差影响。\n最后按仿真执行、真实视频质量、真实物理执行三类证据检查每个数字。读完应能解释UniPi如何借用视频生成先验，也能指出部分可观测场景、生成幻觉、接触可行性与推理时延仍是这一表示方式需要面对的问题。",
+        "id": "transfer",
+        "title": "多环境迁移：共享视频模型，不等于与原生CLIPort协议相同",
+        "body": "Table3评测放块入碗、打包物体组、打包指定颜色组合三种测试环境。UniPi分别为51.6、75.5、45.7，Diffuser为14.8、15.9、10.5；完整五个方法的原表均予保留。训练数据由脚本生成，测试时迁移到规定的环境／语言条件，而不是宣称任意现实任务都可零样本完成。\n这里使用CLIPort任务库，但改成与组合任务相同的连续关节动作和仿真接触接口。§4.2称训练10个任务，Appendix A.5实际列出11个训练环境名称；本笔记保留这个口径差异，不擅自删除一个环境凑成10。测试的三个名称和20万动作注释视频预算则清楚列明。榜单归入Ravens任务家族的独立“UniPi连续控制迁移”设置，与CLIPort原论文的示范预算、部分完成得分、动作原语完全分开，仍是报告论文内部对照。",
         "sources": [
           {
-            "label": "Figure 2；§3–4、6",
-            "url": "https://arxiv.org/html/2302.00111"
+            "label": "正式PDF §4.2、Table3、Appendix A.5，已查看p.8原表",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=8"
+          }
+        ]
+      },
+      {
+        "id": "video-evidence",
+        "title": "真实视频实验：末帧分类器的77.1%不是机器人闭环成功率",
+        "body": "Bridge实验使用7200段视频文本对，80%训练、20%测试；互联网预训练另含1400万视频文本对、6000万图文对和LAION-400M。Table4比较有无互联网预训练后的生成视频质量，CLIP/FID/FVD按32个样本评估，而Success来自一个读取生成视频末帧的成功分类器。72.6%到77.1%是该代理判断的变化，不是真机执行77.1%成功，更不能与后来的BridgeData真机榜混合。\n预训练使FID由17.75降至14.54、FVD由288.02降至264.66，CLIP只由24.43到24.54。正文“higher FID/FVD”的文字与表头向下箭头及数值趋势冲突，本条按原表方向解释并标出冲突。编辑分析：画面语义相似、视觉逼真和控制可实现性并非同一个目标；一个代理分类器也不能验证中间碰撞或最终关节可达。本批在阅读表中保留这些信息，不创建以生成视频代理值冒充的真机成绩。",
+        "sources": [
+          {
+            "label": "正式PDF §4.3、Table4；ar5iv可读原表交叉核对",
+            "url": "https://ar5iv.labs.arxiv.org/html/2302.00111"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "贡献边界与读图路线：视频计划有迁移价值，也有物理与时延缺口",
+        "body": "论文的启发是把跨环境知识先放到语言—视频空间，再单独学习动作适配。它没有证明视频生成会自动满足机器人运动学、接触或部分可观察条件。作者承认高保真视频生成可能需要约一分钟，初步蒸馏实验提到16倍加速，但这不等于所有机器人实验已经以该速度闭环运行；遮挡或未知状态也可能导致虚构物体与运动。\n阅读可先看Figure2的三段数据流，再把Table1的语言组合、Table3的环境迁移、Table4的生成质量分开。Figure4展示计划与仿真实际执行的对应，Figures6/8/9及附录B主要是生成与扰动示例，不能由示例视频推出全任务可靠性。本文笔记以正式NeurIPS2023的17页PDF正文与附录A–B为主，交叉读取ar5iv；架构图和Tables1–3已实际查看原页，正式书目另核验。旧arXiv首发保持，不能把本次补表时间伪装成论文首次公开时间。",
+        "sources": [
+          {
+            "label": "正式PDF §6、Figure4、Appendices A–B；实际阅读范围",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=10"
           }
         ]
       }
@@ -178,43 +205,53 @@
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://arxiv.org/html/2302.00111"
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf"
     },
     "figures": [
       {
-        "title": "Figure 2：从视频计划到动作适配",
-        "url": "https://arxiv.org/html/2302.00111#S3.F2",
-        "caption": "视频规划与本体逆动力学分开；本文实验的开环执行选择与可选闭环形式需要区别。"
+        "title": "Figure2：视频生成、时间细化与动作适配",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=4",
+        "caption": "已查看正式PDF方法图；沿图像计划到动作适配器阅读，区分共有视觉接口与本体相关控制。"
+      },
+      {
+        "title": "Tables1–3与Figure4：仿真实际动作，不是Bridge视频代理",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=6",
+        "caption": "已查看p.6–8原表；Table2完整行与Table1重叠，Table3使用改造后的连续关节接口；Table4另属视频质量。"
       }
     ],
     "tables": [
       {
-        "title": "Bridge视频计划的代理评估，不是机器人执行榜",
+        "title": "原文三类证据：不要合并成统一成功率",
         "columns": [
-          "设置",
-          "FVD，越低越好",
-          "视频末帧成功代理"
+          "证据",
+          "原文数值",
+          "实际含义"
         ],
         "rows": [
           [
-            "无互联网预训练",
-            "288.02",
-            "72.6%"
+            "Table1 UniPi",
+            "59.1 / 53.2 / 60.1 / 46.1",
+            "已见/未见指令的Place/Relation仿真执行"
           ],
           [
-            "有互联网预训练",
-            "264.66",
-            "77.1%"
+            "Table3 UniPi",
+            "51.6 / 75.5 / 45.7",
+            "三个指定迁移环境的仿真完成率"
+          ],
+          [
+            "Table4无/有预训练",
+            "72.6% / 77.1%",
+            "生成视频末帧分类器代理，不是真机执行"
           ]
         ],
-        "locator": "Table 4",
-        "caption": "作者报告；Success来自生成视频末帧分类器，不能登记为真实机器人任务成功率。"
+        "locator": "正式NeurIPS2023 Tables1/3/4；本表为分类解释，不新增测量",
+        "caption": "分母、控制空间和评测对象不同；数值均为原报告，不能跨行平均、取最大或归到真机榜。"
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-19",
+      "note": "第十一批：完成所列原始结果13行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
     }
   }
 }
