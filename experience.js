@@ -79,9 +79,78 @@
   function draw(){const value=c=>!c?0:measure==='papers'?c.paperIds.length:c.resultCount;const max=Math.max(1,...d.cells.map(value));host.querySelector('#coverage-matrix').innerHTML=`<div class="heat-scroll" role="region" tabindex="0" aria-label="可滚动的证据覆盖表"><table class="heatmap"><thead><tr><th>研究方向 / 数据集</th>${d.datasets.map(name=>`<th scope="col">${esc(name)}</th>`).join('')}</tr></thead><tbody>${lib.topics.map(topic=>`<tr><th scope="row">${esc(topic.name)}</th>${d.datasets.map(dataset=>{const c=cells.get(topic.id+'|'+dataset),n=value(c),level=n?Math.max(1,Math.ceil(4*n/max)):0;return `<td><button class="heat-cell heat-${level}" data-cell="${esc(topic.id+'|'+dataset)}" aria-label="${esc(topic.name)}，${esc(dataset)}，${n}${measure==='papers'?'篇来源论文':'条结果'}">${n||'—'}</button></td>`;}).join('')}</tr>`).join('')}</tbody></table></div>`;host.querySelectorAll('[data-cell]').forEach(b=>b.onclick=()=>{const c=cells.get(b.dataset.cell),[topic,dataset]=b.dataset.cell.split('|'),name=lib.topics.find(x=>x.id===topic).name;const target=host.querySelector('#coverage-papers');target.innerHTML=`<div class="coverage-selection"><h2>${esc(name)} · ${esc(dataset)} <small>${c?c.paperIds.length:0} 篇（首30篇）</small></h2><button class="btn" id="coverage-board">查看该数据集榜单 ↗</button></div>`+(c?c.paperIds.slice(0,30).map(id=>`<article class="coverage-paper"><div><h3>${esc(lookup(id).name)}</h3><p>${esc(lookup(id).title)}</p></div>${buttons(id)}</article>`).join(''):'<p class="workspace-empty">本站尚无已核验的对应结果映射。</p>');target.querySelector('#coverage-board').onclick=()=>api.navigate('leaderboards',{dataset});target.scrollIntoView({block:'nearest',behavior:'smooth'});});}
   host.querySelector('#coverage-measure').onchange=e=>{measure=e.target.value;draw();};draw();
  }
- function chart({track,rows,host}){if(!host?.isConnected)return;host.hidden=!host.hidden;if(host.hidden)return;
-  let metric=track.columns.includes('Average')?'Average':track.columns[0];
-  function draw(){const c=C.chartData(track,rows,metric),unit=track.unit==='percent'?'%':track.unit==='seconds'?' s':'';const count=Math.min(c.rows.length,40);host.innerHTML=`<section class="protocol-visual"><div class="chart-heading"><div class="eyebrow">ONE PROTOCOL. ONE METRIC.</div><h2>${esc(track.name)}</h2><label>图表指标<select id="chart-metric">${track.columns.map(k=>`<option ${k===metric?'selected':''}>${esc(k)}</option>`).join('')}</select></label></div><p class="workspace-hint">${track.comparisonScope==='protocol'?'仅展示当前协议已核验结果，数值排序不代表统计显著。':'按原表顺序展示，不赋予公平名次：预算或评测设置不完全一致。'} ${c.missing} 条缺失值不画成零分。原文未统一提供误差，因此不补造误差条。</p><div class="chart-scale"><span>${c.min}${unit}</span><span>${c.max}${unit}</span></div><div class="protocol-bars" role="list">${c.rows.slice(0,40).map(r=>`<div class="chart-row" role="listitem"><div class="chart-model"><strong>${esc(r.method)}</strong><a href="${esc(url(r.source))}" target="_blank" rel="noopener noreferrer">${esc(r.locator)} ↗</a></div><div class="bar-lane" aria-hidden="true"><span style="margin-left:${r.offset}%;width:${r.width}%"></span></div><b class="chart-value">${esc(r.values[c.metric])}${unit}</b></div>`).join('')}</div><p class="workspace-hint">${count} / ${rows.length} 条记录绘图（最多40条），完整数据见原表或 CSV。训练条件：${esc(track.trainingRegime)}</p></section>`;host.querySelector('#chart-metric').onchange=e=>{metric=e.target.value;draw();};}draw();
+ function chart({track,rows,host,metric,chartType='bar',dateBasis='firstPublished',toggle=true,onChange}){
+  if(!host?.isConnected)return;
+  if(toggle){host.hidden=!host.hidden;if(host.hidden)return;}else host.hidden=false;
+  metric=track.columns.includes(metric)?metric:track.columns.includes('Average')?'Average':track.columns[0];
+  chartType=chartType==='scatter'?'scatter':'bar';dateBasis=dateBasis==='verifiedAt'?'verifiedAt':'firstPublished';
+  const unit=track.unit==='percent'?'%':track.unit==='seconds'?' s':'',selected=(a,b)=>a===b?'selected':'';
+  function change(patch){
+   if(onChange){onChange(patch);return;}
+   metric=patch.metric||metric;chartType=patch.chartType||chartType;dateBasis=patch.dateBasis||dateBasis;draw();
+  }
+  function draw(){
+   if(!host.isConnected)return;
+   const c=C.chartData(track,rows,metric);
+   host.innerHTML=`<section class="protocol-visual"><div class="chart-heading"><div class="eyebrow">ONE PROTOCOL. ONE METRIC.</div><h2>${esc(track.name)}</h2></div>
+    <div class="protocol-chart-controls"><label>图表类型<select id="chart-type"><option value="bar" ${selected(chartType,'bar')}>成绩条形图</option><option value="scatter" ${selected(chartType,'scatter')}>时间—成绩散点图</option></select></label>
+    <label>图表指标<select id="chart-metric">${track.columns.map(k=>`<option ${selected(k,metric)}>${esc(k)}</option>`).join('')}</select></label>
+    ${chartType==='scatter'?`<label>横轴时间口径<select id="chart-time"><option value="firstPublished" ${selected(dateBasis,'firstPublished')}>来源论文首次公开日期</option><option value="verifiedAt" ${selected(dateBasis,'verifiedAt')}>本站结果核验日期</option></select></label>`:''}</div>
+    <p class="workspace-hint">${track.comparisonScope==='protocol'?'只展示本赛道已核验的报告，差异不代表统计显著。':'数值排列仅帮助阅读；训练预算或评测细节不完全一致，不赋予公平名次。'} 原文未统一提供误差，不补造误差条，不合成跨协议总分。</p><div id="protocol-plot"></div></section>`;
+   host.querySelector('#chart-type').onchange=e=>change({chartType:e.target.value,focus:'#chart-type'});
+   host.querySelector('#chart-metric').onchange=e=>change({metric:e.target.value,focus:'#chart-metric'});
+   if(chartType==='scatter'){
+    host.querySelector('#chart-time').onchange=e=>change({dateBasis:e.target.value,focus:'#chart-time'});
+    scatter(host.querySelector('#protocol-plot'));return;
+   }
+   host.querySelector('#protocol-plot').innerHTML=`<div class="chart-scale"><span>${c.min}${unit}</span><span>${c.max}${unit}</span></div><div class="protocol-bars" role="list">${c.rows.slice(0,40).map(r=>`<div class="chart-row" role="listitem"><div class="chart-model"><strong>${esc(r.method)}</strong><a href="${esc(url(r.source))}" target="_blank" rel="noopener noreferrer">${esc(r.locator)} ↗</a></div><div class="bar-lane" aria-hidden="true"><span style="margin-left:${r.offset}%;width:${r.width}%"></span></div><b class="chart-value">${esc(r.values[c.metric])}${unit}</b></div>`).join('')}</div><p class="workspace-hint">${Math.min(c.rows.length,40)} / ${rows.length} 条记录绘图（最多40条，随表格排列）；${c.missing} 条缺失值不画成零分。完整记录见表格或 CSV。训练条件：${esc(track.trainingRegime)}</p>`;
+  }
+  function scatter(target){
+   const d=C.scatterData(track,rows,metric,byId,dateBasis),timeLabel=dateBasis==='verifiedAt'?'本站结果核验日期':'来源论文首次公开日期';
+   const explanation=dateBasis==='verifiedAt'?'横轴是本站核验这条结果的日期，不是实验执行日、模型发布日或论文首发日。':'横轴来自记录所归属的报告论文，不一定是被引用基线的方法首发日期，也不代表这条成绩实际测得的日期。同一论文的基线会共用日期。';
+   const summary=`${d.plottedCount} / ${d.eligible} 条结果可见 · 成绩缺失 ${d.missingScore} 条 · 缺少精确日期 ${d.missingDate} 条`;
+   target.innerHTML=`<p class="scatter-time-note">${explanation} 未知或仅有年/月的日期不补造为某一天，不进入图中；原记录仍可查。此图不是技术进步趋势认证。</p><p class="scatter-summary" role="status">${summary}</p><div id="scatter-drawing"></div><div class="scatter-footer"><span>${d.groups.length} / ${d.totalGroups} 个日期—成绩坐标（最多${d.limit}个）；重合坐标合并显示条数，展开可逐条核对。</span><button class="btn" id="export-scatter-csv">导出散点数据 CSV</button></div><div class="scatter-detail" id="scatter-detail" aria-live="polite"><p>悬停、点选或使用 Tab 聚焦数据点，查看方法、日期和原始证据。相同坐标内的记录不做平均。</p></div>`;
+   target.querySelector('#export-scatter-csv').onclick=()=>api.download(track.id+'-'+metric.replace(/[^a-zA-Z0-9_-]/g,'_')+'-time.csv',C.scatterCSV(track,rows,metric,byId,dateBasis),'text/csv;charset=utf-8');
+   if(!d.validCount){target.querySelector('#scatter-drawing').innerHTML='<p class="workspace-empty">当前指标没有同时具备数值和精确日期的记录。可以切换时间口径或指标；不使用今天的日期填补空缺。</p>';return;}
+   const W=880,H=420,L=74,T=36,PW=770,PH=290;
+   const x=v=>L+(v-d.start)/(d.end-d.start)*PW,y=v=>T+PH-(v-d.min)/(d.max-d.min)*PH;
+   const fmt=n=>Number.isInteger(n)?String(n):Number(n.toFixed(2)).toString();
+   const xticks=Array.from({length:d.oneDate?3:5},(_,i)=>d.start+(d.end-d.start)*i/(d.oneDate?2:4));
+   const yticks=Array.from({length:5},(_,i)=>d.min+(d.max-d.min)*i/4);
+   const tickDate=n=>new Date(n).toISOString().slice(0,10);
+   target.querySelector('#scatter-drawing').innerHTML=`${d.oneDate?'<p class="workspace-hint">当前只有一个日期：纵向分布代表同日记录，不是随时间变化的趋势。</p>':''}
+    <div class="scatter-scroll" role="region" tabindex="0" aria-label="可横向滚动的时间—成绩散点图"><svg class="score-scatter" viewBox="0 0 ${W} ${H}" role="group" aria-labelledby="scatter-title scatter-description">
+    <title id="scatter-title">${esc(track.name)}：${esc(metric)}随${timeLabel}的分布</title><desc id="scatter-description">${summary}。不连接数据点，不跨协议拟合趋势。每个可聚焦点可展开原始记录。</desc>
+    ${yticks.map(v=>`<line class="scatter-grid" x1="${L}" y1="${y(v)}" x2="${L+PW}" y2="${y(v)}"/><text class="scatter-tick" x="${L-12}" y="${y(v)+4}" text-anchor="end">${fmt(v)}${unit}</text>`).join('')}
+    ${xticks.map(v=>`<line class="scatter-grid" x1="${x(v)}" y1="${T}" x2="${x(v)}" y2="${T+PH}"/><text class="scatter-tick" x="${x(v)}" y="${T+PH+25}" text-anchor="middle">${tickDate(v)}</text>`).join('')}
+    <line class="scatter-axis" x1="${L}" y1="${T+PH}" x2="${L+PW}" y2="${T+PH}"/><text class="scatter-axis-title" x="${L}" y="18">${esc(metric)}${unit?' ('+unit.trim()+')':''} · ${R.metricDirection(track,metric)==='lower'?'越低越好':'越高越好'}</text><text class="scatter-axis-title" x="${L+PW/2}" y="395" text-anchor="middle">${timeLabel} · UTC 日期</text>
+    ${d.groups.map((group,i)=>`<g class="scatter-point" data-scatter-point="${i}" tabindex="0" role="button" aria-controls="scatter-detail" aria-label="${esc(group.points.length===1?group.points[0].row.method:group.points.length+'条重合记录')}，${group.date}，${esc(metric)} ${group.value}${unit}，查看来源"><title>${esc(group.points.map(p=>p.row.method).slice(0,8).join(' / '))} · ${group.date} · ${group.value}${unit}</title><circle class="scatter-hit" cx="${x(group.time)}" cy="${y(group.value)}" r="14"/><circle class="scatter-dot" cx="${x(group.time)}" cy="${y(group.value)}" r="${group.points.length>1?11:6}"/>${group.points.length>1?`<text class="scatter-count" x="${x(group.time)}" y="${y(group.value)+4}" text-anchor="middle" aria-hidden="true">${group.points.length>99?'99+':group.points.length}</text>`:''}</g>`).join('')}</svg></div>`;
+   let active=-1;
+   function show(i){
+    if(active===i)return;active=i;let count=10;const group=d.groups[i];
+    target.querySelectorAll('[data-scatter-point]').forEach(p=>p.classList.toggle('is-active',Number(p.dataset.scatterPoint)===i));
+    function detail(){
+     target.querySelector('#scatter-detail').innerHTML=`<h3>${group.date} · ${esc(metric)} ${group.value}${unit} <small>${group.points.length} 条原始记录</small></h3>`+group.points.slice(0,count).map(p=>`<article class="scatter-record"><strong>${esc(p.row.method)}</strong><p>${timeLabel}：${p.date} · 来源论文：${esc(p.paperName)} (${esc(p.row.paperId)})</p><p>${esc(p.row.trainingData)}</p><p>${esc(p.row.evaluationNotes)}</p><small>${esc(p.row.sourceVersion)} · ${esc(p.row.locator)}</small>${sourceLinks([{label:'原始结果与设置',url:p.row.source}])}<a class="board-paper-link" href="?view=reader&amp;paper=${esc(p.row.paperId)}">阅读来源论文 ↗</a></article>`).join('')+(count<group.points.length?'<button id="scatter-more" class="btn">显示更多重合记录</button>':'');
+     const more=target.querySelector('#scatter-more');if(more)more.onclick=()=>{count+=10;detail();};
+    }detail();
+   }
+   const svg=target.querySelector('.score-scatter'),points=[...target.querySelectorAll('[data-scatter-point]')];
+   // Dense points may overlap visually: pointer selection uses the nearest true coordinate,
+   // not whichever SVG circle happens to be painted last. No coordinate jitter is applied.
+   function nearest(event,focus){
+    const matrix=svg.getScreenCTM();if(!matrix)return;
+    const pos=new DOMPoint(event.clientX,event.clientY).matrixTransform(matrix.inverse());
+    let index=-1,best=18*18;
+    d.groups.forEach((g,i)=>{const dist=(x(g.time)-pos.x)**2+(y(g.value)-pos.y)**2;if(dist<best){best=dist;index=i;}});
+    if(index>=0){show(index);if(focus)points[index].focus({preventScroll:true});}
+   }
+   svg.onpointermove=e=>nearest(e,false);svg.onclick=e=>nearest(e,true);
+   points.forEach(p=>{
+    const showPoint=()=>show(Number(p.dataset.scatterPoint));p.onfocus=showPoint;
+    p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPoint();}};
+   });
+  }
+  draw();
  }
  function exportDialog(selected){return g.RadarTools.export(selected);}
  async function action(type,arg){if(type==='focus'){api.navigate('reader',{paper:arg});return;}if(type==='compare'){addCompare(arg);return;}if(type==='export')return exportDialog();if(type==='cite')return exportDialog([arg]);if(type==='chart')return chart(arg);if(type==='csv')return api.download(arg.track.id+'.csv',C.csv(arg.track,arg.rows),'text/csv;charset=utf-8');}

@@ -22,3 +22,7 @@ assert.equal(c.makeUrl(true,true).hash,'#paper=p052');assert.equal(c.makeUrl(fal
 c=fixture('https://example.test/VLA-Radar/?year=%3Cscript%3E&week=bad');assert.equal(c.state.year,'');assert.equal(c.state.week,'');
 c=fixture('https://example.test/VLA-Radar/?view=leaderboards&dataset=RoboCasa&track=robocasa24-cosmos-table');assert.equal(c.makeUrl().searchParams.get('dataset'),'RoboCasa');assert.equal(c.makeUrl().searchParams.get('track'),'robocasa24-cosmos-table');
 console.log('PASS: URL tests: legacy weeks/months, public sharing, invalid parameters and leaderboard tracks.');
+
+c=fixture('https://example.test/VLA-Radar/?view=leaderboards&dataset=LIBERO&track=t&lbMetric=Long&lbOrder=asc&lbChart=scatter&lbTime=firstPublished');
+for(const [key,value] of Object.entries({lbMetric:'Long',lbOrder:'asc',lbChart:'scatter',lbTime:'firstPublished'}))assert.equal(c.makeUrl(true,true).searchParams.get(key),value);
+console.log('PASS: shared leaderboard URLs preserve metric, ordering and source-scoped chart choices.');

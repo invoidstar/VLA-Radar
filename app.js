@@ -67,7 +67,7 @@
     for(const k of ['q','topic','month','year','week','venue','priority'])if(state[k])u.searchParams.set(k,state[k]);
     if(state.sort!=='recommended')u.searchParams.set('sort',state.sort);
     if(view==='timeline'&&state.timeline==='month')u.searchParams.set('timeline','month');
-    if(view==='leaderboards'){const params=new URLSearchParams(location.search);for(const k of ['dataset','track']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
+    if(view==='leaderboards'){const params=new URLSearchParams(location.search);for(const k of ['dataset','track','lbMetric','lbOrder','lbChart','lbTime']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
     if(['reader','compare'].includes(view)){const params=new URLSearchParams(location.search);for(const k of ['paper','compare']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
     if(view==='news'){const params=new URLSearchParams(location.search);for(const k of ['nw','nc','ne','nq','paper','story']){const v=params.get(k);if(v)u.searchParams.set(k,v);}}
     if(includePaper)u.hash=location.hash;

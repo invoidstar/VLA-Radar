@@ -119,3 +119,7 @@ python scripts/validate_all.py
 ## 官网反向文献与基准身份
 
 读取 `maintenance/benchmark-content-policy.md` 与 `maintenance/benchmark-source-audit-20260918.json`。周更将当前数据集官网/官方榜单作为发现论文的入口，按实际完成的深读小批次入库。必须将RoboCasa与RoboCasa365分别显示，并保留365的运行版本（1.0.0/1.0.1）、episode horizon、目标/预训练厨房和示范预算。不同版本或同名方法不同设置不覆盖取最大值；官方/论文同源记录不视为独立复现。未取得完整论文/身份或协议不明的条目保留候选，局部审计不推进完整文献检索检查点。
+
+## 榜单交互维护（2026-09-19）
+
+按`maintenance/leaderboard-analysis.md`保留任意成绩列排序、名次/显示方向分离和协议内时间—成绩图。内容更新使用现有firstPublished/verifiedAt，不从图表需要倒推日期或分数。新增browser_leaderboard.py须与现有五套浏览器测试一起通过；没有扩大主库/新闻的自动入库范围。

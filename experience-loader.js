@@ -3,7 +3,7 @@
 (function(g){
  let config,api,pending;
  function script(path){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=path;s.onload=resolve;s.onerror=()=>{s.remove();reject(new Error('功能模块加载失败，请重试'));};document.head.append(s);});}
- function ensure(){if(!pending)pending=(g.RadarExperienceCore?Promise.resolve():script('experience-core.js?v=workspace-20260918')).then(()=>g.RadarExperience?null:script('experience.js?v=final-20260918')).then(()=>{g.RadarExperience.configure(config,api);return g.RadarExperience;}).catch(e=>{pending=null;throw e;});return pending;}
+ function ensure(){if(!pending)pending=(g.RadarExperienceCore?Promise.resolve():script('experience-core.js?v=leaderboard-20260919')).then(()=>g.RadarExperience?null:script('experience.js?v=leaderboard-20260919')).then(()=>{g.RadarExperience.configure(config,api);return g.RadarExperience;}).catch(e=>{pending=null;throw e;});return pending;}
  let newsPending;
  function newsStyle(){if(document.getElementById('news-styles'))return Promise.resolve();return new Promise((resolve,reject)=>{const l=document.createElement('link');l.id='news-styles';l.rel='stylesheet';l.href='news.css?v=news-20260918';l.onload=resolve;l.onerror=()=>{l.remove();reject(new Error('News stylesheet failed'));};document.head.append(l);});}
  function ensureNews(){if(!newsPending)newsPending=Promise.all([newsStyle(),(g.RadarNewsCore?Promise.resolve():script('news-core.js?v=news-20260918')).then(()=>g.RadarNews?null:script('news.js?v=news-20260918'))]).then(()=>{g.RadarNews.configure(config,api);return g.RadarNews;}).catch(e=>{newsPending=null;throw e;});return newsPending;}
