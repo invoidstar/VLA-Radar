@@ -74,7 +74,7 @@ for slug,m,v in [('sync','LingBot-VA sync',[92.9,93.2]),('fdm','FDM-grounded asy
  rs.append(R(f'r-lingbot-v2-async-{slug}','p037',m,'lingbot-v2-async',dict(zip(['Easy all','Easy horizon=3'],v)),'https://arxiv.org/html/2601.21998v2','arXiv 2601.21998v2','Table 3','same model, deployment ablation','FDM缓解但仍未达到同步。'))
 # MVP textual count
 rs.append(R('r-mvp-v1-pixmc-count','p097','MVP frozen visual representation','mvp-v1-pixmc-textual-count',{'Outperform supervised count':7,'Near state-oracle count':5},'https://arxiv.org/abs/2203.06173','arXiv 2203.06173v1','§5.1 textual summary','8 PixMC tasks','只是8任务中的正文计数；不从Figure 5–11曲线读取逐任务精确分数。'))
-assert len(rs)==44,len(rs)
+assert len(rs)==46,len(rs)
 for r in rs: dump('catalog/results/'+r['id']+'.json',r)
 cfg={
  'p033':(['otql-v1-single-policy','otql-v1-pretrained-vla'],4,None,None),
