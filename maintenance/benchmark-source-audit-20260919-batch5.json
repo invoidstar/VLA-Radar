@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "7972642d3dc6f5d98b676b87c31ea9b78f350e8e",
+  "status": "partial-content-backfill",
+  "scope": "第五批只补既有p057 LIBERO与p064 OpenVLA的深读、发表/书目与原始结果；不新增论文/数据集/页面，不推进完整周更检索。",
+  "newPapers": [],
+  "deepenedPapers": [
+    "p057",
+    "p064"
+  ],
+  "newTracks": [
+    "libero-openvla-v3-singleview-cleaned",
+    "libero-original-neurips23-fwt",
+    "libero-original-neurips23-nbt",
+    "libero-original-neurips23-auc"
+  ],
+  "newResults": [
+    "r-libero-openvla-v3-singleview-cleaned-dp",
+    "r-libero-openvla-v3-singleview-cleaned-octo",
+    "r-libero-openvla-v3-singleview-cleaned-openvla",
+    "r-libero-original-neurips23-fwt-er-resnet-rnn",
+    "r-libero-original-neurips23-fwt-packnet-resnet-rnn",
+    "r-libero-original-neurips23-fwt-er-resnet-t",
+    "r-libero-original-neurips23-fwt-packnet-resnet-t",
+    "r-libero-original-neurips23-fwt-er-vit-t",
+    "r-libero-original-neurips23-fwt-packnet-vit-t",
+    "r-libero-original-neurips23-fwt-seql-resnet-t",
+    "r-libero-original-neurips23-fwt-ewc-resnet-t",
+    "r-libero-original-neurips23-nbt-er-resnet-rnn",
+    "r-libero-original-neurips23-nbt-packnet-resnet-rnn",
+    "r-libero-original-neurips23-nbt-er-resnet-t",
+    "r-libero-original-neurips23-nbt-packnet-resnet-t",
+    "r-libero-original-neurips23-nbt-er-vit-t",
+    "r-libero-original-neurips23-nbt-packnet-vit-t",
+    "r-libero-original-neurips23-nbt-seql-resnet-t",
+    "r-libero-original-neurips23-nbt-ewc-resnet-t",
+    "r-libero-original-neurips23-auc-er-resnet-rnn",
+    "r-libero-original-neurips23-auc-packnet-resnet-rnn",
+    "r-libero-original-neurips23-auc-er-resnet-t",
+    "r-libero-original-neurips23-auc-packnet-resnet-t",
+    "r-libero-original-neurips23-auc-er-vit-t",
+    "r-libero-original-neurips23-auc-packnet-vit-t",
+    "r-libero-original-neurips23-auc-seql-resnet-t",
+    "r-libero-original-neurips23-auc-ewc-resnet-t"
+  ],
+  "readSources": [
+    {
+      "paperId": "p057",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "scope": "正式PDF正文§1–7及参考文献，Tables1–3、Figures2–5均查看PDF页面；独立Supplemental ZIP工具不支持，未认证其中配置。",
+      "metadata": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html"
+    },
+    {
+      "paperId": "p064",
+      "url": "https://arxiv.org/html/2406.09246v3",
+      "scope": "v3正文与Appendices A–E，Table12原生HTML，另核对Tables1–2、9–11；图1导读按原文标题/机制，未镜像图片。",
+      "metadata": "https://proceedings.mlr.press/v270/kim25c.html"
+    }
+  ],
+  "boundaries": [
+    "FWT/NBT/AUC与最终成功率分开；NBT越低越好，原表score不乘100。",
+    "Table1与Table2中ResNet-T的ER/PackNet重复证据仅收一次；MTL未给三项指标，不填入缺值。",
+    "OpenVLA静态第三人称相机，过滤后各套432/454/428/379条示范，各套独立微调；500回合每种子每套、三个种子。",
+    "所有27行归属于实际报告论文，Octo/DP基线不改归原方法论文；无OFT或后续分数覆盖。",
+    "OpenVLA低秩/量化章节为较小混合的SigLIP-only变体；旧笔记架构图Figure2定位更正为Figure1。",
+    "LIBERO补正式NeurIPS2023及DOI，首次公开2023-06-05不改，出版年精度不猜月日。",
+    "书目OpenVLA采用正式PMLR作者表，与arXiv v3作者表分开；全文笔记仍限定v3。"
+  ],
+  "deferred": [
+    {
+      "method": "RoboFlamingo",
+      "source": "https://arxiv.org/abs/2311.01378",
+      "status": "full-text-access-pending",
+      "reason": "本轮尝试arXiv HTML不可达，PDF超过web解析大小上限；不把摘要扩写成重新精读，旧记录及deferred保持。"
+    }
+  ],
+  "notes": {
+    "p057": {
+      "sections": 9,
+      "bodyCharacters": 2933
+    },
+    "p064": {
+      "sections": 9,
+      "bodyCharacters": 2940
+    }
+  },
+  "searchCheckpoints": "本批是已有论文原表回补，不改论文/新闻完整检索检查点；此前235行加第四批47行共282条均保留。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "r-libero-original-neurips23-fwt-er-resnet-t",
+  "paperId": "p057",
+  "method": "ER / ResNet-T",
+  "trackId": "libero-original-neurips23-fwt",
+  "values": {
+    "Spatial": 0.65,
+    "Object": 0.67,
+    "Goal": 0.64,
+    "Long": 0.48
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+  "sourceVersion": "NeurIPS2023 formal main PDF",
+  "locator": "Tables1–2 (same evidence, once), PDF p7–8; §5.1 Eq.(3); FWT column",
+  "attribution": "author-reported",
+  "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ResNet-T",
+  "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.03, \"Object\": 0.07, \"Goal\": 0.01, \"Long\": 0.02}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+  "supersedes": ""
+}

@@ -1,0 +1,21 @@
+{
+  "id": "r-libero-original-neurips23-nbt-packnet-resnet-rnn",
+  "paperId": "p057",
+  "method": "PackNet / ResNet-RNN",
+  "trackId": "libero-original-neurips23-nbt",
+  "values": {
+    "Spatial": 0.38,
+    "Object": 0.35,
+    "Goal": 0.37,
+    "Long": 0.21
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+  "sourceVersion": "NeurIPS2023 formal main PDF",
+  "locator": "Table1, PDF p7–8; §5.1 Eq.(3); NBT column",
+  "attribution": "author-reported",
+  "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ResNet-RNN",
+  "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.03, \"Object\": 0.02, \"Goal\": 0.04, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+  "supersedes": ""
+}

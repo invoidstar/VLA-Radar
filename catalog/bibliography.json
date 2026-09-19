@@ -1312,6 +1312,131 @@
         }
       ],
       "verifiedAt": "2026-09-18"
+    },
+    "p057": {
+      "item": {
+        "type": "paper-conference",
+        "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
+        "author": [
+          {
+            "literal": "Bo Liu"
+          },
+          {
+            "literal": "Yifeng Zhu"
+          },
+          {
+            "literal": "Chongkai Gao"
+          },
+          {
+            "literal": "Yihao Feng"
+          },
+          {
+            "literal": "Qiang Liu"
+          },
+          {
+            "literal": "Yuke Zhu"
+          },
+          {
+            "literal": "Peter Stone"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "container-title": "Advances in Neural Information Processing Systems",
+        "volume": "36",
+        "DOI": "10.52202/075280-1939",
+        "URL": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html"
+      },
+      "sources": [
+        {
+          "label": "NeurIPS2023正式页面作者顺序、卷年、DOI；月日与页码不猜补",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p064": {
+      "item": {
+        "type": "paper-conference",
+        "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+        "author": [
+          {
+            "literal": "Moo Jin Kim"
+          },
+          {
+            "literal": "Karl Pertsch"
+          },
+          {
+            "literal": "Siddharth Karamcheti"
+          },
+          {
+            "literal": "Ted Xiao"
+          },
+          {
+            "literal": "Ashwin Balakrishna"
+          },
+          {
+            "literal": "Suraj Nair"
+          },
+          {
+            "literal": "Rafael Rafailov"
+          },
+          {
+            "literal": "Ethan P Foster"
+          },
+          {
+            "literal": "Pannag R Sanketi"
+          },
+          {
+            "literal": "Quan Vuong"
+          },
+          {
+            "literal": "Thomas Kollar"
+          },
+          {
+            "literal": "Benjamin Burchfiel"
+          },
+          {
+            "literal": "Russ Tedrake"
+          },
+          {
+            "literal": "Dorsa Sadigh"
+          },
+          {
+            "literal": "Sergey Levine"
+          },
+          {
+            "literal": "Percy Liang"
+          },
+          {
+            "literal": "Chelsea Finn"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "container-title": "Proceedings of The 8th Conference on Robot Learning",
+        "volume": "270",
+        "page": "2679-2713",
+        "publisher": "PMLR",
+        "URL": "https://proceedings.mlr.press/v270/kim25c.html"
+      },
+      "sources": [
+        {
+          "label": "正式PMLR270书目；采用正式17人作者表而非v3作者表，arXiv首发独立，日期按本页可见年份",
+          "url": "https://proceedings.mlr.press/v270/kim25c.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
     }
   }
 }
