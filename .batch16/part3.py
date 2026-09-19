@@ -18,7 +18,6 @@ tracks=[
  T('w2vla-v1-libero','LIBERO','World-to-Wrist v1 · LIBERO平均','arXiv 2608.05369v1','LIBERO','paper main comparison','Task success rate','percent',['Average'],'https://arxiv.org/abs/2608.05369','W2-VLA 98.5 vs StarVLA 96.5；论文原表对照。','各方法原配置。'),
  T('w2vla-v1-robotwin2500','RoboTwin','World-to-Wrist v1 · RoboTwin 2500-demo协议','arXiv 2608.05369v1','RoboTwin Easy / Hard','2,500 demonstrations protocol','Task success rate','percent',['Easy','Hard'],'https://arxiv.org/abs/2608.05369','特定2,500条示范协议；不能与含大规模random训练的90%级RoboTwin结果混排。','W2-VLA vs UP-VLA。'),
  T('w2vla-v1-chunk-latency','World-to-Wrist inference','World-to-Wrist v1 · 附录D.3片段生成时间','arXiv 2608.05369v1','action chunk generation','chunk lengths differ by method','Action-chunk generation time','seconds',['Latency'],'https://arxiv.org/abs/2608.05369','183/417.55/68.55ms精确换秒；chunk长度16/50/7不同，因此不等于统一闭环Hz。','W2-VLA / pi0 / VLA-JEPA reported setups。','lower'),
- T('vlabot-2026-learning-trials','VLAbot real','VLAbot · 两装配任务学习尝试上界','RCIM 100 (2026) 103268','gear assembly / peg insertion','human-in-the-loop learning','Reported upper bound on trials to learn task','score',['Gear assembly','Peg insertion'],'https://doi.org/10.1016/j.rcim.2026.103268','正式摘要/Highlights只确认两个任务均“within five trials”；记为上界5，不解释为恰好第5次成功或5条无人干预示范。','含专家代理、人类文本/视觉/动作指导。','lower'),
  T('robodojo-v3-sim-score','RoboDojo','RoboDojo v3 · Simulation平均Score','arXiv 2607.04434v3','42 simulation tasks / five capability dimensions','leaderboard frozen 2026-07-03','RoboDojo Score','score',['Average Score'],'https://arxiv.org/html/2607.04434v3','Table 1平均Score；不是百分比SR。','RoboDojo统一benchmark，模型训练配方不同。'),
  T('robodojo-v3-sim-sr','RoboDojo','RoboDojo v3 · Simulation平均SR','arXiv 2607.04434v3','42 simulation tasks / five capability dimensions','leaderboard frozen 2026-07-03','Task success rate','percent',['Average SR'],'https://arxiv.org/html/2607.04434v3','Table 1平均SR，与Score分轨。','RoboDojo统一benchmark。'),
  T('robodojo-v3-real-score','RoboDojo real','RoboDojo v3 · RealEval平均Score','arXiv 2607.04434v3','18 real tasks / three embodiments','standardized real evaluation','RoboDojo real-world score','score',['Overall Score'],'https://arxiv.org/html/2607.04434v3','Table 2 overall score；partial progress与二值成功分开。','RoboDojo-RealEval。'),
@@ -49,8 +48,7 @@ for slug,m,v in [('w2','W2-VLA',[60.71,18.21]),('up','UP-VLA',[52.92,15.16])]:
  rs.append(R(f'r-w2vla-v1-rt-{slug}','p010',m,'w2vla-v1-robotwin2500',dict(zip(['Easy','Hard'],v)),'https://arxiv.org/abs/2608.05369','arXiv 2608.05369v1','Main results','2,500-demo protocol','不可与25k random示范协议混排。'))
 for slug,m,v in [('w2','W2-VLA (chunk 16)',0.183),('pi0','pi0 (chunk 50)',0.41755),('jepa','VLA-JEPA (chunk 7)',0.06855)]:
  rs.append(R(f'r-w2vla-v1-lat-{slug}','p010',m,'w2vla-v1-chunk-latency',{'Latency':v},'https://arxiv.org/abs/2608.05369','arXiv 2608.05369v1','Appendix D.3','method-specific chunk length','不同chunk长度，因此吞吐/延迟只作原文系统对照。'))
-# VLAbot
-rs.append(R('r-vlabot-trial-bound','p046','VLAbot human-in-the-loop system','vlabot-2026-learning-trials',{'Gear assembly':5,'Peg insertion':5},'https://doi.org/10.1016/j.rcim.2026.103268','RCIM 100 (2026) 103268','Published Highlights / Abstract','human text/vision/action guidance','“within five trials”按上界5记录；不是精确达到第5次，也不是无人干预5-demo学习。'))
+# VLAbot remains source-limited; no leaderboard result is created.
 # RoboDojo
 sim=[('hy','Hy-Embodied-0.5-VLA',13.07,8.80),('spatial','Spatial Forcing',12.38,8.04),('pi05','pi0.5',11.41,6.91),('xvla','X-VLA',10.13,6.52)]
 for slug,m,score,sr in sim:
@@ -74,13 +72,12 @@ for slug,m,v in [('sync','LingBot-VA sync',[92.9,93.2]),('fdm','FDM-grounded asy
  rs.append(R(f'r-lingbot-v2-async-{slug}','p037',m,'lingbot-v2-async',dict(zip(['Easy all','Easy horizon=3'],v)),'https://arxiv.org/html/2601.21998v2','arXiv 2601.21998v2','Table 3','same model, deployment ablation','FDM缓解但仍未达到同步。'))
 # MVP textual count
 rs.append(R('r-mvp-v1-pixmc-count','p097','MVP frozen visual representation','mvp-v1-pixmc-textual-count',{'Outperform supervised count':7,'Near state-oracle count':5},'https://arxiv.org/abs/2203.06173','arXiv 2203.06173v1','§5.1 textual summary','8 PixMC tasks','只是8任务中的正文计数；不从Figure 5–11曲线读取逐任务精确分数。'))
-assert len(rs)==46,len(rs)
+assert len(rs)==45,len(rs)
 for r in rs: dump('catalog/results/'+r['id']+'.json',r)
 cfg={
  'p033':(['otql-v1-single-policy','otql-v1-pretrained-vla'],4,None,None),
  'p007':(['track4action-v1-libero-plus','track4action-v1-real','track4action-v1-robotwin'],5,None,None),
  'p010':(['w2vla-v1-libero','w2vla-v1-robotwin2500','w2vla-v1-chunk-latency'],7,None,None),
- 'p046':(['vlabot-2026-learning-trials'],1,None,None),
  'p034':(['robodojo-v3-sim-score','robodojo-v3-sim-sr','robodojo-v3-real-score','robodojo-v3-real-sr','robodojo-v3-randomization'],17,'expanded','arXiv 2607.04434 v3；§3–6、Tables 1–7；榜单冻结2026-07-03；第十六批复核当前v3'),
  'p016':(['baton-v1-task-success','baton-v1-cumulative'],6,None,None),
  'p037':(['lingbot-v2-robotwin','lingbot-v2-async'],5,'expanded','arXiv 2601.21998 v2；§3–4、Table 3与附录；第十六批复核当前v2'),
@@ -101,6 +98,12 @@ for pid,(tids,n,status,ver) in cfg.items():
   if not any(s.get('url')==url for s in p['paper']['sources']): p['paper']['sources'].append({'label':'当前复核版本 · v2','url':url})
  dump('catalog/papers/'+pid+'.json',p)
  review['papers'][pid]={'status':'extracted','trackIds':tids,'resultIds':by[pid],'note':f'最终24篇清理：{n}条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。'}
+# p046 remains deferred by editorial policy: only publisher/institutional abstract is readable.
+p046=load('catalog/papers/p046.json')
+p046['note']['updatedAt']=DAY
+p046['note']['benchmarkReview']={'status':'protocol-unresolved','checkedAt':DAY,'note':'最终24篇审计：确认正式期刊Open Access身份、两个装配任务及within five trials摘要结论，但当前出版商全文入口受403限制，机构页仅公开摘要；按limited-source编辑政策继续deferred，不把“within five trials”伪造为精确试验序列或成功率。'}
+dump('catalog/papers/p046.json',p046)
+review['papers']['p046']={'status':'deferred','trackIds':[],'resultIds':[],'note':'最终24篇审计完成；仅official-abstract来源，按editorial policy继续deferred。未把within-five-trials摘要上界升格为榜单结果。'}
 dump('catalog/benchmarks.json',bench); dump('maintenance/benchmark-review.json',review)
 # Resolve seven note reviews confidently re-read at current versions.
 resolved={
@@ -125,31 +128,31 @@ dump('maintenance/work-queue.json',wq)
 # Final audit.
 all24=['p067','p032','p031','p045','p043','p022','p018','p075','p008','p071','p077','p030','p005','p038','p006','p019','p033','p007','p010','p046','p034','p016','p037','p097']
 review=load('maintenance/benchmark-review.json')
-assert all(review['papers'][p]['status']=='extracted' for p in all24)
-result_count=sum(len(review['papers'][p]['resultIds']) for p in all24)
-track_count=len({t for p in all24 for t in review['papers'][p]['trackIds']})
+extractable=[p for p in all24 if p not in ('p043','p046')]\nassert all(review['papers'][p]['status']=='extracted' for p in extractable)\nassert review['papers']['p043']['status']=='deferred' and review['papers']['p046']['status']=='deferred'
+result_count=sum(len(review['papers'][p]['resultIds']) for p in extractable)
+track_count=len({t for p in extractable for t in review['papers'][p]['trackIds']})
 audit={
  'schemaVersion':1,'reviewedAt':DAY,'batch':'benchmark-final24','baseCommit':BASE,
  'papers':[{'paperId':p,'resultCount':len(review['papers'][p]['resultIds']),'trackIds':review['papers'][p]['trackIds']} for p in all24],
  'countsBefore':{'papers':98,'results':834,'tracks':222,'extracted':72,'deferred':24,'notApplicable':2,'needsReview':18},
- 'countsAfterExpected':{'papers':98,'results':964,'tracks':269,'extracted':96,'deferred':0,'notApplicable':2,'needsReview':11},
+ 'countsAfterExpected':{'papers':98,'results':962,'tracks':267,'extracted':94,'deferred':2,'notApplicable':2,'needsReview':11},
  'batchAdded':{'results':result_count,'tracks':track_count},
  'qualityRules':[
-  'No plot-pixel estimation; FAST/MVP use exact textual efficiency/count claims rather than invented policy scores.',
+  'No plot-pixel estimation; FAST/MVP use exact textual efficiency/count claims rather than invented policy scores.',\n  'DMS-VLA and VLAbot remain deferred because repository editorial policy forbids promoting limited-source records without full-source reading.',
   'DMS-VLA stores only literal published-abstract endpoints 25/55 and explicitly leaves the unusual 25%-55%x notation uninterpreted.',
   'VLAbot stores within-five-trials as an upper bound, not an exact trial count or autonomous-demo claim.',
   'Score, success rate, latency, throughput, correction count, task progress and representation probes remain separate tracks.',
   'Current-version note reviews completed for p031,p018,p075,p030,p038,p034,p037; full-text-limited p043/p046 and published GF-VLA note remain needs_review.'
  ],
- 'unresolvedNoteReviews':['p045','p043','p046'],
+ 'unresolvedNoteReviews':['p045','p043','p046'],\n 'limitedSourceDeferred':['p043','p046'],
  'sourcePolicy':'Primary/official sources prioritized; exact source-located claims only. Missing values remain missing rather than zero.'
 }
-assert result_count==130,(result_count,track_count)
-assert track_count==47,(result_count,track_count)
+assert result_count==128,(result_count,track_count)
+assert track_count==45,(result_count,track_count)
 dump('maintenance/benchmark-source-audit-20260920-final24.json',audit)
 # Changelog + regression tests
 ch=Path('CHANGELOG.md').read_text()
-entry='## 2026-09-20 · 最终24篇 deferred 证据收敛\n\n- 一次性推进剩余24篇 deferred；所有条目均只以精确表格、正式摘要字面值、定量上界或正文明确计数进入证据层，deferred 24→0。\n- 新增130条结果、47个paper-scoped设置；FAST/Deltoris/DMS-VLA效率、VLAbot试验上界、MVP正文计数均明确不冒充机器人闭环SR。\n- 同步完成7篇当前版本笔记复核：Embodied.cpp、PonderPounce、pi*0.6/RECAP、AdaVLA、mimic-video、RoboDojo、CauVA/LingBot-VA；remainingNotes 18→11。\n- 保留DMS-VLA摘要符号歧义、BATON transferring退化、LingBot异步仍低于同步、AdaVLA激进阈值退化、MECo叠块SR持平等边界。\n- 不改Leaderboard UI，不清理历史/安全分支；缺失值仍不按零，异构协议仍不合榜。\n\n'
+entry='## 2026-09-20 · 最终24篇 deferred 证据收敛\n\n- 一次性审计剩余24篇 deferred；其中22篇具备足够一手证据转 extracted，DMS-VLA 与 VLAbot 因完整正文仍不可稳定读取，遵守limited-source编辑政策继续deferred，deferred 24→2。\n- 新增128条结果、45个paper-scoped设置；FAST/Deltoris效率与MVP正文计数明确不冒充机器人闭环SR；DMS-VLA/VLAbot不建立伪精确榜单。\n- 同步完成7篇当前版本笔记复核：Embodied.cpp、PonderPounce、pi*0.6/RECAP、AdaVLA、mimic-video、RoboDojo、CauVA/LingBot-VA；remainingNotes 18→11。\n- 保留DMS-VLA摘要符号歧义、BATON transferring退化、LingBot异步仍低于同步、AdaVLA激进阈值退化、MECo叠块SR持平等边界。\n- 不改Leaderboard UI，不清理历史/安全分支；缺失值仍不按零，异构协议仍不合榜。\n\n'
 if '最终24篇 deferred 证据收敛' not in ch: Path('CHANGELOG.md').write_text(entry+ch)
 Path('tests/test_benchmark_final24.py').write_text("""import json
 from pathlib import Path
@@ -158,22 +161,24 @@ def j(p): return json.loads((R/p).read_text())
 ALL=['p067','p032','p031','p045','p043','p022','p018','p075','p008','p071','p077','p030','p005','p038','p006','p019','p033','p007','p010','p046','p034','p016','p037','p097']
 def test_final24_counts_and_zero_deferred():
     r=j('maintenance/benchmark-review.json')['papers']
-    assert all(r[x]['status']=='extracted' for x in ALL)
-    assert sum(x['status']=='extracted' for x in r.values())==96
-    assert sum(x['status']=='deferred' for x in r.values())==0
+    assert all(r[x]['status']=='extracted' for x in ALL if x not in {'p043','p046'})\n    assert r['p043']['status']=='deferred' and r['p046']['status']=='deferred'
+    assert sum(x['status']=='extracted' for x in r.values())==94
+    assert sum(x['status']=='deferred' for x in r.values())==2
     assert sum(x['status']=='not-applicable' for x in r.values())==2
-    assert len(j('catalog/benchmarks.json')['tracks'])==269
-    assert len(list((R/'catalog/results').glob('r-*.json')))==964
+    assert len(j('catalog/benchmarks.json')['tracks'])==267
+    assert len(list((R/'catalog/results').glob('r-*.json')))==962
     assert j('maintenance/work-queue.json')['remainingNotes']==11
 def test_efficiency_is_not_robot_success():
     t={x['id']:x for x in j('catalog/benchmarks.json')['tracks']}
     assert t['fast-v1-training-speedup']['unit']=='score'
     assert t['deltoris-v1-hardware-speedup']['metric'].startswith('Maximum reported')
     assert j('catalog/results/r-fast-v1-train-speed.json')['values']['Speedup factor']==5.0
-def test_dms_literal_ambiguity_preserved():
-    x=j('catalog/results/r-dmsvla-abstract-range.json')
-    assert x['values']=={'Printed lower endpoint':25.0,'Printed upper endpoint':55.0}
-    assert '不把' in x['evaluationNotes']
+def test_limited_sources_remain_deferred():
+    r=j('maintenance/benchmark-review.json')['papers']
+    assert r['p043']=={'status':'deferred','trackIds':[],'resultIds':[],'note':r['p043']['note']}
+    assert r['p046']=={'status':'deferred','trackIds':[],'resultIds':[],'note':r['p046']['note']}
+    assert not (R/'catalog/results/r-dmsvla-abstract-range.json').exists()
+    assert not (R/'catalog/results/r-vlabot-trial-bound.json').exists()
 def test_negative_results_preserved():
     assert j('catalog/results/r-meco-v1-real-fast.json')['values']['Stack blocks']==60
     assert j('catalog/results/r-meco-v1-real-meco.json')['values']['Stack blocks']==60
@@ -186,13 +191,10 @@ def test_latest_version_reviews():
         assert p['note']['status']=='expanded' and mark in p['note']['version']
     q=j('maintenance/work-queue.json')['notes']
     assert not any(x['paperId'] in {'p034','p075'} for x in q)
-def test_bounds_and_counts_not_faked_as_sr():
-    v=j('catalog/results/r-vlabot-trial-bound.json')
-    assert v['values']=={'Gear assembly':5,'Peg insertion':5}
+def test_counts_not_faked_as_sr():
     m=j('catalog/results/r-mvp-v1-pixmc-count.json')
     assert m['values']=={'Outperform supervised count':7,'Near state-oracle count':5}
     t={x['id']:x for x in j('catalog/benchmarks.json')['tracks']}
-    assert t['vlabot-2026-learning-trials']['direction']=='lower'
     assert t['mvp-v1-pixmc-textual-count']['unit']=='score'
 def test_robodojo_score_sr_separated():
     t={x['id']:x for x in j('catalog/benchmarks.json')['tracks']}
@@ -203,4 +205,4 @@ def test_robodojo_score_sr_separated():
 # Activity time deliberately before this run to avoid "future event" browser false positives.
 subprocess.run(['python','scripts/capture_activity.py','--base',BASE,'--at','2026-09-19T16:45:00Z'],check=True)
 subprocess.run(['python','scripts/build_catalog.py'],check=True)
-print('part3',len(tracks),'tracks',len(rs),'results; final24',result_count,track_count)
+print('part3',len(tracks),'tracks',len(rs),'results; final24 audit',result_count,track_count,'with p043/p046 deferred by policy')
