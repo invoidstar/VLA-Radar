@@ -59,9 +59,20 @@ jobs:
               planned.append((path,final))
           assert seen==allowed
           assert hashlib.sha256(Path('.github/workflows/site.yml').read_bytes()).hexdigest()=='923ad6e20c0d4fa81dcbfcc77fea6273251ae9fced6286158741073f71bf0439'
-          for path,data in planned:
+          corrections=Path('maintenance/.leaderboard-fix.json').read_bytes()
+          assert hashlib.sha256(corrections).hexdigest()=='5d2895c9feb6d2b004f0eb3bf5fcb9c1800dc23c57316ea9aa1179fb7fca7667'
+          fixes=json.loads(corrections)
+          assert fixes['schemaVersion']==1 and len(fixes['files'])==2
+          contents=dict(planned)
+          for f in fixes['files']:
+              path=Path(f['path']);assert f['path'] in {'scripts/browser_leaderboard.py','research.js'}
+              current=contents[path];assert hashlib.sha256(current).hexdigest()==f['before']
+              text=current.decode('utf-8');assert text.count(f['old'])==f['count']
+              final=text.replace(f['old'],f['new']).encode('utf-8')
+              assert hashlib.sha256(final).hexdigest()==f['after'];contents[path]=final
+          for path,data in contents.items():
               path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
-          print('PASS: all 16 UI/doc/test operations match exact preimages and target hashes.')
+          print('PASS: 16 reviewed operations and two exact corrections match target hashes.')
           PY
           python scripts/build_catalog.py
           python scripts/validate_all.py
@@ -96,7 +107,7 @@ jobs:
           test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$BASE"
           test "$(git ls-remote origin refs/heads/$BRANCH | cut -f1)" = "$EXPECTED_HEAD"
           git diff --exit-code -- .github
-          git rm maintenance/.leaderboard-part0 maintenance/.leaderboard-part1
+          git rm maintenance/.leaderboard-part0 maintenance/.leaderboard-part1 maintenance/.leaderboard-fix.json
           git add CHANGELOG.md MAINTENANCE.md app.js experience-core.js experience-loader.js experience.css experience.js index.html maintenance/leaderboard-analysis.md maintenance/workspace.md research.css research.js scripts/browser_leaderboard.py scripts/test_leaderboard_controls.cjs scripts/test_urls.cjs scripts/validate_all.py
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
