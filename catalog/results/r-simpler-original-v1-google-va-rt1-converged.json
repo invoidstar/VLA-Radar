@@ -1,0 +1,26 @@
+{
+  "id": "r-simpler-original-v1-google-va-rt1-converged",
+  "paperId": "p095",
+  "method": "RT-1 (Converged)",
+  "trackId": "simpler-original-v1-google-va",
+  "values": {
+    "Pick-Horizontal": 96.9,
+    "Pick-Vertical": 76.0,
+    "Pick-Standing": 96.4,
+    "Pick-Average": 89.8,
+    "Move Near": 50.0,
+    "Open Drawer": 27.0,
+    "Close Drawer": 37.6,
+    "Drawer-Average": 32.3,
+    "Open Drawer + Apple": 2.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2405.05941v1",
+  "sourceVersion": "arXiv 2405.05941v1",
+  "locator": "Appendix D Table IV; SIMPLER Eval (Variant Aggregation); RT-1 (Converged)",
+  "attribution": "reported-baseline",
+  "trainingData": "冻结原始RT-1各训练阶段、RT-1-X、RT-2-X和Octo-Base；来源训练预算不同，未统一再训练",
+  "evaluationNotes": "Google Robot / SAPIEN；3Hz策略、501Hz仿真控制；Variant Aggregation；Google四种机械臂/夹爪颜色平均，Octo另外3采样随机种子，不是独立训练种子。真实75/60/54/27回合基数在模拟中按颜色或变体及采样重复扩展；放苹果由外部规则切换语言指令。 原表比例×100，列内均值保留原报告，不从舍入分项重算。既不纳入真实截断试验，也不把MMRV/Pearson当成功率。",
+  "supersedes": ""
+}

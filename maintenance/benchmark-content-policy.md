@@ -33,3 +33,8 @@ RoboTwin50×50clean的co-train与每任务独立checkpoint分开；2,500clean与
 ## 第三批原方法回补记录
 
 `benchmark-source-audit-20260918-batch3.json`记录Act3D、GNFactor、ChainedDiffuser三篇原报告的完成范围。历史审计保留发现过程，后续候选去重应同时对照最新paperOrder、arXiv/DOI/规范标题与各批resolved字段，而非仅因旧deferred数组仍有名称就再次新增。GNFactor的20示范最终/最佳检查点、额外训练视角，以及Act3D和ChainedDiffuser的不同任务规模与执行接口必须保留。未知最早公开日可以留null；正式出版日期有证据也不能自动代填为首次公开日。
+
+
+## 第四批原始数据与评测论文
+
+`benchmark-source-audit-20260918-batch4.json`记录RoboMimic、DexMimicGen、SIMPLER三篇实际深读范围。PH/MH、低维/图像、最佳/末期检查点、源/生成示范、机器人硬件及VM/VA均保留独立语义。SIMPLER的Grasp是部分进度，MMRV是整个策略集合的排序质量，不得当作策略完成成功率。数据生成成功率也不能混入策略榜。章节和不同载体图表编号按实际版本标注；已入库的原始研究不再从旧发现队列重复新增。

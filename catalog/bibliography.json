@@ -1131,6 +1131,187 @@
         }
       ],
       "verifiedAt": "2026-09-18"
+    },
+    "p093": {
+      "item": {
+        "type": "paper-conference",
+        "title": "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation",
+        "author": [
+          {
+            "literal": "Ajay Mandlekar"
+          },
+          {
+            "literal": "Danfei Xu"
+          },
+          {
+            "literal": "Josiah Wong"
+          },
+          {
+            "literal": "Soroush Nasiriany"
+          },
+          {
+            "literal": "Chen Wang"
+          },
+          {
+            "literal": "Rohun Kulkarni"
+          },
+          {
+            "literal": "Li Fei-Fei"
+          },
+          {
+            "literal": "Silvio Savarese"
+          },
+          {
+            "literal": "Yuke Zhu"
+          },
+          {
+            "literal": "Roberto Martín-Martín"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2022
+            ]
+          ]
+        },
+        "container-title": "CoRL 2021",
+        "URL": "https://proceedings.mlr.press/v164/mandlekar22a.html",
+        "volume": "164",
+        "publisher": "PMLR",
+        "page": "1678-1690"
+      },
+      "sources": [
+        {
+          "label": "按正式论文集作者顺序和出版年记录；不猜缺失出版月日",
+          "url": "https://proceedings.mlr.press/v164/mandlekar22a.html"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
+    },
+    "p094": {
+      "item": {
+        "type": "paper-conference",
+        "title": "DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning",
+        "author": [
+          {
+            "literal": "Zhenyu Jiang"
+          },
+          {
+            "literal": "Yuqi Xie"
+          },
+          {
+            "literal": "Kevin Lin"
+          },
+          {
+            "literal": "Zhenjia Xu"
+          },
+          {
+            "literal": "Weikang Wan"
+          },
+          {
+            "literal": "Ajay Mandlekar"
+          },
+          {
+            "literal": "Linxi Fan"
+          },
+          {
+            "literal": "Yuke Zhu"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "container-title": "ICRA 2025",
+        "URL": "https://doi.org/10.1109/ICRA55743.2025.11127809",
+        "DOI": "10.1109/ICRA55743.2025.11127809"
+      },
+      "sources": [
+        {
+          "label": "按正式论文集作者顺序和出版年记录；不猜缺失出版月日",
+          "url": "https://doi.org/10.1109/ICRA55743.2025.11127809"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
+    },
+    "p095": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Evaluating Real-World Robot Manipulation Policies in Simulation",
+        "author": [
+          {
+            "literal": "Xuanlin Li"
+          },
+          {
+            "literal": "Kyle Hsu"
+          },
+          {
+            "literal": "Jiayuan Gu"
+          },
+          {
+            "literal": "Oier Mees"
+          },
+          {
+            "literal": "Karl Pertsch"
+          },
+          {
+            "literal": "Homer Rich Walke"
+          },
+          {
+            "literal": "Chuyuan Fu"
+          },
+          {
+            "literal": "Ishikaa Lunawat"
+          },
+          {
+            "literal": "Isabel Sieh"
+          },
+          {
+            "literal": "Sean Kirmani"
+          },
+          {
+            "literal": "Sergey Levine"
+          },
+          {
+            "literal": "Jiajun Wu"
+          },
+          {
+            "literal": "Chelsea Finn"
+          },
+          {
+            "literal": "Hao Su"
+          },
+          {
+            "literal": "Quan Vuong"
+          },
+          {
+            "literal": "Ted Xiao"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "container-title": "CoRL 2024",
+        "URL": "https://proceedings.mlr.press/v270/li25c.html",
+        "volume": "270",
+        "publisher": "PMLR",
+        "page": "3705-3728"
+      },
+      "sources": [
+        {
+          "label": "按正式论文集作者顺序和出版年记录；不猜缺失出版月日",
+          "url": "https://proceedings.mlr.press/v270/li25c.html"
+        }
+      ],
+      "verifiedAt": "2026-09-18"
     }
   }
 }
