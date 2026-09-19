@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-18",
+  "updatedAt": "2026-09-19",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -1862,6 +1862,91 @@
         "Put Eggplant in Basket"
       ],
       "source": "https://arxiv.org/html/2405.05941v1"
+    },
+    {
+      "id": "libero-openvla-v3-singleview-cleaned",
+      "dataset": "LIBERO",
+      "name": "LIBERO · OpenVLA v3 · 单视角清洗示范",
+      "version": "original four suites; OpenVLA v3 regenerated/filtered demonstrations",
+      "tasks": "40 (10 per suite)",
+      "split": "Spatial / Object / Goal / Long; independent suite fine-tuning",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每套500回合×3随机种子=1500回合，四套6000回合/方法；静态第三人称相机，无手腕；256像素重放、去no-op及失败示范、训练测试图像180度旋转；测试初始环境沿用原版。均值±标准误。非终身学习FWT/NBT/AUC，非OFT。",
+      "trainingRegime": "原每套500示范；Spatial/Object/Goal/Long过滤后432/454/428/379。DP从头；Octo微调；OpenVLA LoRA r32；各套独立，预训练预算不同，统一检查点规则未在此完整公开。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2406.09246v3"
+    },
+    {
+      "id": "libero-original-neurips23-fwt",
+      "dataset": "LIBERO",
+      "name": "LIBERO原始终身学习 · FWT · 前向迁移",
+      "version": "NeurIPS2023 original lifelong protocol (Tables1–2)",
+      "tasks": "10 sequential tasks per downstream suite; 4 suites",
+      "split": "Spatial / Object / Goal / Long; sequential lifelong learning",
+      "metric": "FWT (lifelong score, not final task success)",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "正式PDF §5.1 Eq.(3)，0–50 epoch每5轮评估，共11检查点，按首次最佳检查点处理学习曲线；三种子均值±标准误。Table1–2相同ResNet-T重复项只记录一次。FWT/AUC越高越好、NBT越低越好；不乘100，不与套件微调成功率混排。",
+      "trainingRegime": "每任务50条人工示范，BC，原论文非90任务预训练主表；ER回放/EWC正则/PackNet隔离参数成本不同。独立补充ZIP未展开，缓冲区及完整评测回合配置未核验；MTL仅参考不套用缺失指标。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    {
+      "id": "libero-original-neurips23-nbt",
+      "dataset": "LIBERO",
+      "name": "LIBERO原始终身学习 · NBT · 负向后向迁移",
+      "version": "NeurIPS2023 original lifelong protocol (Tables1–2)",
+      "tasks": "10 sequential tasks per downstream suite; 4 suites",
+      "split": "Spatial / Object / Goal / Long; sequential lifelong learning",
+      "metric": "NBT (lifelong score, not final task success)",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "正式PDF §5.1 Eq.(3)，0–50 epoch每5轮评估，共11检查点，按首次最佳检查点处理学习曲线；三种子均值±标准误。Table1–2相同ResNet-T重复项只记录一次。FWT/AUC越高越好、NBT越低越好；不乘100，不与套件微调成功率混排。",
+      "trainingRegime": "每任务50条人工示范，BC，原论文非90任务预训练主表；ER回放/EWC正则/PackNet隔离参数成本不同。独立补充ZIP未展开，缓冲区及完整评测回合配置未核验；MTL仅参考不套用缺失指标。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    {
+      "id": "libero-original-neurips23-auc",
+      "dataset": "LIBERO",
+      "name": "LIBERO原始终身学习 · AUC · 学习与保持",
+      "version": "NeurIPS2023 original lifelong protocol (Tables1–2)",
+      "tasks": "10 sequential tasks per downstream suite; 4 suites",
+      "split": "Spatial / Object / Goal / Long; sequential lifelong learning",
+      "metric": "AUC (lifelong score, not final task success)",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "正式PDF §5.1 Eq.(3)，0–50 epoch每5轮评估，共11检查点，按首次最佳检查点处理学习曲线；三种子均值±标准误。Table1–2相同ResNet-T重复项只记录一次。FWT/AUC越高越好、NBT越低越好；不乘100，不与套件微调成功率混排。",
+      "trainingRegime": "每任务50条人工示范，BC，原论文非90任务预训练主表；ER回放/EWC正则/PackNet隔离参数成本不同。独立补充ZIP未展开，缓冲区及完整评测回合配置未核验；MTL仅参考不套用缺失指标。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
     }
   ],
   "results": [
@@ -3428,6 +3513,576 @@
       "attribution": "author-reported",
       "trainingData": "同文微调配方；不同动作目标／解码方式",
       "evaluationNotes": "OpenVLA 变体：每套 500 回合；仅第三人称图像与语言。种子数未据此推断。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-openvla-v3-singleview-cleaned-dp",
+      "paperId": "p064",
+      "method": "Diffusion Policy (from scratch)",
+      "trackId": "libero-openvla-v3-singleview-cleaned",
+      "values": {
+        "Spatial": 78.3,
+        "Object": 92.5,
+        "Goal": 68.3,
+        "Long": 50.5,
+        "Average": 72.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2406.09246v3",
+      "sourceVersion": "arXiv 2406.09246v3",
+      "locator": "Appendix E.1–E.2, Table12 (success-rate columns only)",
+      "attribution": "reported-baseline",
+      "trainingData": "从头训练；DROID论文实现，DistilBERT任务标签；相同清洗目标示范",
+      "evaluationNotes": "500 trials/suite/seed; 3 seeds; SE按Spatial/Object/Goal/Long/Average为[1.1, 0.7, 1.2, 1.3, 0.7]个百分点。原表平均保留，不以已舍入套件数重算；不同预训练与接口不构成本站公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-openvla-v3-singleview-cleaned-octo",
+      "paperId": "p064",
+      "method": "Octo (fine-tuned)",
+      "trackId": "libero-openvla-v3-singleview-cleaned",
+      "values": {
+        "Spatial": 78.9,
+        "Object": 85.7,
+        "Goal": 84.6,
+        "Long": 51.1,
+        "Average": 75.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2406.09246v3",
+      "sourceVersion": "arXiv 2406.09246v3",
+      "locator": "Appendix E.1–E.2, Table12 (success-rate columns only)",
+      "attribution": "reported-baseline",
+      "trainingData": "真实机器人预训练后目标微调；相同清洗目标示范",
+      "evaluationNotes": "500 trials/suite/seed; 3 seeds; SE按Spatial/Object/Goal/Long/Average为[1, 0.9, 0.9, 1.3, 0.6]个百分点。原表平均保留，不以已舍入套件数重算；不同预训练与接口不构成本站公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-openvla-v3-singleview-cleaned-openvla",
+      "paperId": "p064",
+      "method": "OpenVLA (LoRA r32)",
+      "trackId": "libero-openvla-v3-singleview-cleaned",
+      "values": {
+        "Spatial": 84.7,
+        "Object": 88.4,
+        "Goal": 79.2,
+        "Long": 53.7,
+        "Average": 76.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2406.09246v3",
+      "sourceVersion": "arXiv 2406.09246v3",
+      "locator": "Appendix E.1–E.2, Table12 (success-rate columns only)",
+      "attribution": "author-reported",
+      "trainingData": "970k真实机器人示范预训练；目标套件LoRA r32；相同清洗目标示范",
+      "evaluationNotes": "500 trials/suite/seed; 3 seeds; SE按Spatial/Object/Goal/Long/Average为[0.9, 0.8, 1, 1.3, 0.6]个百分点。原表平均保留，不以已舍入套件数重算；不同预训练与接口不构成本站公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-er-resnet-rnn",
+      "paperId": "p057",
+      "method": "ER / ResNet-RNN",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.29,
+        "Object": 0.17,
+        "Goal": 0.26,
+        "Long": 0.08
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ResNet-RNN",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.05, \"Goal\": 0.01, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-er-resnet-t",
+      "paperId": "p057",
+      "method": "ER / ResNet-T",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.56,
+        "Object": 0.44,
+        "Goal": 0.49,
+        "Long": 0.32
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Tables1–2 (same evidence, once), PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.06, \"Goal\": 0.02, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-er-vit-t",
+      "paperId": "p057",
+      "method": "ER / ViT-T",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.5,
+        "Object": 0.57,
+        "Goal": 0.38,
+        "Long": 0.25
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ViT-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.02, \"Object\": 0.01, \"Goal\": 0.01, \"Long\": 0.02}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-ewc-resnet-t",
+      "paperId": "p057",
+      "method": "EWC / ResNet-T",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.06,
+        "Object": 0.16,
+        "Goal": 0.06,
+        "Long": 0.02
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table2, PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; EWC / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.02, \"Goal\": 0.0, \"Long\": 0.0}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-packnet-resnet-rnn",
+      "paperId": "p057",
+      "method": "PackNet / ResNet-RNN",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.06,
+        "Object": 0.13,
+        "Goal": 0.11,
+        "Long": 0.03
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ResNet-RNN",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.01, \"Goal\": 0.01, \"Long\": 0.0}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-packnet-resnet-t",
+      "paperId": "p057",
+      "method": "PackNet / ResNet-T",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.63,
+        "Object": 0.6,
+        "Goal": 0.75,
+        "Long": 0.25
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Tables1–2 (same evidence, once), PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.0, \"Object\": 0.05, \"Goal\": 0.01, \"Long\": 0.0}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-packnet-vit-t",
+      "paperId": "p057",
+      "method": "PackNet / ViT-T",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.59,
+        "Object": 0.56,
+        "Goal": 0.76,
+        "Long": 0.34
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ViT-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.03, \"Object\": 0.04, \"Goal\": 0.02, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-auc-seql-resnet-t",
+      "paperId": "p057",
+      "method": "SEQL / ResNet-T",
+      "trackId": "libero-original-neurips23-auc",
+      "values": {
+        "Spatial": 0.2,
+        "Object": 0.26,
+        "Goal": 0.22,
+        "Long": 0.15
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table2, PDF p7–8; §5.1 Eq.(3); AUC column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; SEQL / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.02, \"Goal\": 0.0, \"Long\": 0.0}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-er-resnet-rnn",
+      "paperId": "p057",
+      "method": "ER / ResNet-RNN",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.4,
+        "Object": 0.3,
+        "Goal": 0.41,
+        "Long": 0.16
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ResNet-RNN",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.02, \"Object\": 0.01, \"Goal\": 0.0, \"Long\": 0.02}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-er-resnet-t",
+      "paperId": "p057",
+      "method": "ER / ResNet-T",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.65,
+        "Object": 0.67,
+        "Goal": 0.64,
+        "Long": 0.48
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Tables1–2 (same evidence, once), PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.03, \"Object\": 0.07, \"Goal\": 0.01, \"Long\": 0.02}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-er-vit-t",
+      "paperId": "p057",
+      "method": "ER / ViT-T",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.63,
+        "Object": 0.7,
+        "Goal": 0.57,
+        "Long": 0.38
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ViT-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.02, \"Goal\": 0.0, \"Long\": 0.05}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-ewc-resnet-t",
+      "paperId": "p057",
+      "method": "EWC / ResNet-T",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.23,
+        "Object": 0.56,
+        "Goal": 0.32,
+        "Long": 0.13
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table2, PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; EWC / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.03, \"Goal\": 0.02, \"Long\": 0.02}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-packnet-resnet-rnn",
+      "paperId": "p057",
+      "method": "PackNet / ResNet-RNN",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.27,
+        "Object": 0.29,
+        "Goal": 0.32,
+        "Long": 0.13
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ResNet-RNN",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.03, \"Object\": 0.02, \"Goal\": 0.03, \"Long\": 0.0}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-packnet-resnet-t",
+      "paperId": "p057",
+      "method": "PackNet / ResNet-T",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.55,
+        "Object": 0.6,
+        "Goal": 0.63,
+        "Long": 0.22
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Tables1–2 (same evidence, once), PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.07, \"Goal\": 0.02, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-packnet-vit-t",
+      "paperId": "p057",
+      "method": "PackNet / ViT-T",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.57,
+        "Object": 0.58,
+        "Goal": 0.69,
+        "Long": 0.36
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ViT-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.04, \"Object\": 0.03, \"Goal\": 0.02, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-fwt-seql-resnet-t",
+      "paperId": "p057",
+      "method": "SEQL / ResNet-T",
+      "trackId": "libero-original-neurips23-fwt",
+      "values": {
+        "Spatial": 0.72,
+        "Object": 0.78,
+        "Goal": 0.77,
+        "Long": 0.54
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table2, PDF p7–8; §5.1 Eq.(3); FWT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; SEQL / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.04, \"Goal\": 0.01, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-er-resnet-rnn",
+      "paperId": "p057",
+      "method": "ER / ResNet-RNN",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.29,
+        "Object": 0.27,
+        "Goal": 0.35,
+        "Long": 0.16
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ResNet-RNN",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.02, \"Object\": 0.05, \"Goal\": 0.01, \"Long\": 0.02}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-er-resnet-t",
+      "paperId": "p057",
+      "method": "ER / ResNet-T",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.27,
+        "Object": 0.43,
+        "Goal": 0.34,
+        "Long": 0.32
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Tables1–2 (same evidence, once), PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.03, \"Object\": 0.04, \"Goal\": 0.02, \"Long\": 0.04}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-er-vit-t",
+      "paperId": "p057",
+      "method": "ER / ViT-T",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.29,
+        "Object": 0.28,
+        "Goal": 0.4,
+        "Long": 0.29
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; ER / ViT-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.02, \"Object\": 0.01, \"Goal\": 0.02, \"Long\": 0.06}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-ewc-resnet-t",
+      "paperId": "p057",
+      "method": "EWC / ResNet-T",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.33,
+        "Object": 0.69,
+        "Goal": 0.48,
+        "Long": 0.22
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table2, PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; EWC / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.02, \"Goal\": 0.03, \"Long\": 0.03}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-packnet-resnet-rnn",
+      "paperId": "p057",
+      "method": "PackNet / ResNet-RNN",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.38,
+        "Object": 0.35,
+        "Goal": 0.37,
+        "Long": 0.21
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ResNet-RNN",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.03, \"Object\": 0.02, \"Goal\": 0.04, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-packnet-resnet-t",
+      "paperId": "p057",
+      "method": "PackNet / ResNet-T",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.07,
+        "Object": 0.17,
+        "Goal": 0.06,
+        "Long": 0.08
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Tables1–2 (same evidence, once), PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.02, \"Object\": 0.05, \"Goal\": 0.01, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-packnet-vit-t",
+      "paperId": "p057",
+      "method": "PackNet / ViT-T",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.15,
+        "Object": 0.18,
+        "Goal": 0.08,
+        "Long": 0.14
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table1, PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; PackNet / ViT-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.0, \"Object\": 0.02, \"Goal\": 0.01, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-libero-original-neurips23-nbt-seql-resnet-t",
+      "paperId": "p057",
+      "method": "SEQL / ResNet-T",
+      "trackId": "libero-original-neurips23-nbt",
+      "values": {
+        "Spatial": 0.81,
+        "Object": 0.76,
+        "Goal": 0.82,
+        "Long": 0.63
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "sourceVersion": "NeurIPS2023 formal main PDF",
+      "locator": "Table2, PDF p7–8; §5.1 Eq.(3); NBT column",
+      "attribution": "author-reported",
+      "trainingData": "50 human demos/task; BC; no 90-task pretraining in selected main tables; SEQL / ResNet-T",
+      "evaluationNotes": "作者基准实验，非本站复现。3 seeds; SE={\"Spatial\": 0.01, \"Object\": 0.04, \"Goal\": 0.01, \"Long\": 0.01}。保留score，不构造跨套Average；Tables1–2重叠行不当独立证据；完整附录配置尚未核验。",
       "supersedes": ""
     },
     {

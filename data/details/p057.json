@@ -5,13 +5,13 @@
     "name": "LIBERO",
     "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
     "team": "Bo Liu、Yifeng Zhu、Chongkai Gao、Yihao Feng、Qiang Liu、Yuke Zhu、Peter Stone（署名作者）",
-    "venue": "arXiv",
-    "publicationType": "preprint",
-    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "venue": "NeurIPS 2023",
+    "publicationType": "conference",
+    "publicationStatus": "已核对NeurIPS 2023 Datasets and Benchmarks正式论文集；出版日期仅记录年份，不推测录用日。",
     "firstPublished": "2023-06-05",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
-    "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+    "versionNote": "NeurIPS2023正式PDF（16页，正文§1–7与参考文献）；Figures2–5、Tables1–3视觉核对；独立Supplemental ZIP未展开，非arXiv v2附录全量复核。",
     "topics": [
       "evaluation",
       "pretraining"
@@ -28,8 +28,8 @@
     "limitations": "原始 130 任务资源与后来 VLA 常用的 Spatial / Object / Goal / Long 40 任务评价口径应区分；不能将不同任务集合的均值直接比较。",
     "insight": "评价指标、任务集合和知识迁移定义决定结论；“预训练有效”并不意味着每一种初始化都改善持续学习。",
     "readingFocus": "四类任务设计、迁移指标、任务顺序和预训练负面发现。",
-    "evidence": "metadata",
-    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-19核对NeurIPS正式PDF正文§1–7及Tables1–3页面；独立Supplemental ZIP未展开，未认证附录全部配置。",
     "hasCautionaryResult": true,
     "sources": [
       {
@@ -39,23 +39,27 @@
       {
         "label": "官方项目页",
         "url": "https://libero-project.github.io/"
+      },
+      {
+        "label": "NeurIPS2023正式论文页与DOI",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2306.03310",
     "arxiv": "2306.03310",
-    "doi": ""
+    "doi": "10.52202/075280-1939"
   },
   "publication": {
     "firstArxivAt": "2023-06-05",
     "firstArxivSource": "https://arxiv.org/abs/2306.03310v1",
     "latestArxivVersion": "v2",
     "latestArxivAt": "2023-10-14",
-    "status": "preprint",
-    "venue": "arXiv",
-    "doi": "",
+    "status": "published",
+    "venue": "NeurIPS 2023",
+    "doi": "10.52202/075280-1939",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "publishedAt": "2023",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -80,101 +84,120 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2306.03310v2",
         "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2023",
+        "observedAt": "2026-09-19",
+        "venue": "NeurIPS 2023",
+        "source": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html",
+        "note": "正式论文集DB track；日期只到年。arXiv首发2023-06-05不变；未推断具体录用/出版日。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
-    "version": "2306.03310；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+    "status": "expanded",
+    "updatedAt": "2026-09-19",
+    "verifiedAt": "2026-09-19",
+    "version": "NeurIPS2023正式PDF（16页，正文§1–7与参考文献）；Figures2–5、Tables1–3视觉核对；独立Supplemental ZIP未展开，非arXiv v2附录全量复核。",
     "sections": [
       {
         "id": "problem",
-        "title": "原始研究问题：终身学习，而不只是四套成功率",
-        "body": "LIBERO最初为终身机器人学习设计，核心问题是学习新任务时能否利用已有知识，同时避免忘记旧任务。它把对象、空间关系等陈述性知识，与如何执行动作的过程性知识区分开，通过任务生成与套件设计分别考察迁移。\n因此论文贡献是可扩展任务生成管线、带人类示范的标准任务集和系统基线研究，不是一种新的高分VLA策略。后来常见的四套件联合训练成功率，只覆盖这个基准的一种用法，不能代替原论文的顺序学习与遗忘评测。",
+        "title": "原始问题：学习新任务的速度与保留旧技能必须同时评估",
+        "body": "LIBERO研究终身机器人学习：策略依次遇到新操作任务，需要利用已学知识，又不能因更新参数而忘记旧技能。作者把对象、属性和关系等陈述性知识，与动作执行方式等过程性知识区分开，设计可控制变化因素的任务套件。它提供基准和诊断实验，不是一种新的最高分VLA模型。\n这一定位决定评价不能只测训练结束时的一次成功率。机器人有连续动作和误差累积，离线模仿损失变小不保证闭环能完成任务；学新任务很快的策略也可能严重遗忘。论文将架构、持续学习算法、语言表示、任务顺序与预训练分别作为研究因素。后来的VLA论文常借用其中40任务做监督微调，那是另一种使用协议，不能反过来当作原论文已经验证的终身学习能力。",
         "sources": [
           {
-            "label": "§1–4",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "§1–3；NeurIPS2023正式PDF",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=1"
           }
         ]
       },
       {
         "id": "generation",
-        "title": "任务生成：场景描述与行为模板共同确定任务",
-        "body": "生成流程用场景描述、对象摆放与任务目标来构造仿真问题，并提供行为模板和程序化配置，使研究者能够改变对象、关系或目标而保留其他条件。任务并不是简单随机更换背景图片，成功判定与环境状态也随目标定义。\n这种设计有利于控制变量，但“原则上可生成无限任务”不等于论文已经验证了无限泛化。标准集合依旧有固定对象资产、机器人、物理引擎和目标类型，结果应回到具体suite和训练协议解释。",
+        "title": "任务生成：语言模板、初始场景和逻辑目标共同落地",
+        "body": "程序化管线先从Ego4D的人类活动文字描述归纳行为模板，再选取模拟器可用物体、场景及空间区域，形成任务描述。PDDL文件分别指定对象和布局、初始状态以及目标谓词；例如目标可以同时要求抽屉打开且物体位于抽屉内。环境基于Robosuite，完成判定要检查这些具体状态，而不是按画面看起来相似就算成功。\nEgo4D在这里提供语言和任务灵感，并不是把人类视频直接变成6500条机器人动作示范。程序化模板可以继续扩展任务，但正式实验只覆盖已定义的有限集合。资产、物理接触、区域采样和成功判定共同限定难度，改变其中任何一项都可能形成不同评测。Figure2适合用来理解任务如何从文字转成可执行实验，而不能作为无限泛化已经实现的证据。",
         "sources": [
           {
-            "label": "§4.1；Figure 2；Appendix C",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "§4.1、Figure2，PDF p4–5",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=4"
           }
         ]
       },
       {
         "id": "suites",
-        "title": "套件与数量：130个任务与常用40任务口径不同",
-        "body": "Spatial、Object、Goal各有10个任务，分别强调空间指称、对象变化和目标／行为变化。另有100任务集合，其中90个较短任务用于预训练，10个长程任务用于下游评估。总计130个标准任务。\n常见的Spatial、Object、Goal、Long／10四套汇总只涉及其中40个任务，不是130个全部执行。LIBERO-90、LIBERO-100和LIBERO-Long之间有包含与拆分关系；扩展版Plus或其他扰动评测又是额外协议，不能只按“LIBERO”名字合并分数。",
+        "title": "数据组成：四类资源与常见四套40任务并不是同一个分母",
+        "body": "Spatial、Object、Goal各10项任务，分别围绕空间布局/指称、物体变化和目标行为组织；另外LIBERO-100包含90项短程任务及10项长程任务。完整标准资源因此是130任务，常见VLA结果使用Spatial、Object、Goal、Long各10任务，只覆盖其中40项。LIBERO-90是预训练子集，不应被重复加到总数。\n每项任务由专家通过SpaceMouse遥操作收集50条示范，130项共6500条，这是按原文数量计算的资源规模。实验训练实际使用哪些子集仍要逐项记录。空间、物体、目标分组是有意控制迁移条件，不代表三个能力在模型内部完全独立；Long同时包含多种变化与更长行为。原版、重放清洗版、Plus/PRO等扩展不能仅凭同一个LIBERO名称合并比较。",
         "sources": [
           {
-            "label": "§4.2；Appendix C.1",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "§4.2、§4.4、§5.2预训练实验；正式PDF",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=5"
           }
         ]
       },
       {
-        "id": "methods",
-        "title": "基线：视觉结构、时间结构与终身算法分开比较",
-        "body": "论文实现ResNet-RNN、ResNet-Transformer与ViT-Transformer策略，融合语言和视觉历史，以GMM输出动作；同时比较顺序微调、经验回放ER、参数正则EWC和参数隔离PackNet等方法。\n这些算法解决遗忘的路径不同：回放保留旧样本，正则限制关键参数变化，参数隔离为不同任务分配容量。它们对存储、任务身份与可用参数的要求也不同，因此某个算法遗忘较少，并不必然意味着同样的数据效率或更强新任务学习能力。",
+        "id": "architecture",
+        "title": "策略数据流：视觉、语言和时间结构如何生成连续控制",
+        "body": "三类策略是ResNet-RNN、ResNet-T和ViT-T。第一类用ResNet提取图像特征，通过FiLM条件化语言，并用LSTM处理时序；第二类保留ResNet视觉主干，把视觉历史与语言token送入时间Transformer；第三类进一步把视觉空间编码改为ViT。时间主干输出潜向量，GMM动作头给出连续控制分布，机器人采样末端动作并随环境反馈继续决策。\n这些策略均以行为克隆学习示范，不应因输出概率分布就称为扩散策略，也不应把持续学习算法等同于强化学习。GMM允许多模态动作，但闭环表现还依赖视觉对齐和时间记忆。主文给出这种结构关系，精确历史长度、学习率和缓冲区大小在单独附录；本次未展开Supplemental ZIP，因而不从后续实现或其他论文替这些参数补值。",
         "sources": [
           {
-            "label": "§4.3–4.4；Appendix A–B",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "§4.3–4.4、§5，PDF p5–6；附录配置未核验",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=6"
+          }
+        ]
+      },
+      {
+        "id": "lifelong",
+        "title": "更新机制：保存样本、限制权重和隔离容量不是同一种成本",
+        "body": "顺序微调SEQL只继续在新任务数据上训练，可快速适应但容易覆盖旧知识。ER保留过去样本并回放；EWC对关键参数的变化加惩罚；PackNet通过剪枝与掩码给不同任务隔离参数。它们分别付出存储、更新自由度或有效容量的代价，不能把较低遗忘直接解释为没有额外资源的全面优势。\n多任务MTL可以同时使用所有任务数据，它是参考上界式对照而不是合法终身算法。Task身份、可访问旧数据、保留参数和任务顺序都会影响结论。本批把不同算法与架构组合保留为原论文对照，未把某个宏观标签简化成统一训练预算。部署时仍执行当前观察到动作的策略，本文不自动提供规划器或长期记忆检索模块；终身学习发生在跨任务训练更新层面。",
+        "sources": [
+          {
+            "label": "§4.3、§5.2、Tables1–2；正式PDF",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=8"
           }
         ]
       },
       {
         "id": "metrics",
-        "title": "FWT、NBT与AUC：分别看学得快、忘得少与全过程",
-        "body": "前向迁移FWT衡量对新任务的学习表现，负向后向迁移NBT反映旧任务退化，AUC汇总训练过程中的成功率表现；NBT越低越好，另两项越高越好。它们依赖任务顺序和在学习过程中的评测，不是一次最终测试就能计算完整。\n原实现还依据各任务达到最好表现的检查点进行定义与选择。若后续论文只报告联合训练后四套件平均成功率，就不能将其与这里的终身AUC直接排名；相同的0.75可以代表完全不同的统计量。",
+        "title": "指标定义：FWT向上、NBT向下、AUC向上，均不是最终成功率",
+        "body": "§5.1每隔5个epoch评估，覆盖0到50，共11个检查点。FWT汇总学当前任务时的成功率学习曲线；NBT比较任务学好时与后来训练后的表现差额，越低表示越少遗忘；AUC把新任务学习和后续保持合在一起。原文还按首次达到最佳成功率的检查点处理之后的曲线，因此它们不是简单拿最后模型测一次就能得到。\n三个量来自成功率，但是无量纲的过程分数。本批保持0到1量级，不乘100，也不在页面上加百分号；NBT单独设置越低越好。Figure3中的面积是定义的解释图，不是可以读取精确方法分数的柱图。MTL在Table2显示单一参考值而非完整三项过程指标，所以不擅自复制到FWT/NBT/AUC各列，更不把某篇VLA的76.5%与终身AUC的0.76混排。",
         "sources": [
           {
-            "label": "§5.1；Figure 3",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "§5.1、Eq.(3)、Figure3；PDF p6–7",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=6"
           }
         ]
       },
       {
         "id": "results",
-        "title": "主要发现：低遗忘和强前向迁移并不总是同一个方法",
-        "body": "固定ResNet-T时，Spatial上的顺序微调FWT约0.72，但NBT约0.81、AUC仅0.20；PackNet的FWT约0.55，NBT约0.07、AUC约0.63。它显示保留旧知识与快速学习新知识之间确有取舍。\n论文也发现没有一种视觉骨干在全部套件与算法组合中稳定最好。不能把某个配置的平均优势概括为Transformer视觉编码器普遍优于卷积，时间建模方式与终身算法共同决定最终表现。",
+        "title": "原表证据：避免遗忘和快速适应之间存在真实取舍",
+        "body": "Table1比较三种架构与ER/PackNet，Table2固定ResNet-T比较SEQL、ER、EWC和PackNet；两个表中相同设置的重复数值只收一次，不当独立复现实验。表注是三个种子的均值和标准误，不是标准差。以Long为例，ResNet-T的SEQL、ER、EWC、PackNet对应AUC为0.15、0.32、0.02、0.25；前向迁移却分别为0.54、0.48、0.13、0.22。\n这组差异说明SEQL学得快但保留差，PackNet遗忘较少却可能削弱新任务学习，ER取得更均衡结果。Goal上PackNet/ResNet-T的AUC0.75高于ER0.49，Long上顺序反转；不能宣称某个算法普遍最优。原文对容量瓶颈的解释是作者推断，并非这里额外验证过的因果结论。本批按架构与算法区分8种组合，每种分别存3个指标，没有造四套件总平均。",
         "sources": [
           {
-            "label": "§5.2；Tables 1–2",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "Tables1–2，PDF p7–8；三种子、mean±standard error",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=7"
           }
         ]
       },
       {
-        "id": "negative",
-        "title": "值得保留的负结果：语言嵌入与预训练未必自动带来迁移",
-        "body": "语言嵌入对比中，BERT、CLIP、GPT-2与任务ID的差距没有达到统计显著水平，至少在所测固定套件与算法下，预训练语义未被充分转化为迁移优势。论文还讨论监督预训练可能不能改善、甚至损害后续终身学习的情况。\n这些结论不是说语言或预训练无用，而是说明数据、任务区分方式和优化目标可能允许捷径。训练损失也未必与闭环成功率一致，因此把更低行为克隆损失当成更强长期控制能力并不可靠。",
+        "id": "ablations",
+        "title": "语言、顺序与预训练消融：负面结果应限定在实际配方",
+        "body": "Table3在Long上固定ER与ResNet-T，BERT、CLIP、GPT-2和经BERT编码的Task-ID之间未观察到统计显著差异。它说明这组语言表示可能主要起任务区分作用，而不证明自然语言对所有机器人学习都无用。Figure4更换五种任务顺序，结果发生变化；其误差条是固定顺序下标准差，与主表标准误不同。\nFigure5把90个短任务行为克隆预训练后的模型用于Long终身学习，若干设置反而下降；例如图上ResNet-T/ER由无预训练0.32降到0.22。这个数字是原图明确标注，不是像素估计。实验指出朴素BC初始化未必帮助后续更新，不能外推为任何大规模预训练都无效，也不能将数据质量、目标任务难度与学习算法的交互仅归因于某一个视觉编码器。",
         "sources": [
           {
-            "label": "§5.2；Table 3；Appendix E.2",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "Table3、Figures4–5及§5.2，PDF p9（已查看原图）",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=9"
           }
         ]
       },
       {
         "id": "reading",
-        "title": "读图路线与榜单使用：先固定训练范式",
-        "body": "先看套件示意理解哪些因素被改变，再看Figure 3中的整个学习时间轴，确认一个指标是在新任务学习中、旧任务回测中还是最终统一测试中得到。之后再阅读各方法在空间、对象和长程条件下的差异。\n使用LIBERO结果时至少记录套件、是否用LIBERO-90预训练、单／多任务或顺序学习、观察视角、示范预算、种子及检查点选择。这样才能利用它做有意义的模型比较，而不是把名字相似但条件不同的数字塞进一张总榜。",
+        "title": "阅读与复用：先确定要测迁移，还是借用任务测微调",
+        "body": "复用时先确定问题：顺序学习新任务要报告FWT/NBT/AUC与顺序、旧数据访问；套件微调要报告训练数据、相机、清洗和最终成功率。两者共享任务资产，不共享自动可比的统计口径。最稳妥的读法是Figure2理解任务生成，§5.1和Figure3理解计分，再逐格看Tables1–2，最后读语言、顺序和预训练的反例。\n本次依据正式NeurIPS PDF主文及可见表图深化笔记，不认证未取得的独立补充材料，也不宣称已遍历所有任务轨迹或运行模拟器。首发2023-06-05保持，正式发表另补2023年NeurIPS及来源明确的DOI，不猜月日。实验只覆盖有限仿真资产和既定行为克隆配方；对实际家庭、持续在线适应和安全性的外推需要额外证据。此页是原始基准研究，不是当前VLA领域总榜。",
         "sources": [
           {
-            "label": "Figures 1–3；§4–5；Appendix D",
-            "url": "https://arxiv.org/html/2306.03310"
+            "label": "§7、Tables1–3；正式PDF；元数据见正式论文页",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=10"
           }
         ]
       }
@@ -182,52 +205,63 @@
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://arxiv.org/html/2306.03310"
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
     },
     "figures": [
       {
-        "title": "Figure 3：终身学习指标的时间轴",
-        "url": "https://arxiv.org/html/2306.03310#S5.F3",
-        "caption": "分开观察新任务学习速度、旧任务遗忘与全过程面积；注意各指标方向不同。"
+        "title": "Figure2：从活动描述到PDDL任务",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=4",
+        "caption": "NeurIPS2023正式PDF p4。核对对象布局、初始状态和目标谓词三个部分；Ego4D提供模板来源，不是这里的机器人示范。"
+      },
+      {
+        "title": "Figure3与Figures4–5：指标、任务顺序与预训练边界",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf#page=7",
+        "caption": "正式PDF p7的Figure3解释FWT/NBT/AUC，p9的Figures4–5给顺序与预训练对照；注意图4的标准差与主表的标准误不同。"
       }
     ],
     "tables": [
       {
-        "title": "LIBERO-Spatial的终身学习取舍",
+        "title": "固定ResNet-T的Long终身学习结果（mean ± SE）",
         "columns": [
-          "方法，固定ResNet-T",
-          "FWT↑",
-          "NBT↓",
-          "AUC↑"
+          "算法",
+          "FWT ↑",
+          "NBT ↓",
+          "AUC ↑"
         ],
         "rows": [
           [
-            "顺序微调",
-            "0.72",
-            "0.81",
-            "0.20"
+            "SEQL",
+            "0.54 ± 0.01",
+            "0.63 ± 0.01",
+            "0.15 ± 0.00"
           ],
           [
             "ER",
-            "0.65",
-            "0.27",
-            "0.56"
+            "0.48 ± 0.02",
+            "0.32 ± 0.04",
+            "0.32 ± 0.01"
+          ],
+          [
+            "EWC",
+            "0.13 ± 0.02",
+            "0.22 ± 0.03",
+            "0.02 ± 0.00"
           ],
           [
             "PackNet",
-            "0.55",
-            "0.07",
-            "0.63"
+            "0.22 ± 0.01",
+            "0.08 ± 0.01",
+            "0.25 ± 0.00"
           ]
         ],
-        "locator": "Table 2",
-        "caption": "作者报告的三种终身指标，均不能直接当作常见四套件联合训练成功率。"
+        "locator": "NeurIPS2023正式PDF Table2，p8；定义见§5.1",
+        "caption": "作者原报告、三种子。过程指标是score，不是最终任务成功百分比；MTL未提供相同三项，不猜补；不同任务套件不自造统一平均。"
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-19",
+      "note": "正式PDF Tables1–2核验24条（8种架构/算法×3指标）；重复ResNet-T表项不重复收录，NBT越低越好，FWT/AUC越高越好；无自造总体平均。"
     }
   }
 }

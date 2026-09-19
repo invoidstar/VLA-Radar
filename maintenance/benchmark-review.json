@@ -1,13 +1,19 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-18",
+  "reviewedAt": "2026-09-19",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p064": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Appendix E，Table 12。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "libero-openvla-v3-singleview-cleaned"
+      ],
+      "resultIds": [
+        "r-libero-openvla-v3-singleview-cleaned-dp",
+        "r-libero-openvla-v3-singleview-cleaned-octo",
+        "r-libero-openvla-v3-singleview-cleaned-openvla"
+      ],
+      "note": "本批核对v3 Appendix E/Table12，新增3条原报告成功率记录；单相机、清洗数量、LoRA和标准误已定位，其他真机实验未声称全部入榜。"
     },
     "p017": {
       "status": "deferred",
@@ -484,10 +490,39 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p057": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "libero-original-neurips23-fwt",
+        "libero-original-neurips23-nbt",
+        "libero-original-neurips23-auc"
+      ],
+      "resultIds": [
+        "r-libero-original-neurips23-fwt-er-resnet-rnn",
+        "r-libero-original-neurips23-fwt-packnet-resnet-rnn",
+        "r-libero-original-neurips23-fwt-er-resnet-t",
+        "r-libero-original-neurips23-fwt-packnet-resnet-t",
+        "r-libero-original-neurips23-fwt-er-vit-t",
+        "r-libero-original-neurips23-fwt-packnet-vit-t",
+        "r-libero-original-neurips23-fwt-seql-resnet-t",
+        "r-libero-original-neurips23-fwt-ewc-resnet-t",
+        "r-libero-original-neurips23-nbt-er-resnet-rnn",
+        "r-libero-original-neurips23-nbt-packnet-resnet-rnn",
+        "r-libero-original-neurips23-nbt-er-resnet-t",
+        "r-libero-original-neurips23-nbt-packnet-resnet-t",
+        "r-libero-original-neurips23-nbt-er-vit-t",
+        "r-libero-original-neurips23-nbt-packnet-vit-t",
+        "r-libero-original-neurips23-nbt-seql-resnet-t",
+        "r-libero-original-neurips23-nbt-ewc-resnet-t",
+        "r-libero-original-neurips23-auc-er-resnet-rnn",
+        "r-libero-original-neurips23-auc-packnet-resnet-rnn",
+        "r-libero-original-neurips23-auc-er-resnet-t",
+        "r-libero-original-neurips23-auc-packnet-resnet-t",
+        "r-libero-original-neurips23-auc-er-vit-t",
+        "r-libero-original-neurips23-auc-packnet-vit-t",
+        "r-libero-original-neurips23-auc-seql-resnet-t",
+        "r-libero-original-neurips23-auc-ewc-resnet-t"
+      ],
+      "note": "正式PDF Tables1–2核验24条（8种架构/算法×3指标）；重复ResNet-T表项不重复收录，NBT越低越好，FWT/AUC越高越好；无自造总体平均。"
     },
     "p030": {
       "status": "deferred",

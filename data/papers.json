@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-18",
+  "updatedAt": "2026-09-19",
   "title": "VLA Research Radar",
   "collection": "2021—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -2566,13 +2566,13 @@
       "name": "LIBERO",
       "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
       "team": "Bo Liu、Yifeng Zhu、Chongkai Gao、Yihao Feng、Qiang Liu、Yuke Zhu、Peter Stone（署名作者）",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "NeurIPS 2023",
+      "publicationType": "conference",
+      "publicationStatus": "已核对NeurIPS 2023 Datasets and Benchmarks正式论文集；出版日期仅记录年份，不推测录用日。",
       "firstPublished": "2023-06-05",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "NeurIPS2023正式PDF（16页，正文§1–7与参考文献）；Figures2–5、Tables1–3视觉核对；独立Supplemental ZIP未展开，非arXiv v2附录全量复核。",
       "topics": [
         "evaluation",
         "pretraining"
@@ -2589,8 +2589,8 @@
       "limitations": "原始 130 任务资源与后来 VLA 常用的 Spatial / Object / Goal / Long 40 任务评价口径应区分；不能将不同任务集合的均值直接比较。",
       "insight": "评价指标、任务集合和知识迁移定义决定结论；“预训练有效”并不意味着每一种初始化都改善持续学习。",
       "readingFocus": "四类任务设计、迁移指标、任务顺序和预训练负面发现。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-19核对NeurIPS正式PDF正文§1–7及Tables1–3页面；独立Supplemental ZIP未展开，未认证附录全部配置。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -2600,11 +2600,15 @@
         {
           "label": "官方项目页",
           "url": "https://libero-project.github.io/"
+        },
+        {
+          "label": "NeurIPS2023正式论文页与DOI",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2306.03310",
       "arxiv": "2306.03310",
-      "doi": ""
+      "doi": "10.52202/075280-1939"
     },
     {
       "id": "p058",
@@ -2896,7 +2900,7 @@
       "firstPublished": "2024-06-13",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "arXiv 2406.09246v3完整HTML；§1–6、Appendices A–E及Table12；正式书目另按CoRL2024/PMLR270核对，不混用OFT。",
       "topics": [
         "pretraining",
         "action"
@@ -2914,7 +2918,7 @@
       "insight": "通用语义迁移优势具有任务条件；强预训练模型与专用策略各有适用边界。",
       "readingFocus": "视觉表征组合、离散动作接口、低秩微调与负面任务例外。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+      "evidenceNote": "2026-09-19核对arXiv v3正文/附录及Table12原生HTML表格；限定所列版本的来源阅读，不是独立复现。",
       "hasCautionaryResult": true,
       "sources": [
         {

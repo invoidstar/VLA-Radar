@@ -1861,6 +1861,91 @@
         "Put Eggplant in Basket"
       ],
       "source": "https://arxiv.org/html/2405.05941v1"
+    },
+    {
+      "id": "libero-openvla-v3-singleview-cleaned",
+      "dataset": "LIBERO",
+      "name": "LIBERO · OpenVLA v3 · 单视角清洗示范",
+      "version": "original four suites; OpenVLA v3 regenerated/filtered demonstrations",
+      "tasks": "40 (10 per suite)",
+      "split": "Spatial / Object / Goal / Long; independent suite fine-tuning",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每套500回合×3随机种子=1500回合，四套6000回合/方法；静态第三人称相机，无手腕；256像素重放、去no-op及失败示范、训练测试图像180度旋转；测试初始环境沿用原版。均值±标准误。非终身学习FWT/NBT/AUC，非OFT。",
+      "trainingRegime": "原每套500示范；Spatial/Object/Goal/Long过滤后432/454/428/379。DP从头；Octo微调；OpenVLA LoRA r32；各套独立，预训练预算不同，统一检查点规则未在此完整公开。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2406.09246v3"
+    },
+    {
+      "id": "libero-original-neurips23-fwt",
+      "dataset": "LIBERO",
+      "name": "LIBERO原始终身学习 · FWT · 前向迁移",
+      "version": "NeurIPS2023 original lifelong protocol (Tables1–2)",
+      "tasks": "10 sequential tasks per downstream suite; 4 suites",
+      "split": "Spatial / Object / Goal / Long; sequential lifelong learning",
+      "metric": "FWT (lifelong score, not final task success)",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "正式PDF §5.1 Eq.(3)，0–50 epoch每5轮评估，共11检查点，按首次最佳检查点处理学习曲线；三种子均值±标准误。Table1–2相同ResNet-T重复项只记录一次。FWT/AUC越高越好、NBT越低越好；不乘100，不与套件微调成功率混排。",
+      "trainingRegime": "每任务50条人工示范，BC，原论文非90任务预训练主表；ER回放/EWC正则/PackNet隔离参数成本不同。独立补充ZIP未展开，缓冲区及完整评测回合配置未核验；MTL仅参考不套用缺失指标。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    {
+      "id": "libero-original-neurips23-nbt",
+      "dataset": "LIBERO",
+      "name": "LIBERO原始终身学习 · NBT · 负向后向迁移",
+      "version": "NeurIPS2023 original lifelong protocol (Tables1–2)",
+      "tasks": "10 sequential tasks per downstream suite; 4 suites",
+      "split": "Spatial / Object / Goal / Long; sequential lifelong learning",
+      "metric": "NBT (lifelong score, not final task success)",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "正式PDF §5.1 Eq.(3)，0–50 epoch每5轮评估，共11检查点，按首次最佳检查点处理学习曲线；三种子均值±标准误。Table1–2相同ResNet-T重复项只记录一次。FWT/AUC越高越好、NBT越低越好；不乘100，不与套件微调成功率混排。",
+      "trainingRegime": "每任务50条人工示范，BC，原论文非90任务预训练主表；ER回放/EWC正则/PackNet隔离参数成本不同。独立补充ZIP未展开，缓冲区及完整评测回合配置未核验；MTL仅参考不套用缺失指标。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    {
+      "id": "libero-original-neurips23-auc",
+      "dataset": "LIBERO",
+      "name": "LIBERO原始终身学习 · AUC · 学习与保持",
+      "version": "NeurIPS2023 original lifelong protocol (Tables1–2)",
+      "tasks": "10 sequential tasks per downstream suite; 4 suites",
+      "split": "Spatial / Object / Goal / Long; sequential lifelong learning",
+      "metric": "AUC (lifelong score, not final task success)",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "正式PDF §5.1 Eq.(3)，0–50 epoch每5轮评估，共11检查点，按首次最佳检查点处理学习曲线；三种子均值±标准误。Table1–2相同ResNet-T重复项只记录一次。FWT/AUC越高越好、NBT越低越好；不乘100，不与套件微调成功率混排。",
+      "trainingRegime": "每任务50条人工示范，BC，原论文非90任务预训练主表；ER回放/EWC正则/PackNet隔离参数成本不同。独立补充ZIP未展开，缓冲区及完整评测回合配置未核验；MTL仅参考不套用缺失指标。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long"
+      ],
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
     }
   ]
 }
