@@ -176,10 +176,26 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p044": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2，2507.17294v1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "vlatouch-v2-real-manipulation",
+        "vlatouch-v2-real-interleaved",
+        "vlatouch-v2-property-decisions"
+      ],
+      "resultIds": [
+        "r-vlatouch-v2-real-manipulation-rdt",
+        "r-vlatouch-v2-real-manipulation-residual",
+        "r-vlatouch-v2-real-manipulation-interpolant",
+        "r-vlatouch-v2-real-manipulation-no-touch",
+        "r-vlatouch-v2-real-manipulation-no-vision",
+        "r-vlatouch-v2-real-interleaved-no-planning",
+        "r-vlatouch-v2-real-interleaved-no-control",
+        "r-vlatouch-v2-real-interleaved-full",
+        "r-vlatouch-v2-property-decisions-no-tactile",
+        "r-vlatouch-v2-property-decisions-raw-tactile",
+        "r-vlatouch-v2-property-decisions-structured"
+      ],
+      "note": "第十一批：完成所列原始结果11行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
     },
     "p025": {
       "status": "deferred",
@@ -772,10 +788,27 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p053": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "unipi-neurips23-compositional",
+        "ravens-unipi-neurips23-transfer"
+      ],
+      "resultIds": [
+        "r-unipi-neurips23-compositional-state-bc",
+        "r-unipi-neurips23-compositional-image-bc",
+        "r-unipi-neurips23-compositional-image-tt",
+        "r-unipi-neurips23-compositional-diffuser",
+        "r-unipi-neurips23-compositional-unipi",
+        "r-unipi-neurips23-compositional-no-components",
+        "r-unipi-neurips23-compositional-frame-only",
+        "r-unipi-neurips23-compositional-frame-consistency",
+        "r-ravens-unipi-neurips23-transfer-state-bc",
+        "r-ravens-unipi-neurips23-transfer-image-bc",
+        "r-ravens-unipi-neurips23-transfer-image-tt",
+        "r-ravens-unipi-neurips23-transfer-diffuser",
+        "r-ravens-unipi-neurips23-transfer-unipi"
+      ],
+      "note": "第十一批：完成所列原始结果13行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
     },
     "p033": {
       "status": "deferred",

@@ -1742,7 +1742,7 @@
       "firstPublished": "2025-07-23",
       "dateNote": "",
       "collectionMonth": "2026-07",
-      "versionNote": "2026年7月卷期；5月在线；数据取2025预印本v1",
+      "versionNote": "arXiv2507.17294v2（2025-07-29），18页正文§1–6与附录A–C；2026-09-19实际阅读；非期刊终稿核验",
       "topics": [
         "tactile"
       ],
@@ -1752,14 +1752,14 @@
         "feedback"
       ],
       "priority": "selective",
-      "contribution": "高层将触觉转为规划可用信息，低层用触觉条件插值控制器细化动作，保持预训练VLA本体不必重训。",
+      "contribution": "高层以结构化触觉反馈辅助规划，低层用插值控制器修正VLA动作；触觉融合不要求给VLA主干新增触觉微调，但实验先做RDT动作空间对齐与无触觉任务微调。",
       "findings": "各20次真实评测，RDT→插值控制器：放杯7/20→10/20；擦拭完成5/20→12/20；削皮完成6/20→10/20。\n触觉语言使力判断50%→90%、硬度判断60%→75%。",
-      "limitations": "需要GelSight传感器、触觉模型及训练过的控制器；不重训VLA不等于整系统免训练。引用的是预印本v1，不冒充已逐项核对期刊最终版。",
+      "limitations": "结论限三种接触任务与每项20次；v2附录明确RDT先做动作空间和目标任务适配，控制器另训练且最高8Hz。当前深读为预印本v2，不冒充已逐项核对RA-L最终版。",
       "insight": "高层触觉解释与低层反馈控制承担不同职责。不更新VLA并不意味着整个系统无需训练。",
       "readingFocus": "高低层反馈分工；Table 1；语言化触觉与原始触觉图；训练成本。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "本次实际阅读全文及附录，视觉核对所列原图表；作者报告，不是本站独立复现。版本与范围详见笔记。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "原文 · v1",
@@ -1776,14 +1776,18 @@
         {
           "label": "出版方 DOI",
           "url": "https://doi.org/10.1109/lra.2026.3692345"
+        },
+        {
+          "label": "第十一批实际全文与原表",
+          "url": "https://arxiv.org/pdf/2507.17294v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2507.17294",
       "arxiv": "2507.17294",
       "doi": "10.1109/lra.2026.3692345",
-      "detailUrl": "data/details/p044.json?v=c3057d6835c78058",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p044.json?v=e758dadf9c09b730",
+      "resultUrl": "data/paper-results/p044.96e90254eaf11d15.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-07-23",
         "latestArxivVersion": "v2",
@@ -2923,13 +2927,13 @@
       "name": "UniPi",
       "title": "Learning Universal Policies via Text-Guided Video Generation",
       "team": "Yilun Du、Mengjiao Yang、Bo Dai、Hanjun Dai、Ofir Nachum、Joshua B. Tenenbaum、Dale Schuurmans、Pieter Abbeel（署名作者）",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "NeurIPS 2023",
+      "publicationType": "conference",
+      "publicationStatus": "已核对NeurIPS2023正式论文集；仅保留来源明确的2023年精度，录用具体日期未知。",
       "firstPublished": "2023-01-31",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "NeurIPS2023正式17页PDF正文§1–6与附录A–B；ar5iv全文交叉；2026-09-19实际阅读",
       "topics": [
         "world",
         "pretraining"
@@ -2942,30 +2946,38 @@
       ],
       "priority": "selective",
       "contribution": "以文本条件视频生成表示高层计划，再由逆动力学模型把视频转成可执行动作，是视频先验连接机器人控制的重要路线。",
-      "findings": "摘要报告跨任务与跨环境的组合泛化，并探索使用互联网视频。当前核对材料未提供可直接摘录、口径完整的统一成功率，本条不补造分数。",
-      "limitations": "生成视频计划不等于生成可执行的关节轨迹；逆动力学模型、视频质量和测试时生成成本共同限制落地。",
+      "findings": "正式NeurIPS2023 Table1：UniPi已见Place/Relation为59.1/53.2%，未见为60.1/46.1%；Table3三种迁移任务为51.6/75.5/45.7%。Table4的77.1%是生成视频末帧分类器的成功代理，不是机器人真机执行成功率；不生成统一总平均。",
+      "limitations": "实际仿真动作以开环方式执行；视频生成、逆动力学误差与接触简化限制落地。Bridge实验的Success来自生成视频末帧分类器，不能当真机闭环成功率；测试种子与原表±定义未完整明确。",
       "insight": "视频可以成为跨本体的计划表示，但从视觉预测到真实控制仍需要动作落地环节。",
       "readingFocus": "视频规划和逆动力学的分工、跨本体假设、训练与推理开销。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "本次实际阅读全文及附录，视觉核对所列原图表；作者报告，不是本站独立复现。版本与范围详见笔记。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
           "url": "https://arxiv.org/abs/2302.00111"
+        },
+        {
+          "label": "第十一批实际全文与原表",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf"
+        },
+        {
+          "label": "正式发表与书目",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2302.00111",
       "arxiv": "2302.00111",
-      "doi": "",
-      "detailUrl": "data/details/p053.json?v=d024d7b6674dc7f0",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "doi": "10.52202/075280-0403",
+      "detailUrl": "data/details/p053.json?v=4c182210e7319b6e",
+      "resultUrl": "data/paper-results/p053.75382b1cb910e972.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-01-31",
         "latestArxivVersion": "v3",
-        "status": "preprint",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-09-19"
       }
     },
     {

@@ -3062,6 +3062,114 @@
         }
       ],
       "verifiedAt": "2026-09-19"
+    },
+    "p053": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Learning Universal Policies via Text-Guided Video Generation",
+        "author": [
+          {
+            "given": "Yilun",
+            "family": "Du"
+          },
+          {
+            "given": "Sherry",
+            "family": "Yang"
+          },
+          {
+            "given": "Bo",
+            "family": "Dai"
+          },
+          {
+            "given": "Hanjun",
+            "family": "Dai"
+          },
+          {
+            "given": "Ofir",
+            "family": "Nachum"
+          },
+          {
+            "given": "Josh",
+            "family": "Tenenbaum"
+          },
+          {
+            "given": "Dale",
+            "family": "Schuurmans"
+          },
+          {
+            "given": "Pieter",
+            "family": "Abbeel"
+          }
+        ],
+        "container-title": "Advances in Neural Information Processing Systems",
+        "volume": "36",
+        "issued": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "DOI": "10.52202/075280-0403",
+        "URL": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html"
+      },
+      "sources": [
+        {
+          "label": "NeurIPS2023官方标题、八位作者、DOI；按其姓名形式，不混arXiv不同署名形式",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p044": {
+      "item": {
+        "type": "article",
+        "title": "VLA-Touch: Enhancing Vision-Language-Action Models with Dual-Level Tactile Feedback",
+        "author": [
+          {
+            "given": "Jianxin",
+            "family": "Bi"
+          },
+          {
+            "given": "Kevin Yuchen",
+            "family": "Ma"
+          },
+          {
+            "given": "Ce",
+            "family": "Hao"
+          },
+          {
+            "given": "Mike Zheng",
+            "family": "Shou"
+          },
+          {
+            "given": "Harold",
+            "family": "Soh"
+          }
+        ],
+        "container-title": "arXiv",
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              23
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2507.17294"
+      },
+      "sources": [
+        {
+          "label": "预印本引用：v2首页五名作者，日期采用单独保留的v1公开记录；非期刊最终书目",
+          "url": "https://arxiv.org/pdf/2507.17294v2#page=1"
+        },
+        {
+          "label": "arXiv首次提交记录",
+          "url": "https://arxiv.org/abs/2507.17294"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
     }
   }
 }

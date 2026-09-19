@@ -1,0 +1,20 @@
+{
+  "id": "r-vlatouch-v2-real-interleaved-no-planning",
+  "paperId": "p044",
+  "method": "w/o Planning tactile",
+  "trackId": "vlatouch-v2-real-interleaved",
+  "values": {
+    "Cup": 25.0,
+    "Wipe": 25.0,
+    "Peel": 30.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2507.17294v2",
+  "sourceVersion": "arXiv2507.17294v2 Table2",
+  "locator": "v2 PDF p.8 Table2，按原文三列转置为行",
+  "attribution": "author-reported",
+  "trainingData": "牵引示范：Cup40抓取+60放置；Wipe40抓取+60擦拭；Peel60抓取+120削皮，10Hz采集。RDT先100k步Franka动作对齐、每任务20k无触觉微调，再监督训练触觉控制器；非完全免训练。",
+  "evaluationNotes": "原始Cup/Wipe/Peel次数[5, 5, 6]/20，乘5换算；不与控制器表取高或重算总Average。",
+  "supersedes": ""
+}

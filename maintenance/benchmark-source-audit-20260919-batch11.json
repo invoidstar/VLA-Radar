@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "d90a5d52f749413f3cc990b2a3abcd8e93202e4a",
+  "status": "partial-content-backfill",
+  "scope": "第十一批：既有UniPi与VLA-Touch深入阅读、原始结果；不是全领域周检索。",
+  "newPapers": [],
+  "updatedPapers": [
+    "p053",
+    "p044"
+  ],
+  "newTracks": [
+    "unipi-neurips23-compositional",
+    "ravens-unipi-neurips23-transfer",
+    "vlatouch-v2-real-manipulation",
+    "vlatouch-v2-real-interleaved",
+    "vlatouch-v2-property-decisions"
+  ],
+  "newResults": [
+    "r-unipi-neurips23-compositional-state-bc",
+    "r-unipi-neurips23-compositional-image-bc",
+    "r-unipi-neurips23-compositional-image-tt",
+    "r-unipi-neurips23-compositional-diffuser",
+    "r-unipi-neurips23-compositional-unipi",
+    "r-unipi-neurips23-compositional-no-components",
+    "r-unipi-neurips23-compositional-frame-only",
+    "r-unipi-neurips23-compositional-frame-consistency",
+    "r-ravens-unipi-neurips23-transfer-state-bc",
+    "r-ravens-unipi-neurips23-transfer-image-bc",
+    "r-ravens-unipi-neurips23-transfer-image-tt",
+    "r-ravens-unipi-neurips23-transfer-diffuser",
+    "r-ravens-unipi-neurips23-transfer-unipi",
+    "r-vlatouch-v2-real-manipulation-rdt",
+    "r-vlatouch-v2-real-manipulation-residual",
+    "r-vlatouch-v2-real-manipulation-interpolant",
+    "r-vlatouch-v2-real-manipulation-no-touch",
+    "r-vlatouch-v2-real-manipulation-no-vision",
+    "r-vlatouch-v2-real-interleaved-no-planning",
+    "r-vlatouch-v2-real-interleaved-no-control",
+    "r-vlatouch-v2-real-interleaved-full",
+    "r-vlatouch-v2-property-decisions-no-tactile",
+    "r-vlatouch-v2-property-decisions-raw-tactile",
+    "r-vlatouch-v2-property-decisions-structured"
+  ],
+  "readSources": [
+    {
+      "paperId": "p053",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf",
+      "scope": "正式17页PDF正文§1–6与附录A–B；实际查看Figure2及Tables1–4页面，ar5iv全体文本与表格交叉。"
+    },
+    {
+      "paperId": "p044",
+      "url": "https://arxiv.org/pdf/2507.17294v2",
+      "scope": "v2完整18页正文与Appendices A–C；未指定版本PDF截图首页确认为v2，实际看Figures1–3与Tables1/2和p.17训练页；没有核验期刊最终版。"
+    }
+  ],
+  "publicationSources": [
+    "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html"
+  ],
+  "boundaries": [
+    "UniPi全部实际实验开环；连续关节接口不能混入原生CLIPort；组合任务动作注释20k、多任务200k分开。",
+    "UniPi正文10训练任务与A.5列11环境名口径冲突保留；Table2完整模型与Table1去重，Novel未报告null。",
+    "Table4的77.1是生成视频末帧成功代理，不是BridgeData真机完成；FID/FVD正文higher与原表下降方向冲突明确。",
+    "VLA-Touch实验先10万步RDT动作适配、每任务2万步无触觉任务微调；不以摘要免触觉微调冒充VLA完全未训练。",
+    "属性决策、控制器完整完成、交错系统三种指标分开；中间抓起/部分完成不当最终成功；n/20转百分比×5，保留raw counts。",
+    "保留RDT主干先适配、Octopi与Octo不同、力不是Octopi输出、64/48与8Hz；语言化并非每属性都更好。"
+  ],
+  "keyResultCorrections": [
+    {
+      "paperId": "p053",
+      "before": "摘要报告跨任务与跨环境的组合泛化，并探索使用互联网视频。当前核对材料未提供可直接摘录、口径完整的统一成功率，本条不补造分数。",
+      "after": "正式NeurIPS2023 Table1：UniPi已见Place/Relation为59.1/53.2%，未见为60.1/46.1%；Table3三种迁移任务为51.6/75.5/45.7%。Table4的77.1%是生成视频末帧分类器的成功代理，不是机器人真机执行成功率；不生成统一总平均。",
+      "observedAt": "2026-09-19",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf",
+      "reason": "实际核对Tables1/3后替换旧“未提供可摘录材料”过时说明；无统一Average，Bridge视频代理仍与执行隔离。"
+    }
+  ],
+  "summaryCorrections": [
+    {
+      "paperId": "p044",
+      "field": "contribution",
+      "before": "高层将触觉转为规划可用信息，低层用触觉条件插值控制器细化动作，保持预训练VLA本体不必重训。",
+      "after": "高层以结构化触觉反馈辅助规划，低层用插值控制器修正VLA动作；触觉融合不要求给VLA主干新增触觉微调，但实验先做RDT动作空间对齐与无触觉任务微调。",
+      "source": "https://arxiv.org/pdf/2507.17294v2#page=17",
+      "reason": "Appendix C明确RDT先做动作空间对齐与无触觉目标任务微调；不微调触觉输入不等于所有阶段冻结原始VLA。"
+    }
+  ],
+  "deferred": [
+    {
+      "paperId": "p053",
+      "method": "Bridge generated-video proxy and quality metrics",
+      "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf#page=9",
+      "reason": "Table4在笔记解释并保存关键数，不把代理和FID/FVD写成机器人闭环成功；本批正式结果限定实际仿真执行。"
+    },
+    {
+      "paperId": "p044",
+      "method": "Intermediate manipulation stages and Appendix B feedback-format ablation",
+      "source": "https://arxiv.org/pdf/2507.17294v2",
+      "reason": "原文已读并在笔记讨论；正式入榜限定完整动作、交错系统与Figure3属性条件，不重复拆出抓起/部分完成或不同格式子实验。"
+    },
+    {
+      "paperId": "p044",
+      "method": "Final journal full-text and final-volume bibliography",
+      "source": "https://doi.org/10.1109/lra.2026.3692345",
+      "reason": "本轮读取v2预印本，不提升既有期刊版本阅读核验；原出版记录保持，新增CSL明确引用预印本。"
+    }
+  ],
+  "searchCheckpoints": "完整论文和新闻检索状态均不前移；只记录本次定向原文回补。",
+  "notes": {
+    "p053": {
+      "sections": 9,
+      "bodyCharacters": 3184
+    },
+    "p044": {
+      "sections": 9,
+      "bodyCharacters": 3177
+    }
+  }
+}
