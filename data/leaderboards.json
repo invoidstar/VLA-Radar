@@ -2259,6 +2259,165 @@
         "Affordance"
       ],
       "source": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf"
+    },
+    {
+      "id": "bridge-real-rtx-v9-iris",
+      "dataset": "BridgeData (real)",
+      "name": "RT-X · IRIS Stanford WidowX真机",
+      "version": "arXiv 2310.08864v9 Table I",
+      "tasks": "Bridge原报告任务子集",
+      "split": "单规范视图；IRIS Stanford",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "trainingRegime": "原方法与RT-1单域；RT-1-X为9本体混合；RT-2-X55B额外web先验及约1:1联合图文训练。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2310.08864v9"
+    },
+    {
+      "id": "bridge-real-rtx-v9-rail",
+      "dataset": "BridgeData (real)",
+      "name": "RT-X · RAIL UCB WidowX真机",
+      "version": "arXiv 2310.08864v9 Table I",
+      "tasks": "Bridge原报告任务子集",
+      "split": "单规范视图；RAIL UCB",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "trainingRegime": "原方法与RT-1单域；RT-1-X为9本体混合；RT-2-X55B额外web先验及约1:1联合图文训练。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2310.08864v9"
+    },
+    {
+      "id": "google-real-rtx-v9-capacity",
+      "dataset": "Google Robot (real)",
+      "name": "RT-X · Google原六技能容量对照",
+      "version": "arXiv 2310.08864v9 Table I",
+      "tasks": "6 skills",
+      "split": "原作者Google真机，RT-1数据域",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table I六技能；非SimplerEnv，非原RT-1全任务主表。本文全研究3600次不分摊到各行；本列种子、回合和checkpoint未知。Original Method未给数字，不新增空行。",
+      "trainingRegime": "RT-1单域与RT-X跨本体混合，容量及web预训练不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2310.08864v9"
+    },
+    {
+      "id": "google-real-rtx-v9-emergent-generalization",
+      "dataset": "Google Robot (real)",
+      "name": "RT-X · 涌现技能／RT-2泛化分列",
+      "version": "arXiv 2310.08864v9 Table II",
+      "tasks": "two evaluation collections",
+      "split": "Emergent skills / RT-2 generalization",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。",
+      "trainingRegime": "Google-only或9本体混合、Bridge去除、历史0/2、web预训练/联合训练分别标注。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Emergent",
+        "Generalization"
+      ],
+      "source": "https://arxiv.org/html/2310.08864v9"
+    },
+    {
+      "id": "octo-real-v2-finetune",
+      "dataset": "Octo fine-tuning (real)",
+      "name": "Octo · 六种作者真机微调设置",
+      "version": "arXiv 2405.12213v2 Table I",
+      "tasks": "six setups",
+      "split": "Insertion / coffee / baking / pickup / coke / bimanual",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "作者跨平台真机归档，非统一公共benchmark，不归入SimplerEnv或ALOHA-Sim。主表称每域20次，F-C双臂写10次，保留冲突；种子/checkpoint选择未完整给出。原表平均VC1=15（分项算术平均约15.83），Octo=72，均不重算替换。",
+      "trainingRegime": "目标示范：Insertion100/Coffee118/Baking120/PickUp100/Coke115，双臂确数本次未核实；不同预训练、损失及动作/观察头。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Insertion",
+        "Coffee",
+        "Baking",
+        "PickUp",
+        "Coke",
+        "Bimanual",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2405.12213v2"
+    },
+    {
+      "id": "bridge-real-octo-v2-ablation",
+      "dataset": "BridgeData (real)",
+      "name": "Octo · WidowX四任务消融",
+      "version": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+      "tasks": "4",
+      "split": "2 language + 2 goal-image tasks",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。",
+      "trainingRegime": "Octo-Small27M为默认，RT-X mix/Bridge only为Octo训练数据消融，不是原RT-X策略。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "CarrotLanguage",
+        "EggplantLanguage",
+        "BreadGoal",
+        "SpoonGoal",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2405.12213v2"
+    },
+    {
+      "id": "bridge-real-octo-v2-novel-env",
+      "dataset": "BridgeData (real)",
+      "name": "Octo · WidowX新环境",
+      "version": "arXiv 2405.12213v2 Table VII",
+      "tasks": "2",
+      "split": "新环境 zero-shot",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "WidowX真机，2任务共20回合；训练种子/checkpoint规则未完整给出。与同分布85%/新物体80%有不同任务和条件，不拼成统一排名。缺少新技能不当新本体无需微调证据。",
+      "trainingRegime": "Octo-Small原预训练模型，未使用本组目标微调；已见/新物体对应Table VI不重复计入。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "MushroomInPot",
+        "SpoonOnCloth",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2405.12213v2"
+    },
+    {
+      "id": "bridge-real-octo-v2-novel-skill",
+      "dataset": "BridgeData (real)",
+      "name": "Octo · WidowX新技能",
+      "version": "arXiv 2405.12213v2 Table VII",
+      "tasks": "2",
+      "split": "新技能 zero-shot",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "WidowX真机，2任务共20回合；训练种子/checkpoint规则未完整给出。与同分布85%/新物体80%有不同任务和条件，不拼成统一排名。缺少新技能不当新本体无需微调证据。",
+      "trainingRegime": "Octo-Small原预训练模型，未使用本组目标微调；已见/新物体对应Table VI不重复计入。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "FlipCup",
+        "BlockInSlot",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2405.12213v2"
     }
   ],
   "results": [
@@ -2374,6 +2533,322 @@
       "attribution": "reported-baseline",
       "trainingData": "50 scripted demos/task; retrieval baseline",
       "evaluationNotes": "3seeds/50episodes; demonstration access at inference retained as baseline distinction.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-ablation-bridge-only",
+      "paperId": "p063",
+      "method": "Octo with Bridge-only data",
+      "trackId": "bridge-real-octo-v2-ablation",
+      "values": {
+        "CarrotLanguage": 20,
+        "EggplantLanguage": 70,
+        "BreadGoal": 60,
+        "SpoonGoal": 20,
+        "Average": 43
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+      "locator": "Appendix F-B Table VI; Table II同源聚合",
+      "attribution": "author-reported",
+      "trainingData": "Octo架构＋单机器人Bridge数据",
+      "evaluationNotes": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。 原平均保留（如83/43/18），不从已舍入值修正。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-ablation-discrete",
+      "paperId": "p063",
+      "method": "Octo discretized action head",
+      "trackId": "bridge-real-octo-v2-ablation",
+      "values": {
+        "CarrotLanguage": 0,
+        "EggplantLanguage": 20,
+        "BreadGoal": 10,
+        "SpoonGoal": 40,
+        "Average": 18
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+      "locator": "Appendix F-B Table VI; Table II同源聚合",
+      "attribution": "author-reported",
+      "trainingData": "25数据集混合；动作256桶交叉熵替换扩散头",
+      "evaluationNotes": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。 原平均保留（如83/43/18），不从已舍入值修正。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-ablation-mse",
+      "paperId": "p063",
+      "method": "Octo MSE action head",
+      "trackId": "bridge-real-octo-v2-ablation",
+      "values": {
+        "CarrotLanguage": 70,
+        "EggplantLanguage": 30,
+        "BreadGoal": 0,
+        "SpoonGoal": 40,
+        "Average": 35
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+      "locator": "Appendix F-B Table VI; Table II同源聚合",
+      "attribution": "author-reported",
+      "trainingData": "25数据集混合；MSE连续回归替换扩散头",
+      "evaluationNotes": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。 原平均保留（如83/43/18），不从已舍入值修正。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-ablation-octo",
+      "paperId": "p063",
+      "method": "Octo-Small",
+      "trackId": "bridge-real-octo-v2-ablation",
+      "values": {
+        "CarrotLanguage": 80,
+        "EggplantLanguage": 90,
+        "BreadGoal": 70,
+        "SpoonGoal": 90,
+        "Average": 83
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+      "locator": "Appendix F-B Table VI; Table II同源聚合",
+      "attribution": "author-reported",
+      "trainingData": "25数据集约800k＋扩散头",
+      "evaluationNotes": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。 原平均保留（如83/43/18），不从已舍入值修正。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-ablation-resnet",
+      "paperId": "p063",
+      "method": "Octo ResNet-50 + Transformer",
+      "trackId": "bridge-real-octo-v2-ablation",
+      "values": {
+        "CarrotLanguage": 80,
+        "EggplantLanguage": 60,
+        "BreadGoal": 100,
+        "SpoonGoal": 40,
+        "Average": 70
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+      "locator": "Appendix F-B Table VI; Table II同源聚合",
+      "attribution": "author-reported",
+      "trainingData": "25数据集混合；ResNet-50+Transformer架构消融",
+      "evaluationNotes": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。 原平均保留（如83/43/18），不从已舍入值修正。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-ablation-rtx-mix",
+      "paperId": "p063",
+      "method": "Octo with RT-X dataset mix",
+      "trackId": "bridge-real-octo-v2-ablation",
+      "values": {
+        "CarrotLanguage": 80,
+        "EggplantLanguage": 80,
+        "BreadGoal": 40,
+        "SpoonGoal": 40,
+        "Average": 60
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+      "locator": "Appendix F-B Table VI; Table II同源聚合",
+      "attribution": "author-reported",
+      "trainingData": "Octo架构＋较小RT-X数据混合；不是RT-X模型",
+      "evaluationNotes": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。 原平均保留（如83/43/18），不从已舍入值修正。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-novel-env-octo-small",
+      "paperId": "p063",
+      "method": "Octo-Small",
+      "trackId": "bridge-real-octo-v2-novel-env",
+      "values": {
+        "MushroomInPot": 20,
+        "SpoonOnCloth": 60,
+        "Average": 40
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VII",
+      "locator": "Appendix F-B Table VII, 新环境 group",
+      "attribution": "author-reported",
+      "trainingData": "Octo-Small原预训练模型，未使用本组目标微调；已见/新物体对应Table VI不重复计入。",
+      "evaluationNotes": "WidowX真机，2任务共20回合；训练种子/checkpoint规则未完整给出。与同分布85%/新物体80%有不同任务和条件，不拼成统一排名。缺少新技能不当新本体无需微调证据。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-octo-v2-novel-skill-octo-small",
+      "paperId": "p063",
+      "method": "Octo-Small",
+      "trackId": "bridge-real-octo-v2-novel-skill",
+      "values": {
+        "FlipCup": 10,
+        "BlockInSlot": 0,
+        "Average": 5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table VII",
+      "locator": "Appendix F-B Table VII, 新技能 group",
+      "attribution": "author-reported",
+      "trainingData": "Octo-Small原预训练模型，未使用本组目标微调；已见/新物体对应Table VI不重复计入。",
+      "evaluationNotes": "WidowX真机，2任务共20回合；训练种子/checkpoint规则未完整给出。与同分布85%/新物体80%有不同任务和条件，不拼成统一排名。缺少新技能不当新本体无需微调证据。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-iris-lcbc",
+      "paperId": "p059",
+      "method": "LCBC（原报告基线）",
+      "trackId": "bridge-real-rtx-v9-iris",
+      "values": {
+        "Success": 13
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, IRIS Stanford column",
+      "attribution": "reported-baseline",
+      "trainingData": "单域Bridge示范",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-iris-rt1",
+      "paperId": "p059",
+      "method": "RT-1（本报告单域）",
+      "trackId": "bridge-real-rtx-v9-iris",
+      "values": {
+        "Success": 40
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, IRIS Stanford column",
+      "attribution": "reported-baseline",
+      "trainingData": "单域Bridge示范",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-iris-rt1x",
+      "paperId": "p059",
+      "method": "RT-1-X",
+      "trackId": "bridge-real-rtx-v9-iris",
+      "values": {
+        "Success": 27
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, IRIS Stanford column",
+      "attribution": "author-reported",
+      "trainingData": "9本体机器人混合；35M；15图像历史",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-iris-rt2x55b",
+      "paperId": "p059",
+      "method": "RT-2-X (55B)",
+      "trackId": "bridge-real-rtx-v9-iris",
+      "values": {
+        "Success": 50
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, IRIS Stanford column",
+      "attribution": "author-reported",
+      "trainingData": "9本体混合＋web联合；55B PaLI-X",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-rail-lcbc",
+      "paperId": "p059",
+      "method": "LCBC（原报告基线）",
+      "trackId": "bridge-real-rtx-v9-rail",
+      "values": {
+        "Success": 13
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, RAIL UCB column",
+      "attribution": "reported-baseline",
+      "trainingData": "单域Bridge示范",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-rail-rt1",
+      "paperId": "p059",
+      "method": "RT-1（本报告单域）",
+      "trackId": "bridge-real-rtx-v9-rail",
+      "values": {
+        "Success": 30
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, RAIL UCB column",
+      "attribution": "reported-baseline",
+      "trainingData": "单域Bridge示范",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-rail-rt1x",
+      "paperId": "p059",
+      "method": "RT-1-X",
+      "trackId": "bridge-real-rtx-v9-rail",
+      "values": {
+        "Success": 27
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, RAIL UCB column",
+      "attribution": "author-reported",
+      "trainingData": "9本体机器人混合；35M；15图像历史",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-bridge-real-rtx-v9-rail-rt2x55b",
+      "paperId": "p059",
+      "method": "RT-2-X (55B)",
+      "trackId": "bridge-real-rtx-v9-rail",
+      "values": {
+        "Success": 30
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, RAIL UCB column",
+      "attribution": "author-reported",
+      "trainingData": "9本体混合＋web联合；55B PaLI-X",
+      "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
       "supersedes": ""
     },
     {
@@ -4152,6 +4627,193 @@
       "attribution": "reported-baseline",
       "trainingData": "相同机器人数据，不同web/visual预训练；PaLI-X robot采样50%、PaLM-E66%；R3M/VC1解冻加RT1式头",
       "evaluationNotes": "原作者Google机器人真实评测，不是SimplerEnv。各组指令1–5次；6000试验是全研究，非每行样本数；训练种子/误差未完整披露。Average为原表报告，不用舍入分项重算。Table3 PaLI-X平均62与Table5同分项63存在差异。 PaLM-E预训练包含相似机器人规划图像但不含本实验低层动作；非完全视觉未见声明。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-capacity-rt1",
+      "paperId": "p059",
+      "method": "RT-1（本报告单域）",
+      "trackId": "google-real-rtx-v9-capacity",
+      "values": {
+        "Success": 92
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, Google Robot / RT-1 paper 6 skills",
+      "attribution": "reported-baseline",
+      "trainingData": "Google Robot单域机器人示范",
+      "evaluationNotes": "Table I六技能；非SimplerEnv，非原RT-1全任务主表。本文全研究3600次不分摊到各行；本列种子、回合和checkpoint未知。Original Method未给数字，不新增空行。 RT-2-X91不高于RT-1的92，保留与正文概括的边界。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-capacity-rt1x",
+      "paperId": "p059",
+      "method": "RT-1-X",
+      "trackId": "google-real-rtx-v9-capacity",
+      "values": {
+        "Success": 73
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, Google Robot / RT-1 paper 6 skills",
+      "attribution": "author-reported",
+      "trainingData": "9本体机器人混合；35M",
+      "evaluationNotes": "Table I六技能；非SimplerEnv，非原RT-1全任务主表。本文全研究3600次不分摊到各行；本列种子、回合和checkpoint未知。Original Method未给数字，不新增空行。 RT-2-X91不高于RT-1的92，保留与正文概括的边界。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-capacity-rt2x55b",
+      "paperId": "p059",
+      "method": "RT-2-X (55B)",
+      "trackId": "google-real-rtx-v9-capacity",
+      "values": {
+        "Success": 91
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table I",
+      "locator": "Table I, Google Robot / RT-1 paper 6 skills",
+      "attribution": "author-reported",
+      "trainingData": "9本体混合＋web联合；55B",
+      "evaluationNotes": "Table I六技能；非SimplerEnv，非原RT-1全任务主表。本文全研究3600次不分摊到各行；本列种子、回合和checkpoint未知。Original Method未给数字，不新增空行。 RT-2-X91不高于RT-1的92，保留与正文概括的边界。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-emergent-generalization-5b-history",
+      "paperId": "p059",
+      "method": "RT-2-X 5B history 2 (row 4)",
+      "trackId": "google-real-rtx-v9-emergent-generalization",
+      "values": {
+        "Emergent": 44.4,
+        "Generalization": 52
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table II",
+      "locator": "Table II, row 4",
+      "attribution": "author-reported",
+      "trainingData": "Full mix；2-frame history；web-pretrained＋web co-train",
+      "evaluationNotes": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。 原始RT-2结果归报告论文p059，保留与p058原报告区别。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-emergent-generalization-5b-no-co",
+      "paperId": "p059",
+      "method": "RT-2-X 5B no web co-train (row 7)",
+      "trackId": "google-real-rtx-v9-emergent-generalization",
+      "values": {
+        "Emergent": 48.7,
+        "Generalization": 47
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table II",
+      "locator": "Table II, row 7",
+      "attribution": "author-reported",
+      "trainingData": "Full mix；2-frame history；web-pretrained；NO web co-train",
+      "evaluationNotes": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。 原始RT-2结果归报告论文p059，保留与p058原报告区别。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-emergent-generalization-5b-no-history",
+      "paperId": "p059",
+      "method": "RT-2-X 5B no history (row 5)",
+      "trackId": "google-real-rtx-v9-emergent-generalization",
+      "values": {
+        "Emergent": 14.5,
+        "Generalization": 30
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table II",
+      "locator": "Table II, row 5",
+      "attribution": "author-reported",
+      "trainingData": "Full mix；no history；web-pretrained＋web co-train",
+      "evaluationNotes": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。 原始RT-2结果归报告论文p059，保留与p058原报告区别。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-emergent-generalization-5b-scratch",
+      "paperId": "p059",
+      "method": "RT-2-X 5B from scratch (row 6)",
+      "trackId": "google-real-rtx-v9-emergent-generalization",
+      "values": {
+        "Emergent": 0,
+        "Generalization": 1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table II",
+      "locator": "Table II, row 6",
+      "attribution": "author-reported",
+      "trainingData": "Full mix；2-frame history；from scratch；NO web co-train",
+      "evaluationNotes": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。 原始RT-2结果归报告论文p059，保留与p058原报告区别。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-emergent-generalization-no-bridge",
+      "paperId": "p059",
+      "method": "RT-2-X 55B without Bridge (row 3)",
+      "trackId": "google-real-rtx-v9-emergent-generalization",
+      "values": {
+        "Emergent": 42.8,
+        "Generalization": 54
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table II",
+      "locator": "Table II, row 3",
+      "attribution": "author-reported",
+      "trainingData": "Robot mix except Bridge；no history；web-pretrained＋web co-train",
+      "evaluationNotes": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。 原始RT-2结果归报告论文p059，保留与p058原报告区别。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-emergent-generalization-rt2",
+      "paperId": "p059",
+      "method": "RT-2 55B (row 1)",
+      "trackId": "google-real-rtx-v9-emergent-generalization",
+      "values": {
+        "Emergent": 27.3,
+        "Generalization": 62
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table II",
+      "locator": "Table II, row 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Google robot；no history；web-pretrained＋web co-train",
+      "evaluationNotes": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。 原始RT-2结果归报告论文p059，保留与p058原报告区别。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-google-real-rtx-v9-emergent-generalization-rt2x55b",
+      "paperId": "p059",
+      "method": "RT-2-X 55B (row 2)",
+      "trackId": "google-real-rtx-v9-emergent-generalization",
+      "values": {
+        "Emergent": 75.8,
+        "Generalization": 61
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "sourceVersion": "arXiv 2310.08864v9 Table II",
+      "locator": "Table II, row 2",
+      "attribution": "author-reported",
+      "trainingData": "Full robot mix；no history；web-pretrained＋web co-train",
+      "evaluationNotes": "七种配方，两类测试不合成Average；具体每列回合/独立训练种子与checkpoint规则未完整披露，3600为全研究。55B/5B对照可能同时改变历史，不作为单因素容量归因。 原始RT-2结果归报告论文p059，保留与p058原报告区别。",
       "supersedes": ""
     },
     {
@@ -6098,6 +6760,78 @@
       "attribution": "reported-baseline",
       "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
       "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-octo-real-v2-finetune-octo",
+      "paperId": "p063",
+      "method": "Octo（本报告微调）",
+      "trackId": "octo-real-v2-finetune",
+      "values": {
+        "Insertion": 70,
+        "Coffee": 75,
+        "Baking": 50,
+        "PickUp": 60,
+        "Coke": 100,
+        "Bimanual": 80,
+        "Average": 72
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table I",
+      "locator": "Table I + §IV-B + Appendix F-C; RSS Table I视觉交叉核对",
+      "attribution": "author-reported",
+      "trainingData": "约800k OXE预训练；目标域50k步；新传感器/动作头按需加入",
+      "evaluationNotes": "作者跨平台真机归档，非统一公共benchmark，不归入SimplerEnv或ALOHA-Sim。主表称每域20次，F-C双臂写10次，保留冲突；种子/checkpoint选择未完整给出。原表平均VC1=15（分项算术平均约15.83），Octo=72，均不重算替换。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-octo-real-v2-finetune-scratch",
+      "paperId": "p063",
+      "method": "ResNet+Transformer Scratch",
+      "trackId": "octo-real-v2-finetune",
+      "values": {
+        "Insertion": 10,
+        "Coffee": 45,
+        "Baking": 25,
+        "PickUp": 0,
+        "Coke": 20,
+        "Bimanual": 20,
+        "Average": 20
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table I",
+      "locator": "Table I + §IV-B + Appendix F-C; RSS Table I视觉交叉核对",
+      "attribution": "reported-baseline",
+      "trainingData": "目标示范从零训练；28M ResNet+Transformer，diffusion目标",
+      "evaluationNotes": "作者跨平台真机归档，非统一公共benchmark，不归入SimplerEnv或ALOHA-Sim。主表称每域20次，F-C双臂写10次，保留冲突；种子/checkpoint选择未完整给出。原表平均VC1=15（分项算术平均约15.83），Octo=72，均不重算替换。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-octo-real-v2-finetune-vc1",
+      "paperId": "p063",
+      "method": "VC-1（本报告适配）",
+      "trackId": "octo-real-v2-finetune",
+      "values": {
+        "Insertion": 5,
+        "Coffee": 0,
+        "Baking": 30,
+        "PickUp": 0,
+        "Coke": 10,
+        "Bimanual": 50,
+        "Average": 15
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "sourceVersion": "arXiv 2405.12213v2 Table I",
+      "locator": "Table I + §IV-B + Appendix F-C; RSS Table I视觉交叉核对",
+      "attribution": "reported-baseline",
+      "trainingData": "VC-1 ViT-B视觉预训练＋MLP；完整模型MSE微调",
+      "evaluationNotes": "作者跨平台真机归档，非统一公共benchmark，不归入SimplerEnv或ALOHA-Sim。主表称每域20次，F-C双臂写10次，保留冲突；种子/checkpoint选择未完整给出。原表平均VC1=15（分项算术平均约15.83），Octo=72，均不重算替换。",
       "supersedes": ""
     },
     {

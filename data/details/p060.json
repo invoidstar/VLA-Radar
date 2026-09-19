@@ -5,9 +5,9 @@
     "name": "RoboFlamingo",
     "title": "Vision-Language Foundation Models as Effective Robot Imitators",
     "team": "ByteDance Research / Tsinghua / Shanghai Jiao Tong / NUS；Xinghang Li、Minghuan Liu 等",
-    "venue": "arXiv",
-    "publicationType": "preprint",
-    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "venue": "ICLR 2024",
+    "publicationType": "conference",
+    "publicationStatus": "ICLR官方2024论文集确认正式发表；本轮正文PDF超过解析上限，发表确认不表示完成新版本精读。",
     "firstPublished": "2023-11-02",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -39,6 +39,10 @@
       {
         "label": "官方项目页 · 方法 / 实验图",
         "url": "https://roboflamingo.github.io/"
+      },
+      {
+        "label": "正式发表元数据 · 非正文自动复核",
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2311.01378",
@@ -50,12 +54,12 @@
     "firstArxivSource": "https://arxiv.org/abs/2311.01378v1",
     "latestArxivVersion": "v3",
     "latestArxivAt": "2024-02-05",
-    "status": "preprint",
-    "venue": "arXiv",
+    "status": "published",
+    "venue": "ICLR 2024",
     "doi": "",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "publishedAt": "2024",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -80,6 +84,14 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2311.01378v3",
         "note": "元数据版本 v3；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2024",
+        "observedAt": "2026-09-19",
+        "venue": "ICLR 2024",
+        "source": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html",
+        "note": "ICLR官方2024论文集确认正式发表；本轮正文PDF超过解析上限，发表确认不表示完成新版本精读。 首次公开与arXiv版本保持；具体录用日期未核实。"
       }
     ],
     "alerts": []

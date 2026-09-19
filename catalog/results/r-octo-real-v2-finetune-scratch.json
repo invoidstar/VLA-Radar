@@ -1,0 +1,24 @@
+{
+  "id": "r-octo-real-v2-finetune-scratch",
+  "paperId": "p063",
+  "method": "ResNet+Transformer Scratch",
+  "trackId": "octo-real-v2-finetune",
+  "values": {
+    "Insertion": 10,
+    "Coffee": 45,
+    "Baking": 25,
+    "PickUp": 0,
+    "Coke": 20,
+    "Bimanual": 20,
+    "Average": 20
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2405.12213v2",
+  "sourceVersion": "arXiv 2405.12213v2 Table I",
+  "locator": "Table I + §IV-B + Appendix F-C; RSS Table I视觉交叉核对",
+  "attribution": "reported-baseline",
+  "trainingData": "目标示范从零训练；28M ResNet+Transformer，diffusion目标",
+  "evaluationNotes": "作者跨平台真机归档，非统一公共benchmark，不归入SimplerEnv或ALOHA-Sim。主表称每域20次，F-C双臂写10次，保留冲突；种子/checkpoint选择未完整给出。原表平均VC1=15（分项算术平均约15.83），Octo=72，均不重算替换。",
+  "supersedes": ""
+}

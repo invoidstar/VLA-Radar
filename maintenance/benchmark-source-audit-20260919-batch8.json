@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "1f79dbc15f6b00c6a82500d1fafb009435b9220f",
+  "status": "partial-content-backfill",
+  "scope": "第八批：完成RT-X/Octo原文笔记及原始真机证据；RoboFlamingo仅确认正式发表，不冒充正文已复核。",
+  "updatedPapers": [
+    "p059",
+    "p063"
+  ],
+  "publicationOnly": [
+    "p060"
+  ],
+  "newPapers": [],
+  "newTracks": [
+    "bridge-real-rtx-v9-iris",
+    "bridge-real-rtx-v9-rail",
+    "google-real-rtx-v9-capacity",
+    "google-real-rtx-v9-emergent-generalization",
+    "octo-real-v2-finetune",
+    "bridge-real-octo-v2-ablation",
+    "bridge-real-octo-v2-novel-env",
+    "bridge-real-octo-v2-novel-skill"
+  ],
+  "newResults": [
+    "r-bridge-real-rtx-v9-iris-lcbc",
+    "r-bridge-real-rtx-v9-iris-rt1",
+    "r-bridge-real-rtx-v9-iris-rt1x",
+    "r-bridge-real-rtx-v9-iris-rt2x55b",
+    "r-bridge-real-rtx-v9-rail-lcbc",
+    "r-bridge-real-rtx-v9-rail-rt1",
+    "r-bridge-real-rtx-v9-rail-rt1x",
+    "r-bridge-real-rtx-v9-rail-rt2x55b",
+    "r-google-real-rtx-v9-capacity-rt1",
+    "r-google-real-rtx-v9-capacity-rt1x",
+    "r-google-real-rtx-v9-capacity-rt2x55b",
+    "r-google-real-rtx-v9-emergent-generalization-rt2",
+    "r-google-real-rtx-v9-emergent-generalization-rt2x55b",
+    "r-google-real-rtx-v9-emergent-generalization-no-bridge",
+    "r-google-real-rtx-v9-emergent-generalization-5b-history",
+    "r-google-real-rtx-v9-emergent-generalization-5b-no-history",
+    "r-google-real-rtx-v9-emergent-generalization-5b-scratch",
+    "r-google-real-rtx-v9-emergent-generalization-5b-no-co",
+    "r-octo-real-v2-finetune-scratch",
+    "r-octo-real-v2-finetune-vc1",
+    "r-octo-real-v2-finetune-octo",
+    "r-bridge-real-octo-v2-ablation-octo",
+    "r-bridge-real-octo-v2-ablation-rtx-mix",
+    "r-bridge-real-octo-v2-ablation-bridge-only",
+    "r-bridge-real-octo-v2-ablation-discrete",
+    "r-bridge-real-octo-v2-ablation-mse",
+    "r-bridge-real-octo-v2-ablation-resnet",
+    "r-bridge-real-octo-v2-novel-env-octo-small",
+    "r-bridge-real-octo-v2-novel-skill-octo-small"
+  ],
+  "readSources": [
+    {
+      "paperId": "p059",
+      "url": "https://arxiv.org/html/2310.08864v9",
+      "scope": "完整v9 HTML §§I–VI、Tables I/II及图说明；未宣称逐版PDF视觉核验。"
+    },
+    {
+      "paperId": "p063",
+      "url": "https://arxiv.org/html/2405.12213v2",
+      "scope": "完整v2 HTML正文、Appendices A–F及Tables I–VII；原始表VI/VII直接读取HTML。"
+    },
+    {
+      "paperId": "p063",
+      "url": "https://www.roboticsproceedings.org/rss20/p090.pdf",
+      "scope": "正式PDF page3模型图及page7 Tables I/II截图交叉核对；不冒充v2所有PDF页逐页视觉复核。"
+    }
+  ],
+  "publicationSources": [
+    "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/",
+    "https://elib.dlr.de/205810/",
+    "https://www.roboticsproceedings.org/rss20/p090.html",
+    "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html"
+  ],
+  "deferred": [
+    {
+      "method": "RoboFlamingo",
+      "paperId": "p060",
+      "source": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html",
+      "status": "full-text-access-pending",
+      "reason": "已核对ICLR2024正式标题/作者；点击官方PDF返回Content length too large 15465717 bytes，arXiv HTML入口本轮失败。原有正文、verifiedAt、needs_review与deferred不变。没有将发表元数据更新当新精读。"
+    },
+    {
+      "method": "RT-X small-data per-domain scores",
+      "paperId": "p059",
+      "source": "https://arxiv.org/html/2310.08864v9",
+      "reason": "Figure2仅有柱图；没有从像素猜各域精确值，部分协议详细回合未知。"
+    },
+    {
+      "method": "Octo zero-shot/scaling charts",
+      "paperId": "p063",
+      "source": "https://arxiv.org/html/2405.12213v2",
+      "reason": "图中未明确表列的原始值不估算；此次仅Tables I/VI/VII新增部分。"
+    },
+    {
+      "method": "OXE full individual-author CSL",
+      "paperId": "p059",
+      "source": "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/",
+      "reason": "本批未展开完整数百人作者表，CSL保持author缺失，不以team或部分名单冒充完整。"
+    }
+  ],
+  "boundaries": [
+    "Table I两Bridge实验室单列；Google是真实机器人，不是SimplerEnv。",
+    "OXE Table II web预训练与web联合训练分开；模型大小和历史共同变化不当单因素。",
+    "Octo Table I 20次与双臂10次冲突、VC1原平均15与分项均值不一致保持。",
+    "Octo Table II/VI同源聚合不重计，TableVII已见/新物体与VI重合任务不另计。",
+    "RT-X mix是Octo内部消融，保持p063归属；旧SIMPLER报告Octo和旧RT2原报告不改。",
+    "BridgeData (real)与Octo fine-tuning (real)新增为真实实验域归档，不声称两个新统一官方benchmark。",
+    "原始首发/KEY RESULT/版本元数据不变；p060 note整对象不变。"
+  ],
+  "searchCheckpoints": "不推进论文或新闻完整周更成功检查点；本轮是有限定向回补。",
+  "notes": {
+    "p059": {
+      "sections": 9,
+      "bodyCharacters": 3229
+    },
+    "p063": {
+      "sections": 9,
+      "bodyCharacters": 3251
+    }
+  }
+}

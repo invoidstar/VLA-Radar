@@ -1,0 +1,22 @@
+{
+  "id": "r-bridge-real-octo-v2-ablation-octo",
+  "paperId": "p063",
+  "method": "Octo-Small",
+  "trackId": "bridge-real-octo-v2-ablation",
+  "values": {
+    "CarrotLanguage": 80,
+    "EggplantLanguage": 90,
+    "BreadGoal": 70,
+    "SpoonGoal": 90,
+    "Average": 83
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2405.12213v2",
+  "sourceVersion": "arXiv 2405.12213v2 Table VI (Table II aggregate)",
+  "locator": "Appendix F-B Table VI; Table II同源聚合",
+  "attribution": "author-reported",
+  "trainingData": "25数据集约800k＋扩散头",
+  "evaluationNotes": "WidowX真机，4任务×10次=40回合；训练种子/checkpoint选择未完整披露。语言与目标图像信息不等价。Table II与VI聚合同源只记一次；Table VII前四任务不另记。 原平均保留（如83/43/18），不从已舍入值修正。",
+  "supersedes": ""
+}

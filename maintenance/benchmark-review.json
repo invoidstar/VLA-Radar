@@ -389,10 +389,27 @@
       "note": "保留11条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
     },
     "p063": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§III-A–III-C。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "octo-real-v2-finetune",
+        "bridge-real-octo-v2-ablation",
+        "bridge-real-octo-v2-novel-env",
+        "bridge-real-octo-v2-novel-skill"
+      ],
+      "resultIds": [
+        "r-octo-real-v2-finetune-scratch",
+        "r-octo-real-v2-finetune-vc1",
+        "r-octo-real-v2-finetune-octo",
+        "r-bridge-real-octo-v2-ablation-octo",
+        "r-bridge-real-octo-v2-ablation-rtx-mix",
+        "r-bridge-real-octo-v2-ablation-bridge-only",
+        "r-bridge-real-octo-v2-ablation-discrete",
+        "r-bridge-real-octo-v2-ablation-mse",
+        "r-bridge-real-octo-v2-ablation-resnet",
+        "r-bridge-real-octo-v2-novel-env-octo-small",
+        "r-bridge-real-octo-v2-novel-skill-octo-small"
+      ],
+      "note": "2026-09-19第八批原文回补11条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
     },
     "p018": {
       "status": "deferred",
@@ -619,10 +636,34 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p059": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§III-A、IV-C、V。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "bridge-real-rtx-v9-iris",
+        "bridge-real-rtx-v9-rail",
+        "google-real-rtx-v9-capacity",
+        "google-real-rtx-v9-emergent-generalization"
+      ],
+      "resultIds": [
+        "r-bridge-real-rtx-v9-iris-lcbc",
+        "r-bridge-real-rtx-v9-iris-rt1",
+        "r-bridge-real-rtx-v9-iris-rt1x",
+        "r-bridge-real-rtx-v9-iris-rt2x55b",
+        "r-bridge-real-rtx-v9-rail-lcbc",
+        "r-bridge-real-rtx-v9-rail-rt1",
+        "r-bridge-real-rtx-v9-rail-rt1x",
+        "r-bridge-real-rtx-v9-rail-rt2x55b",
+        "r-google-real-rtx-v9-capacity-rt1",
+        "r-google-real-rtx-v9-capacity-rt1x",
+        "r-google-real-rtx-v9-capacity-rt2x55b",
+        "r-google-real-rtx-v9-emergent-generalization-rt2",
+        "r-google-real-rtx-v9-emergent-generalization-rt2x55b",
+        "r-google-real-rtx-v9-emergent-generalization-no-bridge",
+        "r-google-real-rtx-v9-emergent-generalization-5b-history",
+        "r-google-real-rtx-v9-emergent-generalization-5b-no-history",
+        "r-google-real-rtx-v9-emergent-generalization-5b-scratch",
+        "r-google-real-rtx-v9-emergent-generalization-5b-no-co"
+      ],
+      "note": "2026-09-19第八批原文回补18条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
     },
     "p006": {
       "status": "deferred",

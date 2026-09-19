@@ -2170,6 +2170,207 @@
         }
       ],
       "verifiedAt": "2026-09-19"
+    },
+    "p059": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models",
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              8,
+              8
+            ]
+          ]
+        },
+        "container-title": "2024 IEEE International Conference on Robotics and Automation (ICRA)",
+        "URL": "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/",
+        "publisher": "IEEE",
+        "DOI": "10.1109/ICRA57147.2024.10611477",
+        "page": "6892-6903"
+      },
+      "sources": [
+        {
+          "label": "正式来源书目；未核实字段不补猜",
+          "url": "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/"
+        },
+        {
+          "label": "本批未展开数百人完整作者表，CSL不以团队字段替代作者",
+          "url": "https://elib.dlr.de/205810/"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p063": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Octo: An Open-Source Generalist Robot Policy",
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              7
+            ]
+          ]
+        },
+        "container-title": "Proceedings of Robotics: Science and Systems",
+        "URL": "https://www.roboticsproceedings.org/rss20/p090.html",
+        "author": [
+          {
+            "given": "Dibya",
+            "family": "Ghosh"
+          },
+          {
+            "given": "Homer Rich",
+            "family": "Walke"
+          },
+          {
+            "given": "Karl",
+            "family": "Pertsch"
+          },
+          {
+            "given": "Kevin",
+            "family": "Black"
+          },
+          {
+            "given": "Oier",
+            "family": "Mees"
+          },
+          {
+            "given": "Sudeep",
+            "family": "Dasari"
+          },
+          {
+            "given": "Joey",
+            "family": "Hejna"
+          },
+          {
+            "given": "Tobias",
+            "family": "Kreiman"
+          },
+          {
+            "given": "Charles",
+            "family": "Xu"
+          },
+          {
+            "given": "Jianlan",
+            "family": "Luo"
+          },
+          {
+            "given": "You Liang",
+            "family": "Tan"
+          },
+          {
+            "given": "Lawrence Yunliang",
+            "family": "Chen"
+          },
+          {
+            "given": "Quan",
+            "family": "Vuong"
+          },
+          {
+            "given": "Ted",
+            "family": "Xiao"
+          },
+          {
+            "given": "Pannag R",
+            "family": "Sanketi"
+          },
+          {
+            "given": "Dorsa",
+            "family": "Sadigh"
+          },
+          {
+            "given": "Chelsea",
+            "family": "Finn"
+          },
+          {
+            "given": "Sergey",
+            "family": "Levine"
+          }
+        ],
+        "DOI": "10.15607/RSS.2024.XX.090"
+      },
+      "sources": [
+        {
+          "label": "正式来源书目；未核实字段不补猜",
+          "url": "https://www.roboticsproceedings.org/rss20/p090.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p060": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Vision-Language Foundation Models as Effective Robot Imitators",
+        "issued": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "container-title": "The Twelfth International Conference on Learning Representations",
+        "URL": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html",
+        "author": [
+          {
+            "given": "Xinghang",
+            "family": "Li"
+          },
+          {
+            "given": "Minghuan",
+            "family": "Liu"
+          },
+          {
+            "given": "Hanbo",
+            "family": "Zhang"
+          },
+          {
+            "given": "Cunjun",
+            "family": "Yu"
+          },
+          {
+            "given": "Jie",
+            "family": "Xu"
+          },
+          {
+            "given": "Hongtao",
+            "family": "Wu"
+          },
+          {
+            "given": "Chilam",
+            "family": "Cheang"
+          },
+          {
+            "given": "Ya",
+            "family": "Jing"
+          },
+          {
+            "given": "Weinan",
+            "family": "Zhang"
+          },
+          {
+            "given": "Huaping",
+            "family": "Liu"
+          },
+          {
+            "given": "Hang",
+            "family": "Li"
+          },
+          {
+            "given": "Tao",
+            "family": "Kong"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "label": "正式来源书目；未核实字段不补猜",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
     }
   }
 }

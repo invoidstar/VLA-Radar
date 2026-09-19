@@ -27,18 +27,6 @@
       "latestVersion": "v5"
     },
     {
-      "paperId": "p059",
-      "reason": "needs_review",
-      "readVersion": "2310.08864；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
-      "latestVersion": "v9"
-    },
-    {
-      "paperId": "p063",
-      "reason": "needs_review",
-      "readVersion": "2405.12213；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
-      "latestVersion": "v2"
-    },
-    {
       "paperId": "p068",
       "reason": "needs_review",
       "readVersion": "arXiv:2501.15830v1，Sec.III–V、Table I–V；明确保留v1口径，不代表最新修订全量核验",
@@ -48,6 +36,18 @@
       "paperId": "p069",
       "reason": "needs_review",
       "readVersion": "2502.19645；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v2"
+    },
+    {
+      "paperId": "p074",
+      "reason": "needs_review",
+      "readVersion": "2509.09372v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v2"
+    },
+    {
+      "paperId": "p075",
+      "reason": "needs_review",
+      "readVersion": "2511.14759v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
       "latestVersion": "v2"
     }
   ],
@@ -60,7 +60,7 @@
       "p092"
     ]
   },
-  "remainingNotes": 28,
+  "remainingNotes": 26,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."
