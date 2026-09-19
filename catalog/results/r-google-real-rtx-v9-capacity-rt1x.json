@@ -1,0 +1,18 @@
+{
+  "id": "r-google-real-rtx-v9-capacity-rt1x",
+  "paperId": "p059",
+  "method": "RT-1-X",
+  "trackId": "google-real-rtx-v9-capacity",
+  "values": {
+    "Success": 73
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2310.08864v9",
+  "sourceVersion": "arXiv 2310.08864v9 Table I",
+  "locator": "Table I, Google Robot / RT-1 paper 6 skills",
+  "attribution": "author-reported",
+  "trainingData": "9本体机器人混合；35M",
+  "evaluationNotes": "Table I六技能；非SimplerEnv，非原RT-1全任务主表。本文全研究3600次不分摊到各行；本列种子、回合和checkpoint未知。Original Method未给数字，不新增空行。 RT-2-X91不高于RT-1的92，保留与正文概括的边界。",
+  "supersedes": ""
+}

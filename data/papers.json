@@ -2688,13 +2688,13 @@
       "name": "Open X-Embodiment / RT-X",
       "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models",
       "team": "Open X-Embodiment Collaboration；多机构协作，Abby O’Neill 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "ICRA 2024",
+      "publicationType": "conference",
+      "publicationStatus": "参与机构Edinburgh与DLR记录共同确认ICRA正式出版2024-08-08；会议举办日与元数据库存入日不代替出版日。",
       "firstPublished": "2023-10-13",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "arXiv 2310.08864v9完整原生HTML正文§I–VI、Tables I–II、Figures 0–3；ICRA元数据另核对",
       "topics": [
         "pretraining",
         "evaluation"
@@ -2711,9 +2711,9 @@
       "limitations": "不同数据混合、机器人控制频率及评测集合并不一致；不能把所有 OXE 子集预训练模型视作相同训练预算，也不能把相对改善写作百分点。",
       "insight": "共享动作语义、规范化与混合策略是跨本体迁移的前提；数据规模不能脱离覆盖范围阅读。",
       "readingFocus": "数据统一格式、RT-X 迁移实验及数据混合的适用条件。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "2026-09-19实际原文及所引表格核验；未提取或不可读部分保留说明；作者报告而非本站复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
@@ -2722,20 +2722,32 @@
         {
           "label": "官方项目页 · Results",
           "url": "https://robotics-transformer-x.github.io/"
+        },
+        {
+          "label": "本次深入阅读 · 限定版本完整HTML",
+          "url": "https://arxiv.org/html/2310.08864v9"
+        },
+        {
+          "label": "正式发表元数据 · 非正文自动复核",
+          "url": "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/"
+        },
+        {
+          "label": "参与机构DLR · DOI/日期/页码交叉核对",
+          "url": "https://elib.dlr.de/205810/"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2310.08864",
       "arxiv": "2310.08864",
-      "doi": ""
+      "doi": "10.1109/ICRA57147.2024.10611477"
     },
     {
       "id": "p060",
       "name": "RoboFlamingo",
       "title": "Vision-Language Foundation Models as Effective Robot Imitators",
       "team": "ByteDance Research / Tsinghua / Shanghai Jiao Tong / NUS；Xinghang Li、Minghuan Liu 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "ICLR 2024",
+      "publicationType": "conference",
+      "publicationStatus": "ICLR官方2024论文集确认正式发表；本轮正文PDF超过解析上限，发表确认不表示完成新版本精读。",
       "firstPublished": "2023-11-02",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
@@ -2767,6 +2779,10 @@
         {
           "label": "官方项目页 · 方法 / 实验图",
           "url": "https://roboflamingo.github.io/"
+        },
+        {
+          "label": "正式发表元数据 · 非正文自动复核",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2311.01378",
@@ -2873,13 +2889,13 @@
       "name": "Octo",
       "title": "Octo: An Open-Source Generalist Robot Policy",
       "team": "UC Berkeley / Stanford / CMU / Google DeepMind；Octo Model Team",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "RSS 2024",
+      "publicationType": "conference",
+      "publicationStatus": "RSS官方论文集/BibTeX确认发表；日期仅保留来源给出的2024-07精度。",
       "firstPublished": "2024-05-20",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "arXiv 2405.12213v2完整HTML正文及Appendices A–F、Tables I–VII；RSS正式PDF模型图及Tables I–II视觉交叉核对",
       "topics": [
         "pretraining",
         "action"
@@ -2896,9 +2912,9 @@
       "limitations": "其通用性依赖目标数据与接口适配；本条不把不同机器人、不同示范预算的成绩压成一个全局成功率。",
       "insight": "通用策略的价值也包括易于适配传感器和动作接口；语言条件控制不必一律采用超大自回归语言主干。",
       "readingFocus": "可变 token / attention 结构、扩散动作头与新观察 / 动作空间适配。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "2026-09-19实际原文及所引表格核验；未提取或不可读部分保留说明；作者报告而非本站复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
@@ -2907,11 +2923,19 @@
         {
           "label": "官方项目页 · Model / Model sizes",
           "url": "https://octo-models.github.io/"
+        },
+        {
+          "label": "本次深入阅读 · 限定版本完整HTML",
+          "url": "https://arxiv.org/html/2405.12213v2"
+        },
+        {
+          "label": "正式发表元数据 · 非正文自动复核",
+          "url": "https://www.roboticsproceedings.org/rss20/p090.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2405.12213",
       "arxiv": "2405.12213",
-      "doi": ""
+      "doi": "10.15607/RSS.2024.XX.090"
     },
     {
       "id": "p064",

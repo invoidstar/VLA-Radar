@@ -1,0 +1,24 @@
+{
+  "id": "r-octo-real-v2-finetune-octo",
+  "paperId": "p063",
+  "method": "Octo（本报告微调）",
+  "trackId": "octo-real-v2-finetune",
+  "values": {
+    "Insertion": 70,
+    "Coffee": 75,
+    "Baking": 50,
+    "PickUp": 60,
+    "Coke": 100,
+    "Bimanual": 80,
+    "Average": 72
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2405.12213v2",
+  "sourceVersion": "arXiv 2405.12213v2 Table I",
+  "locator": "Table I + §IV-B + Appendix F-C; RSS Table I视觉交叉核对",
+  "attribution": "author-reported",
+  "trainingData": "约800k OXE预训练；目标域50k步；新传感器/动作头按需加入",
+  "evaluationNotes": "作者跨平台真机归档，非统一公共benchmark，不归入SimplerEnv或ALOHA-Sim。主表称每域20次，F-C双臂写10次，保留冲突；种子/checkpoint选择未完整给出。原表平均VC1=15（分项算术平均约15.83），Octo=72，均不重算替换。",
+  "supersedes": ""
+}

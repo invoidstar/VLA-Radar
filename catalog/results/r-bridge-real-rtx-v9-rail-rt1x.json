@@ -1,0 +1,18 @@
+{
+  "id": "r-bridge-real-rtx-v9-rail-rt1x",
+  "paperId": "p059",
+  "method": "RT-1-X",
+  "trackId": "bridge-real-rtx-v9-rail",
+  "values": {
+    "Success": 27
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/html/2310.08864v9",
+  "sourceVersion": "arXiv 2310.08864v9 Table I",
+  "locator": "Table I, RAIL UCB column",
+  "attribution": "author-reported",
+  "trainingData": "9本体机器人混合；35M；15图像历史",
+  "evaluationNotes": "Table I大型数据域；同名WidowX的两实验室分别记录，非SimplerEnv。全文3600次为跨机器人总量；本列独立训练种子、回合数与checkpoint规则未完整披露。表注称低于Original Method但Bridge列27>13，按实际数值保留。",
+  "supersedes": ""
+}
