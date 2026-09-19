@@ -128,7 +128,9 @@ dump('maintenance/work-queue.json',wq)
 # Final audit.
 all24=['p067','p032','p031','p045','p043','p022','p018','p075','p008','p071','p077','p030','p005','p038','p006','p019','p033','p007','p010','p046','p034','p016','p037','p097']
 review=load('maintenance/benchmark-review.json')
-extractable=[p for p in all24 if p not in ('p043','p046')]\nassert all(review['papers'][p]['status']=='extracted' for p in extractable)\nassert review['papers']['p043']['status']=='deferred' and review['papers']['p046']['status']=='deferred'
+extractable=[p for p in all24 if p not in ('p043','p046')]
+assert all(review['papers'][p]['status']=='extracted' for p in extractable)
+assert review['papers']['p043']['status']=='deferred' and review['papers']['p046']['status']=='deferred'
 result_count=sum(len(review['papers'][p]['resultIds']) for p in extractable)
 track_count=len({t for p in extractable for t in review['papers'][p]['trackIds']})
 audit={
