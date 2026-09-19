@@ -17,9 +17,27 @@
   async function loadPaperResults(p){if(!p.resultUrl)return {tracks:[],results:[]};const x=await getJson(p.resultUrl);if(x.paperId!==p.id||!Array.isArray(x.results))throw new Error('论文结果不一致');return x;}
   function pageWindow(current,total){const pages=new Set([1,total]);for(let i=Math.max(1,current-2);i<=Math.min(total,current+2);i++)pages.add(i);let prev=0,out=[];for(const i of [...pages].filter(i=>i>0).sort((a,b)=>a-b)){if(prev&&i-prev>1)out.push(null);out.push(i);prev=i;}return out;}
   function visibleResults(data,trackId){const superseded=new Set([...(data.supersededIds||[]),...data.results.filter(r=>r.evidence==='checked'&&r.supersedes).map(r=>r.supersedes)]);return data.results.filter(r=>r.trackId===trackId&&r.evidence==='checked'&&!superseded.has(r.id));}
+  // Display order is independent of scientific rank. Missing/invalid values stay last.
+  function metricDirection(track,column){return (track.columnDirections?.[column]||track.direction)==='lower'?'lower':'higher';}
+  function sortDirection(track,column,order='auto'){return order==='asc'?'asc':order==='desc'?'desc':metricDirection(track,column)==='lower'?'asc':'desc';}
+  function sortRows(rows,column,order='desc'){
+    return [...rows].sort((a,b)=>{
+      const av=a.values?.[column],bv=b.values?.[column],af=Number.isFinite(av),bf=Number.isFinite(bv);
+      if(af!==bf)return af?-1:1;
+      return (af&&av!==bv?(order==='asc'?av-bv:bv-av):0)||String(a.method).localeCompare(String(b.method))||String(a.id).localeCompare(String(b.id));
+    });
+  }
   function rankRows(rows,column,direction='higher'){
-    let prior, rank=0;
-    return [...rows].sort((a,b)=>{const av=a.values[column],bv=b.values[column];if(av==null)return bv==null?a.method.localeCompare(b.method):1;if(bv==null)return -1;return (direction==='higher'?bv-av:av-bv)||a.method.localeCompare(b.method);}).map((r,i)=>{const v=r.values[column];if(v!=null&&v!==prior)rank=i+1;prior=v;return {...r,rank:v==null?null:rank};});
+    let prior,rank=0;
+    return sortRows(rows,column,direction==='lower'?'asc':'desc').map((r,i)=>{
+      const v=r.values?.[column];if(Number.isFinite(v)&&v!==prior)rank=i+1;prior=v;
+      return {...r,rank:Number.isFinite(v)?rank:null};
+    });
+  }
+  function boardRows(rows,track,column,order='auto'){
+    const ranked=rankRows(rows,column,metricDirection(track,column)),ranks=new Map(ranked.map(r=>[r.id,r.rank]));
+    const ordered=order==='source'?[...rows]:sortRows(rows,column,sortDirection(track,column,order));
+    return ordered.map(r=>({...r,rank:track.comparisonScope==='protocol'?ranks.get(r.id):null}));
   }
   async function detail(p){
     if(!p.detailUrl)return null;
@@ -88,30 +106,74 @@
     const token=++boardToken;host.innerHTML='<p class="research-loading" role="status">正在载入经过核验的评测记录…</p>';
     try{
       const data=await loadBoards();if(token!==boardToken)return;
-      const query=new URLSearchParams(location.search);const families=benchmarkFamilies(data);let dataset=families.includes(query.get('dataset'))?query.get('dataset'):(families.includes('LIBERO')?'LIBERO':families[0]);let trackId=query.get('track')||'',metric='',page=1,drawVersion=0;
-      async function draw(){
-        const drawId=++drawVersion;
+      const query=new URLSearchParams(location.search),families=benchmarkFamilies(data);
+      let dataset=families.includes(query.get('dataset'))?query.get('dataset'):(families.includes('LIBERO')?'LIBERO':families[0]);
+      let trackId=query.get('track')||'',metric=(query.get('lbMetric')||'').slice(0,160),page=1,drawVersion=0;
+      let order=['auto','asc','desc','source'].includes(query.get('lbOrder'))?query.get('lbOrder'):'auto';
+      let chartType=['bar','scatter'].includes(query.get('lbChart'))?query.get('lbChart'):'';
+      let dateBasis=query.get('lbTime')==='verifiedAt'?'verifiedAt':'firstPublished';
+      const selected=(v,x)=>v===x?'selected':'';
+      function updateUrl(){
+        if(token!==boardToken)return;
+        const u=new URL(location.href);u.searchParams.set('dataset',dataset);u.searchParams.set('track',trackId);
+        u.searchParams.set('lbMetric',metric);u.searchParams.set('lbOrder',order);
+        if(chartType)u.searchParams.set('lbChart',chartType);else u.searchParams.delete('lbChart');
+        if(chartType==='scatter')u.searchParams.set('lbTime',dateBasis);else u.searchParams.delete('lbTime');
+        history.replaceState({},'',u);
+      }
+      async function draw(focus){
+        const drawId=++drawVersion,scrollLeft=host.querySelector('.board-table-scroll')?.scrollLeft||0;
         const tracks=data.tracks.filter(t=>t.dataset===dataset);if(!tracks.some(t=>t.id===trackId))trackId=tracks[0]?.id||'';
         const t=tracks.find(t=>t.id===trackId);if(!t){host.innerHTML='<p>暂时没有此数据集的已定义赛道。</p>';return;}
         if(!t.columns.includes(metric))metric=t.columns.includes('Average')?'Average':t.columns[0];
         let loaded;
-        try{loaded=await loadTrack(t,data);}catch(error){if(drawId!==drawVersion||token!==boardToken)return;host.innerHTML='<p class="research-warning">此赛道暂未载入。重新打开榜单可重试；未载入不等于零分。</p>';return;}
+        try{loaded=await loadTrack(t,data);}catch(error){
+          if(drawId!==drawVersion||token!==boardToken)return;
+          host.innerHTML='<p class="research-warning">此赛道暂未载入，未载入不等于零分。</p><button id="retry-track" class="btn">重试当前赛道</button>';
+          host.querySelector('#retry-track').onclick=()=>draw();return;
+        }
         if(drawId!==drawVersion||token!==boardToken)return;
-        const accepted=visibleResults(loaded,t.id),ranked=rankRows(accepted,metric,t.direction),rows=t.comparisonScope==='protocol'?ranked:accepted;
-        const size=20,pages=Math.max(1,Math.ceil(rows.length/size));page=Math.min(page,pages);
+        const accepted=visibleResults(loaded,t.id),rows=boardRows(accepted,t,metric,order);
+        const size=20,pages=Math.max(1,Math.ceil(rows.length/size));page=Math.max(1,Math.min(page,pages));
         const candidates=loaded.results.filter(r=>r.trackId===t.id&&r.evidence==='candidate').length;
-        host.innerHTML=`<div class="leaderboard-top"><div class="dataset-tabs" role="group" aria-label="数据集">${families.map(d=>`<button data-dataset="${esc(d)}" aria-pressed="${d===dataset}">${esc(d)}</button>`).join('')}</div><div class="board-update">目录更新 ${esc(data.updatedAt)} · <a href="data/leaderboards.json" download>公开 JSON ↗</a></div></div><div class="board-controls"><label>评测赛道 / 协议<select id="lb-track">${tracks.map(x=>`<option value="${esc(x.id)}" ${x.id===trackId?'selected':''}>${esc(x.name)}</option>`).join('')}</select></label><label>排序指标<select id="lb-metric" ${t.comparisonScope==='paper-table'?'disabled':''}>${t.columns.map(x=>`<option ${x===metric?'selected':''}>${esc(x)}</option>`).join('')}</select></label></div><div class="protocol-card"><div><span class="note-badge">${t.comparisonScope==='protocol'?'协议内结果榜':'论文对照表 · 不给名次'}</span><h2>${esc(t.name)}</h2><p>${esc(t.protocol)}</p></div><div class="protocol-facts"><span>版本 <b>${esc(t.version)}</b></span><span>任务 <b>${esc(t.tasks)}</b></span><span>训练 <b>${esc(t.trainingRegime)}</b></span></div>${links([{label:'协议原始来源',url:t.source}])}</div><div class="research-warning">${t.comparisonScope==='protocol'?'名次仅覆盖此赛道已核验的作者报告，不是官方全量榜，也不代表统计显著差异或本站复现。预训练数据与计算预算仍可能不同。':'不同训练预算或评测细节未统一；下面保留论文对照记录，不将其解释为公平排名。'} 未核验候选 ${candidates} 条，不参与排序。</div><div class="board-visual-tools"><button class="btn" id="show-protocol-chart">查看当前协议图表</button><button class="btn" id="export-protocol-csv">导出当前协议 CSV</button><span>只比较所选指标，不合成跨协议总分。</span></div><div id="protocol-chart" hidden></div><div class="board-table-scroll"><table class="board-table"><caption>${esc(t.name)} · ${rows.length} 条核验结果 · ${esc(t.metric)} (${esc(t.unit)})</caption><thead><tr><th>${t.comparisonScope==='protocol'?'名次':'记录'}</th><th>模型 / 来源论文</th>${t.columns.map(c=>`<th>${esc(c)}</th>`).join('')}<th>证据与设置</th></tr></thead><tbody>${rows.slice((page-1)*size,page*size).map((r,i)=>`<tr><td class="rank-cell">${t.comparisonScope==='protocol'?(r.rank??'—'):(page-1)*size+i+1}</td><td><strong>${esc(r.method)}</strong><button class="board-paper-link" data-paper="${esc(r.paperId)}">${esc(r.paperId)} · 阅读来源论文 ↗</button><small>${esc(ATTR[r.attribution])}</small></td>${t.columns.map(c=>`<td class="numeric ${c===metric?'selected-metric':''}">${r.values[c]==null?'—':esc(r.values[c])}</td>`).join('')}<td><details><summary>${esc(r.sourceVersion)} · ${esc(r.locator)}</summary><p>${esc(r.trainingData)}</p><p>${esc(r.evaluationNotes)}</p><p>核验：${esc(r.verifiedAt)}</p>${links([{label:'结果来源',url:r.source}])}</details></td></tr>`).join('')}</tbody></table>${rows.length?'':'<p class="research-empty">暂时没有此协议下已核验的结果。</p>'}</div><div class="pagination">${pageWindow(page,pages).map(n=>n===null?'<span>…</span>':`<button data-lb-page="${n}" class="${n===page?'active':''}">${n}</button>`).join('')}<span>每页20条；空缺不是零分。</span></div>`;
-        host.querySelector('#show-protocol-chart').onclick=()=>window.RadarWorkspace.action('chart',{track:t,rows,host:host.querySelector('#protocol-chart')});
-        host.querySelector('#export-protocol-csv').onclick=()=>window.RadarWorkspace.action('csv',{track:t,rows});
-        host.querySelectorAll('[data-dataset]').forEach(b=>b.onclick=()=>{dataset=b.dataset.dataset;trackId='';metric='';page=1;sync();});
-        host.querySelector('#lb-track').onchange=e=>{trackId=e.target.value;metric='';page=1;sync();};
-        host.querySelector('#lb-metric').onchange=e=>{metric=e.target.value;page=1;draw();};
+        const direction=sortDirection(t,metric,order),directionLabel=direction==='asc'?'升序':'降序';
+        const header=c=>`<th scope="col" ${c===metric&&order!=='source'?`aria-sort="${direction==='asc'?'ascending':'descending'}"`:''}><button class="board-sort-button" data-sort-column="${esc(c)}" aria-label="按 ${esc(c)} 排序，重复点击切换升降序">${esc(c)} <span aria-hidden="true">${c===metric&&order!=='source'?(direction==='asc'?'▲':'▼'):'↕'}</span></button></th>`;
+        host.innerHTML=`<div class="leaderboard-top"><div class="dataset-tabs" role="group" aria-label="数据集">${families.map(d=>`<button data-dataset="${esc(d)}" aria-pressed="${d===dataset}">${esc(d)}</button>`).join('')}</div><div class="board-update">目录更新 ${esc(data.updatedAt)} · <a href="data/leaderboards.json" download>公开 JSON ↗</a></div></div>
+          <div class="board-controls board-sort-controls"><label>评测赛道 / 协议<select id="lb-track">${tracks.map(x=>`<option value="${esc(x.id)}" ${selected(x.id,trackId)}>${esc(x.name)}</option>`).join('')}</select></label><label>排序 / 图表指标<select id="lb-metric">${t.columns.map(x=>`<option ${selected(x,metric)}>${esc(x)}</option>`).join('')}</select></label><label>排列方式<select id="lb-order"><option value="auto" ${selected(order,'auto')}>优先较优值（自动）</option><option value="desc" ${selected(order,'desc')}>数值降序 ↓</option><option value="asc" ${selected(order,'asc')}>数值升序 ↑</option><option value="source" ${selected(order,'source')}>原记录顺序</option></select></label></div>
+          <div class="protocol-card"><div><span class="note-badge">${t.comparisonScope==='protocol'?'协议内结果榜':'论文对照表 · 不给名次'}</span><h2>${esc(t.name)}</h2><p>${esc(t.protocol)}</p></div><div class="protocol-facts"><span>版本 <b>${esc(t.version)}</b></span><span>任务 <b>${esc(t.tasks)}</b></span><span>训练 <b>${esc(t.trainingRegime)}</b></span></div>${links([{label:'协议原始来源',url:t.source}])}</div>
+          <div class="research-warning">${t.comparisonScope==='protocol'?'名次按所选指标的优劣方向计算；改变显示升降序不颠倒名次。仅覆盖本赛道已核验报告，不是官方全量榜、统计显著性结论或本站复现。预训练数据与计算预算仍可能不同。':'支持按数值整理原文记录，但训练预算或评测细节未统一，不将排列顺序解释为公平名次。'} 未核验候选 ${candidates} 条，不参与排序或绘图。</div>
+          <div class="board-visual-tools"><button class="btn" id="show-protocol-chart" aria-expanded="${chartType==='bar'}" aria-controls="protocol-chart">查看当前协议图表</button><button class="btn" id="show-time-scatter" aria-expanded="${chartType==='scatter'}" aria-controls="protocol-chart">时间—成绩散点图</button><button class="btn" id="export-protocol-csv">导出当前协议 CSV</button><span>点开列名可排序；图表与表格使用同一指标。</span></div><div id="protocol-chart" hidden></div>
+          <p class="board-sort-status" role="status">${order==='source'?'按原记录顺序展示':`${esc(metric)} · ${directionLabel}`} · 指标${metricDirection(t,metric)==='lower'?'越低越好':'越高越好'} · 数值排序时缺失值置后，真实零分保留。</p>
+          <div class="board-table-scroll" role="region" aria-label="可横向滚动的评测结果表" tabindex="0"><table class="board-table"><caption>${esc(t.name)} · ${rows.length} 条核验结果 · ${esc(t.metric)} (${esc(t.unit)}) · 点击指标列标题切换排序</caption><thead><tr><th scope="col">${t.comparisonScope==='protocol'?'名次':'记录'}</th><th scope="col">模型 / 来源论文</th>${t.columns.map(header).join('')}<th scope="col">证据与设置</th></tr></thead><tbody>${rows.slice((page-1)*size,page*size).map((r,i)=>`<tr data-result-id="${esc(r.id)}"><td class="rank-cell">${t.comparisonScope==='protocol'?(r.rank??'—'):(page-1)*size+i+1}</td><td><strong>${esc(r.method)}</strong><button class="board-paper-link" data-paper="${esc(r.paperId)}">${esc(r.paperId)} · 阅读来源论文 ↗</button><small>${esc(ATTR[r.attribution])}</small></td>${t.columns.map(c=>`<td class="numeric ${c===metric?'selected-metric':''}">${Number.isFinite(r.values[c])?esc(r.values[c]):'—'}</td>`).join('')}<td><details><summary>${esc(r.sourceVersion)} · ${esc(r.locator)}</summary><p>${esc(r.trainingData)}</p><p>${esc(r.evaluationNotes)}</p><p>核验：${esc(r.verifiedAt)}</p>${links([{label:'结果来源',url:r.source}])}</details></td></tr>`).join('')}</tbody></table>${rows.length?'':'<p class="research-empty">暂时没有此协议下已核验的结果。</p>'}</div><div class="pagination">${pageWindow(page,pages).map(n=>n===null?'<span>…</span>':`<button data-lb-page="${n}" class="${n===page?'active':''}">${n}</button>`).join('')}<span>每页20条；先排序全部记录，再分页。</span></div>`;
+        const toggleChart=type=>{chartType=chartType===type?'':type;draw('#show-'+(type==='bar'?'protocol-chart':'time-scatter'));};
+        host.querySelector('#show-protocol-chart').onclick=()=>toggleChart('bar');
+        host.querySelector('#show-time-scatter').onclick=()=>toggleChart('scatter');
+        host.querySelector('#export-protocol-csv').onclick=()=>global.RadarWorkspace.action('csv',{track:t,rows});
+        host.querySelectorAll('[data-dataset]').forEach(b=>b.onclick=()=>{dataset=b.dataset.dataset;trackId='';metric='';order='auto';page=1;draw();});
+        host.querySelector('#lb-track').onchange=e=>{trackId=e.target.value;metric='';order='auto';page=1;draw('#lb-track');};
+        host.querySelector('#lb-metric').onchange=e=>{metric=e.target.value;if(order==='source')order='auto';page=1;draw('#lb-metric');};
+        host.querySelector('#lb-order').onchange=e=>{order=e.target.value;page=1;draw('#lb-order');};
+        host.querySelectorAll('[data-sort-column]').forEach(b=>b.onclick=()=>{
+          const c=b.dataset.sortColumn;order=c===metric&&order!=='source'?(direction==='asc'?'desc':'asc'):'auto';metric=c;page=1;draw({column:c});
+        });
         host.querySelectorAll('[data-lb-page]').forEach(b=>b.onclick=()=>{page=Number(b.dataset.lbPage);draw();});
+        host.querySelector('.board-table-scroll').scrollLeft=scrollLeft;
+        updateUrl();
+        if(chartType){
+          await global.RadarWorkspace.action('chart',{track:t,rows,host:host.querySelector('#protocol-chart'),metric,chartType,dateBasis,toggle:false,onChange:change=>{
+            if(token!==boardToken||drawId!==drawVersion)return;
+            if(change.metric){metric=change.metric;if(order==='source')order='auto';page=1;}
+            if(change.chartType)chartType=change.chartType;if(change.dateBasis)dateBasis=change.dateBasis;
+            draw(change.focus);
+          }});
+        }
+        if(drawId!==drawVersion||token!==boardToken)return;
+        const target=typeof focus==='string'?host.querySelector(focus):focus?.column?[...host.querySelectorAll('[data-sort-column]')].find(b=>b.dataset.sortColumn===focus.column):null;
+        target?.focus({preventScroll:true});
       }
-      async function sync(){await draw();if(token!==boardToken)return;const u=new URL(location.href);u.searchParams.set('dataset',dataset);u.searchParams.set('track',trackId);history.replaceState({},'',u);}
       await draw();
     }catch(err){if(token!==boardToken)return;host.innerHTML='<div class="research-empty"><h2>榜单暂未载入</h2><p>请刷新重试。未载入不代表没有结果或分数为零。</p><button id="retry-board" class="btn">重试</button></div>';host.querySelector('#retry-board').onclick=()=>renderBoards(host);console.warn('Leaderboard:',err.message);}
   }
-  global.RadarResearch={cancelBoards:()=>{boardToken++;},loadBoards,loadTrack,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,pageWindow,rankRows,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks};
+  global.RadarResearch={cancelBoards:()=>{boardToken++;},loadBoards,loadTrack,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,pageWindow,rankRows,sortRows,boardRows,sortDirection,metricDirection,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks};
   if(typeof module!=='undefined')module.exports=global.RadarResearch;
 })(typeof window!=='undefined'?window:globalThis);

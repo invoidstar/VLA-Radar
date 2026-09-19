@@ -20,3 +20,24 @@ html{scroll-padding-top:100px}body{color:var(--workspace-ink)}button,a,select,in
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important}.heat-cell,.paper-card{transition:none}}
 @media print{body.reader-active{background:#fff}.reader-active .sidebar,.reader-active .topbar,.reader-active .footer,.reader-active .reader-toolbar,.reader-active .reader-outline,.reader-active .reader-progress,.reader-active .reader-title-tools,.reader-active .reader-bottom,.reader-active .resume-notice{display:none!important}.reader-active .app-shell{margin:0!important}.reader-active #main{padding:0!important}.reader-active .reader-layout{display:block}.reader-active .reader-article{padding:0;border:0;box-shadow:none;max-width:none;background:white!important;color:black!important}.reader-active .reader-chapter{content-visibility:visible}.reader-active .reader-chapter h2{break-after:avoid}.reader-active .note-table-scroll{overflow:visible}}
 .workspace-header h1:focus,.reader-title h1:focus,.export-dialog-top h2:focus{outline:none}.text-link{appearance:none;border:0;background:transparent;padding:3px 0;color:#7963a6;font:inherit;font-size:11px;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}.text-link:hover{color:#5443a1}
+
+/* Time/score plot is optional SVG, using only the already loaded protocol and directory. */
+.protocol-chart-controls{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0}
+.protocol-chart-controls label{display:block;flex:1 1 150px;color:#68748d;font-size:11px;min-width:0}
+.protocol-chart-controls select{display:block;font:inherit;font-size:12px;color:#344563;background:white;border:1px solid #dce2ee;border-radius:7px;padding:10px;margin-top:7px;max-width:100%;width:100%}
+.scatter-time-note{font-size:12px;line-height:1.95;color:#62718a;background:#f1f5fc;border-left:3px solid #99abd9;padding:12px 15px;border-radius:0 7px 7px 0}
+.scatter-summary{font-size:12px;color:#4d618b;line-height:1.8;font-weight:600;margin:14px 0}
+.scatter-scroll{overflow-x:auto;border:1px solid #e1e7f1;background:#fff;border-radius:12px}
+.score-scatter{display:block;width:100%;min-width:590px;height:auto;max-height:none;overflow:visible}
+.scatter-grid{stroke:#edf0f6;stroke-width:1}.scatter-axis{stroke:#aebbd2;stroke-width:1.2}
+.scatter-tick{font:11px ui-sans-serif,system-ui,sans-serif;fill:#73819b}.scatter-axis-title{font:12px ui-sans-serif,system-ui,sans-serif;fill:#475c82}
+.scatter-point{cursor:pointer;outline:none}.scatter-hit{fill:transparent}.scatter-dot{fill:#6277c8;fill-opacity:.82;stroke:white;stroke-width:2}
+.scatter-point:focus .scatter-dot,.scatter-point.is-active .scatter-dot{fill:#334f9f;stroke:#bfcced;stroke-width:3;fill-opacity:1}
+.scatter-point:focus-visible .scatter-hit{fill:none;stroke:#344a88;stroke-width:2;stroke-dasharray:3 2}
+.scatter-count{font:600 10px system-ui,sans-serif;fill:white;pointer-events:none}
+.scatter-footer{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:14px;font-size:11px;color:#718098;line-height:1.8}
+.scatter-detail{padding:17px 20px;border:1px solid #e1e7f2;border-radius:10px;margin:18px 0 0;background:#f8faff;font-size:12px;line-height:1.9;overflow-wrap:anywhere}
+.scatter-detail h3{font-size:14px;margin:0 0 12px;color:#3c527c}.scatter-detail h3 small{font-weight:400;color:#7e8ba0;margin-left:8px}
+.scatter-record{padding:12px 0;border-top:1px solid #e4e9f3}.scatter-record strong{font-size:14px;color:#354a76}.scatter-record p{margin:6px 0;color:#626f87}.scatter-record small{font-size:11px;color:#73819a}
+@media(max-width:650px){.protocol-chart-controls{gap:12px}.protocol-chart-controls label{flex-basis:100%}.scatter-detail{padding:12px}.scatter-footer .btn{width:100%}}
+@media(forced-colors:active){.scatter-dot{fill:ButtonText;stroke:Canvas}.scatter-grid,.scatter-axis{stroke:GrayText}.scatter-tick,.scatter-axis-title{fill:CanvasText}.scatter-count{fill:Canvas}}

@@ -15,3 +15,14 @@
 .paper-card,.paper-card-main,.paper-card-right,.paper-meta,.finding-text{min-width:0;max-width:100%}
 .paper-title,.paper-name,.paper-meta,.finding-text{overflow-wrap:anywhere}
 @media(max-width:960px){.paper-card{grid-template-columns:minmax(0,1fr)}}
+
+/* Explicit score-column ordering does not turn heterogeneous comparisons into ranks. */
+.board-sort-controls{grid-template-columns:minmax(0,1fr) minmax(130px,180px) minmax(145px,180px)}
+.board-sort-status{font-size:12px;color:#65738d;line-height:1.9;margin:14px 0}
+.board-sort-button{font:inherit;font-weight:650;color:inherit;background:transparent;border:0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:8px 4px;border-radius:5px;text-align:left}
+.board-sort-button:hover,.board-sort-button:focus-visible{background:#e8edf9;color:#3d50a0;outline:2px solid #7a8ac8;outline-offset:2px}
+.board-table th[aria-sort]{background:#eef1fb;color:#425ab4}.board-sort-button span{font-size:10px}
+.board-visual-tools button[aria-expanded=true]{background:#e9eefc;color:#3e52ab;border-color:#aebce4}
+.board-table-scroll:focus-visible{outline:2px solid #7a8ac8;outline-offset:2px}
+@media(max-width:1000px){.board-sort-controls{grid-template-columns:1fr 1fr}.board-sort-controls label:first-child{grid-column:1/-1}}
+@media(max-width:650px){.board-sort-controls{grid-template-columns:minmax(0,1fr)}.board-sort-status{font-size:11px}}
