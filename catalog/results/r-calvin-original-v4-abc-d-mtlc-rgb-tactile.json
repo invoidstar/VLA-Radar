@@ -1,0 +1,18 @@
+{
+  "id": "r-calvin-original-v4-abc-d-mtlc-rgb-tactile",
+  "paperId": "p048",
+  "method": "MCIL／静态RGB＋触觉",
+  "trackId": "calvin-original-v4-abc-d-mtlc",
+  "values": {
+    "MTLC": 43.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2112.03227v4",
+  "sourceVersion": "arXiv2112.03227v4 Figure 8",
+  "locator": "Figure 8，PDF第7页，ABC→D/MCIL／静态RGB＋触觉，MTLC",
+  "attribution": "author-reported",
+  "trainingData": "约18小时ABC play，仅约1%语言标注但其余play仍用于目标条件动作监督；MCIL/Adam1e-4/KL0.001/无图像增强/世界坐标绝对动作。",
+  "evaluationNotes": "34任务各10次；从保留演示恢复相匹配初始状态，非长链中性起点。 不同传感器行paper-table；种子/检查点选择未完整公开，原作者仿真报告非本站复现。 静态RGB短任务53.9不是全表最高，触觉行为54.2；此处按实际单元格保存。",
+  "supersedes": ""
+}

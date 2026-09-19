@@ -2371,6 +2371,589 @@
         }
       ],
       "verifiedAt": "2026-09-19"
+    },
+    "p048": {
+      "item": {
+        "type": "article-journal",
+        "title": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
+        "author": [
+          {
+            "given": "Oier",
+            "family": "Mees"
+          },
+          {
+            "given": "Lukas",
+            "family": "Hermann"
+          },
+          {
+            "given": "Erick",
+            "family": "Rosete-Beas"
+          },
+          {
+            "given": "Wolfram",
+            "family": "Burgard"
+          }
+        ],
+        "container-title": "IEEE Robotics and Automation Letters",
+        "volume": "7",
+        "issue": "3",
+        "page": "7327–7334",
+        "issued": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              3
+            ]
+          ]
+        },
+        "DOI": "10.1109/LRA.2022.3180108",
+        "URL": "https://ieeexplore.ieee.org/document/9788026"
+      },
+      "sources": [
+        {
+          "label": "IEEE官方卷期/页码/DOI/在线日期；作者对照v4首页",
+          "url": "https://ieeexplore.ieee.org/document/9788026"
+        },
+        {
+          "label": "v4首页四位作者及录用日期",
+          "url": "https://arxiv.org/pdf/2112.03227v4#page=1"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p050": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+        "author": [
+          {
+            "given": "brian",
+            "family": "ichter"
+          },
+          {
+            "given": "Anthony",
+            "family": "Brohan"
+          },
+          {
+            "given": "Yevgen",
+            "family": "Chebotar"
+          },
+          {
+            "given": "Chelsea",
+            "family": "Finn"
+          },
+          {
+            "given": "Karol",
+            "family": "Hausman"
+          },
+          {
+            "given": "Alexander",
+            "family": "Herzog"
+          },
+          {
+            "given": "Daniel",
+            "family": "Ho"
+          },
+          {
+            "given": "Julian",
+            "family": "Ibarz"
+          },
+          {
+            "given": "Alex",
+            "family": "Irpan"
+          },
+          {
+            "given": "Eric",
+            "family": "Jang"
+          },
+          {
+            "given": "Ryan",
+            "family": "Julian"
+          },
+          {
+            "given": "Dmitry",
+            "family": "Kalashnikov"
+          },
+          {
+            "given": "Sergey",
+            "family": "Levine"
+          },
+          {
+            "given": "Yao",
+            "family": "Lu"
+          },
+          {
+            "given": "Carolina",
+            "family": "Parada"
+          },
+          {
+            "given": "Kanishka",
+            "family": "Rao"
+          },
+          {
+            "given": "Pierre",
+            "family": "Sermanet"
+          },
+          {
+            "given": "Alexander T",
+            "family": "Toshev"
+          },
+          {
+            "given": "Vincent",
+            "family": "Vanhoucke"
+          },
+          {
+            "given": "Fei",
+            "family": "Xia"
+          },
+          {
+            "given": "Ted",
+            "family": "Xiao"
+          },
+          {
+            "given": "Peng",
+            "family": "Xu"
+          },
+          {
+            "given": "Mengyuan",
+            "family": "Yan"
+          },
+          {
+            "given": "Noah",
+            "family": "Brown"
+          },
+          {
+            "given": "Michael",
+            "family": "Ahn"
+          },
+          {
+            "given": "Omar",
+            "family": "Cortes"
+          },
+          {
+            "given": "Nicolas",
+            "family": "Sievers"
+          },
+          {
+            "given": "Clayton",
+            "family": "Tan"
+          },
+          {
+            "given": "Sichun",
+            "family": "Xu"
+          },
+          {
+            "given": "Diego",
+            "family": "Reyes"
+          },
+          {
+            "given": "Jarek",
+            "family": "Rettinghouse"
+          },
+          {
+            "given": "Jornell",
+            "family": "Quiambao"
+          },
+          {
+            "given": "Peter",
+            "family": "Pastor"
+          },
+          {
+            "given": "Linda",
+            "family": "Luu"
+          },
+          {
+            "given": "Kuang-Huei",
+            "family": "Lee"
+          },
+          {
+            "given": "Yuheng",
+            "family": "Kuang"
+          },
+          {
+            "given": "Sally",
+            "family": "Jesmonth"
+          },
+          {
+            "given": "Nikhil J.",
+            "family": "Joshi"
+          },
+          {
+            "given": "Kyle",
+            "family": "Jeffrey"
+          },
+          {
+            "given": "Rosario Jauregui",
+            "family": "Ruano"
+          },
+          {
+            "given": "Jasmine",
+            "family": "Hsu"
+          },
+          {
+            "given": "Keerthana",
+            "family": "Gopalakrishnan"
+          },
+          {
+            "given": "Byron",
+            "family": "David"
+          },
+          {
+            "given": "Andy",
+            "family": "Zeng"
+          },
+          {
+            "given": "Chuyuan Kelly",
+            "family": "Fu"
+          }
+        ],
+        "container-title": "Proceedings of The 6th Conference on Robot Learning",
+        "volume": "205",
+        "page": "287–318",
+        "publisher": "PMLR",
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              3,
+              6
+            ]
+          ]
+        },
+        "URL": "https://proceedings.mlr.press/v205/ichter23a.html"
+      },
+      "sources": [
+        {
+          "label": "PMLR205正式BibTeX完整45作者，采用其顺序，不与arXiv名单混合",
+          "url": "https://proceedings.mlr.press/v205/ichter23a.html"
+        },
+        {
+          "label": "卷集发布日期06 March2023，不是2022会议日",
+          "url": "https://proceedings.mlr.press/v205/"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p062": {
+      "item": {
+        "type": "paper-conference",
+        "title": "DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset",
+        "author": [
+          {
+            "literal": "Alexander Khazatsky"
+          },
+          {
+            "literal": "Karl Pertsch"
+          },
+          {
+            "literal": "Suraj Nair"
+          },
+          {
+            "literal": "Ashwin Balakrishna"
+          },
+          {
+            "literal": "Sudeep Dasari"
+          },
+          {
+            "literal": "Siddharth Karamcheti"
+          },
+          {
+            "literal": "Soroush Nasiriany"
+          },
+          {
+            "literal": "Mohan Kumar Srirama"
+          },
+          {
+            "literal": "Lawrence Yunliang Chen"
+          },
+          {
+            "literal": "Kirsty Ellis"
+          },
+          {
+            "literal": "Peter David Fagan"
+          },
+          {
+            "literal": "Joey Hejna"
+          },
+          {
+            "literal": "Masha Itkina"
+          },
+          {
+            "literal": "Marion Lepert"
+          },
+          {
+            "literal": "Yecheng Jason Ma"
+          },
+          {
+            "literal": "Patrick Tree Miller"
+          },
+          {
+            "literal": "Jimmy Wu"
+          },
+          {
+            "literal": "Suneel Belkhale"
+          },
+          {
+            "literal": "Shivin Dass"
+          },
+          {
+            "literal": "Huy Ha"
+          },
+          {
+            "literal": "Arhan Jain"
+          },
+          {
+            "literal": "Abraham Lee"
+          },
+          {
+            "literal": "Youngwoon Lee"
+          },
+          {
+            "literal": "Marius Memmel"
+          },
+          {
+            "literal": "Sungjae Park"
+          },
+          {
+            "literal": "Ilija Radosavovic"
+          },
+          {
+            "literal": "Kaiyuan Wang"
+          },
+          {
+            "literal": "Albert Zhan"
+          },
+          {
+            "literal": "Kevin Black"
+          },
+          {
+            "literal": "Cheng Chi"
+          },
+          {
+            "literal": "Kyle Beltran Hatch"
+          },
+          {
+            "literal": "Shan Lin"
+          },
+          {
+            "literal": "Jingpei Lu"
+          },
+          {
+            "literal": "Jean Mercat"
+          },
+          {
+            "literal": "Abdul Rehman"
+          },
+          {
+            "literal": "Pannag R Sanketi"
+          },
+          {
+            "literal": "Archit Sharma"
+          },
+          {
+            "literal": "Cody Simpson"
+          },
+          {
+            "literal": "Quan Vuong"
+          },
+          {
+            "literal": "Homer Rich Walke"
+          },
+          {
+            "literal": "Blake Wulfe"
+          },
+          {
+            "literal": "Ted Xiao"
+          },
+          {
+            "literal": "Jonathan Heewon Yang"
+          },
+          {
+            "literal": "Arefeh Yavary"
+          },
+          {
+            "literal": "Tony Z. Zhao"
+          },
+          {
+            "literal": "Christopher Agia"
+          },
+          {
+            "literal": "Rohan Baijal"
+          },
+          {
+            "literal": "Mateo Guaman Castro"
+          },
+          {
+            "literal": "Daphne Chen"
+          },
+          {
+            "literal": "Qiuyu Chen"
+          },
+          {
+            "literal": "Trinity Chung"
+          },
+          {
+            "literal": "Jaimyn Drake"
+          },
+          {
+            "literal": "Ethan Paul Foster"
+          },
+          {
+            "literal": "Jensen Gao"
+          },
+          {
+            "literal": "David Antonio Herrera"
+          },
+          {
+            "literal": "Minho Heo"
+          },
+          {
+            "literal": "Kyle Hsu"
+          },
+          {
+            "literal": "Jiaheng Hu"
+          },
+          {
+            "literal": "Donovon Jackson"
+          },
+          {
+            "literal": "Charlotte Le"
+          },
+          {
+            "literal": "Yunshuang Li"
+          },
+          {
+            "literal": "Roy Lin"
+          },
+          {
+            "literal": "Zehan Ma"
+          },
+          {
+            "literal": "Abhiram Maddukuri"
+          },
+          {
+            "literal": "Suvir Mirchandani"
+          },
+          {
+            "literal": "Daniel Morton"
+          },
+          {
+            "literal": "Tony Nguyen"
+          },
+          {
+            "literal": "Abigail O'Neill"
+          },
+          {
+            "literal": "Rosario Scalise"
+          },
+          {
+            "literal": "Derick Seale"
+          },
+          {
+            "literal": "Victor Son"
+          },
+          {
+            "literal": "Stephen Tian"
+          },
+          {
+            "literal": "Emi Tran"
+          },
+          {
+            "literal": "Andrew E. Wang"
+          },
+          {
+            "literal": "Yilin Wu"
+          },
+          {
+            "literal": "Annie Xie"
+          },
+          {
+            "literal": "Jingyun Yang"
+          },
+          {
+            "literal": "Patrick Yin"
+          },
+          {
+            "literal": "Yunchu Zhang"
+          },
+          {
+            "literal": "Osbert Bastani"
+          },
+          {
+            "literal": "Glen Berseth"
+          },
+          {
+            "literal": "Jeannette Bohg"
+          },
+          {
+            "literal": "Ken Goldberg"
+          },
+          {
+            "literal": "Abhinav Gupta"
+          },
+          {
+            "literal": "Abhishek Gupta"
+          },
+          {
+            "literal": "Dinesh Jayaraman"
+          },
+          {
+            "literal": "Joseph J Lim"
+          },
+          {
+            "literal": "Jitendra Malik"
+          },
+          {
+            "literal": "Roberto Martín-Martín"
+          },
+          {
+            "literal": "Subramanian Ramamoorthy"
+          },
+          {
+            "literal": "Dorsa Sadigh"
+          },
+          {
+            "literal": "Shuran Song"
+          },
+          {
+            "literal": "Jiajun Wu"
+          },
+          {
+            "literal": "Michael C. Yip"
+          },
+          {
+            "literal": "Yuke Zhu"
+          },
+          {
+            "literal": "Thomas Kollar"
+          },
+          {
+            "literal": "Sergey Levine"
+          },
+          {
+            "literal": "Chelsea Finn"
+          }
+        ],
+        "container-title": "Proceedings of Robotics: Science and Systems",
+        "issued": {
+          "date-parts": [
+            [
+              2024,
+              7
+            ]
+          ]
+        },
+        "DOI": "10.15607/RSS.2024.XX.120",
+        "URL": "https://www.roboticsproceedings.org/rss20/p120.html"
+      },
+      "sources": [
+        {
+          "label": "RSS2024官方完整作者/BibTeX，逐人保留姓名与顺序；非arXiv v2名单推断",
+          "url": "https://www.roboticsproceedings.org/rss20/p120.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
     }
   }
 }

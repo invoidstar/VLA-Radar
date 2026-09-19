@@ -1,0 +1,25 @@
+{
+  "id": "r-google-real-saycan-v2-mock-execute-palm",
+  "paperId": "p050",
+  "method": "PaLM-SayCan",
+  "trackId": "google-real-saycan-v2-mock-execute",
+  "values": {
+    "Single": 100,
+    "Nouns": 47,
+    "Verbs": 93,
+    "Structured": 87,
+    "Embodiment": 55,
+    "Crowd": 87,
+    "LongHorizon": 47,
+    "Total": 74
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://ar5iv.labs.arxiv.org/html/2204.01691",
+  "sourceVersion": "2204.01691 original report HTML snapshot 2026-09-19",
+  "locator": "Table 2；Table 3同源PaLM重复只记一次；§5与Appendix E.1；mock/execute",
+  "attribution": "author-reported",
+  "trainingData": "主BC约68k遥操作＋12k过滤成功自主轨迹；可供性含RL训练与启发式，原LLM不在机器人数据上端到端训练；PaLM540B/FLAN137B分别标注。",
+  "evaluationNotes": "101条指令七类计15/15/15/15/11/15/15，三人中至少两人同意的人工规划/执行判定；原文舍入Total，不对类别简单均值。种子/统一checkpoint/误差未完整披露。两厨房均为物理真机，Mock不是仿真，不归SimplerEnv。只计实际执行；未报告执行的No VF/Generative不填零。",
+  "supersedes": ""
+}

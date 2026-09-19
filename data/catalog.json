@@ -2599,11 +2599,11 @@
       "team": "University of Freiburg / University of Technology Nuremberg；Oier Mees、Lukas Hermann 等",
       "venue": "IEEE RA-L",
       "publicationType": "journal",
-      "publicationStatus": "原文标注 IEEE RA-L，2022-05 接收；首发仍保留 2021 年 arXiv 日期",
+      "publicationStatus": "IEEE元数据确认在线发表2022-06-03；卷期为2022年7月；录用日另据v4首页。",
       "firstPublished": "2021-12-06",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv v4（2022-07-13），第 1–2 页；第 2 页已查看 PDF",
+      "versionNote": "arXiv2112.03227v4完整PDF正文、Appendices A–B及Figure 8；HTML原表交叉核对；首页与表格页实际截图",
       "topics": [
         "evaluation",
         "memory"
@@ -2616,12 +2616,12 @@
       ],
       "priority": "deep",
       "contribution": "提出组合语言指令、连续控制与跨场景泛化的模拟操作基准；用于区分单任务完成、连续任务链和未见环境泛化。",
-      "findings": "原文 v4 第 2 页：4 个环境、34 类子任务、约 24 小时 play 数据和 2 万条语言指令；长程协议由 5 个子任务组成。原始 MCIL 基线短程成功率最高 53.9%，长程仍明显困难。",
+      "findings": "原文v4：4个环境、34类子任务、约24小时play和2万条语言指令；长程协议为5个子任务。Figure 8中D→D静态RGB的MCIL短程成功率为53.9%，加触觉为54.2%；两种输入的五步连续完成率分别为0.08%和0%，不能把53.9%写成全部配置最高。",
       "limitations": "平均任务链长度上限为 5，不是百分比。ABCD→D 与 ABC→D 训练划分不等价；本条记录基准原始设定，而非当前模型排行榜。",
       "insight": "短程成功、连续执行和场景迁移是不同能力；同一数字必须连同数据划分与评价长度阅读。",
       "readingFocus": "原文第 2 页、数据划分、五任务链协议及原始 MCIL 基线。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+      "evidenceNote": "2026-09-19按实际来源范围重读正文、实验和附录；精确结果来自原表或图上数字标签，未估像素；作者报告非本站复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -2631,19 +2631,31 @@
         {
           "label": "原文 v4 · 第 2 页",
           "url": "https://arxiv.org/pdf/2112.03227v4"
+        },
+        {
+          "label": "第九批实际深入阅读 · 版本和限制见笔记",
+          "url": "https://arxiv.org/pdf/2112.03227v4"
+        },
+        {
+          "label": "正式发表记录 · 首发与修订日期保持",
+          "url": "https://ieeexplore.ieee.org/document/9788026"
+        },
+        {
+          "label": "KEY RESULT有据更正／范围澄清：Figure 8含静态＋触觉54.2，原KEY RESULT误将静态53.9表述为最高；本次明确更正条件。",
+          "url": "https://arxiv.org/pdf/2112.03227v4#page=7"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2112.03227",
       "arxiv": "2112.03227",
-      "doi": "",
-      "detailUrl": "data/details/p048.json?v=4ba0f0daa93050ea",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "doi": "10.1109/LRA.2022.3180108",
+      "detailUrl": "data/details/p048.json?v=16671a906f7d6fbc",
+      "resultUrl": "data/paper-results/p048.f44283fb1f0aca5b.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2021-12-06",
         "latestArxivVersion": "v4",
-        "status": "legacy",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-09-19"
       }
     },
     {
@@ -2701,13 +2713,13 @@
       "name": "SayCan",
       "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
       "team": "Robotics at Google / Everyday Robots；Michael Ahn 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "CoRL 2022",
+      "publicationType": "conference",
+      "publicationStatus": "正式PMLR205 pp287–318；卷集说明2023-03-06出版，不能拿2022年会议日期当出版日。",
       "firstPublished": "2022-04-04",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 元数据；官方项目页 2022-08 更新结果",
+      "versionNote": "arXiv2204.01691完整ar5iv HTML正文与Appendices A–E（Appendix A含v1→v2更新）；Tables 2–3；PMLR正式书目另核对，未冒称正式PDF阅读全文",
       "topics": [
         "memory",
         "pretraining"
@@ -2720,12 +2732,12 @@
       ],
       "priority": "deep",
       "contribution": "把语言模型对技能的语义评分与机器人价值函数的可执行性评分结合，为长程指令选择低层技能；属于语言规划与控制连接的前驱工作。",
-      "findings": "官方更新结果在 101 条任务、2 个厨房中报告 PaLM-SayCan 规划正确率 84%、实际执行成功率 74%。两者是不同指标，不能把规划正确率写成机器人成功率。",
+      "findings": "原报告Tables 2–3：101条指令在Mock物理厨房的PaLM-SayCan规划正确率84%、执行成功率74%；办公厨房对应81%和60%。两处都是真机，84/74不是两厨房合并成绩，规划正确率不能写成执行成功率。",
       "limitations": "输出的是预定义技能序列，不是端到端低层 VLA。执行能力受技能库和可执行性估计约束；官方说明中反馈不等同于完整的失败结果理解。",
       "insight": "语义上合理不等于物理上可执行；任务分解、技能选择与技能执行应分别阅读。",
       "readingFocus": "语言得分 × 可执行性、101 任务协议、规划与执行的差距。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+      "evidenceNote": "2026-09-19按实际来源范围重读正文、实验和附录；精确结果来自原表或图上数字标签，未估像素；作者报告非本站复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
@@ -2735,19 +2747,31 @@
         {
           "label": "官方项目页 · Results / Limitations",
           "url": "https://say-can.github.io/"
+        },
+        {
+          "label": "第九批实际深入阅读 · 版本和限制见笔记",
+          "url": "https://ar5iv.labs.arxiv.org/html/2204.01691"
+        },
+        {
+          "label": "正式发表记录 · 首发与修订日期保持",
+          "url": "https://proceedings.mlr.press/v205/ichter23a.html"
+        },
+        {
+          "label": "KEY RESULT有据更正／范围澄清：Table 2分别报告Mock84/74与Office81/60；澄清原KEY RESULT两厨房范围，不改变任一原始数值。",
+          "url": "https://ar5iv.labs.arxiv.org/html/2204.01691"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2204.01691",
       "arxiv": "2204.01691",
       "doi": "",
-      "detailUrl": "data/details/p050.json?v=38401c159a6463b2",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p050.json?v=4b3b768daa6739b5",
+      "resultUrl": "data/paper-results/p050.e4b95f4a807cae36.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2022-04-04",
         "latestArxivVersion": "v2",
-        "status": "preprint",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-09-19"
       }
     },
     {
@@ -3393,13 +3417,13 @@
       "name": "DROID",
       "title": "DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset",
       "team": "DROID 多机构合作；Alexander Khazatsky、Karl Pertsch 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "RSS 2024",
+      "publicationType": "conference",
+      "publicationStatus": "RSS官方书目只支持2024-07精度；具体录用日期未核实，正文阅读为arXiv v2。",
       "firstPublished": "2024-03-19",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv 摘要与所列一手来源（本次读取日期：2026-09-17）",
+      "versionNote": "arXiv2403.12945v2完整HTML正文与Appendices A–G；对应v2 PDF Figures 8/10明确数字标签截图，RSS正式图8局部交叉核对",
       "topics": [
         "evaluation",
         "pretraining"
@@ -3416,9 +3440,9 @@
       "limitations": "更多场景不代表每个任务都具有相同示范密度；数据还涉及不同相机、标定、质量和动作分布。",
       "insight": "数据的场景多样性与总样本量是不同维度，理解泛化必须保留采集结构。",
       "readingFocus": "采集协议、场景覆盖、数据清洗及下游迁移评价。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
-      "hasCautionaryResult": false,
+      "evidence": "checked",
+      "evidenceNote": "2026-09-19按实际来源范围重读正文、实验和附录；精确结果来自原表或图上数字标签，未估像素；作者报告非本站复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
@@ -3427,19 +3451,27 @@
         {
           "label": "官方项目页",
           "url": "https://droid-dataset.github.io/"
+        },
+        {
+          "label": "第九批实际深入阅读 · 版本和限制见笔记",
+          "url": "https://arxiv.org/html/2403.12945v2"
+        },
+        {
+          "label": "正式发表记录 · 首发与修订日期保持",
+          "url": "https://www.roboticsproceedings.org/rss20/p120.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2403.12945",
       "arxiv": "2403.12945",
-      "doi": "",
-      "detailUrl": "data/details/p062.json?v=a409694889d03959",
-      "resultUrl": null,
-      "noteStatus": "needs_review",
+      "doi": "10.15607/RSS.2024.XX.120",
+      "detailUrl": "data/details/p062.json?v=4a9a1e9b12fb6f8a",
+      "resultUrl": "data/paper-results/p062.5204eba9d9ee1e8a.json",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-03-19",
         "latestArxivVersion": "v2",
-        "status": "preprint",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-09-19"
       }
     },
     {

@@ -76,10 +76,23 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV；Appendix A-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p062": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§V-C，Figure 8。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "droid-v2-real-figure8-id",
+        "droid-v2-real-figure8-ood",
+        "droid-v2-real-figure10-diversity"
+      ],
+      "resultIds": [
+        "r-droid-v2-real-figure8-id-target-only",
+        "r-droid-v2-real-figure8-id-oxe",
+        "r-droid-v2-real-figure8-id-droid",
+        "r-droid-v2-real-figure8-ood-target-only",
+        "r-droid-v2-real-figure8-ood-oxe",
+        "r-droid-v2-real-figure8-ood-droid",
+        "r-droid-v2-real-figure10-diversity-20-scenes",
+        "r-droid-v2-real-figure10-diversity-diverse"
+      ],
+      "note": "第九批：重读实际版本并补8条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
     },
     "p067": {
       "status": "deferred",
@@ -265,10 +278,42 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 1。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p048": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Figure 8，2026-09-17 HTML快照。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "calvin-original-v4-d-d-mtlc",
+        "calvin-original-v4-d-d-chain",
+        "calvin-original-v4-abcd-d-mtlc",
+        "calvin-original-v4-abcd-d-chain",
+        "calvin-original-v4-abc-d-mtlc",
+        "calvin-original-v4-abc-d-chain"
+      ],
+      "resultIds": [
+        "r-calvin-original-v4-d-d-mtlc-static",
+        "r-calvin-original-v4-d-d-mtlc-rgb-wrist",
+        "r-calvin-original-v4-d-d-mtlc-rgb-tactile",
+        "r-calvin-original-v4-d-d-mtlc-rgbd-wrist",
+        "r-calvin-original-v4-d-d-chain-static",
+        "r-calvin-original-v4-d-d-chain-rgb-wrist",
+        "r-calvin-original-v4-d-d-chain-rgb-tactile",
+        "r-calvin-original-v4-d-d-chain-rgbd-wrist",
+        "r-calvin-original-v4-abcd-d-mtlc-static",
+        "r-calvin-original-v4-abcd-d-mtlc-rgb-wrist",
+        "r-calvin-original-v4-abcd-d-mtlc-rgb-tactile",
+        "r-calvin-original-v4-abcd-d-mtlc-rgbd-wrist",
+        "r-calvin-original-v4-abcd-d-chain-static",
+        "r-calvin-original-v4-abcd-d-chain-rgb-wrist",
+        "r-calvin-original-v4-abcd-d-chain-rgb-tactile",
+        "r-calvin-original-v4-abcd-d-chain-rgbd-wrist",
+        "r-calvin-original-v4-abc-d-mtlc-static",
+        "r-calvin-original-v4-abc-d-mtlc-rgb-wrist",
+        "r-calvin-original-v4-abc-d-mtlc-rgb-tactile",
+        "r-calvin-original-v4-abc-d-mtlc-rgbd-wrist",
+        "r-calvin-original-v4-abc-d-chain-static",
+        "r-calvin-original-v4-abc-d-chain-rgb-wrist",
+        "r-calvin-original-v4-abc-d-chain-rgb-tactile",
+        "r-calvin-original-v4-abc-d-chain-rgbd-wrist"
+      ],
+      "note": "第九批：重读实际版本并补24条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
     },
     "p061": {
       "status": "extracted",
@@ -702,10 +747,26 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§4主要结果。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p050": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "google-real-saycan-v2-mock-plan",
+        "google-real-saycan-v2-mock-execute",
+        "google-real-saycan-v2-office-plan",
+        "google-real-saycan-v2-office-execute"
+      ],
+      "resultIds": [
+        "r-google-real-saycan-v2-mock-plan-palm",
+        "r-google-real-saycan-v2-mock-plan-no-vf",
+        "r-google-real-saycan-v2-mock-plan-generative",
+        "r-google-real-saycan-v2-mock-plan-flan",
+        "r-google-real-saycan-v2-mock-execute-palm",
+        "r-google-real-saycan-v2-mock-execute-bc-nl",
+        "r-google-real-saycan-v2-mock-execute-bc-use",
+        "r-google-real-saycan-v2-mock-execute-flan",
+        "r-google-real-saycan-v2-office-plan-palm",
+        "r-google-real-saycan-v2-office-execute-palm"
+      ],
+      "note": "第九批：重读实际版本并补10条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
     },
     "p040": {
       "status": "not-applicable",

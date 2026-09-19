@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "bc3710056abe6cd3407c1e6b74d184c25c6f4fed",
+  "status": "partial-content-backfill",
+  "scope": "第九批：三篇既有deferred论文CALVIN、DROID、SayCan，补版本范围深入笔记、原始实验与正式书目；不是全网周检索。",
+  "updatedPapers": [
+    "p048",
+    "p050",
+    "p062"
+  ],
+  "newPapers": [],
+  "newTracks": [
+    "calvin-original-v4-d-d-mtlc",
+    "calvin-original-v4-d-d-chain",
+    "calvin-original-v4-abcd-d-mtlc",
+    "calvin-original-v4-abcd-d-chain",
+    "calvin-original-v4-abc-d-mtlc",
+    "calvin-original-v4-abc-d-chain",
+    "droid-v2-real-figure8-id",
+    "droid-v2-real-figure8-ood",
+    "droid-v2-real-figure10-diversity",
+    "google-real-saycan-v2-mock-plan",
+    "google-real-saycan-v2-mock-execute",
+    "google-real-saycan-v2-office-plan",
+    "google-real-saycan-v2-office-execute"
+  ],
+  "newResults": [
+    "r-calvin-original-v4-d-d-mtlc-static",
+    "r-calvin-original-v4-d-d-mtlc-rgb-wrist",
+    "r-calvin-original-v4-d-d-mtlc-rgb-tactile",
+    "r-calvin-original-v4-d-d-mtlc-rgbd-wrist",
+    "r-calvin-original-v4-d-d-chain-static",
+    "r-calvin-original-v4-d-d-chain-rgb-wrist",
+    "r-calvin-original-v4-d-d-chain-rgb-tactile",
+    "r-calvin-original-v4-d-d-chain-rgbd-wrist",
+    "r-calvin-original-v4-abcd-d-mtlc-static",
+    "r-calvin-original-v4-abcd-d-mtlc-rgb-wrist",
+    "r-calvin-original-v4-abcd-d-mtlc-rgb-tactile",
+    "r-calvin-original-v4-abcd-d-mtlc-rgbd-wrist",
+    "r-calvin-original-v4-abcd-d-chain-static",
+    "r-calvin-original-v4-abcd-d-chain-rgb-wrist",
+    "r-calvin-original-v4-abcd-d-chain-rgb-tactile",
+    "r-calvin-original-v4-abcd-d-chain-rgbd-wrist",
+    "r-calvin-original-v4-abc-d-mtlc-static",
+    "r-calvin-original-v4-abc-d-mtlc-rgb-wrist",
+    "r-calvin-original-v4-abc-d-mtlc-rgb-tactile",
+    "r-calvin-original-v4-abc-d-mtlc-rgbd-wrist",
+    "r-calvin-original-v4-abc-d-chain-static",
+    "r-calvin-original-v4-abc-d-chain-rgb-wrist",
+    "r-calvin-original-v4-abc-d-chain-rgb-tactile",
+    "r-calvin-original-v4-abc-d-chain-rgbd-wrist",
+    "r-droid-v2-real-figure8-id-target-only",
+    "r-droid-v2-real-figure8-id-oxe",
+    "r-droid-v2-real-figure8-id-droid",
+    "r-droid-v2-real-figure8-ood-target-only",
+    "r-droid-v2-real-figure8-ood-oxe",
+    "r-droid-v2-real-figure8-ood-droid",
+    "r-droid-v2-real-figure10-diversity-20-scenes",
+    "r-droid-v2-real-figure10-diversity-diverse",
+    "r-google-real-saycan-v2-mock-plan-palm",
+    "r-google-real-saycan-v2-mock-plan-no-vf",
+    "r-google-real-saycan-v2-mock-plan-generative",
+    "r-google-real-saycan-v2-mock-plan-flan",
+    "r-google-real-saycan-v2-mock-execute-palm",
+    "r-google-real-saycan-v2-mock-execute-bc-nl",
+    "r-google-real-saycan-v2-mock-execute-bc-use",
+    "r-google-real-saycan-v2-mock-execute-flan",
+    "r-google-real-saycan-v2-office-plan-palm",
+    "r-google-real-saycan-v2-office-execute-palm"
+  ],
+  "readSources": [
+    {
+      "paperId": "p048",
+      "url": "https://arxiv.org/pdf/2112.03227v4",
+      "scope": "v4完整正文与附录A–B；首页、Figure8及附录页实际截图；HTML表交叉读取。"
+    },
+    {
+      "paperId": "p062",
+      "url": "https://arxiv.org/html/2403.12945v2",
+      "scope": "完整v2正文与附录A–G；PDF第9/10页图8/10标签视觉提取；RSS图8局部交叉检查。"
+    },
+    {
+      "paperId": "p050",
+      "url": "https://ar5iv.labs.arxiv.org/html/2204.01691",
+      "scope": "完整原报告HTML正文及附录A–E，Appendix A含v1→v2日志；Table2/3直接可读；PMLR/arXiv PDF访问失败，未声称PDF全文核对。"
+    }
+  ],
+  "publicationSources": [
+    "https://ieeexplore.ieee.org/document/9788026",
+    "https://www.roboticsproceedings.org/rss20/p120.html",
+    "https://proceedings.mlr.press/v205/ichter23a.html",
+    "https://proceedings.mlr.press/v205/"
+  ],
+  "resolvedPublicationCandidates": [
+    {
+      "paperId": "p048",
+      "kind": "venue-mention",
+      "source": "https://arxiv.org/abs/2112.03227",
+      "value": "Accepted for publication at IEEE Robotics and Automation Letters (RAL). Code, models and dataset available at this http URL",
+      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+    }
+  ],
+  "boundaries": [
+    "CALVIN三划分、四传感器、MTLC与LH指标分开；Figure8不含Average链长；0.08/0.17%精度原样。",
+    "DROID实际前40k成功已标注/目标50%而非整个76k；OXE400k；烘焙与华夫饼机多任务共享；煮扁豆OOD50k步。",
+    "DROID图8/10从明确数值标签提取，不估柱高/误差条；RSS图8与v2同源不重计。",
+    "DROID真实六任务归档不是统一公共仿真benchmark；新薯片OXE优于DROID，清桌正文/附录干扰设置差异保留。",
+    "SayCan Mock/Office均物理真机；Plan不是Execute；Tables2/3重叠PaLM只一次，FLAN单项胜出保留。",
+    "论文原ID/首发保持；CALVIN与SayCan的KEY RESULT按已核对原表更正/澄清，before/after及证据单独留审计；DROID KEY RESULT保持。",
+    "正式作者逐人核验；SayCan按PMLR顺序，DROID按RSS完整98人表，不用团队替代作者。"
+  ],
+  "deferred": [
+    {
+      "paperId": "p050",
+      "method": "SayCan appendix-only prompt/language/drawer experiments",
+      "reason": "完整阅读并在笔记讨论，但本批正式入榜限定101指令Tables2/3；不把语言评分模拟器、少量多语言案例或不同抽屉任务并入主榜。",
+      "source": "https://ar5iv.labs.arxiv.org/html/2204.01691"
+    },
+    {
+      "paperId": "p062",
+      "method": "DROID calibration distribution statistics",
+      "reason": "v2附录已读，未从质量分布曲线猜精确值，也不将标定质量当任务成功率；不同scene统计口径保留。",
+      "source": "https://arxiv.org/html/2403.12945v2"
+    }
+  ],
+  "searchCheckpoints": "原论文/新闻完整检索状态不变；定向阅读不前移完整周更成功时间。",
+  "notes": {
+    "p048": {
+      "sections": 9,
+      "bodyCharacters": 3156
+    },
+    "p050": {
+      "sections": 9,
+      "bodyCharacters": 3247
+    },
+    "p062": {
+      "sections": 9,
+      "bodyCharacters": 3258
+    }
+  },
+  "keyResultCorrections": [
+    {
+      "paperId": "p048",
+      "before": "原文 v4 第 2 页：4 个环境、34 类子任务、约 24 小时 play 数据和 2 万条语言指令；长程协议由 5 个子任务组成。原始 MCIL 基线短程成功率最高 53.9%，长程仍明显困难。",
+      "after": "原文v4：4个环境、34类子任务、约24小时play和2万条语言指令；长程协议为5个子任务。Figure 8中D→D静态RGB的MCIL短程成功率为53.9%，加触觉为54.2%；两种输入的五步连续完成率分别为0.08%和0%，不能把53.9%写成全部配置最高。",
+      "observedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2112.03227v4#page=7",
+      "reason": "Figure 8含静态＋触觉54.2，原KEY RESULT误将静态53.9表述为最高；本次明确更正条件。"
+    },
+    {
+      "paperId": "p050",
+      "before": "官方更新结果在 101 条任务、2 个厨房中报告 PaLM-SayCan 规划正确率 84%、实际执行成功率 74%。两者是不同指标，不能把规划正确率写成机器人成功率。",
+      "after": "原报告Tables 2–3：101条指令在Mock物理厨房的PaLM-SayCan规划正确率84%、执行成功率74%；办公厨房对应81%和60%。两处都是真机，84/74不是两厨房合并成绩，规划正确率不能写成执行成功率。",
+      "observedAt": "2026-09-19",
+      "source": "https://ar5iv.labs.arxiv.org/html/2204.01691",
+      "reason": "Table 2分别报告Mock84/74与Office81/60；澄清原KEY RESULT两厨房范围，不改变任一原始数值。"
+    }
+  ]
+}
