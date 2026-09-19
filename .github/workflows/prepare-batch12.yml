@@ -1,0 +1,116 @@
+name: Prepare source-checked benchmark batch twelve
+on:
+  push:
+    branches: [weekly-update-2026-09-19-benchmark-batch12]
+    paths: [.github/workflows/prepare-batch12.yml]
+permissions:
+  contents: write
+concurrency:
+  group: prepare-batch12
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply public source payload against exact original hashes
+        run: |
+          mkdir -p /tmp/radar-batch12
+          python - <<'PY'
+          import base64,hashlib,json,lzma,subprocess
+          from pathlib import Path
+          base='ccb22c7b78de0326660cbb5ba91301ac6ab8c228'
+          tree='69e6a7383f9aecef62a2b4570654a7cc19aea941'
+          assert subprocess.check_output(['git','rev-parse',base+'^{tree}'],text=True).strip()==tree
+          assert subprocess.check_output(['git','rev-parse','origin/main'],text=True).strip()==base, 'Main moved; reconcile before proceeding'
+          raw=base64.b64decode(''.join(Path(f'.batch12-transfer/part{i}.b64').read_text().strip() for i in range(1,6)),validate=True)
+          assert hashlib.sha256(raw).hexdigest()=='909248a3c447d9cbcc81befbec76cf4db9f356e854208af13f061f3c9726e2b7','Payload changed'
+          obj=json.loads(lzma.decompress(raw))
+          assert obj['baseCommit']==base and obj['baseTree']==tree
+          assert len(obj['patches'])==172
+          for name,patch in obj['patches'].items():
+            path=Path(name)
+            assert not path.is_absolute() and '..' not in path.parts
+            assert name.startswith(('catalog/','maintenance/','tests/')) or name=='CHANGELOG.md'
+            before=obj['beforeSha256'][name]
+            if before is None:
+              assert not path.exists(),name
+              text=patch['new']
+            else:
+              assert hashlib.sha256(path.read_bytes()).hexdigest()==before,name
+              lines=path.read_text().splitlines(keepends=True)
+              for start,end,replacement in reversed(patch['edits']):
+                lines[start:end]=replacement.splitlines(keepends=True)
+              text=''.join(lines)
+            path.parent.mkdir(parents=True,exist_ok=True)
+            path.write_text(text)
+          subprocess.run(['python','scripts/capture_activity.py','--base',base,'--at',obj['activityAt']],check=True)
+          subprocess.run(['python','scripts/build_catalog.py'],check=True)
+          print('Applied 172 canonical files; 166 genuine activities; exact public source base.')
+          PY
+      - name: Complete offline validation
+        run: |
+          set -o pipefail
+          python scripts/validate_all.py 2>&1 | tee /tmp/radar-batch12/validate.log
+      - name: Install real HTTP browser test environment
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then
+            python -m playwright install --with-deps chromium
+          fi
+          if ! fc-list :lang=zh | grep -q .; then
+            sudo apt-get update -qq
+            sudo apt-get install -y fonts-noto-cjk
+          fi
+      - name: Run all six browser suites without weakening checks
+        run: |
+          set -o pipefail
+          for script in browser_smoke browser_workspace browser_news browser_sidebar browser_tools browser_leaderboard; do
+            python scripts/$script.py 2>&1 | tee /tmp/radar-batch12/$script.log
+          done
+      - name: Verify exact final public tree and save audit source
+        run: |
+          git add CHANGELOG.md catalog maintenance tests data
+          cp .git/index /tmp/b12-final-index
+          GIT_INDEX_FILE=/tmp/b12-final-index git rm --cached -r .batch12-transfer .github/workflows/prepare-batch12.yml
+          final_tree=$(GIT_INDEX_FILE=/tmp/b12-final-index git write-tree)
+          echo "$final_tree" | tee /tmp/radar-batch12/final-tree.txt
+          test "$final_tree" = 'a38008d20130183c8dcd54f5d911e3f63204af1c'
+          git archive --format=zip --output=/tmp/radar-batch12/source.zip "$final_tree"
+          git diff --cached --stat > /tmp/radar-batch12/changes.txt
+          python - <<'PY'
+          import hashlib,json,zipfile
+          from pathlib import Path
+          with zipfile.ZipFile('/tmp/radar-batch12/source.zip') as z:
+            manifest={n:hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist() if not n.endswith('/')}
+          Path('/tmp/radar-batch12/manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          assert not any(n.startswith('.batch12-transfer/') or n=='.github/workflows/prepare-batch12.yml' for n in manifest)
+          print(len(manifest),'files; final-tree excludes all temporary transport/workflow files.')
+          PY
+      - name: Save candidate on authorized update branch only
+        env:
+          EXPECTED_BRANCH: weekly-update-2026-09-19-benchmark-batch12
+        run: |
+          test "${GITHUB_REF_NAME}" = "$EXPECTED_BRANCH"
+          test "$(git ls-remote origin refs/heads/$EXPECTED_BRANCH | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Backfill five source-checked papers with 161 results and version-correct notes'
+          git rev-parse HEAD | tee /tmp/radar-batch12/candidate-commit.txt
+          git push origin HEAD:refs/heads/$EXPECTED_BRANCH
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-batch12-audit-${{ github.run_id }}
+          path: |
+            /tmp/radar-batch12/
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+            /tmp/radar-leaderboard/
+          retention-days: 14
