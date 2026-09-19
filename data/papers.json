@@ -4238,6 +4238,150 @@
       "paperUrl": "https://proceedings.mlr.press/v229/xian23a.html",
       "arxiv": "",
       "doi": ""
+    },
+    {
+      "id": "p093",
+      "name": "RoboMimic study",
+      "title": "What Matters in Learning from Offline Human Demonstrations for Robot Manipulation",
+      "team": "Ajay Mandlekar 等；Stanford University、UT Austin",
+      "venue": "CoRL 2021",
+      "publicationType": "conference",
+      "publicationStatus": "正式论文集已核对；出版时间仅确认至2022年，不猜录用日期。",
+      "firstPublished": "2021-08-06",
+      "dateNote": "arXiv v1 Submission history确认UTC首发日；不以正式出版年、最新修订日或本站收录日覆盖。",
+      "collectionMonth": "2026-09",
+      "versionNote": "CoRL 2021正式PMLR 164 PDF主文与Tables 1–3，pp.1678–1690；不含单独补充ZIP；arXiv v2身份另记",
+      "topics": [
+        "evaluation",
+        "memory",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-4",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "构建多质量人类离线示范研究及统一算法实现，系统区分时间上下文、观测设计、数据质量和检查点选择对闭环操作的影响。",
+      "findings": "原论文低维PH Transport：BC 17.3%、BC-RNN 71.3%；图像PH Tool Hang：BC 20.0%、BC-RNN 67.3%。都是各训练种子的最佳检查点，不是末期平均。",
+      "limitations": "低维PH Tool Hang上BC-RNN弱于BC；MH与PH数据量/策略分布不同；离线损失不能可靠替代成功率选模型，真机Tool Hang仅3.3%。",
+      "insight": "评测算法时应同时锁定演示来源、可用观测和模型选择资源，不把数据质量差异当成纯算法进步。",
+      "readingFocus": "Tables 1/3按PH/MH和低维/图像分开，再读§4.5/4.7检查最佳与最终检查点。",
+      "evidence": "checked",
+      "evidenceNote": "以下笔记仅覆盖所标实际阅读版本；原生HTML表或正式PDF表格图像已核对。作者报告及引用基线，不是本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读正文与原表",
+          "url": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf"
+        },
+        {
+          "label": "正式发表与书目信息",
+          "url": "https://proceedings.mlr.press/v164/mandlekar22a.html"
+        },
+        {
+          "label": "arXiv身份与提交历史",
+          "url": "https://arxiv.org/abs/2108.03298"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2108.03298",
+      "arxiv": "2108.03298",
+      "doi": ""
+    },
+    {
+      "id": "p094",
+      "name": "DexMimicGen",
+      "title": "DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning",
+      "team": "Zhenyu Jiang 等；NVIDIA Research、UT Austin、UC San Diego",
+      "venue": "ICRA 2025",
+      "publicationType": "conference",
+      "publicationStatus": "IEEE正式ICRA 2025论文及DOI已核对；Date Added为索引入库日期，不作为出版日或录用日。",
+      "firstPublished": "2024-10-31",
+      "dateNote": "arXiv v1 Submission history确认UTC首发日；不以正式出版年、最新修订日或本站收录日覆盖。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2410.24185v2完整HTML，§III–VII、Appendix IX–XI；Table I逐格核对，Table II/III与真机部分分开解释",
+      "topics": [
+        "evaluation",
+        "action"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-4",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "在物体条件轨迹变换上加入双臂并行、协调与顺序约束，从少量人类示范生成可训练双臂灵巧操作数据，并提供九任务资源。",
+      "findings": "Table I，1000生成示范/任务的DP：Threading 69.3%、Drawer Cleanup 76.0%、Can Sorting 97.3%；只用少量源示范分别1.3%、0.7%、0.7%。",
+      "limitations": "三个训练种子的最佳检查点；DP并非各任务最优，GMM对部分灵巧手任务明显退化。广分布实验同时在新分布生成训练数据，不是零样本泛化。",
+      "insight": "数据扩增应保留双臂空间和时序依赖；同时检查真实数据预算、训练方法及失败筛选，不将生成轨迹条数等同于新技能多样性。",
+      "readingFocus": "Figures 1–4→Table I四列→Tables II/III的分布和预算→§VI-D real2sim2real。",
+      "evidence": "checked",
+      "evidenceNote": "以下笔记仅覆盖所标实际阅读版本；原生HTML表或正式PDF表格图像已核对。作者报告及引用基线，不是本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读正文与原表",
+          "url": "https://arxiv.org/html/2410.24185v2"
+        },
+        {
+          "label": "正式发表与书目信息",
+          "url": "https://doi.org/10.1109/ICRA55743.2025.11127809"
+        },
+        {
+          "label": "arXiv身份与提交历史",
+          "url": "https://arxiv.org/abs/2410.24185"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2410.24185",
+      "arxiv": "2410.24185",
+      "doi": "10.1109/ICRA55743.2025.11127809"
+    },
+    {
+      "id": "p095",
+      "name": "SIMPLER",
+      "title": "Evaluating Real-World Robot Manipulation Policies in Simulation",
+      "team": "Xuanlin Li 等；UC San Diego、Stanford、UC Berkeley、Google DeepMind",
+      "venue": "CoRL 2024",
+      "publicationType": "conference",
+      "publicationStatus": "正式论文集已核对；出版时间仅确认至2025年，不猜录用日期。",
+      "firstPublished": "2024-05-09",
+      "dateNote": "arXiv v1 Submission history确认UTC首发日；不以正式出版年、最新修订日或本站收录日覆盖。",
+      "collectionMonth": "2026-09",
+      "versionNote": "arXiv 2405.05941v1完整HTML正文/附录；Tables IV–V原始SAPIEN模拟结果；正式PMLR仅核对书目，不混用改版表格",
+      "topics": [
+        "evaluation"
+      ],
+      "tags": [
+        "benchmark-source-audit",
+        "batch-4",
+        "full-source-reading"
+      ],
+      "priority": "deep",
+      "contribution": "以控制辨识和视觉匹配构建真实策略的仿真评测代理，并用MMRV与配对真机实验检验策略相对性能和分布敏感性。",
+      "findings": "主文Table I报告视觉匹配平均MMRV 0.056、Pearson 0.924；附录Drawer汇总不同，须按表定位。榜单仅记录原Table IV/V的模拟成功率，非相关性分数。",
+      "limitations": "模拟不替代全部真实测试；冻结策略的训练预算不同，视觉/控制配置改变结果。真实RT-1 Begin抽屉实验提前中止；部分表格汇总不一致。",
+      "insight": "用于筛选和诊断的模拟指标，需要与真实策略排序和行为变化验证，不能把高仿真成功率等同于可部署或安全。",
+      "readingFocus": "Figure 1指标→SysID和Visual Matching→Tables IV/V按机器人与VM/VA区分→消融及真实试验脚注。",
+      "evidence": "checked",
+      "evidenceNote": "以下笔记仅覆盖所标实际阅读版本；原生HTML表或正式PDF表格图像已核对。作者报告及引用基线，不是本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "实际阅读正文与原表",
+          "url": "https://arxiv.org/html/2405.05941v1"
+        },
+        {
+          "label": "正式发表与书目信息",
+          "url": "https://proceedings.mlr.press/v270/li25c.html"
+        },
+        {
+          "label": "arXiv身份与提交历史",
+          "url": "https://arxiv.org/abs/2405.05941"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2405.05941",
+      "arxiv": "2405.05941",
+      "doi": ""
     }
   ]
 }

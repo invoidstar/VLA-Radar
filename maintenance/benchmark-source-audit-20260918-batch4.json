@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-18",
+  "baseCommit": "c6ad83af947e619f577ec6f6e27cbecce90092b3",
+  "status": "partial-content-backfill",
+  "scope": "第四批补充既有RoboMimic、DexMimicGen和SimplerEnv原始论文与协议；不扩展网站功能，不声称全官网覆盖。",
+  "newPapers": [
+    "p093",
+    "p094",
+    "p095"
+  ],
+  "newTracks": [
+    "robomimic-corl21-lowdim-ph-best",
+    "robomimic-corl21-lowdim-mh-best",
+    "robomimic-corl21-image-ph-best",
+    "robomimic-corl21-image-mh-best",
+    "dexmimicgen-v2-table1-panda-gripper",
+    "dexmimicgen-v2-table1-panda-dex",
+    "dexmimicgen-v2-table1-gr1-dex",
+    "simpler-original-v1-google-vm",
+    "simpler-original-v1-google-va",
+    "simpler-original-v1-widowx-vm"
+  ],
+  "newResults": [
+    "r-robomimic-corl21-lowdim-ph-best-bc",
+    "r-robomimic-corl21-lowdim-ph-best-bc-rnn",
+    "r-robomimic-corl21-lowdim-ph-best-bcq",
+    "r-robomimic-corl21-lowdim-ph-best-cql",
+    "r-robomimic-corl21-lowdim-ph-best-hbc",
+    "r-robomimic-corl21-lowdim-ph-best-iris",
+    "r-robomimic-corl21-lowdim-mh-best-bc",
+    "r-robomimic-corl21-lowdim-mh-best-bc-rnn",
+    "r-robomimic-corl21-lowdim-mh-best-bcq",
+    "r-robomimic-corl21-lowdim-mh-best-cql",
+    "r-robomimic-corl21-lowdim-mh-best-hbc",
+    "r-robomimic-corl21-lowdim-mh-best-iris",
+    "r-robomimic-corl21-image-ph-best-bc",
+    "r-robomimic-corl21-image-ph-best-bc-rnn",
+    "r-robomimic-corl21-image-ph-best-bcq",
+    "r-robomimic-corl21-image-ph-best-cql",
+    "r-robomimic-corl21-image-mh-best-bc",
+    "r-robomimic-corl21-image-mh-best-bc-rnn",
+    "r-robomimic-corl21-image-mh-best-bcq",
+    "r-robomimic-corl21-image-mh-best-cql",
+    "r-dexmimicgen-v2-table1-panda-gripper-source-dp",
+    "r-dexmimicgen-v2-table1-panda-gripper-generated-rnn-gmm",
+    "r-dexmimicgen-v2-table1-panda-gripper-generated-rnn",
+    "r-dexmimicgen-v2-table1-panda-gripper-generated-dp",
+    "r-dexmimicgen-v2-table1-panda-dex-source-dp",
+    "r-dexmimicgen-v2-table1-panda-dex-generated-rnn-gmm",
+    "r-dexmimicgen-v2-table1-panda-dex-generated-rnn",
+    "r-dexmimicgen-v2-table1-panda-dex-generated-dp",
+    "r-dexmimicgen-v2-table1-gr1-dex-source-dp",
+    "r-dexmimicgen-v2-table1-gr1-dex-generated-rnn-gmm",
+    "r-dexmimicgen-v2-table1-gr1-dex-generated-rnn",
+    "r-dexmimicgen-v2-table1-gr1-dex-generated-dp",
+    "r-simpler-original-v1-google-vm-rt1-converged",
+    "r-simpler-original-v1-google-vm-rt1-15pct",
+    "r-simpler-original-v1-google-vm-rt1x",
+    "r-simpler-original-v1-google-vm-rt2x",
+    "r-simpler-original-v1-google-vm-octo-base",
+    "r-simpler-original-v1-google-vm-rt1-begin",
+    "r-simpler-original-v1-google-va-rt1-converged",
+    "r-simpler-original-v1-google-va-rt1-15pct",
+    "r-simpler-original-v1-google-va-rt1x",
+    "r-simpler-original-v1-google-va-rt2x",
+    "r-simpler-original-v1-google-va-octo-base",
+    "r-simpler-original-v1-google-va-rt1-begin",
+    "r-simpler-original-v1-widowx-vm-rt1x",
+    "r-simpler-original-v1-widowx-vm-octo-base",
+    "r-simpler-original-v1-widowx-vm-octo-small"
+  ],
+  "readSources": [
+    {
+      "paperId": "p093",
+      "url": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf",
+      "scope": "完整正式PDF主文，Tables 1/3查看实际页面图像；不声称读取单独补充ZIP。",
+      "formal": "https://proceedings.mlr.press/v164/mandlekar22a.html"
+    },
+    {
+      "paperId": "p094",
+      "url": "https://arxiv.org/html/2410.24185v2",
+      "scope": "v2完整HTML正文和相关附录，Table I逐格原表及II/III/真机边界；IEEE仅核对元数据。",
+      "formal": "https://doi.org/10.1109/ICRA55743.2025.11127809"
+    },
+    {
+      "paperId": "p095",
+      "url": "https://arxiv.org/html/2405.05941v1",
+      "scope": "v1完整HTML正文与附录Table I–XIII；入榜仅IV/V模拟完整成功列。正式PMLR只核对元数据，修订稿原表未全量比较。",
+      "formal": "https://proceedings.mlr.press/v270/li25c.html"
+    }
+  ],
+  "discovery": [
+    {
+      "source": "https://robomimic.github.io/study/",
+      "kind": "official-study",
+      "usedFor": "原始人类示范研究和正式论文入口"
+    },
+    {
+      "source": "https://dexmimicgen.github.io/",
+      "kind": "official-project",
+      "usedFor": "原始双臂生成系统、ICRA身份和论文链接"
+    },
+    {
+      "source": "https://simpler-env.github.io/",
+      "kind": "official-project",
+      "usedFor": "真实策略仿真评测方法及正式论文身份反查"
+    }
+  ],
+  "resolved": [
+    {
+      "method": "RoboMimic study",
+      "paperId": "p093"
+    },
+    {
+      "method": "DexMimicGen",
+      "paperId": "p094"
+    },
+    {
+      "method": "SIMPLER",
+      "paperId": "p095"
+    }
+  ],
+  "boundaries": [
+    "RoboMimic PH/MH与低维/图像独立；原50回合最佳检查点，不与后续DP22次评测/末期平均合并。",
+    "DexMimicGen发布21K不等于每模型预算；Table I仅1000/task，源示范5/10/task；三硬件独立，源与生成预算不平衡。",
+    "SIMPLER VM/VA、Google/WidowX不同；控制频率与物理频率区分；比例仅乘100，不重算舍入平均。",
+    "SIMPLER Table V只提取完整成功，不把grasp或MMRV纳入成功率；中止真实实验未纳入正式结果。",
+    "所有新表的报告论文归属保持，不把所引基线算成新论文或独立复现。",
+    "保留RoboCasa/RoboCasa365及旧首发/版本/结果，不回填未知日期；只校验格式不认证科研事实。"
+  ],
+  "deferred": [
+    {
+      "method": "R3M",
+      "source": "https://proceedings.mlr.press/v205/nair23a.html",
+      "reason": "正式PDF网络读取限制，未取得本轮足够完整可核验正文；仍候选，不以摘要扩写。"
+    },
+    {
+      "method": "MVP",
+      "reason": "未在本轮完成原论文全文/原表核对，后续按实际基准协议推进。"
+    }
+  ],
+  "remaining": "除本批三项以外，既有方法候选和论文待提取队列不改变完成状态。",
+  "searchCheckpoints": "本批是有限原始报告回补；论文与新闻完整周更成功检查点未前移。",
+  "notes": {
+    "sections": {
+      "p093": 9,
+      "p094": 9,
+      "p095": 9
+    },
+    "bodyCharacters": {
+      "p093": 2793,
+      "p094": 2899,
+      "p095": 2843
+    }
+  },
+  "delivery": "本文件记录内容核验范围，不代表远端已推送、合并或部署；发布以真实GitHub执行记录为准。"
+}

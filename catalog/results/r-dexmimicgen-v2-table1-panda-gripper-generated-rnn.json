@@ -1,0 +1,20 @@
+{
+  "id": "r-dexmimicgen-v2-table1-panda-gripper-generated-rnn",
+  "paperId": "p094",
+  "method": "BC-RNN (generated)",
+  "trackId": "dexmimicgen-v2-table1-panda-gripper",
+  "values": {
+    "Piece Assembly": 66,
+    "Threading": 68,
+    "Transport": 57.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://arxiv.org/html/2410.24185v2",
+  "sourceVersion": "arXiv 2410.24185v2",
+  "locator": "Table I; panda-gripper three task rows",
+  "attribution": "reported-baseline",
+  "trainingData": "1000 generated demonstrations/task from 10 source demos",
+  "evaluationNotes": "双Panda平行夹爪；OSC；原始D0；图像策略，3训练种子分别选最大成功率后汇总；§VI-A未在本段重述评测回合数，不由同系列论文猜补；±保留原表统计量。 Source DP和生成DP预算不相同，不作公平同预算排名。 原表±统计量按列保存：{\"Piece Assembly\": 2, \"Threading\": 1.6, \"Transport\": 4.1}；不推导置信区间。",
+  "supersedes": ""
+}

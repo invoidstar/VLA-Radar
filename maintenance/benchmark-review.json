@@ -954,6 +954,87 @@
         "r-rlbench-chained-corl2023-viewshift10-chained"
       ],
       "note": "第三批核对原报告新增10条结果；主任务/预算/检查点与扰动协议拆分。后续引用表保持其原报告归属。"
+    },
+    "p093": {
+      "status": "extracted",
+      "trackIds": [
+        "robomimic-corl21-lowdim-ph-best",
+        "robomimic-corl21-lowdim-mh-best",
+        "robomimic-corl21-image-ph-best",
+        "robomimic-corl21-image-mh-best"
+      ],
+      "resultIds": [
+        "r-robomimic-corl21-lowdim-ph-best-bc",
+        "r-robomimic-corl21-lowdim-ph-best-bc-rnn",
+        "r-robomimic-corl21-lowdim-ph-best-bcq",
+        "r-robomimic-corl21-lowdim-ph-best-cql",
+        "r-robomimic-corl21-lowdim-ph-best-hbc",
+        "r-robomimic-corl21-lowdim-ph-best-iris",
+        "r-robomimic-corl21-lowdim-mh-best-bc",
+        "r-robomimic-corl21-lowdim-mh-best-bc-rnn",
+        "r-robomimic-corl21-lowdim-mh-best-bcq",
+        "r-robomimic-corl21-lowdim-mh-best-cql",
+        "r-robomimic-corl21-lowdim-mh-best-hbc",
+        "r-robomimic-corl21-lowdim-mh-best-iris",
+        "r-robomimic-corl21-image-ph-best-bc",
+        "r-robomimic-corl21-image-ph-best-bc-rnn",
+        "r-robomimic-corl21-image-ph-best-bcq",
+        "r-robomimic-corl21-image-ph-best-cql",
+        "r-robomimic-corl21-image-mh-best-bc",
+        "r-robomimic-corl21-image-mh-best-bc-rnn",
+        "r-robomimic-corl21-image-mh-best-bcq",
+        "r-robomimic-corl21-image-mh-best-cql"
+      ],
+      "note": "本批原报告新增20条、4个协议；来源/示范预算/观察/检查点及缺失值分别保留，不声称已穷尽全文。"
+    },
+    "p094": {
+      "status": "extracted",
+      "trackIds": [
+        "dexmimicgen-v2-table1-panda-gripper",
+        "dexmimicgen-v2-table1-panda-dex",
+        "dexmimicgen-v2-table1-gr1-dex"
+      ],
+      "resultIds": [
+        "r-dexmimicgen-v2-table1-panda-gripper-source-dp",
+        "r-dexmimicgen-v2-table1-panda-gripper-generated-rnn-gmm",
+        "r-dexmimicgen-v2-table1-panda-gripper-generated-rnn",
+        "r-dexmimicgen-v2-table1-panda-gripper-generated-dp",
+        "r-dexmimicgen-v2-table1-panda-dex-source-dp",
+        "r-dexmimicgen-v2-table1-panda-dex-generated-rnn-gmm",
+        "r-dexmimicgen-v2-table1-panda-dex-generated-rnn",
+        "r-dexmimicgen-v2-table1-panda-dex-generated-dp",
+        "r-dexmimicgen-v2-table1-gr1-dex-source-dp",
+        "r-dexmimicgen-v2-table1-gr1-dex-generated-rnn-gmm",
+        "r-dexmimicgen-v2-table1-gr1-dex-generated-rnn",
+        "r-dexmimicgen-v2-table1-gr1-dex-generated-dp"
+      ],
+      "note": "本批原报告新增12条、3个协议；来源/示范预算/观察/检查点及缺失值分别保留，不声称已穷尽全文。"
+    },
+    "p095": {
+      "status": "extracted",
+      "trackIds": [
+        "simpler-original-v1-google-vm",
+        "simpler-original-v1-google-va",
+        "simpler-original-v1-widowx-vm"
+      ],
+      "resultIds": [
+        "r-simpler-original-v1-google-vm-rt1-converged",
+        "r-simpler-original-v1-google-vm-rt1-15pct",
+        "r-simpler-original-v1-google-vm-rt1x",
+        "r-simpler-original-v1-google-vm-rt2x",
+        "r-simpler-original-v1-google-vm-octo-base",
+        "r-simpler-original-v1-google-vm-rt1-begin",
+        "r-simpler-original-v1-google-va-rt1-converged",
+        "r-simpler-original-v1-google-va-rt1-15pct",
+        "r-simpler-original-v1-google-va-rt1x",
+        "r-simpler-original-v1-google-va-rt2x",
+        "r-simpler-original-v1-google-va-octo-base",
+        "r-simpler-original-v1-google-va-rt1-begin",
+        "r-simpler-original-v1-widowx-vm-rt1x",
+        "r-simpler-original-v1-widowx-vm-octo-base",
+        "r-simpler-original-v1-widowx-vm-octo-small"
+      ],
+      "note": "本批原报告新增15条、3个协议；来源/示范预算/观察/检查点及缺失值分别保留，不声称已穷尽全文。"
     }
   }
 }

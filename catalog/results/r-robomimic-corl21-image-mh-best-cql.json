@@ -1,0 +1,21 @@
+{
+  "id": "r-robomimic-corl21-image-mh-best-cql",
+  "paperId": "p093",
+  "method": "CQL",
+  "trackId": "robomimic-corl21-image-mh-best",
+  "values": {
+    "Lift": 11.3,
+    "Can": 0,
+    "Square": null,
+    "Transport": null
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-18",
+  "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf",
+  "sourceVersion": "CoRL 2021 formal PMLR164 PDF",
+  "locator": "Table 3 (PDF p.6)；MH task rows",
+  "attribution": "reported-baseline",
+  "trainingData": "每任务300条多操作者混合质量示范MH；6人×50，不含Tool Hang",
+  "evaluationNotes": "外部+腕部图像及本体状态，不使用物体真值；图像移位随机化；600 epoch×500梯度更新，每20 epoch评价；每检查点50评测回合，3训练种子各选最高成功率再汇总，非末期平均；各任务独立模型。 原作者报告；未报告项为null，0保留；±为Table 1/3报告的3种子标准差。 原表±统计量按列保存：{\"Lift\": 9.3, \"Can\": 0, \"Square\": null, \"Transport\": null}；不推导置信区间。",
+  "supersedes": ""
+}
