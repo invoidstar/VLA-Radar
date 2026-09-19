@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "scripts/browser_leaderboard.py",
+      "before": "dd553948ee6a99c1160b021d2c54a760728fd008282932868817ad41e2686a96",
+      "after": "1d2704f6c0eecf85473e4e3d486f04ed9d7b54a915016e4ba87999d47aa2b592",
+      "old": "methods(page)[-1]=='Act3D'",
+      "new": "methods(page)[-1]=='Act3D（原文引用）'",
+      "count": 2
+    },
+    {
+      "path": "research.js",
+      "before": "320dc5ad035de9f1904c2e442eb2621b0a637b5be30510a6b48d119e6012a60e",
+      "after": "a0446ffc34565c260bdcdd812de98713996c0f9dfa3bebd899b24cda5efaceff",
+      "old": "缺失值始终置后，真实零分保留。",
+      "new": "数值排序时缺失值置后，真实零分保留。",
+      "count": 1
+    }
+  ]
+}
