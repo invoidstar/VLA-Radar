@@ -38,3 +38,7 @@ RoboTwin50×50clean的co-train与每任务独立checkpoint分开；2,500clean与
 ## 第四批原始数据与评测论文
 
 `benchmark-source-audit-20260918-batch4.json`记录RoboMimic、DexMimicGen、SIMPLER三篇实际深读范围。PH/MH、低维/图像、最佳/末期检查点、源/生成示范、机器人硬件及VM/VA均保留独立语义。SIMPLER的Grasp是部分进度，MMRV是整个策略集合的排序质量，不得当作策略完成成功率。数据生成成功率也不能混入策略榜。章节和不同载体图表编号按实际版本标注；已入库的原始研究不再从旧发现队列重复新增。
+
+## 原始真机报告与同表异质指标（第七批）
+
+RT-1/RT-2原作者Google机器人真机实验不能因硬件相似就归入SimplerEnv；新归档组`Google Robot (real)`明确是作者报告集合，不是一个统一公开复现基准，逐轨保持论文、场景、训练及评测差异。PaLM-E的Language Table Table2即使同为百分数，Task1也是验证准确率、Task2/3才是模拟rollout成功；Appendix E.2/Table9修改奖励的结果另对待。失败检测/可供性F1必须独立于操作成功率。重复主表/附表同源只入一次，未报告值为null，未确定种子/检查点不猜。

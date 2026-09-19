@@ -2090,6 +2090,174 @@
         "Average"
       ],
       "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "google-real-rt1-v2-table2",
+      "dataset": "Google Robot (real)",
+      "name": "RT-1原报告 · 四类真机评测",
+      "version": "RT-1 arXiv v2, original EDR real-world evaluation",
+      "tasks": "范围差异见协议",
+      "split": "Seen / unseen / distractors / backgrounds",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "原作者EDR真机，不是SimplerEnv。§6.1称已见200余/未见21；Appendix D.1称744/53并作技能加权，保留口径差异。全文3000余试验非每行回合数；具体种子/每列次数/检查点选择未完整给出。四列不另造总平均。",
+      "trainingRegime": "约130k示范、13 robots、17 months；各基线在同数据重训，结构/预训练不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Seen",
+        "Unseen",
+        "Distractors",
+        "Backgrounds"
+      ],
+      "source": "https://arxiv.org/html/2212.06817v2"
+    },
+    {
+      "id": "google-real-rt1-v2-sim-transfer",
+      "dataset": "Google Robot (real)",
+      "name": "RT-1 · 吸收仿真数据后的真机迁移",
+      "version": "arXiv v2 Table4 / repeated Table9",
+      "tasks": "pick / move-to subset",
+      "split": "Real-object seen skills / sim-object seen skills / sim-object unseen skills",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "全部在EDR真机评测；训练对象是否仅仿真出现不决定评测域。Table4与Appendix Table9同源只记一次；每列回合/种子及检查点未完整公开，非后来的Simpler协议。",
+      "trainingRegime": "Real only vs real + 518k successful simulated trajectories from RL data-generation policy",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "RealObjectsSeenSkill",
+        "SimObjectsSeenSkill",
+        "SimObjectsUnseenSkill"
+      ],
+      "source": "https://arxiv.org/html/2212.06817v2"
+    },
+    {
+      "id": "google-real-rt1-v2-kuka-transfer",
+      "dataset": "Google Robot (real)",
+      "name": "RT-1 · 跨Kuka数据迁移至EDR",
+      "version": "arXiv v2 Table5 / repeated Table10",
+      "tasks": "Classroom subset / bin-picking",
+      "split": "Classroom / bin-picking on EDR",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "评测机器人全部为EDR；附录说明箱内抓取72次并修改EDR外观与箱体。课堂子集为pick/move；缺独立训练种子/统一checkpoint规则。Table5与Table10同源不重计。",
+      "trainingRegime": "EDR demonstrations与209k QT-Opt Kuka成功轨迹；混合时2:1采样，动作映射和pick anything重标注",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Classroom",
+        "BinPicking"
+      ],
+      "source": "https://arxiv.org/html/2212.06817v2"
+    },
+    {
+      "id": "google-real-rt2-v1-generalization",
+      "dataset": "Google Robot (real)",
+      "name": "RT-2原报告 · 真机分布外泛化",
+      "version": "2307.15818 v1 original report HTML",
+      "tasks": "Appendix F instruction sets",
+      "split": "Seen / unseen objects-backgrounds-environments (easy/hard)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "原作者Google机器人真实评测，不是SimplerEnv。各组指令1–5次；6000试验是全研究，非每行样本数；训练种子/误差未完整披露。Average为原表报告，不用舍入分项重算。Table3 PaLI-X平均62与Table5同分项63存在差异。",
+      "trainingRegime": "相同机器人数据，不同web/visual预训练；PaLI-X robot采样50%、PaLM-E66%；R3M/VC1解冻加RT1式头",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Seen",
+        "ObjectsEasy",
+        "ObjectsHard",
+        "BackgroundEasy",
+        "BackgroundHard",
+        "EnvironmentEasy",
+        "EnvironmentHard",
+        "UnseenAverage"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/2307.15818"
+    },
+    {
+      "id": "google-real-rt2-v1-emergent",
+      "dataset": "Google Robot (real)",
+      "name": "RT-2原报告 · 语义指令执行",
+      "version": "2307.15818 v1, Table4 group summary",
+      "tasks": "Appendix F.2 listed instructions",
+      "split": "Symbol understanding / reasoning / person recognition",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每个列出的语义指令5次执行，不是5训练种子。取Table4明确给出的分组及总体平均，不重复生成分项证据或重算平均。机器人数据中已有动作技能，语义组合新颖不等于新运动技能。",
+      "trainingRegime": "与同报告主模型/基线配方一致；预训练和模型容量不同，只作paper-table",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Symbols",
+        "Reasoning",
+        "PersonRecognition",
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/2307.15818"
+    },
+    {
+      "id": "language-table-palme-icml23-task1-accuracy",
+      "dataset": "Language Table",
+      "name": "PaLM-E · Task1验证准确率（非执行成功）",
+      "version": "ICML2023 formal PDF Table2 + Appendix E.2",
+      "tasks": "Task1",
+      "split": "Task1; 10 / 20 / 40 demos",
+      "metric": "Validation accuracy",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Task1为一步任务，Appendix E.2规定测试集验证准确率，不是80条机器人rollout。只保留Table2给出的单元格；通用模型仅原表末列有值，不复制到缺失预算。验证集数、训练种子与checkpoint选择未完整说明。",
+      "trainingRegime": "不同预训练/混合/冻结/目标微调；目标微调额外9000步；按行记录",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Demos10",
+        "Demos20",
+        "Demos40"
+      ],
+      "source": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf"
+    },
+    {
+      "id": "language-table-palme-icml23-task23-success",
+      "dataset": "Language Table",
+      "name": "PaLM-E · Task2/3模拟执行（主表评分）",
+      "version": "ICML2023 formal PDF Table2 original scoring",
+      "tasks": "Task2 / Task3",
+      "split": "Task2 10/20/40; Task3 10/20/80 demonstrations",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "任务2/3各80条模拟rollout，以自动奖励判定，高层每4秒重新观察并指令低层策略。Table9任务3奖励调整后的77.0不混入主表56.3；没有统一总平均。种子/检查点未完整公开，数值保留原文舍入不反推回合。",
+      "trainingRegime": "预训练/冻结/混合和目标微调不同；目标微调另9000步，非同预算公平排名",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Task2D10",
+        "Task2D20",
+        "Task2D40",
+        "Task3D10",
+        "Task3D20",
+        "Task3D80"
+      ],
+      "source": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf"
+    },
+    {
+      "id": "google-real-palme-icml23-perception-f1",
+      "dataset": "Google Robot (real)",
+      "name": "PaLM-E · 移动操作感知F1（非控制成功）",
+      "version": "ICML2023 formal PDF Table4",
+      "tasks": "Failure detection / affordance",
+      "split": "out-of-distribution mobile-manipulation scenes",
+      "metric": "F1 score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table4评估失败检测和可供性分类F1，不是闭环操作成功率，也不是SimplerEnv。不同任务可缺值；不乘100、不与RT-1/RT-2百分比相混。未完整披露本表测试样本量/独立种子和checkpoint规则。",
+      "trainingRegime": "移动机器人规划序列2912；单机器人/完整混合、预训练与冻结设置按行标；baseline训练目标不同",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "FailureDetection",
+        "Affordance"
+      ],
+      "source": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf"
     }
   ]
 }

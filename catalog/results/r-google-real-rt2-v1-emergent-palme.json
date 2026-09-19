@@ -1,0 +1,21 @@
+{
+  "id": "r-google-real-rt2-v1-emergent-palme",
+  "paperId": "p058",
+  "method": "RT-2-PaLM-E-12B",
+  "trackId": "google-real-rt2-v1-emergent",
+  "values": {
+    "Symbols": 36,
+    "Reasoning": 43,
+    "PersonRecognition": 43,
+    "Average": 40
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://ar5iv.labs.arxiv.org/html/2307.15818",
+  "sourceVersion": "2307.15818v1 HTML render",
+  "locator": "Appendix H.2 Table4，分组Average列；F.2",
+  "attribution": "author-reported",
+  "trainingData": "与同报告主模型/基线配方一致；预训练和模型容量不同，只作paper-table",
+  "evaluationNotes": "每个列出的语义指令5次执行，不是5训练种子。取Table4明确给出的分组及总体平均，不重复生成分项证据或重算平均。机器人数据中已有动作技能，语义组合新颖不等于新运动技能。",
+  "supersedes": ""
+}

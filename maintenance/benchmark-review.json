@@ -28,10 +28,24 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§III-B、§III-F。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p052": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "google-real-rt1-v2-table2",
+        "google-real-rt1-v2-sim-transfer",
+        "google-real-rt1-v2-kuka-transfer"
+      ],
+      "resultIds": [
+        "r-google-real-rt1-v2-table2-gato",
+        "r-google-real-rt1-v2-table2-bcz",
+        "r-google-real-rt1-v2-table2-bcz-xl",
+        "r-google-real-rt1-v2-table2-rt1",
+        "r-google-real-rt1-v2-sim-transfer-real",
+        "r-google-real-rt1-v2-sim-transfer-real-sim",
+        "r-google-real-rt1-v2-kuka-transfer-mixed",
+        "r-google-real-rt1-v2-kuka-transfer-edr",
+        "r-google-real-rt1-v2-kuka-transfer-kuka"
+      ],
+      "note": "2026-09-19原文回补9条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
     },
     "p047": {
       "status": "deferred",
@@ -149,10 +163,24 @@
       "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§3–4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
     },
     "p058": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 6。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "google-real-rt2-v1-generalization",
+        "google-real-rt2-v1-emergent"
+      ],
+      "resultIds": [
+        "r-google-real-rt2-v1-generalization-r3m",
+        "r-google-real-rt2-v1-generalization-vc1",
+        "r-google-real-rt2-v1-generalization-rt1",
+        "r-google-real-rt2-v1-generalization-moo",
+        "r-google-real-rt2-v1-generalization-palix",
+        "r-google-real-rt2-v1-generalization-palme",
+        "r-google-real-rt2-v1-emergent-vc1",
+        "r-google-real-rt2-v1-emergent-rt1",
+        "r-google-real-rt2-v1-emergent-palix",
+        "r-google-real-rt2-v1-emergent-palme"
+      ],
+      "note": "2026-09-19原文回补10条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
     },
     "p002": {
       "status": "deferred",
@@ -657,10 +685,33 @@
       "note": "完整正文及原表尚不可读；不得从摘要或作者宣传稿推导精确分数与可比协议。"
     },
     "p054": {
-      "status": "deferred",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 4。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "trackIds": [
+        "language-table-palme-icml23-task1-accuracy",
+        "language-table-palme-icml23-task23-success",
+        "google-real-palme-icml23-perception-f1"
+      ],
+      "resultIds": [
+        "r-language-table-palme-icml23-task1-accuracy-scratch",
+        "r-language-table-palme-icml23-task23-success-scratch",
+        "r-language-table-palme-icml23-task1-accuracy-frozen",
+        "r-language-table-palme-icml23-task23-success-frozen",
+        "r-language-table-palme-icml23-task1-accuracy-unfrozen",
+        "r-language-table-palme-icml23-task23-success-unfrozen",
+        "r-language-table-palme-icml23-task1-accuracy-finetuned",
+        "r-language-table-palme-icml23-task23-success-finetuned",
+        "r-language-table-palme-icml23-task1-accuracy-84b",
+        "r-language-table-palme-icml23-task23-success-84b",
+        "r-google-real-palme-icml23-perception-f1-pali",
+        "r-google-real-palme-icml23-perception-f1-clip-ft",
+        "r-google-real-palme-icml23-perception-f1-clip-hindsight",
+        "r-google-real-palme-icml23-perception-f1-qtopt",
+        "r-google-real-palme-icml23-perception-f1-scratch",
+        "r-google-real-palme-icml23-perception-f1-single-frozen",
+        "r-google-real-palme-icml23-perception-f1-full-frozen",
+        "r-google-real-palme-icml23-perception-f1-full-unfrozen"
+      ],
+      "note": "2026-09-19原文回补18条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
     },
     "p056": {
       "status": "extracted",
