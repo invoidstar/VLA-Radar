@@ -38,7 +38,7 @@ try:
   yes('paper follow stores only follow state',pid in json.loads(page.evaluate('localStorage.getItem("vla-radar.follows.v1")'))['papers'])
   page.locator('.nav-link[data-view="radar"]').click();page.wait_for_selector('.radar-hero');expect(page.locator('#radar-paper-count')).not_to_have_text('0')
   yes('My Radar shows related followed paper',page.locator(f'#radar-paper-list a[href*="paper={pid}"]').count()==1)
-  page.locator('.radar-manager summary').click();page.locator('[data-manager-tab="datasets"]').click();page.locator('[data-follow-value="LIBERO"]').click();expect(page.locator('[data-follow-value="LIBERO"]')).to_have_attribute('aria-pressed','true')
+  page.locator('.radar-manager summary').click();page.locator('[data-manager-tab="datasets"]').click();page.locator('#radar-manage-query').fill('LIBERO');page.locator('[data-follow-value="LIBERO"]').click();expect(page.locator('[data-follow-value="LIBERO"]')).to_have_attribute('aria-pressed','true');page.locator('#radar-manage-query').fill('')
   page.locator('[data-manager-tab="topics"]').click();topic=lib['topics'][0]['id'];page.locator(f'[data-follow-value="{topic}"]').click();page.locator('[data-manager-tab="categories"]').click();cat=news['category'];page.locator(f'[data-follow-value="{cat}"]').click()
   yes('four follow types persist',all(json.loads(page.evaluate('localStorage.getItem("vla-radar.follows.v1")'))[k] for k in ['papers','topics','datasets','categories']))
   yes('no note/result snapshots promoted to new',page.locator('#radar-feed-scope').inner_text().find('快照')>=0)
