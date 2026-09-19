@@ -1,0 +1,18 @@
+{
+  "id": "r-kitchen-r3m-snapshot-aggregate-r3m",
+  "paperId": "p096",
+  "method": "R3M",
+  "trackId": "kitchen-r3m-snapshot-aggregate",
+  "values": {
+    "Average": 53.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+  "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+  "locator": "Table 1; §4.1–4.4; Appendix B",
+  "attribution": "author-reported",
+  "trainingData": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+  "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表53.1±2.7%；移除组件为相应预训练变体，不是推理时删文本。",
+  "supersedes": ""
+}

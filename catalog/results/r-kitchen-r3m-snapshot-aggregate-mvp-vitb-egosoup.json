@@ -1,0 +1,18 @@
+{
+  "id": "r-kitchen-r3m-snapshot-aggregate-mvp-vitb-egosoup",
+  "paperId": "p096",
+  "method": "MVP (ViT-B / Ego-Soup; R3M evaluation)",
+  "trackId": "kitchen-r3m-snapshot-aggregate",
+  "values": {
+    "Average": 27.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+  "sourceVersion": "arXiv 2203.12601 ar5iv full-text snapshot checked 2026-09-19; renderer has no explicit v marker; v3 metadata tracked separately",
+  "locator": "Table 2, Franka column; §4.4; cited reference 70",
+  "attribution": "reported-baseline",
+  "trainingData": "ViT-B masked autoencoder on Ego-Soup, not early ViT-S / HOI MVP; same downstream aggregate BC protocol",
+  "evaluationNotes": "作者原表汇总，不是本站复现。原表±/括号误差照录，不擅自改称三个训练种子的SD；Figure 4标准误表述不自动替代每个表项的统计定义。R3M在Tables 1/2的同一值只入库一次。 原表27.0 (2.6)。此行为原文引用后续MVP配置；不绑定到p097原始报告，不计为独立新论文证据。",
+  "supersedes": ""
+}

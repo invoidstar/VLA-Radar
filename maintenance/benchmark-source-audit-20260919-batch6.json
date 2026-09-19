@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19",
+  "baseCommit": "b0234d1842393357a8c1080b728f951832fe76da",
+  "status": "partial-content-backfill",
+  "scope": "第六批：R3M、MVP早期报告、Meta-World原始工作/2021修订稿。只扩文献与既有基准原表，不增加功能或空榜。",
+  "newPapers": [
+    "p096",
+    "p097",
+    "p098"
+  ],
+  "newTracks": [
+    "kitchen-r3m-snapshot-aggregate",
+    "metaworld-r3m-snapshot-aggregate",
+    "metaworld-v2-original-mt10",
+    "metaworld-v2-original-mt50",
+    "metaworld-v2-original-ml10-meta-train",
+    "metaworld-v2-original-ml10-meta-test",
+    "metaworld-v2-original-ml45-meta-train",
+    "metaworld-v2-original-ml45-meta-test"
+  ],
+  "newResults": [
+    "r-kitchen-r3m-snapshot-aggregate-r3m",
+    "r-metaworld-r3m-snapshot-aggregate-r3m",
+    "r-kitchen-r3m-snapshot-aggregate-minus-aug",
+    "r-metaworld-r3m-snapshot-aggregate-minus-aug",
+    "r-kitchen-r3m-snapshot-aggregate-minus-l1",
+    "r-metaworld-r3m-snapshot-aggregate-minus-l1",
+    "r-kitchen-r3m-snapshot-aggregate-minus-language",
+    "r-metaworld-r3m-snapshot-aggregate-minus-language",
+    "r-kitchen-r3m-snapshot-aggregate-moco-ego4d",
+    "r-kitchen-r3m-snapshot-aggregate-mvp-vitb-egosoup",
+    "r-metaworld-v2-original-mt10-ppo",
+    "r-metaworld-v2-original-mt10-trpo",
+    "r-metaworld-v2-original-mt10-task-embeddings",
+    "r-metaworld-v2-original-mt10-sac",
+    "r-metaworld-v2-original-mt50-ppo",
+    "r-metaworld-v2-original-mt50-trpo",
+    "r-metaworld-v2-original-mt50-task-embeddings",
+    "r-metaworld-v2-original-mt50-sac",
+    "r-metaworld-v2-original-ml10-meta-train-maml",
+    "r-metaworld-v2-original-ml10-meta-train-rl2",
+    "r-metaworld-v2-original-ml10-meta-train-pearl",
+    "r-metaworld-v2-original-ml10-meta-test-maml",
+    "r-metaworld-v2-original-ml10-meta-test-rl2",
+    "r-metaworld-v2-original-ml10-meta-test-pearl",
+    "r-metaworld-v2-original-ml45-meta-train-maml",
+    "r-metaworld-v2-original-ml45-meta-train-rl2",
+    "r-metaworld-v2-original-ml45-meta-train-pearl",
+    "r-metaworld-v2-original-ml45-meta-test-maml",
+    "r-metaworld-v2-original-ml45-meta-test-rl2",
+    "r-metaworld-v2-original-ml45-meta-test-pearl"
+  ],
+  "discovery": [
+    {
+      "source": "https://robot-colosseum.github.io/",
+      "usedFor": "历史候选中的R3M/MVP基线反查原文；不将该站成绩换paperId。"
+    },
+    {
+      "source": "https://proceedings.mlr.press/v205/nair23a.html",
+      "usedFor": "R3M正式原论文作者、会议和出版年份；不从摘要补造结果。"
+    },
+    {
+      "source": "https://tetexiao.com/projects/mvp",
+      "usedFor": "原始MVP技术报告身份，与后续同名配置分开。"
+    },
+    {
+      "source": "https://meta-world.github.io/",
+      "usedFor": "原始基准和作者原文入口；v2与旧会议稿明确区分。"
+    }
+  ],
+  "readSources": [
+    {
+      "paperId": "p096",
+      "url": "https://ar5iv.labs.arxiv.org/html/2203.12601",
+      "scope": "完整原文§1–5及Appendices A–C，Tables1–3原生表；渲染页未明示v号，不以v3元数据冒充逐版PDF对齐。正式PDF/各arXivPDF超过web体积限制，未成功PDF视觉交叉核验。"
+    },
+    {
+      "paperId": "p097",
+      "url": "https://ar5iv.labs.arxiv.org/html/2203.06173",
+      "scope": "v1完整§1–7及Figures1–14说明，PDF文本辅助，PDF截图失败；曲线不估精确值。"
+    },
+    {
+      "paperId": "p098",
+      "url": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+      "scope": "v2§1–6、Appendices A–D、E公共奖励/成功定义，原生Table1与可解析PDF文字交叉核对。v2PDF截图失败；会议版p6–8截图仅用于区分旧稿，不冒充v2表验证。"
+    }
+  ],
+  "boundaries": [
+    "MVP原报告p097为ViT-S/HOI/PPO；R3M Table2的MVP是ViT-B/Ego-Soup，仍归属p096所读报告，不绑成原报告成绩。",
+    "R3M是冻结视觉表示+低数据BC；跨视角/预算/最佳检查点平均不当固定数据预算协议；Tables1/2重复R3M仅一行。",
+    "Meta-World v2 Table1为10种子平均最大成功率；状态观察、元训练/元测试、版本和算法预算分别保留；表注与数据冲突明确提示，不挑高值。",
+    "MVP只有曲线等不足以复核的精确数，结果deferred；不为PixMC新增空数据集，不将其他论文MVP基线改绑。",
+    "正式PMLR出版年份和arXiv首次日期独立；Meta-World正式7作者表与v2增补作者不混写。",
+    "所有95篇旧论文、309条旧结果、6条新闻、87个旧协议/顺序/首发锁与完整检索检查点保持；不更改CAUTION或网站架构。"
+  ],
+  "deferred": [
+    {
+      "method": "MVP (original PixMC report)",
+      "paperId": "p097",
+      "status": "exact-numeric-results-pending",
+      "reason": "全文已完成深读；缺少完整可核验的精确原始成绩，不从曲线像素估分。"
+    },
+    {
+      "method": "RLBench original paper",
+      "reason": "本批未完成其全文/原表深读，保留已知候选，不称第六批全部任务完成。"
+    }
+  ],
+  "remaining": "后续继续RLBench、已收录RT系列/Octo/RoboFlamingo等原表；本批新增3篇，其中2篇有明确结果，1篇诚实保留结果待核验。",
+  "searchCheckpoints": "没有推进论文或新闻完整周更成功检查点；本批为定向内容回补。",
+  "notes": {
+    "sections": {
+      "p096": 9,
+      "p097": 9,
+      "p098": 9
+    },
+    "bodyCharacters": {
+      "p096": 2806,
+      "p097": 2775,
+      "p098": 2770
+    }
+  },
+  "counts": {
+    "papers": 98,
+    "tracks": 95,
+    "results": 339,
+    "families": 15,
+    "reportingPaperIds": 40,
+    "newPaperCount": 3,
+    "newResultCount": 30
+  }
+}

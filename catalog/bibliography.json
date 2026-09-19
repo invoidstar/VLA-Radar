@@ -1437,6 +1437,150 @@
         }
       ],
       "verifiedAt": "2026-09-19"
+    },
+    "p096": {
+      "item": {
+        "type": "paper-conference",
+        "title": "R3M: A Universal Visual Representation for Robot Manipulation",
+        "author": [
+          {
+            "given": "Suraj",
+            "family": "Nair"
+          },
+          {
+            "given": "Aravind",
+            "family": "Rajeswaran"
+          },
+          {
+            "given": "Vikash",
+            "family": "Kumar"
+          },
+          {
+            "given": "Chelsea",
+            "family": "Finn"
+          },
+          {
+            "given": "Abhinav",
+            "family": "Gupta"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2023
+            ]
+          ]
+        },
+        "container-title": "Proceedings of The 6th Conference on Robot Learning",
+        "URL": "https://proceedings.mlr.press/v205/nair23a.html",
+        "volume": "205",
+        "page": "892-909",
+        "publisher": "PMLR"
+      },
+      "sources": [
+        {
+          "label": "核对作者/出版年份，正式作者表与阅读稿版本分开",
+          "url": "https://proceedings.mlr.press/v205/nair23a.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p097": {
+      "item": {
+        "type": "article",
+        "title": "Masked Visual Pre-training for Motor Control",
+        "author": [
+          {
+            "given": "Tete",
+            "family": "Xiao"
+          },
+          {
+            "given": "Ilija",
+            "family": "Radosavovic"
+          },
+          {
+            "given": "Trevor",
+            "family": "Darrell"
+          },
+          {
+            "given": "Jitendra",
+            "family": "Malik"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              11
+            ]
+          ]
+        },
+        "container-title": "arXiv",
+        "URL": "https://arxiv.org/abs/2203.06173"
+      },
+      "sources": [
+        {
+          "label": "核对作者/出版年份，正式作者表与阅读稿版本分开",
+          "url": "https://arxiv.org/abs/2203.06173"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
+    },
+    "p098": {
+      "item": {
+        "type": "paper-conference",
+        "title": "Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning",
+        "author": [
+          {
+            "given": "Tianhe",
+            "family": "Yu"
+          },
+          {
+            "given": "Deirdre",
+            "family": "Quillen"
+          },
+          {
+            "given": "Zhanpeng",
+            "family": "He"
+          },
+          {
+            "given": "Ryan",
+            "family": "Julian"
+          },
+          {
+            "given": "Karol",
+            "family": "Hausman"
+          },
+          {
+            "given": "Chelsea",
+            "family": "Finn"
+          },
+          {
+            "given": "Sergey",
+            "family": "Levine"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": "Proceedings of the Conference on Robot Learning",
+        "URL": "https://proceedings.mlr.press/v100/yu20a.html",
+        "volume": "100",
+        "page": "1094-1100",
+        "publisher": "PMLR"
+      },
+      "sources": [
+        {
+          "label": "核对作者/出版年份，正式作者表与阅读稿版本分开",
+          "url": "https://proceedings.mlr.press/v100/yu20a.html"
+        }
+      ],
+      "verifiedAt": "2026-09-19"
     }
   }
 }

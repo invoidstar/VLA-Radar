@@ -1946,6 +1946,150 @@
         "Long"
       ],
       "source": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    {
+      "id": "kitchen-r3m-snapshot-aggregate",
+      "dataset": "Franka Kitchen",
+      "name": "R3M原报告 · Kitchen五技能 · 跨示范/视角聚合",
+      "version": "R3M modified five-skill Kitchen; not D4RL long-horizon relay",
+      "tasks": "5",
+      "split": "single-skill tasks; kitchen position varied; aggregate over demo sizes and views",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "5任务；每任务3个独立视角配置、5/10/25条示范和3个BC训练种子分别运行，再按原表汇总；单视角输入不是3视图同时输入。BC 20000步，每1000步在线评测取最佳。保留跨预算/视角聚合，不与固定demo数或最后检查点直接排名；原表未在此列给逐任务值或完整在线评测回合数。 Kitchen桌台位置变化，任务为独立技能，非多步任务链。",
+      "trainingRegime": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601"
+    },
+    {
+      "id": "metaworld-r3m-snapshot-aggregate",
+      "dataset": "Meta-World",
+      "name": "R3M原报告 · Meta-World V2五任务 · 跨示范/视角聚合",
+      "version": "Meta-World V2 five-task subset used by R3M",
+      "tasks": "5",
+      "split": "assembly / bin picking / button press / drawer open / hammer",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "5任务；每任务3个独立视角配置、5/10/25条示范和3个BC训练种子分别运行，再按原表汇总；单视角输入不是3视图同时输入。BC 20000步，每1000步在线评测取最佳。保留跨预算/视角聚合，不与固定demo数或最后检查点直接排名；原表未在此列给逐任务值或完整在线评测回合数。 使用启发式专家示范，非MT10/MT50在线RL。",
+      "trainingRegime": "Ego4D视觉预训练；下游冻结特征+本体感觉、MLP行为克隆；5/10/25 demos/task aggregated，3 seeds/config；具体预训练配置逐行区别。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/2203.12601"
+    },
+    {
+      "id": "metaworld-v2-original-mt10",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · MT10 · 状态型多任务RL",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "10",
+      "split": "training skills only; 500 sampled task configurations; task ID/goal available",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1最大成功率跨任务与10种子汇总；39维状态和任务编码，4维末端/夹爪动作，非像素VLA。每种环境50个预采样配置；MT评测已见技能，不是5类新技能泛化；不同算法预算按原附录保留，paper-table不排名。",
+      "trainingRegime": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs4000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-mt50",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · MT50 · 状态型多任务RL",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "50",
+      "split": "training skills only; 2500 sampled task configurations; task ID/goal available",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 1最大成功率跨任务与10种子汇总；39维状态和任务编码，4维末端/夹爪动作，非像素VLA。每种环境50个预采样配置；MT评测已见技能，不是5类新技能泛化；不同算法预算按原附录保留，paper-table不排名。",
+      "trainingRegime": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml10-meta-train",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML10 · 元训练",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "10",
+      "split": "10 meta-training skill families / 5 held-out meta-test families; meta-train",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml10-meta-test",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML10 · 留出技能测试",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "5",
+      "split": "10 meta-training skill families / 5 held-out meta-test families; meta-test",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 10 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml45-meta-train",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML45 · 元训练",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "45",
+      "split": "45 meta-training skill families / 5 held-out meta-test families; meta-train",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
+    },
+    {
+      "id": "metaworld-v2-original-ml45-meta-test",
+      "dataset": "Meta-World",
+      "name": "Meta-World v2原表 · ML45 · 留出技能测试",
+      "version": "arXiv v2 2021 benchmark report; no asserted modern package version",
+      "tasks": "5",
+      "split": "45 meta-training skill families / 5 held-out meta-test families; meta-test",
+      "metric": "Task success rate (source-defined aggregation)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "39维状态型RL；任务ID不可见，依赖新交互进行梯度、递归状态或任务潜变量适应。Table 1跨任务/10种子最大成功率汇总；训练集和留出技能分开，不自造train+test总平均，不称零样本VLA。",
+      "trainingRegime": "Meta-RL, no demonstrations; Appendix D: MAML 20 rollouts/task, RL² 10 rollouts/task, horizon500; PEARL probabilistic context with own sampling/update schedule. Not a common adaptation or compute budget.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ar5iv.labs.arxiv.org/html/1910.10897"
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "id": "r-metaworld-v2-original-mt50-ppo",
+  "paperId": "p098",
+  "method": "Multi-task PPO",
+  "trackId": "metaworld-v2-original-mt50",
+  "values": {
+    "Average": 35.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://ar5iv.labs.arxiv.org/html/1910.10897",
+  "sourceVersion": "arXiv 1910.10897v2 (2021-06-14); native ar5iv Table 1 cross-checked with v2 PDF text, not CoRL 2019 table",
+  "locator": "Table 1 upper half, MT50 column; §4.3 and Appendix D.3–D.6",
+  "attribution": "reported-baseline",
+  "trainingData": "Online state-based RL, no demonstration budget; Appendix D separate per-method budgets: PPO/TRPO epochs10000, SAC epochs500, TE epochs2000; rollout horizon500. These are algorithm-defined epochs, not equal interaction budgets.",
+  "evaluationNotes": "原文正文/表注关于MT50及ML10/ML45最佳方法的说法与表内数值不一致，锁定Table 1数字并保留冲突。指标为原文10种子的average maximum success rate，不改成最终检查点；无误差栏则不补置信区间。不得与2019会议稿、图像BC或后续环境版本混排。",
+  "supersedes": ""
+}
