@@ -1,0 +1,18 @@
+{
+  "id": "r-vlaflow-v2-libero-lpi",
+  "paperId": "p002",
+  "method": "MindLPI",
+  "trackId": "vlaflow-v2-libero",
+  "values": {
+    "Average": 97.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://github.com/MindVLA-Team/VLAFlow",
+  "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+  "locator": "Internal paradigm table",
+  "attribution": "author-reported",
+  "trainingData": "官方项目表格；内部训练范式对照。",
+  "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+  "supersedes": ""
+}

@@ -1,0 +1,18 @@
+{
+  "id": "r-vlaflow-v2-lplus-pi-frozen",
+  "paperId": "p002",
+  "method": "MindPI (Frozen VLM)",
+  "trackId": "vlaflow-v2-libero-plus",
+  "values": {
+    "Total": 74.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://github.com/MindVLA-Team/VLAFlow",
+  "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+  "locator": "Internal paradigm table",
+  "attribution": "author-reported",
+  "trainingData": "官方项目表格；内部训练范式对照。",
+  "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+  "supersedes": ""
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-19",
+  "batch": "benchmark-batch14",
+  "baseCommit": "f102ab13eba5a28b4bf98aff01c7e94d49e5c04d",
+  "papers": [
+    {
+      "paperId": "p012",
+      "results": 8,
+      "trackIds": [
+        "ocvlapp-v1-maniskill2-ablation",
+        "ocvlapp-v1-real-dita-view",
+        "ocvlapp-v1-real-qwen-view"
+      ]
+    },
+    {
+      "paperId": "p014",
+      "results": 5,
+      "trackIds": [
+        "temporalflow-v1-libero-main",
+        "temporalflow-v1-robotwin12-ablation"
+      ]
+    },
+    {
+      "paperId": "p025",
+      "results": 8,
+      "trackIds": [
+        "vtwam-v1-real-main",
+        "vtwam-v1-ablation"
+      ]
+    },
+    {
+      "paperId": "p002",
+      "results": 28,
+      "trackIds": [
+        "vlaflow-v2-libero",
+        "vlaflow-v2-libero-plus",
+        "vlaflow-v2-simpler-widowx",
+        "vlaflow-v2-simpler-rt1"
+      ]
+    },
+    {
+      "paperId": "p015",
+      "results": 6,
+      "trackIds": [
+        "onevomemory-v1-libero-long",
+        "onevomemory-v1-rmbench"
+      ]
+    }
+  ],
+  "countsBefore": {
+    "papers": 98,
+    "results": 720,
+    "tracks": 194,
+    "extracted": 62,
+    "deferred": 34,
+    "notApplicable": 2,
+    "needsReview": 19
+  },
+  "countsAfterExpected": {
+    "papers": 98,
+    "results": 775,
+    "tracks": 207,
+    "extracted": 67,
+    "deferred": 29,
+    "notApplicable": 2,
+    "needsReview": 19
+  },
+  "boundaries": [
+    "OC-VLA++保留Qwen固定视角60.0→59.2的退化，最大位移与固定视角同列不同条件",
+    "TemporalFlow RoboTwin仅12任务子集，LIBERO只存当前可精确核验Long与Average",
+    "VT-WAM六任务综合值包含部分完成得分，不冒充全二值成功率；M2擦瓶40低于Fast-WAM55",
+    "VLAFlow按LIBERO/LIBERO-Plus/SimplerEnv分轨；Full PT在RT-1负迁移保留",
+    "OnEvoMemory在线阶段使用额外rollout；RMBench的0为真实报告而非缺失"
+  ],
+  "sourcePolicy": "Primary/official source values only; no plot-pixel estimation or reverse-engineered baselines."
+}

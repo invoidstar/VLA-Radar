@@ -4189,6 +4189,247 @@
         "Success"
       ],
       "source": "https://arxiv.org/pdf/2606.18247v1"
+    },
+    {
+      "id": "ocvlapp-v1-maniskill2-ablation",
+      "dataset": "ManiSkill2",
+      "name": "OC-VLA++ v1 · Table 3 · 同架构视角监督消融",
+      "version": "arXiv 2608.01066v1",
+      "tasks": "5 task categories",
+      "split": "multi-view simulation",
+      "metric": "Average task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "ManiSkill2五类任务论文内部消融；同Dita架构。只比较OC-VLA及监督变体。",
+      "trainingRegime": "同文Dita设置；paired-view/等变监督按行变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/pdf/2608.01066v1"
+    },
+    {
+      "id": "ocvlapp-v1-real-dita-view",
+      "dataset": "OC-VLA++ real robot",
+      "name": "OC-VLA++ v1 · Dita · 固定/最大相机位移",
+      "version": "arXiv 2608.01066v1",
+      "tasks": "real Franka tasks",
+      "split": "fixed camera vs largest tested displacement",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "真实Franka；每任务10条示范，每任务每相机设置20次rollout；最大位移约30.48cm/23.40deg。",
+      "trainingRegime": "Dita架构内部OC-VLA与OC-VLA++对照。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Fixed view",
+        "Largest displacement"
+      ],
+      "source": "https://arxiv.org/pdf/2608.01066v1"
+    },
+    {
+      "id": "ocvlapp-v1-real-qwen-view",
+      "dataset": "OC-VLA++ real robot",
+      "name": "OC-VLA++ v1 · Qwen3-VL flow · 固定/最大相机位移",
+      "version": "arXiv 2608.01066v1",
+      "tasks": "real Franka tasks",
+      "split": "fixed camera vs largest tested displacement",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "真实Franka；每任务10条示范，每任务每相机设置20次rollout。与Dita架构分轨。",
+      "trainingRegime": "Qwen3-VL-2B + flow action expert；同架构内部比较。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Fixed view",
+        "Largest displacement"
+      ],
+      "source": "https://arxiv.org/pdf/2608.01066v1"
+    },
+    {
+      "id": "temporalflow-v1-libero-main",
+      "dataset": "LIBERO",
+      "name": "TemporalFlow-VLA v1 · 三种子主结果",
+      "version": "arXiv 2608.26821v1",
+      "tasks": "40 tasks / four suites",
+      "split": "3 seeds; 500 rollouts per suite per seed",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "四套件联合训练30k步；这里只存摘要/正文明确的Long与总体平均，不补其余套件精确值。",
+      "trainingRegime": "同文TemporalFlow-VLA主模型；3 seeds (0,2,5)。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.26821"
+    },
+    {
+      "id": "temporalflow-v1-robotwin12-ablation",
+      "dataset": "RoboTwin",
+      "name": "TemporalFlow-VLA v1 · 12任务时序接口消融",
+      "version": "arXiv 2608.26821v1",
+      "tasks": "12 tasks",
+      "split": "clean / randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "12任务子集；每任务50 clean+500 random示范，clean/random各100次评测；不是完整50任务榜。",
+      "trainingRegime": "同文π0.5基础与历史接口消融。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random"
+      ],
+      "source": "https://arxiv.org/abs/2608.26821"
+    },
+    {
+      "id": "vtwam-v1-real-main",
+      "dataset": "VT-WAM real robot",
+      "name": "VT-WAM v1 · 六任务综合报告",
+      "version": "arXiv 2607.02503v1",
+      "tasks": "6 contact-rich tasks",
+      "split": "20 trials per method-task",
+      "metric": "Paper mixed completion score",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "表面三任务允许0/0.5/1部分完成，插入三任务二值；论文称success rate，但本站标为混合完成分数。",
+      "trainingRegime": "每任务100人工示范、逐任务训练；模型预训练不同。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://vt-wam.github.io/"
+    },
+    {
+      "id": "vtwam-v1-ablation",
+      "dataset": "VT-WAM real robot",
+      "name": "VT-WAM v1 · Table III · 触觉时序与AVTAG消融",
+      "version": "arXiv 2607.02503v1",
+      "tasks": "Wipe Vase / Insert Tube",
+      "split": "same demonstrations",
+      "metric": "Task score / success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Wipe Vase允许部分完成得分；Insert Tube为二值SR。两列口径不同，仅作为论文内部消融并列显示。",
+      "trainingRegime": "所有变体从Fast-WAM加不同触觉建模/注意力设计。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Wipe Vase score",
+        "Insert Tube SR"
+      ],
+      "source": "https://arxiv.org/abs/2607.02503"
+    },
+    {
+      "id": "vlaflow-v2-libero",
+      "dataset": "LIBERO",
+      "name": "VLAFlow v2 · 内部训练范式 · LIBERO",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "40 tasks / four suites",
+      "split": "paper-reported average",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方表格；内部变体共享框架但预训练监督不同。",
+      "trainingRegime": "下游统一配方；Robot PT/辅助监督按行变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "vlaflow-v2-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "VLAFlow v2 · 内部训练范式 · LIBERO-Plus",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "LIBERO-Plus perturbation benchmark",
+      "split": "paper-reported total",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方表格；LIBERO-Plus与标准LIBERO分轨。",
+      "trainingRegime": "内部变体；Robot PT/辅助监督按行变化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Total"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "vlaflow-v2-simpler-widowx",
+      "dataset": "SimplerEnv",
+      "name": "VLAFlow v2 · SimplerEnv WidowX",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "WidowX tasks",
+      "split": "Bridge-only downstream fine-tuning",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方README明确WidowX使用Bridge-only FT。",
+      "trainingRegime": "同文内部变体；不同预训练监督。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "WidowX Average"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "vlaflow-v2-simpler-rt1",
+      "dataset": "SimplerEnv",
+      "name": "VLAFlow v2 · SimplerEnv RT-1",
+      "version": "arXiv 2607.01586v2",
+      "tasks": "RT-1 Google robot tasks",
+      "split": "RT-1-only downstream fine-tuning",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方README明确RT-1-only FT；VM与VA同轨不同列。",
+      "trainingRegime": "同文内部变体；不同预训练监督。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "RT-1 VM",
+        "RT-1 VA"
+      ],
+      "source": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    {
+      "id": "onevomemory-v1-libero-long",
+      "dataset": "LIBERO",
+      "name": "OnEvoMemory v1 · LIBERO Long 10任务",
+      "version": "arXiv 2608.08749v1",
+      "tasks": "10 long-horizon tasks",
+      "split": "base / offline memory / one online round",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "冻结基础VLA；离线记忆后再用在线rollout更新记忆模块。在线阶段有额外交互，不当作同训练预算静态榜。",
+      "trainingRegime": "基于QwenOFT；base policy frozen，更新memory/value相关模块。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/abs/2608.08749"
+    },
+    {
+      "id": "onevomemory-v1-rmbench",
+      "dataset": "RMBench",
+      "name": "OnEvoMemory v1 · RMBench两任务",
+      "version": "arXiv 2608.08749v1",
+      "tasks": "SwapBlocks / SwapT",
+      "split": "base / offline memory / one online round",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "只覆盖两个RMBench任务；在线阶段每任务有额外rollout，不代表完整RMBench平均。",
+      "trainingRegime": "基于QwenOFT；记忆模块离线初始化并在线演化。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "SwapBlocks",
+        "SwapT"
+      ],
+      "source": "https://arxiv.org/abs/2608.08749"
     }
   ],
   "results": [
@@ -12434,6 +12675,265 @@
       "supersedes": ""
     },
     {
+      "id": "r-ocvlapp-v1-dita-ocvla",
+      "paperId": "p012",
+      "method": "OC-VLA",
+      "trackId": "ocvlapp-v1-real-dita-view",
+      "values": {
+        "Fixed view": 68.3,
+        "Largest displacement": 40.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Real-robot viewpoint evaluation",
+      "attribution": "author-reported",
+      "trainingData": "每任务10示范；每任务每相机设置20 rollout。",
+      "evaluationNotes": "固定视角无提升；最大位移下提升，不能概括为所有视角都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ocvlapp-v1-dita-plus",
+      "paperId": "p012",
+      "method": "OC-VLA++",
+      "trackId": "ocvlapp-v1-real-dita-view",
+      "values": {
+        "Fixed view": 68.3,
+        "Largest displacement": 48.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Real-robot viewpoint evaluation",
+      "attribution": "author-reported",
+      "trainingData": "每任务10示范；每任务每相机设置20 rollout。",
+      "evaluationNotes": "固定视角无提升；最大位移下提升，不能概括为所有视角都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ocvlapp-v1-maniskill-base",
+      "paperId": "p012",
+      "method": "OC-VLA (Dita)",
+      "trackId": "ocvlapp-v1-maniskill2-ablation",
+      "values": {
+        "Average": 52.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "同Dita架构；paired-view/等变监督按变体变化。",
+      "evaluationNotes": "五类ManiSkill2平均；论文内部消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ocvlapp-v1-maniskill-equiv",
+      "paperId": "p012",
+      "method": "OC-VLA + equivariance supervision",
+      "trackId": "ocvlapp-v1-maniskill2-ablation",
+      "values": {
+        "Average": 54.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "同Dita架构；paired-view/等变监督按变体变化。",
+      "evaluationNotes": "五类ManiSkill2平均；论文内部消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ocvlapp-v1-maniskill-full",
+      "paperId": "p012",
+      "method": "OC-VLA++",
+      "trackId": "ocvlapp-v1-maniskill2-ablation",
+      "values": {
+        "Average": 56.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "同Dita架构；paired-view/等变监督按变体变化。",
+      "evaluationNotes": "五类ManiSkill2平均；论文内部消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ocvlapp-v1-maniskill-synth",
+      "paperId": "p012",
+      "method": "OC-VLA + synthesized-view supervision",
+      "trackId": "ocvlapp-v1-maniskill2-ablation",
+      "values": {
+        "Average": 53.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Table 3",
+      "attribution": "author-reported",
+      "trainingData": "同Dita架构；paired-view/等变监督按变体变化。",
+      "evaluationNotes": "五类ManiSkill2平均；论文内部消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ocvlapp-v1-qwen-ocvla",
+      "paperId": "p012",
+      "method": "OC-VLA",
+      "trackId": "ocvlapp-v1-real-qwen-view",
+      "values": {
+        "Fixed view": 60.0,
+        "Largest displacement": 37.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Real-robot viewpoint evaluation",
+      "attribution": "author-reported",
+      "trainingData": "Qwen3-VL-2B + flow action expert。",
+      "evaluationNotes": "固定视角60.0→59.2的轻微下降保留；最大位移37.5→43.3。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-ocvlapp-v1-qwen-plus",
+      "paperId": "p012",
+      "method": "OC-VLA++",
+      "trackId": "ocvlapp-v1-real-qwen-view",
+      "values": {
+        "Fixed view": 59.2,
+        "Largest displacement": 43.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.01066v1",
+      "sourceVersion": "arXiv 2608.01066v1",
+      "locator": "Real-robot viewpoint evaluation",
+      "attribution": "author-reported",
+      "trainingData": "Qwen3-VL-2B + flow action expert。",
+      "evaluationNotes": "固定视角60.0→59.2的轻微下降保留；最大位移37.5→43.3。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-onevomemory-v1-long-base",
+      "paperId": "p015",
+      "method": "Base QwenOFT",
+      "trackId": "onevomemory-v1-libero-long",
+      "values": {
+        "Average": 86.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.08749v1",
+      "sourceVersion": "arXiv 2608.08749v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "基础policy冻结；memory/value模块按阶段训练。",
+      "evaluationNotes": "在线阶段使用额外rollout，因此不是完全同训练数据预算的静态消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-onevomemory-v1-long-offline",
+      "paperId": "p015",
+      "method": "Offline-initialized memory",
+      "trackId": "onevomemory-v1-libero-long",
+      "values": {
+        "Average": 88.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.08749v1",
+      "sourceVersion": "arXiv 2608.08749v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "基础policy冻结；memory/value模块按阶段训练。",
+      "evaluationNotes": "在线阶段使用额外rollout，因此不是完全同训练数据预算的静态消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-onevomemory-v1-long-online",
+      "paperId": "p015",
+      "method": "Online evolution round 1",
+      "trackId": "onevomemory-v1-libero-long",
+      "values": {
+        "Average": 90.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.08749v1",
+      "sourceVersion": "arXiv 2608.08749v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "基础policy冻结；memory/value模块按阶段训练。",
+      "evaluationNotes": "在线阶段使用额外rollout，因此不是完全同训练数据预算的静态消融。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-onevomemory-v1-rmbench-base",
+      "paperId": "p015",
+      "method": "Base QwenOFT",
+      "trackId": "onevomemory-v1-rmbench",
+      "values": {
+        "SwapBlocks": 0,
+        "SwapT": 0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.08749v1",
+      "sourceVersion": "arXiv 2608.08749v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "基础policy冻结；memory/value模块按阶段训练。",
+      "evaluationNotes": "只覆盖两个RMBench任务；0是真实作者报告值，不是缺失值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-onevomemory-v1-rmbench-offline",
+      "paperId": "p015",
+      "method": "Offline-initialized memory",
+      "trackId": "onevomemory-v1-rmbench",
+      "values": {
+        "SwapBlocks": 10,
+        "SwapT": 8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.08749v1",
+      "sourceVersion": "arXiv 2608.08749v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "基础policy冻结；memory/value模块按阶段训练。",
+      "evaluationNotes": "只覆盖两个RMBench任务；0是真实作者报告值，不是缺失值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-onevomemory-v1-rmbench-online",
+      "paperId": "p015",
+      "method": "Online evolution round 1",
+      "trackId": "onevomemory-v1-rmbench",
+      "values": {
+        "SwapBlocks": 14,
+        "SwapT": 10
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2608.08749v1",
+      "sourceVersion": "arXiv 2608.08749v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "基础policy冻结；memory/value模块按阶段训练。",
+      "evaluationNotes": "只覆盖两个RMBench任务；0是真实作者报告值，不是缺失值。",
+      "supersedes": ""
+    },
+    {
       "id": "r-peract-100-c2farm",
       "paperId": "p051",
       "method": "C2FARM-BC",
@@ -18464,6 +18964,101 @@
       "supersedes": ""
     },
     {
+      "id": "r-temporalflow-v1-libero-main",
+      "paperId": "p014",
+      "method": "TemporalFlow-VLA",
+      "trackId": "temporalflow-v1-libero-main",
+      "values": {
+        "Long": 96.6,
+        "Average": 97.63
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/abs/2608.26821",
+      "sourceVersion": "arXiv 2608.26821v1",
+      "locator": "Abstract; main LIBERO results",
+      "attribution": "author-reported",
+      "trainingData": "四套件联合训练30k步；3 seeds。",
+      "evaluationNotes": "原文还报告±0.87/±0.26；本站当前结果schema不单列误差。其余套件未在当前精确文本中补猜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-temporalflow-v1-rt12-base",
+      "paperId": "p014",
+      "method": "π0.5",
+      "trackId": "temporalflow-v1-robotwin12-ablation",
+      "values": {
+        "Clean": 79.0,
+        "Random": 72.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/abs/2608.26821",
+      "sourceVersion": "arXiv 2608.26821v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "12任务；50 clean+500 random示范/任务；60k步。",
+      "evaluationNotes": "12任务子集，不能并入完整50任务RoboTwin协议。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-temporalflow-v1-rt12-full",
+      "paperId": "p014",
+      "method": "TemporalFlow-VLA",
+      "trackId": "temporalflow-v1-robotwin12-ablation",
+      "values": {
+        "Clean": 85.5,
+        "Random": 84.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/abs/2608.26821",
+      "sourceVersion": "arXiv 2608.26821v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "12任务；50 clean+500 random示范/任务；60k步。",
+      "evaluationNotes": "12任务子集，不能并入完整50任务RoboTwin协议。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-temporalflow-v1-rt12-multiframe",
+      "paperId": "p014",
+      "method": "Direct multi-frame",
+      "trackId": "temporalflow-v1-robotwin12-ablation",
+      "values": {
+        "Clean": 79.8,
+        "Random": 81.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/abs/2608.26821",
+      "sourceVersion": "arXiv 2608.26821v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "12任务；50 clean+500 random示范/任务；60k步。",
+      "evaluationNotes": "12任务子集，不能并入完整50任务RoboTwin协议。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-temporalflow-v1-rt12-queries",
+      "paperId": "p014",
+      "method": "Two queries, no flow supervision",
+      "trackId": "temporalflow-v1-robotwin12-ablation",
+      "values": {
+        "Clean": 83.2,
+        "Random": 83.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/abs/2608.26821",
+      "sourceVersion": "arXiv 2608.26821v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "12任务；50 clean+500 random示范/任务；60k步。",
+      "evaluationNotes": "12任务子集，不能并入完整50任务RoboTwin协议。",
+      "supersedes": ""
+    },
+    {
       "id": "r-unipi-neurips23-compositional-diffuser",
       "paperId": "p053",
       "method": "Diffuser（本文适配）",
@@ -19504,6 +20099,517 @@
       "supersedes": ""
     },
     {
+      "id": "r-vlaflow-v2-libero-lpi",
+      "paperId": "p002",
+      "method": "MindLPI",
+      "trackId": "vlaflow-v2-libero",
+      "values": {
+        "Average": 97.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-libero-lwpi",
+      "paperId": "p002",
+      "method": "MindLWPI",
+      "trackId": "vlaflow-v2-libero",
+      "values": {
+        "Average": 99.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-libero-pi-frozen",
+      "paperId": "p002",
+      "method": "MindPI (Frozen VLM)",
+      "trackId": "vlaflow-v2-libero",
+      "values": {
+        "Average": 97.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-libero-pi-full",
+      "paperId": "p002",
+      "method": "MindPI (Full PT)",
+      "trackId": "vlaflow-v2-libero",
+      "values": {
+        "Average": 97.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-libero-pi-nopt",
+      "paperId": "p002",
+      "method": "MindPI w/o PT",
+      "trackId": "vlaflow-v2-libero",
+      "values": {
+        "Average": 97.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-libero-wpi-nopt",
+      "paperId": "p002",
+      "method": "MindWPI w/o PT",
+      "trackId": "vlaflow-v2-libero",
+      "values": {
+        "Average": 97.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-libero-wpi",
+      "paperId": "p002",
+      "method": "MindWPI",
+      "trackId": "vlaflow-v2-libero",
+      "values": {
+        "Average": 98.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "同文内部比较；不与其他论文不同训练预算直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-lplus-lpi",
+      "paperId": "p002",
+      "method": "MindLPI",
+      "trackId": "vlaflow-v2-libero-plus",
+      "values": {
+        "Total": 72.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-lplus-lwpi",
+      "paperId": "p002",
+      "method": "MindLWPI",
+      "trackId": "vlaflow-v2-libero-plus",
+      "values": {
+        "Total": 74.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-lplus-pi-frozen",
+      "paperId": "p002",
+      "method": "MindPI (Frozen VLM)",
+      "trackId": "vlaflow-v2-libero-plus",
+      "values": {
+        "Total": 74.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-lplus-pi-full",
+      "paperId": "p002",
+      "method": "MindPI (Full PT)",
+      "trackId": "vlaflow-v2-libero-plus",
+      "values": {
+        "Total": 68.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-lplus-pi-nopt",
+      "paperId": "p002",
+      "method": "MindPI w/o PT",
+      "trackId": "vlaflow-v2-libero-plus",
+      "values": {
+        "Total": 59.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-lplus-wpi-nopt",
+      "paperId": "p002",
+      "method": "MindWPI w/o PT",
+      "trackId": "vlaflow-v2-libero-plus",
+      "values": {
+        "Total": 66.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-lplus-wpi",
+      "paperId": "p002",
+      "method": "MindWPI",
+      "trackId": "vlaflow-v2-libero-plus",
+      "values": {
+        "Total": 72.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "官方项目表格；内部训练范式对照。",
+      "evaluationNotes": "LIBERO-Plus与标准LIBERO分开。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-rt1-lpi",
+      "paperId": "p002",
+      "method": "MindLPI",
+      "trackId": "vlaflow-v2-simpler-rt1",
+      "values": {
+        "RT-1 VM": 74.6,
+        "RT-1 VA": 59.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "RT-1使用RT-1-only FT。",
+      "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-rt1-lwpi",
+      "paperId": "p002",
+      "method": "MindLWPI",
+      "trackId": "vlaflow-v2-simpler-rt1",
+      "values": {
+        "RT-1 VM": 84.4,
+        "RT-1 VA": 69.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "RT-1使用RT-1-only FT。",
+      "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-rt1-pi-frozen",
+      "paperId": "p002",
+      "method": "MindPI (Frozen VLM)",
+      "trackId": "vlaflow-v2-simpler-rt1",
+      "values": {
+        "RT-1 VM": 72.7,
+        "RT-1 VA": 66.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "RT-1使用RT-1-only FT。",
+      "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-rt1-pi-full",
+      "paperId": "p002",
+      "method": "MindPI (Full PT)",
+      "trackId": "vlaflow-v2-simpler-rt1",
+      "values": {
+        "RT-1 VM": 68.2,
+        "RT-1 VA": 55.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "RT-1使用RT-1-only FT。",
+      "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-rt1-pi-nopt",
+      "paperId": "p002",
+      "method": "MindPI w/o PT",
+      "trackId": "vlaflow-v2-simpler-rt1",
+      "values": {
+        "RT-1 VM": 75.7,
+        "RT-1 VA": 60.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "RT-1使用RT-1-only FT。",
+      "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-rt1-wpi-nopt",
+      "paperId": "p002",
+      "method": "MindWPI w/o PT",
+      "trackId": "vlaflow-v2-simpler-rt1",
+      "values": {
+        "RT-1 VM": 75.2,
+        "RT-1 VA": 51.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "RT-1使用RT-1-only FT。",
+      "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-rt1-wpi",
+      "paperId": "p002",
+      "method": "MindWPI",
+      "trackId": "vlaflow-v2-simpler-rt1",
+      "values": {
+        "RT-1 VM": 86.7,
+        "RT-1 VA": 71.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "RT-1使用RT-1-only FT。",
+      "evaluationNotes": "MindPI Full PT在RT-1为68.2/55.5，低于w/o PT的75.7/60.4；负迁移保留。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-widowx-lpi",
+      "paperId": "p002",
+      "method": "MindLPI",
+      "trackId": "vlaflow-v2-simpler-widowx",
+      "values": {
+        "WidowX Average": 65.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "WidowX使用Bridge-only FT。",
+      "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-widowx-lwpi",
+      "paperId": "p002",
+      "method": "MindLWPI",
+      "trackId": "vlaflow-v2-simpler-widowx",
+      "values": {
+        "WidowX Average": 75.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "WidowX使用Bridge-only FT。",
+      "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-widowx-pi-frozen",
+      "paperId": "p002",
+      "method": "MindPI (Frozen VLM)",
+      "trackId": "vlaflow-v2-simpler-widowx",
+      "values": {
+        "WidowX Average": 54.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "WidowX使用Bridge-only FT。",
+      "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-widowx-pi-full",
+      "paperId": "p002",
+      "method": "MindPI (Full PT)",
+      "trackId": "vlaflow-v2-simpler-widowx",
+      "values": {
+        "WidowX Average": 65.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "WidowX使用Bridge-only FT。",
+      "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-widowx-pi-nopt",
+      "paperId": "p002",
+      "method": "MindPI w/o PT",
+      "trackId": "vlaflow-v2-simpler-widowx",
+      "values": {
+        "WidowX Average": 59.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "WidowX使用Bridge-only FT。",
+      "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-widowx-wpi-nopt",
+      "paperId": "p002",
+      "method": "MindWPI w/o PT",
+      "trackId": "vlaflow-v2-simpler-widowx",
+      "values": {
+        "WidowX Average": 71.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "WidowX使用Bridge-only FT。",
+      "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlaflow-v2-widowx-wpi",
+      "paperId": "p002",
+      "method": "MindWPI",
+      "trackId": "vlaflow-v2-simpler-widowx",
+      "values": {
+        "WidowX Average": 74.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://github.com/MindVLA-Team/VLAFlow",
+      "sourceVersion": "VLAFlow official README / arXiv 2607.01586v2",
+      "locator": "Internal paradigm table",
+      "attribution": "author-reported",
+      "trainingData": "WidowX使用Bridge-only FT。",
+      "evaluationNotes": "Action-only Full PT并非所有迁移都更好。",
+      "supersedes": ""
+    },
+    {
       "id": "r-vlatouch-v2-property-decisions-no-tactile",
       "paperId": "p044",
       "method": "仅场景图像",
@@ -19721,6 +20827,155 @@
       "attribution": "author-reported",
       "trainingData": "牵引示范：Cup40抓取+60放置；Wipe40抓取+60擦拭；Peel60抓取+120削皮，10Hz采集。RDT先100k步Franka动作对齐、每任务20k无触觉微调，再监督训练触觉控制器；非完全免训练。",
       "evaluationNotes": "原始完整完成次数依列[6, 6, 7]/20，乘5换算百分比；抓起与部分完成仅在原表/笔记中，不作新最终成绩。作者实验，RDT经过动作对齐及任务微调。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-ablation-m0",
+      "paperId": "p025",
+      "method": "M0 Fast-WAM",
+      "trackId": "vtwam-v1-ablation",
+      "values": {
+        "Wipe Vase score": 55,
+        "Insert Tube SR": 25
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "相同任务示范；触觉设计按变体变化。",
+      "evaluationNotes": "M2擦瓶40低于视觉Fast-WAM 55，说明只加初始触觉可退化；保留负面结果。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-ablation-m1",
+      "paperId": "p025",
+      "method": "M1 + Sym. tactile sequence",
+      "trackId": "vtwam-v1-ablation",
+      "values": {
+        "Wipe Vase score": 65,
+        "Insert Tube SR": 40
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "相同任务示范；触觉设计按变体变化。",
+      "evaluationNotes": "M2擦瓶40低于视觉Fast-WAM 55，说明只加初始触觉可退化；保留负面结果。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-ablation-m2",
+      "paperId": "p025",
+      "method": "M2 + Asym. first tactile frame",
+      "trackId": "vtwam-v1-ablation",
+      "values": {
+        "Wipe Vase score": 40,
+        "Insert Tube SR": 30
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "相同任务示范；触觉设计按变体变化。",
+      "evaluationNotes": "M2擦瓶40低于视觉Fast-WAM 55，说明只加初始触觉可退化；保留负面结果。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-ablation-m3",
+      "paperId": "p025",
+      "method": "M3 + Asym. tactile sequence",
+      "trackId": "vtwam-v1-ablation",
+      "values": {
+        "Wipe Vase score": 70,
+        "Insert Tube SR": 50
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "相同任务示范；触觉设计按变体变化。",
+      "evaluationNotes": "M2擦瓶40低于视觉Fast-WAM 55，说明只加初始触觉可退化；保留负面结果。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-ablation-m4",
+      "paperId": "p025",
+      "method": "M4 VT-WAM + AVTAG",
+      "trackId": "vtwam-v1-ablation",
+      "values": {
+        "Wipe Vase score": 85,
+        "Insert Tube SR": 55
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "相同任务示范；触觉设计按变体变化。",
+      "evaluationNotes": "M2擦瓶40低于视觉Fast-WAM 55，说明只加初始触觉可退化；保留负面结果。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-main-fastwam",
+      "paperId": "p025",
+      "method": "Fast-WAM",
+      "trackId": "vtwam-v1-real-main",
+      "values": {
+        "Average": 45.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table I; §IV-B",
+      "attribution": "author-reported",
+      "trainingData": "每任务100人工示范；逐任务训练；20次测试。",
+      "evaluationNotes": "综合均值混合了0/0.5/1表面任务得分与二值插入成功，不能称六任务严格二值SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-main-omnivtla",
+      "paperId": "p025",
+      "method": "OmniVTLA",
+      "trackId": "vtwam-v1-real-main",
+      "values": {
+        "Average": 35.83
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table I; §IV-B",
+      "attribution": "author-reported",
+      "trainingData": "每任务100人工示范；逐任务训练；20次测试。",
+      "evaluationNotes": "综合均值混合了0/0.5/1表面任务得分与二值插入成功，不能称六任务严格二值SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vtwam-v1-main-vtwam",
+      "paperId": "p025",
+      "method": "VT-WAM",
+      "trackId": "vtwam-v1-real-main",
+      "values": {
+        "Average": 71.67
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-19",
+      "source": "https://arxiv.org/pdf/2607.02503v1",
+      "sourceVersion": "arXiv 2607.02503v1",
+      "locator": "Table I; §IV-B",
+      "attribution": "author-reported",
+      "trainingData": "每任务100人工示范；逐任务训练；20次测试。",
+      "evaluationNotes": "综合均值混合了0/0.5/1表面任务得分与二值插入成功，不能称六任务严格二值SR。",
       "supersedes": ""
     }
   ]

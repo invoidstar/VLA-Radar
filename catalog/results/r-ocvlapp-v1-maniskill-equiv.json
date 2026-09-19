@@ -1,0 +1,18 @@
+{
+  "id": "r-ocvlapp-v1-maniskill-equiv",
+  "paperId": "p012",
+  "method": "OC-VLA + equivariance supervision",
+  "trackId": "ocvlapp-v1-maniskill2-ablation",
+  "values": {
+    "Average": 54.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/pdf/2608.01066v1",
+  "sourceVersion": "arXiv 2608.01066v1",
+  "locator": "Table 3",
+  "attribution": "author-reported",
+  "trainingData": "同Dita架构；paired-view/等变监督按变体变化。",
+  "evaluationNotes": "五类ManiSkill2平均；论文内部消融。",
+  "supersedes": ""
+}

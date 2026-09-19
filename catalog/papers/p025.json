@@ -85,8 +85,8 @@
   },
   "note": {
     "status": "expanded",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
+    "updatedAt": "2026-09-19",
+    "verifiedAt": "2026-09-19",
     "version": "arXiv 2607.02503 v1；§III–IV、Tables I–III",
     "sections": [
       {
@@ -227,9 +227,9 @@
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
-      "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table III；§IV-B计分规则。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。"
+      "status": "extracted",
+      "checkedAt": "2026-09-19",
+      "note": "第十四批完成8条源定位结果；仅录原表/官方页面明确值。不同指标、任务子集、训练阶段和混合计分口径分开；不从图高或相对增益反推。"
     }
   }
 }

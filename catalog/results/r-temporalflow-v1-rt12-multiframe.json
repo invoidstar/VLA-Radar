@@ -1,0 +1,19 @@
+{
+  "id": "r-temporalflow-v1-rt12-multiframe",
+  "paperId": "p014",
+  "method": "Direct multi-frame",
+  "trackId": "temporalflow-v1-robotwin12-ablation",
+  "values": {
+    "Clean": 79.8,
+    "Random": 81.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-19",
+  "source": "https://arxiv.org/abs/2608.26821",
+  "sourceVersion": "arXiv 2608.26821v1",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "12任务；50 clean+500 random示范/任务；60k步。",
+  "evaluationNotes": "12任务子集，不能并入完整50任务RoboTwin协议。",
+  "supersedes": ""
+}
