@@ -14,7 +14,11 @@ assert(html.includes('<msubsup>'));
 assert(html.includes('<mover'));
 assert(html.includes('display="block"'));
 
-html=M.renderParagraphs('前文\\n\\\\[\\nL = \\\\sum_{t=1}^{T} \\\\lVert a_t-\\\\hat{a}_t \\\\rVert^2\\n\\\\]\\n后文');
+html=M.renderParagraphs(`前文
+\\[
+L = \\sum_{t=1}^{T} \\lVert a_t-\\hat{a}_t \\rVert^2
+\\]
+后文`);
 assert.equal((html.match(/<math/g)||[]).length,1);
 assert(html.includes('math-display'));
 assert(!html.includes('\\\\['));
