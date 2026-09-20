@@ -210,7 +210,7 @@ def training_identity(value):
     kept=[]
     for seg in segments:
         if not DATA_CUES.search(seg):continue
-        parts=[p.strip() for p in re.split(r'(?<!\\d)[,，]|[,，](?!\\d)|、',seg) if p.strip()];data_parts=[]
+        parts=[p.strip() for p in re.split(r'(?<!\d)[,，]|[,，](?!\d)|、',seg) if p.strip()];data_parts=[]
         for part in parts:
             if RECIPE_CUES.search(part) and data_parts:break
             if DATA_CUES.search(part) or not data_parts:data_parts.append(part)
