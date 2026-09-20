@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260918-spirit-ai",
+  "eventKey": "reuters-spirit-ai-deployment-20260918",
+  "title": "Reuters 报道 Spirit AI 的数据与工业部署进展",
+  "primaryCategory": "robot",
+  "tags": ["真实部署", "具身数据", "人形机器人", "产业"],
+  "eventDate": "2026-09-18",
+  "publishedAt": "2026-09-18",
+  "dateNote": "没有单独可核验的产品发布日；按Reuters 9月18日原始报道日期归档，正文明确这是记者采访与现场报道，不冒充当天发布新模型。",
+  "observedAt": "2026-09-20",
+  "updatedAt": "2026-09-20",
+  "stage": "reported",
+  "evidence": "reported",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "Reuters 9月18日报道，Spirit AI约有1,000名数据采集承包人员，并称其机器人在结构化客厅中的简单任务达到90%成功率；报道还称已有数十台Moz1轮式人形机器人部署在CATL和京东生产线上。公司自2024年成立以来融资超过6.7亿美元、估值约29亿美元。",
+  "whyItMatters": "报道把具身智能的两个现实瓶颈放在一起：大规模真实交互数据的获取，以及从实验室任务转向工业生产线的部署。对于VLA研究，这比单次演示更能提示数据质量、柔性物体、连续工作流和安全控制的实际约束。",
+  "vlaRelevance": "Spirit AI强调主要依赖真实世界数据，并将自然语言到连续物理动作视为未来能力方向。这里的90%成功率只对应公司所述的结构化简单任务，没有公开统一benchmark协议，不能写入Leaderboard或与论文SR直接比较。",
+  "limits": "技术指标、融资与部署数量来自Reuters对公司采访及现场报道，其中能力数字仍是公司陈述而非独立基准复现。报道也明确细粒度操作和未见任务仍困难；家庭通用部署属于公司对未来时间线的判断，不作为已实现能力。",
+  "sources": [
+    {"id":"s1","title":"Chinese 'robot brain' startup sees ChatGPT-style breakthrough as soon as next year","publisher":"Reuters","url":"https://www.reuters.com/world/asia-pacific/founder-chinese-startup-spirit-ai-says-robot-brains-set-2027-breakthrough-2026-09-18/","kind":"media","publishedAt":"2026-09-18","access":"fulltext","note":"核对记者原始报道、采访归属、现场部署描述与公司自报指标；不把公司陈述包装为独立技术验证。"}
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
