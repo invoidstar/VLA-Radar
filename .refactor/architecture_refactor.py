@@ -305,22 +305,119 @@ for p in (ROOT/'tests/browser').glob('browser_*.py'):
     text = p.read_text(encoding='utf-8')
     if 'import tempfile,shutil' not in text:
         text = 'import tempfile,shutil\n' + text
-    lower = "root=Path(__file__).resolve().parents[2]"
-    upper = "ROOT=Path(__file__).resolve().parents[2]"
-    if lower in text:
-        anchor = lower
-        repo_var = 'root'
-    elif upper in text:
-        anchor = upper
-        repo_var = 'ROOT'
-    else:
+    match = re.search(r'(?m)^(root|ROOT)\s*=\s*Path\(__file__\)\.resolve\(\)\.parents\[2\].*
+
+path_map = {}
+path_map.update(script_moves)
+path_map.update(browser_moves)
+path_map.update(node_moves)
+path_map.update(python_test_moves)
+path_map.update(maintenance_map)
+active_roots = [ROOT/'README.md',ROOT/'MAINTENANCE.md',ROOT/'AGENTS.md',ROOT/'validate.py',ROOT/'.github',ROOT/'scripts',ROOT/'tests',ROOT/'maintenance/policies',ROOT/'maintenance/state',ROOT/'maintenance/docs',ROOT/'site']
+active_files = []
+for x in active_roots:
+    if x.is_file():
+        active_files.append(x)
+    elif x.exists():
+        active_files.extend(p for p in x.rglob('*') if p.is_file())
+text_suffixes = {'.md','.py','.js','.cjs','.json','.yml','.yaml','.html','.css','.txt'}
+for p in active_files:
+    if p.suffix.lower() not in text_suffixes and p.name != 'AGENTS.md':
+        continue
+    try:
+        text = p.read_text(encoding='utf-8')
+    except UnicodeDecodeError:
+        continue
+    old_text = text
+    for old, new in sorted(path_map.items(), key=lambda x: -len(x[0])):
+        text = text.replace(old, new)
+        old_parts, new_parts = old.split('/'), new.split('/')
+        for q in ("'", '"'):
+            text = text.replace('/'.join(q+x+q for x in old_parts), '/'.join(q+x+q for x in new_parts))
+            text = text.replace(','.join(q+x+q for x in old_parts), ','.join(q+x+q for x in new_parts))
+    if text != old_text:
+        p.write_text(text, encoding='utf-8')
+
+for p in [ROOT/'README.md',ROOT/'MAINTENANCE.md',ROOT/'AGENTS.md']:
+    text = p.read_text(encoding='utf-8')
+    for old, new in site_moves.items():
+        text = text.replace(old, new)
+    p.write_text(text, encoding='utf-8')
+
+wf = ROOT/'.github/workflows/site.yml'
+w = wf.read_text(encoding='utf-8')
+w = w.replace('python scripts/validate_all.py', 'python scripts/validation/validate_all.py')
+for name in browser_names:
+    w = w.replace(f'python scripts/{name}', f'python tests/browser/{name}')
+w = re.sub(r"mkdir -p _site/data\n\s+cp .*?_site/\n\s+cp -R data/\. _site/data/", "mkdir -p _site/data\n          cp -R site/. _site/\n          cp -R data/. _site/data/", w, count=1)
+if 'cp -R site/. _site/' not in w:
+    raise SystemExit('failed to update Pages staging')
+wf.write_text(w, encoding='utf-8')
+
+readme = ROOT/'README.md'
+r = readme.read_text(encoding='utf-8')
+anchor = '## Maintain\n'
+architecture = '''## Repository architecture
+
+The repository is organized by responsibility rather than by feature files at the root:
+
+- site/ — static website source, split into core, components and feature modules.
+- catalog/ — canonical public research records; this remains the only hand-edited content source.
+- data/ — deterministic generated public artifacts; do not edit by hand.
+- scripts/ — build, validation, discovery, maintenance and migration tooling.
+- tests/ — unit and browser regression suites plus reusable fixtures.
+- maintenance/ — live state, policies, documentation and immutable historical audits.
+
+This layout is structural only: paper IDs, result IDs, benchmark protocols, page routes and local-reading semantics are unchanged.
+
+'''
+if architecture not in r:
+    r = r.replace(anchor, architecture + anchor, 1)
+readme.write_text(r, encoding='utf-8')
+
+maint = ROOT/'MAINTENANCE.md'
+m = maint.read_text(encoding='utf-8')
+if '## Repository layout' not in m:
+    m += '\n\n## Repository layout\n\nRuntime source lives in site/; canonical research content stays in catalog/; generated exports stay in data/. Tooling is grouped under scripts/{build,validation,discovery,maintenance,migration} and tests under tests/{unit,browser,fixtures}. Maintenance records are separated into maintenance/{state,policies,docs,audits}. Historical audit bodies are preserved as snapshots even when their recorded paths predate this layout.\n'
+maint.write_text(m, encoding='utf-8')
+
+changelog = ROOT/'CHANGELOG.md'
+c = changelog.read_text(encoding='utf-8')
+entry = '\n## 2026-09-20 — Repository architecture cleanup\n\n- Grouped static website source under site/ with core, component and feature boundaries; public page routes and query parameters are unchanged.\n- Grouped Python tooling by build, validation, discovery, maintenance and migration responsibility; moved browser and unit checks under tests/.\n- Split maintenance material into live state, policies, docs and historical audits without changing canonical catalog/data semantics.\n- Reorganized sidebar information architecture into Discover, Evidence, Workspace and Personal groups while preserving every existing view.\n\n'
+if entry not in c:
+    first_nl = c.find('\n')
+    c = c[:first_nl+1] + entry + c[first_nl+1:]
+changelog.write_text(c, encoding='utf-8')
+
+audit = {
+    'schemaVersion': 1,
+    'date': '2026-09-20',
+    'baseMainSha': '60b442c10d25591e3aa74308d599b98e258f83ac',
+    'scope': 'repository architecture cleanup; no canonical research-data or route semantic changes',
+    'moves': {'siteFiles':len(site_moves),'scriptFiles':len(script_moves),'browserTests':len(browser_moves),'nodeUnitTests':len(node_moves),'pythonUnitTests':len(python_test_moves),'maintenanceEntries':len(maintenance_map)},
+    'invariants': {'catalogSha256Before':before_catalog,'catalogSha256After':sha_tree('catalog'),'dataSha256Before':before_data,'dataSha256After':sha_tree('data'),'publicRoutesChanged':False,'benchmarkProtocolSemanticsChanged':False},
+    'informationArchitecture': ['DISCOVER','EVIDENCE','WORKSPACE','PERSONAL'],
+}
+audit_path = ROOT/'maintenance/audits/release/repository-architecture-20260920.json'
+audit_path.parent.mkdir(parents=True, exist_ok=True)
+audit_path.write_text(json.dumps(audit, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+if audit['invariants']['catalogSha256Before'] != audit['invariants']['catalogSha256After']:
+    raise SystemExit('catalog changed during structural refactor')
+if audit['invariants']['dataSha256Before'] != audit['invariants']['dataSha256After']:
+    raise SystemExit('generated data changed during structural refactor')
+for old in list(site_moves)+list(script_moves)+list(browser_moves)+list(node_moves):
+    if (ROOT/old).exists():
+        raise SystemExit(f'flat file remains: {old}')
+print('PASS structural refactor staged')
+print(json.dumps(audit, ensure_ascii=False, indent=2))
+, text)
+    if not match:
         raise SystemExit(f'root marker missing in {p}')
-    end = text.find('\n', text.find(anchor))
-    if end < 0:
-        end = len(text)
+    repo_var = match.group(1)
+    end = match.end()
     staging = "\npublic=Path(tempfile.mkdtemp(prefix='vla-radar-public-'))\nshutil.copytree("+repo_var+"/'site',public,dirs_exist_ok=True)\nshutil.copytree("+repo_var+"/'data',public/'data',dirs_exist_ok=True)"
     text = text[:end] + staging + text[end:]
-    text = text.replace('cwd=root,', 'cwd=public,').replace('cwd=ROOT,', 'cwd=public,')
+    text = re.sub(r'cwd\s*=\s*(root|ROOT)', 'cwd=public', text)
     p.write_text(text, encoding='utf-8')
 
 path_map = {}
