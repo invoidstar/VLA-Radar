@@ -58,7 +58,7 @@
       if(methodFilter!=='all'&&!methods.includes(methodFilter))methodFilter='all';
       if(sourceFilter!=='all'&&!sources.some(x=>x[0]===sourceFilter))sourceFilter='all';
       const filtered=accepted.filter(r=>(trainFilter==='all'||trainMap[r.id]===trainFilter)&&(methodFilter==='all'||r.method===methodFilter)&&(sourceFilter==='all'||r.paperId===sourceFilter));
-      const rows=sortRows(filtered,setting,metric,order),size=20,pages=Math.max(1,Math.ceil(rows.length/size));page=Math.max(1,Math.min(page,pages)),dir=direction(setting,order);
+      const rows=sortRows(filtered,setting,metric,order),size=20,pages=Math.max(1,Math.ceil(rows.length/size));page=Math.max(1,Math.min(page,pages));const dir=direction(setting,order);
       const header=c=>`<th scope="col" ${c===metric&&order!=='source'?`aria-sort="${dir==='asc'?'ascending':'descending'}"`:''}><button class="board-sort-button" data-setting-sort="${esc(c)}">${esc(c)} <span aria-hidden="true">${c===metric&&order!=='source'?(dir==='asc'?'▲':'▼'):'↕'}</span></button></th>`;
       const current=rows.slice((page-1)*size,page*size),comparable=trainFilter!=='all';
       host.innerHTML=`<div class="leaderboard-top"><div class="dataset-tabs" role="group" aria-label="数据集">${datasets.map(d=>`<button data-setting-dataset="${esc(d)}" aria-pressed="${d===dataset}">${esc(d)}</button>`).join('')}</div><div class="board-update">目录更新 ${esc(data.updatedAt)} · ${settings.length} evaluation settings</div></div>
