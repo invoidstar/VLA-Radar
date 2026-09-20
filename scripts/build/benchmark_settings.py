@@ -13,6 +13,14 @@ UNKNOWN_MARKERS=(
     '各方法原配置','same paper setting','paper setup','官网训练设置；个别行预算未披露',
     'reported configuration'
 )
+DATA_CUES=re.compile(
+    r'(?:\bdemo(?:s|nstrations?)?\b|demo_clean|示范|演示|轨迹|trajectory|human300|'
+    r'\brlds\b|droid|bridge(?:data)?|open.?x|oxe|robocasa|robotwin|libero|calvin|'
+    r'每任务\s*\d+|\d+[,.]?\d*\s*(?:k|万)?\s*(?:条)?(?:示范|演示|demos?))',re.I)
+RECIPE_CUES=re.compile(
+    r'(?:batch|steps?|epochs?|warmup|\blr\b|learning rate|vit-|qwen|bert|h\d+|'
+    r'action horizon|gradient|gpu|h100|h200|rtx|denois|执行\d|检查点|checkpoint|'
+    r'归一化|optimizer|cosine)',re.I)
 
 def norm(value):
     return re.sub(r'\\s+',' ',unicodedata.normalize('NFKC',str(value or '')).strip().lower())
@@ -21,9 +29,27 @@ def slug(value):
     s=re.sub(r'[^a-z0-9]+','-',norm(value)).strip('-')
     return (s or 'setting')[:64]
 
+def training_identity(value):
+    raw=str(value or '').strip()
+    n=norm(raw)
+    if not n or any(marker in n for marker in UNKNOWN_MARKERS):
+        return None
+    segments=[seg.strip(' ,，:：') for seg in re.split(r'[;；。]\s*',raw) if seg.strip()]
+    kept=[]
+    for seg in segments:
+        if not DATA_CUES.search(seg):continue
+        # Keep the data-bearing prefix, but cut recipe-only clauses such as batch/steps/H50.
+        parts=[p.strip() for p in re.split(r'[,，、]',seg) if p.strip()]
+        data_parts=[]
+        for part in parts:
+            if RECIPE_CUES.search(part) and data_parts:break
+            if DATA_CUES.search(part) or not data_parts:data_parts.append(part)
+        candidate='，'.join(data_parts).strip()
+        if candidate and candidate not in kept:kept.append(candidate)
+    return '；'.join(kept) if kept else None
+
 def training_known(value):
-    n=norm(value)
-    return bool(n) and not any(marker in n for marker in UNKNOWN_MARKERS)
+    return training_identity(value) is not None
 
 def evaluation_id(track):
     if track.get('settingEvalId'):return 'eval:'+track['settingEvalId']
@@ -36,8 +62,8 @@ def evaluation_name(track):
     return track['name']
 
 def training_key(row):
-    value=norm(row.get('trainingData'))
-    return value if training_known(value) else f"source:{row['paperId']}:{value}"
+    identity=training_identity(row.get('trainingData'))
+    return 'data:'+norm(identity) if identity else f"source:{row['paperId']}:{norm(row.get('trainingData'))}"
 
 def setting_key(track,row):
     return (
@@ -71,8 +97,9 @@ def build_settings(tracks,results):
         for t in candidates:
             for col in t['columns']:
                 if col not in columns:columns.append(col)
-        training=rows[0]['trainingData']
-        known=training_known(training)
+        identities=[training_identity(r['trainingData']) for r in rows]
+        known=all(identity is not None for identity in identities)
+        training=identities[0] if known else rows[0]['trainingData']
         digest=hashlib.sha256(('|'.join(map(str,key))).encode()).hexdigest()[:12]
         sid='setting-'+slug(eval_id.replace(':','-'))+'-'+digest
         settings.append({
