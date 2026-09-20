@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+<title id="title">VLA-Radar 核心能力概览</title>
+<desc id="desc">论文发现、证据对齐与研究工作台三部分能力概览。</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081624"/><stop offset=".6" stop-color="#102b46"/><stop offset="1" stop-color="#183b59"/></linearGradient>
+  <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff" stop-opacity=".13"/><stop offset="1" stop-color="#ffffff" stop-opacity=".055"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#72c8ff"/><stop offset="1" stop-color="#9e8fff"/></linearGradient>
+</defs>
+<rect width="1600" height="760" rx="28" fill="url(#bg)"/>
+<circle cx="1320" cy="100" r="260" fill="#68bdff" fill-opacity=".05"/>
+<circle cx="180" cy="700" r="260" fill="#7d8bff" fill-opacity=".05"/>
+<text x="800" y="86" text-anchor="middle" fill="#f3f8fc" font-size="54" font-weight="700" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">VLA-Radar 核心能力概览</text>
+<text x="800" y="128" text-anchor="middle" fill="#a8c7dc" font-size="22" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">从文献到证据，让机器人研究更清晰</text>
+
+<g transform="translate(55 180)">
+  <rect width="460" height="430" rx="28" fill="url(#card)" stroke="#7ec8ff" stroke-opacity=".38"/>
+  <text x="34" y="58" fill="#77c8ff" font-size="18" font-weight="700" font-family="Arial,Helvetica,sans-serif">01</text>
+  <text x="34" y="105" fill="#fff" font-size="36" font-weight="700" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">论文发现</text>
+  <text x="34" y="140" fill="#a7c6dc" font-size="18" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">持续发现、整理并理解 VLA / WAM 前沿工作</text>
+  <g transform="translate(34 185)">
+    <rect width="160" height="118" rx="16" fill="#dceeff" fill-opacity=".95"/>
+    <rect x="18" y="20" width="94" height="8" rx="4" fill="#446985"/>
+    <rect x="18" y="41" width="124" height="6" rx="3" fill="#8aa7bb"/>
+    <rect x="18" y="57" width="108" height="6" rx="3" fill="#9ab3c4"/>
+    <circle cx="126" cy="82" r="20" fill="#5e8caf"/>
+    <path d="M116 88c11-22 21-22 31 0" fill="none" stroke="#edf7ff" stroke-width="5" stroke-linecap="round"/>
+    <rect x="183" y="12" width="180" height="95" rx="16" fill="#ffffff" fill-opacity=".09" stroke="#c3e6ff" stroke-opacity=".22"/>
+    <rect x="205" y="34" width="112" height="7" rx="4" fill="#b7d3e5" fill-opacity=".58"/>
+    <rect x="205" y="54" width="133" height="6" rx="3" fill="#b7d3e5" fill-opacity=".3"/>
+    <rect x="205" y="72" width="98" height="6" rx="3" fill="#b7d3e5" fill-opacity=".3"/>
+  </g>
+  <g transform="translate(34 338)" fill="#d8efff" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
+    <text x="0" y="0" font-size="18">文献库</text><text x="104" y="0" font-size="18">研究方向</text><text x="222" y="0" font-size="18">时间线</text><text x="320" y="0" font-size="18">具身智能周报</text>
+  </g>
+</g>
+
+<g transform="translate(570 180)">
+  <rect width="460" height="430" rx="28" fill="url(#card)" stroke="#8faeff" stroke-opacity=".4"/>
+  <text x="34" y="58" fill="#8faeff" font-size="18" font-weight="700" font-family="Arial,Helvetica,sans-serif">02</text>
+  <text x="34" y="105" fill="#fff" font-size="36" font-weight="700" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">证据对齐</text>
+  <text x="34" y="140" fill="#a7c6dc" font-size="18" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">先对齐评测问题，再看结果差异</text>
+  <g transform="translate(62 178)">
+    <rect width="336" height="58" rx="15" fill="#ffffff" fill-opacity=".09" stroke="#84c8ff" stroke-opacity=".4"/>
+    <text x="168" y="37" text-anchor="middle" fill="#eaf6ff" font-size="22" font-weight="700" font-family="Arial,Helvetica,sans-serif">Benchmark</text>
+    <path d="M168 61v30" stroke="#7ec8ff" stroke-width="3"/><path d="m159 82 9 9 9-9" fill="none" stroke="#7ec8ff" stroke-width="3"/>
+    <rect y="96" width="336" height="64" rx="15" fill="#ffffff" fill-opacity=".11" stroke="#9a98ff" stroke-opacity=".45"/>
+    <text x="168" y="136" text-anchor="middle" fill="#fff" font-size="21" font-weight="700" font-family="Arial,Helvetica,sans-serif">Evaluation Setting</text>
+    <path d="M168 163v30" stroke="#7ec8ff" stroke-width="3"/><path d="m159 184 9 9 9-9" fill="none" stroke="#7ec8ff" stroke-width="3"/>
+    <rect y="198" width="336" height="58" rx="15" fill="#ffffff" fill-opacity=".09" stroke="#84c8ff" stroke-opacity=".4"/>
+    <text x="168" y="235" text-anchor="middle" fill="#eaf6ff" font-size="22" font-weight="700" font-family="Arial,Helvetica,sans-serif">Result Report</text>
+  </g>
+  <text x="230" y="385" text-anchor="middle" fill="#adcce0" font-size="17" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">统一评测语境 · 对齐比较条件 · 保留来源证据</text>
+</g>
+
+<g transform="translate(1085 180)">
+  <rect width="460" height="430" rx="28" fill="url(#card)" stroke="#7ec8ff" stroke-opacity=".38"/>
+  <text x="34" y="58" fill="#77c8ff" font-size="18" font-weight="700" font-family="Arial,Helvetica,sans-serif">03</text>
+  <text x="34" y="105" fill="#fff" font-size="36" font-weight="700" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">研究工作台</text>
+  <text x="34" y="140" fill="#a7c6dc" font-size="18" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">把阅读、比较与整理放到同一个工作流里</text>
+  <g transform="translate(38 184)">
+    <rect width="384" height="154" rx="18" fill="#ffffff" fill-opacity=".09" stroke="#b4ddff" stroke-opacity=".27"/>
+    <rect x="20" y="22" width="76" height="10" rx="5" fill="#b7d9ef" fill-opacity=".6"/>
+    <polyline points="28,120 90,104 147,110 205,76 264,88 328,52 356,66" fill="none" stroke="#76c9ff" stroke-width="4"/>
+    <g fill="#c7ecff"><circle cx="28" cy="120" r="5"/><circle cx="90" cy="104" r="5"/><circle cx="147" cy="110" r="5"/><circle cx="205" cy="76" r="5"/><circle cx="264" cy="88" r="5"/><circle cx="328" cy="52" r="5"/><circle cx="356" cy="66" r="5"/></g>
+  </g>
+  <g transform="translate(38 365)" fill="#d8efff" font-family="'Noto Sans SC','Microsoft YaHei',Arial,sans-serif">
+    <text x="0" y="0" font-size="18">论文对比</text><text x="110" y="0" font-size="18">引用导出</text><text x="220" y="0" font-size="18">阅读记录</text><text x="326" y="0" font-size="18">My Radar</text>
+  </g>
+</g>
+
+<path d="M525 395h35" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/><path d="m550 383 12 12-12 12" fill="none" stroke="#8cb8ff" stroke-width="5"/>
+<path d="M1040 395h35" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/><path d="m1065 383 12 12-12 12" fill="none" stroke="#8cb8ff" stroke-width="5"/>
+
+<g transform="translate(420 652)">
+  <rect width="760" height="72" rx="20" fill="#071522" fill-opacity=".54" stroke="#8ecfff" stroke-opacity=".22"/>
+  <g text-anchor="middle" font-family="Arial,Helvetica,sans-serif">
+    <text x="95" y="32" fill="#fff" font-size="26" font-weight="700">98</text><text x="95" y="54" fill="#a8c7dc" font-size="14">Papers</text>
+    <text x="285" y="32" fill="#fff" font-size="26" font-weight="700">61</text><text x="285" y="54" fill="#a8c7dc" font-size="14">Benchmarks</text>
+    <text x="475" y="32" fill="#fff" font-size="26" font-weight="700">194</text><text x="475" y="54" fill="#a8c7dc" font-size="14">Settings</text>
+    <text x="665" y="32" fill="#fff" font-size="26" font-weight="700">1063</text><text x="665" y="54" fill="#a8c7dc" font-size="14">Results</text>
+  </g>
+</g>
+</svg>

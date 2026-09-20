@@ -1,486 +1,197 @@
 # VLA-Radar
 
 <p align="center">
-  <strong>Evidence-linked research radar for Vision-Language-Action, World Action Models, and robot foundation models.</strong>
+  <img src="assets/readme/vla-radar-hero.svg" alt="VLA-Radar：面向 VLA、WAM 与机器人基础模型的研究雷达">
 </p>
 
 <p align="center">
-  从论文发现、深度阅读，到 Benchmark 对齐、结果比较与证据追溯。<br>
-  一个面向 VLA / WAM / 机器人基础模型研究的开放、静态、持续维护的研究雷达。
+  <strong>从论文发现、深度阅读，到 Benchmark 对齐、结果比较与证据追溯。</strong>
 </p>
 
 <p align="center">
-  <a href="https://invoidstar.github.io/VLA-Radar/"><strong>🌐 Live Site</strong></a>
+  <a href="https://invoidstar.github.io/VLA-Radar/"><strong>🌐 在线访问</strong></a>
   ·
-  <a href="https://github.com/invoidstar/VLA-Radar/actions/workflows/site.yml">CI / Pages</a>
+  <a href="https://github.com/invoidstar/VLA-Radar/actions/workflows/site.yml">构建状态</a>
   ·
-  <a href="MAINTENANCE.md">Maintenance</a>
-  ·
-  <a href="CHANGELOG.md">Changelog</a>
+  <a href="CHANGELOG.md">更新记录</a>
 </p>
 
 <p align="center">
-  <img alt="Validate and deploy VLA Radar" src="https://github.com/invoidstar/VLA-Radar/actions/workflows/site.yml/badge.svg">
-  <img alt="Version" src="https://img.shields.io/badge/version-V3.0-5964a8">
-  <img alt="Static Site" src="https://img.shields.io/badge/site-static%20%2B%20GitHub%20Pages-6f7893">
-  <img alt="Privacy" src="https://img.shields.io/badge/reading%20data-local--only-6d8b73">
+  <img alt="VLA-Radar CI" src="https://github.com/invoidstar/VLA-Radar/actions/workflows/site.yml/badge.svg">
+  <img alt="Version" src="https://img.shields.io/badge/VLA--Radar-V3.0-5964a8">
+  <img alt="Privacy" src="https://img.shields.io/badge/阅读数据-仅保存在本地-6d8b73">
 </p>
 
 ---
 
-## What is VLA-Radar?
+## 项目简介
 
-**VLA-Radar** is a research-oriented reading and evidence workspace for the rapidly evolving VLA ecosystem.
+**VLA-Radar** 是一个面向 **Vision-Language-Action、World Action Model 与机器人基础模型** 的开放研究雷达。
 
-It is designed around a simple idea:
+它希望解决的不只是“有哪些论文”，而是进一步回答：
 
-> **Do not stop at collecting paper titles. Follow the evidence from paper → evaluation protocol → reported result → source.**
+- 这篇工作真正做了什么？
+- 它和已有方法相比改变了什么？
+- 实验结果是在什么评测条件下得到的？
+- 不同论文中的结果是否真的可以直接比较？
+- 一个结论最终能否回到原始论文、表格与证据来源？
 
-The project tracks public work around:
-
-- Vision-Language-Action models
-- Vision / Video-Action models
-- World Action Models and robot world models
-- Robot foundation models
-- Pre-training / post-training / RL
-- Memory and long-horizon control
-- Spatial / 3D / geometry-aware policies
-- Action representation and tokenization
-- Inference / training efficiency
-- Benchmarks, datasets and evaluation methodology
-
-VLA-Radar is **not** an official leaderboard and does not collapse incompatible evaluations into a universal score.
+因此，VLA-Radar 将 **文献阅读、Benchmark、结果证据与研究工作流** 放在同一个网站中持续维护。
 
 ---
 
-## V3.0 Snapshot
+## 核心能力
 
-Current public catalog:
+<p align="center">
+  <img src="assets/readme/vla-radar-overview.svg" alt="VLA-Radar 核心能力概览：论文发现、证据对齐与研究工作台">
+</p>
 
-| Layer | Scale |
-|---|---:|
-| Papers | **98** |
-| Benchmarks | **61** |
-| Evaluation Settings | **194** |
-| Canonical Tracks | **286** |
-| Reported Results | **1063** |
+### 📚 论文发现与深度阅读
 
-V3.0 marks the transition from a paper-reading website to a stable **research radar** with a unified evidence model, Benchmark discovery system, workspace tools, and a repeatable maintenance pipeline.
+持续整理 VLA / WAM / 机器人基础模型相关研究，并提供：
 
----
+- 文献库与研究方向
+- 论文时间线
+- 深度阅读笔记
+- 发表与版本更新追踪
+- 具身智能周报
 
-## Core Features
+### 📊 Benchmark 与证据对齐
 
-### 📚 Paper Library
+VLA-Radar 不将不同评测条件下的数字简单堆成一个总榜。
 
-- Structured paper cards and deep reading notes
-- Search by title, team, method, topic, findings and keywords
-- Topic, venue, time and reading-status filters
-- Publication timeline with first-public / arXiv / acceptance / publication distinctions
-- Paper detail pages with:
-  - reading notes
-  - lifecycle history
-  - benchmark evidence
-  - source links and locators
-
-### 🧭 Research Discovery
-
-- Research-topic overview
-- Timeline view
-- **Embodied AI Weekly / 具身智能周报**
-- Update center for actual catalog changes
-- Global command search
-
-### 📊 Evidence-linked Benchmark Explorer
-
-V3.0 uses the following default hierarchy:
+默认按照：
 
 ```text
 Benchmark
-  ↓
+    ↓
 Evaluation Setting
-  ↓
+    ↓
 Result Report
 ```
 
-where:
+组织结果。
 
-> **Evaluation Setting = Evaluation Protocol only**
+其中 **Evaluation Setting 只由评测协议决定**。训练数据、训练 recipe、base model 和来源论文保留在结果中展示，但不会因此人为拆成新的 Setting。
 
-Training data, recipe, source paper, base model and checkpoint do **not** define the Setting identity.
+这样可以在保留差异的同时，更清楚地判断：
 
-Each result report preserves:
+> **这些数字究竟是不是在回答同一个评测问题。**
 
-```text
-Method
-Score
-Training Data
-Source Paper
-Recipe / Evidence
-```
+### 🧭 Benchmark 搜索与分类
 
-This keeps the evaluation question stable while still exposing why two reports of the same method may produce different scores.
+当前 Benchmark 支持：
 
-### 🔎 Benchmark Search & Taxonomy
+- 关键词搜索
+- Focus 分类
+- Simulation / Real Robot / Mixed 环境筛选
+- Long-horizon、Memory、Tactile、Robustness / OOD、Latency / Efficiency 等标签组合
 
-All 61 Benchmarks are discoverable through:
+帮助快速找到真正关心的评测方向。
 
-**Search**
+### 🛠 研究工作台
 
-- Benchmark / Dataset name
-- Evaluation Setting
-- task scope
-- split
-- metric
-- score columns
+网站同时提供：
 
-**Focus**
-
-- General Manipulation
-- Long-Horizon & Memory
-- Generalization & Robustness
-- Dexterous & Contact-Rich
-- Language, Planning & Compositionality
-- Efficiency & Deployment
-
-**Environment**
-
-- Simulation
-- Real Robot
-- Mixed / Cross-Environment
-
-**Tags**
-
-Examples include:
-
-- Household / Kitchen
-- Tabletop
-- Industrial / Assembly
-- Bimanual / Dual-arm
-- Tactile
-- Long-horizon
-- Memory
-- Multi-task
-- Robustness / OOD
-- Sim-to-Real
-- Latency / Efficiency
-- Language / Compositionality
-
-Search, Focus, Environment and Tags can be combined and are preserved in shareable URLs.
-
-### 🧪 Advanced Track Analysis
-
-The exact canonical track remains available as the evidence-level view:
-
-- original protocol
-- arbitrary score-column sorting
-- metric direction
-- bar charts
-- time–score scatter
-- source / verification dates
-- CSV export
-- exact result IDs and source locators
-
-No missing value is silently converted to zero.
-
-### 🛠 Research Workspace
-
-- 2–4 paper comparison
-- citation / Markdown / CSV export
-- focused reader view
-- evidence coverage map
-- update stream
+- 论文对比
+- Benchmark 结果分析
+- 引用与 CSV 导出
+- 更新中心
+- Evidence Coverage
 - My Radar
-- local reading list
+- 本地阅读记录
 
-Personal reading state, follows and filters stay in the browser and are never written into the public catalog.
+其中收藏、阅读状态与个人筛选偏好只保存在浏览器本地，不上传到公共仓库。
 
 ---
 
-## Benchmark Data Model
+## 当前覆盖
 
-The public benchmark layer is intentionally split into three levels.
+| 内容 | 当前规模 |
+|---|---:|
+| 论文 | **98** |
+| Benchmark | **61** |
+| Evaluation Setting | **194** |
+| 结果记录 | **1063** |
 
-### 1. Benchmark
+这些数字会随着每周维护继续增长。
 
-A dataset or evaluation family, such as:
+VLA-Radar 关注的不只是收录数量，更强调：
 
-`RoboTwin`, `LIBERO`, `RoboCasa`, `RLBench`, `CALVIN`, `RoboDojo`, `SimplerEnv`, etc.
+> **每一条结果都尽可能保留评测条件、来源论文与原始证据。**
 
-Benchmark-level discovery metadata lives in:
+---
+
+## 证据原则
+
+VLA-Radar 在整理结果时遵循几个基本原则：
+
+**先看协议，再看排名。**  
+任务集合、评测条件或指标不同的结果，不会被强行合并成统一排名。
+
+**缺失值不是 0。**  
+论文没有报告的数据保持缺失，不进行猜测或补值。
+
+**同一个方法可以有多条结果。**  
+不同论文、不同训练数据或不同 recipe 报告出的结果都会被保留，而不是只选择最高分。
+
+**结果可以回到来源。**  
+尽量保留来源论文、表格 / 章节定位、版本与核验信息。
+
+**结构校验不等于科学结论验证。**  
+CI 可以保证数据结构和网站一致性，但论文中的科学结论仍以原始来源为准。
+
+---
+
+## V3.0
+
+V3.0 标志着 VLA-Radar 从一个论文阅读网站，进一步发展为一个相对完整的 **VLA Research Radar**。
+
+目前主要的信息链路已经稳定：
 
 ```text
-catalog/benchmark-taxonomy.json
+发现论文
+  ↓
+理解工作
+  ↓
+找到 Benchmark
+  ↓
+对齐 Evaluation Setting
+  ↓
+比较 Result Report
+  ↓
+追溯原始 Evidence
 ```
 
-### 2. Evaluation Setting
+项目现已进入稳定维护阶段。后续默认不再为了增加功能而增加功能，而是持续提高：
 
-A generated comparison layer answering:
-
-> Are these reports evaluating the same benchmark question?
-
-The Setting identity may include:
-
-- dataset / benchmark
-- task set
-- evaluation split / condition
-- metric
-- unit and optimization direction
-- genuine evaluation-context differences
-
-It does **not** split merely because of:
-
-- training dataset
-- demonstration count
-- SFT vs co-training
-- batch size / steps / learning rate
-- architecture / base model
-- checkpoint
-- source paper
-
-### 3. Canonical Track / Result
-
-The precise evidence layer.
-
-```text
-catalog/benchmarks.json
-catalog/results/r-*.json
-```
-
-Tracks preserve the source-defined protocol and result records preserve source paper, value, locator, training description and verification metadata.
+- 文献覆盖率
+- 阅读与总结质量
+- Benchmark 与结果完整性
+- 证据可追溯性
+- 周更稳定性
 
 ---
 
-## Repository Structure
+## 访问
 
-```text
-VLA-Radar/
-├── site/                       # Static frontend
-│   ├── index.html
-│   ├── js/
-│   │   ├── core/
-│   │   ├── components/
-│   │   └── features/
-│   └── styles/
-│
-├── catalog/                    # Canonical public research data
-│   ├── papers/                 # One paper per source file
-│   ├── results/                # Evidence-linked result records
-│   ├── benchmarks.json         # Canonical evaluation tracks
-│   ├── benchmark-taxonomy.json # Focus / Environment / Tags
-│   ├── bibliography.json
-│   └── manifest.json
-│
-├── data/                       # Deterministic generated artifacts
-│   ├── details/
-│   ├── boards/
-│   ├── settings/
-│   ├── paper-results/
-│   └── hashed indexes
-│
-├── scripts/
-│   ├── build/
-│   ├── validate/
-│   ├── browser/
-│   ├── discovery/
-│   ├── maintenance/
-│   └── migrations/
-│
-├── tests/
-├── maintenance/                # Policies, state and release audits
-├── MAINTENANCE.md
-└── AGENTS.md
-```
+🌐 **在线网站**
 
-**Canonical data lives in `catalog/`. Generated `data/` files should not be edited manually.**
+https://invoidstar.github.io/VLA-Radar/
+
+📦 **GitHub**
+
+https://github.com/invoidstar/VLA-Radar
 
 ---
 
-## Quick Start
+## 说明
 
-Requirements:
+VLA-Radar 是一个独立的研究阅读与证据整理项目，并非任何 Benchmark 的官方排行榜。
 
-- Python 3.10+
-- Node.js 18+
-- no database
-- no model API key
-- no frontend framework build step
+网站中的跨论文结果仍可能受到训练数据、模型规模、计算预算、checkpoint 与实现细节等因素影响。即使 Evaluation Setting 已对齐，也不代表所有训练条件完全公平。
 
-Build and validate:
-
-```bash
-python scripts/build/build_catalog.py
-python scripts/validate/validate_all.py
-```
-
-Stage the public site:
-
-```bash
-python scripts/build/stage_site.py --output _site
-python -m http.server 8080 -d _site
-```
-
-Then open:
-
-```text
-http://localhost:8080
-```
-
-The site is designed for static hosting and is deployed through GitHub Pages.
-
----
-
-## Adding or Updating Research Content
-
-### Paper
-
-Edit:
-
-```text
-catalog/papers/pNNN.json
-```
-
-### Benchmark protocol
-
-Edit:
-
-```text
-catalog/benchmarks.json
-```
-
-### Result evidence
-
-Edit:
-
-```text
-catalog/results/r-*.json
-```
-
-### Benchmark classification
-
-Edit:
-
-```text
-catalog/benchmark-taxonomy.json
-```
-
-Every real Benchmark must have:
-
-- exactly one Focus
-- exactly one Environment
-- controlled Tags
-
-After canonical changes:
-
-```bash
-python scripts/build/build_catalog.py
-python scripts/validate/validate_all.py
-```
-
-The validator checks schema, deterministic generation, evidence constraints, taxonomy coverage, performance budgets, Node regressions and browser-facing invariants.
-
----
-
-## Evidence Principles
-
-VLA-Radar follows several non-negotiable rules.
-
-### 1. Protocol before ranking
-
-Results are only compared inside a clearly defined evaluation context.
-
-### 2. Missing is not zero
-
-Unreported values remain missing.
-
-### 3. Same method ≠ same report
-
-The same method can appear multiple times when different papers, training data or recipes report different outcomes.
-
-### 4. Source attribution stays visible
-
-Author-reported methods, reported baselines and independent reproductions are not silently treated as equivalent evidence.
-
-### 5. No automatic “best score” representative
-
-VLA-Radar does not deduplicate a method by keeping its highest reported number.
-
-### 6. Metadata and scientific verification are different
-
-A successful schema / CI check proves structural consistency, not scientific truth. Quantitative claims still require source review.
-
----
-
-## Privacy
-
-VLA-Radar is a static public website.
-
-Personal state such as:
-
-- saved papers
-- reading status
-- follows
-- reading position
-- local filters and preferences
-
-stays in the user's browser.
-
-The public repository does not store personal reading history or analytics-derived user profiles.
-
----
-
-## Maintenance
-
-VLA-Radar is currently in **V3 stable maintenance mode**.
-
-The default strategy is no longer to continuously add product features. Weekly maintenance focuses on:
-
-1. public VLA / WAM paper discovery
-2. full-text reading and source verification
-3. publication-status updates
-4. benchmark / result evidence extraction
-5. Evaluation Setting consistency
-6. Benchmark taxonomy coverage
-7. Embodied AI Weekly
-8. source-health rotation
-9. deterministic build and validation
-10. Chromium regression tests
-11. GitHub Pages deployment and branch housekeeping
-
-See:
-
-- [MAINTENANCE.md](MAINTENANCE.md) — data semantics and maintenance workflow
-- [AGENTS.md](AGENTS.md) — automation and public-data boundaries
-- [CHANGELOG.md](CHANGELOG.md) — project evolution
-
----
-
-## Project Status
-
-**V3.0 · Stable Research Radar**
-
-The project has completed its main information-architecture phase.
-
-Future engineering work is expected only when there is a concrete need such as:
-
-- a real usability problem
-- a measurable performance bottleneck
-- a reliability issue
-- a security / compatibility requirement
-
-Otherwise, development effort goes into **better evidence, broader coverage and more reliable maintenance**.
-
----
-
-## Scope & Disclaimer
-
-VLA-Radar is an independent research reading and evidence project.
-
-- It is not an official leaderboard for any benchmark.
-- It does not claim exhaustive coverage of the VLA field.
-- Reported numbers belong to their cited sources and evaluation conditions.
-- Cross-paper comparison may still differ in training data, model scale, compute, checkpoint selection or other recipe details even when the Evaluation Setting is aligned.
-- Public sources only; unknown information is left unknown rather than guessed.
+项目仅使用公开研究资料；无法可靠确认的信息保持未知，不进行猜测。
 
 ---
 
