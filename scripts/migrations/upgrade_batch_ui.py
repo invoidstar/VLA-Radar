@@ -9,7 +9,7 @@ from pathlib import Path
 R=Path(__file__).resolve().parents[2]
 p=R/'scripts/build/catalog_core.py';s=p.read_text();old="require(t['dataset'] in {'LIBERO','RoboTwin','RoboCasa'},'supported dataset family')";new="require(isinstance(t['dataset'],str) and re.fullmatch(r'[A-Za-z][A-Za-z0-9 +._-]{1,50}',t['dataset']),'invalid dataset family')"
 if old in s:p.write_text(s.replace(old,new),encoding='utf-8')
-p=R/'research.js';s=p.read_text()
+p=R/'site/js/features/research/research.js';s=p.read_text()
 if 'function datasetNames' not in s:
     s=s.replace("let dataset=['LIBERO','RoboTwin','RoboCasa'].includes(query.get('dataset'))?query.get('dataset'):'LIBERO';","const datasets=datasetNames(data);let dataset=datasets.includes(query.get('dataset'))?query.get('dataset'):(datasets[0]||'');")
     s=s.replace("${['LIBERO','RoboTwin','RoboCasa'].map(d=>`<button data-dataset=\"${d}\" aria-pressed=\"${d===dataset}\">${d}</button>`)","${datasets.map(d=>`<button data-dataset=\"${esc(d)}\" aria-pressed=\"${d===dataset}\">${esc(d)}</button>`)")
@@ -33,7 +33,7 @@ if 'function datasetNames' not in s:
     assert 'const datasets=datasetNames(data)' in s and '${datasets.map' in s
     assert "esc(v)+'%'" not in s
     p.write_text(s,encoding='utf-8')
-p=R/'research.css';s=p.read_text();marker='/* Expanded benchmark navigation and evidence tables */'
+p=R/'site/styles/features/research.css';s=p.read_text();marker='/* Expanded benchmark navigation and evidence tables */'
 if marker not in s:p.write_text(s+'\n'+marker+'\n.dataset-tabs{flex-wrap:wrap}.note-data-table{font-size:.85rem}.note-section p{line-height:1.85}.note-section .board-table-scroll{max-width:100%;margin:16px 0}.note-section>div{min-width:0}\n',encoding='utf-8')
 p=R/'scripts/validate/validate_all.py';s=p.read_text()
 if 'test_content.cjs' not in s:p.write_text(s.replace("['node','tests/node/test_research.cjs']]","['node','tests/node/test_research.cjs'],['node','tests/node/test_content.cjs']]"),encoding='utf-8')
