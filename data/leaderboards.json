@@ -16733,6 +16733,611 @@
       }
     }
   ],
+  "taxonomy": {
+    "schemaVersion": 1,
+    "focuses": [
+      {
+        "id": "general-manipulation",
+        "label": "General Manipulation",
+        "description": "通用操作、多任务控制与基础任务成功率。"
+      },
+      {
+        "id": "long-horizon-memory",
+        "label": "Long-Horizon & Memory",
+        "description": "长时程执行、历史依赖、记忆与连续任务。"
+      },
+      {
+        "id": "generalization-robustness",
+        "label": "Generalization & Robustness",
+        "description": "OOD、环境/视角变化、跨场景与 sim-to-real 泛化。"
+      },
+      {
+        "id": "dexterous-contact",
+        "label": "Dexterous & Contact-Rich",
+        "description": "双臂、精细、触觉与接触密集操作。"
+      },
+      {
+        "id": "language-planning-compositionality",
+        "label": "Language, Planning & Compositionality",
+        "description": "语言理解、规划、组合泛化与动作语义。"
+      },
+      {
+        "id": "efficiency-deployment",
+        "label": "Efficiency & Deployment",
+        "description": "延迟、吞吐、缓存、训练效率、硬件与部署。"
+      }
+    ],
+    "environments": [
+      {
+        "id": "simulation",
+        "label": "Simulation",
+        "description": "主要在仿真环境中评测。"
+      },
+      {
+        "id": "real",
+        "label": "Real Robot",
+        "description": "主要在真实机器人或真实物理部署中评测。"
+      },
+      {
+        "id": "mixed",
+        "label": "Mixed / Cross-Environment",
+        "description": "同时涉及仿真与真实环境，或属于跨环境/系统级评测。"
+      }
+    ],
+    "tags": [
+      {
+        "id": "household-kitchen",
+        "label": "Household / Kitchen"
+      },
+      {
+        "id": "tabletop",
+        "label": "Tabletop"
+      },
+      {
+        "id": "industrial-assembly",
+        "label": "Industrial / Assembly"
+      },
+      {
+        "id": "bimanual-dual-arm",
+        "label": "Bimanual / Dual-arm"
+      },
+      {
+        "id": "tactile",
+        "label": "Tactile"
+      },
+      {
+        "id": "contact-rich",
+        "label": "Contact-rich"
+      },
+      {
+        "id": "mobile-manipulation",
+        "label": "Mobile Manipulation"
+      },
+      {
+        "id": "long-horizon",
+        "label": "Long-horizon"
+      },
+      {
+        "id": "memory",
+        "label": "Memory"
+      },
+      {
+        "id": "multi-task",
+        "label": "Multi-task"
+      },
+      {
+        "id": "robustness-ood",
+        "label": "Robustness / OOD"
+      },
+      {
+        "id": "sim-to-real",
+        "label": "Sim-to-Real"
+      },
+      {
+        "id": "latency-efficiency",
+        "label": "Latency / Efficiency"
+      },
+      {
+        "id": "language-compositional",
+        "label": "Language / Compositionality"
+      },
+      {
+        "id": "dexterous",
+        "label": "Dexterous"
+      }
+    ],
+    "benchmarks": {
+      "RoboTwin": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "multi-task",
+          "bimanual-dual-arm",
+          "tabletop"
+        ]
+      },
+      "LIBERO": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "multi-task",
+          "long-horizon",
+          "language-compositional",
+          "household-kitchen"
+        ]
+      },
+      "RoboCasa": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "household-kitchen",
+          "multi-task",
+          "long-horizon"
+        ]
+      },
+      "RoboCasa365": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "household-kitchen",
+          "multi-task",
+          "robustness-ood"
+        ]
+      },
+      "RLBench": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "multi-task",
+          "tabletop",
+          "language-compositional"
+        ]
+      },
+      "SimplerEnv": {
+        "focus": "generalization-robustness",
+        "environment": "mixed",
+        "tags": [
+          "sim-to-real",
+          "robustness-ood",
+          "tabletop"
+        ]
+      },
+      "CALVIN": {
+        "focus": "long-horizon-memory",
+        "environment": "simulation",
+        "tags": [
+          "long-horizon",
+          "memory",
+          "multi-task",
+          "language-compositional",
+          "household-kitchen"
+        ]
+      },
+      "RoboMimic": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "tabletop",
+          "multi-task"
+        ]
+      },
+      "Push-T": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "tabletop"
+        ]
+      },
+      "Franka Kitchen": {
+        "focus": "long-horizon-memory",
+        "environment": "simulation",
+        "tags": [
+          "household-kitchen",
+          "long-horizon"
+        ]
+      },
+      "ALOHA-Sim": {
+        "focus": "dexterous-contact",
+        "environment": "simulation",
+        "tags": [
+          "bimanual-dual-arm",
+          "tabletop"
+        ]
+      },
+      "COLOSSEUM": {
+        "focus": "generalization-robustness",
+        "environment": "simulation",
+        "tags": [
+          "robustness-ood",
+          "tabletop"
+        ]
+      },
+      "DexMimicGen": {
+        "focus": "dexterous-contact",
+        "environment": "simulation",
+        "tags": [
+          "dexterous",
+          "bimanual-dual-arm",
+          "tabletop"
+        ]
+      },
+      "Meta-World": {
+        "focus": "generalization-robustness",
+        "environment": "simulation",
+        "tags": [
+          "multi-task",
+          "robustness-ood",
+          "tabletop"
+        ]
+      },
+      "RoboDojo": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "multi-task",
+          "long-horizon"
+        ]
+      },
+      "Google Robot (real)": {
+        "focus": "language-planning-compositionality",
+        "environment": "real",
+        "tags": [
+          "mobile-manipulation",
+          "language-compositional",
+          "long-horizon",
+          "multi-task"
+        ]
+      },
+      "Language Table": {
+        "focus": "language-planning-compositionality",
+        "environment": "simulation",
+        "tags": [
+          "language-compositional",
+          "tabletop"
+        ]
+      },
+      "BridgeData (real)": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "tabletop",
+          "multi-task"
+        ]
+      },
+      "Octo fine-tuning (real)": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "tabletop",
+          "multi-task"
+        ]
+      },
+      "DROID (real)": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "multi-task",
+          "robustness-ood"
+        ]
+      },
+      "Ravens (CLIPort)": {
+        "focus": "language-planning-compositionality",
+        "environment": "simulation",
+        "tags": [
+          "language-compositional",
+          "tabletop",
+          "robustness-ood"
+        ]
+      },
+      "UniPi compositional (sim)": {
+        "focus": "language-planning-compositionality",
+        "environment": "simulation",
+        "tags": [
+          "language-compositional",
+          "tabletop"
+        ]
+      },
+      "VLA-Touch (real)": {
+        "focus": "dexterous-contact",
+        "environment": "real",
+        "tags": [
+          "tactile",
+          "contact-rich"
+        ]
+      },
+      "Legato (real)": {
+        "focus": "dexterous-contact",
+        "environment": "real",
+        "tags": [
+          "bimanual-dual-arm",
+          "contact-rich",
+          "tabletop"
+        ]
+      },
+      "VLABench": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "multi-task",
+          "latency-efficiency"
+        ]
+      },
+      "ActionCache (real)": {
+        "focus": "efficiency-deployment",
+        "environment": "real",
+        "tags": [
+          "latency-efficiency",
+          "tabletop"
+        ]
+      },
+      "FlashVLA inference": {
+        "focus": "efficiency-deployment",
+        "environment": "mixed",
+        "tags": [
+          "latency-efficiency"
+        ]
+      },
+      "Tau0-VLA real robot": {
+        "focus": "long-horizon-memory",
+        "environment": "real",
+        "tags": [
+          "long-horizon",
+          "memory",
+          "language-compositional"
+        ]
+      },
+      "TRI-Ramen": {
+        "focus": "generalization-robustness",
+        "environment": "simulation",
+        "tags": [
+          "robustness-ood",
+          "language-compositional"
+        ]
+      },
+      "TRI-Ramen real": {
+        "focus": "generalization-robustness",
+        "environment": "real",
+        "tags": [
+          "robustness-ood",
+          "long-horizon",
+          "language-compositional"
+        ]
+      },
+      "HALO long-horizon (sim)": {
+        "focus": "long-horizon-memory",
+        "environment": "simulation",
+        "tags": [
+          "long-horizon",
+          "memory"
+        ]
+      },
+      "HALO long-horizon (real)": {
+        "focus": "long-horizon-memory",
+        "environment": "real",
+        "tags": [
+          "long-horizon",
+          "memory"
+        ]
+      },
+      "DSWAM real folding": {
+        "focus": "dexterous-contact",
+        "environment": "real",
+        "tags": [
+          "contact-rich",
+          "tabletop"
+        ]
+      },
+      "DSWAM real sorting": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "tabletop"
+        ]
+      },
+      "ManiSkill2": {
+        "focus": "general-manipulation",
+        "environment": "simulation",
+        "tags": [
+          "multi-task",
+          "tabletop"
+        ]
+      },
+      "OC-VLA++ real robot": {
+        "focus": "generalization-robustness",
+        "environment": "real",
+        "tags": [
+          "robustness-ood",
+          "tabletop"
+        ]
+      },
+      "VT-WAM real robot": {
+        "focus": "dexterous-contact",
+        "environment": "real",
+        "tags": [
+          "tactile",
+          "contact-rich"
+        ]
+      },
+      "LIBERO-Plus": {
+        "focus": "generalization-robustness",
+        "environment": "simulation",
+        "tags": [
+          "robustness-ood",
+          "multi-task"
+        ]
+      },
+      "RMBench": {
+        "focus": "long-horizon-memory",
+        "environment": "simulation",
+        "tags": [
+          "memory",
+          "long-horizon"
+        ]
+      },
+      "SeeLikeRobot real": {
+        "focus": "generalization-robustness",
+        "environment": "real",
+        "tags": [
+          "robustness-ood"
+        ]
+      },
+      "Lumo-2 probe": {
+        "focus": "language-planning-compositionality",
+        "environment": "mixed",
+        "tags": [
+          "language-compositional"
+        ]
+      },
+      "FAST training": {
+        "focus": "efficiency-deployment",
+        "environment": "mixed",
+        "tags": [
+          "latency-efficiency"
+        ]
+      },
+      "Deltoris hardware": {
+        "focus": "efficiency-deployment",
+        "environment": "mixed",
+        "tags": [
+          "latency-efficiency"
+        ]
+      },
+      "Embodied.cpp": {
+        "focus": "efficiency-deployment",
+        "environment": "mixed",
+        "tags": [
+          "latency-efficiency"
+        ]
+      },
+      "GF-VLA real": {
+        "focus": "dexterous-contact",
+        "environment": "real",
+        "tags": [
+          "bimanual-dual-arm",
+          "industrial-assembly"
+        ]
+      },
+      "RoboMME": {
+        "focus": "general-manipulation",
+        "environment": "mixed",
+        "tags": [
+          "multi-task"
+        ]
+      },
+      "RECAP real": {
+        "focus": "efficiency-deployment",
+        "environment": "real",
+        "tags": [
+          "latency-efficiency",
+          "long-horizon"
+        ]
+      },
+      "MECo-WAM real": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "tabletop"
+        ]
+      },
+      "ALOHA2 sim": {
+        "focus": "dexterous-contact",
+        "environment": "simulation",
+        "tags": [
+          "bimanual-dual-arm",
+          "tabletop"
+        ]
+      },
+      "DreamZero real": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "tabletop",
+          "latency-efficiency"
+        ]
+      },
+      "Dyna-2 real": {
+        "focus": "generalization-robustness",
+        "environment": "real",
+        "tags": [
+          "robustness-ood",
+          "multi-task"
+        ]
+      },
+      "RoboCerebra": {
+        "focus": "long-horizon-memory",
+        "environment": "simulation",
+        "tags": [
+          "long-horizon",
+          "memory"
+        ]
+      },
+      "OTQL real": {
+        "focus": "generalization-robustness",
+        "environment": "real",
+        "tags": [
+          "robustness-ood"
+        ]
+      },
+      "Track4Action real": {
+        "focus": "dexterous-contact",
+        "environment": "real",
+        "tags": [
+          "bimanual-dual-arm"
+        ]
+      },
+      "World-to-Wrist inference": {
+        "focus": "efficiency-deployment",
+        "environment": "mixed",
+        "tags": [
+          "latency-efficiency"
+        ]
+      },
+      "RoboDojo real": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "multi-task"
+        ]
+      },
+      "RoboMemArena": {
+        "focus": "long-horizon-memory",
+        "environment": "simulation",
+        "tags": [
+          "long-horizon",
+          "memory"
+        ]
+      },
+      "PixMC": {
+        "focus": "generalization-robustness",
+        "environment": "simulation",
+        "tags": [
+          "robustness-ood"
+        ]
+      },
+      "DMS-VLA real": {
+        "focus": "general-manipulation",
+        "environment": "real",
+        "tags": [
+          "tabletop"
+        ]
+      },
+      "DMS-VLA deployment": {
+        "focus": "efficiency-deployment",
+        "environment": "mixed",
+        "tags": [
+          "latency-efficiency"
+        ]
+      },
+      "VLAbot real": {
+        "focus": "dexterous-contact",
+        "environment": "real",
+        "tags": [
+          "industrial-assembly",
+          "contact-rich"
+        ]
+      }
+    }
+  },
   "results": [
     {
       "id": "r-act-v1-human-bet",
