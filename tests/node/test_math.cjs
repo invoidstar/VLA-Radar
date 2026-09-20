@@ -39,9 +39,23 @@ assert(html.includes('$x_t + 1'));
 assert(!html.includes('<math'));
 
 const R=require('../../site/js/features/research/research.js');
+html=R.richText('Section $x_t$');
+assert(html.includes('<math'));
+html=R.richParagraphs('Intro $L=\\sum_t x_t$');
+assert(html.includes('<math'));
+
+const evidence=R.richEvidence({
+  coverage:{source:'https://example.com'},
+  sections:[{sources:[{url:'https://example.com'}]}],
+  tables:[],
+  figures:[{title:'Figure $x_t$',url:'https://example.com',caption:'Caption $L$',imageUrl:'',license:''}],
+  benchmarkReview:{status:'extracted',note:'Review $J=\\sum_t e_t$',checkedAt:'2026-09-20'}
+});
+assert((evidence.match(/<math/g)||[]).length>=3,'richEvidence renders math-aware titles, captions and review notes');
+
 html=R.noteBlocks('| Method | Loss |\n|---|---|\n| safe | $L=\\frac{1}{N}\\sum_i e_i$ |');
 assert(html.includes('<table'));
 assert(html.includes('<math'));
 assert(html.includes('<mfrac>'));
 
-console.log('PASS: local MathML rendering, delimiters, scripts, fractions, sums, matrices, escaping and table formulas');
+console.log('PASS: local MathML rendering, multiline display math, rich-text surfaces, escaping and table formulas');
