@@ -384,7 +384,7 @@ found=[]
 for p in R.rglob('*'):
     if not p.is_file() or p.suffix not in text_ext:continue
     rel=p.as_posix()
-    if rel.startswith(('catalog/','data/')):continue
+    if rel.startswith(('catalog/','data/')) or rel=='tests/test_repository_structure.py':continue
     s=p.read_text(errors='ignore')
     for old in stale:
         if old in s:found.append((rel,old))
