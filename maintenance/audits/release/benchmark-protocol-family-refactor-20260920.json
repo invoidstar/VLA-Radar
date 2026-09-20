@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "baseMainSha": "dcd253b20b1ba6b7078b663d65b7201e5d891b00",
+  "scope": "Benchmark information architecture: explicit protocol family and recipe metadata, initially curated for RoboTwin",
+  "model": [
+    "Benchmark",
+    "Protocol Family",
+    "Method",
+    "Recipe / Subprotocol",
+    "Evidence"
+  ],
+  "robotwin": {
+    "originalTracks": 19,
+    "protocolFamilies": 6,
+    "families": [
+      {
+        "id": "robotwin2-standard-50-clean-random",
+        "mode": "aligned",
+        "tracks": 6
+      },
+      {
+        "id": "robotwin2-clean-only-50",
+        "mode": "aligned",
+        "tracks": 2
+      },
+      {
+        "id": "robotwin2-official-2500-clean",
+        "mode": "aligned",
+        "tracks": 2
+      },
+      {
+        "id": "robotwin2-easy-hard-reports",
+        "mode": "aligned",
+        "tracks": 2
+      },
+      {
+        "id": "robotwin2-partial-subset-studies",
+        "mode": "series",
+        "tracks": 4
+      },
+      {
+        "id": "robotwin2-deployment-ablations",
+        "mode": "series",
+        "tracks": 3
+      }
+    ]
+  },
+  "guarantees": {
+    "originalTrackIdsPreserved": true,
+    "resultRecordsUnchanged": true,
+    "paperIdsUnchanged": true,
+    "deepLinksByTrackPreserved": true,
+    "noHighestScoreRepresentativeSelection": true,
+    "seriesFamiliesNeverAggregateScores": true,
+    "otherBenchmarksUseCompatibilityFallback": true
+  },
+  "representativeRule": "Use the curated familyPrimaryTrackId when that method is present; otherwise use the method's first record in family track order. Never choose the maximum score automatically.",
+  "validation": {
+    "preparationWorkflow": 35491471304,
+    "offlineValidation": "pass"
+  }
+}

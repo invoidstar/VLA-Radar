@@ -19,6 +19,7 @@ NOTE_KEYS = set('status updatedAt verifiedAt version sections'.split())
 SECTION_KEYS = set('id title body sources'.split())
 RESULT_KEYS = set('id paperId method trackId values evidence verifiedAt source sourceVersion locator attribution trainingData evaluationNotes supersedes'.split())
 TRACK_KEYS = set('id dataset name version tasks split metric unit direction protocol trainingRegime comparisonScope columns source'.split())
+TRACK_OPTIONAL_KEYS = set('familyId familyName familySummary familyKind familyMode familyPrimaryTrackId recipeName recipeType'.split())
 
 def dumps(x): return json.dumps(x, ensure_ascii=False, indent=2, allow_nan=False)+'\n'
 def load(path): return json.loads(Path(path).read_text(encoding='utf-8'))
@@ -120,13 +121,22 @@ def validate_record(rec, topic_ids=None):
     validate_note_extras(note, public_url, require)
 
 def validate_track(t):
-    keys(t,TRACK_KEYS,'track'); require(re.fullmatch(r'[a-z0-9-]+',t['id']),'track id')
+    require(isinstance(t,dict) and TRACK_KEYS<=set(t)<=TRACK_KEYS|TRACK_OPTIONAL_KEYS,'track: unexpected/missing public fields')
+    require(re.fullmatch(r'[a-z0-9-]+',t['id']),'track id')
     require(isinstance(t['dataset'],str) and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9 ._+()-]{0,59}',t['dataset']),'public benchmark family name')
     require(t['comparisonScope'] in {'protocol','paper-table'},'comparison scope')
     require(t['direction'] in {'higher','lower'},'metric direction')
     require(t['unit'] in {'percent','score','seconds'},'unit')
     require(isinstance(t['columns'],list) and t['columns'] and len(set(t['columns']))==len(t['columns']),'track columns')
     require(all(isinstance(t[k],str) and t[k] for k in TRACK_KEYS-{'columns'}),'track description required'); public_url(t['source'])
+    present=set(t)&TRACK_OPTIONAL_KEYS
+    require(not present or present==TRACK_OPTIONAL_KEYS,'protocol-family metadata must be complete')
+    if present:
+        require(re.fullmatch(r'[a-z0-9-]+',t['familyId']),'family id')
+        require(t['familyMode'] in {'aligned','series'},'family mode')
+        require(t['recipeType'] in {'report','training','subprotocol','deployment'},'recipe type')
+        require(all(isinstance(t[k],str) and t[k] for k in TRACK_OPTIONAL_KEYS),'protocol-family metadata must be text')
+        require(all(t[k] for k in TRACK_OPTIONAL_KEYS),'protocol-family metadata cannot be empty')
 
 def validate_result(r, ids, tracks):
     keys(r,RESULT_KEYS,'result'); require(re.fullmatch(r'r-[a-z0-9-]+',r['id']),'result id')
@@ -155,6 +165,16 @@ def read_catalog(root):
             if val: require(val not in seen[k],f'duplicate {k}: {p["id"]} / {seen[k].get(val)}'); seen[k][val]=p['id']
     raw=load(root/'catalog/benchmarks.json'); require(raw['schemaVersion']==1,'benchmark schema'); tracks={}
     for t in raw['tracks']: validate_track(t); require(t['id'] not in tracks,'duplicate track'); tracks[t['id']]=t
+    families={}
+    family_fields=('dataset','familyName','familySummary','familyKind','familyMode','familyPrimaryTrackId')
+    for t in tracks.values():
+        if not t.get('familyId'): continue
+        signature=tuple(t[k] for k in family_fields)
+        prior=families.setdefault(t['familyId'],signature)
+        require(prior==signature,'inconsistent protocol-family metadata')
+    for fid,signature in families.items():
+        primary=signature[-1]
+        require(primary in tracks and tracks[primary].get('familyId')==fid,'family primary track must belong to family')
     results=[]; rids=set()
     for f in sorted((root/'catalog/results').glob('*.json')):
         r=load(f); validate_result(r,set(order),tracks); require(r['id']==f.stem and r['id'] not in rids,'result id/file mismatch'); rids.add(r['id']); results.append(r)
