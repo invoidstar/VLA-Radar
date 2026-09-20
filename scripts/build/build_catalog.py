@@ -10,6 +10,7 @@ import argparse,hashlib,json
 from pathlib import Path
 from catalog_core import dumps,read_catalog
 from benchmark_settings import build_settings
+from benchmark_taxonomy import load_taxonomy
 from experience_build import outputs as experience_outputs
 from news_core import outputs as news_outputs
 from tools_build import outputs as tools_outputs
@@ -21,6 +22,7 @@ def hashed(prefix,obj,out):
 
 def outputs(root):
     m,records,tracks,results=read_catalog(root)
+    taxonomy=load_taxonomy(root,tracks)
     meta={k:m[k] for k in ('updatedAt','title','collection','description','topics')}
     legacy={'schemaVersion':1,**meta,'papers':[r['paper'] for r in records]}
     out={'data/papers.json':dumps(legacy)};summaries=[];light=[]
@@ -54,12 +56,12 @@ def outputs(root):
     out['data/catalog.json']=dumps({'schemaVersion':1,**meta,'papers':summaries}) # old integrations
     searchkeys={'id','name','title','team','tags','topics','contribution','findings','insight','limitations','venue','publicationStatus','arxiv','firstPublished'}
     searchurl=hashed('data/search-index',{'schemaVersion':1,'topics':m['topics'],'papers':[{k:r['paper'][k] for k in sorted(searchkeys)} for r in records]},out)
-    boardurl=hashed('data/board-index',{'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':indexed_tracks,'settings':indexed_settings,'resultCount':len(results),'settingCount':len(indexed_settings)},out)
+    boardurl=hashed('data/board-index',{'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':indexed_tracks,'settings':indexed_settings,'taxonomy':taxonomy,'resultCount':len(results),'settingCount':len(indexed_settings)},out)
     experience,indexurl=experience_outputs(root,records,tracks,results);out.update(experience)
     news,newsurl=news_outputs(root,records);out.update(news)
     tools,toolsurl=tools_outputs(root,records,tracks,results,experience,indexurl);out.update(tools)
     out['data/library.json']=compact({'schemaVersion':1,**meta,'searchUrl':searchurl,'boardIndexUrl':boardurl,'experienceUrl':indexurl,'newsUrl':newsurl,'toolsUrl':toolsurl,'papers':light})
-    out['data/leaderboards.json']=dumps({'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':tracks,'settings':setting_records,'results':results})
+    out['data/leaderboards.json']=dumps({'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':tracks,'settings':setting_records,'taxonomy':taxonomy,'results':results})
     return out
 
 def build(root,check=False):

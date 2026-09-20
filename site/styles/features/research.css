@@ -169,3 +169,26 @@
  .benchmark-search-box input{flex-basis:100%}
  .benchmark-search-box .btn{flex:1}
 }
+
+
+/* Benchmark taxonomy: Focus + Environment + multi-tag filters. */
+.benchmark-taxonomy{margin:0 0 14px;padding:13px 14px;border:1px solid #e5e7f0;background:#fcfcff;border-radius:11px;display:grid;gap:11px}
+.taxonomy-group{display:grid;gap:6px}
+.taxonomy-group>span{font-size:8px;letter-spacing:1.25px;color:#9197aa;font-weight:700}
+.taxonomy-chips{display:flex;gap:6px;flex-wrap:wrap}
+.taxonomy-chips button{border:1px solid #e0e4ee;background:#fff;color:#747c91;border-radius:999px;padding:6px 9px;font-size:8px;cursor:pointer}
+.taxonomy-chips button[aria-pressed="true"]{background:#eceffc;border-color:#bac4e9;color:#5867a6;font-weight:700}
+.taxonomy-tags{border-top:1px solid #eceef5;padding-top:9px}
+.taxonomy-tags summary{cursor:pointer;font-size:8px;letter-spacing:.7px;color:#7f879c}
+.taxonomy-tag-grid{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.taxonomy-tag-grid label{position:relative;cursor:pointer}
+.taxonomy-tag-grid input{position:absolute;opacity:0;pointer-events:none}
+.taxonomy-tag-grid span{display:block;border:1px solid #e1e4ed;background:#fff;color:#7d8497;border-radius:999px;padding:5px 8px;font-size:8px}
+.taxonomy-tag-grid input:checked+span{background:#f0edfb;border-color:#c9c1ea;color:#71659e;font-weight:700}
+.taxonomy-status{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #eceef5;padding-top:9px;font-size:8px;color:#9aa0b1}
+.taxonomy-status b{color:#667087}
+@media(max-width:650px){
+ .benchmark-taxonomy{padding:11px}
+ .taxonomy-status{align-items:stretch;flex-direction:column}
+ .taxonomy-status .btn{width:100%}
+}

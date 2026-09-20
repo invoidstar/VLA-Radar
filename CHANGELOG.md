@@ -1,3 +1,12 @@
+## 2026-09-20 · Benchmark 分类导航
+
+- 新增独立 canonical 文件 `catalog/benchmark-taxonomy.json`，为全部 61 个 Benchmark 提供唯一主 Focus、Environment 与多标签；不把分类塞入 track/result。
+- Focus 分为 6 类：General Manipulation、Long-Horizon & Memory、Generalization & Robustness、Dexterous & Contact-Rich、Language/Planning/Compositionality、Efficiency & Deployment。
+- Environment 分为 Simulation、Real Robot、Mixed / Cross-Environment；Tags 支持 Household/Kitchen、Tabletop、Bimanual、Tactile、Long-horizon、Robustness/OOD、Latency/Efficiency 等多选。
+- Benchmark 页新增 Focus / Environment / Tags 筛选，并可与全局搜索叠加；筛选状态写入 URL，刷新和分享后保持。
+- 构建校验要求 taxonomy 与当前 Benchmark 数据集集合完全一致；新增 Benchmark 未分类或 taxonomy 存在孤儿项都会失败。
+- 194 Evaluation Settings、286 canonical tracks、1063 results 保持不变；taxonomy 只改变导航与发现方式。
+
 ## 2026-09-20 · Benchmark 全局搜索
 
 - Benchmark 页面新增全局搜索框，可按 Dataset、Evaluation Setting、tasks、split、metric、score columns 与 evalId 组合检索。

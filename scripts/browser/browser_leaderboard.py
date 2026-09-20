@@ -81,6 +81,22 @@ try:
         yes('Benchmark search persists across refresh',page.locator('#benchmark-search-input').input_value()=='RoboTwin 50 tasks clean random' and page.locator('[data-setting-dataset]').count()==1)
         page.locator('#benchmark-search-clear').click();page.wait_for_function('!new URLSearchParams(location.search).has("lbSearch")');page.wait_for_selector('#benchmark-search-input')
         yes('clearing search restores all Benchmark tabs',page.locator('[data-setting-dataset]').count()>10)
+        taxonomy=boards['taxonomy'];bench_tax=taxonomy['benchmarks']
+        yes('taxonomy controls are visible',page.locator('.benchmark-taxonomy').count()==1 and page.locator('[data-tax-focus]').count()==len(taxonomy['focuses'])+1)
+        page.locator('[data-tax-focus="long-horizon-memory"]').click();page.wait_for_function('new URLSearchParams(location.search).get("lbFocus")==="long-horizon-memory"');page.wait_for_selector('.setting-table')
+        focus_expected={d for d,m in bench_tax.items() if m['focus']=='long-horizon-memory'}
+        focus_visible=set(page.locator('[data-setting-dataset]').all_text_contents())
+        yes('Focus filter narrows Benchmark navigation exactly',focus_visible==focus_expected)
+        page.locator('[data-tax-env="real"]').click();page.wait_for_function('new URLSearchParams(location.search).get("lbEnv")==="real"');page.wait_for_selector('.setting-table')
+        real_expected={d for d in focus_expected if bench_tax[d]['environment']=='real'}
+        yes('Environment composes with Focus',set(page.locator('[data-setting-dataset]').all_text_contents())==real_expected)
+        page.locator('.taxonomy-tags summary').click();page.locator('label:has([data-tax-tag="memory"])').click();page.wait_for_function('new URLSearchParams(location.search).get("lbTags")==="memory"');page.wait_for_selector('.setting-table')
+        tag_expected={d for d in real_expected if 'memory' in bench_tax[d]['tags']}
+        yes('tag checkbox composes with Focus and Environment',set(page.locator('[data-setting-dataset]').all_text_contents())==tag_expected)
+        page.reload(wait_until='networkidle');page.wait_for_selector('.benchmark-taxonomy')
+        yes('taxonomy filters persist across refresh',page.locator('[data-tax-focus="long-horizon-memory"]').get_attribute('aria-pressed')=='true' and page.locator('[data-tax-env="real"]').get_attribute('aria-pressed')=='true' and page.locator('[data-tax-tag="memory"]').is_checked())
+        page.locator('#taxonomy-clear').click();page.wait_for_function('!new URLSearchParams(location.search).has("lbFocus") && !new URLSearchParams(location.search).has("lbEnv") && !new URLSearchParams(location.search).has("lbTags")');page.wait_for_selector('.setting-table')
+        yes('clearing taxonomy restores complete Benchmark navigation',page.locator('[data-setting-dataset]').count()==len(bench_tax))
         rt=next(s for s in all_settings if s['dataset']=='RoboTwin' and s['evalId']=='auto:50-clean-random')
         yes('RoboTwin evaluation settings collapse track clutter',len([s for s in all_settings if s['dataset']=='RoboTwin'])<len([t for t in boards['tracks'] if t['dataset']=='RoboTwin']))
         yes('RoboTwin main Setting is genuinely cross-paper and cross-training',rt['paperCount']>=10 and len(rt['trainingOptions'])>=5 and len(rt['trackIds'])>=6)
