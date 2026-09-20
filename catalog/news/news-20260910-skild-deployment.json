@@ -20,7 +20,7 @@
   "vlaRelevance": "双臂高精度装配要求视觉、语言/任务条件、动作生成以及异常恢复在真实生产节拍下协同。该事件应作为产业部署动态理解，不能把ARR、客户数或合作关系换算为VLA算法性能，也不进入Leaderboard。",
   "limits": "ARR、客户数、收入构成和部署描述均来自Skild AI自报，未在本条中做独立财务审计或性能复现。官方更新没有提供统一机器人评测协议、任务成功率或完整硬件/控制配置，因此不据此推导跨任务能力。",
   "sources": [
-    {"id":"s1","title":"The Hidden Pillar of Robotics","publisher":"Skild AI","url":"https://www.skild.ai/blogs/skild-crosses-100m-arr","kind":"official","publishedAt":"2026-09-10","access":"fulltext","note":"核对公司自报的ARR、客户规模、收入构成及NVIDIA/Foxconn双臂装配部署；商业数字仅按公司报告归属。"}
+    {"id":"s1","title":"The Hidden Pillar of Robotics","publisher":"Skild AI","url":"https://www.skild.ai/blogs/skild-crosses-100m-arr","kind":"official","publishedAt":"2026-09-10","access":"full-page","note":"核对公司自报的ARR、客户规模、收入构成及NVIDIA/Foxconn双臂装配部署；商业数字仅按公司报告归属。"}
   ],
   "paperLinks": [],
   "revisionHistory": []
