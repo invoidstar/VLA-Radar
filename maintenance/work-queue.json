@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "plannedAt": "2026-09-19",
+  "plannedAt": "2026-09-20",
   "notes": [
     {
       "paperId": "p055",
@@ -9,27 +9,9 @@
       "latestVersion": "v5"
     },
     {
-      "paperId": "p068",
-      "reason": "needs_review",
-      "readVersion": "arXiv:2501.15830v1，Sec.III–V、Table I–V；明确保留v1口径，不代表最新修订全量核验",
-      "latestVersion": "v5"
-    },
-    {
-      "paperId": "p069",
-      "reason": "needs_review",
-      "readVersion": "2502.19645；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
-      "latestVersion": "v2"
-    },
-    {
       "paperId": "p074",
       "reason": "needs_review",
       "readVersion": "2509.09372v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
-      "latestVersion": "v2"
-    },
-    {
-      "paperId": "p078",
-      "reason": "needs_review",
-      "readVersion": "2603.16666v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
       "latestVersion": "v2"
     },
     {
@@ -37,6 +19,36 @@
       "reason": "needs_review",
       "readVersion": "arXiv 2607.15330 v1；§2–3、附录",
       "latestVersion": "v2"
+    },
+    {
+      "paperId": "p051",
+      "reason": "needs_review",
+      "readVersion": "作者公开 CoRL 2022 PDF（28页），重点核对 Sec.3–4、Fig.2–4、Table 1；不是所有后续复现设置",
+      "latestVersion": "v2"
+    },
+    {
+      "paperId": "p045",
+      "reason": "needs_review",
+      "readVersion": "2508.05342v1；保留的公开HTML阅读快照，2026-09-18整理",
+      "latestVersion": "v2"
+    },
+    {
+      "paperId": "p024",
+      "reason": "needs_review",
+      "readVersion": "arXiv 2607.00678 v1；§2–5、Tables 2–8",
+      "latestVersion": "v2"
+    },
+    {
+      "paperId": "p043",
+      "reason": "needs_review",
+      "readVersion": "2026-03-30作者供稿技术说明＋IEEE正式摘要；2026-09-18核读；未取得期刊完整正文",
+      "latestVersion": null
+    },
+    {
+      "paperId": "p046",
+      "reason": "needs_review",
+      "readVersion": "PolyU机构摘要与Elsevier出版信息；2026-09-18核读；未取得完整方法与实验正文",
+      "latestVersion": null
     }
   ],
   "metadata": {
@@ -48,7 +60,7 @@
       "p092"
     ]
   },
-  "remainingNotes": 11,
+  "remainingNotes": 8,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."

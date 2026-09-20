@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260910-motus2",
+  "eventKey": "shengshu-motus2-release-20260910",
+  "title": "Motus2 发布：把策略、世界模拟与价值评估放进同一闭环",
+  "primaryCategory": "model",
+  "tags": ["世界模型", "灵巧操作", "策略改进", "触觉"],
+  "eventDate": "2026-09-10",
+  "publishedAt": "2026-09-10",
+  "dateNote": "事件日期采用生数科技9月10日外滩大会官方公告；技术研究页于9月11日继续公开细节，两者合并为同一发布事件。",
+  "observedAt": "2026-09-20",
+  "updatedAt": "2026-09-20",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research-resource",
+  "whatHappened": "生数科技在9月10日外滩大会公布Motus2，并在随后官方研究页公开技术细节。官方材料将策略、动作条件世界模拟与价值评估器置于共享模型闭环，另加入长时视觉上下文与触觉专家；研究页报告约13万原始小时第一视角语料、超过100小时机器人域轨迹，并给出多项真机消融。",
+  "whyItMatters": "这次发布的研究价值不只是再做一个WAM，而是把“提出动作—预测后果—评估进展—改进策略”明确串成训练和测试都可研究的接口，并同时讨论人类第一视角数据、记忆和触觉如何进入灵巧操作。",
+  "vlaRelevance": "它直接涉及WAM/VLA之间的接口、测试时Best-of-N规划、基于模型的策略改进以及长程部分可观测问题。新闻中的实验数字只作为官方研究发布的证据范围，不自动转入Leaderboard；对应技术报告仍需按论文深读标准单独处理。",
+  "limits": "来源均为公司官方材料，属于作者/公司报告而非独立复现。130k小时是原始第一视角录制规模，不等于130k小时机器人轨迹；机器人域中期训练材料为超过100小时。不同实验任务和每项20次真机评测不能合并成通用成功率。",
+  "sources": [
+    {"id":"s1","title":"生数科技骆怡航出席外滩大会，阐释通用世界模型下一程","publisher":"生数科技 / GensPI","url":"https://www.genspi.com/zh/news/luo-yihang-bund-summit/","kind":"official","publishedAt":"2026-09-10","access":"full-page","note":"核对发布日、Motus2公布事实和官方定位。"},
+    {"id":"s2","title":"Motus2: A Self-Evolving General World Model for Dexterous Manipulation","publisher":"生数科技 / GensPI","url":"https://www.genspi.com/en/motus-2/","kind":"official","publishedAt":"2026-09-11","access":"full-page","note":"核对模型接口、数据规模与公开实验说明；不是独立验证。"}
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

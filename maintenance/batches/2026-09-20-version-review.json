@@ -1,0 +1,75 @@
+{
+  "id": "2026-09-20-version-review",
+  "date": "2026-09-20",
+  "summary": "周度版本复核小批次：将 SpatialVLA、OpenVLA-OFT、Fast-WAM 三篇 needs_review 笔记按各自最新公开 arXiv 版本重新核对方法、训练/部署信息、协议、原表结果、消融与限制。仅更新阅读证据与版本边界，不新增榜单结果、不改 KEY RESULT、不把元数据刷新冒充新论文收录。",
+  "notes": [
+    {
+      "paperId": "p068",
+      "expectedVersion": "arXiv:2501.15830v1，Sec.III–V、Table I–V；明确保留v1口径，不代表最新修订全量核验",
+      "note": {
+        "status": "expanded",
+        "updatedAt": "2026-09-20",
+        "verifiedAt": "2026-09-20",
+        "version": "arXiv:2501.15830v5（2025-05-19），§III–V、Appendix A–G、Tables I–V；2026-09-20复核",
+        "sections": [
+          {"id":"problem","title":"研究问题：空间结构必须同时进入观测与动作接口","body":"SpatialVLA关注的不是简单给图像再加一个深度通道，而是跨机器人时观测坐标和动作分布都不统一的问题。作者把输入端设计为Ego3D Position Encoding，把输出端设计为Adaptive Action Grids，希望在相机自中心空间里同时组织视觉位置和机器人运动。v5仍以PaliGemma2类VLM为基础，因而贡献应理解为面向机器人空间表示的接口设计，而不是从零训练一个视觉语言骨干。\n论文把能力分成直接执行预训练域任务、适配新机器人/任务以及专门空间理解三类评测。这个拆分很重要：零样本控制、目标域后训练和空间扰动不是一个实验条件，不能只取每组最高值再合成统一能力分。","sources":[{"label":"v5 §I、§III；Fig.1–2","url":"https://arxiv.org/html/2501.15830v5#S3"}]},
+          {"id":"ego3d","title":"Ego3D：免外参不等于免几何假设","body":"单个第三人称图像先经SigLIP得到二维语义特征，再由ZoeDepth估计深度，结合相机内参反投影到相机自中心三维坐标；三维位置经过正弦编码和MLP后加到视觉token。采用相机坐标系可以避免为每种机器人显式提供机器人—相机外参，但仍依赖相机内参、单目深度质量以及图像到深度的对应关系。\n因此“robot-agnostic”更准确地说是减少对特定机器人外参的依赖，而不是完全没有标定或误差来源。遮挡、深度尺度偏差和视角覆盖不足仍可能传入位置编码；空间坐标信号本身也不会替代历史记忆或接触反馈。","sources":[{"label":"v5 §III-A，Eq.(2)，Fig.2","url":"https://arxiv.org/html/2501.15830v5#S3.SS1"}]},
+          {"id":"actions","title":"Adaptive Action Grids：用三个空间token压缩七维动作输出","body":"连续单臂动作包含xyz平移、roll/pitch/yaw旋转和夹爪七维。作者把平移先改写为方向与距离，再对平移和旋转分别拟合数据分布，按等概率区间构造三维网格；每个控制时刻最终预测平移、旋转、夹爪三个token，而不是逐维生成七个独立标量token。网格大小与数据分布共同决定量化分辨率。\n序列变短可能降低自回归开销，但并不意味着动作空间更简单：一个token承担的是联合三维区域，代价转移到较大的空间词表以及网格统计。v5推理设置一次预测4个未来动作，即12个动作token；报告约20Hz是在单RTX 4090、8.5GB显存下的特定实现，不应外推成所有硬件上的控制频率。","sources":[{"label":"v5 §III-A，Eq.(3)–(5)，Fig.3；§IV实现细节","url":"https://arxiv.org/html/2501.15830v5#S3.SS1"},{"label":"v5 §IV，动作chunk与推理配置","url":"https://arxiv.org/html/2501.15830v5#S4"}]},
+          {"id":"training","title":"预训练与后训练：1.1M轨迹和目标域网格重分布是两个阶段","body":"v5使用约110万条真实机器人episodes的混合数据进行预训练，数据来自筛选后的OXE与RH20T等来源；主实验报告64张A100训练约10天、batch size 2048。后训练面对新机器人时重新估计目标动作分布并重划网格，再通过空间嵌入适配把旧网格知识迁移到新网格，随后继续在目标任务数据上优化。\n所以“适配新setup”不是无目标数据迁移；LIBERO等结果属于有示范的fine-tuning。预训练数据规模、VLM先验、Ego3D和动作网格同时存在，主表优势不能自动归因于单一模块。真正检查组件价值要看Table IV–V的受控消融。","sources":[{"label":"v5 §III-B、Appendix A/D；§IV实现细节","url":"https://arxiv.org/html/2501.15830v5#S3.SS2"}]},
+          {"id":"protocol","title":"协议边界：SimplerEnv零样本、Bridge/Fractal微调与LIBERO后训练不能混榜","body":"Google Robot的SimplerEnv表分别给Visual Matching和Variant Aggregation，并区分OXE预训练模型的zero-shot与Fractal继续训练；WidowX表又把完整任务成功和中间抓取成功拆开，并区分BridgeV2微调。LIBERO则是四个10任务套件，每任务50条人类遥操作示范，SpatialVLA用LoRA并加入空间嵌入适配训练200 epochs；Table III按3个随机种子、500次试验汇总标准误。\n这些条件的训练数据、机器人和指标不同，本站仍应保留各自赛道而不是按同名模型求最大值。论文中的zero-shot也只是相对于目标评测不再额外微调，不等于预训练从未包含相同机器人或相近任务。","sources":[{"label":"v5 §IV-A–B，Tables I–III","url":"https://arxiv.org/html/2501.15830v5#S4"}]},
+          {"id":"results","title":"主要结果：最新版本仍支持空间表示收益，但不同条件差距很大","body":"Table I中SpatialVLA zero-shot在Google Robot的Visual Matching平均71.9%、Variant Aggregation平均68.8%；同表RT-2-X分别60.7%和64.3%。继续在Fractal数据上训练后SpatialVLA为75.1%和70.7%。WidowX SimplerEnv的完整任务Overall从zero-shot 34.4%到BridgeV2微调42.7%，不能把中间Grasp列当最终任务成功。\nLIBERO Table III中SpatialVLA四套件为88.2/89.9/78.6/55.5%，平均78.1%，而Long明显低于前三套件。论文自己也指出长时任务仍缺少专门的长历史结构；因此空间增强的收益不等于长期记忆问题已经解决。","sources":[{"label":"v5 Tables I–II，§IV-A","url":"https://arxiv.org/html/2501.15830v5#S4.SS1"},{"label":"v5 Table III，§IV-B","url":"https://arxiv.org/html/2501.15830v5#S4.SS2"}]},
+          {"id":"ablations","title":"消融：Ego3D和目标域空间嵌入都有效，但不是逐项单调","body":"Table IV在Fractal+Bridge混合上从头训练受控变体；去掉Ego3D后，不同任务/指标的下降幅度并不一致，说明几何输入不是固定百分点增益。Table V把后训练策略分开：LIBERO上普通LoRA为83.6/84.8/76.4/50.1%，加入Spatial embedding adaptation后变为88.2/89.9/78.6/55.5%；在Fractal/Bridge微调中Gaussian adaptation也主要用于重新对齐目标动作分布。\n更高分辨率、语言嵌入冻结方式和动作网格设计都有独立影响，因此不应把“3D”作为所有改动的统称。消融需要结合任务列看正负变化，而不是只比较一个平均。","sources":[{"label":"v5 §IV-D，Tables IV–V","url":"https://arxiv.org/html/2501.15830v5#S4.SS4"}]},
+          {"id":"limits","title":"局限与读图路线：空间坐标增强不能替代历史、数据与控制假设","body":"建议先读Fig.2确认语义特征、Ego3D和动作token的完整数据流，再用Fig.3理解等概率网格，之后按Tables I–III分清zero-shot、fine-tuning和不同机器人，最后读Tables IV–V判断各组件因果边界。v5把推理效率、空间扰动与适配结果补得更完整，但其结论仍建立在单图像输入、特定深度估计器、所选数据混合和对应机器人控制接口上。\n尤其是LIBERO-Long仍落后于短程套件，这与单时刻图像缺少长历史有关。空间坐标能改善“在哪里”和“如何运动”的表示，却不能凭空提供过去阶段、失败恢复或未来任务计划。后续比较时应把空间建模、时序记忆和数据规模分别记账。","sources":[{"label":"v5 Fig.2–4、§V Discussion","url":"https://arxiv.org/html/2501.15830v5#S5"}]}
+        ],
+        "coverage":{"level":"deep","scope":"primary-methods-experiments","source":"https://arxiv.org/html/2501.15830v5"},
+        "figures":[{"title":"Figure 2：SpatialVLA整体数据流","url":"https://arxiv.org/html/2501.15830v5#S2.F2","caption":"从第三人称图像与语言到Ego3D，再到三个空间动作token；用于区分输入几何和输出动作表示。"},{"title":"Figure 3：Adaptive Action Grids","url":"https://arxiv.org/html/2501.15830v5#S3.F3","caption":"按动作统计分布切分空间网格；不要把token减少理解成逐维分辨率不变。"}],
+        "tables":[{"title":"v5主要结果口径","columns":["设置","条件","结果"],"rows":[["Google Robot","zero-shot VM / VA","71.9 / 68.8%"],["WidowX SimplerEnv","zero-shot / fine-tune Overall","34.4 / 42.7%"],["LIBERO","Spatial / Object / Goal / Long","88.2 / 89.9 / 78.6 / 55.5%"]],"locator":"Tables I–III","caption":"作者报告；三行属于不同机器人、训练阶段和协议，不可再平均成统一得分。"}],
+        "benchmarkReview":{"status":"extracted","checkedAt":"2026-09-20","note":"按arXiv v5复核已存在的SimplerEnv/LIBERO原表口径与数值边界；本批不新增结果行，不声称穷尽v5全部实验。"}
+      }
+    },
+    {
+      "paperId":"p069",
+      "expectedVersion":"2502.19645；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "note":{
+        "status":"expanded","updatedAt":"2026-09-20","verifiedAt":"2026-09-20","version":"arXiv:2502.19645v2（2025-04-28），§I–VIII、Appendix A–F、Tables I–XV；2026-09-20复核",
+        "sections":[
+          {"id":"problem","title":"研究问题：VLA微调配方同时决定成功率与动作生成成本","body":"OpenVLA原版把每个动作维度当离散token自回归生成，一个控制时刻需要多次大模型前向。OpenVLA-OFT并不重新做大规模机器人预训练，而是固定OpenVLA基座，系统比较并行解码、动作分块、连续动作头和训练目标，寻找更适合高频控制的后训练配方。\n因此论文贡献是组合与受控比较，而不是声称L1、动作chunk或并行注意力本身首次提出。读结果时还必须区分“同一基座换动作接口”的增益和“额外相机、本体状态、过滤失败示范”等观测/数据变化，否则97.1%的最终平均会被错误归因给单个损失。","sources":[{"label":"v2 §I、§IV","url":"https://arxiv.org/html/2502.19645v2#S4"}]},
+          {"id":"parallel","title":"并行解码与动作分块：减少大模型前向，不增加视觉闭环频率","body":"作者用动作位置嵌入让多个动作输出位置并行读取上下文，再从隐藏状态一次得到整个动作片段，避免原版对多个离散动作维度串行解码。LIBERO主设置的chunk length为8，策略每次生成8步并执行这段动作后再规划。\n这使动作吞吐显著提高，但8个动作并不是8次重新读取相机后的闭环决策。一次查询延迟、每秒可生成动作数和机器人实际控制频率是三种不同量；网站继续分开记录，不把26×动作吞吐写成端到端系统26×更快。","sources":[{"label":"v2 §IV-B、§V-A、Appendix A–B","url":"https://arxiv.org/html/2502.19645v2#S4.SS2"}]},
+          {"id":"continuous","title":"连续L1与扩散头：相近成功率不等于表达能力等价","body":"连续L1头通过MLP直接从动作位置隐状态回归实数动作；扩散头则用多步去噪生成连续动作。LIBERO单外部视角、过滤失败示范的主对照中L1平均95.3%，50步扩散95.4%，但扩散一次查询约1.907秒，L1约0.0729秒。本文所测任务因此更偏向简单L1配方。\n不过把扩散压到极少步会明显损伤Long等任务，说明不能从“最终均值接近”推断多峰动作建模毫无作用。不同任务的数据模态、控制容错和动作多样性会改变结论。","sources":[{"label":"v2 Tables I–II、§IV-B","url":"https://arxiv.org/html/2502.19645v2#S5"}]},
+          {"id":"film","title":"OFT+的语言FiLM针对视觉捷径，而不是所有任务都必需","body":"在ALOHA多相机真实任务中，策略可能依据视觉共现选择物体而忽略用户语言。OFT+将语言表示投影为缩放/平移参数，在视觉Transformer中用FiLM调制视觉通道，使语言条件更早影响视觉表征。真实语言相关任务的消融显示去掉FiLM时正确语言选择明显下降。\n但LIBERO附录中有无FiLM的平均成功率接近96.8%与97.0%，说明其收益依赖任务是否真正需要语言消歧。它应被理解为处理语言捷径的机制，而不是一个在所有基准固定加分的模块。","sources":[{"label":"v2 §IV-C、§VI-C、Table XIV","url":"https://arxiv.org/html/2502.19645v2#S4.SS3"}]},
+          {"id":"protocol","title":"协议：过滤数据、额外观测与最佳检查点分别改变比较条件","body":"LIBERO四套件各10任务、每任务500示范。非扩散配置训练50–150K步，扩散配置100–250K步，并每50K评测后选最佳检查点；主OFT使用8步动作块。Table I还分别给原始未过滤示范、增加腕部相机和本体状态等设置。\n所以95.3%对应过滤失败示范、单外部视角的OFT，97.1%来自增加腕部相机与本体状态的完整设置；原始未过滤数据加额外输入又是94.5%。这些不是同一条公平赛道上的单因素差异，必须保留各自训练/观测配置。","sources":[{"label":"v2 §V-A、§V-D，Table I","url":"https://arxiv.org/html/2502.19645v2#S5"}]},
+          {"id":"results","title":"速度结果：26×是动作吞吐，片段请求延迟下降幅度更小","body":"A100测量中原OpenVLA约4.2Hz动作吞吐、单次请求0.2396秒；单外部视角OFT约109.7Hz，但8步片段一次查询仍约0.0729秒。加入腕部相机和本体状态后约71.4Hz、0.1120秒。摘要所说约26×对应动作生成吞吐，不是相机到机器人执行全链路的等比例缩短。\n成功率方面，Table I的最终97.1%相对OpenVLA 76.5%提高20.6个百分点，但同时包含解码、动作块、连续头、数据过滤和额外观测的组合差异。ALOHA真实任务又用阶段rubric，不能与LIBERO二值成功率直接合并。","sources":[{"label":"v2 Abstract、Tables I–II","url":"https://arxiv.org/html/2502.19645v2#S5"}]},
+          {"id":"ablation","title":"消融与负结果：机器人预训练先验仍有价值","body":"附录从VLM直接微调OFT、移除OpenVLA机器人预训练后，LIBERO平均成功率下降约5.2个百分点，说明更高效的动作接口没有取代机器人预训练表征。四套件联合训练约96.8%，接近分套件训练97.1%，但仍是相同基准族内的结果。\n论文也显示并非所有复杂组件都更好：扩散在成功率上几乎不胜L1，却付出高得多的推理开销；FiLM在LIBERO平均上收益很小。合理归因应写成“在这些任务与预算下的配方权衡”，而不是普遍结构定律。","sources":[{"label":"v2 §V-F、§VIII、Tables XIV–XV","url":"https://arxiv.org/html/2502.19645v2#S8"}]},
+          {"id":"reading","title":"读图路线：先分清解码路径，再对齐Table I与Table II的单位","body":"先用Figure 2比较原版串行离散token与并行动作位置，再看Table I中单视角、原始数据和多视角/状态三组表头；随后用Table II同时读取动作吞吐和一次片段延迟。最后回到ALOHA与FiLM消融，判断性能提升来自哪里。\nv2复核没有改变此前榜单核心数字，但把最新公开版本、训练步数、chunk长度和速度定义重新对齐。以后比较任何“更快VLA”时，都应先问测的是动作头、一次模型请求还是完整机器人闭环。","sources":[{"label":"v2 Figure 2、Tables I–II、XIV–XV","url":"https://arxiv.org/html/2502.19645v2"}]}
+        ],
+        "coverage":{"level":"deep","scope":"primary-methods-experiments","source":"https://arxiv.org/html/2502.19645v2"},
+        "figures":[{"title":"Figure 2：微调设计选择","url":"https://arxiv.org/html/2502.19645v2#S1.F2","caption":"对照串行/并行解码、动作分块与连续头；额外观测必须另算。"}],
+        "tables":[{"title":"LIBERO：单外部视角、过滤失败示范的配方对照","columns":["配方","均值SR (%)","单次延迟 (s)"],"rows":[["原OpenVLA","76.5","0.2396"],["并行解码+8步分块","90.2","0.0735"],["连续L1（OFT）","95.3","0.0729"],["连续扩散，50步","95.4","1.9070"]],"locator":"Tables I–II","caption":"作者报告；A100速度测量。吞吐与单次请求延迟不是同一量。"}],
+        "benchmarkReview":{"status":"extracted","checkedAt":"2026-09-20","note":"按arXiv v2重新核对现有LIBERO/效率原表与配置边界；本批不新增结果行，不把动作吞吐换算成端到端机器人频率。"}
+      }
+    },
+    {
+      "paperId":"p078",
+      "expectedVersion":"2603.16666v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+      "note":{
+        "status":"expanded","updatedAt":"2026-09-20","verifiedAt":"2026-09-20","version":"arXiv:2603.16666v2（2026-03-23），§3–5、Appendix、Tables 1–3；2026-09-20复核",
+        "sections":[
+          {"id":"problem","title":"研究问题：世界建模的收益来自训练监督还是测试时显式想象","body":"Fast-WAM把常见World Action Model里两个经常绑在一起的因素拆开：训练时预测未来视频是否塑造了更好的表征，以及部署时是否必须真的生成未来帧后再决定动作。默认Fast-WAM保留视频联合训练，但推理删掉未来视频分支，只用当前首帧视觉latent和语言生成动作。\n这不是“完全不用世界模型”。未来视频仍作为训练目标，骨干也来自预训练视频模型；论文要验证的是显式测试时未来生成是否值得其额外成本。结论必须限定在受控变体和所测任务上，不能外推成长期规划或多候选后果推理永远没有价值。","sources":[{"label":"v2 §1、§3，Figures 1–2","url":"https://arxiv.org/html/2603.16666v2#S3"}]},
+          {"id":"mask","title":"注意力掩码：动作训练路径不能偷看未来视频token","body":"模型将输入分为当前干净首帧latent、训练期未来噪声视频latent和动作token。视频分支可以读取首帧，动作分支也可以读取首帧，但动作不能读取未来视频token，首帧也不反向读取其他token。两支都通过语言交叉注意力接收任务条件。\n这个掩码是方法成立的关键：如果动作训练时能间接利用未来帧，部署删除未来分支就会形成条件缺失。v2继续明确动作和视频联合优化主要通过共享参数与共同当前视觉锚点发生，而不是让动作直接拿到未来答案。","sources":[{"label":"v2 §3.2，Figure 2(b)","url":"https://arxiv.org/html/2603.16666v2#S3.SS2"}]},
+          {"id":"architecture","title":"架构与推理：删未来生成后仍保留视频骨干和10步动作去噪","body":"模型以Wan2.2-5B为视频骨干，动作专家约1B、隐藏维1024，总体约6B；动作horizon为32，多相机图像先拼接再进入VAE。训练对视频latent和动作分别使用flow matching目标，当前首帧作为共享锚点。\n推理不实例化未来视频token，但仍对动作执行10个去噪步骤，CFG为1.0，因此并非一次线性前向。论文所有延迟统一在单张NVIDIA RTX 5090D V2 32GB上测量；190ms等数字不能直接当作其他GPU或完整机器人系统时延。","sources":[{"label":"v2 §3.2、§4.1","url":"https://arxiv.org/html/2603.16666v2#S4.SS1"}]},
+          {"id":"variants","title":"受控变体：Joint、IDM与no-video-co-train分别改变不同因素","body":"Fast-WAM-Joint在推理中联合生成未来视频与动作；Fast-WAM-IDM先生成未来表示，再让动作条件于未来；默认Fast-WAM只输出动作。第四个no-video-co-train变体保持默认推理路径和架构，但去掉训练中的视频建模目标。\n这种设计让“测试时想象成本”与“训练视频监督价值”可以相对分离。Joint/IDM仍是作者在统一框架中的代表性实现，不等同于逐篇复现所有既有WAM，所以跨论文归因仍需谨慎。","sources":[{"label":"v2 §3.3、§4.1，Figure 1","url":"https://arxiv.org/html/2603.16666v2#S3.SS3"}]},
+          {"id":"protocol","title":"评测协议：LIBERO、RoboTwin与真机折毛巾的数据预算完全不同","body":"LIBERO四套件各500示范，训练20K步，最终40任务共2000次试验。RoboTwin2多任务训练使用2500条clean示范和25000条randomized示范，训练30K步，clean/random条件下每任务各100次测试。真机Galaxea R1 Lite折毛巾则使用约60小时遥操作数据、30K训练步。\n作者所谓不使用embodied pretraining，是不额外使用大规模机器人预训练阶段；Wan2.2视频模型先验仍存在。RoboTwin的27500混合示范也不能与只用clean数据的论文配置混成一个公平榜。","sources":[{"label":"v2 §4.1–4.2","url":"https://arxiv.org/html/2603.16666v2#S4"}]},
+          {"id":"results","title":"两张仿真主表：训练视频监督的影响大于是否测试时想象","body":"RoboTwin平均成功率：Fast-WAM 91.8%，Joint 90.6%，IDM 91.3%，去视频联合训练83.8%。LIBERO平均：Fast-WAM 97.6%，Joint 98.5%，IDM 98.0%，去视频联合训练93.5%。两套基准都显示删除训练视频目标的跌幅大于默认与两种显式未来生成之间的差距。\n但显式想象并非处处更差：LIBERO Joint和IDM点估计都高于默认Fast-WAM。因此正确表述是默认方案以更低部署成本保持接近的任务性能，而不是“未来生成会降低成功率”。","sources":[{"label":"v2 Tables 1–2、§4.3.1–4.3.2","url":"https://arxiv.org/html/2603.16666v2#S4.SS3"}]},
+          {"id":"real","title":"真机效率：190ms对810ms是同文变体延迟，不是通用WAM加速比","body":"长程折毛巾实验中，预训练π0.5仍是整体最强；Fast-WAM家族里IDM成功率更高，而默认Fast-WAM完成时间更好。去掉视频联合训练后成功率仅10%，同时完成时间最差，继续支持训练视频监督的重要性。\n推理延迟方面默认Fast-WAM约190ms，Fast-WAM-IDM约810ms，差约4.3倍。这个对比来自同一论文、同一5090D V2测量，是较干净的系统消融；但它不应被写成对所有世界模型或所有硬件的固定4.3倍加速。","sources":[{"label":"v2 §4.3.3，Figure 4","url":"https://arxiv.org/html/2603.16666v2#S4.SS3"}]},
+          {"id":"limits","title":"读图与局限：性能—成本折中不等于否定长期世界推理","body":"阅读顺序应先看Figure 2确认动作不访问未来token，再把Figure 1四种信息流与Tables 1–2逐行对应，最后读Figure 4同时比较真机成功率、完成时间和推理延迟。这样可以知道每个对照删除的是训练损失、推理分支还是信息依赖。\n论文没有证明显式未来在所有部分可观测、动态接触或长期规划任务中无用，也没有比较多候选未来的搜索收益。它提供的更稳健启示是：世界建模训练目标与测试时生成成本必须分别做消融；部署时是否保留未来生成应由任务收益抵偿计算开销，而不是由“world model”标签预设。","sources":[{"label":"v2 Figures 1–2、4；§5","url":"https://arxiv.org/html/2603.16666v2#S5"}]}
+        ],
+        "coverage":{"level":"deep","scope":"primary-methods-experiments","source":"https://arxiv.org/html/2603.16666v2"},
+        "figures":[{"title":"Figure 2：训练与推理掩码","url":"https://arxiv.org/html/2603.16666v2#S3.F2","caption":"动作不能访问未来视频token；这是移除测试时未来分支而不改变动作输入条件的关键。"},{"title":"Figure 4：真机成功率、完成时间与延迟","url":"https://arxiv.org/html/2603.16666v2#S4.F4","caption":"同时读任务质量和推理成本，避免只按单一速度或成功率排序。"}],
+        "tables":[{"title":"Fast-WAM受控比较","columns":["配置","RoboTwin平均SR (%)","LIBERO平均SR (%)"],"rows":[["Fast-WAM","91.8","97.6"],["Joint（测试联合生成）","90.6","98.5"],["IDM（先未来后动作）","91.3","98.0"],["无视频联合训练","83.8","93.5"]],"locator":"Tables 1–2","caption":"作者报告；不同基准独立。默认Fast-WAM主优势是性能—部署成本折中，不是每个任务都最高。"}],
+        "benchmarkReview":{"status":"extracted","checkedAt":"2026-09-20","note":"按arXiv v2复核现有RoboTwin/LIBERO/真机效率证据边界；本批不新增结果行，190/810ms仅作为同文同硬件变体对照。"}
+      }
+    }
+  ],
+  "tracks": [],
+  "results": []
+}

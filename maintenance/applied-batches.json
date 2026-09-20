@@ -39,6 +39,18 @@
         "aloha-act-v1-human50"
       ],
       "results": 21
+    },
+    {
+      "id": "2026-09-20-version-review",
+      "sha256": "ddc7b20ba7ad108bf26589c7b8a5f4a67c455c3da7b5e34bc8bf91ffe403d2f3",
+      "date": "2026-09-20",
+      "notes": [
+        "p068",
+        "p069",
+        "p078"
+      ],
+      "tracks": [],
+      "results": 0
     }
   ]
 }
