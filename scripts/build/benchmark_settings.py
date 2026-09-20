@@ -6,7 +6,7 @@ settingEvalId or an aligned protocol family. Unknown training data is source-sco
 we never assume two papers used the same training budget.
 """
 from __future__ import annotations
-import hashlib,re
+import hashlib,re,unicodedata
 
 UNKNOWN_MARKERS=(
     '未披露','未完整给出','不明确','unknown','not disclosed','not reported',
