@@ -34,7 +34,7 @@ jobs:
           test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; refusing overwrite'; exit 1; }
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add catalog/papers catalog/results catalog/benchmarks.json catalog/manifest.json data maintenance/state/work-queue.json maintenance/state/applied-batches.json CHANGELOG.md research.js research.css scripts/build/catalog_core.py scripts/validate/validate_all.py
+          git add catalog/papers catalog/results catalog/benchmarks.json catalog/manifest.json data maintenance/state/work-queue.json maintenance/state/applied-batches.json CHANGELOG.md site/js/features/research/research.js site/styles/features/research.css scripts/build/catalog_core.py scripts/validate/validate_all.py
           if ! git diff --cached --quiet; then
             git commit -m 'Build and validate sourced content batch'
             git push origin "HEAD:refs/heads/$BRANCH"
@@ -48,9 +48,7 @@ jobs:
             maintenance/
             scripts/
             tests/
-            *.js
-            *.css
-            *.html
+            site/
             *.md
             *.py
             *.svg
