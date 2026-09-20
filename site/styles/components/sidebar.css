@@ -39,3 +39,76 @@
   .sidebar-resizer::before { transition:none; }
 }
 @media print { .sidebar-resizer { display:none!important; } }
+
+
+/* Information architecture: four durable navigation areas, with topic shortcuts nested in Discover. */
+.sidebar .nav-main { display:block; }
+.nav-group { margin:0; }
+.nav-group + .nav-group {
+  margin-top:15px;
+  padding-top:15px;
+  border-top:1px solid #f0f0f6;
+}
+.nav-group .side-heading { margin:0 13px 7px; }
+.nav-group-links { display:grid; gap:3px; }
+.nav-group .nav-link { padding-top:10px; padding-bottom:10px; }
+.nav-group[data-nav-group="personal"] .nav-link { color:#6f7489; }
+.nav-group[data-nav-group="personal"] .nav-link.active { color:var(--accent); }
+.side-topic-panel {
+  margin:7px 4px 0;
+  border:1px solid transparent;
+  border-radius:8px;
+}
+.side-topic-panel[open] {
+  border-color:#eeeef5;
+  background:#fafafe;
+  padding-bottom:5px;
+}
+.side-topic-panel summary {
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:8px 9px;
+  border-radius:7px;
+  color:#8b90a3;
+  font-size:10px;
+  cursor:pointer;
+  user-select:none;
+}
+.side-topic-panel summary::-webkit-details-marker { display:none; }
+.side-topic-panel summary:hover { background:#f1f1f8; color:var(--accent); }
+.side-topic-panel summary [data-icon] svg { width:14px; height:14px; }
+.side-topic-panel .topic-summary-count {
+  margin-left:auto;
+  font-size:7px;
+  letter-spacing:1px;
+  color:#b0b3c0;
+}
+.side-topic-panel[open] .topic-summary-count { color:var(--accent); }
+.side-topic-panel .side-topics {
+  padding:1px 4px 2px;
+  max-height:220px;
+  overflow:auto;
+}
+.side-topic-panel .side-topic { padding:7px 8px; font-size:10px; }
+.side-topic-panel .topic-count { font-size:9px; }
+.side-bottom { padding-top:20px; }
+.side-bottom-links { display:grid; gap:3px; }
+.side-bottom .nav-link { padding-top:10px; padding-bottom:10px; }
+.side-external .external-mark { margin-left:auto; opacity:.55; }
+.side-external .external-mark svg { width:12px; height:12px; }
+.sidebar .privacy-card { margin-top:12px; }
+
+@media (max-width:960px) {
+  .nav-group + .nav-group { margin-top:12px; padding-top:12px; }
+  .nav-group .side-heading { margin-bottom:5px; }
+  .nav-group .nav-link { padding-top:9px; padding-bottom:9px; }
+  .side-topic-panel summary { padding:7px 6px; font-size:9px; }
+}
+@media (max-width:700px) {
+  .nav-group + .nav-group { margin-top:14px; padding-top:14px; }
+  .nav-group .nav-link { padding-top:10px; padding-bottom:10px; }
+  .side-topic-panel summary { font-size:11px; padding:9px 8px; }
+  .side-topic-panel .side-topic { font-size:11px; padding:8px; }
+}

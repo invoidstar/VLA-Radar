@@ -1,3 +1,11 @@
+## 2026-09-20 · 网站信息架构整理
+
+- 侧栏明确分为 Discover / Evidence / Workspace / Personal 四个区域，避免功能入口继续平铺增长。
+- Discover 收纳文献库、研究方向、时间线、具身智能周报，并将原研究主题快捷筛选折叠收纳在该区域内部。
+- Evidence 收纳 Benchmark 与证据地图；Workspace 收纳论文对比、更新中心、引用与导出；Personal 收纳 My Radar 与我的阅读。
+- 关于与维护、GitHub 统一归入侧栏底部；移除顶部重复 GitHub 入口。
+- 所有既有 view 路由、数据、localStorage key、Leaderboard 协议和功能行为保持不变，并新增静态与真实浏览器导航回归。
+
 ## 2026-09-20 · 仓库信息架构重构
 
 - 前端源码归入 `site/`，按 core/components/features 与 styles 分层；Pages 仍发布到原站点根路径，公开 URL 与 localStorage key 不变。

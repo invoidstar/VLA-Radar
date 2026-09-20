@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "baseMainSha": "c0d991df01364b26744c1093bd42f9c45085e672",
+  "scope": "sidebar and website information architecture only; routes, canonical data and benchmark semantics unchanged",
+  "groups": {
+    "discover": [
+      "papers",
+      "topics",
+      "timeline",
+      "news"
+    ],
+    "evidence": [
+      "leaderboards",
+      "coverage"
+    ],
+    "workspace": [
+      "compare",
+      "updates",
+      "export"
+    ],
+    "personal": [
+      "radar",
+      "reading"
+    ]
+  },
+  "footer": [
+    "about",
+    "github"
+  ],
+  "guarantees": {
+    "publicViewRoutesUnchanged": true,
+    "canonicalCatalogUnchanged": true,
+    "generatedDataUnchanged": true,
+    "localStorageKeysUnchanged": true,
+    "leaderboardSemanticsUnchanged": true,
+    "topicQuickFiltersPreserved": true
+  }
+}

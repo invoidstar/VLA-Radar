@@ -26,20 +26,51 @@
 <a class="skip-link" href="#main">跳到主要内容</a>
 <aside class="sidebar" id="sidebar" aria-label="网站导航">
   <a class="brand" href="?view=papers" data-view="papers" aria-label="VLA Radar 首页"><span class="brand-icon" aria-hidden="true"><i></i></span><span>VLA <b>RADAR</b><small>RESEARCH LIBRARY</small></span></a>
-  <div class="side-heading">EXPLORE</div>
-  <nav class="nav-main">
-    <button class="nav-link" data-view="radar"><span data-icon="spark"></span>My Radar<span class="local-indicator">本地</span></button>
-    <button class="nav-link active" data-view="papers"><span data-icon="library"></span>文献总览<span class="nav-count" id="nav-total">—</span></button>
-    <button class="nav-link" data-view="topics"><span data-icon="grid"></span>研究方向</button>
-    <button class="nav-link" data-view="timeline"><span data-icon="clock"></span>发表时间线</button>
-    <button class="nav-link" data-view="leaderboards"><span data-icon="table"></span>评测榜单<span class="local-indicator">NEW</span></button>
-    <button class="nav-link" data-view="news"><span data-icon="spark"></span>具身智能周报<span class="local-indicator">WEEKLY</span></button>
-    <button class="nav-link" data-view="reading"><span data-icon="bookmark"></span>我的阅读<span class="local-indicator">本地</span></button>
-  <div class="side-heading workspace-heading">RESEARCH WORKSPACE</div><button class="nav-link" data-view="compare"><span data-icon="table"></span>论文对比 <small id="compare-count"></small></button><button class="nav-link" data-view="updates"><span data-icon="clock"></span>更新中心</button><button class="nav-link" data-view="coverage"><span data-icon="grid"></span>证据地图</button></nav>
-  <div class="side-heading topic-heading">RESEARCH TOPICS</div>
-  <div id="side-topics" class="side-topics"></div>
+  <nav class="nav-main" aria-label="主要导航">
+    <section class="nav-group" data-nav-group="discover" aria-labelledby="nav-discover">
+      <div class="side-heading" id="nav-discover">DISCOVER</div>
+      <div class="nav-group-links">
+        <button class="nav-link active" data-view="papers"><span data-icon="library"></span>文献库<span class="nav-count" id="nav-total">—</span></button>
+        <button class="nav-link" data-view="topics"><span data-icon="grid"></span>研究方向</button>
+        <button class="nav-link" data-view="timeline"><span data-icon="clock"></span>时间线</button>
+        <button class="nav-link" data-view="news"><span data-icon="spark"></span>具身智能周报<span class="local-indicator">WEEKLY</span></button>
+      </div>
+      <details class="side-topic-panel">
+        <summary><span data-icon="grid"></span><span>主题快捷筛选</span><span class="topic-summary-count">TOPICS</span></summary>
+        <div id="side-topics" class="side-topics"></div>
+      </details>
+    </section>
+
+    <section class="nav-group" data-nav-group="evidence" aria-labelledby="nav-evidence">
+      <div class="side-heading" id="nav-evidence">EVIDENCE</div>
+      <div class="nav-group-links">
+        <button class="nav-link" data-view="leaderboards"><span data-icon="table"></span>Benchmark<span class="local-indicator">DATA</span></button>
+        <button class="nav-link" data-view="coverage"><span data-icon="grid"></span>证据地图</button>
+      </div>
+    </section>
+
+    <section class="nav-group" data-nav-group="workspace" aria-labelledby="nav-workspace">
+      <div class="side-heading" id="nav-workspace">WORKSPACE</div>
+      <div class="nav-group-links">
+        <button class="nav-link" data-view="compare"><span data-icon="table"></span>论文对比 <small id="compare-count"></small></button>
+        <button class="nav-link" data-view="updates"><span data-icon="clock"></span>更新中心</button>
+        <button class="nav-link" data-workspace-export="true" data-nav-action="export" aria-haspopup="dialog"><span data-icon="download"></span>引用与导出</button>
+      </div>
+    </section>
+
+    <section class="nav-group" data-nav-group="personal" aria-labelledby="nav-personal">
+      <div class="side-heading" id="nav-personal">PERSONAL</div>
+      <div class="nav-group-links">
+        <button class="nav-link" data-view="radar"><span data-icon="spark"></span>My Radar<span class="local-indicator">本地</span></button>
+        <button class="nav-link" data-view="reading"><span data-icon="bookmark"></span>我的阅读<span class="local-indicator">本地</span></button>
+      </div>
+    </section>
+  </nav>
   <div class="side-bottom">
-    <button class="nav-link" data-view="about"><span data-icon="info"></span>关于与维护</button>
+    <div class="side-bottom-links">
+      <button class="nav-link" data-view="about"><span data-icon="info"></span>关于与维护</button>
+      <a class="nav-link side-external" href="https://github.com/invoidstar/VLA-Radar/tree/main" target="_blank" rel="noopener noreferrer"><span data-icon="github"></span>GitHub<span class="external-mark" data-icon="external"></span></a>
+    </div>
     <div class="privacy-card"><span data-icon="shield"></span><div><strong>阅读记录，只留本地</strong><p>收藏与进度不上传服务器。<br>跨设备使用请导出备份。</p></div></div>
     <div class="side-foot">READ PAPERS. FOLLOW EVIDENCE.</div>
   </div>
@@ -48,7 +79,7 @@
   <header class="topbar">
     <button class="icon-btn menu-toggle" id="mobile-menu" aria-label="展开导航" aria-expanded="false"><span data-icon="menu"></span></button>
     <div class="breadcrumb">LIBRARY <span>/</span> <b id="breadcrumb">文献总览</b></div>
-    <div class="top-actions"><button class="btn subtle command-launch" data-command="true" aria-label="全局快捷搜索 Ctrl 或 Command 加 K"><span>⌕ 搜索</span><kbd>⌘ / Ctrl K</kbd></button><span class="update-stamp"><i></i><span id="updated-at">正在读取文献</span></span><a class="github-link" href="https://github.com/invoidstar/VLA-Radar/tree/main" target="_blank" rel="noopener noreferrer"><span data-icon="github"></span><span>GitHub</span><span data-icon="external"></span></a></div>
+    <div class="top-actions"><button class="btn subtle command-launch" data-command="true" aria-label="全局快捷搜索 Ctrl 或 Command 加 K"><span>⌕ 搜索</span><kbd>⌘ / Ctrl K</kbd></button><span class="update-stamp"><i></i><span id="updated-at">正在读取文献</span></span></div>
   </header>
   <main id="main" tabindex="-1">
     <section id="radar-section" class="page-section hidden"><div id="radar-content"></div></section>
