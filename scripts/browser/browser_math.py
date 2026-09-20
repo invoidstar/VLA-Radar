@@ -1,6 +1,6 @@
 """Small cross-browser MathML smoke using the same public note renderer."""
 from __future__ import annotations
-import json,os,socket,subprocess,time
+import json,os,shutil,socket,subprocess,time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -21,11 +21,12 @@ try:
     time.sleep(.2)
     with sync_playwright() as p:
         for name,browser_type in [('chromium',p.chromium),('firefox',p.firefox),('webkit',p.webkit)]:
-            browser=browser_type.launch(headless=True)
+            browser=browser_type.launch(headless=True,executable_path=(shutil.which('google-chrome') or shutil.which('chromium')) if name=='chromium' else None)
             page=browser.new_page(viewport={'width':390,'height':844})
             errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
-            page.goto(base,wait_until='networkidle')
-            page.wait_for_function('Boolean(window.RadarMath && window.RadarResearch)')
+            page.goto(base+'?view=reader&paper=p001',wait_until='networkidle')
+            page.wait_for_selector('.reader-chapter')
+            page.wait_for_function('Boolean(window.RadarMath && window.RadarResearch && window.RadarResearch.richText)')
             audit=page.evaluate("""source=>{
               const host=document.createElement('section');host.id='cross-browser-math';
               host.innerHTML=window.RadarResearch.noteBlocks(source);document.querySelector('main').appendChild(host);
@@ -47,7 +48,7 @@ try:
             assert not errors,(name,errors)
             checks[name]=audit
             browser.close()
-    (OUT/'audit.json').write_text(json.dumps({'status':'pass','engines':checks,'scope':'native MathML via RadarResearch.noteBlocks; local staged HTTP'},ensure_ascii=False,indent=2))
+    (OUT/'audit.json').write_text(json.dumps({'status':'pass','engines':checks,'scope':'native MathML through the real Reader route and RadarResearch.noteBlocks; local staged HTTP'},ensure_ascii=False,indent=2))
     print('PASS cross-browser MathML:',', '.join(checks))
 finally:
     server.terminate();server.wait()
