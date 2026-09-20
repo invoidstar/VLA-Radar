@@ -7267,27 +7267,43 @@
       }
     },
     {
-      "id": "setting-calvin-chain-average-length-5331a5daab1f",
+      "id": "setting-calvin-chain-average-length-9d2bc11ebb8a",
       "dataset": "CALVIN",
       "evalId": "auto:chain-average-length",
-      "name": "CALVIN · Five-task Chain · Average Length · Average completed tasks in a five-task chain",
+      "name": "CALVIN · Five-task Chain · Average Length",
       "tasks": "34 skill types; chains of up to five instructions",
       "split": "多来源评测描述；详见各行 Evidence",
       "metric": "Average completed tasks in a five-task chain",
       "unit": "score",
       "direction": "higher",
       "columns": [
-        "Average length"
+        "Average length",
+        "Average"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
         "calvin-gr1-v2-abcd-chain",
         "calvin-gr1-v2-abc-chain",
+        "calvin-abc-d-adapter-table6",
+        "calvin-3dda-v3-abc-d-paper",
         "smile-v1-calvin-chain",
         "roboflamingo-iclr24-abcd-chain",
         "roboflamingo-iclr24-abc-chain"
       ],
       "resultIds": [
+        "r-calvin-3dda-v3-abc-d-paper-3dda",
+        "r-calvin-3dda-v3-abc-d-paper-chaineddiffuser",
+        "r-calvin-3dda-v3-abc-d-paper-dp3-adapted",
+        "r-calvin-3dda-v3-abc-d-paper-gr1",
+        "r-calvin-3dda-v3-abc-d-paper-roboflamingo",
+        "r-calvin-3dda-v3-abc-d-paper-susie",
+        "r-calvin-abc-d-adapter-table6-adapter",
+        "r-calvin-abc-d-adapter-table6-mode",
+        "r-calvin-abc-d-adapter-table6-oft",
+        "r-calvin-abc-d-adapter-table6-openvla",
+        "r-calvin-abc-d-adapter-table6-roboflamingo",
+        "r-calvin-abc-d-adapter-table6-seer-large",
+        "r-calvin-abc-d-adapter-table6-vpp",
         "r-gr1-abc-hulc",
         "r-gr1-abc-length",
         "r-gr1-abc-rt1",
@@ -7306,16 +7322,36 @@
         "r-smile-v1-chain-smile-vpp",
         "r-smile-v1-chain-vpp"
       ],
-      "resultCount": 17,
-      "paperCount": 3,
+      "resultCount": 30,
+      "paperCount": 5,
       "paperIds": [
+        "p088",
+        "p074",
         "p061",
         "p060",
         "p020"
       ],
-      "methodCount": 11,
+      "methodCount": 24,
       "primaryTrackId": "calvin-gr1-v2-abcd-chain",
       "trainingOptions": [
+        {
+          "id": "data-f57b07e51808",
+          "label": "每任务60条轨迹",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p088",
+          "label": "训练数据未完整披露 · p088",
+          "known": false,
+          "count": 5
+        },
+        {
+          "id": "unknown-p074",
+          "label": "训练数据未完整披露 · p074",
+          "known": false,
+          "count": 7
+        },
         {
           "id": "unknown-p061",
           "label": "训练数据未完整披露 · p061",
@@ -7348,6 +7384,19 @@
         }
       ],
       "trainingByResult": {
+        "r-calvin-3dda-v3-abc-d-paper-3dda": "data-f57b07e51808",
+        "r-calvin-3dda-v3-abc-d-paper-chaineddiffuser": "unknown-p088",
+        "r-calvin-3dda-v3-abc-d-paper-dp3-adapted": "unknown-p088",
+        "r-calvin-3dda-v3-abc-d-paper-gr1": "unknown-p088",
+        "r-calvin-3dda-v3-abc-d-paper-roboflamingo": "unknown-p088",
+        "r-calvin-3dda-v3-abc-d-paper-susie": "unknown-p088",
+        "r-calvin-abc-d-adapter-table6-adapter": "unknown-p074",
+        "r-calvin-abc-d-adapter-table6-mode": "unknown-p074",
+        "r-calvin-abc-d-adapter-table6-oft": "unknown-p074",
+        "r-calvin-abc-d-adapter-table6-openvla": "unknown-p074",
+        "r-calvin-abc-d-adapter-table6-roboflamingo": "unknown-p074",
+        "r-calvin-abc-d-adapter-table6-seer-large": "unknown-p074",
+        "r-calvin-abc-d-adapter-table6-vpp": "unknown-p074",
         "r-gr1-abc-hulc": "unknown-p061",
         "r-gr1-abc-length": "unknown-p061",
         "r-gr1-abc-rt1": "data-029a1b86bf56",
@@ -7694,57 +7743,6 @@
         "r-act-v1-script-bet": "data-931811823241",
         "r-act-v1-script-main": "data-cd90063f2dde",
         "r-act-v1-script-vinn": "data-931811823241"
-      }
-    },
-    {
-      "id": "setting-calvin-chain-average-length-5ec302075352",
-      "dataset": "CALVIN",
-      "evalId": "auto:chain-average-length",
-      "name": "CALVIN · Five-task Chain · Average Length · Mean consecutive tasks completed",
-      "tasks": "34 subtasks; 1,000 chains",
-      "split": "train A/B/C; evaluate D",
-      "metric": "Mean consecutive tasks completed",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "Average length"
-      ],
-      "protocol": "每链最多5个连续任务；数值范围0–5，不是百分比。原文引用表只展示，不作同预算排名。",
-      "trackIds": [
-        "calvin-abc-d-adapter-table6"
-      ],
-      "resultIds": [
-        "r-calvin-abc-d-adapter-table6-adapter",
-        "r-calvin-abc-d-adapter-table6-mode",
-        "r-calvin-abc-d-adapter-table6-oft",
-        "r-calvin-abc-d-adapter-table6-openvla",
-        "r-calvin-abc-d-adapter-table6-roboflamingo",
-        "r-calvin-abc-d-adapter-table6-seer-large",
-        "r-calvin-abc-d-adapter-table6-vpp"
-      ],
-      "resultCount": 7,
-      "paperCount": 1,
-      "paperIds": [
-        "p074"
-      ],
-      "methodCount": 7,
-      "primaryTrackId": "calvin-abc-d-adapter-table6",
-      "trainingOptions": [
-        {
-          "id": "unknown-p074",
-          "label": "训练数据未完整披露 · p074",
-          "known": false,
-          "count": 7
-        }
-      ],
-      "trainingByResult": {
-        "r-calvin-abc-d-adapter-table6-adapter": "unknown-p074",
-        "r-calvin-abc-d-adapter-table6-mode": "unknown-p074",
-        "r-calvin-abc-d-adapter-table6-oft": "unknown-p074",
-        "r-calvin-abc-d-adapter-table6-openvla": "unknown-p074",
-        "r-calvin-abc-d-adapter-table6-roboflamingo": "unknown-p074",
-        "r-calvin-abc-d-adapter-table6-seer-large": "unknown-p074",
-        "r-calvin-abc-d-adapter-table6-vpp": "unknown-p074"
       }
     },
     {
@@ -8869,61 +8867,6 @@
         "r-rlbench-3dda-v3-singleview-3dda": "data-fdf7ad8e684f",
         "r-rlbench-3dda-v3-singleview-act3d": "data-fdf7ad8e684f",
         "r-rlbench-3dda-v3-singleview-gnfactor": "data-fdf7ad8e684f"
-      }
-    },
-    {
-      "id": "setting-calvin-chain-average-length-6a5ba4055557",
-      "dataset": "CALVIN",
-      "evalId": "auto:chain-average-length",
-      "name": "CALVIN · Five-task Chain · Average Length · Mean completed tasks per five-instruction chain",
-      "tasks": "34 tasks; five-instruction chains",
-      "split": "ABC→D; final checkpoints for authors-trained methods",
-      "metric": "Mean completed tasks per five-instruction chain",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "Average"
-      ],
-      "protocol": "指标为平均连续完成任务数（0–5），不是百分比。本文允许每任务最多60条轨迹，部分前作360个单动作，控制/时限不一致。3DDA、作者适配DP3和ChainedDiffuser为最终checkpoint三种子；其余为引用，不能当统一预算排名。",
-      "trackIds": [
-        "calvin-3dda-v3-abc-d-paper"
-      ],
-      "resultIds": [
-        "r-calvin-3dda-v3-abc-d-paper-3dda",
-        "r-calvin-3dda-v3-abc-d-paper-chaineddiffuser",
-        "r-calvin-3dda-v3-abc-d-paper-dp3-adapted",
-        "r-calvin-3dda-v3-abc-d-paper-gr1",
-        "r-calvin-3dda-v3-abc-d-paper-roboflamingo",
-        "r-calvin-3dda-v3-abc-d-paper-susie"
-      ],
-      "resultCount": 6,
-      "paperCount": 1,
-      "paperIds": [
-        "p088"
-      ],
-      "methodCount": 6,
-      "primaryTrackId": "calvin-3dda-v3-abc-d-paper",
-      "trainingOptions": [
-        {
-          "id": "data-f57b07e51808",
-          "label": "每任务60条轨迹",
-          "known": true,
-          "count": 1
-        },
-        {
-          "id": "unknown-p088",
-          "label": "训练数据未完整披露 · p088",
-          "known": false,
-          "count": 5
-        }
-      ],
-      "trainingByResult": {
-        "r-calvin-3dda-v3-abc-d-paper-3dda": "data-f57b07e51808",
-        "r-calvin-3dda-v3-abc-d-paper-chaineddiffuser": "unknown-p088",
-        "r-calvin-3dda-v3-abc-d-paper-dp3-adapted": "unknown-p088",
-        "r-calvin-3dda-v3-abc-d-paper-gr1": "unknown-p088",
-        "r-calvin-3dda-v3-abc-d-paper-roboflamingo": "unknown-p088",
-        "r-calvin-3dda-v3-abc-d-paper-susie": "unknown-p088"
       }
     },
     {
@@ -14510,10 +14453,10 @@
       }
     },
     {
-      "id": "setting-calvin-chain-average-length-enriched-e62e0643f23f",
+      "id": "setting-calvin-chain-average-length-enriched-d0d0d7c21a76",
       "dataset": "CALVIN",
       "evalId": "auto:chain-average-length-enriched",
-      "name": "CALVIN · Five-task Chain · Enriched Instructions · Average completed tasks in a five-task chain",
+      "name": "CALVIN · Five-task Chain · Enriched Instructions",
       "tasks": "five-instruction chains",
       "split": "ABCD train -> D eval; GPT-4 alternatives",
       "metric": "Average completed tasks in a five-task chain",
