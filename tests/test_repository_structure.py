@@ -27,3 +27,14 @@ def test_operational_directories_are_not_flat_dumps():
     assert not list((ROOT/'scripts').glob('*.cjs'))
     top_files={p.name for p in (ROOT/'maintenance').iterdir() if p.is_file()}
     assert top_files=={'README.md'}
+
+def test_current_automation_uses_structured_site_paths():
+    batch=(ROOT/'.github/workflows/content-batch.yml').read_text()
+    assert 'site/js/features/research/research.js' in batch
+    assert 'site/styles/features/research.css' in batch
+    assert ' CHANGELOG.md research.js research.css ' not in batch
+    upgrader=(ROOT/'scripts/migrations/upgrade_batch_ui.py').read_text()
+    assert "R/'site/js/features/research/research.js'" in upgrader
+    assert "R/'site/styles/features/research.css'" in upgrader
+    assert "R/'research.js'" not in upgrader
+    assert "R/'research.css'" not in upgrader
