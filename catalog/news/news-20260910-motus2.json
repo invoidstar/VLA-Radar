@@ -20,8 +20,8 @@
   "vlaRelevance": "它直接涉及WAM/VLA之间的接口、测试时Best-of-N规划、基于模型的策略改进以及长程部分可观测问题。新闻中的实验数字只作为官方研究发布的证据范围，不自动转入Leaderboard；对应技术报告仍需按论文深读标准单独处理。",
   "limits": "来源均为公司官方材料，属于作者/公司报告而非独立复现。130k小时是原始第一视角录制规模，不等于130k小时机器人轨迹；机器人域中期训练材料为超过100小时。不同实验任务和每项20次真机评测不能合并成通用成功率。",
   "sources": [
-    {"id":"s1","title":"生数科技骆怡航出席外滩大会，阐释通用世界模型下一程","publisher":"生数科技 / GensPI","url":"https://www.genspi.com/zh/news/luo-yihang-bund-summit/","kind":"official","publishedAt":"2026-09-10","access":"fulltext","note":"核对发布日、Motus2公布事实和官方定位。"},
-    {"id":"s2","title":"Motus2: A Self-Evolving General World Model for Dexterous Manipulation","publisher":"生数科技 / GensPI","url":"https://www.genspi.com/en/motus-2/","kind":"official","publishedAt":"2026-09-11","access":"fulltext","note":"核对模型接口、数据规模与公开实验说明；不是独立验证。"}
+    {"id":"s1","title":"生数科技骆怡航出席外滩大会，阐释通用世界模型下一程","publisher":"生数科技 / GensPI","url":"https://www.genspi.com/zh/news/luo-yihang-bund-summit/","kind":"official","publishedAt":"2026-09-10","access":"full-page","note":"核对发布日、Motus2公布事实和官方定位。"},
+    {"id":"s2","title":"Motus2: A Self-Evolving General World Model for Dexterous Manipulation","publisher":"生数科技 / GensPI","url":"https://www.genspi.com/en/motus-2/","kind":"official","publishedAt":"2026-09-11","access":"full-page","note":"核对模型接口、数据规模与公开实验说明；不是独立验证。"}
   ],
   "paperLinks": [],
   "revisionHistory": []
