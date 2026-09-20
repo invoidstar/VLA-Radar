@@ -175,6 +175,6 @@ Training Data identity 只保留训练数据本身（例如数据集、示范量
 
 ## Benchmark 搜索（2026-09-20）
 
-Evaluation Setting 默认页提供全局 Benchmark 搜索。检索字段限于已加载的轻量索引元数据：dataset、Setting 名称、tasks、split、metric、columns、evalId 与 protocol 摘要；多个词按 AND 组合。搜索不得为了命中而加载所有 `data/settings/` 结果分片。
+Evaluation Setting 默认页提供全局 Benchmark 搜索。检索字段限于已加载的轻量索引元数据：dataset、Setting 名称、tasks、split、metric、columns 与 evalId；多个词按 AND 组合。protocol 正文不参与搜索，避免 episode 数、训练说明等自由文本造成误命中。搜索不得为了命中而加载所有 `data/settings/` 结果分片。
 
 搜索参数使用 `lbSearch` 写入 URL，刷新/分享需保持；切换 Benchmark 时保留搜索词，清除搜索恢复全部数据集入口。搜索仅改变导航可见性，不改变 Setting identity、结果归属、排序语义或 Training Data / Method / Source 行级筛选。
