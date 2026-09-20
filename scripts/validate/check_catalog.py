@@ -23,6 +23,8 @@ for p in data['papers']:
     for src in p['sources']:
         parsed = urlparse(src['url'])
         if parsed.scheme not in {'http', 'https'} or not parsed.netloc: errors.append(f'{p["id"]}: invalid source URL')
+        lm=re.search(r'\\bv(\\d+)\\b',src.get('label',''),re.I);um=re.search(r'arxiv\\.org/(?:html|pdf|abs)/\\d{4}\\.\\d{4,5}v(\\d+)',src['url'],re.I)
+        if lm and um and lm.group(1)!=um.group(1): errors.append(f'{p["id"]}: source label {src["label"]!r} disagrees with URL version v{um.group(1)}')
 state = json.loads((ROOT / 'maintenance/state/state.json').read_text(encoding='utf-8'))
 if state['lastStatus'] not in {'not_run', 'success', 'partial', 'failed'}: errors.append('Invalid maintenance status')
 if errors: raise SystemExit('\n'.join(errors))

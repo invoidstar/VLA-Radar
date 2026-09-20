@@ -1,3 +1,11 @@
+## 2026-09-20 · P1 细节修复
+
+- 修正 Benchmark 页面旧口径：Evaluation Setting 只描述评测问题，Training Data / 模型结构 / recipe / 来源论文保留在结果层。
+- About 不再硬编码早期 46+32 篇规模，并将覆盖时间修正为当前 2019—2026。
+- 修正 Xiaomi-Robotics-1、ABot-M0.5、GF-VLA、VLA-Adapter 的阅读版本与来源标签；VLA-Adapter 明确区分 v1 结构化结果和 v2 当前全文复核。
+- 修复跨行 `$$...$$` 与 `\\[...\\]` 块级公式，并新增对应回归测试。
+- 增加 arXiv 来源标签与 URL 版本一致性检查，防止再次出现“标 v1、链接 v2”。
+
 ## 2026-09-20 · 修复论文公式渲染
 
 - 新增完全本地的 TeX → MathML 渲染层，不依赖 MathJax/KaTeX CDN、外部字体或运行期 API 请求。
