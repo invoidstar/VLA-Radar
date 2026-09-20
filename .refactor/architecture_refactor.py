@@ -371,7 +371,11 @@ w = wf.read_text(encoding='utf-8')
 w = w.replace('python scripts/validate_all.py', 'python scripts/validation/validate_all.py')
 for name in browser_names:
     w = w.replace(f'python scripts/{name}', f'python tests/browser/{name}')
-w = re.sub(r"mkdir -p _site/data\n\s+cp .*?_site/\n\s+cp -R data/\. _site/data/", "mkdir -p _site/data\n          cp -R site/. _site/\n          cp -R data/. _site/data/", w, count=1)
+stage_start = w.find('          mkdir -p _site/data')
+stage_end = w.find('          touch _site/.nojekyll', stage_start)
+if stage_start < 0 or stage_end < 0:
+    raise SystemExit('failed to locate Pages staging block')
+w = w[:stage_start] + '          mkdir -p _site/data' + chr(10) + '          cp -R site/. _site/' + chr(10) + '          cp -R data/. _site/data/' + chr(10) + w[stage_end:]
 if 'cp -R site/. _site/' not in w:
     raise SystemExit('failed to update Pages staging')
 wf.write_text(w, encoding='utf-8')
