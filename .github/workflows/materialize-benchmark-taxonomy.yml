@@ -1,0 +1,39 @@
+name: Materialize Benchmark taxonomy
+on:
+  push:
+    branches: ['feature/benchmark-taxonomy-2026-09-20']
+    paths:
+      - 'catalog/benchmark-taxonomy.json'
+      - 'scripts/build/benchmark_taxonomy.py'
+      - 'scripts/build/build_catalog.py'
+permissions:
+  contents: write
+concurrency:
+  group: benchmark-taxonomy-materialize
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild generated data and validate
+        run: |
+          set -eu
+          python scripts/build/build_catalog.py
+          python scripts/validate/validate_all.py
+      - name: Remove one-shot materialization workflow
+        run: rm -f .github/workflows/materialize-benchmark-taxonomy.yml
+      - name: Commit deterministic outputs
+        env:
+          BRANCH: ${{ github.ref_name }}
+          EXPECTED: ${{ github.sha }}
+        run: |
+          set -eu
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED" || exit 1
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Materialize Benchmark taxonomy index'
+          git push origin "HEAD:refs/heads/$BRANCH"
