@@ -88,3 +88,5 @@ def build_settings(tracks,results):
         })
     settings.sort(key=lambda s:(track_order[s['primaryTrackId']],s['id']))
     return settings
+
+# materialization trigger
