@@ -305,11 +305,22 @@ for p in (ROOT/'tests/browser').glob('browser_*.py'):
     text = p.read_text(encoding='utf-8')
     if 'import tempfile,shutil' not in text:
         text = 'import tempfile,shutil\n' + text
-    marker = "root=Path(__file__).resolve().parents[2]\n"
-    if marker not in text:
+    lower = "root=Path(__file__).resolve().parents[2]"
+    upper = "ROOT=Path(__file__).resolve().parents[2]"
+    if lower in text:
+        anchor = lower
+        repo_var = 'root'
+    elif upper in text:
+        anchor = upper
+        repo_var = 'ROOT'
+    else:
         raise SystemExit(f'root marker missing in {p}')
-    staging = marker + "public=Path(tempfile.mkdtemp(prefix='vla-radar-public-'))\nshutil.copytree(root/'site',public,dirs_exist_ok=True)\nshutil.copytree(root/'data',public/'data',dirs_exist_ok=True)\n"
-    text = text.replace(marker, staging, 1).replace('cwd=root,', 'cwd=public,')
+    end = text.find('\n', text.find(anchor))
+    if end < 0:
+        end = len(text)
+    staging = "\npublic=Path(tempfile.mkdtemp(prefix='vla-radar-public-'))\nshutil.copytree("+repo_var+"/'site',public,dirs_exist_ok=True)\nshutil.copytree("+repo_var+"/'data',public/'data',dirs_exist_ok=True)"
+    text = text[:end] + staging + text[end:]
+    text = text.replace('cwd=root,', 'cwd=public,').replace('cwd=ROOT,', 'cwd=public,')
     p.write_text(text, encoding='utf-8')
 
 path_map = {}
