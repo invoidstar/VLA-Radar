@@ -219,8 +219,227 @@ py_files = [p for p in ROOT.rglob('*.py') if '.git' not in p.parts and '.refacto
 for p in py_files:
     text = p.read_text(encoding='utf-8')
     for mod, target in sorted(module_paths.items(), key=lambda x: -len(x[0])):
-        text = re.sub(rf'(?m)^from\s+{re.escape(mod)}\s+import\s+', f'from {target} import ', text)
-        text = re.sub(rf'(?m)^import\s+{re.escape(mod)}(\s+as\s+\w+)?\s*$', lambda m: f'import {target}{m.group(1) or ""}', text)
+        text = re.sub(rf'(?m)^(\\s*)from\\s+{re.escape(mod)}\\s+import\\s+', lambda m: f'{m.group(1)}from {target} import ', text)
+        text = re.sub(rf'(?m)^(\\s*)import\\s+{re.escape(mod)}(\\s+as\\s+\\w+)?\\s*
+    p.write_text(text, encoding='utf-8')
+
+moved_python = [ROOT/new for new in script_moves.values()] + [ROOT/new for new in browser_moves.values()] + [ROOT/new for new in python_test_moves.values()]
+for p in moved_python:
+    text = p.read_text(encoding='utf-8').replace("Path(__file__).resolve().parents[1]", "Path(__file__).resolve().parents[2]")
+    p.write_text(text, encoding='utf-8')
+
+bootstrap = """# Direct-file compatibility: add repository root before importing scripts packages.
+if __package__ in (None, ''):
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parents[2]))
+
+"""
+for p in [ROOT/new for new in script_moves.values()]:
+    text = p.read_text(encoding='utf-8')
+    if 'from scripts.' in text and 'Direct-file compatibility:' not in text:
+        future = list(re.finditer(r'(?m)^from __future__ import .+$', text))
+        if future:
+            pos = future[-1].end()
+            text = text[:pos] + '\n' + bootstrap + text[pos+1:]
+        else:
+            text = bootstrap + text
+        p.write_text(text, encoding='utf-8')
+
+validate = ROOT/'validate.py'
+v = validate.read_text(encoding='utf-8')
+v = re.sub(r"(?m)^sys\.path\.insert\(0,str\(Path\(__file__\)\.parent/'scripts'\)\)\n", '', v)
+v = v.replace('from catalog_core import', 'from scripts.build.catalog_core import')
+v = v.replace('from build_catalog import', 'from scripts.build.build_catalog import')
+validate.write_text(v, encoding='utf-8')
+
+validate_all = ROOT/'scripts/validation/validate_all.py'
+validate_all.write_text("""\"\"\"One offline entry point used by local development and both PR/publish CI.\"\"\"
+import subprocess,sys
+from pathlib import Path
+root=Path(__file__).resolve().parents[2]
+commands=[
+ ['node','tests/unit/test_leaderboard_controls.cjs'],
+ ['node','--check','site/js/features/tools/tools-loader.js'],
+ ['node','--check','site/js/features/tools/tools-core.js'],
+ ['node','--check','site/js/features/tools/tools.js'],
+ ['node','tests/unit/test_tools.cjs'],
+ ['node','--check','site/js/components/sidebar.js'],
+ ['node','--check','site/js/features/news/news.js'],
+ ['node','--check','site/js/features/news/news-core.js'],
+ ['node','tests/unit/test_news.cjs'],
+ [sys.executable,'validate.py'],
+ [sys.executable,'scripts/validation/check_editorial.py'],
+ [sys.executable,'scripts/validation/check_performance.py'],
+ [sys.executable,'scripts/validation/check_catalog.py'],
+ [sys.executable,'-m','unittest','discover','-s','tests/unit','-v'],
+ ['node','--check','site/js/app.js'],
+ ['node','--check','site/js/features/research/research.js'],
+ ['node','--check','site/js/core/dates.js'],
+ *(['node','--check',p] for p in ['site/js/core/runtime.js','site/js/core/search/search-core.js','site/js/core/search/search-client.js','site/js/core/search/search-worker.js']),
+ ['node','tests/unit/test_dates.cjs'],
+ ['node','tests/unit/test_urls.cjs'],
+ ['node','tests/unit/test_research.cjs'],
+ ['node','tests/unit/test_content.cjs'],
+ ['node','tests/unit/test_performance.cjs'],
+ ['node','tests/unit/test_experience.cjs'],
+ *(['node','--check',p] for p in ['site/js/features/workspace/experience-loader.js','site/js/features/workspace/experience-core.js','site/js/features/workspace/experience.js'])
+]
+for command in commands:
+    if command[0]=='node' and not (root/command[-1]).exists():
+        raise SystemExit('Missing test: '+command[-1])
+    subprocess.run(command,cwd=root,check=True)
+print('PASS: all offline validation commands completed.')
+""", encoding='utf-8')
+
+for p in (ROOT/'tests/unit').glob('*.cjs'):
+    text = p.read_text(encoding='utf-8')
+    text = text.replace("path.join(__dirname,'..',", "path.join(__dirname,'..','..',")
+    text = text.replace('path.join(__dirname,"..",', 'path.join(__dirname,"..","..",')
+    text = text.replace("require('../", "require('../../")
+    text = text.replace('require("../', 'require("../../')
+    for old, new in site_moves.items():
+        text = text.replace(f"../../{old}", f"../../{new}")
+        text = text.replace("'" + old + "'", "'" + new + "'")
+        text = text.replace('"' + old + '"', '"' + new + '"')
+    p.write_text(text, encoding='utf-8')
+
+for p in (ROOT/'tests/browser').glob('browser_*.py'):
+    text = p.read_text(encoding='utf-8')
+    nl = chr(10)
+    if 'import tempfile' not in text:
+        text = 'import tempfile' + nl + text
+    token = 'Path(__file__).resolve().parents[2]'
+    pos = text.find(token)
+    if pos < 0:
+        raise SystemExit(f'root marker missing in {p}')
+    line_start = text.rfind(nl, 0, pos) + 1
+    line_end = text.find(nl, pos)
+    if line_end < 0:
+        line_end = len(text)
+    line = text[line_start:line_end]
+    compact = line.replace(' ', '')
+    repo_var = 'ROOT' if 'ROOT=' in compact else ('root' if 'root=' in compact else None)
+    if repo_var is None:
+        raise SystemExit(f'repository root variable missing in {p}: {line}')
+    staging = (
+        nl + "public=Path(tempfile.mkdtemp(prefix='vla-radar-public-'))"
+        + nl + "shutil.copytree(" + repo_var + "/'site',public,dirs_exist_ok=True)"
+        + nl + "shutil.copytree(" + repo_var + "/'data',public/'data',dirs_exist_ok=True)"
+    )
+    text = text[:line_end] + staging + text[line_end:]
+    text = text.replace('cwd=ROOT', 'cwd=public').replace('cwd = ROOT', 'cwd=public')
+    text = text.replace('cwd=root', 'cwd=public').replace('cwd = root', 'cwd=public')
+    p.write_text(text, encoding='utf-8')
+
+path_map = {}
+path_map.update(script_moves)
+path_map.update(browser_moves)
+path_map.update(node_moves)
+path_map.update(python_test_moves)
+path_map.update(maintenance_map)
+active_roots = [ROOT/'README.md',ROOT/'MAINTENANCE.md',ROOT/'AGENTS.md',ROOT/'validate.py',ROOT/'.github',ROOT/'scripts',ROOT/'tests',ROOT/'maintenance/policies',ROOT/'maintenance/state',ROOT/'maintenance/docs',ROOT/'site']
+active_files = []
+for x in active_roots:
+    if x.is_file():
+        active_files.append(x)
+    elif x.exists():
+        active_files.extend(p for p in x.rglob('*') if p.is_file())
+text_suffixes = {'.md','.py','.js','.cjs','.json','.yml','.yaml','.html','.css','.txt'}
+for p in active_files:
+    if p.suffix.lower() not in text_suffixes and p.name != 'AGENTS.md':
+        continue
+    try:
+        text = p.read_text(encoding='utf-8')
+    except UnicodeDecodeError:
+        continue
+    old_text = text
+    for old, new in sorted(path_map.items(), key=lambda x: -len(x[0])):
+        text = text.replace(old, new)
+        old_parts, new_parts = old.split('/'), new.split('/')
+        for q in ("'", '"'):
+            text = text.replace('/'.join(q+x+q for x in old_parts), '/'.join(q+x+q for x in new_parts))
+            text = text.replace(','.join(q+x+q for x in old_parts), ','.join(q+x+q for x in new_parts))
+    if text != old_text:
+        p.write_text(text, encoding='utf-8')
+
+for p in [ROOT/'README.md',ROOT/'MAINTENANCE.md',ROOT/'AGENTS.md']:
+    text = p.read_text(encoding='utf-8')
+    for old, new in site_moves.items():
+        text = text.replace(old, new)
+    p.write_text(text, encoding='utf-8')
+
+wf = ROOT/'.github/workflows/site.yml'
+w = wf.read_text(encoding='utf-8')
+w = w.replace('python scripts/validate_all.py', 'python scripts/validation/validate_all.py')
+for name in browser_names:
+    w = w.replace(f'python scripts/{name}', f'python tests/browser/{name}')
+stage_start = w.find('          mkdir -p _site/data')
+stage_end = w.find('          touch _site/.nojekyll', stage_start)
+if stage_start < 0 or stage_end < 0:
+    raise SystemExit('failed to locate Pages staging block')
+w = w[:stage_start] + '          mkdir -p _site/data' + chr(10) + '          cp -R site/. _site/' + chr(10) + '          cp -R data/. _site/data/' + chr(10) + w[stage_end:]
+if 'cp -R site/. _site/' not in w:
+    raise SystemExit('failed to update Pages staging')
+wf.write_text(w, encoding='utf-8')
+
+readme = ROOT/'README.md'
+r = readme.read_text(encoding='utf-8')
+anchor = '## Maintain\n'
+architecture = '''## Repository architecture
+
+The repository is organized by responsibility rather than by feature files at the root:
+
+- site/ — static website source, split into core, components and feature modules.
+- catalog/ — canonical public research records; this remains the only hand-edited content source.
+- data/ — deterministic generated public artifacts; do not edit by hand.
+- scripts/ — build, validation, discovery, maintenance and migration tooling.
+- tests/ — unit and browser regression suites plus reusable fixtures.
+- maintenance/ — live state, policies, documentation and immutable historical audits.
+
+This layout is structural only: paper IDs, result IDs, benchmark protocols, page routes and local-reading semantics are unchanged.
+
+'''
+if architecture not in r:
+    r = r.replace(anchor, architecture + anchor, 1)
+readme.write_text(r, encoding='utf-8')
+
+maint = ROOT/'MAINTENANCE.md'
+m = maint.read_text(encoding='utf-8')
+if '## Repository layout' not in m:
+    m += '\n\n## Repository layout\n\nRuntime source lives in site/; canonical research content stays in catalog/; generated exports stay in data/. Tooling is grouped under scripts/{build,validation,discovery,maintenance,migration} and tests under tests/{unit,browser,fixtures}. Maintenance records are separated into maintenance/{state,policies,docs,audits}. Historical audit bodies are preserved as snapshots even when their recorded paths predate this layout.\n'
+maint.write_text(m, encoding='utf-8')
+
+changelog = ROOT/'CHANGELOG.md'
+c = changelog.read_text(encoding='utf-8')
+entry = '\n## 2026-09-20 — Repository architecture cleanup\n\n- Grouped static website source under site/ with core, component and feature boundaries; public page routes and query parameters are unchanged.\n- Grouped Python tooling by build, validation, discovery, maintenance and migration responsibility; moved browser and unit checks under tests/.\n- Split maintenance material into live state, policies, docs and historical audits without changing canonical catalog/data semantics.\n- Reorganized sidebar information architecture into Discover, Evidence, Workspace and Personal groups while preserving every existing view.\n\n'
+if entry not in c:
+    first_nl = c.find('\n')
+    c = c[:first_nl+1] + entry + c[first_nl+1:]
+changelog.write_text(c, encoding='utf-8')
+
+audit = {
+    'schemaVersion': 1,
+    'date': '2026-09-20',
+    'baseMainSha': '60b442c10d25591e3aa74308d599b98e258f83ac',
+    'scope': 'repository architecture cleanup; no canonical research-data or route semantic changes',
+    'moves': {'siteFiles':len(site_moves),'scriptFiles':len(script_moves),'browserTests':len(browser_moves),'nodeUnitTests':len(node_moves),'pythonUnitTests':len(python_test_moves),'maintenanceEntries':len(maintenance_map)},
+    'invariants': {'catalogSha256Before':before_catalog,'catalogSha256After':sha_tree('catalog'),'dataSha256Before':before_data,'dataSha256After':sha_tree('data'),'publicRoutesChanged':False,'benchmarkProtocolSemanticsChanged':False},
+    'informationArchitecture': ['DISCOVER','EVIDENCE','WORKSPACE','PERSONAL'],
+}
+audit_path = ROOT/'maintenance/audits/release/repository-architecture-20260920.json'
+audit_path.parent.mkdir(parents=True, exist_ok=True)
+audit_path.write_text(json.dumps(audit, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+if audit['invariants']['catalogSha256Before'] != audit['invariants']['catalogSha256After']:
+    raise SystemExit('catalog changed during structural refactor')
+if audit['invariants']['dataSha256Before'] != audit['invariants']['dataSha256After']:
+    raise SystemExit('generated data changed during structural refactor')
+for old in list(site_moves)+list(script_moves)+list(browser_moves)+list(node_moves):
+    if (ROOT/old).exists():
+        raise SystemExit(f'flat file remains: {old}')
+print('PASS structural refactor staged')
+print(json.dumps(audit, ensure_ascii=False, indent=2))
+, lambda m: f'{m.group(1)}import {target}{m.group(2) or ""}', text)
     p.write_text(text, encoding='utf-8')
 
 moved_python = [ROOT/new for new in script_moves.values()] + [ROOT/new for new in browser_moves.values()] + [ROOT/new for new in python_test_moves.values()]
