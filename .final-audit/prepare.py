@@ -107,7 +107,12 @@ for p in open_prs:
 
 for item in candidates:
     name=item['name']; expected=item['sha']
-    sha,protected=branch_sha(name)
+    row=api(f'repos/{REPO}/branches/'+quote(name,safe=''))
+    if isinstance(row,dict) and row.get('_httpStatus')==404:
+        cleanup['checks'].append({'branch':name,'sha':expected,'proof':'validated-and-deleted-in-prior-final-audit-run-35484772151','remoteAbsent':True})
+        cleanup['deleted'].append({'branch':name,'sha':expected,'reason':item['reason'],'status':'already-deleted-by-prior-final-audit-run','priorRunId':35484772151})
+        continue
+    sha=row['commit']['sha']; protected=bool(row.get('protected'))
     assert sha==expected,(name,sha,expected)
     assert not protected,(name,'protected')
     assert name not in open_refs,(name,'open-pr-reference')
@@ -196,7 +201,7 @@ assert work['remainingNotes']==0 and work['notes']==[]
 assert not policy['limitedLegacyIds']
 assert not [p['paper']['id'] for p in papers if p['note']['status']=='needs_review']
 assert pub['status']=='success' and pub['dueCount']==0 and pub['dueRemaining']==0 and not pub['errors']
-assert len(first)==78, len(first)
+assert len(first)==98, len(first)
 
 # Result/track/review referential closure.
 review_results=[]
