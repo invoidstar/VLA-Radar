@@ -2,16 +2,15 @@
 import copy,sys,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'scripts'))
-from catalog_core import load,read_catalog
-from check_editorial import check
+from scripts.build.catalog_core import load,read_catalog
+from scripts.validate.check_editorial import check
 
 class EditorialTests(unittest.TestCase):
     def setUp(self):
         _,records,_,self.results=read_catalog(ROOT)
         self.records=copy.deepcopy(records)
-        self.policy=load(ROOT/'maintenance/editorial-policy.json')
-        self.ledger=load(ROOT/'maintenance/benchmark-review.json')
+        self.policy=load(ROOT/'maintenance/policies/editorial-policy.json')
+        self.ledger=load(ROOT/'maintenance/state/benchmark-review.json')
         self.full=next(r for r in self.records if r['note']['coverage']['level']=='deep')
     def run_check(self):return check(self.records,self.policy,self.ledger,self.results)
     def make_partial_fixture(self):

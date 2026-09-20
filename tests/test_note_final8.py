@@ -16,7 +16,7 @@ def test_two_limited_sources_remain_visible():
         assert p['note']['status']=='needs_review'
         assert p['note']['coverage']['level']=='limited'
         assert p['note']['verifiedAt']=='2026-09-20'
-    w=j('maintenance/work-queue.json')
+    w=j('maintenance/state/work-queue.json')
     assert w['remainingNotes']==2
     assert {x['paperId'] for x in w['notes']}=={'p043','p046'}
 def test_xiaomi_conflict_preserved():
@@ -33,7 +33,7 @@ def test_vla_adapter_pro_kept_separate():
     t=next(x for x in p['note']['tables'] if x['title']=='v2新增VLA-Adapter-Pro结果')
     assert t['rows']==[['VLA-Adapter','97.3%','4.42'],['VLA-Adapter-Pro','98.5%','4.50']]
 def test_benchmark_counts_unchanged():
-    review=j('maintenance/benchmark-review.json')['papers']
+    review=j('maintenance/state/benchmark-review.json')['papers']
     assert sum(x['status']=='extracted' for x in review.values())==94
     assert sum(x['status']=='deferred' for x in review.values())==2
     assert sum(x['status']=='not-applicable' for x in review.values())==2

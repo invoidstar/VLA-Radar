@@ -50,7 +50,7 @@ class BatchSixTests(unittest.TestCase):
         self.assertEqual(r['paper']['firstPublished'],'2022-03-23')
         self.assertEqual(r['publication']['publishedAt'],'2023')
     def test_reading_scope_and_unsupported_curves_remain_documented(self):
-        audit=read('maintenance/benchmark-source-audit-20260919-batch6.json')
+        audit=read('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch6.json')
         m=next(x for x in audit['deferred'] if x.get('paperId')=='p097')
         self.assertEqual(m['status'],'exact-numeric-results-pending')
         self.assertEqual(audit['counts']['newResultCount'],30)

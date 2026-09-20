@@ -2,13 +2,13 @@
 import copy,json,sys,unittest
 from pathlib import Path
 from datetime import date,timedelta
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
-from news_core import validate,outputs,week_key,week_start
+ROOT=Path(__file__).resolve().parents[1]
+from scripts.build.news_core import validate,outputs,week_key,week_start
 class NewsTests(unittest.TestCase):
  def setUp(self):
   self.records=[json.loads(p.read_text()) for p in sorted((ROOT/'catalog/news').glob('*.json'))]
   self.paperids={p.stem for p in (ROOT/'catalog/papers').glob('*.json')}
-  self.state=json.loads((ROOT/'maintenance/news-state.json').read_text());self.today=date.fromisoformat(self.state['asOf'])
+  self.state=json.loads((ROOT/'maintenance/state/news-state.json').read_text());self.today=date.fromisoformat(self.state['asOf'])
  def runcheck(self):return validate(self.records,self.paperids,self.state,self.today)
  def fails(self):
   with self.assertRaises(ValueError):self.runcheck()

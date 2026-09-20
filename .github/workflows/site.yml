@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate canonical records, generated files and regression tests
-        run: python scripts/validate_all.py
+        run: python scripts/validate/validate_all.py
       - name: Install browser test driver and CJK test fonts
         run: |
           python -m pip install --disable-pip-version-check playwright==1.57.0
@@ -32,12 +32,12 @@ jobs:
           fi
       - name: Browser HTTP, worker, persistence and responsive regression
         run: |
-          python scripts/browser_smoke.py
-          python scripts/browser_workspace.py
-          python scripts/browser_news.py
-          python scripts/browser_sidebar.py
-          python scripts/browser_tools.py
-          python scripts/browser_leaderboard.py
+          python scripts/browser/browser_smoke.py
+          python scripts/browser/browser_workspace.py
+          python scripts/browser/browser_news.py
+          python scripts/browser/browser_sidebar.py
+          python scripts/browser/browser_tools.py
+          python scripts/browser/browser_leaderboard.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -63,12 +63,7 @@ jobs:
           fi
       - name: Stage public website only
         if: github.event_name != 'pull_request'
-        run: |
-          mkdir -p _site/data
-          cp index.html styles.css research.css app.js research.js dates.js runtime.js search-core.js search-client.js search-worker.js favicon.svg experience-loader.js experience-core.js experience.js experience.css news-core.js news.js news.css sidebar.js sidebar.css _site/
-          cp tools-loader.js tools-core.js tools.js tools.css _site/
-          cp -R data/. _site/data/
-          touch _site/.nojekyll
+        run: python scripts/build/stage_site.py --output _site
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
         with:

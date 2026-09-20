@@ -54,8 +54,8 @@ for group,names in groups.items():
     for name in names:
         old=f'scripts/{name}'; new=f'scripts/{group}/{name}'
         script_map[old]=new; move(old,new)
-move('validate.py','scripts/validate/validate_schema.py')
-script_map['validate.py']='scripts/validate/validate_schema.py'
+move('scripts/validate/validate_schema.py','scripts/validate/validate_schema.py')
+script_map['scripts/validate/validate_schema.py']='scripts/validate/validate_schema.py'
 
 # JS/Node tests belong with tests, not operational scripts.
 node_tests=['test_content.cjs','test_dates.cjs','test_experience.cjs','test_leaderboard_controls.cjs','test_news.cjs','test_performance.cjs','test_research.cjs','test_tools.cjs','test_urls.cjs']
@@ -83,12 +83,12 @@ for n in editorial_audits:mmove(n,'audits/editorial')
 for n in discovery_audits:mmove(n,'audits/discovery')
 for p in sorted((R/'maintenance').glob('benchmark-source-audit*.json')):
     mmove(p.name,'audits/benchmark')
-if (R/'maintenance/benchmark-audit-invariance.json').exists():mmove('benchmark-audit-invariance.json','audits/benchmark')
+if (R/'maintenance/audits/benchmark/benchmark-audit-invariance.json').exists():mmove('benchmark-audit-invariance.json','audits/benchmark')
 if (R/'maintenance/batches').exists():
-    maint_map['maintenance/batches/']='maintenance/audits/batches/'
+    maint_map['maintenance/audits/batches/']='maintenance/audits/batches/'
     move('maintenance/batches','maintenance/audits/batches')
 if (R/'maintenance/deep-reading').exists():
-    maint_map['maintenance/deep-reading/']='maintenance/audits/deep-reading/'
+    maint_map['maintenance/audits/deep-reading/']='maintenance/audits/deep-reading/'
     move('maintenance/deep-reading','maintenance/audits/deep-reading')
 
 # Three completed one-shot workflows are historical machinery, not current operations.
@@ -382,7 +382,7 @@ def test_repository_layers_are_explicit():
     assert (ROOT/'maintenance/docs').is_dir()
 
 def test_root_is_not_a_frontend_source_dump():
-    forbidden=['index.html','app.js','styles.css','research.js','research.css','experience.js','experience.css','news.js','news.css','tools.js','tools.css','sidebar.js','sidebar.css','runtime.js','dates.js','search-core.js','search-client.js','search-worker.js','validate.py']
+    forbidden=['index.html','app.js','styles.css','research.js','research.css','experience.js','experience.css','news.js','news.css','tools.js','tools.css','sidebar.js','sidebar.css','runtime.js','dates.js','search-core.js','search-client.js','search-worker.js','scripts/validate/validate_schema.py']
     assert not [name for name in forbidden if (ROOT/name).exists()]
 
 def test_operational_directories_are_not_flat_dumps():

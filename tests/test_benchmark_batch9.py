@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def load(p): return json.loads((ROOT/p).read_text())
 class BatchNineTests(unittest.TestCase):
  def setUp(self):
-  self.a=load('maintenance/benchmark-source-audit-20260919-batch9.json')
+  self.a=load('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch9.json')
   self.tracks={t['id']:t for t in load('catalog/benchmarks.json')['tracks']}
   self.rows=[load('catalog/results/'+r+'.json') for r in self.a['newResults']]
   self.records={p:load('catalog/papers/'+p+'.json') for p in ['p048','p050','p062']}

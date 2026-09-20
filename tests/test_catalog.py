@@ -1,13 +1,13 @@
 import copy,json,sys,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
-from catalog_core import *
-from build_catalog import outputs,build
-from sync_publications import parse_feed,apply_arxiv,apply_crossref,publisher_date,sync
-from extract_results import extract,number
-from discover_results import discover
-from maintenance_queue import plan
+ROOT=Path(__file__).resolve().parents[1]
+from scripts.build.catalog_core import *
+from scripts.build.build_catalog import outputs,build
+from scripts.maintenance.sync_publications import parse_feed,apply_arxiv,apply_crossref,publisher_date,sync
+from scripts.discovery.extract_results import extract,number
+from scripts.discovery.discover_results import discover
+from scripts.maintenance.maintenance_queue import plan
 
 class CatalogTests(unittest.TestCase):
     def setUp(self):
@@ -46,9 +46,9 @@ class CatalogTests(unittest.TestCase):
     def test_network_failure_does_not_advance_search(self):
         import shutil
         with tempfile.TemporaryDirectory() as tmp:
-            shutil.copytree(ROOT/'catalog',Path(tmp)/'catalog');Path(tmp,'maintenance').mkdir();write(Path(tmp)/'maintenance/state.json',{'lastSuccessfulSearchAt':None});before=load(Path(tmp)/'maintenance/state.json')
-            with patch('sync_publications.fetch',side_effect=OSError('offline')):report=sync(tmp,1,True,pause=0,due_days=0)
-            self.assertEqual(report['status'],'partial');self.assertFalse(report['metadataChecked']);self.assertEqual(load(Path(tmp)/'maintenance/state.json'),before)
+            shutil.copytree(ROOT/'catalog',Path(tmp)/'catalog');Path(tmp,'maintenance').mkdir();write(Path(tmp)/'maintenance/state/state.json',{'lastSuccessfulSearchAt':None});before=load(Path(tmp)/'maintenance/state/state.json')
+            with patch('scripts.maintenance.sync_publications.fetch',side_effect=OSError('offline')):report=sync(tmp,1,True,pause=0,due_days=0)
+            self.assertEqual(report['status'],'partial');self.assertFalse(report['metadataChecked']);self.assertEqual(load(Path(tmp)/'maintenance/state/state.json'),before)
     def meta(self,**kw):return dict(arxiv='2502.19645',version='v3',firstArxivAt='2025-02-27',latestArxivAt='2026-09-01',title=self.rec['paper']['title'],doi='',journalRef='',comment='',**kw)
     def test_arxiv_version_preserves_first_public(self):
         prior=self.rec['paper']['firstPublished'];self.rec['note']['status']='expanded';apply_arxiv(self.rec,self.meta(),'2026-09-17');self.assertEqual(self.rec['paper']['firstPublished'],prior);self.assertEqual(self.rec['publication']['status'],'published');self.assertEqual(self.rec['note']['status'],'needs_review')

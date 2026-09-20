@@ -32,16 +32,16 @@ jobs:
       - name: Audit protection without changing existing rules
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python scripts/configure_main_protection.py --output /tmp/radar-protection-audit.json
+        run: python scripts/maintenance/configure_main_protection.py --output /tmp/radar-protection-audit.json
       - name: Prune only exact heads with merged PR evidence and a published main
         env:
           GH_TOKEN: ${{ github.token }}
           APPLY: ${{ github.event_name != 'workflow_dispatch' || inputs.apply }}
         run: |
           if test "$APPLY" = true; then
-            python scripts/repo_housekeeping.py --apply --output /tmp/radar-branch-audit.json
+            python scripts/maintenance/repo_housekeeping.py --apply --output /tmp/radar-branch-audit.json
           else
-            python scripts/repo_housekeeping.py --output /tmp/radar-branch-audit.json
+            python scripts/maintenance/repo_housekeeping.py --output /tmp/radar-branch-audit.json
           fi
       - name: Record audit summary
         if: always()

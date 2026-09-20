@@ -1,10 +1,9 @@
 import copy,sys,unittest
 from pathlib import Path
 from datetime import datetime,timezone
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from arxiv_metadata import parse_abstract
-from repo_housekeeping import decide,REPO
-from catalog_core import load
+from scripts.discovery.arxiv_metadata import parse_abstract
+from scripts.maintenance.repo_housekeeping import decide,REPO
+from scripts.build.catalog_core import load
 ROOT=Path(__file__).resolve().parents[1]
 HTML='''<meta name="citation_arxiv_id" content="2502.19645"><meta name="citation_title" content="Example paper">
 <div>Comments: Accepted at test conference. Subjects: Robotics</div><div class="submission-history">Submission history
@@ -21,7 +20,7 @@ class MaintenanceTests(unittest.TestCase):
     def test_doi_is_not_arxiv_doi(self):
         m=parse_abstract(HTML+'<a href="https://doi.org/10.48550/arXiv.2502.19645">doi</a>','2502.19645');self.assertEqual(m['doi'],'')
     def setUp(self):
-        self.policy=load(ROOT/'maintenance/branch-policy.json');self.now=datetime(2026,9,18,12,tzinfo=timezone.utc)
+        self.policy=load(ROOT/'maintenance/policies/branch-policy.json');self.now=datetime(2026,9,18,12,tzinfo=timezone.utc)
         self.b={'name':'weekly-update-2026-09-01','commit':{'sha':'a'*40},'protected':False}
         self.pr={'number':1,'state':'closed','merged_at':'2026-09-17T00:00:00Z','merge_commit_sha':'b'*40,'base':{'ref':'main'},'head':{'ref':self.b['name'],'sha':'a'*40,'repo':{'full_name':REPO}}}
     def result(self,prs=None):return decide(self.b,[self.pr] if prs is None else prs,self.policy,self.now)
@@ -44,10 +43,10 @@ class SyncFallbackTests(unittest.TestCase):
         import tempfile,shutil
         from unittest.mock import patch
         from urllib.error import HTTPError
-        from sync_publications import sync
+        from scripts.maintenance.sync_publications import sync
         from catalog_core import write
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);root=Path(self.tmp.name)
-        shutil.copytree(ROOT/'catalog',root/'catalog');(root/'maintenance').mkdir();write(root/'maintenance/state.json',{'lastSuccessfulSearchAt':None})
+        shutil.copytree(ROOT/'catalog',root/'catalog');(root/'maintenance').mkdir();write(root/'maintenance/state/state.json',{'lastSuccessfulSearchAt':None})
         # Deterministic fixture: one chosen due record, independent of live metadata.
         from catalog_core import today
         for file in (root/'catalog/papers').glob('*.json'):
@@ -60,9 +59,9 @@ class SyncFallbackTests(unittest.TestCase):
         def mock(url,**kwargs):
             if '/api/query' in url:raise HTTPError(url,fail_code,'test failure',{},None)
             return html,200,url
-        with patch('sync_publications.fetch',side_effect=mock) as f:
+        with patch('scripts.maintenance.sync_publications.fetch',side_effect=mock) as f:
             r=sync(root,1,True,pause=0,due_days=7)
-        return r,f.call_count,load(root/'maintenance/state.json')
+        return r,f.call_count,load(root/'maintenance/state/state.json')
     def test_406_uses_official_html(self):
         report,calls,state=self.run_sync(406);self.assertEqual(calls,2);self.assertEqual(report['metadataChecked'],['p001']);self.assertEqual(report['providers']['2608.27550'],'arxiv-abstract');self.assertIsNone(state['lastSuccessfulSearchAt'])
     def test_429_does_not_bypass(self):

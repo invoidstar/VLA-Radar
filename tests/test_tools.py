@@ -1,9 +1,8 @@
 import copy,json,sys,tempfile,unittest
 from pathlib import Path
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from tools_build import outputs,bibliography
-from catalog_core import read_catalog
-from experience_build import outputs as experience
+from scripts.build.tools_build import outputs,bibliography
+from scripts.build.catalog_core import read_catalog
+from scripts.build.experience_build import outputs as experience
 ROOT=Path(__file__).resolve().parents[1]
 class ToolBuildTests(unittest.TestCase):
  def setUp(self):

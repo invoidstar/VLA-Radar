@@ -26,7 +26,7 @@ class BatchEightTests(unittest.TestCase):
  def test_octo_rtx_mix_is_not_original_rtx_policy(self):
   r=row('bridge-real-octo-v2-ablation','rtx-mix');self.assertEqual(r['paperId'],'p063');self.assertIn('Octo',r['method']);self.assertIn('不是RT-X模型',r['trainingData'])
  def test_octo_table_overlap_not_new_replications(self):
-  audit=read('maintenance/benchmark-source-audit-20260919-batch8.json')
+  audit=read('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch8.json')
   self.assertEqual(len([x for x in audit['newResults'] if x.startswith('r-bridge-real-octo-v2-ablation-')]),6)
   self.assertFalse(any('-in-distribution-' in x or '-novel-object-' in x for x in audit['newResults']))
   self.assertIn('Table II',self.tracks['bridge-real-octo-v2-ablation']['protocol'])
@@ -41,5 +41,5 @@ class BatchEightTests(unittest.TestCase):
    r=read('catalog/papers/'+pid+'.json');self.assertEqual(r['paper']['firstPublished'],first);self.assertEqual(r['publication']['firstArxivAt'],first)
   b=read('catalog/bibliography.json')['entries'];self.assertNotIn('author',b['p059']['item']);self.assertEqual(len(b['p063']['item']['author']),18)
  def test_limited_recheck_does_not_certify_roboflamingo_notes(self):
-  a=read('maintenance/benchmark-source-audit-20260919-batch8.json');self.assertEqual(a['publicationOnly'],['p060']);self.assertNotIn('p060',a['updatedPapers'])
+  a=read('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch8.json');self.assertEqual(a['publicationOnly'],['p060']);self.assertNotIn('p060',a['updatedPapers'])
   d=next(x for x in a['deferred'] if x.get('paperId')=='p060');self.assertEqual(d['status'],'full-text-access-pending');self.assertIn('15465717',d['reason'])
