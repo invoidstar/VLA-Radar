@@ -183,6 +183,51 @@ for p in R.glob('scripts/*/*.py'):
         s=s.replace('root=Path(__file__).parent','root=Path(__file__).resolve().parents[2]')
     p.write_text(insert_bootstrap(s))
 
+# Python tests import the new responsibility packages explicitly.
+test_imports={
+  'tests/test_catalog.py':{
+    "ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))":"ROOT=Path(__file__).resolve().parents[1]",
+    'from catalog_core import *':'from scripts.build.catalog_core import *',
+    'from build_catalog import outputs,build':'from scripts.build.build_catalog import outputs,build',
+    'from sync_publications import parse_feed,apply_arxiv,apply_crossref,publisher_date,sync':'from scripts.maintenance.sync_publications import parse_feed,apply_arxiv,apply_crossref,publisher_date,sync',
+    'from extract_results import extract,number':'from scripts.discovery.extract_results import extract,number',
+    'from discover_results import discover':'from scripts.discovery.discover_results import discover',
+    'from maintenance_queue import plan':'from scripts.maintenance.maintenance_queue import plan',
+  },
+  'tests/test_editorial.py':{
+    "sys.path.insert(0,str(ROOT/'scripts'))\n":'',
+    'from catalog_core import load,read_catalog':'from scripts.build.catalog_core import load,read_catalog',
+    'from check_editorial import check':'from scripts.validate.check_editorial import check',
+  },
+  'tests/test_experience.py':{
+    "ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))":"ROOT=Path(__file__).resolve().parents[1]",
+    'from experience_build import outputs':'from scripts.build.experience_build import outputs',
+    'from capture_activity import paper_events':'from scripts.maintenance.capture_activity import paper_events',
+    'from catalog_core import read_catalog':'from scripts.build.catalog_core import read_catalog',
+  },
+  'tests/test_maintenance.py':{
+    "sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))\n":'',
+    'from arxiv_metadata import parse_abstract':'from scripts.discovery.arxiv_metadata import parse_abstract',
+    'from repo_housekeeping import decide,REPO':'from scripts.maintenance.repo_housekeeping import decide,REPO',
+    'from catalog_core import load':'from scripts.build.catalog_core import load',
+    'from sync_publications import ':'from scripts.maintenance.sync_publications import ',
+  },
+  'tests/test_news.py':{
+    "ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))":"ROOT=Path(__file__).resolve().parents[1]",
+    'from news_core import validate,outputs,week_key,week_start':'from scripts.build.news_core import validate,outputs,week_key,week_start',
+  },
+  'tests/test_tools.py':{
+    "sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))\n":'',
+    'from tools_build import outputs,bibliography':'from scripts.build.tools_build import outputs,bibliography',
+    'from catalog_core import read_catalog':'from scripts.build.catalog_core import read_catalog',
+    'from experience_build import outputs as experience':'from scripts.build.experience_build import outputs as experience',
+  },
+}
+for rel,repls in test_imports.items():
+    p=R/rel;s=p.read_text()
+    for a,b in repls.items():s=s.replace(a,b)
+    p.write_text(s)
+
 # Node tests now live under tests/node.
 node_refs={
   "../dates.js":"../../site/js/core/dates.js",
