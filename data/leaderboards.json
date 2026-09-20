@@ -6235,6 +6235,7 @@
       "trackIds": [
         "libero-oft-single-view",
         "libero-oft-multi-view",
+        "libero-cosmos-3seeds",
         "libero-rldx-v2",
         "libero-prts-crl-v1",
         "libero-openvla-v3-singleview-cleaned",
@@ -6291,6 +6292,7 @@
         "r-libero-actioncache-v2-pi05-cache-one",
         "r-libero-actioncache-v2-pi05-cache-two",
         "r-libero-actioncache-v2-pi05-cache-zero",
+        "r-libero-cosmos-3seeds-cosmos-policy",
         "r-libero-infoentropy-v1-100-attention",
         "r-libero-infoentropy-v1-100-fastv",
         "r-libero-infoentropy-v1-100-openvla",
@@ -6356,13 +6358,14 @@
         "r-w2vla-v1-libero-star",
         "r-w2vla-v1-libero-w2"
       ],
-      "resultCount": 100,
-      "paperCount": 14,
+      "resultCount": 101,
+      "paperCount": 15,
       "paperIds": [
         "p030",
         "p043",
         "p009",
         "p028",
+        "p076",
         "p042",
         "p069",
         "p064",
@@ -6374,7 +6377,7 @@
         "p006",
         "p010"
       ],
-      "methodCount": 89,
+      "methodCount": 90,
       "primaryTrackId": "libero-oft-single-view",
       "trainingOptions": [
         {
@@ -6400,6 +6403,12 @@
           "label": "lerobot/pi05_libero_finetuned_v044",
           "known": true,
           "count": 5
+        },
+        {
+          "id": "data-ed20e1582e15",
+          "label": "每任务50条示范；策略训练过滤失败轨迹",
+          "known": true,
+          "count": 1
         },
         {
           "id": "unknown-p042",
@@ -6523,6 +6532,7 @@
         "r-libero-actioncache-v2-pi05-cache-one": "data-3783e97e1263",
         "r-libero-actioncache-v2-pi05-cache-two": "data-3783e97e1263",
         "r-libero-actioncache-v2-pi05-cache-zero": "data-3783e97e1263",
+        "r-libero-cosmos-3seeds-cosmos-policy": "data-ed20e1582e15",
         "r-libero-infoentropy-v1-100-attention": "unknown-p042",
         "r-libero-infoentropy-v1-100-fastv": "unknown-p042",
         "r-libero-infoentropy-v1-100-openvla": "unknown-p042",
@@ -6587,63 +6597,6 @@
         "r-vlatalker-v1-libero-talker": "unknown-p006",
         "r-w2vla-v1-libero-star": "unknown-p010",
         "r-w2vla-v1-libero-w2": "unknown-p010"
-      }
-    },
-    {
-      "id": "setting-libero-long10-a5b842c135cf",
-      "dataset": "LIBERO",
-      "evalId": "auto:long10",
-      "name": "LIBERO · Long-Horizon 10 Tasks · Success Rate",
-      "tasks": "40",
-      "split": "多来源评测描述；详见各行 Evidence",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Spatial",
-        "Object",
-        "Goal",
-        "Long",
-        "Average"
-      ],
-      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
-      "trackIds": [
-        "libero-cosmos-3seeds",
-        "onevomemory-v1-libero-long"
-      ],
-      "resultIds": [
-        "r-libero-cosmos-3seeds-cosmos-policy",
-        "r-onevomemory-v1-long-base",
-        "r-onevomemory-v1-long-offline",
-        "r-onevomemory-v1-long-online"
-      ],
-      "resultCount": 4,
-      "paperCount": 2,
-      "paperIds": [
-        "p076",
-        "p015"
-      ],
-      "methodCount": 4,
-      "primaryTrackId": "libero-cosmos-3seeds",
-      "trainingOptions": [
-        {
-          "id": "data-ed20e1582e15",
-          "label": "每任务50条示范；策略训练过滤失败轨迹",
-          "known": true,
-          "count": 1
-        },
-        {
-          "id": "unknown-p015",
-          "label": "训练数据未完整披露 · p015",
-          "known": false,
-          "count": 3
-        }
-      ],
-      "trainingByResult": {
-        "r-libero-cosmos-3seeds-cosmos-policy": "data-ed20e1582e15",
-        "r-onevomemory-v1-long-base": "unknown-p015",
-        "r-onevomemory-v1-long-offline": "unknown-p015",
-        "r-onevomemory-v1-long-online": "unknown-p015"
       }
     },
     {
@@ -14210,6 +14163,49 @@
         "r-vlaflow-v2-rt1-pi-nopt": "unknown-p002",
         "r-vlaflow-v2-rt1-wpi-nopt": "unknown-p002",
         "r-vlaflow-v2-rt1-wpi": "unknown-p002"
+      }
+    },
+    {
+      "id": "setting-libero-long10-a5b842c135cf",
+      "dataset": "LIBERO",
+      "evalId": "auto:long10",
+      "name": "LIBERO · Long-Horizon 10 Tasks · Success Rate",
+      "tasks": "10 long-horizon tasks",
+      "split": "base / offline memory / one online round",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Average"
+      ],
+      "protocol": "冻结基础VLA；离线记忆后再用在线rollout更新记忆模块。在线阶段有额外交互，不当作同训练预算静态榜。",
+      "trackIds": [
+        "onevomemory-v1-libero-long"
+      ],
+      "resultIds": [
+        "r-onevomemory-v1-long-base",
+        "r-onevomemory-v1-long-offline",
+        "r-onevomemory-v1-long-online"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p015"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "onevomemory-v1-libero-long",
+      "trainingOptions": [
+        {
+          "id": "unknown-p015",
+          "label": "训练数据未完整披露 · p015",
+          "known": false,
+          "count": 3
+        }
+      ],
+      "trainingByResult": {
+        "r-onevomemory-v1-long-base": "unknown-p015",
+        "r-onevomemory-v1-long-offline": "unknown-p015",
+        "r-onevomemory-v1-long-online": "unknown-p015"
       }
     },
     {
