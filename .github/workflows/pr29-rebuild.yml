@@ -1,0 +1,36 @@
+name: PR29 rebuild canonical exports
+on:
+  push:
+    branches: ['release/batch-2026-09-20-weekly-notes']
+    paths: ['.github/workflows/pr29-rebuild.yml']
+permissions:
+  contents: write
+concurrency:
+  group: pr29-rebuild
+  cancel-in-progress: false
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/batch-2026-09-20-weekly-notes
+          fetch-depth: 0
+      - name: Rebuild deterministic data and validate
+        run: |
+          set -euo pipefail
+          python scripts/build_catalog.py
+          python scripts/validate_all.py
+      - name: Commit rebuilt outputs and remove one-shot workflow
+        env:
+          BRANCH: release/batch-2026-09-20-weekly-notes
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = "$BRANCH"
+          rm .github/workflows/pr29-rebuild.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Rebuild weekly news exports after schema-label correction'
+          git push origin "HEAD:refs/heads/$BRANCH"
