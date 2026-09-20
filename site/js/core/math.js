@@ -16,7 +16,7 @@
   const funcs=new Set(['sin','cos','tan','cot','sec','csc','arcsin','arccos','arctan','sinh','cosh','tanh','log','ln','exp','lim','min','max','argmin','argmax','det','dim','ker','Pr','softmax']);
   const variants={mathrm:'normal',mathbf:'bold',mathit:'italic',mathsf:'sans-serif',mathtt:'monospace',mathbb:'double-struck',mathcal:'script',boldsymbol:'bold-italic'};
   const accents={hat:'^',widehat:'^',bar:'¯',overline:'¯',vec:'→',tilde:'˜',widetilde:'˜',dot:'˙',ddot:'¨',underline:'_'};
-  const delimiters={'{':'{','}':'}','[':'[',']':']','(':'(',')':')','|':'|','.':'','lbrace':'{','rbrace':'}','lbrack':'[','rbrack':']','langle':'⟨','rangle':'⟩','vert':'|','Vert':'‖'};
+  const delimiters={'{':'{','}':'}','[':'[',']':']','(':'(',')':')','|':'|','.':'','lbrace':'{','rbrace':'}','lbrack':'[','rbrack':']','langle':'⟨','rangle':'⟩','vert':'|','Vert':'‖','lvert':'|','rvert':'|','lVert':'‖','rVert':'‖'};
 
   function tag(name,body,attrs=''){return '<'+name+(attrs?' '+attrs:'')+'>'+body+'</'+name+'>';}
   function mo(v,attrs=''){return tag('mo',esc(v),attrs);}
@@ -69,6 +69,7 @@
     }
     cmd(name){
       if(greek[name])return mi(greek[name]);
+      if(Object.prototype.hasOwnProperty.call(delimiters,name))return mo(delimiters[name],'stretchy="true"');
       if(ops[name])return mo(ops[name]);
       if(big[name])return mo(big[name],'largeop="true" movablelimits="true"');
       if(funcs.has(name))return mi(name,'mathvariant="normal"');
@@ -79,6 +80,9 @@
         return tag('msqrt',tag('mrow',this.group()));
       }
       if(name==='text'||name==='textrm'||name==='textnormal')return mtext(this.rawGroup());
+      if(name==='operatorname'){if(this.peek()==='*')this.i++;return mi(this.rawGroup(),'mathvariant="normal"');}
+      if(name==='mathop')return tag('mrow',this.group());
+      if(['displaystyle','textstyle','scriptstyle','scriptscriptstyle','limits','nolimits'].includes(name))return '';
       if(variants[name])return tag('mstyle',tag('mrow',this.group()),'mathvariant="'+variants[name]+'"');
       if(accents[name]){
         const base=tag('mrow',this.group()),mark=mo(accents[name],name==='vec'?'stretchy="true"':'');
