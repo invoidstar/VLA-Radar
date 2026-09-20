@@ -12,7 +12,7 @@
   const priorityOrder = {deep:0,selective:1,overview:2};
   const statusText = {unread:'未读',reading:'阅读中',read:'已读'};
   const evidenceText = {checked:'已复核片段',notes:'笔记待复核',metadata:'出版 / 摘要证据'};
-  const views = {radar:'My Radar',papers:'文献总览',topics:'研究方向',timeline:'发表时间线',reading:'我的阅读',leaderboards:'评测榜单',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',news:'具身智能周报',about:'关于与维护'};
+  const views = {radar:'My Radar',papers:'文献库',topics:'研究方向',timeline:'时间线',reading:'我的阅读',leaderboards:'Benchmark',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',news:'具身智能周报',about:'关于与维护'};
   const paths = {
     library:'<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l3-1 4 15-3 1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
