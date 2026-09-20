@@ -4,7 +4,7 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": null,
-  "lastAttemptAt": null,
-  "lastStatus": "not_run",
-  "lastSummary": "首批 46 篇记录来自既有 2026 年 7—8 月阅读库；迁移不表示进行过新的全网检索或全文复核。首次周更回补 2026 年 9 月。"
+  "lastAttemptAt": "2026-09-20",
+  "lastStatus": "partial",
+  "lastSummary": "首次回补窗口 2026-09-01—2026-09-20 已执行一轮公开检索，发现若干 VLA/WAM/机器人世界模型候选；本次完成 SpatialVLA、OpenVLA-OFT、Fast-WAM 三篇既有记录的最新公开版本深读复核。新发现候选尚未全部完成全文深读、身份去重与协议核验，因此不推进 lastSuccessfulSearchAt。"
 }
