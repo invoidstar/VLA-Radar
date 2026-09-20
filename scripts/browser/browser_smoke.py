@@ -32,6 +32,32 @@ try:
    (out/'initial-failure.json').write_text(json.dumps(diagnostic,ensure_ascii=False,indent=2));print(json.dumps(diagnostic,ensure_ascii=False),flush=True)
    page.screenshot(path=str(out/'initial-failure.png'),full_page=True)
    raise
+  # Native MathML must render in the real browser without external CDN/font requests.
+  math_source=r'inline $a_t = \\frac{\\Delta x}{\\Delta t}$ and display \\[L=\\sum_{t=1}^{T}\\lVert a_t-\\hat{a}_t\\rVert^2\\]'
+  math_audit=page.evaluate("""(source) => {
+    const host=document.createElement('div');
+    host.id='math-smoke';
+    host.style.width='320px';
+    host.innerHTML=window.RadarMath.renderText(source);
+    document.body.appendChild(host);
+    const inline=host.querySelector('.math-inline math'),display=host.querySelector('.math-display math');
+    const displayWrap=host.querySelector('.math-display');
+    return {
+      mathCount:host.querySelectorAll('math').length,
+      inlineWidth:inline?.getBoundingClientRect().width||0,
+      displayWidth:display?.getBoundingClientRect().width||0,
+      displayOverflow:getComputedStyle(displayWrap).overflowX,
+      rawDollar:host.textContent.includes('$a_t'),
+      rawDelimiter:host.textContent.includes('\\\\['),
+      pageOverflow:document.documentElement.scrollWidth>innerWidth+1
+    };
+  }""",math_source)
+  assert math_audit['mathCount']==2,math_audit
+  assert math_audit['inlineWidth']>0 and math_audit['displayWidth']>0,math_audit
+  assert math_audit['displayOverflow']=='auto',math_audit
+  assert not math_audit['rawDollar'] and not math_audit['rawDelimiter'],math_audit
+  assert not math_audit['pageOverflow'],math_audit
+  page.locator('#math-smoke').evaluate('(el)=>el.remove()')
   assert not any('search-index.' in u or 'board-index.' in u or '/details/' in u for u in requests), requests
   page.locator('#search').fill('LIBERO');page.wait_for_timeout(900)
   assert any('search-index.' in u for u in requests)
@@ -67,7 +93,7 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
   page.screenshot(path=str(out/'mobile.png'),full_page=False)
   assert not errors, errors
-  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','search worker index loading','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
+  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
   print('PASS browser HTTP integration, persistence, lazy-loading, worker search and mobile overflow')
   browser.close()
 finally:server.terminate();server.wait()

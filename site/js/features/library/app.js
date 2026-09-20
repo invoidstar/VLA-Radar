@@ -40,6 +40,7 @@
   };
   const icon = name => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${paths[name]||paths.book}</svg>`;
   const esc = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const math = s => window.RadarMath?.renderParagraphs?window.RadarMath.renderParagraphs(s):`<p>${esc(s)}</p>`;
   const norm = s => String(s||'').normalize('NFKC').toLowerCase().replace(/[‐‑–—]/g,'-').replace(/π/g,'pi').replace(/τ/g,'tau').trim();
   function safeUrl(url){try{const u=new URL(url);return /^https?:$/.test(u.protocol)?u.href:'#';}catch{return '#';}}
   let searchClient, searchScores=new Map(), searchQuery="", renderSequence=0, detailSequence=0;
@@ -228,11 +229,11 @@
     const l=local(id);
     $('#paper-detail').innerHTML=`<div class="dialog-labels">${badge(p)}<span class="venue-label">${esc(p.venue)}</span>${p.topics.map(t=>`<button class="tag" data-topic="${esc(t)}">${esc(topicMap[t].name)}</button>`).join('')}</div><h2 id="dialog-title">${esc(p.name)}</h2><p class="dialog-full-title">${esc(p.title)}</p><div class="dialog-team">${esc(p.team)}</div>
       <div class="date-grid"><div><label>首次公开</label><span>${esc(p.firstPublished||p.dateNote)}</span></div><div><label>收录批次</label><span>${esc(p.collectionMonth)}</span></div><div class="wide"><label>首发周（ISO 8601）</label><span>${esc(Dates.isoWeek(p.firstPublished)?Dates.label(Dates.isoWeek(p.firstPublished).key):'日期未精确到日，不指定周次')}</span></div><div class="wide"><label>日期口径</label><span>${esc(p.dateNote||'以所列原始来源记录的日期为准；不以修订或收录日期替代。')}</span></div><div class="wide"><label>发表状态与阅读版本</label><span>${esc(p.publicationStatus).replaceAll('\n',' · ')}<br>${esc(p.versionNote)}</span></div></div>
-      <section class="detail-section"><h3><span class="num">01</span>核心贡献</h3><p>${esc(p.contribution)}</p></section>
-      <section class="detail-section results-box"><h3><span class="num">02</span>具体结论与数据 <small>· 作者报告</small></h3><p>${esc(p.findings)}</p></section>
-      <section class="detail-section limit-box"><h3>${icon('info')}适用条件与证据边界</h3><p>${esc(p.limitations)}</p></section>
-      <section class="detail-section"><h3><span class="num">03</span>阅读启示</h3><p>${esc(p.insight)}</p></section>
-      <section class="detail-section"><h3><span class="num">04</span>重点读什么</h3><p>${esc(p.readingFocus)}</p></section>
+      <section class="detail-section"><h3><span class="num">01</span>核心贡献</h3><div class="detail-prose">${math(p.contribution)}</div></section>
+      <section class="detail-section results-box"><h3><span class="num">02</span>具体结论与数据 <small>· 作者报告</small></h3><div class="detail-prose">${math(p.findings)}</div></section>
+      <section class="detail-section limit-box"><h3>${icon('info')}适用条件与证据边界</h3><div class="detail-prose">${math(p.limitations)}</div></section>
+      <section class="detail-section"><h3><span class="num">03</span>阅读启示</h3><div class="detail-prose">${math(p.insight)}</div></section>
+      <section class="detail-section"><h3><span class="num">04</span>重点读什么</h3><div class="detail-prose">${math(p.readingFocus)}</div></section>
       <div class="evidence-status"><strong>${evidenceText[p.evidence]||'待核验'}</strong> · ${esc(p.evidenceNote)}</div>
       <div class="source-links">${p.sources.map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('')}</div>
       <div class="dialog-actions"><div class="action-group"><a class="btn primary" href="${esc(safeUrl(p.paperUrl))}" target="_blank" rel="noopener noreferrer">阅读原文 ${icon('external')}</a><button class="btn" data-save="${p.id}">${icon('bookmark')}${l.saved?'已收藏':'收藏'}</button><button class="btn" data-bib="${p.id}">BibTeX</button><button class="btn" data-share-paper="${p.id}">${icon('link')}分享</button></div><label class="status-label">本地进度<select class="status-select" id="detail-status" data-id="${p.id}">${Object.entries(statusText).map(([v,t])=>`<option value="${v}" ${l.status===v?'selected':''}>${t}</option>`).join('')}</select></label></div>`;

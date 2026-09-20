@@ -2,9 +2,11 @@
 'use strict';
 (function (global) {
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const MathText=global.RadarMath||(typeof require==='function'?require('../../core/math.js'):null);
+  const rich = text => MathText?.renderText?MathText.renderText(text):esc(text);
   function external(v){try{const u=new URL(v);return ['https:','http:'].includes(u.protocol)&&!u.username&&!u.password?u.href:'#';}catch{return '#';}}
   const links = sources => `<div class="note-sources">${sources.map(s=>`<a href="${esc(external(s.url))}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a>`).join('')}</div>`;
-  const para = text => String(text||'').split(/\n+/).filter(Boolean).map(x=>`<p>${esc(x)}</p>`).join('');
+  const para = text => MathText?.renderParagraphs?MathText.renderParagraphs(text):String(text||'').split(/\n+/).filter(Boolean).map(x=>`<p>${esc(x)}</p>`).join('');
   const date = v => v || '未核验 / 未公开';
   const STATUS = {legacy:'沿用旧记录 · 待检查',preprint:'预印本',accepted:'已录用',published:'正式发表',report:'技术报告',withdrawn:'已撤回'};
   const ATTR = {'author-reported':'作者方法','reported-baseline':'同文报告基线','independent-reproduction':'独立复现'};
@@ -149,7 +151,7 @@
   }
   function richEvidence(note){
     const source=note.coverage?.source||note.sections[0]?.sources[0]?.url;
-    const tables=(note.tables||[]).map((t,i)=>`<section class="note-table-block"><h3>结果与推理对照 ${i+1} · ${esc(t.title)}</h3><div class="note-table-scroll" tabindex="0" role="region" aria-label="${esc(t.title)}"><table class="note-table"><thead><tr>${t.columns.map(c=>`<th scope="col">${esc(c)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(row=>`<tr>${row.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note-small">${esc(t.caption)}</p>${links([{label:t.locator+' · 原文依据',url:source}])}</section>`).join('');
+    const tables=(note.tables||[]).map((t,i)=>`<section class="note-table-block"><h3>结果与推理对照 ${i+1} · ${rich(t.title)}</h3><div class="note-table-scroll" tabindex="0" role="region" aria-label="${esc(t.title)}"><table class="note-table"><thead><tr>${t.columns.map(c=>`<th scope="col">${rich(c)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(row=>`<tr>${row.map(v=>`<td>${rich(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><div class="note-small">${para(t.caption)}</div>${links([{label:t.locator+' · 原文依据',url:source}])}</section>`).join('');
     const figures=(note.figures||[]).map(f=>`<figure class="note-figure"><h3>${esc(f.title)}</h3>${f.imageUrl?`<a href="${esc(external(f.url))}" target="_blank" rel="noopener noreferrer"><img src="${esc(external(f.imageUrl))}" alt="${esc(f.title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>`:''}<figcaption>${para(f.caption)}${f.license?`<p class="note-small">原作者图像 · ${esc(f.license)} · 未修改。图片不可达时仍可访问下方原文。</p>`:'<p class="note-small">提供原图定位和阅读说明，不复制未确认再分发许可的图像。</p>'}${links([{label:'查看论文原图 / 上下文',url:f.url}])}</figcaption></figure>`).join('');
     const br=note.benchmarkReview;const labels={pending:'待检查',extracted:'已有提取记录', 'not-applicable':'无适用标准榜单','protocol-unresolved':'协议或数据待核验'};
     const review=br?`<aside class="note-benchmark-review"><strong>评测提取：${esc(labels[br.status])}</strong><p>${esc(br.note)}</p><small>检查时间：${esc(br.checkedAt||'尚未完成')}</small></aside>`:'';
@@ -164,7 +166,7 @@
       if(lines.length>2&&lines.every(x=>x.trim().startsWith('|')&&x.trim().endsWith('|'))&&/^\|[\s:|\-]+\|$/.test(lines[1].trim())){
         const cells=x=>x.trim().slice(1,-1).split('|').map(x=>x.trim());
         const head=cells(lines[0]),rows=lines.slice(2).map(cells);
-        if(rows.every(r=>r.length===head.length))return '<div class="board-table-scroll"><table class="board-table note-data-table"><thead><tr>'+head.map(c=>'<th>'+esc(c)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(c=>'<td>'+esc(c)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+        if(rows.every(r=>r.length===head.length))return '<div class="board-table-scroll"><table class="board-table note-data-table"><thead><tr>'+head.map(c=>'<th>'+rich(c)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(c=>'<td>'+rich(c)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
       }
       return para(block);
     }).join('');

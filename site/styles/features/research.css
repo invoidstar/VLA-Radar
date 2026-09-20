@@ -192,3 +192,16 @@
  .taxonomy-status{align-items:stretch;flex-direction:column}
  .taxonomy-status .btn{width:100%}
 }
+
+
+/* Local MathML rendering for paper notes, summaries and evidence tables. */
+.math-inline{display:inline-flex;align-items:baseline;max-width:100%;margin:0 .08em;vertical-align:-.14em;color:inherit}
+.math-inline math{font-size:1.02em;color:inherit}
+.math-display{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:14px 0;padding:10px 12px;border:1px solid rgba(126,136,168,.2);border-radius:8px;background:rgba(126,136,168,.065);color:inherit;text-align:center;-webkit-overflow-scrolling:touch}
+.math-display math{display:inline-block;min-width:max-content;max-width:none;margin:auto;font-size:1.06em;color:inherit}
+.math-inline math,.math-display math{font-family:"STIX Two Math","Cambria Math","Latin Modern Math","Times New Roman",serif}
+.math-fallback{display:inline-block;max-width:100%;overflow-wrap:anywhere;padding:1px 4px;border:1px dashed #d8b88b;border-radius:4px;background:#fff8ea;color:#805d2c;font:inherit}
+.note-data-table .math-display,.note-table .math-display{margin:6px 0;padding:7px 8px}
+.detail-prose>p:last-child,.note-small>p:last-child{margin-bottom:0}
+@media(max-width:650px){.math-display{margin:12px 0;padding:9px 8px;text-align:left}.math-display math{font-size:1em}}
+@media print{.math-display{overflow:visible;border-color:#ddd;background:transparent;break-inside:avoid}}
