@@ -41,7 +41,7 @@ def _digest(path:Path)->str:
     return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
 
 def _stamp(text:str,name:str,digest:str)->str:
-    pattern=re.compile(r"(?P<q>['\\\"])" + re.escape(name) + r"(?:\\?v=[^'\\\"]*)?(?P=q)")
+    pattern=re.compile(r"""(?P<q>['"])""" + re.escape(name) + r"""(?:\?v=[^'"]*)?(?P=q)""")
     return pattern.sub(lambda m:f'{m.group("q")}{name}?v={digest}{m.group("q")}',text)
 
 def _stamp_lazy_assets(output:Path)->None:
