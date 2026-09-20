@@ -19,7 +19,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://arxiv.org/html/2608.00725v1"
+      "source": "https://arxiv.org/html/2608.00725v1",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "27.5K mixed · SelfWAM main table",
+      "recipeType": "report"
     },
     {
       "id": "libero-oft-single-view",
@@ -1014,7 +1022,15 @@
         "Clean",
         "Random"
       ],
-      "source": "https://arxiv.org/html/2603.17240v2#S4.T8"
+      "source": "https://arxiv.org/html/2603.17240v2#S4.T8",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "27.5K mixed · GigaWorld Table 8",
+      "recipeType": "report"
     },
     {
       "id": "metaworld-dp3-v7-10demo",
@@ -1097,7 +1113,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json"
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "familyId": "robotwin2-official-2500-clean",
+      "familyName": "RoboTwin 2.0 · Official 2.5K Clean",
+      "familySummary": "官方 2,500 clean demonstrations 口径（50 demos × 50 tasks），Clean / Random 分别评测。50-task co-train 与 per-task SFT 作为训练 recipe 展开。",
+      "familyKind": "official",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-official-2500clean-cotrain",
+      "recipeName": "50-task co-train",
+      "recipeType": "training"
     },
     {
       "id": "robotwin2-official-2500clean-sft",
@@ -1117,7 +1141,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json"
+      "source": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "familyId": "robotwin2-official-2500-clean",
+      "familyName": "RoboTwin 2.0 · Official 2.5K Clean",
+      "familySummary": "官方 2,500 clean demonstrations 口径（50 demos × 50 tasks），Clean / Random 分别评测。50-task co-train 与 per-task SFT 作为训练 recipe 展开。",
+      "familyKind": "official",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-official-2500clean-cotrain",
+      "recipeName": "Per-task SFT",
+      "recipeType": "training"
     },
     {
       "id": "robodojo-official-sim-multi-score",
@@ -3359,7 +3391,15 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2607.27205v2"
+      "source": "https://arxiv.org/pdf/2607.27205v2",
+      "familyId": "robotwin2-clean-only-50",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean-only",
+      "familySummary": "完整50任务的 clean-only 评测。Per-task 与 multi-task 属于训练 recipe，而不是新的 Benchmark；代表值只用于导航，不自动选择最高分。",
+      "familyKind": "clean-only",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-turbovla-v2-clean-multi-task",
+      "recipeName": "Per-task training",
+      "recipeType": "training"
     },
     {
       "id": "robotwin2-turbovla-v2-clean-multi-task",
@@ -3377,7 +3417,15 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2607.27205v2"
+      "source": "https://arxiv.org/pdf/2607.27205v2",
+      "familyId": "robotwin2-clean-only-50",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean-only",
+      "familySummary": "完整50任务的 clean-only 评测。Per-task 与 multi-task 属于训练 recipe，而不是新的 Benchmark；代表值只用于导航，不自动选择最高分。",
+      "familyKind": "clean-only",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-turbovla-v2-clean-multi-task",
+      "recipeName": "Multi-task training",
+      "recipeType": "training"
     },
     {
       "id": "vlabench-actioncache-v2-pi05",
@@ -3724,7 +3772,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2608.27384v1"
+      "source": "https://arxiv.org/pdf/2608.27384v1",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "Mixed 50-task · 100k steps · FlashVLA",
+      "recipeType": "training"
     },
     {
       "id": "robotwin2-flashvla-v1-pi05-short",
@@ -3744,7 +3800,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2608.27384v1"
+      "source": "https://arxiv.org/pdf/2608.27384v1",
+      "familyId": "robotwin2-partial-subset-studies",
+      "familyName": "RoboTwin 2.0 · Partial / Subset Studies",
+      "familySummary": "短/中/长时长任务子集与 12-task 等局部研究统一收纳为子协议系列。任务集合并不相同，因此只展开原始子协议和 recipe，不生成跨子集代表分数或统一名次。",
+      "familyKind": "subset-series",
+      "familyMode": "series",
+      "familyPrimaryTrackId": "robotwin2-flashvla-v1-pi05-short",
+      "recipeName": "Short-duration task subset",
+      "recipeType": "subprotocol"
     },
     {
       "id": "robotwin2-flashvla-v1-pi05-medium",
@@ -3764,7 +3828,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2608.27384v1"
+      "source": "https://arxiv.org/pdf/2608.27384v1",
+      "familyId": "robotwin2-partial-subset-studies",
+      "familyName": "RoboTwin 2.0 · Partial / Subset Studies",
+      "familySummary": "短/中/长时长任务子集与 12-task 等局部研究统一收纳为子协议系列。任务集合并不相同，因此只展开原始子协议和 recipe，不生成跨子集代表分数或统一名次。",
+      "familyKind": "subset-series",
+      "familyMode": "series",
+      "familyPrimaryTrackId": "robotwin2-flashvla-v1-pi05-short",
+      "recipeName": "Medium-duration task subset",
+      "recipeType": "subprotocol"
     },
     {
       "id": "robotwin2-flashvla-v1-pi05-long",
@@ -3784,7 +3856,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2608.27384v1"
+      "source": "https://arxiv.org/pdf/2608.27384v1",
+      "familyId": "robotwin2-partial-subset-studies",
+      "familyName": "RoboTwin 2.0 · Partial / Subset Studies",
+      "familySummary": "短/中/长时长任务子集与 12-task 等局部研究统一收纳为子协议系列。任务集合并不相同，因此只展开原始子协议和 recipe，不生成跨子集代表分数或统一名次。",
+      "familyKind": "subset-series",
+      "familyMode": "series",
+      "familyPrimaryTrackId": "robotwin2-flashvla-v1-pi05-short",
+      "recipeName": "Long-duration task subset",
+      "recipeType": "subprotocol"
     },
     {
       "id": "libero-flashvla-v1-smol-d0",
@@ -3838,7 +3918,15 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2608.27384v1"
+      "source": "https://arxiv.org/pdf/2608.27384v1",
+      "familyId": "robotwin2-deployment-ablations",
+      "familyName": "RoboTwin 2.0 · Deployment / Async Ablations",
+      "familySummary": "同步深度、异步部署等运行时消融统一收纳。列定义和评测子条件可能不同，因此只展示各原始变体，不生成跨子协议汇总分数。",
+      "familyKind": "deployment-series",
+      "familyMode": "series",
+      "familyPrimaryTrackId": "robotwin-flashvla-v1-lingbot-d0",
+      "recipeName": "LingBot deployment · d=0",
+      "recipeType": "deployment"
     },
     {
       "id": "robotwin-flashvla-v1-lingbot-d1",
@@ -3856,7 +3944,15 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2608.27384v1"
+      "source": "https://arxiv.org/pdf/2608.27384v1",
+      "familyId": "robotwin2-deployment-ablations",
+      "familyName": "RoboTwin 2.0 · Deployment / Async Ablations",
+      "familySummary": "同步深度、异步部署等运行时消融统一收纳。列定义和评测子条件可能不同，因此只展示各原始变体，不生成跨子协议汇总分数。",
+      "familyKind": "deployment-series",
+      "familyMode": "series",
+      "familyPrimaryTrackId": "robotwin-flashvla-v1-lingbot-d0",
+      "recipeName": "LingBot deployment · d=1",
+      "recipeType": "deployment"
     },
     {
       "id": "flashvla-v1-inference-latency",
@@ -4077,7 +4173,15 @@
         "Clean",
         "Random"
       ],
-      "source": "https://arxiv.org/pdf/2607.04927v1"
+      "source": "https://arxiv.org/pdf/2607.04927v1",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "DSWAM main table",
+      "recipeType": "report"
     },
     {
       "id": "dswam-v1-real-folding-sr",
@@ -4281,7 +4385,15 @@
         "Clean",
         "Random"
       ],
-      "source": "https://arxiv.org/abs/2608.26821"
+      "source": "https://arxiv.org/abs/2608.26821",
+      "familyId": "robotwin2-partial-subset-studies",
+      "familyName": "RoboTwin 2.0 · Partial / Subset Studies",
+      "familySummary": "短/中/长时长任务子集与 12-task 等局部研究统一收纳为子协议系列。任务集合并不相同，因此只展开原始子协议和 recipe，不生成跨子集代表分数或统一名次。",
+      "familyKind": "subset-series",
+      "familyMode": "series",
+      "familyPrimaryTrackId": "robotwin2-flashvla-v1-pi05-short",
+      "recipeName": "12-task temporal-interface study",
+      "recipeType": "subprotocol"
     },
     {
       "id": "vtwam-v1-real-main",
@@ -4938,7 +5050,15 @@
         "Clean",
         "Random"
       ],
-      "source": "https://arxiv.org/abs/2607.05468"
+      "source": "https://arxiv.org/abs/2607.05468",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "MECo-WAM report",
+      "recipeType": "report"
     },
     {
       "id": "meco-v1-real-success",
@@ -5284,7 +5404,15 @@
         "Clean",
         "Random"
       ],
-      "source": "https://arxiv.org/abs/2608.03727"
+      "source": "https://arxiv.org/abs/2608.03727",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "Track4Action report",
+      "recipeType": "report"
     },
     {
       "id": "w2vla-v1-libero",
@@ -5321,7 +5449,15 @@
         "Easy",
         "Hard"
       ],
-      "source": "https://arxiv.org/abs/2608.05369"
+      "source": "https://arxiv.org/abs/2608.05369",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "2.5K demonstrations · W2-VLA report",
+      "recipeType": "training"
     },
     {
       "id": "w2vla-v1-chunk-latency",
@@ -5486,7 +5622,15 @@
         "Easy",
         "Hard"
       ],
-      "source": "https://arxiv.org/html/2601.21998v2"
+      "source": "https://arxiv.org/html/2601.21998v2",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "27.5K mixed · LingBot-VA main report",
+      "recipeType": "training"
     },
     {
       "id": "lingbot-v2-async",
@@ -5505,7 +5649,15 @@
         "Easy all",
         "Easy horizon=3"
       ],
-      "source": "https://arxiv.org/html/2601.21998v2"
+      "source": "https://arxiv.org/html/2601.21998v2",
+      "familyId": "robotwin2-deployment-ablations",
+      "familyName": "RoboTwin 2.0 · Deployment / Async Ablations",
+      "familySummary": "同步深度、异步部署等运行时消融统一收纳。列定义和评测子条件可能不同，因此只展示各原始变体，不生成跨子协议汇总分数。",
+      "familyKind": "deployment-series",
+      "familyMode": "series",
+      "familyPrimaryTrackId": "robotwin-flashvla-v1-lingbot-d0",
+      "recipeName": "LingBot-VA async deployment",
+      "recipeType": "deployment"
     },
     {
       "id": "mvp-v1-pixmc-textual-count",
