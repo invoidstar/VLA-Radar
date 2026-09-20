@@ -1,3 +1,11 @@
+## 2026-09-20 · Benchmark 全局搜索
+
+- Benchmark 页面新增全局搜索框，可按 Dataset、Evaluation Setting、tasks、split、metric、score columns 与 protocol 摘要组合检索。
+- 多关键词采用 AND 匹配；搜索会同时缩小 Benchmark 数据集入口与当前数据集的 Setting 列表。
+- 搜索词写入 `lbSearch` URL 参数，支持刷新与分享；清除搜索恢复完整 Benchmark 列表。
+- 搜索只使用已加载的轻量 Setting 索引，不预加载结果分片；Training Data / Method / Source 行级筛选保持不变。
+- 不修改任何 canonical paper/result/track，也不改变 Evaluation Setting 的聚合语义。
+
 ## 2026-09-20 · Benchmark Setting 最终收敛为 Evaluation Protocol
 
 - 正式将 Setting identity 从“Evaluation Protocol + Training Data”修正为 **Evaluation Protocol only**；Training Data、来源论文与训练 recipe 不再拆 Setting。
