@@ -304,8 +304,16 @@ for p in (ROOT/'tests/unit').glob('*.cjs'):
 for p in (ROOT/'tests/browser').glob('browser_*.py'):
     text = p.read_text(encoding='utf-8')
     if 'import tempfile,shutil' not in text:
-        text = 'import tempfile,shutil\n' + text
-    match = re.search(r'(?m)^(root|ROOT)\s*=\s*Path\(__file__\)\.resolve\(\)\.parents\[2\].*
+        text = 'import tempfile,shutil\\n' + text
+    match = re.search(r'(?m)^(root|ROOT)\\s*=\\s*Path\\(__file__\\)\\.resolve\\(\\)\\.parents\\[2\\].*$', text)
+    if not match:
+        raise SystemExit(f'root marker missing in {p}')
+    repo_var = match.group(1)
+    end = match.end()
+    staging = "\\npublic=Path(tempfile.mkdtemp(prefix='vla-radar-public-'))\\nshutil.copytree("+repo_var+"/'site',public,dirs_exist_ok=True)\\nshutil.copytree("+repo_var+"/'data',public/'data',dirs_exist_ok=True)"
+    text = text[:end] + staging + text[end:]
+    text = re.sub(r'cwd\\s*=\\s*(root|ROOT)', 'cwd=public', text)
+    p.write_text(text, encoding='utf-8')
 
 path_map = {}
 path_map.update(script_moves)
