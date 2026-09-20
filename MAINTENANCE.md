@@ -154,3 +154,20 @@ Training Data identity 只保留训练数据本身（例如数据集、示范量
 原始 `track.id` 与 `result.id` 仍是 canonical 精确证据层。Setting 是由构建器确定性生成的展示/比较层；`track=` 深链接、原 track 排序、图表与 CSV 高级视图继续保留。Setting 默认排序仅是 reported score 排列，不产生跨来源的公平名次。
 
 当前生成 Setting 覆盖全部有核验结果的 Benchmark 数据集；无法安全归并的 track/结果保守保持独立。
+
+
+## Benchmark Evaluation Setting 最终语义（2026-09-20）
+
+本节**取代同日上方“Benchmark Setting / Result Report 层级”中 Setting = Evaluation Protocol + Training Data identity 的定义**。最终默认模型为：
+
+`Benchmark → Evaluation Setting → Result Report`
+
+**Setting = Evaluation Protocol only**。Training Data、训练 recipe、base model、checkpoint、来源论文均不得成为 Setting identity。Setting 只回答“这些报告是否在回答同一个 Benchmark 评测问题”，由 benchmark/dataset、任务集合、评测 split、metric/unit/direction 与必要的评测上下文共同决定。
+
+训练数据改为 Result Report 的行级属性与筛选维度。页面默认可同时展示不同 Training Data 的公开报告，并提供 Training Data / Method / Source 三类筛选。Training Data 未完整披露时使用来源标识明确标记“未知”，但**未知训练数据不会再把 Setting 按论文拆开**。限定同一 Training Data 只能提高可比性，不自动证明训练 recipe、预训练、模型规模或计算预算完全一致。
+
+以下差异属于真实 Evaluation Protocol，必须继续拆分或加护栏：任务子集、VM/VA、相机扰动、异步延迟 d、真实物理场景、干扰物条件、特殊语言评测、不同 metric、不同 task schema 等。以下差异不拆 Setting：示范量、训练数据来源、per-task/multi-task、SFT/cotrain、batch、steps、LR、action horizon、架构、base model、checkpoint 与来源论文；这些内容全部保留在结果行和 Recipe / Evidence 展开区。
+
+同一 Method 在不同论文、不同 Training Data 或不同 recipe 中报告的分数必须保留为独立行，不去重、不自动选择最高分。默认排序仅表示 reported score 的数值顺序，不产生跨来源公平名次。原始 `track.id` / `result.id`、`track=` 深链接、track 排序、图表与 CSV 继续作为精确 evidence / advanced analysis 层。
+
+当前生成层覆盖 61 个含核验结果的数据集，共 **194 个 Evaluation Setting**；底层仍为 98 papers、1063 checked results、286 canonical tracks。
