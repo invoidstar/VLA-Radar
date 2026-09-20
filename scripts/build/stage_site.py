@@ -17,6 +17,7 @@ PUBLIC_FILES={
     'site/js/features/research/benchmark-settings.js':'benchmark-settings.js',
     'site/js/core/dates.js':'dates.js',
     'site/js/core/runtime.js':'runtime.js',
+    'site/js/core/math.js':'math.js',
     'site/js/core/search-core.js':'search-core.js',
     'site/js/core/search-client.js':'search-client.js',
     'site/js/core/search-worker.js':'search-worker.js',
