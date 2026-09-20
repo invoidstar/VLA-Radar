@@ -178,3 +178,19 @@ Training Data identity 只保留训练数据本身（例如数据集、示范量
 Evaluation Setting 默认页提供全局 Benchmark 搜索。检索字段限于已加载的轻量索引元数据：dataset、Setting 名称、tasks、split、metric、columns 与 evalId；多个词按 AND 组合。protocol 正文不参与搜索，避免 episode 数、训练说明等自由文本造成误命中。搜索不得为了命中而加载所有 `data/settings/` 结果分片。
 
 搜索参数使用 `lbSearch` 写入 URL，刷新/分享需保持；切换 Benchmark 时保留搜索词，清除搜索恢复全部数据集入口。搜索仅改变导航可见性，不改变 Setting identity、结果归属、排序语义或 Training Data / Method / Source 行级筛选。
+
+
+## Benchmark 分类体系（2026-09-20）
+
+Benchmark 分类是独立的 **dataset-level taxonomy**，canonical 来源为 `catalog/benchmark-taxonomy.json`。它不得改变 Evaluation Setting、track 或 result identity，也不得从论文来源自动推断。
+
+每个 Benchmark 必须恰好有：
+- 一个 `focus`：General Manipulation / Long-Horizon & Memory / Generalization & Robustness / Dexterous & Contact-Rich / Language, Planning & Compositionality / Efficiency & Deployment；
+- 一个 `environment`：Simulation / Real Robot / Mixed / Cross-Environment；
+- 零个或多个受控 `tags`。
+
+Focus 表示该 Benchmark 的主要评测侧重点；Environment 表示主要评测环境；Tags 用于补充 Household/Kitchen、Tabletop、Industrial/Assembly、Bimanual、Tactile、Long-horizon、Memory、Multi-task、Robustness/OOD、Sim-to-Real、Latency/Efficiency、Language/Compositionality 等横切属性。
+
+前端分类筛选与 `lbSearch` 搜索组合使用：Focus 与 Environment 单选，Tags 多选并采用 AND 语义。URL 参数为 `lbFocus`、`lbEnv`、`lbTags`。分类只过滤 Benchmark / Setting 导航，不改变结果行、分数排序、Training Data / Method / Source 筛选或原始 `track=` 高级视图。
+
+构建期 `benchmark_taxonomy.py` 必须检查 taxonomy 数据集集合与 `catalog/benchmarks.json` 中实际 dataset 集合完全一致，枚举合法、无重复 tag；新增 Benchmark 未同步分类时阻止发布。
