@@ -33,11 +33,12 @@ try:
    page.screenshot(path=str(out/'initial-failure.png'),full_page=True)
    raise
   # Native MathML must render in the real browser without external CDN/font requests.
-  math_audit=page.evaluate("""() => {
+  math_source=r'inline $a_t = \\frac{\\Delta x}{\\Delta t}$ and display \\[L=\\sum_{t=1}^{T}\\lVert a_t-\\hat{a}_t\\rVert^2\\]'
+  math_audit=page.evaluate("""(source) => {
     const host=document.createElement('div');
     host.id='math-smoke';
     host.style.width='320px';
-    host.innerHTML=window.RadarMath.renderText('inline $a_t = \\frac{\\Delta x}{\\Delta t}$ and display \\[L=\\sum_{t=1}^{T}\\lVert a_t-\\hat{a}_t\\rVert^2\\]');
+    host.innerHTML=window.RadarMath.renderText(source);
     document.body.appendChild(host);
     const inline=host.querySelector('.math-inline math'),display=host.querySelector('.math-display math');
     const displayWrap=host.querySelector('.math-display');
@@ -50,7 +51,7 @@ try:
       rawDelimiter:host.textContent.includes('\\\\['),
       pageOverflow:document.documentElement.scrollWidth>innerWidth+1
     };
-  }""")
+  }""",math_source)
   assert math_audit['mathCount']==2,math_audit
   assert math_audit['inlineWidth']>0 and math_audit['displayWidth']>0,math_audit
   assert math_audit['displayOverflow']=='auto',math_audit
