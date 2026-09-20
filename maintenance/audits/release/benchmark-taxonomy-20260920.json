@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "baseMainSha": "f7b190ed3165bc2589efc815cbc800fa26382a36",
+  "scope": "Benchmark-level taxonomy and classification navigation",
+  "inventory": {
+    "benchmarks": 61,
+    "evaluationSettings": 194,
+    "canonicalTracks": 286,
+    "results": 1063
+  },
+  "focusCounts": {
+    "general-manipulation": 19,
+    "generalization-robustness": 11,
+    "long-horizon-memory": 8,
+    "dexterous-contact": 10,
+    "language-planning-compositionality": 5,
+    "efficiency-deployment": 8
+  },
+  "environmentCounts": {
+    "simulation": 27,
+    "real": 25,
+    "mixed": 9
+  },
+  "model": {
+    "canonical": "catalog/benchmark-taxonomy.json",
+    "assignment": "exactly one focus + exactly one environment + controlled multi-tags per Benchmark",
+    "filters": [
+      "lbFocus",
+      "lbEnv",
+      "lbTags"
+    ],
+    "tagSemantics": "multi-select AND"
+  },
+  "guarantees": {
+    "exactDatasetCoverage": true,
+    "noOrphanTaxonomyEntries": true,
+    "classificationIsBenchmarkLevel": true,
+    "settingIdentityUnchanged": true,
+    "trackIdentityUnchanged": true,
+    "resultIdentityUnchanged": true,
+    "searchComposable": true,
+    "advancedTrackViewPreserved": true
+  },
+  "validation": {
+    "materializationRun": 35496107516,
+    "offlineValidation": "pass"
+  }
+}
