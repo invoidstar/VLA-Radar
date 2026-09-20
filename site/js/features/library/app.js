@@ -94,7 +94,7 @@
     $('#section-title').textContent=state.view==='reading'?'我的阅读清单':'论文文库';
     updateControls();renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
     if(state.view==='radar'){window.RadarWorkspace.leave();window.RadarTools.show($('#radar-content'));}else if(['reader','compare','updates','coverage','news'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
-    document.title=`${views[state.view]} · VLA Research Radar`;
+    document.title=`${views[state.view]} · VLA-Radar`;
   }
   function goView(view){state.view=view;state.page=1;if(!['papers','reading'].includes(view)){state.q='';state.topic='';state.month='';state.year='';state.week='';state.venue='';state.priority='';state.status='';}syncUrl(true);showView();closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}
   function closeSidebar(){$('#sidebar').classList.remove('open');$('#mobile-menu').setAttribute('aria-expanded','false');}
@@ -240,8 +240,8 @@
     $('#paper-detail').insertAdjacentHTML('afterbegin',`<div class="quick-note-tools"><button class="btn primary" data-focus="${p.id}">进入专注阅读 ↗</button><button class="btn" data-compare="${p.id}">＋ 加入对比</button><span>先看结论，再沿章节深入。</span></div>`);
     window.RadarResearch.enhance(p,$('#paper-detail'));
   }
-  function openPaper(id,update=true){if(!data.papers.some(p=>p.id===id)){notify('文献记录不存在或已移除');return;}lastFocused=document.activeElement;renderDetail(id);const d=$('#paper-dialog');if(!d.open)d.showModal();$('#paper-detail').parentElement.scrollTop=0;if(update){const u=makeUrl(false);u.hash='paper='+encodeURIComponent(id);try{history.pushState({},'',u);}catch{}}document.title=data.papers.find(p=>p.id===id).name+' · VLA Research Radar';}
-  function closePaper(){detailSequence++;const d=$('#paper-dialog');if(d.open)d.close();if(location.hash.startsWith('#paper=')){const u=new URL(location.href);u.hash='';try{history.replaceState({},'',u);}catch{}}document.title=`${views[state.view]} · VLA Research Radar`;if(lastFocused?.isConnected)lastFocused.focus();}
+  function openPaper(id,update=true){if(!data.papers.some(p=>p.id===id)){notify('文献记录不存在或已移除');return;}lastFocused=document.activeElement;renderDetail(id);const d=$('#paper-dialog');if(!d.open)d.showModal();$('#paper-detail').parentElement.scrollTop=0;if(update){const u=makeUrl(false);u.hash='paper='+encodeURIComponent(id);try{history.pushState({},'',u);}catch{}}document.title=data.papers.find(p=>p.id===id).name+' · VLA-Radar';}
+  function closePaper(){detailSequence++;const d=$('#paper-dialog');if(d.open)d.close();if(location.hash.startsWith('#paper=')){const u=new URL(location.href);u.hash='';try{history.replaceState({},'',u);}catch{}}document.title=`${views[state.view]} · VLA-Radar`;if(lastFocused?.isConnected)lastFocused.focus();}
   function hashPaper(){const m=location.hash.match(/^#paper=(p\d+)$/);if(m)openPaper(m[1],false);else if($('#paper-dialog').open)$('#paper-dialog').close();}
   async function copy(text,success){try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);else{const el=document.createElement('textarea');el.value=text;el.style.position='fixed';el.style.opacity='0';document.body.appendChild(el);el.select();const ok=document.execCommand('copy');el.remove();if(!ok)throw new Error('clipboard unavailable');}notify(success);}catch{notify('浏览器未允许复制，请从地址栏或下载文件中获取。');}}
   function download(name,text,type='application/json'){const url=URL.createObjectURL(new Blob([text],{type:type+';charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
