@@ -740,9 +740,7 @@
         "Unseen composite",
         "Average"
       ],
-      "source": "https://robocasa.ai/leaderboard.html",
-      "settingEvalId": "robocasa365-official-human300",
-      "settingEvalName": "RoboCasa365 · Official Human300 multitask"
+      "source": "https://robocasa.ai/leaderboard.html"
     },
     {
       "id": "robocasa365-official-101",
@@ -763,9 +761,7 @@
         "Unseen composite",
         "Average"
       ],
-      "source": "https://robocasa.ai/leaderboard.html",
-      "settingEvalId": "robocasa365-official-human300",
-      "settingEvalName": "RoboCasa365 · Official Human300 multitask"
+      "source": "https://robocasa.ai/leaderboard.html"
     },
     {
       "id": "libero-rldx-v2",
@@ -1700,9 +1696,7 @@
         "Transport",
         "Tool Hang"
       ],
-      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf",
-      "settingEvalId": "robomimic-ph-best",
-      "settingEvalName": "RoboMimic · PH · best-checkpoint"
+      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf"
     },
     {
       "id": "robomimic-corl21-lowdim-mh-best",
@@ -1723,9 +1717,7 @@
         "Square",
         "Transport"
       ],
-      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf",
-      "settingEvalId": "robomimic-mh-best",
-      "settingEvalName": "RoboMimic · MH · best-checkpoint"
+      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf"
     },
     {
       "id": "robomimic-corl21-image-ph-best",
@@ -1747,9 +1739,7 @@
         "Transport",
         "Tool Hang"
       ],
-      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf",
-      "settingEvalId": "robomimic-ph-best",
-      "settingEvalName": "RoboMimic · PH · best-checkpoint"
+      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf"
     },
     {
       "id": "robomimic-corl21-image-mh-best",
@@ -1770,9 +1760,7 @@
         "Square",
         "Transport"
       ],
-      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf",
-      "settingEvalId": "robomimic-mh-best",
-      "settingEvalName": "RoboMimic · MH · best-checkpoint"
+      "source": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf"
     },
     {
       "id": "dexmimicgen-v2-table1-panda-gripper",
@@ -3310,9 +3298,7 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2604.05323v1",
-      "settingEvalId": "libero-infoentropy-average-budget",
-      "settingEvalName": "LIBERO · VLA-InfoEntropy · Average-score budget study"
+      "source": "https://arxiv.org/pdf/2604.05323v1"
     },
     {
       "id": "libero-infoentropy-v1-budget80",
@@ -3330,9 +3316,7 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2604.05323v1",
-      "settingEvalId": "libero-infoentropy-average-budget",
-      "settingEvalName": "LIBERO · VLA-InfoEntropy · Average-score budget study"
+      "source": "https://arxiv.org/pdf/2604.05323v1"
     },
     {
       "id": "libero-infoentropy-v1-budget120",
@@ -3350,9 +3334,7 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2604.05323v1",
-      "settingEvalId": "libero-infoentropy-average-budget",
-      "settingEvalName": "LIBERO · VLA-InfoEntropy · Average-score budget study"
+      "source": "https://arxiv.org/pdf/2604.05323v1"
     },
     {
       "id": "libero-infoentropy-v1-budget140",
@@ -3370,9 +3352,7 @@
       "columns": [
         "Average"
       ],
-      "source": "https://arxiv.org/pdf/2604.05323v1",
-      "settingEvalId": "libero-infoentropy-average-budget",
-      "settingEvalName": "LIBERO · VLA-InfoEntropy · Average-score budget study"
+      "source": "https://arxiv.org/pdf/2604.05323v1"
     },
     {
       "id": "libero-turbovla-v2",
@@ -6613,7 +6593,7 @@
       "id": "setting-libero-long10-a5b842c135cf",
       "dataset": "LIBERO",
       "evalId": "auto:long10",
-      "name": "LIBERO · 40 Tasks · Success Rate",
+      "name": "LIBERO · Long-Horizon 10 Tasks · Success Rate",
       "tasks": "40",
       "split": "多来源评测描述；详见各行 Evidence",
       "metric": "Task success rate",
@@ -7118,7 +7098,6 @@
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
         "simpler-spatialvla-v1-google-vm",
-        "simpler-spatialvla-v1-google-va",
         "dmsvla-ieee-simpler-main"
       ],
       "resultIds": [
@@ -7130,14 +7109,11 @@
         "r-dms-ieee-simpler-pi0",
         "r-dms-ieee-simpler-robovlm-dms",
         "r-dms-ieee-simpler-robovlm",
-        "r-spatialvla-v1-va-octo",
-        "r-spatialvla-v1-va-openvla",
-        "r-spatialvla-v1-va",
         "r-spatialvla-v1-vm-octo",
         "r-spatialvla-v1-vm-openvla",
         "r-spatialvla-v1-vm"
       ],
-      "resultCount": 14,
+      "resultCount": 11,
       "paperCount": 2,
       "paperIds": [
         "p043",
@@ -7153,21 +7129,15 @@
           "count": 8
         },
         {
-          "id": "unknown-p068",
-          "label": "训练数据未完整披露 · p068",
-          "known": false,
-          "count": 3
-        },
-        {
-          "id": "data-55512759037d",
-          "label": "OXE+RH20T",
+          "id": "data-21f4d52cf576",
+          "label": "Octo OXE pretraining",
           "known": true,
           "count": 1
         },
         {
-          "id": "data-21f4d52cf576",
-          "label": "Octo OXE pretraining",
-          "known": true,
+          "id": "unknown-p068",
+          "label": "训练数据未完整披露 · p068",
+          "known": false,
           "count": 1
         },
         {
@@ -7186,12 +7156,61 @@
         "r-dms-ieee-simpler-pi0": "unknown-p043",
         "r-dms-ieee-simpler-robovlm-dms": "unknown-p043",
         "r-dms-ieee-simpler-robovlm": "unknown-p043",
-        "r-spatialvla-v1-va-octo": "unknown-p068",
-        "r-spatialvla-v1-va-openvla": "unknown-p068",
-        "r-spatialvla-v1-va": "data-55512759037d",
         "r-spatialvla-v1-vm-octo": "data-21f4d52cf576",
         "r-spatialvla-v1-vm-openvla": "unknown-p068",
         "r-spatialvla-v1-vm": "data-93cc2eeb9668"
+      }
+    },
+    {
+      "id": "setting-simplerenv-success-va-4e74ce81-a8a33177d05f",
+      "dataset": "SimplerEnv",
+      "evalId": "auto:success-va-4e74ce81",
+      "name": "SimplerEnv · Pick Coke Can / Move Near / Open/Close Drawer · Success Rate",
+      "tasks": "Google: Pick Coke Can / Move Near / Open-Close Drawer",
+      "split": "Variant Aggregation; no additional target-dataset fine-tuning rows",
+      "metric": "Success rate; original reported aggregation",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Pick Coke Can",
+        "Move Near",
+        "Open/Close Drawer",
+        "Average"
+      ],
+      "protocol": "外观变体聚合，与Visual Matching独立；Average按原表记录。未从摘要推断评测次数或种子。",
+      "trackIds": [
+        "simpler-spatialvla-v1-google-va"
+      ],
+      "resultIds": [
+        "r-spatialvla-v1-va-octo",
+        "r-spatialvla-v1-va-openvla",
+        "r-spatialvla-v1-va"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p068"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "simpler-spatialvla-v1-google-va",
+      "trainingOptions": [
+        {
+          "id": "unknown-p068",
+          "label": "训练数据未完整披露 · p068",
+          "known": false,
+          "count": 2
+        },
+        {
+          "id": "data-55512759037d",
+          "label": "OXE+RH20T",
+          "known": true,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-spatialvla-v1-va-octo": "unknown-p068",
+        "r-spatialvla-v1-va-openvla": "unknown-p068",
+        "r-spatialvla-v1-va": "data-55512759037d"
       }
     },
     {
@@ -7248,10 +7267,10 @@
       }
     },
     {
-      "id": "setting-calvin-average-completed-tasks-in-a-five-task-chain-efea7f6e-fe680779e1a5",
+      "id": "setting-calvin-chain-average-length-5331a5daab1f",
       "dataset": "CALVIN",
-      "evalId": "auto:average-completed-tasks-in-a-five-task-chain-efea7f6e",
-      "name": "CALVIN · 34 Tasks · Average completed tasks in a five-task chain",
+      "evalId": "auto:chain-average-length",
+      "name": "CALVIN · Five-task Chain · Average Length · Average completed tasks in a five-task chain",
       "tasks": "34 skill types; chains of up to five instructions",
       "split": "多来源评测描述；详见各行 Evidence",
       "metric": "Average completed tasks in a five-task chain",
@@ -7678,10 +7697,10 @@
       }
     },
     {
-      "id": "setting-calvin-mean-consecutive-tasks-completed-efea7f6e-09a50d5d22dd",
+      "id": "setting-calvin-chain-average-length-5ec302075352",
       "dataset": "CALVIN",
-      "evalId": "auto:mean-consecutive-tasks-completed-efea7f6e",
-      "name": "CALVIN · Average length · Mean consecutive tasks completed",
+      "evalId": "auto:chain-average-length",
+      "name": "CALVIN · Five-task Chain · Average Length · Mean consecutive tasks completed",
       "tasks": "34 subtasks; 1,000 chains",
       "split": "train A/B/C; evaluate D",
       "metric": "Mean consecutive tasks completed",
@@ -8853,10 +8872,10 @@
       }
     },
     {
-      "id": "setting-calvin-mean-completed-tasks-per-five-instruction-chain-184df936-53d079c4074c",
+      "id": "setting-calvin-chain-average-length-6a5ba4055557",
       "dataset": "CALVIN",
-      "evalId": "auto:mean-completed-tasks-per-five-instruction-chain-184df936",
-      "name": "CALVIN · 34 Tasks · Mean completed tasks per five-instruction chain",
+      "evalId": "auto:chain-average-length",
+      "name": "CALVIN · Five-task Chain · Average Length · Mean completed tasks per five-instruction chain",
       "tasks": "34 tasks; five-instruction chains",
       "split": "ABC→D; final checkpoints for authors-trained methods",
       "metric": "Mean completed tasks per five-instruction chain",
@@ -14491,10 +14510,10 @@
       }
     },
     {
-      "id": "setting-calvin-average-completed-tasks-in-a-five-task-chain-efea7f6e-enriched-41f1585fec56",
+      "id": "setting-calvin-chain-average-length-enriched-e62e0643f23f",
       "dataset": "CALVIN",
-      "evalId": "auto:average-completed-tasks-in-a-five-task-chain-efea7f6e-enriched",
-      "name": "CALVIN · Average length · Average completed tasks in a five-task chain",
+      "evalId": "auto:chain-average-length-enriched",
+      "name": "CALVIN · Five-task Chain · Enriched Instructions · Average completed tasks in a five-task chain",
       "tasks": "five-instruction chains",
       "split": "ABCD train -> D eval; GPT-4 alternatives",
       "metric": "Average completed tasks in a five-task chain",
@@ -14699,9 +14718,9 @@
       }
     },
     {
-      "id": "setting-embodied-cpp-latency-3fdb7e873d-na-va-1862d76db611",
+      "id": "setting-embodied-cpp-latency-3fdb7e873d-na-0c25040a1785",
       "dataset": "Embodied.cpp",
-      "evalId": "auto:latency-3fdb7e873d-na-va",
+      "evalId": "auto:latency-3fdb7e873d-na",
       "name": "Embodied.cpp · Latency · Latency",
       "tasks": "single LingBot-VA Transformer block",
       "split": "Python BF16 vs C++ Q4_K",
@@ -15406,7 +15425,7 @@
       "id": "setting-libero-three-suites-e10a03456b96",
       "dataset": "LIBERO",
       "evalId": "auto:three-suites",
-      "name": "LIBERO · Success Rate · Success Rate",
+      "name": "LIBERO · Three Suites · Success Rate",
       "tasks": "3 suites excluding Long",
       "split": "paper-reported average",
       "metric": "Task success rate",
@@ -16027,9 +16046,9 @@
       }
     },
     {
-      "id": "setting-robotwin-success-7ad6f0d98f-na-va-30f885587744",
+      "id": "setting-robotwin-success-7ad6f0d98f-na-412e6f793953",
       "dataset": "RoboTwin",
-      "evalId": "auto:success-7ad6f0d98f-na-va",
+      "evalId": "auto:success-7ad6f0d98f-na",
       "name": "RoboTwin · Easy all / Easy horizon=3 · Success Rate",
       "tasks": "RoboTwin Easy",
       "split": "all tasks / three-stage tasks",
