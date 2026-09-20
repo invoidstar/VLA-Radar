@@ -1,0 +1,41 @@
+name: Prepare benchmark protocol-family refactor
+on:
+  push:
+    branches: ['feature/benchmark-protocol-families-2026-09-20']
+    paths:
+      - '.github/scripts/benchmark_family_ui_patch.py'
+      - 'catalog/benchmarks.json'
+      - 'scripts/build/catalog_core.py'
+permissions:
+  contents: write
+concurrency:
+  group: benchmark-family-refactor
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply protocol-family UI migration
+        run: |
+          python .github/scripts/benchmark_family_ui_patch.py
+          python scripts/build/build_catalog.py
+          python scripts/validate/validate_all.py
+      - name: Remove one-shot migration payload
+        run: |
+          rm .github/scripts/benchmark_family_ui_patch.py
+          rm .github/workflows/benchmark-family-refactor.yml
+      - name: Commit prepared refactor to feature branch
+        env:
+          BRANCH: ${{ github.ref_name }}
+          EXPECTED: ${{ github.sha }}
+        run: |
+          set -eu
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED" || { echo "branch moved"; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Materialize benchmark protocol-family UI and generated data'
+          git push origin "HEAD:refs/heads/$BRANCH"
