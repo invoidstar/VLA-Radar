@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-09-20T02:45:45.914417+00:00",
+  "baseMainSha": "f477ab6eaa29c3e1bf7310bfbc84910bd21f1699",
+  "scope": "repository-wide consistency audit after benchmark/note backlog closure; structural consistency is not independent scientific replication",
+  "canonical": {
+    "papers": 98,
+    "manifestIds": 98,
+    "results": 1063,
+    "tracks": 286,
+    "benchmarkDisposition": {
+      "extracted": 96,
+      "not-applicable": 2
+    },
+    "remainingNotes": 0,
+    "limitedLegacyIds": 0,
+    "orphanResults": 0,
+    "orphanTracks": 0,
+    "duplicateResultReferences": 0,
+    "firstPublicLocks": 98
+  },
+  "generated": {
+    "buildCatalogCheck": "pass",
+    "temporaryOneShotFilesOnPublishedMain": []
+  },
+  "publication": {
+    "status": "success",
+    "dueCount": 0,
+    "dueRemaining": 0,
+    "manualSourceReview": [
+      "p005",
+      "p043",
+      "p046",
+      "p092"
+    ]
+  },
+  "discovery": {
+    "lastStatus": "partial",
+    "lastSuccessfulSearchAt": null,
+    "note": "Literature discovery checkpoint remains partial by design because candidate discovery was not exhaustively completed; this is not a canonical consistency failure."
+  },
+  "sourceHealth": {
+    "checkedThisRun": 100,
+    "totalSources": 457,
+    "dueRemaining": 237,
+    "note": "Reachability is a rotating warning-only maintenance queue, not a content correctness gate."
+  },
+  "delivery": {
+    "publishedMainSha": "f477ab6eaa29c3e1bf7310bfbc84910bd21f1699",
+    "pagesDeployment": {
+      "runId": 35484267766,
+      "url": "https://github.com/invoidstar/VLA-Radar/actions/runs/35484267766"
+    },
+    "openPullRequestsBeforeAudit": 0
+  },
+  "branches": {
+    "deletedNow": [
+      "pre-update-safety-2026-09-17",
+      "feature/vla-radar-v2-2026-09-17",
+      "weekly-update-2026-09-18-benchmark-batch4"
+    ],
+    "preservedNow": [
+      {
+        "branch": "release/deep-notes-2026-09-17",
+        "sha": "0f8d8938457f169bcb4a92da9c3df89f1945d3aa",
+        "reason": "19 unique historical content commits; no exact merged PR; unmerged history is preserved rather than deleted"
+      },
+      {
+        "branch": "release/batch-2026-09-20-weekly-notes",
+        "sha": "8394011c20a4dd38bb12105b1474c90a8034d617",
+        "reason": "merged exact head, but still inside repository 6-hour recovery grace period",
+        "pr": 29,
+        "mergedAt": "2026-09-20T00:30:55Z"
+      },
+      {
+        "branch": "weekly-update-2026-09-20-note-final8",
+        "sha": "49094c63e5cea1b4170d69d98d6bd22b080e55f4",
+        "reason": "merged exact head, but still inside repository 6-hour recovery grace period",
+        "pr": 30,
+        "mergedAt": "2026-09-20T02:08:31Z"
+      },
+      {
+        "branch": "weekly-update-2026-09-20-final-two-fulltext",
+        "sha": "f9aff97a794e3093f134808c9d077fdb6ce40b6a",
+        "reason": "merged exact head, but still inside repository 6-hour recovery grace period",
+        "pr": 31,
+        "mergedAt": "2026-09-20T02:32:45Z"
+      }
+    ],
+    "remainingBranchNames": [
+      "main",
+      "release/batch-2026-09-20-final-audit",
+      "release/batch-2026-09-20-weekly-notes",
+      "release/deep-notes-2026-09-17",
+      "weekly-update-2026-09-20-final-two-fulltext",
+      "weekly-update-2026-09-20-note-final8"
+    ]
+  },
+  "governance": {
+    "branchApiProtectedFlag": false,
+    "rulesetCount": 0,
+    "branchProtectionReadHttpStatus": 403,
+    "branchProtectionReadAccessible": false,
+    "finding": "GitHub App lacks Administration(write/read for protection endpoint); server-side main protection is not confirmed/enforced by this audit. PR exact-head CI discipline remains procedural, not a substitute for branch protection."
+  },
+  "findings": [
+    "Canonical paper/result/track/review/work-queue references are closed and internally consistent.",
+    "All benchmark deferred and note review queues are zero; two papers remain intentionally not-applicable.",
+    "Generated catalog is current and published main contains no obsolete one-shot preparation payloads.",
+    "Three provably obsolete historical/safety branches were deleted with exact-SHA lease checks.",
+    "One unmerged deep-notes history branch is intentionally preserved because it contains unique commits.",
+    "Three recent merged heads are intentionally preserved until the six-hour recovery grace period expires.",
+    "Source-health rotation still has due URLs; literature discovery state remains partial, both explicitly documented maintenance state rather than hidden completion claims.",
+    "Main branch server-side protection is not confirmed because the installed GitHub App lacks Administration permission; this remains the only repository-governance warning."
+  ]
+}
