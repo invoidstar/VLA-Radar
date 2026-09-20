@@ -171,3 +171,10 @@ Training Data identity 只保留训练数据本身（例如数据集、示范量
 同一 Method 在不同论文、不同 Training Data 或不同 recipe 中报告的分数必须保留为独立行，不去重、不自动选择最高分。默认排序仅表示 reported score 的数值顺序，不产生跨来源公平名次。原始 `track.id` / `result.id`、`track=` 深链接、track 排序、图表与 CSV 继续作为精确 evidence / advanced analysis 层。
 
 当前生成层覆盖 61 个含核验结果的数据集，共 **194 个 Evaluation Setting**；底层仍为 98 papers、1063 checked results、286 canonical tracks。
+
+
+## Benchmark 搜索（2026-09-20）
+
+Evaluation Setting 默认页提供全局 Benchmark 搜索。检索字段限于已加载的轻量索引元数据：dataset、Setting 名称、tasks、split、metric、columns、evalId 与 protocol 摘要；多个词按 AND 组合。搜索不得为了命中而加载所有 `data/settings/` 结果分片。
+
+搜索参数使用 `lbSearch` 写入 URL，刷新/分享需保持；切换 Benchmark 时保留搜索词，清除搜索恢复全部数据集入口。搜索仅改变导航可见性，不改变 Setting identity、结果归属、排序语义或 Training Data / Method / Source 行级筛选。
