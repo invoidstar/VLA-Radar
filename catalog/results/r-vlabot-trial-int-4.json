@@ -1,0 +1,19 @@
+{
+  "id": "r-vlabot-trial-int-4",
+  "paperId": "p046",
+  "method": "VLAbot trial 4",
+  "trackId": "vlabot-rcim-active-interactions",
+  "values": {
+    "Gear assembly": 32.6,
+    "Beam assembly": 35
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+  "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+  "locator": "Tables 3–4",
+  "attribution": "author-reported",
+  "trainingData": "Same five-trial protocol.",
+  "evaluationNotes": "Beam interactions rise in trials 2–3; non-monotonic evidence retained.",
+  "supersedes": ""
+}

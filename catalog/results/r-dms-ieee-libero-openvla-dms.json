@@ -1,0 +1,22 @@
+{
+  "id": "r-dms-ieee-libero-openvla-dms",
+  "paperId": "p043",
+  "method": "OpenVLA-DMS",
+  "trackId": "dmsvla-ieee-libero-main",
+  "values": {
+    "Spatial": 85.6,
+    "Object": 88.1,
+    "Goal": 78.9,
+    "Long": 53.4,
+    "Average": 76.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+  "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+  "supersedes": ""
+}

@@ -1,0 +1,23 @@
+{
+  "id": "r-vlabot-exec-ramp",
+  "paperId": "p046",
+  "method": "RAMP",
+  "trackId": "vlabot-rcim-execution-time",
+  "values": {
+    "Gear1": null,
+    "Gear2": null,
+    "Gear3": null,
+    "Peg1": 175.3,
+    "Peg2": 215.8,
+    "Beam": null
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+  "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+  "locator": "Table 5",
+  "attribution": "author-reported",
+  "trainingData": "Ablation excludes interaction time; manual/RAMP already know assembly process.",
+  "evaluationNotes": "Null means cannot assemble or not reported, not zero.",
+  "supersedes": ""
+}

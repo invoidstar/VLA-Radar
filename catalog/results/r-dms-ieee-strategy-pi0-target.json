@@ -1,0 +1,21 @@
+{
+  "id": "r-dms-ieee-strategy-pi0-target",
+  "paperId": "p043",
+  "method": "pi0-DMS · target-action-diff",
+  "trackId": "dmsvla-ieee-strategy-ablation",
+  "values": {
+    "Pick Coke Can": 73.2,
+    "Move Near": 65.2,
+    "Open / Close Drawer": 38.6,
+    "Average": 59.0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table V",
+  "attribution": "author-reported",
+  "trainingData": "Controlled strategy ablation.",
+  "evaluationNotes": "Same number of Maclaurin templates; target-action strategy generally improves average.",
+  "supersedes": ""
+}

@@ -1,0 +1,21 @@
+{
+  "id": "r-dms-ieee-simpler-robovlm",
+  "paperId": "p043",
+  "method": "RoboVLM",
+  "trackId": "dmsvla-ieee-simpler-main",
+  "values": {
+    "Pick Coke Can": 77.3,
+    "Move Near": 61.7,
+    "Open / Close Drawer": 43.5,
+    "Average": 60.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table II",
+  "attribution": "author-reported",
+  "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+  "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+  "supersedes": ""
+}

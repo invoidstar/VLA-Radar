@@ -1,0 +1,22 @@
+{
+  "id": "r-dms-ieee-libero-octo-dms",
+  "paperId": "p043",
+  "method": "Octo-DMS",
+  "trackId": "dmsvla-ieee-libero-main",
+  "values": {
+    "Spatial": 78.7,
+    "Object": 85.9,
+    "Goal": 84.9,
+    "Long": 50.9,
+    "Average": 75.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+  "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+  "supersedes": ""
+}

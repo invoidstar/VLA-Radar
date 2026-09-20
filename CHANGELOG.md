@@ -1,3 +1,11 @@
+## 2026-09-20 · 最后两篇全文补齐：DMS-VLA 与 VLAbot
+
+- 用户提供IEEE Xplore与ScienceDirect下载的完整正式PDF，解除p043/p046 limited-source证据限制；两篇均从needs_review/deferred升级为expanded/extracted。
+- DMS-VLA新增72条结果、13个设置：LIBERO、SIMPLER、ALOHA、Emergen、效率对照、Fig.6部署以及Tables V–VII消融全部按原表/带标签图精确落库。
+- VLAbot新增29条结果、6个设置：五轮成功对象数、Avg.Time、active interactions、updates、Table 5执行时间和Table 6模块交互分轨；缺失保持null。
+- 保留DMS摘要“25%-55%×”歧义、部分DMS任务略降、VLAbot beam交互非单调和§6.4时间叙述与Tables 3–4不一致等负面/冲突证据。
+- 最终状态：96 extracted、0 deferred、2 not-applicable；1063 results、286 tracks；remainingNotes=0。
+
 ## 2026-09-20 · 剩余笔记版本复核收口（8→2）
 
 - 基于当前main实际状态完成6篇latest-version全文复核：Xiaomi-Robotics-1 v2、ABot-M0.5 v2、GF-VLA v2/Information Fusion、PerAct v2/CoRL 2022、Diffusion Policy v5、VLA-Adapter v2。

@@ -1,0 +1,19 @@
+{
+  "id": "r-dms-ieee-template-speed-8",
+  "paperId": "p043",
+  "method": "OpenVLA-DMS · 8 templates",
+  "trackId": "dmsvla-ieee-template-speedup",
+  "values": {
+    "Jetson Orin": 1.67,
+    "H100": 1.55
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table VII",
+  "attribution": "author-reported",
+  "trainingData": "OpenVLA family; template count ablation.",
+  "evaluationNotes": "Speedup increases as templates decrease.",
+  "supersedes": ""
+}

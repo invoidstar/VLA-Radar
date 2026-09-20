@@ -1,0 +1,20 @@
+{
+  "id": "r-dms-ieee-fig6-libero-pi0",
+  "paperId": "p043",
+  "method": "pi0-DMS",
+  "trackId": "dmsvla-ieee-deploy-libero",
+  "values": {
+    "Jetson Orin": 1.48,
+    "RTX4090": 1.4,
+    "H100": 1.29
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Fig. 6",
+  "attribution": "author-reported",
+  "trainingData": "DMS vs corresponding naive model; average latency per frame.",
+  "evaluationNotes": "Exact printed labels above bars; no pixel-height estimation.",
+  "supersedes": ""
+}

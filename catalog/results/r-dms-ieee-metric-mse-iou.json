@@ -1,0 +1,21 @@
+{
+  "id": "r-dms-ieee-metric-mse-iou",
+  "paperId": "p043",
+  "method": "MSE-IoU",
+  "trackId": "dmsvla-ieee-metric-ablation",
+  "values": {
+    "Pick Coke Can": 77.4,
+    "Move Near": 61.9,
+    "Open / Close Drawer": 43.1,
+    "Average": 60.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table VI",
+  "attribution": "author-reported",
+  "trainingData": "DMS-RoboVLM metric ablation.",
+  "evaluationNotes": "IoU-weighted metrics improve average; MSE-IoU vs Mahalanobis-IoU differs by task.",
+  "supersedes": ""
+}

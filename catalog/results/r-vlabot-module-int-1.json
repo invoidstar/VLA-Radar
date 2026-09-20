@@ -1,0 +1,21 @@
+{
+  "id": "r-vlabot-module-int-1",
+  "paperId": "p046",
+  "method": "VLAbot trial 1",
+  "trackId": "vlabot-rcim-module-interactions",
+  "values": {
+    "Intent-action planner": 15,
+    "Visual detector": 6,
+    "Numeric action planner": 16,
+    "Action monitor": 5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+  "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+  "locator": "Table 6",
+  "attribution": "author-reported",
+  "trainingData": "Five-trial system interaction analysis.",
+  "evaluationNotes": "Numeric action planner remains the dominant source of active questions.",
+  "supersedes": ""
+}

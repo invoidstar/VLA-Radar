@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-20",
+  "batch": "final-two-fulltext",
+  "baseCommit": "18f9491aeb6ecd8172099054601ee1204b7f6e39",
+  "papers": [
+    {
+      "paperId": "p043",
+      "source": "user-supplied official IEEE Xplore PDF",
+      "publicSource": "https://ieeexplore.ieee.org/document/11479850",
+      "results": 72,
+      "tracks": 13
+    },
+    {
+      "paperId": "p046",
+      "source": "user-supplied official ScienceDirect PDF",
+      "publicSource": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "results": 29,
+      "tracks": 6
+    }
+  ],
+  "countsBefore": {
+    "papers": 98,
+    "results": 962,
+    "tracks": 267,
+    "extracted": 94,
+    "deferred": 2,
+    "notApplicable": 2,
+    "remainingNotes": 2
+  },
+  "countsAfterExpected": {
+    "papers": 98,
+    "results": 1063,
+    "tracks": 286,
+    "extracted": 96,
+    "deferred": 0,
+    "notApplicable": 2,
+    "remainingNotes": 0
+  },
+  "boundaries": [
+    "DMS-VLA Fig.6 uses exact printed bar labels; no plot-height estimation.",
+    "DMS-VLA abstract/conclusion speed string 25%-55%x is not standardized; tables/figure labels are authoritative for structured rows.",
+    "DMS-VLA real-robot SR is step-scored earned-points/total-points, not binary episode success.",
+    "VLAbot trial Success is number of assembled objects out of three, not percentage.",
+    "VLAbot Tables 3-4 time values are used instead of conflicting prose endpoints.",
+    "VLAbot Table 5 em dash is stored as null, never zero; ADE in mm remains in notes because leaderboard unit schema does not support length."
+  ]
+}

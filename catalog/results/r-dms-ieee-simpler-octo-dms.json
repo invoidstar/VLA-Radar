@@ -1,0 +1,21 @@
+{
+  "id": "r-dms-ieee-simpler-octo-dms",
+  "paperId": "p043",
+  "method": "Octo-DMS",
+  "trackId": "dmsvla-ieee-simpler-main",
+  "values": {
+    "Pick Coke Can": 30.1,
+    "Move Near": 34.9,
+    "Open / Close Drawer": 33.5,
+    "Average": 32.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table II",
+  "attribution": "author-reported",
+  "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+  "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+  "supersedes": ""
+}
