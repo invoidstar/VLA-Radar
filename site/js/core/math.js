@@ -179,7 +179,16 @@
     flush();return out;
   }
   function renderParagraphs(text){
-    return String(text??'').split(/\n+/).filter(Boolean).map(line=>'<p>'+renderText(line)+'</p>').join('');
+    const s=String(text??'');let out='',plain='',i=0;
+    const flush=()=>{if(!plain)return;out+=plain.split(/\n+/).filter(line=>line.trim()).map(line=>'<p>'+renderText(line)+'</p>').join('');plain='';};
+    while(i<s.length){
+      let close='',offset=0,end=-1;
+      if(s.startsWith('$$',i)&&!escapedBefore(s,i)){close='$$';offset=2;end=endDollar(s,i+2,true);}
+      else if(s.startsWith('\\[',i)){close='\\]';offset=2;end=s.indexOf(close,i+2);}
+      if(close&&end>=0){flush();out+=renderTex(s.slice(i+offset,end),true);i=end+close.length;continue;}
+      plain+=s[i++];
+    }
+    flush();return out;
   }
 
   const api={renderTex,renderText,renderParagraphs,Parser};
