@@ -20,8 +20,7 @@ SECTION_KEYS = set('id title body sources'.split())
 RESULT_KEYS = set('id paperId method trackId values evidence verifiedAt source sourceVersion locator attribution trainingData evaluationNotes supersedes'.split())
 TRACK_KEYS = set('id dataset name version tasks split metric unit direction protocol trainingRegime comparisonScope columns source'.split())
 FAMILY_KEYS = set('familyId familyName familySummary familyKind familyMode familyPrimaryTrackId recipeName recipeType'.split())
-SETTING_EVAL_KEYS = set('settingEvalId settingEvalName'.split())
-TRACK_OPTIONAL_KEYS = FAMILY_KEYS | SETTING_EVAL_KEYS
+TRACK_OPTIONAL_KEYS = FAMILY_KEYS
 
 def dumps(x): return json.dumps(x, ensure_ascii=False, indent=2, allow_nan=False)+'\n'
 def load(path): return json.loads(Path(path).read_text(encoding='utf-8'))
@@ -132,18 +131,13 @@ def validate_track(t):
     require(isinstance(t['columns'],list) and t['columns'] and len(set(t['columns']))==len(t['columns']),'track columns')
     require(all(isinstance(t[k],str) and t[k] for k in TRACK_KEYS-{'columns'}),'track description required'); public_url(t['source'])
     family_present=set(t)&FAMILY_KEYS
-    setting_present=set(t)&SETTING_EVAL_KEYS
     require(not family_present or family_present==FAMILY_KEYS,'protocol-family metadata must be complete')
-    require(not setting_present or setting_present==SETTING_EVAL_KEYS,'setting evaluation metadata must be complete')
     if family_present:
         require(re.fullmatch(r'[a-z0-9-]+',t['familyId']),'family id')
         require(t['familyMode'] in {'aligned','series'},'family mode')
         require(t['recipeType'] in {'report','training','subprotocol','deployment'},'recipe type')
         require(all(isinstance(t[k],str) and t[k] for k in FAMILY_KEYS),'protocol-family metadata must be text')
         require(all(t[k] for k in FAMILY_KEYS),'protocol-family metadata cannot be empty')
-    if setting_present:
-        require(re.fullmatch(r'[a-z0-9-]+',t['settingEvalId']),'setting evaluation id')
-        require(isinstance(t['settingEvalName'],str) and t['settingEvalName'],'setting evaluation name')
 
 def validate_result(r, ids, tracks):
     keys(r,RESULT_KEYS,'result'); require(re.fullmatch(r'r-[a-z0-9-]+',r['id']),'result id')
