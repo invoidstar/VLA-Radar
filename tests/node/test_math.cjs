@@ -14,6 +14,13 @@ assert(html.includes('<msubsup>'));
 assert(html.includes('<mover'));
 assert(html.includes('display="block"'));
 
+html=M.renderParagraphs('前文\\n\\\\[\\nL = \\\\sum_{t=1}^{T} \\\\lVert a_t-\\\\hat{a}_t \\\\rVert^2\\n\\\\]\\n后文');
+assert.equal((html.match(/<math/g)||[]).length,1);
+assert(html.includes('math-display'));
+assert(!html.includes('\\\\['));
+assert(!html.includes('\\\\]'));
+assert(html.includes('<p>前文</p>')&&html.includes('<p>后文</p>'));
+
 html=M.renderText('矩阵 $$A=\\begin{bmatrix}1 & 2 \\\\ 3 & 4\\end{bmatrix}$$');
 assert(html.includes('<mtable>'));
 assert(html.includes('stretchy="true"'));
@@ -33,4 +40,4 @@ assert(html.includes('<table'));
 assert(html.includes('<math'));
 assert(html.includes('<mfrac>'));
 
-console.log('PASS: local MathML rendering, delimiters, scripts, fractions, sums, matrices, escaping and table formulas');
+console.log('PASS: local MathML rendering, delimiters, scripts, fractions, sums, matrices, escaping and table formulas and multiline display math');
