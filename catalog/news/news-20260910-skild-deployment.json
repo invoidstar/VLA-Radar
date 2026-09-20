@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260910-skild-deployment",
+  "eventKey": "skild-commercial-deployment-update-20260910",
+  "title": "Skild 报告机器人业务规模化，并披露与 NVIDIA/Foxconn 的双臂装配部署",
+  "primaryCategory": "robot",
+  "tags": ["真实部署", "制造", "机器人基础模型", "产业"],
+  "eventDate": "2026-09-10",
+  "publishedAt": "2026-09-10",
+  "dateNote": "事件日期采用Skild AI官方9月10日业务与部署更新，不把此前S1模型8月发布重新记成本周事件。",
+  "observedAt": "2026-09-20",
+  "updatedAt": "2026-09-20",
+  "stage": "reported",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "Skild AI在9月10日官方更新中称，公司在首个商业部署约十个月后达到超过1亿美元ARR，并服务60多家付费客户；同时披露与NVIDIA和Foxconn合作，将Skild Brain部署到双臂机器人，用于NVIDIA Blackwell系统的高精度装配。",
+  "whyItMatters": "对具身智能研究而言，这类信息的价值在于显示通用机器人策略正在接受真实制造流程中的持续变化、精密装配和运营约束，而不只是实验室单任务演示。商业规模本身不证明模型泛化，但能提供部署成熟度与需求侧信号。",
+  "vlaRelevance": "双臂高精度装配要求视觉、语言/任务条件、动作生成以及异常恢复在真实生产节拍下协同。该事件应作为产业部署动态理解，不能把ARR、客户数或合作关系换算为VLA算法性能，也不进入Leaderboard。",
+  "limits": "ARR、客户数、收入构成和部署描述均来自Skild AI自报，未在本条中做独立财务审计或性能复现。官方更新没有提供统一机器人评测协议、任务成功率或完整硬件/控制配置，因此不据此推导跨任务能力。",
+  "sources": [
+    {"id":"s1","title":"The Hidden Pillar of Robotics","publisher":"Skild AI","url":"https://www.skild.ai/blogs/skild-crosses-100m-arr","kind":"official","publishedAt":"2026-09-10","access":"fulltext","note":"核对公司自报的ARR、客户规模、收入构成及NVIDIA/Foxconn双臂装配部署；商业数字仅按公司报告归属。"}
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
