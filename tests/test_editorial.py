@@ -14,6 +14,15 @@ class EditorialTests(unittest.TestCase):
         self.ledger=load(ROOT/'maintenance/benchmark-review.json')
         self.full=next(r for r in self.records if r['note']['coverage']['level']=='deep')
     def run_check(self):return check(self.records,self.policy,self.ledger,self.results)
+    def make_partial_fixture(self):
+        partial=self.full
+        pid=partial['paper']['id']
+        partial['note']['coverage']={'level':'limited','scope':'author-materials-partial','source':partial['paper']['paperUrl']}
+        partial['note']['status']='needs_review'
+        partial['note']['benchmarkReview']={'status':'protocol-unresolved','checkedAt':'2026-09-20','note':'synthetic partial-source fixture'}
+        self.policy['limitedLegacyIds'][pid]='author-materials-partial'
+        self.ledger['papers'][pid]={'status':'deferred','trackIds':[],'resultIds':[],'note':'synthetic partial-source fixture'}
+        return partial
     def test_entire_library_passes(self):self.assertTrue(self.run_check())
     def test_seven_sections_rejected(self):
         self.full['note']['sections']=self.full['note']['sections'][:7]
@@ -38,15 +47,15 @@ class EditorialTests(unittest.TestCase):
         self.ledger['papers'].pop(self.full['paper']['id'])
         with self.assertRaises(ValueError):self.run_check()
     def test_partial_source_cannot_be_deep(self):
-        partial=next(r for r in self.records if r['note']['coverage']['level']=='limited')
+        partial=self.make_partial_fixture()
         partial['note']['coverage']['level']='deep'
         with self.assertRaises(ValueError):self.run_check()
     def test_partial_guide_must_be_visibly_incomplete(self):
-        partial=next(r for r in self.records if r['note']['coverage']['level']=='limited')
+        partial=self.make_partial_fixture()
         partial['note']['status']='expanded'
         with self.assertRaises(ValueError):self.run_check()
     def test_new_abstract_cannot_use_legacy_exemption(self):
-        partial=next(r for r in self.records if r['note']['coverage']['level']=='limited')
+        partial=self.make_partial_fixture()
         self.policy['baselinePaperIds'].remove(partial['paper']['id'])
         with self.assertRaises(ValueError):self.run_check()
     def test_new_paper_has_higher_depth_requirement(self):
@@ -55,7 +64,6 @@ class EditorialTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.run_check()
     def test_valid_new_deep_record_is_supported(self):
         pid=self.full['paper']['id'];self.policy['baselinePaperIds'].remove(pid)
-        # Deliberately synthetic fixture text, never written to the public catalog.
         for section in self.full['note']['sections']:section['body']='fixture '*40
         self.assertTrue(self.run_check())
 

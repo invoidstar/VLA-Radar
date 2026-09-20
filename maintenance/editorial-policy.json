@@ -81,10 +81,7 @@
     "p077",
     "p078"
   ],
-  "limitedLegacyIds": {
-    "p043": "author-materials-partial",
-    "p046": "official-abstract-only"
-  },
+  "limitedLegacyIds": {},
   "newPaperMinimumCharacters": 2000,
   "minimumSections": 8,
   "weeklyMergeMode": "self-review-ci-then-merge",

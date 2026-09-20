@@ -1,20 +1,7 @@
 {
   "schemaVersion": 1,
   "plannedAt": "2026-09-20",
-  "notes": [
-    {
-      "paperId": "p043",
-      "reason": "needs_review",
-      "readVersion": "IEEE RA-L正式摘要＋既有作者材料；2026-09-20再次检索全文，仍未取得可稳定阅读全文的一手版本",
-      "latestVersion": null
-    },
-    {
-      "paperId": "p046",
-      "reason": "needs_review",
-      "readVersion": "RCIM 100 (2026) 103268；PolyU/ScienceDirect正式摘要；2026-09-20再次尝试全文，ScienceDirect抓取仍403",
-      "latestVersion": null
-    }
-  ],
+  "notes": [],
   "metadata": {
     "allArxiv": true,
     "withoutArxiv": [
@@ -24,7 +11,7 @@
       "p092"
     ]
   },
-  "remainingNotes": 2,
+  "remainingNotes": 0,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
   "quarterlyReview": "2026-Q3",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."

@@ -5526,6 +5526,387 @@
         "Near state-oracle count"
       ],
       "source": "https://arxiv.org/abs/2203.06173"
+    },
+    {
+      "id": "dmsvla-ieee-libero-main",
+      "dataset": "LIBERO",
+      "name": "DMS-VLA IEEE · Table I · base vs DMS",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "four LIBERO suites / 40 tasks",
+      "split": "6 seeds × 10 tasks × 50 episodes per suite",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Paper reimplementation of base VLA and corresponding DMS variant; 3000 rollouts per suite as described.",
+      "trainingRegime": "DMS variant uses same loss/training hyperparameters as corresponding base.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-simpler-main",
+      "dataset": "SimplerEnv",
+      "name": "DMS-VLA IEEE · Table II · Visual Matching",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "Pick Coke Can / Move Near / Open-Close Drawer",
+      "split": "SIMPLER Visual Matching; default task trial counts",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Visual Matching evaluation; task-specific default trial counts.",
+      "trainingRegime": "Corresponding base vs DMS variant.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Pick Coke Can",
+        "Move Near",
+        "Open / Close Drawer",
+        "Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-real-aloha",
+      "dataset": "DMS-VLA real",
+      "name": "DMS-VLA IEEE · Table III · ALOHA",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "three step-scored tasks",
+      "split": "ALOHA ViperX-300; third-person RealSense D435",
+      "metric": "Step-scored task completion rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "SR is earned task points / total task points, not binary episode success.",
+      "trainingRegime": "pi0/OpenVLA base and DMS variants.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Put Balls Into Box",
+        "Clean Table",
+        "Stack Bowls",
+        "Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-real-emergen",
+      "dataset": "DMS-VLA real",
+      "name": "DMS-VLA IEEE · Table III · Emergen",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "three step-scored tasks",
+      "split": "Emergen C3; third-person RealSense D435",
+      "metric": "Step-scored task completion rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "SR is earned task points / total task points, not binary episode success.",
+      "trainingRegime": "pi0/OpenVLA base and DMS variants.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Put Balls Into Box",
+        "Clean Table",
+        "Stack Bowls",
+        "Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-efficient-success",
+      "dataset": "LIBERO",
+      "name": "DMS-VLA IEEE · Table IV · efficient VLA quality",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "LIBERO four-suite aggregate",
+      "split": "OpenVLA-centered efficiency comparison",
+      "metric": "LIBERO average success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Precision differs by method and is part of the method label; this is a paper-table comparison, not a common-training-budget leaderboard.",
+      "trainingRegime": "OpenVLA baseline; efficient methods from paper comparison.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-efficient-speedup",
+      "dataset": "DMS-VLA deployment",
+      "name": "DMS-VLA IEEE · Table IV · efficient VLA speedup",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "OpenVLA-centered deployment comparison",
+      "split": "Jetson AGX Orin and H100",
+      "metric": "Inference speedup vs OpenVLA BF16",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Table IV speedup ratios; INT4+DMS includes quantization in addition to DMS.",
+      "trainingRegime": "Hardware/precision stated in method label.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Jetson Orin",
+        "H100"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-deploy-libero",
+      "dataset": "DMS-VLA deployment",
+      "name": "DMS-VLA IEEE · Fig.6 · LIBERO DMS-only speedup",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "Octo / pi0 / OpenVLA",
+      "split": "LIBERO; average latency per frame",
+      "metric": "Inference speedup vs corresponding naive VLA",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Exact numeric labels printed on Fig.6 bars; DMS variant divided by corresponding naive model latency.",
+      "trainingRegime": "BF16/default repo dtype; no INT4 combination.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Jetson Orin",
+        "RTX4090",
+        "H100"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-deploy-simpler",
+      "dataset": "DMS-VLA deployment",
+      "name": "DMS-VLA IEEE · Fig.6 · SIMPLER DMS-only speedup",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "Octo / pi0 / OpenVLA",
+      "split": "SIMPLER; average latency per frame",
+      "metric": "Inference speedup vs corresponding naive VLA",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Exact numeric labels printed on Fig.6 bars.",
+      "trainingRegime": "BF16/default repo dtype; no INT4 combination.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Jetson Orin",
+        "RTX4090",
+        "H100"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-strategy-ablation",
+      "dataset": "SimplerEnv",
+      "name": "DMS-VLA IEEE · Table V · complexity strategy",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "SIMPLER three tasks",
+      "split": "same number of Maclaurin templates",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Full-frame-diff vs target-action-diff within pi0-DMS and RoboVLM-DMS.",
+      "trainingRegime": "Controlled paper ablation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Pick Coke Can",
+        "Move Near",
+        "Open / Close Drawer",
+        "Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-metric-ablation",
+      "dataset": "SimplerEnv",
+      "name": "DMS-VLA IEEE · Table VI · complexity metric",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "SIMPLER three tasks",
+      "split": "DMS-RoboVLM",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "MSE, Mahalanobis and IoU-weighted variants.",
+      "trainingRegime": "Controlled metric ablation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Pick Coke Can",
+        "Move Near",
+        "Open / Close Drawer",
+        "Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-template-quality",
+      "dataset": "DMS-VLA deployment",
+      "name": "DMS-VLA IEEE · Table VII · template count quality",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "OpenVLA / OpenVLA-DMS",
+      "split": "2–32 distinctive templates",
+      "metric": "Benchmark average success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Template-count tradeoff; OpenVLA 32 is non-DMS baseline.",
+      "trainingRegime": "Same OpenVLA family; template count varies.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "LIBERO Average",
+        "SIMPLER Average"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-template-speedup",
+      "dataset": "DMS-VLA deployment",
+      "name": "DMS-VLA IEEE · Table VII · template count speedup",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "OpenVLA / OpenVLA-DMS",
+      "split": "2–32 distinctive templates",
+      "metric": "Inference speedup vs OpenVLA",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Same rows as Table VII quality track; speedup direction higher.",
+      "trainingRegime": "Same OpenVLA family; template count varies.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Jetson Orin",
+        "H100"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "dmsvla-ieee-template-memory",
+      "dataset": "DMS-VLA deployment",
+      "name": "DMS-VLA IEEE · Table VII · runtime memory",
+      "version": "IEEE RA-L 11(7), 2026",
+      "tasks": "OpenVLA / OpenVLA-DMS",
+      "split": "2–32 distinctive templates",
+      "metric": "Runtime memory relative to baseline",
+      "unit": "percent",
+      "direction": "lower",
+      "protocol": "OpenVLA baseline=100%; lower means less runtime memory.",
+      "trainingRegime": "Same OpenVLA family; template count varies.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Jetson Orin",
+        "H100"
+      ],
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    {
+      "id": "vlabot-rcim-learning-success",
+      "dataset": "VLAbot real",
+      "name": "VLAbot RCIM · Tables 3–4 · successful objects across trials",
+      "version": "RCIM 100 (2026) 103268",
+      "tasks": "gear assembly and beam assembly",
+      "split": "five trials per task",
+      "metric": "Successfully assembled object count (out of 3)",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Each task contains three target objects/stages; value is count, not percent.",
+      "trainingRegime": "Human-in-the-loop VLAbot; interaction history accumulates across trials.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Gear assembly",
+        "Beam assembly"
+      ],
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
+    },
+    {
+      "id": "vlabot-rcim-learning-time",
+      "dataset": "VLAbot real",
+      "name": "VLAbot RCIM · Tables 3–4 · reported Avg. Time",
+      "version": "RCIM 100 (2026) 103268",
+      "tasks": "gear assembly and beam assembly",
+      "split": "five trials per task",
+      "metric": "Reported average operating time",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "Uses Table 3/4 Avg. Time values; paper prose gives conflicting rounded endpoints, so structured rows follow tables.",
+      "trainingRegime": "Human-in-the-loop VLAbot across trials.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Gear assembly",
+        "Beam assembly"
+      ],
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
+    },
+    {
+      "id": "vlabot-rcim-active-interactions",
+      "dataset": "VLAbot real",
+      "name": "VLAbot RCIM · Tables 3–4 · active interactions",
+      "version": "RCIM 100 (2026) 103268",
+      "tasks": "gear assembly and beam assembly",
+      "split": "five trials per task",
+      "metric": "Active robot interaction count",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "# Int. values from Tables 3–4; beam interactions are non-monotonic in early trials.",
+      "trainingRegime": "Human-in-the-loop interaction burden.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Gear assembly",
+        "Beam assembly"
+      ],
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
+    },
+    {
+      "id": "vlabot-rcim-interaction-updates",
+      "dataset": "VLAbot real",
+      "name": "VLAbot RCIM · Tables 3–4 · interaction updates",
+      "version": "RCIM 100 (2026) 103268",
+      "tasks": "gear assembly and beam assembly",
+      "split": "five trials per task",
+      "metric": "Interaction update count",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "# Upd. from Tables 3–4; not a success metric.",
+      "trainingRegime": "Human-in-the-loop update burden.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Gear assembly",
+        "Beam assembly"
+      ],
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
+    },
+    {
+      "id": "vlabot-rcim-execution-time",
+      "dataset": "VLAbot real",
+      "name": "VLAbot RCIM · Table 5 · execution-time ablation",
+      "version": "RCIM 100 (2026) 103268",
+      "tasks": "Gear1/Gear2/Gear3/Peg1/Peg2/Beam",
+      "split": "interaction time excluded for ablation",
+      "metric": "Robot planning and execution time",
+      "unit": "seconds",
+      "direction": "lower",
+      "protocol": "Null means the method could not assemble / was not reported, never zero. Manual and RAMP already know assembly process.",
+      "trainingRegime": "Manual vs no-update VLAbot vs active regulation vs RAMP.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Gear1",
+        "Gear2",
+        "Gear3",
+        "Peg1",
+        "Peg2",
+        "Beam"
+      ],
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
+    },
+    {
+      "id": "vlabot-rcim-module-interactions",
+      "dataset": "VLAbot real",
+      "name": "VLAbot RCIM · Table 6 · module interaction burden",
+      "version": "RCIM 100 (2026) 103268",
+      "tasks": "four VLA-agent modules",
+      "split": "five trials",
+      "metric": "Module active interaction count",
+      "unit": "score",
+      "direction": "lower",
+      "protocol": "Counts active interactions per module; lower indicates less human/agent questioning burden, not higher task quality.",
+      "trainingRegime": "Same VLAbot system across trials.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Intent-action planner",
+        "Visual detector",
+        "Numeric action planner",
+        "Action monitor"
+      ],
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
     }
   ],
   "results": [
@@ -8138,6 +8519,1451 @@
       "attribution": "reported-baseline",
       "trainingData": "10 source human demonstrations/task",
       "evaluationNotes": "双Panda平行夹爪；OSC；原始D0；图像策略，3训练种子分别选最大成功率后汇总；§VI-A未在本段重述评测回合数，不由同系列论文猜补；±保留原表统计量。 Source DP和生成DP预算不相同，不作公平同预算排名。 原表±统计量按列保存：{\"Piece Assembly\": 0.9, \"Threading\": 0.9, \"Transport\": 7.7}；不推导置信区间。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-quality-cache",
+      "paperId": "p043",
+      "method": "VLA-Cache (BF16)",
+      "trackId": "dmsvla-ieee-efficient-success",
+      "values": {
+        "Average": 74.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "VLA-Cache (BF16)",
+      "evaluationNotes": "Precision and auxiliary optimization differ by method; paper-table only.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-quality-deer",
+      "paperId": "p043",
+      "method": "DeeR-VLA (BF16)",
+      "trackId": "dmsvla-ieee-efficient-success",
+      "values": {
+        "Average": 73.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "DeeR-VLA (BF16)",
+      "evaluationNotes": "Precision and auxiliary optimization differ by method; paper-table only.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-quality-dms-bf16",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS (BF16)",
+      "trackId": "dmsvla-ieee-efficient-success",
+      "values": {
+        "Average": 76.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA-DMS (BF16)",
+      "evaluationNotes": "Precision and auxiliary optimization differ by method; paper-table only.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-quality-dms-int4",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS (INT4)",
+      "trackId": "dmsvla-ieee-efficient-success",
+      "values": {
+        "Average": 75.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA-DMS (INT4)",
+      "evaluationNotes": "Precision and auxiliary optimization differ by method; paper-table only.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-quality-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA (BF16)",
+      "trackId": "dmsvla-ieee-efficient-success",
+      "values": {
+        "Average": 76.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA (BF16)",
+      "evaluationNotes": "Precision and auxiliary optimization differ by method; paper-table only.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-quality-qail",
+      "paperId": "p043",
+      "method": "QAIL (INT4)",
+      "trackId": "dmsvla-ieee-efficient-success",
+      "values": {
+        "Average": 73.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "QAIL (INT4)",
+      "evaluationNotes": "Precision and auxiliary optimization differ by method; paper-table only.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-quality-spvla",
+      "paperId": "p043",
+      "method": "SP-VLA (BF16)",
+      "trackId": "dmsvla-ieee-efficient-success",
+      "values": {
+        "Average": 74.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "SP-VLA (BF16)",
+      "evaluationNotes": "Precision and auxiliary optimization differ by method; paper-table only.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-speed-cache",
+      "paperId": "p043",
+      "method": "VLA-Cache (BF16)",
+      "trackId": "dmsvla-ieee-efficient-speedup",
+      "values": {
+        "Jetson Orin": 1.39,
+        "H100": 1.32
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "VLA-Cache (BF16)",
+      "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-speed-deer",
+      "paperId": "p043",
+      "method": "DeeR-VLA (BF16)",
+      "trackId": "dmsvla-ieee-efficient-speedup",
+      "values": {
+        "Jetson Orin": 1.47,
+        "H100": 1.36
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "DeeR-VLA (BF16)",
+      "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-speed-dms-bf16",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS (BF16)",
+      "trackId": "dmsvla-ieee-efficient-speedup",
+      "values": {
+        "Jetson Orin": 1.56,
+        "H100": 1.41
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA-DMS (BF16)",
+      "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-speed-dms-int4",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS (INT4)",
+      "trackId": "dmsvla-ieee-efficient-speedup",
+      "values": {
+        "Jetson Orin": 2.96,
+        "H100": 2.64
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA-DMS (INT4)",
+      "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-speed-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA (BF16)",
+      "trackId": "dmsvla-ieee-efficient-speedup",
+      "values": {
+        "Jetson Orin": 1.0,
+        "H100": 1.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA (BF16)",
+      "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-speed-qail",
+      "paperId": "p043",
+      "method": "QAIL (INT4)",
+      "trackId": "dmsvla-ieee-efficient-speedup",
+      "values": {
+        "Jetson Orin": 2.47,
+        "H100": 1.89
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "QAIL (INT4)",
+      "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-eff-speed-spvla",
+      "paperId": "p043",
+      "method": "SP-VLA (BF16)",
+      "trackId": "dmsvla-ieee-efficient-speedup",
+      "values": {
+        "Jetson Orin": 1.37,
+        "H100": 1.25
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table IV",
+      "attribution": "author-reported",
+      "trainingData": "SP-VLA (BF16)",
+      "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-fig6-libero-octo",
+      "paperId": "p043",
+      "method": "Octo-DMS",
+      "trackId": "dmsvla-ieee-deploy-libero",
+      "values": {
+        "Jetson Orin": 1.45,
+        "RTX4090": 1.37,
+        "H100": 1.27
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Fig. 6",
+      "attribution": "author-reported",
+      "trainingData": "DMS vs corresponding naive model; average latency per frame.",
+      "evaluationNotes": "Exact printed labels above bars; no pixel-height estimation.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-fig6-libero-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS",
+      "trackId": "dmsvla-ieee-deploy-libero",
+      "values": {
+        "Jetson Orin": 1.56,
+        "RTX4090": 1.5,
+        "H100": 1.41
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Fig. 6",
+      "attribution": "author-reported",
+      "trainingData": "DMS vs corresponding naive model; average latency per frame.",
+      "evaluationNotes": "Exact printed labels above bars; no pixel-height estimation.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-fig6-libero-pi0",
+      "paperId": "p043",
+      "method": "pi0-DMS",
+      "trackId": "dmsvla-ieee-deploy-libero",
+      "values": {
+        "Jetson Orin": 1.48,
+        "RTX4090": 1.4,
+        "H100": 1.29
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Fig. 6",
+      "attribution": "author-reported",
+      "trainingData": "DMS vs corresponding naive model; average latency per frame.",
+      "evaluationNotes": "Exact printed labels above bars; no pixel-height estimation.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-fig6-simpler-octo",
+      "paperId": "p043",
+      "method": "Octo-DMS",
+      "trackId": "dmsvla-ieee-deploy-simpler",
+      "values": {
+        "Jetson Orin": 1.4,
+        "RTX4090": 1.33,
+        "H100": 1.23
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Fig. 6",
+      "attribution": "author-reported",
+      "trainingData": "DMS vs corresponding naive model; average latency per frame.",
+      "evaluationNotes": "Exact printed labels above bars; no pixel-height estimation.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-fig6-simpler-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS",
+      "trackId": "dmsvla-ieee-deploy-simpler",
+      "values": {
+        "Jetson Orin": 1.53,
+        "RTX4090": 1.46,
+        "H100": 1.38
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Fig. 6",
+      "attribution": "author-reported",
+      "trainingData": "DMS vs corresponding naive model; average latency per frame.",
+      "evaluationNotes": "Exact printed labels above bars; no pixel-height estimation.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-fig6-simpler-pi0",
+      "paperId": "p043",
+      "method": "pi0-DMS",
+      "trackId": "dmsvla-ieee-deploy-simpler",
+      "values": {
+        "Jetson Orin": 1.43,
+        "RTX4090": 1.35,
+        "H100": 1.24
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Fig. 6",
+      "attribution": "author-reported",
+      "trainingData": "DMS vs corresponding naive model; average latency per frame.",
+      "evaluationNotes": "Exact printed labels above bars; no pixel-height estimation.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-octo-dms",
+      "paperId": "p043",
+      "method": "Octo-DMS",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 78.7,
+        "Object": 85.9,
+        "Goal": 84.9,
+        "Long": 50.9,
+        "Average": 75.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-octo",
+      "paperId": "p043",
+      "method": "Octo",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 78.9,
+        "Object": 85.7,
+        "Goal": 84.6,
+        "Long": 51.1,
+        "Average": 75.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-oft-dms",
+      "paperId": "p043",
+      "method": "OpenVLA-OFT-DMS",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 97.2,
+        "Object": 98.6,
+        "Goal": 97.4,
+        "Long": 95.6,
+        "Average": 97.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-oft",
+      "paperId": "p043",
+      "method": "OpenVLA-OFT",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 97.6,
+        "Object": 98.4,
+        "Goal": 97.9,
+        "Long": 94.5,
+        "Average": 97.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-openvla-dms",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 85.6,
+        "Object": 88.1,
+        "Goal": 78.9,
+        "Long": 53.4,
+        "Average": 76.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 84.7,
+        "Object": 88.4,
+        "Goal": 79.2,
+        "Long": 53.7,
+        "Average": 76.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-pi0-dms",
+      "paperId": "p043",
+      "method": "pi0-DMS",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 96.9,
+        "Object": 98.7,
+        "Goal": 96.0,
+        "Long": 85.4,
+        "Average": 94.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-pi0",
+      "paperId": "p043",
+      "method": "pi0",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 96.8,
+        "Object": 98.8,
+        "Goal": 95.8,
+        "Long": 85.2,
+        "Average": 94.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-univla-dms",
+      "paperId": "p043",
+      "method": "UniVLA-DMS",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 95.6,
+        "Object": 98.8,
+        "Goal": 93.9,
+        "Long": 94.1,
+        "Average": 95.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-libero-univla",
+      "paperId": "p043",
+      "method": "UniVLA",
+      "trackId": "dmsvla-ieee-libero-main",
+      "values": {
+        "Spatial": 95.4,
+        "Object": 98.8,
+        "Goal": 93.6,
+        "Long": 94.0,
+        "Average": 95.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-metric-maha-iou",
+      "paperId": "p043",
+      "method": "Mahalanobis-IoU",
+      "trackId": "dmsvla-ieee-metric-ablation",
+      "values": {
+        "Pick Coke Can": 77.5,
+        "Move Near": 61.8,
+        "Open / Close Drawer": 43.4,
+        "Average": 60.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VI",
+      "attribution": "author-reported",
+      "trainingData": "DMS-RoboVLM metric ablation.",
+      "evaluationNotes": "IoU-weighted metrics improve average; MSE-IoU vs Mahalanobis-IoU differs by task.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-metric-maha",
+      "paperId": "p043",
+      "method": "Mahalanobis",
+      "trackId": "dmsvla-ieee-metric-ablation",
+      "values": {
+        "Pick Coke Can": 75.4,
+        "Move Near": 60.5,
+        "Open / Close Drawer": 42.1,
+        "Average": 59.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VI",
+      "attribution": "author-reported",
+      "trainingData": "DMS-RoboVLM metric ablation.",
+      "evaluationNotes": "IoU-weighted metrics improve average; MSE-IoU vs Mahalanobis-IoU differs by task.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-metric-mse-iou",
+      "paperId": "p043",
+      "method": "MSE-IoU",
+      "trackId": "dmsvla-ieee-metric-ablation",
+      "values": {
+        "Pick Coke Can": 77.4,
+        "Move Near": 61.9,
+        "Open / Close Drawer": 43.1,
+        "Average": 60.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VI",
+      "attribution": "author-reported",
+      "trainingData": "DMS-RoboVLM metric ablation.",
+      "evaluationNotes": "IoU-weighted metrics improve average; MSE-IoU vs Mahalanobis-IoU differs by task.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-metric-mse",
+      "paperId": "p043",
+      "method": "MSE",
+      "trackId": "dmsvla-ieee-metric-ablation",
+      "values": {
+        "Pick Coke Can": 75.2,
+        "Move Near": 60.6,
+        "Open / Close Drawer": 41.9,
+        "Average": 59.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VI",
+      "attribution": "author-reported",
+      "trainingData": "DMS-RoboVLM metric ablation.",
+      "evaluationNotes": "IoU-weighted metrics improve average; MSE-IoU vs Mahalanobis-IoU differs by task.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-aloha-openvla-dms",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS",
+      "trackId": "dmsvla-ieee-real-aloha",
+      "values": {
+        "Put Balls Into Box": 93.0,
+        "Clean Table": 81.5,
+        "Stack Bowls": 74.0,
+        "Average": 82.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-aloha-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA",
+      "trackId": "dmsvla-ieee-real-aloha",
+      "values": {
+        "Put Balls Into Box": 92.5,
+        "Clean Table": 81.7,
+        "Stack Bowls": 73.7,
+        "Average": 82.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-aloha-pi0-dms",
+      "paperId": "p043",
+      "method": "pi0-DMS",
+      "trackId": "dmsvla-ieee-real-aloha",
+      "values": {
+        "Put Balls Into Box": 82.8,
+        "Clean Table": 76.3,
+        "Stack Bowls": 71.0,
+        "Average": 76.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-aloha-pi0",
+      "paperId": "p043",
+      "method": "pi0",
+      "trackId": "dmsvla-ieee-real-aloha",
+      "values": {
+        "Put Balls Into Box": 82.5,
+        "Clean Table": 76.0,
+        "Stack Bowls": 70.5,
+        "Average": 76.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-emergen-openvla-dms",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS",
+      "trackId": "dmsvla-ieee-real-emergen",
+      "values": {
+        "Put Balls Into Box": 95.7,
+        "Clean Table": 83.7,
+        "Stack Bowls": 75.5,
+        "Average": 85.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-emergen-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA",
+      "trackId": "dmsvla-ieee-real-emergen",
+      "values": {
+        "Put Balls Into Box": 95.5,
+        "Clean Table": 83.5,
+        "Stack Bowls": 75.3,
+        "Average": 84.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-emergen-pi0-dms",
+      "paperId": "p043",
+      "method": "pi0-DMS",
+      "trackId": "dmsvla-ieee-real-emergen",
+      "values": {
+        "Put Balls Into Box": 84.8,
+        "Clean Table": 77.8,
+        "Stack Bowls": 74.0,
+        "Average": 78.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-real-emergen-pi0",
+      "paperId": "p043",
+      "method": "pi0",
+      "trackId": "dmsvla-ieee-real-emergen",
+      "values": {
+        "Put Balls Into Box": 85.0,
+        "Clean Table": 77.5,
+        "Stack Bowls": 73.7,
+        "Average": 78.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+      "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-octo-dms",
+      "paperId": "p043",
+      "method": "Octo-DMS",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 30.1,
+        "Move Near": 34.9,
+        "Open / Close Drawer": 33.5,
+        "Average": 32.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-octo",
+      "paperId": "p043",
+      "method": "Octo",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 29.3,
+        "Move Near": 35.0,
+        "Open / Close Drawer": 33.3,
+        "Average": 32.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-openvla-dms",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 16.6,
+        "Move Near": 46.4,
+        "Open / Close Drawer": 35.9,
+        "Average": 33.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-openvla",
+      "paperId": "p043",
+      "method": "OpenVLA",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 16.3,
+        "Move Near": 46.2,
+        "Open / Close Drawer": 35.6,
+        "Average": 32.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-pi0-dms",
+      "paperId": "p043",
+      "method": "pi0-DMS",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 73.2,
+        "Move Near": 65.2,
+        "Open / Close Drawer": 38.6,
+        "Average": 59.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-pi0",
+      "paperId": "p043",
+      "method": "pi0",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 72.7,
+        "Move Near": 65.3,
+        "Open / Close Drawer": 38.3,
+        "Average": 58.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-robovlm-dms",
+      "paperId": "p043",
+      "method": "RoboVLM-DMS",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 77.5,
+        "Move Near": 61.8,
+        "Open / Close Drawer": 43.4,
+        "Average": 60.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-simpler-robovlm",
+      "paperId": "p043",
+      "method": "RoboVLM",
+      "trackId": "dmsvla-ieee-simpler-main",
+      "values": {
+        "Pick Coke Can": 77.3,
+        "Move Near": 61.7,
+        "Open / Close Drawer": 43.5,
+        "Average": 60.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+      "evaluationNotes": "SIMPLER Visual Matching; small negative cells retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-strategy-pi0-full",
+      "paperId": "p043",
+      "method": "pi0-DMS · full-frame-diff",
+      "trackId": "dmsvla-ieee-strategy-ablation",
+      "values": {
+        "Pick Coke Can": 72.5,
+        "Move Near": 65.2,
+        "Open / Close Drawer": 38.1,
+        "Average": 58.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table V",
+      "attribution": "author-reported",
+      "trainingData": "Controlled strategy ablation.",
+      "evaluationNotes": "Same number of Maclaurin templates; target-action strategy generally improves average.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-strategy-pi0-target",
+      "paperId": "p043",
+      "method": "pi0-DMS · target-action-diff",
+      "trackId": "dmsvla-ieee-strategy-ablation",
+      "values": {
+        "Pick Coke Can": 73.2,
+        "Move Near": 65.2,
+        "Open / Close Drawer": 38.6,
+        "Average": 59.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table V",
+      "attribution": "author-reported",
+      "trainingData": "Controlled strategy ablation.",
+      "evaluationNotes": "Same number of Maclaurin templates; target-action strategy generally improves average.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-strategy-robovlm-full",
+      "paperId": "p043",
+      "method": "RoboVLM-DMS · full-frame-diff",
+      "trackId": "dmsvla-ieee-strategy-ablation",
+      "values": {
+        "Pick Coke Can": 76.5,
+        "Move Near": 61.3,
+        "Open / Close Drawer": 43.0,
+        "Average": 60.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table V",
+      "attribution": "author-reported",
+      "trainingData": "Controlled strategy ablation.",
+      "evaluationNotes": "Same number of Maclaurin templates; target-action strategy generally improves average.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-strategy-robovlm-target",
+      "paperId": "p043",
+      "method": "RoboVLM-DMS · target-action-diff",
+      "trackId": "dmsvla-ieee-strategy-ablation",
+      "values": {
+        "Pick Coke Can": 77.5,
+        "Move Near": 61.8,
+        "Open / Close Drawer": 43.4,
+        "Average": 60.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table V",
+      "attribution": "author-reported",
+      "trainingData": "Controlled strategy ablation.",
+      "evaluationNotes": "Same number of Maclaurin templates; target-action strategy generally improves average.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-memory-12",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 12 templates",
+      "trackId": "dmsvla-ieee-template-memory",
+      "values": {
+        "Jetson Orin": 41,
+        "H100": 53
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Runtime memory is percentage of baseline; lower is better.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-memory-16",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 16 templates",
+      "trackId": "dmsvla-ieee-template-memory",
+      "values": {
+        "Jetson Orin": 58,
+        "H100": 65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Runtime memory is percentage of baseline; lower is better.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-memory-2",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 2 templates",
+      "trackId": "dmsvla-ieee-template-memory",
+      "values": {
+        "Jetson Orin": 11,
+        "H100": 17
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Runtime memory is percentage of baseline; lower is better.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-memory-4",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 4 templates",
+      "trackId": "dmsvla-ieee-template-memory",
+      "values": {
+        "Jetson Orin": 18,
+        "H100": 27
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Runtime memory is percentage of baseline; lower is better.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-memory-8",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 8 templates",
+      "trackId": "dmsvla-ieee-template-memory",
+      "values": {
+        "Jetson Orin": 29,
+        "H100": 39
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Runtime memory is percentage of baseline; lower is better.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-memory-base",
+      "paperId": "p043",
+      "method": "OpenVLA · 32 blocks",
+      "trackId": "dmsvla-ieee-template-memory",
+      "values": {
+        "Jetson Orin": 100,
+        "H100": 100
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Runtime memory is percentage of baseline; lower is better.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-quality-12",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 12 templates",
+      "trackId": "dmsvla-ieee-template-quality",
+      "values": {
+        "LIBERO Average": 76.5,
+        "SIMPLER Average": 33.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Fewer templates improve efficiency but eventually reduce task quality.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-quality-16",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 16 templates",
+      "trackId": "dmsvla-ieee-template-quality",
+      "values": {
+        "LIBERO Average": 76.6,
+        "SIMPLER Average": 33.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Fewer templates improve efficiency but eventually reduce task quality.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-quality-2",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 2 templates",
+      "trackId": "dmsvla-ieee-template-quality",
+      "values": {
+        "LIBERO Average": 72.9,
+        "SIMPLER Average": 30.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Fewer templates improve efficiency but eventually reduce task quality.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-quality-4",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 4 templates",
+      "trackId": "dmsvla-ieee-template-quality",
+      "values": {
+        "LIBERO Average": 74.6,
+        "SIMPLER Average": 31.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Fewer templates improve efficiency but eventually reduce task quality.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-quality-8",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 8 templates",
+      "trackId": "dmsvla-ieee-template-quality",
+      "values": {
+        "LIBERO Average": 75.9,
+        "SIMPLER Average": 32.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Fewer templates improve efficiency but eventually reduce task quality.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-quality-base",
+      "paperId": "p043",
+      "method": "OpenVLA · 32 blocks",
+      "trackId": "dmsvla-ieee-template-quality",
+      "values": {
+        "LIBERO Average": 76.5,
+        "SIMPLER Average": 32.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Fewer templates improve efficiency but eventually reduce task quality.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-speed-12",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 12 templates",
+      "trackId": "dmsvla-ieee-template-speedup",
+      "values": {
+        "Jetson Orin": 1.56,
+        "H100": 1.41
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Speedup increases as templates decrease.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-speed-16",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 16 templates",
+      "trackId": "dmsvla-ieee-template-speedup",
+      "values": {
+        "Jetson Orin": 1.4,
+        "H100": 1.27
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Speedup increases as templates decrease.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-speed-2",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 2 templates",
+      "trackId": "dmsvla-ieee-template-speedup",
+      "values": {
+        "Jetson Orin": 1.85,
+        "H100": 1.78
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Speedup increases as templates decrease.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-speed-4",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 4 templates",
+      "trackId": "dmsvla-ieee-template-speedup",
+      "values": {
+        "Jetson Orin": 1.75,
+        "H100": 1.66
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Speedup increases as templates decrease.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-speed-8",
+      "paperId": "p043",
+      "method": "OpenVLA-DMS · 8 templates",
+      "trackId": "dmsvla-ieee-template-speedup",
+      "values": {
+        "Jetson Orin": 1.67,
+        "H100": 1.55
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Speedup increases as templates decrease.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dms-ieee-template-speed-base",
+      "paperId": "p043",
+      "method": "OpenVLA · 32 blocks",
+      "trackId": "dmsvla-ieee-template-speedup",
+      "values": {
+        "Jetson Orin": 1.0,
+        "H100": 1.0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://ieeexplore.ieee.org/document/11479850",
+      "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+      "locator": "Table VII",
+      "attribution": "author-reported",
+      "trainingData": "OpenVLA family; template count ablation.",
+      "evaluationNotes": "Speedup increases as templates decrease.",
       "supersedes": ""
     },
     {
@@ -24424,6 +26250,583 @@
       "attribution": "reported-baseline",
       "trainingData": "π0.5使用VLABench/pi05-primitive-10task权重；GR00T-N1.6 3B按10任务数据100k步、batch640、8×H100微调。ActionCache本身不训练，但需成功rollout预填充、校准及成功判定；默认其它实验C3000不可替代主表容量。最终检查点选择未明确。",
       "evaluationNotes": "π0.5；原表动作头6.8 ms；SR误差未报告。 Falcon两行未给NFE；以原表顺序区分，不猜具体步数。 单位转换ms/1000；命中后0步仍运行VLM和检索，非整机零计算。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-exec-active",
+      "paperId": "p046",
+      "method": "VLAbot active regulation",
+      "trackId": "vlabot-rcim-execution-time",
+      "values": {
+        "Gear1": 596.3,
+        "Gear2": 438.1,
+        "Gear3": 468.1,
+        "Peg1": 213.4,
+        "Peg2": 282.2,
+        "Beam": 469.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "Ablation excludes interaction time; manual/RAMP already know assembly process.",
+      "evaluationNotes": "Null means cannot assemble or not reported, not zero.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-exec-manual",
+      "paperId": "p046",
+      "method": "Manual user",
+      "trackId": "vlabot-rcim-execution-time",
+      "values": {
+        "Gear1": 185.2,
+        "Gear2": 520.5,
+        "Gear3": 275.8,
+        "Peg1": 216.7,
+        "Peg2": 181.7,
+        "Beam": 378.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "Ablation excludes interaction time; manual/RAMP already know assembly process.",
+      "evaluationNotes": "Null means cannot assemble or not reported, not zero.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-exec-no-updates",
+      "paperId": "p046",
+      "method": "VLAbot w/o interaction updates",
+      "trackId": "vlabot-rcim-execution-time",
+      "values": {
+        "Gear1": 1054.8,
+        "Gear2": 1255.4,
+        "Gear3": null,
+        "Peg1": 987.2,
+        "Peg2": null,
+        "Beam": null
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "Ablation excludes interaction time; manual/RAMP already know assembly process.",
+      "evaluationNotes": "Null means cannot assemble or not reported, not zero.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-exec-ramp",
+      "paperId": "p046",
+      "method": "RAMP",
+      "trackId": "vlabot-rcim-execution-time",
+      "values": {
+        "Gear1": null,
+        "Gear2": null,
+        "Gear3": null,
+        "Peg1": 175.3,
+        "Peg2": 215.8,
+        "Beam": null
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 5",
+      "attribution": "author-reported",
+      "trainingData": "Ablation excludes interaction time; manual/RAMP already know assembly process.",
+      "evaluationNotes": "Null means cannot assemble or not reported, not zero.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-module-int-1",
+      "paperId": "p046",
+      "method": "VLAbot trial 1",
+      "trackId": "vlabot-rcim-module-interactions",
+      "values": {
+        "Intent-action planner": 15,
+        "Visual detector": 6,
+        "Numeric action planner": 16,
+        "Action monitor": 5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 6",
+      "attribution": "author-reported",
+      "trainingData": "Five-trial system interaction analysis.",
+      "evaluationNotes": "Numeric action planner remains the dominant source of active questions.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-module-int-2",
+      "paperId": "p046",
+      "method": "VLAbot trial 2",
+      "trackId": "vlabot-rcim-module-interactions",
+      "values": {
+        "Intent-action planner": 13,
+        "Visual detector": 6,
+        "Numeric action planner": 15,
+        "Action monitor": 5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 6",
+      "attribution": "author-reported",
+      "trainingData": "Five-trial system interaction analysis.",
+      "evaluationNotes": "Numeric action planner remains the dominant source of active questions.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-module-int-3",
+      "paperId": "p046",
+      "method": "VLAbot trial 3",
+      "trackId": "vlabot-rcim-module-interactions",
+      "values": {
+        "Intent-action planner": 7,
+        "Visual detector": 5,
+        "Numeric action planner": 15,
+        "Action monitor": 5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 6",
+      "attribution": "author-reported",
+      "trainingData": "Five-trial system interaction analysis.",
+      "evaluationNotes": "Numeric action planner remains the dominant source of active questions.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-module-int-4",
+      "paperId": "p046",
+      "method": "VLAbot trial 4",
+      "trackId": "vlabot-rcim-module-interactions",
+      "values": {
+        "Intent-action planner": 6,
+        "Visual detector": 6,
+        "Numeric action planner": 15,
+        "Action monitor": 5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 6",
+      "attribution": "author-reported",
+      "trainingData": "Five-trial system interaction analysis.",
+      "evaluationNotes": "Numeric action planner remains the dominant source of active questions.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-module-int-5",
+      "paperId": "p046",
+      "method": "VLAbot trial 5",
+      "trackId": "vlabot-rcim-module-interactions",
+      "values": {
+        "Intent-action planner": 7,
+        "Visual detector": 6,
+        "Numeric action planner": 14,
+        "Action monitor": 5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Table 6",
+      "attribution": "author-reported",
+      "trainingData": "Five-trial system interaction analysis.",
+      "evaluationNotes": "Numeric action planner remains the dominant source of active questions.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-int-1",
+      "paperId": "p046",
+      "method": "VLAbot trial 1",
+      "trackId": "vlabot-rcim-active-interactions",
+      "values": {
+        "Gear assembly": 42,
+        "Beam assembly": 37.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Beam interactions rise in trials 2–3; non-monotonic evidence retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-int-2",
+      "paperId": "p046",
+      "method": "VLAbot trial 2",
+      "trackId": "vlabot-rcim-active-interactions",
+      "values": {
+        "Gear assembly": 39.5,
+        "Beam assembly": 56
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Beam interactions rise in trials 2–3; non-monotonic evidence retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-int-3",
+      "paperId": "p046",
+      "method": "VLAbot trial 3",
+      "trackId": "vlabot-rcim-active-interactions",
+      "values": {
+        "Gear assembly": 32.3,
+        "Beam assembly": 55
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Beam interactions rise in trials 2–3; non-monotonic evidence retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-int-4",
+      "paperId": "p046",
+      "method": "VLAbot trial 4",
+      "trackId": "vlabot-rcim-active-interactions",
+      "values": {
+        "Gear assembly": 32.6,
+        "Beam assembly": 35
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Beam interactions rise in trials 2–3; non-monotonic evidence retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-int-5",
+      "paperId": "p046",
+      "method": "VLAbot trial 5",
+      "trackId": "vlabot-rcim-active-interactions",
+      "values": {
+        "Gear assembly": 31,
+        "Beam assembly": 35.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Beam interactions rise in trials 2–3; non-monotonic evidence retained.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-success-1",
+      "paperId": "p046",
+      "method": "VLAbot trial 1",
+      "trackId": "vlabot-rcim-learning-success",
+      "values": {
+        "Gear assembly": 2,
+        "Beam assembly": 1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Five sequential trials per task with human-VLA interaction history.",
+      "evaluationNotes": "Count of successfully assembled objects out of three; not percentage.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-success-2",
+      "paperId": "p046",
+      "method": "VLAbot trial 2",
+      "trackId": "vlabot-rcim-learning-success",
+      "values": {
+        "Gear assembly": 2,
+        "Beam assembly": 3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Five sequential trials per task with human-VLA interaction history.",
+      "evaluationNotes": "Count of successfully assembled objects out of three; not percentage.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-success-3",
+      "paperId": "p046",
+      "method": "VLAbot trial 3",
+      "trackId": "vlabot-rcim-learning-success",
+      "values": {
+        "Gear assembly": 3,
+        "Beam assembly": 3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Five sequential trials per task with human-VLA interaction history.",
+      "evaluationNotes": "Count of successfully assembled objects out of three; not percentage.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-success-4",
+      "paperId": "p046",
+      "method": "VLAbot trial 4",
+      "trackId": "vlabot-rcim-learning-success",
+      "values": {
+        "Gear assembly": 3,
+        "Beam assembly": 3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Five sequential trials per task with human-VLA interaction history.",
+      "evaluationNotes": "Count of successfully assembled objects out of three; not percentage.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-success-5",
+      "paperId": "p046",
+      "method": "VLAbot trial 5",
+      "trackId": "vlabot-rcim-learning-success",
+      "values": {
+        "Gear assembly": 3,
+        "Beam assembly": 3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Five sequential trials per task with human-VLA interaction history.",
+      "evaluationNotes": "Count of successfully assembled objects out of three; not percentage.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-time-1",
+      "paperId": "p046",
+      "method": "VLAbot trial 1",
+      "trackId": "vlabot-rcim-learning-time",
+      "values": {
+        "Gear assembly": 1360.11,
+        "Beam assembly": 1177.24
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial real-robot protocol.",
+      "evaluationNotes": "Uses table Avg. Time values; prose endpoints conflict and are not substituted.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-time-2",
+      "paperId": "p046",
+      "method": "VLAbot trial 2",
+      "trackId": "vlabot-rcim-learning-time",
+      "values": {
+        "Gear assembly": 1079.76,
+        "Beam assembly": 1147.24
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial real-robot protocol.",
+      "evaluationNotes": "Uses table Avg. Time values; prose endpoints conflict and are not substituted.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-time-3",
+      "paperId": "p046",
+      "method": "VLAbot trial 3",
+      "trackId": "vlabot-rcim-learning-time",
+      "values": {
+        "Gear assembly": 828.2,
+        "Beam assembly": 941.19
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial real-robot protocol.",
+      "evaluationNotes": "Uses table Avg. Time values; prose endpoints conflict and are not substituted.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-time-4",
+      "paperId": "p046",
+      "method": "VLAbot trial 4",
+      "trackId": "vlabot-rcim-learning-time",
+      "values": {
+        "Gear assembly": 606.89,
+        "Beam assembly": 608.54
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial real-robot protocol.",
+      "evaluationNotes": "Uses table Avg. Time values; prose endpoints conflict and are not substituted.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-time-5",
+      "paperId": "p046",
+      "method": "VLAbot trial 5",
+      "trackId": "vlabot-rcim-learning-time",
+      "values": {
+        "Gear assembly": 500.86,
+        "Beam assembly": 498.06
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial real-robot protocol.",
+      "evaluationNotes": "Uses table Avg. Time values; prose endpoints conflict and are not substituted.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-upd-1",
+      "paperId": "p046",
+      "method": "VLAbot trial 1",
+      "trackId": "vlabot-rcim-interaction-updates",
+      "values": {
+        "Gear assembly": 8,
+        "Beam assembly": 6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Interaction updates are a human/agent intervention burden metric.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-upd-2",
+      "paperId": "p046",
+      "method": "VLAbot trial 2",
+      "trackId": "vlabot-rcim-interaction-updates",
+      "values": {
+        "Gear assembly": 6,
+        "Beam assembly": 8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Interaction updates are a human/agent intervention burden metric.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-upd-3",
+      "paperId": "p046",
+      "method": "VLAbot trial 3",
+      "trackId": "vlabot-rcim-interaction-updates",
+      "values": {
+        "Gear assembly": 3,
+        "Beam assembly": 10
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Interaction updates are a human/agent intervention burden metric.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-upd-4",
+      "paperId": "p046",
+      "method": "VLAbot trial 4",
+      "trackId": "vlabot-rcim-interaction-updates",
+      "values": {
+        "Gear assembly": 3,
+        "Beam assembly": 3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Interaction updates are a human/agent intervention burden metric.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vlabot-trial-upd-5",
+      "paperId": "p046",
+      "method": "VLAbot trial 5",
+      "trackId": "vlabot-rcim-interaction-updates",
+      "values": {
+        "Gear assembly": 2,
+        "Beam assembly": 3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-20",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+      "locator": "Tables 3–4",
+      "attribution": "author-reported",
+      "trainingData": "Same five-trial protocol.",
+      "evaluationNotes": "Interaction updates are a human/agent intervention burden metric.",
       "supersedes": ""
     },
     {

@@ -1,0 +1,22 @@
+{
+  "id": "r-dms-ieee-libero-univla-dms",
+  "paperId": "p043",
+  "method": "UniVLA-DMS",
+  "trackId": "dmsvla-ieee-libero-main",
+  "values": {
+    "Spatial": 95.6,
+    "Object": 98.8,
+    "Goal": 93.9,
+    "Long": 94.1,
+    "Average": 95.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "Corresponding base model/public repo configuration; DMS variant uses same loss and training hyperparameters as base.",
+  "evaluationNotes": "DMS is not uniformly higher; negative cells are retained.",
+  "supersedes": ""
+}

@@ -4,12 +4,12 @@
     "id": "p043",
     "name": "DMS-VLA",
     "title": "Dynamic Maclaurin-Series-Based Vision-Language-Action Model",
-    "team": "Chong Yu、Zhongxue Gan作者团队\n完整署名机构未从原始全文核验",
+    "team": "Chong Yu、Zhongxue Gan｜Fudan University, College of Intelligent Robotics and Advanced Manufacturing",
     "venue": "IEEE RA-L",
     "publicationType": "journal",
-    "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259\nDOI:10.1109/LRA.2026.3683324",
+    "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259；online 2026-04-13；DOI:10.1109/LRA.2026.3683324",
     "firstPublished": null,
-    "dateNote": "未核验首发；已查到2026-04上线",
+    "dateNote": "Received 2025-08-09；accepted 2026-03-11；online 2026-04-13；current version 2026-05-27",
     "collectionMonth": "2026-07",
     "versionNote": "7月卷期；非7月才首次提出",
     "topics": [
@@ -20,14 +20,14 @@
       "compression"
     ],
     "priority": "overview",
-    "contribution": "通过Maclaurin级数式参数化共享权重/动态计算，探索VLA结构压缩与推理效率。",
-    "findings": "未填写未经原文核验的压缩率、成功率或加速比。\n当前仅核验出版条目及摘要层面的结构设计；IEEE原始全文受访问限制。",
-    "limitations": "量化结论证据不足，不能依据二手宣传数字调整主干。期刊卷期与首次上线时间分开记录。",
-    "insight": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
-    "readingFocus": "摘要与结构动机；有全文后再看量化口径。",
-    "evidence": "metadata",
-    "evidenceNote": "2026-09-20再次检索IEEE/作者/学术索引渠道；仍只有正式摘要与部分作者材料可稳定读取。按author-materials-partial编辑政策继续needs_review，不能把摘要加速字符串或二手页面当完整实验复核。",
-    "hasCautionaryResult": false,
+    "contribution": "用跨层共享的Maclaurin-series weight templates与层相关系数替代每层独立Transformer权重，并依据输入复杂度动态选择参与计算的模板项数，以联合降低VLA存储和推理成本。",
+    "findings": "LIBERO与SIMPLER中DMS变体总体与对应原模型接近，部分任务略升、部分略降；OpenVLA-DMS在LIBERO平均仍为76.5%，π0-DMS为94.3%。Fig.6的BF16 DMS加速约1.21×–1.56×；Table IV中叠加INT4的OpenVLA-DMS达到Jetson 2.96×、H100 2.64×。",
+    "limitations": "DMS并非逐项无损：例如Octo-DMS的LIBERO Spatial 78.7低于78.9、OpenVLA-DMS的Object/Goal/Long均略低；模板越少速度和内存越好但成功率下降。摘要/结论中的“25%-55%×”字符串存在排版/语义歧义，本站只采用表格和带数值标签的图。",
+    "insight": "共享模板解决参数冗余，动态项数解决输入无关的固定计算预算；两者需要和量化、缓存等额外优化分开归因。真正有价值的是成功率—速度—运行内存三轴权衡，而不是单一最大加速倍率。",
+    "readingFocus": "先看Figs.1–4理解共享模板和target-action-diff，再读Tables I–IV区分模型质量与额外量化收益，最后用Fig.6和Tables V–VII检查动态策略、复杂度度量与模板数量的性能—效率折中。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20根据用户提供的IEEE Xplore完整8页正式PDF逐页核读，并以IEEE Xplore公开条目作为可追溯来源；非独立实验复现。",
+    "hasCautionaryResult": true,
     "sources": [
       {
         "label": "官方 / 作者来源",
@@ -36,6 +36,10 @@
       {
         "label": "DOI",
         "url": "https://doi.org/10.1109/LRA.2026.3683324"
+      },
+      {
+        "label": "IEEE Xplore · 正式全文入口",
+        "url": "https://ieeexplore.ieee.org/document/11479850"
       }
     ],
     "paperUrl": "https://doi.org/10.1109/LRA.2026.3683324",
@@ -47,11 +51,11 @@
     "firstArxivSource": "",
     "latestArxivVersion": null,
     "latestArxivAt": null,
-    "status": "legacy",
+    "status": "published",
     "venue": "IEEE RA-L",
     "doi": "10.1109/LRA.2026.3683324",
-    "acceptedAt": null,
-    "publishedAt": null,
+    "acceptedAt": "2026-03-11",
+    "publishedAt": "2026-04-13",
     "lastCheckedAt": "2026-09-20",
     "history": [
       {
@@ -61,187 +65,265 @@
         "venue": "IEEE RA-L",
         "source": "https://doi.org/10.1109/LRA.2026.3683324",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
-      }
-    ],
-    "alerts": []
-  },
-  "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-20",
-    "verifiedAt": "2026-09-20",
-    "version": "IEEE RA-L正式摘要＋既有作者材料；2026-09-20再次检索全文，仍未取得可稳定阅读全文的一手版本",
-    "sections": [
-      {
-        "id": "scope",
-        "title": "证据范围：作者说明可解释机制，但不是期刊全文",
-        "body": "目前可核读的材料包括IEEE正式摘要，以及署名“余翀（复旦大学、眸深智能）等投稿”的2026年3月30日技术说明。说明中的标题为Dynamic Maclaurin-Series-Based Embodied Model，期刊题名为Dynamic Maclaurin-Series-Based Vision-Language-Action Model；两者围绕同类动态共享模板机制，但不能据此认定所有实验与最终版本逐项一致。\n以下机制解释主要依据作者供稿，正式摘要只支持共享权重、动态项数和部署评估等概括。精确训练配方、完整消融与误差条尚未核验，因此本页保留“受限材料导读”，不作为期刊全文已完成精读的记录。",
-        "sources": [
-          {
-            "label": "作者供稿题名、署名与方法介绍；IEEE正式摘要",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
-          {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
-          }
-        ]
       },
       {
+        "kind": "accepted",
+        "date": "2026-03-11",
+        "observedAt": "2026-09-20",
+        "venue": "IEEE Robotics and Automation Letters",
+        "source": "https://ieeexplore.ieee.org/document/11479850",
+        "note": "正式PDF首页Received/accepted信息。"
+      },
+      {
+        "kind": "published",
+        "date": "2026-04-13",
+        "observedAt": "2026-09-20",
+        "venue": "IEEE Robotics and Automation Letters",
+        "source": "https://ieeexplore.ieee.org/document/11479850",
+        "note": "正式PDF首页Date of publication 13 April 2026。"
+      }
+    ],
+    "alerts": [
+      "正式PDF摘要/结论写“up to 25%-55%× speedups”，但Fig.6带标签的BF16 DMS比值为约1.21×–1.56×，Table IV的INT4+DMS为Jetson 2.96× / H100 2.64×；本站不将该字符串自行标准化成25×–55×。"
+    ]
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "IEEE Robotics and Automation Letters 11(7), July 2026, pp.8252–8259；完整正式PDF；Tables I–VII、Figs.1–6",
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://ieeexplore.ieee.org/document/11479850"
+    },
+    "sections": [
+      {
         "id": "problem",
-        "title": "问题定位：层间参数存储与每次推理计算不是一件事",
-        "body": "常规Transformer每层保存独立的投影和前馈权重。DMS的思路是让多个层共用少量权重模板，各层只保留较小的系数集合；进一步根据输入复杂度选择需要参与计算的模板项数。它分别针对存储冗余与输入无关的固定计算预算。\n这和把所有层直接替换成同一组权重不同，因为层相关系数仍然保留差异；也不等同于量化，量化主要改变数值精度。理解工作时先区分“少存多少参数”和“少执行多少运算”，不能从压缩比例直接推出相同的端到端加速比例。",
+        "title": "问题：VLA的层间参数冗余与固定计算预算同时限制部署",
+        "body": "论文把VLA部署瓶颈拆成两类：Transformer每层独立Q/K/V、输出投影与FFN权重带来高常驻内存，而所有输入都走固定深度/固定计算又浪费简单场景的算力。DMS-VLA不是只做token缓存或单独量化，而是直接重参数化Transformer权重，并让每次输入动态决定使用多少共享模板。理解结果时必须分别记录模型质量、平均每帧延迟加速和运行内存，不能从其中一个指标替代另外两个。",
         "sources": [
           {
-            "label": "作者供稿§02–03；IEEE摘要",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
-          {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
+            "label": "§I–II；正式全文",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
           }
         ]
       },
       {
         "id": "templates",
-        "title": "共享模板怎样保留层与投影之间的差异",
-        "body": "作者说明用全局共享模板和每层专属的可学习标量进行组合，在形状兼容的Q、K、V投影之间进一步复用模板。可以把它理解为给原来每层独立的权重族加上一个共享基底：层之间共享大块参数，但通过组合系数表达不同功能。\n这种理解有助于看清结构，却不能替代正文中的精确张量运算。模板是否按矩阵形状分组、FFN不同投影如何处理、是否显式物化组合后的权重、模板数变化是否需要重新训练，现有材料没有足够细节，不能据常见低秩分解配方补造实现。",
+        "title": "共享Maclaurin模板：跨层共享大矩阵，层差异保留在系数",
+        "body": "§III-A把每层FFN、输出投影及Q/K/V权重表示为少量共享Maclaurin-series weight templates的线性组合，每层仍有独立可学习系数；Q/K/V因形状一致可共享同一模板组，FFN和输出投影使用各自模板组。作者的内存论证来自K个Transformer块远多于模板数M/N/L，而系数只是标量。这个结构与INT4量化不同：前者减少需要存储的独立大矩阵，后者改变数值精度。",
         "sources": [
           {
-            "label": "作者供稿§02、图2",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
-          {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
+            "label": "§III-A，Eqs.1–3，Figs.1–2",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
           }
         ]
       },
       {
         "id": "dynamic",
-        "title": "动态项数：根据任务相关观察分配计算，而非知道未来动作",
-        "body": "供稿称target-action-diff先利用语言中的目标对象与动作信息，减少无关背景和视觉token的影响，再对相关区域计算帧间变化，据此调节参与计算的级数项数。简单、变化较小的输入使用较少项，复杂变化使用更多项。\n这里的“action”来自任务语义或已观测信息，不应理解成部署前就知道真实未来专家动作。作为机制分析，任何复杂度估计都可能漏掉关键接触变化，因此需要分别评估估计开销、项数策略与动作误差；现有摘要没有给出足以复刻阈值或动态调度的公式。",
+        "title": "动态展开：full-frame-diff与target-action-diff按输入复杂度选择项数",
+        "body": "§III-B提出两类复杂度信号。full-frame-diff直接比较相邻帧；target-action-diff先利用语言提示抽取目标对象和相关动作，过滤背景与无关视觉token，再计算相邻帧差异。差异越小使用越少的低阶模板，变化越复杂则加入更多高阶模板。论文还比较MSE、Mahalanobis及带IoU权重的版本；因此“动态”并不是提前知道未来专家动作，而是根据当前语言和观察得到的任务相关变化分配计算。",
         "sources": [
           {
-            "label": "作者供稿§03、图3–4；IEEE摘要",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
-          {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
+            "label": "§III-B，Figs.3–4",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
           }
         ]
       },
       {
         "id": "training",
-        "title": "训练与数学边界：级数动机不能代替近似误差证明",
-        "body": "供稿明确提到模板与层系数可学习，但没有完整交代初始化、监督目标、蒸馏或联合微调流程。不能因其用于已有VLA就假定完全免训练，也不能假定动态项数在所有任务上严格无损。训练成本与部署节省需要分别报告。\n数学上，无限可微本身并不足以保证函数等于其麦克劳林级数；还需要相应解析性或余项收敛条件。更不能直接从标量函数展开推出任意Transformer权重族都可由有限模板精确表示。该处应把级数看作建模动机，并等待正式正文的假设与近似分析。",
+        "title": "训练与部署条件：DMS变体沿用原模型损失和超参数",
+        "body": "实验使用PyTorch 2.2.0，训练/微调在H100集群上完成；部署使用TensorRT 8.6（H100、RTX4090）与JetPack 6.0（Jetson AGX Orin）。脚注明确每个DMS变体采用与对应原模型相同的loss和训练超参数，早期尝试过原权重与Maclaurin近似之间的辅助L2，后来发现只用原始loss也能收敛。Table IV另有INT4的OpenVLA-DMS，必须与BF16 DMS单独归因。",
         "sources": [
           {
-            "label": "作者供稿§02；本节末段为数学边界分析，不是作者实验结论",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
+            "label": "§IV开头与脚注2",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "评测协议：LIBERO、SIMPLER与真实机器人三类成功口径不同",
+        "body": "LIBERO每个suite按6个随机种子×10任务×50 episodes报告，论文写为3000 trials；SIMPLER采用Visual Matching并遵循各任务默认试验数。真实ALOHA和Emergen各评估put balls into box、clean table、stack bowls三任务，但其“success rate”按任务步骤计分：每完成一个步骤获得分数，最终SR为earned points/total points，因此更接近分步完成率而不是整段二值episode成功。本站将三者分成独立protocol。",
+        "sources": [
           {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
+            "label": "§IV-A；Tables I–III",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
           }
         ]
       },
       {
         "id": "results",
-        "title": "实验材料：保留指标语义，不沿用宣传式全面领先",
-        "body": "IEEE摘要确认研究涉及LIBERO、SIMPLER及ALOHA、Emergen真实平台，并在H100、RTX4090和Jetson AGX Orin上检查部署。作者供稿给出若干接近原模型的成功率及更低内存占用，但没有同时提供所有行的版本、示范预算、种子和完整评测协议。\n因此这些材料足以说明作者主张的性能—资源折中，尚不足以在本站新建正式排名记录。尤其0.1个百分点的差异不能在缺少重复实验与统计信息时解释成稳定优越；“保留任务表现”也不意味着每个样本、每种分布或全部动态场景都完全无损。",
+        "title": "主结果：DMS总体接近原模型，但不是每个单元格都更高",
+        "body": "Table I中π0从94.2%到π0-DMS 94.3%、UniVLA从95.5%到95.6%、OpenVLA-OFT从97.1%到97.2%，但Octo平均仍75.1%、OpenVLA平均仍76.5%，且部分suite略降。Table II的SIMPLER平均提升也很小，例如π0 58.8→59.0、RoboVLM 60.8→60.9。Table III真实平台同样是小幅变化。这支持“压缩后大体保持质量”，不支持“DMS对所有模型和任务都提升”。",
         "sources": [
           {
-            "label": "IEEE正式摘要；作者供稿§04",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
-          {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
+            "label": "Tables I–III",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
           }
         ]
       },
       {
-        "id": "runtime",
-        "title": "速度与内存数字为何需要更谨慎地读取",
-        "body": "作者供稿将不同硬件、不同模板数与INT4量化混合展示，而IEEE摘要的加速百分比还存在排版歧义。模型常驻参数、峰值运行显存、缓存占用和额外工作区不是同一项测量，极限压缩配置也不应与另一个配置的最好速度拼成一个系统。\n正确的比较应固定输入视角、动作片段、精度、硬件和批量，再区分模型前向时间、吞吐、观察到动作延迟与实际闭环成功。以上是对证据的分析要求，不表示这些条件已经在本站全部核验；因此本页不从供稿中选最大的倍率填入榜单。",
+        "id": "deployment",
+        "title": "部署收益：BF16 DMS本身与INT4+DMS的倍率必须分开",
+        "body": "Fig.6直接给出DMS相对对应naive VLA的每帧平均延迟加速：LIBERO上Jetson/RTX4090/H100分别约1.45–1.56×、1.37–1.50×、1.27–1.41×，SIMPLER约1.40–1.53×、1.33–1.46×、1.21–1.38×。Table IV在统一OpenVLA比较中，BF16 OpenVLA-DMS为Jetson 1.56×、H100 1.41×；INT4 OpenVLA-DMS为2.96×/2.64×，这是DMS叠加量化后的系统，不应归因成DMS单独收益。",
         "sources": [
           {
-            "label": "作者供稿硬件对照表；IEEE摘要；指标解释为编辑分析",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
-          {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
+            "label": "Fig.6；Table IV",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
           }
         ]
       },
       {
-        "id": "reading",
-        "title": "读图路线与结论：已能理解结构，尚不能复现完整实验",
-        "body": "先沿供稿图2找共享模板与层系数，再沿图3–4找项数选择所依赖的观察和语言信息。读者可以用两个问题检查理解：固定全部系数时还保留了多少层差异？即使省下模板运算，区域筛选与调度是否会抵消一部分节省？这两个问题分别对应表示容量与运行时收益。\n目前可以支持的总结是：工作尝试通过共享权重表达和输入相关计算改善VLA部署成本。正式期刊版训练细节、严格近似条件、消融和全协议数值仍需正文补充；本页不把作者技术供稿冒充独立复现或完整同行评审证据。",
+        "id": "ablation",
+        "title": "消融：任务相关差异、IoU加权和12个模板构成推荐折中",
+        "body": "Table V显示target-action-diff在两套DMS模型上总体优于full-frame-diff；Table VI中MSE-IoU与Mahalanobis-IoU优于未加IoU的对应度量。Table VII最清楚展示质量—效率交换：12模板时LIBERO/SIMPLER平均76.5/33.0，Jetson/H100为1.56×/1.41×且运行内存为基线41%/53%；降到2模板时加速1.85×/1.78×、内存11%/17%，但成功率跌到72.9/30.3。作者因此推荐12模板而非追求最大压缩。",
         "sources": [
           {
-            "label": "作者供稿图2–4；IEEE正式摘要",
-            "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-          },
+            "label": "Tables V–VII",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "证据边界：数学动机、摘要加速字符串与统计显著性都要谨慎",
+        "body": "论文将Maclaurin级数作为共享权重的建模动机，但工程有效性主要由实验支持，而不是一个对任意Transformer权重族的严格有限项逼近定理。主表大量差异只有0.1–0.4个百分点，论文没有为这些单元格提供置信区间，因此不应宣称稳定显著提升。正式PDF摘要和结论中的“25%-55%×”存在明显排版/单位歧义；本站只使用Table IV、Table VII和Fig.6中明确标注的比值与内存百分比。",
+        "sources": [
           {
-            "label": "IEEE正式摘要；非全文",
-            "url": "https://xplorestaging.ieee.org/document/11479850/"
+            "label": "Abstract、§III、§IV、§V",
+            "url": "https://ieeexplore.ieee.org/document/11479850"
           }
         ]
       }
     ],
-    "coverage": {
-      "level": "limited",
-      "scope": "author-materials-partial",
-      "source": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D"
-    },
     "figures": [
       {
-        "title": "作者供稿图2–4：共享模板与动态调用",
-        "url": "https://course.zhidx.com/download/detail/ZGFkMmQzMDk5MWRlNThiNjAxYTM%3D",
-        "caption": "仅链接作者供稿中的原图，不镜像图片；该材料题名与期刊题名有差别，不能认定图号与最终期刊版本完全相同。"
+        "title": "Fig.2 · shared Maclaurin-series weight templates",
+        "url": "https://ieeexplore.ieee.org/document/11479850",
+        "caption": "跨Transformer块共享模板、每层保留可学习系数。"
+      },
+      {
+        "title": "Fig.4 · target-action-diff",
+        "url": "https://ieeexplore.ieee.org/document/11479850",
+        "caption": "利用语言提取任务相关对象/动作后过滤视觉token，再计算相邻帧差异。"
+      },
+      {
+        "title": "Fig.6 · deployment speedup",
+        "url": "https://ieeexplore.ieee.org/document/11479850",
+        "caption": "带数值标签的BF16 DMS相对naive模型加速；本站以图中标签而非摘要歧义字符串为准。"
       }
     ],
     "tables": [
       {
-        "title": "已经明确的机制与仍待正文核验的部分",
+        "title": "DMS主结果摘要",
         "columns": [
-          "问题",
-          "可确认的描述",
-          "尚未确认"
+          "设置",
+          "原模型",
+          "DMS",
+          "说明"
         ],
         "rows": [
           [
-            "层间表达",
-            "共享模板＋层相关系数",
-            "全部张量公式、近似误差条件"
+            "LIBERO π0 Avg",
+            "94.2%",
+            "94.3%",
+            "小幅提升"
           ],
           [
-            "动态计算",
-            "语言目标与相关观察差分参与项数选择",
-            "阈值、调度开销与失败检测"
+            "LIBERO OpenVLA Avg",
+            "76.5%",
+            "76.5%",
+            "总体持平，若干suite略降"
           ],
           [
-            "实验",
-            "仿真与真实平台均有作者报告",
-            "完整版本、预算、种子、误差条"
+            "SIMPLER RoboVLM Avg",
+            "60.8%",
+            "60.9%",
+            "小幅提升"
           ],
           [
-            "部署",
-            "多类GPU与边缘平台检查",
-            "同配置峰值显存与闭环时延"
+            "ALOHA OpenVLA Avg",
+            "82.6%",
+            "82.8%",
+            "分步计分SR"
           ]
         ],
-        "locator": "IEEE摘要与2026-03-30作者供稿",
-        "caption": "证据范围表，不是性能排名。数学与工程分析已显式区别于作者报告。"
+        "locator": "Tables I–III",
+        "caption": "不同benchmark/平台分轨，不合并平均。"
+      },
+      {
+        "title": "OpenVLA效率比较",
+        "columns": [
+          "配置",
+          "LIBERO Avg",
+          "Jetson",
+          "H100"
+        ],
+        "rows": [
+          [
+            "OpenVLA BF16",
+            "76.5%",
+            "1.00×",
+            "1.00×"
+          ],
+          [
+            "OpenVLA-DMS BF16",
+            "76.5%",
+            "1.56×",
+            "1.41×"
+          ],
+          [
+            "OpenVLA-DMS INT4",
+            "75.7%",
+            "2.96×",
+            "2.64×"
+          ]
+        ],
+        "locator": "Table IV",
+        "caption": "INT4+DMS包含额外量化，不能视为DMS单因素。"
+      },
+      {
+        "title": "模板数量折中",
+        "columns": [
+          "模板数",
+          "LIBERO",
+          "SIMPLER",
+          "Jetson speedup",
+          "Jetson memory"
+        ],
+        "rows": [
+          [
+            "32 baseline",
+            "76.5%",
+            "32.7%",
+            "1.00×",
+            "100%"
+          ],
+          [
+            "12 DMS",
+            "76.5%",
+            "33.0%",
+            "1.56×",
+            "41%"
+          ],
+          [
+            "2 DMS",
+            "72.9%",
+            "30.3%",
+            "1.85×",
+            "11%"
+          ]
+        ],
+        "locator": "Table VII",
+        "caption": "减少模板继续提速/省内存，但会牺牲任务表现。"
       }
     ],
     "benchmarkReview": {
-      "status": "protocol-unresolved",
+      "status": "extracted",
       "checkedAt": "2026-09-20",
-      "note": "2026-09-20再次检索IEEE/作者/学术索引渠道；仍只有正式摘要与部分作者材料可稳定读取。按author-materials-partial编辑政策继续needs_review，不能把摘要加速字符串或二手页面当完整实验复核。"
+      "note": "用户提供IEEE Xplore完整正式PDF后完成全文复核；Tables I–VII与Fig.6精确落库。成功率、分步真实任务得分、speedup与runtime memory分轨；摘要“25%-55%×”不作为标准化榜单值。"
     }
   }
 }

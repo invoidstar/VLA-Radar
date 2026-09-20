@@ -1,0 +1,19 @@
+{
+  "id": "r-vlabot-trial-time-2",
+  "paperId": "p046",
+  "method": "VLAbot trial 2",
+  "trackId": "vlabot-rcim-learning-time",
+  "values": {
+    "Gear assembly": 1079.76,
+    "Beam assembly": 1147.24
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+  "sourceVersion": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268",
+  "locator": "Tables 3–4",
+  "attribution": "author-reported",
+  "trainingData": "Same five-trial real-robot protocol.",
+  "evaluationNotes": "Uses table Avg. Time values; prose endpoints conflict and are not substituted.",
+  "supersedes": ""
+}

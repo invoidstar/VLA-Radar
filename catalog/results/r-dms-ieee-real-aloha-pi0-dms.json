@@ -1,0 +1,21 @@
+{
+  "id": "r-dms-ieee-real-aloha-pi0-dms",
+  "paperId": "p043",
+  "method": "pi0-DMS",
+  "trackId": "dmsvla-ieee-real-aloha",
+  "values": {
+    "Put Balls Into Box": 82.8,
+    "Clean Table": 76.3,
+    "Stack Bowls": 71.0,
+    "Average": 76.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+  "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+  "supersedes": ""
+}

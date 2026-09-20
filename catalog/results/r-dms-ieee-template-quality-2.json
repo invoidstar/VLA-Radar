@@ -1,0 +1,19 @@
+{
+  "id": "r-dms-ieee-template-quality-2",
+  "paperId": "p043",
+  "method": "OpenVLA-DMS · 2 templates",
+  "trackId": "dmsvla-ieee-template-quality",
+  "values": {
+    "LIBERO Average": 72.9,
+    "SIMPLER Average": 30.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table VII",
+  "attribution": "author-reported",
+  "trainingData": "OpenVLA family; template count ablation.",
+  "evaluationNotes": "Fewer templates improve efficiency but eventually reduce task quality.",
+  "supersedes": ""
+}

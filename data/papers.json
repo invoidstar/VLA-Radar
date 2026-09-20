@@ -1829,12 +1829,12 @@
       "id": "p043",
       "name": "DMS-VLA",
       "title": "Dynamic Maclaurin-Series-Based Vision-Language-Action Model",
-      "team": "Chong Yu、Zhongxue Gan作者团队\n完整署名机构未从原始全文核验",
+      "team": "Chong Yu、Zhongxue Gan｜Fudan University, College of Intelligent Robotics and Advanced Manufacturing",
       "venue": "IEEE RA-L",
       "publicationType": "journal",
-      "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259\nDOI:10.1109/LRA.2026.3683324",
+      "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259；online 2026-04-13；DOI:10.1109/LRA.2026.3683324",
       "firstPublished": null,
-      "dateNote": "未核验首发；已查到2026-04上线",
+      "dateNote": "Received 2025-08-09；accepted 2026-03-11；online 2026-04-13；current version 2026-05-27",
       "collectionMonth": "2026-07",
       "versionNote": "7月卷期；非7月才首次提出",
       "topics": [
@@ -1845,14 +1845,14 @@
         "compression"
       ],
       "priority": "overview",
-      "contribution": "通过Maclaurin级数式参数化共享权重/动态计算，探索VLA结构压缩与推理效率。",
-      "findings": "未填写未经原文核验的压缩率、成功率或加速比。\n当前仅核验出版条目及摘要层面的结构设计；IEEE原始全文受访问限制。",
-      "limitations": "量化结论证据不足，不能依据二手宣传数字调整主干。期刊卷期与首次上线时间分开记录。",
-      "insight": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
-      "readingFocus": "摘要与结构动机；有全文后再看量化口径。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-20再次检索IEEE/作者/学术索引渠道；仍只有正式摘要与部分作者材料可稳定读取。按author-materials-partial编辑政策继续needs_review，不能把摘要加速字符串或二手页面当完整实验复核。",
-      "hasCautionaryResult": false,
+      "contribution": "用跨层共享的Maclaurin-series weight templates与层相关系数替代每层独立Transformer权重，并依据输入复杂度动态选择参与计算的模板项数，以联合降低VLA存储和推理成本。",
+      "findings": "LIBERO与SIMPLER中DMS变体总体与对应原模型接近，部分任务略升、部分略降；OpenVLA-DMS在LIBERO平均仍为76.5%，π0-DMS为94.3%。Fig.6的BF16 DMS加速约1.21×–1.56×；Table IV中叠加INT4的OpenVLA-DMS达到Jetson 2.96×、H100 2.64×。",
+      "limitations": "DMS并非逐项无损：例如Octo-DMS的LIBERO Spatial 78.7低于78.9、OpenVLA-DMS的Object/Goal/Long均略低；模板越少速度和内存越好但成功率下降。摘要/结论中的“25%-55%×”字符串存在排版/语义歧义，本站只采用表格和带数值标签的图。",
+      "insight": "共享模板解决参数冗余，动态项数解决输入无关的固定计算预算；两者需要和量化、缓存等额外优化分开归因。真正有价值的是成功率—速度—运行内存三轴权衡，而不是单一最大加速倍率。",
+      "readingFocus": "先看Figs.1–4理解共享模板和target-action-diff，再读Tables I–IV区分模型质量与额外量化收益，最后用Fig.6和Tables V–VII检查动态策略、复杂度度量与模板数量的性能—效率折中。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20根据用户提供的IEEE Xplore完整8页正式PDF逐页核读，并以IEEE Xplore公开条目作为可追溯来源；非独立实验复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "官方 / 作者来源",
@@ -1861,6 +1861,10 @@
         {
           "label": "DOI",
           "url": "https://doi.org/10.1109/LRA.2026.3683324"
+        },
+        {
+          "label": "IEEE Xplore · 正式全文入口",
+          "url": "https://ieeexplore.ieee.org/document/11479850"
         }
       ],
       "paperUrl": "https://doi.org/10.1109/LRA.2026.3683324",
@@ -2108,9 +2112,9 @@
       "team": "香港理工大学相关工业合作团队\nXueting Wang、Xiwen Dengxiong、Shi Bai、Pai Zheng、Yunbo Zhang",
       "venue": "RCIM",
       "publicationType": "journal",
-      "publicationStatus": "Elsevier Robotics and Computer-Integrated Manufacturing 100:103268\nDOI:10.1016/j.rcim.2026.103268",
+      "publicationStatus": "Robotics and Computer-Integrated Manufacturing 100 (2026) 103268；online 2026-02-16；DOI:10.1016/j.rcim.2026.103268",
       "firstPublished": null,
-      "dateNote": "首次在线日期未核验",
+      "dateNote": "Received 2025-08-13；revised 2026-01-14；accepted 2026-02-12；online 2026-02-16",
       "collectionMonth": "2026-08",
       "versionNote": "2026年8月卷期｜依据机构出版页/摘要",
       "topics": [
@@ -2122,14 +2126,14 @@
         "AR"
       ],
       "priority": "overview",
-      "contribution": "结合多专家模型、增强现实和人类指导，组织工业装配的任务解释、反馈和执行协作。",
-      "findings": "作者在齿轮装配与插销案例中报告，机器人可在5次尝试内学习目标操作；随交互推进，完成耗时降低。\n公开摘要未给出统一成功率/耗时数值，不补造。",
-      "limitations": "包含人类提示、指导与交互，不是5条无人干预示范实现自主泛化；证据以两个装配案例和公开摘要为主。",
-      "insight": "人机协作的少次尝试应连同人类指导和纠正一起计量。不要把交互式学习误当成纯自主少样本泛化。",
-      "readingFocus": "人类介入点；增强现实反馈；5次尝试包含的监督成本。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-20确认论文Open Access身份及正式摘要，但当前自动化全文入口仍返回403，PolyU页面仅提供摘要。按official-abstract-only编辑政策继续needs_review，不把within five trials升级成未读全文的完整实验结论。",
-      "hasCautionaryResult": false,
+      "contribution": "提出面向长程工业装配的人—VLA交互框架：AR界面、分布式多模态数据层、高层LLM规划器与由四个模块组成的VLA agent协同，使机器人能主动向人请求文本、视觉和动作指导并逐轮减少依赖。",
+      "findings": "五轮真机试验中，齿轮装配从2/3成功对象提升到第3轮起3/3，beam/peg装配从第1轮1/3到第2轮起3/3；Table 3/4报告Avg. Time分别1360.11→500.86 s和1177.24→498.06 s。主动调节版本在Table 5能完成更多子任务，但绝对执行时间并非普遍优于人工或RAMP。",
+      "limitations": "系统显式依赖人类文本、视觉和示范交互，以及远程高算力模型；active interactions在beam任务中前3轮并非单调下降。正文§6.4给出1264→450 s、1177→450 s的叙述，与Tables 3–4的1360.11→500.86、1177.24→498.06不一致，本站采用原表并保留冲突。",
+      "insight": "VLAbot的核心不是“5-shot自主学习”，而是把求助、计划、视觉定位、数值动作和完成监控组织成可持续的人机闭环。评估应同时计量任务完成、人工交互次数、更新次数和执行时间，而不是只看最终能否装配。",
+      "readingFocus": "先读Fig.1/2理解系统与分布式数据流，再读Fig.4的四模块VLA agent和§5三类交互，最后用Tables 3–6核对五轮学习、人工成本和active regulation消融；特别注意正文时间叙述与原表冲突。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20根据用户提供的ScienceDirect完整13页正式PDF逐页核读，并以ScienceDirect公开文章页作为可追溯来源；非独立实验复现。",
+      "hasCautionaryResult": true,
       "sources": [
         {
           "label": "官方 / 作者来源",
@@ -2138,6 +2142,10 @@
         {
           "label": "DOI",
           "url": "https://doi.org/10.1016/j.rcim.2026.103268"
+        },
+        {
+          "label": "ScienceDirect · 正式全文入口",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
         }
       ],
       "paperUrl": "https://doi.org/10.1016/j.rcim.2026.103268",

@@ -1,0 +1,21 @@
+{
+  "id": "r-dms-ieee-real-emergen-pi0-dms",
+  "paperId": "p043",
+  "method": "pi0-DMS",
+  "trackId": "dmsvla-ieee-real-emergen",
+  "values": {
+    "Put Balls Into Box": 84.8,
+    "Clean Table": 77.8,
+    "Stack Bowls": 74.0,
+    "Average": 78.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "Real robot task setup from Table III; step-scored evaluation.",
+  "evaluationNotes": "Paper defines SR as earned step points / total points; not binary episode success.",
+  "supersedes": ""
+}

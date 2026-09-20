@@ -1,0 +1,19 @@
+{
+  "id": "r-dms-ieee-eff-speed-spvla",
+  "paperId": "p043",
+  "method": "SP-VLA (BF16)",
+  "trackId": "dmsvla-ieee-efficient-speedup",
+  "values": {
+    "Jetson Orin": 1.37,
+    "H100": 1.25
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-20",
+  "source": "https://ieeexplore.ieee.org/document/11479850",
+  "sourceVersion": "IEEE Robotics and Automation Letters 11(7), 2026, pp.8252–8259",
+  "locator": "Table IV",
+  "attribution": "author-reported",
+  "trainingData": "SP-VLA (BF16)",
+  "evaluationNotes": "INT4+DMS includes quantization; speedup is not attributable to DMS alone.",
+  "supersedes": ""
+}
