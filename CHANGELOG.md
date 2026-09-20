@@ -1,3 +1,12 @@
+## 2026-09-20 · 全部 Benchmark 切换到 Setting-first 结果表
+
+- 默认信息模型改为 `Benchmark → Setting (Evaluation Protocol + Training Data) → Result Report (Method + Score + Recipe + Source)`。
+- Setting 与成绩表放在同一视图：每行直接显示 Method、动态 Score 列、来源论文，并可展开 Recipe / Evidence。
+- 同一 Method 在不同论文 / recipe 中报告不同分数时保留为独立行，不做方法级去重或最高分代表值。
+- Training Data identity 与 batch / steps / LR / horizon 等 Recipe 字段分离；训练数据不明确时禁止跨论文合并。
+- 全部 61 个有核验结果的数据集进入统一 Setting UI；原 286 个 track、1063 条结果、track 深链接、原始排序/图表高级视图全部保留。
+- 只对人工确认的跨-track 等价评测建立共享 Setting；其余数据保守保持独立。
+
 ## 2026-09-20 · Benchmark Protocol Family / Recipe 重构
 
 - Benchmark 信息层级改为 `Benchmark → Protocol Family → Method → Recipe / Subprotocol → Evidence`，不再默认以“论文来源=一个 setting”组织入口。

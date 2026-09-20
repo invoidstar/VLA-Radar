@@ -1,0 +1,12 @@
+'use strict';
+const a=require('node:assert/strict'),S=require('../../site/js/features/research/benchmark-settings.js');
+let count=0;const ok=(name,f)=>{f();count++;};
+const setting={direction:'higher',columns:['Average']};
+const row=(id,method,v)=>({id,method,values:{Average:v}});
+const rows=[row('a','Same',80),row('b','Same',90),row('c','Other',null),row('d','Zero',0)];
+ok('same method reports stay separate',()=>a.deepEqual(S.sortRows(rows,setting,'Average').map(x=>x.id),['b','a','d','c']));
+ok('source order does not deduplicate',()=>a.deepEqual(S.sortRows(rows,setting,'Average','source').map(x=>x.id),['a','b','c','d']));
+ok('missing score stays last ascending',()=>a.deepEqual(S.sortRows(rows,setting,'Average','asc').map(x=>x.id),['d','a','b','c']));
+ok('lower metric auto sorts ascending',()=>a.deepEqual(S.sortRows(rows,{...setting,direction:'lower'},'Average').map(x=>x.id),['d','a','b','c']));
+ok('sorting is non-mutating',()=>{const before=JSON.stringify(rows);S.sortRows(rows,setting,'Average');a.equal(JSON.stringify(rows),before);});
+console.log(`PASS: ${count} Setting-table sorting / duplicate-report assertions.`);

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "baseMainSha": "4bc71925fd68e0ec9dd4f62391a2cb0777d6561b",
+  "scope": "All-dataset Benchmark Setting-first result presentation",
+  "model": "Benchmark -> Setting (Evaluation Protocol + Training Data) -> Result Report (Method + Score + Recipe + Source)",
+  "inventory": {
+    "datasets": 61,
+    "papers": 98,
+    "canonicalTracks": 286,
+    "checkedResults": 1063,
+    "generatedSettings": 384,
+    "trainingKnownSettings": 154,
+    "sourceScopedUnknownTrainingSettings": 230,
+    "crossTrackSettings": 6,
+    "multiPaperSettings": 2
+  },
+  "guarantees": {
+    "canonicalPaperFilesChanged": false,
+    "canonicalResultFilesChanged": false,
+    "originalTrackIdsPreserved": true,
+    "originalResultIdsPreserved": true,
+    "trackDeepLinksPreserved": true,
+    "sameMethodReportsNeverDeduplicated": true,
+    "unknownTrainingNeverMergedAcrossPapers": true,
+    "crossTrackMergeRequiresCuratedEvaluationIdentity": true,
+    "recipeFieldsDoNotDefineTrainingDataIdentity": true,
+    "noCrossSourceRankingInSettingView": true,
+    "advancedTrackViewPreserved": true
+  },
+  "curatedCrossTrackSettings": [
+    {
+      "dataset": "RoboCasa365",
+      "name": "RoboCasa365 · Official Human300 multitask",
+      "trackIds": [
+        "robocasa365-official-100",
+        "robocasa365-official-101"
+      ],
+      "resultCount": 10,
+      "paperCount": 9,
+      "trainingData": "Human300=30，000 demos",
+      "trainingKnown": true
+    },
+    {
+      "dataset": "RoboTwin",
+      "name": "RoboTwin 2.0 · Official 2.5K Clean",
+      "trackIds": [
+        "robotwin2-official-2500clean-cotrain",
+        "robotwin2-official-2500clean-sft"
+      ],
+      "resultCount": 7,
+      "paperCount": 7,
+      "trainingData": "50 demo_clean x 50 tasks (2，500 demos)",
+      "trainingKnown": true
+    },
+    {
+      "dataset": "RoboMimic",
+      "name": "RoboMimic · PH · best-checkpoint",
+      "trackIds": [
+        "robomimic-corl21-lowdim-ph-best",
+        "robomimic-corl21-image-ph-best"
+      ],
+      "resultCount": 10,
+      "paperCount": 1,
+      "trainingData": "每任务200条熟练人类示范PH",
+      "trainingKnown": true
+    },
+    {
+      "dataset": "RoboMimic",
+      "name": "RoboMimic · MH · best-checkpoint",
+      "trackIds": [
+        "robomimic-corl21-lowdim-mh-best",
+        "robomimic-corl21-image-mh-best"
+      ],
+      "resultCount": 10,
+      "paperCount": 1,
+      "trainingData": "每任务300条多操作者混合质量示范MH",
+      "trainingKnown": true
+    },
+    {
+      "dataset": "LIBERO",
+      "name": "LIBERO · VLA-InfoEntropy · Average-score budget study",
+      "trackIds": [
+        "libero-infoentropy-v1-budget60",
+        "libero-infoentropy-v1-budget80",
+        "libero-infoentropy-v1-budget120",
+        "libero-infoentropy-v1-budget140"
+      ],
+      "resultCount": 4,
+      "paperCount": 1,
+      "trainingData": "基础OpenVLA；RTX4090；论文仅披露推理缓存配置，确切训练数据版本、示范数、相机方案、检查点选择、重复次数未完整给出，不套用OpenVLA原论文设置。",
+      "trainingKnown": false
+    },
+    {
+      "dataset": "RoboTwin",
+      "name": "RoboTwin 2.0 · 50 Tasks · Clean-only",
+      "trackIds": [
+        "robotwin2-turbovla-v2-clean-per-task",
+        "robotwin2-turbovla-v2-clean-multi-task"
+      ],
+      "resultCount": 11,
+      "paperCount": 1,
+      "trainingData": "TurboVLA: RoboTwin2.0全部50任务clean示范联合训练",
+      "trainingKnown": true
+    }
+  ],
+  "validation": {
+    "candidateAuditRun": 35492266166,
+    "materializationRun": 35492638035,
+    "trainingIdentityRefreshRun": 35492757702,
+    "offlineValidation": "pass"
+  }
+}
