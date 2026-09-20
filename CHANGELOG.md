@@ -1,3 +1,11 @@
+## 2026-09-20 · Benchmark Protocol Family / Recipe 重构
+
+- Benchmark 信息层级改为 `Benchmark → Protocol Family → Method → Recipe / Subprotocol → Evidence`，不再默认以“论文来源=一个 setting”组织入口。
+- RoboTwin 19 个原始 track 人工整理为 6 个 protocol family；所有原 track ID、结果与深链接保留。
+- 对齐 family 默认先展示 Method，并可展开各训练 recipe / 原始证据；代表报告按人工指定主 track 选择，不自动取最高分。
+- Partial / Subset 与 Deployment / Async 使用 series 模式，只收纳子协议，不跨任务集合或部署条件合并分数。
+- 其他 Benchmark 暂时保留来源分组兼容路径，避免未经人工核验的自动协议合并。
+
 ## 2026-09-20 · 网站信息架构整理
 
 - 侧栏明确分为 Discover / Evidence / Workspace / Personal 四个区域，避免功能入口继续平铺增长。
