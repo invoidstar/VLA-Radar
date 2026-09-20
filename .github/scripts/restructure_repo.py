@@ -272,21 +272,14 @@ if __name__=='__main__':
 
 # Current operational workflows.
 p=R/'.github/workflows/site.yml';s=p.read_text()
-old="""      - name: Stage public website only
-        if: github.event_name != 'pull_request'
-        run: |
-mkdir -p _site/data
-cp index.html styles.css research.css app.js research.js dates.js runtime.js search-core.js search-client.js search-worker.js favicon.svg experience-loader.js experience-core.js experience.js experience.css news-core.js news.js news.css sidebar.js sidebar.css _site/
-cp tools-loader.js tools-core.js tools.js tools.css _site/
-cp -R data/. _site/data/
-touch _site/.nojekyll
-"""
+pattern=r"      - name: Stage public website only\n        if: github\.event_name != 'pull_request'\n        run: \|\n.*?(?=      - uses: actions/upload-pages-artifact@v3)"
 new="""      - name: Stage public website only
         if: github.event_name != 'pull_request'
         run: python scripts/build/stage_site.py --output _site
 """
-if old not in s:raise RuntimeError('site staging block changed unexpectedly')
-p.write_text(s.replace(old,new))
+s,count=re.subn(pattern,new,s,count=1,flags=re.S)
+if count!=1:raise RuntimeError('site staging block changed unexpectedly')
+p.write_text(s)
 
 # Human-facing structure documentation.
 (R/'site/README.md').write_text("""# Site source
