@@ -180,6 +180,7 @@ if n != 1:
 index_path.write_text(index, encoding='utf-8')
 
 replacements = {
+    ROOT/'site/js/features/research/research.js': {"require('./runtime.js')": "require('../../core/runtime.js')"},
     ROOT/'site/js/core/search/search-client.js': {"new Worker('search-worker.js?v=maintenance-20260918')": "new Worker('js/core/search/search-worker.js?v=maintenance-20260918')"},
     ROOT/'site/js/core/search/search-worker.js': {"importScripts('dates.js','search-core.js');": "importScripts('../dates.js','search-core.js');"},
     ROOT/'site/js/features/workspace/experience-loader.js': {
