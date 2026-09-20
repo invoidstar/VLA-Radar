@@ -125,8 +125,9 @@ def dataset_scope(track):
         if kind=='success':
             delays=[x for x in ctx if x.startswith('delay-')]
             if delays:return 'standard40-'+'-'.join(delays)
-            if re.search(r'10 long|long 10|10 long-horizon',text,re.I):return 'long10'
-            if re.search(r'3 suites|three suites|excluding long',text,re.I):return 'three-suites'
+            scope_text=' '.join(norm(track.get(k,'')) for k in ('id','name','tasks','split'))
+            if count==10 and re.search(r'long(?:-horizon)?|long horizon',scope_text,re.I):return 'long10'
+            if re.search(r'3 suites|three suites|excluding long',scope_text,re.I):return 'three-suites'
             return 'standard40'
     if ds=='RoboCasa' and kind=='success':
         if count==24 or '24' in text:return '24-main'
@@ -209,7 +210,7 @@ def training_identity(value):
     kept=[]
     for seg in segments:
         if not DATA_CUES.search(seg):continue
-        parts=[p.strip() for p in re.split(r'[,，、]',seg) if p.strip()];data_parts=[]
+        parts=[p.strip() for p in re.split(r'(?<!\\d)[,，]|[,，](?!\\d)|、',seg) if p.strip()];data_parts=[]
         for part in parts:
             if RECIPE_CUES.search(part) and data_parts:break
             if DATA_CUES.search(part) or not data_parts:data_parts.append(part)
