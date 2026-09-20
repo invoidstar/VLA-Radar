@@ -15,7 +15,7 @@ UNKNOWN_MARKERS=(
 )
 
 def norm(value):
-    return re.sub(r'\s+',' ',str(value or '').normalize('NFKC').strip().lower())
+    return re.sub(r'\\s+',' ',unicodedata.normalize('NFKC',str(value or '')).strip().lower())
 
 def slug(value):
     s=re.sub(r'[^a-z0-9]+','-',norm(value)).strip('-')
