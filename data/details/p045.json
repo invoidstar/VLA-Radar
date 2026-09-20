@@ -11,7 +11,7 @@
     "firstPublished": "2025-08-07",
     "dateNote": "",
     "collectionMonth": "2026-07",
-    "versionNote": "2026年7月卷期；2025年8月已有预印本｜数据取v1",
+    "versionNote": "2026年7月卷期；2025年8月已有预印本｜当前复核 arXiv v2 / Information Fusion 正式版",
     "topics": [
       "memory",
       "evaluation"
@@ -32,7 +32,7 @@
     "hasCautionaryResult": false,
     "sources": [
       {
-        "label": "原文 · v1",
+        "label": "当前复核原文 · arXiv v2",
         "url": "https://arxiv.org/html/2508.05342v2"
       },
       {
