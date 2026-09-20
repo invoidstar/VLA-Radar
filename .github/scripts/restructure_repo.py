@@ -193,6 +193,7 @@ test_imports={
     'from extract_results import extract,number':'from scripts.discovery.extract_results import extract,number',
     'from discover_results import discover':'from scripts.discovery.discover_results import discover',
     'from maintenance_queue import plan':'from scripts.maintenance.maintenance_queue import plan',
+    "patch('sync_publications.fetch'":"patch('scripts.maintenance.sync_publications.fetch'",
   },
   'tests/test_editorial.py':{
     "sys.path.insert(0,str(ROOT/'scripts'))\n":'',
@@ -211,6 +212,7 @@ test_imports={
     'from repo_housekeeping import decide,REPO':'from scripts.maintenance.repo_housekeeping import decide,REPO',
     'from catalog_core import load':'from scripts.build.catalog_core import load',
     'from sync_publications import ':'from scripts.maintenance.sync_publications import ',
+    "patch('sync_publications.fetch'":"patch('scripts.maintenance.sync_publications.fetch'",
   },
   'tests/test_news.py':{
     "ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))":"ROOT=Path(__file__).resolve().parents[1]",
