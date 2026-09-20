@@ -219,8 +219,10 @@ py_files = [p for p in ROOT.rglob('*.py') if '.git' not in p.parts and '.refacto
 for p in py_files:
     text = p.read_text(encoding='utf-8')
     for mod, target in sorted(module_paths.items(), key=lambda x: -len(x[0])):
-        text = re.sub(rf'(?m)^(\\s*)from\\s+{re.escape(mod)}\\s+import\\s+', lambda m: f'{m.group(1)}from {target} import ', text)
-        text = re.sub(rf'(?m)^(\\s*)import\\s+{re.escape(mod)}(\\s+as\\s+\\w+)?\\s*
+        pattern = rf'(?m)^([ \\t]*)from[ \\t]+{re.escape(mod)}[ \\t]+import[ \\t]+'
+        text = re.sub(pattern, lambda m: m.group(1) + 'from ' + target + ' import ', text)
+        pattern = rf'(?m)^([ \\t]*)import[ \\t]+{re.escape(mod)}([ \\t]+as[ \\t]+[A-Za-z_][A-Za-z0-9_]*)?'
+        text = re.sub(pattern, lambda m: m.group(1) + 'import ' + target + (m.group(2) or ''), text)
     p.write_text(text, encoding='utf-8')
 
 moved_python = [ROOT/new for new in script_moves.values()] + [ROOT/new for new in browser_moves.values()] + [ROOT/new for new in python_test_moves.values()]
