@@ -272,13 +272,13 @@
       "limitations": "36小时仅为后训练数据，不能忽略10万小时级预训练。每任务10次，样本量较小；公司报告而非独立复现。",
       "insight": "描述状态转移的语言监督比仅重复任务名提供更细的行为信息。阅读数据效率时必须同时计入预训练资源。",
       "readingFocus": "自动状态转移描述；预训练/后训练分工；真实任务数据口径。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2607.15330v2（2026-07-22），§2–3、Tables 2–5、Appendix；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
           "label": "原文 · v1",
-          "url": "https://arxiv.org/html/2607.15330v1"
+          "url": "https://arxiv.org/html/2607.15330v2"
         },
         {
           "label": "arXiv 元数据",
@@ -1125,13 +1125,13 @@
       "limitations": "限定结构化双臂任务，不是通用基础模型大规模泛化结论；图、分割、抓取和整体成功率是不同指标。量化结果来自所链预印本。",
       "insight": "显式图结构适合描述关系和阶段，但结构化场景的高成功率不能直接等同开放任务泛化。",
       "readingFocus": "状态图字段；行为树/动作接口；指标层级与任务范围。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2508.05342v2（2026-02-06）/ Information Fusion 131 (2026) 104193；§3–7、Tables 1–3；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
           "label": "原文 · v1",
-          "url": "https://arxiv.org/html/2508.05342v1"
+          "url": "https://arxiv.org/html/2508.05342v2"
         },
         {
           "label": "DOI",
@@ -1343,13 +1343,13 @@
       "limitations": "Target后训练与预训练直接评测不是同一口径。较高平均分掩盖未见组合泛化短板；+Condensed Memory的完整细节留待后续工作，不能当成熟可移植模块。",
       "insight": "统一移动与操作需要适配多时间尺度。较高平均分可能掩盖未见任务组合上的明显短板。",
       "readingFocus": "Dream Forcing；预测误差适应；RoboCasa已见/未见任务差异。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2607.00678v2（2026-07-06），§2–5、Tables 2–8；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
       "hasCautionaryResult": true,
       "sources": [
         {
           "label": "原文 · v1",
-          "url": "https://arxiv.org/html/2607.00678v1"
+          "url": "https://arxiv.org/html/2607.00678v2"
         },
         {
           "label": "arXiv 元数据",
@@ -1851,7 +1851,7 @@
       "insight": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
       "readingFocus": "摘要与结构动机；有全文后再看量化口径。",
       "evidence": "metadata",
-      "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+      "evidenceNote": "2026-09-20再次检索IEEE/作者/学术索引渠道；仍只有正式摘要与部分作者材料可稳定读取。按author-materials-partial编辑政策继续needs_review，不能把摘要加速字符串或二手页面当完整实验复核。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -2128,7 +2128,7 @@
       "insight": "人机协作的少次尝试应连同人类指导和纠正一起计量。不要把交互式学习误当成纯自主少样本泛化。",
       "readingFocus": "人类介入点；增强现实反馈；5次尝试包含的监督成本。",
       "evidence": "metadata",
-      "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+      "evidenceNote": "2026-09-20确认论文Open Access身份及正式摘要，但当前自动化全文入口仍返回403，PolyU页面仅提供摘要。按official-abstract-only编辑政策继续needs_review，不把within five trials升级成未读全文的完整实验结论。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -2400,8 +2400,8 @@
       "limitations": "需要 RGB-D、体素空间及动作执行规划器；离散关键帧动作不能与高频连续关节控制直接比较。",
       "insight": "输入与动作坐标的结构匹配本身就是重要归纳偏置；模型规模并非数据效率的唯一来源。",
       "readingFocus": "观测 / 动作空间统一、潜变量压缩及运动规划器边界。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2209.05451v2（2022-11-11）/ CoRL 2022 final；§3–4、Appendix、Table 1；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -2411,6 +2411,10 @@
         {
           "label": "官方项目页 · 任务与数据规模",
           "url": "https://peract.github.io/"
+        },
+        {
+          "label": "当前复核版本 · v2",
+          "url": "https://arxiv.org/html/2209.05451v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2209.05451",
@@ -2599,13 +2603,17 @@
       "limitations": "涉及多种任务与数据设置；扩散采样会产生计算开销。视觉控制成功不能直接证明语言理解或跨本体泛化。",
       "insight": "把动作当成序列分布而非单步回归可保留多种可行行为；表示能力与闭环采样成本需要同时阅读。",
       "readingFocus": "动作扩散、receding-horizon execution、时间条件与误差累积。",
-      "evidence": "metadata",
-      "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-20按arXiv 2303.04137v5（2024-03-14）扩展版；§1–7、Appendix；RSS 2023 Table I–IV榜单快照单独保留；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
           "label": "arXiv · 元数据 / 首发记录",
           "url": "https://arxiv.org/abs/2303.04137"
+        },
+        {
+          "label": "当前复核版本 · v5",
+          "url": "https://arxiv.org/html/2303.04137v5"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2303.04137",
@@ -3519,7 +3527,7 @@
       "insight": "轻量化值得关注条件传递效率，而非只压缩参数；高饱和仿真成绩并不自动代表开放世界优势。",
       "readingFocus": "Bridge Attention、v1 主表、训练前提与版本差异。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+      "evidenceNote": "2026-09-20按arXiv 2509.09372v2（2025-09-22），§1–6、Appendix、Tables 2–8；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -3528,7 +3536,7 @@
         },
         {
           "label": "原文 v1 · LIBERO",
-          "url": "https://arxiv.org/html/2509.09372v1"
+          "url": "https://arxiv.org/html/2509.09372v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2509.09372",

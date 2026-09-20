@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-20",
+  "batch": "note-final8",
+  "baseCommit": "60e16cc2a1edf34cc8bfd5b767bc5a80376f4f87",
+  "requestedRemaining": 11,
+  "actualAtStart": 8,
+  "completedLatestVersionReviews": [
+    "p004",
+    "p024",
+    "p045",
+    "p051",
+    "p055",
+    "p074"
+  ],
+  "limitedSourceRemaining": [
+    "p043",
+    "p046"
+  ],
+  "countsBefore": {
+    "remainingNotes": 8
+  },
+  "countsAfterExpected": {
+    "remainingNotes": 2
+  },
+  "versionFindings": {
+    "p004": "v2 Abstract/Table 3 report RoboCasa365 57.4 while Introduction still says 57.6; table value retained.",
+    "p024": "v2 preserves 40.4/46.6 pretraining and 54.2/30.1 target-adaptation settings; stages remain separate.",
+    "p045": "v2/published version preserves 94 grasp, 89 placement and 90 overall task success as distinct metrics.",
+    "p051": "v2/CoRL final confirms 18 RLBench tasks with 249 variations and 7 real tasks with 18 variations.",
+    "p055": "v5 expands evaluation to 15 tasks across four benchmarks; existing structured rows remain RSS 2023 snapshots.",
+    "p074": "v2 adds VLA-Adapter-Pro (LIBERO 98.5, CALVIN chain 4.50); base VLA-Adapter remains 97.3/4.42."
+  },
+  "qualityRules": [
+    "Changing note status never silently changes benchmark sourceVersion or protocol.",
+    "Internal numerical conflicts are retained rather than normalized by the site.",
+    "Limited-source records remain needs_review until full primary methods/experiments are readable.",
+    "No private project context is used in public VLA-Radar notes."
+  ]
+}

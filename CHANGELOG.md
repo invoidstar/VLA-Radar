@@ -1,3 +1,10 @@
+## 2026-09-20 · 剩余笔记版本复核收口（8→2）
+
+- 基于当前main实际状态完成6篇latest-version全文复核：Xiaomi-Robotics-1 v2、ABot-M0.5 v2、GF-VLA v2/Information Fusion、PerAct v2/CoRL 2022、Diffusion Policy v5、VLA-Adapter v2。
+- remainingNotes 8→2；DMS-VLA 与 VLAbot 因仓库limited-source政策继续needs_review，2026-09-20已再次检索全文但仍无法稳定取得完整方法/实验正文。
+- 保留Xiaomi v2中57.4/57.6内部冲突；Diffusion Policy明确区分v5扩展版与RSS 2023榜单快照；VLA-Adapter v2新增Pro变体而不覆盖基础模型。
+- 本轮不改变任何Leaderboard结果、协议或排名，仅更新深读版本、来源、证据状态与work queue。
+
 ## 2026-09-20 — 2026-09-20-version-review
 
 周度版本复核小批次：将 SpatialVLA、OpenVLA-OFT、Fast-WAM 三篇 needs_review 笔记按各自最新公开 arXiv 版本重新核对方法、训练/部署信息、协议、原表结果、消融与限制。仅更新阅读证据与版本边界，不新增榜单结果、不改 KEY RESULT、不把元数据刷新冒充新论文收录。

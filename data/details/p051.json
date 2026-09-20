@@ -28,8 +28,8 @@
     "limitations": "需要 RGB-D、体素空间及动作执行规划器；离散关键帧动作不能与高频连续关节控制直接比较。",
     "insight": "输入与动作坐标的结构匹配本身就是重要归纳偏置；模型规模并非数据效率的唯一来源。",
     "readingFocus": "观测 / 动作空间统一、潜变量压缩及运动规划器边界。",
-    "evidence": "metadata",
-    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2209.05451v2（2022-11-11）/ CoRL 2022 final；§3–4、Appendix、Table 1；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -39,6 +39,10 @@
       {
         "label": "官方项目页 · 任务与数据规模",
         "url": "https://peract.github.io/"
+      },
+      {
+        "label": "当前复核版本 · v2",
+        "url": "https://arxiv.org/html/2209.05451v2"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2209.05451",
@@ -55,7 +59,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-20",
     "history": [
       {
         "kind": "imported",
@@ -85,10 +89,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
-    "version": "作者公开 CoRL 2022 PDF（28页），重点核对 Sec.3–4、Fig.2–4、Table 1；不是所有后续复现设置",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2209.05451v2（2022-11-11）/ CoRL 2022 final；§3–4、Appendix、Table 1；2026-09-20复核",
     "sections": [
       {
         "id": "problem",
@@ -193,19 +197,34 @@
             "url": "https://peract.github.io/paper/peract_corl2022.pdf#page=7"
           }
         ]
+      },
+      {
+        "id": "version-review",
+        "title": "v2 / CoRL最终版复核：18个RLBench任务与7个真实任务的范围不外推",
+        "body": "2026-09-20重新核对arXiv v2与作者公开CoRL版本。论文仍以18个RLBench任务（249个variation）和7个真实任务（18个variation）验证PerAct；现有笔记中关于体素化3D输入、离散6-DoF动作、少量示范和多任务行为克隆的描述与最终版一致。本轮不把后续第三方PerAct复现设置或RLBench其他任务重新绑定到原论文。",
+        "sources": [
+          {
+            "label": "arXiv v2 · final text",
+            "url": "https://arxiv.org/html/2209.05451v2"
+          },
+          {
+            "label": "CoRL 2022 official paper",
+            "url": "https://proceedings.mlr.press/v205/shridhar23a.html"
+          }
+        ]
       }
     ],
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://proceedings.mlr.press/v205/shridhar23a.html"
+      "source": "https://arxiv.org/html/2209.05451v2"
     },
     "figures": [],
     "tables": [],
     "benchmarkReview": {
       "status": "extracted",
       "checkedAt": "2026-09-18",
-      "note": "保留3条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留3条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-20完成当前版本深读复核；已有结构化结果仅在原sourceVersion/locator边界内继续有效，不因笔记升级而自动改绑。"
     }
   }
 }
