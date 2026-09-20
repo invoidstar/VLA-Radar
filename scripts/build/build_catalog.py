@@ -38,8 +38,9 @@ def outputs(root):
     for setting in setting_records:
         setting_tracks=[trackmap[tid] for tid in setting['trackIds']]
         setting_rows=[resultmap[rid] for rid in setting['resultIds']]
-        path=hashed(f'data/settings/{setting["id"]}',{'schemaVersion':1,'settingId':setting['id'],'tracks':setting_tracks,'results':setting_rows},out)
-        public={k:v for k,v in setting.items() if k!='resultIds'}
+        shard_setting={k:v for k,v in setting.items() if k!='resultIds'}
+        path=hashed(f'data/settings/{setting["id"]}',{'schemaVersion':1,'settingId':setting['id'],'setting':shard_setting,'tracks':setting_tracks,'results':setting_rows},out)
+        public={k:v for k,v in setting.items() if k not in {'resultIds','trainingByResult'}}
         indexed_settings.append({**public,'resultUrl':path})
     for r in records:
         p=r['paper'];out[f'data/details/{p["id"]}.json']=dumps(r) # stable public compatibility URL

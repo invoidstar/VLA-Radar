@@ -136,3 +136,18 @@
  .setting-controls label{flex:1 1 120px}
  .setting-controls select{width:100%}
 }
+
+
+/* Evaluation-only Setting refinements. Training Data is row metadata/filter, not Setting identity. */
+.setting-definition{font-size:9px;line-height:1.8;color:#858ca1;margin:4px 0 0}
+.setting-filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px;padding:9px 10px;border:1px solid #e7e7f0;background:#fafafe;border-radius:9px}
+.setting-filter-bar label{font-size:8px;color:#959bad;min-width:150px;flex:1 1 180px}
+.setting-filter-bar select{display:block;width:100%;margin-top:3px;border:1px solid #e2e4ee;background:#fff;color:#626a80;border-radius:6px;padding:7px 8px;font-size:9px}
+.setting-training-cell{min-width:180px;max-width:260px}
+.setting-training-cell strong{display:block;font-size:9px;line-height:1.5;color:#626a80;font-weight:600}
+.setting-training-cell small{display:block;margin-top:3px;font-size:7px;color:#a2a7b5}
+.setting-table th:nth-last-child(3){min-width:180px}
+@media(max-width:700px){
+ .setting-filter-bar{display:grid;grid-template-columns:1fr}
+ .setting-filter-bar label{min-width:0}
+}

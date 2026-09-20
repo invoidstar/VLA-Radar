@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "baseMainSha": "9ce77727195378fe6f4ead67bcd7fdc281b06af6",
+  "scope": "Final Benchmark Setting identity: Evaluation Protocol only",
+  "supersedes": "2026-09-20 Setting = Evaluation Protocol + Training Data identity",
+  "inventory": {
+    "datasets": 61,
+    "papers": 98,
+    "canonicalTracks": 286,
+    "checkedResults": 1063,
+    "previousGeneratedSettings": 384,
+    "finalGeneratedSettings": 194,
+    "singlePaperSettings": 177,
+    "multiPaperSettings": 17
+  },
+  "model": {
+    "settingIdentity": [
+      "benchmark/dataset",
+      "task/evaluation scope",
+      "metric/unit/direction",
+      "true evaluation-context guards"
+    ],
+    "rowDimensions": [
+      "method",
+      "score",
+      "training data",
+      "source paper",
+      "recipe/evidence"
+    ],
+    "filters": [
+      "training data",
+      "method",
+      "source"
+    ]
+  },
+  "examples": {
+    "roboTwinMain": {
+      "id": "setting-robotwin-50-clean-random-12d1d5deee73",
+      "dataset": "RoboTwin",
+      "evalId": "auto:50-clean-random",
+      "name": "RoboTwin · 50 Tasks · Clean + Random · Success Rate",
+      "tasks": "50",
+      "split": "多来源评测描述；详见各行 Evidence",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
+      "trackIds": [
+        "robotwin2-selfwam-27500",
+        "robotwin2-gwp-v2-27500",
+        "robotwin2-official-2500clean-cotrain",
+        "robotwin2-official-2500clean-sft",
+        "robotwin2-flashvla-v1-pi05-all",
+        "robotwin2-dswam-v1-paper",
+        "meco-v1-robotwin",
+        "track4action-v1-robotwin"
+      ],
+      "resultCount": 26,
+      "paperCount": 13,
+      "paperIds": [
+        "p008",
+        "p023",
+        "p029",
+        "p083",
+        "p078",
+        "p072",
+        "p056",
+        "p055",
+        "p085",
+        "p066",
+        "p065",
+        "p021",
+        "p007"
+      ],
+      "methodCount": 18,
+      "primaryTrackId": "robotwin2-selfwam-27500",
+      "trainingOptions": [
+        {
+          "id": "unknown-p008",
+          "label": "训练数据未完整披露 · p008",
+          "known": false,
+          "count": 2
+        },
+        {
+          "id": "unknown-p023",
+          "label": "训练数据未完整披露 · p023",
+          "known": false,
+          "count": 6
+        },
+        {
+          "id": "data-d94375ea6abc",
+          "label": "RoboTwin2.0全50任务clean与random示范并集联合训练",
+          "known": true,
+          "count": 2
+        },
+        {
+          "id": "unknown-p083",
+          "label": "训练数据未完整披露 · p083",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "data-abf32eae8a16",
+          "label": "27，500 demos",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-2b0c1124c08c",
+          "label": "50 demo_clean x 50 tasks (2，500 demos)",
+          "known": true,
+          "count": 7
+        },
+        {
+          "id": "data-4a480d8ee5b6",
+          "label": "2，000 randomized 专家示范",
+          "known": true,
+          "count": 6
+        },
+        {
+          "id": "data-a01017a45a5d",
+          "label": "paper RoboTwin setup",
+          "known": true,
+          "count": 1
+        }
+      ],
+      "resultUrl": "data/settings/setting-robotwin-50-clean-random-12d1d5deee73.3fd08becdd4948ca.json"
+    },
+    "liberoStandard": {
+      "id": "setting-libero-standard40-f73a3b7db184",
+      "dataset": "LIBERO",
+      "evalId": "auto:standard40",
+      "name": "LIBERO · Standard 40 Tasks · Four Suites · Success Rate",
+      "tasks": "40",
+      "split": "多来源评测描述；详见各行 Evidence",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
+      "trackIds": [
+        "libero-oft-single-view",
+        "libero-oft-multi-view",
+        "libero-rldx-v2",
+        "libero-prts-crl-v1",
+        "libero-openvla-v3-singleview-cleaned",
+        "libero-infoentropy-v1-100",
+        "libero-infoentropy-v1-budget60",
+        "libero-infoentropy-v1-budget80",
+        "libero-infoentropy-v1-budget120",
+        "libero-infoentropy-v1-budget140",
+        "libero-turbovla-v2",
+        "libero-actioncache-v2-pi05",
+        "temporalflow-v1-libero-main",
+        "vlaflow-v2-libero",
+        "gwm-v1-libero",
+        "adavla-v2-libero-sr",
+        "vlatalker-v1-libero",
+        "w2vla-v1-libero",
+        "dmsvla-ieee-libero-main",
+        "dmsvla-ieee-efficient-success"
+      ],
+      "resultCount": 100,
+      "paperCount": 14,
+      "paperIds": [
+        "p030",
+        "p043",
+        "p009",
+        "p028",
+        "p042",
+        "p069",
+        "p064",
+        "p082",
+        "p081",
+        "p027",
+        "p014",
+        "p002",
+        "p006",
+        "p010"
+      ],
+      "methodCount": 89,
+      "primaryTrackId": "libero-oft-single-view",
+      "trainingOptions": [
+        {
+          "id": "unknown-p030",
+          "label": "训练数据未完整披露 · p030",
+          "known": false,
+          "count": 11
+        },
+        {
+          "id": "unknown-p043",
+          "label": "训练数据未完整披露 · p043",
+          "known": false,
+          "count": 17
+        },
+        {
+          "id": "data-cf81e449b35e",
+          "label": "GWM-VLA约7.6万DROID轨迹",
+          "known": true,
+          "count": 3
+        },
+        {
+          "id": "data-3783e97e1263",
+          "label": "lerobot/pi05_libero_finetuned_v044",
+          "known": true,
+          "count": 5
+        },
+        {
+          "id": "unknown-p042",
+          "label": "训练数据未完整披露 · p042",
+          "known": false,
+          "count": 14
+        },
+        {
+          "id": "data-7e00359842dc",
+          "label": "每任务 50 示范",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p069",
+          "label": "训练数据未完整披露 · p069",
+          "known": false,
+          "count": 4
+        },
+        {
+          "id": "data-a2085c20e42f",
+          "label": "DROID论文实现；相同清洗目标示范",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-3b638283e9ca",
+          "label": "相同清洗目标示范",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-46d07bc95d6a",
+          "label": "970k真实机器人示范预训练；相同清洗目标示范",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-ebacd00de09e",
+          "label": "LIBERO30k/batch32/window20",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p082",
+          "label": "训练数据未完整披露 · p082",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "unknown-p081",
+          "label": "训练数据未完整披露 · p081",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "unknown-p027",
+          "label": "训练数据未完整披露 · p027",
+          "known": false,
+          "count": 27
+        },
+        {
+          "id": "unknown-p014",
+          "label": "训练数据未完整披露 · p014",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "unknown-p002",
+          "label": "训练数据未完整披露 · p002",
+          "known": false,
+          "count": 7
+        },
+        {
+          "id": "unknown-p006",
+          "label": "训练数据未完整披露 · p006",
+          "known": false,
+          "count": 2
+        },
+        {
+          "id": "unknown-p010",
+          "label": "训练数据未完整披露 · p010",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "resultUrl": "data/settings/setting-libero-standard40-f73a3b7db184.b82357df73cd61e9.json"
+    },
+    "roboCasa24": {
+      "id": "setting-robocasa-24-main-dcf46d7e096e",
+      "dataset": "RoboCasa",
+      "evalId": "auto:24-main",
+      "name": "RoboCasa · 24 Tasks · Success Rate",
+      "tasks": "24",
+      "split": "多来源评测描述；详见各行 Evidence",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Average",
+        "Arrange vegetables",
+        "Microwave thawing",
+        "Restock pantry",
+        "Pre-soak pan",
+        "Prepare coffee",
+        "Fixed",
+        "Randomized"
+      ],
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
+      "trackIds": [
+        "robocasa24-cosmos-50demos",
+        "robocasa24-cosmos-table",
+        "robocasa24-xiaomi-300demos",
+        "robocasa-original-24atomic-v1",
+        "robocasa-original-5composite-v1",
+        "robocasa24-rldx-v2",
+        "seelike-v1-geometry-ablation",
+        "seelike-v1-fusion-ablation",
+        "seelike-v1-view-robustness",
+        "seelike-v1-pretrained-robocasa"
+      ],
+      "resultCount": 44,
+      "paperCount": 5,
+      "paperIds": [
+        "p079",
+        "p076",
+        "p081",
+        "p004",
+        "p011"
+      ],
+      "methodCount": 39,
+      "primaryTrackId": "robocasa24-cosmos-50demos",
+      "trainingOptions": [
+        {
+          "id": "data-2d7fbfb62e73",
+          "label": "24任务×100生成示范=2",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-40d1629e4ee1",
+          "label": "24任务×300生成示范=7",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-e2fb49bfe3f3",
+          "label": "24任务×3，000生成示范=72",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-9580096c3de0",
+          "label": "25任务×50人工示范=1",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-4b307daf9935",
+          "label": "50 human demos per composite task",
+          "known": true,
+          "count": 2
+        },
+        {
+          "id": "data-daf196c7526d",
+          "label": "每任务50条人工示范",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-4ff10f462a53",
+          "label": "50 demos/task",
+          "known": true,
+          "count": 2
+        },
+        {
+          "id": "data-db5a6a3acfd9",
+          "label": "3000 demos/task",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-e169b9667770",
+          "label": "300 demos/task",
+          "known": true,
+          "count": 7
+        },
+        {
+          "id": "data-5148e9265435",
+          "label": "300 + 10000 synthetic demos/task",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-f6c46bcb0dd6",
+          "label": "1000 demos/task",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p081",
+          "label": "训练数据未完整披露 · p081",
+          "known": false,
+          "count": 3
+        },
+        {
+          "id": "data-39a521218203",
+          "label": "每任务300条合成示范",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p011",
+          "label": "训练数据未完整披露 · p011",
+          "known": false,
+          "count": 21
+        }
+      ],
+      "resultUrl": "data/settings/setting-robocasa-24-main-dcf46d7e096e.937913b54ffc1852.json"
+    },
+    "rlbench18": {
+      "id": "setting-rlbench-18-main-d71328817de2",
+      "dataset": "RLBench",
+      "evalId": "auto:18-main",
+      "name": "RLBench · 18 Tasks · Success Rate",
+      "tasks": "18 tasks / 249 variations",
+      "split": "多来源评测描述；详见各行 Evidence",
+      "metric": "Full task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Open drawer",
+        "Slide block",
+        "Sweep",
+        "Meat off grill",
+        "Turn tap",
+        "Put in drawer",
+        "Close jar",
+        "Drag stick",
+        "Stack blocks",
+        "Screw bulb",
+        "Put in safe",
+        "Place wine",
+        "Put in cupboard",
+        "Sort shape",
+        "Push buttons",
+        "Insert peg",
+        "Stack cups",
+        "Place cups",
+        "Average",
+        "Close Jar",
+        "Drag Stick",
+        "Insert Peg",
+        "Meat off Grill",
+        "Open Drawer",
+        "Place Cups",
+        "Place Wine",
+        "Push Buttons",
+        "Put in Cupboard",
+        "Put in Drawer",
+        "Put in Safe",
+        "Screw Bulb",
+        "Slide Block",
+        "Sort Shape",
+        "Stack Blocks",
+        "Stack Cups",
+        "Sweep to Dustpan",
+        "Turn Tap"
+      ],
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
+      "trackIds": [
+        "rlbench-peract-100d",
+        "rlbench-18-bridgepp-table1",
+        "rlbench-rvt-corl2023-table1",
+        "rlbench-rvt2-v1-table1",
+        "rlbench-3dda-v3-multiview",
+        "rlbench-act3d-corl2023-18multi"
+      ],
+      "resultCount": 25,
+      "paperCount": 6,
+      "paperIds": [
+        "p051",
+        "p013",
+        "p088",
+        "p090",
+        "p086",
+        "p087"
+      ],
+      "methodCount": 21,
+      "primaryTrackId": "rlbench-peract-100d",
+      "trainingOptions": [
+        {
+          "id": "data-b0aff8dfe56f",
+          "label": "100 demos per task",
+          "known": true,
+          "count": 3
+        },
+        {
+          "id": "data-afceeaf319fe",
+          "label": "100示范/任务",
+          "known": true,
+          "count": 8
+        },
+        {
+          "id": "data-7330b050ea11",
+          "label": "RLBench 18任务，每任务100条专家示范（共1800）",
+          "known": true,
+          "count": 10
+        },
+        {
+          "id": "data-52505ee46033",
+          "label": "10 demos/task",
+          "known": true,
+          "count": 2
+        },
+        {
+          "id": "data-e3d27d8740f0",
+          "label": "100 demos/task",
+          "known": true,
+          "count": 2
+        }
+      ],
+      "resultUrl": "data/settings/setting-rlbench-18-main-d71328817de2.cc9e41c8746dac70.json"
+    },
+    "calvinChain": {
+      "id": "setting-calvin-chain-average-length-9d2bc11ebb8a",
+      "dataset": "CALVIN",
+      "evalId": "auto:chain-average-length",
+      "name": "CALVIN · Five-task Chain · Average Length",
+      "tasks": "34 skill types; chains of up to five instructions",
+      "split": "多来源评测描述；详见各行 Evidence",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "Average length",
+        "Average"
+      ],
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
+      "trackIds": [
+        "calvin-gr1-v2-abcd-chain",
+        "calvin-gr1-v2-abc-chain",
+        "calvin-abc-d-adapter-table6",
+        "calvin-3dda-v3-abc-d-paper",
+        "smile-v1-calvin-chain",
+        "roboflamingo-iclr24-abcd-chain",
+        "roboflamingo-iclr24-abc-chain"
+      ],
+      "resultCount": 30,
+      "paperCount": 5,
+      "paperIds": [
+        "p088",
+        "p074",
+        "p061",
+        "p060",
+        "p020"
+      ],
+      "methodCount": 24,
+      "primaryTrackId": "calvin-gr1-v2-abcd-chain",
+      "trainingOptions": [
+        {
+          "id": "data-f57b07e51808",
+          "label": "每任务60条轨迹",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p088",
+          "label": "训练数据未完整披露 · p088",
+          "known": false,
+          "count": 5
+        },
+        {
+          "id": "unknown-p074",
+          "label": "训练数据未完整披露 · p074",
+          "known": false,
+          "count": 7
+        },
+        {
+          "id": "unknown-p061",
+          "label": "训练数据未完整披露 · p061",
+          "known": false,
+          "count": 4
+        },
+        {
+          "id": "data-029a1b86bf56",
+          "label": "CALVIN ABC baseline",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-fa3d63459e82",
+          "label": "CALVIN RT-1 baseline implementation",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p060",
+          "label": "训练数据未完整披露 · p060",
+          "known": false,
+          "count": 7
+        },
+        {
+          "id": "unknown-p020",
+          "label": "训练数据未完整披露 · p020",
+          "known": false,
+          "count": 4
+        }
+      ],
+      "resultUrl": "data/settings/setting-calvin-chain-average-length-9d2bc11ebb8a.31daba0916534adf.json"
+    }
+  },
+  "guarantees": {
+    "trainingDataNotInSettingIdentity": true,
+    "unknownTrainingDoesNotSplitSettingByPaper": true,
+    "sameMethodReportsRemainDistinct": true,
+    "noAutomaticHighestScoreRepresentative": true,
+    "noCrossSourceFairRankClaim": true,
+    "evaluationGuardsPreserved": true,
+    "originalTrackIdsPreserved": true,
+    "originalResultIdsPreserved": true,
+    "trackDeepLinksPreserved": true,
+    "advancedTrackChartsCsvPreserved": true,
+    "catalogPaperFilesUnchanged": true,
+    "catalogResultFilesUnchanged": true
+  },
+  "validation": {
+    "fingerprintAuditRun": 35493833820,
+    "initialMaterializationRun": 35494086610,
+    "refinementRefreshRun": 35494199249,
+    "finalAliasRefreshRun": 35494265506,
+    "offlineValidation": "pass"
+  }
+}

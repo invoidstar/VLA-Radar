@@ -1,3 +1,13 @@
+## 2026-09-20 · Benchmark Setting 最终收敛为 Evaluation Protocol
+
+- 正式将 Setting identity 从“Evaluation Protocol + Training Data”修正为 **Evaluation Protocol only**；Training Data、来源论文与训练 recipe 不再拆 Setting。
+- Training Data 下沉为结果表的独立列和筛选器，并与 Method / Source 一起过滤；未知训练数据保留来源标识，但不再导致“一篇论文一个 Setting”。
+- 全库生成 Setting 从 **384 降至 194**，覆盖全部 61 个有核验结果的数据集；原 286 canonical tracks、1063 checked results、98 papers 不变。
+- RoboTwin 50-task Clean+Random 主 Setting 合并 8 个原 track、26 条报告、13 篇论文和 8 种 Training Data；LIBERO 标准40任务合并 20 tracks、100 reports、14 papers、18 training variants。
+- RoboCasa 24-task 主 Setting 合并 10 tracks / 44 reports / 5 papers；RLBench 18-task 合并 6 tracks / 25 reports / 6 papers；CALVIN 五步链平均长度合并 7 tracks / 30 reports / 5 papers。
+- 任务子集、VM/VA、相机扰动、异步延迟、真实物理环境、不同 metric/task schema 等真正改变评测问题的条件继续保持独立。
+- 同一 Method 的不同论文 / Training Data / recipe 报告始终保留为多行；reported-score 排序不解释为跨来源公平排名；原 `track=` 高级分析路径完整保留。
+
 ## 2026-09-20 · 全部 Benchmark 切换到 Setting-first 结果表
 
 - 默认信息模型改为 `Benchmark → Setting (Evaluation Protocol + Training Data) → Result Report (Method + Score + Recipe + Source)`。

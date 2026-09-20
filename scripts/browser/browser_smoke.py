@@ -41,7 +41,14 @@ try:
   assert page.locator('.note-section').count()>=8
   page.locator('[data-note-tab="life"]').click();assert page.locator('.life-grid').is_visible()
   page.locator('[data-note-tab="results"]').click();page.wait_for_timeout(300)
-  page.keyboard.press('Escape');page.locator('.nav-link[data-view="leaderboards"]').click();page.wait_for_selector('#setting-select')
+  page.keyboard.press('Escape');page.locator('.nav-link[data-view="leaderboards"]').click()
+  try:
+   page.wait_for_selector('#setting-select',timeout=12000)
+  except Exception:
+   diagnostic={'status':'failure','stage':'benchmark-setting-render','url':page.url,'errors':errors,'console':console[-30:],'failedRequests':failed[-30:],'body':page.locator('body').inner_text()[:12000]}
+   (out/'benchmark-setting-failure.json').write_text(json.dumps(diagnostic,ensure_ascii=False,indent=2));print(json.dumps(diagnostic,ensure_ascii=False),flush=True)
+   page.screenshot(path=str(out/'benchmark-setting-failure.png'),full_page=True)
+   raise
   assert page.locator('.setting-table').count()==1
   page.locator('[data-setting-dataset="CALVIN"]').click();page.wait_for_selector('#setting-select')
   page.wait_for_function('new URLSearchParams(location.search).get("dataset")==="CALVIN"')
