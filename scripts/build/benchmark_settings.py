@@ -170,7 +170,8 @@ def dataset_scope(track):
 
 def evaluation_key(track):
     scope=dataset_scope(track)
-    return (track['dataset'],scope,metric_class(track['metric']),track['unit'],track['direction'])
+    metric='chain-average-length' if track['dataset']=='CALVIN' and scope.startswith('chain-average-length') else metric_class(track['metric'])
+    return (track['dataset'],scope,metric,track['unit'],track['direction'])
 
 def scope_label(track,scope):
     ds=track['dataset'];kind=metric_label(track['metric'])
@@ -192,7 +193,9 @@ def scope_label(track,scope):
       ('RLBench','74-single'):'74 Tasks',
     }
     base=special.get((ds,scope))
-    if base:return f'{ds} · {base} · {kind}'
+    if base:
+        if ds=='CALVIN' and scope.startswith('chain-average-length'):return f'{ds} · {base}'
+        return f'{ds} · {base} · {kind}'
     count=task_count(track)
     if count:return f'{ds} · {count} Tasks · {kind}'
     cols=[str(c) for c in track['columns'] if canon_col(c) not in {'average','total','overall'}]
