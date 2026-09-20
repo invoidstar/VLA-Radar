@@ -6162,19 +6162,19 @@
         },
         {
           "id": "data-abf32eae8a16",
-          "label": "27，500 demos",
+          "label": "27,500 demos",
           "known": true,
           "count": 1
         },
         {
           "id": "data-2b0c1124c08c",
-          "label": "50 demo_clean x 50 tasks (2，500 demos)",
+          "label": "50 demo_clean x 50 tasks (2,500 demos)",
           "known": true,
           "count": 7
         },
         {
-          "id": "data-4a480d8ee5b6",
-          "label": "2，000 randomized 专家示范",
+          "id": "data-97b0f8e5c171",
+          "label": "2,500 clean + 25,000 randomized 专家示范",
           "known": true,
           "count": 6
         },
@@ -6205,12 +6205,12 @@
         "r-robotwin2-official-2500clean-sft-sft-dp3": "data-2b0c1124c08c",
         "r-robotwin2-official-2500clean-sft-sft-pi0": "data-2b0c1124c08c",
         "r-robotwin2-official-2500clean-sft-sft-rdt": "data-2b0c1124c08c",
-        "r-robotwin2-selfwam-27500-fastwam": "data-4a480d8ee5b6",
-        "r-robotwin2-selfwam-27500-gigaworld-policy": "data-4a480d8ee5b6",
-        "r-robotwin2-selfwam-27500-motus": "data-4a480d8ee5b6",
-        "r-robotwin2-selfwam-27500-pi0-5": "data-4a480d8ee5b6",
-        "r-robotwin2-selfwam-27500-pi0": "data-4a480d8ee5b6",
-        "r-robotwin2-selfwam-27500-selfwam": "data-4a480d8ee5b6",
+        "r-robotwin2-selfwam-27500-fastwam": "data-97b0f8e5c171",
+        "r-robotwin2-selfwam-27500-gigaworld-policy": "data-97b0f8e5c171",
+        "r-robotwin2-selfwam-27500-motus": "data-97b0f8e5c171",
+        "r-robotwin2-selfwam-27500-pi0-5": "data-97b0f8e5c171",
+        "r-robotwin2-selfwam-27500-pi0": "data-97b0f8e5c171",
+        "r-robotwin2-selfwam-27500-selfwam": "data-97b0f8e5c171",
         "r-track4-v1-robotwin": "data-a01017a45a5d"
       }
     },
@@ -6691,26 +6691,26 @@
       "primaryTrackId": "robocasa24-cosmos-50demos",
       "trainingOptions": [
         {
-          "id": "data-2d7fbfb62e73",
-          "label": "24任务×100生成示范=2",
+          "id": "data-ecf0d87fe335",
+          "label": "24任务×100生成示范=2,400",
           "known": true,
           "count": 1
         },
         {
-          "id": "data-40d1629e4ee1",
-          "label": "24任务×300生成示范=7",
+          "id": "data-9f47635c86be",
+          "label": "24任务×300生成示范=7,200",
           "known": true,
           "count": 1
         },
         {
-          "id": "data-e2fb49bfe3f3",
-          "label": "24任务×3，000生成示范=72",
+          "id": "data-434c5c14aa99",
+          "label": "24任务×3,000生成示范=72,000",
           "known": true,
           "count": 1
         },
         {
-          "id": "data-9580096c3de0",
-          "label": "25任务×50人工示范=1",
+          "id": "data-21bafe1586e0",
+          "label": "25任务×50人工示范=1,250",
           "known": true,
           "count": 1
         },
@@ -6776,10 +6776,10 @@
         }
       ],
       "trainingByResult": {
-        "r-robocasa-original-24atomic-v1-bc-transformer-generated-100": "data-2d7fbfb62e73",
-        "r-robocasa-original-24atomic-v1-bc-transformer-generated-300": "data-40d1629e4ee1",
-        "r-robocasa-original-24atomic-v1-bc-transformer-generated-3000": "data-e2fb49bfe3f3",
-        "r-robocasa-original-24atomic-v1-bc-transformer-human-50": "data-9580096c3de0",
+        "r-robocasa-original-24atomic-v1-bc-transformer-generated-100": "data-ecf0d87fe335",
+        "r-robocasa-original-24atomic-v1-bc-transformer-generated-300": "data-9f47635c86be",
+        "r-robocasa-original-24atomic-v1-bc-transformer-generated-3000": "data-434c5c14aa99",
+        "r-robocasa-original-24atomic-v1-bc-transformer-human-50": "data-21bafe1586e0",
         "r-robocasa-original-5composite-v1-bc-transformer-atomic-pretrain-fine-tune": "data-4b307daf9935",
         "r-robocasa-original-5composite-v1-bc-transformer-scratch": "data-4b307daf9935",
         "r-robocasa24-cosmos-50demos-cosmos-policy": "data-daf196c7526d",
@@ -7840,7 +7840,7 @@
       "trainingOptions": [
         {
           "id": "data-c48f1e138d11",
-          "label": "2，500示范",
+          "label": "2,500示范",
           "known": true,
           "count": 7
         },
@@ -8016,7 +8016,7 @@
       "trainingOptions": [
         {
           "id": "data-323b6ff599d2",
-          "label": "Human300=30，000 demos",
+          "label": "Human300=30,000 demos",
           "known": true,
           "count": 10
         },
@@ -15615,21 +15615,21 @@
       "primaryTrackId": "w2vla-v1-robotwin2500",
       "trainingOptions": [
         {
-          "id": "data-4581ce8b4d87",
-          "label": "2，000 randomized demos",
+          "id": "data-c20fcf04f9d4",
+          "label": "2,500 clean +25,000 randomized demos",
           "known": true,
           "count": 2
         },
         {
           "id": "data-3816da30eeb1",
-          "label": "2，500-demo protocol",
+          "label": "2,500-demo protocol",
           "known": true,
           "count": 2
         }
       ],
       "trainingByResult": {
-        "r-lingbot-v2-rt-ling": "data-4581ce8b4d87",
-        "r-lingbot-v2-rt-motus": "data-4581ce8b4d87",
+        "r-lingbot-v2-rt-ling": "data-c20fcf04f9d4",
+        "r-lingbot-v2-rt-motus": "data-c20fcf04f9d4",
         "r-w2vla-v1-rt-up": "data-3816da30eeb1",
         "r-w2vla-v1-rt-w2": "data-3816da30eeb1"
       }
