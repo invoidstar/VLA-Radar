@@ -1,0 +1,62 @@
+name: Weekly maintenance 2026-09-20
+on:
+  push:
+    branches: ['release/batch-2026-09-20-weekly-notes']
+    paths: ['.github/workflows/weekly-maintenance-2026-09-20.yml']
+permissions:
+  contents: write
+concurrency:
+  group: weekly-maintenance-2026-09-20
+  cancel-in-progress: false
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/batch-2026-09-20-weekly-notes
+          fetch-depth: 0
+      - name: Refresh due publication metadata
+        run: |
+          set -eu
+          python scripts/sync_publications.py --apply-safe --limit 100 --due-days 7 | tee /tmp/publication-check-output.json
+      - name: Check due public source reachability
+        run: |
+          set -eu
+          python scripts/check_sources.py --limit 100 --due-days 30 --max-seconds 180 | tee /tmp/source-health-output.txt
+          cp maintenance/source-health.json /tmp/source-health.json
+      - name: Capture public activity, rebuild and validate
+        env:
+          BASE_SHA: 5a30310a382f80edc4d9c03001db0e4b9af296b9
+        run: |
+          set -eu
+          python scripts/capture_activity.py --base "$BASE_SHA" | tee /tmp/activity-output.txt
+          python scripts/build_catalog.py | tee /tmp/build-output.txt
+          python scripts/validate_all.py | tee /tmp/validate-output.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: weekly-maintenance-audit-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            /tmp/publication-check-output.json
+            /tmp/source-health-output.txt
+            /tmp/source-health.json
+            /tmp/activity-output.txt
+            /tmp/build-output.txt
+            /tmp/validate-output.txt
+      - name: Commit validated maintenance outputs and remove one-shot workflow
+        env:
+          BRANCH: release/batch-2026-09-20-weekly-notes
+        run: |
+          set -eu
+          test "$(git branch --show-current)" = "$BRANCH"
+          rm .github/workflows/weekly-maintenance-2026-09-20.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record 2026-09-20 weekly maintenance checks'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
