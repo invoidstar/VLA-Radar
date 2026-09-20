@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-09-20",
-  "title": "VLA Research Radar",
+  "title": "VLA-Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
   "topics": [
@@ -257,7 +257,7 @@
       "firstPublished": "2026-07-16",
       "dateNote": "",
       "collectionMonth": "2026-07",
-      "versionNote": "7月首次公开｜阅读v1",
+      "versionNote": "7月首次公开｜当前复核 arXiv v2（首发 v1）",
       "topics": [
         "pretraining"
       ],
@@ -277,7 +277,7 @@
       "hasCautionaryResult": false,
       "sources": [
         {
-          "label": "原文 · v1",
+          "label": "当前复核原文 · v2",
           "url": "https://arxiv.org/html/2607.15330v2"
         },
         {
@@ -1109,7 +1109,7 @@
       "firstPublished": "2025-08-07",
       "dateNote": "",
       "collectionMonth": "2026-07",
-      "versionNote": "2026年7月卷期；2025年8月已有预印本｜数据取v1",
+      "versionNote": "2026年7月卷期；2025年8月已有预印本｜当前复核 arXiv v2 / Information Fusion 正式版",
       "topics": [
         "memory",
         "evaluation"
@@ -1130,7 +1130,7 @@
       "hasCautionaryResult": false,
       "sources": [
         {
-          "label": "原文 · v1",
+          "label": "当前复核原文 · arXiv v2",
           "url": "https://arxiv.org/html/2508.05342v2"
         },
         {
@@ -1328,7 +1328,7 @@
       "firstPublished": "2026-07-01",
       "dateNote": "",
       "collectionMonth": "2026-07",
-      "versionNote": "7月首次公开｜阅读v1",
+      "versionNote": "7月首次公开｜当前复核 arXiv v2（首发 v1）",
       "topics": [
         "world"
       ],
@@ -1348,7 +1348,7 @@
       "hasCautionaryResult": true,
       "sources": [
         {
-          "label": "原文 · v1",
+          "label": "当前复核原文 · v2",
           "url": "https://arxiv.org/html/2607.00678v2"
         },
         {
@@ -2250,10 +2250,6 @@
           "url": "https://arxiv.org/pdf/2112.03227v4"
         },
         {
-          "label": "第九批实际深入阅读 · 版本和限制见笔记",
-          "url": "https://arxiv.org/pdf/2112.03227v4"
-        },
-        {
           "label": "正式发表记录 · 首发与修订日期保持",
           "url": "https://ieeexplore.ieee.org/document/9788026"
         },
@@ -2364,16 +2360,12 @@
           "url": "https://say-can.github.io/"
         },
         {
-          "label": "第九批实际深入阅读 · 版本和限制见笔记",
+          "label": "KEY RESULT有据更正／范围澄清：Table 2分别报告Mock84/74与Office81/60；澄清原KEY RESULT两厨房范围，不改变任一原始数值。",
           "url": "https://ar5iv.labs.arxiv.org/html/2204.01691"
         },
         {
           "label": "正式发表记录 · 首发与修订日期保持",
           "url": "https://proceedings.mlr.press/v205/ichter23a.html"
-        },
-        {
-          "label": "KEY RESULT有据更正／范围澄清：Table 2分别报告Mock84/74与Office81/60；澄清原KEY RESULT两厨房范围，不改变任一原始数值。",
-          "url": "https://ar5iv.labs.arxiv.org/html/2204.01691"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2204.01691",
@@ -3517,7 +3509,7 @@
       "firstPublished": "2025-09-11",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv v1；LIBERO 主表与摘要",
+      "versionNote": "LIBERO 结构化结果保留 arXiv v1；当前全文复核 arXiv v2",
       "topics": [
         "efficiency",
         "pretraining"
@@ -3543,7 +3535,11 @@
           "url": "https://arxiv.org/abs/2509.09372"
         },
         {
-          "label": "原文 v1 · LIBERO",
+          "label": "结构化结果原文 · v1 · LIBERO",
+          "url": "https://arxiv.org/html/2509.09372v1"
+        },
+        {
+          "label": "当前复核原文 · v2",
           "url": "https://arxiv.org/html/2509.09372v2"
         }
       ],

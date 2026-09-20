@@ -11,7 +11,7 @@
     "firstPublished": "2025-09-11",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
-    "versionNote": "arXiv v1；LIBERO 主表与摘要",
+    "versionNote": "LIBERO 结构化结果保留 arXiv v1；当前全文复核 arXiv v2",
     "topics": [
       "efficiency",
       "pretraining"
@@ -37,7 +37,11 @@
         "url": "https://arxiv.org/abs/2509.09372"
       },
       {
-        "label": "原文 v1 · LIBERO",
+        "label": "结构化结果原文 · v1 · LIBERO",
+        "url": "https://arxiv.org/html/2509.09372v1"
+      },
+      {
+        "label": "当前复核原文 · v2",
         "url": "https://arxiv.org/html/2509.09372v2"
       }
     ],
