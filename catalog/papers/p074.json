@@ -29,7 +29,7 @@
     "insight": "轻量化值得关注条件传递效率，而非只压缩参数；高饱和仿真成绩并不自动代表开放世界优势。",
     "readingFocus": "Bridge Attention、v1 主表、训练前提与版本差异。",
     "evidence": "checked",
-    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "evidenceNote": "2026-09-20按arXiv 2509.09372v2（2025-09-22），§1–6、Appendix、Tables 2–8；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -38,7 +38,7 @@
       },
       {
         "label": "原文 v1 · LIBERO",
-        "url": "https://arxiv.org/html/2509.09372v1"
+        "url": "https://arxiv.org/html/2509.09372v2"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2509.09372",
@@ -55,7 +55,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-20",
     "history": [
       {
         "kind": "imported",
@@ -85,10 +85,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
-    "version": "2509.09372v1；保留的2026-09-17公开HTML阅读快照，2026-09-18整理",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2509.09372v2（2025-09-22），§1–6、Appendix、Tables 2–8；2026-09-20复核",
     "sections": [
       {
         "id": "problem",
@@ -97,7 +97,7 @@
         "sources": [
           {
             "label": "§1、3.1–3.2；Figures 2–3",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       },
@@ -108,7 +108,7 @@
         "sources": [
           {
             "label": "§3.2；Table 1；Tables C1–C2",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       },
@@ -119,7 +119,7 @@
         "sources": [
           {
             "label": "§3.3；Figure 3",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       },
@@ -130,7 +130,7 @@
         "sources": [
           {
             "label": "§3.4、4；Tables B1、F1–F2",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       },
@@ -141,7 +141,7 @@
         "sources": [
           {
             "label": "Tables 2、5–6、D1",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       },
@@ -152,7 +152,7 @@
         "sources": [
           {
             "label": "Tables 3、7–8；Figure 8",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       },
@@ -163,7 +163,7 @@
         "sources": [
           {
             "label": "Table 4；§4.4、6",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       },
@@ -174,7 +174,18 @@
         "sources": [
           {
             "label": "Figures 2–4；Tables 3、6–8",
-            "url": "https://arxiv.org/html/2509.09372v1"
+            "url": "https://arxiv.org/html/2509.09372v2"
+          }
+        ]
+      },
+      {
+        "id": "version-review",
+        "title": "v2版本复核：新增VLA-Adapter-Pro，基础VLA-Adapter结果保持独立",
+        "body": "2026-09-20重新核读v2。最新版本新增VLA-Adapter-Pro：LIBERO四套件平均98.5%，CALVIN连续任务平均链长4.50；基础VLA-Adapter仍为LIBERO 97.3%与CALVIN 4.42。本站把Pro视为新的方法变体，而不是用更高数字覆盖原VLA-Adapter；现有Bridge Attention、Raw/ActionQuery与门控消融的结论仍由基础版本对应表格支持。",
+        "sources": [
+          {
+            "label": "arXiv v2 · Tables 2–8",
+            "url": "https://arxiv.org/html/2509.09372v2"
           }
         ]
       }
@@ -182,7 +193,7 @@
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://arxiv.org/html/2509.09372v1"
+      "source": "https://arxiv.org/html/2509.09372v2"
     },
     "figures": [
       {
@@ -222,12 +233,34 @@
         ],
         "locator": "Table 7",
         "caption": "同文桥接比较；不应把相应style名称误认为逐项复现了其他论文全部训练配方。"
+      },
+      {
+        "title": "v2新增VLA-Adapter-Pro结果",
+        "columns": [
+          "方法",
+          "LIBERO Avg.",
+          "CALVIN Avg. chain"
+        ],
+        "rows": [
+          [
+            "VLA-Adapter",
+            "97.3%",
+            "4.42"
+          ],
+          [
+            "VLA-Adapter-Pro",
+            "98.5%",
+            "4.50"
+          ]
+        ],
+        "locator": "arXiv v2 Tables 2、6",
+        "caption": "Pro是v2新增变体；不覆盖基础VLA-Adapter的既有成绩。"
       }
     ],
     "benchmarkReview": {
       "status": "extracted",
       "checkedAt": "2026-09-18",
-      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-20完成当前版本深读复核；已有结构化结果仅在原sourceVersion/locator边界内继续有效，不因笔记升级而自动改绑。"
     }
   }
 }

@@ -27,13 +27,17 @@
     "limitations": "涉及多种任务与数据设置；扩散采样会产生计算开销。视觉控制成功不能直接证明语言理解或跨本体泛化。",
     "insight": "把动作当成序列分布而非单步回归可保留多种可行行为；表示能力与闭环采样成本需要同时阅读。",
     "readingFocus": "动作扩散、receding-horizon execution、时间条件与误差累积。",
-    "evidence": "metadata",
-    "evidenceNote": "2026-09-17 核对出版元数据、摘要或官方项目说明；未将未读全文标记为完整核验。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2303.04137v5（2024-03-14）扩展版；§1–7、Appendix；RSS 2023 Table I–IV榜单快照单独保留；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
         "label": "arXiv · 元数据 / 首发记录",
         "url": "https://arxiv.org/abs/2303.04137"
+      },
+      {
+        "label": "当前复核版本 · v5",
+        "url": "https://arxiv.org/html/2303.04137v5"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2303.04137",
@@ -50,7 +54,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-20",
     "history": [
       {
         "kind": "imported",
@@ -80,10 +84,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-18",
-    "verifiedAt": "2026-09-18",
-    "version": "作者提供 diffusion_policy_2023.pdf（16页，RSS 2023），Sec.II–V、VIII、Appendix与Table I–IV；KEY RESULT原有v5摘要保持不变，本笔记不混用期刊扩展版实验",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2303.04137v5（2024-03-14）扩展版；§1–7、Appendix；RSS 2023 Table I–IV榜单快照单独保留；2026-09-20复核",
     "sections": [
       {
         "id": "question",
@@ -200,19 +204,62 @@
             "url": "https://diffusion-policy.cs.columbia.edu/"
           }
         ]
+      },
+      {
+        "id": "version-review",
+        "title": "v5扩展版复核：最新论文覆盖15个任务，既有榜单仍保留RSS表格快照",
+        "body": "2026-09-20重新阅读arXiv v5。扩展版明确写为在4类机器人操作benchmark的15个任务上评测，并继续报告46.9%的平均提升；这比本站原先用于结构化成绩的RSS 2023会议版实验范围更广。为避免版本混算，本轮把深读版本升级到v5，但已入库的RoboMimic等结果仍标注为RSS 2023可定位Table I–IV快照，除非逐表重新建立v5协议，否则不悄悄替换来源版本。",
+        "sources": [
+          {
+            "label": "arXiv v5 · extended journal version",
+            "url": "https://arxiv.org/html/2303.04137v5"
+          },
+          {
+            "label": "arXiv submission history",
+            "url": "https://arxiv.org/abs/2303.04137"
+          }
+        ]
       }
     ],
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://diffusion-policy.cs.columbia.edu/"
+      "source": "https://arxiv.org/html/2303.04137v5"
     },
     "figures": [],
-    "tables": [],
+    "tables": [
+      {
+        "title": "版本复核：v5扩展版与RSS 2023榜单快照",
+        "columns": [
+          "证据层",
+          "范围",
+          "本站处理"
+        ],
+        "rows": [
+          [
+            "arXiv v5扩展版",
+            "4类benchmark、15个任务",
+            "作为当前深读版本"
+          ],
+          [
+            "RSS 2023 Table I–IV",
+            "既有可精确定位实验表",
+            "现有结构化结果继续保留来源版本"
+          ],
+          [
+            "46.9%平均提升",
+            "作者跨任务汇总",
+            "不拆成缺失的逐任务新成绩"
+          ]
+        ],
+        "locator": "arXiv v5 Abstract；RSS 2023 Tables I–IV",
+        "caption": "最新阅读版本与既有结构化实验快照明确分离，避免版本混算。"
+      }
+    ],
     "benchmarkReview": {
       "status": "extracted",
       "checkedAt": "2026-09-18",
-      "note": "保留15条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
+      "note": "保留15条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。 2026-09-20完成当前版本深读复核；已有结构化结果仅在原sourceVersion/locator边界内继续有效，不因笔记升级而自动改绑。"
     }
   }
 }

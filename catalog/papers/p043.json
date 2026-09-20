@@ -26,7 +26,7 @@
     "insight": "出版条目和摘要足以了解结构动机，但不足以支持量化压缩或性能结论。缺少全文时保留判断。",
     "readingFocus": "摘要与结构动机；有全文后再看量化口径。",
     "evidence": "metadata",
-    "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+    "evidenceNote": "2026-09-20再次检索IEEE/作者/学术索引渠道；仍只有正式摘要与部分作者材料可稳定读取。按author-materials-partial编辑政策继续needs_review，不能把摘要加速字符串或二手页面当完整实验复核。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -52,7 +52,7 @@
     "doi": "10.1109/LRA.2026.3683324",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": null,
+    "lastCheckedAt": "2026-09-20",
     "history": [
       {
         "kind": "imported",
@@ -68,8 +68,8 @@
   "note": {
     "status": "needs_review",
     "updatedAt": "2026-09-20",
-    "verifiedAt": "2026-09-18",
-    "version": "2026-03-30作者供稿技术说明＋IEEE正式摘要；2026-09-18核读；未取得期刊完整正文",
+    "verifiedAt": "2026-09-20",
+    "version": "IEEE RA-L正式摘要＋既有作者材料；2026-09-20再次检索全文，仍未取得可稳定阅读全文的一手版本",
     "sections": [
       {
         "id": "scope",
@@ -241,7 +241,7 @@
     "benchmarkReview": {
       "status": "protocol-unresolved",
       "checkedAt": "2026-09-20",
-      "note": "最终24篇审计：已复核正式出版摘要与现有作者材料，但完整方法/实验正文仍不可稳定读取；按limited-source编辑政策继续deferred，不把摘要速度字符串或二手数值升格为榜单结果。"
+      "note": "2026-09-20再次检索IEEE/作者/学术索引渠道；仍只有正式摘要与部分作者材料可稳定读取。按author-materials-partial编辑政策继续needs_review，不能把摘要加速字符串或二手页面当完整实验复核。"
     }
   }
 }

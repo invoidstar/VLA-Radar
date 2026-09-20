@@ -27,7 +27,7 @@
     "insight": "人机协作的少次尝试应连同人类指导和纠正一起计量。不要把交互式学习误当成纯自主少样本泛化。",
     "readingFocus": "人类介入点；增强现实反馈；5次尝试包含的监督成本。",
     "evidence": "metadata",
-    "evidenceNote": "当前仅有出版条目或摘要层面的证据；见下方边界。",
+    "evidenceNote": "2026-09-20确认论文Open Access身份及正式摘要，但当前自动化全文入口仍返回403，PolyU页面仅提供摘要。按official-abstract-only编辑政策继续needs_review，不把within five trials升级成未读全文的完整实验结论。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -53,7 +53,7 @@
     "doi": "10.1016/j.rcim.2026.103268",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": null,
+    "lastCheckedAt": "2026-09-20",
     "history": [
       {
         "kind": "imported",
@@ -69,8 +69,8 @@
   "note": {
     "status": "needs_review",
     "updatedAt": "2026-09-20",
-    "verifiedAt": "2026-09-18",
-    "version": "PolyU机构摘要与Elsevier出版信息；2026-09-18核读；未取得完整方法与实验正文",
+    "verifiedAt": "2026-09-20",
+    "version": "RCIM 100 (2026) 103268；PolyU/ScienceDirect正式摘要；2026-09-20再次尝试全文，ScienceDirect抓取仍403",
     "sections": [
       {
         "id": "scope",
@@ -236,7 +236,7 @@
     "benchmarkReview": {
       "status": "protocol-unresolved",
       "checkedAt": "2026-09-20",
-      "note": "最终24篇审计：确认正式期刊Open Access身份、两个装配任务及within five trials摘要结论，但当前出版商全文入口受403限制，机构页仅公开摘要；按limited-source编辑政策继续deferred，不把“within five trials”伪造为精确试验序列或成功率。"
+      "note": "2026-09-20确认论文Open Access身份及正式摘要，但当前自动化全文入口仍返回403，PolyU页面仅提供摘要。按official-abstract-only编辑政策继续needs_review，不把within five trials升级成未读全文的完整实验结论。"
     }
   }
 }

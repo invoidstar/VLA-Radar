@@ -27,13 +27,13 @@
     "limitations": "限定结构化双臂任务，不是通用基础模型大规模泛化结论；图、分割、抓取和整体成功率是不同指标。量化结果来自所链预印本。",
     "insight": "显式图结构适合描述关系和阶段，但结构化场景的高成功率不能直接等同开放任务泛化。",
     "readingFocus": "状态图字段；行为树/动作接口；指标层级与任务范围。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2508.05342v2（2026-02-06）/ Information Fusion 131 (2026) 104193；§3–7、Tables 1–3；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
     "hasCautionaryResult": false,
     "sources": [
       {
         "label": "原文 · v1",
-        "url": "https://arxiv.org/html/2508.05342v1"
+        "url": "https://arxiv.org/html/2508.05342v2"
       },
       {
         "label": "DOI",
@@ -58,7 +58,7 @@
     "doi": "10.1016/j.inffus.2026.104193",
     "acceptedAt": null,
     "publishedAt": "2026-07",
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-20",
     "history": [
       {
         "kind": "imported",
@@ -96,10 +96,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-20",
     "verifiedAt": "2026-09-20",
-    "version": "2508.05342v1；保留的公开HTML阅读快照，2026-09-18整理",
+    "version": "arXiv 2508.05342v2（2026-02-06）/ Information Fusion 131 (2026) 104193；§3–7、Tables 1–3；2026-09-20复核",
     "sections": [
       {
         "id": "problem",
@@ -108,7 +108,7 @@
         "sources": [
           {
             "label": "§1；§3；§4.1",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
           }
         ]
       },
@@ -119,7 +119,7 @@
         "sources": [
           {
             "label": "§3.1–3.2；Figures 2–3",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
           }
         ]
       },
@@ -130,7 +130,7 @@
         "sources": [
           {
             "label": "§3.2.3；§4.1–4.3",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
           }
         ]
       },
@@ -141,7 +141,7 @@
         "sources": [
           {
             "label": "§4.2–4.4；§5.2–5.3",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
           }
         ]
       },
@@ -152,7 +152,7 @@
         "sources": [
           {
             "label": "§5.1–5.4；§6",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
           }
         ]
       },
@@ -163,7 +163,7 @@
         "sources": [
           {
             "label": "§6.1–6.4；Table 2；§7",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
           }
         ]
       },
@@ -174,7 +174,7 @@
         "sources": [
           {
             "label": "§3；§4.3；§7–8",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
           }
         ]
       },
@@ -185,7 +185,22 @@
         "sources": [
           {
             "label": "Figure 1；§3–6",
-            "url": "https://arxiv.org/html/2508.05342v1"
+            "url": "https://arxiv.org/html/2508.05342v2"
+          }
+        ]
+      },
+      {
+        "id": "version-review",
+        "title": "v2与正式期刊版复核：操作成功率和总体TSR口径未改变",
+        "body": "2026-09-20按arXiv v2并对照Information Fusion正式出版信息复核。基础操作表仍给出总体抓取94%、放置89%，组合迁移Table 3总体TSR为90%；这些指标的分母与含义仍不同，因此本站继续分轨保存，不把图表示准确率、阶段分割和任务TSR合成单一总分。期刊身份的确认也不改变实验数字的证据层级。",
+        "sources": [
+          {
+            "label": "arXiv v2 · Tables 1–3",
+            "url": "https://arxiv.org/html/2508.05342v2"
+          },
+          {
+            "label": "Information Fusion · DOI",
+            "url": "https://doi.org/10.1016/j.inffus.2026.104193"
           }
         ]
       }
@@ -193,7 +208,7 @@
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://arxiv.org/html/2508.05342v1"
+      "source": "https://arxiv.org/html/2508.05342v2"
     },
     "figures": [
       {
@@ -239,7 +254,7 @@
     "benchmarkReview": {
       "status": "extracted",
       "checkedAt": "2026-09-20",
-      "note": "最终24篇清理：提取2条精确源定位记录；效率/摘要边界/诊断指标不伪装成闭环成功率。"
+      "note": "最终24篇清理：提取2条精确源定位记录；效率/摘要边界/诊断指标不伪装成闭环成功率。 2026-09-20完成当前版本深读复核；已有结构化结果仅在原sourceVersion/locator边界内继续有效，不因笔记升级而自动改绑。"
     }
   }
 }

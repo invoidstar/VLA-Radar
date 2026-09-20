@@ -26,13 +26,13 @@
     "limitations": "Target后训练与预训练直接评测不是同一口径。较高平均分掩盖未见组合泛化短板；+Condensed Memory的完整细节留待后续工作，不能当成熟可移植模块。",
     "insight": "统一移动与操作需要适配多时间尺度。较高平均分可能掩盖未见任务组合上的明显短板。",
     "readingFocus": "Dream Forcing；预测误差适应；RoboCasa已见/未见任务差异。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-20按arXiv 2607.00678v2（2026-07-06），§2–5、Tables 2–8；2026-09-20复核完成当前公开版本方法、实验协议与版本差异复核；非独立实验复现。",
     "hasCautionaryResult": true,
     "sources": [
       {
         "label": "原文 · v1",
-        "url": "https://arxiv.org/html/2607.00678v1"
+        "url": "https://arxiv.org/html/2607.00678v2"
       },
       {
         "label": "arXiv 元数据",
@@ -53,7 +53,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-20",
     "history": [
       {
         "kind": "imported",
@@ -83,10 +83,10 @@
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
-    "updatedAt": "2026-09-17",
-    "verifiedAt": "2026-09-17",
-    "version": "arXiv 2607.00678 v1；§2–5、Tables 2–8",
+    "status": "expanded",
+    "updatedAt": "2026-09-20",
+    "verifiedAt": "2026-09-20",
+    "version": "arXiv 2607.00678v2（2026-07-06），§2–5、Tables 2–8；2026-09-20复核",
     "sections": [
       {
         "id": "problem",
@@ -95,7 +95,7 @@
         "sources": [
           {
             "label": "§2；§3.1 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       },
@@ -106,7 +106,7 @@
         "sources": [
           {
             "label": "§3.2；§4.3 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       },
@@ -117,7 +117,7 @@
         "sources": [
           {
             "label": "§3.3；Figure 3 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       },
@@ -128,7 +128,7 @@
         "sources": [
           {
             "label": "§3.4；§4.4；Figures 4–5 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       },
@@ -139,7 +139,7 @@
         "sources": [
           {
             "label": "§4.1–4.5 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       },
@@ -150,7 +150,7 @@
         "sources": [
           {
             "label": "Tables 2–6 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       },
@@ -161,7 +161,7 @@
         "sources": [
           {
             "label": "Tables 2、7–8；Figure 10 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       },
@@ -172,7 +172,18 @@
         "sources": [
           {
             "label": "Figures 2–5；Tables 2–3、7–8 · 指定版本原文",
-            "url": "https://arxiv.org/html/2607.00678v1"
+            "url": "https://arxiv.org/html/2607.00678v2"
+          }
+        ]
+      },
+      {
+        "id": "version-review",
+        "title": "v2版本复核：RoboCasa365主表与训练阶段边界保持一致",
+        "body": "2026-09-20重新核读v2。RoboCasa365预训练表仍报告ABot-M0.5为40.4%，加入Condensed Memory为46.6%；Target 100%与Target 10%适配分别为54.2%和30.1%。这些数字与现有笔记一致，因此本次只把阅读版本升级到v2，不把不同训练阶段合并成一个协议。v2仍明确将Condensed Memory视为额外增强路径，不能倒灌成基础ABot-M0.5的默认成绩。",
+        "sources": [
+          {
+            "label": "arXiv v2 · Tables 2–3",
+            "url": "https://arxiv.org/html/2607.00678v2"
           }
         ]
       }
@@ -180,7 +191,7 @@
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://arxiv.org/html/2607.00678v1"
+      "source": "https://arxiv.org/html/2607.00678v2"
     },
     "figures": [
       {
@@ -226,7 +237,7 @@
     "benchmarkReview": {
       "status": "extracted",
       "checkedAt": "2026-09-18",
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。"
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。 2026-09-20完成当前版本深读复核；已有结构化结果仅在原sourceVersion/locator边界内继续有效，不因笔记升级而自动改绑。"
     }
   }
 }
