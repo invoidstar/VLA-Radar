@@ -1,3 +1,11 @@
+## 2026-09-20 · V3.0 细节与发布链路加固
+
+- 修正 Benchmark / About 的旧口径文案，并统一公开项目名称为 VLA-Radar；补充 canonical 与 Open Graph / Twitter 基础分享元信息。
+- 修复多行 `$$...$$` / `\\[...\\]` 块级公式，扩展数学渲染到章节标题、Figure 标题、Benchmark review、专注阅读简介与对比视图。
+- 修正 Xiaomi-Robotics-1、ABot-M0.5、GF-VLA、VLA-Adapter 的阅读版本标签，并明确 VLA-Adapter 的 v1 结构化结果与 v2 当前复核边界；清理重复来源链接。
+- 静态资源版本改为 staging 时按内容 SHA-256 自动注入，包含 lazy-loaded workspace / news / tools 资源，不再依赖人工 `?v=` 文案。
+- 将当前函数式 Python 回归加入正式验证链路；补充三浏览器 MathML smoke 与部署后的 GitHub Pages 线上资源/深链 smoke。
+
 ## 2026-09-20 · 修复论文公式渲染
 
 - 新增完全本地的 TeX → MathML 渲染层，不依赖 MathJax/KaTeX CDN、外部字体或运行期 API 请求。
