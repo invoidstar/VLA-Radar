@@ -213,3 +213,5 @@ if needle not in b: raise RuntimeError('browser anchor missing')
 browser.write_text(b.replace(needle,addition+needle),encoding='utf-8')
 
 print('benchmark protocol-family UI patch applied')
+
+# trigger one-shot migration after workflow definition exists
