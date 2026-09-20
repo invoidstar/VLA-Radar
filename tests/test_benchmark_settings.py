@@ -99,3 +99,19 @@ def test_training_identity_is_row_metadata_not_setting_identity():
     tracks,results,settings=catalog()
     rc=next(s for s in settings if s['dataset']=='RoboCasa365' and 'pretraining-kitchens' in s['evalId'])
     assert len(rc['trainingOptions'])>=1
+
+
+def test_eval_ids_are_unique_within_dataset():
+    _,_,settings=catalog()
+    seen=set()
+    for s in settings:
+        key=(s['dataset'],s['evalId'])
+        assert key not in seen
+        seen.add(key)
+
+def test_calvin_synonymous_chain_length_reports_share_setting():
+    _,_,settings=catalog()
+    target=[s for s in settings if s['dataset']=='CALVIN' and s['evalId']=='auto:chain-average-length']
+    assert len(target)==1
+    assert target[0]['paperCount']>=3
+    assert target[0]['resultCount']>=25
