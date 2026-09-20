@@ -8,7 +8,7 @@
     function startWorker(){
       if(workerAttempted)return;workerAttempted=true;
     if(path&&!fixture&&typeof Worker!=='undefined')try{
-      worker=new Worker('js/core/search-worker.js?v=maintenance-20260918');workerReady=true;
+      worker=new Worker('search-worker.js?v=maintenance-20260918');workerReady=true;
       worker.onmessage=e=>{const item=pending.get(e.data.id);if(!item)return;pending.delete(e.data.id);clearTimeout(item.timer);e.data.error?item.reject(new Error(e.data.error)):item.resolve(e.data.rows);};
       worker.onerror=failWorker;
     }catch{workerReady=false;}
