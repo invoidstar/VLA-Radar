@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-20",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -3860,9 +3860,9 @@
       "paperUrl": "https://arxiv.org/abs/2501.15830",
       "arxiv": "2501.15830",
       "doi": "",
-      "detailUrl": "data/details/p068.json?v=a1fd1b5f4fac6fad",
+      "detailUrl": "data/details/p068.json?v=fea7e6a8bb304f6d",
       "resultUrl": "data/paper-results/p068.51ef96d6c55d867d.json",
-      "noteStatus": "needs_review",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-01-27",
         "latestArxivVersion": "v5",
@@ -3918,9 +3918,9 @@
       "paperUrl": "https://arxiv.org/abs/2502.19645",
       "arxiv": "2502.19645",
       "doi": "10.15607/RSS.2025.XXI.017",
-      "detailUrl": "data/details/p069.json?v=3a2383289f6267de",
+      "detailUrl": "data/details/p069.json?v=da59055770d14ca5",
       "resultUrl": "data/paper-results/p069.0364b2ff76a84478.json",
-      "noteStatus": "needs_review",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-02-27",
         "latestArxivVersion": "v2",
@@ -4413,9 +4413,9 @@
       "paperUrl": "https://arxiv.org/abs/2603.16666",
       "arxiv": "2603.16666",
       "doi": "",
-      "detailUrl": "data/details/p078.json?v=b8271f272c79e3fc",
+      "detailUrl": "data/details/p078.json?v=e3d29807bc9a1fad",
       "resultUrl": "data/paper-results/p078.83e1ca456810d613.json",
-      "noteStatus": "needs_review",
+      "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-03-17",
         "latestArxivVersion": "v2",

@@ -36,3 +36,6 @@
 .protocol-card .protocol-brief{font-size:12px;margin-bottom:0}.protocol-details{border-top:1px solid #e7ebf4;margin-top:14px;padding-top:12px;font-size:12px;color:#687a96}
 .protocol-details summary{cursor:pointer;line-height:1.8;color:#4b6298}.protocol-details[open] summary{margin-bottom:10px}
 @media(max-width:650px){.board-group-controls{grid-template-columns:minmax(0,1fr)}.board-browse-card{padding:14px}.board-browse-heading{gap:10px}.board-group-help{font-size:11px}}
+
+/* Expanded benchmark navigation and evidence tables */
+.dataset-tabs{flex-wrap:wrap}.note-data-table{font-size:.85rem}.note-section p{line-height:1.85}.note-section .board-table-scroll{max-width:100%;margin:16px 0}.note-section>div{min-width:0}

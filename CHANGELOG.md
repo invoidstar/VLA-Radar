@@ -1,3 +1,7 @@
+## 2026-09-20 — 2026-09-20-version-review
+
+周度版本复核小批次：将 SpatialVLA、OpenVLA-OFT、Fast-WAM 三篇 needs_review 笔记按各自最新公开 arXiv 版本重新核对方法、训练/部署信息、协议、原表结果、消融与限制。仅更新阅读证据与版本边界，不新增榜单结果、不改 KEY RESULT、不把元数据刷新冒充新论文收录。
+
 ## 2026-09-20 · 最终24篇 deferred 证据收敛
 
 - 一次性审计剩余24篇 deferred；其中22篇具备足够一手证据转 extracted，DMS-VLA 与 VLAbot 因完整正文仍不可稳定读取，遵守limited-source编辑政策继续deferred，deferred 24→2。
