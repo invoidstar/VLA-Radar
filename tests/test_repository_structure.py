@@ -44,13 +44,13 @@ def test_public_asset_urls_are_stable():
     from scripts.build.stage_site import PUBLIC_FILES
     expected={
         'index.html','favicon.svg','styles.css','sidebar.css','research.css','experience.css','news.css','tools.css',
-        'app.js','research.js','dates.js','runtime.js','search-core.js','search-client.js','search-worker.js',
+        'app.js','research.js','benchmark-settings.js','dates.js','runtime.js','search-core.js','search-client.js','search-worker.js',
         'sidebar.js','experience-loader.js','experience-core.js','experience.js','news-core.js','news.js',
         'tools-loader.js','tools-core.js','tools.js'
     }
     assert set(PUBLIC_FILES.values())==expected
     index=(ROOT/'site/index.html').read_text()
-    for name in ['styles.css','sidebar.css','research.css','experience.css','app.js','research.js','runtime.js','search-client.js','experience-loader.js','tools-loader.js']:
+    for name in ['styles.css','sidebar.css','research.css','experience.css','app.js','research.js','benchmark-settings.js','runtime.js','search-client.js','experience-loader.js','tools-loader.js']:
         assert name in index
     assert 'src="js/' not in index
     assert 'href="styles/' not in index
