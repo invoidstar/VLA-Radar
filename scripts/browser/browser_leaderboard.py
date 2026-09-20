@@ -74,7 +74,7 @@ try:
         page.goto(base+'?'+urlencode({'view':'leaderboards','dataset':'RoboCasa365','setting':rc['id']}),wait_until='networkidle')
         page.wait_for_selector('.setting-summary');page.wait_for_function('(sid)=>document.querySelector("#setting-select")?.value===sid',arg=rc['id'])
         yes('default benchmark view keeps Setting adjacent to scores',page.locator('.setting-summary').count()==1 and page.locator('.setting-table').count()==1 and page.locator('#lb-track').count()==0)
-        yes('Setting header exposes training data before result rows','Training data' in page.locator('.setting-summary').inner_text())
+        yes('Setting header exposes training data before result rows',page.locator('.setting-training strong').count()==1 and bool(page.locator('.setting-training span').inner_text().strip()))
         source_ids=page.locator('.setting-source .board-paper-link').evaluate_all('(els)=>[...new Set(els.map(e=>e.dataset.paper))]')
         yes('same Setting preserves separate source papers',len(source_ids)>=3)
         page.locator('.setting-recipe details').first.locator('summary').click()
