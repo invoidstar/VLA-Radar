@@ -1,0 +1,55 @@
+name: One-shot repository architecture refactor
+on:
+  push:
+    branches: [refactor/repository-architecture-2026-09-20]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: architecture-refactor-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  refactor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply structural refactor
+        run: python .refactor/architecture_refactor.py
+      - name: Verify canonical data is byte-identical
+        run: git diff --exit-code -- catalog data
+      - name: Run complete offline validation
+        run: python scripts/validation/validate_all.py
+      - name: Install browser test driver and CJK fonts
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then
+            python -m playwright install --with-deps chromium
+          fi
+          if ! fc-list :lang=zh | grep -q .; then
+            sudo apt-get update -qq
+            sudo apt-get install -y fonts-noto-cjk
+          fi
+      - name: Run full browser regression on staged public tree
+        run: |
+          python tests/browser/browser_smoke.py
+          python tests/browser/browser_workspace.py
+          python tests/browser/browser_news.py
+          python tests/browser/browser_sidebar.py
+          python tests/browser/browser_tools.py
+          python tests/browser/browser_leaderboard.py
+      - name: Check patch hygiene
+        run: git diff --check
+      - name: Remove one-shot refactor machinery
+        run: |
+          rm -rf .refactor
+          rm -f .github/workflows/architecture-refactor.yml
+      - name: Commit validated architecture
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Refactor repository architecture and navigation hierarchy"
+          git push origin HEAD:refactor/repository-architecture-2026-09-20
