@@ -1,3 +1,11 @@
+## 2026-09-20 · 仓库信息架构重构
+
+- 前端源码归入 `site/`，按 core/components/features 与 styles 分层；Pages 仍发布到原站点根路径，公开 URL 与 localStorage key 不变。
+- `scripts/` 按 build/validate/browser/maintenance/discovery/migrations 分责；Node 回归归入 `tests/node/`，本地与 CI 共用确定性 site staging。
+- `maintenance/` 分为 policies/state/audits/docs，历史审计保留且不与当前运行状态混放。
+- `catalog/` 与 `data/` 在迁移中逐字节锁定；论文、结果、协议及榜单语义不参与本次重构。
+- 移除已完成使命的三套历史一次性 workflow，保留并更新当前 Pages、内容批处理和 housekeeping 流程。
+
 ## 2026-09-20 · 最终仓库一致性审计与安全分支清理
 
 - 删除3个经精确SHA与内容差异证明可安全清理的历史/安全分支；保留含19个独有内容提交的release/deep-notes历史分支，以及仍处6小时恢复窗口的3个近期已合并分支。
@@ -84,7 +92,7 @@
 
 ## 2026-09-19 · 榜单列排序与时间—成绩散点图
 
-按明确使用需求改进现有Leaderboard：所有成绩列可点选排序及升降序切换，论文对照表也可排列但不赋公平名次；名次方向与显示顺序分开，缺失与零分不混淆。新增协议内时间—成绩SVG散点图、来源首发/本站核验两种日期口径、重合记录展开、CSV和共享URL。保持按需加载、有限绘图数量和移动端局部滚动；没有改写论文、笔记、首发日期、评测记录或检索检查点。详细语义见maintenance/leaderboard-analysis.md，增加对应纯函数和真实HTTP浏览器回归。
+按明确使用需求改进现有Leaderboard：所有成绩列可点选排序及升降序切换，论文对照表也可排列但不赋公平名次；名次方向与显示顺序分开，缺失与零分不混淆。新增协议内时间—成绩SVG散点图、来源首发/本站核验两种日期口径、重合记录展开、CSV和共享URL。保持按需加载、有限绘图数量和移动端局部滚动；没有改写论文、笔记、首发日期、评测记录或检索检查点。详细语义见maintenance/docs/leaderboard-analysis.md，增加对应纯函数和真实HTTP浏览器回归。
 
 ## 2026-09-19 · 原始证据回补第七批
 
@@ -160,7 +168,7 @@
 - Expanded six public reading notes (p001, p004, p021, p064, p069, p076). Older notes retain explicit legacy status; p069's v1 note is marked for v2 review.
 - Added RoboTwin / RoboCasa / LIBERO Leaderboards: 8 protocol tracks, 27 source-located rows. Candidate detection and extraction are separate from ranked checked evidence. Heterogeneous comparison tables are unranked; no cross-protocol SOTA total.
 - Added monthly-age source health rotation, quarterly review / old-note queues, strict source/build/result tests, bounded pagination and lazy timeline. KEY RESULT and the local reading storage key remain unchanged.
-- New changes are proposed via a feature PR; no automatic main merge. See `maintenance/v2-validation.md` for completed checks and remaining verification boundaries.
+- New changes are proposed via a feature PR; no automatic main merge. See `maintenance/audits/migrations/v2-validation.md` for completed checks and remaining verification boundaries.
 
 # Changelog
 
@@ -171,14 +179,14 @@
 - 新增首发年份与 ISO 周次筛选、可切换的周/月时间线、周范围详情与 CSV 字段；收录批次保持独立口径。
 - 只精确到月份或日期未知的记录不推算周数，单独显示；使用 UTC 计算以避免浏览器时区改变周归属。
 - 新增日期模块和日期回归测试；发布制品加入 dates.js。
-- 本次为历史关键文献定向补充，不是 9 月全量检索；不推进 maintenance/state.json 的周更检查点。
-- 文献清单和证据边界见 maintenance/landmarks-2026-09.md；周检索维护说明见 maintenance/week-search.md。
+- 本次为历史关键文献定向补充，不是 9 月全量检索；不推进 maintenance/state/state.json 的周更检查点。
+- 文献清单和证据边界见 maintenance/docs/landmarks-2026-09.md；周检索维护说明见 maintenance/docs/week-search.md。
 - 周日定时维护调整为人工审核流程：自动任务只创建 `weekly-update-YYYY-MM-DD` 分支和 PR，不直接修改 `main`，不自动合并；维护者审核后手动合并。交互式明确要求的即时更新仍可在完整验证后直接 fast-forward 到 `main`。
 
 ## 2026-09-17 — 独立仓库迁移
 
 - 将既有 VLA Radar 站点迁入独立仓库，保留原界面、检索、筛选和本地阅读逻辑。
-- 已从固定公开快照导入首批 46 篇记录；原始文件哈希、数据字节一致性、公开结构、去重和 JavaScript 语法校验通过。具体记录见 maintenance/migration.json。迁移不代表重新核验论文。
+- 已从固定公开快照导入首批 46 篇记录；原始文件哈希、数据字节一致性、公开结构、去重和 JavaScript 语法校验通过。具体记录见 maintenance/audits/migrations/migration.json。迁移不代表重新核验论文。
 - 修正仓库和数据编辑入口；新增 AGENTS.md、MAINTENANCE.md、检索检查点、去重校验和 Pages 发布流程。
 - 原主页仓库当前文件树已恢复到迁移前的主页状态；与添加文献站之前相比，文件差异为零，正常提交历史保留。
 - 已设置每周日早晨约 08:00（Asia/Singapore，UTC+8）的文献维护任务，首次为 2026-09-20。首轮回补 2026-09-01 起的公开成果；截至本次迁移尚未执行该轮检索。后续运行依赖可用的检索工具与 GitHub 授权，任务结果必须区分新增、修订和未完成项。

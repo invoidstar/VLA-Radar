@@ -12,7 +12,7 @@ class BatchSevenTests(unittest.TestCase):
    self.assertEqual(self.t[k]['comparisonScope'],'paper-table')
  def test_rt1_scope_conflict_and_same_source_dedup(self):
   t=self.t['google-real-rt1-v2-table2'];self.assertIn('21',t['protocol']);self.assertIn('53',t['protocol'])
-  audit=read('maintenance/benchmark-source-audit-20260919-batch7.json')
+  audit=read('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch7.json')
   self.assertEqual(len([i for i in audit['newResults'] if i.startswith('r-google-real-rt1')]),9)
  def test_rt2_original_table_average_not_larger_value(self):
   r=read('catalog/results/r-google-real-rt2-v1-generalization-palix.json')

@@ -6,7 +6,7 @@ R=Path(__file__).resolve().parents[1]
 def read(p): return json.loads((R/p).read_text())
 class BatchTenTests(unittest.TestCase):
  def setUp(self):
-  self.audit=read('maintenance/benchmark-source-audit-20260919-batch10.json')
+  self.audit=read('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch10.json')
   self.tracks={x['id']:x for x in read('catalog/benchmarks.json')['tracks']}
   self.rows=[read('catalog/results/'+i+'.json') for i in self.audit['newResults']]
   self.records={p:read('catalog/papers/'+p+'.json') for p in ['p047','p049']}
@@ -72,7 +72,7 @@ class BatchTenTests(unittest.TestCase):
   b=read('catalog/bibliography.json')['entries']
   self.assertEqual(len(b['p049']['item']['author']),8);self.assertEqual(len(b['p047']['item']['author']),3)
   self.assertTrue(all(b[p]['item']['issued']['date-parts']==[[2022,1,11]] for p in self.records))
-  self.assertFalse(any(c.get('paperId')=='p049' for c in read('maintenance/publication-candidates.json')['candidates']))
+  self.assertFalse(any(c.get('paperId')=='p049' for c in read('maintenance/state/publication-candidates.json')['candidates']))
  def test_limits_stay_visible(self):
   self.assertEqual(len(self.audit['deferred']),2)
   self.assertEqual({c['paperId'] for c in self.audit['keyResultCorrections']},{'p049'})

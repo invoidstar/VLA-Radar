@@ -6,7 +6,7 @@ R=Path(__file__).resolve().parents[1]
 def read(path): return json.loads((R/path).read_text())
 class BatchElevenTests(unittest.TestCase):
  def setUp(self):
-  self.audit=read('maintenance/benchmark-source-audit-20260919-batch11.json')
+  self.audit=read('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch11.json')
   self.tracks={t['id']:t for t in read('catalog/benchmarks.json')['tracks']}
   self.rows=[read('catalog/results/'+id+'.json') for id in self.audit['newResults']]
   self.rec={id:read('catalog/papers/'+id+'.json') for id in ['p053','p044']}

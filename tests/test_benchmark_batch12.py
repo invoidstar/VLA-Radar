@@ -8,7 +8,7 @@ def read(p):return json.loads((R/p).read_text())
 class BatchTwelveTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.a=read('maintenance/benchmark-source-audit-20260919-batch12.json')
+  cls.a=read('maintenance/audits/benchmark/benchmark-source-audit-20260919-batch12.json')
   cls.t={t['id']:t for t in read('catalog/benchmarks.json')['tracks']}
   cls.r={i:read('catalog/results/'+i+'.json') for i in cls.a['newResults']}
   cls.p={p:read('catalog/papers/'+p+'.json') for p in cls.a['papers']}
@@ -38,7 +38,7 @@ class BatchTwelveTests(unittest.TestCase):
   self.assertIn('v2',self.p['p028']['note']['version'])
   self.assertIn('v2',self.p['p041']['note']['version'])
  def test_review_cross_references(self):
-  d=read('maintenance/benchmark-review.json')['papers']
+  d=read('maintenance/state/benchmark-review.json')['papers']
   for p in self.p:
    self.assertEqual(d[p]['status'],'extracted')
    self.assertEqual(set(d[p]['resultIds']),{i for i,r in self.r.items() if r['paperId']==p})

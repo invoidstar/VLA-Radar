@@ -1,10 +1,10 @@
 """Public derived views and truthful update semantics, using synthetic deltas only."""
 import copy,json,sys,unittest
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
-from experience_build import outputs
-from capture_activity import paper_events
-from catalog_core import read_catalog
+ROOT=Path(__file__).resolve().parents[1]
+from scripts.build.experience_build import outputs
+from scripts.maintenance.capture_activity import paper_events
+from scripts.build.catalog_core import read_catalog
 class ExperienceTests(unittest.TestCase):
  def setUp(self):self.manifest,self.records,self.tracks,self.results=read_catalog(ROOT)
  def test_original_records_not_mutated(self):

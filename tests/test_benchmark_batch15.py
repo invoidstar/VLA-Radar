@@ -3,7 +3,7 @@ from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def j(p): return json.loads((R/p).read_text())
 def test_batch15_counts():
-    r=j('maintenance/benchmark-review.json')['papers']
+    r=j('maintenance/state/benchmark-review.json')['papers']
     assert all(r[x]['status']=='extracted' for x in ['p011','p020','p009','p060','p003'])
     assert sum(x['status']=='extracted' for x in r.values())==72
     assert sum(x['status']=='deferred' for x in r.values())==24

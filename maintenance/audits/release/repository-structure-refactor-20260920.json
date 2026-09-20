@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "baseMainSha": "60b442c10d25591e3aa74308d599b98e258f83ac",
+  "scope": "repository information architecture only; canonical research semantics excluded",
+  "layers": [
+    "site",
+    "catalog",
+    "data",
+    "scripts",
+    "tests",
+    "maintenance"
+  ],
+  "guarantees": {
+    "catalogByteIdentical": true,
+    "dataByteIdentical": true,
+    "publicRoutesUnchanged": true,
+    "localStorageKeysUnchanged": true,
+    "paperResultTrackSemanticsUnchanged": true,
+    "publicAssetPathsUnchanged": true
+  },
+  "removedHistoricalOneShotWorkflows": [
+    "complete-library.yml",
+    "import-site.yml",
+    "recover-library.yml"
+  ],
+  "validation": {
+    "buildCatalogCheck": "pass",
+    "validateAll": "pass",
+    "publicAssetCompatibility": "locked-by-test_repository_structure"
+  }
+}

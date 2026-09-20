@@ -4,7 +4,7 @@ R=Path(__file__).resolve().parents[1]
 def j(p): return json.loads((R/p).read_text())
 ALL=['p067','p032','p031','p045','p043','p022','p018','p075','p008','p071','p077','p030','p005','p038','p006','p019','p033','p007','p010','p046','p034','p016','p037','p097']
 def test_final24_counts_and_zero_deferred():
-    r=j('maintenance/benchmark-review.json')['papers']
+    r=j('maintenance/state/benchmark-review.json')['papers']
     assert all(r[x]['status']=='extracted' for x in ALL if x not in {'p043','p046'})
     assert r['p043']['status']=='deferred' and r['p046']['status']=='deferred'
     assert sum(x['status']=='extracted' for x in r.values())==94
@@ -12,14 +12,14 @@ def test_final24_counts_and_zero_deferred():
     assert sum(x['status']=='not-applicable' for x in r.values())==2
     assert len(j('catalog/benchmarks.json')['tracks'])==267
     assert len(list((R/'catalog/results').glob('r-*.json')))==962
-    assert j('maintenance/work-queue.json')['remainingNotes']==11
+    assert j('maintenance/state/work-queue.json')['remainingNotes']==11
 def test_efficiency_is_not_robot_success():
     t={x['id']:x for x in j('catalog/benchmarks.json')['tracks']}
     assert t['fast-v1-training-speedup']['unit']=='score'
     assert t['deltoris-v1-hardware-speedup']['metric'].startswith('Maximum reported')
     assert j('catalog/results/r-fast-v1-train-speed.json')['values']['Speedup factor']==5.0
 def test_limited_sources_remain_deferred():
-    r=j('maintenance/benchmark-review.json')['papers']
+    r=j('maintenance/state/benchmark-review.json')['papers']
     assert r['p043']=={'status':'deferred','trackIds':[],'resultIds':[],'note':r['p043']['note']}
     assert r['p046']=={'status':'deferred','trackIds':[],'resultIds':[],'note':r['p046']['note']}
     assert not (R/'catalog/results/r-dmsvla-abstract-range.json').exists()
@@ -34,7 +34,7 @@ def test_latest_version_reviews():
     for pid,mark in [('p018','v2'),('p075','v2'),('p030','v2'),('p038','v2'),('p034','v3'),('p037','v2')]:
         p=j('catalog/papers/'+pid+'.json')
         assert p['note']['status']=='expanded' and mark in p['note']['version']
-    q=j('maintenance/work-queue.json')['notes']
+    q=j('maintenance/state/work-queue.json')['notes']
     assert not any(x['paperId'] in {'p034','p075'} for x in q)
 def test_counts_not_faked_as_sr():
     m=j('catalog/results/r-mvp-v1-pixmc-count.json')
