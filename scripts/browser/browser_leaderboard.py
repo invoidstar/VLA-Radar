@@ -90,7 +90,7 @@ try:
         page.locator('[data-tax-env="real"]').click();page.wait_for_function('new URLSearchParams(location.search).get("lbEnv")==="real"');page.wait_for_selector('.setting-table')
         real_expected={d for d in focus_expected if bench_tax[d]['environment']=='real'}
         yes('Environment composes with Focus',set(page.locator('[data-setting-dataset]').all_text_contents())==real_expected)
-        page.locator('.taxonomy-tags summary').click();page.locator('[data-tax-tag="memory"]').check();page.wait_for_function('new URLSearchParams(location.search).get("lbTags")==="memory"');page.wait_for_selector('.setting-table')
+        page.locator('.taxonomy-tags summary').click();page.locator('label:has([data-tax-tag="memory"])').click();page.wait_for_function('new URLSearchParams(location.search).get("lbTags")==="memory"');page.wait_for_selector('.setting-table')
         tag_expected={d for d in real_expected if 'memory' in bench_tax[d]['tags']}
         yes('tag checkbox composes with Focus and Environment',set(page.locator('[data-setting-dataset]').all_text_contents())==tag_expected)
         page.reload(wait_until='networkidle');page.wait_for_selector('.benchmark-taxonomy')
