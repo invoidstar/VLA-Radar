@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, shutil
+import argparse, hashlib, re, shutil
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -32,6 +32,30 @@ PUBLIC_FILES={
     'site/js/features/tools/tools.js':'tools.js',
 }
 
+LAZY_REFERENCES={
+    'experience-loader.js':['experience-core.js','experience.js','news.css','news-core.js','news.js'],
+    'tools-loader.js':['tools.css','tools-core.js','tools.js'],
+}
+
+def _digest(path:Path)->str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+
+def _stamp(text:str,name:str,digest:str)->str:
+    pattern=re.compile(r'(?P<q>["\\\'])'+re.escape(name)+r'(?:\\?v=[^"\\\']*)?(?P=q)')
+    return pattern.sub(lambda m:f'{m.group("q")}{name}?v={digest}{m.group("q")}',text)
+
+def _stamp_lazy_assets(output:Path)->None:
+    for loader,names in LAZY_REFERENCES.items():
+        path=output/loader;text=path.read_text()
+        for name in names:text=_stamp(text,name,_digest(output/name))
+        path.write_text(text)
+
+def _stamp_index_assets(output:Path)->None:
+    path=output/'index.html';text=path.read_text()
+    for name in sorted({dst for dst in PUBLIC_FILES.values() if dst.endswith(('.js','.css'))}):
+        text=_stamp(text,name,_digest(output/name))
+    path.write_text(text)
+
 def stage(output:Path)->Path:
     output=output if output.is_absolute() else ROOT/output
     source=ROOT/'site'
@@ -43,6 +67,8 @@ def stage(output:Path)->Path:
         if not source_file.is_file():raise FileNotFoundError(source_file)
         shutil.copy2(source_file,output/dst)
     shutil.copytree(ROOT/'data',output/'data')
+    _stamp_lazy_assets(output)
+    _stamp_index_assets(output)
     (output/'.nojekyll').touch()
     return output
 
