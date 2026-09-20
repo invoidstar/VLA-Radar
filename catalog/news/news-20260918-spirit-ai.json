@@ -20,7 +20,7 @@
   "vlaRelevance": "Spirit AI强调主要依赖真实世界数据，并将自然语言到连续物理动作视为未来能力方向。这里的90%成功率只对应公司所述的结构化简单任务，没有公开统一benchmark协议，不能写入Leaderboard或与论文SR直接比较。",
   "limits": "技术指标、融资与部署数量来自Reuters对公司采访及现场报道，其中能力数字仍是公司陈述而非独立基准复现。报道也明确细粒度操作和未见任务仍困难；家庭通用部署属于公司对未来时间线的判断，不作为已实现能力。",
   "sources": [
-    {"id":"s1","title":"Chinese 'robot brain' startup sees ChatGPT-style breakthrough as soon as next year","publisher":"Reuters","url":"https://www.reuters.com/world/asia-pacific/founder-chinese-startup-spirit-ai-says-robot-brains-set-2027-breakthrough-2026-09-18/","kind":"media","publishedAt":"2026-09-18","access":"fulltext","note":"核对记者原始报道、采访归属、现场部署描述与公司自报指标；不把公司陈述包装为独立技术验证。"}
+    {"id":"s1","title":"Chinese 'robot brain' startup sees ChatGPT-style breakthrough as soon as next year","publisher":"Reuters","url":"https://www.reuters.com/world/asia-pacific/founder-chinese-startup-spirit-ai-says-robot-brains-set-2027-breakthrough-2026-09-18/","kind":"media","publishedAt":"2026-09-18","access":"full-page","note":"核对记者原始报道、采访归属、现场部署描述与公司自报指标；不把公司陈述包装为独立技术验证。"}
   ],
   "paperLinks": [],
   "revisionHistory": []
