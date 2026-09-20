@@ -17,7 +17,7 @@
     const tokens=searchNorm(query).split(' ').filter(Boolean);
     if(!tokens.length)return [...settings];
     return settings.filter(s=>{
-      const hay=searchNorm([s.dataset,s.name,s.tasks,s.split,s.metric,s.evalId,s.protocol,...(s.columns||[])].join(' '));
+      const hay=searchNorm([s.dataset,s.name,s.tasks,s.split,s.metric,s.evalId,...(s.columns||[])].join(' '));
       return tokens.every(token=>hay.includes(token));
     });
   }
