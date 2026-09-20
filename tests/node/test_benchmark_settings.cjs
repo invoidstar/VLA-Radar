@@ -9,4 +9,5 @@ ok('source order does not deduplicate',()=>a.deepEqual(S.sortRows(rows,setting,'
 ok('missing score stays last ascending',()=>a.deepEqual(S.sortRows(rows,setting,'Average','asc').map(x=>x.id),['d','a','b','c']));
 ok('lower metric auto sorts ascending',()=>a.deepEqual(S.sortRows(rows,{...setting,direction:'lower'},'Average').map(x=>x.id),['d','a','b','c']));
 ok('sorting is non-mutating',()=>{const before=JSON.stringify(rows);S.sortRows(rows,setting,'Average');a.equal(JSON.stringify(rows),before);});
+ok('render keeps direction block-scoped',()=>{const src=require('node:fs').readFileSync('site/js/features/research/benchmark-settings.js','utf8');a(src.includes(';const dir=direction(setting,order);'));a(!src.includes('),dir=direction(setting,order);'));});
 console.log(`PASS: ${count} Setting-table sorting / duplicate-report assertions.`);
