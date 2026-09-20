@@ -3,7 +3,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts/build'))
 from catalog_core import read_catalog
-from benchmark_settings import build_settings,training_known,training_identity
+from benchmark_settings import build_settings,training_identity,evaluation_key
 
 def catalog():
     _,_,tracks,results=read_catalog(ROOT)
@@ -22,63 +22,80 @@ def test_every_dataset_with_checked_results_has_settings():
     expected={trackmap[r['trackId']]['dataset'] for r in results if r['evidence']=='checked'}
     assert expected=={s['dataset'] for s in settings}
 
-def test_setting_metric_and_training_are_consistent():
+def test_settings_are_evaluation_protocols_not_training_buckets():
     tracks,results,settings=catalog();trackmap={t['id']:t for t in tracks};resultmap={r['id']:r for r in results}
+    assert len(settings)<230
     for s in settings:
         assert all(trackmap[resultmap[rid]['trackId']]['dataset']==s['dataset'] for rid in s['resultIds'])
         assert all(trackmap[resultmap[rid]['trackId']]['unit']==s['unit'] for rid in s['resultIds'])
         assert all(trackmap[resultmap[rid]['trackId']]['direction']==s['direction'] for rid in s['resultIds'])
-        if s['trainingKnown']:
-            identities={training_identity(resultmap[rid]['trainingData']) for rid in s['resultIds']}
-            assert None not in identities and len(identities)==1
-        else:
-            assert s['paperCount']==1
+        assert len(s['trainingByResult'])==len(s['resultIds'])
+        assert sum(x['count'] for x in s['trainingOptions'])==len(s['resultIds'])
 
-def test_curated_cross_track_equivalence_only_where_declared():
-    tracks,_,settings=catalog();trackmap={t['id']:t for t in tracks}
-    for s in settings:
-        if len(s['trackIds'])<=1:continue
-        ts=[trackmap[x] for x in s['trackIds']]
-        eval_ids={t.get('settingEvalId') or (t.get('familyId') if t.get('familyMode')=='aligned' else None) for t in ts}
-        assert len(eval_ids)==1 and None not in eval_ids
-
-def test_libero_budget_variants_are_recipe_rows_not_settings():
+def test_robotwin_training_regimes_share_clean_random_setting():
     _,_,settings=catalog()
-    target=[s for s in settings if set(s['trackIds'])=={
-        'libero-infoentropy-v1-budget60','libero-infoentropy-v1-budget80',
-        'libero-infoentropy-v1-budget120','libero-infoentropy-v1-budget140'}]
-    assert len(target)==1
-    assert target[0]['resultCount']==4
+    target=next(s for s in settings if s['dataset']=='RoboTwin' and s['evalId']=='auto:50-clean-random')
+    ids=set(target['trackIds'])
+    assert {'robotwin2-selfwam-27500','robotwin2-flashvla-v1-pi05-all','robotwin2-official-2500clean-cotrain','robotwin2-official-2500clean-sft'}<=ids
+    assert len(target['trainingOptions'])>=3
+    assert target['paperCount']>=5
 
-def test_robocasa365_same_protocol_and_training_crosses_sources():
+def test_libero_standard_setting_is_cross_paper_not_source_scoped():
     _,_,settings=catalog()
-    target=[s for s in settings if {'robocasa365-official-100','robocasa365-official-101'}<=set(s['trackIds'])]
-    assert target
-    assert any(s['paperCount']>=3 for s in target)
+    target=next(s for s in settings if s['dataset']=='LIBERO' and s['evalId']=='auto:standard40')
+    ids=set(target['trackIds'])
+    assert {'libero-oft-single-view','libero-oft-multi-view','libero-cosmos-3seeds','libero-rldx-v2','libero-openvla-v3-singleview-cleaned','dmsvla-ieee-libero-main'}<=ids
+    assert target['paperCount']>=6
+    assert len(target['trainingOptions'])>1
 
-def test_robomimic_observation_recipes_share_setting_and_keep_duplicate_methods():
-    tracks,results,settings=catalog();resultmap={r['id']:r for r in results}
-    target=next(s for s in settings if set(s['trackIds'])=={'robomimic-corl21-lowdim-ph-best','robomimic-corl21-image-ph-best'})
-    names=[resultmap[rid]['method'] for rid in target['resultIds']]
-    assert names.count('BC-RNN')==2
-    assert target['trainingKnown']
+def test_libero_delay_is_real_evaluation_guard():
+    _,_,settings=catalog()
+    ids={s['evalId'] for s in settings if s['dataset']=='LIBERO'}
+    assert 'auto:standard40-delay-d1' in ids
+    assert 'auto:standard40-delay-d4' in ids
+    assert 'auto:standard40' in ids
 
-def test_actioncache_distinct_tasks_never_auto_merge():
+def test_rlbench_18_task_reports_share_setting_but_74_task_does_not():
+    _,_,settings=catalog()
+    main=next(s for s in settings if s['dataset']=='RLBench' and s['evalId']=='auto:18-main')
+    assert {'rlbench-18-bridgepp-table1','rlbench-act3d-corl2023-18multi','rlbench-rvt-corl2023-table1'}<=set(main['trackIds'])
+    assert 'rlbench-act3d-corl2023-74single' not in main['trackIds']
+
+def test_robodojo_single_multi_training_mode_does_not_split_evaluation():
+    _,_,settings=catalog()
+    score=[s for s in settings if s['dataset']=='RoboDojo' and 'score' in s['evalId']]
+    assert any({'robodojo-official-sim-multi-score','robodojo-official-sim-single-score'}<=set(s['trackIds']) for s in score)
+
+def test_simler_vm_va_remain_distinct_evaluation_settings():
+    _,_,settings=catalog()
+    vm=[s for s in settings if s['dataset']=='SimplerEnv' and '-vm-' in s['evalId']]
+    va=[s for s in settings if s['dataset']=='SimplerEnv' and '-va-' in s['evalId']]
+    assert vm and va
+    assert not any(set(a['trackIds'])&set(b['trackIds']) for a in vm for b in va)
+
+def test_google_physical_kitchens_remain_distinct():
+    _,_,settings=catalog()
+    mock=[s for s in settings if s['dataset']=='Google Robot (real)' and 'mock-kitchen' in s['evalId']]
+    office=[s for s in settings if s['dataset']=='Google Robot (real)' and 'office-kitchen' in s['evalId']]
+    assert mock and office
+
+def test_actioncache_real_tasks_never_merge():
     _,_,settings=catalog()
     for s in settings:
         action=[tid for tid in s['trackIds'] if tid.startswith('actioncache-v2-real-')]
-        assert len(action)<=1
+        tasks={x for x in ('button','close','sausage') if any(x in tid for tid in action)}
+        assert len(tasks)<=1
 
-def test_robotwin_clean_only_training_modes_become_recipes():
-    _,_,settings=catalog()
-    assert any(set(s['trackIds'])=={'robotwin2-turbovla-v2-clean-per-task','robotwin2-turbovla-v2-clean-multi-task'} for s in settings)
+def test_same_method_reports_are_not_deduplicated():
+    tracks,results,settings=catalog();resultmap={r['id']:r for r in results}
+    libero=next(s for s in settings if s['dataset']=='LIBERO' and s['evalId']=='auto:standard40')
+    methods=[resultmap[rid]['method'] for rid in libero['resultIds']]
+    assert len(methods)>len(set(methods))
 
-
-def test_recipe_fields_do_not_split_training_data_identity():
-    a='Human300=30,000 demos; global batch 192; steps 250000; checkpoints retained'
+def test_training_identity_is_row_metadata_not_setting_identity():
+    a='Human300=30,000 demos; global batch 192; steps 250000'
     b='Human300=30,000 demos; global batch 64; steps 75000'
     assert training_identity(a)==training_identity(b)=='Human300=30,000 demos'
-
-def test_unknown_training_never_crosses_papers():
-    assert training_identity('各方法原配置。') is None
-    assert training_identity('确切训练数据版本、示范数未完整给出。') is None
+    tracks,results,settings=catalog()
+    rc=next(s for s in settings if s['dataset']=='RoboCasa365' and 'pretraining-kitchens' in s['evalId'])
+    assert len(rc['trainingOptions'])>=1
