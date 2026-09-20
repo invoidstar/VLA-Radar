@@ -80,3 +80,5 @@ for level in ['strict','medium','loose']:
           } for x in dsg if len(x)>1]
         }
 print(json.dumps(out,ensure_ascii=False,indent=2))
+
+# trigger
