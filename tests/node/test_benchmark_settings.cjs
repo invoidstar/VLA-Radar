@@ -11,10 +11,17 @@ ok('lower metric auto sorts ascending',()=>a.deepEqual(S.sortRows(rows,{...setti
 ok('sorting is non-mutating',()=>{const before=JSON.stringify(rows);S.sortRows(rows,setting,'Average');a.equal(JSON.stringify(rows),before);});
 ok('render keeps direction block-scoped',()=>{const src=require('node:fs').readFileSync('site/js/features/research/benchmark-settings.js','utf8');a(src.includes(';const dir=direction(setting,order);'));a(!src.includes('),dir=direction(setting,order);'));});
 const realSettings=require('../../data/leaderboards.json').settings;
+const taxonomy=require('../../catalog/benchmark-taxonomy.json');
 ok('benchmark search supports multi-token AND matching',()=>{const x=S.searchSettings(realSettings,'RoboTwin 50 tasks clean random');a(x.length>=1);a(x.every(s=>s.dataset==='RoboTwin'));a(x.some(s=>s.evalId==='auto:50-clean-random'));});
 ok('benchmark search covers metric and task vocabulary',()=>{const x=S.searchSettings(realSettings,'RLBench 18 success');a(x.some(s=>s.dataset==='RLBench'&&s.evalId==='auto:18-main'));});
 ok('benchmark search covers setting names and normalized case',()=>{const x=S.searchSettings(realSettings,'libero LONG HORIZON 10');a(x.some(s=>s.evalId==='auto:long10'));});
 ok('benchmark search no-match is empty',()=>a.equal(S.searchSettings(realSettings,'zzzz-no-such-benchmark-987').length,0));
 ok('benchmark search empty query returns copy without mutation',()=>{const before=JSON.stringify(realSettings);const x=S.searchSettings(realSettings,'  ');a.equal(x.length,realSettings.length);a.notEqual(x,realSettings);a.equal(JSON.stringify(realSettings),before);});
 
-console.log(`PASS: ${count} Setting-table sorting / duplicate-report assertions.`);
+ok('taxonomy focus filter uses benchmark-level metadata',()=>{const x=S.filterSettingsByTaxonomy(realSettings,taxonomy,'long-horizon-memory','all',[]);a(x.length>0);a(x.every(s=>taxonomy.benchmarks[s.dataset].focus==='long-horizon-memory'));a(x.some(s=>s.dataset==='CALVIN'));});
+ok('taxonomy environment filter separates real robot benchmarks',()=>{const x=S.filterSettingsByTaxonomy(realSettings,taxonomy,'all','real',[]);a(x.length>0);a(x.every(s=>taxonomy.benchmarks[s.dataset].environment==='real'));a(x.some(s=>s.dataset==='RoboDojo real'));a(!x.some(s=>s.dataset==='RoboTwin'));});
+ok('taxonomy multi-tag filter uses AND semantics',()=>{const x=S.filterSettingsByTaxonomy(realSettings,taxonomy,'all','all',['tactile','contact-rich']);const ds=new Set(x.map(s=>s.dataset));a(ds.has('VLA-Touch (real)'));a(ds.has('VT-WAM real robot'));a(!ds.has('RoboTwin'));});
+ok('taxonomy filters compose focus environment and tags',()=>{const x=S.filterSettingsByTaxonomy(realSettings,taxonomy,'dexterous-contact','real',['industrial-assembly']);const ds=new Set(x.map(s=>s.dataset));a(ds.has('GF-VLA real'));a(ds.has('VLAbot real'));a([...ds].every(d=>taxonomy.benchmarks[d].focus==='dexterous-contact'&&taxonomy.benchmarks[d].environment==='real'));});
+ok('taxonomy filtering is non-mutating',()=>{const before=JSON.stringify(realSettings);S.filterSettingsByTaxonomy(realSettings,taxonomy,'general-manipulation','simulation',['multi-task']);a.equal(JSON.stringify(realSettings),before);});
+
+console.log(`PASS: ${count} Setting-table sorting / search / taxonomy assertions.`);
