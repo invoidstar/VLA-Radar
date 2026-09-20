@@ -41,10 +41,16 @@ try:
   assert page.locator('.note-section').count()>=8
   page.locator('[data-note-tab="life"]').click();assert page.locator('.life-grid').is_visible()
   page.locator('[data-note-tab="results"]').click();page.wait_for_timeout(300)
-  page.keyboard.press('Escape');page.locator('.nav-link[data-view="leaderboards"]').click();page.wait_for_selector('#lb-track')
-  page.locator('[data-dataset="CALVIN"]').click();page.wait_for_timeout(350);assert 'CALVIN' in page.locator('.protocol-card').inner_text()
-  assert not any('/data/leaderboards.json' in u for u in requests),requests
+  page.keyboard.press('Escape');page.locator('.nav-link[data-view="leaderboards"]').click();page.wait_for_selector('#setting-select')
+  assert page.locator('.setting-table').count()==1
+  page.locator('[data-setting-dataset="CALVIN"]').click();page.wait_for_selector('#setting-select')
+  page.wait_for_function('new URLSearchParams(location.search).get("dataset")==="CALVIN"')
+  assert page.locator('.setting-summary').is_visible() and page.locator('.setting-table').is_visible()
   page.screenshot(path=str(out/'desktop.png'),full_page=False)
+  # Exact track analysis remains available as the advanced compatibility path.
+  page.locator('.setting-advanced-link').click();page.wait_for_selector('#lb-track')
+  assert 'CALVIN' in page.locator('.protocol-card').inner_text()
+  assert not any('/data/leaderboards.json' in u for u in requests),requests
   page.locator('.nav-link[data-view="papers"]').click();page.wait_for_timeout(200)
   # Clear and test saved state persistence across a real HTTP reload.
   page.locator('#search').fill('');page.wait_for_timeout(300)
@@ -54,7 +60,7 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
   page.screenshot(path=str(out/'mobile.png'),full_page=False)
   assert not errors, errors
-  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','search worker index loading','8-section notes','lifecycle tab','paper results tab','CALVIN switching','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
+  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','search worker index loading','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
   print('PASS browser HTTP integration, persistence, lazy-loading, worker search and mobile overflow')
   browser.close()
 finally:server.terminate();server.wait()
