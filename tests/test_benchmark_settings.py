@@ -3,7 +3,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts/build'))
 from catalog_core import read_catalog
-from benchmark_settings import build_settings,training_known
+from benchmark_settings import build_settings,training_known,training_identity
 
 def catalog():
     _,_,tracks,results=read_catalog(ROOT)
@@ -29,8 +29,8 @@ def test_setting_metric_and_training_are_consistent():
         assert all(trackmap[resultmap[rid]['trackId']]['unit']==s['unit'] for rid in s['resultIds'])
         assert all(trackmap[resultmap[rid]['trackId']]['direction']==s['direction'] for rid in s['resultIds'])
         if s['trainingKnown']:
-            normalized={' '.join(resultmap[rid]['trainingData'].lower().split()) for rid in s['resultIds']}
-            assert len(normalized)==1
+            identities={training_identity(resultmap[rid]['trainingData']) for rid in s['resultIds']}
+            assert None not in identities and len(identities)==1
         else:
             assert s['paperCount']==1
 
@@ -72,3 +72,13 @@ def test_actioncache_distinct_tasks_never_auto_merge():
 def test_robotwin_clean_only_training_modes_become_recipes():
     _,_,settings=catalog()
     assert any(set(s['trackIds'])=={'robotwin2-turbovla-v2-clean-per-task','robotwin2-turbovla-v2-clean-multi-task'} for s in settings)
+
+
+def test_recipe_fields_do_not_split_training_data_identity():
+    a='Human300=30,000 demos; global batch 192; steps 250000; checkpoints retained'
+    b='Human300=30,000 demos; global batch 64; steps 75000'
+    assert training_identity(a)==training_identity(b)=='Human300=30,000 demos'
+
+def test_unknown_training_never_crosses_papers():
+    assert training_identity('各方法原配置。') is None
+    assert training_identity('确切训练数据版本、示范数未完整给出。') is None
