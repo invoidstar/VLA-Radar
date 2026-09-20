@@ -43,7 +43,7 @@ completed={
  'old':'https://arxiv.org/html/2607.15330v1','new':'https://arxiv.org/html/2607.15330v2',
  'label':'当前复核版本 · v2',
  'section':{
-  'id':'version_review',
+  'id':'version-review',
   'title':'v2版本复核：主表口径稳定，但57.4/57.6内部冲突必须保留',
   'body':'2026-09-20重新核读arXiv v2。RoboCasa365的摘要与Table 3都给出57.4%平均成功率，而Introduction仍出现57.6%；因此本站继续以原表57.4%作为结构化成绩，并把57.6%保留为作者版本内部冲突，而不是自行平均或择高。其余两阶段训练、Choice Policies、100K小时UMI预训练与10K小时跨本体后训练的主线没有改变。',
   'sources':[{'label':'arXiv v2 · Abstract / Introduction / Table 3','url':'https://arxiv.org/html/2607.15330v2'}]
@@ -61,7 +61,7 @@ completed={
  'old':'https://arxiv.org/html/2607.00678v1','new':'https://arxiv.org/html/2607.00678v2',
  'label':'当前复核版本 · v2',
  'section':{
-  'id':'version_review',
+  'id':'version-review',
   'title':'v2版本复核：RoboCasa365主表与训练阶段边界保持一致',
   'body':'2026-09-20重新核读v2。RoboCasa365预训练表仍报告ABot-M0.5为40.4%，加入Condensed Memory为46.6%；Target 100%与Target 10%适配分别为54.2%和30.1%。这些数字与现有笔记一致，因此本次只把阅读版本升级到v2，不把不同训练阶段合并成一个协议。v2仍明确将Condensed Memory视为额外增强路径，不能倒灌成基础ABot-M0.5的默认成绩。',
   'sources':[{'label':'arXiv v2 · Tables 2–3','url':'https://arxiv.org/html/2607.00678v2'}]
@@ -72,7 +72,7 @@ completed={
  'old':'https://arxiv.org/html/2508.05342v1','new':'https://arxiv.org/html/2508.05342v2',
  'label':'当前复核版本 · v2',
  'section':{
-  'id':'version_review',
+  'id':'version-review',
   'title':'v2与正式期刊版复核：操作成功率和总体TSR口径未改变',
   'body':'2026-09-20按arXiv v2并对照Information Fusion正式出版信息复核。基础操作表仍给出总体抓取94%、放置89%，组合迁移Table 3总体TSR为90%；这些指标的分母与含义仍不同，因此本站继续分轨保存，不把图表示准确率、阶段分割和任务TSR合成单一总分。期刊身份的确认也不改变实验数字的证据层级。',
   'sources':[{'label':'arXiv v2 · Tables 1–3','url':'https://arxiv.org/html/2508.05342v2'},{'label':'Information Fusion · DOI','url':'https://doi.org/10.1016/j.inffus.2026.104193'}]
@@ -83,7 +83,7 @@ completed={
  'old':None,'new':'https://arxiv.org/html/2209.05451v2',
  'label':'当前复核版本 · v2',
  'section':{
-  'id':'version_review',
+  'id':'version-review',
   'title':'v2 / CoRL最终版复核：18个RLBench任务与7个真实任务的范围不外推',
   'body':'2026-09-20重新核对arXiv v2与作者公开CoRL版本。论文仍以18个RLBench任务（249个variation）和7个真实任务（18个variation）验证PerAct；现有笔记中关于体素化3D输入、离散6-DoF动作、少量示范和多任务行为克隆的描述与最终版一致。本轮不把后续第三方PerAct复现设置或RLBench其他任务重新绑定到原论文。',
   'sources':[{'label':'arXiv v2 · final text','url':'https://arxiv.org/html/2209.05451v2'},{'label':'CoRL 2022 official paper','url':'https://proceedings.mlr.press/v205/shridhar23a.html'}]
@@ -94,7 +94,7 @@ completed={
  'old':None,'new':'https://arxiv.org/html/2303.04137v5',
  'label':'当前复核版本 · v5',
  'section':{
-  'id':'version_review',
+  'id':'version-review',
   'title':'v5扩展版复核：最新论文覆盖15个任务，既有榜单仍保留RSS表格快照',
   'body':'2026-09-20重新阅读arXiv v5。扩展版明确写为在4类机器人操作benchmark的15个任务上评测，并继续报告46.9%的平均提升；这比本站原先用于结构化成绩的RSS 2023会议版实验范围更广。为避免版本混算，本轮把深读版本升级到v5，但已入库的RoboMimic等结果仍标注为RSS 2023可定位Table I–IV快照，除非逐表重新建立v5协议，否则不悄悄替换来源版本。',
   'sources':[{'label':'arXiv v5 · extended journal version','url':'https://arxiv.org/html/2303.04137v5'},{'label':'arXiv submission history','url':'https://arxiv.org/abs/2303.04137'}]
@@ -112,7 +112,7 @@ completed={
  'old':'https://arxiv.org/html/2509.09372v1','new':'https://arxiv.org/html/2509.09372v2',
  'label':'当前复核版本 · v2',
  'section':{
-  'id':'version_review',
+  'id':'version-review',
   'title':'v2版本复核：新增VLA-Adapter-Pro，基础VLA-Adapter结果保持独立',
   'body':'2026-09-20重新核读v2。最新版本新增VLA-Adapter-Pro：LIBERO四套件平均98.5%，CALVIN连续任务平均链长4.50；基础VLA-Adapter仍为LIBERO 97.3%与CALVIN 4.42。本站把Pro视为新的方法变体，而不是用更高数字覆盖原VLA-Adapter；现有Bridge Attention、Raw/ActionQuery与门控消融的结论仍由基础版本对应表格支持。',
   'sources':[{'label':'arXiv v2 · Tables 2–8','url':'https://arxiv.org/html/2509.09372v2'}]
@@ -240,7 +240,7 @@ def test_xiaomi_conflict_preserved():
     assert t['rows'][0][1]=='57.4%' and t['rows'][2][1]=='57.6%'
 def test_diffusion_v5_scope_does_not_rebind_results():
     p=j('catalog/papers/p055.json')
-    assert '15个任务' in next(x for x in p['note']['sections'] if x['id']=='version_review')['body']
+    assert '15个任务' in next(x for x in p['note']['sections'] if x['id']=='version-review')['body']
     assert 'RSS 2023' in p['note']['version']
 def test_vla_adapter_pro_kept_separate():
     p=j('catalog/papers/p074.json')
