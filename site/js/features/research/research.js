@@ -14,6 +14,7 @@
   function configure(catalog){boardPapers=Array.isArray(catalog.papers)?catalog.papers:[];boardIndexUrl=catalog.boardIndexUrl||'data/leaderboards.json';boardPromise=null;}
   function loadBoards(){if(!boardPromise)boardPromise=getJson(boardIndexUrl).then(x=>{if(x.schemaVersion!==1||!Array.isArray(x.tracks))throw new Error('榜单格式不支持');return x;}).catch(e=>{boardPromise=null;throw e;});return boardPromise;}
   async function loadTrack(t,data){if(Array.isArray(data.results))return data;const x=await getJson(t.resultUrl);if(x.trackId!==t.id||!Array.isArray(x.results))throw new Error('赛道数据不一致');return {...data,results:x.results};}
+  async function loadSetting(s,data){if(Array.isArray(data.results)&&Array.isArray(data.tracks))return data;const x=await getJson(s.resultUrl);if(x.settingId!==s.id||!Array.isArray(x.results)||!Array.isArray(x.tracks))throw new Error('Setting 数据不一致');return x;}
   async function loadPaperResults(p){if(!p.resultUrl)return {tracks:[],results:[]};const x=await getJson(p.resultUrl);if(x.paperId!==p.id||!Array.isArray(x.results))throw new Error('论文结果不一致');return x;}
   function pageWindow(current,total){const pages=new Set([1,total]);for(let i=Math.max(1,current-2);i<=Math.min(total,current+2);i++)pages.add(i);let prev=0,out=[];for(const i of [...pages].filter(i=>i>0).sort((a,b)=>a-b)){if(prev&&i-prev>1)out.push(null);out.push(i);prev=i;}return out;}
   function visibleResults(data,trackId){const superseded=new Set([...(data.supersededIds||[]),...data.results.filter(r=>r.evidence==='checked'&&r.supersedes).map(r=>r.supersedes)]);return data.results.filter(r=>r.trackId===trackId&&r.evidence==='checked'&&!superseded.has(r.id));}
@@ -193,6 +194,10 @@
     try{
       const data=await loadBoards();if(token!==boardToken)return;
       const query=new URLSearchParams(location.search),families=benchmarkFamilies(data);
+      if(!query.get('track')&&Array.isArray(data.settings)&&global.RadarBenchmarkSettings){
+        await global.RadarBenchmarkSettings.render(host,{data,query,token,isCurrent:()=>token===boardToken,papers:boardPapers,loadSetting});
+        return;
+      }
       let dataset=families.includes(query.get('dataset'))?query.get('dataset'):(families.includes('LIBERO')?'LIBERO':families[0]);
       let trackId=query.get('track')||'',metric=(query.get('lbMetric')||'').slice(0,160),page=1,drawVersion=0;
       let order=['auto','asc','desc','source'].includes(query.get('lbOrder'))?query.get('lbOrder'):'auto';
@@ -278,6 +283,6 @@
       await draw();
     }catch(err){if(token!==boardToken)return;host.innerHTML='<div class="research-empty"><h2>榜单暂未载入</h2><p>请刷新重试。未载入不代表没有结果或分数为零。</p><button id="retry-board" class="btn">重试</button></div>';host.querySelector('#retry-board').onclick=()=>renderBoards(host);console.warn('Leaderboard:',err.message);}
   }
-  global.RadarResearch={cancelBoards:()=>{boardToken++;},loadBoards,loadTrack,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,sourceKey,boardGroups,protocolGroups,methodKey,methodGroups,familyMethodsHtml,pageWindow,rankRows,sortRows,boardRows,sortDirection,metricDirection,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks};
+  global.RadarResearch={cancelBoards:()=>{boardToken++;},loadBoards,loadTrack,loadSetting,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,sourceKey,boardGroups,protocolGroups,methodKey,methodGroups,familyMethodsHtml,pageWindow,rankRows,sortRows,boardRows,sortDirection,metricDirection,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks};
   if(typeof module!=='undefined')module.exports=global.RadarResearch;
 })(typeof window!=='undefined'?window:globalThis);
