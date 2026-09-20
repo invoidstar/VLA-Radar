@@ -82,6 +82,7 @@ def build_settings(tracks,results):
             'trainingKnown':known,'protocol':primary['protocol'],'trackIds':member_tracks,
             'resultIds':[r['id'] for r in sorted(rows,key=lambda r:result_order[r['id']])],
             'resultCount':len(rows),'paperCount':len({r['paperId'] for r in rows}),
+            'paperIds':list(dict.fromkeys(r['paperId'] for r in rows)),
             'methodCount':len({norm(r['method']) for r in rows}),
             'primaryTrackId':primary['id']
         })
