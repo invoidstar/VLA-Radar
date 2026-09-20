@@ -300,6 +300,8 @@ for p in (ROOT/'tests/unit').glob('*.cjs'):
     text = text.replace('require("../', 'require("../../')
     for old, new in site_moves.items():
         text = text.replace(f"../../{old}", f"../../{new}")
+        text = text.replace("'" + old + "'", "'" + new + "'")
+        text = text.replace('"' + old + '"', '"' + new + '"')
     p.write_text(text, encoding='utf-8')
 
 for p in (ROOT/'tests/browser').glob('browser_*.py'):
