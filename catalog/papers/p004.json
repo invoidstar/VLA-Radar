@@ -11,7 +11,7 @@
     "firstPublished": "2026-07-16",
     "dateNote": "",
     "collectionMonth": "2026-07",
-    "versionNote": "7月首次公开｜阅读v1",
+    "versionNote": "7月首次公开｜当前复核 arXiv v2（首发 v1）",
     "topics": [
       "pretraining"
     ],
@@ -31,7 +31,7 @@
     "hasCautionaryResult": false,
     "sources": [
       {
-        "label": "原文 · v1",
+        "label": "当前复核原文 · v2",
         "url": "https://arxiv.org/html/2607.15330v2"
       },
       {
