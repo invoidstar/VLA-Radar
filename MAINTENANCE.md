@@ -124,3 +124,16 @@ python scripts/validate/validate_all.py
 ## 榜单交互维护（2026-09-19）
 
 按`maintenance/docs/leaderboard-analysis.md`保留任意成绩列排序、名次/显示方向分离和协议内时间—成绩图。内容更新使用现有firstPublished/verifiedAt，不从图表需要倒推日期或分数。新增browser_leaderboard.py须与现有五套浏览器测试一起通过；没有扩大主库/新闻的自动入库范围。
+
+
+## Benchmark 协议族与 Recipe 层级（2026-09-20）
+
+Benchmark 导航不再把“来源论文 / 训练 recipe / 评测协议”全部提升为同一级 setting。新的信息模型为：
+
+`Benchmark → Protocol Family → Method → Recipe / Subprotocol → Evidence`
+
+`familyId` 只用于组织评测可比性或明确标注的子协议系列；原始 `track.id`、结果记录和证据定位仍是不可替代的精确层。训练数据量、per-task / multi-task、训练步数、base model、部署方式等优先放在 recipe 层，而不是自动产生新的 Benchmark 入口。真正改变任务集合、评测 split 或指标定义的情况仍保留为子协议。
+
+`familyMode=aligned` 可在方法层显示按人工指定 `familyPrimaryTrackId` 选择的代表报告；代表报告只为导航，不自动取最高分，也不把不同训练预算解释为公平同条件排名。若指定主 track 没有某方法，则使用该方法在协议族 track 顺序中的第一条记录。`familyMode=series` 用于任务子集、部署消融等不可直接合并的系列，只展开各子协议 / 变体，不生成跨子协议代表分数、平均值或名次。
+
+当前先对 RoboTwin 完成人工整理；没有 family 元数据的数据集继续使用原来源分组兼容路径，后续必须人工核对协议后再迁移，禁止仅依据论文名、URL 或字段相似度自动合并。
