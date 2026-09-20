@@ -1,0 +1,13 @@
+name: Audit evaluation-setting fingerprints
+on:
+  push:
+    branches: ['feature/benchmark-eval-settings-2026-09-20']
+    paths: ['.github/scripts/audit_eval_settings.py']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python .github/scripts/audit_eval_settings.py
