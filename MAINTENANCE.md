@@ -137,3 +137,20 @@ Benchmark 导航不再把“来源论文 / 训练 recipe / 评测协议”全部
 `familyMode=aligned` 可在方法层显示按人工指定 `familyPrimaryTrackId` 选择的代表报告；代表报告只为导航，不自动取最高分，也不把不同训练预算解释为公平同条件排名。若指定主 track 没有某方法，则使用该方法在协议族 track 顺序中的第一条记录。`familyMode=series` 用于任务子集、部署消融等不可直接合并的系列，只展开各子协议 / 变体，不生成跨子协议代表分数、平均值或名次。
 
 当前先对 RoboTwin 完成人工整理；没有 family 元数据的数据集继续使用原来源分组兼容路径，后续必须人工核对协议后再迁移，禁止仅依据论文名、URL 或字段相似度自动合并。
+
+
+## Benchmark Setting / Result Report 层级（2026-09-20）
+
+默认 Benchmark 页面采用：
+
+`Benchmark → Setting → Result Report`
+
+其中 **Setting = Evaluation Protocol + Training Data identity**。Evaluation Protocol 至少区分任务集合、评测 split、metric/unit/direction 等真正影响结果可比性的条件；跨原始 track 的评测等价关系只能通过人工核验的 `settingEvalId` 或已对齐的 protocol family 建立，不能根据论文名、URL 或字段相似度自动猜测。
+
+Training Data identity 只保留训练数据本身（例如数据集、示范量、任务范围）；batch、steps、learning rate、action horizon、模型结构、checkpoint、部署方式等属于 Recipe，不应仅因这些差异产生新的 Setting。若训练数据未完整披露，则 Setting 必须按来源论文隔离，禁止跨论文假定训练预算一致。
+
+**Result Report** 是页面上的一行：`Method + Score + Source paper`。同一 Method 被不同论文或不同 recipe 报告出不同结果时必须保留为多行，不去重、不自动挑最高分。每行的 Recipe / Evidence 可展开查看完整 trainingData 原文、track trainingRegime、evaluation notes、locator、verifiedAt 与原始证据。
+
+原始 `track.id` 与 `result.id` 仍是 canonical 精确证据层。Setting 是由构建器确定性生成的展示/比较层；`track=` 深链接、原 track 排序、图表与 CSV 高级视图继续保留。Setting 默认排序仅是 reported score 排列，不产生跨来源的公平名次。
+
+当前生成 Setting 覆盖全部有核验结果的 Benchmark 数据集；无法安全归并的 track/结果保守保持独立。
