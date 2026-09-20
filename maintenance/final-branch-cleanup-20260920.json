@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "repository": "invoidstar/VLA-Radar",
+  "checkedAt": "2026-09-20T02:45:43.171476+00:00",
+  "baseMainSha": "f477ab6eaa29c3e1bf7310bfbc84910bd21f1699",
+  "deployment": {
+    "runId": 35484267766,
+    "url": "https://github.com/invoidstar/VLA-Radar/actions/runs/35484267766"
+  },
+  "explicitMaintainerRequest": true,
+  "deleted": [
+    {
+      "branch": "pre-update-safety-2026-09-17",
+      "sha": "5af47965977194b0c57734ce9fd542f6176dde9c",
+      "reason": "final safety snapshot is fully contained in published main; explicit maintainer final-cleanup request",
+      "status": "already-deleted-by-prior-final-audit-run",
+      "priorRunId": 35484772151
+    },
+    {
+      "branch": "feature/vla-radar-v2-2026-09-17",
+      "sha": "2a1da46650ac0a905baca2f52372204e59af9ad5",
+      "reason": "only unique content is obsolete branch-scoped one-time migration workflow",
+      "status": "already-deleted-by-prior-final-audit-run",
+      "priorRunId": 35484772151
+    },
+    {
+      "branch": "weekly-update-2026-09-18-benchmark-batch4",
+      "sha": "03148dcab86dbcf1f976941ce26055671d2cb727",
+      "reason": "only unique content is obsolete one-shot prepare workflow and two marker files",
+      "status": "already-deleted-by-prior-final-audit-run",
+      "priorRunId": 35484772151
+    }
+  ],
+  "preserved": [
+    {
+      "branch": "release/deep-notes-2026-09-17",
+      "sha": "0f8d8938457f169bcb4a92da9c3df89f1945d3aa",
+      "reason": "19 unique historical content commits; no exact merged PR; unmerged history is preserved rather than deleted"
+    },
+    {
+      "branch": "release/batch-2026-09-20-weekly-notes",
+      "sha": "8394011c20a4dd38bb12105b1474c90a8034d617",
+      "reason": "merged exact head, but still inside repository 6-hour recovery grace period",
+      "pr": 29,
+      "mergedAt": "2026-09-20T00:30:55Z"
+    },
+    {
+      "branch": "weekly-update-2026-09-20-note-final8",
+      "sha": "49094c63e5cea1b4170d69d98d6bd22b080e55f4",
+      "reason": "merged exact head, but still inside repository 6-hour recovery grace period",
+      "pr": 30,
+      "mergedAt": "2026-09-20T02:08:31Z"
+    },
+    {
+      "branch": "weekly-update-2026-09-20-final-two-fulltext",
+      "sha": "f9aff97a794e3093f134808c9d077fdb6ce40b6a",
+      "reason": "merged exact head, but still inside repository 6-hour recovery grace period",
+      "pr": 31,
+      "mergedAt": "2026-09-20T02:32:45Z"
+    }
+  ],
+  "checks": [
+    {
+      "branch": "pre-update-safety-2026-09-17",
+      "sha": "5af47965977194b0c57734ce9fd542f6176dde9c",
+      "proof": "validated-and-deleted-in-prior-final-audit-run-35484772151",
+      "remoteAbsent": true
+    },
+    {
+      "branch": "feature/vla-radar-v2-2026-09-17",
+      "sha": "2a1da46650ac0a905baca2f52372204e59af9ad5",
+      "proof": "validated-and-deleted-in-prior-final-audit-run-35484772151",
+      "remoteAbsent": true
+    },
+    {
+      "branch": "weekly-update-2026-09-18-benchmark-batch4",
+      "sha": "03148dcab86dbcf1f976941ce26055671d2cb727",
+      "proof": "validated-and-deleted-in-prior-final-audit-run-35484772151",
+      "remoteAbsent": true
+    }
+  ]
+}

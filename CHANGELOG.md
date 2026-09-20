@@ -1,3 +1,11 @@
+## 2026-09-20 · 最终仓库一致性审计与安全分支清理
+
+- 删除3个经精确SHA与内容差异证明可安全清理的历史/安全分支；保留含19个独有内容提交的release/deep-notes历史分支，以及仍处6小时恢复窗口的3个近期已合并分支。
+- 全仓一致性审计确认98 papers、1063 results、286 tracks；96 extracted、0 deferred、2 not-applicable、remainingNotes=0，result/track/review无孤儿或重复归属。
+- build_catalog --check与完整离线/浏览器CI继续作为发布门槛；published main无遗留一次性prepare payload。
+- 明确保留两个非阻塞维护状态：source-health轮检仍有due URL，文献发现checkpoint仍为partial；二者不冒充全量完成。
+- GitHub App访问branch protection端点仍为403，main API protected flag为false且无ruleset；记录为最终治理warning，不声称服务端保护已启用。
+
 ## 2026-09-20 · 最后两篇全文补齐：DMS-VLA 与 VLAbot
 
 - 用户提供IEEE Xplore与ScienceDirect下载的完整正式PDF，解除p043/p046 limited-source证据限制；两篇均从needs_review/deferred升级为expanded/extracted。
