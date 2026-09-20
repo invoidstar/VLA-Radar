@@ -14,6 +14,7 @@ PUBLIC_FILES={
     'site/styles/features/tools.css':'tools.css',
     'site/js/features/library/app.js':'app.js',
     'site/js/features/research/research.js':'research.js',
+    'site/js/features/research/benchmark-settings.js':'benchmark-settings.js',
     'site/js/core/dates.js':'dates.js',
     'site/js/core/runtime.js':'runtime.js',
     'site/js/core/search-core.js':'search-core.js',
