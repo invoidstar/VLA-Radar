@@ -1,4 +1,5 @@
 from pathlib import Path
+import hashlib,re,tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -41,10 +42,10 @@ def test_current_automation_uses_structured_site_paths():
 
 
 def test_public_asset_urls_are_stable():
-    from scripts.build.stage_site import PUBLIC_FILES
+    from scripts.build.stage_site import PUBLIC_FILES,stage
     expected={
         'index.html','favicon.svg','styles.css','sidebar.css','research.css','experience.css','news.css','tools.css',
-        'app.js','research.js','benchmark-settings.js','dates.js','runtime.js','search-core.js','search-client.js','search-worker.js',
+        'app.js','research.js','benchmark-settings.js','dates.js','runtime.js','math.js','search-core.js','search-client.js','search-worker.js',
         'sidebar.js','experience-loader.js','experience-core.js','experience.js','news-core.js','news.js',
         'tools-loader.js','tools-core.js','tools.js'
     }
@@ -54,3 +55,21 @@ def test_public_asset_urls_are_stable():
         assert name in index
     assert 'src="js/' not in index
     assert 'href="styles/' not in index
+
+
+def test_staged_assets_use_content_hash_cache_busting():
+    from scripts.build.stage_site import stage
+    source=(ROOT/'site/index.html').read_text()
+    assert '?v=' not in source
+    with tempfile.TemporaryDirectory() as td:
+        out=stage(Path(td)/'public')
+        index=(out/'index.html').read_text()
+        for name in ['styles.css','research.css','experience.css','app.js','research.js','math.js','experience-loader.js','tools-loader.js']:
+            digest=hashlib.sha256((out/name).read_bytes()).hexdigest()[:12]
+            assert f'{name}?v={digest}' in index,name
+        for loader,refs in {'experience-loader.js':['experience-core.js','experience.js','news.css','news-core.js','news.js'],'tools-loader.js':['tools.css','tools-core.js','tools.js']}.items():
+            text=(out/loader).read_text()
+            for name in refs:
+                digest=hashlib.sha256((out/name).read_bytes()).hexdigest()[:12]
+                assert f'{name}?v={digest}' in text,(loader,name)
+        assert not re.search(r'\\?v=(?:final|maintenance|leaderboard|math|settings|news)-',index)
