@@ -1,0 +1,70 @@
+name: Prepare final two full-text publication
+on:
+  push:
+    branches: [weekly-update-2026-09-20-final-two-fulltext]
+    paths:
+      - .github/workflows/prepare-final-two.yml
+      - .final-two/**
+permissions:
+  contents: write
+concurrency:
+  group: prepare-final-two
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply full-text publication payload
+        run: python .final-two/prepare.py
+      - name: Full offline validation
+        run: python scripts/validate_all.py
+      - name: Install browser environment
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          if ! command -v google-chrome && ! command -v chromium; then python -m playwright install --with-deps chromium; fi
+          if ! fc-list :lang=zh | grep -q .; then sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk; fi
+      - name: Run all six real HTTP browser suites
+        run: |
+          for s in browser_smoke browser_workspace browser_news browser_sidebar browser_tools browser_leaderboard; do python scripts/$s.py; done
+      - name: Verify final counts and save candidate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('maintenance/benchmark-review.json').read_text())['papers']
+          assert sum(x['status']=='extracted' for x in r.values())==96
+          assert sum(x['status']=='deferred' for x in r.values())==0
+          assert sum(x['status']=='not-applicable' for x in r.values())==2
+          assert len(json.loads(Path('catalog/benchmarks.json').read_text())['tracks'])==286
+          assert len(list(Path('catalog/results').glob('r-*.json')))==1063
+          w=json.loads(Path('maintenance/work-queue.json').read_text())
+          assert w['remainingNotes']==0 and w['notes']==[]
+          assert json.loads(Path('catalog/papers/p043.json').read_text())['note']['status']=='expanded'
+          assert json.loads(Path('catalog/papers/p046.json').read_text())['note']['status']=='expanded'
+          audit=json.loads(Path('maintenance/final-two-source-audit-20260920.json').read_text())
+          assert audit['countsAfterExpected']['results']==1063
+          print('final two publication counts verified')
+          PY
+          git add CHANGELOG.md catalog maintenance tests data
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Materialize final two full-text papers after full validation'
+          git push origin HEAD:refs/heads/weekly-update-2026-09-20-final-two-fulltext
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-two-fulltext-audit
+          path: |
+            maintenance/final-two-source-audit-20260920.json
+            tests/test_final_two_fulltext.py
+            /tmp/radar-browser/
+            /tmp/radar-workspace/
+            /tmp/radar-news-browser/
+            /tmp/radar-sidebar/
+            /tmp/radar-tools/
+            /tmp/radar-leaderboard/
+          retention-days: 14
