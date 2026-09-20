@@ -15,7 +15,8 @@
     "dataByteIdentical": true,
     "publicRoutesUnchanged": true,
     "localStorageKeysUnchanged": true,
-    "paperResultTrackSemanticsUnchanged": true
+    "paperResultTrackSemanticsUnchanged": true,
+    "publicAssetPathsUnchanged": true
   },
   "removedHistoricalOneShotWorkflows": [
     "complete-library.yml",
@@ -24,6 +25,7 @@
   ],
   "validation": {
     "buildCatalogCheck": "pass",
-    "validateAll": "pass"
+    "validateAll": "pass",
+    "publicAssetCompatibility": "locked-by-test_repository_structure"
   }
 }
