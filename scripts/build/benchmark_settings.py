@@ -74,8 +74,6 @@ def eval_context(track):
     text=text_of(track);dataset=track['dataset'];kind=metric_class(track['metric']);tags=[]
     # Explicit evaluation perturbations / environments. Training-only differences are intentionally absent.
     rules=[
-      ('vm',r'visual matching|(?:^|[ /·_-])vm(?:$|[ /·_-])'),
-      ('va',r'variant aggregation|(?:^|[ /·_-])va(?:$|[ /·_-])'),
       ('camera-shift',r'camera perturb|viewshift|view shift|camera shift|相机扰动'),
       ('delay-d0',r'\bd\s*=\s*0\b'),('delay-d1',r'\bd\s*=\s*1\b'),('delay-d4',r'\bd\s*=\s*4\b'),
       ('subset-short',r'short[- ]?duration|短时长'),('subset-medium',r'medium[- ]?duration|中时长'),('subset-long',r'long[- ]?duration|长时长'),
@@ -85,6 +83,10 @@ def eval_context(track):
     ]
     for tag,pat in rules:
         if re.search(pat,text,re.I):tags.append(tag)
+    if dataset=='SimplerEnv':
+        split=norm(track.get('split',''))
+        if re.search(r'visual matching|(?:^|[ /_-])vm(?:$|[ /_-])',split,re.I):tags.append('vm')
+        if re.search(r'variant aggregation|(?:^|[ /_-])va(?:$|[ /_-])',split,re.I):tags.append('va')
     if dataset=='RoboCasa365':
         if re.search(r'target kitchens?|目标厨房',text,re.I):tags.append('target-kitchens')
         elif re.search(r'pretraining kitchens?|human300|预训练厨房',text,re.I):tags.append('pretraining-kitchens')
@@ -139,6 +141,9 @@ def dataset_scope(track):
         mode='vm' if 'vm' in ctx else 'va' if 'va' in ctx else 'reported'
         return kind+'-'+mode+'-'+hashlib.sha256('|'.join(cols).encode()).hexdigest()[:8]
     if ds=='CALVIN':
+        m=norm(track['metric'])
+        if ('five-task chain' in m or 'five-instruction chain' in m or 'consecutive tasks completed' in m) and len(cols)==1:
+            return 'chain-average-length'+('-enriched' if 'enriched-language' in ctx else '')
         return kind+'-'+hashlib.sha256('|'.join(cols).encode()).hexdigest()[:8]+('-enriched' if 'enriched-language' in ctx else '')
     if ds=='RoboDojo':
         return kind+'-'+hashlib.sha256('|'.join(cols).encode()).hexdigest()[:8]
@@ -179,6 +184,10 @@ def scope_label(track,scope):
       ('RoboCasa','24-main'):'24 Tasks',
       ('RoboCasa365','50-main-pretraining-kitchens'):'50 Tasks · Pretraining Kitchens',
       ('RoboCasa365','50-main-target-kitchens'):'50 Tasks · Target Kitchens',
+      ('LIBERO','long10'):'Long-Horizon 10 Tasks',
+      ('LIBERO','three-suites'):'Three Suites',
+      ('CALVIN','chain-average-length'):'Five-task Chain · Average Length',
+      ('CALVIN','chain-average-length-enriched'):'Five-task Chain · Enriched Instructions',
       ('RLBench','18-main'):'18 Tasks',
       ('RLBench','74-single'):'74 Tasks',
     }
