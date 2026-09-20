@@ -303,27 +303,30 @@ for p in (ROOT/'tests/unit').glob('*.cjs'):
 
 for p in (ROOT/'tests/browser').glob('browser_*.py'):
     text = p.read_text(encoding='utf-8')
-    if 'import tempfile,shutil' not in text:
-        text = 'import tempfile,shutil\\n' + text
+    nl = chr(10)
+    if 'import tempfile' not in text:
+        text = 'import tempfile' + nl + text
     token = 'Path(__file__).resolve().parents[2]'
     pos = text.find(token)
     if pos < 0:
         raise SystemExit(f'root marker missing in {p}')
-    line_start = text.rfind('\\n', 0, pos) + 1
-    line_end = text.find('\\n', pos)
+    line_start = text.rfind(nl, 0, pos) + 1
+    line_end = text.find(nl, pos)
     if line_end < 0:
         line_end = len(text)
     line = text[line_start:line_end]
-    repo_var = 'ROOT' if re.search(r'\\bROOT\\s*=', line) else ('root' if re.search(r'\\broot\\s*=', line) else None)
+    compact = line.replace(' ', '')
+    repo_var = 'ROOT' if 'ROOT=' in compact else ('root' if 'root=' in compact else None)
     if repo_var is None:
         raise SystemExit(f'repository root variable missing in {p}: {line}')
     staging = (
-        "\\npublic=Path(tempfile.mkdtemp(prefix='vla-radar-public-'))"
-        + "\\nshutil.copytree(" + repo_var + "/'site',public,dirs_exist_ok=True)"
-        + "\\nshutil.copytree(" + repo_var + "/'data',public/'data',dirs_exist_ok=True)"
+        nl + "public=Path(tempfile.mkdtemp(prefix='vla-radar-public-'))"
+        + nl + "shutil.copytree(" + repo_var + "/'site',public,dirs_exist_ok=True)"
+        + nl + "shutil.copytree(" + repo_var + "/'data',public/'data',dirs_exist_ok=True)"
     )
     text = text[:line_end] + staging + text[line_end:]
-    text = re.sub(r'cwd\\s*=\\s*(root|ROOT)', 'cwd=public', text)
+    text = text.replace('cwd=ROOT', 'cwd=public').replace('cwd = ROOT', 'cwd=public')
+    text = text.replace('cwd=root', 'cwd=public').replace('cwd = root', 'cwd=public')
     p.write_text(text, encoding='utf-8')
 
 path_map = {}
