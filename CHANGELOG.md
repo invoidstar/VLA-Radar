@@ -1,3 +1,12 @@
+## 2026-09-20 · P2 发布与测试链路加固
+
+- 将章节标题、Figure 标题、Benchmark review、专注阅读简介与论文对比标题统一接入同一 MathML-aware 渲染路径，避免新增公式字段再次漏接。
+- 移除源码中手工维护的静态资源 `?v=...`，改为 staging 时基于最终文件内容自动注入 12 位 SHA-256 cache key；lazy-loaded workspace / news / tools 资源同样纳入。
+- 正式执行此前被 `unittest discover` 跳过的顶层 Python `test_*()` 回归，并将历史批次断言更新为当前 V3.0 canonical 状态。
+- 函数式回归启用后修复两处真实边界：LIBERO 40-task track 不再因 protocol 文本中的 “long” 被误归 Long10；带千位逗号的训练数据数量不再被 recipe parser 拆坏。
+- 新增 Chromium / Firefox / WebKit 原生 MathML smoke，通过真实 Reader 路由验证公式可见尺寸、块级滚动和页面无横向溢出。
+- Pages 部署后新增 production smoke，确认当前内容 hash 资源已经在线、关键 JS 可读取且 Reader deep link 返回当前发布版本。
+
 ## 2026-09-20 · P1 细节修复
 
 - 修正 Benchmark 页面旧口径：Evaluation Setting 只描述评测问题，Training Data / 模型结构 / recipe / 来源论文保留在结果层。
