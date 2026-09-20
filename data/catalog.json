@@ -540,7 +540,7 @@
       "arxiv": "2608.03727",
       "doi": "",
       "detailUrl": "data/details/p007.json?v=828a07ab73fbe964",
-      "resultUrl": "data/paper-results/p007.719876ba67114486.json",
+      "resultUrl": "data/paper-results/p007.5a7b12af19d3c052.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-04",
@@ -593,7 +593,7 @@
       "arxiv": "2607.05468",
       "doi": "",
       "detailUrl": "data/details/p008.json?v=fbb614be34bf4914",
-      "resultUrl": "data/paper-results/p008.fe94cb7674addf74.json",
+      "resultUrl": "data/paper-results/p008.b1f8680ff631f850.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
@@ -700,7 +700,7 @@
       "arxiv": "2608.05369",
       "doi": "",
       "detailUrl": "data/details/p010.json?v=04146819431b40bb",
-      "resultUrl": "data/paper-results/p010.8db6f78a5f5f8bfc.json",
+      "resultUrl": "data/paper-results/p010.d878f138308a01d5.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
@@ -909,7 +909,7 @@
       "arxiv": "2608.26821",
       "doi": "",
       "detailUrl": "data/details/p014.json?v=d239d1c4846cc14a",
-      "resultUrl": "data/paper-results/p014.09b0acb564fb759c.json",
+      "resultUrl": "data/paper-results/p014.3eb779d3d2c79663.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
@@ -1405,7 +1405,7 @@
       "arxiv": "2608.00725",
       "doi": "",
       "detailUrl": "data/details/p021.json?v=2f6f3b1aa55347a5",
-      "resultUrl": "data/paper-results/p021.fc66f017db4b9c7f.json",
+      "resultUrl": "data/paper-results/p021.12ff2f14d17d5966.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-01",
@@ -1560,7 +1560,7 @@
       "arxiv": "2607.04927",
       "doi": "",
       "detailUrl": "data/details/p023.json?v=099b1ebc262ec589",
-      "resultUrl": "data/paper-results/p023.9f786c9fe2ff0c3d.json",
+      "resultUrl": "data/paper-results/p023.ab14daf4e7010649.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
@@ -1677,7 +1677,7 @@
       "arxiv": "2601.21998",
       "doi": "10.15607/rss.2026.xxii.016",
       "detailUrl": "data/details/p037.json?v=11b984f52fc5e507",
-      "resultUrl": "data/paper-results/p037.3253548d39c15075.json",
+      "resultUrl": "data/paper-results/p037.c79351afba100ba5.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-01-29",
@@ -1846,7 +1846,7 @@
       "arxiv": "2607.27205",
       "doi": "",
       "detailUrl": "data/details/p027.json?v=9fac2d7106c789bb",
-      "resultUrl": "data/paper-results/p027.771299778c4edb20.json",
+      "resultUrl": "data/paper-results/p027.62f57a73a8999c79.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-07-29",
@@ -1951,7 +1951,7 @@
       "arxiv": "2608.27384",
       "doi": "",
       "detailUrl": "data/details/p029.json?v=03be7c6b3c1b2d17",
-      "resultUrl": "data/paper-results/p029.421c411eed53ef89.json",
+      "resultUrl": "data/paper-results/p029.5c8c0d805cfbe184.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
@@ -3114,7 +3114,7 @@
       "arxiv": "2303.04137",
       "doi": "",
       "detailUrl": "data/details/p055.json?v=add1889c9ee9d644",
-      "resultUrl": "data/paper-results/p055.5d5ebaf5069bc060.json",
+      "resultUrl": "data/paper-results/p055.237dea8f0205a603.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-03-07",
@@ -3168,7 +3168,7 @@
       "arxiv": "2304.13705",
       "doi": "",
       "detailUrl": "data/details/p056.json?v=40342835e6225a37",
-      "resultUrl": "data/paper-results/p056.f3474a51a8abe99c.json",
+      "resultUrl": "data/paper-results/p056.bf232ce77e993533.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2023-04-23",
@@ -3715,7 +3715,7 @@
       "arxiv": "2410.07864",
       "doi": "",
       "detailUrl": "data/details/p065.json?v=49b08ed795b750a1",
-      "resultUrl": "data/paper-results/p065.4e22f2f96dabc39f.json",
+      "resultUrl": "data/paper-results/p065.fc3ca61515b6cf51.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-10-10",
@@ -3769,7 +3769,7 @@
       "arxiv": "2410.24164",
       "doi": "",
       "detailUrl": "data/details/p066.json?v=d9101fbbb5f6ae86",
-      "resultUrl": "data/paper-results/p066.935c54ba4d57dd61.json",
+      "resultUrl": "data/paper-results/p066.817cf5064df5f0d7.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-10-31",
@@ -4099,7 +4099,7 @@
       "arxiv": "2504.16054",
       "doi": "",
       "detailUrl": "data/details/p072.json?v=0f07641ea6e39973",
-      "resultUrl": "data/paper-results/p072.4005656cbc3f24af.json",
+      "resultUrl": "data/paper-results/p072.b9968997750ff06e.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2025-04-22",
@@ -4430,7 +4430,7 @@
       "arxiv": "2603.16666",
       "doi": "",
       "detailUrl": "data/details/p078.json?v=e3d29807bc9a1fad",
-      "resultUrl": "data/paper-results/p078.83e1ca456810d613.json",
+      "resultUrl": "data/paper-results/p078.ba667950f3761671.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-03-17",
@@ -4702,7 +4702,7 @@
       "arxiv": "2603.17240",
       "doi": "",
       "detailUrl": "data/details/p083.json?v=f7ab75e08bf108d7",
-      "resultUrl": "data/paper-results/p083.bb25b0b57859aa8f.json",
+      "resultUrl": "data/paper-results/p083.e22803cbde27b2a4.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2026-03-18",
@@ -4811,7 +4811,7 @@
       "arxiv": "2403.03954",
       "doi": "10.15607/RSS.2024.XX.067",
       "detailUrl": "data/details/p085.json?v=0e42651cb803d6c7",
-      "resultUrl": "data/paper-results/p085.e68010641a8b50d5.json",
+      "resultUrl": "data/paper-results/p085.a631b2382f7cf721.json",
       "noteStatus": "expanded",
       "lifecycle": {
         "firstArxivAt": "2024-03-06",
