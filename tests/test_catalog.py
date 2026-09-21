@@ -18,7 +18,8 @@ class CatalogTests(unittest.TestCase):
         m,r,t,v=read_catalog(ROOT);self.assertGreaterEqual(len(r),78);self.assertTrue(t);self.assertTrue(v)
     def test_official_resources_registry(self):
         m,r,_,_=read_catalog(ROOT);resources=load_resources(ROOT,{x['paper']['id'] for x in r})
-        self.assertTrue(resources);self.assertTrue(all(set(v)<={'project','code'} and v for v in resources.values()))
+        self.assertGreaterEqual(len(resources),80);self.assertTrue(all(set(v)<={'project','code'} and v for v in resources.values()))
+        self.assertEqual(set(resources['p064']),{'project','code'});self.assertNotIn('p006',resources)
         out=outputs(ROOT);lib=json.loads(out['data/library.json']);byid={p['id']:p for p in lib['papers']}
         for pid,value in resources.items():self.assertEqual(byid[pid]['resources'],value)
         self.assertTrue(all('resources' in p for p in lib['papers']))
