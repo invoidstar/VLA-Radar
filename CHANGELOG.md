@@ -1,3 +1,10 @@
+## 2026-09-21 · 官方资源周更闭环
+
+- 内容批次新增可选 `resources` 更新，可为已有论文增补或删除 `project / code`，并与现有资源 registry 合并后统一校验。
+- `release/batch-*` 工作流现在会提交 `catalog/resources.json`，历史批次无需增加新字段即可继续使用。
+- 周更内容标准新增官方 Project / Code 核验要求：只收作者/机构可确认资源，第三方复现不收，Code coming soon 不标成已开源。
+- README 明确 Resources 与 Evidence 分离：资源用于访问项目，不替代论文原文、表格和实验依据。
+
 ## 2026-09-21 · 论文官方资源链接
 
 - 新增独立 `catalog/resources.json`，将论文的官方项目主页 / 作者维护开源代码与 Evidence `sources` 分离；资源链接不参与论文证据语义。

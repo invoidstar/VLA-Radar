@@ -9,19 +9,36 @@ for _name in ('build','validate','browser','maintenance','discovery','migrations
 import argparse, hashlib, re
 from pathlib import Path
 from datetime import date
-from catalog_core import load, write, read_catalog, validate_record, validate_track, validate_result, require
+from catalog_core import load, write, read_catalog, validate_record, validate_track, validate_result, require, load_resources, public_url
 from build_catalog import build
 from maintenance_queue import plan
 ROOT=Path(__file__).resolve().parents[2]
+
+def prepare_resources(root,paper_ids,updates):
+    require(isinstance(updates,dict),'resources must be an object')
+    merged={pid:dict(value) for pid,value in load_resources(root,paper_ids).items()}
+    for pid,change in updates.items():
+        require(pid in paper_ids,'Resource update references unknown paper: '+pid)
+        require(isinstance(change,dict) and change and set(change)<={'project','code'},pid+': resource update must contain project/code')
+        item=dict(merged.get(pid,{}))
+        for kind,value in change.items():
+            if value is None:item.pop(kind,None)
+            else:item[kind]=public_url(value)
+        require(len(set(item.values()))==len(item),pid+': duplicate resource URL')
+        if item:merged[pid]=item
+        else:merged.pop(pid,None)
+    return {'schemaVersion':1,'papers':{pid:merged[pid] for pid in sorted(merged)}}
 def apply(root,path):
     b=load(path)
-    require(set(b)=={'id','date','summary','notes','tracks','results'},'Unexpected batch fields')
+    required={'id','date','summary','notes','tracks','results'};allowed=required|{'resources'}
+    require(required<=set(b)<=allowed,'Unexpected batch fields')
     require(re.fullmatch(r'[a-z0-9-]+',b['id']),'Invalid batch ID');date.fromisoformat(b['date'])
     lp=root/'maintenance/state/applied-batches.json';ledger=load(lp) if lp.exists() else {'schemaVersion':1,'batches':[]}
     digest=hashlib.sha256(path.read_bytes()).hexdigest();old=next((x for x in ledger['batches'] if x['id']==b['id']),None)
     if old:
         require(old['sha256']==digest,'Applied batch cannot be rewritten');print('Already applied:',b['id']);return False
     m,recs,tracks,results=read_catalog(root);byid={r['paper']['id']:r for r in recs}
+    resource_updates=b.get('resources',{});resource_data=prepare_resources(root,set(byid),resource_updates)
     require(len(b['notes'])==len({n['paperId'] for n in b['notes']}),'Duplicate note')
     for n in b['notes']:
         require(set(n)=={'paperId','expectedVersion','note'},'Unexpected note fields');require(n['paperId'] in byid,'Only existing papers')
@@ -37,10 +54,11 @@ def apply(root,path):
     for r in b['results']:
         validate_result(r,set(byid),tm);require(r['id'] not in ids,'Duplicate result');ids.add(r['id'])
     for n in b['notes']:write(root/f'catalog/papers/{n["paperId"]}.json',byid[n['paperId']])
+    if resource_updates:write(root/'catalog/resources.json',resource_data)
     write(root/'catalog/benchmarks.json',{'schemaVersion':1,'tracks':list(tm.values())})
     for r in b['results']:write(root/f'catalog/results/{r["id"]}.json',r)
     m['updatedAt']=b['date'];write(root/'catalog/manifest.json',m)
-    ledger['batches'].append({'id':b['id'],'sha256':digest,'date':b['date'],'notes':[n['paperId'] for n in b['notes']],'tracks':[t['id'] for t in b['tracks']],'results':len(b['results'])});write(lp,ledger)
+    ledger['batches'].append({'id':b['id'],'sha256':digest,'date':b['date'],'notes':[n['paperId'] for n in b['notes']],'tracks':[t['id'] for t in b['tracks']],'results':len(b['results']),'resources':sorted(resource_updates)});write(lp,ledger)
     log=root/'CHANGELOG.md';log.write_text(f'## {b["date"]} — {b["id"]}\n\n{b["summary"]}\n\n'+log.read_text(encoding='utf-8'),encoding='utf-8')
     build(root);plan(root);print('Applied',b['id']);return True
 if __name__=='__main__':
