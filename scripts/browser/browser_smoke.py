@@ -59,6 +59,24 @@ try:
   assert not math_audit['pageOverflow'],math_audit
   page.locator('#math-smoke').evaluate('(el)=>el.remove()')
   assert not any('search-index.' in u or 'board-index.' in u or '/details/' in u for u in requests), requests
+  # Official resources are separate from evidence: render only when verified and never add placeholders.
+  page.locator('#search').fill('OpenVLA');page.wait_for_timeout(900)
+  openvla=page.locator('[data-paper="p064"]').first;assert openvla.count()==1
+  card=openvla.locator('xpath=ancestor::article[contains(@class,"paper-card")]')
+  assert card.locator('.paper-resource.project').count()==1 and card.locator('.paper-resource.code').count()==1
+  assert 'openvla.github.io' in card.locator('.paper-resource.project').get_attribute('href')
+  assert 'github.com/openvla/openvla' in card.locator('.paper-resource.code').get_attribute('href')
+  card.locator('.detail-btn').click();page.wait_for_selector('.note-section')
+  assert page.locator('#paper-detail .paper-resources .paper-resource').count()==2
+  for link in page.locator('#paper-detail .paper-resources .paper-resource').all():
+   assert link.get_attribute('target')=='_blank' and 'noopener' in (link.get_attribute('rel') or '')
+  page.locator('#paper-detail [data-focus="p064"]').click();page.wait_for_selector('.reader-title-tools')
+  assert page.locator('.reader-title-tools a',has_text='项目主页').count()==1
+  assert page.locator('.reader-title-tools a',has_text='开源代码').count()==1
+  page.locator('.reader-toolbar [data-view="papers"]').click();page.wait_for_selector('#search');page.wait_for_timeout(250)
+  page.locator('#search').fill('In-Context VLA');page.wait_for_timeout(900)
+  nores=page.locator('[data-paper="p006"]').first;assert nores.count()==1
+  assert nores.locator('xpath=ancestor::article[contains(@class,"paper-card")]').locator('.paper-resources').count()==0
   page.locator('#search').fill('LIBERO');page.wait_for_timeout(900)
   assert any('search-index.' in u for u in requests)
   assert page.locator('.paper-card').count()>0
@@ -93,7 +111,7 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
   page.screenshot(path=str(out/'mobile.png'),full_page=False)
   assert not errors, errors
-  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
+  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
   print('PASS browser HTTP integration, persistence, lazy-loading, worker search and mobile overflow')
   browser.close()
 finally:server.terminate();server.wait()
