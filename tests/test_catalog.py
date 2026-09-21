@@ -16,6 +16,13 @@ class CatalogTests(unittest.TestCase):
         self.rec['note']['version']='arXiv v1'
     def test_entire_catalog(self):
         m,r,t,v=read_catalog(ROOT);self.assertGreaterEqual(len(r),78);self.assertTrue(t);self.assertTrue(v)
+    def test_official_resources_registry(self):
+        m,r,_,_=read_catalog(ROOT);resources=load_resources(ROOT,{x['paper']['id'] for x in r})
+        self.assertTrue(resources);self.assertTrue(all(set(v)<={'project','code'} and v for v in resources.values()))
+        out=outputs(ROOT);lib=json.loads(out['data/library.json']);byid={p['id']:p for p in lib['papers']}
+        for pid,value in resources.items():self.assertEqual(byid[pid]['resources'],value)
+        self.assertTrue(all('resources' in p for p in lib['papers']))
+
     def test_public_keys(self):
         self.rec['privateNotes']='not allowed'
         with self.assertRaises(ValueError):validate_record(self.rec)
