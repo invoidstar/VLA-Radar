@@ -8,6 +8,7 @@ from scripts.maintenance.sync_publications import parse_feed,apply_arxiv,apply_c
 from scripts.discovery.extract_results import extract,number
 from scripts.discovery.discover_results import discover
 from scripts.maintenance.maintenance_queue import plan
+from scripts.migrations.apply_content_batch import prepare_resources
 
 class CatalogTests(unittest.TestCase):
     def setUp(self):
@@ -23,6 +24,15 @@ class CatalogTests(unittest.TestCase):
         out=outputs(ROOT);lib=json.loads(out['data/library.json']);byid={p['id']:p for p in lib['papers']}
         for pid,value in resources.items():self.assertEqual(byid[pid]['resources'],value)
         self.assertTrue(all('resources' in p for p in lib['papers']))
+
+    def test_batch_resource_updates_merge_and_remove(self):
+        _,records,_,_=read_catalog(ROOT);ids={x['paper']['id'] for x in records}
+        merged=prepare_resources(ROOT,ids,{'p064':{'project':'https://example.com/openvla-project'},'p001':{'project':None}})
+        self.assertEqual(merged['papers']['p064']['project'],'https://example.com/openvla-project')
+        self.assertEqual(merged['papers']['p064']['code'],'https://github.com/openvla/openvla')
+        self.assertNotIn('p001',merged['papers'])
+        with self.assertRaises(ValueError):prepare_resources(ROOT,ids,{'p999':{'project':'https://example.com'}})
+        with self.assertRaises(ValueError):prepare_resources(ROOT,ids,{'p064':{'demo':'https://example.com'}})
 
     def test_public_keys(self):
         self.rec['privateNotes']='not allowed'
