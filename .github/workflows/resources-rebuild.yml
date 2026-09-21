@@ -1,0 +1,29 @@
+name: Temporary resource data rebuild
+on:
+  push:
+    branches: [feature/paper-resources-2026-09-21]
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/paper-resources-2026-09-21
+          fetch-depth: 0
+      - name: Rebuild deterministic public data
+        run: python scripts/build/build_catalog.py
+      - name: Commit generated data only
+        run: |
+          if git diff --quiet -- data; then
+            echo "Generated data already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "Rebuild public data for paper resources"
+          git push origin HEAD:feature/paper-resources-2026-09-21
