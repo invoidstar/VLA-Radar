@@ -281,6 +281,12 @@
     },
     "p098": {
       "project": "https://meta-world.github.io/"
+    },
+    "p024": {
+      "code": "https://github.com/amap-cvlab/ABot-Manipulation"
+    },
+    "p033": {
+      "project": "https://ansocho.github.io/otql-flow/"
     }
   }
 }
