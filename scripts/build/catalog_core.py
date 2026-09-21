@@ -52,6 +52,22 @@ def public_url(value):
     else: require(ip.is_global,'non-public address')
     return value
 
+def load_resources(root, paper_ids):
+    path=Path(root)/'catalog/resources.json'
+    data=load(path)
+    keys(data,{'schemaVersion','papers'},'resources'); require(data['schemaVersion']==1,'resources schema version')
+    require(isinstance(data['papers'],dict),'resources papers must be an object')
+    allowed={'project','code'}; known=set(paper_ids); out={}
+    for pid,item in data['papers'].items():
+        require(pid in known,f'resource for unknown paper {pid}')
+        require(isinstance(item,dict) and item and set(item)<=allowed,f'{pid}: resources must contain only project/code')
+        require(len(item)==len(set(item)),f'{pid}: duplicate resource kind')
+        clean={}
+        for kind,url in item.items(): clean[kind]=public_url(url)
+        require(len(set(clean.values()))==len(clean),f'{pid}: duplicate resource URL')
+        out[pid]=clean
+    return out
+
 def normal_title(s): return re.sub(r'[\W_]+','',unicodedata.normalize('NFKC',s).casefold())
 def canonical_doi(s): return re.sub(r'^https?://(?:dx\.)?doi.org/','',s.strip().lower())
 def add_event(pub, kind, event_date, source, venue='', note='', observed=None):
