@@ -83,7 +83,7 @@ try:
   page.locator('[data-paper="p001"]').first.click() if page.locator('[data-paper="p001"]').count() else page.locator('.detail-btn').first.click()
   page.wait_for_selector('.note-section')
   assert page.locator('.note-section').count()>=8
-  page.locator('[data-note-tab="life"]').click();assert page.locator('.life-grid').is_visible()
+  page.locator('[data-note-tab="life"]').click();assert page.locator('#paper-detail #panel-life .life-grid').is_visible()
   page.locator('[data-note-tab="results"]').click();page.wait_for_timeout(300)
   page.keyboard.press('Escape');page.locator('.nav-link[data-view="leaderboards"]').click()
   try:
