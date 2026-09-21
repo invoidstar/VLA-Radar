@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "papers": {
+    "p001": {
+      "project": "https://starvla.github.io/VLAct/"
+    },
+    "p002": {
+      "code": "https://github.com/MindVLA-Team/VLAFlow"
+    },
+    "p003": {
+      "project": "https://www.astribot.com/research/Lumo2"
+    },
+    "p004": {
+      "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1"
+    },
+    "p005": {
+      "project": "https://www.dyna.co/dyna-2"
+    },
+    "p007": {
+      "project": "https://wing0night.github.io/track4action-project-page"
+    },
+    "p010": {
+      "code": "https://github.com/yyyyu120/W2-VLA"
+    },
+    "p011": {
+      "project": "https://davian-robotics.github.io/pointmap/",
+      "code": "https://github.com/DAVIAN-Robotics/pointmap"
+    },
+    "p013": {
+      "project": "https://bridgevla-plus.github.io/",
+      "code": "https://github.com/BridgeVLA/BridgeVLA"
+    },
+    "p017": {
+      "code": "https://github.com/sii-research/tau-0-vla"
+    },
+    "p018": {
+      "project": "https://worv-ai.github.io/ponderpounce/"
+    },
+    "p019": {
+      "project": "https://icr-lab.github.io/SparkVLA/",
+      "code": "https://github.com/huhuhushou/SparkVLA"
+    },
+    "p020": {
+      "project": "https://jongwoopark7978.github.io/smilevla"
+    },
+    "p021": {
+      "project": "https://selfwam.github.io/",
+      "code": "https://github.com/SelfWAM/SelfWAM"
+    },
+    "p022": {
+      "code": "https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model"
+    },
+    "p023": {
+      "project": "https://ds-wam.github.io/"
+    },
+    "p025": {
+      "project": "https://vt-wam.github.io/"
+    },
+    "p027": {
+      "code": "https://github.com/H-EmbodVis/TurboVLA"
+    },
+    "p029": {
+      "code": "https://github.com/z-lab/flashvla"
+    },
+    "p031": {
+      "code": "https://github.com/SEU-PAISys/Embodied.cpp"
+    },
+    "p034": {
+      "project": "https://robodojo-benchmark.com/",
+      "code": "https://github.com/RoboDojo-Benchmark/RoboDojo"
+    },
+    "p035": {
+      "project": "https://co-training-lbm.github.io/"
+    },
+    "p036": {
+      "project": "https://robin-lab.cs.utexas.edu/HALO/"
+    },
+    "p037": {
+      "project": "https://technology.robbyant.com/lingbot-va",
+      "code": "https://github.com/Robbyant/lingbot-va"
+    },
+    "p038": {
+      "project": "https://mimic-video.github.io/",
+      "code": "https://github.com/mimic-video/mimic-video"
+    },
+    "p039": {
+      "project": "https://veritas-improvement.github.io/",
+      "code": "https://github.com/princeton-prism/veritas"
+    },
+    "p040": {
+      "code": "https://github.com/dasnyder5/nscore"
+    },
+    "p041": {
+      "project": "https://lyfeng001.github.io/Legato/",
+      "code": "https://github.com/lyfeng001/Legato-kinetix"
+    },
+    "p044": {
+      "project": "https://clear-nus.github.io/blog/vla-touch"
+    },
+    "p047": {
+      "project": "https://cliport.github.io/",
+      "code": "https://github.com/cliport/cliport"
+    },
+    "p048": {
+      "project": "https://calvin.cs.uni-freiburg.de/",
+      "code": "https://github.com/mees/calvin"
+    },
+    "p049": {
+      "project": "https://sites.google.com/view/bc-z/home"
+    },
+    "p050": {
+      "project": "https://say-can.github.io/"
+    },
+    "p051": {
+      "project": "https://peract.github.io/",
+      "code": "https://github.com/peract/peract"
+    },
+    "p052": {
+      "project": "https://robotics-transformer1.github.io/"
+    },
+    "p053": {
+      "project": "https://universal-policy.github.io/"
+    },
+    "p054": {
+      "project": "https://palm-e.github.io/"
+    },
+    "p055": {
+      "project": "https://diffusion-policy.cs.columbia.edu/",
+      "code": "https://github.com/real-stanford/diffusion_policy"
+    },
+    "p056": {
+      "project": "https://tonyzhaozh.github.io/aloha/",
+      "code": "https://github.com/tonyzhaozh/act"
+    },
+    "p057": {
+      "project": "https://libero-project.github.io/",
+      "code": "https://github.com/Lifelong-Robot-Learning/LIBERO"
+    },
+    "p058": {
+      "project": "https://robotics-transformer2.github.io/"
+    },
+    "p059": {
+      "project": "https://robotics-transformer-x.github.io/",
+      "code": "https://github.com/google-deepmind/open_x_embodiment"
+    },
+    "p060": {
+      "project": "https://roboflamingo.github.io/",
+      "code": "https://github.com/RoboFlamingo/RoboFlamingo"
+    },
+    "p061": {
+      "project": "https://gr1-manipulation.github.io/",
+      "code": "https://github.com/bytedance/GR-1"
+    },
+    "p062": {
+      "project": "https://droid-dataset.github.io/",
+      "code": "https://github.com/droid-dataset/droid"
+    },
+    "p063": {
+      "project": "https://octo-models.github.io/",
+      "code": "https://github.com/octo-models/octo"
+    },
+    "p064": {
+      "project": "https://openvla.github.io/",
+      "code": "https://github.com/openvla/openvla"
+    },
+    "p065": {
+      "project": "https://rdt-robotics.github.io/rdt-robotics/",
+      "code": "https://github.com/thu-ml/RoboticsDiffusionTransformer"
+    },
+    "p066": {
+      "code": "https://github.com/Physical-Intelligence/openpi"
+    },
+    "p067": {
+      "code": "https://github.com/Physical-Intelligence/openpi"
+    },
+    "p068": {
+      "project": "https://spatialvla.github.io/",
+      "code": "https://github.com/SpatialVLA/SpatialVLA"
+    },
+    "p069": {
+      "project": "https://openvla-oft.github.io/",
+      "code": "https://github.com/moojink/openvla-oft"
+    },
+    "p070": {
+      "project": "https://developer.nvidia.com/isaac/gr00t",
+      "code": "https://github.com/NVIDIA/Isaac-GR00T"
+    },
+    "p071": {
+      "project": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/"
+    },
+    "p072": {
+      "code": "https://github.com/Physical-Intelligence/openpi"
+    },
+    "p073": {
+      "code": "https://github.com/huggingface/lerobot"
+    },
+    "p074": {
+      "project": "https://vla-adapter.github.io/",
+      "code": "https://github.com/OpenHelix-Team/VLA-Adapter"
+    },
+    "p075": {
+      "project": "https://www.pi.website/blog/pistar06"
+    },
+    "p076": {
+      "code": "https://github.com/NVlabs/cosmos-policy"
+    },
+    "p077": {
+      "code": "https://github.com/dreamzero0/dreamzero"
+    },
+    "p078": {
+      "project": "https://yuantianyuan01.github.io/FastWAM/",
+      "code": "https://github.com/yuantianyuan01/FastWAM"
+    },
+    "p079": {
+      "code": "https://github.com/robocasa/robocasa"
+    },
+    "p080": {
+      "code": "https://github.com/robocasa/robocasa"
+    },
+    "p081": {
+      "code": "https://github.com/RLWRLD/RLDX-1"
+    },
+    "p082": {
+      "project": "https://rhodes-team-prts.github.io/",
+      "code": "https://github.com/TeleHuman/PRTS"
+    },
+    "p083": {
+      "code": "https://github.com/open-gigaai/giga-world-policy"
+    },
+    "p084": {
+      "project": "https://xpolicylab.github.io/",
+      "code": "https://github.com/XPolicyLab/XPolicyLab"
+    },
+    "p085": {
+      "project": "https://3d-diffusion-policy.github.io/",
+      "code": "https://github.com/YanjieZe/3D-Diffusion-Policy"
+    },
+    "p086": {
+      "project": "https://robotic-view-transformer.github.io/",
+      "code": "https://github.com/NVlabs/RVT"
+    },
+    "p087": {
+      "project": "https://robotic-view-transformer.github.io/",
+      "code": "https://github.com/NVlabs/RVT"
+    },
+    "p088": {
+      "project": "https://3d-diffuser-actor.github.io/",
+      "code": "https://github.com/nickgkan/3d_diffuser_actor"
+    },
+    "p089": {
+      "project": "https://robot-colosseum.github.io/",
+      "code": "https://github.com/robot-colosseum/robot-colosseum"
+    },
+    "p090": {
+      "project": "https://act3d.github.io/"
+    },
+    "p091": {
+      "project": "https://yanjieze.com/GNFactor/",
+      "code": "https://github.com/YanjieZe/GNFactor"
+    },
+    "p092": {
+      "project": "https://chained-diffuser.github.io/"
+    },
+    "p093": {
+      "project": "https://robomimic.github.io/study/",
+      "code": "https://github.com/ARISE-Initiative/robomimic"
+    },
+    "p094": {
+      "project": "https://dexmimicgen.github.io/",
+      "code": "https://github.com/NVlabs/dexmimicgen"
+    },
+    "p095": {
+      "project": "https://simpler-env.github.io/",
+      "code": "https://github.com/simpler-env/SimplerEnv"
+    },
+    "p096": {
+      "code": "https://github.com/facebookresearch/r3m"
+    },
+    "p097": {
+      "project": "https://tetexiao.com/projects/mvp"
+    },
+    "p098": {
+      "project": "https://meta-world.github.io/"
+    },
+    "p024": {
+      "code": "https://github.com/amap-cvlab/ABot-Manipulation"
+    },
+    "p033": {
+      "project": "https://ansocho.github.io/otql-flow/"
+    }
+  }
+}

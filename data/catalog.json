@@ -112,6 +112,9 @@
       "detailUrl": "data/details/p001.json?v=48b4f4cde427d775",
       "resultUrl": "data/paper-results/p001.eb1d49191aa1a96e.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://starvla.github.io/VLAct/"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
         "latestArxivVersion": "v1",
@@ -164,6 +167,9 @@
       "detailUrl": "data/details/p002.json?v=018ffa06850e6ae7",
       "resultUrl": "data/paper-results/p002.bc221fa51692df42.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/MindVLA-Team/VLAFlow"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-02",
         "latestArxivVersion": "v2",
@@ -224,6 +230,9 @@
       "detailUrl": "data/details/p035.json?v=f8948e6dd8c15f84",
       "resultUrl": "data/paper-results/p035.96ca7927d6797737.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://co-training-lbm.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-02-01",
         "latestArxivVersion": "v1",
@@ -275,6 +284,9 @@
       "detailUrl": "data/details/p003.json?v=79a0282a4c6cda72",
       "resultUrl": "data/paper-results/p003.d84a1ae32ae0bf51.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://www.astribot.com/research/Lumo2"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-13",
         "latestArxivVersion": "v1",
@@ -327,6 +339,9 @@
       "detailUrl": "data/details/p004.json?v=66bcf0bc1b5d6692",
       "resultUrl": "data/paper-results/p004.0702eaa6b2980776.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-16",
         "latestArxivVersion": "v2",
@@ -376,6 +391,9 @@
       "detailUrl": "data/details/p005.json?v=94eb4a40be926070",
       "resultUrl": "data/paper-results/p005.fd6e1b7ea29c5fba.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://www.dyna.co/dyna-2"
+      },
       "lifecycle": {
         "firstArxivAt": null,
         "latestArxivVersion": null,
@@ -428,6 +446,7 @@
       "detailUrl": "data/details/p006.json?v=2a68d67f0c917914",
       "resultUrl": "data/paper-results/p006.8ac0d97ea787d80d.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-06",
         "latestArxivVersion": "v1",
@@ -489,6 +508,10 @@
       "detailUrl": "data/details/p038.json?v=6c1170b5ad60117d",
       "resultUrl": "data/paper-results/p038.a020b2c84e7f8923.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://mimic-video.github.io/",
+        "code": "https://github.com/mimic-video/mimic-video"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-12-17",
         "latestArxivVersion": "v2",
@@ -542,6 +565,9 @@
       "detailUrl": "data/details/p007.json?v=828a07ab73fbe964",
       "resultUrl": "data/paper-results/p007.5a7b12af19d3c052.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://wing0night.github.io/track4action-project-page"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-04",
         "latestArxivVersion": "v1",
@@ -595,6 +621,7 @@
       "detailUrl": "data/details/p008.json?v=fbb614be34bf4914",
       "resultUrl": "data/paper-results/p008.b1f8680ff631f850.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
         "latestArxivVersion": "v1",
@@ -648,6 +675,7 @@
       "detailUrl": "data/details/p009.json?v=688dd491a210a2a4",
       "resultUrl": "data/paper-results/p009.ca8ea7fc4f273865.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-07",
         "latestArxivVersion": "v1",
@@ -702,6 +730,9 @@
       "detailUrl": "data/details/p010.json?v=04146819431b40bb",
       "resultUrl": "data/paper-results/p010.d878f138308a01d5.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/yyyyu120/W2-VLA"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
         "latestArxivVersion": "v1",
@@ -754,6 +785,10 @@
       "detailUrl": "data/details/p011.json?v=c81634f9d744ea37",
       "resultUrl": "data/paper-results/p011.99e2bb699ff5d013.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://davian-robotics.github.io/pointmap/",
+        "code": "https://github.com/DAVIAN-Robotics/pointmap"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-13",
         "latestArxivVersion": "v1",
@@ -806,6 +841,7 @@
       "detailUrl": "data/details/p012.json?v=cb4693940ad926ea",
       "resultUrl": "data/paper-results/p012.2733b8e1ac4b3fb6.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-02",
         "latestArxivVersion": "v1",
@@ -859,6 +895,10 @@
       "detailUrl": "data/details/p013.json?v=5a715e4b60ac3d7b",
       "resultUrl": "data/paper-results/p013.b2edcecf913ebe5b.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://bridgevla-plus.github.io/",
+        "code": "https://github.com/BridgeVLA/BridgeVLA"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
         "latestArxivVersion": "v1",
@@ -911,6 +951,7 @@
       "detailUrl": "data/details/p014.json?v=d239d1c4846cc14a",
       "resultUrl": "data/paper-results/p014.3eb779d3d2c79663.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
         "latestArxivVersion": "v1",
@@ -963,6 +1004,7 @@
       "detailUrl": "data/details/p016.json?v=0f2312fa1b453ef2",
       "resultUrl": "data/paper-results/p016.37bc9b4252c8c860.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
         "latestArxivVersion": "v1",
@@ -1023,6 +1065,9 @@
       "detailUrl": "data/details/p036.json?v=895fb92f2d0bef26",
       "resultUrl": "data/paper-results/p036.a7bc8165a791a06b.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robin-lab.cs.utexas.edu/HALO/"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-06-23",
         "latestArxivVersion": "v1",
@@ -1084,6 +1129,10 @@
       "detailUrl": "data/details/p039.json?v=5480e74e8eb4c77e",
       "resultUrl": "data/paper-results/p039.cef82ec20f98b7f3.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://veritas-improvement.github.io/",
+        "code": "https://github.com/princeton-prism/veritas"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-06-16",
         "latestArxivVersion": "v1",
@@ -1135,6 +1184,7 @@
       "detailUrl": "data/details/p015.json?v=d32bafd787dbbb92",
       "resultUrl": "data/paper-results/p015.4398eea533aca14c.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-09",
         "latestArxivVersion": "v1",
@@ -1188,6 +1238,9 @@
       "detailUrl": "data/details/p017.json?v=74f479592bf850d3",
       "resultUrl": "data/paper-results/p017.2ea5c9877f8bc84c.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/sii-research/tau-0-vla"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
         "latestArxivVersion": "v1",
@@ -1245,6 +1298,9 @@
       "detailUrl": "data/details/p018.json?v=b8f9cfcb665e66a5",
       "resultUrl": "data/paper-results/p018.e4eef25fa7ec74bf.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://worv-ai.github.io/ponderpounce/"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-25",
         "latestArxivVersion": "v2",
@@ -1298,6 +1354,10 @@
       "detailUrl": "data/details/p019.json?v=670af2346290a6d4",
       "resultUrl": "data/paper-results/p019.036bed8e22267de3.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://icr-lab.github.io/SparkVLA/",
+        "code": "https://github.com/huhuhushou/SparkVLA"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
         "latestArxivVersion": "v1",
@@ -1355,6 +1415,7 @@
       "detailUrl": "data/details/p045.json?v=e44055937b27b9de",
       "resultUrl": "data/paper-results/p045.fcbb0c62fb547b6a.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2025-08-07",
         "latestArxivVersion": "v2",
@@ -1407,6 +1468,10 @@
       "detailUrl": "data/details/p021.json?v=2f6f3b1aa55347a5",
       "resultUrl": "data/paper-results/p021.12ff2f14d17d5966.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://selfwam.github.io/",
+        "code": "https://github.com/SelfWAM/SelfWAM"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-01",
         "latestArxivVersion": "v1",
@@ -1459,6 +1524,9 @@
       "detailUrl": "data/details/p022.json?v=639d7a51a70428a5",
       "resultUrl": "data/paper-results/p022.99049d6f9a069bd9.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-31",
         "latestArxivVersion": "v1",
@@ -1511,6 +1579,7 @@
       "detailUrl": "data/details/p026.json?v=e9bc530cf13e66bb",
       "resultUrl": null,
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-23",
         "latestArxivVersion": "v1",
@@ -1562,6 +1631,9 @@
       "detailUrl": "data/details/p023.json?v=099b1ebc262ec589",
       "resultUrl": "data/paper-results/p023.ab14daf4e7010649.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://ds-wam.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
         "latestArxivVersion": "v1",
@@ -1614,6 +1686,9 @@
       "detailUrl": "data/details/p024.json?v=d88aa9886231efda",
       "resultUrl": "data/paper-results/p024.6cb9248de73341ee.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/amap-cvlab/ABot-Manipulation"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-01",
         "latestArxivVersion": "v2",
@@ -1679,6 +1754,10 @@
       "detailUrl": "data/details/p037.json?v=11b984f52fc5e507",
       "resultUrl": "data/paper-results/p037.c79351afba100ba5.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://technology.robbyant.com/lingbot-va",
+        "code": "https://github.com/Robbyant/lingbot-va"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-01-29",
         "latestArxivVersion": "v2",
@@ -1732,6 +1811,9 @@
       "detailUrl": "data/details/p025.json?v=d216d74ad6e607f9",
       "resultUrl": "data/paper-results/p025.b7660573d472171f.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://vt-wam.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-02",
         "latestArxivVersion": "v1",
@@ -1796,6 +1878,9 @@
       "detailUrl": "data/details/p044.json?v=e758dadf9c09b730",
       "resultUrl": "data/paper-results/p044.96e90254eaf11d15.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://clear-nus.github.io/blog/vla-touch"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-07-23",
         "latestArxivVersion": "v2",
@@ -1848,6 +1933,9 @@
       "detailUrl": "data/details/p027.json?v=9fac2d7106c789bb",
       "resultUrl": "data/paper-results/p027.62f57a73a8999c79.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/H-EmbodVis/TurboVLA"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-29",
         "latestArxivVersion": "v2",
@@ -1900,6 +1988,7 @@
       "detailUrl": "data/details/p028.json?v=d67da4a010aac446",
       "resultUrl": "data/paper-results/p028.b1b55b77cf81e0e7.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-07-07",
         "latestArxivVersion": "v2",
@@ -1953,6 +2042,9 @@
       "detailUrl": "data/details/p029.json?v=03be7c6b3c1b2d17",
       "resultUrl": "data/paper-results/p029.5c8c0d805cfbe184.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/z-lab/flashvla"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
         "latestArxivVersion": "v1",
@@ -2009,6 +2101,7 @@
       "detailUrl": "data/details/p030.json?v=615686a0f7db19e5",
       "resultUrl": "data/paper-results/p030.a4ff50368879d389.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-29",
         "latestArxivVersion": "v2",
@@ -2061,6 +2154,9 @@
       "detailUrl": "data/details/p031.json?v=38dfb24924add83c",
       "resultUrl": "data/paper-results/p031.8085f57bd469e512.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/SEU-PAISys/Embodied.cpp"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-02",
         "latestArxivVersion": "v3",
@@ -2117,6 +2213,7 @@
       "detailUrl": "data/details/p042.json?v=0abc35b151b3fe89",
       "resultUrl": "data/paper-results/p042.5b85711d6894a185.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-04-07",
         "latestArxivVersion": "v1",
@@ -2169,6 +2266,7 @@
       "detailUrl": "data/details/p032.json?v=4ad2adfe3728c020",
       "resultUrl": "data/paper-results/p032.0309004a1b53f681.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
         "latestArxivVersion": "v1",
@@ -2224,6 +2322,7 @@
       "detailUrl": "data/details/p043.json?v=53b58af96e198c08",
       "resultUrl": "data/paper-results/p043.4432b551e88d50c9.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": null,
         "latestArxivVersion": null,
@@ -2277,6 +2376,9 @@
       "detailUrl": "data/details/p020.json?v=409432bb4c16f697",
       "resultUrl": "data/paper-results/p020.a687120bdc77faa9.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://jongwoopark7978.github.io/smilevla"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-29",
         "latestArxivVersion": "v1",
@@ -2330,6 +2432,9 @@
       "detailUrl": "data/details/p033.json?v=71dd8e9523903616",
       "resultUrl": "data/paper-results/p033.76d913c941e189e7.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://ansocho.github.io/otql-flow/"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-07",
         "latestArxivVersion": "v1",
@@ -2387,6 +2492,10 @@
       "detailUrl": "data/details/p041.json?v=a3c044dbd489b36b",
       "resultUrl": "data/paper-results/p041.7d73dfa562aec789.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://lyfeng001.github.io/Legato/",
+        "code": "https://github.com/lyfeng001/Legato-kinetix"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-02-13",
         "latestArxivVersion": "v2",
@@ -2443,6 +2552,10 @@
       "detailUrl": "data/details/p034.json?v=7020dab71990ad11",
       "resultUrl": "data/paper-results/p034.659876f064644f7f.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robodojo-benchmark.com/",
+        "code": "https://github.com/RoboDojo-Benchmark/RoboDojo"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-05",
         "latestArxivVersion": "v3",
@@ -2503,6 +2616,9 @@
       "detailUrl": "data/details/p040.json?v=0fd20d15ed84c4a2",
       "resultUrl": null,
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/dasnyder5/nscore"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-03-13",
         "latestArxivVersion": "v1",
@@ -2559,6 +2675,7 @@
       "detailUrl": "data/details/p046.json?v=45af3d64ca536f33",
       "resultUrl": "data/paper-results/p046.6a46bf94b6fcd60b.json",
       "noteStatus": "expanded",
+      "resources": {},
       "lifecycle": {
         "firstArxivAt": null,
         "latestArxivVersion": null,
@@ -2625,6 +2742,10 @@
       "detailUrl": "data/details/p047.json?v=cda6369e0b2a3e86",
       "resultUrl": "data/paper-results/p047.76203b97fce8fbae.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://cliport.github.io/",
+        "code": "https://github.com/cliport/cliport"
+      },
       "lifecycle": {
         "firstArxivAt": "2021-09-24",
         "latestArxivVersion": "v1",
@@ -2691,6 +2812,10 @@
       "detailUrl": "data/details/p048.json?v=16671a906f7d6fbc",
       "resultUrl": "data/paper-results/p048.f44283fb1f0aca5b.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://calvin.cs.uni-freiburg.de/",
+        "code": "https://github.com/mees/calvin"
+      },
       "lifecycle": {
         "firstArxivAt": "2021-12-06",
         "latestArxivVersion": "v4",
@@ -2757,6 +2882,9 @@
       "detailUrl": "data/details/p049.json?v=e9c23271e2eb4ef9",
       "resultUrl": "data/paper-results/p049.8e611c37d7edf69d.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://sites.google.com/view/bc-z/home"
+      },
       "lifecycle": {
         "firstArxivAt": "2022-02-04",
         "latestArxivVersion": "v1",
@@ -2823,6 +2951,9 @@
       "detailUrl": "data/details/p050.json?v=4b3b768daa6739b5",
       "resultUrl": "data/paper-results/p050.e4b95f4a807cae36.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://say-can.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2022-04-04",
         "latestArxivVersion": "v2",
@@ -2881,6 +3012,10 @@
       "detailUrl": "data/details/p051.json?v=5391a0817d6d0bfa",
       "resultUrl": "data/paper-results/p051.18f22c9ebae17e04.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://peract.github.io/",
+        "code": "https://github.com/peract/peract"
+      },
       "lifecycle": {
         "firstArxivAt": "2022-09-12",
         "latestArxivVersion": "v2",
@@ -2943,6 +3078,9 @@
       "detailUrl": "data/details/p052.json?v=7933787b734cbc02",
       "resultUrl": "data/paper-results/p052.ecbda2113e9ebdb0.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robotics-transformer1.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2022-12-13",
         "latestArxivVersion": "v2",
@@ -3001,6 +3139,9 @@
       "detailUrl": "data/details/p053.json?v=4c182210e7319b6e",
       "resultUrl": "data/paper-results/p053.75382b1cb910e972.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://universal-policy.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-01-31",
         "latestArxivVersion": "v3",
@@ -3063,6 +3204,9 @@
       "detailUrl": "data/details/p054.json?v=eaf27744c7aee17d",
       "resultUrl": "data/paper-results/p054.c1ef7aaeae39b54c.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://palm-e.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-03-06",
         "latestArxivVersion": "v1",
@@ -3116,6 +3260,10 @@
       "detailUrl": "data/details/p055.json?v=add1889c9ee9d644",
       "resultUrl": "data/paper-results/p055.237dea8f0205a603.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://diffusion-policy.cs.columbia.edu/",
+        "code": "https://github.com/real-stanford/diffusion_policy"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-03-07",
         "latestArxivVersion": "v5",
@@ -3170,6 +3318,10 @@
       "detailUrl": "data/details/p056.json?v=40342835e6225a37",
       "resultUrl": "data/paper-results/p056.bf232ce77e993533.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://tonyzhaozh.github.io/aloha/",
+        "code": "https://github.com/tonyzhaozh/act"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-04-23",
         "latestArxivVersion": "v1",
@@ -3228,6 +3380,10 @@
       "detailUrl": "data/details/p057.json?v=bd1e911cf9027ef0",
       "resultUrl": "data/paper-results/p057.e994d302154a2389.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://libero-project.github.io/",
+        "code": "https://github.com/Lifelong-Robot-Learning/LIBERO"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-06-05",
         "latestArxivVersion": "v2",
@@ -3294,6 +3450,9 @@
       "detailUrl": "data/details/p058.json?v=377e6dade3131a47",
       "resultUrl": "data/paper-results/p058.517c431b4b0c922d.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robotics-transformer2.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-07-28",
         "latestArxivVersion": "v1",
@@ -3360,6 +3519,10 @@
       "detailUrl": "data/details/p059.json?v=c7685e894c1a2962",
       "resultUrl": "data/paper-results/p059.fa1c01d9a4d3e6c8.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robotics-transformer-x.github.io/",
+        "code": "https://github.com/google-deepmind/open_x_embodiment"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-10-13",
         "latestArxivVersion": "v9",
@@ -3422,6 +3585,10 @@
       "detailUrl": "data/details/p060.json?v=7b8abdffe58d171c",
       "resultUrl": "data/paper-results/p060.5503695f0838c979.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://roboflamingo.github.io/",
+        "code": "https://github.com/RoboFlamingo/RoboFlamingo"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-11-02",
         "latestArxivVersion": "v3",
@@ -3481,6 +3648,10 @@
       "detailUrl": "data/details/p061.json?v=3e7b94235062c96d",
       "resultUrl": "data/paper-results/p061.27edd801846e41ac.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://gr1-manipulation.github.io/",
+        "code": "https://github.com/bytedance/GR-1"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-12-20",
         "latestArxivVersion": "v2",
@@ -3543,6 +3714,10 @@
       "detailUrl": "data/details/p062.json?v=4a9a1e9b12fb6f8a",
       "resultUrl": "data/paper-results/p062.5204eba9d9ee1e8a.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://droid-dataset.github.io/",
+        "code": "https://github.com/droid-dataset/droid"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-03-19",
         "latestArxivVersion": "v2",
@@ -3605,6 +3780,10 @@
       "detailUrl": "data/details/p063.json?v=be8758c893a9807d",
       "resultUrl": "data/paper-results/p063.873f85a476020390.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://octo-models.github.io/",
+        "code": "https://github.com/octo-models/octo"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-05-20",
         "latestArxivVersion": "v2",
@@ -3663,6 +3842,10 @@
       "detailUrl": "data/details/p064.json?v=55838faaef9c3cd1",
       "resultUrl": "data/paper-results/p064.7673c68cfead6f96.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://openvla.github.io/",
+        "code": "https://github.com/openvla/openvla"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-06-13",
         "latestArxivVersion": "v3",
@@ -3717,6 +3900,10 @@
       "detailUrl": "data/details/p065.json?v=49b08ed795b750a1",
       "resultUrl": "data/paper-results/p065.fc3ca61515b6cf51.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://rdt-robotics.github.io/rdt-robotics/",
+        "code": "https://github.com/thu-ml/RoboticsDiffusionTransformer"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-10-10",
         "latestArxivVersion": "v2",
@@ -3771,6 +3958,9 @@
       "detailUrl": "data/details/p066.json?v=d9101fbbb5f6ae86",
       "resultUrl": "data/paper-results/p066.817cf5064df5f0d7.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/Physical-Intelligence/openpi"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-10-31",
         "latestArxivVersion": "v4",
@@ -3825,6 +4015,9 @@
       "detailUrl": "data/details/p067.json?v=baafc50ddc9543fa",
       "resultUrl": "data/paper-results/p067.fc560f5555640bcf.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/Physical-Intelligence/openpi"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-01-16",
         "latestArxivVersion": "v1",
@@ -3879,6 +4072,10 @@
       "detailUrl": "data/details/p068.json?v=fea7e6a8bb304f6d",
       "resultUrl": "data/paper-results/p068.51ef96d6c55d867d.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://spatialvla.github.io/",
+        "code": "https://github.com/SpatialVLA/SpatialVLA"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-01-27",
         "latestArxivVersion": "v5",
@@ -3937,6 +4134,10 @@
       "detailUrl": "data/details/p069.json?v=da59055770d14ca5",
       "resultUrl": "data/paper-results/p069.0364b2ff76a84478.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://openvla-oft.github.io/",
+        "code": "https://github.com/moojink/openvla-oft"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-02-27",
         "latestArxivVersion": "v2",
@@ -3991,6 +4192,10 @@
       "detailUrl": "data/details/p070.json?v=16ca70c169939220",
       "resultUrl": "data/paper-results/p070.2d14c2e5396dd037.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://developer.nvidia.com/isaac/gr00t",
+        "code": "https://github.com/NVIDIA/Isaac-GR00T"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-03-18",
         "latestArxivVersion": "v2",
@@ -4046,6 +4251,9 @@
       "detailUrl": "data/details/p071.json?v=59dc6a28f8146d91",
       "resultUrl": "data/paper-results/p071.8a8ce57537f59544.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-03-25",
         "latestArxivVersion": "v1",
@@ -4101,6 +4309,9 @@
       "detailUrl": "data/details/p072.json?v=0f07641ea6e39973",
       "resultUrl": "data/paper-results/p072.b9968997750ff06e.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/Physical-Intelligence/openpi"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-04-22",
         "latestArxivVersion": "v1",
@@ -4156,6 +4367,9 @@
       "detailUrl": "data/details/p073.json?v=8e1a11c9f1cdd487",
       "resultUrl": "data/paper-results/p073.f3dd8c3ea348d7c0.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/huggingface/lerobot"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-06-02",
         "latestArxivVersion": "v1",
@@ -4214,6 +4428,10 @@
       "detailUrl": "data/details/p074.json?v=c92ead463717ef15",
       "resultUrl": "data/paper-results/p074.5a1b92bf249b9f07.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://vla-adapter.github.io/",
+        "code": "https://github.com/OpenHelix-Team/VLA-Adapter"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-09-11",
         "latestArxivVersion": "v2",
@@ -4273,6 +4491,9 @@
       "detailUrl": "data/details/p075.json?v=51bdb918a6e8ddb4",
       "resultUrl": "data/paper-results/p075.2eadde913d55386c.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://www.pi.website/blog/pistar06"
+      },
       "lifecycle": {
         "firstArxivAt": "2025-11-18",
         "latestArxivVersion": "v2",
@@ -4327,6 +4548,9 @@
       "detailUrl": "data/details/p076.json?v=a397f4cdaeb7bb77",
       "resultUrl": "data/paper-results/p076.79a95f4986dd60bd.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/NVlabs/cosmos-policy"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-01-22",
         "latestArxivVersion": "v1",
@@ -4382,6 +4606,9 @@
       "detailUrl": "data/details/p077.json?v=85771468f31b74e7",
       "resultUrl": "data/paper-results/p077.f45498740c24adf0.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/dreamzero0/dreamzero"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-02-17",
         "latestArxivVersion": "v1",
@@ -4436,6 +4663,10 @@
       "detailUrl": "data/details/p078.json?v=e3d29807bc9a1fad",
       "resultUrl": "data/paper-results/p078.ba667950f3761671.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://yuantianyuan01.github.io/FastWAM/",
+        "code": "https://github.com/yuantianyuan01/FastWAM"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-03-17",
         "latestArxivVersion": "v2",
@@ -4492,6 +4723,9 @@
       "detailUrl": "data/details/p079.json?v=98d0939e2a2bb5c5",
       "resultUrl": "data/paper-results/p079.42e730235e79cfea.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/robocasa/robocasa"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-06-04",
         "latestArxivVersion": "v1",
@@ -4548,6 +4782,9 @@
       "detailUrl": "data/details/p080.json?v=6fb45c31d5119510",
       "resultUrl": "data/paper-results/p080.cb3eb222ec5559a8.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/robocasa/robocasa"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-03-04",
         "latestArxivVersion": "v1",
@@ -4602,6 +4839,9 @@
       "detailUrl": "data/details/p081.json?v=582c5b501cbfed7c",
       "resultUrl": "data/paper-results/p081.f38e8dbe4fc1ce28.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/RLWRLD/RLDX-1"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-05-05",
         "latestArxivVersion": "v2",
@@ -4655,6 +4895,10 @@
       "detailUrl": "data/details/p082.json?v=16fcb3e7db238872",
       "resultUrl": "data/paper-results/p082.5dae83bb41ca736d.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://rhodes-team-prts.github.io/",
+        "code": "https://github.com/TeleHuman/PRTS"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-04-30",
         "latestArxivVersion": "v1",
@@ -4708,6 +4952,9 @@
       "detailUrl": "data/details/p083.json?v=f7ab75e08bf108d7",
       "resultUrl": "data/paper-results/p083.e22803cbde27b2a4.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/open-gigaai/giga-world-policy"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-03-18",
         "latestArxivVersion": "v2",
@@ -4760,6 +5007,10 @@
       "detailUrl": "data/details/p084.json?v=c26d9e8e9ff6c18f",
       "resultUrl": "data/paper-results/p084.40353f616f7ea545.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://xpolicylab.github.io/",
+        "code": "https://github.com/XPolicyLab/XPolicyLab"
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-10",
         "latestArxivVersion": "v3",
@@ -4817,6 +5068,10 @@
       "detailUrl": "data/details/p085.json?v=0e42651cb803d6c7",
       "resultUrl": "data/paper-results/p085.a631b2382f7cf721.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://3d-diffusion-policy.github.io/",
+        "code": "https://github.com/YanjieZe/3D-Diffusion-Policy"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-03-06",
         "latestArxivVersion": "v7",
@@ -4875,6 +5130,10 @@
       "detailUrl": "data/details/p086.json?v=625a153d1b9edcfc",
       "resultUrl": "data/paper-results/p086.86f3b7a585b840ee.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robotic-view-transformer.github.io/",
+        "code": "https://github.com/NVlabs/RVT"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-06-26",
         "latestArxivVersion": "v1",
@@ -4933,6 +5192,10 @@
       "detailUrl": "data/details/p087.json?v=3f3ffad1d4ceac1e",
       "resultUrl": "data/paper-results/p087.a564ab10e33bde40.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robotic-view-transformer.github.io/",
+        "code": "https://github.com/NVlabs/RVT"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-06-12",
         "latestArxivVersion": "v1",
@@ -4991,6 +5254,10 @@
       "detailUrl": "data/details/p088.json?v=9f60b402a0edb214",
       "resultUrl": "data/paper-results/p088.23ae3e09b98c3f0f.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://3d-diffuser-actor.github.io/",
+        "code": "https://github.com/nickgkan/3d_diffuser_actor"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-02-16",
         "latestArxivVersion": "v3",
@@ -5048,6 +5315,10 @@
       "detailUrl": "data/details/p089.json?v=64e857bcc089b0aa",
       "resultUrl": "data/paper-results/p089.23571e93705e832b.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robot-colosseum.github.io/",
+        "code": "https://github.com/robot-colosseum/robot-colosseum"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-02-13",
         "latestArxivVersion": "v2",
@@ -5109,6 +5380,9 @@
       "detailUrl": "data/details/p090.json?v=39357d7dbb068933",
       "resultUrl": "data/paper-results/p090.5a22e57ba10e5b60.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://act3d.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-06-30",
         "latestArxivVersion": "v2",
@@ -5171,6 +5445,10 @@
       "detailUrl": "data/details/p091.json?v=c372ae37e3bbff9d",
       "resultUrl": "data/paper-results/p091.5b353c8cb0c805fa.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://yanjieze.com/GNFactor/",
+        "code": "https://github.com/YanjieZe/GNFactor"
+      },
       "lifecycle": {
         "firstArxivAt": "2023-08-31",
         "latestArxivVersion": "v3",
@@ -5228,6 +5506,9 @@
       "detailUrl": "data/details/p092.json?v=bc135597b9ccd481",
       "resultUrl": "data/paper-results/p092.335d09edbce3d0fe.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://chained-diffuser.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": null,
         "latestArxivVersion": null,
@@ -5286,6 +5567,10 @@
       "detailUrl": "data/details/p093.json?v=01f7815f6773162d",
       "resultUrl": "data/paper-results/p093.51b3ec049d99a7ac.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://robomimic.github.io/study/",
+        "code": "https://github.com/ARISE-Initiative/robomimic"
+      },
       "lifecycle": {
         "firstArxivAt": "2021-08-06",
         "latestArxivVersion": "v2",
@@ -5343,6 +5628,10 @@
       "detailUrl": "data/details/p094.json?v=689cfd30ed6928a4",
       "resultUrl": "data/paper-results/p094.1cafb30833237ff7.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://dexmimicgen.github.io/",
+        "code": "https://github.com/NVlabs/dexmimicgen"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-10-31",
         "latestArxivVersion": "v2",
@@ -5399,6 +5688,10 @@
       "detailUrl": "data/details/p095.json?v=23080ff949ff131f",
       "resultUrl": "data/paper-results/p095.06541aba040a6c87.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://simpler-env.github.io/",
+        "code": "https://github.com/simpler-env/SimplerEnv"
+      },
       "lifecycle": {
         "firstArxivAt": "2024-05-09",
         "latestArxivVersion": "v1",
@@ -5456,6 +5749,9 @@
       "detailUrl": "data/details/p096.json?v=561636b23853899b",
       "resultUrl": "data/paper-results/p096.5ade49d366ba590f.json",
       "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/facebookresearch/r3m"
+      },
       "lifecycle": {
         "firstArxivAt": "2022-03-23",
         "latestArxivVersion": "v3",
@@ -5513,6 +5809,9 @@
       "detailUrl": "data/details/p097.json?v=a4d0936bb04d5464",
       "resultUrl": "data/paper-results/p097.152cb928b802c3c2.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://tetexiao.com/projects/mvp"
+      },
       "lifecycle": {
         "firstArxivAt": "2022-03-11",
         "latestArxivVersion": "v1",
@@ -5570,6 +5869,9 @@
       "detailUrl": "data/details/p098.json?v=6eb0c2e3439a0db2",
       "resultUrl": "data/paper-results/p098.ca698671206c9fc2.json",
       "noteStatus": "expanded",
+      "resources": {
+        "project": "https://meta-world.github.io/"
+      },
       "lifecycle": {
         "firstArxivAt": "2019-10-24",
         "latestArxivVersion": "v2",
