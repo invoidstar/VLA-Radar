@@ -1,0 +1,18 @@
+{
+  "id": "r-gam-v1-libero-pro-ours",
+  "paperId": "p104",
+  "method": "GAM",
+  "trackId": "gam-v1-libero-pro",
+  "values": {
+    "Average": 61
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.23863v1",
+  "sourceVersion": "arXiv 2609.23863v1",
+  "locator": "Table II",
+  "attribution": "author-reported",
+  "trainingData": "Single GAM policy trained on LIBERO demonstrations from all four suites; action head uses grounded object observations.",
+  "evaluationNotes": "Mean over Obj/Pos/Sem/Task perturbations across four suites = 16 settings; paper table reports 0.61.",
+  "supersedes": ""
+}

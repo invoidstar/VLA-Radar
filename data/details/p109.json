@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p109",
+    "name": "RoboTwin-Phys",
+    "title": "RoboTwin-Phys: Do WAMs and VLAs Understand the Physical World?",
+    "team": "Jiaqi Zhang、Feng Ye、Mingjia Yang、Zhihong Chen、Mingkang Xiang、Xinglin Yao、Yanbin Li、Siwei Ma、Chuanmin Jia",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-22",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "evaluation",
+      "world"
+    ],
+    "tags": [
+      "benchmark",
+      "physics",
+      "robustness OOD",
+      "RoboTwin"
+    ],
+    "priority": "deep",
+    "contribution": "在RoboTwin 2.0视觉/布局随机化之外加入13个连续物理属性，形成Physical Random条件，并发布5,000+带每episode真实物理参数的专家示范。",
+    "findings": "五模型从Official Random转到Physical Random均大幅下降：Fast-WAM 91.78→44.24，Motus 87.02→39.60，FACT 86.60→39.14，π0.5 76.76→31.60，Galaxea-VLA 92.80→37.82。",
+    "limitations": "物理参数范围仍由仿真器和作者设定，不能覆盖真实世界全部接触/材料变化；Clean/Official Random中部分数字来自对应公开Benchmark报告，Physical Random由本文评测。",
+    "insight": "视觉OOD鲁棒不等于物理鲁棒；质量、摩擦和关节动力学变化会在画面相近时改变同一动作后果，因此应成为独立Evaluation Setting。",
+    "readingFocus": "13物理属性、episode-level采样、5K+参数标注示范、Clean/Official/Physical三条件和逐任务下降。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.26292v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.26292"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.26292",
+    "arxiv": "2609.26292",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-22",
+    "firstArxivSource": "https://arxiv.org/abs/2609.26292v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-22",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.26292v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.26292v1（2026-09-22），13维物理随机化、5K+ demos与五模型评测；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：现有随机化主要改变‘看起来怎样’，很少改变‘动作后果怎样’",
+        "body": "大型模拟Benchmark已经会随机背景、物体外观、布局和相机，但质量、摩擦、阻尼、关节动力学等物理参数常保持固定。policy因此可能在视觉上经历丰富变化，却始终学习到单一动力学映射。RoboTwin-Phys把物理条件本身设为显式OOD轴，检验WAM/VLA是否真正对动作后果敏感，而不只是对图像变化稳健。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "attributes",
+        "title": "13个连续物理属性按episode采样",
+        "body": "Benchmark定义13项物理属性，并在合理范围内连续随机化；每个episode初始化时采样具体参数，形成Physical Random条件。与单纯在图像上加噪声不同，这些变化直接改变抓取、推动、接触或关节响应。作者保留RoboTwin原任务结构，使Clean、Official Random和Physical Random能够在同一50-task语境下观察变化来源。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "dataset",
+        "title": "5,000+专家示范同时提供物理参数ground truth",
+        "body": "除评测环境外，作者生成超过5,000个expert episodes，覆盖物理条件分布，并为每条示范附上13维episode-level ground-truth parameters。数据格式保持与官方RoboTwin兼容。这使Benchmark不仅能测试已有policy，还支持后续研究显式physical-condition estimation、condition-aware model或physics-conditioned policy training。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "三条件必须分开：Clean、Official Random、Physical Random",
+        "body": "Clean是无额外随机化的基线；Official Random沿用RoboTwin既有视觉/布局等随机化；Physical Random在此基础上进一步采样物理属性。Table 1中的Clean和Official Random来自相应公开Benchmark评测记录，而Physical Random由本文在统一新环境中评测。Radar因此把Physical Random当新Setting，不把它悄悄并到原Random列。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果：所有五个代表policy在物理随机化下都大幅掉点",
+        "body": "Fast-WAM从Official Random 91.78%降到Physical Random 44.24%；Motus 87.02→39.60，FACT 86.60→39.14，π0.5 76.76→31.60，Galaxea-VLA 92.80→37.82。下降跨WAM和VLA都出现，说明已有scene randomization高分并不能作为物理理解能力的代理指标。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "interpretation",
+        "title": "‘物理理解’在本文中是操作性定义，不是泛化哲学结论",
+        "body": "论文标题问模型是否理解physical world，但实验证据更准确地说是在13维仿真物理变化下保持操控成功率。失败可能来自没有估计物理参数、动作策略不适配、world dynamics表示不足或训练数据缺少变化。因而Radar应描述为physical-condition robustness gap，而不是直接断言模型没有任何物理理解。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "relation",
+        "title": "与LIBERO-VPro互补：视觉证据变化和动力学变化是两条独立轴",
+        "body": "LIBERO-VPro主要改变policy看到什么、看到的信息是否及时一致；RoboTwin-Phys强调在视觉可能相似时，动作—结果关系本身发生改变。两者都属于Robustness/OOD，但Evaluation Setting必须分开。未来若模型在两者都提高，才更能说明它同时具备感知适应和动力学适应，而不是某一种随机化上的特化。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：模拟参数空间仍不是现实物理分布",
+        "body": "13属性虽然比固定动力学更丰富，但范围和组合仍由模拟器可实现性与作者设置决定，接触模型、材料形变、传感误差等现实因素可能缺失。5K+示范提供了重要训练入口，却不足以证明参数覆盖均匀。当前最稳妥结论是：现有VLA/WAM在标准随机化上的高分隐藏了显著physical-condition鲁棒性缺口。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：Physical Random 与 Official Random 的来源差异必须显式保留",
+        "body": "Table 1 把 Clean、Official Random、Physical Random 并列，但前两列部分取自相应公开 Benchmark 报告，而 Physical Random 是本文在新增环境中评测。91.78→44.24 等落差非常醒目，适合说明标准视觉随机化高分不能代理物理鲁棒性；不过精确差值仍同时含评测环境实现与物理参数变化，不能当成“只修改某一个参数”的单因素实验。后续复现应使用同 checkpoint 在三条件下统一重跑，才能更严格量化纯物理 OOD gap。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：13维连续参数是可控测试空间，不是现实物理分布模型",
+        "body": "质量、摩擦、阻尼等属性被作者限制在仿真器可稳定运行的范围，episode-level ground truth 对研究 condition-aware policy 很有用，但并没有证明这些维度覆盖真实材料、柔性、磨损、传感器延迟等全部动力学因素。5K+ demonstrations 也表示在该采样方案中的专家轨迹，不等于各13维组合均匀覆盖。论文最稳健的结论是“加入明确 physical randomization 会暴露现有模型的大幅性能缺口”。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：新增 Physical Random Setting，不重定义原 RoboTwin Random",
+        "body": "RoboTwin-Phys 复用 RoboTwin 2.0 的任务语义，却改变随机化问题本身，因此 Radar 新增独立 Benchmark/Setting，而不是覆盖原 clean/random 结果。taxonomy 标为 Generalization/Robustness，并保留 multi-task、bimanual 等标签。以后若模型在同一 checkpoint 下同时报告 Official Random 与 Physical Random，可以比较视觉/布局鲁棒和物理动力学鲁棒；不同训练数据仍作为 Result Report recipe，而不是拆成新的 Setting。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.26292v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "RoboTwin-Phys Table 1",
+        "columns": [
+          "方法",
+          "Clean",
+          "Official Random",
+          "Physical Random"
+        ],
+        "rows": [
+          [
+            "Fast-WAM",
+            "91.88",
+            "91.78",
+            "44.24"
+          ],
+          [
+            "Motus",
+            "88.66",
+            "87.02",
+            "39.60"
+          ],
+          [
+            "FACT",
+            "88.40",
+            "86.60",
+            "39.14"
+          ],
+          [
+            "π0.5",
+            "82.74",
+            "76.76",
+            "31.60"
+          ],
+          [
+            "Galaxea-VLA",
+            "93.70",
+            "92.80",
+            "37.82"
+          ]
+        ],
+        "locator": "Table 1",
+        "caption": "作者汇总；单位%。Clean/Official列来自对应公开评测，Physical Random为本文新协议。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-24",
+      "note": "本批新增RoboTwin-Phys Physical Random主track；Clean/Official Random同时保留为论文对照，但Setting不与原RoboTwin混合训练协议强制合并。"
+    }
+  }
+}

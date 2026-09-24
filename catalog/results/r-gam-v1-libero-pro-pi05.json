@@ -1,0 +1,18 @@
+{
+  "id": "r-gam-v1-libero-pro-pi05",
+  "paperId": "p104",
+  "method": "π0.5",
+  "trackId": "gam-v1-libero-pro",
+  "values": {
+    "Average": 53
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.23863v1",
+  "sourceVersion": "arXiv 2609.23863v1",
+  "locator": "Table II",
+  "attribution": "reported-baseline",
+  "trainingData": "Official LIBERO-PRO leaderboard baseline quoted by the paper.",
+  "evaluationNotes": "Average over 16 settings; paper table reports 0.53, stored as percent 53.0.",
+  "supersedes": ""
+}

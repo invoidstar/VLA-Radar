@@ -1,0 +1,25 @@
+{
+  "id": "r-geact-v1-libero-plus-starvla",
+  "paperId": "p099",
+  "method": "StarVLA",
+  "trackId": "geact-v1-libero-plus",
+  "values": {
+    "Camera": 52.5,
+    "Robot": 49.8,
+    "Language": 88.5,
+    "Light": 95.7,
+    "Background": 95.7,
+    "Noise": 73,
+    "Layout": 76.9,
+    "Overall": 74.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.05588v1",
+  "sourceVersion": "arXiv 2609.05588v1",
+  "locator": "Appendix A.3 Table 5",
+  "attribution": "reported-baseline",
+  "trainingData": "Paper-reported StarVLA baseline; adapted on standard LIBERO under the table protocol.",
+  "evaluationNotes": "Baseline is quoted in GE-Act 2.0; not independently reproduced by VLA-Radar.",
+  "supersedes": ""
+}

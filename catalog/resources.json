@@ -53,6 +53,9 @@
     "p023": {
       "project": "https://ds-wam.github.io/"
     },
+    "p024": {
+      "code": "https://github.com/amap-cvlab/ABot-Manipulation"
+    },
     "p025": {
       "project": "https://vt-wam.github.io/"
     },
@@ -64,6 +67,9 @@
     },
     "p031": {
       "code": "https://github.com/SEU-PAISys/Embodied.cpp"
+    },
+    "p033": {
+      "project": "https://ansocho.github.io/otql-flow/"
     },
     "p034": {
       "project": "https://robodojo-benchmark.com/",
@@ -282,11 +288,36 @@
     "p098": {
       "project": "https://meta-world.github.io/"
     },
-    "p024": {
-      "code": "https://github.com/amap-cvlab/ABot-Manipulation"
+    "p099": {
+      "project": "https://ge-act-v2.github.io/"
     },
-    "p033": {
-      "project": "https://ansocho.github.io/otql-flow/"
+    "p100": {
+      "project": "https://sizhezhao.github.io/projects/MaP-WAM/"
+    },
+    "p101": {
+      "project": "https://rcl-robotics.github.io/Awesome-World-Action-Models/",
+      "code": "https://github.com/RCL-Robotics/Awesome-World-Action-Models"
+    },
+    "p102": {
+      "project": "https://zbzyjya.github.io/WholeBodyWAM/"
+    },
+    "p104": {
+      "project": "https://grounded-action-model.github.io/"
+    },
+    "p105": {
+      "project": "https://huiqiongli.github.io/LIBERO-VPro/"
+    },
+    "p106": {
+      "project": "https://thaw-vla.trung-dt.com/"
+    },
+    "p107": {
+      "code": "https://github.com/xiaoqi-7/IndustrialVLA-Bench"
+    },
+    "p108": {
+      "code": "https://github.com/AutoLab-SAI-SJTU/RoboFollow"
+    },
+    "p110": {
+      "project": "https://ccdcs.github.io/LiMA_repo/"
     }
   }
 }

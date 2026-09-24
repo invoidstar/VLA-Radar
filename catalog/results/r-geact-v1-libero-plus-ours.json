@@ -1,0 +1,25 @@
+{
+  "id": "r-geact-v1-libero-plus-ours",
+  "paperId": "p099",
+  "method": "GE-Act 2.0",
+  "trackId": "geact-v1-libero-plus",
+  "values": {
+    "Camera": 94.1,
+    "Robot": 50.7,
+    "Language": 81.4,
+    "Light": 94,
+    "Background": 60.5,
+    "Noise": 95.5,
+    "Layout": 83.1,
+    "Overall": 80.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.05588v1",
+  "sourceVersion": "arXiv 2609.05588v1",
+  "locator": "Appendix A.3 Table 5",
+  "attribution": "author-reported",
+  "trainingData": "GE-Act 2.0 adapted on standard LIBERO training data before LIBERO-Plus evaluation.",
+  "evaluationNotes": "Strong camera/noise performance coexists with weak robot/background axes; preserve per-axis evidence.",
+  "supersedes": ""
+}

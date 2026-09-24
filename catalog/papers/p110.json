@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p110",
+    "name": "LiMA",
+    "title": "LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion",
+    "team": "Ning Chen、Yankai Fu、Junkai Zhao、Qianpu Sun、Guocai Yao、Pengwei Wang、Zhongyuan Wang、Shanghang Zhang",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-23",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月23日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "world",
+      "action"
+    ],
+    "tags": [
+      "WAM",
+      "asynchronous",
+      "dexterous",
+      "long-horizon"
+    ],
+    "priority": "deep",
+    "contribution": "把长期稀疏意图生成与高频局部动作refinement异步解耦，用Latent Schrödinger Bridge Coupling把低频未来意图映射成高频动作轨迹，减少WAM迭代生成阻塞控制。",
+    "findings": "六项双臂灵巧任务总体成功率70.8%、平均子任务78.9%；端到端32步action chunk平均325ms，相比Cosmos-Policy 600ms降低45.8%。",
+    "limitations": "325ms是特定异步调度的摊销延迟，并非每个控制tick都重新运行完整Dreamer；六项任务和所用硬件不能代表所有接触/实时系统。",
+    "insight": "世界模型的长程推理与动作policy的快速反应可以运行在不同时间尺度，不必每次动作都同步等待完整未来想象。",
+    "readingFocus": "Dreamer/Refiner时间尺度、Latent Schrödinger Bridge、ΔT=4异步调度、六任务主表、未见场景与延迟定义。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.28431v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.28431"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://ccdcs.github.io/LiMA_repo/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.28431",
+    "arxiv": "2609.28431",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-23",
+    "firstArxivSource": "https://arxiv.org/abs/2609.28431v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-23",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-23",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.28431v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.28431v1（2026-09-23），异步双系统、Schrödinger Bridge、六项双臂任务与延迟；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：长期想象与接触控制要求相反的时间尺度",
+        "body": "灵巧操作需要慢尺度的长期目标判断，也需要在接触瞬间快速修正。典型VLA响应快但未显式建模未来物理，WAM能想象未来却常因多步生成造成高延迟。如果每次动作都等待完整世界想象，意图在生成完成时可能已过时。LiMA因此把‘未来想什么’和‘当前怎么修动作’分配给两个异步系统。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "systems",
+        "title": "双系统：Dreamer稀疏更新，Refiner高频运行",
+        "body": "慢系统Dreamer负责长程、稀疏的spatiotemporal intent generation，不必每个动作step刷新；快系统Refiner根据当前观测和最近意图生成更密集的动作更新。两个系统异步运行，使高层意图保持较长时间尺度，而局部控制可在新视觉/接触条件下频繁修正，避免同步WAM每次都阻塞动作流。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "bridge",
+        "title": "Latent Schrödinger Bridge把稀疏意图与稠密动作连接",
+        "body": "Dreamer输出的未来意图和Refiner需要的动作轨迹时间分辨率不同。作者用Latent Schrödinger Bridge Coupling把refinement写成带熵正则的概率传输问题，在latent中连接稀疏未来目标与连续动作分布。它不是简单插值，而是学习如何在保持长程意图约束的同时允许局部轨迹根据当前状态产生多样修正。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "schedule",
+        "title": "异步调度决定‘325ms’如何理解",
+        "body": "论文设置Dreamer每4次Refiner更新刷新一次，即ΔT=4。端到端延迟从接收多视角观测到解码可执行action chunk计算，并把一次Dreamer成本摊到四个Refiner周期：Tavg=(TDreamer+4TRefiner)/4。因此325ms是异步方案的摊销chunk延迟，不等于Dreamer单次生成只需325ms，也不代表32个动作都各需325ms。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "实验覆盖六项双臂dexterous任务和多种时程",
+        "body": "任务跨不同horizon，既有较短接触动作也有需要多阶段意图的双臂操作；作者同时报告task-level success和subtask success，并测试unseen scenarios。对照包含VLA和world-policy类方法。因为任务、数据和硬件是该论文自定义设置，Radar保留原表，不把70.8%与LIBERO或其他真机SR放入同一个Setting。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主结果同时展示任务成功和局部阶段完成",
+        "body": "LiMA六任务overall success为70.8%，average subtask success为78.9%。subtask高于完整任务符合长程链式执行中误差累积的直觉：局部阶段能完成并不保证所有阶段连续成功。作者还报告在unseen scenarios中保持竞争表现，因此读表时应同时看完整task与subtask，而不是只摘一个更高数字。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "latency",
+        "title": "效率：325ms相对Cosmos-Policy 600ms降低45.8%",
+        "body": "同文延迟表中Cosmos-Policy为600ms，LiMA为325ms，作者据此给出45.8%降低；InternVLA-A1为360ms。关键收益来自慢/快系统的异步更新，而不是简单减少action horizon。这里适合支持‘测试时未来生成可以低频化’，但不能把差值直接外推到其他GPU、camera pipeline或控制器。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：异步系统也引入意图陈旧与耦合稳定性问题",
+        "body": "Dreamer低频运行意味着高层意图可能在环境快速变化时变陈旧，Refiner必须在不偏离长期目标的同时吸收新观测；Schrödinger Bridge的耦合质量因此很关键。当前六任务结果支持多时间尺度设计，但未证明任意长程任务都能用固定ΔT=4。未来应研究事件触发的重规划、接触异常下刷新频率和计算资源动态分配。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：异步优势要与相同任务中的同步生成器比较",
+        "body": "LiMA 的 325ms 是按 ΔT=4 将 Dreamer 成本摊入四个 Refiner 周期后的平均 action-chunk latency，最适合与同文、同硬件下 Cosmos-Policy 600ms 等系统做部署比较。它并不表示 Dreamer 单次未来生成只有325ms，也不能与只输出一个控制 tick 的方法直接除法比较。成功率方面，六任务 overall 70.8% 与 subtask 78.9% 是不同指标；后者更高主要反映长程任务的阶段误差累积，不能挑高值替代完整任务成功。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：双系统把计算从同步等待改成并行/摊销，并没有消除长期想象成本",
+        "body": "Dreamer 仍周期性生成未来意图，Refiner 也持续根据当前观测修动作；性能取决于两者更新频率、硬件并行能力和 bridge 耦合质量。ΔT=4 是作者任务上的选择，当环境状态突变或接触异常频繁时，更稀疏的高层刷新可能导致 stale intent；反之过于频繁又会失去效率收益。因而论文支持“多时间尺度异步调度是可行折中”，而不是固定四步刷新适用于所有机器人。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：把 long-term imagination 与 local refinement 分成两个部署角色",
+        "body": "LiMA 与普通 action chunking 的差别在于低频分支显式承担长期 future intent，高频分支承担局部闭环修正，中间再由 latent bridge 连接。Radar 将其放在 World & Action Models 与 Efficiency 交叉位置，但六项真机任务属于作者自定义协议，暂不与其他真实 dexterous SR 强行合榜。未来比较应记录 Dreamer/Refiner 各自频率、候选 horizon、摊销延迟定义和是否需要并行硬件。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.28431v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "LiMA主结果与延迟",
+        "columns": [
+          "配置",
+          "总体成功率",
+          "平均子任务成功率",
+          "延迟"
+        ],
+        "rows": [
+          [
+            "InternVLA-A1",
+            "—",
+            "—",
+            "360 ms"
+          ],
+          [
+            "Cosmos-Policy",
+            "—",
+            "—",
+            "600 ms"
+          ],
+          [
+            "LiMA",
+            "70.8%",
+            "78.9%",
+            "325 ms"
+          ]
+        ],
+        "locator": "Main results / latency analysis",
+        "caption": "作者报告；325ms为ΔT=4异步调度下的摊销32-step action-chunk延迟。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-24",
+      "note": "六项双臂任务为论文自定义协议，当前保留成功率/延迟原表，不建立跨论文统一Benchmark。"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "r-thaw-v2-libero-base",
+  "paperId": "p106",
+  "method": "QwenGR00T 0.8B · no distillation",
+  "trackId": "thaw-v2-libero",
+  "values": {
+    "Spatial": 96.6,
+    "Object": 96.4,
+    "Goal": 95.6,
+    "Long": 92.6,
+    "Average": 95.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.24682v2",
+  "sourceVersion": "arXiv 2609.24682v2",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "0.8B QwenGR00T student without world-model representation distillation.",
+  "evaluationNotes": "Mean over 4 evaluation runs = 2 seeds × 2 GPUs; standard deviations remain in source table.",
+  "supersedes": ""
+}

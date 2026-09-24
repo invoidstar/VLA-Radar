@@ -1,0 +1,20 @@
+{
+  "id": "r-robofollow-v1-lingbot-vla",
+  "paperId": "p108",
+  "method": "Lingbot-VLA",
+  "trackId": "robofollow-v1-main-avg",
+  "values": {
+    "Intent Score": 35.2,
+    "Execution Score": 32.5,
+    "Completion Rate": 27.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.25636v1",
+  "sourceVersion": "arXiv 2609.25636v1",
+  "locator": "Table 1 · Avg block",
+  "attribution": "reported-baseline",
+  "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+  "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+  "supersedes": ""
+}

@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p105",
+    "name": "LIBERO-VPro",
+    "title": "LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models",
+    "team": "Huiqiong Li、Zhiting Mei、Anirudha Majumdar、Jingjing Chen、Yu-Gang Jiang、Bin Zhu",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-21",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月21日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "evaluation",
+      "spatial"
+    ],
+    "tags": [
+      "benchmark",
+      "visual robustness",
+      "LIBERO",
+      "closed-loop"
+    ],
+    "priority": "deep",
+    "contribution": "把视觉鲁棒性拆成视觉证据退化、相机陈旧、视觉源一致性、任务相关场景变化四维，形成12类挑战、96设置、3,296 task-condition cases的闭环诊断Benchmark。",
+    "findings": "六个VLA/WAM在约196,000次模拟episode上评测，并补200次Franka真机rollout；结果显示对象遮挡并非总是最致命，陈旧/缺失视角、局部交互线索中断和任务前置条件变化更容易导致崩溃。",
+    "limitations": "部分challenge的高成功率并不必然代表更强，例如掩码或冗余视角可能形成诊断性而非单调‘越高越好’的解释；96设置不适合压成一个单一总榜。",
+    "insight": "VLA/WAM视觉鲁棒性必须沿不同故障源分解；单一Clean SR会掩盖闭环中对相机时效、局部接触线索和空间先验的依赖。",
+    "readingFocus": "四维12类扰动设计、96 settings构造、六模型VLA/WAM差异、约196k模拟与200真机rollout，以及哪些场景成功率不能简单视作单调指标。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.24350v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.24350"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://huiqiongli.github.io/LIBERO-VPro/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.24350",
+    "arxiv": "2609.24350",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-21",
+    "firstArxivSource": "https://arxiv.org/abs/2609.24350v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-21",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-21",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.24350v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.24350v1（2026-09-21），benchmark设计、六模型仿真与真机；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：标准LIBERO的干净视觉不足以检验闭环依赖",
+        "body": "大多数机器人foundation model在标准benchmark上看到及时、清晰且跨相机一致的视觉输入，导致成功率无法回答一个更部署化的问题：当视觉信息缺失、延迟、互相矛盾或任务前置条件发生变化时，policy是否还能根据当前证据修正动作。LIBERO-VPro因此把视觉鲁棒性设为独立评测对象，而不是在标准LIBERO上只加一个噪声强度。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "dimensions",
+        "title": "四个维度对应四种不同的闭环视觉失效",
+        "body": "Visual Evidence Degradation关注遮挡、局部信息丢失等观测质量；Camera Staleness考察相机帧陈旧、缺失或更新不同步；Visual Source Consistency考察多视角之间是否一致；Task-Relevant Scene Variation改变与任务行为直接相关的场景因素。四维强调的是不同因果来源，因此同一模型在一个维度稳健并不能推断在另一个维度同样稳健。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "scale",
+        "title": "规模：12挑战、96设置、3,296 task-condition cases",
+        "body": "Benchmark沿四个维度细分为12类challenge，总计96个experimental settings和3,296个task-condition cases。底层仍使用LIBERO四个套件40任务，每个case用10次不同初始配置评测，累计约196,000个模拟episodes。这个规模意味着结果更适合作为多轴诊断矩阵，而非把所有设置简单平均成一个‘鲁棒性总分’。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "models",
+        "title": "对照同时覆盖VLA与WAM，但架构类别不是唯一变量",
+        "body": "作者评测OpenVLA-OFT、π0、π0.5三种VLA，以及FastWAM、LingBot-VA、LaWAM三种WAM。它们的预训练、参数量、动作接口和推理配置并不统一，因此论文主要比较每个模型在不同视觉故障模式下的profile，而不是证明VLA或WAM类别本身因果上更优。Radar也应保留这一证据边界。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "findings",
+        "title": "视觉缺失的破坏性取决于是否切断任务相关证据",
+        "body": "论文发现某些严重对象级遮挡下模型仍可能成功，说明固定空间先验或冗余线索可以补偿；但当局部交互线索被破坏、相机变陈旧/缺失，或场景变化迫使policy改变原先行为时，成功率显著下降。换言之，像素退化强度不是唯一轴，关键是扰动是否破坏闭环决策所需的时效和因果证据。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "real",
+        "title": "真机补充：Franka 200 rollouts用于验证部分视觉失效现象",
+        "body": "除模拟外，作者在Franka Research 3上进行200次物理rollout，作为闭环视觉挑战的真实补充。真机并没有复制全部96设置，因此它更像验证若干关键failure mode是否具有物理一致性，而不是另一个完整Benchmark。模拟和真机证据应分开阅读，不把200次rollout与196k模拟episode混成统一样本量。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "metrics",
+        "title": "为什么这里不应该马上做一个总Leaderboard",
+        "body": "不少设置的success rate方向仍是higher-better，但benchmark设计中存在诊断性条件：例如某些视觉源被移除后继续成功，可能反映模型真正鲁棒，也可能暴露它根本没使用该视觉源。若只对96设置做无条件平均，会掩盖这种语义差异。因此本次Radar先收Benchmark定义与主要现象，不把全部类别压成一个Setting和统一名次。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：它诊断视觉依赖，但不直接覆盖动力学、触觉或长期记忆",
+        "body": "LIBERO-VPro系统化回答‘policy怎样依赖视觉’，但物理参数变化、接触反馈、语言长期组合和历史记忆仍属于其他鲁棒性维度。六个模型的差异也混合了训练数据与实现。最合适的用法是将它作为视觉闭环诊断工具，与RoboTwin-Phys等物理鲁棒性Benchmark互补，而不是把两者合成单一robustness分数。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：不同视觉故障不能用“扰动强度”单轴解释",
+        "body": "LIBERO-VPro 最重要的发现不是哪一个模型平均最高，而是模型在遮挡、staleness、cross-view contradiction 和 task-precondition variation 上呈现不同 failure profile。某些对象遮挡下继续成功，既可能说明多视角冗余，也可能说明策略依赖固定空间先验；而旧帧或任务前置条件变化造成的下降更直接反映闭环更新失败。因此读 Table II 时应把 challenge 类型作为 Setting 主语，不应把所有 success rate 按扰动严重度排成一条鲁棒曲线。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：约19.6万仿真 episode 与200次真机不是一个统计池",
+        "body": "大规模模拟覆盖 96 个 setting、3296 个 task-condition case，是系统性 profile 的主要证据；Franka 200 rollouts 只复现若干代表性 failure mode，用于检查趋势是否具有物理相关性。两部分任务、模型覆盖和样本结构不同，不能相加成“总评测 196200 次”再计算统一成功率。另有 prediction–reality divergence 只适用于可显式滚动未来的 WAM，也不能要求纯 VLA 在完全相同列上评分。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：作为视觉证据鲁棒 Benchmark，而非统一 OOD 总榜",
+        "body": "Radar 会把 LIBERO-VPro 与 LIBERO-Plus、RoboTwin-Phys 分开：前者问闭环视觉证据是否及时、一致、任务相关；LIBERO-Plus更偏场景/视觉分布变化；RoboTwin-Phys改变动作后果本身的物理参数。三者都可标 Robustness/OOD，但 Evaluation Setting 必须保留具体问题。由于部分 VPro 条件是诊断性而非简单单调指标，本轮先完成 Benchmark 语义与论文深读，不强行把 96 setting 压成一个 average leaderboard。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.24350v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "LIBERO-VPro 评测规模",
+        "columns": [
+          "维度",
+          "规模/对象"
+        ],
+        "rows": [
+          [
+            "挑战维度",
+            "4"
+          ],
+          [
+            "challenge categories",
+            "12"
+          ],
+          [
+            "experimental settings",
+            "96"
+          ],
+          [
+            "task-condition cases",
+            "3,296"
+          ],
+          [
+            "simulation episodes",
+            "约196,000"
+          ],
+          [
+            "Franka real rollouts",
+            "200"
+          ]
+        ],
+        "locator": "§III–IV",
+        "caption": "作者报告；不同设置具有不同诊断语义，不将其直接合成一个总榜。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-24",
+      "note": "LIBERO-VPro含96个设置且部分挑战具诊断性非单调语义；本批完成Benchmark深读，但不压缩成单一Setting/总分。"
+    }
+  }
+}

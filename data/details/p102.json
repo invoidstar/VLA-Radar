@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p102",
+    "name": "WholeBodyWAM",
+    "title": "WholeBodyWAM: Learning Whole-Body World Action Models with Scalable Motion Priors",
+    "team": "Bowei Zhang、Qiyao Zhang、Shuanghao Bai、Xinhua Wang、Meng Li、Yilei Wang、Leiwang Zhang等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-16",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月16日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "world",
+      "pretraining"
+    ],
+    "tags": [
+      "WAM",
+      "humanoid",
+      "motion pretraining",
+      "whole-body"
+    ],
+    "priority": "deep",
+    "contribution": "先用异构人类/机器人全身运动预训练语言条件Motion Expert，再在目标机器人后训练时通过非对称MoT把Motion、Video、Action专家连接，使可扩展运动先验参与具体机器人动作生成。",
+    "findings": "UniMotion-4K超过4.1K小时；六项真实人形机器人任务中WholeBodyWAM平均72.2%，GR00T N1.7为60.8%；去运动预训练59.1%，阻断Motion→Action后46.3%。",
+    "limitations": "运动先验经过root-free统一表示后仍需目标机器人后训练；六个任务和TianGong 3.0不能代表所有人形平台，运动数据规模与模型结构同时变化。",
+    "insight": "跨形态可迁移的信息不一定是目标机器人的动作，而可以是更抽象的未来全身运动；关键在于后训练时让运动预测真正影响动作，而不只是作为辅助损失。",
+    "readingFocus": "UniMotion-4K清洗与63D表示、Stage-I Motion Expert、Stage-II非对称MoT、Motion→Action路径和六项真机消融。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.18197v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.18197"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://zbzyjya.github.io/WholeBodyWAM/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.18197",
+    "arxiv": "2609.18197",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-16",
+    "firstArxivSource": "https://arxiv.org/abs/2609.18197v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-16",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-16",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.18197v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.18197v1（2026-09-16），方法、UniMotion-4K、真机与消融；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：人形全身动作稀缺，但运动数据并不稀缺",
+        "body": "目标机器人上的高质量whole-body操控轨迹昂贵，而人类视频、3D motion capture和不同人形平台积累了大量运动数据。论文提出把这些数据看作‘未来身体运动’监督，而不是直接当成目标机器人action。这样预训练阶段无需目标机器人动作标签，先学习什么样的全身运动会随语言和历史发生，再在后训练中把这一预测先验迁移到具体控制空间。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "UniMotion-4K：把30K小时原始运动筛成4.1K小时统一语料",
+        "body": "作者从人类视频、原生3D motion数据和异构人形平台汇集超过30K小时原始运动，经质量和可用性筛选后形成超过4.1K小时、约119万序列和4.44亿帧的UniMotion-4K。不同来源被canonicalize到统一的root-free 63D表示，由21个关节的局部旋转组成，减少世界坐标和形态差异对预训练的干扰。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "pretrain",
+        "title": "Stage I：Motion Expert只预测未来运动，不学目标机器人动作",
+        "body": "第一阶段使用语言条件Motion Expert，根据16帧历史预测未来32帧全身运动，并以flow matching训练。这里没有目标机器人action supervision，目的是把跨来源、跨形态运动规律压进可迁移的预测模型。论文随着motion-pretraining数据规模增加观察到未来运动预测和下游任务同步改善，把运动规模本身作为独立研究变量。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "posttrain",
+        "title": "Stage II：Video、Motion、Action专家通过MoT协作",
+        "body": "后训练阶段引入Video Expert和Action Expert，与冻结/初始化后的Motion Expert按layer-wise Mixture-of-Transformers连接。非对称attention明确限制信息流，既让动作能读取场景与运动预测，又避免训练时未来视觉信息泄漏到动作输入。未来视频latent主要作为训练监督，部署时不需要生成完整未来视频，从而把世界预测价值和测试时生成成本部分解耦。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "deployment",
+        "title": "部署：预测先验保留，但控制接口仍是目标形态动作",
+        "body": "论文在TianGong 3.0上使用34维动作空间；推理在单张RTX 5090、4个Euler步骤下，一次输出32动作chunk并以30Hz执行。这个设置说明预训练运动先验最终必须通过目标机器人的action expert落地，而不是直接回放通用63D运动。速度数字因此只代表所述硬件与采样设置，不能外推到其他人形平台。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "真机协议：六项whole-body与loco-manipulation任务",
+        "body": "主实验覆盖六项真实whole-body任务，每任务约100条目标机器人示范，评测每任务20次rollout，并用归一化任务/子任务得分汇总。对照包括FastWAM、π0.5、GR00T N1.7、τ0-WM及内部变体。由于这是论文自定义TianGong协议，Radar保留原表证据，但不把它与RoboTwin或其他‘humanoid’报告强行放入一个Setting。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果：运动预训练与Motion→Action交互都贡献明显",
+        "body": "WholeBodyWAM六任务平均72.2%，高于GR00T N1.7的60.8%和π0.5的58.1%。去掉Stage-I motion pretraining降至59.1%；保留运动预测监督但阻断Motion→Action attention进一步降到46.3%。这个消融很关键：收益不仅来自多一个辅助预测loss，而来自预训练运动表征在动作生成时能被直接访问。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：统一运动空间不是万能跨形态动作空间",
+        "body": "63D root-free表示降低来源差异，但仍会丢失形态特定的接触、关节限制和动力学；这些信息最终仍由目标机器人后训练补齐。当前六项任务和单个平台不足以判断运动先验对手部精细接触、不同腿式结构或极端动力学变化是否同样有效。更稳妥的结论是：可规模化的运动预测能成为WAM动作学习的强先验。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：最关键消融是 motion pretraining 与 Motion→Action 信息流",
+        "body": "WholeBodyWAM 的最终 72.2% 同时包含数据规模、Motion Expert、Video Expert、Action Expert 和 MoT 信息流；真正支持机制结论的是受控消融：去掉 Stage-I motion pretraining 降到 59.1%，进一步阻断 Motion→Action attention 降到 46.3%。这说明“有一个运动预测辅助任务”和“动作端能读取预训练运动表征”不是同一件事。跨 GR00T、π0.5 等外部基线的差异则还混有预训练与模型规模，不宜承担单组件归因。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：30K 原始运动与 4.1K UniMotion-4K 是不同统计口径",
+        "body": "作者从超过 30K 小时的候选运动来源中筛选、规范化，得到超过 4.1K 小时用于预训练的 UniMotion-4K。两者不能同时当作实际训练时长，也不能把所有人类视频理解成与目标机器人同质量的动作示范。root-free 63D 表示提供跨来源共享接口，但接触、关节极限和平台动力学仍要靠 TianGong 3.0 的后训练补齐。因而这里展示的是可迁移 motion prior，而不是“直接用人类动作替代机器人数据”。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：把 motion prior 与 whole-body 真机协议分开记账",
+        "body": "WholeBodyWAM 对 Radar 的价值在于给 WAM 增加一条“可规模化运动先验”轴：未来信息不必只来自视频，可以来自统一人体/机器人运动空间。六项 TianGong 真机结果属于作者自定义 whole-body/loco-manipulation 协议，目前缺少可严格对齐的跨论文 Setting，因此保留深读而不强行入榜。后续若出现同平台同六任务复现，再把训练 motion 数据量、目标机器人 demonstrations 和动作接口作为结果层 recipe 一起比较。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.18197v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "WholeBodyWAM 六项真机平均得分",
+        "columns": [
+          "方法/变体",
+          "平均任务得分"
+        ],
+        "rows": [
+          [
+            "GR00T N1.7",
+            "60.8%"
+          ],
+          [
+            "τ0-WM + Motion Pretraining",
+            "62.7%"
+          ],
+          [
+            "WholeBodyWAM w/o Motion Pretraining",
+            "59.1%"
+          ],
+          [
+            "WholeBodyWAM w/o Motion→Action",
+            "46.3%"
+          ],
+          [
+            "WholeBodyWAM",
+            "72.2%"
+          ]
+        ],
+        "locator": "Table I",
+        "caption": "作者报告；论文自定义TianGong 3.0真机协议，不与其他Benchmark合榜。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-24",
+      "note": "六项TianGong真机任务是论文自定义协议；保留原表，不新建跨论文Benchmark。"
+    }
+  }
+}

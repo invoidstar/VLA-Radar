@@ -600,7 +600,33 @@
         "industrial-assembly",
         "contact-rich"
       ]
+    },
+    "LIBERO-PRO": {
+      "focus": "generalization-robustness",
+      "environment": "simulation",
+      "tags": [
+        "robustness-ood",
+        "multi-task",
+        "language-compositional"
+      ]
+    },
+    "RoboFollow": {
+      "focus": "language-planning-compositionality",
+      "environment": "simulation",
+      "tags": [
+        "language-compositional",
+        "robustness-ood",
+        "multi-task"
+      ]
+    },
+    "RoboTwin-Phys": {
+      "focus": "generalization-robustness",
+      "environment": "simulation",
+      "tags": [
+        "robustness-ood",
+        "multi-task",
+        "bimanual-dual-arm"
+      ]
     }
   }
 }
-

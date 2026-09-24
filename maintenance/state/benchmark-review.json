@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-19",
+  "reviewedAt": "2026-09-24",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p064": {
@@ -2157,6 +2157,125 @@
         "r-metaworld-v2-original-ml45-meta-test-pearl"
       ],
       "note": "本批核对原报告，新增20条、6个历史协议；保留版本、预算、来源归属及冲突。只认证这些原表记录，不代表穷尽全文/官网。"
+    },
+    "p099": {
+      "status": "extracted",
+      "trackIds": [
+        "geact-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-geact-v1-libero-plus-starvla",
+        "r-geact-v1-libero-plus-pi05",
+        "r-geact-v1-libero-plus-ours"
+      ],
+      "note": "2026-09补扫：结构化LIBERO-Plus Table 5七扰动轴与Overall；真实100任务规模结果保留深读，不混入目标域SFT Setting。"
+    },
+    "p100": {
+      "status": "extracted",
+      "trackIds": [
+        "mapwam-v1-rmbench-full"
+      ],
+      "resultIds": [
+        "r-mapwam-v1-rmbench-dp",
+        "r-mapwam-v1-rmbench-pi05",
+        "r-mapwam-v1-rmbench-xvla",
+        "r-mapwam-v1-rmbench-mem0",
+        "r-mapwam-v1-rmbench-lingbot",
+        "r-mapwam-v1-rmbench-ours"
+      ],
+      "note": "2026-09补扫：新增RMBench完整9任务协议；与既有OnEvoMemory两任务子集track保持分离。"
+    },
+    "p101": {
+      "status": "not-applicable",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "WAM综述论文；汇总既有Benchmark但没有原创机器人结果，不创建Result Report。"
+    },
+    "p102": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "WholeBodyWAM六项TianGong 3.0真机任务为作者自定义协议；保留原表与消融，暂不建立跨论文Benchmark。"
+    },
+    "p103": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "五项高DoF真实任务及SFT/DAgger/RL阶段为作者自定义post-training协议；保留20-trial结果，不与其他dexterous任务强行合榜。"
+    },
+    "p104": {
+      "status": "extracted",
+      "trackIds": [
+        "gam-v1-robotwin50-single-task",
+        "gam-v1-libero-pro"
+      ],
+      "resultIds": [
+        "r-gam-v1-robotwin-ours",
+        "r-gam-v1-libero-pro-pi05",
+        "r-gam-v1-libero-pro-ours"
+      ],
+      "note": "结构化RoboTwin 50-task official single-task协议及LIBERO-PRO 16-setting平均；真机YAM/Franka结果保留笔记。"
+    },
+    "p105": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "LIBERO-VPro含96视觉鲁棒性设置且部分条件具有诊断性非单调语义；本批完成Benchmark深读，不压成单一总榜。"
+    },
+    "p106": {
+      "status": "extracted",
+      "trackIds": [
+        "thaw-v2-libero"
+      ],
+      "resultIds": [
+        "r-thaw-v2-libero-base",
+        "r-thaw-v2-libero-distilled"
+      ],
+      "note": "结构化同一0.8B student在标准LIBERO四套件的distillation受控比较；RoboCasa-GR1/真机保留笔记。"
+    },
+    "p107": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "IndustrialVLA-Bench混合protocol-faithful/near-reproduction/pending-verification证据等级；本批不将弱证据行复制进统一Leaderboard。"
+    },
+    "p108": {
+      "status": "extracted",
+      "trackIds": [
+        "robofollow-v1-main-avg"
+      ],
+      "resultIds": [
+        "r-robofollow-v1-pi05",
+        "r-robofollow-v1-pi0",
+        "r-robofollow-v1-groot-n16",
+        "r-robofollow-v1-openvla-oft",
+        "r-robofollow-v1-xvla",
+        "r-robofollow-v1-acot-vla",
+        "r-robofollow-v1-lingbot-vla",
+        "r-robofollow-v1-motus",
+        "r-robofollow-v1-fastwam"
+      ],
+      "note": "新增RoboFollow Benchmark与全场景Avg IS/ES/CR九模型结果；L0–L3细分保留原表，不合成单指标。"
+    },
+    "p109": {
+      "status": "extracted",
+      "trackIds": [
+        "robotwin-phys-v1-main"
+      ],
+      "resultIds": [
+        "r-robotwin-phys-v1-fastwam",
+        "r-robotwin-phys-v1-motus",
+        "r-robotwin-phys-v1-fact",
+        "r-robotwin-phys-v1-pi05",
+        "r-robotwin-phys-v1-galaxea-vla"
+      ],
+      "note": "新增RoboTwin-Phys；保留Clean/Official Random作为同表对照，Physical Random为13维物理随机化新协议。"
+    },
+    "p110": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "LiMA六项双臂任务及异步延迟为作者自定义真机协议；保留70.8/78.9和325ms原始证据，不建跨论文统一Benchmark。"
     }
   }
 }

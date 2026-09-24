@@ -32,10 +32,8 @@ def test_vla_adapter_pro_kept_separate():
     p=j('catalog/papers/p074.json')
     t=next(x for x in p['note']['tables'] if x['title']=='v2新增VLA-Adapter-Pro结果')
     assert t['rows']==[['VLA-Adapter','97.3%','4.42'],['VLA-Adapter-Pro','98.5%','4.50']]
-def test_benchmark_counts_unchanged():
+def test_benchmark_evidence_survives_later_catalog_growth():
     review=j('maintenance/state/benchmark-review.json')['papers']
-    assert sum(x['status']=='extracted' for x in review.values())==96
-    assert sum(x['status']=='deferred' for x in review.values())==0
-    assert sum(x['status']=='not-applicable' for x in review.values())==2
-    assert len(j('catalog/benchmarks.json')['tracks'])==286
-    assert len(list((R/'catalog/results').glob('r-*.json')))==1063
+    assert all(review[pid]['status']=='extracted' for pid in DONE)
+    assert len(j('catalog/benchmarks.json')['tracks'])>=286
+    assert len(list((R/'catalog/results').glob('r-*.json')))>=1063

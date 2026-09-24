@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p101",
+    "name": "WAM Survey",
+    "title": "World-Action Models for Robot Learning and Control: A Survey",
+    "team": "Zuxing Lu、Hongjia Zhai、Guanzhi Wang、Huajian Zeng、Jiaqi Yang、Jingyu Liu等16位作者",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-13",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月13日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "world",
+      "evaluation"
+    ],
+    "tags": [
+      "WAM",
+      "survey",
+      "taxonomy",
+      "benchmark"
+    ],
+    "priority": "overview",
+    "contribution": "系统定义WAM与传统world model、MBRL、action-conditioned video和反应式VLA的边界，并从表示、transition、动作接口、架构、训练管线、数据模态和scale组织机器人WAM方法。",
+    "findings": "该工作不提出新的机器人性能表；核心产出是统一taxonomy、应用/数据/评测梳理，以及对action alignment、world-action factorization、多视角一致性、长程记忆、神经仿真和高效推理的挑战总结。",
+    "limitations": "Survey对快速发展的2026 WAM文献只能代表截稿时视图；分类并不等同于因果结论，跨论文结果仍受协议、训练数据和实现差异影响。",
+    "insight": "把WAM理解为‘预测未来 + 可执行动作’的耦合系统，比按是否生成视频来命名更稳定；Radar可借其taxonomy检查WAM结果到底在评世界、动作还是两者接口。",
+    "readingFocus": "WAM定义边界、统一taxonomy、训练数据与scale、benchmark/metric对齐，以及作者提出的开放问题。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": false,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.16074v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.16074"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://rcl-robotics.github.io/Awesome-World-Action-Models"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.16074",
+    "arxiv": "2609.16074",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-13",
+    "firstArxivSource": "https://arxiv.org/abs/2609.16074v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-13",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-13",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.16074v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.16074v1（2026-09-13），全文taxonomy、数据、评测与挑战；2026-09-24复核",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "定义边界：WAM不是任何“带视频的VLA”",
+        "body": "综述把WAM定义在未来世界预测与可执行动作生成之间的耦合上，并与四类邻近概念区分：只建模环境演化的传统world model、用于规划/价值估计的MBRL、给定动作生成视频的action-conditioned video，以及直接从观测/语言映射动作的反应式VLA。这个定义强调世界预测怎样影响动作接口，而不是仅按是否存在生成模块命名。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "taxonomy",
+        "title": "统一taxonomy：从表示一直追到训练与scale",
+        "body": "作者从representation、transition modeling、action interface、architecture、training pipeline、data modality和scaling strategy多个维度组织WAM。这样的多轴分类比单一‘joint/decoupled’更适合解释不同系统：两个模型即便都生成未来，也可能在潜空间、动作条件方式、是否联合训练以及未来只在训练还是部署使用等方面回答完全不同的问题。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "representations",
+        "title": "世界表示决定预测结果怎样进入控制",
+        "body": "Survey覆盖像素/视频、latent feature、geometry/3D、motion/trajectory等不同未来表示。对机器人控制而言，视觉保真不是唯一目标：未来表示还要保留任务对象、几何、可达性与动力学线索，并以足够低的token/采样成本进入动作模型。这个视角也解释了为什么近期工作不断出现控制导向autoencoder、潜在世界变化和几何future，而不仅是更清晰的视频。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "interfaces",
+        "title": "World→Action接口是比较WAM时最容易被忽略的变量",
+        "body": "世界预测可作为显式future图像喂给IDM，也可只提供hidden features、latent trajectories、reward/value或规划候选；动作头则可能并行、级联或与生成器共享backbone。不同接口决定了测试时是否必须想象未来、动作是否能直接看到未来token，以及训练时世界损失能否塑造动作表征。把这些系统放在同一个‘WAM’标签下比较，必须先标明接口。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "数据轴：无动作视频、机器人轨迹与跨形态数据承担不同监督",
+        "body": "综述强调WAM的潜力之一是利用不完整标签的数据：视频可学习世界变化，机器人轨迹提供动作和状态转移，语言/任务标签提供条件。不同工作对失败轨迹、人类视频、仿真、真机和多形态混合的利用方式不同。因而所谓scale不能只记‘小时数’，还需要记录视频/动作是否配对、场景覆盖、技能覆盖和目标形态占比。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "evaluation",
+        "title": "评测应把世界质量、动作质量和系统成本分开",
+        "body": "作者梳理现有数据集、benchmark、metric与protocol，并指出WAM往往同时声称更好预测、更好控制和更强泛化。三种主张需要不同证据：生成指标不能替代闭环成功率，任务成功也不能说明预测正确，推理时延又是另一条轴。这个框架与VLA-Radar的Setting-first原则一致：先问协议和指标回答什么，再比较数字。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "challenges",
+        "title": "开放问题集中在耦合而不是单独世界或动作模块",
+        "body": "Survey把action alignment、world-action factorization、spatial/multi-view consistency、long-horizon memory、neural simulation for closed-loop learning和efficient inference列为关键挑战。共同点是世界模型产生的信息必须在正确时间、正确空间与动作条件对齐；单纯提升视频质量或扩大VLM并不能自动解决这些接口问题。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "radar",
+        "title": "对Radar的启示：WAM证据需要按“世界—动作接口”记账",
+        "body": "这篇综述最有价值的不是给出一个总榜，而是提供统一词汇。后续Radar记录WAM时，应至少区分未来表示、训练期/测试期是否生成、动作头怎样消费世界信息、世界与动作损失是否共享参数、使用什么数据和评测。这样才能避免把Fast-WAM、两阶段future-IDM、feature distillation等机制仅因都叫WAM而当作同一设置。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：Survey 的 taxonomy 不是新的性能对照实验",
+        "body": "这篇综述列举大量 WAM、world model、VLA 与 MBRL 工作，但它没有在统一代码栈中重新训练这些模型，也没有产生原创机器人成功率表。因此文中对不同路线的优缺点主要是基于公开文献的组织和分析，不能转写成新的 Result Report，更不能把不同论文原本不一致的数字经 Survey 二次引用后放进统一榜单。它的贡献应被视为概念边界、设计轴和研究问题的系统化整理。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：快速变化领域中的综述具有明确时间截面",
+        "body": "2026 年 WAM 文献增长很快，同一个“训练时世界监督 / 测试时世界生成”的分类在新工作中也不断出现混合形态。综述的 taxonomy 对当前阅读很有价值，但并不意味着所有后续方法都能被无歧义放入固定盒子。尤其 feature distillation、latent motion future、asynchronous imagination 等路线跨越多个传统类别。Radar 应把 Survey 当作词汇基线，并允许后续记录增加更细的接口属性，而不是为了服从旧分类牺牲事实。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：统一记录世界表示、动作接口和推理阶段",
+        "body": "综述最直接的基础设施价值，是提醒每个 WAM 记录至少回答三件事：世界表示是什么（像素、latent、geometry、motion 等）；动作怎样消费世界信息（IDM、共享 backbone、cross-attention、value/selector 等）；世界预测发生在训练、推理还是两者。再配合数据与 Benchmark Setting，才能解释 Fast-WAM、THAW、LeWAM、MoWAM 等为何虽然都与世界建模有关，却不能被当成同一种算法做简单平均排名。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-theory",
+      "source": "https://arxiv.org/html/2609.16074v1"
+    },
+    "figures": [],
+    "tables": [],
+    "benchmarkReview": {
+      "status": "not-applicable",
+      "checkedAt": "2026-09-24",
+      "note": "综述汇总既有Benchmark但没有原创可排名结果；不为Survey创建Result Report。"
+    }
+  }
+}
