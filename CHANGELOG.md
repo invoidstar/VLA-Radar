@@ -1,3 +1,13 @@
+## 2026-09-25 · Reproducibility Card / 资源状态
+
+- 新增 canonical `catalog/reproducibility.json`，将 Project / Code 入口与 Weights、Dataset、Training、Inference、Evaluation、License 的实际开放状态分离。
+- 固定状态语义为 available / partial / unavailable / unknown；unknown 表示尚未充分核验，只有官方明确声明未发布或无发布计划时才允许 unavailable。
+- 首批完成 10 篇高价值资源审计：OpenVLA、OpenVLA-OFT、π0、π0.5、Xiaomi-Robotics-0/1、LaWAM、Qwen-VLA、Qwen-RobotManip、Qwen-RobotNav。
+- Qwen-VLA / RobotManip / RobotNav 的官方 GitHub 链接不再被简单等同为“完整代码开放”：当前信息型仓库标为 Code=partial；RobotManip / RobotNav 依据官方 README 将 Weights 标为 unavailable。
+- OpenVLA / OpenVLA-OFT / openpi / Xiaomi / LaWAM 按官方 README 对 weights、训练、推理、评测、数据与许可证逐项记录；完整预训练数据未公开但下游数据可用时使用 partial，不夸大为完全可复现。
+- 论文详情新增 8 维 Reproducibility Card，不生成总分、不参与论文排序；Project / Code 继续保留原快速链接。
+- 内容批次新增可选 `reproducibility` 更新，可与论文/结果/资源同批原子发布；CI 新增 registry、默认 unknown、explicit unavailable 和浏览器卡片回归。
+
 ## 2026-09-25 · 论文关系层与系列导航
 
 - 新增独立 canonical `catalog/relations.json`，方向关系仅允许 `extends / follow-up-of`，同系列使用 series membership，避免 N 篇系列论文产生 N² 条冗余边。
