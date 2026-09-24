@@ -1,7 +1,7 @@
 {
   "id": "2026-09-25-lawam-xiaomi-qwen",
   "date": "2026-09-25",
-  "summary": "新增 LaWAM、Xiaomi-Robotics-0、Qwen-VLA、Qwen-RobotManip、Qwen-RobotNav、Qwen-RobotWorld 六篇深读记录；为可兼容的操作基准补充协议化 Result Report，并为 Xiaomi-Robotics-1 补官方项目页。导航与 world-model 评测保持协议隔离；同时修正维护队列在全部深读完成后仍回填已完成条目的问题。",
+  "summary": "新增 LaWAM、Xiaomi-Robotics-0、Qwen-VLA、Qwen-RobotManip、Qwen-RobotNav、Qwen-RobotWorld 六篇深读记录；为可兼容的操作基准补充协议化 Result Report，并为 Xiaomi-Robotics-1 补官方项目页。导航与 world-model 评测保持协议隔离；同时修正维护队列在全部深读完成后仍回填已完成条目的问题，并补充对应回归测试。",
   "notes": [],
   "tracks": [
     {
