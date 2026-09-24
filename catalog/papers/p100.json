@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.11561v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：完整 RMBench 与历史两任务子集不是同一个 Setting",
+        "body": "MaP-WAM 的 83.3% 来自 RMBench 完整九任务平均，最干净的比较对象是同表、同九任务协议下的 DP、π0.5、X-VLA、Mem0、LingBot-VA 等。本站此前 OnEvoMemory 只结构化过 Swap Blocks / Swap T 两任务，因此即使数据集名称都写 RMBench，也不能把两任务均值和九任务平均直接排序。MaP-WAM 的优势应先在完整协议内部解读，再把视觉计划、进度建模等消融作为机制证据。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.11561v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：固定 executor 成本不代表整个记忆系统成本恒定",
+        "body": "论文的重要系统结论是 executor 上下文不会随历史线性增长，并可继续利用 KV cache；但长期记忆检索和重新规划仍会在 segment 边界发生。所谓“延迟随历史近似恒定”主要指执行路径，而不是 planner、memory retrieval、视觉索引等所有组件的端到端成本都与任务长度无关。真实任务 78% 也使用不同任务和硬件，不能作为 RMBench 83.3% 的第二次同协议复现。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.11561v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：把记忆位置写进方法，而不是只打 Memory 标签",
+        "body": "MaP-WAM 最值得记录的是记忆位于“规划期证据层”，执行器只消费压缩后的 plan，而不是持续读取原始历史。这与把多帧直接拼给 policy、外部检索历史帧、语言摘要 memory 等方案具有不同计算与信息瓶颈。Radar 后续比较 long-horizon 方法时，应同时注明历史保存形式、检索触发时机、计划/执行边界和是否固定执行上下文；只有任务/评测协议一致时，再比较最终成功率。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.11561v1"
+          }
+        ]
       }
     ],
     "coverage": {
