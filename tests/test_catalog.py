@@ -110,5 +110,12 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaises(ValueError):validate_result(r,set(m['paperOrder']),{t['id']:t for t in tracks})
     def test_review_queue(self):
         with tempfile.TemporaryDirectory() as tmp:
-            import shutil;shutil.copytree(ROOT/'catalog',Path(tmp)/'catalog');p=plan(tmp,3);self.assertEqual(len(p['notes']),3);self.assertEqual(len({x['paperId'] for x in p['notes']}),3)
+            import shutil
+            root=Path(tmp);shutil.copytree(ROOT/'catalog',root/'catalog')
+            pending={'p001','p002','p003'}
+            for pid in pending:
+                path=root/'catalog'/'papers'/f'{pid}.json';rec=json.loads(path.read_text());rec['note']['status']='needs_review';path.write_text(json.dumps(rec,ensure_ascii=False,indent=2)+'\n')
+            p=plan(root,3)
+            self.assertEqual({x['paperId'] for x in p['notes']},pending)
+            self.assertEqual(p['remainingNotes'],3)
 if __name__=='__main__':unittest.main()
