@@ -10,6 +10,7 @@ Use public papers, official reports and this public repository only. Never consu
 
 - Edit one paper in `catalog/papers/pNNN.json`; `paper` retains the legacy public fields; `publication` records lifecycle evidence; `note` holds source-linked structured sections.
 - Edit tracks in `catalog/benchmarks.json`, and one result per `catalog/results/r-*.json`.
+- Edit verified paper lineage / series only in `catalog/relations.json`; do not infer relationships in frontend code.
 - `catalog/manifest.json` maintains stable display order and content date. `catalog/first-public.json` protects migrated original first-public values. Add a first-public lock when adding a paper. A factual correction requires explicit source documentation, a dedicated reviewed change to record AND lock, never an automatic venue update.
 - `data/papers.json`, `data/catalog.json`, `data/details/`, `data/leaderboards.json` are generated; never hand-edit them. Run `python scripts/build/build_catalog.py` then `python scripts/validate/validate_all.py`.
 - Re-read current HEAD before committing. Do not assume old conversation snapshots are current.
