@@ -6,7 +6,7 @@ def test_batch14_counts():
     r=j('maintenance/state/benchmark-review.json')['papers']
     assert all(r[x]['status']=='extracted' for x in ['p012','p014','p025','p002','p015'])
     assert sum(x['status']=='extracted' for x in r.values())>=96
-        assert len(j('catalog/benchmarks.json')['tracks'])>=286
+    assert len(j('catalog/benchmarks.json')['tracks'])>=286
     assert len(list((R/'catalog/results').glob('r-*.json')))>=1063
 def test_ocvla_fixed_negative_preserved():
     a=j('catalog/results/r-ocvlapp-v1-qwen-ocvla.json')['values']
