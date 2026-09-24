@@ -26,7 +26,7 @@ def test_september_backfill_inventory_and_depth():
 
 def test_september_discovery_window_is_complete_but_deferred_stays_explicit():
     a=j('maintenance/audits/discovery-2026-09-01-2026-09-24.json')
-    assert a['window']=={'from':'2026-09-01','to':'2026-09-24'}
+    assert a['window']['from']=='2026-09-01' and a['window']['to']=='2026-09-24' and a['window']['completedAt']=='2026-09-24'
     assert a['counts']=={'total':276,'selected':12,'deferred':244,'excluded':20,'crossIndexed':79}
     assert {x['arxiv'] for x in a['candidates'] if x['status']=='selected'}=={v[0] for v in NEW.values()}
     state=j('maintenance/state/state.json')
