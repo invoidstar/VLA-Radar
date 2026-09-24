@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p107",
+    "name": "IndustrialVLA-Bench",
+    "title": "IndustrialVLA-Bench: A Traceable Multi-Axis Evaluation of Open Robot Policy Models",
+    "team": "Yiqi Wang、Zhifeng Rao、Jiaqi Zhang、Xiaoyang Li、Zhangkai Wu、Yiqun Duan、Mingkai Zheng、Fei Wang、Shan You、Taotao Cai",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-22",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "evaluation",
+      "efficiency"
+    ],
+    "tags": [
+      "benchmark",
+      "evidence-aware",
+      "LIBERO",
+      "deployment"
+    ],
+    "priority": "deep",
+    "contribution": "把开放VLA/WAM在Clean capability、非语言鲁棒性、指令敏感性和部署成本四轴放进统一可追溯schema，并显式区分protocol-faithful、near-reproduction、pending-verification证据等级。",
+    "findings": "六系统Clean LIBERO平均只差1.58点，但LIBERO-Plus鲁棒性跨度14.62、LIBERO-Para指令跨度31.08；只看三条protocol-faithful系统仍为1.36/14.62/23.10。",
+    "limitations": "六系统并非所有行都达到相同复现实证等级；作者明确只有protocol-faithful条目支持严格比较，因此不能把完整六行当作公平统一排行榜。",
+    "insight": "Clean分数接近不代表能力相近；把鲁棒性、语言敏感性、延迟/显存和evidence status并列，能避免‘一个平均SR’掩盖部署与协议风险。",
+    "readingFocus": "evidence status定义、三次完整评测的固定checkpoint口径、LIBERO/Plus/Para分轴、latency/memory记录，以及为何弱证据行不进入strict comparison。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.25562v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.25562"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/xiaoqi-7/IndustrialVLA-Bench"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.25562",
+    "arxiv": "2609.25562",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-22",
+    "firstArxivSource": "https://arxiv.org/abs/2609.25562v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-22",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.25562v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.25562v1（2026-09-22），统一schema、证据分级、LIBERO/Plus/Para与部署成本；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：VLA和WAM常在不同协议下各报最有利数字",
+        "body": "开放机器人policy越来越多，但同名LIBERO结果可能来自不同checkpoint、seed、runtime和实现；WAM又常另报未来生成成本。若直接把论文表拼在一起，会把协议差异误当方法差异。IndustrialVLA-Bench的核心不是造一个更大的总榜，而是为已发布policy建立统一报告schema，并让每一行说明其证据质量和实际可比较范围。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "axes",
+        "title": "四轴分离：Clean、robustness、language、deployment",
+        "body": "评测把标准LIBERO作为clean capability；LIBERO-Plus承担不以语言为主的视觉/环境robustness；LIBERO-Para用于instruction paraphrase/sensitivity；系统侧记录observed inference latency、peak memory和runtime mode。四个轴回答不同问题，因此作者不把它们再平均成单一‘综合分’，这与Radar的Setting-first原则高度一致。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence",
+        "title": "证据等级是Benchmark本身的一部分",
+        "body": "每个系统被标记为protocol-faithful、near-reproduction或pending-verification。前者满足作者设定的checkpoint、评测次数和推理配置要求；后两者保留用于覆盖，但不能进入strict comparison。这个机制承认‘有一个数字’和‘数字可严格比较’不是一回事，也避免为追求表格完整度而隐藏复现缺口。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "repeat",
+        "title": "重复评测：每个task score来自三次完整运行",
+        "body": "作者对报告的task scores聚合三次独立随机seed的完整评测，并固定checkpoint与inference configuration。这里的重复不是简单重复同一episode，而是完整evaluation run，从而减少单次随机初始化带来的波动。对VLA-Radar而言，这种信息应留在Evaluation Setting / result evidence中，而不是只保存最终average。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "Clean接近，但鲁棒与语言轴把差异拉开",
+        "body": "六个系统的clean LIBERO averages跨度仅1.58个百分点，看起来几乎同档；LIBERO-Plus robustness跨度扩大到14.62，LIBERO-Para paraphrase达到31.08。更重要的是，只看三条protocol-faithful系统，跨度仍为1.36、14.62、23.10，说明主要现象不是由低证据等级条目人为放大的。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "cost",
+        "title": "部署成本是独立能力轴，不由成功率代替",
+        "body": "论文同时记录latency、peak memory和runtime mode，因为一个高成功率policy可能无法满足目标控制频率或硬件预算。尤其WAM和VLA的推理路径不同，‘每动作延迟’、‘chunk生成时间’和world imagination成本不能互换。作者把系统成本与任务成功并列，而不是转成任意加权综合分，是其评测设计的重要部分。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "interpretation",
+        "title": "论文不声称VLA或WAM范式有统一赢家",
+        "body": "作者明确把结果限定为所评checkpoints，并指出多轴表现并不一致。某系统clean高并不保证鲁棒性或语言敏感性高，架构类别也不是唯一变量。因而正确用法是查看每条结果的protocol/evidence/runtime条件，而不是从六系统中挑一个最高平均当成‘VLA vs WAM’结论。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "radar",
+        "title": "对Radar的直接启示：Evidence status应与分数同等显眼",
+        "body": "IndustrialVLA-Bench验证了Radar长期坚持的结构：Benchmark/Setting描述评测问题，训练与来源留在result，证据等级不能被总榜抹掉。本次不把其near-reproduction和pending-verification条目复制进统一leaderboard，而是保留论文的多轴结论与代码入口；未来若逐行核验，可按protocol-faithful证据逐条接入。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.25562v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "IndustrialVLA-Bench 结果跨度",
+        "columns": [
+          "范围",
+          "Clean LIBERO",
+          "LIBERO-Plus robustness",
+          "LIBERO-Para"
+        ],
+        "rows": [
+          [
+            "全部6系统",
+            "1.58 pt",
+            "14.62 pt",
+            "31.08 pt"
+          ],
+          [
+            "3个protocol-faithful系统",
+            "1.36 pt",
+            "14.62 pt",
+            "23.10 pt"
+          ]
+        ],
+        "locator": "Abstract；Results",
+        "caption": "这是各轴最大-最小跨度，不是方法得分；作者只允许protocol-faithful子集做严格比较。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-24",
+      "note": "论文把多个既有Benchmark与证据等级组成评测schema；本批不复制弱证据行到统一Leaderboard，只保留可追溯多轴结论。"
+    }
+  }
+}
