@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.05588v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：规模、表示与联合训练不能混成单因素",
+        "body": "GE-Act 2.0 的 scaling 表最适合支持“在同一系统设计下增加机器人预训练覆盖会提高零样本 OOD 成功率”，而不是证明 CoAE、SVP 或 KASO 中某一个组件单独产生全部提升。300、1200、5000、30000 小时阶段同时改变了可见技能和数据来源覆盖；组件价值应回到对应消融，规模价值则看同配方曲线。尤其真实 100-task OOD 与 LIBERO-Plus 先适配后鲁棒评测回答不同问题，不能把二者平均后称为统一泛化分。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：训练阶段小时数和技能覆盖要避免重复记账",
+        "body": "论文列出的 39K 小时 SVP、32K 小时 IDM、30K 小时 co-training 描述的是不同训练阶段/可用数据池，并不意味着存在 101K 小时互不重叠的独立机器人轨迹。站点在描述规模时应优先采用作者明确的阶段语义，不把阶段小时数相加制造更大的“总数据量”。技能覆盖与成功率的 Pearson/Spearman 相关也只能说明在作者数据构成下覆盖度具有解释力，不能自动证明增加任意新技能数据都会带来同样边际收益。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：预训练证据与下游鲁棒结果分层",
+        "body": "这篇论文同时是 WAM 预训练研究和 LIBERO-Plus 结果来源。Radar 因此应把 30K 小时扩展、跨 embodiment 迁移和 KASO 作为方法/训练层证据，而把 LIBERO-Plus 七扰动轴保留在 Result Report；真实 100-task OOD 则维持作者自定义协议，不因都叫“泛化”就与 LIBERO-Plus 合并。这样读者可以分别回答“规模是否有效”“标准鲁棒协议上表现如何”“真实零样本任务覆盖如何”，避免一个总体数字遮住三类结论。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
       }
     ],
     "coverage": {
