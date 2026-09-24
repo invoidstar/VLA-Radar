@@ -3,8 +3,8 @@
   "timezone": "Asia/Singapore",
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
-  "lastSuccessfulSearchAt": null,
-  "lastAttemptAt": "2026-09-20",
-  "lastStatus": "partial",
-  "lastSummary": "首次回补窗口 2026-09-01—2026-09-20 已执行一轮公开检索，发现若干 VLA/WAM/机器人世界模型候选；本次完成 SpatialVLA、OpenVLA-OFT、Fast-WAM 三篇既有记录的最新公开版本深读复核。新发现候选尚未全部完成全文深读、身份去重与协议核验，仅摘要或未完成协议核验者不进入主库，因此不推进 lastSuccessfulSearchAt。"
+  "lastSuccessfulSearchAt": "2026-09-24",
+  "lastAttemptAt": "2026-09-24",
+  "lastStatus": "complete",
+  "lastSummary": "完整回补窗口 2026-09-01—2026-09-24 已完成：使用 robotics_paper_daily 与 Embodied-AI-Daily 两个独立公开索引交叉扫描 VLA/WAM/机器人基础模型候选，并对入库条目回到 arXiv/官方项目材料做正文级核验。候选审计共记录 276 条，12 条完成正文深读并进入主库，244 条保留 deferred、20 条按范围边界 excluded；79 条被两个索引交叉发现。complete 表示本窗口的公开检索、去重与候选 disposition 已闭环，不表示 deferred 候选都已经完成深读或应进入主库。"
 }
