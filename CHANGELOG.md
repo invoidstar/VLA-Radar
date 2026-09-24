@@ -1,3 +1,11 @@
+## 2026-09-25 · Reproducibility 全库覆盖
+
+- 将 Reproducibility audit 从首批 10 篇扩展到 **116 / 116** papers：10 篇保留 deep 逐维审计，106 篇新增 baseline 官方资源核验。
+- baseline 只证明当前官方 Project / Code / 项目入口已经检查；没有明确来源的 Weights / Dataset / Training / Inference / Evaluation / License 继续保持 unknown，不把“未发现”写成 unavailable。
+- `catalog/reproducibility.json` 升级为 schema v2，新增 `level / note`；构建器要求 audit paper ID 集合与 catalog 完全一致，新论文漏建 audit 会直接导致 CI 失败。
+- 116 篇均生成按需 `data/reproducibility/pNNN.json`，首页仍不下载完整卡片；详情页区分“深度逐维审计”和“基础官方资源核验”。
+- 内容批次只允许替换 audit，不允许删除 audit 破坏全库覆盖；新增 baseline/deep、全覆盖与浏览器回归。
+
 ## 2026-09-25 · Reproducibility Card / 资源状态
 
 - 新增 canonical `catalog/reproducibility.json`，将 Project / Code 入口与 Weights、Dataset、Training、Inference、Evaluation、License 的实际开放状态分离。

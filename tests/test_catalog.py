@@ -36,10 +36,11 @@ class CatalogTests(unittest.TestCase):
 
     def test_batch_reproducibility_updates_merge_and_remove(self):
         _,records,_,_=read_catalog(ROOT);ids={x['paper']['id'] for x in records}
-        audit={'verifiedAt':'2026-09-25','items':{'weights':{'status':'unavailable','note':'Officially not released.','url':None,'source':'https://example.com/release-note'}}}
-        merged=prepare_reproducibility(ROOT,ids,{'p001':audit,'p064':None})
+        audit={'verifiedAt':'2026-09-25','level':'deep','note':'Explicit release audit.','items':{'weights':{'status':'unavailable','note':'Officially not released.','url':None,'source':'https://example.com/release-note'}}}
+        merged=prepare_reproducibility(ROOT,ids,{'p001':audit})
         self.assertEqual(merged['papers']['p001'],audit)
-        self.assertNotIn('p064',merged['papers'])
+        self.assertIn('p064',merged['papers'])
+        with self.assertRaises(ValueError):prepare_reproducibility(ROOT,ids,{'p064':None})
         with self.assertRaises(ValueError):prepare_reproducibility(ROOT,ids,{'p999':audit})
         bad=copy.deepcopy(audit);bad['items']['weights']['status']='unknown'
         with self.assertRaises(ValueError):prepare_reproducibility(ROOT,ids,{'p001':bad})
