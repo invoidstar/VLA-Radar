@@ -1,0 +1,31 @@
+name: Temporary September backfill rebuild
+on:
+  push:
+    branches: [weekly-update-2026-09-24-backfill]
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: weekly-update-2026-09-24-backfill
+          fetch-depth: 0
+      - name: Rebuild deterministic public data
+        run: python scripts/build/build_catalog.py
+      - name: Validate canonical, editorial, generated and regressions
+        run: python scripts/validate/validate_all.py
+      - name: Commit generated data only
+        run: |
+          if git diff --quiet -- data; then
+            echo "Generated data already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "Rebuild public data for September 1-24 backfill"
+          git push origin HEAD:weekly-update-2026-09-24-backfill
