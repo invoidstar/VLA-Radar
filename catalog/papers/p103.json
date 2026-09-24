@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p103",
+    "name": "High-DoF VLA Post-Training",
+    "title": "Towards High-DoF Dexterous Manipulation through VLA Post-Training",
+    "team": "Junlei Zhu、Shenzhe Yao、Chaogui Huang、Wenkai Zhu、Jingwei Peng、Guanqi He、Soren Schwertfeger、Jiahao Chen、Yide Liu",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-17",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月17日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "action",
+      "pretraining"
+    ],
+    "tags": [
+      "VLA",
+      "post-training",
+      "dexterous",
+      "real-world RL"
+    ],
+    "priority": "deep",
+    "contribution": "针对高DoF手部适配提出四阶段post-training：时序手动作codec→SFT→带rollback/alignment/blending的DAgger→codec潜空间残差RL，把原始40维双手命令压成协调动作潜变量。",
+    "findings": "五项真实任务最终均20/20成功；latent residual RL将双手转移任务70%→100%、手内旋转50%→100%，并在3000真实transitions内完成；100 episodes的人力估计RL 1.2h、SFT 2.0h、DAgger 3.9h。",
+    "limitations": "100%来自五项受控真实任务和20次/任务，不代表开放世界可靠性；pipeline包含多阶段工程与人工介入，无法把最终收益归于单一RL或codec。",
+    "insight": "VLA落到高自由度手部时，最大瓶颈可能是动作接口与安全高效探索，而不是视觉/语言backbone；先学协调动作流形，再做残差探索可显著降低RL维度。",
+    "readingFocus": "40→latent手动作codec、DAgger平滑接管、latent residual RL、样本/操作员时间，以及五项20-trial最终评测。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.19666v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.19666"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://wuji.tech/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.19666",
+    "arxiv": "2609.19666",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-17",
+    "firstArxivSource": "https://arxiv.org/abs/2609.19666v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-17",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-17",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.19666v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.19666v1（2026-09-17），action codec、SFT、DAgger、真实RL与消融；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：通用VLA没有直接解决高DoF手部适配",
+        "body": "预训练VLA在常见夹爪或低维机械臂动作上有现成接口，但双灵巧手带来约40维手部命令和更复杂的协调模式。论文指出三类具体障碍：开源VLA缺少原生高DoF action interface；DAgger人工接管时手势不连续会污染纠正轨迹；直接在原始关节空间做RL探索效率低。它因此把post-training视为动作接口、数据纠正和在线优化的联合问题。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "codec",
+        "title": "动作codec：把高维关节命令变成可学习的时序动作流形",
+        "body": "作者先学习temporal hand-action codec，把双手每帧共40维的绝对关节命令编码为更低维、具有时间结构的latent。后续VLA不需要逐关节直接建模所有自由度，RL也可以在这个协调动作空间里施加残差。实验显示9维latent能够保留模仿学习表现，说明压缩并非简单丢弃动作能力，而是在训练数据中提取常见手部协同模式。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "sft",
+        "title": "SFT：先把预训练VLA接到新的手部动作接口",
+        "body": "第二阶段使用示范进行监督微调，使视觉—语言policy输出适配后的手部action codec和机器人动作。这个阶段建立可工作的初始策略，但论文没有把SFT视为终点：复杂接触和细微姿态误差导致分布偏移，单靠离线示范仍会在执行中累积。后续DAgger和RL分别解决在线纠正数据以及剩余成功率缺口。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "dagger",
+        "title": "DAgger：重点不是采集更多数据，而是让人工接管连续",
+        "body": "传统human-gated DAgger在操作者接管瞬间容易出现VLA命令与遥操作姿态突变。作者加入buffered rollback、pose alignment和smooth command blending：先回滚到安全状态、对齐操作者和机器人姿态，再平滑过渡控制权。这样收集到的纠正轨迹更接近任务需要的连续动作，而不是包含接管冲击的异常命令。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "rl",
+        "title": "Residual RL：只在协调latent上探索剩余误差",
+        "body": "最后阶段冻结/继承已有策略，用real-world residual RL在codec潜空间预测动作修正，而不是直接在40维原始手关节空间搜索。每个online transition执行25帧、控制频率30Hz，约0.83秒。潜空间把探索限制到示范中常见的协调手势附近，使RL更像对已有技能做局部修补，降低无意义或危险动作的比例。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "协议：五项真实高DoF任务，最终每项20次评测",
+        "body": "任务覆盖双手物体转移、手内旋转和工具使用等五类真实操作。所有最终成功率都以每任务20个evaluation trials报告，因此100%意味着20/20，而不是无限次可靠性。在线学习曲线另外按transitions/episodes记录，数据收集人力则用估算worker-hours；三个口径不能互相替代。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果：RL主要补齐模仿阶段剩余失败",
+        "body": "latent residual RL在3000 real-world transitions内把Transfer Marker between Hands从70%提高到100%，Rotate Marker in Hand从50%提高到100%；完整pipeline最终五任务均20/20。作者估计收集100 episodes的人力：SFT示范约2.0 worker-hours，DAgger纠正3.9，RL自主rollout约1.2，说明RL成本优势主要来自减少持续人工遥操作。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：这是任务后训练方案，不是新的通用预训练能力",
+        "body": "最终100%是在限定任务、硬件和post-training预算下得到，且pipeline依赖示范、人工监控/纠正和在线环境交互。它证明的是通用VLA可以通过动作codec和分阶段后训练适配高DoF手，而不是说模型零样本就具备灵巧操控。后续比较应单独记录基础模型、示范量、DAgger量、RL transitions与人工时间，避免只看最终成功率。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.19666v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "高DoF后训练关键量化结果",
+        "columns": [
+          "项目",
+          "结果"
+        ],
+        "rows": [
+          [
+            "Transfer Marker: latent RL",
+            "70% → 100%"
+          ],
+          [
+            "Rotate Marker: latent RL",
+            "50% → 100%"
+          ],
+          [
+            "最终五任务",
+            "每项20/20"
+          ],
+          [
+            "100 episodes人力估计",
+            "SFT 2.0h / DAgger 3.9h / RL 1.2h"
+          ]
+        ],
+        "locator": "Fig.7、Fig.9、Table 2、§4.5",
+        "caption": "作者报告；人力为估算，成功率来自特定真实任务与试验次数。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-24",
+      "note": "五项真实高DoF任务为论文自定义协议；保留原始20-trial结果，不新建跨论文Benchmark。"
+    }
+  }
+}
