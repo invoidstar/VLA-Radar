@@ -1,0 +1,18 @@
+{
+  "id": "r-mapwam-v1-rmbench-lingbot",
+  "paperId": "p100",
+  "method": "LingBot-VA",
+  "trackId": "mapwam-v1-rmbench-full",
+  "values": {
+    "Average": 77.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.11561v1",
+  "sourceVersion": "arXiv 2609.11561v1",
+  "locator": "Table 1 · Total Average",
+  "attribution": "reported-baseline",
+  "trainingData": "RMBench reported baseline under the paper table protocol.",
+  "evaluationNotes": "Complete 9-task average; baseline is quoted by MaP-WAM.",
+  "supersedes": ""
+}
