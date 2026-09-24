@@ -182,6 +182,18 @@
   function badge(p){return `<span class="priority ${p.priority}">${p.priority==='deep'?icon('spark'):''}${priorityText[p.priority]}</span>`;}
   function resourcesHtml(p,compact=false){const r=p.resources||{},items=[];if(r.project)items.push(['project','项目主页',r.project,'external']);if(r.code)items.push(['code','开源代码',r.code,'github']);return items.length?`<div class="paper-resources ${compact?'compact':''}" aria-label="官方资源">${items.map(([kind,label,href,ico])=>`<a class="paper-resource ${kind}" href="${esc(safeUrl(href))}" target="_blank" rel="noopener noreferrer">${icon(ico)}${label}</a>`).join('')}</div>`:'';}
 
+  function relationsHtml(p){
+    const rel=p.relations||{},previous=rel.previous||[],followups=rel.followups||[],series=rel.series||[];
+    if(!previous.length&&!followups.length&&!series.length)return '';
+    const relationButton=item=>`<button class="tag" data-paper="${esc(item.paperId)}" title="${esc(item.title||item.name)}">${esc(item.name||item.paperId)}</button>`;
+    const evidence=sources=>(sources||[]).slice(0,2).map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('');
+    const blocks=[];
+    if(previous.length)blocks.push(`<div class="relation-block"><label>Previous / Builds on</label><div class="paper-tags">${previous.map(relationButton).join('')}</div>${previous.map(x=>`<p><strong>${x.type==='extends'?'Extends':'Follow-up of'} · ${esc(x.name)}</strong> — ${esc(x.note)}</p><div class="source-links compact">${evidence(x.sources)}</div>`).join('')}</div>`);
+    if(followups.length)blocks.push(`<div class="relation-block"><label>Follow-up</label><div class="paper-tags">${followups.map(relationButton).join('')}</div>${followups.map(x=>`<p><strong>${x.type==='extends'?'Extended by':'Followed by'} · ${esc(x.name)}</strong> — ${esc(x.note)}</p><div class="source-links compact">${evidence(x.sources)}</div>`).join('')}</div>`);
+    for(const group of series)blocks.push(`<div class="relation-block"><label>Same Series · ${esc(group.name)}</label><div class="paper-tags">${(group.members||[]).map(relationButton).join('')}</div><p>${esc(group.note)}</p><div class="source-links compact">${evidence(group.sources)}</div></div>`);
+    return `<section class="detail-section relation-section"><h3>${icon('link')}论文关系</h3>${blocks.join('')}<small>仅展示已在 VLA-Radar 中收录、并有公开来源核验的直接关系；同机构或仅使用相同 backbone 不自动建立关系。</small></section>`;
+  }
+
   function saveButton(p){const saved=local(p.id).saved;return `<button class="save-btn ${saved?'saved':''}" data-save="${p.id}" aria-label="${saved?'取消收藏':'收藏'} ${esc(p.name)}" aria-pressed="${saved}">${icon('bookmark')}</button>`;}
   function card(p){const t=topicMap[p.topics[0]],l=local(p.id);return `<article class="paper-card">
     <div class="paper-card-main"><div class="paper-card-top"><button class="paper-name" data-paper="${p.id}">${highlight(p.name)}</button>${badge(p)}</div><p class="paper-title">${highlight(p.title)}</p><div class="paper-meta"><span class="venue-label">${esc(p.venue)}</span><span class="meta-sep">/</span><time>${esc(p.firstPublished||'首发待核验')}</time>${weekBadge(p)}<span class="meta-sep">/</span><span class="team-short" title="${esc(p.team)}">${highlight(p.team.split('\n')[0])}</span></div><div class="finding-preview"><span class="finding-label">KEY RESULT</span><span class="finding-text">${highlight(p.findings)}</span></div></div>
@@ -226,7 +238,7 @@
     const brief=data.papers.find(p=>p.id===id);if(!brief)return;const request=++detailSequence;
     $('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p role="status">正在载入详细笔记…</p>';
     let p=brief;
-    try{const r=await window.RadarResearch.detail(brief);if(request!==detailSequence)return;if(r)p={...r.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{}};}
+    try{const r=await window.RadarResearch.detail(brief);if(request!==detailSequence)return;if(r)p={...r.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{},relations:brief.relations||{previous:[],followups:[],series:[]}};}
     catch(error){if(request!==detailSequence)return;$('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p class="research-warning">详细笔记暂不可用，网站可能已更新。请刷新页面后重试。</p>';return;}
     const l=local(id);
     $('#paper-detail').innerHTML=`<div class="dialog-labels">${badge(p)}<span class="venue-label">${esc(p.venue)}</span>${p.topics.map(t=>`<button class="tag" data-topic="${esc(t)}">${esc(topicMap[t].name)}</button>`).join('')}</div><h2 id="dialog-title">${esc(p.name)}</h2><p class="dialog-full-title">${esc(p.title)}</p><div class="dialog-team">${esc(p.team)}</div>
@@ -237,6 +249,7 @@
       <section class="detail-section"><h3><span class="num">03</span>阅读启示</h3><div class="detail-prose">${math(p.insight)}</div></section>
       <section class="detail-section"><h3><span class="num">04</span>重点读什么</h3><div class="detail-prose">${math(p.readingFocus)}</div></section>
       <div class="evidence-status"><strong>${evidenceText[p.evidence]||'待核验'}</strong> · ${esc(p.evidenceNote)}</div>
+      ${relationsHtml(p)}
       ${resourcesHtml(p)}
       <div class="source-links">${p.sources.map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('')}</div>
       <div class="dialog-actions"><div class="action-group"><a class="btn primary" href="${esc(safeUrl(p.paperUrl))}" target="_blank" rel="noopener noreferrer">阅读原文 ${icon('external')}</a><button class="btn" data-save="${p.id}">${icon('bookmark')}${l.saved?'已收藏':'收藏'}</button><button class="btn" data-bib="${p.id}">BibTeX</button><button class="btn" data-share-paper="${p.id}">${icon('link')}分享</button></div><label class="status-label">本地进度<select class="status-select" id="detail-status" data-id="${p.id}">${Object.entries(statusText).map(([v,t])=>`<option value="${v}" ${l.status===v?'selected':''}>${t}</option>`).join('')}</select></label></div>`;
