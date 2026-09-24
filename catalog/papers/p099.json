@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p099",
+    "name": "GE-Act 2.0",
+    "title": "GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation",
+    "team": "AgiBot Research Team；Renhang Liu、Wenzhi Zhao、Zhuo Yang、Shengcong Chen 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-04",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月4日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "world",
+      "pretraining"
+    ],
+    "tags": [
+      "WAM",
+      "scaling",
+      "zero-shot OOD",
+      "cross-embodiment"
+    ],
+    "priority": "deep",
+    "contribution": "从操控数据出发预训练完整 WAM：以控制导向 CoAE 压缩视觉、单步视觉规划器生成未来状态、IDM 恢复动作，并用 KASO 缓解生成未来与记录动作不一致的监督冲突。",
+    "findings": "真实机器人零样本 OOD 中，协同训练数据从300小时扩大到30,000小时，G1-OP成功率17.1%→44.1%，G2-90D 13.4%→31.1%；LIBERO-Plus总体80.4%。",
+    "limitations": "主结果同时包含表示、生成、IDM、KASO与规模变化，不能把增长归因于单一模块；LIBERO-Plus中背景和机器人状态扰动仍明显较弱。",
+    "insight": "WAM预训练不一定必须继承自然视频生成器；更关键的是为控制设计潜空间、让世界预测与动作监督可分开预训练，再显式处理两者对齐。",
+    "readingFocus": "CoAE的64×空间压缩、单步SVP、validity gap与KASO、300→30,000小时扩展，以及RoboTwin/LIBERO-Plus的OOD口径。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.05588v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.05588"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://ge-act-v2.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.05588",
+    "arxiv": "2609.05588",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-04",
+    "firstArxivSource": "https://arxiv.org/abs/2609.05588v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-04",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-04",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.05588v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.05588v1（2026-09-04），方法、规模实验、OOD评测与附录；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：把WAM从“视频模型适配”改成“机器人预训练问题”",
+        "body": "论文把研究问题从如何把现成视频生成器接到动作头，转向能否从操控数据本身预训练并规模化整个世界—动作系统。作者强调，多数WAM继承自然视频生成器，使潜空间、生成速度和动作接口都带着非控制目标的先验；GE-Act 2.0因此把可训练的生成与动作部件重新初始化，把零样本OOD能力作为预训练质量的主要检验，而不是先对目标任务做SFT再看最终分数。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "representation",
+        "title": "CoAE：为控制而不是只为重建设计潜空间",
+        "body": "CoAE把256×384图像压到4×6的512维潜网格，即每帧24个token，空间轴压缩达到64×。训练同时使用像素/感知/对抗重建损失和SigLIP2、V-JEPA2.1、DINOv3多教师表征对齐。这里的关键不是单纯追求高压缩率，而是要求压缩后的视觉状态仍能支持动作恢复、时空结构和语言相关语义，减少未来生成进入控制环时的token成本。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "planner",
+        "title": "SVP：一次前向完成未来视觉规划",
+        "body": "单步视觉规划器以当前多视角潜变量和语言为条件，在一次flow-generator前向中直接得到完整未来视觉状态，同时预测近端稠密与更远期稀疏未来。这样做的研究意义是把视觉生成和IDM拆成可独立预训练模块：视觉规划可以吸收无动作视频，IDM可以吸收缺语言或失败的机器人轨迹，而不必先要求两类数据同时具备完整标签。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "alignment",
+        "title": "KASO：显式处理“未来合理但动作标签不匹配”",
+        "body": "同一场景和指令可能有多种正确完成方式。若生成器预测的是另一条合理未来，却仍用记录示范的动作监督IDM，就形成作者所称validity gap。KASO从多个候选未来中，用当前IDM判断哪些与记录动作模式兼容，只对兼容候选施加生成未来上的动作监督。它处理的是多模态行为配对错误，而不是通常意义上的生成质量不足。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "训练数据：规模和技能覆盖同时被当作变量",
+        "body": "论文把操控数据从300小时逐步扩展到30,000小时，并跟踪两种机器人形态的零样本OOD表现。G2-90D在整体混合中占比不到2%，却随更大共享语料获得17.7个百分点提升，因此作者将其解释为跨形态迁移证据。更重要的是，技能级数据覆盖与成功率之间Pearson r=0.80、Spearman ρ=0.85，说明“总小时数”并不能完全替代技能分布覆盖。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "协议：主要问题是预训练能力，而不是目标域适配能力",
+        "body": "真实机器人主评测覆盖100个任务、20类操控技能，并持出场景、背景、光照和物体实例；模型直接使用预训练checkpoint，不做任务或形态特定SFT。附录中的RoboTwin、GenieSim-Instruction与LIBERO-Plus则属于不同的标准化模拟协议，其中LIBERO-Plus先在标准LIBERO上适配。两类结果回答的问题不同，不能用一个平均值合并。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "结果：规模收益显著，但鲁棒性不是各轴均匀提高",
+        "body": "300→30,000小时把G1-OP从17.1%提高到44.1%，G2-90D从13.4%提高到31.1%；语言压力测试中，对对象、颜色、形状和位置的grounding至少达到90%。LIBERO-Plus上总体80.4%，但相机94.1%、噪声95.5%，机器人状态50.7%、背景60.5%，显示“总体鲁棒”并不意味着对不同扰动来源同样稳健。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：规模定律仍依赖作者定义的数据分布和系统设计",
+        "body": "这项工作支持“机器人数据上的WAM预训练可以随规模增长”这一结论，但尚不能推出任意WAM都遵循相同斜率，也不能把G2提升全部归于跨形态迁移，因为共享技能、训练配方和表示均同时变化。KASO依赖IDM对动作兼容性的判断，单步未来也可能牺牲复杂多模态预测。阅读时应把数据规模、技能覆盖、表示设计和联合训练分别记账。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.05588v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.05588v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "GE-Act 2.0 关键规模与鲁棒性结果",
+        "columns": [
+          "设置",
+          "较小配置",
+          "较大/最终配置"
+        ],
+        "rows": [
+          [
+            "G1-OP零样本OOD",
+            "300h: 17.1%",
+            "30,000h: 44.1%"
+          ],
+          [
+            "G2-90D零样本OOD",
+            "300h: 13.4%",
+            "30,000h: 31.1%"
+          ],
+          [
+            "LIBERO-Plus",
+            "StarVLA 74.1%; π0.5 84.4%",
+            "GE-Act 2.0 80.4%"
+          ]
+        ],
+        "locator": "§5；Appendix A.3 Table 5",
+        "caption": "作者报告；真实机器人规模实验与LIBERO-Plus属于不同协议，不跨表合成。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-24",
+      "note": "本批结构化其 LIBERO-Plus Table 5 原表；真实机器人100任务和其他模拟结果保留在笔记，不与目标域SFT结果混排。"
+    }
+  }
+}
