@@ -7,7 +7,7 @@ def test_final24_counts_and_zero_deferred():
     r=j('maintenance/state/benchmark-review.json')['papers']
     assert all(r[x]['status']=='extracted' for x in ALL)
     assert sum(x['status']=='extracted' for x in r.values())>=96
-        assert sum(x['status']=='not-applicable' for x in r.values())>=2
+    assert sum(x['status']=='not-applicable' for x in r.values())>=2
     assert len(j('catalog/benchmarks.json')['tracks'])>=286
     assert len(list((R/'catalog/results').glob('r-*.json')))>=1063
     assert j('maintenance/state/work-queue.json')['remainingNotes']==0
