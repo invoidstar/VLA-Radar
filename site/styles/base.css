@@ -24,3 +24,28 @@
 
 .follow-pick{border:0;background:transparent;font:inherit;font-size:11px;color:#8b79bb;cursor:pointer;white-space:nowrap}.follow-pick[aria-pressed=true]{color:#388477}
 @media(max-width:420px){.topbar .update-stamp{display:none}.breadcrumb{min-width:0}.breadcrumb b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+.reproducibility-card{margin:22px 0;padding:18px 19px;border:1px solid #e4e5f0;border-radius:11px;background:#fbfbfe}
+.repro-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:13px}
+.repro-heading h3{font-size:12px;color:#656b82;font-weight:600;display:flex;align-items:center;gap:7px;margin:0}
+.repro-heading h3 svg{width:14px;height:14px;color:#7771a7}
+.repro-heading small{font-size:9px;color:#9ba0b2;text-align:right}
+.repro-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.repro-item{min-width:0;border:1px solid #e8e9f2;border-radius:8px;background:#fff;padding:10px}
+.repro-item.available{border-color:#dcebe4;background:#fbfefc}
+.repro-item.partial{border-color:#ebe5d4;background:#fffdfa}
+.repro-item.unavailable{border-color:#eddede;background:#fffafa}
+.repro-item-top{display:flex;justify-content:space-between;gap:7px;align-items:center}
+.repro-item-top span{font-size:9px;font-weight:600;color:#70788f}
+.repro-item-top strong{font-size:8px;font-weight:600;padding:1px 5px;border-radius:4px;background:#f1f2f6;color:#9ba0ae;white-space:nowrap}
+.repro-item.available .repro-item-top strong{background:#eaf5ee;color:#6d947d}
+.repro-item.partial .repro-item-top strong{background:#f6f0df;color:#a28c58}
+.repro-item.unavailable .repro-item-top strong{background:#f7eaea;color:#aa7777}
+.repro-item p{font-size:9px!important;line-height:1.7!important;color:#9399ab!important;margin:7px 0 0!important;white-space:normal!important}
+.repro-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
+.repro-links a{font-size:8px;color:#7f78aa;display:inline-flex;align-items:center;gap:3px}
+.repro-links a svg{width:9px;height:9px}
+.repro-evidence{color:#999fb0!important}
+.repro-note{font-size:9px!important;color:#a2a6b5!important;line-height:1.7!important;margin:11px 0 0!important;white-space:normal!important}
+@media(max-width:900px){.repro-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.repro-heading{display:block}.repro-heading small{display:block;text-align:left;margin-top:5px}.repro-grid{grid-template-columns:1fr}}
