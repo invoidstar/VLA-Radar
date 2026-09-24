@@ -1,0 +1,20 @@
+{
+  "id": "r-gam-v1-robotwin-ours",
+  "paperId": "p104",
+  "method": "GAM",
+  "trackId": "gam-v1-robotwin50-single-task",
+  "values": {
+    "Clean": 62.96,
+    "Random": 47.62,
+    "Average": 55.29
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.23863v1",
+  "sourceVersion": "arXiv 2609.23863v1",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "One policy per task; 50 clean-scene demonstrations per task. Grounding backbone adapted to RoboTwin rendered domain then frozen; only action head trained.",
+  "evaluationNotes": "100 rollouts per task in Easy/Clean and Hard/Random; no randomized scenes seen during action-policy training.",
+  "supersedes": ""
+}
