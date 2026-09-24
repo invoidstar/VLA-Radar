@@ -121,3 +121,24 @@ def test_one_provider_cannot_fake_four_lanes():
     try:validate_audit(bad,policy)
     except ValueError as exc:assert "provider diversity" in str(exc)
     else:raise AssertionError("one provider satisfied all discovery lanes")
+
+
+def test_narrow_success_window_cannot_advance_checkpoint():
+    tmp,root=fixture()
+    try:
+        bad=audit()
+        bad["id"]="discovery-2026-09-24-2026-09-25"
+        bad["window"]["from"]="2026-09-24"
+        for s in bad["sources"]:s["coverage"]["from"]="2026-09-24"
+        path=root/"maintenance/audits/discovery/discovery-2026-09-24-2026-09-25.json"
+        dump(path,bad)
+        try:apply_audit(root,path)
+        except ValueError as exc:assert "overlap from 2026-09-10" in str(exc)
+        else:raise AssertionError("narrow discovery window advanced checkpoint")
+    finally:tmp.cleanup()
+
+def test_audit_filename_identity_dates_match_window():
+    policy=load_policy(ROOT);bad=audit();bad["id"]="discovery-2026-09-09-2026-09-25"
+    try:validate_audit(bad,policy)
+    except ValueError as exc:assert "id/window mismatch" in str(exc)
+    else:raise AssertionError("audit id/window mismatch was accepted")
