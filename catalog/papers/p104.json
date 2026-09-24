@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p104",
+    "name": "Grounded Action Model",
+    "title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+    "team": "Gehao Zhang、Weikai Huang、Shailesh Shailesh、Yiyan Peng、Jiafei Duan、Ranjay Krishna",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-20",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月20日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "spatial",
+      "pretraining"
+    ],
+    "tags": [
+      "3D grounding",
+      "robot foundation model",
+      "RoboTwin",
+      "LIBERO-PRO"
+    ],
+    "priority": "deep",
+    "contribution": "以可提示3D grounding作为机器人foundation backbone：语言、点或框先统一成目标对象的视觉+度量几何表示，再与机器人状态历史进入多流Transformer预测动作chunk。",
+    "findings": "RoboTwin 2.0 Clean/Random为62.96%/47.62%，平均55.29%；LIBERO-PRO 16扰动平均61%（π0.5 53%）；YAM视觉shift下17/20 vs π0.5的4/20。",
+    "limitations": "GAM冻结grounding backbone并只训练动作头，但3D检测/追踪质量仍是前提；RoboTwin训练只用clean demos，和混合random训练的其他论文结果不完全同预算。",
+    "insight": "把‘哪个对象、在哪里’做成显式可提示的metric grounding，可减少policy依赖场景捷径，并给高层planner提供稳定的低层控制接口。",
+    "readingFocus": "prompt→detections→object-centric observation、WildDet3D冻结、multi-stream action transformer、RoboTwin随机化与LIBERO-PRO位置/目标扰动。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.23863v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.23863"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://grounded-action-model.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.23863",
+    "arxiv": "2609.23863",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-20",
+    "firstArxivSource": "https://arxiv.org/abs/2609.23863v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-20",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-20",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.23863v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.23863v1（2026-09-20），GAM、RoboTwin 2.0、LIBERO-PRO与真机；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：VLA/WAM的预训练目标并不保证metric grounding",
+        "body": "语言预训练强调语义、视频生成强调视觉动态，但机器人动作往往首先需要知道目标对象是哪一个、其三维位置和尺度在哪里。传统policy把这些几何关系隐式留给机器人示范学习，容易在固定布局上形成视觉/轨迹捷径。GAM提出不同的foundation入口：先由通用3D grounding模型产生对象级、可度量表示，再让动作policy学习如何控制。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "prompts",
+        "title": "统一prompt接口：语言、点和框都落到同一种对象表示",
+        "body": "GAM接受language、point或box prompt，并先把它们转换为选中对象的detections。这样高层planner可以用语言描述目标，也可以直接给图像位置/框；低层action model看到的是统一的目标对象表示，而不是为每种prompt训练不同policy。这个接口也允许部署时由跟踪器维持目标，减少每帧重新语言定位的成本。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "对象表示同时包含视觉特征和度量3D几何",
+        "body": "检测结果不仅有target-focused visual features，还包含由点云/3D检测得到的中心、尺寸和朝向等度量信息。作者使用冻结的WildDet3D作为grounding backbone，动作训练主要更新action head。这使‘看懂任务对象’与‘学会机器人动作’在参数上相对解耦，并让测试时背景、干扰物或外观变化更少直接进入动作表示。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "action",
+        "title": "多流Transformer把对象、状态历史和动作生成结合",
+        "body": "对象视觉/几何token与机器人state history经过multi-stream transformer融合，动作端用flow matching预测绝对关节位置action chunk。GAM不需要为了控制而生成未来视频，核心world knowledge被表达为当前对象的三维grounding；同时它保留状态历史，因此并非纯单帧policy。对于长程任务，GAM还可作为低层controller接受高层planner动态重选目标。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "robotwin",
+        "title": "RoboTwin：clean示范训练后测试scene randomization",
+        "body": "RoboTwin 2.0实验覆盖50任务，GAM动作policy只用clean-scene demonstrations训练，再在Clean和scene-randomized条件测试。GAM分别为62.96%和47.62%，平均55.29%；Spatial Forcing平均52.00，Abot-M0在random为30.4%左右。由于本站已有不同训练预算的RoboTwin报告，新增track必须保留‘clean-only训练’这一recipe，不能和27.5K mixed training当成公平同预算比较。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "liberopro",
+        "title": "LIBERO-PRO：位置和新目标最能检验是否真正grounding",
+        "body": "LIBERO-PRO在四套件上分别施加Obj、Pos、Sem、Task四类扰动，共16个设置。多数基线在只改变外观或语言措辞时仍较高，但位置变化和新目标会明显崩溃；GAM平均0.61，高于π0.5的0.53，尤其在Pos/Task轴收益更大。这与作者的核心假设一致：显式对象定位能降低固定布局轨迹记忆。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "real",
+        "title": "真机：视觉shift与高层planner组合提供不同类型证据",
+        "body": "双臂YAM上，ID条件GAM和π0.5都是19/20；视觉shift后GAM保持17/20，而π0.5降为4/20。Franka长程实验则把GAM作为Molmo2高层planner的低层控制器，step completion为ID 64.7%、OOD 49.8%。前者检验视觉鲁棒性，后者检验可提示controller组合性，二者不能合成一个‘真机平均’。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：显式3D grounding把失败模式前移到了检测/跟踪",
+        "body": "GAM的优势依赖grounding backbone能在目标域可靠定位对象；若点云质量、遮挡、检测类别或跟踪失败，动作模型不会自动补回丢失的对象信息。冻结backbone有助于归因，但也限制了对机器人域特定几何的适配。当前结果支持‘显式metric grounding减少固定布局捷径’，尚不能证明它替代世界动态、接触感知或长时记忆。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.23863v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "GAM关键评测",
+        "columns": [
+          "评测",
+          "GAM",
+          "代表对照"
+        ],
+        "rows": [
+          [
+            "RoboTwin Clean / Random / Avg",
+            "62.96 / 47.62 / 55.29%",
+            "Spatial Forcing Avg 52.00%"
+          ],
+          [
+            "LIBERO-PRO 16 settings",
+            "61%",
+            "π0.5 53%"
+          ],
+          [
+            "YAM visual shift",
+            "17/20",
+            "π0.5 4/20"
+          ],
+          [
+            "Franka planner OOD step completion",
+            "49.8%",
+            "π0.5 24.0%"
+          ]
+        ],
+        "locator": "Tables I–II；§IV-C",
+        "caption": "作者报告；四行属于不同协议，不做跨行平均。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-24",
+      "note": "本批结构化RoboTwin 50-task Clean/Random主结果和LIBERO-PRO 16-setting平均；真机结果保留在笔记。"
+    }
+  }
+}
