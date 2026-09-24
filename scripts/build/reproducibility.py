@@ -6,8 +6,7 @@ from catalog_core import load,public_url,require,day
 DIMENSIONS=("project","code","weights","dataset","training","inference","evaluation","license")
 STATUSES=("available","partial","unavailable","unknown")
 
-def load_reproducibility(root,paper_ids,resources):
-    data=load(Path(root)/"catalog/reproducibility.json")
+def validate_reproducibility_data(data,paper_ids):
     require(isinstance(data,dict) and set(data)=={"schemaVersion","dimensions","statuses","papers"},"reproducibility: unexpected/missing fields")
     require(data["schemaVersion"]==1,"reproducibility schema version")
     require(tuple(data["dimensions"])==DIMENSIONS,"reproducibility dimensions")
@@ -33,6 +32,10 @@ def load_reproducibility(root,paper_ids,resources):
             clean[dim]=item
         audits[pid]={"verifiedAt":audit["verifiedAt"],"items":clean}
     return audits
+
+def load_reproducibility(root,paper_ids,resources=None):
+    data=load(Path(root)/"catalog/reproducibility.json")
+    return validate_reproducibility_data(data,paper_ids)
 
 def build_reproducibility_views(paper_ids,resources,audits):
     out={}
