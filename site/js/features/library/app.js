@@ -208,6 +208,27 @@
     return `<section class="reproducibility-card"><div class="repro-heading"><h3>${icon('check')}Reproducibility Card</h3><small>${view.verifiedAt?`附加资源审计 · ${esc(view.verifiedAt)}`:'Project / Code 来自官方资源 registry；其余维度待逐项核验'}</small></div><div class="repro-grid">${cards}</div><p class="repro-note">可用 = 有公开且可执行资源；部分开放 = 只开放部分复现链路；未开放 = 官方明确未发布；未核验 ≠ 不存在。</p></section>`;
   }
 
+  function baseReproducibility(p){
+    const resources=p.resources||{},items={};
+    for(const dim of ['project','code','weights','dataset','training','inference','evaluation','license']){
+      if(dim==='project'&&resources.project){const url=resources.project;items[dim]={status:'available',note:'Official project page',url,source:url};}
+      else if(dim==='code'&&resources.code){const url=resources.code;items[dim]={status:'available',note:'Official public code repository/link',url,source:url};}
+      else items[dim]={status:'unknown',note:'Not yet independently audited in VLA-Radar.',url:null,source:null};
+    }
+    return {verifiedAt:null,items};
+  }
+  async function loadReproducibility(p){
+    const fallback=baseReproducibility(p);
+    if(!p.reproducibilityUrl)return fallback;
+    try{
+      const response=await fetch(p.reproducibilityUrl,{cache:'no-cache',credentials:'omit'});
+      if(!response.ok)throw new Error('HTTP '+response.status);
+      const payload=await response.json();
+      if(payload.schemaVersion!==1||payload.paperId!==p.id||!payload.items)throw new Error('invalid reproducibility shard');
+      return {verifiedAt:payload.verifiedAt||null,items:payload.items};
+    }catch(error){console.warn('Reproducibility card:',error.message);return fallback;}
+  }
+
   function saveButton(p){const saved=local(p.id).saved;return `<button class="save-btn ${saved?'saved':''}" data-save="${p.id}" aria-label="${saved?'取消收藏':'收藏'} ${esc(p.name)}" aria-pressed="${saved}">${icon('bookmark')}</button>`;}
   function card(p){const t=topicMap[p.topics[0]],l=local(p.id);return `<article class="paper-card">
     <div class="paper-card-main"><div class="paper-card-top"><button class="paper-name" data-paper="${p.id}">${highlight(p.name)}</button>${badge(p)}</div><p class="paper-title">${highlight(p.title)}</p><div class="paper-meta"><span class="venue-label">${esc(p.venue)}</span><span class="meta-sep">/</span><time>${esc(p.firstPublished||'首发待核验')}</time>${weekBadge(p)}<span class="meta-sep">/</span><span class="team-short" title="${esc(p.team)}">${highlight(p.team.split('\n')[0])}</span></div><div class="finding-preview"><span class="finding-label">KEY RESULT</span><span class="finding-text">${highlight(p.findings)}</span></div></div>
@@ -252,7 +273,7 @@
     const brief=data.papers.find(p=>p.id===id);if(!brief)return;const request=++detailSequence;
     $('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p role="status">正在载入详细笔记…</p>';
     let p=brief;
-    try{const r=await window.RadarResearch.detail(brief);if(request!==detailSequence)return;if(r)p={...r.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{},relations:brief.relations||{previous:[],followups:[],series:[]},reproducibility:brief.reproducibility||{verifiedAt:null,items:{}}};}
+    try{const [r,reproducibility]=await Promise.all([window.RadarResearch.detail(brief),loadReproducibility(brief)]);if(request!==detailSequence)return;if(r)p={...r.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{},relations:brief.relations||{previous:[],followups:[],series:[]},reproducibility};}
     catch(error){if(request!==detailSequence)return;$('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p class="research-warning">详细笔记暂不可用，网站可能已更新。请刷新页面后重试。</p>';return;}
     const l=local(id);
     $('#paper-detail').innerHTML=`<div class="dialog-labels">${badge(p)}<span class="venue-label">${esc(p.venue)}</span>${p.topics.map(t=>`<button class="tag" data-topic="${esc(t)}">${esc(topicMap[t].name)}</button>`).join('')}</div><h2 id="dialog-title">${esc(p.name)}</h2><p class="dialog-full-title">${esc(p.title)}</p><div class="dialog-team">${esc(p.team)}</div>
