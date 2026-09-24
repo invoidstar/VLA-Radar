@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.18197v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：最关键消融是 motion pretraining 与 Motion→Action 信息流",
+        "body": "WholeBodyWAM 的最终 72.2% 同时包含数据规模、Motion Expert、Video Expert、Action Expert 和 MoT 信息流；真正支持机制结论的是受控消融：去掉 Stage-I motion pretraining 降到 59.1%，进一步阻断 Motion→Action attention 降到 46.3%。这说明“有一个运动预测辅助任务”和“动作端能读取预训练运动表征”不是同一件事。跨 GR00T、π0.5 等外部基线的差异则还混有预训练与模型规模，不宜承担单组件归因。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：30K 原始运动与 4.1K UniMotion-4K 是不同统计口径",
+        "body": "作者从超过 30K 小时的候选运动来源中筛选、规范化，得到超过 4.1K 小时用于预训练的 UniMotion-4K。两者不能同时当作实际训练时长，也不能把所有人类视频理解成与目标机器人同质量的动作示范。root-free 63D 表示提供跨来源共享接口，但接触、关节极限和平台动力学仍要靠 TianGong 3.0 的后训练补齐。因而这里展示的是可迁移 motion prior，而不是“直接用人类动作替代机器人数据”。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：把 motion prior 与 whole-body 真机协议分开记账",
+        "body": "WholeBodyWAM 对 Radar 的价值在于给 WAM 增加一条“可规模化运动先验”轴：未来信息不必只来自视频，可以来自统一人体/机器人运动空间。六项 TianGong 真机结果属于作者自定义 whole-body/loco-manipulation 协议，目前缺少可严格对齐的跨论文 Setting，因此保留深读而不强行入榜。后续若出现同平台同六任务复现，再把训练 motion 数据量、目标机器人 demonstrations 和动作接口作为结果层 recipe 一起比较。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.18197v1"
+          }
+        ]
       }
     ],
     "coverage": {
