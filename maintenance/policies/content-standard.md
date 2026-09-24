@@ -4,7 +4,7 @@
 
 内容按3–8篇的小批次处理。先完成可核验的条目、构建并提交，不等待全部旧笔记完成。维护者已明确授权本轮深入笔记/榜单回补由助手进行来源与代码自检、创建PR、通过CI后合并发布；这是同一助手的自检，不是第三方独立评审，不得伪造GitHub批准或绕过保护。2026-09-18起，该来源自检、CI后合并授权也适用于每周维护；仍不允许其他仓库写入或绕过保护。详细条件见publishing-policy.md。
 
-`release/batch-*`支持明文批次JSON：`maintenance/audits/batches/*.json`。除既有 `notes / tracks / results` 外，批次可选携带 `resources` 对象，为已有论文增补或移除 `project / code`；批处理会合并到 `catalog/resources.json` 并走同一公开URL与paper ID校验。未提供 `resources` 的历史批次保持兼容。工作流只在发布分支应用未处理批次，校验后以普通push提交生成文件；主分支不由批次工作流写入。合并后须确认Pages的deploy步骤成功。`maintenance/state/applied-batches.json`记录真实完成批次及哈希，不能重写已应用批次。修正旧内容应另建新批次。
+`release/batch-*`支持明文批次JSON：`maintenance/audits/batches/*.json`。除既有 `notes / tracks / results` 外，批次可选携带 `resources` 与 `reproducibility` 对象：前者为已有论文增补或移除 `project / code`，后者原子更新逐篇复现审计；批处理分别合并到 `catalog/resources.json` 与 `catalog/reproducibility.json`，并走同一 paper ID、状态和公开URL校验。未提供这些字段的历史批次保持兼容。工作流只在发布分支应用未处理批次，校验后以普通push提交生成文件；主分支不由批次工作流写入。合并后须确认Pages的deploy步骤成功。`maintenance/state/applied-batches.json`记录真实完成批次及哈希，不能重写已应用批次。修正旧内容应另建新批次。
 
 ## 笔记质量
 
