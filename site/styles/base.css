@@ -49,3 +49,5 @@
 .repro-note{font-size:9px!important;color:#a2a6b5!important;line-height:1.7!important;margin:11px 0 0!important;white-space:normal!important}
 @media(max-width:900px){.repro-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.repro-heading{display:block}.repro-heading small{display:block;text-align:left;margin-top:5px}.repro-grid{grid-template-columns:1fr}}
+
+.repro-audit-note{font-size:9px!important;line-height:1.75!important;color:#868da1!important;margin:0 0 12px!important;white-space:normal!important}
