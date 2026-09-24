@@ -6,7 +6,7 @@ def test_batch13_counts():
     r=j('maintenance/state/benchmark-review.json')['papers']
     assert all(r[x]['status']=='extracted' for x in ['p017','p035','p036','p023','p039'])
     assert sum(x['status']=='extracted' for x in r.values())>=96
-        assert len(j('catalog/benchmarks.json')['tracks'])>=286
+    assert len(j('catalog/benchmarks.json')['tracks'])>=286
     assert len(list((R/'catalog/results').glob('r-*.json')))>=1063
 def test_tau0_ttc():
     assert j('catalog/results/r-tau0-v1-ttc-ttc.json')['values']=={'Make Milk Tea':70,'Book Organization':90,'Clean Room':70}
