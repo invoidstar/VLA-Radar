@@ -13,6 +13,46 @@
       .map(x=>x.r);
   }
   function searchNorm(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/[·｜|/_,—–-]+/g,' ').replace(/\s+/g,' ').trim();}
+  function protocolFacts(setting){
+    const scope=String(setting?.evalId||'reported').replace(/^auto:/,'');
+    const match=String(setting?.id||'').match(/([a-f0-9]{12})$/i);
+    const fingerprint=match?`ep1-${match[1].toLowerCase()}`:String(setting?.id||scope);
+    return {
+      fingerprint,scope,
+      fields:[
+        ['Benchmark',setting?.dataset||'—'],
+        ['Task scope',scope||'reported'],
+        ['Tasks',setting?.tasks||'—'],
+        ['Split / conditions',setting?.split||'—'],
+        ['Metric',setting?.metric||'—'],
+        ['Unit',setting?.unit||'—'],
+        ['Direction',setting?.direction||'—'],
+        ['Reported columns',(setting?.columns||[]).join(' / ')||'—']
+      ]
+    };
+  }
+  function canonicalColumns(track){return (track?.columns||[]).map(x=>searchNorm(x).replace(/\s+/g,''));}
+  function knownTaskCount(track){
+    const m=String(track?.tasks||track?.name||'').match(/(^|\D)(\d{1,3})\s*(?:tasks?|任务|skills?|skill types?|atomic tasks?)(\D|$)/i);
+    if(m)return Number(m[2]);
+    const raw=String(track?.tasks||'').trim();return /^\d{1,3}$/.test(raw)?Number(raw):null;
+  }
+  function compatibilityLevel(primary,track){
+    if(!primary||!track)return 'compatible';
+    if(primary.dataset!==track.dataset||searchNorm(primary.metric)!==searchNorm(track.metric)||primary.unit!==track.unit||primary.direction!==track.direction)return 'incompatible';
+    const a=canonicalColumns(primary),b=canonicalColumns(track);
+    if(a.length!==b.length||a.some((x,i)=>x!==b[i]))return 'partial';
+    const ac=knownTaskCount(primary),bc=knownTaskCount(track);
+    if(ac!==null&&bc!==null&&ac!==bc)return 'partial';
+    if(searchNorm(primary.tasks)===searchNorm(track.tasks)&&searchNorm(primary.split)===searchNorm(track.split))return 'exact';
+    return 'compatible';
+  }
+  function compatibilitySummary(setting,tracks){
+    const primary=(tracks||[]).find(t=>t.id===setting?.primaryTrackId)||(tracks||[])[0];
+    const counts={exact:0,compatible:0,partial:0,incompatible:0};
+    for(const track of tracks||[])counts[compatibilityLevel(primary,track)]++;
+    return counts;
+  }
   function searchSettings(settings,query){
     const tokens=searchNorm(query).split(' ').filter(Boolean);
     if(!tokens.length)return [...settings];
@@ -105,6 +145,7 @@
       }
       if(drawId!==drawVersion||!isCurrent())return;
       const fullSetting=loaded.setting||setting,trackmap=new Map(loaded.tracks.map(t=>[t.id,t]));
+      const protocolView=protocolFacts(fullSetting),compatibility=compatibilitySummary(fullSetting,loaded.tracks);
       const accepted=loaded.results.filter(r=>r.evidence==='checked');
       const trainMap=fullSetting.trainingByResult||{},trainMeta=new Map((fullSetting.trainingOptions||setting.trainingOptions||[]).map(x=>[x.id,x]));
       const trainLabel=r=>trainMeta.get(trainMap[r.id])?.label||'训练数据未完整披露';
@@ -120,7 +161,7 @@
       const current=rows.slice((page-1)*size,page*size),comparable=trainFilter!=='all';
       host.innerHTML=searchBarHtml(searchTerm,matchedSettings.length,visibleDatasets.length)+taxonomyBarHtml(taxonomy,focusFilter,environmentFilter,tagFilters,visibleDatasets.length,matchedSettings.length)+`<div class="leaderboard-top"><div class="dataset-tabs" role="group" aria-label="数据集">${visibleDatasets.map(d=>`<button data-setting-dataset="${esc(d)}" aria-pressed="${d===dataset}">${esc(d)}</button>`).join('')}</div><div class="board-update">目录更新 ${esc(data.updatedAt)} · ${settings.length} evaluation settings</div></div>
         <div class="setting-picker"><label><span>SETTING · EVALUATION PROTOCOL</span><select id="setting-select">${settings.map(s=>`<option value="${esc(s.id)}" ${s.id===settingId?'selected':''}>${esc(s.name)} · ${s.resultCount} reports</option>`).join('')}</select></label><a class="btn setting-advanced-link" href="?view=leaderboards&amp;dataset=${encodeURIComponent(dataset)}&amp;track=${encodeURIComponent(setting.primaryTrackId)}">高级：原始 track / 图表</a></div>
-        <section class="setting-summary" data-setting-id="${esc(setting.id)}"><div class="setting-summary-main"><span class="setting-kicker">SETTING · EVALUATION PROTOCOL ONLY</span><h2>${esc(setting.name)}</h2><p class="setting-definition">Training Data、训练 recipe、base model 与来源论文不再拆 Setting；它们直接显示在下方结果行。</p></div><div class="setting-facts"><span>Tasks <b>${esc(setting.tasks)}</b></span><span>Eval <b>${esc(setting.split)}</b></span><span>Metric <b>${esc(setting.metric)}</b></span><span>Reports <b>${setting.resultCount}</b></span><span>Papers <b>${setting.paperCount}</b></span><span>Training Data <b>${(setting.trainingOptions||[]).length} variants</b></span></div><details class="setting-protocol"><summary>展开评测协议说明</summary><p>${esc(setting.protocol)}</p><small>同一 Setting 只表示评测问题一致；不同论文的回合数、种子、训练预算或实现细节仍以每行 Evidence 为准。</small></details></section>
+        <section class="setting-summary" data-setting-id="${esc(setting.id)}"><div class="setting-summary-main"><span class="setting-kicker">SETTING · EVALUATION PROTOCOL ONLY</span><h2>${esc(setting.name)}</h2><p class="setting-definition">Training Data、训练 recipe、base model 与来源论文不再拆 Setting；它们直接显示在下方结果行。</p></div><div class="setting-facts"><span>Tasks <b>${esc(setting.tasks)}</b></span><span>Eval <b>${esc(setting.split)}</b></span><span>Metric <b>${esc(setting.metric)}</b></span><span>Reports <b>${setting.resultCount}</b></span><span>Papers <b>${setting.paperCount}</b></span><span>Training Data <b>${(setting.trainingOptions||[]).length} variants</b></span></div><details class="setting-protocol"><summary>展开结构化评测协议</summary><div class="recipe-evidence-grid">${protocolView.fields.map(([k,v])=>`<span>${esc(k)} <b>${esc(v)}</b></span>`).join('')}</div><p>${esc(setting.protocol)}</p><small>Protocol fingerprint <b>${esc(protocolView.fingerprint)}</b> · Track compatibility: exact ${compatibility.exact} / compatible ${compatibility.compatible} / partial ${compatibility.partial}. Training Data、recipe、base model、来源论文以及仅报告层的回合数/种子差异不会单独制造新 Setting；真实任务范围、评测条件或指标变化仍会拆分。</small></details></section>
         <div class="setting-filter-bar"><label>Training Data<select id="setting-train">${options(trains,trainFilter,'全部训练数据')}</select></label><label>Method<select id="setting-method">${options(methods.map(x=>[x,x]),methodFilter,'全部方法')}</select></label><label>Source<select id="setting-source">${options(sources,sourceFilter,'全部来源')}</select></label></div>
         <div class="setting-toolbar"><div><strong>Method / Score / Training Data / Source</strong><span>${comparable?'已限定同一 Training Data；仍需注意 recipe 与实现差异。':'默认展示所有公开报告；排序不等于公平排名。'}</span></div><div class="board-controls setting-controls"><label>排序指标<select id="setting-metric">${setting.columns.map(c=>`<option ${c===metric?'selected':''}>${esc(c)}</option>`).join('')}</select></label><label>排列<select id="setting-order"><option value="auto" ${order==='auto'?'selected':''}>按指标优劣</option><option value="desc" ${order==='desc'?'selected':''}>数值降序</option><option value="asc" ${order==='asc'?'selected':''}>数值升序</option><option value="source" ${order==='source'?'selected':''}>原记录顺序</option></select></label><button class="btn" id="export-setting-csv">导出当前结果 CSV</button></div></div>
         <p class="board-sort-status" role="status">${comparable?'同一 Training Data 子集 · ':''}${order==='source'?'按原记录顺序展示':esc(metric)+' · '+(dir==='asc'?'升序':'降序')} · ${rows.length}/${accepted.length} reports · 不生成跨来源名次。</p>
@@ -141,6 +182,6 @@
     }
     await draw();
   }
-  g.RadarBenchmarkSettings={render,sortRows,direction,searchNorm,searchSettings,filterSettingsByTaxonomy};
+  g.RadarBenchmarkSettings={render,sortRows,direction,searchNorm,searchSettings,filterSettingsByTaxonomy,protocolFacts,compatibilityLevel,compatibilitySummary};
   if(typeof module!=='undefined')module.exports=g.RadarBenchmarkSettings;
 })(typeof window!=='undefined'?window:globalThis);
