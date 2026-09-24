@@ -1,3 +1,11 @@
+## 2026-09-24 · 9月1–24日完整文献回补
+
+- 完成 2026-09-01—2026-09-24 的 VLA / WAM / 机器人基础模型公开文献补扫；使用两个独立公开索引交叉发现并对 selected 条目回到 arXiv / 官方项目材料做一手核验。
+- discovery audit 共记录 276 条候选：12 条完成正文级深读并进入主库、244 条保留 deferred、20 条按范围边界 excluded；其中 79 条被两个索引同时发现。搜索窗口已闭环，`lastSuccessfulSearchAt` 推进至 2026-09-24；deferred 仍明确保留，不冒充已深读或应入库。
+- 新增 p099–p110：GE-Act 2.0、MaP-WAM、WAM Survey、WholeBodyWAM、High-DoF VLA Post-Training、Grounded Action Model、LIBERO-VPro、THAW-VLA、IndustrialVLA-Bench、RoboFollow、RoboTwin-Phys、LiMA；最新首发日期推进至 2026-09-23。
+- 新增 7 个 canonical tracks 与 28 条 source-located results；新结果只在协议可完整定位时结构化，WholeBodyWAM / High-DoF / LIBERO-VPro / IndustrialVLA-Bench / LiMA 等仍保留 protocol-unresolved / deferred 边界，不为凑榜单猜协议。
+- 同步新论文官方 Project / Code Resources、Benchmark taxonomy、benchmark-review、first-public 锁与测试；README/主视觉按构建后的真实 inventory 更新为 110 Papers / 64 Benchmarks / 199 Settings / 1091 Results。
+
 ## 2026-09-21 · 官方资源周更闭环
 
 - 内容批次新增可选 `resources` 更新，可为已有论文增补或删除 `project / code`，并与现有资源 registry 合并后统一校验。
