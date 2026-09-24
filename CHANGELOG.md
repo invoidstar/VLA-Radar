@@ -1,3 +1,7 @@
+## 2026-09-25 — 2026-09-25-lawam-xiaomi-qwen
+
+新增 LaWAM、Xiaomi-Robotics-0、Qwen-VLA、Qwen-RobotManip、Qwen-RobotNav、Qwen-RobotWorld 六篇深读记录；为可兼容的操作基准补充协议化 Result Report，并为 Xiaomi-Robotics-1 补官方项目页。导航与 world-model 评测保持协议隔离；同时修正维护队列在全部深读完成后仍回填已完成条目的问题，并补充对应回归测试。
+
 ## 2026-09-24 · 9月1–24日完整文献回补
 
 - 完成 2026-09-01—2026-09-24 的 VLA / WAM / 机器人基础模型公开文献补扫；使用两个独立公开索引交叉发现并对 selected 条目回到 arXiv / 官方项目材料做一手核验。

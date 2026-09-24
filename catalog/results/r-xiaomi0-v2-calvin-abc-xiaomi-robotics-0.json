@@ -1,0 +1,18 @@
+{
+  "id": "r-xiaomi0-v2-calvin-abc-xiaomi-robotics-0",
+  "paperId": "p112",
+  "method": "Xiaomi-Robotics-0",
+  "trackId": "xiaomi0-v2-calvin-abc",
+  "values": {
+    "Average length": 4.75
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+  "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+  "locator": "README Benchmark; CALVIN ABC→D",
+  "attribution": "author-reported",
+  "trainingData": "XR-0 CALVIN ABC→D fine-tuned checkpoint。",
+  "evaluationNotes": "unseen D 平均五任务链完成长度。",
+  "supersedes": ""
+}

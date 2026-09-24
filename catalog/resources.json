@@ -11,7 +11,8 @@
       "project": "https://www.astribot.com/research/Lumo2"
     },
     "p004": {
-      "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1"
+      "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1",
+      "project": "https://robotics.xiaomi.com/xiaomi-robotics-1.html"
     },
     "p005": {
       "project": "https://www.dyna.co/dyna-2"
@@ -318,6 +319,29 @@
     },
     "p110": {
       "project": "https://ccdcs.github.io/LiMA_repo/"
+    },
+    "p111": {
+      "project": "https://rlinf.github.io/LaWAM/",
+      "code": "https://github.com/RLinf/LaWAM"
+    },
+    "p112": {
+      "project": "https://robotics.xiaomi.com/xiaomi-robotics-0.html",
+      "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+    },
+    "p113": {
+      "project": "https://qwen.ai/blog?id=qwenvla",
+      "code": "https://github.com/QwenLM/Qwen-VLA"
+    },
+    "p114": {
+      "project": "https://qwen.ai/blog?id=qwen-robotmanip",
+      "code": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    "p115": {
+      "project": "https://qwen.ai/blog?id=qwen-robotnav",
+      "code": "https://github.com/QwenLM/Qwen-RobotNav"
+    },
+    "p116": {
+      "project": "https://qwen.ai/blog?id=qwen-robotworld"
     }
   }
 }

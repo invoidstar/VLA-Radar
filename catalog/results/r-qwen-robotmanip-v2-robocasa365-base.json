@@ -1,0 +1,18 @@
+{
+  "id": "r-qwen-robotmanip-v2-robocasa365-base",
+  "paperId": "p114",
+  "method": "Qwen-RobotManip",
+  "trackId": "qwen-robotmanip-v2-robocasa365",
+  "values": {
+    "Total": 35.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://github.com/QwenLM/Qwen-RobotManip",
+  "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+  "locator": "README OOD table: RoboCasa365 Total SR",
+  "attribution": "author-reported",
+  "trainingData": "~38,100h aligned pretraining。",
+  "evaluationNotes": "技术报告 OOD Total；不假设与 Xiaomi 50-task 分组协议相同。",
+  "supersedes": ""
+}

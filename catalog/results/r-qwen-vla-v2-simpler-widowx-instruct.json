@@ -1,0 +1,18 @@
+{
+  "id": "r-qwen-vla-v2-simpler-widowx-instruct",
+  "paperId": "p113",
+  "method": "Qwen-VLA-Instruct",
+  "trackId": "qwen-vla-v2-simpler-widowx",
+  "values": {
+    "Average": 73.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://github.com/QwenLM/Qwen-VLA",
+  "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+  "locator": "README Benchmarks: Simpler-WidowX",
+  "attribution": "author-reported",
+  "trainingData": "统一多任务/多本体预训练 + Instruct 后训练。",
+  "evaluationNotes": "作者报告；与 LIBERO 不做跨 benchmark 平均。",
+  "supersedes": ""
+}

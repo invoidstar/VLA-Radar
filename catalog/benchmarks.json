@@ -6209,6 +6209,295 @@
         "Physical Random"
       ],
       "source": "https://arxiv.org/html/2609.26292v1"
+    },
+    {
+      "id": "lawam-v1-libero",
+      "dataset": "LIBERO",
+      "name": "LaWAM v1 · 标准四套件",
+      "version": "arXiv 2606.15768v1",
+      "tasks": "40 tasks / four suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务50次 rollout；论文主表。",
+      "trainingRegime": "LaWAM latent-world/action pretraining + LIBERO SFT；不同外部方法预训练预算不统一。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2606.15768v1"
+    },
+    {
+      "id": "lawam-v1-robotwin",
+      "dataset": "RoboTwin",
+      "name": "LaWAM v1 · RoboTwin 2.0 Clean / Random",
+      "version": "arXiv 2606.15768v1",
+      "tasks": "50",
+      "split": "Clean / Random",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务、每设置100次评测；论文主表。",
+      "trainingRegime": "LaWAM 预训练后在 RoboTwin merged action data 上 SFT；不同论文训练资源保留在 recipe。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2606.15768v1",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "LaWAM v1 report",
+      "recipeType": "report"
+    },
+    {
+      "id": "xiaomi0-v2-libero",
+      "dataset": "LIBERO",
+      "name": "Xiaomi-Robotics-0 v2 · LIBERO 四套件",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 LIBERO 评测；四套件分别微调/评测，保留原表聚合。",
+      "trainingRegime": "XR-0 预训练 + LIBERO 后训练 checkpoint；不是零样本基础模型。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2602.12684v2"
+    },
+    {
+      "id": "xiaomi0-v2-calvin-abcd",
+      "dataset": "CALVIN",
+      "name": "Xiaomi-Robotics-0 v2 · CALVIN ABCD→D",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "1,000 five-instruction chains",
+      "split": "ABCD train -> D eval",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "标准 CALVIN 五指令链；平均完成长度 0–5。",
+      "trainingRegime": "XR-0 CALVIN ABCD→D 后训练 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/html/2602.12684v2"
+    },
+    {
+      "id": "xiaomi0-v2-calvin-abc",
+      "dataset": "CALVIN",
+      "name": "Xiaomi-Robotics-0 v2 · CALVIN ABC→D",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "1,000 five-instruction chains",
+      "split": "ABC train -> unseen D eval",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "标准 CALVIN unseen-environment 五指令链；平均完成长度 0–5。",
+      "trainingRegime": "XR-0 CALVIN ABC→D 后训练 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/html/2602.12684v2"
+    },
+    {
+      "id": "xiaomi0-v2-simpler-google",
+      "dataset": "SimplerEnv",
+      "name": "Xiaomi-Robotics-0 v2 · Google Robot",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "Google Robot tasks",
+      "split": "Visual Matching / Variant Aggregation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 SimplerEnv Google Robot 报告；VM 与 VA 分列。",
+      "trainingRegime": "Fine-tuned on Fractal dataset；官方公开 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "VM",
+        "VA"
+      ],
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+    },
+    {
+      "id": "xiaomi0-v2-simpler-widowx",
+      "dataset": "SimplerEnv",
+      "name": "Xiaomi-Robotics-0 v2 · WidowX",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "WidowX tasks",
+      "split": "Bridge / paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 SimplerEnv WidowX 报告平均成功率。",
+      "trainingRegime": "Fine-tuned on Bridge dataset；官方公开 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+    },
+    {
+      "id": "qwen-vla-v2-libero",
+      "dataset": "LIBERO",
+      "name": "Qwen-VLA v2 · unified generalist · LIBERO",
+      "version": "arXiv 2605.30280v2",
+      "tasks": "LIBERO four suites",
+      "split": "paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Qwen-VLA unified generalist 官方主表；只结构化 Instruct 行。",
+      "trainingRegime": "联合多任务/多本体预训练 + Instruct 后训练；非每 benchmark 独立专家权重。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-VLA"
+    },
+    {
+      "id": "qwen-vla-v2-simpler-widowx",
+      "dataset": "SimplerEnv",
+      "name": "Qwen-VLA v2 · unified generalist · Simpler-WidowX",
+      "version": "arXiv 2605.30280v2",
+      "tasks": "WidowX tasks",
+      "split": "paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Qwen-VLA unified generalist 官方主表。",
+      "trainingRegime": "统一 generalist 权重；多任务/多本体联合训练。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-VLA"
+    },
+    {
+      "id": "qwen-vla-v2-robotwin",
+      "dataset": "RoboTwin",
+      "name": "Qwen-VLA v2 · RoboTwin Easy / Hard",
+      "version": "arXiv 2605.30280v2",
+      "tasks": "RoboTwin Easy / Hard",
+      "split": "paper-reported Easy / Hard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方主表 Easy/Hard；统一 generalist 评测。",
+      "trainingRegime": "Qwen-VLA-Instruct unified generalist；训练数据跨任务/本体。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Hard"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-VLA",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "Qwen-VLA-Instruct unified generalist",
+      "recipeType": "report"
+    },
+    {
+      "id": "qwen-robotmanip-v2-libero",
+      "dataset": "LIBERO",
+      "name": "Qwen-RobotManip v2 · IID LIBERO",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "LIBERO four suites",
+      "split": "paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 IID 主表；普通版和 Context 同轨分行。",
+      "trainingRegime": "约38,100h 对齐预训练；下游评测配方按技术报告；Context 使用 episode 历史。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    {
+      "id": "qwen-robotmanip-v2-robotwin",
+      "dataset": "RoboTwin",
+      "name": "Qwen-RobotManip v2 · RoboTwin Easy / Hard",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "RoboTwin Easy / Hard",
+      "split": "IID Easy / Hard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 IID 主表；普通版和 Context 分行。",
+      "trainingRegime": "Qwen-RobotManip aligned pretraining；Context 额外读取同 episode 历史。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Hard"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "Qwen-RobotManip aligned-pretraining report",
+      "recipeType": "report"
+    },
+    {
+      "id": "qwen-robotmanip-v2-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "Qwen-RobotManip v2 · OOD LIBERO-Plus",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "LIBERO-Plus perturbation benchmark",
+      "split": "paper-reported Overall",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "OOD 扰动评测；普通版与 Context 分行。",
+      "trainingRegime": "aligned large-scale pretraining；Context 使用最近 observation-state-action chunks。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    {
+      "id": "qwen-robotmanip-v2-robocasa365",
+      "dataset": "RoboCasa365",
+      "name": "Qwen-RobotManip v2 · OOD RoboCasa365",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "paper-reported RoboCasa365 OOD setting",
+      "split": "Total SR",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "技术报告 OOD 表 Total SR；不与 Xiaomi 50-task 18/16/16 分组表自动视为同一 Setting。",
+      "trainingRegime": "aligned large-scale pretraining；Context 使用 episode 历史。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Total"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip"
     }
   ]
 }

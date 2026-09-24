@@ -1,0 +1,18 @@
+{
+  "id": "r-qwen-robotmanip-v2-libero-plus-context",
+  "paperId": "p114",
+  "method": "Qwen-RobotManip-Context",
+  "trackId": "qwen-robotmanip-v2-libero-plus",
+  "values": {
+    "Average": 91.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://github.com/QwenLM/Qwen-RobotManip",
+  "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+  "locator": "README Out-of-Distribution Generalization",
+  "attribution": "author-reported",
+  "trainingData": "同基础模型；使用 episode context。",
+  "evaluationNotes": "LIBERO-Plus Overall SR；Context。",
+  "supersedes": ""
+}

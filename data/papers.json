@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24",
+  "updatedAt": "2026-09-25",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,329 @@
     }
   ],
   "papers": [
+    {
+      "id": "p116",
+      "name": "Qwen-RobotWorld",
+      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+      "team": "Jie Zhang、Xiaoyue Chen、Anzhe Chen、Dayiheng Liu、Deqing Li、Gengze Zhou 等（Qwen Team）",
+      "venue": "arXiv",
+      "publicationType": "report",
+      "publicationStatus": "arXiv 技术报告",
+      "firstPublished": "2026-06-15",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC）；当前深读 v3。",
+      "collectionMonth": "2026-06",
+      "versionNote": "6月15日首次公开｜当前复核 arXiv v3（6月17日）",
+      "topics": [
+        "world",
+        "pretraining",
+        "spatial"
+      ],
+      "tags": [
+        "world model",
+        "video generation",
+        "language action",
+        "multi-view",
+        "human-to-robot"
+      ],
+      "priority": "deep",
+      "contribution": "用语言作为跨机器人/驾驶/导航的统一动作接口，在 60 层双流 MMDiT 中融合 Qwen2.5-VL 语义与视频 latent，并以 8.6M EWK 数据学习跨场景未来生成。",
+      "findings": "作者报告在 EWMBench、DreamGen Bench 总体排名第一，并在 WorldModelBench、PBench 的开源模型中表现最佳；支持 20+ embodiment、500+ 动作类别和 2–4 视角一致生成。",
+      "limitations": "世界模型生成指标不等于闭环机器人成功率；语言动作条件缺少低层控制精度，接触/力觉与可达性仍需下游 policy 或额外模型解决。",
+      "insight": "跨本体 world model 可以先统一“动作意图的语言语义”，再共享视觉物理知识；但这与直接统一低层动作空间是两条不同路线。",
+      "readingFocus": "Double-Stream MMDiT、EWK、General+Expert curriculum、Scene2Robot、多视角一致性、world-model benchmarks 与下游控制边界。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-25 按 arXiv v3 与 Qwen 官方博客复核；排名与规模均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v3 正文",
+          "url": "https://arxiv.org/html/2606.17030v3"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2606.17030"
+        },
+        {
+          "label": "Qwen-RobotWorld 官方介绍",
+          "url": "https://qwen.ai/blog?id=qwen-robotworld"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2606.17030",
+      "arxiv": "2606.17030",
+      "doi": ""
+    },
+    {
+      "id": "p115",
+      "name": "Qwen-RobotNav",
+      "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+      "team": "Jiazhao Zhang、Gengze Zhou、Hale Yin、Yiyang Huang、Zixing Lei、Qihang Peng 等（Qwen Team）",
+      "venue": "arXiv",
+      "publicationType": "report",
+      "publicationStatus": "arXiv 技术报告",
+      "firstPublished": "2026-06-16",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC）；当前深读 v3。",
+      "collectionMonth": "2026-06",
+      "versionNote": "6月16日首次公开｜当前复核 arXiv v3（6月29日）",
+      "topics": [
+        "spatial",
+        "memory",
+        "action"
+      ],
+      "tags": [
+        "navigation",
+        "agentic",
+        "VLN",
+        "context",
+        "waypoint"
+      ],
+      "priority": "deep",
+      "contribution": "把导航任务模式与视觉历史消费策略参数化，使同一个 Qwen3-VL 导航 backbone 可被上层 Agent 在 episode 中动态切换 context 和行为。",
+      "findings": "8B 报告 R2R SR 72.1%、RxR SR 76.5%、HM3Dv2 ObjectNav SR 75.6%、NAVSIM PDMS 91.4、EVT-Bench Tracking Rate 90.0，并展示零样本真机迁移。",
+      "limitations": "多种导航 family 使用完全不同的任务定义和指标；当前未公开模型权重，真实机器人还依赖模型外的定位、控制与系统工程。",
+      "insight": "Agentic navigation 的关键接口不仅是“输出往哪走”，还应允许上层系统控制底层模型看多少历史、看哪些相机、当前处于哪种导航模式。",
+      "readingFocus": "parameterized context、task modes、视觉 token budget、15.6M 数据混合、2B→8B scaling、agentic planner/memory、导航评测 taxonomy。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-25 按 arXiv v3 与 Qwen 官方仓库/博客复核；结果为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v3 正文",
+          "url": "https://arxiv.org/html/2606.18112v3"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2606.18112"
+        },
+        {
+          "label": "Qwen-RobotNav 官方仓库",
+          "url": "https://github.com/QwenLM/Qwen-RobotNav"
+        },
+        {
+          "label": "Qwen 官方介绍",
+          "url": "https://qwen.ai/blog?id=qwen-robotnav"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2606.18112",
+      "arxiv": "2606.18112",
+      "doi": ""
+    },
+    {
+      "id": "p114",
+      "name": "Qwen-RobotManip",
+      "title": "Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models",
+      "team": "Haoqi Yuan、Zhixuan Liang、Anzhe Chen、Ye Wang、Haoyang Li、Pei Lin 等（Qwen Team）",
+      "venue": "arXiv",
+      "publicationType": "report",
+      "publicationStatus": "arXiv 技术报告",
+      "firstPublished": "2026-06-16",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC）；当前深读 v2。",
+      "collectionMonth": "2026-06",
+      "versionNote": "6月16日首次公开｜当前复核 arXiv v2（6月17日）",
+      "topics": [
+        "pretraining",
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "alignment",
+        "cross-embodiment",
+        "human-to-robot",
+        "OOD",
+        "VLA"
+      ],
+      "priority": "deep",
+      "contribution": "以 representation/motion/behavior 三维对齐解决异构机器人数据冲突，并用 80D canonical state-action、camera-frame motion 与 H2R 合成把预训练扩展到约 38,100 小时。",
+      "findings": "LIBERO 99.1%（Context 99.2%）；RoboTwin Easy/Hard 93.4%/92.5%（Context 93.7%/94.0%）；LIBERO-Plus 89.0%（Context 91.4%）；RoboChallenge Table30 45% SR。",
+      "limitations": "官方当前不计划公开模型权重；Context 并非所有 OOD 设置都更优；训练数据虽来自开放来源，但 H2R/清洗与大规模训练流水线仍影响可复现性。",
+      "insight": "跨本体规模化的第一问题可能不是“更多轨迹”，而是让状态、动作、相机和行为上下文先具有一致语义。",
+      "readingFocus": "80D canonical action、camera-frame delta、CaPE、in-context adaptation、H2R、IID 与多种 OOD、RoboChallenge。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-25 按 arXiv v2 与 Qwen 官方仓库/博客复核；数值为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v2 正文",
+          "url": "https://arxiv.org/html/2606.17846v2"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2606.17846"
+        },
+        {
+          "label": "Qwen-RobotManip 官方仓库",
+          "url": "https://github.com/QwenLM/Qwen-RobotManip"
+        },
+        {
+          "label": "Qwen 官方介绍",
+          "url": "https://qwen.ai/blog?id=qwen-robotmanip"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2606.17846",
+      "arxiv": "2606.17846",
+      "doi": ""
+    },
+    {
+      "id": "p113",
+      "name": "Qwen-VLA",
+      "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+      "team": "Qiuyue Wang、Mingsheng Li、Jian Guan、Jinhui Ye、Sicheng Xie 等（Qwen Team）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-05-28",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC）；当前深读 v2。",
+      "collectionMonth": "2026-05",
+      "versionNote": "5月28日首次公开｜当前复核 arXiv v2（6月1日）",
+      "topics": [
+        "pretraining",
+        "action",
+        "spatial"
+      ],
+      "tags": [
+        "generalist",
+        "multi-embodiment",
+        "manipulation",
+        "navigation",
+        "DiT"
+      ],
+      "priority": "deep",
+      "contribution": "把操作、导航与轨迹预测统一到单一 VLA 的 action-and-trajectory 接口，并以 embodiment-aware 文本条件让同一套权重跨机器人平台执行。",
+      "findings": "Qwen-VLA-Instruct：LIBERO 97.9%、Simpler-WidowX 73.7%、RoboTwin Easy/Hard 86.1%/87.2%；R2R OSR 69.0%、RxR SR 59.6%；ALOHA OOD 平均 76.9%。",
+      "limitations": "联合预训练、SFT 与 RL 同时变化，难从外部对照单独归因；操作/导航/真机指标不可合成一个总分。",
+      "insight": "跨本体统一不一定需要为每个平台设计新输出头，本体和控制约定可以作为可读的条件上下文。",
+      "readingFocus": "action-and-trajectory 统一表示、embodiment prompt、渐进训练、Base→Instruct、操作/导航与真机 OOD 协议。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-25 按 arXiv v2 与 Qwen 官方仓库/博客复核；结果为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v2 正文",
+          "url": "https://arxiv.org/html/2605.30280v2"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2605.30280"
+        },
+        {
+          "label": "Qwen-VLA 官方仓库",
+          "url": "https://github.com/QwenLM/Qwen-VLA"
+        },
+        {
+          "label": "Qwen 官方介绍",
+          "url": "https://qwen.ai/blog?id=qwenvla"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2605.30280",
+      "arxiv": "2605.30280",
+      "doi": ""
+    },
+    {
+      "id": "p112",
+      "name": "Xiaomi-Robotics-0",
+      "title": "Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution",
+      "team": "Rui Cai、Jun Guo、Xinze He、Piaopiao Jin、Jie Li、Bingxuan Lin 等（Xiaomi Robotics）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-02-13",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC）；当前深读 v2。",
+      "collectionMonth": "2026-02",
+      "versionNote": "2月13日首次公开｜当前复核 arXiv v2（3月25日）",
+      "topics": [
+        "pretraining",
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "VLA",
+        "real-time",
+        "asynchronous",
+        "open source",
+        "LIBERO",
+        "CALVIN"
+      ],
+      "priority": "deep",
+      "contribution": "以 Qwen3-VL + flow-matching DiT 构建 4.7B VLA，并用 Choice Policies、两阶段预训练和异步 action-chunk 机制兼顾泛化与实时执行。",
+      "findings": "LIBERO 98.7%；CALVIN ABCD→D / ABC→D 平均链长 4.80 / 4.75；SimplerEnv Google VM/VA 85.5%/74.7%，WidowX 79.2%。",
+      "limitations": "主要标准 benchmark 结果包含目标数据后训练；异步实时收益与具体硬件、chunk 和控制栈有关，自采机器人数据也并非全部公开。",
+      "insight": "VLA 的实时部署问题不只是缩小模型，还要显式处理生成延迟与正在执行动作之间的时序对齐。",
+      "readingFocus": "Choice Policies、VLM/DiT 两阶段训练、Lambda attention、异步 chunk、LIBERO/CALVIN/SimplerEnv 协议及开源范围。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-25 按 arXiv v2、官方项目页与 GitHub 仓库复核；结果为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v2 正文",
+          "url": "https://arxiv.org/html/2602.12684v2"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2602.12684"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://robotics.xiaomi.com/xiaomi-robotics-0.html"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2602.12684",
+      "arxiv": "2602.12684",
+      "doi": ""
+    },
+    {
+      "id": "p111",
+      "name": "LaWAM",
+      "title": "LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies",
+      "team": "Jialei Chen、Kai Wang、Kang Chen、Shuaihang Chen、Feng Gao、Wenhao Tang、Zhiyuan Li、Weilin Liu、Zhuyu Yao、Boxun Li、Yuanbo Xu、Chao Yu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-06-14",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以本站收录日替代。",
+      "collectionMonth": "2026-06",
+      "versionNote": "6月14日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "world",
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "WAM",
+        "latent action",
+        "latent world model",
+        "LIBERO",
+        "RoboTwin"
+      ],
+      "priority": "deep",
+      "contribution": "用潜动作条件的视觉特征世界模型替代像素级未来视频，把预测未来压缩成 latent visual subgoal，再条件化 VLA 动作生成。",
+      "findings": "LIBERO 平均 98.6%；RoboTwin Clean/Random 为 92.64%/89.80%，平均 91.22%；作者报告 187 ms/action chunk，并相对像素 WAM 最高降低约 24× wall-clock latency。",
+      "limitations": "潜动作会同时吸收相机自运动与场景变化，剧烈移动视角下更难解耦；延迟依赖具体硬件、chunk 与实现，不能跨论文直接排名。",
+      "insight": "WAM 不必输出可观看未来帧；若目标是辅助控制，未来表征可以直接留在预训练视觉空间中。",
+      "readingFocus": "latent action 后验/先验、LaWM forward decoder、Knowledge Insulation、物理时间编码、LIBERO/RoboTwin 与效率消融。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-25 按 arXiv v1 全文、官方项目页与代码仓库复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2606.15768v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2606.15768"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://rlinf.github.io/LaWAM/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2606.15768",
+      "arxiv": "2606.15768",
+      "doi": ""
+    },
     {
       "id": "p110",
       "name": "LiMA",

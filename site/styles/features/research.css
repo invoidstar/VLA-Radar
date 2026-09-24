@@ -205,3 +205,6 @@
 .detail-prose>p:last-child,.note-small>p:last-child{margin-bottom:0}
 @media(max-width:650px){.math-display{margin:12px 0;padding:9px 8px;text-align:left}.math-display math{font-size:1em}}
 @media print{.math-display{overflow:visible;border-color:#ddd;background:transparent;break-inside:avoid}}
+
+/* Expanded benchmark navigation and evidence tables */
+.dataset-tabs{flex-wrap:wrap}.note-data-table{font-size:.85rem}.note-section p{line-height:1.85}.note-section .board-table-scroll{max-width:100%;margin:16px 0}.note-section>div{min-width:0}

@@ -1,0 +1,18 @@
+{
+  "id": "r-qwen-robotmanip-v2-libero-context",
+  "paperId": "p114",
+  "method": "Qwen-RobotManip-Context",
+  "trackId": "qwen-robotmanip-v2-libero",
+  "values": {
+    "Average": 99.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://github.com/QwenLM/Qwen-RobotManip",
+  "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+  "locator": "README In-Distribution Manipulation",
+  "attribution": "author-reported",
+  "trainingData": "同基础模型；额外使用同 episode observation-state-action context。",
+  "evaluationNotes": "Context 不是独立 backbone；作者报告。",
+  "supersedes": ""
+}
