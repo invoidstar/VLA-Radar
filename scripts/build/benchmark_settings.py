@@ -169,10 +169,59 @@ def dataset_scope(track):
     # Generic fallback: column schema + reliable task count + true evaluation-context guards.
     return kind+'-'+hashlib.sha256('|'.join(cols).encode()).hexdigest()[:10]+'-'+str(count or 'na')+(('-'+'-'.join(ctx)) if ctx else '')
 
-def evaluation_key(track):
+PROFILE_SCHEMA_VERSION=1
+
+def protocol_profile(track):
+    """Return the structured evaluation-only identity used to control Setting growth.
+
+    Hard identity fields answer the evaluation question. Training data, optimization
+    recipe, base model, checkpoint choice, paper/source and author-specific reporting
+    prose are deliberately excluded so they cannot create duplicate Settings.
+    """
     scope=dataset_scope(track)
     metric='chain-average-length' if track['dataset']=='CALVIN' and scope.startswith('chain-average-length') else metric_class(track['metric'])
-    return (track['dataset'],scope,metric,track['unit'],track['direction'])
+    return {
+      'schemaVersion':PROFILE_SCHEMA_VERSION,
+      'benchmark':track['dataset'],
+      'taskScope':scope,
+      'taskCount':task_count(track),
+      'metric':metric,
+      'unit':track['unit'],
+      'direction':track['direction'],
+      'columns':list(canon_columns(track)),
+      'conditions':list(eval_context(track)),
+    }
+
+def profile_identity(profile):
+    """Stable hard dimensions. Adding report metadata must not change this tuple."""
+    return (
+      profile['benchmark'],profile['taskScope'],profile['metric'],
+      profile['unit'],profile['direction']
+    )
+
+def protocol_fingerprint(track):
+    """Short stable fingerprint for the normalized evaluation question."""
+    profile=protocol_profile(track)
+    raw='|'.join(map(str,profile_identity(profile)))
+    return 'ep1-'+hashlib.sha256(raw.encode()).hexdigest()[:16]
+
+def protocol_compatibility(left,right):
+    """Classify two tracks without turning every reporting difference into a Setting.
+
+    incompatible: different hard evaluation identity;
+    partial: same question but different known task/column coverage;
+    exact: same normalized structured profile;
+    compatible: same hard identity with only soft/reporting differences.
+    """
+    a,b=protocol_profile(left),protocol_profile(right)
+    if profile_identity(a)!=profile_identity(b):return 'incompatible'
+    if a['columns']!=b['columns']:return 'partial'
+    if a['taskCount'] is not None and b['taskCount'] is not None and a['taskCount']!=b['taskCount']:return 'partial'
+    if a==b:return 'exact'
+    return 'compatible'
+
+def evaluation_key(track):
+    return profile_identity(protocol_profile(track))
 
 def scope_label(track,scope):
     ds=track['dataset'];kind=metric_label(track['metric'])
