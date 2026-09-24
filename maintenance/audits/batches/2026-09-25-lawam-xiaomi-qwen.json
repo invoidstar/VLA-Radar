@@ -1,0 +1,665 @@
+{
+  "id": "2026-09-25-lawam-xiaomi-qwen",
+  "date": "2026-09-25",
+  "summary": "新增 LaWAM、Xiaomi-Robotics-0、Qwen-VLA、Qwen-RobotManip、Qwen-RobotNav、Qwen-RobotWorld 六篇深读记录；为可兼容的操作基准补充协议化 Result Report，并为 Xiaomi-Robotics-1 补官方项目页。导航与 world-model 评测明确保持协议隔离。",
+  "notes": [],
+  "tracks": [
+    {
+      "id": "lawam-v1-libero",
+      "dataset": "LIBERO",
+      "name": "LaWAM v1 · 标准四套件",
+      "version": "arXiv 2606.15768v1",
+      "tasks": "40 tasks / four suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务50次 rollout；论文主表。",
+      "trainingRegime": "LaWAM latent-world/action pretraining + LIBERO SFT；不同外部方法预训练预算不统一。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2606.15768v1"
+    },
+    {
+      "id": "lawam-v1-robotwin",
+      "dataset": "RoboTwin",
+      "name": "LaWAM v1 · RoboTwin 2.0 Clean / Random",
+      "version": "arXiv 2606.15768v1",
+      "tasks": "50",
+      "split": "Clean / Random",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "每任务、每设置100次评测；论文主表。",
+      "trainingRegime": "LaWAM 预训练后在 RoboTwin merged action data 上 SFT；不同论文训练资源保留在 recipe。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2606.15768v1",
+      "familyId": "robotwin2-standard-50-clean-random",
+      "familyName": "RoboTwin 2.0 · 50 Tasks · Clean + Random",
+      "familySummary": "完整50任务，Clean / Random 两种评测。不同论文的训练预算、预训练与优化方式仍可不同；本协议族用于收拢可对齐的评测口径，不把不同 recipe 自动解释为公平同训练比较。",
+      "familyKind": "main",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-selfwam-27500",
+      "recipeName": "LaWAM v1 report",
+      "recipeType": "report"
+    },
+    {
+      "id": "xiaomi0-v2-libero",
+      "dataset": "LIBERO",
+      "name": "Xiaomi-Robotics-0 v2 · LIBERO 四套件",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "40",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 LIBERO 评测；四套件分别微调/评测，保留原表聚合。",
+      "trainingRegime": "XR-0 预训练 + LIBERO 后训练 checkpoint；不是零样本基础模型。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2602.12684v2"
+    },
+    {
+      "id": "xiaomi0-v2-calvin-abcd",
+      "dataset": "CALVIN",
+      "name": "Xiaomi-Robotics-0 v2 · CALVIN ABCD→D",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "1,000 five-instruction chains",
+      "split": "ABCD train -> D eval",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "标准 CALVIN 五指令链；平均完成长度 0–5。",
+      "trainingRegime": "XR-0 CALVIN ABCD→D 后训练 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/html/2602.12684v2"
+    },
+    {
+      "id": "xiaomi0-v2-calvin-abc",
+      "dataset": "CALVIN",
+      "name": "Xiaomi-Robotics-0 v2 · CALVIN ABC→D",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "1,000 five-instruction chains",
+      "split": "ABC train -> unseen D eval",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "标准 CALVIN unseen-environment 五指令链；平均完成长度 0–5。",
+      "trainingRegime": "XR-0 CALVIN ABC→D 后训练 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length"
+      ],
+      "source": "https://arxiv.org/html/2602.12684v2"
+    },
+    {
+      "id": "xiaomi0-v2-simpler-google",
+      "dataset": "SimplerEnv",
+      "name": "Xiaomi-Robotics-0 v2 · Google Robot",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "Google Robot tasks",
+      "split": "Visual Matching / Variant Aggregation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 SimplerEnv Google Robot 报告；VM 与 VA 分列。",
+      "trainingRegime": "Fine-tuned on Fractal dataset；官方公开 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "VM",
+        "VA"
+      ],
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+    },
+    {
+      "id": "xiaomi0-v2-simpler-widowx",
+      "dataset": "SimplerEnv",
+      "name": "Xiaomi-Robotics-0 v2 · WidowX",
+      "version": "arXiv 2602.12684v2",
+      "tasks": "WidowX tasks",
+      "split": "Bridge / paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 SimplerEnv WidowX 报告平均成功率。",
+      "trainingRegime": "Fine-tuned on Bridge dataset；官方公开 checkpoint。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+    },
+    {
+      "id": "qwen-vla-v2-libero",
+      "dataset": "LIBERO",
+      "name": "Qwen-VLA v2 · unified generalist · LIBERO",
+      "version": "arXiv 2605.30280v2",
+      "tasks": "LIBERO four suites",
+      "split": "paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Qwen-VLA unified generalist 官方主表；只结构化 Instruct 行。",
+      "trainingRegime": "联合多任务/多本体预训练 + Instruct 后训练；非每 benchmark 独立专家权重。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-VLA"
+    },
+    {
+      "id": "qwen-vla-v2-simpler-widowx",
+      "dataset": "SimplerEnv",
+      "name": "Qwen-VLA v2 · unified generalist · Simpler-WidowX",
+      "version": "arXiv 2605.30280v2",
+      "tasks": "WidowX tasks",
+      "split": "paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Qwen-VLA unified generalist 官方主表。",
+      "trainingRegime": "统一 generalist 权重；多任务/多本体联合训练。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-VLA"
+    },
+    {
+      "id": "qwen-vla-v2-robotwin",
+      "dataset": "RoboTwin",
+      "name": "Qwen-VLA v2 · RoboTwin Easy / Hard",
+      "version": "arXiv 2605.30280v2",
+      "tasks": "RoboTwin Easy / Hard",
+      "split": "paper-reported Easy / Hard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方主表 Easy/Hard；统一 generalist 评测。",
+      "trainingRegime": "Qwen-VLA-Instruct unified generalist；训练数据跨任务/本体。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Hard"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-VLA",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "Qwen-VLA-Instruct unified generalist",
+      "recipeType": "report"
+    },
+    {
+      "id": "qwen-robotmanip-v2-libero",
+      "dataset": "LIBERO",
+      "name": "Qwen-RobotManip v2 · IID LIBERO",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "LIBERO four suites",
+      "split": "paper-reported aggregate",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 IID 主表；普通版和 Context 同轨分行。",
+      "trainingRegime": "约38,100h 对齐预训练；下游评测配方按技术报告；Context 使用 episode 历史。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    {
+      "id": "qwen-robotmanip-v2-robotwin",
+      "dataset": "RoboTwin",
+      "name": "Qwen-RobotManip v2 · RoboTwin Easy / Hard",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "RoboTwin Easy / Hard",
+      "split": "IID Easy / Hard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "官方 IID 主表；普通版和 Context 分行。",
+      "trainingRegime": "Qwen-RobotManip aligned pretraining；Context 额外读取同 episode 历史。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Hard"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "Qwen-RobotManip aligned-pretraining report",
+      "recipeType": "report"
+    },
+    {
+      "id": "qwen-robotmanip-v2-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "Qwen-RobotManip v2 · OOD LIBERO-Plus",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "LIBERO-Plus perturbation benchmark",
+      "split": "paper-reported Overall",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "OOD 扰动评测；普通版与 Context 分行。",
+      "trainingRegime": "aligned large-scale pretraining；Context 使用最近 observation-state-action chunks。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    {
+      "id": "qwen-robotmanip-v2-robocasa365",
+      "dataset": "RoboCasa365",
+      "name": "Qwen-RobotManip v2 · OOD RoboCasa365",
+      "version": "arXiv 2606.17846v2",
+      "tasks": "paper-reported RoboCasa365 OOD setting",
+      "split": "Total SR",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "技术报告 OOD 表 Total SR；不与 Xiaomi 50-task 18/16/16 分组表自动视为同一 Setting。",
+      "trainingRegime": "aligned large-scale pretraining；Context 使用 episode 历史。",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Total"
+      ],
+      "source": "https://github.com/QwenLM/Qwen-RobotManip"
+    }
+  ],
+  "results": [
+    {
+      "id": "r-lawam-v1-libero-lawam",
+      "paperId": "p111",
+      "method": "LaWAM",
+      "trackId": "lawam-v1-libero",
+      "values": {
+        "Spatial": 99.4,
+        "Object": 99.6,
+        "Goal": 98.4,
+        "Long": 97,
+        "Average": 98.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://arxiv.org/html/2606.15768v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "LIBERO main table",
+      "attribution": "author-reported",
+      "trainingData": "LaWAM pretraining + LIBERO SFT；论文报告协议。",
+      "evaluationNotes": "50 rollouts/task；作者报告，非本站复现。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lawam-v1-robotwin-lawam",
+      "paperId": "p111",
+      "method": "LaWAM",
+      "trackId": "lawam-v1-robotwin",
+      "values": {
+        "Clean": 92.64,
+        "Random": 89.8,
+        "Average": 91.22
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://arxiv.org/html/2606.15768v1",
+      "sourceVersion": "arXiv v1",
+      "locator": "RoboTwin main table",
+      "attribution": "author-reported",
+      "trainingData": "LaWAM pretraining + RoboTwin merged SFT；不同外部方法预算不统一。",
+      "evaluationNotes": "50 tasks；每任务每设置100次；作者报告。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-xiaomi0-v2-libero-xiaomi-robotics-0",
+      "paperId": "p112",
+      "method": "Xiaomi-Robotics-0",
+      "trackId": "xiaomi0-v2-libero",
+      "values": {
+        "Spatial": 98.8,
+        "Object": 100,
+        "Goal": 98.8,
+        "Long": 97.2,
+        "Average": 98.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://arxiv.org/html/2602.12684v2",
+      "sourceVersion": "arXiv v2",
+      "locator": "LIBERO main table / official checkpoint summary",
+      "attribution": "author-reported",
+      "trainingData": "XR-0 pretraining + LIBERO downstream post-training。",
+      "evaluationNotes": "目标 benchmark 后训练结果；不是 base 零样本。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-xiaomi0-v2-calvin-abcd-xiaomi-robotics-0",
+      "paperId": "p112",
+      "method": "Xiaomi-Robotics-0",
+      "trackId": "xiaomi0-v2-calvin-abcd",
+      "values": {
+        "Average length": 4.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Benchmark; CALVIN ABCD→D",
+      "attribution": "author-reported",
+      "trainingData": "XR-0 CALVIN ABCD→D fine-tuned checkpoint。",
+      "evaluationNotes": "平均五任务链完成长度，单位不是百分比。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-xiaomi0-v2-calvin-abc-xiaomi-robotics-0",
+      "paperId": "p112",
+      "method": "Xiaomi-Robotics-0",
+      "trackId": "xiaomi0-v2-calvin-abc",
+      "values": {
+        "Average length": 4.75
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Benchmark; CALVIN ABC→D",
+      "attribution": "author-reported",
+      "trainingData": "XR-0 CALVIN ABC→D fine-tuned checkpoint。",
+      "evaluationNotes": "unseen D 平均五任务链完成长度。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-xiaomi0-v2-simpler-google-xiaomi-robotics-0",
+      "paperId": "p112",
+      "method": "Xiaomi-Robotics-0",
+      "trackId": "xiaomi0-v2-simpler-google",
+      "values": {
+        "VM": 85.5,
+        "VA": 74.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Benchmark; SimplerEnv Google Robot",
+      "attribution": "author-reported",
+      "trainingData": "Fine-tuned on Fractal dataset；官方公开 checkpoint。",
+      "evaluationNotes": "VM/VA 分列；不与 WidowX 聚合。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-xiaomi0-v2-simpler-widowx-xiaomi-robotics-0",
+      "paperId": "p112",
+      "method": "Xiaomi-Robotics-0",
+      "trackId": "xiaomi0-v2-simpler-widowx",
+      "values": {
+        "Average": 79.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Benchmark; SimplerEnv WidowX",
+      "attribution": "author-reported",
+      "trainingData": "Fine-tuned on Bridge dataset；官方公开 checkpoint。",
+      "evaluationNotes": "作者报告平均 SR。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-vla-v2-libero-instruct",
+      "paperId": "p113",
+      "method": "Qwen-VLA-Instruct",
+      "trackId": "qwen-vla-v2-libero",
+      "values": {
+        "Average": 97.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-VLA",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Benchmarks: Manipulation & Navigation",
+      "attribution": "author-reported",
+      "trainingData": "统一多任务/多本体预训练 + Instruct 后训练。",
+      "evaluationNotes": "同一 generalist 权重；作者报告。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-vla-v2-simpler-widowx-instruct",
+      "paperId": "p113",
+      "method": "Qwen-VLA-Instruct",
+      "trackId": "qwen-vla-v2-simpler-widowx",
+      "values": {
+        "Average": 73.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-VLA",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Benchmarks: Simpler-WidowX",
+      "attribution": "author-reported",
+      "trainingData": "统一多任务/多本体预训练 + Instruct 后训练。",
+      "evaluationNotes": "作者报告；与 LIBERO 不做跨 benchmark 平均。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-vla-v2-robotwin-instruct",
+      "paperId": "p113",
+      "method": "Qwen-VLA-Instruct",
+      "trackId": "qwen-vla-v2-robotwin",
+      "values": {
+        "Easy": 86.1,
+        "Hard": 87.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-VLA",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Benchmarks: RoboTwin Easy/Hard",
+      "attribution": "author-reported",
+      "trainingData": "统一 generalist 权重；多任务/多本体联合训练。",
+      "evaluationNotes": "Easy/Hard 原表；不同 recipe 仍保留在结果层。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-libero-base",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip",
+      "trackId": "qwen-robotmanip-v2-libero",
+      "values": {
+        "Average": 99.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README In-Distribution Manipulation",
+      "attribution": "author-reported",
+      "trainingData": "~38,100h aligned pretraining；技术报告下游协议。",
+      "evaluationNotes": "普通版；作者报告。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-libero-context",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip-Context",
+      "trackId": "qwen-robotmanip-v2-libero",
+      "values": {
+        "Average": 99.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README In-Distribution Manipulation",
+      "attribution": "author-reported",
+      "trainingData": "同基础模型；额外使用同 episode observation-state-action context。",
+      "evaluationNotes": "Context 不是独立 backbone；作者报告。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-robotwin-base",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip",
+      "trackId": "qwen-robotmanip-v2-robotwin",
+      "values": {
+        "Easy": 93.4,
+        "Hard": 92.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README In-Distribution Manipulation",
+      "attribution": "author-reported",
+      "trainingData": "~38,100h aligned pretraining；技术报告下游协议。",
+      "evaluationNotes": "普通版；作者报告。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-robotwin-context",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip-Context",
+      "trackId": "qwen-robotmanip-v2-robotwin",
+      "values": {
+        "Easy": 93.7,
+        "Hard": 94
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README In-Distribution Manipulation",
+      "attribution": "author-reported",
+      "trainingData": "同基础模型；使用 episode context。",
+      "evaluationNotes": "Context 行；作者报告。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-libero-plus-base",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip",
+      "trackId": "qwen-robotmanip-v2-libero-plus",
+      "values": {
+        "Average": 89
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Out-of-Distribution Generalization",
+      "attribution": "author-reported",
+      "trainingData": "~38,100h aligned pretraining。",
+      "evaluationNotes": "LIBERO-Plus Overall SR；普通版。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-libero-plus-context",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip-Context",
+      "trackId": "qwen-robotmanip-v2-libero-plus",
+      "values": {
+        "Average": 91.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README Out-of-Distribution Generalization",
+      "attribution": "author-reported",
+      "trainingData": "同基础模型；使用 episode context。",
+      "evaluationNotes": "LIBERO-Plus Overall SR；Context。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-robocasa365-base",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip",
+      "trackId": "qwen-robotmanip-v2-robocasa365",
+      "values": {
+        "Total": 35.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README OOD table: RoboCasa365 Total SR",
+      "attribution": "author-reported",
+      "trainingData": "~38,100h aligned pretraining。",
+      "evaluationNotes": "技术报告 OOD Total；不假设与 Xiaomi 50-task 分组协议相同。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-qwen-robotmanip-v2-robocasa365-context",
+      "paperId": "p114",
+      "method": "Qwen-RobotManip-Context",
+      "trackId": "qwen-robotmanip-v2-robocasa365",
+      "values": {
+        "Total": 33.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-25",
+      "source": "https://github.com/QwenLM/Qwen-RobotManip",
+      "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+      "locator": "README OOD table: RoboCasa365 Total SR",
+      "attribution": "author-reported",
+      "trainingData": "同基础模型；使用 episode context。",
+      "evaluationNotes": "Context 在该设置低于普通版；原样保留，不择高。",
+      "supersedes": ""
+    }
+  ],
+  "resources": {
+    "p004": {
+      "project": "https://robotics.xiaomi.com/xiaomi-robotics-1.html"
+    },
+    "p111": {
+      "project": "https://rlinf.github.io/LaWAM/",
+      "code": "https://github.com/RLinf/LaWAM"
+    },
+    "p112": {
+      "project": "https://robotics.xiaomi.com/xiaomi-robotics-0.html",
+      "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+    },
+    "p113": {
+      "project": "https://qwen.ai/blog?id=qwenvla",
+      "code": "https://github.com/QwenLM/Qwen-VLA"
+    },
+    "p114": {
+      "project": "https://qwen.ai/blog?id=qwen-robotmanip",
+      "code": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    "p115": {
+      "project": "https://qwen.ai/blog?id=qwen-robotnav",
+      "code": "https://github.com/QwenLM/Qwen-RobotNav"
+    },
+    "p116": {
+      "project": "https://qwen.ai/blog?id=qwen-robotworld"
+    }
+  }
+}
