@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.25636v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：平均 IS/ES/CR 不能替代 L0–L3 失效结构",
+        "body": "RoboFollow 的全场景平均便于概览九个模型，但机制诊断必须回到层级：L0 接近训练分布，L1 改视觉布局，L2 重组语义，L3 同时变化。一个模型的 Avg Intent Score 相同，可能分别来自“视觉 grounding 很弱但语义还行”或“视觉稳健但组合语言差”。因此 Radar 新增的主表平均只能作为 Benchmark 概览，不能用它宣称某模型在所有 instruction-following 维度统一更强；细分 level 保留在原文证据中。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：跨模型 fine-tuning 与真实 pilot 都不是完全 matched control",
+        "body": "九个模型共享 Benchmark，但 backbone、训练 recipe、动作接口和适配预算不同，因而跨模型差异是系统级结果，不是架构类别的因果实验。真实 π0.5 pilot 中 training instructions 20/40、held-out 6/40 很有提示性，但作者明确两组不是完全 matched task pairs；它支持“新语言表达明显更难”的方向，而不应被换算成严格 35 点 causal gap。empty-language 对照则更直接说明语言确实被使用，只是组合泛化不足。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：语言依赖 Benchmark 要与普通操控成功率分开",
+        "body": "RoboFollow 的设计目标是让语言在高 scene entropy 下成为必要条件，因此它和 LIBERO clean success 回答不同问题。Radar 将其归到 Language / Planning / Compositionality，并保留 Intent、Execution、Completion 三指标；不把 Avg IS 与 LIBERO SR 合并，也不因 FastWAM/VLA 同表就推断哪一种范式天然更懂语言。未来若结构化 L0–L3，应按 scene/level 定义 Setting，并明确 fine-tuning 数据。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
       }
     ],
     "coverage": {
