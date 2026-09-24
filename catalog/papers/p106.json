@@ -173,6 +173,39 @@
             "url": "https://arxiv.org/html/2609.24682v2"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：同一0.8B student前后才是蒸馏贡献的核心证据",
+        "body": "跨 OpenVLA-OFT、π0.5 或更大模型比较会同时改变参数量、动作头和预训练，因此 THAW 最可信的因果对照是 undistilled 与 distilled 的同一 0.8B QwenGR00T：LIBERO 95.3→97.9、RoboCasa-GR1 48.2→50.5，同时部署结构不变。教师替换、alignment layer 和 student scale 消融进一步说明效果不是某一层偶然匹配。外部大模型行更适合定位绝对水平，不应承担 feature alignment 单因素归因。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24682v2"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：zero added inference cost 不等于 world-model supervision 免费",
+        "body": "教师 feature 需要先由 frozen world model 对训练帧离线提取并缓存，作者用 memory-mapped cache 避免在每个 student step 重跑教师。部署时 teacher/projector 确实都被移除，所以相对同 student 的在线推理没有新增计算；但训练前处理仍有 GPU 时间、存储和数据管理成本。RoboCasa 还使用多次 seed/GPU 重复评测来估计波动，因而 2.3 点增益应连同方差一起阅读，而不是只保留平均数。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24682v2"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：把世界模型写成训练期教师，而不是部署 WAM",
+        "body": "THAW 的 world model 不在动作执行路径里，所以它与 Fast-WAM、MoWAM 等“策略本身包含世界建模路径”的系统应分开描述。方法层应记录 teacher、cache layer、alignment loss 和 projector 生命周期；Result Report 则只比较匹配 student 的性能变化。这样可以回答“预测训练塑造的表征能否迁移给轻量 VLA”，而不会因为论文标题含 world model 就误判为需要测试时 future imagination 的 WAM。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24682v2"
+          }
+        ]
       }
     ],
     "coverage": {
