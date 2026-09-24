@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.19666v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：四阶段 pipeline 要看阶段增益，而不是只看最终 100%",
+        "body": "五个任务最终 20/20 很醒目，但更有解释力的是 SFT、DAgger、latent residual RL 各自解决什么问题。SFT建立高 DoF 基础模仿，DAgger修正部署分布偏移和人工接管轨迹，RL再补齐接触/姿态剩余失败。Transfer Marker 与 Rotate Marker 的 70→100、50→100 能直接说明最后 RL 阶段的作用；其他任务若前一阶段已经较高，则不能把最终成功全部归因于 RL。动作 codec 又在三阶段之前改变了可探索空间，是另一个独立因素。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：20 次评测、3000 transitions 与 worker-hours 不能互换",
+        "body": "每任务 20 trials 给出的是最终策略在限定 setup 下的二项成功率样本，100% 即 20/20，并不等价于长期故障率为零。3000 real-world transitions 衡量在线 RL 交互量，而作者估算的 1.2/2.0/3.9 worker-hours 衡量人工参与，并非 GPU 时间或机器人占用时间。比较数据效率时应分别记录示范 episodes、DAgger 纠正、RL transitions 和人工小时，不能挑一个最小的口径宣称整个 post-training 只需 1.2 小时。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：这是 post-training 配方，不是新的零样本 foundation model",
+        "body": "该工作最适合放在 Action & Policy Learning：它回答“已有通用 VLA 如何落到 40 维双手高 DoF 控制”，而不是重新定义基础模型预训练。当前五个真机任务为作者自定义协议，暂不与其他 dexterous benchmark 强行对齐；但动作 codec、连续 DAgger 接管和 latent residual RL 三项机制可以跨任务比较。未来若有同硬件或同任务的 VLA post-training 工作，结果层需要把基础 VLA、示范量、在线交互和人工纠正预算完整保留。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.19666v1"
+          }
+        ]
       }
     ],
     "coverage": {
