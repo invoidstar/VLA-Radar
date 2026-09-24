@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p108",
+    "name": "RoboFollow",
+    "title": "RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents",
+    "team": "Chang Guo、Yukun Xie、Bohan Tan、Zheng Chang、Zhaokai Yin、Qianli Ma、Yingqiao Wang、Chao Liang、Zhipeng Zhang",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-22",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "evaluation",
+      "pretraining"
+    ],
+    "tags": [
+      "benchmark",
+      "instruction following",
+      "language",
+      "generalization"
+    ],
+    "priority": "deep",
+    "contribution": "提出高Scene Entropy的instruction-following诊断Benchmark，让同一视觉场景存在多条运动学不同的有效任务分支，并用L0–L3逐级打乱视觉布局和语义组合来区分语言理解与动作执行。",
+    "findings": "九个VLA/WAM在L0可很高，但向L1–L3泛化显著下降；PI0.5全场景平均IS/ES/CR为55.7/53.0/47.3%，清空语言后12.3/8.9/5.2%，说明语言有用但仍不足以稳定组合泛化。",
+    "limitations": "各模型fine-tuning实现、基础模型和训练预算不同；Avg把四scene和四难度层汇总，适合Benchmark内诊断，不应与LIBERO成功率直接比较。",
+    "insight": "低Scene Entropy会让视觉本身泄露任务，造成‘看起来会听指令’；真正的语言评测需要在同一场景中存在多个可执行分支，并分别测Intent与Execution。",
+    "readingFocus": "scene entropy定义、L0–L3分层、Intent/Execution/Completion三指标、九模型Table 1与empty-language/强VLM/QA/CFG等缓解实验。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.25636v1"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2609.25636"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/AutoLab-SAI-SJTU/RoboFollow"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.25636",
+    "arxiv": "2609.25636",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-22",
+    "firstArxivSource": "https://arxiv.org/abs/2609.25636v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-24",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-22",
+        "observedAt": "2026-09-24",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.25636v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-24",
+    "verifiedAt": "2026-09-24",
+    "version": "arXiv:2609.25636v1（2026-09-22），benchmark、L0–L3、九模型与缓解实验；2026-09-24复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：标准成功率可能制造instruction-following假象",
+        "body": "如果一个场景只有一个合理任务，policy即使忽略语言也能凭视觉和训练先验执行正确动作。作者把这种结构称为low scene entropy，并指出很多操控Benchmark会让语言成为冗余条件。RoboFollow因此不从更复杂动作开始，而是先保证同一场景支持多个运动学不同、都曾训练过的任务分支，使视觉无法单独确定应该做哪一个。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "entropy",
+        "title": "High Scene Entropy让语言成为真正必要的信息源",
+        "body": "Benchmark构造四类scene families，每个场景中放置可支持多种空间关系、属性、轨迹约束和逻辑条件的对象/状态。作者报告其scene entropy显著高于按相同分组统计的LIBERO套件。这里的目标不是让图像更杂乱，而是提高‘给定图像仍有多少有效任务分支’；只有这时instruction才携带决定动作的必要信息。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "levels",
+        "title": "L0–L3把记忆训练分布和组合泛化拆开",
+        "body": "L0是分布内执行；L1改变visual layout，检查grounding能否随布局变化；L2做semantic recombination，在熟悉视觉中重新组合指令要素；L3同时改变视觉与语义，是最强组合。分层的好处是能定位失败来自‘看错对象/位置’还是‘没理解新语义组合’，而不是所有失败都只变成一个总成功率。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "metrics",
+        "title": "Intent、Execution、Completion分别度量理解、执行和最终闭环",
+        "body": "Intent Score衡量policy是否选择与指令一致的动作意图；Execution Score关注阶段动作执行质量；Completion Rate更接近最终任务完成。三个指标可以出现分离：模型可能理解了目标但执行失败，也可能执行动作流畅却选择错任务。这个设计避免把运动控制误差完全归为语言理解失败。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "models",
+        "title": "九个VLA/WAM显示‘L0高’不等于真正组合instruction following",
+        "body": "评测包含π0.5、π0、GR00T N1.6、OpenVLA-OFT、X-VLA、ACoT-VLA、Lingbot-VLA、MOTUS、FastWAM。多数方法在某些L0场景接近或达到高分，但L1–L3显著下降。PI0.5全场景平均IS/ES/CR为55.7/53.0/47.3，说明即使强模型在高scene-entropy组合条件下仍远未接近饱和。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "language",
+        "title": "Empty-language对照证明语言并非完全没被用，但利用方式脆弱",
+        "body": "PI0.5清空语言后全场景平均IS/ES/CR降到12.3/8.9/5.2，相比完整语言55.7/53.0/47.3有巨大差距。因此问题不是‘模型完全忽略语言’，而是语言条件在训练分布内有效，却不能稳定支持布局变化和新组合。这个区分比简单说‘VLA不听语言’更准确。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "mitigations",
+        "title": "常见补救没有自动关闭gap",
+        "body": "作者尝试更强VLM backbone、QA co-training、LangForce与Classifier-Free Guidance等代表性手段，但都没有消除L1–L3差距。这提示瓶颈可能不仅是语言encoder容量，而在于训练数据是否真正要求语言决定动作，以及视觉grounding、动作生成与语言语义是否在组合分布中对齐。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：这是诊断instruction following，不是通用操控能力总榜",
+        "body": "RoboFollow刻意简化交互对象并把动作限制在训练过的repertoire，以减少control confound。因此它非常适合判断policy是否根据语言在多分支场景选对行为，但不覆盖复杂物体物理、触觉或超长任务。跨模型训练预算仍不同，Avg结果应作为该Benchmark下的诊断证据，而非替代标准操控Benchmark。",
+        "sources": [
+          {
+            "label": "arXiv 正文",
+            "url": "https://arxiv.org/html/2609.25636v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.25636v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "RoboFollow 全场景平均（Table 1）",
+        "columns": [
+          "模型",
+          "Intent Score",
+          "Execution Score",
+          "Completion Rate"
+        ],
+        "rows": [
+          [
+            "π0.5",
+            "55.7",
+            "53.0",
+            "47.3"
+          ],
+          [
+            "π0",
+            "48.4",
+            "44.9",
+            "38.9"
+          ],
+          [
+            "GR00T N1.6",
+            "32.7",
+            "25.6",
+            "20.5"
+          ],
+          [
+            "OpenVLA-OFT",
+            "10.7",
+            "4.2",
+            "3.5"
+          ],
+          [
+            "ACoT-VLA",
+            "53.5",
+            "49.3",
+            "42.5"
+          ],
+          [
+            "FastWAM",
+            "39.3",
+            "35.2",
+            "30.3"
+          ]
+        ],
+        "locator": "Table 1 · Avg block",
+        "caption": "作者报告，单位%；Avg汇总四scene及L0–L3。完整九模型保留在原表。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-24",
+      "note": "本批新增RoboFollow全场景Avg IS/ES/CR track，并保留L0–L3细分表在论文笔记；新Benchmark单独taxonomy。"
+    }
+  }
+}
