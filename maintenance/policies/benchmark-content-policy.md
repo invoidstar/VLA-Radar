@@ -2,6 +2,16 @@
 
 本项目保持稳定维护，不新增大型功能。2026-09-18起，定期将各已覆盖基准的官网、官方榜单提交和作者论文集作为文献发现入口，而不只搜索新arXiv关键词。当前批次范围见benchmark-source-audit-20260918.json；未完成全文/协议的项目是候选，不声称穷尽榜单。
 
+## Evaluation Setting 结构化与防膨胀
+
+Evaluation Setting 只表示“是否在回答同一个评测问题”，不表示训练条件、模型架构或来源完全公平。构建器统一通过 `scripts/build/benchmark_settings.py` 的结构化 protocol profile 归一化现有 track，并生成稳定 evaluation identity；已有 Setting ID 与公开链接保持兼容。
+
+硬身份维度包括：Benchmark、task/suite/subset scope、真正改变评测问题的 split / deployment / perturbation 条件、metric、unit 与 direction。只有这些维度发生实质变化时才应产生新的 Setting。任务列覆盖不完整但仍回答同一问题时保留在同一 Setting，并标记为 partial coverage，而不是机械复制 Setting。
+
+以下属于 Result Report / 原始 track 的报告或训练差异，**不得单独制造 Setting**：训练数据与 demonstration budget、base model、optimization recipe、checkpoint 选择、来源论文、作者实现、回合数/seed 数等重复统计细节。它们必须继续保留在 Training Data、Recipe / Evidence、原始 track 与 source locator 中；必要时提示 compatible / partial，而不是伪装成完全公平比较。
+
+新增或复核 track 时，先检查现有 Setting 的结构化 identity，再决定是否创建新 evaluation scope。禁止仅因论文命名、作者 wording、训练预算或 protocol prose 不同就增加 Setting。CI 中的 protocol profile / fingerprint / compatibility 回归用于防止未来增长重新退化为“每篇论文一个 Setting”。
+
 ## RoboCasa身份不可混合
 
 - `dataset=RoboCasa`仅对应原版RoboCasa；原版24原子任务、5复合迁移及其他子协议仍分开。

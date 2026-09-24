@@ -1,9 +1,9 @@
-import sys
+import copy,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts/build'))
 from catalog_core import read_catalog
-from benchmark_settings import build_settings,training_identity,evaluation_key
+from benchmark_settings import build_settings,training_identity,evaluation_key,protocol_profile,profile_identity,protocol_fingerprint,protocol_compatibility
 
 def catalog():
     _,_,tracks,results=read_catalog(ROOT)
@@ -115,3 +115,34 @@ def test_calvin_synonymous_chain_length_reports_share_setting():
     assert len(target)==1
     assert target[0]['paperCount']>=3
     assert target[0]['resultCount']>=25
+
+
+def test_structured_protocol_profile_excludes_training_and_reporting_recipe():
+    tracks,_,_=catalog()
+    base=next(t for t in tracks if t['id']=='libero-oft-single-view')
+    changed=copy.deepcopy(base)
+    changed['trainingRegime']='Completely different training corpus, optimizer and checkpoint.'
+    changed['protocol']=base['protocol']+' Reporting uses another implementation note.'
+    assert profile_identity(protocol_profile(base))==profile_identity(protocol_profile(changed))
+    assert protocol_fingerprint(base)==protocol_fingerprint(changed)
+    assert protocol_compatibility(base,changed)=='exact'
+
+def test_true_evaluation_condition_changes_protocol_identity():
+    tracks,_,_=catalog()
+    base=next(t for t in tracks if t['id']=='libero-oft-single-view')
+    delayed=copy.deepcopy(base)
+    delayed['id']='synthetic-libero-delay-d1'
+    delayed['name']=base['name']+' D=1'
+    delayed['protocol']=base['protocol']+' Deployment delay D=1.'
+    assert evaluation_key(base)!=evaluation_key(delayed)
+    assert protocol_fingerprint(base)!=protocol_fingerprint(delayed)
+    assert protocol_compatibility(base,delayed)=='incompatible'
+
+def test_same_setting_with_partial_column_coverage_is_not_split():
+    tracks,_,_=catalog()
+    base=next(t for t in tracks if t['id']=='libero-oft-single-view')
+    partial=copy.deepcopy(base)
+    partial['id']='synthetic-libero-partial-columns'
+    partial['columns']=base['columns'][:-1]
+    assert evaluation_key(base)==evaluation_key(partial)
+    assert protocol_compatibility(base,partial)=='partial'
