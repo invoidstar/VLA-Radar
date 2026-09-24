@@ -10,6 +10,7 @@ catalog/manifest.json       公共元信息、稳定论文顺序
 catalog/first-public.json   最早公开日期的迁移保护值
 catalog/papers/p001.json    单篇源记录（paper / publication / note）
 catalog/benchmarks.json     显式评测协议与指标定义
+catalog/relations.json      已核验论文前后继与系列关系
 catalog/results/r-*.json    单条结果与证据
             ↓ python scripts/build/build_catalog.py
 data/library.json          轻量首页目录（卡片与筛选字段）
