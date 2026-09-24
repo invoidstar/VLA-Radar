@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts/build"))
 from catalog_core import read_catalog
 from paper_relations import load_relations,build_relation_views
+from build_catalog import outputs
 
 def test_relation_registry_is_referentially_closed():
     _,records,_,_=read_catalog(ROOT)
@@ -68,3 +69,13 @@ def test_invalid_series_unknown_paper_is_rejected():
         try:load_relations(root,ids)
         except ValueError as exc:assert "unknown paper" in str(exc)
         else:raise AssertionError("unknown series paper accepted")
+
+
+def test_public_library_contains_relation_views_without_extra_fetch():
+    out=outputs(ROOT)
+    lib=json.loads(out["data/library.json"])
+    byid={p["id"]:p for p in lib["papers"]}
+    assert byid["p069"]["relations"]["previous"][0]["paperId"]=="p064"
+    assert byid["p064"]["relations"]["followups"][0]["paperId"]=="p069"
+    assert any(x["id"]=="series-qwen-robotics" for x in byid["p113"]["relations"]["series"])
+    assert byid["p001"]["relations"]=={"previous":[],"followups":[],"series":[]}
