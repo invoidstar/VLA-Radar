@@ -161,6 +161,39 @@
             "url": "https://arxiv.org/html/2609.26292v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：Physical Random 与 Official Random 的来源差异必须显式保留",
+        "body": "Table 1 把 Clean、Official Random、Physical Random 并列，但前两列部分取自相应公开 Benchmark 报告，而 Physical Random 是本文在新增环境中评测。91.78→44.24 等落差非常醒目，适合说明标准视觉随机化高分不能代理物理鲁棒性；不过精确差值仍同时含评测环境实现与物理参数变化，不能当成“只修改某一个参数”的单因素实验。后续复现应使用同 checkpoint 在三条件下统一重跑，才能更严格量化纯物理 OOD gap。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：13维连续参数是可控测试空间，不是现实物理分布模型",
+        "body": "质量、摩擦、阻尼等属性被作者限制在仿真器可稳定运行的范围，episode-level ground truth 对研究 condition-aware policy 很有用，但并没有证明这些维度覆盖真实材料、柔性、磨损、传感器延迟等全部动力学因素。5K+ demonstrations 也表示在该采样方案中的专家轨迹，不等于各13维组合均匀覆盖。论文最稳健的结论是“加入明确 physical randomization 会暴露现有模型的大幅性能缺口”。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：新增 Physical Random Setting，不重定义原 RoboTwin Random",
+        "body": "RoboTwin-Phys 复用 RoboTwin 2.0 的任务语义，却改变随机化问题本身，因此 Radar 新增独立 Benchmark/Setting，而不是覆盖原 clean/random 结果。taxonomy 标为 Generalization/Robustness，并保留 multi-task、bimanual 等标签。以后若模型在同一 checkpoint 下同时报告 Official Random 与 Physical Random，可以比较视觉/布局鲁棒和物理动力学鲁棒；不同训练数据仍作为 Result Report recipe，而不是拆成新的 Setting。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.26292v1"
+          }
+        ]
       }
     ],
     "coverage": {
