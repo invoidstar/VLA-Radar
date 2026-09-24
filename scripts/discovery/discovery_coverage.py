@@ -157,7 +157,7 @@ def list_v2_audits(root=ROOT,policy=None):
     policy=policy or load_policy(root);out=[]
     directory=Path(root)/AUDIT_DIR
     if not directory.exists():return out
-    for path in sorted(directory.glob("*.json")):
+    for path in sorted(directory.glob("discovery-*.json")):
         audit=load(path);report=validate_audit(audit,policy);out.append((path,audit,report))
     return out
 
