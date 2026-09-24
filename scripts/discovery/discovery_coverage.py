@@ -60,6 +60,7 @@ def load_policy(root=ROOT):
         require(type(lane.get("minSuccessful")) is int and lane["minSuccessful"]>=1,"lane minSuccessful")
     day(p["enforceFrom"]);day(p["baselineSuccessfulThrough"])
     require(type(p.get("defaultLookbackDays")) is int and p["defaultLookbackDays"]>=1,"defaultLookbackDays")
+    require(type(p.get("minDistinctSuccessfulProviders")) is int and p["minDistinctSuccessfulProviders"]>=2,"minDistinctSuccessfulProviders")
     require(set(p.get("sourceStatuses",[]))=={"success","partial","blocked"},"source status policy")
     require(set(p.get("candidateStatuses",[]))=={"selected","deferred","excluded","duplicate"},"candidate status policy")
     return p
@@ -134,12 +135,17 @@ def validate_audit(audit,policy):
     require(audit["counts"]==counts,f"discovery counts mismatch: expected {counts}")
     lane_report={}
     complete=True
+    successful_providers=set()
     for lane in policy["requiredLanes"]:
         hits=[s for s in audit["sources"] if s["lane"]==lane["id"] and source_covers(s,start,end)]
+        successful_providers.update(s["provider"].strip().casefold() for s in hits)
         ok=len(hits)>=lane["minSuccessful"]
         lane_report[lane["id"]]={"required":lane["minSuccessful"],"successful":len(hits),"complete":ok}
         complete=complete and ok
-    require((audit["status"]=="success")==complete,"audit status does not match required-lane coverage")
+    provider_ok=len(successful_providers)>=policy["minDistinctSuccessfulProviders"]
+    lane_report["_providerDiversity"]={"required":policy["minDistinctSuccessfulProviders"],"successful":len(successful_providers),"complete":provider_ok}
+    complete=complete and provider_ok
+    require((audit["status"]=="success")==complete,"audit status does not match required-lane coverage/provider diversity")
     if complete:require(window["completedAt"] is not None,"successful audit needs completedAt")
     else:require(window["completedAt"] is None,"partial audit cannot claim completedAt")
     return {"complete":complete,"window":{"from":window["from"],"to":window["to"]},"counts":counts,"lanes":lane_report}
