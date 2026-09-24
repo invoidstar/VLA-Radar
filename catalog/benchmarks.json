@@ -6120,7 +6120,15 @@
         "Random",
         "Average"
       ],
-      "source": "https://arxiv.org/html/2609.23863v1"
+      "source": "https://arxiv.org/html/2609.23863v1",
+      "familyId": "robotwin2-official-2500-clean",
+      "familyName": "RoboTwin 2.0 · Official 2.5K Clean",
+      "familySummary": "官方 2,500 clean demonstrations 口径（50 demos × 50 tasks），Clean / Random 分别评测。50-task co-train 与 per-task SFT 作为训练 recipe 展开。",
+      "familyKind": "official",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-official-2500clean-cotrain",
+      "recipeName": "Per-task SFT · GAM grounded action head",
+      "recipeType": "training"
     },
     {
       "id": "gam-v1-libero-pro",
