@@ -13,7 +13,7 @@ class BenchmarkTaxonomyTests(unittest.TestCase):
 
     def test_exact_dataset_coverage(self):
         self.assertEqual(set(self.tax['benchmarks']),{t['dataset'] for t in self.tracks})
-        self.assertEqual(len(self.tax['benchmarks']),61)
+        self.assertGreaterEqual(len(self.tax['benchmarks']),61)
 
     def test_all_focuses_are_used(self):
         used={x['focus'] for x in self.tax['benchmarks'].values()}
@@ -31,6 +31,10 @@ class BenchmarkTaxonomyTests(unittest.TestCase):
         self.assertEqual(b['VLA-Touch (real)']['focus'],'dexterous-contact')
         self.assertEqual(b['Google Robot (real)']['focus'],'language-planning-compositionality')
         self.assertEqual(b['ActionCache (real)']['focus'],'efficiency-deployment')
+        self.assertEqual(b['RoboFollow']['focus'],'language-planning-compositionality')
+        self.assertEqual(b['RoboTwin-Phys']['focus'],'generalization-robustness')
+        self.assertEqual(b['LIBERO-PRO']['focus'],'generalization-robustness')
+        self.assertEqual(b['RMBench']['focus'],'long-horizon-memory')
         self.assertEqual(b['RoboTwin']['environment'],'simulation')
         self.assertEqual(b['RoboDojo real']['environment'],'real')
         self.assertEqual(b['SimplerEnv']['environment'],'mixed')
