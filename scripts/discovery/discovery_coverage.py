@@ -90,6 +90,7 @@ def validate_audit(audit,policy):
     window=audit["window"]
     require(set(window)=={"from","to","attemptedAt","completedAt"},"discovery window fields")
     start=day(window["from"]);end=day(window["to"]);attempted=day(window["attemptedAt"])
+    require(audit["id"].startswith(f"discovery-{window['from']}-{window['to']}"),"audit id/window mismatch")
     require(start<=end and attempted>=end,"discovery window order")
     if window["completedAt"] is not None: require(day(window["completedAt"])>=end,"completedAt before window end")
     require(isinstance(audit["scope"],str) and audit["scope"].strip(),"discovery scope")
@@ -108,8 +109,9 @@ def validate_audit(audit,policy):
         require(isinstance(s["kind"],str) and s["kind"].strip(),"source kind")
         require(s["status"] in policy["sourceStatuses"],"invalid source status")
         require(isinstance(s["coverage"],dict) and set(s["coverage"])=={"from","to"},"source coverage fields")
-        if s["coverage"]["from"] is not None:day(s["coverage"]["from"])
-        if s["coverage"]["to"] is not None:day(s["coverage"]["to"])
+        cfrom=day(s["coverage"]["from"]) if s["coverage"]["from"] is not None else None
+        cto=day(s["coverage"]["to"]) if s["coverage"]["to"] is not None else None
+        if cfrom is not None and cto is not None:require(cfrom<=cto,"source coverage order")
         require(isinstance(s["query"],str) and s["query"].strip(),"source query/scope required")
         require(type(s["resultCount"]) is int and s["resultCount"]>=0,"source resultCount")
         require(isinstance(s["note"],str),"source note")
@@ -123,6 +125,7 @@ def validate_audit(audit,policy):
         if c["arxiv"]:require(bool(re.fullmatch(r"\d{4}\.\d{4,5}",c["arxiv"])),"candidate arxiv")
         if c["date"] is not None:day(c["date"])
         require(isinstance(c["sourceIds"],list) and c["sourceIds"],"candidate sourceIds")
+        require(len(c["sourceIds"])==len(set(c["sourceIds"])),"candidate duplicate sourceIds")
         require(set(c["sourceIds"])<=source_ids,"candidate references unknown source")
         require(c["status"] in policy["candidateStatuses"],"candidate status")
         require(isinstance(c["reason"],str) and c["reason"].strip(),"candidate disposition reason")
@@ -242,7 +245,11 @@ def apply_audit(root,path):
     state["lastDiscoveryAudit"]=str(path.relative_to(root)).replace("\\","/")
     if report["complete"]:
         current=state.get("lastSuccessfulSearchAt")
-        require(not current or audit["window"]["to"]>=current,"refusing to move successful discovery checkpoint backward")
+        current_day=day(current) if current else day(policy["baselineSuccessfulThrough"])
+        required_start=current_day-timedelta(days=policy["defaultLookbackDays"])
+        require(day(audit["window"]["from"])<=required_start,
+                f"successful discovery audit must include overlap from {required_start.isoformat()}")
+        require(day(audit["window"]["to"])>=current_day,"refusing to move successful discovery checkpoint backward")
         state["lastSuccessfulSearchAt"]=audit["window"]["to"]
         state["lastCompleteDiscoveryAudit"]=str(path.relative_to(root)).replace("\\","/")
         state["lastStatus"]="success"
