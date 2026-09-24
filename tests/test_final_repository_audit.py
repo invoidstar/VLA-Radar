@@ -6,7 +6,9 @@ def test_content_queues_are_closed():
     r=j('maintenance/state/benchmark-review.json')['papers']
     counts={}
     for x in r.values(): counts[x['status']]=counts.get(x['status'],0)+1
-    assert counts=={'extracted':96,'not-applicable':2}
+    assert counts=={'extracted':102,'not-applicable':3,'deferred':5}
+    assert {pid for pid,x in r.items() if x['status']=='deferred'}=={'p102','p103','p105','p107','p110'}
+    assert all(r[pid]['note'] and not r[pid]['trackIds'] and not r[pid]['resultIds'] for pid in {'p102','p103','p105','p107','p110'})
     w=j('maintenance/state/work-queue.json')
     assert w['remainingNotes']==0 and w['notes']==[]
 def test_final_counts_and_referential_closure():
