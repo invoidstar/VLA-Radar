@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "enforceFrom": "2026-09-25",
+  "baselineSuccessfulThrough": "2026-09-24",
+  "defaultLookbackDays": 14,
+  "requiredLanes": [
+    {
+      "id": "primary-preprints",
+      "label": "Primary preprint / publisher search",
+      "minSuccessful": 1,
+      "description": "Direct primary-source discovery such as arXiv category/keyword search; not an aggregator."
+    },
+    {
+      "id": "academic-index",
+      "label": "Independent academic index",
+      "minSuccessful": 1,
+      "description": "At least one broad independent scholarly index, e.g. OpenAlex or Semantic Scholar."
+    },
+    {
+      "id": "curated-robotics",
+      "label": "Curated robotics index",
+      "minSuccessful": 1,
+      "description": "At least one robotics/VLA-specific curated feed or literature index."
+    },
+    {
+      "id": "reverse-discovery",
+      "label": "Official reverse discovery",
+      "minSuccessful": 1,
+      "description": "Official lab/project/benchmark/leaderboard pages or citation/related-work expansion used as a reverse check."
+    }
+  ],
+  "sourceStatuses": [
+    "success",
+    "partial",
+    "blocked"
+  ],
+  "candidateStatuses": [
+    "selected",
+    "deferred",
+    "excluded",
+    "duplicate"
+  ]
+}
