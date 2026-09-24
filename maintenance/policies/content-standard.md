@@ -36,7 +36,11 @@
 
 ## 周更
 
-沿用现有每周任务，检索新论文、追踪旧论文发表状态，同时按本标准补深读笔记、所有相关榜单和官方资源链接。新增论文在进入主库前检查 Project / Code；既有论文若出现新仓库或项目页，在当周同步更新资源 registry。单项来源被阻塞不阻塞其他已核验内容的PR；未完成项留队列，失败不推进完整成功检索日期。范围、数量和状态均按仓库当前记录统计。
+沿用现有每周任务，检索新论文、追踪旧论文发表状态，同时按本标准补深读笔记、所有相关榜单和官方资源链接。新增论文在进入主库前检查 Project / Code；既有论文若出现新仓库或项目页，在当周同步更新资源 registry。
+
+文献发现从 2026-09-25 起使用 `maintenance/policies/discovery-policy.json` 与 `scripts/discovery/discovery_coverage.py`。每次先按 last successful checkpoint 回退14天生成扫描窗口，再分别完成 primary-preprints、academic-index、curated-robotics、reverse-discovery 四个 lane，并把实际 provider、query/scope、覆盖日期、结果数和 blocked/partial 状态写入 schema-v2 discovery audit。所有候选必须有 `selected / deferred / excluded / duplicate` disposition；deferred 不因当周未深读而丢失，历史 audit 会与新 audit 聚合成持续候选队列。
+
+单项来源被阻塞不阻塞其他已核验内容的PR，也不阻止已经充分核验的论文入库；但只要任一必需 discovery lane 未完整覆盖，本轮只能标为 partial，`lastSuccessfulSearchAt` 不得推进。完整成功日期只能由通过 coverage gate 的 audit 经 `discovery_coverage.py apply` 更新。范围、数量和状态均按仓库当前记录统计，不能把“找到了几篇论文”替代“扫描窗口已完整覆盖”的证据。
 
 ## 全库检查与受限材料
 

@@ -6,5 +6,9 @@
   "lastSuccessfulSearchAt": "2026-09-24",
   "lastAttemptAt": "2026-09-24",
   "lastStatus": "success",
-  "lastSummary": "完整回补窗口 2026-09-01—2026-09-24 已完成：使用 robotics_paper_daily 与 Embodied-AI-Daily 两个独立公开索引交叉扫描 VLA/WAM/机器人基础模型候选，并对入库条目回到 arXiv/官方项目材料做正文级核验。候选审计共记录 276 条，12 条完成正文深读并进入主库，244 条保留 deferred、20 条按范围边界 excluded；79 条被两个索引交叉发现。complete 表示本窗口的公开检索、去重与候选 disposition 已闭环，不表示 deferred 候选都已经完成深读或应进入主库。"
+  "lastSummary": "完整回补窗口 2026-09-01—2026-09-24 已完成：使用 robotics_paper_daily 与 Embodied-AI-Daily 两个独立公开索引交叉扫描 VLA/WAM/机器人基础模型候选，并对入库条目回到 arXiv/官方项目材料做正文级核验。候选审计共记录 276 条，12 条完成正文深读并进入主库，244 条保留 deferred、20 条按范围边界 excluded；79 条被两个索引交叉发现。complete 表示本窗口的公开检索、去重与候选 disposition 已闭环，不表示 deferred 候选都已经完成深读或应进入主库。",
+  "discoveryPolicyVersion": 1,
+  "lastDiscoveryAudit": "maintenance/audits/discovery-2026-09-01-2026-09-24.json",
+  "lastCompleteDiscoveryAudit": null,
+  "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }

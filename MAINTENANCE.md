@@ -49,6 +49,26 @@ python scripts/maintenance/sync_publications.py --apply-safe    # 仅在候选�
 
 arXiv 按精确 ID 分批、间隔请求；Crossref 只核对直接关联的 DOI 及高相似标题。无 DOI 的论文、改题论文、仅在作者评论中出现的录用消息进入待核验队列，由维护任务查看会议、期刊或 OpenReview 的正式证据后更新。脚本不是无遗漏的录用识别器。不用 arXiv 的 DataCite DOI 证明会议发表，不根据 Crossref deposit 日期猜录用时间。部分失败不标成全量成功。
 
+## 文献发现覆盖门禁（2026-09-25）
+
+文献发现不再用“本周搜过了”或单一聚合站作为成功判据。完整检索窗口由 `maintenance/policies/discovery-policy.json` 定义四类必需 lane：直接 primary preprint/publisher 检索、独立 academic index、VLA/机器人 curated index、以及官方 lab/project/benchmark/leaderboard 或 related/citation 的反向发现。每个 lane 至少要有一个成功 provider 覆盖整个窗口；某个必需 lane 被限流、阻塞或只完成部分范围时，本轮 discovery 状态必须是 `partial`。
+
+每周先生成真实扫描窗口：
+
+```bash
+python scripts/discovery/discovery_coverage.py plan --to YYYY-MM-DD
+```
+
+其 `from` 会从 `lastSuccessfulSearchAt` 回退14天，主动重叠扫描以吸收延迟收录与索引更新时间差。完成搜索后，将实际 provider、query/scope、覆盖起止、resultCount、状态与全部候选 disposition 写入 `maintenance/audits/discovery/discovery-FROM-TO*.json`（schema v2）。候选只允许 `selected / deferred / excluded / duplicate`，并按 arXiv ID、DOI、规范标题去重；找到了但尚未全文核验的论文必须留为 deferred，不能从后续周次消失。
+
+```bash
+python scripts/discovery/discovery_coverage.py validate maintenance/audits/discovery/discovery-FROM-TO.json
+python scripts/discovery/discovery_coverage.py apply maintenance/audits/discovery/discovery-FROM-TO.json
+python scripts/discovery/discovery_coverage.py status
+```
+
+只有通过四 lane 门禁的 `success` audit 才能推进 `maintenance/state/state.json.lastSuccessfulSearchAt`。partial audit 仍可记录本周尝试，也不阻止已经由一手来源完整核验的论文单独发布，但 checkpoint 保持原值。历史 schema-v1 discovery audit 不重写；状态命令会与新 audit 一起聚合候选，因此旧 deferred 队列继续保留。CI 的 `check_discovery.py` 会阻止“checkpoint 已前移但没有对应完整 audit”这种漏扫状态进入 main。
+
 ## 详细阅读笔记
 
 笔记分研究问题、贡献与创新、方法机制、训练与评测口径、关键结果、消融与负面结果、局限和阅读重点。每节保存自己的证据来源；阅读标签分 `legacy`（旧笔记）、`expanded`（指定版本已扩展）、`needs_review`（如新版待复核）。当前覆盖与受限项以 canonical 文件和 work-queue 为准，不在维护手册固化易过期的完成数量。
@@ -70,9 +90,11 @@ python scripts/discovery/extract_results.py https://arxiv.org/html/2608.00725v1 
 
 ## 维护节奏与状态
 
-每周日早晨约08:00（Asia/Singapore）原有 ChatGPT 任务继续执行，首次2026-09-20。顺序为读取最新默认分支→文献发现→全部 arXiv/直接DOI状态扫描→正式出处候选复核→新论文和旧队列笔记→榜单候选与协议核验→源健康轮检→构建校验→PR。没有变更不创建空PR。检索首次从2026-09-01回补，此后从最近完整成功日期回退14天；本次工程升级不前移这个检查点。
+每周日早晨约08:00（Asia/Singapore）原有 ChatGPT 任务继续执行，首次2026-09-20。顺序为读取最新默认分支→用 discovery coverage plan 确定重叠窗口→完成四类来源 lane 并写 audit→候选去重与 disposition→全部 arXiv/直接DOI状态扫描→正式出处候选复核→新论文和旧队列笔记→榜单候选与协议核验→源健康轮检→构建校验→PR。没有变更不创建空PR。2026-09-24 以前的完整回补作为 legacy baseline 保留；2026-09-25 起只有 schema-v2 multi-lane audit 可以继续推进完整检索 checkpoint。
 
 ```bash
+python scripts/discovery/discovery_coverage.py plan --to YYYY-MM-DD
+python scripts/discovery/discovery_coverage.py status
 python scripts/maintenance/maintenance_queue.py --limit 8
 python scripts/maintenance/check_sources.py --limit 100 --due-days 30
 python scripts/build/build_catalog.py
