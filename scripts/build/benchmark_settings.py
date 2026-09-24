@@ -188,7 +188,7 @@ def protocol_profile(track):
       'metric':metric,
       'unit':track['unit'],
       'direction':track['direction'],
-      'columns':list(canon_columns(track)),
+      'columns':list(canon_columns(track['columns'])),
       'conditions':list(eval_context(track)),
     }
 
