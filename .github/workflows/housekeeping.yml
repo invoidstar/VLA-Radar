@@ -2,9 +2,6 @@ name: Safe merged-branch housekeeping
 on:
   schedule:
     - cron: '20 1 * * 0'
-  workflow_run:
-    workflows: ['Validate and deploy VLA Radar']
-    types: [completed]
   workflow_dispatch:
     inputs:
       apply:
@@ -18,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   cleanup:
-    if: github.repository == 'invoidstar/VLA-Radar' && (github.event_name != 'workflow_run' || (github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.conclusion == 'success'))
+    if: github.repository == 'invoidstar/VLA-Radar'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
