@@ -73,12 +73,25 @@ try:
   assert 'Follow-up' in page.locator('#paper-detail .relation-section').inner_text()
   assert 'Same Series · OpenVLA' in page.locator('#paper-detail .relation-section').inner_text()
   assert page.locator('#paper-detail .relation-section [data-paper="p069"]').count()>=1
+  # Reproducibility Card distinguishes an official link from audited release completeness.
+  assert page.locator('#paper-detail .reproducibility-card').count()==1
+  assert '可用' in page.locator('#paper-detail [data-repro-dim="weights"]').inner_text()
+  assert '部分开放' in page.locator('#paper-detail [data-repro-dim="license"]').inner_text()
+  assert page.locator('#paper-detail [data-repro-dim="weights"] a').count()>=1
   for link in page.locator('#paper-detail .paper-resources .paper-resource').all():
    assert link.get_attribute('target')=='_blank' and 'noopener' in (link.get_attribute('rel') or '')
   page.locator('#paper-detail [data-focus="p064"]').click();page.wait_for_selector('.reader-title-tools')
   assert page.locator('.reader-title-tools a',has_text='项目主页').count()==1
   assert page.locator('.reader-title-tools a',has_text='开源代码').count()==1
   page.locator('.reader-toolbar [data-view="papers"]').click();page.wait_for_selector('#search');page.wait_for_timeout(250)
+  page.locator('#search').fill('Qwen-RobotManip');page.wait_for_timeout(900)
+  qwen=page.locator('[data-paper="p114"]').first;assert qwen.count()==1
+  qwen.locator('xpath=ancestor::article[contains(@class,"paper-card")]').locator('.detail-btn').click();page.wait_for_selector('.note-section')
+  assert '未开放' in page.locator('#paper-detail [data-repro-dim="weights"]').inner_text()
+  assert '部分开放' in page.locator('#paper-detail [data-repro-dim="code"]').inner_text()
+  assert page.locator('#paper-detail [data-repro-dim="weights"] .repro-evidence').count()==1
+  assert page.locator('#paper-detail [data-repro-dim="weights"] a:not(.repro-evidence)').count()==0
+  page.keyboard.press('Escape');page.wait_for_timeout(150)
   page.locator('#search').fill('In-Context VLA');page.wait_for_timeout(900)
   nores=page.locator('[data-paper="p006"]').first;assert nores.count()==1
   assert nores.locator('xpath=ancestor::article[contains(@class,"paper-card")]').locator('.paper-resources').count()==0
@@ -116,7 +129,7 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
   page.screenshot(path=str(out/'mobile.png'),full_page=False)
   assert not errors, errors
-  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','verified paper lineage and same-series rendering','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
+  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','verified paper lineage and same-series rendering','reproducibility status card and explicit unavailable weights','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
   print('PASS browser HTTP integration, persistence, lazy-loading, worker search and mobile overflow')
   browser.close()
 finally:server.terminate();server.wait()
