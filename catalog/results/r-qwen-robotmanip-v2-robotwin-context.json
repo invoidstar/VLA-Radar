@@ -1,0 +1,19 @@
+{
+  "id": "r-qwen-robotmanip-v2-robotwin-context",
+  "paperId": "p114",
+  "method": "Qwen-RobotManip-Context",
+  "trackId": "qwen-robotmanip-v2-robotwin",
+  "values": {
+    "Easy": 93.7,
+    "Hard": 94
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://github.com/QwenLM/Qwen-RobotManip",
+  "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+  "locator": "README In-Distribution Manipulation",
+  "attribution": "author-reported",
+  "trainingData": "同基础模型；使用 episode context。",
+  "evaluationNotes": "Context 行；作者报告。",
+  "supersedes": ""
+}

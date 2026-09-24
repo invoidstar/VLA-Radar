@@ -14,9 +14,10 @@ def plan(root,limit=8):
     m,records,tracks,results=read_catalog(root);now=today()
     def priority(r):
         n=r['note'];return (0 if n['status']=='needs_review' else 1 if n['status']=='legacy' else 2,{'deep':0,'selective':1,'overview':2}[r['paper']['priority']],n['verifiedAt'] or '',r['paper']['id'])
-    out={'schemaVersion':1,'plannedAt':now,'notes':[{'paperId':r['paper']['id'],'reason':r['note']['status'],'readVersion':r['note']['version'],'latestVersion':r['publication']['latestArxivVersion']} for r in sorted(records,key=priority)[:limit]],
+    pending=[r for r in records if r['note']['status']!='expanded']
+    out={'schemaVersion':1,'plannedAt':now,'notes':[{'paperId':r['paper']['id'],'reason':r['note']['status'],'readVersion':r['note']['version'],'latestVersion':r['publication']['latestArxivVersion']} for r in sorted(pending,key=priority)[:limit]],
          'metadata':{'allArxiv':True,'withoutArxiv':[r['paper']['id'] for r in records if not r['paper']['arxiv']]},
-         'remainingNotes':sum(r['note']['status']!='expanded' for r in records),
+         'remainingNotes':len(pending),
          'sourceHealth':'check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete',
          'quarterlyReview':f'{now[:4]}-Q{(int(now[5:7])-1)//3+1}',
          'instructions':'For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context.'}

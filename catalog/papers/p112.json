@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p112",
+    "name": "Xiaomi-Robotics-0",
+    "title": "Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution",
+    "team": "Rui Cai、Jun Guo、Xinze He、Piaopiao Jin、Jie Li、Bingxuan Lin 等（Xiaomi Robotics）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-02-13",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC）；当前深读 v2。",
+    "collectionMonth": "2026-02",
+    "versionNote": "2月13日首次公开｜当前复核 arXiv v2（3月25日）",
+    "topics": [
+      "pretraining",
+      "action",
+      "efficiency"
+    ],
+    "tags": [
+      "VLA",
+      "real-time",
+      "asynchronous",
+      "open source",
+      "LIBERO",
+      "CALVIN"
+    ],
+    "priority": "deep",
+    "contribution": "以 Qwen3-VL + flow-matching DiT 构建 4.7B VLA，并用 Choice Policies、两阶段预训练和异步 action-chunk 机制兼顾泛化与实时执行。",
+    "findings": "LIBERO 98.7%；CALVIN ABCD→D / ABC→D 平均链长 4.80 / 4.75；SimplerEnv Google VM/VA 85.5%/74.7%，WidowX 79.2%。",
+    "limitations": "主要标准 benchmark 结果包含目标数据后训练；异步实时收益与具体硬件、chunk 和控制栈有关，自采机器人数据也并非全部公开。",
+    "insight": "VLA 的实时部署问题不只是缩小模型，还要显式处理生成延迟与正在执行动作之间的时序对齐。",
+    "readingFocus": "Choice Policies、VLM/DiT 两阶段训练、Lambda attention、异步 chunk、LIBERO/CALVIN/SimplerEnv 协议及开源范围。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-25 按 arXiv v2、官方项目页与 GitHub 仓库复核；结果为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v2 正文",
+        "url": "https://arxiv.org/html/2602.12684v2"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2602.12684"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://robotics.xiaomi.com/xiaomi-robotics-0.html"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2602.12684",
+    "arxiv": "2602.12684",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-02-13",
+    "firstArxivSource": "https://arxiv.org/abs/2602.12684v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-03-25",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-25",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-02-13",
+        "observedAt": "2026-09-25",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2602.12684v1",
+        "note": "arXiv v1；首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-03-25",
+        "observedAt": "2026-09-25",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2602.12684v2",
+        "note": "当前公开版本 v2；本次深读版本。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-25",
+    "verifiedAt": "2026-09-25",
+    "version": "arXiv:2602.12684v2（2026-03-25），方法、异步执行、三套模拟评测与开源实现；2026-09-25复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "目标：在通用 VLA 能力与实时闭环执行之间取平衡",
+        "body": "Xiaomi-Robotics-0 把问题定义得很工程化：模型既要从大规模视觉语言和跨本体机器人数据获得泛化能力，又必须在真实机器人上持续、低延迟地产生动作。模型总规模约 4.7B，以 Qwen3-VL-4B-Instruct 作为视觉语言骨干，再接 16 层 DiT 动作专家。论文因此同时讨论预训练、动作解码、异步执行和端到端部署，而不是只追求离线 benchmark 分数。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "两阶段动作学习：先让 VLM 学会动作语义，再训练连续动作专家",
+        "body": "训练第一阶段通过 Choice Policies 给 VLM 加入动作相关辅助监督：模型提出多个动作候选，并用 winner-takes-all 形式鼓励至少一个候选接近示范；同时混合视觉语言数据，避免 VLM 在机器人训练后丢失语义能力。第二阶段冻结主要 VLM 表示，再训练基于 flow matching 的 DiT 连续动作专家，使离散语义骨干与连续控制解码分工更清楚。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "choice-policy",
+        "title": "Choice Policies 的作用是动作表征监督，而不是部署时额外规划器",
+        "body": "Choice Policies 让 VLM 中间表征显式接触动作预测，但最终动作仍由 DiT 根据视觉语言 KV、机器人状态和噪声轨迹生成。论文还避免让下游动作专家直接读取容易形成捷径的辅助答案 token，从而减少“复制候选动作”而不看图像的风险。理解这个设计时应把它看作预训练表示约束，而不是推理时需要枚举多个策略再搜索最优候选。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "预训练数据：机器人时序与视觉语言共同进入同一基础模型",
+        "body": "论文汇集开源与自采机器人轨迹，整体约 2 亿 timestep，并加入超过 8,000 万视觉语言样本；机器人与 V-L 样本按论文配方混合训练。自采数据包括约 338 小时 Lego 操作和约 400 小时毛巾操作等真实轨迹。这个规模说明 XR-0 的能力来自“模型结构 + 大规模跨域数据 + 训练配方”的组合，外部基线差值不能单独归因给某一个模块。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "async",
+        "title": "异步执行：用前缀动作连续性，但阻断复制捷径",
+        "body": "真实部署时，下一段动作生成会发生在上一段动作仍被执行的过程中。若把已经承诺执行的动作前缀直接喂给模型，训练时模型可能只复制前缀而忽略视觉变化。XR-0 通过位置偏移和 Lambda-shaped attention mask 控制哪些动作 token 可以互相访问，让异步 chunk 能在时间上衔接，同时保留对最新观测的依赖。输入流还按统一时间基准同步，以减少多相机/状态错位。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "libero",
+        "title": "LIBERO：标准四套件平均 98.7%",
+        "body": "在 LIBERO 四套件上，XR-0 报告 Spatial 98.8%、Object 100.0%、Goal 98.8%、Long 97.2%，平均 98.7%。官方仓库同时提供对应微调检查点和评测脚本。这里的高分属于目标 benchmark 上的专用后训练结果，不应被误写成“基础模型零样本 LIBERO”；Radar 因此在 Result Report 中保留微调与示范配方，而不是只展示一个 98.7。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "calvin-simpler",
+        "title": "CALVIN 与 SimplerEnv 展示跨协议能力，但单位必须分开",
+        "body": "CALVIN 采用五指令链的平均完成长度，XR-0 在 ABCD→D 与 ABC→D 分别报告 4.80 与 4.75；这不是百分比成功率。SimplerEnv 则回到成功率：Google Robot 的 Visual Matching/Variant Aggregation 为 85.5%/74.7%，WidowX 平均 79.2%。三个 benchmark 的任务集合、训练数据和指标都不同，不能把 4.80 与 98.7% 等数字直接排到同一列。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "opensource",
+        "title": "开放程度：权重、推理/评测与后训练代码形成较完整闭环",
+        "body": "官方仓库在 2026 年 2 月公开预训练/微调权重、推理和评测脚本，并在 4 月进一步开放后训练代码。LIBERO、CALVIN、SimplerEnv 都给出对应 checkpoint 和评测入口，真实机器人适配也提供示例流程。对 Radar 来说，这使论文不只是“报告一个模型”，还提供了较强的可检查实现证据；但自采训练数据本身并未等价地完全公开。",
+        "sources": [
+          {
+            "label": "官方代码仓库",
+            "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
+          }
+        ]
+      },
+      {
+        "id": "deployment",
+        "title": "部署细节：实时表现来自计算与执行重叠，不等于模型瞬时推理",
+        "body": "XR-0 的异步方案把动作生成放在前一 chunk 的执行窗口中，实际收益取决于 chunk horizon、机器人控制频率、通信延迟和 GPU 性能。若模型生成时间超过预留窗口，系统仍会出现停顿；若窗口过长，又可能降低对新视觉反馈的反应速度。因此论文的实时性更接近“调度协议 + 模型速度”的联合结果，而不是单一 FLOPs 指标。官方实现对输入时间同步和执行前缀都有明确处理，这些细节也是复现时不可省略的部分。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "comparison",
+        "title": "与后续 Xiaomi-Robotics-1 的关系：0 更重部署，1 更重规模化预训练",
+        "body": "XR-0 与已经收录的 Xiaomi-Robotics-1 不是同一论文的版本更新。XR-0 重点是 4.7B VLA、Choice Policies 和异步实时执行；XR-1 则把核心问题推进到超过 100K 小时 embodiment-free UMI 轨迹的预训练扩展，并采用不同的两阶段 pre/post-training 叙事。VLA-Radar 因此保留两条独立论文记录，同时在资源层连接各自官方项目页，而不会用 XR-1 的后续数字覆盖 XR-0 的原始评测。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：实时性和泛化仍依赖部署协议与数据覆盖",
+        "body": "XR-0 的异步机制解决的是模型计算与动作执行重叠问题，并不意味着任何硬件上都能得到相同控制频率。标准 benchmark 结果包含目标数据后训练，不能和纯零样本模型混称。论文中的真机任务又覆盖有限的 Lego/毛巾等操作，且部分训练数据来自内部采集。因此更可靠的结论是：该架构展示了可部署的统一 VLA 工程路径，而不是已经验证任意机器人、任意场景的通用控制。",
+        "sources": [
+          {
+            "label": "arXiv v2 正文",
+            "url": "https://arxiv.org/html/2602.12684v2"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2602.12684v2"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "XR-0 公开基准",
+        "columns": [
+          "Benchmark",
+          "协议",
+          "XR-0"
+        ],
+        "rows": [
+          [
+            "LIBERO",
+            "四套件平均 SR",
+            "98.7%"
+          ],
+          [
+            "CALVIN",
+            "ABCD→D / ABC→D 平均链长",
+            "4.80 / 4.75"
+          ],
+          [
+            "SimplerEnv Google",
+            "VM / VA SR",
+            "85.5% / 74.7%"
+          ],
+          [
+            "SimplerEnv WidowX",
+            "平均 SR",
+            "79.2%"
+          ]
+        ],
+        "locator": "论文主结果表；官方仓库 Benchmark",
+        "caption": "不同 benchmark 的单位与训练协议不同；Radar 分轨记录。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-25",
+      "note": "结构化 LIBERO、CALVIN 两个 split 和 SimplerEnv Google/WidowX 主结果；真机结果保留在深读。"
+    }
+  }
+}

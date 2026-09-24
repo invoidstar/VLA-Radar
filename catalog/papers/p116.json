@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p116",
+    "name": "Qwen-RobotWorld",
+    "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+    "team": "Jie Zhang、Xiaoyue Chen、Anzhe Chen、Dayiheng Liu、Deqing Li、Gengze Zhou 等（Qwen Team）",
+    "venue": "arXiv",
+    "publicationType": "report",
+    "publicationStatus": "arXiv 技术报告",
+    "firstPublished": "2026-06-15",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC）；当前深读 v3。",
+    "collectionMonth": "2026-06",
+    "versionNote": "6月15日首次公开｜当前复核 arXiv v3（6月17日）",
+    "topics": [
+      "world",
+      "pretraining",
+      "spatial"
+    ],
+    "tags": [
+      "world model",
+      "video generation",
+      "language action",
+      "multi-view",
+      "human-to-robot"
+    ],
+    "priority": "deep",
+    "contribution": "用语言作为跨机器人/驾驶/导航的统一动作接口，在 60 层双流 MMDiT 中融合 Qwen2.5-VL 语义与视频 latent，并以 8.6M EWK 数据学习跨场景未来生成。",
+    "findings": "作者报告在 EWMBench、DreamGen Bench 总体排名第一，并在 WorldModelBench、PBench 的开源模型中表现最佳；支持 20+ embodiment、500+ 动作类别和 2–4 视角一致生成。",
+    "limitations": "世界模型生成指标不等于闭环机器人成功率；语言动作条件缺少低层控制精度，接触/力觉与可达性仍需下游 policy 或额外模型解决。",
+    "insight": "跨本体 world model 可以先统一“动作意图的语言语义”，再共享视觉物理知识；但这与直接统一低层动作空间是两条不同路线。",
+    "readingFocus": "Double-Stream MMDiT、EWK、General+Expert curriculum、Scene2Robot、多视角一致性、world-model benchmarks 与下游控制边界。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-25 按 arXiv v3 与 Qwen 官方博客复核；排名与规模均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v3 正文",
+        "url": "https://arxiv.org/html/2606.17030v3"
+      },
+      {
+        "label": "arXiv 元数据 / 版本记录",
+        "url": "https://arxiv.org/abs/2606.17030"
+      },
+      {
+        "label": "Qwen-RobotWorld 官方介绍",
+        "url": "https://qwen.ai/blog?id=qwen-robotworld"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2606.17030",
+    "arxiv": "2606.17030",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-06-15",
+    "firstArxivSource": "https://arxiv.org/abs/2606.17030v1",
+    "latestArxivVersion": "v3",
+    "latestArxivAt": "2026-06-17",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-25",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-06-15",
+        "observedAt": "2026-09-25",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2606.17030v1",
+        "note": "arXiv v1；首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-06-17",
+        "observedAt": "2026-09-25",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2606.17030v3",
+        "note": "当前公开版本 v3；本次深读版本。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-25",
+    "verifiedAt": "2026-09-25",
+    "version": "arXiv:2606.17030v3（2026-06-17），世界模型架构、EWK、Scene2Robot、多视角与评测；2026-09-25复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "把 world model 从单场景视频预测扩展到统一具身世界建模",
+        "body": "Qwen-RobotWorld 不是动作 policy，而是以当前观察和语言动作条件生成未来视觉轨迹的 embodied world model。它希望同一模型同时覆盖机器人操作、自动驾驶、室内导航和人类到机器人迁移。论文提出的三个主要用途分别是：生成合成训练数据、构建可扩展虚拟评测环境，以及为下游控制提供语言引导的规划/未来信号。理解这篇工作时必须把“预测世界”与“直接输出控制动作”区分开。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      },
+      {
+        "id": "language-action",
+        "title": "语言作为统一 action interface，跨域共享物理知识",
+        "body": "不同机器人和驾驶/导航系统的低层 action space 很难直接拼接，Qwen-RobotWorld 选择自然语言作为世界模型条件：例如“拿起红杯放到架子上”同时描述目标和动作语义。这样操作、驾驶、导航可以共享训练接口，并让 Qwen2.5-VL 已有的语义/世界知识参与未来生成。代价是语言条件比低层控制更抽象，因此该模型更适合任务级未来建模，而不是替代毫秒级执行命令。",
+        "sources": [
+          {
+            "label": "Qwen 官方博客",
+            "url": "https://qwen.ai/blog?id=qwen-robotworld"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "60 层 Double-Stream MMDiT：语义流与视频潜变量逐层交互",
+        "body": "模型使用 60 层双流 Multimodal Diffusion Transformer。理解流由冻结的 Qwen2.5-VL 编码语言动作和语义上下文，生成流在 video-VAE latent 中表示视觉状态；两条流通过逐层 joint attention 交换信息。相比用轻量文本编码器，作者希望 MLLM 内化的物体关系、常识和物理约束能直接约束未来视频，从而减少与指令不一致的状态变化。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "EWK：8.6M video-text、2 亿以上帧、20+ 本体与 500+ 动作类别",
+        "body": "Embodied World Knowledge 数据集包含约 860 万视频—文本样本、超过 2 亿帧，覆盖 20 多种 embodiment 和 500 多个 action category；官方材料还给出约 590 万 manipulation 样本。数据沿多本体、多任务、多场景、多视角四个轴组织，使 world model 不只记住单一机械臂或厨房。规模本身很大，但不同来源的视频质量、动作文本粒度和物理可观测性仍可能不均衡。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      },
+      {
+        "id": "curriculum",
+        "title": "General + Expert progressive curriculum 分离视觉先验与具身专门化",
+        "body": "训练采用两阶段 progressive curriculum：先学习更广泛的视频/视觉生成先验，再注入具身数据进行专家化，使模型既能生成稳定视觉，又能遵循操作、驾驶和导航中的动作条件。这个设计与直接从机器人短视频训练 world model 不同，强调基础视频知识可以作为物理建模的起点；但最终具身能力仍要依赖 EWK 中的真实/仿真交互数据校准。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      },
+      {
+        "id": "scene2robot",
+        "title": "Scene2Robot：把人类示范重定向到 14 种机器人形态",
+        "body": "官方材料展示 Scene2Robot 作为 human-to-robot 视频编辑/合成机制：模型保留原场景和任务意图，同时把人手执行替换为目标机器人形态，并支持多段条件控制。它既是训练数据扩张工具，也被展示为推理能力。与直接动作 retargeting 相比，这里输出的是视觉未来，因此还需要下游 policy 从这些视觉/语义变化中学习控制，不能把合成视频数量直接当成真实机器人轨迹数量。",
+        "sources": [
+          {
+            "label": "Qwen 官方博客",
+            "url": "https://qwen.ai/blog?id=qwen-robotworld"
+          }
+        ]
+      },
+      {
+        "id": "multiview",
+        "title": "同步 2–4 视角生成把几何一致性作为世界模型约束",
+        "body": "机器人接触往往在单视角下被遮挡，Qwen-RobotWorld 支持主视角、腕部和第三人称等 2–4 个同步 camera stream。训练时把同步视图组织进联合生成过程，并通过 3D RoPE 与全局 attention 建立跨视角对应。官方数据说明约 160 万具身样本含多视角信息。多视角一致性既是输出能力，也形成一种几何正则，但仍不能替代显式深度、力觉或机器人运动学约束。",
+        "sources": [
+          {
+            "label": "Qwen 官方博客",
+            "url": "https://qwen.ai/blog?id=qwen-robotworld"
+          }
+        ]
+      },
+      {
+        "id": "cross-domain",
+        "title": "跨场景统一的意义在于共享“物理变化先验”，而非共享同一个控制空间",
+        "body": "操作、驾驶和室内导航的低层控制完全不同，但它们都包含物体持续性、遮挡、碰撞、相机运动和目标条件下的未来变化。RobotWorld 通过统一语言动作和视频 latent，让这些场景在生成模型里共享物理变化统计。这个路线与 Qwen-RobotManip 的 80D canonical action 不同：Manip 在控制空间做数值对齐，World 在任务/动作语义层做语言对齐；两者都属于“统一”，但抽象层级不能混为一谈。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      },
+      {
+        "id": "benchmarks",
+        "title": "世界模型榜单：EWMBench、DreamGen 等不等同机器人任务成功率",
+        "body": "技术报告称 Qwen-RobotWorld 在 EWMBench 与 DreamGen Bench 总体排名第一，并在 WorldModelBench、PBench 的开源模型中表现最佳；还在 RoboTwin-IF 上进行零样本分析以检验指令与多视角一致性。这些评测主要衡量生成未来的质量、语义/物理一致性或 world-model 能力，而不是机械臂闭环 task success。Radar 因而不会把这些 rank 或生成分数混进 VLA action Leaderboard。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      },
+      {
+        "id": "applications",
+        "title": "三个下游方向需要不同验证：数据生成、虚拟评测与规划提示",
+        "body": "作者把 RobotWorld 的应用分为三类。作为数据生成器，需要验证合成轨迹是否真正提高 policy，而不只看视频观感；作为 virtual environment，需要验证滚动误差和与真实世界的 calibration；作为 planning signal，则要验证条件未来能否提升闭环成功率。技术报告展示了这些方向的潜力，但单次 world-model benchmark 排名不能同时证明三个用途都有效。对 Radar 来说，这也是为什么不把“world model 分数高”直接翻译成“VLA 更强”。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      },
+      {
+        "id": "resources",
+        "title": "当前官方资源以论文和 Qwen 展示为主，没有发现对应独立代码仓库",
+        "body": "与 Qwen-VLA、RobotManip、RobotNav 不同，本轮核对没有发现 QwenLM 下独立的 Qwen-RobotWorld GitHub 仓库，因此资源登记只放官方 Qwen 项目页而不伪造 code 链接。官方博客提供架构、数据清单、多视角/Scene2Robot 展示与 benchmark 介绍，可作为论文之外的第一方材料。若后续团队发布代码或权重，Radar 可以在周常资源检查中补充，而不需要新建重复论文条目。",
+        "sources": [
+          {
+            "label": "Qwen 官方博客",
+            "url": "https://qwen.ai/blog?id=qwen-robotworld"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：高质量未来视频仍只是控制系统的一层证据",
+        "body": "即使未来视频满足语言指令，也不保证下游机器人能从当前状态执行到该未来；接触力、精确几何、控制频率和动作可达性可能没有被完整表达。自然语言统一 action interface 提升跨域共享，却牺牲了低层动作的精确监督。再加上当前没有对应的官方开源代码仓库，复现主要依赖技术报告和官方展示。因此该工作应被视为 world-model 基础设施，而不是直接 VLA policy 替代物。",
+        "sources": [
+          {
+            "label": "arXiv v3 正文",
+            "url": "https://arxiv.org/html/2606.17030v3"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "official-technical-report",
+      "source": "https://arxiv.org/html/2606.17030v3"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "Qwen-RobotWorld 评测定位",
+        "columns": [
+          "证据",
+          "报告结论",
+          "Radar 处理"
+        ],
+        "rows": [
+          [
+            "EWMBench",
+            "总体第 1",
+            "world-model 指标，不并入动作 SR"
+          ],
+          [
+            "DreamGen Bench",
+            "总体第 1",
+            "world-model 指标，不并入动作 SR"
+          ],
+          [
+            "WorldModelBench / PBench",
+            "开源模型中最佳",
+            "保留原报告，不复制排名为统一分数"
+          ],
+          [
+            "RoboTwin-IF",
+            "零样本分析",
+            "用于泛化/一致性证据"
+          ]
+        ],
+        "locator": "技术报告主结果与官方博客",
+        "caption": "这里的排名/生成指标不与 VLA 控制成功率直接比较。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-25",
+      "note": "World-model 生成评测与控制 task-success 语义不同；本轮完整收录论文与结果定位，但不将排名/生成指标强行加入 VLA Leaderboard。"
+    }
+  }
+}

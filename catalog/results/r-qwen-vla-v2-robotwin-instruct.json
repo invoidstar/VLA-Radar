@@ -1,0 +1,19 @@
+{
+  "id": "r-qwen-vla-v2-robotwin-instruct",
+  "paperId": "p113",
+  "method": "Qwen-VLA-Instruct",
+  "trackId": "qwen-vla-v2-robotwin",
+  "values": {
+    "Easy": 86.1,
+    "Hard": 87.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://github.com/QwenLM/Qwen-VLA",
+  "sourceVersion": "official repository snapshot 2026-09-25; arXiv v2",
+  "locator": "README Benchmarks: RoboTwin Easy/Hard",
+  "attribution": "author-reported",
+  "trainingData": "统一 generalist 权重；多任务/多本体联合训练。",
+  "evaluationNotes": "Easy/Hard 原表；不同 recipe 仍保留在结果层。",
+  "supersedes": ""
+}

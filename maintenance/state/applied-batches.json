@@ -51,6 +51,38 @@
       ],
       "tracks": [],
       "results": 0
+    },
+    {
+      "id": "2026-09-25-lawam-xiaomi-qwen",
+      "sha256": "d0c0686d73b2d72a7386578000fe57acc8a76971fde19e8f4de46a364ec0de1a",
+      "date": "2026-09-25",
+      "notes": [],
+      "tracks": [
+        "lawam-v1-libero",
+        "lawam-v1-robotwin",
+        "xiaomi0-v2-libero",
+        "xiaomi0-v2-calvin-abcd",
+        "xiaomi0-v2-calvin-abc",
+        "xiaomi0-v2-simpler-google",
+        "xiaomi0-v2-simpler-widowx",
+        "qwen-vla-v2-libero",
+        "qwen-vla-v2-simpler-widowx",
+        "qwen-vla-v2-robotwin",
+        "qwen-robotmanip-v2-libero",
+        "qwen-robotmanip-v2-robotwin",
+        "qwen-robotmanip-v2-libero-plus",
+        "qwen-robotmanip-v2-robocasa365"
+      ],
+      "results": 18,
+      "resources": [
+        "p004",
+        "p111",
+        "p112",
+        "p113",
+        "p114",
+        "p115",
+        "p116"
+      ]
     }
   ]
 }

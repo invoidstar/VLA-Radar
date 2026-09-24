@@ -1,0 +1,20 @@
+{
+  "id": "r-lawam-v1-robotwin-lawam",
+  "paperId": "p111",
+  "method": "LaWAM",
+  "trackId": "lawam-v1-robotwin",
+  "values": {
+    "Clean": 92.64,
+    "Random": 89.8,
+    "Average": 91.22
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-25",
+  "source": "https://arxiv.org/html/2606.15768v1",
+  "sourceVersion": "arXiv v1",
+  "locator": "RoboTwin main table",
+  "attribution": "author-reported",
+  "trainingData": "LaWAM pretraining + RoboTwin merged SFT；不同外部方法预算不统一。",
+  "evaluationNotes": "50 tasks；每任务每设置100次；作者报告。",
+  "supersedes": ""
+}
