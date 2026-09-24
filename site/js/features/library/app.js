@@ -205,7 +205,9 @@
       const evidence=item.source&&item.source!==item.url?`<a class="repro-evidence" href="${esc(safeUrl(item.source))}" target="_blank" rel="noopener noreferrer">核验来源</a>`:'';
       return `<div class="repro-item ${esc(item.status)}" data-repro-dim="${esc(dim)}"><div class="repro-item-top"><span>${esc(labels[dim])}</span><strong>${esc(statusText[item.status]||item.status)}</strong></div><p>${esc(item.note||'')}</p><div class="repro-links">${action}${evidence}</div></div>`;
     }).join('');
-    return `<section class="reproducibility-card"><div class="repro-heading"><h3>${icon('check')}Reproducibility Card</h3><small>${view.verifiedAt?`附加资源审计 · ${esc(view.verifiedAt)}`:'Project / Code 来自官方资源 registry；其余维度待逐项核验'}</small></div><div class="repro-grid">${cards}</div><p class="repro-note">可用 = 有公开且可执行资源；部分开放 = 只开放部分复现链路；未开放 = 官方明确未发布；未核验 ≠ 不存在。</p></section>`;
+    const level=view.level==='deep'?'深度逐维审计':view.level==='baseline'?'基础官方资源核验':'资源状态未审计';
+    const auditNote=view.note?`<p class="repro-audit-note">${esc(view.note)}</p>`:'';
+    return `<section class="reproducibility-card"><div class="repro-heading"><h3>${icon('check')}Reproducibility Card</h3><small>${view.verifiedAt?`${level} · ${esc(view.verifiedAt)}`:'Project / Code 来自官方资源 registry；其余维度待逐项核验'}</small></div>${auditNote}<div class="repro-grid">${cards}</div><p class="repro-note">可用 = 有公开且可执行资源；部分开放 = 只开放部分复现链路；未开放 = 官方明确未发布；未核验 ≠ 不存在。Baseline 仅表示已检查当前官方入口，不等于逐维深审。</p></section>`;
   }
 
   function baseReproducibility(p){
@@ -215,7 +217,7 @@
       else if(dim==='code'&&resources.code){const url=resources.code;items[dim]={status:'available',note:'Official public code repository/link',url,source:url};}
       else items[dim]={status:'unknown',note:'Not yet independently audited in VLA-Radar.',url:null,source:null};
     }
-    return {verifiedAt:null,items};
+    return {verifiedAt:null,level:null,note:'No reproducibility audit record yet.',items};
   }
   async function loadReproducibility(p){
     const fallback=baseReproducibility(p);
@@ -225,7 +227,7 @@
       if(!response.ok)throw new Error('HTTP '+response.status);
       const payload=await response.json();
       if(payload.schemaVersion!==1||payload.paperId!==p.id||!payload.items)throw new Error('invalid reproducibility shard');
-      return {verifiedAt:payload.verifiedAt||null,items:payload.items};
+      return {verifiedAt:payload.verifiedAt||null,level:payload.level||null,note:payload.note||'',items:payload.items};
     }catch(error){console.warn('Reproducibility card:',error.message);return fallback;}
   }
 
