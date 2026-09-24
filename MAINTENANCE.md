@@ -51,6 +51,14 @@ python scripts/maintenance/sync_publications.py --apply-safe    # 仅在候选�
 
 arXiv 按精确 ID 分批、间隔请求；Crossref 只核对直接关联的 DOI 及高相似标题。无 DOI 的论文、改题论文、仅在作者评论中出现的录用消息进入待核验队列，由维护任务查看会议、期刊或 OpenReview 的正式证据后更新。脚本不是无遗漏的录用识别器。不用 arXiv 的 DataCite DOI 证明会议发表，不根据 Crossref deposit 日期猜录用时间。部分失败不标成全量成功。
 
+## 精简发布流水线（2026-09-25）
+
+完整质量门禁只在 Pull Request 的 exact head 执行一次：`validate_all.py` + 全部 HTTP/browser regressions。通过助手自检后使用 expected-head 正常合并。
+
+main push 不再重复下载 Firefox/WebKit 或重跑完整浏览器套件，只执行 `build_catalog.py --check`，随后 stage → Pages deploy → production smoke。production smoke 成功即可认定上线；housekeeping 已从每次发布链路移除，仅保留每周 schedule 与手动 dispatch。
+
+该精简依赖“正常变更必须经过 PR exact-head 完整门禁”的既有规则；direct push main 仍不是常规发布路径。
+
 ## 文献发现覆盖门禁（2026-09-25）
 
 文献发现不再用“本周搜过了”或单一聚合站作为成功判据。完整检索窗口由 `maintenance/policies/discovery-policy.json` 定义四类必需 lane：直接 primary preprint/publisher 检索、独立 academic index、VLA/机器人 curated index、以及官方 lab/project/benchmark/leaderboard 或 related/citation 的反向发现。每个 lane 至少要有一个成功 provider 覆盖整个窗口；某个必需 lane 被限流、阻塞或只完成部分范围时，本轮 discovery 状态必须是 `partial`。

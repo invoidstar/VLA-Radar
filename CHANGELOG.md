@@ -1,3 +1,11 @@
+## 2026-09-25 · GitHub Actions 发布链路压缩
+
+- 完整离线 + Firefox/WebKit/browser regressions 只在 PR exact head 执行一次；merge 后 main 不再重复整套重测试。
+- main 仅执行 generated-files `build_catalog.py --check`，然后 stage、Pages deploy 与 production smoke。
+- 移除已启用仓库中冗余的 Pages-enabled API 检查。
+- Safe housekeeping 不再由每次成功部署自动触发，只保留每周 schedule 与手动 dispatch。
+- 发布判据保持：PR exact-head full CI → expected-head merge → main build check → Pages deploy → production smoke。
+
 ## 2026-09-25 · Reproducibility 全库覆盖
 
 - 将 Reproducibility audit 从首批 10 篇扩展到 **116 / 116** papers：10 篇保留 deep 逐维审计，106 篇新增 baseline 官方资源核验。

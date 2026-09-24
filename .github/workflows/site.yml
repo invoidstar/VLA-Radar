@@ -1,4 +1,4 @@
-name: Validate and deploy VLA Radar
+name: VLA Radar CI and Pages
 on:
   push:
     branches: [main]
@@ -8,14 +8,14 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: false
+  group: vla-radar-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
-  validate:
+  quality:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    outputs:
-      pages_enabled: ${{ steps.pages.outputs.enabled }}
     steps:
       - uses: actions/checkout@v4
       - name: Validate canonical records, generated files and regression tests
@@ -50,27 +50,24 @@ jobs:
             /tmp/radar-tools/
             /tmp/radar-leaderboard/
           retention-days: 14
-      - name: Check Pages enablement
-        if: github.event_name != 'pull_request'
-        id: pages
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          enabled=$(gh api "repos/$GITHUB_REPOSITORY" --jq '.has_pages')
-          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
-          if test "$enabled" != 'true'; then
-            echo 'Validation passed. Pages is disabled; no deployment occurred.' >> "$GITHUB_STEP_SUMMARY"
-          fi
+
+  stage:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify generated files are current
+        run: python scripts/build/build_catalog.py --check
       - name: Stage public website only
-        if: github.event_name != 'pull_request'
         run: python scripts/build/stage_site.py --output _site
       - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request'
         with:
           path: _site
+
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && needs.validate.outputs.pages_enabled == 'true'
-    needs: validate
+    if: needs.stage.result == 'success' && ((github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch')
+    needs: stage
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -84,6 +81,7 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
+
   production-smoke:
     if: needs.deploy.result == 'success'
     needs: deploy
