@@ -11,6 +11,7 @@ from pathlib import Path
 from datetime import date
 from catalog_core import load, write, read_catalog, validate_record, validate_track, validate_result, require, load_resources, public_url
 from build_catalog import build
+from reproducibility import validate_reproducibility_data
 from maintenance_queue import plan
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -28,9 +29,23 @@ def prepare_resources(root,paper_ids,updates):
         if item:merged[pid]=item
         else:merged.pop(pid,None)
     return {'schemaVersion':1,'papers':{pid:merged[pid] for pid in sorted(merged)}}
+def prepare_reproducibility(root,paper_ids,updates):
+    require(isinstance(updates,dict),'reproducibility must be an object')
+    current=load(root/'catalog/reproducibility.json')
+    merged={**current,'papers':{pid:dict(value) for pid,value in current['papers'].items()}}
+    for pid,change in updates.items():
+        require(pid in paper_ids,'Reproducibility update references unknown paper: '+pid)
+        if change is None:merged['papers'].pop(pid,None)
+        else:
+            require(isinstance(change,dict),pid+': reproducibility audit must be an object or null')
+            merged['papers'][pid]=change
+    validate_reproducibility_data(merged,paper_ids)
+    return {'schemaVersion':merged['schemaVersion'],'dimensions':merged['dimensions'],'statuses':merged['statuses'],
+            'papers':{pid:merged['papers'][pid] for pid in sorted(merged['papers'])}}
+
 def apply(root,path):
     b=load(path)
-    required={'id','date','summary','notes','tracks','results'};allowed=required|{'resources'}
+    required={'id','date','summary','notes','tracks','results'};allowed=required|{'resources','reproducibility'}
     require(required<=set(b)<=allowed,'Unexpected batch fields')
     require(re.fullmatch(r'[a-z0-9-]+',b['id']),'Invalid batch ID');date.fromisoformat(b['date'])
     lp=root/'maintenance/state/applied-batches.json';ledger=load(lp) if lp.exists() else {'schemaVersion':1,'batches':[]}
@@ -39,6 +54,7 @@ def apply(root,path):
         require(old['sha256']==digest,'Applied batch cannot be rewritten');print('Already applied:',b['id']);return False
     m,recs,tracks,results=read_catalog(root);byid={r['paper']['id']:r for r in recs}
     resource_updates=b.get('resources',{});resource_data=prepare_resources(root,set(byid),resource_updates)
+    repro_updates=b.get('reproducibility',{});repro_data=prepare_reproducibility(root,set(byid),repro_updates)
     require(len(b['notes'])==len({n['paperId'] for n in b['notes']}),'Duplicate note')
     for n in b['notes']:
         require(set(n)=={'paperId','expectedVersion','note'},'Unexpected note fields');require(n['paperId'] in byid,'Only existing papers')
@@ -55,10 +71,11 @@ def apply(root,path):
         validate_result(r,set(byid),tm);require(r['id'] not in ids,'Duplicate result');ids.add(r['id'])
     for n in b['notes']:write(root/f'catalog/papers/{n["paperId"]}.json',byid[n['paperId']])
     if resource_updates:write(root/'catalog/resources.json',resource_data)
+    if repro_updates:write(root/'catalog/reproducibility.json',repro_data)
     write(root/'catalog/benchmarks.json',{'schemaVersion':1,'tracks':list(tm.values())})
     for r in b['results']:write(root/f'catalog/results/{r["id"]}.json',r)
     m['updatedAt']=b['date'];write(root/'catalog/manifest.json',m)
-    ledger['batches'].append({'id':b['id'],'sha256':digest,'date':b['date'],'notes':[n['paperId'] for n in b['notes']],'tracks':[t['id'] for t in b['tracks']],'results':len(b['results']),'resources':sorted(resource_updates)});write(lp,ledger)
+    ledger['batches'].append({'id':b['id'],'sha256':digest,'date':b['date'],'notes':[n['paperId'] for n in b['notes']],'tracks':[t['id'] for t in b['tracks']],'results':len(b['results']),'resources':sorted(resource_updates),'reproducibility':sorted(repro_updates)});write(lp,ledger)
     log=root/'CHANGELOG.md';log.write_text(f'## {b["date"]} — {b["id"]}\n\n{b["summary"]}\n\n'+log.read_text(encoding='utf-8'),encoding='utf-8')
     build(root);plan(root);print('Applied',b['id']);return True
 if __name__=='__main__':

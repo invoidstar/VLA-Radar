@@ -4,7 +4,7 @@
 
 内容按3–8篇的小批次处理。先完成可核验的条目、构建并提交，不等待全部旧笔记完成。维护者已明确授权本轮深入笔记/榜单回补由助手进行来源与代码自检、创建PR、通过CI后合并发布；这是同一助手的自检，不是第三方独立评审，不得伪造GitHub批准或绕过保护。2026-09-18起，该来源自检、CI后合并授权也适用于每周维护；仍不允许其他仓库写入或绕过保护。详细条件见publishing-policy.md。
 
-`release/batch-*`支持明文批次JSON：`maintenance/audits/batches/*.json`。除既有 `notes / tracks / results` 外，批次可选携带 `resources` 对象，为已有论文增补或移除 `project / code`；批处理会合并到 `catalog/resources.json` 并走同一公开URL与paper ID校验。未提供 `resources` 的历史批次保持兼容。工作流只在发布分支应用未处理批次，校验后以普通push提交生成文件；主分支不由批次工作流写入。合并后须确认Pages的deploy步骤成功。`maintenance/state/applied-batches.json`记录真实完成批次及哈希，不能重写已应用批次。修正旧内容应另建新批次。
+`release/batch-*`支持明文批次JSON：`maintenance/audits/batches/*.json`。除既有 `notes / tracks / results` 外，批次可选携带 `resources` 与 `reproducibility` 对象：前者为已有论文增补或移除 `project / code`，后者原子更新逐篇复现审计；批处理分别合并到 `catalog/resources.json` 与 `catalog/reproducibility.json`，并走同一 paper ID、状态和公开URL校验。未提供这些字段的历史批次保持兼容。工作流只在发布分支应用未处理批次，校验后以普通push提交生成文件；主分支不由批次工作流写入。合并后须确认Pages的deploy步骤成功。`maintenance/state/applied-batches.json`记录真实完成批次及哈希，不能重写已应用批次。修正旧内容应另建新批次。
 
 ## 笔记质量
 
@@ -35,6 +35,19 @@
 方向关系必须由论文正文、官方项目页或作者/机构公开材料明确支持“基于 / 扩展 / 前作 / 后续”等关系；仅仅引用另一篇、使用相同 backbone、同一机构、标题相似或都评测同一 Benchmark 都不能建立关系。series 也必须有公开来源支持其模型家族身份。关系两端必须已经是 VLA-Radar 的稳定 paper ID；尚未收录的前作可以在笔记中提及，但不能伪造外部 paperId。
 
 每条关系保存核验日期、简短关系说明和公开来源。新论文入库与旧论文版本复核时检查是否需要加入已有 series 或新增明确 lineage；证据不足时保持无关系，不写“可能相关”占位。构建器负责生成 Previous / Follow-up / Same Series 视图，前端不得自行根据名字或作者猜关系。
+
+## Reproducibility Card
+
+`catalog/resources.json` 继续只回答“官方 Project / Code 链接在哪里”；`catalog/reproducibility.json` 单独回答“复现链路实际开放到什么程度”。固定维度为 Project、Code、Weights、Dataset、Training、Inference、Evaluation、License，状态语义为：
+
+- `available`：存在公开、可访问且足以执行该环节的官方资源；
+- `partial`：有真实资源，但只覆盖部分流程，例如只有 post-training、只有部分 benchmark、或官方 GitHub 目前只有报告/素材而没有可执行实现；
+- `unavailable`：官方材料明确写明未发布、无发布计划或当前不可提供；
+- `unknown`：VLA-Radar 尚未取得足够证据；这是默认状态，**不能因为搜索不到就改写为 unavailable**。
+
+Project / Code 的基础可用性由现有 Resources registry 自动生成；若进一步审计发现官方“Code”仓库实际上只是信息页，可在 reproducibility registry 中用 `partial` 覆盖。Weights / Dataset / Training / Inference / Evaluation / License 必须逐项给出核验日期、简短说明、公开证据来源；available / partial 必须提供可访问资源 URL，unavailable 必须不提供伪资源 URL，只链接官方声明作为证据。
+
+同一论文不同资源的许可证可以不同，例如代码许可证与基础模型/权重许可证不一致，此时 License 应使用 partial 并说明边界。大型预训练数据未完整公开、但 benchmark/post-training 数据可用时，Dataset 也应使用 partial，而不是 available。资源状态不是“可复现性总分”，前端不得据此给论文排名。
 
 ## 官方资源链接
 
