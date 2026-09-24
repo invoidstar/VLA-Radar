@@ -203,7 +203,7 @@ def protocol_fingerprint(track):
     """Short stable fingerprint for the normalized evaluation question."""
     profile=protocol_profile(track)
     raw='|'.join(map(str,profile_identity(profile)))
-    return 'ep1-'+hashlib.sha256(raw.encode()).hexdigest()[:16]
+    return 'ep1-'+hashlib.sha256(raw.encode()).hexdigest()[:12]
 
 def protocol_compatibility(left,right):
     """Classify two tracks without turning every reporting difference into a Setting.
