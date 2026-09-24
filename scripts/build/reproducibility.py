@@ -22,7 +22,7 @@ def validate_reproducibility_data(data,paper_ids):
         clean={}
         for dim,item in audit["items"].items():
             require(isinstance(item,dict) and set(item)=={"status","note","url","source"},f"{pid}.{dim}: invalid reproducibility item")
-            require(item["status"] in STATUSES-{"unknown"},f"{pid}.{dim}: audited item cannot be unknown")
+            require(item["status"] in set(STATUSES)-{"unknown"},f"{pid}.{dim}: audited item cannot be unknown")
             require(isinstance(item["note"],str) and item["note"].strip(),f"{pid}.{dim}: note required")
             require(item["url"] is None or isinstance(item["url"],str),f"{pid}.{dim}: url must be text/null")
             if item["url"] is not None: public_url(item["url"])
