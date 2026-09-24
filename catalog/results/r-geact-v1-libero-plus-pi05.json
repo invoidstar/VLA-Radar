@@ -1,0 +1,25 @@
+{
+  "id": "r-geact-v1-libero-plus-pi05",
+  "paperId": "p099",
+  "method": "π0.5",
+  "trackId": "geact-v1-libero-plus",
+  "values": {
+    "Camera": 78.4,
+    "Robot": 73.6,
+    "Language": 80.8,
+    "Light": 96.2,
+    "Background": 94.1,
+    "Noise": 89,
+    "Layout": 84.5,
+    "Overall": 84.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.05588v1",
+  "sourceVersion": "arXiv 2609.05588v1",
+  "locator": "Appendix A.3 Table 5",
+  "attribution": "reported-baseline",
+  "trainingData": "Paper-reported π0.5 baseline; adapted on standard LIBERO under the table protocol.",
+  "evaluationNotes": "Overall follows LIBERO-Plus instance weighting over 10,030 task instances; not a simple unweighted mean.",
+  "supersedes": ""
+}
