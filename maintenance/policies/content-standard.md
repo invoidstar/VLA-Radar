@@ -4,7 +4,7 @@
 
 内容按3–8篇的小批次处理。先完成可核验的条目、构建并提交，不等待全部旧笔记完成。维护者已明确授权本轮深入笔记/榜单回补由助手进行来源与代码自检、创建PR、通过CI后合并发布；这是同一助手的自检，不是第三方独立评审，不得伪造GitHub批准或绕过保护。2026-09-18起，该来源自检、CI后合并授权也适用于每周维护；仍不允许其他仓库写入或绕过保护。详细条件见publishing-policy.md。
 
-`release/batch-*`支持明文批次JSON：`maintenance/audits/batches/*.json`。除既有 `notes / tracks / results` 外，批次可选携带 `resources` 与 `reproducibility` 对象：前者为已有论文增补或移除 `project / code`，后者原子更新逐篇复现审计；批处理分别合并到 `catalog/resources.json` 与 `catalog/reproducibility.json`，并走同一 paper ID、状态和公开URL校验。未提供这些字段的历史批次保持兼容。工作流只在发布分支应用未处理批次，校验后以普通push提交生成文件；主分支不由批次工作流写入。合并后须确认Pages的deploy步骤成功。`maintenance/state/applied-batches.json`记录真实完成批次及哈希，不能重写已应用批次。修正旧内容应另建新批次。
+`release/batch-*`支持明文批次JSON：`maintenance/audits/batches/*.json`。除既有 `notes / tracks / results` 外，批次可选携带 `resources` 与 `reproducibility` 对象：前者为已有论文增补或移除 `project / code`，后者原子替换逐篇复现审计但不得删除 audit；批处理分别合并到 `catalog/resources.json` 与 `catalog/reproducibility.json`，并走同一 paper ID、状态、全覆盖和公开URL校验。未提供这些字段的历史批次保持兼容。工作流只在发布分支应用未处理批次，校验后以普通push提交生成文件；主分支不由批次工作流写入。合并后须确认Pages的deploy步骤成功。`maintenance/state/applied-batches.json`记录真实完成批次及哈希，不能重写已应用批次。修正旧内容应另建新批次。
 
 ## 笔记质量
 
@@ -38,16 +38,23 @@
 
 ## Reproducibility Card
 
-`catalog/resources.json` 继续只回答“官方 Project / Code 链接在哪里”；`catalog/reproducibility.json` 单独回答“复现链路实际开放到什么程度”。固定维度为 Project、Code、Weights、Dataset、Training、Inference、Evaluation、License，状态语义为：
+`catalog/resources.json` 继续只回答“官方 Project / Code 链接在哪里”；`catalog/reproducibility.json` 单独回答“复现链路实际开放到什么程度”。每篇 catalog paper 必须有 exactly one audit record，分两级：
+
+- `baseline`：已检查当前官方 Project / Code / 项目入口；没有足够证据的其他维度保持 unknown；
+- `deep`：逐维核验官方仓库、模型页、数据页、训练/推理/评测说明与许可证，并记录显式 claims。
+
+固定维度为 Project、Code、Weights、Dataset、Training、Inference、Evaluation、License，状态语义为：
 
 - `available`：存在公开、可访问且足以执行该环节的官方资源；
 - `partial`：有真实资源，但只覆盖部分流程，例如只有 post-training、只有部分 benchmark、或官方 GitHub 目前只有报告/素材而没有可执行实现；
 - `unavailable`：官方材料明确写明未发布、无发布计划或当前不可提供；
 - `unknown`：VLA-Radar 尚未取得足够证据；这是默认状态，**不能因为搜索不到就改写为 unavailable**。
 
-Project / Code 的基础可用性由现有 Resources registry 自动生成；若进一步审计发现官方“Code”仓库实际上只是信息页，可在 reproducibility registry 中用 `partial` 覆盖。Weights / Dataset / Training / Inference / Evaluation / License 必须逐项给出核验日期、简短说明、公开证据来源；available / partial 必须提供可访问资源 URL，unavailable 必须不提供伪资源 URL，只链接官方声明作为证据。
+Project / Code 的基础可用性由现有 Resources registry 自动生成；若进一步审计发现官方“Code”仓库实际上只是信息页，可在 reproducibility registry 中用 `partial` 覆盖。Weights / Dataset / Training / Inference / Evaluation / License 只有 deep audit 才应逐项提升，必须给出核验日期、简短说明、公开证据来源；available / partial 必须提供可访问资源 URL，unavailable 必须不提供伪资源 URL，只链接官方声明作为证据。
 
 同一论文不同资源的许可证可以不同，例如代码许可证与基础模型/权重许可证不一致，此时 License 应使用 partial 并说明边界。大型预训练数据未完整公开、但 benchmark/post-training 数据可用时，Dataset 也应使用 partial，而不是 available。资源状态不是“可复现性总分”，前端不得据此给论文排名。
+
+全库 audit coverage 必须与 paper ID 集合完全一致。新增论文必须同步创建至少 baseline audit；batch 只能替换 audit，不能删除 audit 造成覆盖缺口。
 
 ## 官方资源链接
 

@@ -8,16 +8,23 @@ STATUSES=("available","partial","unavailable","unknown")
 
 def validate_reproducibility_data(data,paper_ids):
     require(isinstance(data,dict) and set(data)=={"schemaVersion","dimensions","statuses","papers"},"reproducibility: unexpected/missing fields")
-    require(data["schemaVersion"]==1,"reproducibility schema version")
+    require(data["schemaVersion"]==2,"reproducibility schema version")
     require(tuple(data["dimensions"])==DIMENSIONS,"reproducibility dimensions")
     require(tuple(data["statuses"])==STATUSES,"reproducibility statuses")
     known=set(paper_ids);audits={}
     require(isinstance(data["papers"],dict),"reproducibility papers must be an object")
+    paper_keys=set(data["papers"])
+    unknown=paper_keys-known
+    require(not unknown,"reproducibility audit for unknown paper "+sorted(unknown)[0] if unknown else "")
+    require(paper_keys==known,"reproducibility audits must cover every catalog paper exactly")
     for pid,audit in data["papers"].items():
         require(pid in known,f"reproducibility audit for unknown paper {pid}")
-        require(isinstance(audit,dict) and set(audit)=={"verifiedAt","items"},f"{pid}: reproducibility audit fields")
+        require(isinstance(audit,dict) and set(audit)=={"verifiedAt","level","note","items"},f"{pid}: reproducibility audit fields")
         day(audit["verifiedAt"],False)
-        require(isinstance(audit["items"],dict) and audit["items"],f"{pid}: reproducibility items required")
+        require(audit["level"] in {"baseline","deep"},f"{pid}: reproducibility audit level")
+        require(isinstance(audit["note"],str) and audit["note"].strip(),f"{pid}: reproducibility audit note")
+        require(isinstance(audit["items"],dict),f"{pid}: reproducibility items must be an object")
+        if audit["level"]=="deep":require(audit["items"],f"{pid}: deep audit requires explicit items")
         require(set(audit["items"])<=set(DIMENSIONS),f"{pid}: unknown reproducibility dimension")
         clean={}
         for dim,item in audit["items"].items():
@@ -30,7 +37,7 @@ def validate_reproducibility_data(data,paper_ids):
             if item["status"] in {"available","partial"}:require(item["url"],f"{pid}.{dim}: actionable status requires url")
             if item["status"]=="unavailable":require(item["url"] is None,f"{pid}.{dim}: unavailable item cannot have resource url")
             clean[dim]=item
-        audits[pid]={"verifiedAt":audit["verifiedAt"],"items":clean}
+        audits[pid]={"verifiedAt":audit["verifiedAt"],"level":audit["level"],"note":audit["note"],"items":clean}
     return audits
 
 def load_reproducibility(root,paper_ids,resources=None):
@@ -55,5 +62,5 @@ def build_reproducibility_views(paper_ids,resources,audits):
         audit=audits.get(pid)
         if audit:
             for dim,item in audit["items"].items():base[dim]=item
-        out[pid]={"verifiedAt":audit["verifiedAt"] if audit else None,"items":base}
+        out[pid]={"verifiedAt":audit["verifiedAt"] if audit else None,"level":audit["level"] if audit else None,"note":audit["note"] if audit else "No reproducibility audit record yet.","items":base}
     return out

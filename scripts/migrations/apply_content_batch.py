@@ -35,10 +35,8 @@ def prepare_reproducibility(root,paper_ids,updates):
     merged={**current,'papers':{pid:dict(value) for pid,value in current['papers'].items()}}
     for pid,change in updates.items():
         require(pid in paper_ids,'Reproducibility update references unknown paper: '+pid)
-        if change is None:merged['papers'].pop(pid,None)
-        else:
-            require(isinstance(change,dict),pid+': reproducibility audit must be an object or null')
-            merged['papers'][pid]=change
+        require(isinstance(change,dict),pid+': reproducibility audit must be an object')
+        merged['papers'][pid]=change
     validate_reproducibility_data(merged,paper_ids)
     return {'schemaVersion':merged['schemaVersion'],'dimensions':merged['dimensions'],'statuses':merged['statuses'],
             'papers':{pid:merged['papers'][pid] for pid in sorted(merged['papers'])}}
