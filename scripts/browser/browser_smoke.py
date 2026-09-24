@@ -68,6 +68,11 @@ try:
   assert 'github.com/openvla/openvla' in card.locator('.paper-resource.code').get_attribute('href')
   card.locator('.detail-btn').click();page.wait_for_selector('.note-section')
   assert page.locator('#paper-detail .paper-resources .paper-resource').count()==2
+  # Verified paper lineage/series is rendered from catalog/relations.json, not inferred in-browser.
+  assert page.locator('#paper-detail .relation-section').count()==1
+  assert 'Follow-up' in page.locator('#paper-detail .relation-section').inner_text()
+  assert 'Same Series · OpenVLA' in page.locator('#paper-detail .relation-section').inner_text()
+  assert page.locator('#paper-detail .relation-section [data-paper="p069"]').count()>=1
   for link in page.locator('#paper-detail .paper-resources .paper-resource').all():
    assert link.get_attribute('target')=='_blank' and 'noopener' in (link.get_attribute('rel') or '')
   page.locator('#paper-detail [data-focus="p064"]').click();page.wait_for_selector('.reader-title-tools')
@@ -111,7 +116,7 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
   page.screenshot(path=str(out/'mobile.png'),full_page=False)
   assert not errors, errors
-  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
+  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','verified paper lineage and same-series rendering','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
   print('PASS browser HTTP integration, persistence, lazy-loading, worker search and mobile overflow')
   browser.close()
 finally:server.terminate();server.wait()
