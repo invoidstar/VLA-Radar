@@ -19,6 +19,6 @@
 
 保留的恢复包只作为候选：先比对远端实际进展、完整树和源记录，不重跑旧迁移器覆盖后续论文。能够使用现成远端分支时，不再上传旧包。准备工作流只能在获授权本批分支执行可审阅、哈希核验的代码并正常提交；不得通过工作流取得更高权限、修改保护或用失败检查换取发布。
 
-创建PR后审查真实diff与一手来源，检查精确head所有必需CI（包括全部HTTP浏览器回归）。留下诚实的助手自检说明，不伪造第二个审批身份；正常merge使用expected_head_sha。合并前重新读main/PR HEAD，合并后核实同一merge SHA的validate和Pages deploy，并查看安全分支清理审计。
+创建PR后审查真实diff与一手来源，检查精确head所有必需CI（包括全部HTTP浏览器回归）。留下诚实的助手自检说明，不伪造第二个审批身份；正常merge使用expected_head_sha。合并前重新读main/PR HEAD。合并后同一 main SHA 只需核实 generated-files check、Pages deploy 与 production smoke；不要等待一套重复的 Firefox/WebKit 全量回归。安全分支清理由每周 schedule 或手动 workflow 独立执行，不再作为每次发布的尾部步骤。
 
 周更与人工触发批次均按本规则执行。持续出现的工具发现缺失应描述为当前操作可用性问题；不要笼统声称仓库权限丢失，也不承诺工具可用性永远不会变化。
