@@ -203,7 +203,7 @@
       const item=items[dim]||{status:'unknown',note:'Not yet independently audited in VLA-Radar.',url:null,source:null};
       const action=item.url?`<a href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">访问资源 ${icon('external')}</a>`:'';
       const evidence=item.source&&item.source!==item.url?`<a class="repro-evidence" href="${esc(safeUrl(item.source))}" target="_blank" rel="noopener noreferrer">核验来源</a>`:'';
-      return `<div class="repro-item ${esc(item.status)}"><div class="repro-item-top"><span>${esc(labels[dim])}</span><strong>${esc(statusText[item.status]||item.status)}</strong></div><p>${esc(item.note||'')}</p><div class="repro-links">${action}${evidence}</div></div>`;
+      return `<div class="repro-item ${esc(item.status)}" data-repro-dim="${esc(dim)}"><div class="repro-item-top"><span>${esc(labels[dim])}</span><strong>${esc(statusText[item.status]||item.status)}</strong></div><p>${esc(item.note||'')}</p><div class="repro-links">${action}${evidence}</div></div>`;
     }).join('');
     return `<section class="reproducibility-card"><div class="repro-heading"><h3>${icon('check')}Reproducibility Card</h3><small>${view.verifiedAt?`附加资源审计 · ${esc(view.verifiedAt)}`:'Project / Code 来自官方资源 registry；其余维度待逐项核验'}</small></div><div class="repro-grid">${cards}</div><p class="repro-note">可用 = 有公开且可执行资源；部分开放 = 只开放部分复现链路；未开放 = 官方明确未发布；未核验 ≠ 不存在。</p></section>`;
   }
