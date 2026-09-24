@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.28431v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：异步优势要与相同任务中的同步生成器比较",
+        "body": "LiMA 的 325ms 是按 ΔT=4 将 Dreamer 成本摊入四个 Refiner 周期后的平均 action-chunk latency，最适合与同文、同硬件下 Cosmos-Policy 600ms 等系统做部署比较。它并不表示 Dreamer 单次未来生成只有325ms，也不能与只输出一个控制 tick 的方法直接除法比较。成功率方面，六任务 overall 70.8% 与 subtask 78.9% 是不同指标；后者更高主要反映长程任务的阶段误差累积，不能挑高值替代完整任务成功。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：双系统把计算从同步等待改成并行/摊销，并没有消除长期想象成本",
+        "body": "Dreamer 仍周期性生成未来意图，Refiner 也持续根据当前观测修动作；性能取决于两者更新频率、硬件并行能力和 bridge 耦合质量。ΔT=4 是作者任务上的选择，当环境状态突变或接触异常频繁时，更稀疏的高层刷新可能导致 stale intent；反之过于频繁又会失去效率收益。因而论文支持“多时间尺度异步调度是可行折中”，而不是固定四步刷新适用于所有机器人。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：把 long-term imagination 与 local refinement 分成两个部署角色",
+        "body": "LiMA 与普通 action chunking 的差别在于低频分支显式承担长期 future intent，高频分支承担局部闭环修正，中间再由 latent bridge 连接。Radar 将其放在 World & Action Models 与 Efficiency 交叉位置，但六项真机任务属于作者自定义协议，暂不与其他真实 dexterous SR 强行合榜。未来比较应记录 Dreamer/Refiner 各自频率、候选 horizon、摊销延迟定义和是否需要并行硬件。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.28431v1"
+          }
+        ]
       }
     ],
     "coverage": {
