@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.25562v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：严格比较只能在 protocol-faithful 子集中进行",
+        "body": "论文故意把 PF、NR、PV 三类系统一起保留，是为了展示公开生态的可追溯性，而不是授权把六行当成同证据等级排名。Clean/Plus/Para 全六系统跨度可以描述“公开结果画像”，真正支持严格方法差异的应优先看 PF-only 子集。near-reproduction 中只要 checkpoint、wrapper 或推理配置有替代，就可能产生与模型本身同量级的变化；pending-verification 更不应进入正式 leaderboard。Radar 因此不直接复制弱证据行。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：三次完整运行和部署测量各自有统计口径",
+        "body": "每个 model-benchmark 配置按固定 checkpoint/inference configuration 在三个 seeds 下完成整套评测，表中 run-level 标准差描述 simulator/policy sampling 波动。部署表的 latency、peak VRAM 和 setup burden 则是给定硬件/runtime 的观察值，不是同样统计意义的随机变量。把它们线性加权成综合分会同时混淆任务波动与系统工程差异；正确做法是把 reproducibility evidence、任务能力和部署画像并列展示。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：把“证据等级”提升到结果本身的一等属性",
+        "body": "IndustrialVLA-Bench 对当前 VLA-Radar 的价值更多是方法论：结果行必须说明来源、checkpoint、实现、协议偏差与复现等级。它强化了 Benchmark→Setting→Result Report 的设计，而不是要求另建一个跨轴总榜。本轮把论文作为 Evaluation 类关键工作收录，保留三轴 gap 与 evidence-promotion 规则；只有未来逐行完成原始 checkpoint/命令核验时，才把相应 PF 结果接入站内可比较 Setting。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.25562v1"
+          }
+        ]
       }
     ],
     "coverage": {
