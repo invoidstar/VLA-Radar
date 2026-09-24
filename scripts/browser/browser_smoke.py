@@ -76,6 +76,7 @@ try:
   # Reproducibility Card distinguishes an official link from audited release completeness.
   assert page.locator('#paper-detail .reproducibility-card').count()==1
   assert any('/data/reproducibility/p064.json' in u for u in requests),requests
+  assert '深度逐维审计' in page.locator('#paper-detail .repro-heading').inner_text()
   assert '可用' in page.locator('#paper-detail [data-repro-dim="weights"]').inner_text()
   assert '部分开放' in page.locator('#paper-detail [data-repro-dim="license"]').inner_text()
   assert page.locator('#paper-detail [data-repro-dim="weights"] a').count()>=1
@@ -95,7 +96,13 @@ try:
   page.keyboard.press('Escape');page.wait_for_timeout(150)
   page.locator('#search').fill('In-Context VLA');page.wait_for_timeout(900)
   nores=page.locator('[data-paper="p006"]').first;assert nores.count()==1
-  assert nores.locator('xpath=ancestor::article[contains(@class,"paper-card")]').locator('.paper-resources').count()==0
+  nores_card=nores.locator('xpath=ancestor::article[contains(@class,"paper-card")]')
+  assert nores_card.locator('.paper-resources').count()==0
+  nores_card.locator('.detail-btn').click();page.wait_for_selector('.note-section')
+  assert '基础官方资源核验' in page.locator('#paper-detail .repro-heading').inner_text()
+  assert '未核验' in page.locator('#paper-detail [data-repro-dim="weights"]').inner_text()
+  assert any('/data/reproducibility/p006.json' in u for u in requests),requests
+  page.keyboard.press('Escape');page.wait_for_timeout(150)
   page.locator('#search').fill('LIBERO');page.wait_for_timeout(900)
   assert any('search-index.' in u for u in requests)
   assert page.locator('.paper-card').count()>0
@@ -130,7 +137,7 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
   page.screenshot(path=str(out/'mobile.png'),full_page=False)
   assert not errors, errors
-  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','verified paper lineage and same-series rendering','lazy reproducibility shard loading and explicit unavailable weights','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
+  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','verified paper lineage and same-series rendering','full reproducibility coverage with deep/baseline lazy cards and explicit unavailable weights','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
   print('PASS browser HTTP integration, persistence, lazy-loading, worker search and mobile overflow')
   browser.close()
 finally:server.terminate();server.wait()
