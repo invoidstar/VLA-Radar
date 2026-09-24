@@ -58,7 +58,7 @@ try:
   assert not math_audit['rawDollar'] and not math_audit['rawDelimiter'],math_audit
   assert not math_audit['pageOverflow'],math_audit
   page.locator('#math-smoke').evaluate('(el)=>el.remove()')
-  assert not any('search-index.' in u or 'board-index.' in u or '/details/' in u for u in requests), requests
+  assert not any('search-index.' in u or 'board-index.' in u or '/details/' in u or '/reproducibility/' in u for u in requests), requests
   # Official resources are separate from evidence: render only when verified and never add placeholders.
   page.locator('#search').fill('OpenVLA');page.wait_for_timeout(900)
   openvla=page.locator('[data-paper="p064"]').first;assert openvla.count()==1
@@ -75,6 +75,7 @@ try:
   assert page.locator('#paper-detail .relation-section [data-paper="p069"]').count()>=1
   # Reproducibility Card distinguishes an official link from audited release completeness.
   assert page.locator('#paper-detail .reproducibility-card').count()==1
+  assert any('/data/reproducibility/p064.json' in u for u in requests),requests
   assert '可用' in page.locator('#paper-detail [data-repro-dim="weights"]').inner_text()
   assert '部分开放' in page.locator('#paper-detail [data-repro-dim="license"]').inner_text()
   assert page.locator('#paper-detail [data-repro-dim="weights"] a').count()>=1
@@ -129,7 +130,7 @@ try:
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
   page.screenshot(path=str(out/'mobile.png'),full_page=False)
   assert not errors, errors
-  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','verified paper lineage and same-series rendering','reproducibility status card and explicit unavailable weights','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
+  (out/'audit.json').write_text(json.dumps({'status':'pass','tests':['HTTP initial lazy-load boundary','native MathML formula rendering','search worker index loading','official project/code resources and absent-placeholder behavior','verified paper lineage and same-series rendering','lazy reproducibility shard loading and explicit unavailable weights','8-section notes','lifecycle tab','paper results tab','Setting-first CALVIN switching','advanced track compatibility','no full-board download','localStorage reload persistence','mobile overflow','no uncaught JS errors'],'errors':errors,'requestCount':len(requests),'environment':'local Chromium 1440x1000 and 390x844; not production or real mobile hardware'},indent=2))
   print('PASS browser HTTP integration, persistence, lazy-loading, worker search and mobile overflow')
   browser.close()
 finally:server.terminate();server.wait()
