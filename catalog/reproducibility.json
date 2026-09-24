@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "dimensions": [
+    "project",
+    "code",
+    "weights",
+    "dataset",
+    "training",
+    "inference",
+    "evaluation",
+    "license"
+  ],
+  "statuses": [
+    "available",
+    "partial",
+    "unavailable",
+    "unknown"
+  ],
+  "papers": {
+    "p064": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "Official OpenVLA repository includes model, training, fine-tuning, deployment and evaluation code.",
+          "url": "https://github.com/openvla/openvla",
+          "source": "https://github.com/openvla/openvla/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "Official OpenVLA checkpoints and model cards are publicly released on Hugging Face.",
+          "url": "https://huggingface.co/openvla/openvla-7b",
+          "source": "https://github.com/openvla/openvla/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "Training/evaluation uses public Open X-Embodiment and BridgeData-style datasets with mixture/config guidance, but the paper's entire training corpus is not packaged as one project dataset release.",
+          "url": "https://github.com/openvla/openvla/blob/main/README.md",
+          "source": "https://github.com/openvla/openvla/blob/main/README.md"
+        },
+        "training": {
+          "status": "available",
+          "note": "Repository documents LoRA/full fine-tuning and training-from-scratch paths with executable scripts.",
+          "url": "https://github.com/openvla/openvla/tree/main/vla-scripts",
+          "source": "https://github.com/openvla/openvla/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Public inference and deployment examples are provided, including Hugging Face loading and REST deployment.",
+          "url": "https://github.com/openvla/openvla/blob/main/vla-scripts/deploy.py",
+          "source": "https://github.com/openvla/openvla/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "Repository documents benchmark/robot evaluation flows, including LIBERO and BridgeData/WidowX evaluation.",
+          "url": "https://github.com/openvla/openvla/blob/main/README.md",
+          "source": "https://github.com/openvla/openvla/blob/main/README.md"
+        },
+        "license": {
+          "status": "partial",
+          "note": "Repository code is MIT-licensed, while pretrained model use inherits restrictions from the underlying Llama-2 base model.",
+          "url": "https://github.com/openvla/openvla/blob/main/LICENSE",
+          "source": "https://github.com/openvla/openvla/blob/main/README.md"
+        }
+      }
+    },
+    "p069": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "Official OpenVLA-OFT repository contains the fine-tuning, inference and evaluation implementation.",
+          "url": "https://github.com/moojink/openvla-oft",
+          "source": "https://github.com/moojink/openvla-oft/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "README provides public pretrained/fine-tuned OpenVLA-OFT checkpoints for direct inference.",
+          "url": "https://huggingface.co/moojink/openvla-7b-oft-finetuned-libero-spatial",
+          "source": "https://github.com/moojink/openvla-oft/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "The repository provides benchmark-specific setup and uses external LIBERO/ALOHA data; it does not package the complete training data as a standalone project dataset release.",
+          "url": "https://github.com/moojink/openvla-oft/blob/main/LIBERO.md",
+          "source": "https://github.com/moojink/openvla-oft/blob/main/README.md"
+        },
+        "training": {
+          "status": "available",
+          "note": "Fine-tuning procedures are documented for LIBERO and ALOHA with executable code.",
+          "url": "https://github.com/moojink/openvla-oft/blob/main/LIBERO.md",
+          "source": "https://github.com/moojink/openvla-oft/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Quick-start inference is documented with released checkpoints and public implementation.",
+          "url": "https://github.com/moojink/openvla-oft/blob/main/README.md",
+          "source": "https://github.com/moojink/openvla-oft/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "LIBERO and ALOHA training/evaluation guides are included in the repository.",
+          "url": "https://github.com/moojink/openvla-oft/blob/main/LIBERO.md",
+          "source": "https://github.com/moojink/openvla-oft/blob/main/README.md"
+        },
+        "license": {
+          "status": "available",
+          "note": "Repository code is released under the MIT License.",
+          "url": "https://github.com/moojink/openvla-oft/blob/main/LICENSE",
+          "source": "https://github.com/moojink/openvla-oft/blob/main/LICENSE"
+        }
+      }
+    },
+    "p066": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "Physical Intelligence's openpi repository contains π0 model code, training, inference and examples.",
+          "url": "https://github.com/Physical-Intelligence/openpi",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "openpi publicly provides π0 base and multiple fine-tuned checkpoints.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "Public examples cover DROID/LIBERO and data conversion, but the 10k+ hour base pretraining mixture is not released as one complete public dataset.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "training": {
+          "status": "available",
+          "note": "The repository provides runnable fine-tuning/training configs and scripts for π0.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/scripts/train.py",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Released checkpoints can be loaded through the public policy API; local and remote inference examples are documented.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "Public examples include benchmark evaluation workflows such as LIBERO and robot-specific examples.",
+          "url": "https://github.com/Physical-Intelligence/openpi/tree/main/examples",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "license": {
+          "status": "partial",
+          "note": "Repository code is Apache-2.0, while third-party/base-model components have additional license terms such as the included Gemma license.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE_GEMMA.txt"
+        }
+      }
+    },
+    "p072": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "openpi currently supports π0.5 training and inference with the flow-matching head.",
+          "url": "https://github.com/Physical-Intelligence/openpi",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "π0.5 base, LIBERO and DROID checkpoints are publicly listed in openpi.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "LIBERO/DROID examples and conversions are public, but the complete 10k+ hour base pretraining mixture is not packaged as a public project dataset.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "training": {
+          "status": "available",
+          "note": "openpi provides π0.5 fine-tuning configs and runnable training instructions.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/scripts/train.py",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "π0.5 checkpoints have public inference and policy-server examples.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "The repository documents π0.5 LIBERO evaluation and additional robot examples.",
+          "url": "https://github.com/Physical-Intelligence/openpi/tree/main/examples/libero",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md"
+        },
+        "license": {
+          "status": "partial",
+          "note": "Repository code is Apache-2.0; model/base components include additional third-party license terms.",
+          "url": "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE",
+          "source": "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE_GEMMA.txt"
+        }
+      }
+    },
+    "p112": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "Official Xiaomi-Robotics-0 repository includes deployment, post-training and benchmark evaluation code.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "Pretrained and benchmark fine-tuned checkpoints are publicly released through the official Hugging Face collection.",
+          "url": "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "Sample/post-training data paths are public, but the complete pretraining corpus is not released as a project dataset.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "training": {
+          "status": "partial",
+          "note": "Post-training/fine-tuning code is released; the full original pretraining pipeline and corpus are not presented as a complete reproducible release.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Public Hugging Face inference/deployment code is documented and released.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/deploy",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "Repository contains evaluation guides/scripts for LIBERO, CALVIN and SimplerEnv with matched checkpoints.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/eval_libero",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "license": {
+          "status": "available",
+          "note": "Official repository is Apache-2.0 licensed.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE"
+        }
+      }
+    },
+    "p004": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "Official Xiaomi-Robotics-1 repository includes post-training, deployment and benchmark evaluation code.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "Base and benchmark checkpoints are publicly released through official model collections.",
+          "url": "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-1",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "The 100K+ hour pretraining corpus and full post-training mixture are not released as one public dataset; repository provides formats/examples for adaptation.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/xr1",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md"
+        },
+        "training": {
+          "status": "partial",
+          "note": "Post-training code is public, while the full original large-scale pretraining pipeline/data are not exposed as a complete reproducible package.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/xr1",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Deployment/inference code is publicly available in the official repository.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/deploy",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "partial",
+          "note": "RoboCasa, RoboCasa365 and VLABench have repository evaluation guides/checkpoints; RoboDojo points to external official docs without a matched released checkpoint in the table.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md"
+        },
+        "license": {
+          "status": "available",
+          "note": "Official repository is Apache-2.0 licensed.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/LICENSE",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/LICENSE"
+        }
+      }
+    },
+    "p111": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "LaWAM repository includes core model code, latent-action/world-model code, deployment, training and benchmark examples.",
+          "url": "https://github.com/RLinf/LaWAM",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "Official Hugging Face collection provides LAM, pretraining and LIBERO/RoboTwin SFT checkpoints.",
+          "url": "https://huggingface.co/collections/jialei02/lawam-checkpoints",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "Official LIBERO and RoboTwin SFT datasets are released, while the broader pretraining data story is not represented by one complete public dataset package.",
+          "url": "https://huggingface.co/datasets/jialei02/libero_merged_no_noops_20hz",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "training": {
+          "status": "available",
+          "note": "Repository includes LaWAM/LAM training code plus LIBERO and RoboTwin SFT scripts.",
+          "url": "https://github.com/RLinf/LaWAM",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Policy server and benchmark inference paths are documented for LIBERO and RoboTwin.",
+          "url": "https://github.com/RLinf/LaWAM/tree/main/deployment",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "Official repository contains LIBERO/RoboTwin evaluation scripts and run instructions.",
+          "url": "https://github.com/RLinf/LaWAM/tree/main/examples",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        }
+      }
+    },
+    "p113": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "The official Qwen-VLA GitHub repository currently contains the report README and assets, but no executable training/inference implementation in the audited root tree.",
+          "url": "https://github.com/QwenLM/Qwen-VLA",
+          "source": "https://github.com/QwenLM/Qwen-VLA"
+        }
+      }
+    },
+    "p114": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "The official Qwen-RobotManip repository currently contains report material/assets rather than a released executable model/training codebase.",
+          "url": "https://github.com/QwenLM/Qwen-RobotManip",
+          "source": "https://github.com/QwenLM/Qwen-RobotManip"
+        },
+        "weights": {
+          "status": "unavailable",
+          "note": "The official README explicitly states there is currently no plan to release Qwen-RobotManip model weights.",
+          "url": null,
+          "source": "https://github.com/QwenLM/Qwen-RobotManip/blob/main/README.md"
+        }
+      }
+    },
+    "p115": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "The official Qwen-RobotNav repository currently contains report material/assets rather than a released executable model/training codebase.",
+          "url": "https://github.com/QwenLM/Qwen-RobotNav",
+          "source": "https://github.com/QwenLM/Qwen-RobotNav"
+        },
+        "weights": {
+          "status": "unavailable",
+          "note": "The official README explicitly states there is currently no plan to release Qwen-RobotNav model weights.",
+          "url": null,
+          "source": "https://github.com/QwenLM/Qwen-RobotNav/blob/main/README.md"
+        }
+      }
+    }
+  }
+}
