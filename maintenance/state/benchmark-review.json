@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-24",
+  "reviewedAt": "2026-09-25",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p064": {
@@ -2276,6 +2276,82 @@
       "trackIds": [],
       "resultIds": [],
       "note": "LiMA六项双臂任务及异步延迟为作者自定义真机协议；保留70.8/78.9和325ms原始证据，不建跨论文统一Benchmark。"
+    },
+    "p111": {
+      "status": "extracted",
+      "trackIds": [
+        "lawam-v1-libero",
+        "lawam-v1-robotwin"
+      ],
+      "resultIds": [
+        "r-lawam-v1-libero-lawam",
+        "r-lawam-v1-robotwin-lawam"
+      ],
+      "note": "结构化标准 LIBERO 四套件与 RoboTwin 2.0 Clean/Random 主结果；真机和延迟保留深读。"
+    },
+    "p112": {
+      "status": "extracted",
+      "trackIds": [
+        "xiaomi0-v2-libero",
+        "xiaomi0-v2-calvin-abcd",
+        "xiaomi0-v2-calvin-abc",
+        "xiaomi0-v2-simpler-google",
+        "xiaomi0-v2-simpler-widowx"
+      ],
+      "resultIds": [
+        "r-xiaomi0-v2-libero-xiaomi-robotics-0",
+        "r-xiaomi0-v2-calvin-abcd-xiaomi-robotics-0",
+        "r-xiaomi0-v2-calvin-abc-xiaomi-robotics-0",
+        "r-xiaomi0-v2-simpler-google-xiaomi-robotics-0",
+        "r-xiaomi0-v2-simpler-widowx-xiaomi-robotics-0"
+      ],
+      "note": "结构化 LIBERO、CALVIN ABCD→D/ABC→D 与 SimplerEnv Google/WidowX 主结果。"
+    },
+    "p113": {
+      "status": "extracted",
+      "trackIds": [
+        "qwen-vla-v2-libero",
+        "qwen-vla-v2-simpler-widowx",
+        "qwen-vla-v2-robotwin"
+      ],
+      "resultIds": [
+        "r-qwen-vla-v2-libero-instruct",
+        "r-qwen-vla-v2-simpler-widowx-instruct",
+        "r-qwen-vla-v2-robotwin-instruct"
+      ],
+      "note": "只结构化与当前操作类 benchmark 兼容的 Qwen-VLA-Instruct 主结果；导航/真机 OOD 保留深读。"
+    },
+    "p114": {
+      "status": "extracted",
+      "trackIds": [
+        "qwen-robotmanip-v2-libero",
+        "qwen-robotmanip-v2-robotwin",
+        "qwen-robotmanip-v2-libero-plus",
+        "qwen-robotmanip-v2-robocasa365"
+      ],
+      "resultIds": [
+        "r-qwen-robotmanip-v2-libero-base",
+        "r-qwen-robotmanip-v2-libero-context",
+        "r-qwen-robotmanip-v2-robotwin-base",
+        "r-qwen-robotmanip-v2-robotwin-context",
+        "r-qwen-robotmanip-v2-libero-plus-base",
+        "r-qwen-robotmanip-v2-libero-plus-context",
+        "r-qwen-robotmanip-v2-robocasa365-base",
+        "r-qwen-robotmanip-v2-robocasa365-context"
+      ],
+      "note": "结构化 IID LIBERO/RoboTwin 与 OOD LIBERO-Plus/RoboCasa365 普通版和 Context；其他 OOD/真机保留深读。"
+    },
+    "p115": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "R2R/RxR、ObjectNav、NAVSIM、Tracking 需要导航专用 taxonomy；暂不与操作类 Leaderboard 混合。"
+    },
+    "p116": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "EWMBench/DreamGen/WorldModelBench/PBench 属于 world-model 生成评测；不与 VLA 闭环 task success 强行合榜。"
     }
   }
 }
