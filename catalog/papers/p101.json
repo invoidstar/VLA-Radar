@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.16074v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：Survey 的 taxonomy 不是新的性能对照实验",
+        "body": "这篇综述列举大量 WAM、world model、VLA 与 MBRL 工作，但它没有在统一代码栈中重新训练这些模型，也没有产生原创机器人成功率表。因此文中对不同路线的优缺点主要是基于公开文献的组织和分析，不能转写成新的 Result Report，更不能把不同论文原本不一致的数字经 Survey 二次引用后放进统一榜单。它的贡献应被视为概念边界、设计轴和研究问题的系统化整理。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：快速变化领域中的综述具有明确时间截面",
+        "body": "2026 年 WAM 文献增长很快，同一个“训练时世界监督 / 测试时世界生成”的分类在新工作中也不断出现混合形态。综述的 taxonomy 对当前阅读很有价值，但并不意味着所有后续方法都能被无歧义放入固定盒子。尤其 feature distillation、latent motion future、asynchronous imagination 等路线跨越多个传统类别。Radar 应把 Survey 当作词汇基线，并允许后续记录增加更细的接口属性，而不是为了服从旧分类牺牲事实。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：统一记录世界表示、动作接口和推理阶段",
+        "body": "综述最直接的基础设施价值，是提醒每个 WAM 记录至少回答三件事：世界表示是什么（像素、latent、geometry、motion 等）；动作怎样消费世界信息（IDM、共享 backbone、cross-attention、value/selector 等）；世界预测发生在训练、推理还是两者。再配合数据与 Benchmark Setting，才能解释 Fast-WAM、THAW、LeWAM、MoWAM 等为何虽然都与世界建模有关，却不能被当成同一种算法做简单平均排名。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.16074v1"
+          }
+        ]
       }
     ],
     "coverage": {
