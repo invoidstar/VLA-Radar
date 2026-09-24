@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.23863v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：显式 3D grounding 与训练预算要同时看",
+        "body": "GAM 冻结 grounding backbone、主要训练 action head，有利于把“对象级 metric geometry”与动作学习相对分开；但 RoboTwin 主实验又采用 clean-only demonstrations，而一些外部模型可能使用不同预训练或 mixed random 数据。最干净的机制证据来自 GAM 自身的 2D/no-3D/grounding 等受控变体与位置扰动，而不是只看它与大模型的最终平均差。YAM 上 ID 19/20 持平、视觉 shift 17/20 对 4/20，则更直接支持显式 grounding 对外观变化的帮助。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：LIBERO-PRO 平均与真机结果属于不同层次",
+        "body": "LIBERO-PRO 把四套件上的 Obj/Pos/Sem/Task 扰动合成 16 个设置，GAM 平均约 61%、π0.5 约 53%；这个平均适合总结同 benchmark 的扰动 profile，但不能与 RoboTwin 55.29% 或 YAM 17/20 再求总平均。Franka planner+GAM 又加入高层模型，反映的是可提示低层 controller 的系统组合性，而不是单独 GAM 的同协议 success。Radar 因此只结构化可明确对齐的 RoboTwin 与 LIBERO-PRO 行。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：3D grounding 是观测接口，不能替代 dynamics 与 memory",
+        "body": "GAM 把“哪个对象、在哪里”显式化，这和 world model 学“动作之后会发生什么”、memory 学“之前发生了什么”是互补而非互斥。它在固定布局捷径明显的评测上很有价值，但遮挡、接触动力学或长时任务仍可能需要其他模块。Radar 将其归到 Spatial & Geometry，并在结果层注明 frozen WildDet3D、clean-only RoboTwin action training 等 recipe，避免读者把几何 backbone 带来的鲁棒性解释成所有物理泛化问题已经解决。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.23863v1"
+          }
+        ]
       }
     ],
     "coverage": {
