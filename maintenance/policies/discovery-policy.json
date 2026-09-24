@@ -39,5 +39,6 @@
     "deferred",
     "excluded",
     "duplicate"
-  ]
+  ],
+  "minDistinctSuccessfulProviders": 3
 }
