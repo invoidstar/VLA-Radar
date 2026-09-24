@@ -8,7 +8,7 @@ from scripts.maintenance.sync_publications import parse_feed,apply_arxiv,apply_c
 from scripts.discovery.extract_results import extract,number
 from scripts.discovery.discover_results import discover
 from scripts.maintenance.maintenance_queue import plan
-from scripts.migrations.apply_content_batch import prepare_resources
+from scripts.migrations.apply_content_batch import prepare_resources,prepare_reproducibility
 
 class CatalogTests(unittest.TestCase):
     def setUp(self):
@@ -33,6 +33,16 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn('p001',merged['papers'])
         with self.assertRaises(ValueError):prepare_resources(ROOT,ids,{'p999':{'project':'https://example.com'}})
         with self.assertRaises(ValueError):prepare_resources(ROOT,ids,{'p064':{'demo':'https://example.com'}})
+
+    def test_batch_reproducibility_updates_merge_and_remove(self):
+        _,records,_,_=read_catalog(ROOT);ids={x['paper']['id'] for x in records}
+        audit={'verifiedAt':'2026-09-25','items':{'weights':{'status':'unavailable','note':'Officially not released.','url':None,'source':'https://example.com/release-note'}}}
+        merged=prepare_reproducibility(ROOT,ids,{'p001':audit,'p064':None})
+        self.assertEqual(merged['papers']['p001'],audit)
+        self.assertNotIn('p064',merged['papers'])
+        with self.assertRaises(ValueError):prepare_reproducibility(ROOT,ids,{'p999':audit})
+        bad=copy.deepcopy(audit);bad['items']['weights']['status']='unknown'
+        with self.assertRaises(ValueError):prepare_reproducibility(ROOT,ids,{'p001':bad})
 
     def test_public_keys(self):
         self.rec['privateNotes']='not allowed'
