@@ -165,6 +165,39 @@
             "url": "https://arxiv.org/html/2609.24350v1"
           }
         ]
+      },
+      {
+        "id": "comparison-notes",
+        "title": "对照归因：不同视觉故障不能用“扰动强度”单轴解释",
+        "body": "LIBERO-VPro 最重要的发现不是哪一个模型平均最高，而是模型在遮挡、staleness、cross-view contradiction 和 task-precondition variation 上呈现不同 failure profile。某些对象遮挡下继续成功，既可能说明多视角冗余，也可能说明策略依赖固定空间先验；而旧帧或任务前置条件变化造成的下降更直接反映闭环更新失败。因此读 Table II 时应把 challenge 类型作为 Setting 主语，不应把所有 success rate 按扰动严重度排成一条鲁棒曲线。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "evidence-boundary",
+        "title": "证据边界：约19.6万仿真 episode 与200次真机不是一个统计池",
+        "body": "大规模模拟覆盖 96 个 setting、3296 个 task-condition case，是系统性 profile 的主要证据；Franka 200 rollouts 只复现若干代表性 failure mode，用于检查趋势是否具有物理相关性。两部分任务、模型覆盖和样本结构不同，不能相加成“总评测 196200 次”再计算统一成功率。另有 prediction–reality divergence 只适用于可显式滚动未来的 WAM，也不能要求纯 VLA 在完全相同列上评分。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
+      },
+      {
+        "id": "radar-reading",
+        "title": "在 Radar 中的用法：作为视觉证据鲁棒 Benchmark，而非统一 OOD 总榜",
+        "body": "Radar 会把 LIBERO-VPro 与 LIBERO-Plus、RoboTwin-Phys 分开：前者问闭环视觉证据是否及时、一致、任务相关；LIBERO-Plus更偏场景/视觉分布变化；RoboTwin-Phys改变动作后果本身的物理参数。三者都可标 Robustness/OOD，但 Evaluation Setting 必须保留具体问题。由于部分 VPro 条件是诊断性而非简单单调指标，本轮先完成 Benchmark 语义与论文深读，不强行把 96 setting 压成一个 average leaderboard。",
+        "sources": [
+          {
+            "label": "正文复核 · 证据解释",
+            "url": "https://arxiv.org/html/2609.24350v1"
+          }
+        ]
       }
     ],
     "coverage": {
