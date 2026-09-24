@@ -11,7 +11,8 @@ class EditorialTests(unittest.TestCase):
         self.records=copy.deepcopy(records)
         self.policy=load(ROOT/'maintenance/policies/editorial-policy.json')
         self.ledger=load(ROOT/'maintenance/state/benchmark-review.json')
-        self.full=next(r for r in self.records if r['note']['coverage']['level']=='deep')
+        baseline=set(self.policy['baselinePaperIds'])
+        self.full=next(r for r in self.records if r['paper']['id'] in baseline and r['note']['coverage']['level']=='deep')
     def run_check(self):return check(self.records,self.policy,self.ledger,self.results)
     def make_partial_fixture(self):
         partial=self.full
