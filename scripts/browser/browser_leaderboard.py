@@ -242,7 +242,7 @@ try:
         open_track(page,'robotwin2-selfwam-27500')
         page.wait_for_selector('.protocol-family-panel')
         yes('RoboTwin uses six protocol families',page.locator('#lb-group option').count()==6)
-        yes('standard family hides nineteen-track clutter',page.locator('#lb-track option').count()==6)
+        yes('standard family hides full-track clutter',page.locator('#lb-track option').count()==6)
         yes('family view is method-first','先选评测协议族' in page.locator('.board-browse-heading').inner_text() and page.locator('.family-method').count()>0)
         pi=page.locator('.family-method').filter(has_text='pi0.5').first
         yes('same method exposes multiple reported recipes','reported recipes' in pi.inner_text())
@@ -251,8 +251,9 @@ try:
         partial=page.locator('#lb-group option').evaluate_all('(ops)=>String(ops.findIndex(o=>o.textContent.includes("Partial / Subset")))')
         page.locator('#lb-group').select_option(partial);page.wait_for_selector('.protocol-family-panel')
         yes('subset series refuses representative score aggregation','不合并成绩' in page.locator('.protocol-family-panel').inner_text() and page.locator('.family-method-values').count()==0)
-        page.locator('#lb-all').click();page.wait_for_function('document.querySelector("#lb-track")?.options.length===19')
-        yes('advanced mode still exposes all original RoboTwin tracks',page.locator('#lb-track option').count()==19)
+        rt_total=len([track for track in boards['tracks'] if track['dataset']=='RoboTwin'])
+        page.locator('#lb-all').click();page.wait_for_function('(n)=>document.querySelector("#lb-track")?.options.length===n',arg=rt_total)
+        yes('advanced mode still exposes every current RoboTwin track',page.locator('#lb-track option').count()==rt_total)
         page.locator('#lb-all').click();page.wait_for_function('!document.querySelector("#lb-group").disabled')
         page.screenshot(path=str(OUT/'robotwin-protocol-family.png'))
 
