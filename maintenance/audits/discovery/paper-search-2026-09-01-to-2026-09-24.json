@@ -1,0 +1,1601 @@
+{
+  "schemaVersion": 1,
+  "window": {
+    "from": "2026-09-01",
+    "to": "2026-09-24",
+    "timezone": "Asia/Singapore"
+  },
+  "checkedAt": "2026-09-24",
+  "status": "complete",
+  "sources": [
+    {
+      "name": "robotics_paper_daily",
+      "url": "https://github.com/ttylerzh/robotics_paper_daily",
+      "scope": "VLA + World Model daily index"
+    },
+    {
+      "name": "Embodied-AI-Daily",
+      "url": "https://github.com/luohongk/Embodied-AI-Daily",
+      "scope": "Vision-Language-Action + World-Action-Model index"
+    }
+  ],
+  "deduplication": "canonical arXiv ID; title used only as secondary identity check",
+  "scopeNote": "候选池只保留直接VLA/WAM/机器人foundation-policy相关条目；完整搜索与主库精选是两个状态。selected需要正文级证据，deferred保留后续深读，excluded记录范围边界。",
+  "counts": {
+    "candidate": 137,
+    "selected": 10,
+    "deferred": 117,
+    "excluded": 10,
+    "crossIndexed": 52
+  },
+  "items": [
+    {
+      "arxiv": "2609.13984",
+      "date": "2026-09-23",
+      "title": "What Makes an Efficient VLA? Navigating Action-Head Design, Scaling, and Latency",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.27314",
+      "date": "2026-09-23",
+      "title": "CoRe-WAM: Correspondence-Aligned Temporal Residuals for World Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.27450",
+      "date": "2026-09-23",
+      "title": "BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.27455",
+      "date": "2026-09-23",
+      "title": "Latent evolving World Action Model",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p100",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.27468",
+      "date": "2026-09-23",
+      "title": "CereVLA: Cerebellum-Inspired Consequence-Aware Residual Governance for Efficient Vision-Language-Action Execution",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.27747",
+      "date": "2026-09-23",
+      "title": "Less Language, More Latents: Annotation-Efficient VLAs for Driving",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.28161",
+      "date": "2026-09-23",
+      "title": "Dissecting Advantage-Guided Post-Training for Vision-Language-Action Policies",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.28256",
+      "date": "2026-09-23",
+      "title": "MemBodied: Recurrent Associative Memory for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.28314",
+      "date": "2026-09-23",
+      "title": "TANDEM: Task and Motion Planning with As-Needed Demonstrations for Efficient Vision-Language-Action Model Fine-tuning",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22332",
+      "date": "2026-09-22",
+      "title": "AffordanceWAM: Affordance-Aware Joint World-Action Modeling for Robot Manipulation",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.25558",
+      "date": "2026-09-22",
+      "title": "HABILIS Brain 0: Geometry-Change Supervision for Vision-Language-Action and Residual Flow Recovery",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.25562",
+      "date": "2026-09-22",
+      "title": "IndustrialVLA-Bench: A Traceable Multi-Axis Evaluation of Open Robot Policy Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p102",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.25606",
+      "date": "2026-09-22",
+      "title": "CableVLA: Simulation-Privileged Global-Local Representation Learning for Cable Routing",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.25636",
+      "date": "2026-09-22",
+      "title": "RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p101",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.25750",
+      "date": "2026-09-22",
+      "title": "Fisheye-VLA: Decoupling Coverage and Acuity for Manipulation with a Single Fisheye Camera",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.25756",
+      "date": "2026-09-22",
+      "title": "MedVLA: A Hierarchical Vision-Language-Action Framework for Closed-Loop Precision Medical Robot Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.25820",
+      "date": "2026-09-22",
+      "title": "Beyond Reconstruction Error: Analytical and Data-Driven Action Tokenization for Autoregressive Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.25961",
+      "date": "2026-09-22",
+      "title": "An Action Is Worth One Patch: Unified World-Action Modeling with PatchWAM",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.26292",
+      "date": "2026-09-22",
+      "title": "RoboTwin-Phys: Do WAMs and VLAs Understand the Physical World?",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.26313",
+      "date": "2026-09-22",
+      "title": "SafeLoop: Risk-Aware Rollback for Vision-Language-Action Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.26467",
+      "date": "2026-09-22",
+      "title": "RouteRLT: Learning When and Which RL Specialist Should Control a Vision-Language-Action Policy",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23968",
+      "date": "2026-09-21",
+      "title": "Opt2VLA: Force-Aware Vision-Language-Action for Contact-Rich Humanoid Whole-Body Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24033",
+      "date": "2026-09-21",
+      "title": "Imagine-RL: Residual-Confidence-Guided Cross-Attention for World-Model-Augmented VLA Reinforcement Learning",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24048",
+      "date": "2026-09-21",
+      "title": "What Matters in Designing World Action Models: An Empirical Study",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24118",
+      "date": "2026-09-21",
+      "title": "CARE: Experience-Guided Atomic Corrective Execution for Vision-Language-Action Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24170",
+      "date": "2026-09-21",
+      "title": "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24187",
+      "date": "2026-09-21",
+      "title": "StenoVLA-3D: 3D-Aware Reasoning VLA for Navigation Through Gastrointestinal Stenoses",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.24274",
+      "date": "2026-09-21",
+      "title": "vla.simd: Efficient CPU Inference for Language-Conditioned Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24350",
+      "date": "2026-09-21",
+      "title": "LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p103",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.24433",
+      "date": "2026-09-21",
+      "title": "FoldQuantVLA: Native Low-Bit Quantization of Vision-Language-Action Models via Consistent Folding",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24525",
+      "date": "2026-09-21",
+      "title": "Bridge3D: Enabling Vision-Language-Action Models to See and Act in 3D",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24682",
+      "date": "2026-09-21",
+      "title": "Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p104",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.24745",
+      "date": "2026-09-21",
+      "title": "Beyond Visual Quality: A Study of Test-Time Planning with World Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24868",
+      "date": "2026-09-21",
+      "title": "DualWAM: Dual-System World Action Models for Asynchronous Global Planning and Local Refinement",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.24976",
+      "date": "2026-09-21",
+      "title": "DexTacWAM: A Visuo-Tactile World-Action Model for Dexterous Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.25376",
+      "date": "2026-09-21",
+      "title": "VLAQuantBench: Closed-Loop Evaluation of Post-Training Quantization for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23275",
+      "date": "2026-09-20",
+      "title": "SCULPT-VLA: Learning Structured Control through Staged Action Grounding",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23369",
+      "date": "2026-09-20",
+      "title": "The Right Future for Action: Learning Action-Relevant Predictive States in World Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23565",
+      "date": "2026-09-20",
+      "title": "MaskVLA: Visual Masking Against Trajectory Overfitting of Vision-Language-Action Model",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23578",
+      "date": "2026-09-20",
+      "title": "AR-WAM: A Visual-Conditioned Agent-Ready World Action Model for Robotic Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23580",
+      "date": "2026-09-20",
+      "title": "TaskAnchor: Grounding Task State in Reactive VLAs for Long-Horizon Manipulation",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23614",
+      "date": "2026-09-20",
+      "title": "CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23650",
+      "date": "2026-09-20",
+      "title": "Beyond Appearance Shifts: Task-Semantic Action Calibration for VLA Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23863",
+      "date": "2026-09-20",
+      "title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23888",
+      "date": "2026-09-20",
+      "title": "HapticWAM: Distilling Imagined Touch into a World-Action Model without Inference-Time Tactile Sensing",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23910",
+      "date": "2026-09-20",
+      "title": "ReVeal: A Reconstruction-Aware Real-to-Sim Framework for VLA Policy Evaluation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22684",
+      "date": "2026-09-19",
+      "title": "StateMem: Single-State Residual Memory with Adaptive Inference for Vision-Language-Action Policies",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22762",
+      "date": "2026-09-19",
+      "title": "DriveReferee: Geometric Safety Verdicts Need Not Be Learned for Driving World-Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22840",
+      "date": "2026-09-19",
+      "title": "ForceRFT: Refining VLA Actions through Force-Guided Residual Reinforcement Learning",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22854",
+      "date": "2026-09-19",
+      "title": "SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22879",
+      "date": "2026-09-19",
+      "title": "Prioritized Rollouts for Efficient World Model-based Vision-Language-Action Policy Optimization",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22888",
+      "date": "2026-09-19",
+      "title": "Stable and Efficient Real-World Online VLA Post-Training via Asynchronous Replay-Anchored Policy Improvement",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22895",
+      "date": "2026-09-19",
+      "title": "H-VLA: Hierarchical Vision-Language-Action Model with Key-Action Reasoning and Motion Planning in a Unified Action Space",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22973",
+      "date": "2026-09-19",
+      "title": "An Empirical Study and Open Testbed for Federated Fine-Tuning of Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.23133",
+      "date": "2026-09-19",
+      "title": "AquaCap: A Training-Free Underwater Embodied Agent with Code-as-Policy",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21228",
+      "date": "2026-09-18",
+      "title": "FOCAL-VLA: Subtask-Guided Geometry Distillation and Implicit World Modeling for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21246",
+      "date": "2026-09-18",
+      "title": "VLA-Scope: Shift-Aware Failure Prediction for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21358",
+      "date": "2026-09-18",
+      "title": "FAN: Foresight Action Normalization for Continual Adaptation of Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21449",
+      "date": "2026-09-18",
+      "title": "ME-Dex 1.0: Bringing Heterogeneous Tactile Sensing into World Action Modeling",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21461",
+      "date": "2026-09-18",
+      "title": "AtomEgo: Exploring Ego-Robot Integration for Embodied Foundation Model Pretraining",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21514",
+      "date": "2026-09-18",
+      "title": "Skel-WAM: A Hand-Skeleton-Conditioned World Action Model for Human-to-Robot Manipulation Transfer",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21650",
+      "date": "2026-09-18",
+      "title": "SynthDemo-RL: Breaking the Zero-Reward Barrier in VLA Adaptation with LLM-Guided Synthetic Demonstrations",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21659",
+      "date": "2026-09-18",
+      "title": "Outcome-Conditioned End-Effector Geometry Across Vision-Language-Action Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21817",
+      "date": "2026-09-18",
+      "title": "A Sim-to-Real Integration Pipeline for Training and Deployment of Chunk-Based VLA Manipulation Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21908",
+      "date": "2026-09-18",
+      "title": "CommitFlow: Semantic Commitment Verification and Local Correction for Long-Horizon Robot Manipulation VLA Execution",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21948",
+      "date": "2026-09-18",
+      "title": "GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.21983",
+      "date": "2026-09-18",
+      "title": "SkelWAM: A Skeleton-Guided World-Action Model for Zero-Shot Cross-Embodiment Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.22040",
+      "date": "2026-09-18",
+      "title": "PRIME: Perception Feedback with Situational Memory Embeddings in VLA Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.19579",
+      "date": "2026-09-17",
+      "title": "Recovering Aggressively Pruned Vision-Language-Action Models with Offline Hidden-State Distillation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.19613",
+      "date": "2026-09-17",
+      "title": "TacSushi: Tactile-Grounded World-Action Modeling for Dexterous Sushi Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.19666",
+      "date": "2026-09-17",
+      "title": "Towards High-DoF Dexterous Manipulation through VLA Post-Training",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.19669",
+      "date": "2026-09-17",
+      "title": "Beyond Patch Removal: Persistent Adversarial Effects in Vision-Language-Action Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.19923",
+      "date": "2026-09-17",
+      "title": "Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/Vision-Language-Action.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.20377",
+      "date": "2026-09-17",
+      "title": "MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.20648",
+      "date": "2026-09-17",
+      "title": "SkipVLA: Skipping VLA Steps with Classical Planning for Fast Robot Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.20659",
+      "date": "2026-09-17",
+      "title": "HIL-UMI: Bringing Human-in-the-Loop Post-Training of Vision-Language-Action Models to Universal Manipulation Interface",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.20709",
+      "date": "2026-09-17",
+      "title": "MoWAM: Explicit Future Motion Prediction for Efficient World Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p105",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.20761",
+      "date": "2026-09-17",
+      "title": "Agile-WAM: An Agile Tactile World Action Model for Contact-Rich Robot Control",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.20776",
+      "date": "2026-09-17",
+      "title": "GeoAAC: Geometry-Based Adaptive Action Chunking from Denoising Trajectories in VLA Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.18016",
+      "date": "2026-09-16",
+      "title": "Causal-History Test-Time Scaling for Failure Recovery in Autoregressive World-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.18197",
+      "date": "2026-09-16",
+      "title": "WholeBodyWAM: Learning Whole-Body World Action Models with Scalable Motion Priors",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.18259",
+      "date": "2026-09-16",
+      "title": "${M}^2$Tok: Multi-head Multi-codebook Discrete Action Tokenization for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.18392",
+      "date": "2026-09-16",
+      "title": "DistAL: Distance-based Advantage Learning for VLA Fine-Tuning",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.18462",
+      "date": "2026-09-16",
+      "title": "CSWAM: Better Causal Semantic Representations for Out-of-Distribution Generalization in World Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.18487",
+      "date": "2026-09-16",
+      "title": "ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p106",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.18543",
+      "date": "2026-09-16",
+      "title": "Challenging the archetypal intermittent radio galaxy J0111+3906. New insights from optical GTC/OSIRIS and radio VLA and LOFAR observations",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.18623",
+      "date": "2026-09-16",
+      "title": "FIVE-VLA: Fast and EffectIVE Autonomous Driving with Recurrent Action Memory",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.18663",
+      "date": "2026-09-16",
+      "title": "VLA-ULAP: Interleaving Cloud VLA Calls with Ultra-Lightweight Local Action Prediction at the Edge",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.19104",
+      "date": "2026-09-16",
+      "title": "rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.19441",
+      "date": "2026-09-16",
+      "title": "Predict Before You Deploy: Offline Prediction of Quantization-Induced Task Degradation for World Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.16641",
+      "date": "2026-09-15",
+      "title": "SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.16644",
+      "date": "2026-09-15",
+      "title": "WholeBodyWAM: Generalizing Pre-trained World-Action Priors to Humanoid Loco-Manipulation via WBC-Grounded Coordination",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.17021",
+      "date": "2026-09-15",
+      "title": "sensVLA: Spatially-Grounded Vision-Language-Action Model for Autonomous Wheel Loader",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.17115",
+      "date": "2026-09-15",
+      "title": "Intrinsic Robot Rewarding: Reusing VLA Representations for Autonomous Evaluation and Policy Improvement",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.17210",
+      "date": "2026-09-15",
+      "title": "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md",
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.17524",
+      "date": "2026-09-15",
+      "title": "Modality-Autoregressive World-Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.15570",
+      "date": "2026-09-14",
+      "title": "DIDO: Distilling Interaction-Centric Dynamics into One-Step Denoising for World Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.15940",
+      "date": "2026-09-14",
+      "title": "Beyond Single-Axis Testing: Paired Evaluation of Compound Robustness in Vision-Language-Action Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.15960",
+      "date": "2026-09-14",
+      "title": "Validating Inverse Fundamental-Plane IMBH Mass Estimates in the SKA/ngVLA Era",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.16074",
+      "date": "2026-09-13",
+      "title": "World-Action Models for Robot Learning and Control: A Survey",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.10915",
+      "date": "2026-09-10",
+      "title": "IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.11561",
+      "date": "2026-09-10",
+      "title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p107",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.09925",
+      "date": "2026-09-09",
+      "title": "Time-Frequency Geometric Cross-Attention for Chunked Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.09941",
+      "date": "2026-09-09",
+      "title": "HaWMPO: Hallucination-Aware World Model-based Policy Optimization for Generalist Robot Policy",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.10021",
+      "date": "2026-09-09",
+      "title": "RoboDrop: Curating VLA Post-Training Data via Local Gradient Compatibility",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.10405",
+      "date": "2026-09-09",
+      "title": "Frequency-Conditioned Flow Matching for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.10706",
+      "date": "2026-09-09",
+      "title": "HuRo: Robotizing Human Videos for Scalable VLA Pretraining",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.10873",
+      "date": "2026-09-09",
+      "title": "When Validation Stops Learning: Auditing Update Admission for Continual Embodied Agents",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.08444",
+      "date": "2026-09-08",
+      "title": "Safe Task Planning with Long-Term Graph Memory for Embodied Agents",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.09119",
+      "date": "2026-09-08",
+      "title": "DeCAL: Towards Physically-Grounded Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.09158",
+      "date": "2026-09-08",
+      "title": "TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.07398",
+      "date": "2026-09-07",
+      "title": "OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.07470",
+      "date": "2026-09-07",
+      "title": "Measuring Language Transfer in Robot Policies: Adding Greek to a Cosmos3 Vision-Language-Action Policy",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.07581",
+      "date": "2026-09-07",
+      "title": "ICI-VLA: In-Context Imitation with Spatiotemporally Aligned Demonstrations for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.07838",
+      "date": "2026-09-07",
+      "title": "ComVLA: Communication-Aware Split Inference for VLA Models in 6G-Connected Robotics",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.06578",
+      "date": "2026-09-06",
+      "title": "Learning to Use Imagination: Progress-Conditioned Future Utilization for World Action Models",
+      "sources": [
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.04893",
+      "date": "2026-09-04",
+      "title": "Reasoning Without Inference Cost: Latent Semantic Scaffolding for Robot VLA Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.05266",
+      "date": "2026-09-04",
+      "title": "TacPAC: Tactile Prediction and Real-Time Action Correction in World-Action Models for Contact-Rich Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.05324",
+      "date": "2026-09-04",
+      "title": "RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.05369",
+      "date": "2026-09-04",
+      "title": "Towards Neuro-Symbolic Procedural Reasoning for Long-Horizon Vision-Language-Action Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.05588",
+      "date": "2026-09-04",
+      "title": "GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p108",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    },
+    {
+      "arxiv": "2609.03602",
+      "date": "2026-09-03",
+      "title": "SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.03681",
+      "date": "2026-09-03",
+      "title": "WISE: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.03889",
+      "date": "2026-09-03",
+      "title": "FWBC-VLA: Force-Aware Whole-Body Compensation for Contact-Rich Loco-Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.03927",
+      "date": "2026-09-03",
+      "title": "Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.04355",
+      "date": "2026-09-03",
+      "title": "VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.02159",
+      "date": "2026-09-02",
+      "title": "World-Coherent Decoding: Self-Verifying Test-Time Planning for World Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.02341",
+      "date": "2026-09-02",
+      "title": "Towards Zero-Shot Transfer Across Embodiments For Driving VLAs",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.02531",
+      "date": "2026-09-02",
+      "title": "Spatially Aware World Action Model via Geometric Latent Diffusion",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/world-model.md",
+        "https://github.com/luohongk/Embodied-AI-Daily/blob/main/papers/World-Action-Model.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.02546",
+      "date": "2026-09-02",
+      "title": "ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.02634",
+      "date": "2026-09-02",
+      "title": "Latent Cluster Analysis for Vision-Language-Action Models",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.03142",
+      "date": "2026-09-02",
+      "title": "Sensing Which Modality Matters: Evidence-Gated Regularization for Robust VLA Policies",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.00908",
+      "date": "2026-09-01",
+      "title": "Knowing When to Stop: Adaptive Action Chunking via Internal Cross-Attention Dynamics in VLAs",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.01215",
+      "date": "2026-09-01",
+      "title": "REFACTOR-VLA: Unsupervised Library Learning of Typed Motor Programs",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.01281",
+      "date": "2026-09-01",
+      "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "deferred",
+      "paperId": null,
+      "reason": "属于VLA/WAM相关候选，但本轮主库按代表性与证据完整度精选；保留候选供后续周更深读，不把标题级发现冒充已收录。"
+    },
+    {
+      "arxiv": "2609.01404",
+      "date": "2026-09-01",
+      "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "excluded",
+      "paperId": null,
+      "reason": "与当前VLA-Radar机器人操控主线边界较远（导航/驾驶/医疗等专域或VLA缩写歧义），本轮不进入主库。"
+    },
+    {
+      "arxiv": "2609.01596",
+      "date": "2026-09-01",
+      "title": "Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation",
+      "sources": [
+        "https://github.com/ttylerzh/robotics_paper_daily/blob/main/docs/vla.md"
+      ],
+      "disposition": "selected",
+      "paperId": "p109",
+      "reason": "核心VLA/WAM方法或评测；已进入本轮正文级深读与主库回补。"
+    }
+  ]
+}
