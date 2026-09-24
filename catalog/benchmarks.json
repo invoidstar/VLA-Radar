@@ -6058,6 +6058,149 @@
         "Action monitor"
       ],
       "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
+    },
+    {
+      "id": "geact-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "GE-Act 2.0 v1 · LIBERO-Plus Table 5",
+      "version": "arXiv 2609.05588v1",
+      "tasks": "LIBERO-Plus task instances",
+      "split": "7 perturbation axes; 10,030 weighted task instances",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Adapt on standard LIBERO; evaluate Camera, Robot, Language, Light, Background, Noise, Layout; Overall follows official instance-weighted protocol.",
+      "trainingRegime": "GE-Act 2.0 standard-LIBERO SFT; baselines are paper-reported under same table protocol.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Overall"
+      ],
+      "source": "https://arxiv.org/html/2609.05588v1"
+    },
+    {
+      "id": "mapwam-v1-rmbench-full",
+      "dataset": "RMBench",
+      "name": "MaP-WAM v1 · RMBench complete 9-task protocol",
+      "version": "arXiv 2609.11561v1",
+      "tasks": "9 tasks (5 M(1) + 4 M(n))",
+      "split": "official complete benchmark",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "50 official expert demonstrations per task; 100 evaluation rollouts per task; global seed 0. Average is Table 1 Total Average.",
+      "trainingRegime": "Each method follows the RMBench setup reported in Table 1; WLA-0 lacks a complete Total Average and is not materialized as a result row.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.11561v1"
+    },
+    {
+      "id": "gam-v1-robotwin50-single-task",
+      "dataset": "RoboTwin",
+      "name": "GAM v1 · RoboTwin 2.0 official single-task protocol",
+      "version": "arXiv 2609.23863v1",
+      "tasks": "50 tasks",
+      "split": "Easy / Hard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "One GAM policy per task; 50 clean-scene demonstrations per task; 100 rollouts per task in Easy and Hard; no randomized scenes during action-policy training.",
+      "trainingRegime": "Single-task action-head training; 3D grounding backbone adapted to rendered domain then frozen.",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.23863v1"
+    },
+    {
+      "id": "gam-v1-libero-pro",
+      "dataset": "LIBERO-PRO",
+      "name": "GAM v1 · LIBERO-PRO 16 perturbation settings",
+      "version": "arXiv 2609.23863v1",
+      "tasks": "4 LIBERO suites × 4 perturbation axes",
+      "split": "Obj / Pos / Sem / Task; 16 settings",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Single policy trained on demonstrations from all four LIBERO suites; evaluate all 16 LIBERO-PRO perturbation settings; Average is mean over settings.",
+      "trainingRegime": "GAM vs released-policy baselines; baseline numbers follow official LIBERO-PRO leaderboard except Flex-pi evaluated by paper authors.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.23863v1"
+    },
+    {
+      "id": "thaw-v2-libero",
+      "dataset": "LIBERO",
+      "name": "THAW-VLA v2 · 0.8B student distillation",
+      "version": "arXiv 2609.24682v2",
+      "tasks": "40 tasks",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Four evaluation runs = 2 seeds × 2 GPUs (A100-80GB and RTX 5090); rows are mean values reported in Table I.",
+      "trainingRegime": "Same 0.8B QwenGR00T student architecture; compare no-distillation vs world-model feature distillation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.24682v2"
+    },
+    {
+      "id": "robofollow-v1-main-avg",
+      "dataset": "RoboFollow",
+      "name": "RoboFollow v1 · four-scene L0–L3 aggregate",
+      "version": "arXiv 2609.25636v1",
+      "tasks": "4 scene families; L0–L3",
+      "split": "Avg over S1–S4 and all difficulty levels",
+      "metric": "Instruction-following diagnostic",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Report Intent Score, Execution Score and Completion Rate separately; Avg block is mean over four scenes and L0–L3. All main experiments fine-tune on the benchmark data.",
+      "trainingRegime": "Nine released VLA/WAM policies; base models and external pretraining differ, so rows are benchmark evidence, not equal-training causal comparison.",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Intent Score",
+        "Execution Score",
+        "Completion Rate"
+      ],
+      "source": "https://arxiv.org/html/2609.25636v1"
+    },
+    {
+      "id": "robotwin-phys-v1-main",
+      "dataset": "RoboTwin-Phys",
+      "name": "RoboTwin-Phys v1 · physical-condition robustness",
+      "version": "arXiv 2609.26292v1",
+      "tasks": "RoboTwin 2.0 tasks",
+      "split": "Clean / Official Random / Physical Random",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Clean disables benchmark randomization; Official Random enables original visual/layout randomization; Physical Random additionally samples 13 physical attributes. Physical Random is evaluated by the paper.",
+      "trainingRegime": "Evaluated released WAM/VLA policies; Clean and Official Random are corresponding public benchmark results, Physical Random is the new paper evaluation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Official Random",
+        "Physical Random"
+      ],
+      "source": "https://arxiv.org/html/2609.26292v1"
     }
   ]
 }
