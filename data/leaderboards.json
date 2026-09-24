@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20",
+  "updatedAt": "2026-09-24",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -6059,6 +6059,157 @@
         "Action monitor"
       ],
       "source": "https://www.sciencedirect.com/science/article/pii/S0736584526000475"
+    },
+    {
+      "id": "geact-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "GE-Act 2.0 v1 · LIBERO-Plus Table 5",
+      "version": "arXiv 2609.05588v1",
+      "tasks": "LIBERO-Plus task instances",
+      "split": "7 perturbation axes; 10,030 weighted task instances",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Adapt on standard LIBERO; evaluate Camera, Robot, Language, Light, Background, Noise, Layout; Overall follows official instance-weighted protocol.",
+      "trainingRegime": "GE-Act 2.0 standard-LIBERO SFT; baselines are paper-reported under same table protocol.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Overall"
+      ],
+      "source": "https://arxiv.org/html/2609.05588v1"
+    },
+    {
+      "id": "mapwam-v1-rmbench-full",
+      "dataset": "RMBench",
+      "name": "MaP-WAM v1 · RMBench complete 9-task protocol",
+      "version": "arXiv 2609.11561v1",
+      "tasks": "9 tasks (5 M(1) + 4 M(n))",
+      "split": "official complete benchmark",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "50 official expert demonstrations per task; 100 evaluation rollouts per task; global seed 0. Average is Table 1 Total Average.",
+      "trainingRegime": "Each method follows the RMBench setup reported in Table 1; WLA-0 lacks a complete Total Average and is not materialized as a result row.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.11561v1"
+    },
+    {
+      "id": "gam-v1-robotwin50-single-task",
+      "dataset": "RoboTwin",
+      "name": "GAM v1 · RoboTwin 2.0 official single-task protocol",
+      "version": "arXiv 2609.23863v1",
+      "tasks": "50 tasks",
+      "split": "Easy / Hard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "One GAM policy per task; 50 clean-scene demonstrations per task; 100 rollouts per task in Easy and Hard; no randomized scenes during action-policy training.",
+      "trainingRegime": "Single-task action-head training; 3D grounding backbone adapted to rendered domain then frozen.",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.23863v1",
+      "familyId": "robotwin2-official-2500-clean",
+      "familyName": "RoboTwin 2.0 · Official 2.5K Clean",
+      "familySummary": "官方 2,500 clean demonstrations 口径（50 demos × 50 tasks），Clean / Random 分别评测。50-task co-train 与 per-task SFT 作为训练 recipe 展开。",
+      "familyKind": "official",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "robotwin2-official-2500clean-cotrain",
+      "recipeName": "Per-task SFT · GAM grounded action head",
+      "recipeType": "training"
+    },
+    {
+      "id": "gam-v1-libero-pro",
+      "dataset": "LIBERO-PRO",
+      "name": "GAM v1 · LIBERO-PRO 16 perturbation settings",
+      "version": "arXiv 2609.23863v1",
+      "tasks": "4 LIBERO suites × 4 perturbation axes",
+      "split": "Obj / Pos / Sem / Task; 16 settings",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Single policy trained on demonstrations from all four LIBERO suites; evaluate all 16 LIBERO-PRO perturbation settings; Average is mean over settings.",
+      "trainingRegime": "GAM vs released-policy baselines; baseline numbers follow official LIBERO-PRO leaderboard except Flex-pi evaluated by paper authors.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.23863v1"
+    },
+    {
+      "id": "thaw-v2-libero",
+      "dataset": "LIBERO",
+      "name": "THAW-VLA v2 · 0.8B student distillation",
+      "version": "arXiv 2609.24682v2",
+      "tasks": "40 tasks",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Four evaluation runs = 2 seeds × 2 GPUs (A100-80GB and RTX 5090); rows are mean values reported in Table I.",
+      "trainingRegime": "Same 0.8B QwenGR00T student architecture; compare no-distillation vs world-model feature distillation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.24682v2"
+    },
+    {
+      "id": "robofollow-v1-main-avg",
+      "dataset": "RoboFollow",
+      "name": "RoboFollow v1 · four-scene L0–L3 aggregate",
+      "version": "arXiv 2609.25636v1",
+      "tasks": "4 scene families; L0–L3",
+      "split": "Avg over S1–S4 and all difficulty levels",
+      "metric": "Instruction-following diagnostic",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Report Intent Score, Execution Score and Completion Rate separately; Avg block is mean over four scenes and L0–L3. All main experiments fine-tune on the benchmark data.",
+      "trainingRegime": "Nine released VLA/WAM policies; base models and external pretraining differ, so rows are benchmark evidence, not equal-training causal comparison.",
+      "comparisonScope": "protocol",
+      "columns": [
+        "Intent Score",
+        "Execution Score",
+        "Completion Rate"
+      ],
+      "source": "https://arxiv.org/html/2609.25636v1"
+    },
+    {
+      "id": "robotwin-phys-v1-main",
+      "dataset": "RoboTwin-Phys",
+      "name": "RoboTwin-Phys v1 · physical-condition robustness",
+      "version": "arXiv 2609.26292v1",
+      "tasks": "RoboTwin 2.0 tasks",
+      "split": "Clean / Official Random / Physical Random",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Clean disables benchmark randomization; Official Random enables original visual/layout randomization; Physical Random additionally samples 13 physical attributes. Physical Random is evaluated by the paper.",
+      "trainingRegime": "Evaluated released WAM/VLA policies; Clean and Official Random are corresponding public benchmark results, Physical Random is the new paper evaluation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Official Random",
+        "Physical Random"
+      ],
+      "source": "https://arxiv.org/html/2609.26292v1"
     }
   ],
   "settings": [
@@ -6086,9 +6237,11 @@
         "robotwin2-flashvla-v1-pi05-all",
         "robotwin2-dswam-v1-paper",
         "meco-v1-robotwin",
-        "track4action-v1-robotwin"
+        "track4action-v1-robotwin",
+        "gam-v1-robotwin50-single-task"
       ],
       "resultIds": [
+        "r-gam-v1-robotwin-ours",
         "r-meco-v1-rt-fast",
         "r-meco-v1-rt-meco",
         "r-robotwin2-dswam-v1-demavla",
@@ -6116,9 +6269,10 @@
         "r-robotwin2-selfwam-27500-selfwam",
         "r-track4-v1-robotwin"
       ],
-      "resultCount": 26,
-      "paperCount": 13,
+      "resultCount": 27,
+      "paperCount": 14,
       "paperIds": [
+        "p104",
         "p008",
         "p023",
         "p029",
@@ -6133,9 +6287,15 @@
         "p021",
         "p007"
       ],
-      "methodCount": 18,
+      "methodCount": 19,
       "primaryTrackId": "robotwin2-selfwam-27500",
       "trainingOptions": [
+        {
+          "id": "data-99292e2a0f97",
+          "label": "50 clean-scene demonstrations per task. Grounding backbone adapted to RoboTwin rendered domain then frozen",
+          "known": true,
+          "count": 1
+        },
         {
           "id": "unknown-p008",
           "label": "训练数据未完整披露 · p008",
@@ -6186,6 +6346,7 @@
         }
       ],
       "trainingByResult": {
+        "r-gam-v1-robotwin-ours": "data-99292e2a0f97",
         "r-meco-v1-rt-fast": "unknown-p008",
         "r-meco-v1-rt-meco": "unknown-p008",
         "r-robotwin2-dswam-v1-demavla": "unknown-p023",
@@ -6253,7 +6414,8 @@
         "vlatalker-v1-libero",
         "w2vla-v1-libero",
         "dmsvla-ieee-libero-main",
-        "dmsvla-ieee-efficient-success"
+        "dmsvla-ieee-efficient-success",
+        "thaw-v2-libero"
       ],
       "resultIds": [
         "r-adavla-v2-sr-b1",
@@ -6346,6 +6508,8 @@
         "r-libero-turbovla-v2-vla-adapter",
         "r-libero-turbovla-v2-vla-jepa",
         "r-temporalflow-v1-libero-main",
+        "r-thaw-v2-libero-base",
+        "r-thaw-v2-libero-distilled",
         "r-vlaflow-v2-libero-lpi",
         "r-vlaflow-v2-libero-lwpi",
         "r-vlaflow-v2-libero-pi-frozen",
@@ -6358,8 +6522,8 @@
         "r-w2vla-v1-libero-star",
         "r-w2vla-v1-libero-w2"
       ],
-      "resultCount": 101,
-      "paperCount": 15,
+      "resultCount": 103,
+      "paperCount": 16,
       "paperIds": [
         "p030",
         "p043",
@@ -6373,11 +6537,12 @@
         "p081",
         "p027",
         "p014",
+        "p106",
         "p002",
         "p006",
         "p010"
       ],
-      "methodCount": 90,
+      "methodCount": 92,
       "primaryTrackId": "libero-oft-single-view",
       "trainingOptions": [
         {
@@ -6475,6 +6640,12 @@
           "label": "训练数据未完整披露 · p014",
           "known": false,
           "count": 1
+        },
+        {
+          "id": "unknown-p106",
+          "label": "训练数据未完整披露 · p106",
+          "known": false,
+          "count": 2
         },
         {
           "id": "unknown-p002",
@@ -6586,6 +6757,8 @@
         "r-libero-turbovla-v2-vla-adapter": "unknown-p027",
         "r-libero-turbovla-v2-vla-jepa": "unknown-p027",
         "r-temporalflow-v1-libero-main": "unknown-p014",
+        "r-thaw-v2-libero-base": "unknown-p106",
+        "r-thaw-v2-libero-distilled": "unknown-p106",
         "r-vlaflow-v2-libero-lpi": "unknown-p002",
         "r-vlaflow-v2-libero-lwpi": "unknown-p002",
         "r-vlaflow-v2-libero-pi-frozen": "unknown-p002",
@@ -16727,6 +16900,270 @@
         "r-vlabot-module-int-4": "unknown-p046",
         "r-vlabot-module-int-5": "unknown-p046"
       }
+    },
+    {
+      "id": "setting-libero-plus-success-7b83824e1f-na-45b81c8e0947",
+      "dataset": "LIBERO-Plus",
+      "evalId": "auto:success-7b83824e1f-na",
+      "name": "LIBERO-Plus · Camera / Robot / Language / … · Success Rate",
+      "tasks": "LIBERO-Plus task instances",
+      "split": "7 perturbation axes; 10,030 weighted task instances",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Overall"
+      ],
+      "protocol": "Adapt on standard LIBERO; evaluate Camera, Robot, Language, Light, Background, Noise, Layout; Overall follows official instance-weighted protocol.",
+      "trackIds": [
+        "geact-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-geact-v1-libero-plus-ours",
+        "r-geact-v1-libero-plus-pi05",
+        "r-geact-v1-libero-plus-starvla"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p099"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "geact-v1-libero-plus",
+      "trainingOptions": [
+        {
+          "id": "data-f314779080a4",
+          "label": "GE-Act 2.0 adapted on standard LIBERO training data before LIBERO-Plus evaluation.",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-1607152c4c46",
+          "label": "adapted on standard LIBERO under the table protocol.",
+          "known": true,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-geact-v1-libero-plus-ours": "data-f314779080a4",
+        "r-geact-v1-libero-plus-pi05": "data-1607152c4c46",
+        "r-geact-v1-libero-plus-starvla": "data-1607152c4c46"
+      }
+    },
+    {
+      "id": "setting-rmbench-success-184df936d4-9-b56ddb319590",
+      "dataset": "RMBench",
+      "evalId": "auto:success-184df936d4-9",
+      "name": "RMBench · 9 Tasks · Success Rate",
+      "tasks": "9 tasks (5 M(1) + 4 M(n))",
+      "split": "official complete benchmark",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Average"
+      ],
+      "protocol": "50 official expert demonstrations per task; 100 evaluation rollouts per task; global seed 0. Average is Table 1 Total Average.",
+      "trackIds": [
+        "mapwam-v1-rmbench-full"
+      ],
+      "resultIds": [
+        "r-mapwam-v1-rmbench-dp",
+        "r-mapwam-v1-rmbench-lingbot",
+        "r-mapwam-v1-rmbench-mem0",
+        "r-mapwam-v1-rmbench-ours",
+        "r-mapwam-v1-rmbench-pi05",
+        "r-mapwam-v1-rmbench-xvla"
+      ],
+      "resultCount": 6,
+      "paperCount": 1,
+      "paperIds": [
+        "p100"
+      ],
+      "methodCount": 6,
+      "primaryTrackId": "mapwam-v1-rmbench-full",
+      "trainingOptions": [
+        {
+          "id": "unknown-p100",
+          "label": "训练数据未完整披露 · p100",
+          "known": false,
+          "count": 5
+        },
+        {
+          "id": "data-6ca80794dd9d",
+          "label": "50 official expert demonstrations per task",
+          "known": true,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-mapwam-v1-rmbench-dp": "unknown-p100",
+        "r-mapwam-v1-rmbench-lingbot": "unknown-p100",
+        "r-mapwam-v1-rmbench-mem0": "unknown-p100",
+        "r-mapwam-v1-rmbench-ours": "data-6ca80794dd9d",
+        "r-mapwam-v1-rmbench-pi05": "unknown-p100",
+        "r-mapwam-v1-rmbench-xvla": "unknown-p100"
+      }
+    },
+    {
+      "id": "setting-libero-pro-success-184df936d4-na-11048de56cd7",
+      "dataset": "LIBERO-PRO",
+      "evalId": "auto:success-184df936d4-na",
+      "name": "LIBERO-PRO · Success Rate · Success Rate",
+      "tasks": "4 LIBERO suites × 4 perturbation axes",
+      "split": "Obj / Pos / Sem / Task; 16 settings",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Average"
+      ],
+      "protocol": "Single policy trained on demonstrations from all four LIBERO suites; evaluate all 16 LIBERO-PRO perturbation settings; Average is mean over settings.",
+      "trackIds": [
+        "gam-v1-libero-pro"
+      ],
+      "resultIds": [
+        "r-gam-v1-libero-pro-ours",
+        "r-gam-v1-libero-pro-pi05"
+      ],
+      "resultCount": 2,
+      "paperCount": 1,
+      "paperIds": [
+        "p104"
+      ],
+      "methodCount": 2,
+      "primaryTrackId": "gam-v1-libero-pro",
+      "trainingOptions": [
+        {
+          "id": "data-d98c94bccb7d",
+          "label": "Single GAM policy trained on LIBERO demonstrations from all four suites",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-64824581171d",
+          "label": "Official LIBERO-PRO leaderboard baseline quoted by the paper.",
+          "known": true,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-gam-v1-libero-pro-ours": "data-d98c94bccb7d",
+        "r-gam-v1-libero-pro-pi05": "data-64824581171d"
+      }
+    },
+    {
+      "id": "setting-robofollow-instruction-following-diagnostic-8d83f5712a-na-b7b42f81ca32",
+      "dataset": "RoboFollow",
+      "evalId": "auto:instruction-following-diagnostic-8d83f5712a-na",
+      "name": "RoboFollow · Intent Score / Execution Score / Completion Rate · Instruction-following diagnostic",
+      "tasks": "4 scene families; L0–L3",
+      "split": "Avg over S1–S4 and all difficulty levels",
+      "metric": "Instruction-following diagnostic",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Intent Score",
+        "Execution Score",
+        "Completion Rate"
+      ],
+      "protocol": "Report Intent Score, Execution Score and Completion Rate separately; Avg block is mean over four scenes and L0–L3. All main experiments fine-tune on the benchmark data.",
+      "trackIds": [
+        "robofollow-v1-main-avg"
+      ],
+      "resultIds": [
+        "r-robofollow-v1-acot-vla",
+        "r-robofollow-v1-fastwam",
+        "r-robofollow-v1-groot-n16",
+        "r-robofollow-v1-lingbot-vla",
+        "r-robofollow-v1-motus",
+        "r-robofollow-v1-openvla-oft",
+        "r-robofollow-v1-pi0",
+        "r-robofollow-v1-pi05",
+        "r-robofollow-v1-xvla"
+      ],
+      "resultCount": 9,
+      "paperCount": 1,
+      "paperIds": [
+        "p108"
+      ],
+      "methodCount": 9,
+      "primaryTrackId": "robofollow-v1-main-avg",
+      "trainingOptions": [
+        {
+          "id": "unknown-p108",
+          "label": "训练数据未完整披露 · p108",
+          "known": false,
+          "count": 9
+        }
+      ],
+      "trainingByResult": {
+        "r-robofollow-v1-acot-vla": "unknown-p108",
+        "r-robofollow-v1-fastwam": "unknown-p108",
+        "r-robofollow-v1-groot-n16": "unknown-p108",
+        "r-robofollow-v1-lingbot-vla": "unknown-p108",
+        "r-robofollow-v1-motus": "unknown-p108",
+        "r-robofollow-v1-openvla-oft": "unknown-p108",
+        "r-robofollow-v1-pi0": "unknown-p108",
+        "r-robofollow-v1-pi05": "unknown-p108",
+        "r-robofollow-v1-xvla": "unknown-p108"
+      }
+    },
+    {
+      "id": "setting-robotwin-phys-success-f8b6c17b7d-na-26875ef2de9c",
+      "dataset": "RoboTwin-Phys",
+      "evalId": "auto:success-f8b6c17b7d-na",
+      "name": "RoboTwin-Phys · Clean / Official Random / Physical Random · Success Rate",
+      "tasks": "RoboTwin 2.0 tasks",
+      "split": "Clean / Official Random / Physical Random",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Clean",
+        "Official Random",
+        "Physical Random"
+      ],
+      "protocol": "Clean disables benchmark randomization; Official Random enables original visual/layout randomization; Physical Random additionally samples 13 physical attributes. Physical Random is evaluated by the paper.",
+      "trackIds": [
+        "robotwin-phys-v1-main"
+      ],
+      "resultIds": [
+        "r-robotwin-phys-v1-fact",
+        "r-robotwin-phys-v1-fastwam",
+        "r-robotwin-phys-v1-galaxea-vla",
+        "r-robotwin-phys-v1-motus",
+        "r-robotwin-phys-v1-pi05"
+      ],
+      "resultCount": 5,
+      "paperCount": 1,
+      "paperIds": [
+        "p109"
+      ],
+      "methodCount": 5,
+      "primaryTrackId": "robotwin-phys-v1-main",
+      "trainingOptions": [
+        {
+          "id": "data-20dad4c0c4b0",
+          "label": "Released model/checkpoint evaluated under RoboTwin-family protocols",
+          "known": true,
+          "count": 5
+        }
+      ],
+      "trainingByResult": {
+        "r-robotwin-phys-v1-fact": "data-20dad4c0c4b0",
+        "r-robotwin-phys-v1-fastwam": "data-20dad4c0c4b0",
+        "r-robotwin-phys-v1-galaxea-vla": "data-20dad4c0c4b0",
+        "r-robotwin-phys-v1-motus": "data-20dad4c0c4b0",
+        "r-robotwin-phys-v1-pi05": "data-20dad4c0c4b0"
+      }
     }
   ],
   "taxonomy": {
@@ -17330,6 +17767,33 @@
         "tags": [
           "industrial-assembly",
           "contact-rich"
+        ]
+      },
+      "LIBERO-PRO": {
+        "focus": "generalization-robustness",
+        "environment": "simulation",
+        "tags": [
+          "robustness-ood",
+          "multi-task",
+          "language-compositional"
+        ]
+      },
+      "RoboFollow": {
+        "focus": "language-planning-compositionality",
+        "environment": "simulation",
+        "tags": [
+          "language-compositional",
+          "robustness-ood",
+          "multi-task"
+        ]
+      },
+      "RoboTwin-Phys": {
+        "focus": "generalization-robustness",
+        "environment": "simulation",
+        "tags": [
+          "robustness-ood",
+          "multi-task",
+          "bimanual-dual-arm"
         ]
       }
     }
@@ -22446,6 +22910,137 @@
       "supersedes": ""
     },
     {
+      "id": "r-gam-v1-libero-pro-ours",
+      "paperId": "p104",
+      "method": "GAM",
+      "trackId": "gam-v1-libero-pro",
+      "values": {
+        "Average": 61
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.23863v1",
+      "sourceVersion": "arXiv 2609.23863v1",
+      "locator": "Table II",
+      "attribution": "author-reported",
+      "trainingData": "Single GAM policy trained on LIBERO demonstrations from all four suites; action head uses grounded object observations.",
+      "evaluationNotes": "Mean over Obj/Pos/Sem/Task perturbations across four suites = 16 settings; paper table reports 0.61.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-gam-v1-libero-pro-pi05",
+      "paperId": "p104",
+      "method": "π0.5",
+      "trackId": "gam-v1-libero-pro",
+      "values": {
+        "Average": 53
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.23863v1",
+      "sourceVersion": "arXiv 2609.23863v1",
+      "locator": "Table II",
+      "attribution": "reported-baseline",
+      "trainingData": "Official LIBERO-PRO leaderboard baseline quoted by the paper.",
+      "evaluationNotes": "Average over 16 settings; paper table reports 0.53, stored as percent 53.0.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-gam-v1-robotwin-ours",
+      "paperId": "p104",
+      "method": "GAM",
+      "trackId": "gam-v1-robotwin50-single-task",
+      "values": {
+        "Clean": 62.96,
+        "Random": 47.62,
+        "Average": 55.29
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.23863v1",
+      "sourceVersion": "arXiv 2609.23863v1",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "One policy per task; 50 clean-scene demonstrations per task. Grounding backbone adapted to RoboTwin rendered domain then frozen; only action head trained.",
+      "evaluationNotes": "100 rollouts per task in Easy/Clean and Hard/Random; no randomized scenes seen during action-policy training.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geact-v1-libero-plus-ours",
+      "paperId": "p099",
+      "method": "GE-Act 2.0",
+      "trackId": "geact-v1-libero-plus",
+      "values": {
+        "Camera": 94.1,
+        "Robot": 50.7,
+        "Language": 81.4,
+        "Light": 94,
+        "Background": 60.5,
+        "Noise": 95.5,
+        "Layout": 83.1,
+        "Overall": 80.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.05588v1",
+      "sourceVersion": "arXiv 2609.05588v1",
+      "locator": "Appendix A.3 Table 5",
+      "attribution": "author-reported",
+      "trainingData": "GE-Act 2.0 adapted on standard LIBERO training data before LIBERO-Plus evaluation.",
+      "evaluationNotes": "Strong camera/noise performance coexists with weak robot/background axes; preserve per-axis evidence.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geact-v1-libero-plus-pi05",
+      "paperId": "p099",
+      "method": "π0.5",
+      "trackId": "geact-v1-libero-plus",
+      "values": {
+        "Camera": 78.4,
+        "Robot": 73.6,
+        "Language": 80.8,
+        "Light": 96.2,
+        "Background": 94.1,
+        "Noise": 89,
+        "Layout": 84.5,
+        "Overall": 84.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.05588v1",
+      "sourceVersion": "arXiv 2609.05588v1",
+      "locator": "Appendix A.3 Table 5",
+      "attribution": "reported-baseline",
+      "trainingData": "Paper-reported π0.5 baseline; adapted on standard LIBERO under the table protocol.",
+      "evaluationNotes": "Overall follows LIBERO-Plus instance weighting over 10,030 task instances; not a simple unweighted mean.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geact-v1-libero-plus-starvla",
+      "paperId": "p099",
+      "method": "StarVLA",
+      "trackId": "geact-v1-libero-plus",
+      "values": {
+        "Camera": 52.5,
+        "Robot": 49.8,
+        "Language": 88.5,
+        "Light": 95.7,
+        "Background": 95.7,
+        "Noise": 73,
+        "Layout": 76.9,
+        "Overall": 74.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.05588v1",
+      "sourceVersion": "arXiv 2609.05588v1",
+      "locator": "Appendix A.3 Table 5",
+      "attribution": "reported-baseline",
+      "trainingData": "Paper-reported StarVLA baseline; adapted on standard LIBERO under the table protocol.",
+      "evaluationNotes": "Baseline is quoted in GE-Act 2.0; not independently reproduced by VLA-Radar.",
+      "supersedes": ""
+    },
+    {
       "id": "r-gemini-er-v1-er",
       "paperId": "p071",
       "method": "Gemini Robotics-ER",
@@ -27483,6 +28078,114 @@
       "attribution": "author-reported",
       "trainingData": "18类×400样本；4:1划分；两层MLP分类器。",
       "evaluationNotes": "这是语义表征探针，不是机器人任务成功率；“linear probing”标签与实际两层MLP结构有差异。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mapwam-v1-rmbench-dp",
+      "paperId": "p100",
+      "method": "Diffusion Policy",
+      "trackId": "mapwam-v1-rmbench-full",
+      "values": {
+        "Average": 5.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.11561v1",
+      "sourceVersion": "arXiv 2609.11561v1",
+      "locator": "Table 1 · Total Average",
+      "attribution": "reported-baseline",
+      "trainingData": "RMBench reported baseline under paper table protocol.",
+      "evaluationNotes": "Complete 9-task average; not the two-task OnEvoMemory subset.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mapwam-v1-rmbench-lingbot",
+      "paperId": "p100",
+      "method": "LingBot-VA",
+      "trackId": "mapwam-v1-rmbench-full",
+      "values": {
+        "Average": 77.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.11561v1",
+      "sourceVersion": "arXiv 2609.11561v1",
+      "locator": "Table 1 · Total Average",
+      "attribution": "reported-baseline",
+      "trainingData": "RMBench reported baseline under the paper table protocol.",
+      "evaluationNotes": "Complete 9-task average; baseline is quoted by MaP-WAM.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mapwam-v1-rmbench-mem0",
+      "paperId": "p100",
+      "method": "Mem-0",
+      "trackId": "mapwam-v1-rmbench-full",
+      "values": {
+        "Average": 42
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.11561v1",
+      "sourceVersion": "arXiv 2609.11561v1",
+      "locator": "Table 1 · Total Average",
+      "attribution": "reported-baseline",
+      "trainingData": "RMBench reported baseline under paper table protocol.",
+      "evaluationNotes": "Complete 9-task average.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mapwam-v1-rmbench-ours",
+      "paperId": "p100",
+      "method": "MaP-WAM",
+      "trackId": "mapwam-v1-rmbench-full",
+      "values": {
+        "Average": 83.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.11561v1",
+      "sourceVersion": "arXiv 2609.11561v1",
+      "locator": "Table 1 · Total Average",
+      "attribution": "author-reported",
+      "trainingData": "50 official expert demonstrations per task; 9 RMBench tasks; memory-grounded planner + WAP executor.",
+      "evaluationNotes": "100 evaluation rollouts per task; global seed 0; complete benchmark average.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mapwam-v1-rmbench-pi05",
+      "paperId": "p100",
+      "method": "π0.5",
+      "trackId": "mapwam-v1-rmbench-full",
+      "values": {
+        "Average": 10.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.11561v1",
+      "sourceVersion": "arXiv 2609.11561v1",
+      "locator": "Table 1 · Total Average",
+      "attribution": "reported-baseline",
+      "trainingData": "RMBench reported baseline under paper table protocol.",
+      "evaluationNotes": "Complete 9-task average.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-mapwam-v1-rmbench-xvla",
+      "paperId": "p100",
+      "method": "X-VLA",
+      "trackId": "mapwam-v1-rmbench-full",
+      "values": {
+        "Average": 9.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.11561v1",
+      "sourceVersion": "arXiv 2609.11561v1",
+      "locator": "Table 1 · Total Average",
+      "attribution": "reported-baseline",
+      "trainingData": "RMBench reported baseline under paper table protocol.",
+      "evaluationNotes": "Complete 9-task average.",
       "supersedes": ""
     },
     {
@@ -33449,6 +34152,186 @@
       "supersedes": ""
     },
     {
+      "id": "r-robofollow-v1-acot-vla",
+      "paperId": "p108",
+      "method": "ACoT-VLA",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 53.5,
+        "Execution Score": 49.3,
+        "Completion Rate": 42.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+      "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-fastwam",
+      "paperId": "p108",
+      "method": "FastWAM",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 39.3,
+        "Execution Score": 35.2,
+        "Completion Rate": 30.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining differs.",
+      "evaluationNotes": "Avg over four scene families and L0–L3; metrics remain separate.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-groot-n16",
+      "paperId": "p108",
+      "method": "GR00T N1.6",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 32.7,
+        "Execution Score": 25.6,
+        "Completion Rate": 20.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+      "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-lingbot-vla",
+      "paperId": "p108",
+      "method": "Lingbot-VLA",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 35.2,
+        "Execution Score": 32.5,
+        "Completion Rate": 27.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+      "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-motus",
+      "paperId": "p108",
+      "method": "MOTUS",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 36.8,
+        "Execution Score": 30.8,
+        "Completion Rate": 27.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining differs.",
+      "evaluationNotes": "Avg over four scene families and L0–L3; metrics remain separate.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-openvla-oft",
+      "paperId": "p108",
+      "method": "OpenVLA-OFT",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 10.7,
+        "Execution Score": 4.2,
+        "Completion Rate": 3.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+      "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-pi0",
+      "paperId": "p108",
+      "method": "π0",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 48.4,
+        "Execution Score": 44.9,
+        "Completion Rate": 38.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+      "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-pi05",
+      "paperId": "p108",
+      "method": "π0.5",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 55.7,
+        "Execution Score": 53,
+        "Completion Rate": 47.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+      "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robofollow-v1-xvla",
+      "paperId": "p108",
+      "method": "X-VLA",
+      "trackId": "robofollow-v1-main-avg",
+      "values": {
+        "Intent Score": 34.3,
+        "Execution Score": 30.9,
+        "Completion Rate": 22.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.25636v1",
+      "sourceVersion": "arXiv 2609.25636v1",
+      "locator": "Table 1 · Avg block",
+      "attribution": "reported-baseline",
+      "trainingData": "Main RoboFollow evaluation; benchmark fine-tuning uses all benchmark training data. Base-model pretraining and architecture differ across rows.",
+      "evaluationNotes": "Avg over four scene families and L0–L3. Intent, execution and completion are separate diagnostics; no cross-metric composite score.",
+      "supersedes": ""
+    },
+    {
       "id": "r-robomimic-corl21-image-mh-best-bc-rnn",
       "paperId": "p093",
       "method": "BC-RNN",
@@ -33930,6 +34813,106 @@
       "attribution": "author-reported",
       "trainingData": "LingBot-VLA 4B: 100k步，clean/random混合50任务，C20/N4，执行16。",
       "evaluationNotes": "Time/Step=46.6ms；inference latency=Nonems，d=1原表未单列调用延迟，保留缺失。SmolVLA异步80.1→79.5下降不能省略。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin-phys-v1-fact",
+      "paperId": "p109",
+      "method": "FACT",
+      "trackId": "robotwin-phys-v1-main",
+      "values": {
+        "Clean": 88.4,
+        "Official Random": 86.6,
+        "Physical Random": 39.14
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.26292v1",
+      "sourceVersion": "arXiv 2609.26292v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Released model/checkpoint evaluated under RoboTwin-family protocols; original training data and recipes differ across methods.",
+      "evaluationNotes": "Clean and Official Random are corresponding public benchmark results summarized by the paper; Physical Random is evaluated under the new 13-attribute protocol. Do not interpret rows as equal-training causal comparison.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin-phys-v1-fastwam",
+      "paperId": "p109",
+      "method": "Fast-WAM",
+      "trackId": "robotwin-phys-v1-main",
+      "values": {
+        "Clean": 91.88,
+        "Official Random": 91.78,
+        "Physical Random": 44.24
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.26292v1",
+      "sourceVersion": "arXiv 2609.26292v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Released model/checkpoint evaluated under RoboTwin-family protocols; original training data and recipes differ across methods.",
+      "evaluationNotes": "Clean and Official Random are corresponding public benchmark results summarized by the paper; Physical Random is evaluated under the new 13-attribute protocol. Do not interpret rows as equal-training causal comparison.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin-phys-v1-galaxea-vla",
+      "paperId": "p109",
+      "method": "Galaxea-VLA",
+      "trackId": "robotwin-phys-v1-main",
+      "values": {
+        "Clean": 93.7,
+        "Official Random": 92.8,
+        "Physical Random": 37.82
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.26292v1",
+      "sourceVersion": "arXiv 2609.26292v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Released model/checkpoint evaluated under RoboTwin-family protocols; original training data and recipes differ across methods.",
+      "evaluationNotes": "Clean and Official Random are corresponding public benchmark results summarized by the paper; Physical Random is evaluated under the new 13-attribute protocol. Do not interpret rows as equal-training causal comparison.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin-phys-v1-motus",
+      "paperId": "p109",
+      "method": "Motus",
+      "trackId": "robotwin-phys-v1-main",
+      "values": {
+        "Clean": 88.66,
+        "Official Random": 87.02,
+        "Physical Random": 39.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.26292v1",
+      "sourceVersion": "arXiv 2609.26292v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Released model/checkpoint evaluated under RoboTwin-family protocols; original training data and recipes differ across methods.",
+      "evaluationNotes": "Clean and Official Random are corresponding public benchmark results summarized by the paper; Physical Random is evaluated under the new 13-attribute protocol. Do not interpret rows as equal-training causal comparison.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-robotwin-phys-v1-pi05",
+      "paperId": "p109",
+      "method": "π0.5",
+      "trackId": "robotwin-phys-v1-main",
+      "values": {
+        "Clean": 82.74,
+        "Official Random": 76.76,
+        "Physical Random": 31.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.26292v1",
+      "sourceVersion": "arXiv 2609.26292v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Released model/checkpoint evaluated under RoboTwin-family protocols; original training data and recipes differ across methods.",
+      "evaluationNotes": "Clean and Official Random are corresponding public benchmark results summarized by the paper; Physical Random is evaluated under the new 13-attribute protocol. Do not interpret rows as equal-training causal comparison.",
       "supersedes": ""
     },
     {
@@ -36544,6 +37527,50 @@
       "attribution": "author-reported",
       "trainingData": "12任务；50 clean+500 random示范/任务；60k步。",
       "evaluationNotes": "12任务子集，不能并入完整50任务RoboTwin协议。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-thaw-v2-libero-base",
+      "paperId": "p106",
+      "method": "QwenGR00T 0.8B · no distillation",
+      "trackId": "thaw-v2-libero",
+      "values": {
+        "Spatial": 96.6,
+        "Object": 96.4,
+        "Goal": 95.6,
+        "Long": 92.6,
+        "Average": 95.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.24682v2",
+      "sourceVersion": "arXiv 2609.24682v2",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "0.8B QwenGR00T student without world-model representation distillation.",
+      "evaluationNotes": "Mean over 4 evaluation runs = 2 seeds × 2 GPUs; standard deviations remain in source table.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-thaw-v2-libero-distilled",
+      "paperId": "p106",
+      "method": "THAW-VLA · QwenGR00T 0.8B distilled",
+      "trackId": "thaw-v2-libero",
+      "values": {
+        "Spatial": 99.3,
+        "Object": 99.2,
+        "Goal": 99.4,
+        "Long": 93.8,
+        "Average": 97.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-24",
+      "source": "https://arxiv.org/html/2609.24682v2",
+      "sourceVersion": "arXiv 2609.24682v2",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Same 0.8B student; frozen world-model features cached offline and used via representation-alignment loss; projector discarded after training.",
+      "evaluationNotes": "Mean over 4 evaluation runs = 2 seeds × 2 GPUs; deployed graph unchanged from undistilled baseline.",
       "supersedes": ""
     },
     {

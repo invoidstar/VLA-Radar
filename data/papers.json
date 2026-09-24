@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20",
+  "updatedAt": "2026-09-24",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,590 @@
     }
   ],
   "papers": [
+    {
+      "id": "p110",
+      "name": "LiMA",
+      "title": "LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion",
+      "team": "Ning Chen、Yankai Fu、Junkai Zhao、Qianpu Sun、Guocai Yao、Pengwei Wang、Zhongyuan Wang、Shanghang Zhang",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-23",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月23日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "world",
+        "action"
+      ],
+      "tags": [
+        "WAM",
+        "asynchronous",
+        "dexterous",
+        "long-horizon"
+      ],
+      "priority": "deep",
+      "contribution": "把长期稀疏意图生成与高频局部动作refinement异步解耦，用Latent Schrödinger Bridge Coupling把低频未来意图映射成高频动作轨迹，减少WAM迭代生成阻塞控制。",
+      "findings": "六项双臂灵巧任务总体成功率70.8%、平均子任务78.9%；端到端32步action chunk平均325ms，相比Cosmos-Policy 600ms降低45.8%。",
+      "limitations": "325ms是特定异步调度的摊销延迟，并非每个控制tick都重新运行完整Dreamer；六项任务和所用硬件不能代表所有接触/实时系统。",
+      "insight": "世界模型的长程推理与动作policy的快速反应可以运行在不同时间尺度，不必每次动作都同步等待完整未来想象。",
+      "readingFocus": "Dreamer/Refiner时间尺度、Latent Schrödinger Bridge、ΔT=4异步调度、六任务主表、未见场景与延迟定义。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.28431v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.28431"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://ccdcs.github.io/LiMA_repo/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.28431",
+      "arxiv": "2609.28431",
+      "doi": ""
+    },
+    {
+      "id": "p107",
+      "name": "IndustrialVLA-Bench",
+      "title": "IndustrialVLA-Bench: A Traceable Multi-Axis Evaluation of Open Robot Policy Models",
+      "team": "Yiqi Wang、Zhifeng Rao、Jiaqi Zhang、Xiaoyang Li、Zhangkai Wu、Yiqun Duan、Mingkai Zheng、Fei Wang、Shan You、Taotao Cai",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-22",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "evaluation",
+        "efficiency"
+      ],
+      "tags": [
+        "benchmark",
+        "evidence-aware",
+        "LIBERO",
+        "deployment"
+      ],
+      "priority": "deep",
+      "contribution": "把开放VLA/WAM在Clean capability、非语言鲁棒性、指令敏感性和部署成本四轴放进统一可追溯schema，并显式区分protocol-faithful、near-reproduction、pending-verification证据等级。",
+      "findings": "六系统Clean LIBERO平均只差1.58点，但LIBERO-Plus鲁棒性跨度14.62、LIBERO-Para指令跨度31.08；只看三条protocol-faithful系统仍为1.36/14.62/23.10。",
+      "limitations": "六系统并非所有行都达到相同复现实证等级；作者明确只有protocol-faithful条目支持严格比较，因此不能把完整六行当作公平统一排行榜。",
+      "insight": "Clean分数接近不代表能力相近；把鲁棒性、语言敏感性、延迟/显存和evidence status并列，能避免‘一个平均SR’掩盖部署与协议风险。",
+      "readingFocus": "evidence status定义、三次完整评测的固定checkpoint口径、LIBERO/Plus/Para分轴、latency/memory记录，以及为何弱证据行不进入strict comparison。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.25562v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.25562"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/xiaoqi-7/IndustrialVLA-Bench"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.25562",
+      "arxiv": "2609.25562",
+      "doi": ""
+    },
+    {
+      "id": "p108",
+      "name": "RoboFollow",
+      "title": "RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents",
+      "team": "Chang Guo、Yukun Xie、Bohan Tan、Zheng Chang、Zhaokai Yin、Qianli Ma、Yingqiao Wang、Chao Liang、Zhipeng Zhang",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-22",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "evaluation",
+        "pretraining"
+      ],
+      "tags": [
+        "benchmark",
+        "instruction following",
+        "language",
+        "generalization"
+      ],
+      "priority": "deep",
+      "contribution": "提出高Scene Entropy的instruction-following诊断Benchmark，让同一视觉场景存在多条运动学不同的有效任务分支，并用L0–L3逐级打乱视觉布局和语义组合来区分语言理解与动作执行。",
+      "findings": "九个VLA/WAM在L0可很高，但向L1–L3泛化显著下降；PI0.5全场景平均IS/ES/CR为55.7/53.0/47.3%，清空语言后12.3/8.9/5.2%，说明语言有用但仍不足以稳定组合泛化。",
+      "limitations": "各模型fine-tuning实现、基础模型和训练预算不同；Avg把四scene和四难度层汇总，适合Benchmark内诊断，不应与LIBERO成功率直接比较。",
+      "insight": "低Scene Entropy会让视觉本身泄露任务，造成‘看起来会听指令’；真正的语言评测需要在同一场景中存在多个可执行分支，并分别测Intent与Execution。",
+      "readingFocus": "scene entropy定义、L0–L3分层、Intent/Execution/Completion三指标、九模型Table 1与empty-language/强VLM/QA/CFG等缓解实验。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.25636v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.25636"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/AutoLab-SAI-SJTU/RoboFollow"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.25636",
+      "arxiv": "2609.25636",
+      "doi": ""
+    },
+    {
+      "id": "p109",
+      "name": "RoboTwin-Phys",
+      "title": "RoboTwin-Phys: Do WAMs and VLAs Understand the Physical World?",
+      "team": "Jiaqi Zhang、Feng Ye、Mingjia Yang、Zhihong Chen、Mingkang Xiang、Xinglin Yao、Yanbin Li、Siwei Ma、Chuanmin Jia",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-22",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "evaluation",
+        "world"
+      ],
+      "tags": [
+        "benchmark",
+        "physics",
+        "robustness OOD",
+        "RoboTwin"
+      ],
+      "priority": "deep",
+      "contribution": "在RoboTwin 2.0视觉/布局随机化之外加入13个连续物理属性，形成Physical Random条件，并发布5,000+带每episode真实物理参数的专家示范。",
+      "findings": "五模型从Official Random转到Physical Random均大幅下降：Fast-WAM 91.78→44.24，Motus 87.02→39.60，FACT 86.60→39.14，π0.5 76.76→31.60，Galaxea-VLA 92.80→37.82。",
+      "limitations": "物理参数范围仍由仿真器和作者设定，不能覆盖真实世界全部接触/材料变化；Clean/Official Random中部分数字来自对应公开Benchmark报告，Physical Random由本文评测。",
+      "insight": "视觉OOD鲁棒不等于物理鲁棒；质量、摩擦和关节动力学变化会在画面相近时改变同一动作后果，因此应成为独立Evaluation Setting。",
+      "readingFocus": "13物理属性、episode-level采样、5K+参数标注示范、Clean/Official/Physical三条件和逐任务下降。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.26292v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.26292"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.26292",
+      "arxiv": "2609.26292",
+      "doi": ""
+    },
+    {
+      "id": "p105",
+      "name": "LIBERO-VPro",
+      "title": "LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models",
+      "team": "Huiqiong Li、Zhiting Mei、Anirudha Majumdar、Jingjing Chen、Yu-Gang Jiang、Bin Zhu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-21",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月21日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "evaluation",
+        "spatial"
+      ],
+      "tags": [
+        "benchmark",
+        "visual robustness",
+        "LIBERO",
+        "closed-loop"
+      ],
+      "priority": "deep",
+      "contribution": "把视觉鲁棒性拆成视觉证据退化、相机陈旧、视觉源一致性、任务相关场景变化四维，形成12类挑战、96设置、3,296 task-condition cases的闭环诊断Benchmark。",
+      "findings": "六个VLA/WAM在约196,000次模拟episode上评测，并补200次Franka真机rollout；结果显示对象遮挡并非总是最致命，陈旧/缺失视角、局部交互线索中断和任务前置条件变化更容易导致崩溃。",
+      "limitations": "部分challenge的高成功率并不必然代表更强，例如掩码或冗余视角可能形成诊断性而非单调‘越高越好’的解释；96设置不适合压成一个单一总榜。",
+      "insight": "VLA/WAM视觉鲁棒性必须沿不同故障源分解；单一Clean SR会掩盖闭环中对相机时效、局部接触线索和空间先验的依赖。",
+      "readingFocus": "四维12类扰动设计、96 settings构造、六模型VLA/WAM差异、约196k模拟与200真机rollout，以及哪些场景成功率不能简单视作单调指标。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.24350v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.24350"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://huiqiongli.github.io/LIBERO-VPro/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.24350",
+      "arxiv": "2609.24350",
+      "doi": ""
+    },
+    {
+      "id": "p106",
+      "name": "THAW-VLA",
+      "title": "Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies",
+      "team": "Trung Dao、Sankalp Yamsani、Jaden Park、Joohyung Kim、Yong Jae Lee",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-21",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月21日首发｜当前复核 arXiv v2（9月22日）",
+      "topics": [
+        "pretraining",
+        "world"
+      ],
+      "tags": [
+        "VLA",
+        "world-model distillation",
+        "representation",
+        "efficient"
+      ],
+      "priority": "deep",
+      "contribution": "用冻结world model的中间表征做离线feature cache，只增加一个representation alignment损失训练小型VLA；teacher不在训练主循环或部署图中，投影头训练后丢弃。",
+      "findings": "0.8B学生LIBERO从95.3%→97.9%，RoboCasa-GR1从48.2%→50.5%；部署仍为同一0.8B policy，RTX5090报告32ms、1.86GB。",
+      "limitations": "teacher选择、cache层和student architecture仍会影响迁移；‘部署零额外成本’不等于训练没有teacher预计算成本，且LIBERO接近饱和使2.6个百分点的意义需结合长程套件看。",
+      "insight": "world model的价值可以作为训练期representation prior蒸馏进VLA，而不要求测试时生成未来；这为WAM→VLA预训练迁移提供了更干净的因果接口。",
+      "readingFocus": "teacher cache、alignment loss、student/teacher分离、LIBERO同规模对照、RoboCasa-GR1与32ms部署成本。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "arXiv v2 正文",
+          "url": "https://arxiv.org/html/2609.24682v2"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.24682"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://thaw-vla.trung-dt.com/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.24682",
+      "arxiv": "2609.24682",
+      "doi": ""
+    },
+    {
+      "id": "p104",
+      "name": "Grounded Action Model",
+      "title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+      "team": "Gehao Zhang、Weikai Huang、Shailesh Shailesh、Yiyan Peng、Jiafei Duan、Ranjay Krishna",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-20",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月20日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "spatial",
+        "pretraining"
+      ],
+      "tags": [
+        "3D grounding",
+        "robot foundation model",
+        "RoboTwin",
+        "LIBERO-PRO"
+      ],
+      "priority": "deep",
+      "contribution": "以可提示3D grounding作为机器人foundation backbone：语言、点或框先统一成目标对象的视觉+度量几何表示，再与机器人状态历史进入多流Transformer预测动作chunk。",
+      "findings": "RoboTwin 2.0 Clean/Random为62.96%/47.62%，平均55.29%；LIBERO-PRO 16扰动平均61%（π0.5 53%）；YAM视觉shift下17/20 vs π0.5的4/20。",
+      "limitations": "GAM冻结grounding backbone并只训练动作头，但3D检测/追踪质量仍是前提；RoboTwin训练只用clean demos，和混合random训练的其他论文结果不完全同预算。",
+      "insight": "把‘哪个对象、在哪里’做成显式可提示的metric grounding，可减少policy依赖场景捷径，并给高层planner提供稳定的低层控制接口。",
+      "readingFocus": "prompt→detections→object-centric observation、WildDet3D冻结、multi-stream action transformer、RoboTwin随机化与LIBERO-PRO位置/目标扰动。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.23863v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.23863"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://grounded-action-model.github.io/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.23863",
+      "arxiv": "2609.23863",
+      "doi": ""
+    },
+    {
+      "id": "p103",
+      "name": "High-DoF VLA Post-Training",
+      "title": "Towards High-DoF Dexterous Manipulation through VLA Post-Training",
+      "team": "Junlei Zhu、Shenzhe Yao、Chaogui Huang、Wenkai Zhu、Jingwei Peng、Guanqi He、Soren Schwertfeger、Jiahao Chen、Yide Liu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-17",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月17日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "action",
+        "pretraining"
+      ],
+      "tags": [
+        "VLA",
+        "post-training",
+        "dexterous",
+        "real-world RL"
+      ],
+      "priority": "deep",
+      "contribution": "针对高DoF手部适配提出四阶段post-training：时序手动作codec→SFT→带rollback/alignment/blending的DAgger→codec潜空间残差RL，把原始40维双手命令压成协调动作潜变量。",
+      "findings": "五项真实任务最终均20/20成功；latent residual RL将双手转移任务70%→100%、手内旋转50%→100%，并在3000真实transitions内完成；100 episodes的人力估计RL 1.2h、SFT 2.0h、DAgger 3.9h。",
+      "limitations": "100%来自五项受控真实任务和20次/任务，不代表开放世界可靠性；pipeline包含多阶段工程与人工介入，无法把最终收益归于单一RL或codec。",
+      "insight": "VLA落到高自由度手部时，最大瓶颈可能是动作接口与安全高效探索，而不是视觉/语言backbone；先学协调动作流形，再做残差探索可显著降低RL维度。",
+      "readingFocus": "40→latent手动作codec、DAgger平滑接管、latent residual RL、样本/操作员时间，以及五项20-trial最终评测。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.19666v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.19666"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://wuji.tech/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.19666",
+      "arxiv": "2609.19666",
+      "doi": ""
+    },
+    {
+      "id": "p102",
+      "name": "WholeBodyWAM",
+      "title": "WholeBodyWAM: Learning Whole-Body World Action Models with Scalable Motion Priors",
+      "team": "Bowei Zhang、Qiyao Zhang、Shuanghao Bai、Xinhua Wang、Meng Li、Yilei Wang、Leiwang Zhang等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-16",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月16日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "world",
+        "pretraining"
+      ],
+      "tags": [
+        "WAM",
+        "humanoid",
+        "motion pretraining",
+        "whole-body"
+      ],
+      "priority": "deep",
+      "contribution": "先用异构人类/机器人全身运动预训练语言条件Motion Expert，再在目标机器人后训练时通过非对称MoT把Motion、Video、Action专家连接，使可扩展运动先验参与具体机器人动作生成。",
+      "findings": "UniMotion-4K超过4.1K小时；六项真实人形机器人任务中WholeBodyWAM平均72.2%，GR00T N1.7为60.8%；去运动预训练59.1%，阻断Motion→Action后46.3%。",
+      "limitations": "运动先验经过root-free统一表示后仍需目标机器人后训练；六个任务和TianGong 3.0不能代表所有人形平台，运动数据规模与模型结构同时变化。",
+      "insight": "跨形态可迁移的信息不一定是目标机器人的动作，而可以是更抽象的未来全身运动；关键在于后训练时让运动预测真正影响动作，而不只是作为辅助损失。",
+      "readingFocus": "UniMotion-4K清洗与63D表示、Stage-I Motion Expert、Stage-II非对称MoT、Motion→Action路径和六项真机消融。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.18197v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.18197"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://zbzyjya.github.io/WholeBodyWAM/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.18197",
+      "arxiv": "2609.18197",
+      "doi": ""
+    },
+    {
+      "id": "p101",
+      "name": "WAM Survey",
+      "title": "World-Action Models for Robot Learning and Control: A Survey",
+      "team": "Zuxing Lu、Hongjia Zhai、Guanzhi Wang、Huajian Zeng、Jiaqi Yang、Jingyu Liu等16位作者",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-13",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月13日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "world",
+        "evaluation"
+      ],
+      "tags": [
+        "WAM",
+        "survey",
+        "taxonomy",
+        "benchmark"
+      ],
+      "priority": "overview",
+      "contribution": "系统定义WAM与传统world model、MBRL、action-conditioned video和反应式VLA的边界，并从表示、transition、动作接口、架构、训练管线、数据模态和scale组织机器人WAM方法。",
+      "findings": "该工作不提出新的机器人性能表；核心产出是统一taxonomy、应用/数据/评测梳理，以及对action alignment、world-action factorization、多视角一致性、长程记忆、神经仿真和高效推理的挑战总结。",
+      "limitations": "Survey对快速发展的2026 WAM文献只能代表截稿时视图；分类并不等同于因果结论，跨论文结果仍受协议、训练数据和实现差异影响。",
+      "insight": "把WAM理解为‘预测未来 + 可执行动作’的耦合系统，比按是否生成视频来命名更稳定；Radar可借其taxonomy检查WAM结果到底在评世界、动作还是两者接口。",
+      "readingFocus": "WAM定义边界、统一taxonomy、训练数据与scale、benchmark/metric对齐，以及作者提出的开放问题。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.16074v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.16074"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://rcl-robotics.github.io/Awesome-World-Action-Models"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.16074",
+      "arxiv": "2609.16074",
+      "doi": ""
+    },
+    {
+      "id": "p100",
+      "name": "MaP-WAM",
+      "title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+      "team": "Sizhe Zhao、Haozhe Xie、Weiyu Zhao、Chenchu Zhang、Huan Wang、Chenyang Wang、Qinglin Liu、Shengping Zhang",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-10",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月10日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "memory",
+        "world"
+      ],
+      "tags": [
+        "WAM",
+        "memory",
+        "long-horizon",
+        "planning"
+      ],
+      "priority": "deep",
+      "contribution": "把长时多模态历史作为规划期证据，而不是持续塞进执行器；用 Memory-as-Plans 将完成片段压成下一段语言计划与视觉引导，并由WAP联合预测动作与进度。",
+      "findings": "RMBench完整9任务平均成功率83.3%，Swap T与Press Button均96%；真实机器人任务总体78.0%，同时执行器上下文长度和推理延迟随历史增长近似保持恒定。",
+      "limitations": "规划器仍要正确检索并压缩历史证据；计划层错误会传给执行器。真实任务规模有限，83.3%来自RMBench协议，不能直接代表任意长程场景。",
+      "insight": "长历史不一定要通过不断扩大的token窗口进入policy；把历史变成可复用的计划证据，可以把‘记忆容量’与‘低延迟执行’解耦。",
+      "readingFocus": "episodic memory记录结构、视觉计划、WAP进度预测与校准、RMBench完整协议，以及去视觉计划/视觉记忆/进度校准的消融。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": false,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.11561v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.11561"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://sizhezhao.github.io/projects/MaP-WAM/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.11561",
+      "arxiv": "2609.11561",
+      "doi": ""
+    },
+    {
+      "id": "p099",
+      "name": "GE-Act 2.0",
+      "title": "GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation",
+      "team": "AgiBot Research Team；Renhang Liu、Wenzhi Zhao、Zhuo Yang、Shengcong Chen 等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-04",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月4日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "world",
+        "pretraining"
+      ],
+      "tags": [
+        "WAM",
+        "scaling",
+        "zero-shot OOD",
+        "cross-embodiment"
+      ],
+      "priority": "deep",
+      "contribution": "从操控数据出发预训练完整 WAM：以控制导向 CoAE 压缩视觉、单步视觉规划器生成未来状态、IDM 恢复动作，并用 KASO 缓解生成未来与记录动作不一致的监督冲突。",
+      "findings": "真实机器人零样本 OOD 中，协同训练数据从300小时扩大到30,000小时，G1-OP成功率17.1%→44.1%，G2-90D 13.4%→31.1%；LIBERO-Plus总体80.4%。",
+      "limitations": "主结果同时包含表示、生成、IDM、KASO与规模变化，不能把增长归因于单一模块；LIBERO-Plus中背景和机器人状态扰动仍明显较弱。",
+      "insight": "WAM预训练不一定必须继承自然视频生成器；更关键的是为控制设计潜空间、让世界预测与动作监督可分开预训练，再显式处理两者对齐。",
+      "readingFocus": "CoAE的64×空间压缩、单步SVP、validity gap与KASO、300→30,000小时扩展，以及RoboTwin/LIBERO-Plus的OOD口径。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-24 按 arXiv 正文与可确认官方材料复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.05588v1"
+        },
+        {
+          "label": "arXiv 元数据 / 版本记录",
+          "url": "https://arxiv.org/abs/2609.05588"
+        },
+        {
+          "label": "官方项目页",
+          "url": "https://ge-act-v2.github.io/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.05588",
+      "arxiv": "2609.05588",
+      "doi": ""
+    },
     {
       "id": "p001",
       "name": "VLAct",
