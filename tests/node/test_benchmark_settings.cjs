@@ -10,6 +10,18 @@ ok('missing score stays last ascending',()=>a.deepEqual(S.sortRows(rows,setting,
 ok('lower metric auto sorts ascending',()=>a.deepEqual(S.sortRows(rows,{...setting,direction:'lower'},'Average').map(x=>x.id),['d','a','b','c']));
 ok('sorting is non-mutating',()=>{const before=JSON.stringify(rows);S.sortRows(rows,setting,'Average');a.equal(JSON.stringify(rows),before);});
 ok('render keeps direction block-scoped',()=>{const src=require('node:fs').readFileSync('site/js/features/research/benchmark-settings.js','utf8');a(src.includes(';const dir=direction(setting,order);'));a(!src.includes('),dir=direction(setting,order);'));});
+ok('structured protocol facts expose stable fingerprint and hard dimensions',()=>{
+  const x=S.protocolFacts({id:'setting-libero-standard40-abcdef123456',evalId:'auto:standard40',dataset:'LIBERO',tasks:'40',split:'four suites',metric:'Task success rate',unit:'percent',direction:'higher',columns:['Spatial','Average']});
+  a.equal(x.fingerprint,'ep1-abcdef123456');a.equal(x.scope,'standard40');a(x.fields.some(([k,v])=>k==='Benchmark'&&v==='LIBERO'));a(x.fields.some(([k,v])=>k==='Reported columns'&&v.includes('Spatial')));
+});
+ok('compatibility keeps soft reporting differences inside one Setting',()=>{
+  const p={id:'a',dataset:'LIBERO',tasks:'40',split:'Spatial / Object / Goal / Long',metric:'Task success rate',unit:'percent',direction:'higher',columns:['Spatial','Object','Goal','Long','Average']};
+  const soft={...p,id:'b',split:'four suites; 3 seeds'};
+  const partial={...p,id:'c',columns:['Spatial','Object','Goal','Long']};
+  const other={...p,id:'d',metric:'Latency',unit:'seconds',direction:'lower'};
+  a.equal(S.compatibilityLevel(p,p),'exact');a.equal(S.compatibilityLevel(p,soft),'compatible');a.equal(S.compatibilityLevel(p,partial),'partial');a.equal(S.compatibilityLevel(p,other),'incompatible');
+  a.deepEqual(S.compatibilitySummary({primaryTrackId:'a'},[p,soft,partial]),{exact:1,compatible:1,partial:1,incompatible:0});
+});
 const realSettings=require('../../data/leaderboards.json').settings;
 const taxonomy=require('../../catalog/benchmark-taxonomy.json');
 ok('benchmark search supports multi-token AND matching',()=>{const x=S.searchSettings(realSettings,'RoboTwin 50 tasks clean random');a(x.length>=1);a(x.every(s=>s.dataset==='RoboTwin'));a(x.some(s=>s.evalId==='auto:50-clean-random'));});
