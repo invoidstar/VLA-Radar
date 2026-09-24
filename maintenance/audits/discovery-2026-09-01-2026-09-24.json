@@ -1,0 +1,4145 @@
+{
+  "schemaVersion": 1,
+  "window": {
+    "from": "2026-09-01",
+    "to": "2026-09-24",
+    "completedAt": "2026-09-24"
+  },
+  "scope": "VLA / World-Action Model / robot-foundation-policy discovery. Candidate search is broader than main-library admission; main admission still requires primary-source deep reading and protocol-aware evidence review.",
+  "sources": [
+    {
+      "repository": "ttylerzh/robotics_paper_daily",
+      "paths": [
+        "docs/vla.md",
+        "docs/world-model.md",
+        "docs/ego-policy.md",
+        "docs/rl.md"
+      ],
+      "role": "broad robotics daily index"
+    },
+    {
+      "repository": "luohongk/Embodied-AI-Daily",
+      "paths": [
+        "papers/Vision-Language-Action.md",
+        "papers/World-Action-Model.md"
+      ],
+      "role": "independent cross-check index"
+    }
+  ],
+  "primaryVerification": "Selected papers are separately verified against arXiv/official project materials before publication. Aggregator metadata is discovery-only evidence.",
+  "counts": {
+    "total": 276,
+    "selected": 12,
+    "deferred": 244,
+    "excluded": 20,
+    "crossIndexed": 79
+  },
+  "candidates": [
+    {
+      "arxiv": "2609.00908",
+      "date": "2026-09-01",
+      "title": "Knowing When to Stop: Adaptive Action Chunking via Internal Cross-Attention Dynamics in VLAs",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.00920",
+      "date": "2026-09-01",
+      "title": "VerNav: Verifier-First Low-Latency Vision-and-Language Navigation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.01215",
+      "date": "2026-09-01",
+      "title": "REFACTOR-VLA: Unsupervised Library Learning of Typed Motor Programs",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.01281",
+      "date": "2026-09-01",
+      "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+      "tags": [
+        "HF-Hot",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.01404",
+      "date": "2026-09-01",
+      "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.01567",
+      "date": "2026-09-01",
+      "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.01596",
+      "date": "2026-09-01",
+      "title": "Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.01961",
+      "date": "2026-09-02",
+      "title": "MACAW: Reliable And Efficient Surgical Debridement Using Monocular Adaptive Compact Attention Windows",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.02159",
+      "date": "2026-09-02",
+      "title": "World-Coherent Decoding: Self-Verifying Test-Time Planning for World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.02341",
+      "date": "2026-09-02",
+      "title": "Towards Zero-Shot Transfer Across Embodiments For Driving VLAs",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.02350",
+      "date": "2026-09-02",
+      "title": "LookStep: Efficient Vision-Language Navigation with Linguistic Foresight and Event Driven Memory",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.02531",
+      "date": "2026-09-02",
+      "title": "Spatially Aware World Action Model via Geometric Latent Diffusion",
+      "tags": [
+        "RL",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/rl.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.02546",
+      "date": "2026-09-02",
+      "title": "ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation",
+      "tags": [
+        "Dexterous",
+        "EGO Policy",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.02599",
+      "date": "2026-09-02",
+      "title": "Drift-dominated dust evolution. A multiwavelength analysis of dust rings in CY Tau and DoAr25",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.02634",
+      "date": "2026-09-02",
+      "title": "Latent Cluster Analysis for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.02653",
+      "date": "2026-09-02",
+      "title": "HINT: Human-Intent Inception for Long-Horizon Robot Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03142",
+      "date": "2026-09-02",
+      "title": "Sensing Which Modality Matters: Evidence-Gated Regularization for Robust VLA Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03276",
+      "date": "2026-09-03",
+      "title": "R2S-Eval: Robot Evaluation with Real-to-Sim Calibration via Vision-Language Models",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03483",
+      "date": "2026-09-03",
+      "title": "Air-Ground Collaborative Vision-and-Language Navigation via Shared Bird's-Eye Maps",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03591",
+      "date": "2026-09-03",
+      "title": "Scaling Bimanual Household Manipulation from 1,500 hours of Demonstrations to On-Policy Corrections",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03602",
+      "date": "2026-09-03",
+      "title": "SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.03681",
+      "date": "2026-09-03",
+      "title": "WISE: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03715",
+      "date": "2026-09-03",
+      "title": "MINERVA: How Small Can a Manipulation Policy Be and Still Solve LIBERO?",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03889",
+      "date": "2026-09-03",
+      "title": "FWBC-VLA: Force-Aware Whole-Body Compensation for Contact-Rich Loco-Manipulation",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03906",
+      "date": "2026-09-03",
+      "title": "Revisiting Topological Graphs for Macro Action based Closed-loop Reinforcement Learning of Vision Language Navigation in Continuous Environment",
+      "tags": [
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03927",
+      "date": "2026-09-03",
+      "title": "Toward Unified Robot Learning: Bridging Representation, Vision-Language-Action, and World Models",
+      "tags": [
+        "EGO Policy",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.03952",
+      "date": "2026-09-03",
+      "title": "WorldReward: Reward Modeling for Camera-Conditioned World Models",
+      "tags": [
+        "HF-Hot",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.04070",
+      "date": "2026-09-03",
+      "title": "Continuous Actions from Discrete Minds: Latent-Aligned Planning for End-to-End Autonomous Driving",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.04193",
+      "date": "2026-09-03",
+      "title": "GIFT: Guided Intermediate Feature Training via Action-Oriented Structural Supervision for Robotic Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.04355",
+      "date": "2026-09-03",
+      "title": "VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.04552",
+      "date": "2026-09-03",
+      "title": "Continual Field-Adaptive Models (CFAMs) for Post-Deployment Physical AI",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.04850",
+      "date": "2026-09-04",
+      "title": "ElderBench: Benchmarking Autonomous Mobile Agents for Older Adults",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.04893",
+      "date": "2026-09-04",
+      "title": "Reasoning Without Inference Cost: Latent Semantic Scaffolding for Robot VLA Policies",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05178",
+      "date": "2026-09-04",
+      "title": "LIBERO-RECOVER: Beyond Task Success Towards Failure Recovery in Robotic Manipulation Models",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05266",
+      "date": "2026-09-04",
+      "title": "TacPAC: Tactile Prediction and Real-Time Action Correction in World-Action Models for Contact-Rich Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05282",
+      "date": "2026-09-04",
+      "title": "Temporal Tactile Encoding and Compliance for Intent-Aware Robot-to-Human Bimanual Handover",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05324",
+      "date": "2026-09-04",
+      "title": "RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?",
+      "tags": [
+        "Dexterous",
+        "HF-Hot",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05369",
+      "date": "2026-09-04",
+      "title": "Towards Neuro-Symbolic Procedural Reasoning for Long-Horizon Vision-Language-Action Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05376",
+      "date": "2026-09-04",
+      "title": "What Matters, When? Diagnosing and Improving Conditional Visual Grounding in Visuomotor Imitation Policies",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05401",
+      "date": "2026-09-04",
+      "title": "Same Trajectory, Contradictory Rewards (ROBORMBENCH): Paraphrase Fragility in Vision Language Reward Models",
+      "tags": [
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.05588",
+      "date": "2026-09-04",
+      "title": "GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation",
+      "tags": [
+        "EGO Policy",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.06578",
+      "date": "2026-09-06",
+      "title": "Learning to Use Imagination: Progress-Conditioned Future Utilization for World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.06852",
+      "date": "2026-09-06",
+      "title": "ContextFlow: In-Context Flow Matching for Robot Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09210",
+      "date": "2026-09-06",
+      "title": "Identifying Habit, Physics, and Nuisance in Robot World Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07006",
+      "date": "2026-09-07",
+      "title": "GIFT: Goal-Injected Fine-Tuning for Efficient Manipulation Policy Adaptation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07047",
+      "date": "2026-09-07",
+      "title": "MEMOBench: A Process Level Memory Benchmark for Robotic Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07049",
+      "date": "2026-09-07",
+      "title": "Large Discrete Policy: Advancing Explicit Behavior Modeling with Stochastic Iterative Scoring",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07135",
+      "date": "2026-09-07",
+      "title": "NutriBench-Kitchen: Benchmarking Embodied AI for Nutrition Management",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.07311",
+      "date": "2026-09-07",
+      "title": "Can Agents Win the Video Browser Showdown?",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07398",
+      "date": "2026-09-07",
+      "title": "OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "high",
+      "reason": "高优先级范围相关工作；本次未满足主库正文级核验条件（访问/正文处理未闭环），保留候选优先补读。"
+    },
+    {
+      "arxiv": "2609.07420",
+      "date": "2026-09-07",
+      "title": "Unified Vision-Centric Pedestrian Crossing Action Prediction via Adaptive Patch Projection and Proactive Spatial Rectification",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07470",
+      "date": "2026-09-07",
+      "title": "Measuring Language Transfer in Robot Policies: Adding Greek to a Cosmos3 Vision-Language-Action Policy",
+      "tags": [
+        "HF-Hot",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07581",
+      "date": "2026-09-07",
+      "title": "ICI-VLA: In-Context Imitation with Spatiotemporally Aligned Demonstrations for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.07838",
+      "date": "2026-09-07",
+      "title": "ComVLA: Communication-Aware Split Inference for VLA Models in 6G-Connected Robotics",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.08123",
+      "date": "2026-09-08",
+      "title": "DISEIL: Demonstration Distillation for Sample-Efficient Imitation Learning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08130",
+      "date": "2026-09-08",
+      "title": "Observe Before You Alert: Adaptive Driver Alerting with Vision-Language Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08162",
+      "date": "2026-09-08",
+      "title": "WorldAgen: Unified State-Action Prediction with Test-Time World Model Training",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08209",
+      "date": "2026-09-08",
+      "title": "Monkey See, Can Monkey Do? A Benchmark for Evaluating Robot Skill Learning by Observation",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08224",
+      "date": "2026-09-08",
+      "title": "3DWay: Generalizing Robot Manipulation via 3D Consistent Waypoints",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08442",
+      "date": "2026-09-08",
+      "title": "AirAnchor: Bridging Local and Global Spatial Information for Zero-Shot Aerial Vision-and-Language Navigation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08444",
+      "date": "2026-09-08",
+      "title": "Safe Task Planning with Long-Term Graph Memory for Embodied Agents",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08506",
+      "date": "2026-09-08",
+      "title": "J023721.13$-$010528.5: A Giant $S$-shaped Radio Galaxy Showing Four Episodes of Jet Activity",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.08602",
+      "date": "2026-09-08",
+      "title": "CLAMP: Constrained Decoding for Vision-Language Embodied Planning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.08638",
+      "date": "2026-09-08",
+      "title": "CASD: Chunk-Aligned Semantic Distillation for Multi-StageRobot Manipulation",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09119",
+      "date": "2026-09-08",
+      "title": "DeCAL: Towards Physically-Grounded Dexterous Vision-Language-Action Models via Contact-Aware Latent Co-Imagination",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09148",
+      "date": "2026-09-08",
+      "title": "Proxy Policy Steering",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09155",
+      "date": "2026-09-08",
+      "title": "SyncWorld: Visual Calibration Enables World Models as Zero-Shot Simulators",
+      "tags": [
+        "HF-Hot",
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09158",
+      "date": "2026-09-08",
+      "title": "TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09250",
+      "date": "2026-09-08",
+      "title": "No Free Checker: A Survey of Verifiers for Robot Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09396",
+      "date": "2026-09-08",
+      "title": "VANTAGE-Bench: Evaluating the Infrastructure AI Gap in Vision-Language Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09418",
+      "date": "2026-09-08",
+      "title": "Valerant: An Automatic Navigable Game Map Generator via Action-Conditioned World Model Exploration",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09539",
+      "date": "2026-09-08",
+      "title": "First Detection of Radio Polarization During Jet Formation in the Changing-Look AGN 1ES 1927+654",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09591",
+      "date": "2026-09-09",
+      "title": "Modality-Decoupled Federated Learning for Privacy-Preserving Embodied Intelligence in 6G",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.09808",
+      "date": "2026-09-09",
+      "title": "GTA-2: A Multi-VLM Framework for Synthesizing Robot Manipulation Skills via Grounded Task Axes",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09925",
+      "date": "2026-09-09",
+      "title": "Time-Frequency Geometric Cross-Attention for Chunked Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.09941",
+      "date": "2026-09-09",
+      "title": "HaWMPO: Hallucination-Aware World Model-based Policy Optimization for Generalist Robot Policy",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10021",
+      "date": "2026-09-09",
+      "title": "RoboDrop: Curating VLA Post-Training Data via Local Gradient Compatibility",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10243",
+      "date": "2026-09-09",
+      "title": "RoboFolDeX: A Physical-World Benchmark for Long-Horizon Robotic Manipulation of Deformable Objects",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10321",
+      "date": "2026-09-09",
+      "title": "On-Policy Distillation for Vision-Language Model Adaptation, an Effective Paradigm on Low-Quality Multimodal Data",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10405",
+      "date": "2026-09-09",
+      "title": "Frequency-Conditioned Flow Matching for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10522",
+      "date": "2026-09-09",
+      "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10706",
+      "date": "2026-09-09",
+      "title": "HuRo: Robotizing Human Videos for Scalable VLA Pretraining",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10873",
+      "date": "2026-09-09",
+      "title": "When Validation Stops Learning: Auditing Update Admission for Continual Embodied Agents",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.10915",
+      "date": "2026-09-10",
+      "title": "IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.11022",
+      "date": "2026-09-10",
+      "title": "New Evidence, Same Choice: Testing Physical Experiment Selection in Vision Language Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.11308",
+      "date": "2026-09-10",
+      "title": "2AM: Grounding Agent-Side Memory as Guidance for Steerable Action Models in Long-Horizon Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.11310",
+      "date": "2026-09-10",
+      "title": "Your Model Already Knows Don't Teach It, Learn to Ask It: Soft Prompting for Few-Shot Adaptation of Vision-Language Models",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.11445",
+      "date": "2026-09-10",
+      "title": "FARM: Reading Failure Signals from the Internal Predictive States of a Frozen Robotic World Model",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.11561",
+      "date": "2026-09-10",
+      "title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+      "tags": [
+        "Dexterous",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.11697",
+      "date": "2026-09-10",
+      "title": "ActSafeGuard: Differentiable and Training-Aligned Constraint Enforcement for Flow-Matching Policies",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.11875",
+      "date": "2026-09-10",
+      "title": "UniMPA: A Unified Memory-Prediction-Action Model via Action-Grounded Transition Modeling",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.12103",
+      "date": "2026-09-10",
+      "title": "RodForesight: A World Model Enhanced Diffusion Policy for Slender Rod Insertion",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.12441",
+      "date": "2026-09-11",
+      "title": "IMPLY: Physically Anchored Consistency for World-Model Rollouts",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16074",
+      "date": "2026-09-13",
+      "title": "World-Action Models for Robot Learning and Control: A Survey",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.15012",
+      "date": "2026-09-14",
+      "title": "Atomic Motion Coordinate for Language-Steerable and Force-Responsive Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.15098",
+      "date": "2026-09-14",
+      "title": "LG-VLN: A Zero-Shot Vision-and-Language Navigation Framework with LangGraph State Orchestration",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.15142",
+      "date": "2026-09-14",
+      "title": "C$^2$Nav: Compare Before You Commit for Zero-Shot Vision-and-Language Navigation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.15169",
+      "date": "2026-09-14",
+      "title": "GRAVA: Grounded Reasoning-to-Action Representation and Learning for Autonomous Driving",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.15382",
+      "date": "2026-09-14",
+      "title": "From Prediction to Decision: World-Model-Guided Action Selection for Continuous Pile Excavation",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.15570",
+      "date": "2026-09-14",
+      "title": "DIDO: Distilling Interaction-Centric Dynamics into One-Step Denoising for World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.15706",
+      "date": "2026-09-14",
+      "title": "Beyond Accuracy: Robustness, Cost, and Governance Trade-offs for Vision-Language Models in Templated Document Extraction",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.15940",
+      "date": "2026-09-14",
+      "title": "Beyond Single-Axis Testing: Paired Evaluation of Compound Robustness in Vision-Language-Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.15960",
+      "date": "2026-09-14",
+      "title": "Validating Inverse Fundamental-Plane IMBH Mass Estimates in the SKA/ngVLA Era",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.16368",
+      "date": "2026-09-14",
+      "title": "UDAV: Uncertainty-Driven Adaptive VLM Waypoint Planner",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16437",
+      "date": "2026-09-14",
+      "title": "XRoboToolKit-T: Teleoperation with High Stability and Precision with Tactile Sensing for Contact-rich Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16503",
+      "date": "2026-09-15",
+      "title": "Dense to MoE Adaptation for Compact Vision Language Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16610",
+      "date": "2026-09-15",
+      "title": "EgoPathBench: Evaluating Zero-Shot Egocentric Waypoint Decision-Making in Vision-Language Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16641",
+      "date": "2026-09-15",
+      "title": "SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16644",
+      "date": "2026-09-15",
+      "title": "WholeBodyWAM: Generalizing Pre-trained World-Action Priors to Humanoid Loco-Manipulation via WBC-Grounded Coordination",
+      "tags": [
+        "Dexterous",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16705",
+      "date": "2026-09-15",
+      "title": "The Robot Data Factory",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16864",
+      "date": "2026-09-15",
+      "title": "TEMPO: Learning Temporal Context for Dynamic Robot Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.16884",
+      "date": "2026-09-15",
+      "title": "Bridging Learned Visual Perception and Symbolic Belief-Space Planning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17021",
+      "date": "2026-09-15",
+      "title": "sensVLA: Spatially-Grounded Vision-Language-Action Model for Autonomous Wheel Loader",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17035",
+      "date": "2026-09-15",
+      "title": "SWIM: Vision-Language-Grounded Soft Whole-Body Interactive Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17099",
+      "date": "2026-09-15",
+      "title": "GeoLAM: Learning Geometry-Grounded Latent Actions from Unlabeled Human Videos",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17115",
+      "date": "2026-09-15",
+      "title": "Intrinsic Robot Rewarding: Reusing VLA Representations for Autonomous Evaluation and Policy Improvement",
+      "tags": [
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17210",
+      "date": "2026-09-15",
+      "title": "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17247",
+      "date": "2026-09-15",
+      "title": "DriveMCP: An Agentic AI framework for Advanced Driver Assistance System",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17372",
+      "date": "2026-09-15",
+      "title": "XPACE: Joint World and Action Modeling from Heterogeneous Experience",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.17524",
+      "date": "2026-09-15",
+      "title": "Modality-Autoregressive World-Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18016",
+      "date": "2026-09-16",
+      "title": "Causal-History Test-Time Scaling for Failure Recovery in Autoregressive World-Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18197",
+      "date": "2026-09-16",
+      "title": "WholeBodyWAM: Learning Whole-Body World Action Models with Scalable Motion Priors",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.18243",
+      "date": "2026-09-16",
+      "title": "Acting in Meters: Learning Metric Interactions for Precise Robotic Manipulation",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18259",
+      "date": "2026-09-16",
+      "title": "${M}^2$Tok: Multi-head Multi-codebook Discrete Action Tokenization for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18326",
+      "date": "2026-09-16",
+      "title": "UAVs Meet Embodied Intelligence: Bridging Human Intents and Flying Dynamics Via Harnessing Physical-Digital AI Agents",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18374",
+      "date": "2026-09-16",
+      "title": "Decoupling Vision, Language, and Action for Efficient Multi-Task Robot Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18392",
+      "date": "2026-09-16",
+      "title": "DistAL: Distance-based Advantage Learning for VLA Fine-Tuning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18413",
+      "date": "2026-09-16",
+      "title": "Vocabulary-Guided Gait Recognition",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18435",
+      "date": "2026-09-16",
+      "title": "WetRobo: A Reproducible Robot Kit for Coding Agents in Biological Laboratories",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18451",
+      "date": "2026-09-16",
+      "title": "VLM-MPPI: Grounding Natural Language in Behaviorally Diverse Trajectories for Aerial Navigation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18462",
+      "date": "2026-09-16",
+      "title": "CSWAM: Better Causal Semantic Representations for Out-of-Distribution Generalization in World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18487",
+      "date": "2026-09-16",
+      "title": "ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "high",
+      "reason": "高优先级范围相关工作；本次未满足主库正文级核验条件（访问/正文处理未闭环），保留候选优先补读。"
+    },
+    {
+      "arxiv": "2609.18497",
+      "date": "2026-09-16",
+      "title": "TAO-Force: Unifying Force-Aware Perception and Fast-Slow Control for Contact-Rich Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18514",
+      "date": "2026-09-16",
+      "title": "ActiveScale: Scaling Active Perception for Robots across Model, Data, and Hardware",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18543",
+      "date": "2026-09-16",
+      "title": "Challenging the archetypal intermittent radio galaxy J0111+3906. New insights from optical GTC/OSIRIS and radio VLA and LOFAR observations",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.18581",
+      "date": "2026-09-16",
+      "title": "GroundingVLN: Reasoning and Acting with Grounding for Vision-Language Navigation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.18623",
+      "date": "2026-09-16",
+      "title": "FIVE-VLA: Fast and EffectIVE Autonomous Driving with Recurrent Action Memory",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.18651",
+      "date": "2026-09-16",
+      "title": "FIERCE: From Generalist Robot Policies to Fast Specialists via Progress-Failure Feedback",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18663",
+      "date": "2026-09-16",
+      "title": "VLA-ULAP: Interleaving Cloud VLA Calls with Ultra-Lightweight Local Action Prediction at the Edge",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18718",
+      "date": "2026-09-16",
+      "title": "Calibrated Probabilistic Obstruction Reasoning with Vision-Language Models for Grasping in Clutter",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.18869",
+      "date": "2026-09-16",
+      "title": "KINO: A Keyframe Interface for VLM Planning and Whole-Body Control in Humanoid Loco-Manipulation",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19104",
+      "date": "2026-09-16",
+      "title": "rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19138",
+      "date": "2026-09-16",
+      "title": "In-Context Robot Learning with VLM Agents",
+      "tags": [
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19441",
+      "date": "2026-09-16",
+      "title": "Predict Before You Deploy: Offline Prediction of Quantization-Induced Task Degradation for World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19579",
+      "date": "2026-09-17",
+      "title": "Recovering Aggressively Pruned Vision-Language-Action Models with Offline Hidden-State Distillation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19600",
+      "date": "2026-09-17",
+      "title": "WorldContact: A Contact-Centric World Model for Scalable Robot Learning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19613",
+      "date": "2026-09-17",
+      "title": "TacSushi: Tactile-Grounded World-Action Modeling for Dexterous Sushi Manipulation",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19661",
+      "date": "2026-09-17",
+      "title": "ReShoot: Generative Visual Domain Randomization of Recorded Robot Demonstrations for Visuomotor Policy Learning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19665",
+      "date": "2026-09-17",
+      "title": "Runtime Safety Filtering for Two-Terminal Hazards in Robotic Battery Recycling",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19666",
+      "date": "2026-09-17",
+      "title": "Towards High-DoF Dexterous Manipulation through VLA Post-Training",
+      "tags": [
+        "RL",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/rl.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.19669",
+      "date": "2026-09-17",
+      "title": "Beyond Patch Removal: Persistent Adversarial Effects in Vision-Language-Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19745",
+      "date": "2026-09-17",
+      "title": "Region-Level Policy Optimization for Fine-grained MLLM Perception",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19796",
+      "date": "2026-09-17",
+      "title": "LIFD: Anchored Diffusion for 3D-Aware Scene Memory in Robotic Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19846",
+      "date": "2026-09-17",
+      "title": "Improving Cross-embodiment Transfer in Latent Action Models with Action-Similarity Supervision",
+      "tags": [
+        "EGO Policy",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19878",
+      "date": "2026-09-17",
+      "title": "Uni-LaDiR: Latent Diffusion Unifies Multimodal Reasoning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19923",
+      "date": "2026-09-17",
+      "title": "Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.19976",
+      "date": "2026-09-17",
+      "title": "Compliance for Free: Learning Identifiable Impedance via Bilateral Teleoperation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20116",
+      "date": "2026-09-17",
+      "title": "GPT-6-Astra in a Navigation Workflow: Behavioral Analysis in Zero-Shot Vision-and-Language Navigation in Continuous Environments",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20377",
+      "date": "2026-09-17",
+      "title": "MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.20396",
+      "date": "2026-09-17",
+      "title": "Imagine-TAMP: Imagination-Guided Task and Motion Planning in Partial Observability",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20420",
+      "date": "2026-09-17",
+      "title": "Water maser detections toward 70 $μ$m infrared dark clumps at early star formation stage",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20646",
+      "date": "2026-09-17",
+      "title": "TraceFlow: Guiding Frozen Flow-Matching Robot Policies with Success and Failure Traces",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20648",
+      "date": "2026-09-17",
+      "title": "SkipVLA: Skipping VLA Steps with Classical Planning for Fast Robot Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20649",
+      "date": "2026-09-17",
+      "title": "DexTouch-WM: Learning Action-Conditioned Tactile World Models from Human Touch for Dexterous Robot Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "RL",
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/rl.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20659",
+      "date": "2026-09-17",
+      "title": "HIL-UMI: Bringing Human-in-the-Loop Post-Training of Vision-Language-Action Models to Universal Manipulation Interface",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20709",
+      "date": "2026-09-17",
+      "title": "MoWAM: Explicit Future Motion Prediction for Efficient World Action Models",
+      "tags": [
+        "Dexterous",
+        "RL",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/rl.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20761",
+      "date": "2026-09-17",
+      "title": "Agile-WAM: An Agile Tactile World Action Model for Contact-Rich Robot Control",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.20776",
+      "date": "2026-09-17",
+      "title": "GeoAAC: Geometry-Based Adaptive Action Chunking from Denoising Trajectories in VLA Policies",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21223",
+      "date": "2026-09-18",
+      "title": "SafeStage: Evaluating Safety Before, During, and After Vision-Language-Conditioned Robot Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21228",
+      "date": "2026-09-18",
+      "title": "FOCAL-VLA: Subtask-Guided Geometry Distillation and Implicit World Modeling for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21229",
+      "date": "2026-09-18",
+      "title": "KnowDemo: Knowledge-Guided Robot Demonstration Generation from Human Videos",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21246",
+      "date": "2026-09-18",
+      "title": "VLA-Scope: Shift-Aware Failure Prediction for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21323",
+      "date": "2026-09-18",
+      "title": "VeriFuse: Bounded Vision-Language Arbitration and Reason-Guided Refinement for Cooperative 3D Perception",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21358",
+      "date": "2026-09-18",
+      "title": "FAN: Foresight Action Normalization for Continual Adaptation of Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21369",
+      "date": "2026-09-18",
+      "title": "ProTracer: Proprioception-Guided Failure Diagnosis in Robot Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21449",
+      "date": "2026-09-18",
+      "title": "ME-Dex 1.0: Bringing Heterogeneous Tactile Sensing into World Action Modeling",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21461",
+      "date": "2026-09-18",
+      "title": "AtomEgo: Exploring Ego-Robot Integration for Embodied Foundation Model Pretraining",
+      "tags": [
+        "EGO Policy",
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21502",
+      "date": "2026-09-18",
+      "title": "Adaptive World Memory 3D Foundation Model for Scalable 3D Mapping, Localization, and Rendering",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21514",
+      "date": "2026-09-18",
+      "title": "Skel-WAM: A Hand-Skeleton-Conditioned World Action Model for Human-to-Robot Manipulation Transfer",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21650",
+      "date": "2026-09-18",
+      "title": "SynthDemo-RL: Breaking the Zero-Reward Barrier in VLA Adaptation with LLM-Guided Synthetic Demonstrations",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21659",
+      "date": "2026-09-18",
+      "title": "Outcome-Conditioned End-Effector Geometry Across Vision-Language-Action Policies",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21712",
+      "date": "2026-09-18",
+      "title": "ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21726",
+      "date": "2026-09-18",
+      "title": "ZeroTouch: Tactile-Supervised Visual Contact Estimation for Contact-Rich Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21753",
+      "date": "2026-09-18",
+      "title": "PSR: Predictive Sensorimotor Representation Learning for Contact-Rich Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21817",
+      "date": "2026-09-18",
+      "title": "A Sim-to-Real Integration Pipeline for Training and Deployment of Chunk-Based VLA Manipulation Policies",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21828",
+      "date": "2026-09-18",
+      "title": "Touvigation: Embodied Adaptive Object Acquisition for Blind and Low-Vision Users in Unfamiliar Indoor Environments",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21908",
+      "date": "2026-09-18",
+      "title": "CommitFlow: Semantic Commitment Verification and Local Correction for Long-Horizon Robot Manipulation VLA Execution",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21942",
+      "date": "2026-09-18",
+      "title": "When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21948",
+      "date": "2026-09-18",
+      "title": "GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments",
+      "tags": [
+        "Dexterous",
+        "EGO Policy",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.21983",
+      "date": "2026-09-18",
+      "title": "SkelWAM: A Skeleton-Guided World-Action Model for Zero-Shot Cross-Embodiment Manipulation",
+      "tags": [
+        "Dexterous",
+        "EGO Policy",
+        "Manipulation",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22040",
+      "date": "2026-09-18",
+      "title": "PRIME: Perception Feedback with Situational Memory Embeddings in VLA Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22055",
+      "date": "2026-09-18",
+      "title": "Benchmarking World Models for Continual Learning on Compositional Tasks",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22085",
+      "date": "2026-09-18",
+      "title": "SeeQ: Training Generalist Value Functions for Long-Horizon Robotic Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22684",
+      "date": "2026-09-19",
+      "title": "StateMem: Single-State Residual Memory with Adaptive Inference for Vision-Language-Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22762",
+      "date": "2026-09-19",
+      "title": "DriveReferee: Geometric Safety Verdicts Need Not Be Learned for Driving World-Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22840",
+      "date": "2026-09-19",
+      "title": "ForceRFT: Refining VLA Actions through Force-Guided Residual Reinforcement Learning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22854",
+      "date": "2026-09-19",
+      "title": "SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22858",
+      "date": "2026-09-19",
+      "title": "PileBelief: Persistent Physical State for Interaction-Driven World Modeling",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22879",
+      "date": "2026-09-19",
+      "title": "Prioritized Rollouts for Efficient World Model-based Vision-Language-Action Policy Optimization",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22888",
+      "date": "2026-09-19",
+      "title": "Stable and Efficient Real-World Online VLA Post-Training via Asynchronous Replay-Anchored Policy Improvement",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22895",
+      "date": "2026-09-19",
+      "title": "H-VLA: Hierarchical Vision-Language-Action Model with Key-Action Reasoning and Motion Planning in a Unified Action Space",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22973",
+      "date": "2026-09-19",
+      "title": "An Empirical Study and Open Testbed for Federated Fine-Tuning of Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23133",
+      "date": "2026-09-19",
+      "title": "AquaCap: A Training-Free Underwater Embodied Agent with Code-as-Policy",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23252",
+      "date": "2026-09-19",
+      "title": "Robot World Models Are Not Invariant to How the Actions Are Written",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23275",
+      "date": "2026-09-20",
+      "title": "SCULPT-VLA: Learning Structured Control through Staged Action Grounding",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23369",
+      "date": "2026-09-20",
+      "title": "The Right Future for Action: Learning Action-Relevant Predictive States in World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23418",
+      "date": "2026-09-20",
+      "title": "HEARTH: An Object-Centric RGB-Thermal-3D Dataset for Temperature-Aware Robot Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23565",
+      "date": "2026-09-20",
+      "title": "MaskVLA: Visual Masking Against Trajectory Overfitting of Vision-Language-Action Model",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23578",
+      "date": "2026-09-20",
+      "title": "AR-WAM: A Visual-Conditioned Agent-Ready World Action Model for Robotic Manipulation",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23580",
+      "date": "2026-09-20",
+      "title": "TaskAnchor: Grounding Task State in Reactive VLAs for Long-Horizon Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23614",
+      "date": "2026-09-20",
+      "title": "CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23650",
+      "date": "2026-09-20",
+      "title": "Beyond Appearance Shifts: Task-Semantic Action Calibration for VLA Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23863",
+      "date": "2026-09-20",
+      "title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.23885",
+      "date": "2026-09-20",
+      "title": "HumynexSurg-1: A Curated Expert Liposuction Dataset",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23888",
+      "date": "2026-09-20",
+      "title": "HapticWAM: Distilling Imagined Touch into a World-Action Model without Inference-Time Tactile Sensing",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23910",
+      "date": "2026-09-20",
+      "title": "ReVeal: A Reconstruction-Aware Real-to-Sim Framework for VLA Policy Evaluation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23944",
+      "date": "2026-09-20",
+      "title": "Topology-Informed Visual Prompting For Vision Language Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23968",
+      "date": "2026-09-21",
+      "title": "Opt2VLA: Force-Aware Vision-Language-Action for Contact-Rich Humanoid Whole-Body Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.23997",
+      "date": "2026-09-21",
+      "title": "RoboTalk: Learning Multi-Robot Communication and Coordination from Multimodal Demonstrations",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24033",
+      "date": "2026-09-21",
+      "title": "Imagine-RL: Residual-Confidence-Guided Cross-Attention for World-Model-Augmented VLA Reinforcement Learning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24048",
+      "date": "2026-09-21",
+      "title": "What Matters in Designing World Action Models: An Empirical Study",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24059",
+      "date": "2026-09-21",
+      "title": "Automatic Labelling for Bimanual Mobile Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24094",
+      "date": "2026-09-21",
+      "title": "WidgetVA: A Widget-Centric Framework and Benchmark for Agentic Visual Analytics",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.24118",
+      "date": "2026-09-21",
+      "title": "CARE: Experience-Guided Atomic Corrective Execution for Vision-Language-Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24124",
+      "date": "2026-09-21",
+      "title": "ActiveArena: Benchmarking and Understanding Active Perception in Robotic Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24170",
+      "date": "2026-09-21",
+      "title": "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24187",
+      "date": "2026-09-21",
+      "title": "StenoVLA-3D: 3D-Aware Reasoning VLA for Navigation Through Gastrointestinal Stenoses",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.24243",
+      "date": "2026-09-21",
+      "title": "Taming CoT Obfuscation in VLMs: From Mechanistic Evidence to Activation Enforcement",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24274",
+      "date": "2026-09-21",
+      "title": "vla.simd: Efficient CPU Inference for Language-Conditioned Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24350",
+      "date": "2026-09-21",
+      "title": "LIBERO-VPro: Benchmarking Closed-Loop Visual Robustness of Robotic Foundation Models",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.24411",
+      "date": "2026-09-21",
+      "title": "Zeva-Ego: Egocentric Mid-Training with In-Context Causal Learning for Robot Manipulation",
+      "tags": [
+        "EGO Policy",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24433",
+      "date": "2026-09-21",
+      "title": "FoldQuantVLA: Native Low-Bit Quantization of Vision-Language-Action Models via Consistent Folding",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24525",
+      "date": "2026-09-21",
+      "title": "Bridge3D: Enabling Vision-Language-Action Models to See and Act in 3D",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24576",
+      "date": "2026-09-21",
+      "title": "What do VLM-Based Vision-Language Navigation Models Rely on: Interpreting and Steering Policy Behavior",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.24682",
+      "date": "2026-09-21",
+      "title": "Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.24745",
+      "date": "2026-09-21",
+      "title": "Beyond Visual Quality: A Study of Test-Time Planning with World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24868",
+      "date": "2026-09-21",
+      "title": "DualWAM: Dual-System World Action Models for Asynchronous Global Planning and Local Refinement",
+      "tags": [
+        "Dexterous",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.24976",
+      "date": "2026-09-21",
+      "title": "DexTacWAM: A Visuo-Tactile World-Action Model for Dexterous Manipulation",
+      "tags": [
+        "Dexterous",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25146",
+      "date": "2026-09-21",
+      "title": "Brain-Inspired Hierarchical Modularity for General Continual Learning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25187",
+      "date": "2026-09-21",
+      "title": "X-Planner: Event-Structured Task Planning for Embodied Intelligence",
+      "tags": [
+        "EGO Policy",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/ego-policy.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25369",
+      "date": "2026-09-21",
+      "title": "Capability-Aware Arbitration for Semantic Intent-Based Shared Control",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25376",
+      "date": "2026-09-21",
+      "title": "VLAQuantBench: Closed-Loop Evaluation of Post-Training Quantization for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.22332",
+      "date": "2026-09-22",
+      "title": "AffordanceWAM: Affordance-Aware Joint World-Action Modeling for Robot Manipulation",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25558",
+      "date": "2026-09-22",
+      "title": "HABILIS Brain 0: Geometry-Change Supervision for Vision-Language-Action and Residual Flow Recovery",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25562",
+      "date": "2026-09-22",
+      "title": "IndustrialVLA-Bench: A Traceable Multi-Axis Evaluation of Open Robot Policy Models",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.25606",
+      "date": "2026-09-22",
+      "title": "CableVLA: Simulation-Privileged Global-Local Representation Learning for Cable Routing",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25627",
+      "date": "2026-09-22",
+      "title": "MachEmbodied-U0: Unified Understanding and Generation Model for Embodied Intelligence",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25636",
+      "date": "2026-09-22",
+      "title": "RoboFollow: Unveiling the Instruction Following Mirage in Embodied Agents",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.25651",
+      "date": "2026-09-22",
+      "title": "SurgGraph: Quantitative Laparoscopic Video Understanding via Geometry-Grounded Scene Graphs",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25750",
+      "date": "2026-09-22",
+      "title": "Fisheye-VLA: Decoupling Coverage and Acuity for Manipulation with a Single Fisheye Camera",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25756",
+      "date": "2026-09-22",
+      "title": "MedVLA: A Hierarchical Vision-Language-Action Framework for Closed-Loop Precision Medical Robot Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "excluded",
+      "priority": "normal",
+      "reason": "标题/任务表明其主要对象不属于当前 VLA-Radar 机器人策略主线（如自动驾驶、导航、医疗、通信或非机器人 VLA 缩写语境）。"
+    },
+    {
+      "arxiv": "2609.25785",
+      "date": "2026-09-22",
+      "title": "VisForce: Visual Grounding of Current and Desired Forces for Goal-Conditioned Dexterous Manipulation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25820",
+      "date": "2026-09-22",
+      "title": "Beyond Reconstruction Error: Analytical and Data-Driven Action Tokenization for Autoregressive Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.25961",
+      "date": "2026-09-22",
+      "title": "An Action Is Worth One Patch: Unified World-Action Modeling with PatchWAM",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26292",
+      "date": "2026-09-22",
+      "title": "RoboTwin-Phys: Do WAMs and VLAs Understand the Physical World?",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    },
+    {
+      "arxiv": "2609.26313",
+      "date": "2026-09-22",
+      "title": "SafeLoop: Risk-Aware Rollback for Vision-Language-Action Manipulation",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26314",
+      "date": "2026-09-22",
+      "title": "TriWorldBench: A Tri-View Consistency Perspective on Embodied World Models",
+      "tags": [
+        "Dexterous",
+        "World Model"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26467",
+      "date": "2026-09-22",
+      "title": "RouteRLT: Learning When and Which RL Specialist Should Control a Vision-Language-Action Policy",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26499",
+      "date": "2026-09-22",
+      "title": "Generalizing Manipulation Skills with a Local Coding Agent",
+      "tags": [
+        "Dexterous",
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26520",
+      "date": "2026-09-22",
+      "title": "MATE: Multi-Agent Virtual Teleoperation Platform for Humanoid Collaboration Data Collection",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26672",
+      "date": "2026-09-22",
+      "title": "Imperfection for Precision: Upcycling Imperfect Data for High-Precision Robotic Manipulation",
+      "tags": [
+        "Dexterous",
+        "Manipulation",
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26733",
+      "date": "2026-09-22",
+      "title": "Evaluating the Semantic-to-Geometric Gap in Adversarial Defenses Against Vision-Language Model-Based Plagiarism",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "ttylerzh/robotics_paper_daily:docs/vla.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.26868",
+      "date": "2026-09-22",
+      "title": "Backdoors in Learning-Based Industrial Robotic Arm Manipulation: An Empirical Security Study",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.13984",
+      "date": "2026-09-23",
+      "title": "What Makes an Efficient VLA? Navigating Action-Head Design, Scaling, and Latency",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.27244",
+      "date": "2026-09-23",
+      "title": "Full-Covariance Smoothing of Bayesian Neural Networks for Online Adaptation",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.27314",
+      "date": "2026-09-23",
+      "title": "CoRe-WAM: Correspondence-Aligned Temporal Residuals for World Action Models",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.27450",
+      "date": "2026-09-23",
+      "title": "BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.27455",
+      "date": "2026-09-23",
+      "title": "Latent evolving World Action Model",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "deferred",
+      "priority": "high",
+      "reason": "高优先级范围相关工作；本次未满足主库正文级核验条件（访问/正文处理未闭环），保留候选优先补读。"
+    },
+    {
+      "arxiv": "2609.27468",
+      "date": "2026-09-23",
+      "title": "CereVLA: Cerebellum-Inspired Consequence-Aware Residual Governance for Efficient Vision-Language-Action Execution",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.27734",
+      "date": "2026-09-23",
+      "title": "InfiNoVA: Infinite Novel View Augmentation for Viewpoint Invariant Robot Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.27747",
+      "date": "2026-09-23",
+      "title": "Less Language, More Latents: Annotation-Efficient VLAs for Driving",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.28064",
+      "date": "2026-09-23",
+      "title": "SlackDrive: Reclaiming Runtime Slack for Adaptive Driving Inference",
+      "tags": [
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.28161",
+      "date": "2026-09-23",
+      "title": "Dissecting Advantage-Guided Post-Training for Vision-Language-Action Policies",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.28256",
+      "date": "2026-09-23",
+      "title": "MemBodied: Recurrent Associative Memory for Vision-Language-Action Models",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.28314",
+      "date": "2026-09-23",
+      "title": "TANDEM: Task and Motion Planning with As-Needed Demonstrations for Efficient Vision-Language-Action Model Fine-tuning",
+      "tags": [
+        "VLA"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md"
+      ],
+      "status": "deferred",
+      "priority": "normal",
+      "reason": "与 VLA/WAM/机器人基础模型范围相关，但本次主库批次尚未完成足够的一手全文与评测协议核验；保留为后续候选，不以摘要级材料直接入库。"
+    },
+    {
+      "arxiv": "2609.28431",
+      "date": "2026-09-23",
+      "title": "LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion",
+      "tags": [
+        "VLA",
+        "World Model"
+      ],
+      "sources": [
+        "luohongk/Embodied-AI-Daily:papers/Vision-Language-Action.md",
+        "luohongk/Embodied-AI-Daily:papers/World-Action-Model.md",
+        "ttylerzh/robotics_paper_daily:docs/world-model.md"
+      ],
+      "status": "selected",
+      "priority": "high",
+      "reason": "正文级一手来源已纳入本次深读批次，计划进入主库。"
+    }
+  ]
+}
