@@ -11,6 +11,7 @@ catalog/first-public.json   最早公开日期的迁移保护值
 catalog/papers/p001.json    单篇源记录（paper / publication / note）
 catalog/benchmarks.json     显式评测协议与指标定义
 catalog/relations.json      已核验论文前后继与系列关系
+catalog/reproducibility.json 复现资源状态与核验证据
 catalog/results/r-*.json    单条结果与证据
             ↓ python scripts/build/build_catalog.py
 data/library.json          轻量首页目录（卡片与筛选字段）
@@ -69,6 +70,14 @@ python scripts/discovery/discovery_coverage.py status
 ```
 
 只有通过四 lane 门禁的 `success` audit 才能推进 `maintenance/state/state.json.lastSuccessfulSearchAt`。partial audit 仍可记录本周尝试，也不阻止已经由一手来源完整核验的论文单独发布，但 checkpoint 保持原值。历史 schema-v1 discovery audit 不重写；状态命令会与新 audit 一起聚合候选，因此旧 deferred 队列继续保留。CI 的 `check_discovery.py` 会阻止“checkpoint 已前移但没有对应完整 audit”这种漏扫状态进入 main。
+
+## Reproducibility Card（2026-09-25）
+
+Resources 与 Reproducibility 分层维护：`catalog/resources.json` 保存稳定的官方 Project / Code 入口，`catalog/reproducibility.json` 保存对 Code、Weights、Dataset、Training、Inference、Evaluation、License 的逐项核验。构建器会为每篇论文生成固定8维卡片；没有额外审计时 Project/Code 可从 Resources 直接显示，其他维度为 unknown。
+
+`unknown` 表示“尚未充分核验”，不是“没有资源”；只有官方 README / 项目页明确声明未发布或无发布计划时才可写 `unavailable`。例如官方 GitHub 仅含 README/assets 而没有执行代码，可标 Code=partial；只开放 post-training、不开放完整 pretraining，可标 Training=partial；论文训练混合数据未完整公开但 benchmark/SFT 数据集公开，可标 Dataset=partial。
+
+Reproducibility Card 只用于帮助读者判断公开复现入口，不生成总分、不参与论文排序，也不把第三方复现冒充官方资源。每次新增论文、官方仓库重大更新、权重/数据/代码新开放时同步复核；旧 audit 的 `verifiedAt` 不能因普通 metadata 更新自动刷新。
 
 ## 论文关系层（2026-09-25）
 
