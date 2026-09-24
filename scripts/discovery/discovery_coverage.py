@@ -155,23 +155,43 @@ def list_v2_audits(root=ROOT,policy=None):
         audit=load(path);report=validate_audit(audit,policy);out.append((path,audit,report))
     return out
 
-def aggregate_candidates(audits):
-    queue={}
+def _merge_queue_row(queue,c,seen_at,source_count,audit_ref):
     rank={"excluded":0,"duplicate":1,"deferred":2,"selected":3}
+    key=candidate_key(c);row=queue.get(key)
+    if row is None:
+        row={"key":key,"title":c["title"],"firstSeenAt":seen_at,"lastSeenAt":seen_at,
+             "status":c["status"],"reason":c["reason"],"sourceCount":0,"audits":[]}
+        queue[key]=row
+    row["lastSeenAt"]=max(row["lastSeenAt"],seen_at)
+    if rank[c["status"]]>=rank[row["status"]]:
+        row["status"]=c["status"];row["reason"]=c["reason"];row["title"]=c["title"]
+    row["sourceCount"]=max(row["sourceCount"],source_count)
+    if audit_ref not in row["audits"]:row["audits"].append(audit_ref)
+
+def aggregate_candidates(root,audits):
+    """Build one durable candidate queue from legacy and v2 discovery audits."""
+    root=Path(root);queue={}
+    for path in sorted((root/"maintenance/audits").glob("discovery-*.json")):
+        audit=load(path)
+        if audit.get("schemaVersion")!=1 or not isinstance(audit.get("candidates"),list):continue
+        seen_at=audit.get("window",{}).get("to") or audit.get("window",{}).get("completedAt")
+        if not seen_at:continue
+        rel=str(path.relative_to(root)).replace("\\","/")
+        for item in audit["candidates"]:
+            status=item.get("status")
+            if status not in {"selected","deferred","excluded"}:continue
+            candidate={
+              "title":item.get("title") or "",
+              "arxiv":item.get("arxiv") or "",
+              "doi":item.get("doi") or "",
+              "status":status,
+              "reason":item.get("reason") or "legacy discovery audit",
+            }
+            _merge_queue_row(queue,candidate,seen_at,len(set(item.get("sources") or [])),rel)
     for path,audit,_ in audits:
-        seen_at=audit["window"]["to"]
-        for c in audit["candidates"]:
-            key=candidate_key(c);row=queue.get(key)
-            if row is None:
-                row={"key":key,"title":c["title"],"firstSeenAt":seen_at,"lastSeenAt":seen_at,
-                     "status":c["status"],"reason":c["reason"],"sourceCount":0,"audits":[]}
-                queue[key]=row
-            row["lastSeenAt"]=max(row["lastSeenAt"],seen_at)
-            if rank[c["status"]]>=rank[row["status"]]:
-                row["status"]=c["status"];row["reason"]=c["reason"];row["title"]=c["title"]
-            row["sourceCount"]=max(row["sourceCount"],len(set(c["sourceIds"])))
-            rel=str(path).replace("\\","/")
-            if rel not in row["audits"]:row["audits"].append(rel)
+        seen_at=audit["window"]["to"];rel=str(path.relative_to(root)).replace("\\","/")
+        for item in audit["candidates"]:
+            _merge_queue_row(queue,item,seen_at,len(set(item["sourceIds"])),rel)
     return queue
 
 def next_window(state,policy,to_value):
@@ -199,7 +219,7 @@ def validate_repository(root=ROOT):
     if complete:
         latest=max(complete,key=lambda x:x[1]["window"]["to"])
         require(not last or last>=latest[1]["window"]["to"],"complete discovery audit was not reflected in state checkpoint")
-    queue=aggregate_candidates(audits)
+    queue=aggregate_candidates(root,audits)
     counts={k:0 for k in policy["candidateStatuses"]}
     for row in queue.values():counts[row["status"]]+=1
     return {"audits":len(audits),"completeAudits":len(complete),"candidateQueue":counts,"lastSuccessfulSearchAt":last}
