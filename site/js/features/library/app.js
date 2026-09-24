@@ -194,6 +194,20 @@
     return `<section class="detail-section relation-section"><h3>${icon('link')}论文关系</h3>${blocks.join('')}<small>仅展示已在 VLA-Radar 中收录、并有公开来源核验的直接关系；同机构或仅使用相同 backbone 不自动建立关系。</small></section>`;
   }
 
+  function reproducibilityHtml(p){
+    const view=p.reproducibility||{},items=view.items||{};
+    const labels={project:'Project',code:'Code',weights:'Weights',dataset:'Dataset',training:'Training',inference:'Inference',evaluation:'Evaluation',license:'License'};
+    const statusText={available:'可用',partial:'部分开放',unavailable:'未开放',unknown:'未核验'};
+    const order=['project','code','weights','dataset','training','inference','evaluation','license'];
+    const cards=order.map(dim=>{
+      const item=items[dim]||{status:'unknown',note:'Not yet independently audited in VLA-Radar.',url:null,source:null};
+      const action=item.url?`<a href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">访问资源 ${icon('external')}</a>`:'';
+      const evidence=item.source&&item.source!==item.url?`<a class="repro-evidence" href="${esc(safeUrl(item.source))}" target="_blank" rel="noopener noreferrer">核验来源</a>`:'';
+      return `<div class="repro-item ${esc(item.status)}"><div class="repro-item-top"><span>${esc(labels[dim])}</span><strong>${esc(statusText[item.status]||item.status)}</strong></div><p>${esc(item.note||'')}</p><div class="repro-links">${action}${evidence}</div></div>`;
+    }).join('');
+    return `<section class="reproducibility-card"><div class="repro-heading"><h3>${icon('check')}Reproducibility Card</h3><small>${view.verifiedAt?`附加资源审计 · ${esc(view.verifiedAt)}`:'Project / Code 来自官方资源 registry；其余维度待逐项核验'}</small></div><div class="repro-grid">${cards}</div><p class="repro-note">可用 = 有公开且可执行资源；部分开放 = 只开放部分复现链路；未开放 = 官方明确未发布；未核验 ≠ 不存在。</p></section>`;
+  }
+
   function saveButton(p){const saved=local(p.id).saved;return `<button class="save-btn ${saved?'saved':''}" data-save="${p.id}" aria-label="${saved?'取消收藏':'收藏'} ${esc(p.name)}" aria-pressed="${saved}">${icon('bookmark')}</button>`;}
   function card(p){const t=topicMap[p.topics[0]],l=local(p.id);return `<article class="paper-card">
     <div class="paper-card-main"><div class="paper-card-top"><button class="paper-name" data-paper="${p.id}">${highlight(p.name)}</button>${badge(p)}</div><p class="paper-title">${highlight(p.title)}</p><div class="paper-meta"><span class="venue-label">${esc(p.venue)}</span><span class="meta-sep">/</span><time>${esc(p.firstPublished||'首发待核验')}</time>${weekBadge(p)}<span class="meta-sep">/</span><span class="team-short" title="${esc(p.team)}">${highlight(p.team.split('\n')[0])}</span></div><div class="finding-preview"><span class="finding-label">KEY RESULT</span><span class="finding-text">${highlight(p.findings)}</span></div></div>
@@ -238,7 +252,7 @@
     const brief=data.papers.find(p=>p.id===id);if(!brief)return;const request=++detailSequence;
     $('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p role="status">正在载入详细笔记…</p>';
     let p=brief;
-    try{const r=await window.RadarResearch.detail(brief);if(request!==detailSequence)return;if(r)p={...r.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{},relations:brief.relations||{previous:[],followups:[],series:[]}};}
+    try{const r=await window.RadarResearch.detail(brief);if(request!==detailSequence)return;if(r)p={...r.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{},relations:brief.relations||{previous:[],followups:[],series:[]},reproducibility:brief.reproducibility||{verifiedAt:null,items:{}}};}
     catch(error){if(request!==detailSequence)return;$('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p class="research-warning">详细笔记暂不可用，网站可能已更新。请刷新页面后重试。</p>';return;}
     const l=local(id);
     $('#paper-detail').innerHTML=`<div class="dialog-labels">${badge(p)}<span class="venue-label">${esc(p.venue)}</span>${p.topics.map(t=>`<button class="tag" data-topic="${esc(t)}">${esc(topicMap[t].name)}</button>`).join('')}</div><h2 id="dialog-title">${esc(p.name)}</h2><p class="dialog-full-title">${esc(p.title)}</p><div class="dialog-team">${esc(p.team)}</div>
@@ -250,6 +264,7 @@
       <section class="detail-section"><h3><span class="num">04</span>重点读什么</h3><div class="detail-prose">${math(p.readingFocus)}</div></section>
       <div class="evidence-status"><strong>${evidenceText[p.evidence]||'待核验'}</strong> · ${esc(p.evidenceNote)}</div>
       ${relationsHtml(p)}
+      ${reproducibilityHtml(p)}
       ${resourcesHtml(p)}
       <div class="source-links">${p.sources.map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('')}</div>
       <div class="dialog-actions"><div class="action-group"><a class="btn primary" href="${esc(safeUrl(p.paperUrl))}" target="_blank" rel="noopener noreferrer">阅读原文 ${icon('external')}</a><button class="btn" data-save="${p.id}">${icon('bookmark')}${l.saved?'已收藏':'收藏'}</button><button class="btn" data-bib="${p.id}">BibTeX</button><button class="btn" data-share-paper="${p.id}">${icon('link')}分享</button></div><label class="status-label">本地进度<select class="status-select" id="detail-status" data-id="${p.id}">${Object.entries(statusText).map(([v,t])=>`<option value="${v}" ${l.status===v?'selected':''}>${t}</option>`).join('')}</select></label></div>`;
