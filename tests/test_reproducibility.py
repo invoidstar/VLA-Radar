@@ -40,18 +40,21 @@ def test_code_link_can_be_partial_when_repo_is_information_only():
     assert views["p115"]["items"]["code"]["status"]=="partial"
     assert views["p113"]["items"]["code"]["url"]=="https://github.com/QwenLM/Qwen-VLA"
 
-def test_public_library_contains_reproducibility_cards():
+def test_public_library_lazy_loads_reproducibility_cards():
     out=outputs(ROOT)
     lib=json.loads(out["data/library.json"])
     byid={p["id"]:p for p in lib["papers"]}
-    openvla=byid["p064"]["reproducibility"]
-    assert openvla["verifiedAt"]=="2026-09-25"
+    assert byid["p064"]["reproducibilityUrl"]=="data/reproducibility/p064.json"
+    assert byid["p114"]["reproducibilityUrl"]=="data/reproducibility/p114.json"
+    assert byid["p116"]["reproducibilityUrl"] is None
+    openvla=json.loads(out["data/reproducibility/p064.json"])
+    assert openvla["paperId"]=="p064" and openvla["verifiedAt"]=="2026-09-25"
     assert openvla["items"]["weights"]["status"]=="available"
     assert openvla["items"]["license"]["status"]=="partial"
-    qwen=byid["p114"]["reproducibility"]
+    qwen=json.loads(out["data/reproducibility/p114.json"])
     assert qwen["items"]["weights"]["status"]=="unavailable"
     assert qwen["items"]["training"]["status"]=="unknown"
-    assert all(set(p["reproducibility"]["items"])=={"project","code","weights","dataset","training","inference","evaluation","license"} for p in lib["papers"])
+    assert len([k for k in out if k.startswith("data/reproducibility/")])==10
 
 def test_audited_unknown_status_is_rejected():
     _,_,ids,resources=catalog_context()
