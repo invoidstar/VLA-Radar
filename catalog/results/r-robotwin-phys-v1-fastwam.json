@@ -1,0 +1,20 @@
+{
+  "id": "r-robotwin-phys-v1-fastwam",
+  "paperId": "p109",
+  "method": "Fast-WAM",
+  "trackId": "robotwin-phys-v1-main",
+  "values": {
+    "Clean": 91.88,
+    "Official Random": 91.78,
+    "Physical Random": 44.24
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.26292v1",
+  "sourceVersion": "arXiv 2609.26292v1",
+  "locator": "Table 1",
+  "attribution": "reported-baseline",
+  "trainingData": "Released model/checkpoint evaluated under RoboTwin-family protocols; original training data and recipes differ across methods.",
+  "evaluationNotes": "Clean and Official Random are corresponding public benchmark results summarized by the paper; Physical Random is evaluated under the new 13-attribute protocol. Do not interpret rows as equal-training causal comparison.",
+  "supersedes": ""
+}
