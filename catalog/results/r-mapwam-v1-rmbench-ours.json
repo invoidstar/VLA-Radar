@@ -1,0 +1,18 @@
+{
+  "id": "r-mapwam-v1-rmbench-ours",
+  "paperId": "p100",
+  "method": "MaP-WAM",
+  "trackId": "mapwam-v1-rmbench-full",
+  "values": {
+    "Average": 83.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.11561v1",
+  "sourceVersion": "arXiv 2609.11561v1",
+  "locator": "Table 1 · Total Average",
+  "attribution": "author-reported",
+  "trainingData": "50 official expert demonstrations per task; 9 RMBench tasks; memory-grounded planner + WAP executor.",
+  "evaluationNotes": "100 evaluation rollouts per task; global seed 0; complete benchmark average.",
+  "supersedes": ""
+}
