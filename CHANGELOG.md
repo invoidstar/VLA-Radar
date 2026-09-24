@@ -1,3 +1,11 @@
+## 2026-09-25 · 论文关系层与系列导航
+
+- 新增独立 canonical `catalog/relations.json`，方向关系仅允许 `extends / follow-up-of`，同系列使用 series membership，避免 N 篇系列论文产生 N² 条冗余边。
+- 首批核验 6 个系列：OpenVLA、Physical Intelligence π、RVT、Robotics Transformer、Xiaomi Robotics、Qwen Robotics；共 14 篇已收录论文进入关系层。
+- 首批方向关系记录 OpenVLA-OFT → OpenVLA、π0.5 → π0、RVT-2 → RVT，并保存核验日期、说明与公开证据来源。
+- 论文详情新增 Previous / Builds on、Follow-up、Same Series，可直接跳转库内论文；同机构、同 Benchmark、同 backbone 或标题相似不会自动建立关系。
+- 构建器与 CI 校验未知 paper ID、自环、重复边、series 成员和公开来源；关系摘要只注入轻量 library/catalog，不新增重型前端请求。
+
 ## 2026-09-25 — 2026-09-25-lawam-xiaomi-qwen
 
 新增 LaWAM、Xiaomi-Robotics-0、Qwen-VLA、Qwen-RobotManip、Qwen-RobotNav、Qwen-RobotWorld 六篇深读记录；为可兼容的操作基准补充协议化 Result Report，并为 Xiaomi-Robotics-1 补官方项目页。导航与 world-model 评测保持协议隔离；同时修正维护队列在全部深读完成后仍回填已完成条目的问题，并补充对应回归测试。

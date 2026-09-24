@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "id": "rel-openvla-oft-extends-openvla",
+      "type": "extends",
+      "fromPaperId": "p069",
+      "toPaperId": "p064",
+      "verifiedAt": "2026-09-25",
+      "note": "OpenVLA-OFT explicitly uses OpenVLA as the representative base VLA and instantiates the optimized fine-tuning recipe on it.",
+      "sources": [
+        {
+          "label": "OpenVLA-OFT arXiv",
+          "url": "https://arxiv.org/abs/2502.19645"
+        }
+      ]
+    },
+    {
+      "id": "rel-pi05-extends-pi0",
+      "type": "extends",
+      "fromPaperId": "p072",
+      "toPaperId": "p066",
+      "verifiedAt": "2026-09-25",
+      "note": "The π0.5 report explicitly describes π0.5 as a new model based on π0, adding heterogeneous co-training for open-world generalization.",
+      "sources": [
+        {
+          "label": "π0.5 official report",
+          "url": "https://www.physicalintelligence.company/download/pi05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "rel-rvt2-followup-rvt",
+      "type": "follow-up-of",
+      "fromPaperId": "p087",
+      "toPaperId": "p086",
+      "verifiedAt": "2026-09-25",
+      "note": "RVT-2 explicitly identifies RVT as its predecessor and introduces architectural and system-level improvements for precision and speed.",
+      "sources": [
+        {
+          "label": "RVT-2 arXiv",
+          "url": "https://arxiv.org/abs/2406.08545"
+        }
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "series-openvla",
+      "name": "OpenVLA",
+      "paperIds": [
+        "p064",
+        "p069"
+      ],
+      "verifiedAt": "2026-09-25",
+      "note": "OpenVLA and the OpenVLA-OFT fine-tuning extension.",
+      "sources": [
+        {
+          "label": "OpenVLA-OFT arXiv",
+          "url": "https://arxiv.org/abs/2502.19645"
+        }
+      ]
+    },
+    {
+      "id": "series-pi",
+      "name": "Physical Intelligence π",
+      "paperIds": [
+        "p066",
+        "p072"
+      ],
+      "verifiedAt": "2026-09-25",
+      "note": "Physical Intelligence's π0 → π0.5 VLA model line.",
+      "sources": [
+        {
+          "label": "π0.5 official report",
+          "url": "https://www.physicalintelligence.company/download/pi05.pdf"
+        }
+      ]
+    },
+    {
+      "id": "series-rvt",
+      "name": "Robotic View Transformer",
+      "paperIds": [
+        "p086",
+        "p087"
+      ],
+      "verifiedAt": "2026-09-25",
+      "note": "RVT and its explicitly named successor RVT-2.",
+      "sources": [
+        {
+          "label": "RVT-2 arXiv",
+          "url": "https://arxiv.org/abs/2406.08545"
+        }
+      ]
+    },
+    {
+      "id": "series-rt",
+      "name": "Robotics Transformer",
+      "paperIds": [
+        "p052",
+        "p058"
+      ],
+      "verifiedAt": "2026-09-25",
+      "note": "Google's RT-1 / RT-2 Robotics Transformer research line.",
+      "sources": [
+        {
+          "label": "RT-1 arXiv",
+          "url": "https://arxiv.org/abs/2212.06817"
+        },
+        {
+          "label": "RT-2 official project",
+          "url": "https://robotics-transformer2.github.io/"
+        }
+      ]
+    },
+    {
+      "id": "series-xiaomi-robotics",
+      "name": "Xiaomi Robotics",
+      "paperIds": [
+        "p112",
+        "p004"
+      ],
+      "verifiedAt": "2026-09-25",
+      "note": "Xiaomi Robotics' numbered robot foundation model line, Xiaomi-Robotics-0 and Xiaomi-Robotics-1.",
+      "sources": [
+        {
+          "label": "Xiaomi Robotics research page",
+          "url": "https://robotics.xiaomi.com/"
+        }
+      ]
+    },
+    {
+      "id": "series-qwen-robotics",
+      "name": "Qwen Robotics",
+      "paperIds": [
+        "p113",
+        "p116",
+        "p114",
+        "p115"
+      ],
+      "verifiedAt": "2026-09-25",
+      "note": "Qwen Team's robotics model family spanning general VLA, world modeling, manipulation, and navigation.",
+      "sources": [
+        {
+          "label": "Qwen-VLA",
+          "url": "https://qwen.ai/blog?id=qwenvla"
+        },
+        {
+          "label": "Qwen-RobotWorld",
+          "url": "https://qwen.ai/blog?id=qwen-robotworld"
+        },
+        {
+          "label": "Qwen-RobotManip",
+          "url": "https://qwen.ai/blog?id=qwen-robotmanip"
+        },
+        {
+          "label": "Qwen-RobotNav",
+          "url": "https://qwen.ai/blog?id=qwen-robotnav"
+        }
+      ]
+    }
+  ]
+}

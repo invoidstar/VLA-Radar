@@ -10,6 +10,7 @@ catalog/manifest.json       公共元信息、稳定论文顺序
 catalog/first-public.json   最早公开日期的迁移保护值
 catalog/papers/p001.json    单篇源记录（paper / publication / note）
 catalog/benchmarks.json     显式评测协议与指标定义
+catalog/relations.json      已核验论文前后继与系列关系
 catalog/results/r-*.json    单条结果与证据
             ↓ python scripts/build/build_catalog.py
 data/library.json          轻量首页目录（卡片与筛选字段）
@@ -68,6 +69,14 @@ python scripts/discovery/discovery_coverage.py status
 ```
 
 只有通过四 lane 门禁的 `success` audit 才能推进 `maintenance/state/state.json.lastSuccessfulSearchAt`。partial audit 仍可记录本周尝试，也不阻止已经由一手来源完整核验的论文单独发布，但 checkpoint 保持原值。历史 schema-v1 discovery audit 不重写；状态命令会与新 audit 一起聚合候选，因此旧 deferred 队列继续保留。CI 的 `check_discovery.py` 会阻止“checkpoint 已前移但没有对应完整 audit”这种漏扫状态进入 main。
+
+## 论文关系层（2026-09-25）
+
+`catalog/relations.json` 是论文 lineage / series 的唯一 canonical 来源。它不改变单篇论文 JSON，也不替代引用网络。方向关系只允许 `extends` 与 `follow-up-of`；同系列采用 series membership，一组 N 篇论文只维护 N 个成员，不生成 N² 条 same-series 边。
+
+构建时 `paper_relations.py` 校验 paper ID、关系类型、自环、重复边、series 成员、核验日期和公开来源，并将紧凑关系摘要注入 `data/library.json` / `data/catalog.json`。详情页由该摘要生成 Previous / Builds on、Follow-up、Same Series；前端不依据标题、作者或机构自行推断。
+
+新增或版本复核论文时检查关系，但证据门槛高于“看起来相关”：只有论文/官方项目/作者机构材料明确支持模型前后继、扩展或系列身份时才写入。引用关系、共同 benchmark、相同 backbone、同机构或名称相似均不足以建立 relation。未收录的外部前作可在阅读笔记里说明，但不能分配虚构 paper ID。
 
 ## 详细阅读笔记
 

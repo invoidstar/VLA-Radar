@@ -119,6 +119,56 @@
       "resources": {
         "project": "https://qwen.ai/blog?id=qwen-robotworld"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-qwen-robotics",
+            "name": "Qwen Robotics",
+            "note": "Qwen Team's robotics model family spanning general VLA, world modeling, manipulation, and navigation.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "Qwen-VLA",
+                "url": "https://qwen.ai/blog?id=qwenvla"
+              },
+              {
+                "label": "Qwen-RobotWorld",
+                "url": "https://qwen.ai/blog?id=qwen-robotworld"
+              },
+              {
+                "label": "Qwen-RobotManip",
+                "url": "https://qwen.ai/blog?id=qwen-robotmanip"
+              },
+              {
+                "label": "Qwen-RobotNav",
+                "url": "https://qwen.ai/blog?id=qwen-robotnav"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p113",
+                "name": "Qwen-VLA",
+                "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+                "firstPublished": "2026-05-28"
+              },
+              {
+                "paperId": "p114",
+                "name": "Qwen-RobotManip",
+                "title": "Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models",
+                "firstPublished": "2026-06-16"
+              },
+              {
+                "paperId": "p115",
+                "name": "Qwen-RobotNav",
+                "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+                "firstPublished": "2026-06-16"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2026-06-15",
         "latestArxivVersion": "v3",
@@ -186,6 +236,56 @@
       "resources": {
         "project": "https://qwen.ai/blog?id=qwen-robotnav",
         "code": "https://github.com/QwenLM/Qwen-RobotNav"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-qwen-robotics",
+            "name": "Qwen Robotics",
+            "note": "Qwen Team's robotics model family spanning general VLA, world modeling, manipulation, and navigation.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "Qwen-VLA",
+                "url": "https://qwen.ai/blog?id=qwenvla"
+              },
+              {
+                "label": "Qwen-RobotWorld",
+                "url": "https://qwen.ai/blog?id=qwen-robotworld"
+              },
+              {
+                "label": "Qwen-RobotManip",
+                "url": "https://qwen.ai/blog?id=qwen-robotmanip"
+              },
+              {
+                "label": "Qwen-RobotNav",
+                "url": "https://qwen.ai/blog?id=qwen-robotnav"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p113",
+                "name": "Qwen-VLA",
+                "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+                "firstPublished": "2026-05-28"
+              },
+              {
+                "paperId": "p116",
+                "name": "Qwen-RobotWorld",
+                "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+                "firstPublished": "2026-06-15"
+              },
+              {
+                "paperId": "p114",
+                "name": "Qwen-RobotManip",
+                "title": "Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models",
+                "firstPublished": "2026-06-16"
+              }
+            ]
+          }
+        ]
       },
       "lifecycle": {
         "firstArxivAt": "2026-06-16",
@@ -255,6 +355,56 @@
         "project": "https://qwen.ai/blog?id=qwen-robotmanip",
         "code": "https://github.com/QwenLM/Qwen-RobotManip"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-qwen-robotics",
+            "name": "Qwen Robotics",
+            "note": "Qwen Team's robotics model family spanning general VLA, world modeling, manipulation, and navigation.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "Qwen-VLA",
+                "url": "https://qwen.ai/blog?id=qwenvla"
+              },
+              {
+                "label": "Qwen-RobotWorld",
+                "url": "https://qwen.ai/blog?id=qwen-robotworld"
+              },
+              {
+                "label": "Qwen-RobotManip",
+                "url": "https://qwen.ai/blog?id=qwen-robotmanip"
+              },
+              {
+                "label": "Qwen-RobotNav",
+                "url": "https://qwen.ai/blog?id=qwen-robotnav"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p113",
+                "name": "Qwen-VLA",
+                "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+                "firstPublished": "2026-05-28"
+              },
+              {
+                "paperId": "p116",
+                "name": "Qwen-RobotWorld",
+                "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+                "firstPublished": "2026-06-15"
+              },
+              {
+                "paperId": "p115",
+                "name": "Qwen-RobotNav",
+                "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+                "firstPublished": "2026-06-16"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2026-06-16",
         "latestArxivVersion": "v2",
@@ -322,6 +472,56 @@
       "resources": {
         "project": "https://qwen.ai/blog?id=qwenvla",
         "code": "https://github.com/QwenLM/Qwen-VLA"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-qwen-robotics",
+            "name": "Qwen Robotics",
+            "note": "Qwen Team's robotics model family spanning general VLA, world modeling, manipulation, and navigation.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "Qwen-VLA",
+                "url": "https://qwen.ai/blog?id=qwenvla"
+              },
+              {
+                "label": "Qwen-RobotWorld",
+                "url": "https://qwen.ai/blog?id=qwen-robotworld"
+              },
+              {
+                "label": "Qwen-RobotManip",
+                "url": "https://qwen.ai/blog?id=qwen-robotmanip"
+              },
+              {
+                "label": "Qwen-RobotNav",
+                "url": "https://qwen.ai/blog?id=qwen-robotnav"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p116",
+                "name": "Qwen-RobotWorld",
+                "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+                "firstPublished": "2026-06-15"
+              },
+              {
+                "paperId": "p114",
+                "name": "Qwen-RobotManip",
+                "title": "Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models",
+                "firstPublished": "2026-06-16"
+              },
+              {
+                "paperId": "p115",
+                "name": "Qwen-RobotNav",
+                "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+                "firstPublished": "2026-06-16"
+              }
+            ]
+          }
+        ]
       },
       "lifecycle": {
         "firstArxivAt": "2026-05-28",
@@ -392,6 +592,32 @@
         "project": "https://robotics.xiaomi.com/xiaomi-robotics-0.html",
         "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-xiaomi-robotics",
+            "name": "Xiaomi Robotics",
+            "note": "Xiaomi Robotics' numbered robot foundation model line, Xiaomi-Robotics-0 and Xiaomi-Robotics-1.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "Xiaomi Robotics research page",
+                "url": "https://robotics.xiaomi.com/"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p004",
+                "name": "Xiaomi-Robotics-1",
+                "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+                "firstPublished": "2026-07-16"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2026-02-13",
         "latestArxivVersion": "v2",
@@ -456,6 +682,11 @@
         "project": "https://rlinf.github.io/LaWAM/",
         "code": "https://github.com/RLinf/LaWAM"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-06-14",
         "latestArxivVersion": "v1",
@@ -516,6 +747,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://ccdcs.github.io/LiMA_repo/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-09-23",
@@ -578,6 +814,11 @@
       "resources": {
         "code": "https://github.com/xiaoqi-7/IndustrialVLA-Bench"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-22",
         "latestArxivVersion": "v1",
@@ -639,6 +880,11 @@
       "resources": {
         "code": "https://github.com/AutoLab-SAI-SJTU/RoboFollow"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-22",
         "latestArxivVersion": "v1",
@@ -694,6 +940,11 @@
       "resultUrl": "data/paper-results/p109.e62a6d4a9ed9c92e.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-22",
         "latestArxivVersion": "v1",
@@ -754,6 +1005,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://huiqiongli.github.io/LIBERO-VPro/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-09-21",
@@ -816,6 +1072,11 @@
       "resources": {
         "project": "https://thaw-vla.trung-dt.com/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-21",
         "latestArxivVersion": "v2",
@@ -877,6 +1138,11 @@
       "resources": {
         "project": "https://grounded-action-model.github.io/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-20",
         "latestArxivVersion": "v1",
@@ -936,6 +1202,11 @@
       "resultUrl": null,
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-17",
         "latestArxivVersion": "v1",
@@ -996,6 +1267,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://zbzyjya.github.io/WholeBodyWAM/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-09-16",
@@ -1059,6 +1335,11 @@
         "project": "https://rcl-robotics.github.io/Awesome-World-Action-Models/",
         "code": "https://github.com/RCL-Robotics/Awesome-World-Action-Models"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-13",
         "latestArxivVersion": "v1",
@@ -1119,6 +1400,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://sizhezhao.github.io/projects/MaP-WAM/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-09-10",
@@ -1181,6 +1467,11 @@
       "resources": {
         "project": "https://ge-act-v2.github.io/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-09-04",
         "latestArxivVersion": "v1",
@@ -1240,6 +1531,11 @@
       "resources": {
         "project": "https://starvla.github.io/VLAct/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
         "latestArxivVersion": "v1",
@@ -1294,6 +1590,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/MindVLA-Team/VLAFlow"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-02",
@@ -1358,6 +1659,11 @@
       "resources": {
         "project": "https://co-training-lbm.github.io/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-02-01",
         "latestArxivVersion": "v1",
@@ -1411,6 +1717,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://www.astribot.com/research/Lumo2"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-13",
@@ -1468,6 +1779,32 @@
         "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1",
         "project": "https://robotics.xiaomi.com/xiaomi-robotics-1.html"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-xiaomi-robotics",
+            "name": "Xiaomi Robotics",
+            "note": "Xiaomi Robotics' numbered robot foundation model line, Xiaomi-Robotics-0 and Xiaomi-Robotics-1.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "Xiaomi Robotics research page",
+                "url": "https://robotics.xiaomi.com/"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p112",
+                "name": "Xiaomi-Robotics-0",
+                "title": "Xiaomi-Robotics-0: An Open-Sourced Vision-Language-Action Model with Real-Time Execution",
+                "firstPublished": "2026-02-13"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-16",
         "latestArxivVersion": "v2",
@@ -1519,6 +1856,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://www.dyna.co/dyna-2"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": null,
@@ -1573,6 +1915,11 @@
       "resultUrl": "data/paper-results/p006.8ac0d97ea787d80d.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-06",
         "latestArxivVersion": "v1",
@@ -1638,6 +1985,11 @@
         "project": "https://mimic-video.github.io/",
         "code": "https://github.com/mimic-video/mimic-video"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2025-12-17",
         "latestArxivVersion": "v2",
@@ -1694,6 +2046,11 @@
       "resources": {
         "project": "https://wing0night.github.io/track4action-project-page"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-04",
         "latestArxivVersion": "v1",
@@ -1748,6 +2105,11 @@
       "resultUrl": "data/paper-results/p008.b1f8680ff631f850.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
         "latestArxivVersion": "v1",
@@ -1802,6 +2164,11 @@
       "resultUrl": "data/paper-results/p009.ca8ea7fc4f273865.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-07",
         "latestArxivVersion": "v1",
@@ -1859,6 +2226,11 @@
       "resources": {
         "code": "https://github.com/yyyyu120/W2-VLA"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
         "latestArxivVersion": "v1",
@@ -1915,6 +2287,11 @@
         "project": "https://davian-robotics.github.io/pointmap/",
         "code": "https://github.com/DAVIAN-Robotics/pointmap"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-13",
         "latestArxivVersion": "v1",
@@ -1968,6 +2345,11 @@
       "resultUrl": "data/paper-results/p012.2733b8e1ac4b3fb6.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-02",
         "latestArxivVersion": "v1",
@@ -2025,6 +2407,11 @@
         "project": "https://bridgevla-plus.github.io/",
         "code": "https://github.com/BridgeVLA/BridgeVLA"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
         "latestArxivVersion": "v1",
@@ -2078,6 +2465,11 @@
       "resultUrl": "data/paper-results/p014.3eb779d3d2c79663.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
         "latestArxivVersion": "v1",
@@ -2131,6 +2523,11 @@
       "resultUrl": "data/paper-results/p016.37bc9b4252c8c860.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
         "latestArxivVersion": "v1",
@@ -2193,6 +2590,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://robin-lab.cs.utexas.edu/HALO/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-06-23",
@@ -2259,6 +2661,11 @@
         "project": "https://veritas-improvement.github.io/",
         "code": "https://github.com/princeton-prism/veritas"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-06-16",
         "latestArxivVersion": "v1",
@@ -2311,6 +2718,11 @@
       "resultUrl": "data/paper-results/p015.4398eea533aca14c.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-09",
         "latestArxivVersion": "v1",
@@ -2366,6 +2778,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/sii-research/tau-0-vla"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
@@ -2427,6 +2844,11 @@
       "resources": {
         "project": "https://worv-ai.github.io/ponderpounce/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-25",
         "latestArxivVersion": "v2",
@@ -2483,6 +2905,11 @@
       "resources": {
         "project": "https://icr-lab.github.io/SparkVLA/",
         "code": "https://github.com/huhuhushou/SparkVLA"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-08-17",
@@ -2542,6 +2969,11 @@
       "resultUrl": "data/paper-results/p045.fcbb0c62fb547b6a.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2025-08-07",
         "latestArxivVersion": "v2",
@@ -2598,6 +3030,11 @@
         "project": "https://selfwam.github.io/",
         "code": "https://github.com/SelfWAM/SelfWAM"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-01",
         "latestArxivVersion": "v1",
@@ -2653,6 +3090,11 @@
       "resources": {
         "code": "https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-31",
         "latestArxivVersion": "v1",
@@ -2706,6 +3148,11 @@
       "resultUrl": null,
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-23",
         "latestArxivVersion": "v1",
@@ -2759,6 +3206,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://ds-wam.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-06",
@@ -2814,6 +3266,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/amap-cvlab/ABot-Manipulation"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-01",
@@ -2884,6 +3341,11 @@
         "project": "https://technology.robbyant.com/lingbot-va",
         "code": "https://github.com/Robbyant/lingbot-va"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-01-29",
         "latestArxivVersion": "v2",
@@ -2939,6 +3401,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://vt-wam.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-02",
@@ -3007,6 +3474,11 @@
       "resources": {
         "project": "https://clear-nus.github.io/blog/vla-touch"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2025-07-23",
         "latestArxivVersion": "v2",
@@ -3062,6 +3534,11 @@
       "resources": {
         "code": "https://github.com/H-EmbodVis/TurboVLA"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-29",
         "latestArxivVersion": "v2",
@@ -3115,6 +3592,11 @@
       "resultUrl": "data/paper-results/p028.b1b55b77cf81e0e7.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-07-07",
         "latestArxivVersion": "v2",
@@ -3170,6 +3652,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/z-lab/flashvla"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-08-27",
@@ -3228,6 +3715,11 @@
       "resultUrl": "data/paper-results/p030.a4ff50368879d389.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-29",
         "latestArxivVersion": "v2",
@@ -3282,6 +3774,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/SEU-PAISys/Embodied.cpp"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-02",
@@ -3340,6 +3837,11 @@
       "resultUrl": "data/paper-results/p042.5b85711d6894a185.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-04-07",
         "latestArxivVersion": "v1",
@@ -3393,6 +3895,11 @@
       "resultUrl": "data/paper-results/p032.0309004a1b53f681.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-05",
         "latestArxivVersion": "v1",
@@ -3449,6 +3956,11 @@
       "resultUrl": "data/paper-results/p043.4432b551e88d50c9.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": null,
         "latestArxivVersion": null,
@@ -3505,6 +4017,11 @@
       "resources": {
         "project": "https://jongwoopark7978.github.io/smilevla"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-08-29",
         "latestArxivVersion": "v1",
@@ -3560,6 +4077,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://ansocho.github.io/otql-flow/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-07",
@@ -3622,6 +4144,11 @@
         "project": "https://lyfeng001.github.io/Legato/",
         "code": "https://github.com/lyfeng001/Legato-kinetix"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-02-13",
         "latestArxivVersion": "v2",
@@ -3681,6 +4208,11 @@
       "resources": {
         "project": "https://robodojo-benchmark.com/",
         "code": "https://github.com/RoboDojo-Benchmark/RoboDojo"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-07-05",
@@ -3745,6 +4277,11 @@
       "resources": {
         "code": "https://github.com/dasnyder5/nscore"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-03-13",
         "latestArxivVersion": "v1",
@@ -3802,6 +4339,11 @@
       "resultUrl": "data/paper-results/p046.6a46bf94b6fcd60b.json",
       "noteStatus": "expanded",
       "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": null,
         "latestArxivVersion": null,
@@ -3871,6 +4413,11 @@
       "resources": {
         "project": "https://cliport.github.io/",
         "code": "https://github.com/cliport/cliport"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2021-09-24",
@@ -3942,6 +4489,11 @@
         "project": "https://calvin.cs.uni-freiburg.de/",
         "code": "https://github.com/mees/calvin"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2021-12-06",
         "latestArxivVersion": "v4",
@@ -4010,6 +4562,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://sites.google.com/view/bc-z/home"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2022-02-04",
@@ -4080,6 +4637,11 @@
       "resources": {
         "project": "https://say-can.github.io/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2022-04-04",
         "latestArxivVersion": "v2",
@@ -4141,6 +4703,11 @@
       "resources": {
         "project": "https://peract.github.io/",
         "code": "https://github.com/peract/peract"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2022-09-12",
@@ -4207,6 +4774,36 @@
       "resources": {
         "project": "https://robotics-transformer1.github.io/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-rt",
+            "name": "Robotics Transformer",
+            "note": "Google's RT-1 / RT-2 Robotics Transformer research line.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "RT-1 arXiv",
+                "url": "https://arxiv.org/abs/2212.06817"
+              },
+              {
+                "label": "RT-2 official project",
+                "url": "https://robotics-transformer2.github.io/"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p058",
+                "name": "RT-2",
+                "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control",
+                "firstPublished": "2023-07-28"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2022-12-13",
         "latestArxivVersion": "v2",
@@ -4267,6 +4864,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://universal-policy.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2023-01-31",
@@ -4333,6 +4935,11 @@
       "resources": {
         "project": "https://palm-e.github.io/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2023-03-06",
         "latestArxivVersion": "v1",
@@ -4389,6 +4996,11 @@
       "resources": {
         "project": "https://diffusion-policy.cs.columbia.edu/",
         "code": "https://github.com/real-stanford/diffusion_policy"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2023-03-07",
@@ -4447,6 +5059,11 @@
       "resources": {
         "project": "https://tonyzhaozh.github.io/aloha/",
         "code": "https://github.com/tonyzhaozh/act"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2023-04-23",
@@ -4509,6 +5126,11 @@
       "resources": {
         "project": "https://libero-project.github.io/",
         "code": "https://github.com/Lifelong-Robot-Learning/LIBERO"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2023-06-05",
@@ -4578,6 +5200,36 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://robotics-transformer2.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-rt",
+            "name": "Robotics Transformer",
+            "note": "Google's RT-1 / RT-2 Robotics Transformer research line.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "RT-1 arXiv",
+                "url": "https://arxiv.org/abs/2212.06817"
+              },
+              {
+                "label": "RT-2 official project",
+                "url": "https://robotics-transformer2.github.io/"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p052",
+                "name": "RT-1",
+                "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
+                "firstPublished": "2022-12-13"
+              }
+            ]
+          }
+        ]
       },
       "lifecycle": {
         "firstArxivAt": "2023-07-28",
@@ -4649,6 +5301,11 @@
         "project": "https://robotics-transformer-x.github.io/",
         "code": "https://github.com/google-deepmind/open_x_embodiment"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2023-10-13",
         "latestArxivVersion": "v9",
@@ -4715,6 +5372,11 @@
         "project": "https://roboflamingo.github.io/",
         "code": "https://github.com/RoboFlamingo/RoboFlamingo"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2023-11-02",
         "latestArxivVersion": "v3",
@@ -4777,6 +5439,11 @@
       "resources": {
         "project": "https://gr1-manipulation.github.io/",
         "code": "https://github.com/bytedance/GR-1"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2023-12-20",
@@ -4844,6 +5511,11 @@
         "project": "https://droid-dataset.github.io/",
         "code": "https://github.com/droid-dataset/droid"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2024-03-19",
         "latestArxivVersion": "v2",
@@ -4910,6 +5582,11 @@
         "project": "https://octo-models.github.io/",
         "code": "https://github.com/octo-models/octo"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2024-05-20",
         "latestArxivVersion": "v2",
@@ -4972,6 +5649,48 @@
         "project": "https://openvla.github.io/",
         "code": "https://github.com/openvla/openvla"
       },
+      "relations": {
+        "previous": [],
+        "followups": [
+          {
+            "paperId": "p069",
+            "name": "OpenVLA-OFT",
+            "title": "Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success",
+            "firstPublished": "2025-02-27",
+            "type": "extends",
+            "note": "OpenVLA-OFT explicitly uses OpenVLA as the representative base VLA and instantiates the optimized fine-tuning recipe on it.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "OpenVLA-OFT arXiv",
+                "url": "https://arxiv.org/abs/2502.19645"
+              }
+            ]
+          }
+        ],
+        "series": [
+          {
+            "id": "series-openvla",
+            "name": "OpenVLA",
+            "note": "OpenVLA and the OpenVLA-OFT fine-tuning extension.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "OpenVLA-OFT arXiv",
+                "url": "https://arxiv.org/abs/2502.19645"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p069",
+                "name": "OpenVLA-OFT",
+                "title": "Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success",
+                "firstPublished": "2025-02-27"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2024-06-13",
         "latestArxivVersion": "v3",
@@ -5030,6 +5749,11 @@
         "project": "https://rdt-robotics.github.io/rdt-robotics/",
         "code": "https://github.com/thu-ml/RoboticsDiffusionTransformer"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2024-10-10",
         "latestArxivVersion": "v2",
@@ -5086,6 +5810,48 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/Physical-Intelligence/openpi"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [
+          {
+            "paperId": "p072",
+            "name": "π0.5",
+            "title": "π0.5: a Vision-Language-Action Model with Open-World Generalization",
+            "firstPublished": "2025-04-22",
+            "type": "extends",
+            "note": "The π0.5 report explicitly describes π0.5 as a new model based on π0, adding heterogeneous co-training for open-world generalization.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "π0.5 official report",
+                "url": "https://www.physicalintelligence.company/download/pi05.pdf"
+              }
+            ]
+          }
+        ],
+        "series": [
+          {
+            "id": "series-pi",
+            "name": "Physical Intelligence π",
+            "note": "Physical Intelligence's π0 → π0.5 VLA model line.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "π0.5 official report",
+                "url": "https://www.physicalintelligence.company/download/pi05.pdf"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p072",
+                "name": "π0.5",
+                "title": "π0.5: a Vision-Language-Action Model with Open-World Generalization",
+                "firstPublished": "2025-04-22"
+              }
+            ]
+          }
+        ]
       },
       "lifecycle": {
         "firstArxivAt": "2024-10-31",
@@ -5144,6 +5910,11 @@
       "resources": {
         "code": "https://github.com/Physical-Intelligence/openpi"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2025-01-16",
         "latestArxivVersion": "v1",
@@ -5201,6 +5972,11 @@
       "resources": {
         "project": "https://spatialvla.github.io/",
         "code": "https://github.com/SpatialVLA/SpatialVLA"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2025-01-27",
@@ -5264,6 +6040,48 @@
         "project": "https://openvla-oft.github.io/",
         "code": "https://github.com/moojink/openvla-oft"
       },
+      "relations": {
+        "previous": [
+          {
+            "paperId": "p064",
+            "name": "OpenVLA",
+            "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+            "firstPublished": "2024-06-13",
+            "type": "extends",
+            "note": "OpenVLA-OFT explicitly uses OpenVLA as the representative base VLA and instantiates the optimized fine-tuning recipe on it.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "OpenVLA-OFT arXiv",
+                "url": "https://arxiv.org/abs/2502.19645"
+              }
+            ]
+          }
+        ],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-openvla",
+            "name": "OpenVLA",
+            "note": "OpenVLA and the OpenVLA-OFT fine-tuning extension.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "OpenVLA-OFT arXiv",
+                "url": "https://arxiv.org/abs/2502.19645"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p064",
+                "name": "OpenVLA",
+                "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+                "firstPublished": "2024-06-13"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2025-02-27",
         "latestArxivVersion": "v2",
@@ -5321,6 +6139,11 @@
       "resources": {
         "project": "https://developer.nvidia.com/isaac/gr00t",
         "code": "https://github.com/NVIDIA/Isaac-GR00T"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2025-03-18",
@@ -5380,6 +6203,11 @@
       "resources": {
         "project": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2025-03-25",
         "latestArxivVersion": "v1",
@@ -5438,6 +6266,48 @@
       "resources": {
         "code": "https://github.com/Physical-Intelligence/openpi"
       },
+      "relations": {
+        "previous": [
+          {
+            "paperId": "p066",
+            "name": "π0",
+            "title": "π0: A Vision-Language-Action Flow Model for General Robot Control",
+            "firstPublished": "2024-10-31",
+            "type": "extends",
+            "note": "The π0.5 report explicitly describes π0.5 as a new model based on π0, adding heterogeneous co-training for open-world generalization.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "π0.5 official report",
+                "url": "https://www.physicalintelligence.company/download/pi05.pdf"
+              }
+            ]
+          }
+        ],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-pi",
+            "name": "Physical Intelligence π",
+            "note": "Physical Intelligence's π0 → π0.5 VLA model line.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "π0.5 official report",
+                "url": "https://www.physicalintelligence.company/download/pi05.pdf"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p066",
+                "name": "π0",
+                "title": "π0: A Vision-Language-Action Flow Model for General Robot Control",
+                "firstPublished": "2024-10-31"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2025-04-22",
         "latestArxivVersion": "v1",
@@ -5495,6 +6365,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/huggingface/lerobot"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2025-06-02",
@@ -5558,6 +6433,11 @@
         "project": "https://vla-adapter.github.io/",
         "code": "https://github.com/OpenHelix-Team/VLA-Adapter"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2025-09-11",
         "latestArxivVersion": "v2",
@@ -5620,6 +6500,11 @@
       "resources": {
         "project": "https://www.pi.website/blog/pistar06"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2025-11-18",
         "latestArxivVersion": "v2",
@@ -5676,6 +6561,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/NVlabs/cosmos-policy"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-01-22",
@@ -5735,6 +6625,11 @@
       "resources": {
         "code": "https://github.com/dreamzero0/dreamzero"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-02-17",
         "latestArxivVersion": "v1",
@@ -5792,6 +6687,11 @@
       "resources": {
         "project": "https://yuantianyuan01.github.io/FastWAM/",
         "code": "https://github.com/yuantianyuan01/FastWAM"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-03-17",
@@ -5852,6 +6752,11 @@
       "resources": {
         "code": "https://github.com/robocasa/robocasa"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2024-06-04",
         "latestArxivVersion": "v1",
@@ -5911,6 +6816,11 @@
       "resources": {
         "code": "https://github.com/robocasa/robocasa"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-03-04",
         "latestArxivVersion": "v1",
@@ -5967,6 +6877,11 @@
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/RLWRLD/RLDX-1"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-05-05",
@@ -6025,6 +6940,11 @@
         "project": "https://rhodes-team-prts.github.io/",
         "code": "https://github.com/TeleHuman/PRTS"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-04-30",
         "latestArxivVersion": "v1",
@@ -6081,6 +7001,11 @@
       "resources": {
         "code": "https://github.com/open-gigaai/giga-world-policy"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2026-03-18",
         "latestArxivVersion": "v2",
@@ -6136,6 +7061,11 @@
       "resources": {
         "project": "https://xpolicylab.github.io/",
         "code": "https://github.com/XPolicyLab/XPolicyLab"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2026-08-10",
@@ -6197,6 +7127,11 @@
       "resources": {
         "project": "https://3d-diffusion-policy.github.io/",
         "code": "https://github.com/YanjieZe/3D-Diffusion-Policy"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2024-03-06",
@@ -6260,6 +7195,48 @@
         "project": "https://robotic-view-transformer.github.io/",
         "code": "https://github.com/NVlabs/RVT"
       },
+      "relations": {
+        "previous": [],
+        "followups": [
+          {
+            "paperId": "p087",
+            "name": "RVT-2",
+            "title": "RVT-2: Learning Precise Manipulation from Few Demonstrations",
+            "firstPublished": "2024-06-12",
+            "type": "follow-up-of",
+            "note": "RVT-2 explicitly identifies RVT as its predecessor and introduces architectural and system-level improvements for precision and speed.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "RVT-2 arXiv",
+                "url": "https://arxiv.org/abs/2406.08545"
+              }
+            ]
+          }
+        ],
+        "series": [
+          {
+            "id": "series-rvt",
+            "name": "Robotic View Transformer",
+            "note": "RVT and its explicitly named successor RVT-2.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "RVT-2 arXiv",
+                "url": "https://arxiv.org/abs/2406.08545"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p087",
+                "name": "RVT-2",
+                "title": "RVT-2: Learning Precise Manipulation from Few Demonstrations",
+                "firstPublished": "2024-06-12"
+              }
+            ]
+          }
+        ]
+      },
       "lifecycle": {
         "firstArxivAt": "2023-06-26",
         "latestArxivVersion": "v1",
@@ -6321,6 +7298,48 @@
       "resources": {
         "project": "https://robotic-view-transformer.github.io/",
         "code": "https://github.com/NVlabs/RVT"
+      },
+      "relations": {
+        "previous": [
+          {
+            "paperId": "p086",
+            "name": "RVT",
+            "title": "RVT: Robotic View Transformer for 3D Object Manipulation",
+            "firstPublished": "2023-06-26",
+            "type": "follow-up-of",
+            "note": "RVT-2 explicitly identifies RVT as its predecessor and introduces architectural and system-level improvements for precision and speed.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "RVT-2 arXiv",
+                "url": "https://arxiv.org/abs/2406.08545"
+              }
+            ]
+          }
+        ],
+        "followups": [],
+        "series": [
+          {
+            "id": "series-rvt",
+            "name": "Robotic View Transformer",
+            "note": "RVT and its explicitly named successor RVT-2.",
+            "verifiedAt": "2026-09-25",
+            "sources": [
+              {
+                "label": "RVT-2 arXiv",
+                "url": "https://arxiv.org/abs/2406.08545"
+              }
+            ],
+            "members": [
+              {
+                "paperId": "p086",
+                "name": "RVT",
+                "title": "RVT: Robotic View Transformer for 3D Object Manipulation",
+                "firstPublished": "2023-06-26"
+              }
+            ]
+          }
+        ]
       },
       "lifecycle": {
         "firstArxivAt": "2024-06-12",
@@ -6384,6 +7403,11 @@
         "project": "https://3d-diffuser-actor.github.io/",
         "code": "https://github.com/nickgkan/3d_diffuser_actor"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2024-02-16",
         "latestArxivVersion": "v3",
@@ -6444,6 +7468,11 @@
       "resources": {
         "project": "https://robot-colosseum.github.io/",
         "code": "https://github.com/robot-colosseum/robot-colosseum"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2024-02-13",
@@ -6508,6 +7537,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://act3d.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2023-06-30",
@@ -6575,6 +7609,11 @@
         "project": "https://yanjieze.com/GNFactor/",
         "code": "https://github.com/YanjieZe/GNFactor"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2023-08-31",
         "latestArxivVersion": "v3",
@@ -6634,6 +7673,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://chained-diffuser.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": null,
@@ -6697,6 +7741,11 @@
         "project": "https://robomimic.github.io/study/",
         "code": "https://github.com/ARISE-Initiative/robomimic"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2021-08-06",
         "latestArxivVersion": "v2",
@@ -6758,6 +7807,11 @@
         "project": "https://dexmimicgen.github.io/",
         "code": "https://github.com/NVlabs/dexmimicgen"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2024-10-31",
         "latestArxivVersion": "v2",
@@ -6817,6 +7871,11 @@
       "resources": {
         "project": "https://simpler-env.github.io/",
         "code": "https://github.com/simpler-env/SimplerEnv"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2024-05-09",
@@ -6878,6 +7937,11 @@
       "resources": {
         "code": "https://github.com/facebookresearch/r3m"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2022-03-23",
         "latestArxivVersion": "v3",
@@ -6938,6 +8002,11 @@
       "resources": {
         "project": "https://tetexiao.com/projects/mvp"
       },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
       "lifecycle": {
         "firstArxivAt": "2022-03-11",
         "latestArxivVersion": "v1",
@@ -6997,6 +8066,11 @@
       "noteStatus": "expanded",
       "resources": {
         "project": "https://meta-world.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
       },
       "lifecycle": {
         "firstArxivAt": "2019-10-24",
