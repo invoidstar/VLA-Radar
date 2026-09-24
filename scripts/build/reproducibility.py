@@ -13,6 +13,7 @@ def validate_reproducibility_data(data,paper_ids):
     require(tuple(data["statuses"])==STATUSES,"reproducibility statuses")
     known=set(paper_ids);audits={}
     require(isinstance(data["papers"],dict),"reproducibility papers must be an object")
+    require(set(data["papers"])==known,"reproducibility audits must cover every catalog paper exactly")
     for pid,audit in data["papers"].items():
         require(pid in known,f"reproducibility audit for unknown paper {pid}")
         require(isinstance(audit,dict) and set(audit)=={"verifiedAt","level","note","items"},f"{pid}: reproducibility audit fields")
