@@ -1,0 +1,18 @@
+{
+  "id": "r-mapwam-v1-rmbench-pi05",
+  "paperId": "p100",
+  "method": "π0.5",
+  "trackId": "mapwam-v1-rmbench-full",
+  "values": {
+    "Average": 10.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.11561v1",
+  "sourceVersion": "arXiv 2609.11561v1",
+  "locator": "Table 1 · Total Average",
+  "attribution": "reported-baseline",
+  "trainingData": "RMBench reported baseline under paper table protocol.",
+  "evaluationNotes": "Complete 9-task average.",
+  "supersedes": ""
+}
