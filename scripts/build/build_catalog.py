@@ -10,6 +10,7 @@ import argparse,hashlib,json
 from pathlib import Path
 from catalog_core import dumps,read_catalog,load_resources
 from paper_relations import load_relations,build_relation_views
+from reproducibility import load_reproducibility,build_reproducibility_views
 from benchmark_settings import build_settings
 from benchmark_taxonomy import load_taxonomy
 from experience_build import outputs as experience_outputs
@@ -24,9 +25,12 @@ def hashed(prefix,obj,out):
 def outputs(root):
     m,records,tracks,results=read_catalog(root)
     taxonomy=load_taxonomy(root,tracks)
-    resources=load_resources(root,{r['paper']['id'] for r in records})
-    relations=load_relations(root,{r['paper']['id'] for r in records})
+    paper_ids={r['paper']['id'] for r in records}
+    resources=load_resources(root,paper_ids)
+    relations=load_relations(root,paper_ids)
     relation_views=build_relation_views(records,relations)
+    reproducibility=load_reproducibility(root,paper_ids,resources)
+    reproducibility_views=build_reproducibility_views(m['paperOrder'],resources,reproducibility)
     meta={k:m[k] for k in ('updatedAt','title','collection','description','topics')}
     legacy={'schemaVersion':1,**meta,'papers':[r['paper'] for r in records]}
     out={'data/papers.json':dumps(legacy)};summaries=[];light=[]
@@ -55,7 +59,7 @@ def outputs(root):
         tids={x['trackId'] for x in paperresults}
         result=hashed(f'data/paper-results/{p["id"]}',{'schemaVersion':1,'paperId':p['id'],'tracks':[t for t in tracks if t['id'] in tids],'results':paperresults,'supersededIds':[x['id'] for x in paperresults if x['id'] in superseded]},out) if paperresults else None
         extra={'detailUrl':detail,'resultUrl':result,'noteStatus':r['note']['status'],'resources':resources.get(p['id'],{}),
-               'relations':relation_views[p['id']],
+               'relations':relation_views[p['id']],'reproducibility':reproducibility_views[p['id']],
                'lifecycle':{k:r['publication'][k] for k in ('firstArxivAt','latestArxivVersion','status','lastCheckedAt')}}
         summaries.append({**p,**extra,'detailUrl':f'data/details/{p["id"]}.json?v={hashlib.sha256(dumps(r).encode()).hexdigest()[:16]}'});light.append({**{k:p[k] for k in sorted(cardkeys)},**extra})
     out['data/catalog.json']=dumps({'schemaVersion':1,**meta,'papers':summaries}) # old integrations
