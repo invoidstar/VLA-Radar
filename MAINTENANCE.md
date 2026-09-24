@@ -73,7 +73,15 @@ python scripts/discovery/discovery_coverage.py status
 
 ## Reproducibility Card（2026-09-25）
 
-Resources 与 Reproducibility 分层维护：`catalog/resources.json` 保存稳定的官方 Project / Code 入口，`catalog/reproducibility.json` 保存对 Code、Weights、Dataset、Training、Inference、Evaluation、License 的逐项核验。构建器会为每篇论文生成固定8维卡片；没有额外审计时 Project/Code 可从 Resources 直接显示，其他维度为 unknown。
+Resources 与 Reproducibility 分层维护：`catalog/resources.json` 保存稳定的官方 Project / Code 入口，`catalog/reproducibility.json` 保存对 Code、Weights、Dataset、Training、Inference、Evaluation、License 的核验层。
+
+全库采用两级 audit：
+- `deep`：逐维读取官方仓库/项目材料，只有明确证据才写 available / partial / unavailable；
+- `baseline`：已经完成当前官方入口核验，但没有足够证据的维度继续保持 unknown，不把“没找到”写成“未开放”。
+
+当前 **116 / 116 papers 均有 audit record**：10 篇 deep、106 篇 baseline。构建器要求 reproducibility registry 与当前 paper ID 集合完全一致；新增论文若没有同步创建 baseline/deep audit，CI 会失败，因此全库覆盖不会静默退化。
+
+构建器为每篇论文生成固定8维懒加载卡片；首页只保存 `reproducibilityUrl`，打开论文详情时才加载 `data/reproducibility/pNNN.json`。Project/Code 可由 Resources 作为基础状态，其他未被明确审计的维度保持 unknown。
 
 `unknown` 表示“尚未充分核验”，不是“没有资源”；只有官方 README / 项目页明确声明未发布或无发布计划时才可写 `unavailable`。例如官方 GitHub 仅含 README/assets 而没有执行代码，可标 Code=partial；只开放 post-training、不开放完整 pretraining，可标 Training=partial；论文训练混合数据未完整公开但 benchmark/SFT 数据集公开，可标 Dataset=partial。
 
