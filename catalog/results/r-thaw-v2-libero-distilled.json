@@ -1,0 +1,22 @@
+{
+  "id": "r-thaw-v2-libero-distilled",
+  "paperId": "p106",
+  "method": "THAW-VLA · QwenGR00T 0.8B distilled",
+  "trackId": "thaw-v2-libero",
+  "values": {
+    "Spatial": 99.3,
+    "Object": 99.2,
+    "Goal": 99.4,
+    "Long": 93.8,
+    "Average": 97.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-24",
+  "source": "https://arxiv.org/html/2609.24682v2",
+  "sourceVersion": "arXiv 2609.24682v2",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "Same 0.8B student; frozen world-model features cached offline and used via representation-alignment loss; projector discarded after training.",
+  "evaluationNotes": "Mean over 4 evaluation runs = 2 seeds × 2 GPUs; deployed graph unchanged from undistilled baseline.",
+  "supersedes": ""
+}
