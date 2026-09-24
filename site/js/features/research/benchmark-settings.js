@@ -39,7 +39,7 @@
   }
   function compatibilityLevel(primary,track){
     if(!primary||!track)return 'compatible';
-    if(primary.dataset!==track.dataset||searchNorm(primary.metric)!==searchNorm(track.metric)||primary.unit!==track.unit||primary.direction!==track.direction)return 'incompatible';
+    if(primary.dataset!==track.dataset||primary.unit!==track.unit||primary.direction!==track.direction)return 'incompatible';
     const a=canonicalColumns(primary),b=canonicalColumns(track);
     if(a.length!==b.length||a.some((x,i)=>x!==b[i]))return 'partial';
     const ac=knownTaskCount(primary),bc=knownTaskCount(track);
