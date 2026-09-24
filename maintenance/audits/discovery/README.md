@@ -12,8 +12,10 @@ A successful audit must cover the whole planned date window in every lane requir
 
 Every source entry records its exact provider, query/scope, date coverage, result count
 and whether the source succeeded, was partial, or was blocked. A blocked/partial required
-lane makes the whole audit partial. Verified papers from a partial run may still be
-published, but the global full-search checkpoint does not move.
+lane makes the whole audit partial. A complete audit must also satisfy the configured
+minimum number of distinct successful providers, so one aggregator cannot masquerade as
+four independent lanes. Verified papers from a partial run may still be published, but
+the global full-search checkpoint does not move.
 
 Every candidate is deduplicated by canonical arXiv ID, DOI, then normalized title and has
 one explicit disposition: `selected`, `deferred`, `excluded`, or `duplicate`.
