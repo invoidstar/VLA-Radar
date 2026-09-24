@@ -113,3 +113,11 @@ def test_duplicate_candidate_identity_in_one_audit_is_rejected():
     try:validate_audit(bad,policy)
     except ValueError as exc:assert "duplicate candidate identity" in str(exc)
     else:raise AssertionError("duplicate arXiv candidate was accepted")
+
+
+def test_one_provider_cannot_fake_four_lanes():
+    policy=load_policy(ROOT);bad=audit()
+    for s in bad["sources"]:s["provider"]="same-aggregator"
+    try:validate_audit(bad,policy)
+    except ValueError as exc:assert "provider diversity" in str(exc)
+    else:raise AssertionError("one provider satisfied all discovery lanes")
