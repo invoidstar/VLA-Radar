@@ -23,7 +23,6 @@
   <script src="benchmark-settings.js" defer></script>
   <script src="research.js" defer></script>
   <script src="app.js" defer></script>
-  <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要内容</a>
@@ -137,6 +136,14 @@
 <dialog id="paper-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow">PAPER NOTES</span><button class="icon-btn" id="close-dialog" aria-label="关闭论文详情"><span data-icon="close"></span></button></div><div id="paper-detail"></div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <input id="reading-file" type="file" accept="application/json,.json" hidden>
+<script>
+  if (window.location.hostname === 'invoidstar.github.io') {
+    const busuanzi = document.createElement('script');
+    busuanzi.src = 'https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js';
+    busuanzi.async = true;
+    document.body.appendChild(busuanzi);
+  }
+</script>
 <noscript><div class="noscript">此网站的检索需要 JavaScript。公开文献也可通过 <a href="data/papers.json">JSON 数据文件</a> 阅读。</div></noscript>
 </body>
 </html>
