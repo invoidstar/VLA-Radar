@@ -1,3 +1,9 @@
+## 2026-09-27 · 轻量网站流量统计
+
+- 接入不蒜子 v3.6.9，在 GitHub Pages 页面加载时统计全站访问量与访客数。
+- 页脚新增简洁的 PV / UV 展示，不改变论文库、Benchmark 与阅读工作区布局。
+- “关于与维护”的隐私说明同步披露第三方访问统计；收藏与阅读状态仍只保存在浏览器本地。
+
 ## 2026-09-25 · GitHub Actions 发布链路压缩
 
 - 完整离线 + Firefox/WebKit/browser regressions 只在 PR exact head 执行一次；merge 后 main 不再重复整套重测试。
