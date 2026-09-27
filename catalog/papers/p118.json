@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p118",
+    "name": "Decoupled Early Exits",
+    "title": "Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs",
+    "team": "Riccardo Andrea Izzo、Rimvydas Rubavicius、Gianluca Bardaro、Subramanian Ramamoorthy、Matteo Matteucci、Alessandro Suglia",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-24",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月24日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "efficiency",
+      "action"
+    ],
+    "tags": [
+      "early exit",
+      "flow matching",
+      "compute allocation",
+      "KV cache",
+      "SmolVLA",
+      "pi0.5"
+    ],
+    "priority": "deep",
+    "contribution": "把 Flow-Matching VLA 的 VLM 深度、action expert 深度和去噪步数解耦为三轴运行时预算，并用 Exit Transformer 与 KV cache synthesis 支持独立提前退出。",
+    "findings": "SmolVLA/pi0.5 与 LIBERO/Meta-World 四个设置中，联合配置平均降低79.2%时延和31.8% FLOPs，同时平均SR提高5.6%；pi0.5/LIBERO SR则从87.6%降到86.7%。",
+    "limitations": "最优配置由离线评测选择，尚无在线任务识别与预算调度器；时延结果限定于单张A100、batch size 1及指定checkpoint。",
+    "insight": "VLA 加速不能只看视觉骨干：action expert 在每个 denoising step 重复运行，其深度往往是实时控制延迟的重要杠杆。",
+    "readingFocus": "三轴预算、Exit Transformer、KV cache synthesis、训练蒸馏、Table II Pareto点、Meta-World任务级敏感性与Table III消融。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-27 按 arXiv v1 正文与作者给出的官方代码入口复核；所有性能为作者报告。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.29382v1"
+      },
+      {
+        "label": "arXiv 元数据 / Submission history",
+        "url": "https://arxiv.org/abs/2609.29382"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/esgi-research-group/ee-vla"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.29382",
+    "arxiv": "2609.29382",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-24",
+    "firstArxivSource": "https://arxiv.org/abs/2609.29382v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-24",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-27",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-24",
+        "observedAt": "2026-09-27",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.29382v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-27",
+    "verifiedAt": "2026-09-27",
+    "version": "arXiv:2609.29382v1（2026-09-24），三轴提前退出、LIBERO/Meta-World与效率分析；2026-09-27复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：Flow-Matching VLA 的计算不是单一“模型大小”问题",
+        "body": "论文把推理成本拆成三个独立轴：VLM backbone 深度 V、action expert 深度 A、denoising steps D。已有加速工作多只跳过视觉语言层或减少去噪步，而 action expert 会在每个 denoising step 重复执行，其深度直接影响控制时延。因此作者研究的不只是“少算几层”，而是任务应把有限计算放在感知、动作生成还是迭代求解的哪一部分。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "axes",
+        "title": "三轴计算预算与任务依赖",
+        "body": "V 主要决定前缀和语义计算，A 决定每个去噪步中的动作网络深度，D 决定 action expert 被重复调用多少次。三者对 FLOPs 和 wall-clock latency 的影响不同：V 更擅长降 FLOPs，A 对时延更敏感，D 同时影响两者。Meta-World 的任务分析显示视觉辨识复杂的任务更依赖 V，而精细接触与轨迹任务更依赖 A，说明固定预算不是所有任务的统一最优点。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "exit-transformer",
+        "title": "Exit Transformer：不改基础策略，只学习中间出口",
+        "body": "作者在 VLM 与 action expert 的若干中间深度插入轻量 Exit Transformer。每个 ET 由对应 Transformer block 初始化，并通过蒸馏逼近完整深度最后一层；基础 VLM 与 action expert 始终冻结。VLM ET 输出供后续 action expert 消费的中间表示，action expert ET 则直接输出 velocity。这样完整模型的原始行为保留，运行时可以选择不同的 V、A、D，而不是为每种预算重新训练完整策略。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "kv",
+        "title": "KV Cache synthesis 让 VLM 和动作专家可独立退出",
+        "body": "如果 VLM 在较浅层提前退出，更深 action expert 仍需要本应由跳过层产生的 prefix key/value。论文用各跳过层自己的 RMSNorm、K/V 投影与 RoPE 对退出后的 prefix 重建缺失 cache，只省掉 attention、output projection 与 FFN。这样 V 和 A 不必被迫绑定到同一深度，并且 Table III 显示该机制能明显降低 VLM/VLA FLOPs，成功率变化通常较小。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "训练监督与参数开销",
+        "body": "VLM ET 同时做 velocity distillation 与中间特征 cosine distillation；action expert ET 使用标准 flow-matching 目标加对完整模型 velocity 的蒸馏。不同深度出口在同一轴上联合训练，但每个出口只接收自身损失。SmolVLA 的 expert/VLM ET 分别增加约3.1M/9.8M 参数，相对605M基础模型较小；pi0.5 对应23.6M/110.1M，相对3.3B基础模型。D 轴不需要额外训练。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "评测协议：两个模型、两个 benchmark、单卡端到端 action generation",
+        "body": "实验使用已在对应 benchmark 上 fine-tune 的 SmolVLA 与 pi0.5 checkpoint，冻结它们后只训练 ET。LIBERO 与 Meta-World MT50 均按每任务30 episodes 评测；论文给出 LIBERO 每 suite N=300，Meta-World 四难度组 N=840/330/180/150。SR 是成功比例；FLOPs 统计一次完整 action-generation call；latency 为 batch size 1 的 wall-clock，训练与评测均在单张 A100 40GB 上进行。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "main-results",
+        "title": "Table II：联合配置大幅降时延，但并非每个设置的 SR 都上升",
+        "body": "SmolVLA/LIBERO 从(32,32,10)的66.6%与0.798s变为(16,24,3)的68.2%与0.159s；Meta-World 从60.7%/0.397s变为74.9%/0.081s。pi0.5/LIBERO 从87.6%/0.537s变为86.7%/0.095s，成功率略降；pi0.5/Meta-World 从64.9%/0.522s升至72.2%/0.132s。四设置平均时延降79.2%、FLOPs降31.8%、平均SR加5.6%，不能把平均改善写成每一行都更准。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "task-analysis",
+        "title": "任务级结果：最省算力的轴取决于任务瓶颈",
+        "body": "完整策略只在 SmolVLA 的11/50个 Meta-World 任务、pi0.5 的22/50个任务上是最优配置。若按任务选择最佳轴，作者报告平均SR可由60.7%升到79.5%、由64.9%升到75.9%。hammer 对 action expert 深度敏感，而 faucet-open 对浅 VLM 很敏感；减少 denoising steps D 则在多数任务最稳健。真正在线如何识别任务并动态选择配置，论文仍留作未来工作。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界、负面结果与阅读路线",
+        "body": "方法证明离线枚举后存在任务相关 Pareto 改善，但尚未给出自动在线预算选择器，因此“task-dependent allocation”目前主要是分析与可配置能力。结果依赖 A100、指定 checkpoint 与 batch=1 时延定义，跨设备延迟不能直接外推。阅读应先看 §III 的 ET/KV 机制，再用 Table II 区分 SR、latency、GFLOPs，最后看 Fig.4 与 Table III 理解任务敏感性和 cache ablation。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.29382v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.29382v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "Base 与联合计算配置",
+        "columns": [
+          "模型 / Benchmark",
+          "配置(V,A,D)",
+          "SR",
+          "Latency(s)",
+          "GFLOPs"
+        ],
+        "rows": [
+          [
+            "SmolVLA / LIBERO Base",
+            "32,32,10",
+            "66.6",
+            "0.798",
+            "556.6"
+          ],
+          [
+            "SmolVLA / LIBERO Joint",
+            "16,24,3",
+            "68.2",
+            "0.159",
+            "406.3"
+          ],
+          [
+            "SmolVLA / Meta-World Base",
+            "16,16,10",
+            "60.7",
+            "0.397",
+            "318.0"
+          ],
+          [
+            "SmolVLA / Meta-World Joint",
+            "8,8,3",
+            "74.9",
+            "0.081",
+            "173.0"
+          ],
+          [
+            "pi0.5 / LIBERO Base",
+            "18,18,10",
+            "87.6",
+            "0.537",
+            "5000.2"
+          ],
+          [
+            "pi0.5 / LIBERO Joint",
+            "14,14,2",
+            "86.7",
+            "0.095",
+            "3541.0"
+          ],
+          [
+            "pi0.5 / Meta-World Base",
+            "18,18,10",
+            "64.9",
+            "0.522",
+            "5000.2"
+          ],
+          [
+            "pi0.5 / Meta-World Joint",
+            "14,16,2",
+            "72.2",
+            "0.132",
+            "3733.2"
+          ]
+        ],
+        "locator": "Table II",
+        "caption": "作者报告；Radar 的结构化 Leaderboard 只抽取SR，时延/FLOPs保留在笔记以避免不同单位混轨。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-27",
+      "note": "已从 Table II 抽取 LIBERO 与 Meta-World 的 Base/Joint 成功率；latency/FLOPs作为部署证据保留在笔记，不与SR混成同一Setting。"
+    }
+  }
+}
