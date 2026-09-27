@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p117",
+    "name": "Self-Adaptive VLA",
+    "title": "Self-Adaptive VLA for Robust Robot Deployment",
+    "team": "Hongxin Zhang、Chunru Lin、Tsun-Hsuan Wang、Zhenjia Xu、Chuang Gan",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-24",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月24日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "memory",
+      "action"
+    ],
+    "tags": [
+      "test-time adaptation",
+      "hardware shift",
+      "failure context",
+      "AdaLN",
+      "real robot"
+    ],
+    "priority": "deep",
+    "contribution": "提出面向部署期硬件漂移的 VLA 后训练方案：把失败 rollout 压缩成上下文 token，经 AdaLN 调制策略，并支持跨 trial 叠加实现迭代自适应。",
+    "findings": "四项精密真机任务中，多 trial 上下文可在 actuation bias 和 joint encoder offset 下恢复作者定义的80%与84%可恢复性能。",
+    "limitations": "评测集中于两类恒定硬件偏移、四项操作与最多6次尝试；非平稳故障、更广泛硬件类型及高失败成本场景尚未验证。",
+    "insight": "把部署失败看作可压缩的系统辨识证据，而不是仅靠重新校准或在线梯度更新，是低运行时开销自适应的一条可行路径。",
+    "readingFocus": "硬件偏移建模、上下文数据构造、Context Encoder/AdaLN、token ensemble、Table I 恢复率与潜变量结构。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-27 按 arXiv v1 正文逐节复核；数值均为作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.30092v1"
+      },
+      {
+        "label": "arXiv 元数据 / Submission history",
+        "url": "https://arxiv.org/abs/2609.30092"
+      },
+      {
+        "label": "作者项目页",
+        "url": "https://icefoxzhx.github.io/self-adaptive-vla"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.30092",
+    "arxiv": "2609.30092",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-24",
+    "firstArxivSource": "https://arxiv.org/abs/2609.30092v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-24",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-27",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-24",
+        "observedAt": "2026-09-27",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.30092v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-27",
+    "verifiedAt": "2026-09-27",
+    "version": "arXiv:2609.30092v1（2026-09-24），硬件偏移、自适应上下文与四项真机任务；2026-09-27复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题与定位",
+        "body": "论文处理 VLA 上线后的硬件偏移，而不是普通视觉扰动。制造公差、磨损或重新装配会让训练时的控制映射失效；无记忆策略只看当前观测，容易重复同类错误。目标是在不持续人工校准、也不在每个控制周期做在线梯度更新的前提下，让策略利用自身上一轮执行轨迹判断硬件变化并修正下一轮动作。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "shift-model",
+        "title": "两类硬件偏移与可观测性",
+        "body": "作者把测试硬件写成训练硬件加固定关节偏移 δ，研究 actuation bias 与 joint encoder offset。前者让执行动作整体偏移但状态读数仍准确，因此 proprioception 能暴露异常；后者同时影响执行与编码器零点，策略看到的状态可能仍像训练环境，偏移主要需从视频中的真实机械臂位置推断。这个差异决定了上下文模态的重要性。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "上下文化专家数据如何构造",
+        "body": "后训练先在人工注入的偏移下 rollout 冻结基础策略，收集带偏差的次优轨迹作为 context。随后从原始专家演示中取高质量轨迹，按已知 δ 对目标动作预补偿，并在需要时同步变换 proprioception。失败轨迹只提供“当前硬件发生了什么”的上下文，不直接成为模仿目标，因此监督质量仍来自人类专家数据。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "encoder",
+        "title": "Context Encoder 的输入输出与数据流",
+        "body": "上下文窗口含三路相机、30 Hz proprioception 与动作。视频按时间分辨率降采样后经 ViT 编码，状态与动作经共享 MLP 投影；模态类型嵌入和时间 RoPE 保留来源与时序，两层 self-attention 融合后由 learned-query pooling 压成单一 context token。该 token 与 DiT 的 timestep conditioning 同维度，并在 AdaLN 前相加以调制动作生成。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "训练与部署流程",
+        "body": "基础 VLA 使用 VLM 条件和 DiT action denoiser，通过 conditional flow matching 学动作 chunk。Self-Adaptive VLA 后训练时冻结 VLM backbone，只训练 Context Encoder 等适配部分，并沿用同一 flow-matching 监督。部署时先按原策略执行；若上一 trial 失败，再把轨迹编码成静态 token 供下一 trial 使用。它不是测试时反向传播，而是预先学会如何解释失败上下文。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "ensemble",
+        "title": "多次 trial 的迭代修正",
+        "body": "单次失败可能不足以唯一定位偏移，所以作者把每次 trial 独立得到的 context token 直接求和。这样前一次试验先纠正明显误差，后续试验再暴露残余偏差并继续补偿。这个设计依赖潜变量空间近似线性：同一自由度的正负偏移方向相反、不同自由度接近正交，因此简单 token ensemble 在所测场景中可以稳定累计信息。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "真机评测协议与可比性边界",
+        "body": "实验覆盖 Transport Corn、Insert Tube、Cap Marker、Assemble Ring 四项精密双臂/灵巧操作，使用 Piper/Piper-X、Marvin Arms 与 Wuji Hand。每个方法在20个 episode 上测试，每个 episode 采样一个未见硬件偏移并最多允许6次 trial，trial 间场景完全重置；任一 trial 成功则该 episode 记成功。这个“多次尝试”定义与常规单 rollout SR 不同，不能直接混入其他真机总榜。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主要结果与负面现象",
+        "body": "名义硬件下基础策略四任务平均成功率88.8%。Actuation bias 使基础平均降至7.5%，单次 Self-Adaptive VLA 为45.0%，多 trial ensemble 为72.5%，作者给出80% recovery；joint encoder offset 下基础5.0%、单次46.3%、ensemble 75.0%，恢复84%。Gated Memory Policy 分别只有30.0%与41.3%，说明“有记忆”本身并不等于能辨认并补偿硬件偏移。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "analysis",
+        "title": "机制分析、局限与阅读路线",
+        "body": "在 Insert Tube 分析中，同一偏移轴正负方向的 token 余弦约为−0.987到−0.991，不同轴接近0，支持表示确实编码了硬件自由度。但证据仍限于两类恒定加性偏移、四项约10–15秒任务与最多6次试错；摩擦变化、时延、松动和非平稳故障尚未验证。阅读应重点对照 §III 的可观测性、§IV-A 的监督来源以及 Table I 的多 trial 成功定义。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.30092v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "硬件偏移主结果",
+        "columns": [
+          "条件",
+          "Base Avg.",
+          "GMP Avg.",
+          "Self-Adaptive Avg.",
+          "Ensemble Avg."
+        ],
+        "rows": [
+          [
+            "Nominal",
+            "88.8",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "Actuation bias",
+            "7.5",
+            "30.0",
+            "45.0",
+            "72.5"
+          ],
+          [
+            "Joint encoder offset",
+            "5.0",
+            "41.3",
+            "46.3",
+            "75.0"
+          ]
+        ],
+        "locator": "Table I",
+        "caption": "作者报告成功率（%）；偏移条件允许每个 episode 最多6次 trial，不能与单 rollout SR 直接等价比较。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "protocol-unresolved",
+      "checkedAt": "2026-09-27",
+      "note": "四项自定义真实机器人硬件偏移协议包含最多6次 trial 与 recovery ratio；保留原表，不建立跨论文统一 Setting。"
+    }
+  }
+}
