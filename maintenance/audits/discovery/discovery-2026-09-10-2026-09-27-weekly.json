@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-10-2026-09-27-weekly",
+  "window": {
+    "from": "2026-09-10",
+    "to": "2026-09-27",
+    "attemptedAt": "2026-09-27",
+    "completedAt": null
+  },
+  "scope": "Weekly VLA/WAM/robotics discovery: VLA, Vision/Video-Action, WAM, robot world models, pretraining, action representation, spatial/3D, memory/long-horizon, efficiency, post-training/RL and evaluation.",
+  "sources": [
+    {
+      "id": "arxiv-primary",
+      "lane": "primary-preprints",
+      "provider": "arXiv",
+      "kind": "primary preprint full text / exact-record follow-up",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-10",
+        "to": "2026-09-27"
+      },
+      "query": "Broad topic scan attempted; direct advanced-search endpoint was unavailable in this runtime, while exact arXiv records/full texts for surfaced candidates were verified.",
+      "resultCount": 12,
+      "note": "Primary records for selected candidates were checked, but the provider-wide date-range query was not exhaustively enumerated; marked partial."
+    },
+    {
+      "id": "semantic-scholar-index",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar",
+      "kind": "independent academic index",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-10",
+        "to": "2026-09-27"
+      },
+      "query": "Cross-check surfaced VLA/WAM candidate identities through scholarly-index links/search; broad date-range enumeration was not available.",
+      "resultCount": 3,
+      "note": "Identity cross-check only; not a complete academic-index sweep."
+    },
+    {
+      "id": "robotics-paper-daily",
+      "lane": "curated-robotics",
+      "provider": "ttylerzh/robotics_paper_daily",
+      "kind": "public curated robotics daily index",
+      "status": "success",
+      "coverage": {
+        "from": "2026-09-10",
+        "to": "2026-09-27"
+      },
+      "query": "Review recent robotics/VLA entries in the public daily index across the required lookback window, with focus on 2026-09-23 and 2026-09-24 releases.",
+      "resultCount": 12,
+      "note": "Public curated index was readable through its current README and used only for discovery; paper facts were rechecked on primary sources."
+    },
+    {
+      "id": "official-reverse",
+      "lane": "reverse-discovery",
+      "provider": "Official author/project pages",
+      "kind": "official project/repository reverse check",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-10",
+        "to": "2026-09-27"
+      },
+      "query": "Reverse-check selected candidates through author-linked project/code pages and benchmark references.",
+      "resultCount": 3,
+      "note": "Selected-paper reverse validation completed; not a comprehensive sweep of every lab/project/benchmark page in the window."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Self-Adaptive VLA for Robust Robot Deployment",
+      "arxiv": "2609.30092",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily",
+        "arxiv-primary",
+        "official-reverse"
+      ],
+      "status": "selected",
+      "reason": "Full arXiv v1 text verified; robust-deployment/test-time adaptation contribution is in scope and supports a complete deep note.",
+      "paperId": "p117",
+      "duplicateOf": null
+    },
+    {
+      "title": "Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs",
+      "arxiv": "2609.29382",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily",
+        "arxiv-primary",
+        "official-reverse"
+      ],
+      "status": "selected",
+      "reason": "Full arXiv v1 text and official code link verified; directly addresses VLA inference efficiency with explicit benchmark tables.",
+      "paperId": "p118",
+      "duplicateOf": null
+    },
+    {
+      "title": "Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models",
+      "arxiv": "2609.28865",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily",
+        "arxiv-primary",
+        "official-reverse"
+      ],
+      "status": "selected",
+      "reason": "Full arXiv v1 text and official project page verified; action-representation contribution has explicit LIBERO/SimplerEnv/real-robot evidence.",
+      "paperId": "p119",
+      "duplicateOf": null
+    },
+    {
+      "title": "World Action Agent",
+      "arxiv": "2609.29964",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "Relevant world/action-agent candidate surfaced, but not selected for this 3-paper batch before completing full-text and benchmark evidence review.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Robo-Harness K1",
+      "arxiv": "2609.29389",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "Potentially relevant robotics evaluation candidate; deferred pending full-text scope and identity review.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "IronViT",
+      "arxiv": "2609.29252",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "Potential embodied/VLA representation candidate; deferred pending full-text relevance review.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "AdaHVLA",
+      "arxiv": "2609.29204",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "Potential VLA candidate; deferred pending full-text and benchmark review.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "CrossSafe",
+      "arxiv": "2609.28984",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "Safety-related embodied candidate; deferred pending full-text confirmation that it meets the project scope.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "ActGaze",
+      "arxiv": "2609.28955",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "Action/gaze robotics candidate; deferred pending primary full-text review.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "DeltaWAM",
+      "arxiv": "2609.28811",
+      "doi": "",
+      "date": "2026-09-23",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "WAM candidate in scope; deferred to a later batch for full-text and result-table review.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "MemBodied",
+      "arxiv": "2609.28256",
+      "doi": "",
+      "date": "2026-09-23",
+      "sourceIds": [
+        "robotics-paper-daily"
+      ],
+      "status": "deferred",
+      "reason": "Memory/embodied candidate in scope; deferred pending source-complete reading.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "LiMA: Bridging Long-term Imagination to Real-time Dexterous Manipulation via Asynchronous Diffusion",
+      "arxiv": "2609.28431",
+      "doi": "",
+      "date": "2026-09-23",
+      "sourceIds": [
+        "robotics-paper-daily",
+        "arxiv-primary"
+      ],
+      "status": "duplicate",
+      "reason": "Already present in the canonical catalog and deeply reviewed.",
+      "paperId": null,
+      "duplicateOf": "p110"
+    }
+  ],
+  "counts": {
+    "total": 12,
+    "selected": 3,
+    "deferred": 8,
+    "excluded": 0,
+    "duplicate": 1
+  },
+  "status": "partial",
+  "notes": "Curated robotics coverage succeeded, but primary-provider enumeration, academic-index sweep, and reverse-discovery breadth were not complete in this runtime. The audit therefore remains partial and must not advance lastSuccessfulSearchAt. Selected papers were independently verified against primary full text before inclusion."
+}
