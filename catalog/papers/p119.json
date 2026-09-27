@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p119",
+    "name": "Direction-Scale Decomposition (DSD)",
+    "title": "Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models",
+    "team": "Yufei Duan、Hang Yin、Alberta Longhini、Chao Tang、Danica Kragic",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-24",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月24日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "action",
+      "pretraining"
+    ],
+    "tags": [
+      "action representation",
+      "tokenization",
+      "co-training",
+      "LIBERO",
+      "SimplerEnv",
+      "real robot"
+    ],
+    "priority": "deep",
+    "contribution": "在 tokenization 前把位姿增量解析分解为方向/距离与旋转轴/角度，使几何方向不再随执行速度或数据集归一化尺度改变，并可与 BIN、BEAST 等 tokenizer 组合。",
+    "findings": "LIBERO 上 DSD-BIN 与 DSD-BEAST 平均成功率分别较原表示提升3.8与3.9点；SimplerEnv 五数据集混训中 DSD-BIN 比 BIN 高10.3点；真机平均也在有无机器人预训练两种设置下提升。",
+    "limitations": "混训仅五个OXE数据集，tokenizer仅BIN/BEAST，真实机器人仅Franka；不同任务收益不均匀，小运动方向loss阈值需要调节。",
+    "insight": "异构机器人数据的难点不只在模型容量，动作数值语义本身若随数据集统计漂移，也会破坏共享；先统一几何表示再tokenize是一条低复杂度的跨数据学习思路。",
+    "readingFocus": "DSD连续表示、scale归一化、小运动loss、Florence-2训练设置、LIBERO Table II、SimplerEnv Table III、真实机器人与局限。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-27 按 arXiv v1 正文与官方项目页复核；图中未正文给出的精确值不做像素估计。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.28865v1"
+      },
+      {
+        "label": "arXiv 元数据 / Submission history",
+        "url": "https://arxiv.org/abs/2609.28865"
+      },
+      {
+        "label": "官方项目页",
+        "url": "https://vla-dsd.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.28865",
+    "arxiv": "2609.28865",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-24",
+    "firstArxivSource": "https://arxiv.org/abs/2609.28865v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-24",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-27",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-24",
+        "observedAt": "2026-09-27",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.28865v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-27",
+    "verifiedAt": "2026-09-27",
+    "version": "arXiv:2609.28865v1（2026-09-24），动作表示、LIBERO/SimplerEnv/真机；2026-09-27复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：动作 token 把速度、归一化和几何结构混在了一起",
+        "body": "离散动作 VLA 常直接对位姿增量逐维归一化再分桶或压缩。这样相同几何路径只要执行速度不同，增量大小就会变；不同数据集各自的分位数归一化也会把相同物理动作映到不同 token。作者认为这种“表示层混杂”会削弱跨演示和跨数据集共享，因此不是先设计更复杂 tokenizer，而是先改变送进 tokenizer 的连续动作表示。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "representation",
+        "title": "DSD：平移拆方向与距离，旋转拆轴与角度",
+        "body": "Direction-Scale Decomposition 在 tokenization 前将三维平移增量分解为单位方向和 magnitude，将相对旋转分解为 rotation axis 和 angle，gripper 命令保持原编码。方向和旋转轴天然在固定区间内，不需要依赖数据集统计；只有 scale 通道再做归一化。DSD 因此是 tokenizer 前端表示，而非一个学习到的码本，可直接与 BIN 或 BEAST 等不同 tokenizer 组合。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "normalization",
+        "title": "跨数据集归一化如何处理",
+        "body": "方向分量保持共享的几何坐标约定，不参与 dataset-specific percentile normalization；平移 magnitude 与旋转 angle 归一化到[-1,1]。在异构 co-training 中，作者对实际运动 scale 使用共享参数，希望同一物理幅度跨数据集具有一致意义；针对下游 fine-tuning 则可使用目标数据集的 scale 参数。解码时先恢复 magnitude/angle，再与方向/轴组合回物理动作。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "stability",
+        "title": "小运动时方向不稳定：用 scale-aware loss 降权",
+        "body": "当平移距离或旋转角接近0时，单位方向会对微小噪声极敏感，即便物理位移几乎没有变化，方向 target 也可能剧烈旋转。论文没有忽略这些样本，而是在 scale 低于阈值 tau 时降低对应 direction-token loss，并保留最小权重0.1。这个处理承认 DSD 的几何分解并非免费：把速度与方向解耦后，零运动附近会出现新的数值不适定点。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "model",
+        "title": "训练模型与动作输出",
+        "body": "仓库内对照统一采用 Florence-2-Base 0.23B，视觉 DaViT 与语言 BART 由公开 checkpoint 初始化，完整模型端到端 fine-tune。策略并行预测20步 end-effector delta action chunk，每个动作维度用256 bins；BIN、DSD-BIN、BEAST 与 DSD-BEAST 保持同一模型骨干，使主要差异落在动作表示和 tokenizer。BEAST 用10个 B-spline basis 表示20步 chunk，因此 DSD 也被用于非简单标量分桶的压缩式 tokenizer。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "libero",
+        "title": "LIBERO：两种 tokenizer 上平均成功率都提升，但长程项有不同变化",
+        "body": "四个 LIBERO suite 每个500 trials。BIN 的 Spatial/Object/Goal/Long/Avg 为83.4/93.4/91.8/85.2/88.5，DSD-BIN 为93.6/96.8/95.0/83.8/92.3，平均+3.8但 Long 略降。BEAST 为88.4/96.4/88.6/78.4/88.0，DSD-BEAST 为92.4/97.2/89.4/88.6/91.9，四项全升且 Long 达88.6。结果说明收益跨 tokenizer 存在，但并非每个 suite 都单调提升。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "simpler",
+        "title": "SimplerEnv：异构 co-training 是最关键的正证据",
+        "body": "Bridge 四任务各75个 matched trials，共300次。BIN-bridge Overall 40.0，加入五数据集 OXE mixture 后 BIN-mix 反而降到33.0；DSD-BIN 从 bridge-only 的40.7升到 mix 的43.3。在同为 mix 条件下，DSD-BIN 比 BIN 高10.3个百分点，作者给出 task-stratified bootstrap 95% CI 5.0–15.7，Holm-adjusted exact McNemar p=0.003。它支持“方向/scale 解耦更能吃到异构数据”的核心主张。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "real",
+        "title": "真机结果：无预训练与有预训练都改善，但当前只有 Franka",
+        "body": "四项真实 Franka 任务分别是 cube stacking、cloth folding、tissue sweeping、spoon replacement，每种方法每任务30 trials。正文报告 DSD-BIN 四任务平均由60.0升至73.3，+13.3点；从五数据集 co-training checkpoint fine-tune 的 BIN-P/DSD-BIN-P 由65.0升至76.7，+11.7点。每任务增益来自 Fig.4，Radar 不从图像像素反推额外精确值，只保留正文明确写出的平均值与差值。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "限制与阅读路线",
+        "body": "混合训练只覆盖五个 OXE 数据集，未验证全量 OXE 或更多 embodiment；SimplerEnv 的任务收益不均匀，阈值也可能随训练阶段调整。Tokenizer 仅验证 BIN 与 BEAST，真实机器人仅 Franka。阅读时先看 §IV–V 理解分解和小 scale 稳定项，再看 Table II 检查“平均提升并非所有 suite 提升”，最后用 Table III 和真实机器人段落区分异构数据收益、机器人预训练以及作者尚未验证的更大规模迁移。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.28865v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.28865v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "LIBERO success rate",
+        "columns": [
+          "Method",
+          "Spatial",
+          "Object",
+          "Goal",
+          "Long",
+          "Avg."
+        ],
+        "rows": [
+          [
+            "BIN",
+            "83.4",
+            "93.4",
+            "91.8",
+            "85.2",
+            "88.5"
+          ],
+          [
+            "DSD-BIN",
+            "93.6",
+            "96.8",
+            "95.0",
+            "83.8",
+            "92.3"
+          ],
+          [
+            "BEAST",
+            "88.4",
+            "96.4",
+            "88.6",
+            "78.4",
+            "88.0"
+          ],
+          [
+            "DSD-BEAST",
+            "92.4",
+            "97.2",
+            "89.4",
+            "88.6",
+            "91.9"
+          ],
+          [
+            "pi0.5",
+            "98.0",
+            "97.6",
+            "96.6",
+            "82.0",
+            "93.6"
+          ],
+          [
+            "pi-FAST",
+            "96.4",
+            "98.0",
+            "87.8",
+            "60.0",
+            "85.6"
+          ],
+          [
+            "pi0",
+            "96.4",
+            "97.4",
+            "95.4",
+            "80.0",
+            "92.3"
+          ]
+        ],
+        "locator": "Table II",
+        "caption": "作者报告，500 trials per LIBERO suite；pi系列行为带机器人预训练，训练条件在Result Report层区分。"
+      },
+      {
+        "title": "SimplerEnv Bridge tasks",
+        "columns": [
+          "Method",
+          "Carrot",
+          "Spoon",
+          "Stack",
+          "Eggplant",
+          "Overall"
+        ],
+        "rows": [
+          [
+            "RT-1-X",
+            "10.7",
+            "4.0",
+            "0.0",
+            "0.0",
+            "3.7"
+          ],
+          [
+            "Octo-base",
+            "6.7",
+            "8.0",
+            "0.0",
+            "41.3",
+            "14.0"
+          ],
+          [
+            "Octo-small",
+            "5.3",
+            "34.7",
+            "2.7",
+            "53.3",
+            "24.0"
+          ],
+          [
+            "OpenVLA",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ],
+          [
+            "pi-FAST-ft",
+            "0.0",
+            "0.0",
+            "0.0",
+            "9.3",
+            "2.3"
+          ],
+          [
+            "pi0-ft",
+            "8.0",
+            "6.7",
+            "6.7",
+            "14.7",
+            "9.0"
+          ],
+          [
+            "pi0.5-ft",
+            "69.3",
+            "34.7",
+            "14.7",
+            "40.0",
+            "39.7"
+          ],
+          [
+            "SpatialVLA",
+            "22.7",
+            "13.3",
+            "16.0",
+            "94.7",
+            "36.7"
+          ],
+          [
+            "BIN-bridge",
+            "20.0",
+            "40.0",
+            "4.0",
+            "96.0",
+            "40.0"
+          ],
+          [
+            "BIN-mix",
+            "12.0",
+            "49.3",
+            "12.0",
+            "58.7",
+            "33.0"
+          ],
+          [
+            "DSD-BIN-bridge",
+            "45.3",
+            "41.3",
+            "9.3",
+            "66.7",
+            "40.7"
+          ],
+          [
+            "DSD-BIN-mix",
+            "49.3",
+            "40.0",
+            "4.0",
+            "80.0",
+            "43.3"
+          ]
+        ],
+        "locator": "Table III",
+        "caption": "作者报告，四个Bridge任务各75 matched trials；bridge/mix训练数据在Result Report层明确区分。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-27",
+      "note": "Table II LIBERO与Table III SimplerEnv均有明确数值与协议，可结构化；真实机器人Fig.4只保留正文明确平均值，不从图像估算每任务数值。"
+    }
+  }
+}
