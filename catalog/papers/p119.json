@@ -73,7 +73,7 @@
     "status": "expanded",
     "updatedAt": "2026-09-29",
     "verifiedAt": "2026-09-29",
-    "version": "arXiv:2609.29964v1（2026-09-24），visual action workspace、skill evolution、LIBERO-PRO 与小VLM轨迹训练；2026-09-29复核",
+    "version": "arXiv:2609.29964v1（2026-09-24），visual action workspace、工具接口、skill evolution、LIBERO-PRO、系统成本与小VLM轨迹训练；2026-09-29复核",
     "sections": [
       {
         "id": "problem",
@@ -178,6 +178,50 @@
         "id": "limits",
         "title": "边界：这是系统级 agent harness，不是单一 VLA 参数量对比",
         "body": "WAA 的收益来自 Contact views、动作工具、Imagination Agent、技能库与低层执行闭环共同作用；论文没有为所有组件提供完全独立的逐项消融，因此不能把 75.6% 归因于某一个模块。系统还依赖视觉几何和多次模型调用，部署延迟/费用与端到端 VLA 的单次前向并非同一概念。阅读时应把系统工程能力和模型内生能力分开。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.29964v1"
+          }
+        ]
+      },
+      {
+        "id": "tool-interface",
+        "title": "工具接口：proposal、observation 与 execution 被显式分层",
+        "body": "WAA 的关键不是单纯“让 VLM 多想几步”，而是把不同权限的动作封装成工具接口。观察和动作提案工具只改变 agent 的内部工作区，不直接驱动物理机器人；执行工具才真正改变环境。这个分层让模型可以先生成 grasp/pose 等候选，再通过局部视觉或 Imagination Agent 检查其几何合理性。对研究者来说，这也提供了更清晰的错误定位：失败究竟来自场景理解、动作提案、修正判断，还是低层执行，而不是全部压进一个不可观察的端到端动作 token。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.29964v1"
+          }
+        ]
+      },
+      {
+        "id": "skill-boundary",
+        "title": "技能库的证据边界：测试前冻结，避免把目标任务经验泄漏回系统",
+        "body": "技能增强 agent 容易出现一个评测陷阱：如果测试阶段持续把失败和成功轨迹写回技能库，后面的 episode 就不再是同一能力条件。论文在 LIBERO-PRO 中明确把 evolved skills 的来源限定为 LIBERO-90，并在目标评测开始前冻结。这使结果更接近“来源任务形成的程序性知识能否迁移到扰动任务”，而不是在线试错后的适应成绩。Radar 因此在 Result Report 中保留技能来源和冻结时点，不把 skill memory 当成普通参数量或训练数据的一行小注。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.29964v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation-reading",
+        "title": "消融怎么读：无技能版本仍保留 workspace，说明 28.9% 不是裸 VLM",
+        "body": "主表中的 WAA no-skills 得分约 28.9%，它并不是完全移除 WAA 后只让 Gemini 直接输出机器人动作；visual action workspace、Contact views、动作工具和闭环纠错仍然存在。因而 evolved skills 从 28.9% 推到 75.6% 可以说明技能库对完整系统很重要，却不能把 46.7 个百分点全部归因于“记忆模块”本身。相反，Show-Harness 在同 backbone 下约 6.7% 的结果更接近说明工具/交互接口的差异，但其 rollout 与调用预算仍需保留原文限制。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.29964v1"
+          }
+        ]
+      },
+      {
+        "id": "cost-boundary",
+        "title": "系统成本：更强闭环往往意味着更多视觉调用，不能只看最终成功率",
+        "body": "WAA 允许观察、生成动作 proposal、调用 Imagination Agent、执行后再进行 in-view correction，因此一次任务可能包含多次 VLM/tool 调用。论文的优势是把这些调用组织成可审查的闭环，而不是证明其每个控制周期比端到端 VLA 更快。若未来比较真实部署，需要同时记录平均模型调用次数、单次延迟、低层控制频率、失败后重试以及技能检索开销。否则 75.6% 这样的系统成功率与单次前向策略的成功率放在同一效率结论里，会掩盖运行时预算差异。",
         "sources": [
           {
             "label": "arXiv v1",
