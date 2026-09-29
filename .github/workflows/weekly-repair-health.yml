@@ -1,0 +1,33 @@
+name: Weekly repair health refresh
+on:
+  push:
+    branches: ['release/batch-weekly-repair-2026-09-29']
+    paths: ['.github/workflows/weekly-repair-health.yml']
+permissions:
+  contents: write
+concurrency:
+  group: weekly-repair-health-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh due publication metadata
+        run: python scripts/maintenance/sync_publications.py --apply-safe --limit 100 --due-days 7
+      - name: Run bounded source-health rotation
+        run: python scripts/maintenance/check_sources.py --limit 100 --due-days 30 --max-seconds 180
+      - name: Commit health state to repair branch only
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          test "$BRANCH" = "release/batch-weekly-repair-2026-09-29"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog/papers catalog/manifest.json maintenance/state/publication-check.json maintenance/state/publication-candidates.json maintenance/state/source-health.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh publication and source health for weekly repair'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
