@@ -77,7 +77,7 @@
     "status": "expanded",
     "updatedAt": "2026-09-29",
     "verifiedAt": "2026-09-29",
-    "version": "arXiv:2609.30092v1（2026-09-24），硬件偏移适应、context token、AdaLN、四项真机任务与新工作站部署；2026-09-29复核",
+    "version": "arXiv:2609.30092v1（2026-09-24），shift-conditioned demonstrations、context encoder、AdaLN、trial-level adaptation、token ensembling、四项真机任务与安全边界；2026-09-29复核",
     "sections": [
       {
         "id": "problem",
@@ -183,6 +183,54 @@
         "id": "limits",
         "title": "边界：需要可重复试错，且不等于任意 OOD 的万能自适应",
         "body": "方法最适合可重置、可多次尝试的操作流程；若一次失败造成不可逆损坏，历史上下文无法替代安全恢复机制。当前证据集中在执行器偏置、编码器偏移和工作站变化，尚不能证明对物体类别突变、视觉域漂移、任务定义变化或长期硬件老化都同样有效。阅读时应把“上下文适应”与“模型权重持续学习”严格区分。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "train-deploy-separation",
+        "title": "训练和部署必须分开看：部署时没有 shift 标签，也不做梯度更新",
+        "body": "训练阶段的可控偏移标签只用于构造 shift-conditioned expert demonstrations，让 context encoder 学到“从 rollout 反推隐藏执行差异”的能力；到了真实部署，模型只看到自己刚刚经历的视频、状态和动作历史，并不知道真实偏移量是多少。这个区分很重要：如果部署时直接提供编码器零点或执行器 bias 的真值，就只是条件控制而不是自适应。论文的贡献恰恰是把系统辨识信息压进上下文 token，再通过 AdaLN 调制冻结策略，而不是在线访问故障标签。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "trial-semantics",
+        "title": "Trial-level 适应而不是 control-tick 级在线学习",
+        "body": "context encoder 的工作单位是一段已经结束的 rollout，每次 trial 结束后才提取新的上下文；随后下一次尝试使用更新后的 token。它因此不会在 20Hz/50Hz 的每个控制 tick 都重新训练或重新估计硬件参数。这个时间尺度让方法适合装配、抓取等可以重置和重复尝试的生产任务，也解释了为什么项目页用连续三次 Assemble Ring 失败/修正展示能力。相反，对于一次性高速动作或无法安全重置的任务，trial-level 反馈可能来得太晚。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          },
+          {
+            "label": "作者项目页",
+            "url": "https://icefoxzhx.github.io/self-adaptive-vla/"
+          }
+        ]
+      },
+      {
+        "id": "failure-information",
+        "title": "失败轨迹提供什么信息：不是只记录“失败”标签，而是记录偏差如何累积",
+        "body": "一个 rollout 中包含期望动作、机器人实际状态变化和多视角视觉结果，这些序列共同揭示执行器偏置的方向与幅度。例如抓取点持续偏向同一侧、关节到达位置与动作命令存在稳定差值，都比单个 success/failure bit 更有系统辨识价值。context encoder 正是利用这种时序结构生成 latent context。因此 token ensembling 能从多次不同失败中累积互补信息；它并不是对多个二元失败标签简单投票。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.30092v1"
+          }
+        ]
+      },
+      {
+        "id": "safety-boundary",
+        "title": "自适应不等于安全恢复：失败本身仍需要被允许和管理",
+        "body": "方法把失败 rollout 当作下一次尝试的条件，但并没有因此给出形式化安全保证。若第一次失败会导致碰撞、物体破损或不可逆装配错误，收集上下文的代价可能不可接受；这与 SafeLoop 一类“执行前预测风险并回滚”的目标不同。Self-Adaptive VLA 更像部署后的性能恢复和系统辨识机制。实际系统若同时关心安全与适应，需要额外的风险监控、停止/回滚策略和可重复任务设计，而不能把“会从失败中学习”当成允许任意失败的理由。",
         "sources": [
           {
             "label": "arXiv v1",
