@@ -72,7 +72,7 @@
     "status": "expanded",
     "updatedAt": "2026-09-29",
     "verifiedAt": "2026-09-29",
-    "version": "arXiv:2609.16641v1（2026-09-15），方法、LIBERO、旋转鲁棒性、数据效率与消融；2026-09-27复核",
+    "version": "arXiv:2609.16641v1（2026-09-15），typed geometry、SO(3) equivariant flow matching、canonicalizer、标准 LIBERO、旋转压力测试、数据效率与系统边界；2026-09-29复核",
     "sections": [
       {
         "id": "problem",
@@ -158,6 +158,50 @@
         "sources": [
           {
             "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "equivariance",
+        "title": "为什么要把旋转等变性写进网络，而不是只靠数据增强",
+        "body": "旋转增强可以让训练集覆盖更多姿态，但它仍要求网络从样本中自行学习“输入怎样旋转，输出动作就应该怎样跟着旋转”。SAVLA 把这种对应关系直接写成 scalar / vector typed representation 和 SO(3)-equivariant action head：不随坐标旋转改变的语义量与会随旋转变化的几何量走不同通道。这样训练数据不必穷举所有朝向，模型结构本身就限制了允许的变换方式。论文的数据比例实验因此应和旋转外推一起读：收益不只是更多增强，而是几何先验减少了需要从示范估计的自由度。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "canonicalizer-role",
+        "title": "Canonicalizer 与等变 action head 解决的是两种不同的分布偏移",
+        "body": "动作头的等变性约束主要作用在机器人状态、几何条件与动作空间；但 RGB 图像在相机绕重力轴旋转后会出现纹理、遮挡、视场和投影变化，冻结的 VLM 并不会天然保持等变。canonicalizer 因此承担视觉侧的分布对齐：先把输入图像映射回更接近训练分布的规范视角，再让几何条件与动作头在一致坐标语义下工作。消融中只保留其中一部分会明显掉分，说明两者不是重复模块，而是在视觉外观与动作几何两个层面协作。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "rotation-protocol",
+        "title": "旋转压力测试不能和标准 LIBERO 平均成功率混成一个榜",
+        "body": "论文除了标准 LIBERO 四套件，还专门改变相机/场景绕重力轴的旋转角度来测试空间外推。标准 Table I 的 91.6% 是四套件常规设置下的平均值，而 90.4% 是 LIBERO-Goal 在 -30° 到 +30° 旋转区间上的另一套汇总；极端 ±35°/±45° 又属于更强压力测试。Radar 分开记录这些证据，因为任务范围、扰动变量和汇总方法都不同。把 90.4% 当作普通 LIBERO Goal 或把 64.5% 与标准四套件平均直接排序，都会丢掉实验真正要说明的旋转鲁棒性问题。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "capacity-boundary",
+        "title": "模型容量与归因：匹配可训练头规模，不等于所有系统成本完全一致",
+        "body": "作者为了让 SAVLA 与 GR00T N1.5 的比较更聚焦结构归纳偏置，尽量匹配可训练 action-head 容量，并沿用相同 AdamW、学习率和 batch size 等训练设置。但 SAVLA 额外包含 canonicalizer，且两种系统的预训练表征、实现细节和测试时视觉处理仍不完全相同。因此 Table I 适合支持“这种结构在作者控制的对照中有效”，不应进一步推出等参数、等 FLOPs 或完全公平系统成本。Radar 保留这些训练与实现差异在 Result Report，而不把它们变成新的 Evaluation Setting。",
+        "sources": [
+          {
+            "label": "arXiv v1",
             "url": "https://arxiv.org/html/2609.16641v1"
           }
         ]
