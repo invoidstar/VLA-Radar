@@ -77,7 +77,7 @@
     "status": "expanded",
     "updatedAt": "2026-09-29",
     "verifiedAt": "2026-09-29",
-    "version": "arXiv:2609.26313v1（2026-09-22），风险预测、rollback、安全决策、LIBERO 24 tasks 与真机实验；2026-09-29复核",
+    "version": "arXiv:2609.26313v1（2026-09-22），risk predictor、noop/record/rollback、安全 checkpoint、20Hz/1Hz 双时间尺度、LIBERO 24 tasks、真机实验与预测误差边界；2026-09-29复核",
     "sections": [
       {
         "id": "problem",
@@ -190,6 +190,54 @@
           {
             "label": "官方代码仓库",
             "url": "https://github.com/Loule0-0/SafeLoop"
+          }
+        ]
+      },
+      {
+        "id": "metric-reading",
+        "title": "安全指标要和任务成功并列看，不能用停机把 hazard 人为降到零",
+        "body": "一个极端“安全”系统可以什么都不做，从而几乎不发生碰撞，但也不会完成任务。因此 SafeLoop 同时报告 task success、body hazard、object hazard 与风险事件频率，目的就是检查危险降低是否以显著牺牲任务完成为代价。论文中的 OpenVLA-OFT 对照里，加入 SafeLoop 后 body hazard 从约22.9%降到5.7%，success 反而从67.7%到68.2%，这比单独看 hazard 更能说明 wrapper 没有简单靠频繁停止换取数字。Radar 也因此不把这些列合成一个“安全总分”。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "checkpoint-policy",
+        "title": "Record 也是动作：安全点选错会直接决定 rollback 是否有用",
+        "body": "决策器不只是二元地“继续/回滚”，还要决定什么时候 record 一个新的安全 checkpoint。记录得太频繁，可能把已经接近危险的状态误当成恢复点；记录得太保守，又会让回滚距离过长，增加路径规划和任务进度损失。因此 noop / record / rollback 三动作把“哪里值得恢复”也纳入策略学习。这个设计说明 rollback 系统的关键不只在机械臂能否沿路径返回，还在历史中是否保存了真正有价值、仍与当前任务相关的安全状态。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "predictor-errors",
+        "title": "风险预测器本身有两类代价：漏报导致事故，误报导致无谓回滚",
+        "body": "time-to-hazard 让系统能在风险真正发生前留出撤退时间，但预测器仍可能漏报或过度敏感。漏报会让 1Hz 左右的安全决策器来不及介入；误报则会打断原本能够成功的轨迹、增加回滚次数和完成时间。论文通过多任务 hazard 统计展示总体改善，但并没有证明风险头在所有视觉遮挡、未知物体和接触状态下都校准良好。实际部署应继续关注 precision/recall、干预延迟以及不同阈值下的 success–safety trade-off。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "resource-boundary",
+        "title": "开源代码增加了可检查性，但不等于论文安全结论已经独立复现",
+        "body": "官方仓库公开了 SafeLoop 的实现入口和 Apache-2.0 代码许可证，这有助于检查 risk predictor、meta decider 与训练/运行脚本的接口。Radar 因此记录 Code=官方资源入口，但仍把论文中的 hazard 和真机成功率标为 author-reported：仓库存在并不能自动证明相同硬件、数据和随机种子下会复现原表。复现状态和科学证据是两个层次，后续只有出现可核验的独立运行结果时才应提升相应证据属性。",
+        "sources": [
+          {
+            "label": "官方代码仓库",
+            "url": "https://github.com/Loule0-0/SafeLoop"
+          },
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
           }
         ]
       }
