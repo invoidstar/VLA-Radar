@@ -96,7 +96,8 @@
     "p045",
     "p051",
     "p055",
-    "p074"
+    "p074",
+    "p011"
   ],
   "changed": [
     "p064",
@@ -191,18 +192,11 @@
     "p045",
     "p051",
     "p055",
-    "p074"
+    "p074",
+    "p011"
   ],
-  "status": "partial",
-  "errors": [
-    {
-      "paperIds": [
-        "p011"
-      ],
-      "provider": "arxiv-api",
-      "error": "Title identity requires review"
-    }
-  ],
+  "status": "success",
+  "errors": [],
   "warnings": [],
   "providers": {
     "2602.01067": "arxiv-api",
@@ -229,7 +223,7 @@
     "2608.00725": "arxiv-api",
     "2608.01066": "arxiv-api",
     "2607.27205": "arxiv-api",
-    "2607.11498": "arxiv-api",
+    "2607.11498": "arxiv-primary-manual",
     "2608.29208": "arxiv-api",
     "2607.02503": "arxiv-api",
     "2607.05468": "arxiv-api",
@@ -302,7 +296,7 @@
   },
   "totalTracked": 116,
   "dueCount": 94,
-  "dueRemaining": 1,
+  "dueRemaining": 0,
   "dueDays": 7,
   "checkedScope": "due subset, not discovery or acceptance certification",
   "manualSourceReview": [
@@ -311,5 +305,5 @@
     "p046",
     "p092"
   ],
-  "scope": "arXiv IDs and directly linked Crossref DOIs only; acceptance pages and missing DOIs need source review. Not a complete publication-status certification."
+  "scope": "arXiv IDs and directly linked Crossref DOIs only; acceptance pages and missing DOIs need source review. Not a complete publication-status certification. p011 title/version mismatch was manually resolved against the arXiv current page on 2026-09-29."
 }
