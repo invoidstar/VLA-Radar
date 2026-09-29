@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p117",
+    "name": "SAVLA",
+    "title": "SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation",
+    "team": "Junle Li、Weixian Waylon Li、Fuxiang Wu、Fusheng Hao、Fengxiang He",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-15",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月15日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "spatial",
+      "action"
+    ],
+    "tags": [
+      "equivariance",
+      "SO(3)",
+      "canonicalization",
+      "LIBERO"
+    ],
+    "priority": "deep",
+    "contribution": "冻结 VLM 主干，以 SO(3)-equivariant flow-matching action head 加学习式 canonicalizer，把旋转对称性显式写入 VLA。",
+    "findings": "LIBERO 平均 91.6%；LIBERO-Goal 旋转平均从 GR00T N1.5 的 41.5% 提升到 90.4%。",
+    "limitations": "canonicalizer 主要验证重力轴旋转；极端视角仍受视差、遮挡与视场变化影响。",
+    "insight": "把已知几何对称性作为动作归纳偏置，可减少仅靠示范覆盖姿态的负担。",
+    "readingFocus": "typed interface、equivariant flow matching、canonicalizer、LIBERO、旋转鲁棒性与数据效率。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-29 重新核对 9 月 27 日中断分支的 arXiv v1 深读记录；作者报告，非本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.16641v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2609.16641"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.16641",
+    "arxiv": "2609.16641",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-15",
+    "firstArxivSource": "https://arxiv.org/abs/2609.16641v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-15",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-29",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-15",
+        "observedAt": "2026-09-27",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.16641v1",
+        "note": "arXiv Submission history v1；作为首次公开日期锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-29",
+    "verifiedAt": "2026-09-29",
+    "version": "arXiv:2609.16641v1（2026-09-15），方法、LIBERO、旋转鲁棒性、数据效率与消融；2026-09-27复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题与动机",
+        "body": "常规 VLA 的空间能力主要从示范分布拟合，训练中没有覆盖的相机和物体旋转会成为明显 OOD。SAVLA 不把解决方案只放在数据增强，而是把旋转对称性写进动作生成结构，让几何输入旋转后动作输出按一致规则变化，并用图像规范化减少视觉主干面对的视角分布偏移。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "typing",
+        "title": "Typed 几何表示",
+        "body": "动作头把条件、状态与动作拆成旋转不变 scalar 和随 SO(3) 变换的 vector 通道，并在各层保持类型。这样位置、方向等几何量不会和语言语义混在同一种自由表示里，模型无需仅靠数据自行猜测哪些维度应随坐标系变化，等变性成为明确的归纳偏置。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "head",
+        "title": "等变 flow-matching 动作头",
+        "body": "预训练视觉语言主干保持冻结，主要可训练容量放在约 103M 参数的 SO(3)-equivariant flow-matching action head。流匹配的中间动作表征同样遵守 scalar/vector 类型，使测试姿态发生旋转时动作分布保持结构一致；这比只做随机旋转增强提供更强的结构约束。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "canonicalizer",
+        "title": "图像 canonicalizer",
+        "body": "斜视 RGB 并不是简单向量旋转，因此只做等变动作头仍会让 VLM 遇到陌生外观。作者学习 gravity-axis canonicalizer，把相机绕重力轴的视图映射到规范视角，并同步变换几何条件。图像与动作坐标必须成对一致，否则视觉规范化会引入新的坐标语义错位。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "训练与 checkpoint 口径",
+        "body": "SAVLA 与论文中的 GR00T N1.5 对照尽量匹配可训练头规模，并使用相同 AdamW、1e-4 学习率和 batch size 16；20K/40K/80K checkpoint 通过同一小规模筛选选择，canonicalizer 另训约 3K steps。这些训练差异属于 Result Report，不应制造新的 Evaluation Setting。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "标准 LIBERO 主结果",
+        "body": "Table I 中 SAVLA 在 Spatial/Object/Goal/Long 为 96.7/92.9/97.5/79.3，平均 91.6；GR00T N1.5 为 95.3/92.4/91.6/66.7，平均 86.5。每套件 500 episodes，并对三随机种子求均值。外部基线预算异构，因此只按 paper-table 证据比较。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "rotation",
+        "title": "旋转、消融与数据效率",
+        "body": "LIBERO-Goal -30° 到 +30° 旋转下，GR00T 平均 41.5%，SAVLA 90.4%；更极端 ±35°/±45° 为约 1.9% 对 64.5%。去 canonicalization 约 46.0%，GR00T+canonicalization 约 63.5%。10/25/100% 数据下 SAVLA 为 57.1/71.9/91.6，对照为 48.3/66.1/86.5。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "局限与阅读路线",
+        "body": "实验证据最强的是重力轴相机旋转，而不是任意 6-DoF 视角；极端角度仍受视差、遮挡和视场变化影响。真实机器人只覆盖少量任务。阅读时应把标准 LIBERO、旋转外推、canonicalizer 消融和数据比例实验分开看，不能把 90.4% 当成普通 LIBERO 或通用真机成功率。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2609.16641v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.16641v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "SAVLA · LIBERO Table I",
+        "columns": [
+          "方法",
+          "Spatial",
+          "Object",
+          "Goal",
+          "Long",
+          "Average"
+        ],
+        "rows": [
+          [
+            "Diffusion Policy",
+            "78.3",
+            "92.5",
+            "68.3",
+            "50.5",
+            "72.4"
+          ],
+          [
+            "Octo",
+            "78.9",
+            "85.7",
+            "84.6",
+            "51.1",
+            "75.1"
+          ],
+          [
+            "OpenVLA",
+            "84.7",
+            "88.4",
+            "79.2",
+            "53.7",
+            "76.5"
+          ],
+          [
+            "SmolVLA",
+            "93.0",
+            "94.0",
+            "91.0",
+            "77.0",
+            "88.8"
+          ],
+          [
+            "GR00T N1.5",
+            "95.3",
+            "92.4",
+            "91.6",
+            "66.7",
+            "86.5"
+          ],
+          [
+            "SAVLA",
+            "96.7",
+            "92.9",
+            "97.5",
+            "79.3",
+            "91.6"
+          ]
+        ],
+        "locator": "Table I",
+        "caption": "作者报告；每套件 500 episodes，三随机种子均值。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-29",
+      "note": "标准 LIBERO Table I 数值与协议可核验；本次补更将其结构化为独立 paper-table track，并保留训练/checkpoint 差异在 Result Report。"
+    }
+  }
+}
