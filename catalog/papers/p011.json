@@ -3,15 +3,15 @@
   "paper": {
     "id": "p011",
     "name": "See like a Robot",
-    "title": "See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models",
-    "team": "KAIST／Holiday Robotics\nByungkun Lee、Dongyoon Hwang、Dongjin Kim等",
+    "title": "See like a Robot: Robot-Centric Pointmaps for VLA Models",
+    "team": "Byungkun Lee、Dongyoon Hwang、Dongjin Kim、Hojoon Lee、Hyunseung Kim、Jaegul Choo、Minho Park",
     "venue": "arXiv",
     "publicationType": "preprint",
-    "publicationStatus": "arXiv:2607.11498\n技术预印本",
+    "publicationStatus": "arXiv 预印本；当前 v2（2026-09-21）",
     "firstPublished": "2026-07-13",
     "dateNote": "",
     "collectionMonth": "2026-07",
-    "versionNote": "7月首次公开｜阅读v1",
+    "versionNote": "7月13日首次公开｜9月21日修订 v2｜正文深读仍基于 v1，待复核",
     "topics": [
       "spatial"
     ],
@@ -27,7 +27,7 @@
     "insight": "统一视觉几何与机器人动作的坐标系本身就有价值。鲁棒性收益需要连同标定和点图质量一起看。",
     "readingFocus": "坐标系选择；末端中心化；相机变化下的退化幅度。",
     "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidenceNote": "2026-09-29 核对 arXiv 当前元数据：v2 改题并更新作者列表；现有深入笔记仍基于 v1，因此标记 needs_review，不自动认证 v2 正文。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -46,14 +46,14 @@
   "publication": {
     "firstArxivAt": "2026-07-13",
     "firstArxivSource": "https://arxiv.org/abs/2607.11498v1",
-    "latestArxivVersion": "v1",
-    "latestArxivAt": "2026-07-13",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-09-21",
     "status": "preprint",
     "venue": "arXiv",
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "imported",
@@ -78,12 +78,20 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2607.11498v1",
         "note": "元数据版本 v1；并不表示已重读该版本。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-09-21",
+        "observedAt": "2026-09-29",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.11498v2",
+        "note": "arXiv 当前页确认 v2 于 2026-09-21 修订，并将标题更新为 “See like a Robot: Robot-Centric Pointmaps for VLA Models”；现有深读仍为 v1。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-20",
     "verifiedAt": "2026-09-20",
     "version": "arXiv 2607.11498 v1；§3–6、附录B–D",
