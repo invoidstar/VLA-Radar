@@ -5,9 +5,9 @@
     "name": "OpenVLA-OFT",
     "title": "Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success",
     "team": "Stanford University；Moo Jin Kim、Chelsea Finn、Percy Liang",
-    "venue": "RSS 2025",
+    "venue": "Robotics: Science and Systems XXI",
     "publicationType": "conference",
-    "publicationStatus": "RSS 2025 · 正式论文集",
+    "publicationStatus": "正式发表于 Robotics: Science and Systems XXI；出版日期 2025-06-21；DOI:10.15607/rss.2025.xxi.017",
     "firstPublished": "2025-02-27",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -43,11 +43,15 @@
       {
         "label": "RSS 2025 正式论文页",
         "url": "https://www.roboticsproceedings.org/rss21/p017.html"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.15607/rss.2025.xxi.017"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2502.19645",
     "arxiv": "2502.19645",
-    "doi": "10.15607/RSS.2025.XXI.017"
+    "doi": "10.15607/rss.2025.xxi.017"
   },
   "publication": {
     "firstArxivAt": "2025-02-27",
@@ -55,11 +59,11 @@
     "latestArxivVersion": "v2",
     "latestArxivAt": "2025-04-28",
     "status": "published",
-    "venue": "RSS 2025",
-    "doi": "10.15607/RSS.2025.XXI.017",
+    "venue": "Robotics: Science and Systems XXI",
+    "doi": "10.15607/rss.2025.xxi.017",
     "acceptedAt": null,
-    "publishedAt": "2025-06",
-    "lastCheckedAt": "2026-09-17",
+    "publishedAt": "2025-06-21",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "imported",
@@ -92,6 +96,30 @@
         "venue": "RSS 2025",
         "source": "https://www.roboticsproceedings.org/rss21/p017.html",
         "note": "正式论文集；出版日期与会议年份分开，未推断录用日期。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2025-02-27",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2502.19645v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2025-04-28",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2502.19645v2",
+        "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2025-06-21",
+        "observedAt": "2026-09-29",
+        "venue": "Robotics: Science and Systems XXI",
+        "source": "https://doi.org/10.15607/rss.2025.xxi.017",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []

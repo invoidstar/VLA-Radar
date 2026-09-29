@@ -58,7 +58,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2023",
-    "lastCheckedAt": "2026-09-19",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "arxiv_first",
@@ -75,12 +75,28 @@
         "venue": "CoRL 2022",
         "source": "https://proceedings.mlr.press/v205/nair23a.html",
         "note": "核对正式论文集年份；会议时间范围不代填为出版月日。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2022-03-23",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2203.12601v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2022-11-18",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2203.12601v3",
+        "note": "元数据版本 v3；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv 2203.12601完整ar5iv HTML及Appendices A–C，2026-09-19快照；渲染页未明示v号，最新v3元数据单列；Tables 1–3原生表格",

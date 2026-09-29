@@ -53,7 +53,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "imported",
@@ -78,12 +78,20 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2607.02501v3",
         "note": "元数据版本 v3；并不表示已重读该版本。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2026-07-02",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2607.02501v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-20",
     "verifiedAt": "2026-09-20",
     "version": "arXiv 2607.02501 v2；§2–4、Tables 3–6；第十六批复核当前v2",

@@ -5,9 +5,9 @@
     "name": "LIBERO",
     "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
     "team": "Bo Liu、Yifeng Zhu、Chongkai Gao、Yihao Feng、Qiang Liu、Yuke Zhu、Peter Stone（署名作者）",
-    "venue": "NeurIPS 2023",
+    "venue": "Advances in Neural Information Processing Systems 36",
     "publicationType": "conference",
-    "publicationStatus": "已核对NeurIPS 2023 Datasets and Benchmarks正式论文集；出版日期仅记录年份，不推测录用日。",
+    "publicationStatus": "正式发表于 Advances in Neural Information Processing Systems 36；出版日期 2023；DOI:10.52202/075280-1939",
     "firstPublished": "2023-06-05",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -43,6 +43,10 @@
       {
         "label": "NeurIPS2023正式论文页与DOI",
         "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.52202/075280-1939"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2306.03310",
@@ -55,11 +59,11 @@
     "latestArxivVersion": "v2",
     "latestArxivAt": "2023-10-14",
     "status": "published",
-    "venue": "NeurIPS 2023",
+    "venue": "Advances in Neural Information Processing Systems 36",
     "doi": "10.52202/075280-1939",
     "acceptedAt": null,
     "publishedAt": "2023",
-    "lastCheckedAt": "2026-09-19",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "imported",
@@ -92,12 +96,28 @@
         "venue": "NeurIPS 2023",
         "source": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html",
         "note": "正式论文集DB track；日期只到年。arXiv首发2023-06-05不变；未推断具体录用/出版日。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2023-06-05",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2306.03310v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "published",
+        "date": "2023",
+        "observedAt": "2026-09-29",
+        "venue": "Advances in Neural Information Processing Systems 36",
+        "source": "https://doi.org/10.52202/075280-1939",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "NeurIPS2023正式PDF（16页，正文§1–7与参考文献）；Figures2–5、Tables1–3视觉核对；独立Supplemental ZIP未展开，非arXiv v2附录全量复核。",

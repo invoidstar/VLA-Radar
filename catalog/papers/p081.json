@@ -55,7 +55,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "arxiv_first",
@@ -72,6 +72,22 @@
         "venue": "arXiv",
         "source": "https://arxiv.org/abs/2605.03269v2",
         "note": "本次读取的明确版本；保留首版日期。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2026-05-05",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2605.03269v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-05-06",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2605.03269v2",
+        "note": "元数据版本 v2；并不表示已重读该版本。"
       }
     ],
     "alerts": [

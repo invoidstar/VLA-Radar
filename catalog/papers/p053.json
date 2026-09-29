@@ -5,9 +5,9 @@
     "name": "UniPi",
     "title": "Learning Universal Policies via Text-Guided Video Generation",
     "team": "Yilun Du、Mengjiao Yang、Bo Dai、Hanjun Dai、Ofir Nachum、Joshua B. Tenenbaum、Dale Schuurmans、Pieter Abbeel（署名作者）",
-    "venue": "NeurIPS 2023",
+    "venue": "Advances in Neural Information Processing Systems 36",
     "publicationType": "conference",
-    "publicationStatus": "已核对NeurIPS2023正式论文集；仅保留来源明确的2023年精度，录用具体日期未知。",
+    "publicationStatus": "正式发表于 Advances in Neural Information Processing Systems 36；出版日期 2023；DOI:10.52202/075280-0403",
     "firstPublished": "2023-01-31",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -43,6 +43,10 @@
       {
         "label": "正式发表与书目",
         "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.52202/075280-0403"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2302.00111",
@@ -55,11 +59,11 @@
     "latestArxivVersion": "v3",
     "latestArxivAt": "2023-11-20",
     "status": "published",
-    "venue": "NeurIPS 2023",
+    "venue": "Advances in Neural Information Processing Systems 36",
     "doi": "10.52202/075280-0403",
     "acceptedAt": null,
     "publishedAt": "2023",
-    "lastCheckedAt": "2026-09-19",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "imported",
@@ -92,12 +96,28 @@
         "venue": "NeurIPS 2023",
         "source": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html",
         "note": "正式论文集标题、八位作者及DOI核对；仅年精度，不覆盖arXiv首发或推测录用日。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2023-01-31",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2302.00111v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "published",
+        "date": "2023",
+        "observedAt": "2026-09-29",
+        "venue": "Advances in Neural Information Processing Systems 36",
+        "source": "https://doi.org/10.52202/075280-0403",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "NeurIPS2023正式17页PDF正文§1–6与附录A–B；ar5iv全文交叉；2026-09-19实际阅读",

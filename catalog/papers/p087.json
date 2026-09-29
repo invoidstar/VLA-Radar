@@ -5,9 +5,9 @@
     "name": "RVT-2",
     "title": "RVT-2: Learning Precise Manipulation from Few Demonstrations",
     "team": "Ankit Goyal 等；NVIDIA",
-    "venue": "RSS 2024",
+    "venue": "Robotics: Science and Systems XX",
     "publicationType": "conference",
-    "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
+    "publicationStatus": "正式发表于 Robotics: Science and Systems XX；出版日期 2024-07-15；DOI:10.15607/rss.2024.xx.055",
     "firstPublished": "2024-06-12",
     "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
     "collectionMonth": "2026-09",
@@ -43,11 +43,15 @@
       {
         "label": "arXiv版本历史",
         "url": "https://arxiv.org/abs/2406.08545"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.15607/rss.2024.xx.055"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2406.08545",
     "arxiv": "2406.08545",
-    "doi": "10.15607/RSS.2024.XX.055"
+    "doi": "10.15607/rss.2024.xx.055"
   },
   "publication": {
     "firstArxivAt": "2024-06-12",
@@ -55,11 +59,11 @@
     "latestArxivVersion": "v1",
     "latestArxivAt": "2024-06-12",
     "status": "published",
-    "venue": "RSS 2024",
-    "doi": "10.15607/RSS.2024.XX.055",
+    "venue": "Robotics: Science and Systems XX",
+    "doi": "10.15607/rss.2024.xx.055",
     "acceptedAt": null,
-    "publishedAt": "2024-07",
-    "lastCheckedAt": "2026-09-18",
+    "publishedAt": "2024-07-15",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "arxiv_first",
@@ -76,6 +80,30 @@
         "venue": "RSS 2024",
         "source": "https://www.roboticsproceedings.org/rss20/p055.html",
         "note": "已核对正式会议论文集；仅保留来源给出的日期精度，不推测录用日。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2024-06-12",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2406.08545v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2024-06-12",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2406.08545v1",
+        "note": "元数据版本 v1；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2024-07-15",
+        "observedAt": "2026-09-29",
+        "venue": "Robotics: Science and Systems XX",
+        "source": "https://doi.org/10.15607/rss.2024.xx.055",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": [

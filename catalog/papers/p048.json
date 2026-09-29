@@ -5,9 +5,9 @@
     "name": "CALVIN",
     "title": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
     "team": "University of Freiburg / University of Technology Nuremberg；Oier Mees、Lukas Hermann 等",
-    "venue": "IEEE RA-L",
+    "venue": "IEEE Robotics and Automation Letters",
     "publicationType": "journal",
-    "publicationStatus": "IEEE元数据确认在线发表2022-06-03；卷期为2022年7月；录用日另据v4首页。",
+    "publicationStatus": "正式发表于 IEEE Robotics and Automation Letters；出版日期 2022-07；DOI:10.1109/lra.2022.3180108",
     "firstPublished": "2021-12-06",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -51,11 +51,15 @@
       {
         "label": "KEY RESULT有据更正／范围澄清：Figure 8含静态＋触觉54.2，原KEY RESULT误将静态53.9表述为最高；本次明确更正条件。",
         "url": "https://arxiv.org/pdf/2112.03227v4#page=7"
+      },
+      {
+        "label": "出版方 DOI",
+        "url": "https://doi.org/10.1109/lra.2022.3180108"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2112.03227",
     "arxiv": "2112.03227",
-    "doi": "10.1109/LRA.2022.3180108"
+    "doi": "10.1109/lra.2022.3180108"
   },
   "publication": {
     "firstArxivAt": "2021-12-06",
@@ -63,11 +67,11 @@
     "latestArxivVersion": "v4",
     "latestArxivAt": "2022-07-13",
     "status": "published",
-    "venue": "IEEE RA-L",
-    "doi": "10.1109/LRA.2022.3180108",
+    "venue": "IEEE Robotics and Automation Letters",
+    "doi": "10.1109/lra.2022.3180108",
     "acceptedAt": "2022-05-22",
-    "publishedAt": "2022-06-03",
-    "lastCheckedAt": "2026-09-19",
+    "publishedAt": "2022-07",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "imported",
@@ -108,12 +112,28 @@
         "venue": "IEEE RA-L",
         "source": "https://arxiv.org/pdf/2112.03227v4#page=1",
         "note": "v4首页明确Manuscript accepted May22,2022；与在线出版日分开。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2021-12-06",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2112.03227v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "published",
+        "date": "2022-07",
+        "observedAt": "2026-09-29",
+        "venue": "IEEE Robotics and Automation Letters",
+        "source": "https://doi.org/10.1109/lra.2022.3180108",
+        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv2112.03227v4完整PDF正文、Appendices A–B及Figure 8；HTML原表交叉核对；首页与表格页实际截图",

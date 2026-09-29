@@ -62,7 +62,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2023-12-02",
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "arxiv_first",
@@ -79,12 +79,28 @@
         "venue": "CoRL 2023",
         "source": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-gervet23a.md",
         "note": "官方PMLR源记录date与issued字段；会议年份不是录用或最早公开日。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2023-06-30",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2306.17817v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2023-10-19",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2306.17817v2",
+        "note": "元数据版本 v2；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-18",
     "verifiedAt": "2026-09-18",
     "version": "CoRL 2023 PMLR 229正式PDF，pp.3949–3965；正文与附录，Figs.1、3–4和Tables 1–3；arXiv身份2306.17817v2另记",

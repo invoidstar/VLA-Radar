@@ -58,7 +58,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-19",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "arxiv_first",
@@ -75,6 +75,22 @@
         "venue": "arXiv / Tech report 2022",
         "source": "https://tetexiao.com/projects/mvp",
         "note": "原技术报告与后续正式论文分开，不推测录用。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2022-03-11",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2203.06173v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2022-03-11",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2203.06173v1",
+        "note": "元数据版本 v1；并不表示已重读该版本。"
       }
     ],
     "alerts": []

@@ -59,7 +59,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2023-12-02",
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "arxiv_first",
@@ -76,6 +76,22 @@
         "venue": "CoRL 2023",
         "source": "https://proceedings.mlr.press/v229/goyal23a.html",
         "note": "已核对正式会议论文集；仅保留来源给出的日期精度，不推测录用日。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2023-06-26",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2306.14896v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2023-06-26",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2306.14896v1",
+        "note": "元数据版本 v1；并不表示已重读该版本。"
       }
     ],
     "alerts": []

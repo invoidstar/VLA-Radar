@@ -59,7 +59,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2025-01-12",
-    "lastCheckedAt": "2026-09-17",
+    "lastCheckedAt": "2026-09-29",
     "history": [
       {
         "kind": "imported",
@@ -92,12 +92,28 @@
         "venue": "CoRL 2024",
         "source": "https://proceedings.mlr.press/v270/kim25c.html",
         "note": "正式论文集；出版日期与会议年份分开，未推断录用日期。"
+      },
+      {
+        "kind": "arxiv_first",
+        "date": "2024-06-13",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2406.09246v1",
+        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2024-09-05",
+        "observedAt": "2026-09-29",
+        "venue": "",
+        "source": "https://arxiv.org/abs/2406.09246v3",
+        "note": "元数据版本 v3；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "expanded",
+    "status": "needs_review",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv 2406.09246v3完整HTML；§1–6、Appendices A–E及Table12；正式书目另按CoRL2024/PMLR270核对，不混用OFT。",
