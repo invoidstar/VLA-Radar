@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260925-lerobot-humanoid-stack",
+  "eventKey": "huggingface-lerobot-unitree-g1-humanoid-stack-20260925",
+  "title": "LeRobot 展示 Unitree G1 人形机器人 VLA + SONIC 分层控制工作流",
+  "primaryCategory": "opensource",
+  "tags": [
+    "LeRobot",
+    "Unitree G1",
+    "π0.5",
+    "SONIC",
+    "人形机器人",
+    "开源工作流"
+  ],
+  "eventDate": "2026-09-25",
+  "publishedAt": "2026-09-25",
+  "dateNote": "按 Hugging Face Community Article 的明确发布日期 2026-09-25 归档；内容是公开工作流/资源说明，不把其中模拟结果包装成真机统计。",
+  "observedAt": "2026-09-29",
+  "updatedAt": "2026-09-29",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research-resource",
+  "whatHappened": "Hugging Face 的 LeRobot 社区文章公开了一套 Unitree G1 人形机器人学习工作流：π0.5 从语言、相机与机器人状态预测 64-D SONIC latent motion token，机器人侧的快速 SONIC whole-body controller 再将 token 解码为 29-DoF 稳定全身动作；文章同时给出遥操作、数据、训练、部署与硬件改装入口。",
+  "whyItMatters": "人形机器人需要持续维持平衡，高延迟 VLA 不适合直接承担 50Hz 级全身稳定控制。这个公开工作流把高层任务行为与快速低层动态控制解耦，给 VLA 如何接入 humanoid whole-body control 提供了可复用的工程模板，而不是只展示一次性 demo。",
+  "vlaRelevance": "该工作流直接使用 π0.5 作为高层 VLA，并让策略预测紧凑运动 latent 而非直接输出全部关节目标；它展示了“低频语义/任务策略 + 高频全身控制器”的分层 VLA 部署路径。",
+  "limits": "文章是社区/项目工作流说明，不是统一 benchmark 论文。其 79.1% depth-dodge 数字明确来自三种子模拟评测，不能当作物理 G1 成功率；硬件视频也不是受控统计实验。不同 whole-body controller 的端到端安全性和性能仍需独立评测。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Bringing Humanoids to LeRobot",
+      "publisher": "Hugging Face / LeRobot Community",
+      "url": "https://huggingface.co/blog/nepyope/bringing-humanoids-to-lerobot",
+      "kind": "official",
+      "publishedAt": "2026-09-25",
+      "access": "full-page",
+      "note": "核对 VLA→SONIC latent token→G1 whole-body controller 的公开工作流、数据规模与模拟/硬件证据边界。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
