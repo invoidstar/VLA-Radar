@@ -59,14 +59,14 @@ def fixture():
 
 def test_current_repository_keeps_legacy_candidates_visible():
     report=validate_repository(ROOT)
-    assert report["lastSuccessfulSearchAt"]=="2026-09-24"
+    assert report["lastSuccessfulSearchAt"]>="2026-09-24"
+    assert report["completeAudits"]>=1
     assert report["candidateQueue"]["deferred"]>=244
     assert report["candidateQueue"]["selected"]>=12
 
 def test_plan_rewinds_success_checkpoint_by_policy_lookback():
     policy=load_policy(ROOT)
-    state=json.loads((ROOT/"maintenance/state/state.json").read_text())
-    assert next_window(state,policy,"2026-09-25")==("2026-09-10","2026-09-25")
+    assert next_window(base_state(),policy,"2026-09-25")==("2026-09-10","2026-09-25")
 
 def test_complete_multilane_audit_advances_checkpoint():
     tmp,root=fixture()
