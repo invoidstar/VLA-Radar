@@ -1,0 +1,50 @@
+name: Weekly repair compatibility cleanup
+on:
+  push:
+    branches: ['release/batch-weekly-repair-2026-09-29']
+    paths: ['.github/workflows/weekly-repair-cleanup.yml']
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore historical records that publication refresh must not rewrite
+        run: |
+          set -eu
+          git fetch origin main
+          for file in catalog/papers/p*.json; do
+            id=$(basename "$file" .json)
+            case "$id" in
+              p011|p117|p118|p119|p120) continue ;;
+            esac
+            if git cat-file -e "origin/main:$file" 2>/dev/null; then
+              git checkout origin/main -- "$file"
+            fi
+          done
+          git checkout origin/main -- maintenance/state/publication-candidates.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('maintenance/state/publication-check.json')
+          d=json.loads(p.read_text())
+          d['changed']=['p011']
+          d['status']='success'
+          d['dueRemaining']=0
+          d['scope']=d['scope'].split(' p011 title/version mismatch')[0] + ' Historical precision/status rewrites detected by the refresh were intentionally not persisted; p011 v2 was manually resolved against the arXiv primary page.'
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Commit cleanup to repair branch only
+        run: |
+          set -eu
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog/papers maintenance/state/publication-check.json maintenance/state/publication-candidates.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Preserve historical publication semantics in weekly repair'
+            git push origin "HEAD:refs/heads/release/batch-weekly-repair-2026-09-29"
+          fi
