@@ -5,9 +5,9 @@
     "name": "Octo",
     "title": "Octo: An Open-Source Generalist Robot Policy",
     "team": "UC Berkeley / Stanford / CMU / Google DeepMind；Octo Model Team",
-    "venue": "Robotics: Science and Systems XX",
+    "venue": "RSS 2024",
     "publicationType": "conference",
-    "publicationStatus": "正式发表于 Robotics: Science and Systems XX；出版日期 2024-07-15；DOI:10.15607/rss.2024.xx.090",
+    "publicationStatus": "RSS官方论文集/BibTeX确认发表；日期仅保留来源给出的2024-07精度。",
     "firstPublished": "2024-05-20",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -47,15 +47,11 @@
       {
         "label": "正式发表元数据 · 非正文自动复核",
         "url": "https://www.roboticsproceedings.org/rss20/p090.html"
-      },
-      {
-        "label": "出版方 DOI",
-        "url": "https://doi.org/10.15607/rss.2024.xx.090"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2405.12213",
     "arxiv": "2405.12213",
-    "doi": "10.15607/rss.2024.xx.090"
+    "doi": "10.15607/RSS.2024.XX.090"
   },
   "publication": {
     "firstArxivAt": "2024-05-20",
@@ -63,11 +59,11 @@
     "latestArxivVersion": "v2",
     "latestArxivAt": "2024-05-26",
     "status": "published",
-    "venue": "Robotics: Science and Systems XX",
-    "doi": "10.15607/rss.2024.xx.090",
+    "venue": "RSS 2024",
+    "doi": "10.15607/RSS.2024.XX.090",
     "acceptedAt": null,
-    "publishedAt": "2024-07-15",
-    "lastCheckedAt": "2026-09-29",
+    "publishedAt": "2024-07",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -100,28 +96,12 @@
         "venue": "RSS 2024",
         "source": "https://www.roboticsproceedings.org/rss20/p090.html",
         "note": "RSS官方论文集/BibTeX确认发表；日期仅保留来源给出的2024-07精度。 首次公开与arXiv版本保持；具体录用日期未核实。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2024-05-20",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2405.12213v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "published",
-        "date": "2024-07-15",
-        "observedAt": "2026-09-29",
-        "venue": "Robotics: Science and Systems XX",
-        "source": "https://doi.org/10.15607/rss.2024.xx.090",
-        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv 2405.12213v2完整HTML正文及Appendices A–F、Tables I–VII；RSS正式PDF模型图及Tables I–II视觉交叉核对",

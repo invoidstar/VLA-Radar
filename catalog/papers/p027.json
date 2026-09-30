@@ -46,14 +46,14 @@
   "publication": {
     "firstArxivAt": "2026-07-29",
     "firstArxivSource": "https://arxiv.org/abs/2607.27205v1",
-    "latestArxivVersion": "v3",
-    "latestArxivAt": "2026-09-27",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-08-16",
     "status": "preprint",
     "venue": "arXiv",
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -78,28 +78,12 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2607.27205v2",
         "note": "元数据版本 v2；并不表示已重读该版本。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2026-07-29",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2607.27205v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2026-09-27",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2607.27205v3",
-        "note": "元数据版本 v3；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv 2607.27205v2；16页PDF正文§4方法、§5实验与§6结论；Figures 2–6、Tables 1–6原生表页核验；未声称有独立附录",

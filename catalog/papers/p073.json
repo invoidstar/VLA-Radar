@@ -56,7 +56,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -81,14 +81,6 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2506.01844v1",
         "note": "元数据版本 v1；并不表示已重读该版本。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2025-06-02",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2506.01844v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []

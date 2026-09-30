@@ -66,7 +66,7 @@
     "doi": "10.15607/rss.2026.xxii.016",
     "acceptedAt": null,
     "publishedAt": "2026-07-13",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -99,14 +99,6 @@
         "venue": "Robotics: Science and Systems XXII",
         "source": "https://doi.org/10.15607/rss.2026.xxii.016",
         "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2026-01-29",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2601.21998v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []

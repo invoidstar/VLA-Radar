@@ -67,7 +67,7 @@
     "doi": "10.1109/ICRA57147.2024.10611477",
     "acceptedAt": null,
     "publishedAt": "2024-08-08",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -100,20 +100,12 @@
         "venue": "ICRA 2024",
         "source": "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/",
         "note": "参与机构Edinburgh与DLR记录共同确认ICRA正式出版2024-08-08；会议举办日与元数据库存入日不代替出版日。 首次公开与arXiv版本保持；具体录用日期未核实。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2023-10-13",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2310.08864v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv 2310.08864v9完整原生HTML正文§I–VI、Tables I–II、Figures 0–3；ICRA元数据另核对",

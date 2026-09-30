@@ -63,7 +63,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2023-12-02",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "arxiv_first",
@@ -80,28 +80,12 @@
         "venue": "CoRL 2023",
         "source": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-ze23a.md",
         "note": "官方PMLR源记录date与issued字段；会议年份不是录用或最早公开日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2023-08-31",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2308.16891v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2024-07-28",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2308.16891v3",
-        "note": "元数据版本 v3；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-18",
     "verifiedAt": "2026-09-18",
     "version": "arXiv 2308.16891v3完整HTML，§3–5、Appendices C–G及Tables 1–4、7–9；主要表格另对照CoRL正式PDF",

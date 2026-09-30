@@ -58,7 +58,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2020",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "arxiv_first",
@@ -75,28 +75,12 @@
         "venue": "CoRL 2019",
         "source": "https://proceedings.mlr.press/v100/yu20a.html",
         "note": "核对正式论文集年份；会议时间范围不代填为出版月日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2019-10-24",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/1910.10897v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2021-06-14",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/1910.10897v2",
-        "note": "元数据版本 v2；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv 1910.10897v2正文§1–6及相关附录A–D、E公共定义；Table 1原生HTML与PDF文本；正式会议PDF仅用于版本区分",

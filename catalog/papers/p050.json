@@ -67,7 +67,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2023-03-06",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -100,20 +100,12 @@
         "venue": "CoRL 2022",
         "source": "https://proceedings.mlr.press/v205/ichter23a.html",
         "note": "正式PMLR205 pp287–318；卷集说明2023-03-06出版，不能拿2022年会议日期当出版日。 卷集日期来源 https://proceedings.mlr.press/v205/ 。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2022-04-04",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2204.01691v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv2204.01691完整ar5iv HTML正文与Appendices A–E（Appendix A含v1→v2更新）；Tables 2–3；PMLR正式书目另核对，未冒称正式PDF阅读全文",

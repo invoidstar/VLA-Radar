@@ -63,7 +63,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2024",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -96,20 +96,12 @@
         "venue": "ICLR 2024",
         "source": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html",
         "note": "ICLR官方2024论文集确认正式发表；本轮正文PDF超过解析上限，发表确认不表示完成新版本精读。 首次公开与arXiv版本保持；具体录用日期未核实。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2023-11-02",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2311.01378v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-20",
     "verifiedAt": "2026-09-20",
     "version": "ICLR 2024 official paper；arXiv 2311.01378v3；Tables 1、5–8与附录",

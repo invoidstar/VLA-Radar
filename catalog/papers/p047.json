@@ -67,7 +67,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2022-01-11",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -100,14 +100,6 @@
         "venue": "CoRL 2021",
         "source": "https://proceedings.mlr.press/v164/",
         "note": "PMLR卷164首页明确公开日期；论文身份/作者/卷页另据单篇条目，会议举行日不同。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2021-09-24",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2109.12098v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []

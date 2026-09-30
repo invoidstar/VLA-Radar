@@ -67,7 +67,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2023",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -100,14 +100,6 @@
         "venue": "CoRL 2023",
         "source": "https://proceedings.mlr.press/v229/zitkovich23a.html",
         "note": "正式论文集元数据确认；会议时间范围不代填为出版月日；arXiv首发保持。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2023-07-28",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2307.15818v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []

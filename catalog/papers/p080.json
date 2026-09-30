@@ -57,7 +57,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2026",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "arxiv_first",
@@ -74,22 +74,6 @@
         "venue": "ICLR 2026",
         "source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05003fdb1e9562ab0c0a9719ea4de10-Abstract-Conference.html",
         "note": "正式论文集核验；保留首次arXiv日期与实际阅读版本。日期只有年/月精度，不猜具体日或录用日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2026-03-04",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2603.04356v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2026-03-04",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2603.04356v1",
-        "note": "元数据版本 v1；并不表示已重读该版本。"
       }
     ],
     "alerts": [

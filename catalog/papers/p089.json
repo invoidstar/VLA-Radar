@@ -5,9 +5,9 @@
     "name": "THE COLOSSEUM",
     "title": "THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation",
     "team": "Wilbert Pumacay、Ishika Singh、Jiafei Duan 等；UCSP、USC、UW、AI2、NVIDIA",
-    "venue": "Robotics: Science and Systems XX",
+    "venue": "RSS 2024",
     "publicationType": "conference",
-    "publicationStatus": "正式发表于 Robotics: Science and Systems XX；出版日期 2024-07-15；DOI:10.15607/rss.2024.xx.133",
+    "publicationStatus": "已核对正式会议论文集；录用日未知，不由会议年份推断。",
     "firstPublished": "2024-02-13",
     "dateNote": "arXiv v1 Submission history（UTC）；正式出版与修订日期另记。",
     "collectionMonth": "2026-09",
@@ -42,15 +42,11 @@
       {
         "label": "arXiv版本历史",
         "url": "https://arxiv.org/abs/2402.08191"
-      },
-      {
-        "label": "出版方 DOI",
-        "url": "https://doi.org/10.15607/rss.2024.xx.133"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2402.08191",
     "arxiv": "2402.08191",
-    "doi": "10.15607/rss.2024.xx.133"
+    "doi": "10.15607/RSS.2024.XX.133"
   },
   "publication": {
     "firstArxivAt": "2024-02-13",
@@ -58,11 +54,11 @@
     "latestArxivVersion": "v2",
     "latestArxivAt": "2024-05-28",
     "status": "published",
-    "venue": "Robotics: Science and Systems XX",
-    "doi": "10.15607/rss.2024.xx.133",
+    "venue": "RSS 2024",
+    "doi": "10.15607/RSS.2024.XX.133",
     "acceptedAt": null,
-    "publishedAt": "2024-07-15",
-    "lastCheckedAt": "2026-09-29",
+    "publishedAt": "2024-07",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "arxiv_first",
@@ -87,30 +83,6 @@
         "venue": "RSS 2024",
         "source": "https://www.roboticsproceedings.org/rss20/p133.html",
         "note": "已核对正式会议论文集；仅保留来源给出的日期精度，不推测录用日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2024-02-13",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2402.08191v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2024-05-28",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2402.08191v2",
-        "note": "元数据版本 v2；并不表示已重读该版本。"
-      },
-      {
-        "kind": "published",
-        "date": "2024-07-15",
-        "observedAt": "2026-09-29",
-        "venue": "Robotics: Science and Systems XX",
-        "source": "https://doi.org/10.15607/rss.2024.xx.133",
-        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": [

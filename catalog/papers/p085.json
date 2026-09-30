@@ -5,9 +5,9 @@
     "name": "3D Diffusion Policy (DP3)",
     "title": "3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations",
     "team": "Yanjie Ze、Gu Zhang、Kangning Zhang、Chenyuan Hu、Muhan Wang、Huazhe Xu",
-    "venue": "Robotics: Science and Systems XX",
+    "venue": "RSS 2024",
     "publicationType": "conference",
-    "publicationStatus": "正式发表于 Robotics: Science and Systems XX；出版日期 2024-07-15；DOI:10.15607/rss.2024.xx.067",
+    "publicationStatus": "已核对正式会议论文集；出版日期按来源精度保留，不推测录用日。",
     "firstPublished": "2024-03-06",
     "dateNote": "依据 arXiv v1 Submission history（UTC）；与当前版本和官网榜单提交时间分开记录。",
     "collectionMonth": "2026-09",
@@ -42,15 +42,11 @@
       {
         "label": "正式会议论文集与书目",
         "url": "https://www.roboticsproceedings.org/rss20/p067.html"
-      },
-      {
-        "label": "出版方 DOI",
-        "url": "https://doi.org/10.15607/rss.2024.xx.067"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2403.03954",
     "arxiv": "2403.03954",
-    "doi": "10.15607/rss.2024.xx.067"
+    "doi": "10.15607/RSS.2024.XX.067"
   },
   "publication": {
     "firstArxivAt": "2024-03-06",
@@ -58,11 +54,11 @@
     "latestArxivVersion": "v7",
     "latestArxivAt": "2024-09-27",
     "status": "published",
-    "venue": "Robotics: Science and Systems XX",
-    "doi": "10.15607/rss.2024.xx.067",
+    "venue": "RSS 2024",
+    "doi": "10.15607/RSS.2024.XX.067",
     "acceptedAt": null,
-    "publishedAt": "2024-07-15",
-    "lastCheckedAt": "2026-09-29",
+    "publishedAt": "2024-07",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "arxiv_first",
@@ -87,30 +83,6 @@
         "venue": "RSS 2024",
         "source": "https://www.roboticsproceedings.org/rss20/p067.html",
         "note": "正式论文集核验；保留首次arXiv日期与实际阅读版本。日期只有年/月精度，不猜具体日或录用日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2024-03-06",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2403.03954v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2024-09-27",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2403.03954v7",
-        "note": "元数据版本 v7；并不表示已重读该版本。"
-      },
-      {
-        "kind": "published",
-        "date": "2024-07-15",
-        "observedAt": "2026-09-29",
-        "venue": "Robotics: Science and Systems XX",
-        "source": "https://doi.org/10.15607/rss.2024.xx.067",
-        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": [

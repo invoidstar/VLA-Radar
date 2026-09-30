@@ -5,9 +5,9 @@
     "name": "DROID",
     "title": "DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset",
     "team": "DROID 多机构合作；Alexander Khazatsky、Karl Pertsch 等",
-    "venue": "Robotics: Science and Systems XX",
+    "venue": "RSS 2024",
     "publicationType": "conference",
-    "publicationStatus": "正式发表于 Robotics: Science and Systems XX；出版日期 2024-07-15；DOI:10.15607/rss.2024.xx.120",
+    "publicationStatus": "RSS官方书目只支持2024-07精度；具体录用日期未核实，正文阅读为arXiv v2。",
     "firstPublished": "2024-03-19",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -47,15 +47,11 @@
       {
         "label": "正式发表记录 · 首发与修订日期保持",
         "url": "https://www.roboticsproceedings.org/rss20/p120.html"
-      },
-      {
-        "label": "出版方 DOI",
-        "url": "https://doi.org/10.15607/rss.2024.xx.120"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2403.12945",
     "arxiv": "2403.12945",
-    "doi": "10.15607/rss.2024.xx.120"
+    "doi": "10.15607/RSS.2024.XX.120"
   },
   "publication": {
     "firstArxivAt": "2024-03-19",
@@ -63,11 +59,11 @@
     "latestArxivVersion": "v2",
     "latestArxivAt": "2025-04-22",
     "status": "published",
-    "venue": "Robotics: Science and Systems XX",
-    "doi": "10.15607/rss.2024.xx.120",
+    "venue": "RSS 2024",
+    "doi": "10.15607/RSS.2024.XX.120",
     "acceptedAt": null,
-    "publishedAt": "2024-07-15",
-    "lastCheckedAt": "2026-09-29",
+    "publishedAt": "2024-07",
+    "lastCheckedAt": "2026-09-19",
     "history": [
       {
         "kind": "imported",
@@ -100,28 +96,12 @@
         "venue": "RSS 2024",
         "source": "https://www.roboticsproceedings.org/rss20/p120.html",
         "note": "RSS官方书目只支持2024-07精度；具体录用日期未核实，正文阅读为arXiv v2。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2024-03-19",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2403.12945v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "published",
-        "date": "2024-07-15",
-        "observedAt": "2026-09-29",
-        "venue": "Robotics: Science and Systems XX",
-        "source": "https://doi.org/10.15607/rss.2024.xx.120",
-        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-19",
     "verifiedAt": "2026-09-19",
     "version": "arXiv2403.12945v2完整HTML正文与Appendices A–G；对应v2 PDF Figures 8/10明确数字标签截图，RSS正式图8局部交叉核对",

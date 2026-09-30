@@ -65,7 +65,7 @@
     "doi": "10.1109/lra.2026.3692345",
     "acceptedAt": null,
     "publishedAt": "2026-07",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "imported",
@@ -98,14 +98,6 @@
         "venue": "IEEE Robotics and Automation Letters",
         "source": "https://doi.org/10.1109/lra.2026.3692345",
         "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2025-07-23",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2507.17294v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
       }
     ],
     "alerts": []

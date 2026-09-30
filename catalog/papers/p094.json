@@ -5,9 +5,9 @@
     "name": "DexMimicGen",
     "title": "DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning",
     "team": "Zhenyu Jiang 等；NVIDIA Research、UT Austin、UC San Diego",
-    "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+    "venue": "ICRA 2025",
     "publicationType": "conference",
-    "publicationStatus": "正式发表于 2025 IEEE International Conference on Robotics and Automation (ICRA)；出版日期 2025-05-19；DOI:10.1109/icra55743.2025.11127809",
+    "publicationStatus": "IEEE正式ICRA 2025论文及DOI已核对；Date Added为索引入库日期，不作为出版日或录用日。",
     "firstPublished": "2024-10-31",
     "dateNote": "arXiv v1 Submission history确认UTC首发日；不以正式出版年、最新修订日或本站收录日覆盖。",
     "collectionMonth": "2026-09",
@@ -42,15 +42,11 @@
       {
         "label": "arXiv身份与提交历史",
         "url": "https://arxiv.org/abs/2410.24185"
-      },
-      {
-        "label": "出版方 DOI",
-        "url": "https://doi.org/10.1109/icra55743.2025.11127809"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2410.24185",
     "arxiv": "2410.24185",
-    "doi": "10.1109/icra55743.2025.11127809"
+    "doi": "10.1109/ICRA55743.2025.11127809"
   },
   "publication": {
     "firstArxivAt": "2024-10-31",
@@ -58,11 +54,11 @@
     "latestArxivVersion": "v2",
     "latestArxivAt": "2025-03-06",
     "status": "published",
-    "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
-    "doi": "10.1109/icra55743.2025.11127809",
+    "venue": "ICRA 2025",
+    "doi": "10.1109/ICRA55743.2025.11127809",
     "acceptedAt": null,
-    "publishedAt": "2025-05-19",
-    "lastCheckedAt": "2026-09-29",
+    "publishedAt": "2025",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "arxiv_first",
@@ -79,36 +75,12 @@
         "venue": "ICRA 2025",
         "source": "https://doi.org/10.1109/ICRA55743.2025.11127809",
         "note": "正式论文集确认出版年份；不从会议日期或索引入库日猜出版日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2024-10-31",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2410.24185v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2025-03-06",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2410.24185v2",
-        "note": "元数据版本 v2；并不表示已重读该版本。"
-      },
-      {
-        "kind": "published",
-        "date": "2025-05-19",
-        "observedAt": "2026-09-29",
-        "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
-        "source": "https://doi.org/10.1109/icra55743.2025.11127809",
-        "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-18",
     "verifiedAt": "2026-09-18",
     "version": "arXiv 2410.24185v2完整HTML，§III–VII、Appendix IX–XI；Table I逐格核对，Table II/III与真机部分分开解释",

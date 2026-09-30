@@ -57,7 +57,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2025",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "arxiv_first",
@@ -74,22 +74,6 @@
         "venue": "CoRL 2024",
         "source": "https://proceedings.mlr.press/v270/li25c.html",
         "note": "正式论文集确认出版年份；不从会议日期或索引入库日猜出版日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2024-05-09",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2405.05941v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2024-05-09",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2405.05941v1",
-        "note": "元数据版本 v1；并不表示已重读该版本。"
       }
     ],
     "alerts": [

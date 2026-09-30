@@ -59,7 +59,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": "2022",
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-09-18",
     "history": [
       {
         "kind": "arxiv_first",
@@ -76,28 +76,12 @@
         "venue": "CoRL 2021",
         "source": "https://proceedings.mlr.press/v164/mandlekar22a.html",
         "note": "正式论文集确认出版年份；不从会议日期或索引入库日猜出版日。"
-      },
-      {
-        "kind": "arxiv_first",
-        "date": "2021-08-06",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2108.03298v1",
-        "note": "arXiv Atom published（UTC）；不替代既有首次公开日期。"
-      },
-      {
-        "kind": "arxiv_version",
-        "date": "2021-09-25",
-        "observedAt": "2026-09-29",
-        "venue": "",
-        "source": "https://arxiv.org/abs/2108.03298v2",
-        "note": "元数据版本 v2；并不表示已重读该版本。"
       }
     ],
     "alerts": []
   },
   "note": {
-    "status": "needs_review",
+    "status": "expanded",
     "updatedAt": "2026-09-18",
     "verifiedAt": "2026-09-18",
     "version": "CoRL 2021正式PMLR 164 PDF主文与Tables 1–3，pp.1678–1690；不含单独补充ZIP；arXiv v2身份另记",
