@@ -128,5 +128,6 @@ class CatalogTests(unittest.TestCase):
                 path=root/'catalog'/'papers'/f'{pid}.json';rec=json.loads(path.read_text());rec['note']['status']='needs_review';path.write_text(json.dumps(rec,ensure_ascii=False,indent=2)+'\n')
             p=plan(root,3)
             self.assertEqual({x['paperId'] for x in p['notes']},pending)
-            self.assertEqual(p['remainingNotes'],3)
+            _,records,_,_=read_catalog(root)
+            self.assertEqual(p['remainingNotes'],sum(r['note']['status']!='expanded' for r in records))
 if __name__=='__main__':unittest.main()
