@@ -1,7 +1,7 @@
 {
   "id": "2026-09-29-weekly-repair",
   "date": "2026-09-29",
-  "summary": "补齐 2026-09-27 中断周更并覆盖至 9 月 29 日：正式纳入 SAVLA、Self-Adaptive VLA、World Action Agent、SafeLoop 四篇正文级深读（均达到新论文深度门槛），补 LIBERO/LIBERO-PRO safety 证据，并完成 discovery、周报、publication 与 source-health 维护；publication refresh 仅保留经主源确认且不破坏历史精度语义的变更。",
+  "summary": "补齐 2026-09-27 中断周更并覆盖至 9 月 29 日：正式纳入 SAVLA、Self-Adaptive VLA、World Action Agent、SafeLoop 四篇正文级深读（均达到新论文深度门槛），补 LIBERO/LIBERO-PRO safety 证据，并完成 discovery、周报、publication 与 source-health 维护；publication refresh 仅保留经主源确认且不破坏历史精度语义的变更；p011 v2 正确进入 needs_review 队列。",
   "notes": [],
   "tracks": [
     {
