@@ -10,7 +10,8 @@ def test_final24_counts_and_zero_deferred():
     assert sum(x['status']=='not-applicable' for x in r.values())>=2
     assert len(j('catalog/benchmarks.json')['tracks'])>=286
     assert len(list((R/'catalog/results').glob('r-*.json')))>=1063
-    assert j('maintenance/state/work-queue.json')['remainingNotes']==0
+    q=j('maintenance/state/work-queue.json')
+    assert not any(x['paperId'] in set(ALL) for x in q['notes'])
 def test_efficiency_is_not_robot_success():
     t={x['id']:x for x in j('catalog/benchmarks.json')['tracks']}
     assert t['fast-v1-training-speedup']['unit']=='score'
