@@ -1,0 +1,22 @@
+{
+  "id": "r-savla-v1-libero-savla",
+  "paperId": "p117",
+  "method": "SAVLA",
+  "trackId": "savla-v1-libero-table1",
+  "values": {
+    "Spatial": 96.7,
+    "Object": 92.9,
+    "Goal": 97.5,
+    "Long": 79.3,
+    "Average": 91.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.16641v1",
+  "sourceVersion": "arXiv 2609.16641v1",
+  "locator": "Table I",
+  "attribution": "author-reported",
+  "trainingData": "Reporting-paper SAVLA training setup; frozen VLM backbone with SO(3)-equivariant action head and learned canonicalizer.",
+  "evaluationNotes": "Author-reported standard LIBERO suite success rates; 500 episodes per suite, three random seeds. Keep paper-reported Average and do not mix with rotated-camera stress tests.",
+  "supersedes": ""
+}

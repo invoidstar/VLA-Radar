@@ -1,0 +1,18 @@
+{
+  "id": "r-waa-v1-libero-pro-noskills",
+  "paperId": "p119",
+  "method": "WAA · no skills",
+  "trackId": "waa-v1-libero-pro",
+  "values": {
+    "Average": 28.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.29964v1",
+  "sourceVersion": "arXiv 2609.29964v1",
+  "locator": "LIBERO-PRO main comparison",
+  "attribution": "author-reported",
+  "trainingData": "Same WAA harness without the evolved skill library.",
+  "evaluationNotes": "Ablative system-level comparison within WAA; other harness components remain active.",
+  "supersedes": ""
+}

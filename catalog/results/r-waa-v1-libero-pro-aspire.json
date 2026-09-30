@@ -1,0 +1,18 @@
+{
+  "id": "r-waa-v1-libero-pro-aspire",
+  "paperId": "p119",
+  "method": "ASPIRE",
+  "trackId": "waa-v1-libero-pro",
+  "values": {
+    "Average": 72
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.29964v1",
+  "sourceVersion": "arXiv 2609.29964v1",
+  "locator": "LIBERO-PRO main comparison",
+  "attribution": "reported-baseline",
+  "trainingData": "Baseline configuration as cited/reported by World Action Agent paper.",
+  "evaluationNotes": "Reported baseline; rollout budget/tooling may differ from WAA, so this is source-table context rather than a fairness rank.",
+  "supersedes": ""
+}
