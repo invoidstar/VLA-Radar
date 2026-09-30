@@ -1,0 +1,20 @@
+{
+  "id": "r-safeloop-v1-libero-safety",
+  "paperId": "p120",
+  "method": "SafeLoop",
+  "trackId": "safeloop-v1-libero-safety",
+  "values": {
+    "Success": 59.6,
+    "Haz-B": 5.2,
+    "Haz-O": 6.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.26313v1",
+  "sourceVersion": "arXiv 2609.26313v1",
+  "locator": "main safety comparison",
+  "attribution": "author-reported",
+  "trainingData": "Frozen base VLA plus separately trained SafeLoop risk predictor and meta safety decider.",
+  "evaluationNotes": "24 LIBERO tasks, 16 seeds each. Success is higher-better while hazard rates are lower-better; VLA-Radar does not collapse them into one ranking metric.",
+  "supersedes": ""
+}

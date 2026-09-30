@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-09-18",
+  "checkedAt": "2026-09-29",
   "items": [
     {
       "title": "Skild S1 相关9月报道",
@@ -13,6 +13,18 @@
       "status": "deferred",
       "source": "https://arxiv.org/abs/2608.30935",
       "reason": "首发可能早于本次14天窗口；尚未核实近期是否有实质新版本，暂不收为本周事件。"
+    },
+    {
+      "title": "Hugging Face 数据集 episode preview 更新",
+      "status": "deferred",
+      "source": "https://huggingface.co/docs/lerobot/main/en/il_robots",
+      "reason": "属于工具体验改进，当前信息价值低于本期3条精选；保留后续若形成更大数据工作流更新再纳入。"
+    },
+    {
+      "title": "AGIBOT WITA-Omni 现场交互展示",
+      "status": "deferred",
+      "source": "https://www.agibot.com/news",
+      "reason": "官方有9月21日现场展示，但技术开放与可核验指标有限；不为凑数单独收录。"
     }
   ]
 }

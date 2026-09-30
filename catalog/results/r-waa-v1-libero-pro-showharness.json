@@ -1,0 +1,18 @@
+{
+  "id": "r-waa-v1-libero-pro-showharness",
+  "paperId": "p119",
+  "method": "Show-Harness · same VLM backbone",
+  "trackId": "waa-v1-libero-pro",
+  "values": {
+    "Average": 6.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.29964v1",
+  "sourceVersion": "arXiv 2609.29964v1",
+  "locator": "LIBERO-PRO main comparison",
+  "attribution": "reported-baseline",
+  "trainingData": "Show-Harness rerun using the same Gemini 3.7 Flash backbone according to the WAA paper.",
+  "evaluationNotes": "The reporting paper notes Show-Harness uses a different rollout count/call budget; kept only as a same-paper context row.",
+  "supersedes": ""
+}

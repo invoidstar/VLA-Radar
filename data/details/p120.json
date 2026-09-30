@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p120",
+    "name": "SafeLoop",
+    "title": "SafeLoop: Risk-Aware Rollback for Vision-Language-Action Manipulation",
+    "team": "Zeyu Lou、Tianran Zhang、Xinquan Yue、Ya Jing、Chenyang Si",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-09-22",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC）；录用信息未以独立正式会务来源升级为 accepted 状态。",
+    "collectionMonth": "2026-09",
+    "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "action",
+      "evaluation"
+    ],
+    "tags": [
+      "safety",
+      "rollback",
+      "hazard prediction",
+      "LIBERO",
+      "runtime wrapper"
+    ],
+    "priority": "deep",
+    "contribution": "在不修改基础 VLA 参数的前提下增加风险预测器与轻量安全决策器，提前预测碰撞/物体失败，并在风险升高时记录安全点或回滚到最近安全关节状态后重新询问原策略。",
+    "findings": "24 个 LIBERO 任务和三项真机任务中，SafeLoop 报告约 70% 的 hazard case 降低且基本保持任务成功率；主对照表中 SafeLoop 成功率 59.6%、body/object hazard 5.2%/6.8%。",
+    "limitations": "rollback 只能回到可达安全关节状态，无法撤销掉落、破损等不可逆场景变化；风险预测和路径规划错误本身也可能成为新的安全失效点。",
+    "insight": "安全层不一定要重训 VLA；把高频策略视为受监督执行器，在外围增加可解释的 hazard forecast、checkpoint 与 rollback，可把恢复机制和基础能力解耦。",
+    "readingFocus": "四输出 risk predictor、noop/record/rollback 决策、20Hz 策略与约1Hz安全层、LIBERO 24-task 协议、真机25-rollout设置与不可逆失败边界。",
+    "evidence": "checked",
+    "evidenceNote": "2026-09-29 按 arXiv v1 与官方开源仓库核对；结果为作者报告，代码仓库只作为资源证据，不视为独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2609.26313v1"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/Loule0-0/SafeLoop"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2609.26313"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.26313",
+    "arxiv": "2609.26313",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-22",
+    "firstArxivSource": "https://arxiv.org/abs/2609.26313v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-09-29",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-22",
+        "observedAt": "2026-09-29",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.26313v1",
+        "note": "arXiv v1 首次公开日期；作者材料提到 IROS 2026，但本站未以独立正式会务来源升级录用状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-09-29",
+    "verifiedAt": "2026-09-29",
+    "version": "arXiv:2609.26313v1（2026-09-22），risk predictor、noop/record/rollback、安全 checkpoint、20Hz/1Hz 双时间尺度、LIBERO 24 tasks、真机实验与预测误差边界；2026-09-29复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：长程执行中的小误差会积累成碰撞和掉落",
+        "body": "VLA 在单步或短任务上成功并不代表长时程执行安全。状态估计偏差、抓取误差或控制噪声可能在早期看起来很小，随后演化成机器人本体碰撞、物体掉落等不可逆失败。SafeLoop 关注的不是提高语言理解，而是在基础 VLA 外围建立一个能提前看到风险并采取恢复动作的运行时安全层。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "wrapper",
+        "title": "非侵入式 wrapper：基础 VLA 冻结，安全逻辑放在外部",
+        "body": "SafeLoop 不修改 VLA 参数，也不要求重新训练原动作模型。基础策略继续给出正常动作，外部模块只读取视觉、proprioception、动作历史和指令，判断是否允许继续。这样的接口使同一安全层可以包裹不同 VLA backbone，同时也让安全性能和基础任务能力可以分别分析，而不是把所有改进混成一个新 policy。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "predictor",
+        "title": "Risk predictor 同时预测 body/object 两类概率和 time-to-hazard",
+        "body": "风险预测器输出四个量：机器人本体危险概率、物体失败概率，以及对应的 time-to-hazard。使用时间到危险而非只有二元分类，可以让决策器区分“有风险但尚可继续观察”和“即将发生、需要马上回滚”。论文采用冻结的视觉语言 backbone 配合紧凑风险头，避免安全模块本身成为与基础 VLA 同量级的推理负担。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "decision",
+        "title": "三种安全动作：noop、record、rollback",
+        "body": "轻量 meta safety decider 在每次安全决策时从 noop、record、rollback 中选择：风险低时继续执行；状态足够安全时记录 checkpoint；风险升高时回到最近安全点。它不是直接生成任务动作，而是决定是否让原 VLA 继续，以及何时保留/恢复执行状态，因此可以把安全恢复和任务策略的语义规划分开。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "rollback",
+        "title": "Rollback 回到安全关节配置，再重新询问原策略",
+        "body": "回滚目标是之前记录的安全 joint configuration，系统通过碰撞检查路径返回，再用最新观测重新调用基础 VLA。重新询问很关键：它不是机械地重复导致风险的旧动作，而是希望环境和机器人状态回到更可控区域后，让策略产生另一条 continuation。不过若物体已经掉落或场景发生不可逆变化，关节状态回退无法把世界一起复原。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "安全决策器用规则行为克隆热启动，再用 PPO 优化",
+        "body": "风险模块和决策器的训练与基础 VLA 分离。论文先用规则 teacher 产生安全动作进行 behavior cloning warm-start，再在仿真中使用 PPO 与 asymmetric actor-critic 优化；规则 teacher 在部署时不需要继续存在。该设计把人工安全启发用于初始化，而最终策略仍可根据训练回报学习何时记录和回滚。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "timing",
+        "title": "不同时间尺度：20Hz 控制策略外包一层约1Hz安全决策",
+        "body": "基础控制环保持约 20Hz，而安全决策器运行频率显著更低，论文配置约 1Hz。这样既减少安全推理开销，也避免每个动作 tick 都插入回滚判断。风险预测仍需足够提前量支撑低频决策，因此 time-to-hazard 是这个架构能否成立的重要量；预测过晚时，即使识别到危险也可能来不及安全撤退。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "实验：24 个 LIBERO 任务 × 16 seeds，并补三项真机任务",
+        "body": "仿真评测覆盖 24 个 LIBERO 任务，每项使用 16 个随机 seed；另有三项真实机器人任务，每项 25 rollouts。论文比较 task success、body/object hazard 以及每千步风险事件等指标。由于安全指标与普通成功率是不同目标，Radar 用独立 safety paper-table 展示，不把 hazard 数值和标准 LIBERO 成功率做单一总分。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主要结果：危险显著下降，同时尽量保留基础策略成功率",
+        "body": "跨多种 VLA backbone，作者报告 hazard case 约下降 56%–75%；总体概括约 70%。主比较中 SafeLoop 的 task success 为 59.6%，body hazard 5.2%，object hazard 6.8%，每千步风险事件约 0.22。另一个 OpenVLA-OFT 对照中 body hazard 由 22.9% 降到 5.7%，success 由 67.7% 略升到 68.2%，说明目标不是简单通过停止动作换取安全。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：安全回滚不能逆转物理世界，也不能保证预测器永不漏报",
+        "body": "SafeLoop 的前提是最近安全关节状态仍可通过碰撞自由路径恢复，而且危险在发生前能被视觉/状态历史预测。掉落、破损、夹住等不可逆变化无法靠 joint rollback 修复；风险预测器漏报或误报会分别造成事故或不必要的中断。它因此是运行时风险缓解层，而不是形式化安全证明，也不应被解读为任何 VLA 都因此“安全”。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          },
+          {
+            "label": "官方代码仓库",
+            "url": "https://github.com/Loule0-0/SafeLoop"
+          }
+        ]
+      },
+      {
+        "id": "metric-reading",
+        "title": "安全指标要和任务成功并列看，不能用停机把 hazard 人为降到零",
+        "body": "一个极端“安全”系统可以什么都不做，从而几乎不发生碰撞，但也不会完成任务。因此 SafeLoop 同时报告 task success、body hazard、object hazard 与风险事件频率，目的就是检查危险降低是否以显著牺牲任务完成为代价。论文中的 OpenVLA-OFT 对照里，加入 SafeLoop 后 body hazard 从约22.9%降到5.7%，success 反而从67.7%到68.2%，这比单独看 hazard 更能说明 wrapper 没有简单靠频繁停止换取数字。Radar 也因此不把这些列合成一个“安全总分”。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "checkpoint-policy",
+        "title": "Record 也是动作：安全点选错会直接决定 rollback 是否有用",
+        "body": "决策器不只是二元地“继续/回滚”，还要决定什么时候 record 一个新的安全 checkpoint。记录得太频繁，可能把已经接近危险的状态误当成恢复点；记录得太保守，又会让回滚距离过长，增加路径规划和任务进度损失。因此 noop / record / rollback 三动作把“哪里值得恢复”也纳入策略学习。这个设计说明 rollback 系统的关键不只在机械臂能否沿路径返回，还在历史中是否保存了真正有价值、仍与当前任务相关的安全状态。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "predictor-errors",
+        "title": "风险预测器本身有两类代价：漏报导致事故，误报导致无谓回滚",
+        "body": "time-to-hazard 让系统能在风险真正发生前留出撤退时间，但预测器仍可能漏报或过度敏感。漏报会让 1Hz 左右的安全决策器来不及介入；误报则会打断原本能够成功的轨迹、增加回滚次数和完成时间。论文通过多任务 hazard 统计展示总体改善，但并没有证明风险头在所有视觉遮挡、未知物体和接触状态下都校准良好。实际部署应继续关注 precision/recall、干预延迟以及不同阈值下的 success–safety trade-off。",
+        "sources": [
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      },
+      {
+        "id": "resource-boundary",
+        "title": "开源代码增加了可检查性，但不等于论文安全结论已经独立复现",
+        "body": "官方仓库公开了 SafeLoop 的实现入口和 Apache-2.0 代码许可证，这有助于检查 risk predictor、meta decider 与训练/运行脚本的接口。Radar 因此记录 Code=官方资源入口，但仍把论文中的 hazard 和真机成功率标为 author-reported：仓库存在并不能自动证明相同硬件、数据和随机种子下会复现原表。复现状态和科学证据是两个层次，后续只有出现可核验的独立运行结果时才应提升相应证据属性。",
+        "sources": [
+          {
+            "label": "官方代码仓库",
+            "url": "https://github.com/Loule0-0/SafeLoop"
+          },
+          {
+            "label": "arXiv v1",
+            "url": "https://arxiv.org/html/2609.26313v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.26313v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "SafeLoop · LIBERO safety 主表摘要",
+        "columns": [
+          "方法",
+          "Success",
+          "Haz-B",
+          "Haz-O",
+          "Events / 1k"
+        ],
+        "rows": [
+          [
+            "SafeLoop",
+            "59.6%",
+            "5.2%",
+            "6.8%",
+            "0.22"
+          ]
+        ],
+        "locator": "main safety comparison",
+        "caption": "作者报告；成功率和 hazard 是并列指标，不合成为跨论文总分。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-09-29",
+      "note": "LIBERO 24-task safety 协议可定位；新增独立 paper-table，只结构化作者主表中的 success / body hazard / object hazard。"
+    }
+  }
+}

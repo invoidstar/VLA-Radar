@@ -342,6 +342,12 @@
     },
     "p116": {
       "project": "https://qwen.ai/blog?id=qwen-robotworld"
+    },
+    "p118": {
+      "project": "https://icefoxzhx.github.io/self-adaptive-vla/"
+    },
+    "p120": {
+      "code": "https://github.com/Loule0-0/SafeLoop"
     }
   }
 }

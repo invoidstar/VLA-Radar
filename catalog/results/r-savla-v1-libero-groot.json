@@ -1,0 +1,22 @@
+{
+  "id": "r-savla-v1-libero-groot",
+  "paperId": "p117",
+  "method": "GR00T N1.5",
+  "trackId": "savla-v1-libero-table1",
+  "values": {
+    "Spatial": 95.3,
+    "Object": 92.4,
+    "Goal": 91.6,
+    "Long": 66.7,
+    "Average": 86.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.16641v1",
+  "sourceVersion": "arXiv 2609.16641v1",
+  "locator": "Table I",
+  "attribution": "reported-baseline",
+  "trainingData": "GR00T N1.5 baseline as reported in SAVLA Table I; training details are not normalized by VLA-Radar.",
+  "evaluationNotes": "Same reporting table and LIBERO suite columns as SAVLA; retained as cited baseline, not an independent reproduction.",
+  "supersedes": ""
+}

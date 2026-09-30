@@ -30,8 +30,9 @@ def test_september_discovery_window_is_complete_but_deferred_stays_explicit():
     assert a['counts']=={'total':276,'selected':12,'deferred':244,'excluded':20,'crossIndexed':79}
     assert {x['arxiv'] for x in a['candidates'] if x['status']=='selected'}=={v[0] for v in NEW.values()}
     state=j('maintenance/state/state.json')
-    assert state['lastStatus']=='success' and state['lastSuccessfulSearchAt']=='2026-09-24'
-    assert j('maintenance/state/work-queue.json')['remainingNotes']==0
+    assert state['lastStatus']=='success' and state['lastSuccessfulSearchAt']>='2026-09-24'
+    queue=j('maintenance/state/work-queue.json')
+    assert not any(x['paperId'] in set(NEW) for x in queue['notes'])
 
 def test_september_benchmark_dispositions_and_canonical_counts():
     review=j('maintenance/state/benchmark-review.json')['papers']
@@ -53,5 +54,5 @@ def test_latest_main_candidate_is_september_not_august():
     papers=[j(f'catalog/papers/{pid}.json')['paper'] for pid in j('catalog/manifest.json')['paperOrder']]
     exact=[p for p in papers if isinstance(p['firstPublished'],str) and len(p['firstPublished'])==10]
     latest=max(p['firstPublished'] for p in exact)
-    assert latest=='2026-09-23'
-    assert any(p['id']=='p110' and p['firstPublished']==latest for p in exact)
+    assert latest.startswith('2026-09') and latest>='2026-09-23'
+    assert any(p['id']=='p110' and p['firstPublished']=='2026-09-23' for p in exact)

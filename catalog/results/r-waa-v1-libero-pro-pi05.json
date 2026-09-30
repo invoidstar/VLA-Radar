@@ -1,0 +1,18 @@
+{
+  "id": "r-waa-v1-libero-pro-pi05",
+  "paperId": "p119",
+  "method": "π0.5",
+  "trackId": "waa-v1-libero-pro",
+  "values": {
+    "Average": 12.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.29964v1",
+  "sourceVersion": "arXiv 2609.29964v1",
+  "locator": "LIBERO-PRO main comparison",
+  "attribution": "reported-baseline",
+  "trainingData": "π0.5 baseline as reported in the WAA paper.",
+  "evaluationNotes": "Reported baseline under the paper's LIBERO-PRO comparison; not a VLA-Radar independent rerun.",
+  "supersedes": ""
+}

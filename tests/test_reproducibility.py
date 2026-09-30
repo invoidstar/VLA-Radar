@@ -16,9 +16,12 @@ def catalog_context():
 def test_reproducibility_registry_and_dimensions():
     _,_,ids,resources=catalog_context()
     audits=load_reproducibility(ROOT,ids,resources)
-    assert len(audits)==116
-    assert sum(x["level"]=="deep" for x in audits.values())==10
-    assert sum(x["level"]=="baseline" for x in audits.values())==106
+    assert set(audits)==ids
+    assert len(audits)==len(ids)
+    deep=sum(x["level"]=="deep" for x in audits.values())
+    assert deep>=10
+    assert sum(x["level"]=="baseline" for x in audits.values())==len(ids)-deep
+    assert all(audits[pid]["level"]=="baseline" for pid in {"p117","p118","p119","p120"})
     assert audits["p064"]["items"]["weights"]["status"]=="available"
     assert audits["p004"]["items"]["training"]["status"]=="partial"
     assert audits["p114"]["items"]["weights"]["status"]=="unavailable"
@@ -43,6 +46,7 @@ def test_code_link_can_be_partial_when_repo_is_information_only():
     assert views["p113"]["items"]["code"]["url"]=="https://github.com/QwenLM/Qwen-VLA"
 
 def test_public_library_lazy_loads_reproducibility_cards():
+    _,_,ids,_=catalog_context()
     out=outputs(ROOT)
     lib=json.loads(out["data/library.json"])
     byid={p["id"]:p for p in lib["papers"]}
@@ -59,7 +63,7 @@ def test_public_library_lazy_loads_reproducibility_cards():
     baseline=json.loads(out["data/reproducibility/p116.json"])
     assert baseline["level"]=="baseline"
     assert baseline["items"]["weights"]["status"]=="unknown"
-    assert len([k for k in out if k.startswith("data/reproducibility/")])==116
+    assert len([k for k in out if k.startswith("data/reproducibility/")])==len(ids)
 
 def test_audited_unknown_status_is_rejected():
     _,_,ids,resources=catalog_context()

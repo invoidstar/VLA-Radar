@@ -17,227 +17,6 @@
     "unknown"
   ],
   "papers": {
-    "p116": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p115": {
-      "verifiedAt": "2026-09-25",
-      "items": {
-        "code": {
-          "status": "partial",
-          "note": "The official Qwen-RobotNav repository currently contains report material/assets rather than a released executable model/training codebase.",
-          "url": "https://github.com/QwenLM/Qwen-RobotNav",
-          "source": "https://github.com/QwenLM/Qwen-RobotNav"
-        },
-        "weights": {
-          "status": "unavailable",
-          "note": "The official README explicitly states there is currently no plan to release Qwen-RobotNav model weights.",
-          "url": null,
-          "source": "https://github.com/QwenLM/Qwen-RobotNav/blob/main/README.md"
-        }
-      },
-      "level": "deep",
-      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
-    },
-    "p114": {
-      "verifiedAt": "2026-09-25",
-      "items": {
-        "code": {
-          "status": "partial",
-          "note": "The official Qwen-RobotManip repository currently contains report material/assets rather than a released executable model/training codebase.",
-          "url": "https://github.com/QwenLM/Qwen-RobotManip",
-          "source": "https://github.com/QwenLM/Qwen-RobotManip"
-        },
-        "weights": {
-          "status": "unavailable",
-          "note": "The official README explicitly states there is currently no plan to release Qwen-RobotManip model weights.",
-          "url": null,
-          "source": "https://github.com/QwenLM/Qwen-RobotManip/blob/main/README.md"
-        }
-      },
-      "level": "deep",
-      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
-    },
-    "p113": {
-      "verifiedAt": "2026-09-25",
-      "items": {
-        "code": {
-          "status": "partial",
-          "note": "The official Qwen-VLA GitHub repository currently contains the report README and assets, but no executable training/inference implementation in the audited root tree.",
-          "url": "https://github.com/QwenLM/Qwen-VLA",
-          "source": "https://github.com/QwenLM/Qwen-VLA"
-        }
-      },
-      "level": "deep",
-      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
-    },
-    "p112": {
-      "verifiedAt": "2026-09-25",
-      "items": {
-        "code": {
-          "status": "available",
-          "note": "Official Xiaomi-Robotics-0 repository includes deployment, post-training and benchmark evaluation code.",
-          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
-          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
-        },
-        "weights": {
-          "status": "available",
-          "note": "Pretrained and benchmark fine-tuned checkpoints are publicly released through the official Hugging Face collection.",
-          "url": "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-0",
-          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
-        },
-        "dataset": {
-          "status": "partial",
-          "note": "Sample/post-training data paths are public, but the complete pretraining corpus is not released as a project dataset.",
-          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0",
-          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
-        },
-        "training": {
-          "status": "partial",
-          "note": "Post-training/fine-tuning code is released; the full original pretraining pipeline and corpus are not presented as a complete reproducible release.",
-          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0",
-          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
-        },
-        "inference": {
-          "status": "available",
-          "note": "Public Hugging Face inference/deployment code is documented and released.",
-          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/deploy",
-          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
-        },
-        "evaluation": {
-          "status": "available",
-          "note": "Repository contains evaluation guides/scripts for LIBERO, CALVIN and SimplerEnv with matched checkpoints.",
-          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/eval_libero",
-          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
-        },
-        "license": {
-          "status": "available",
-          "note": "Official repository is Apache-2.0 licensed.",
-          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE",
-          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE"
-        }
-      },
-      "level": "deep",
-      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
-    },
-    "p111": {
-      "verifiedAt": "2026-09-25",
-      "items": {
-        "code": {
-          "status": "available",
-          "note": "LaWAM repository includes core model code, latent-action/world-model code, deployment, training and benchmark examples.",
-          "url": "https://github.com/RLinf/LaWAM",
-          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
-        },
-        "weights": {
-          "status": "available",
-          "note": "Official Hugging Face collection provides LAM, pretraining and LIBERO/RoboTwin SFT checkpoints.",
-          "url": "https://huggingface.co/collections/jialei02/lawam-checkpoints",
-          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
-        },
-        "dataset": {
-          "status": "partial",
-          "note": "Official LIBERO and RoboTwin SFT datasets are released, while the broader pretraining data story is not represented by one complete public dataset package.",
-          "url": "https://huggingface.co/datasets/jialei02/libero_merged_no_noops_20hz",
-          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
-        },
-        "training": {
-          "status": "available",
-          "note": "Repository includes LaWAM/LAM training code plus LIBERO and RoboTwin SFT scripts.",
-          "url": "https://github.com/RLinf/LaWAM",
-          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
-        },
-        "inference": {
-          "status": "available",
-          "note": "Policy server and benchmark inference paths are documented for LIBERO and RoboTwin.",
-          "url": "https://github.com/RLinf/LaWAM/tree/main/deployment",
-          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
-        },
-        "evaluation": {
-          "status": "available",
-          "note": "Official repository contains LIBERO/RoboTwin evaluation scripts and run instructions.",
-          "url": "https://github.com/RLinf/LaWAM/tree/main/examples",
-          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
-        }
-      },
-      "level": "deep",
-      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
-    },
-    "p110": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p107": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p108": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p109": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
-      "items": {}
-    },
-    "p105": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p106": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p104": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p103": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
-      "items": {}
-    },
-    "p102": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p101": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
-      "items": {}
-    },
-    "p100": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p099": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
     "p001": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
@@ -248,12 +27,6 @@
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p035": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     },
     "p003": {
@@ -323,12 +96,6 @@
       "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
       "items": {}
     },
-    "p038": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
-      "items": {}
-    },
     "p007": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
@@ -377,25 +144,13 @@
       "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
       "items": {}
     },
-    "p016": {
+    "p015": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
       "items": {}
     },
-    "p036": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p039": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
-      "items": {}
-    },
-    "p015": {
+    "p016": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
@@ -419,10 +174,10 @@
       "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
       "items": {}
     },
-    "p045": {
+    "p020": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
-      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     },
     "p021": {
@@ -437,12 +192,6 @@
       "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     },
-    "p026": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
-      "items": {}
-    },
     "p023": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
@@ -455,22 +204,16 @@
       "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     },
-    "p037": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
-      "items": {}
-    },
     "p025": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     },
-    "p044": {
+    "p026": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
       "items": {}
     },
     "p027": {
@@ -503,13 +246,67 @@
       "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     },
-    "p042": {
+    "p032": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
       "items": {}
     },
-    "p032": {
+    "p033": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p034": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
+      "items": {}
+    },
+    "p035": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p036": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p037": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
+      "items": {}
+    },
+    "p038": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
+      "items": {}
+    },
+    "p039": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
+      "items": {}
+    },
+    "p040": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p041": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
+      "items": {}
+    },
+    "p042": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
@@ -521,34 +318,16 @@
       "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
       "items": {}
     },
-    "p020": {
+    "p044": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     },
-    "p033": {
+    "p045": {
       "verifiedAt": "2026-09-25",
       "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
-    },
-    "p041": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
-      "items": {}
-    },
-    "p034": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
-      "items": {}
-    },
-    "p040": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
       "items": {}
     },
     "p046": {
@@ -1039,6 +818,251 @@
       "verifiedAt": "2026-09-25",
       "level": "baseline",
       "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p099": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p100": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p101": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
+      "items": {}
+    },
+    "p102": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p103": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
+      "items": {}
+    },
+    "p104": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p105": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p106": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p107": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p108": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p109": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline reproducibility review completed. No official Project/Code resource is currently recorded in VLA-Radar; all release dimensions remain unknown unless explicit public evidence is added.",
+      "items": {}
+    },
+    "p110": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p111": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "LaWAM repository includes core model code, latent-action/world-model code, deployment, training and benchmark examples.",
+          "url": "https://github.com/RLinf/LaWAM",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "Official Hugging Face collection provides LAM, pretraining and LIBERO/RoboTwin SFT checkpoints.",
+          "url": "https://huggingface.co/collections/jialei02/lawam-checkpoints",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "Official LIBERO and RoboTwin SFT datasets are released, while the broader pretraining data story is not represented by one complete public dataset package.",
+          "url": "https://huggingface.co/datasets/jialei02/libero_merged_no_noops_20hz",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "training": {
+          "status": "available",
+          "note": "Repository includes LaWAM/LAM training code plus LIBERO and RoboTwin SFT scripts.",
+          "url": "https://github.com/RLinf/LaWAM",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Policy server and benchmark inference paths are documented for LIBERO and RoboTwin.",
+          "url": "https://github.com/RLinf/LaWAM/tree/main/deployment",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "Official repository contains LIBERO/RoboTwin evaluation scripts and run instructions.",
+          "url": "https://github.com/RLinf/LaWAM/tree/main/examples",
+          "source": "https://github.com/RLinf/LaWAM/blob/main/README.md"
+        }
+      },
+      "level": "deep",
+      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
+    },
+    "p112": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "Official Xiaomi-Robotics-0 repository includes deployment, post-training and benchmark evaluation code.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "weights": {
+          "status": "available",
+          "note": "Pretrained and benchmark fine-tuned checkpoints are publicly released through the official Hugging Face collection.",
+          "url": "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "Sample/post-training data paths are public, but the complete pretraining corpus is not released as a project dataset.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "training": {
+          "status": "partial",
+          "note": "Post-training/fine-tuning code is released; the full original pretraining pipeline and corpus are not presented as a complete reproducible release.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "Public Hugging Face inference/deployment code is documented and released.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/deploy",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "Repository contains evaluation guides/scripts for LIBERO, CALVIN and SimplerEnv with matched checkpoints.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/eval_libero",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md"
+        },
+        "license": {
+          "status": "available",
+          "note": "Official repository is Apache-2.0 licensed.",
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE",
+          "source": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE"
+        }
+      },
+      "level": "deep",
+      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
+    },
+    "p113": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "The official Qwen-VLA GitHub repository currently contains the report README and assets, but no executable training/inference implementation in the audited root tree.",
+          "url": "https://github.com/QwenLM/Qwen-VLA",
+          "source": "https://github.com/QwenLM/Qwen-VLA"
+        }
+      },
+      "level": "deep",
+      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
+    },
+    "p114": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "The official Qwen-RobotManip repository currently contains report material/assets rather than a released executable model/training codebase.",
+          "url": "https://github.com/QwenLM/Qwen-RobotManip",
+          "source": "https://github.com/QwenLM/Qwen-RobotManip"
+        },
+        "weights": {
+          "status": "unavailable",
+          "note": "The official README explicitly states there is currently no plan to release Qwen-RobotManip model weights.",
+          "url": null,
+          "source": "https://github.com/QwenLM/Qwen-RobotManip/blob/main/README.md"
+        }
+      },
+      "level": "deep",
+      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
+    },
+    "p115": {
+      "verifiedAt": "2026-09-25",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "The official Qwen-RobotNav repository currently contains report material/assets rather than a released executable model/training codebase.",
+          "url": "https://github.com/QwenLM/Qwen-RobotNav",
+          "source": "https://github.com/QwenLM/Qwen-RobotNav"
+        },
+        "weights": {
+          "status": "unavailable",
+          "note": "The official README explicitly states there is currently no plan to release Qwen-RobotNav model weights.",
+          "url": null,
+          "source": "https://github.com/QwenLM/Qwen-RobotNav/blob/main/README.md"
+        }
+      },
+      "level": "deep",
+      "note": "Deep official-source audit of released reproducibility resources; explicit dimension claims are recorded below."
+    },
+    "p116": {
+      "verifiedAt": "2026-09-25",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p117": {
+      "verifiedAt": "2026-09-29",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. No separate official Project/Code entry was confirmed; unverified dimensions remain unknown.",
+      "items": {}
+    },
+    "p118": {
+      "verifiedAt": "2026-09-29",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. The authors' official project page is recorded in Resources; other release dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p119": {
+      "verifiedAt": "2026-09-29",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. No official Project/Code release was confirmed in this repair pass; other dimensions remain unknown.",
+      "items": {}
+    },
+    "p120": {
+      "verifiedAt": "2026-09-29",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. The official SafeLoop code repository is recorded in Resources; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
     }
   }

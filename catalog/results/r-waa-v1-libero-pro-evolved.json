@@ -1,0 +1,18 @@
+{
+  "id": "r-waa-v1-libero-pro-evolved",
+  "paperId": "p119",
+  "method": "WAA + evolved skills",
+  "trackId": "waa-v1-libero-pro",
+  "values": {
+    "Average": 75.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-09-29",
+  "source": "https://arxiv.org/html/2609.29964v1",
+  "sourceVersion": "arXiv 2609.29964v1",
+  "locator": "LIBERO-PRO main comparison",
+  "attribution": "author-reported",
+  "trainingData": "Multimodal skills evolved from LIBERO-90 sources only and frozen before LIBERO-PRO evaluation; Gemini 3.7 Flash main agent.",
+  "evaluationNotes": "60 episodes per split / 6 per task for WAA. System includes Contact views, rehearsal, in-view correction and Skill Agent; do not interpret as an end-to-end VLA-only score.",
+  "supersedes": ""
+}

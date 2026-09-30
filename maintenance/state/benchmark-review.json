@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-25",
+  "reviewedAt": "2026-09-29",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p064": {
@@ -2352,6 +2352,47 @@
       "trackIds": [],
       "resultIds": [],
       "note": "EWMBench/DreamGen/WorldModelBench/PBench 属于 world-model 生成评测；不与 VLA 闭环 task success 强行合榜。"
+    },
+    "p117": {
+      "status": "extracted",
+      "trackIds": [
+        "savla-v1-libero-table1"
+      ],
+      "resultIds": [
+        "r-savla-v1-libero-savla",
+        "r-savla-v1-libero-groot"
+      ],
+      "note": "SAVLA Table I 标准 LIBERO 四套件与平均值可核验；本次只结构化 SAVLA 与同文 GR00T N1.5 对照，保持 paper-table。"
+    },
+    "p118": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "Self-Adaptive VLA 的四项真机 hardware-shift 任务为作者自定义协议；保留深读原表，不新增跨论文 Benchmark。"
+    },
+    "p119": {
+      "status": "extracted",
+      "trackIds": [
+        "waa-v1-libero-pro"
+      ],
+      "resultIds": [
+        "r-waa-v1-libero-pro-evolved",
+        "r-waa-v1-libero-pro-aspire",
+        "r-waa-v1-libero-pro-noskills",
+        "r-waa-v1-libero-pro-pi05",
+        "r-waa-v1-libero-pro-showharness"
+      ],
+      "note": "LIBERO-PRO 六 split aggregate 可核验；按 paper-table 结构化 Average，不与标准 LIBERO 混排。"
+    },
+    "p120": {
+      "status": "extracted",
+      "trackIds": [
+        "safeloop-v1-libero-safety"
+      ],
+      "resultIds": [
+        "r-safeloop-v1-libero-safety"
+      ],
+      "note": "LIBERO 24-task safety 评测的 success/body hazard/object hazard 可核验；作为独立 safety paper-table，不合成为总分。"
     }
   }
 }

@@ -40,4 +40,7 @@ def test_robot_series_resources_and_queue():
     assert resources['p115']['code']=='https://github.com/QwenLM/Qwen-RobotNav'
     assert resources['p116']=={'project':'https://qwen.ai/blog?id=qwen-robotworld'}
     queue=j('maintenance/state/work-queue.json')
-    assert queue['remainingNotes']==0 and queue['notes']==[]
+    order=j('catalog/manifest.json')['paperOrder']
+    pending={pid for pid in order if j(f'catalog/papers/{pid}.json')['note']['status']!='expanded'}
+    assert queue['remainingNotes']==len(pending)
+    assert not any(x['paperId'] in NEW for x in queue['notes'])

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-09-20",
-  "status": "partial",
-  "lastAttemptAt": "2026-09-20",
-  "lastSuccessfulSearchAt": null,
+  "asOf": "2026-09-29",
+  "status": "complete",
+  "lastAttemptAt": "2026-09-29",
+  "lastSuccessfulSearchAt": "2026-09-29",
   "lookbackDays": 14,
-  "summary": "继续执行 2026-09-06—2026-09-20 中英文具身智能动态扫描，本轮新增核验 Motus2、Skild 真实部署/业务更新、Spirit AI Reuters 报道 3 条；与既有 6 条共同构成当前精选样本。仍有部分来源与候选未完成全量回溯，故保持 partial，不推进完整成功检查点。",
+  "summary": "完成 2026-09-16—2026-09-29 的中英文具身智能周报补扫，重点复核最近7天；新增 LeRobot humanoid workflow、AGIBOT 300+机器人规模部署、AMD/World Labs physical AI 产业事件 3 条。原始来源与日期边界已核对，本轮计划内扫描完成。",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -18,6 +18,12 @@
       "to": "2026-09-20",
       "status": "partial",
       "note": "2026-09-20 继续中英文检索并回溯官方公告、研究页及可靠媒体原报；新增 3 条已核验事件。候选和全部来源尚未完成穷尽扫描，因此不标记完整成功。"
+    },
+    {
+      "from": "2026-09-16",
+      "to": "2026-09-29",
+      "status": "complete",
+      "note": "2026-09-29 修复周更：覆盖官方项目/公司新闻室、开源机器人生态与可靠原始媒体报道；精选3条近期事件，不重复已有9月18日前条目。"
     }
   ]
 }

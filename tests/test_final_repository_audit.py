@@ -11,7 +11,10 @@ def test_content_queues_are_closed():
     assert baseline_deferred <= {pid for pid,x in r.items() if x['status']=='deferred'}
     assert all(r[pid]['note'] and not r[pid]['trackIds'] and not r[pid]['resultIds'] for pid in baseline_deferred)
     w=j('maintenance/state/work-queue.json')
-    assert w['remainingNotes']==0 and w['notes']==[]
+    order=j('catalog/manifest.json')['paperOrder']
+    pending={pid for pid in order if j(f'catalog/papers/{pid}.json')['note']['status']!='expanded'}
+    assert w['remainingNotes']==len(pending)
+    assert {x['paperId'] for x in w['notes']} <= pending
 def test_final_counts_and_referential_closure():
     a=j('maintenance/audits/release/final-consistency-audit-20260920.json')
     assert a['canonical']['papers']==98

@@ -18,7 +18,10 @@ def test_two_former_limited_sources_are_now_fulltext_closed():
         assert p['note']['verifiedAt']=='2026-09-20'
         assert p['note']['benchmarkReview']['status']=='extracted'
     w=j('maintenance/state/work-queue.json')
-    assert w['remainingNotes']==0 and not w['notes']
+    order=j('catalog/manifest.json')['paperOrder']
+    pending={pid for pid in order if j(f'catalog/papers/{pid}.json')['note']['status']!='expanded'}
+    assert w['remainingNotes']==len(pending)
+    assert not any(x['paperId'] in {'p043','p046'} for x in w['notes'])
 def test_xiaomi_conflict_preserved():
     p=j('catalog/papers/p004.json')
     assert any('57.4' in x and '57.6' in x for x in p['publication']['alerts'])

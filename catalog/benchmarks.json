@@ -6498,6 +6498,66 @@
         "Total"
       ],
       "source": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    {
+      "id": "savla-v1-libero-table1",
+      "dataset": "LIBERO",
+      "name": "SAVLA v1 · standard LIBERO Table I",
+      "version": "arXiv 2609.16641v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Standard LIBERO four-suite evaluation. Paper reports 500 episodes per suite and means over three random seeds; Average is the paper-reported mean across suites.",
+      "trainingRegime": "SAVLA and GR00T N1.5 are compared in the reporting paper; external baselines and trainable-head details differ, so this is paper-table evidence rather than a fairness leaderboard.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.16641v1"
+    },
+    {
+      "id": "waa-v1-libero-pro",
+      "dataset": "LIBERO-PRO",
+      "name": "World Action Agent v1 · LIBERO-PRO six-split aggregate",
+      "version": "arXiv 2609.29964v1",
+      "tasks": "Object / Goal / Spatial × Pos / Task; 10 tasks per split",
+      "split": "six LIBERO-PRO splits",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "WAA evaluates 60 episodes per split (6 per task); Average is the mean over six split success rates. Reporting paper notes some baseline rollout budgets and system costs differ.",
+      "trainingRegime": "WAA evolved skills are learned only from LIBERO-90 and frozen before LIBERO-PRO evaluation; compared systems have heterogeneous models, skills and tool stacks.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.29964v1"
+    },
+    {
+      "id": "safeloop-v1-libero-safety",
+      "dataset": "LIBERO",
+      "name": "SafeLoop v1 · 24-task safety evaluation",
+      "version": "arXiv 2609.26313v1",
+      "tasks": "24 LIBERO tasks",
+      "split": "24 selected tasks; 16 random seeds each",
+      "metric": "Task success and hazard incidence",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Safety wrapper evaluation over 24 LIBERO tasks. Success is higher-is-better while Haz-B/Haz-O are lower-is-better; columns are retained together only as a source table and must not be converted to a single rank.",
+      "trainingRegime": "Frozen base VLA plus SafeLoop risk predictor and meta safety decider; safety layer is trained separately from the base policy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success",
+        "Haz-B",
+        "Haz-O"
+      ],
+      "source": "https://arxiv.org/html/2609.26313v1"
     }
   ]
 }

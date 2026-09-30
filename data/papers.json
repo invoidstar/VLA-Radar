@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25",
+  "updatedAt": "2026-09-29",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,197 @@
     }
   ],
   "papers": [
+    {
+      "id": "p119",
+      "name": "World Action Agent",
+      "title": "World Action Agent: Harnessing VLMs for Robot Manipulation via World Action Rehearsal",
+      "team": "Yehang Zhang、Haojian Huang、Yifan Chang、Jianchong Su、Bohan Zhou、Yingjie Xu、Wosong Chen、Tianhao Zhou、Chenxu Wang、Tianyi Zhang、Yangkai Wei、Wenqian Li、Shiyuan Deng、Yinchuan Li、Ying-Cong Chen、Zexi Li",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-24",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC）；论文标注 work in progress。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月24日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "action",
+        "world"
+      ],
+      "tags": [
+        "VLM agent",
+        "world action rehearsal",
+        "LIBERO-PRO",
+        "skill library",
+        "tool use"
+      ],
+      "priority": "deep",
+      "contribution": "把通用 VLM 放进可交互的 visual action workspace，通过 Contact views、动作预演与 in-view correction 让模型先观察、排练、修正再执行，并用 Skill Agent 管理从示范和人类教学获得的多模态技能。",
+      "findings": "LIBERO-PRO 六个 split 上，使用仅由 LIBERO-90 形成并冻结的 evolved skills 时平均成功率 75.6%；同文 ASPIRE 为 72.0%，无技能 WAA 为 28.9%，同 backbone Show-Harness 为 6.7%。",
+      "limitations": "系统是多智能体/多工具 harness，成功率同时受 VLM、视觉几何、技能库和工具执行影响；不同方法的 episode 数与计算调用并非完全一致，不能把 75.6%解释为纯模型能力。",
+      "insight": "相比让 VLM 一次性输出绝对动作，先在局部接触视图中构造可编辑动作提案、预演并观察纠错，能把通用视觉语言推理更直接地接到闭环操作。",
+      "readingFocus": "visual action workspace、Contact views、Imagination Agent、in-view correction、Skill Agent、LIBERO-PRO 六split与小VLM轨迹蒸馏。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-29 按 arXiv v1 正文/元数据与公开索引交叉核对；结果为作者报告，非本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.29964v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2609.29964"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.29964",
+      "arxiv": "2609.29964",
+      "doi": ""
+    },
+    {
+      "id": "p118",
+      "name": "Self-Adaptive VLA",
+      "title": "Self-Adaptive VLA for Robust Robot Deployment",
+      "team": "Hongxin Zhang、Chunru Lin、Tsun-Hsuan Wang、Zhenjia Xu、Chuang Gan",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-24",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以本站发现或项目页更新时间替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月24日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "test-time adaptation",
+        "hardware shift",
+        "context token",
+        "AdaLN",
+        "dexterous"
+      ],
+      "priority": "deep",
+      "contribution": "用部署失败 rollout 作为上下文，通过轻量 context encoder 与 AdaLN 调制冻结的基础策略，使 VLA 在不重新标定、不在线更新参数的情况下适应执行器偏置与关节编码器偏移。",
+      "findings": "四项精细操作中，硬件偏移会让 memoryless 基础策略显著失效；Self-Adaptive VLA 通过失败上下文迭代恢复超过 80% 的基础性能，并可在新工作站逐次自我修正。",
+      "limitations": "适应依赖任务可重复尝试与 rollout 边界；论文主要研究已知类型的硬件偏移，不能等同于任意环境变化、开放世界故障或持续在线学习。",
+      "insight": "失败轨迹不仅是错误样本，也可以充当部署期系统辨识信号；把它压缩成可组合 context token，比每次故障后重新训练整个 VLA 更适合现场维护。",
+      "readingFocus": "shift-conditioned expert data、context encoder、AdaLN 注入、token ensembling、四项真机任务、硬件偏移恢复率与新工作站实验。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-29 按 arXiv v1 与作者项目页复核方法、部署流程和主要实验；数值均为作者报告。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.30092v1"
+        },
+        {
+          "label": "作者项目页",
+          "url": "https://icefoxzhx.github.io/self-adaptive-vla/"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2609.30092"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.30092",
+      "arxiv": "2609.30092",
+      "doi": ""
+    },
+    {
+      "id": "p120",
+      "name": "SafeLoop",
+      "title": "SafeLoop: Risk-Aware Rollback for Vision-Language-Action Manipulation",
+      "team": "Zeyu Lou、Tianran Zhang、Xinquan Yue、Ya Jing、Chenyang Si",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-22",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC）；录用信息未以独立正式会务来源升级为 accepted 状态。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月22日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "safety",
+        "rollback",
+        "hazard prediction",
+        "LIBERO",
+        "runtime wrapper"
+      ],
+      "priority": "deep",
+      "contribution": "在不修改基础 VLA 参数的前提下增加风险预测器与轻量安全决策器，提前预测碰撞/物体失败，并在风险升高时记录安全点或回滚到最近安全关节状态后重新询问原策略。",
+      "findings": "24 个 LIBERO 任务和三项真机任务中，SafeLoop 报告约 70% 的 hazard case 降低且基本保持任务成功率；主对照表中 SafeLoop 成功率 59.6%、body/object hazard 5.2%/6.8%。",
+      "limitations": "rollback 只能回到可达安全关节状态，无法撤销掉落、破损等不可逆场景变化；风险预测和路径规划错误本身也可能成为新的安全失效点。",
+      "insight": "安全层不一定要重训 VLA；把高频策略视为受监督执行器，在外围增加可解释的 hazard forecast、checkpoint 与 rollback，可把恢复机制和基础能力解耦。",
+      "readingFocus": "四输出 risk predictor、noop/record/rollback 决策、20Hz 策略与约1Hz安全层、LIBERO 24-task 协议、真机25-rollout设置与不可逆失败边界。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-29 按 arXiv v1 与官方开源仓库核对；结果为作者报告，代码仓库只作为资源证据，不视为独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.26313v1"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/Loule0-0/SafeLoop"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2609.26313"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.26313",
+      "arxiv": "2609.26313",
+      "doi": ""
+    },
+    {
+      "id": "p117",
+      "name": "SAVLA",
+      "title": "SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation",
+      "team": "Junle Li、Weixian Waylon Li、Fuxiang Wu、Fusheng Hao、Fengxiang He",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-09-15",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以修订日或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "9月15日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "spatial",
+        "action"
+      ],
+      "tags": [
+        "equivariance",
+        "SO(3)",
+        "canonicalization",
+        "LIBERO"
+      ],
+      "priority": "deep",
+      "contribution": "冻结 VLM 主干，以 SO(3)-equivariant flow-matching action head 加学习式 canonicalizer，把旋转对称性显式写入 VLA。",
+      "findings": "LIBERO 平均 91.6%；LIBERO-Goal 旋转平均从 GR00T N1.5 的 41.5% 提升到 90.4%。",
+      "limitations": "canonicalizer 主要验证重力轴旋转；极端视角仍受视差、遮挡与视场变化影响。",
+      "insight": "把已知几何对称性作为动作归纳偏置，可减少仅靠示范覆盖姿态的负担。",
+      "readingFocus": "typed interface、equivariant flow matching、canonicalizer、LIBERO、旋转鲁棒性与数据效率。",
+      "evidence": "checked",
+      "evidenceNote": "2026-09-29 重新核对 9 月 27 日中断分支的 arXiv v1 深读记录；作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2609.16641v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2609.16641"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.16641",
+      "arxiv": "2609.16641",
+      "doi": ""
+    },
     {
       "id": "p116",
       "name": "Qwen-RobotWorld",
@@ -1511,15 +1702,15 @@
     {
       "id": "p011",
       "name": "See like a Robot",
-      "title": "See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models",
-      "team": "KAIST／Holiday Robotics\nByungkun Lee、Dongyoon Hwang、Dongjin Kim等",
+      "title": "See like a Robot: Robot-Centric Pointmaps for VLA Models",
+      "team": "Byungkun Lee、Dongyoon Hwang、Dongjin Kim、Hojoon Lee、Hyunseung Kim、Jaegul Choo、Minho Park",
       "venue": "arXiv",
       "publicationType": "preprint",
-      "publicationStatus": "arXiv:2607.11498\n技术预印本",
+      "publicationStatus": "arXiv 预印本；当前 v2（2026-09-21）",
       "firstPublished": "2026-07-13",
       "dateNote": "",
       "collectionMonth": "2026-07",
-      "versionNote": "7月首次公开｜阅读v1",
+      "versionNote": "7月13日首次公开｜9月21日修订 v2｜正文深读仍基于 v1，待复核",
       "topics": [
         "spatial"
       ],
@@ -1535,7 +1726,7 @@
       "insight": "统一视觉几何与机器人动作的坐标系本身就有价值。鲁棒性收益需要连同标定和点图质量一起看。",
       "readingFocus": "坐标系选择；末端中心化；相机变化下的退化幅度。",
       "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidenceNote": "2026-09-29 核对 arXiv 当前元数据：v2 改题并更新作者列表；现有深入笔记仍基于 v1，因此标记 needs_review，不自动认证 v2 正文。",
       "hasCautionaryResult": false,
       "sources": [
         {

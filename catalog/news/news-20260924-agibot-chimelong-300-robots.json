@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260924-agibot-chimelong-300-robots",
+  "eventKey": "agibot-chimelong-300-robot-deployment-20260924",
+  "title": "AGIBOT 与 Chimelong 启动超 300 台机器人规模化场景部署",
+  "primaryCategory": "robot",
+  "tags": [
+    "AGIBOT",
+    "真实部署",
+    "人形机器人",
+    "多机器人",
+    "文旅场景"
+  ],
+  "eventDate": "2026-09-24",
+  "publishedAt": "2026-09-24",
+  "dateNote": "采用 AGIBOT 官方文章正文的珠海 2026-09-24 dateline；其 newsroom 列表显示 9月23日，本站保留文章内明确日期作为事件/发布日口径。",
+  "observedAt": "2026-09-29",
+  "updatedAt": "2026-09-29",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "AGIBOT 与 Chimelong 宣布在 Chimelong Spaceship Park 启动首期大规模具身智能部署，官方称超过 300 台机器人进入娱乐、教育、游客服务与酒店运营等场景，并配套连接、多机器人协同和安全系统；同一活动还交付了其生产线下线的第 20,000 台机器人。",
+  "whyItMatters": "这类数百台规模的场景部署比单机演示更能暴露具身系统在运维、连接、协同、安全和持续服务上的现实约束。对 VLA/机器人基础模型研究而言，规模化部署会把“单任务成功率”之外的可靠性、恢复、维护成本与系统集成问题推到更重要的位置。",
+  "vlaRelevance": "该事件不是一篇 VLA 性能论文，但属于具身智能真实部署生态：如果通用 VLA/世界模型要进入类似规模场景，就必须同时满足多机器人运行、异常恢复、安全与运维要求。",
+  "limits": "所有部署数量、生产里程碑和应用范围来自 AGIBOT 官方公告，本站没有独立核验每台机器人的在线率、任务成功率或实际采用的模型栈；因此不把这些产业数字写入论文 Benchmark。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "AGIBOT and Chimelong Launch Large-Scale Embodied AI Theme Park with More Than 300 Robots",
+      "publisher": "AGIBOT",
+      "url": "https://www.agibot.com/article/231/detail/123.html",
+      "kind": "official",
+      "publishedAt": "2026-09-24",
+      "access": "full-page",
+      "note": "核对超过300台部署、场景范围、第20,000台机器人交付以及官方日期口径。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

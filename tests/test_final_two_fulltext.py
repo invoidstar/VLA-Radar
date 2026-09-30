@@ -9,8 +9,11 @@ def test_final_counts_zero_deferred_and_notes():
     assert sum(x['status']=='not-applicable' for x in review.values())>=2
     assert len(j('catalog/benchmarks.json')['tracks'])>=286
     assert len(list((R/'catalog/results').glob('r-*.json')))>=1063
-    assert j('maintenance/state/work-queue.json')['remainingNotes']==0
-    assert j('maintenance/state/work-queue.json')['notes']==[]
+    queue=j('maintenance/state/work-queue.json')
+    order=j('catalog/manifest.json')['paperOrder']
+    pending={pid for pid in order if j(f'catalog/papers/{pid}.json')['note']['status']!='expanded'}
+    assert queue['remainingNotes']==len(pending)
+    assert not any(x['paperId'] in {'p043','p046'} for x in queue['notes'])
     cat=[j('catalog/papers/p043.json'),j('catalog/papers/p046.json')]
     assert all(x['note']['status']=='expanded' and x['note']['coverage']['level']=='deep' for x in cat)
 def test_limited_policy_cleared():

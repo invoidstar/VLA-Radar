@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25",
+  "updatedAt": "2026-09-29",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -6499,6 +6499,66 @@
         "Total"
       ],
       "source": "https://github.com/QwenLM/Qwen-RobotManip"
+    },
+    {
+      "id": "savla-v1-libero-table1",
+      "dataset": "LIBERO",
+      "name": "SAVLA v1 · standard LIBERO Table I",
+      "version": "arXiv 2609.16641v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Standard LIBERO four-suite evaluation. Paper reports 500 episodes per suite and means over three random seeds; Average is the paper-reported mean across suites.",
+      "trainingRegime": "SAVLA and GR00T N1.5 are compared in the reporting paper; external baselines and trainable-head details differ, so this is paper-table evidence rather than a fairness leaderboard.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.16641v1"
+    },
+    {
+      "id": "waa-v1-libero-pro",
+      "dataset": "LIBERO-PRO",
+      "name": "World Action Agent v1 · LIBERO-PRO six-split aggregate",
+      "version": "arXiv 2609.29964v1",
+      "tasks": "Object / Goal / Spatial × Pos / Task; 10 tasks per split",
+      "split": "six LIBERO-PRO splits",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "WAA evaluates 60 episodes per split (6 per task); Average is the mean over six split success rates. Reporting paper notes some baseline rollout budgets and system costs differ.",
+      "trainingRegime": "WAA evolved skills are learned only from LIBERO-90 and frozen before LIBERO-PRO evaluation; compared systems have heterogeneous models, skills and tool stacks.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.29964v1"
+    },
+    {
+      "id": "safeloop-v1-libero-safety",
+      "dataset": "LIBERO",
+      "name": "SafeLoop v1 · 24-task safety evaluation",
+      "version": "arXiv 2609.26313v1",
+      "tasks": "24 LIBERO tasks",
+      "split": "24 selected tasks; 16 random seeds each",
+      "metric": "Task success and hazard incidence",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Safety wrapper evaluation over 24 LIBERO tasks. Success is higher-is-better while Haz-B/Haz-O are lower-is-better; columns are retained together only as a source table and must not be converted to a single rank.",
+      "trainingRegime": "Frozen base VLA plus SafeLoop risk predictor and meta safety decider; safety layer is trained separately from the base policy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success",
+        "Haz-B",
+        "Haz-O"
+      ],
+      "source": "https://arxiv.org/html/2609.26313v1"
     }
   ],
   "settings": [
@@ -6689,7 +6749,10 @@
         "Object",
         "Goal",
         "Long",
-        "Average"
+        "Average",
+        "Success",
+        "Haz-B",
+        "Haz-O"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
@@ -6718,7 +6781,9 @@
         "lawam-v1-libero",
         "xiaomi0-v2-libero",
         "qwen-vla-v2-libero",
-        "qwen-robotmanip-v2-libero"
+        "qwen-robotmanip-v2-libero",
+        "savla-v1-libero-table1",
+        "safeloop-v1-libero-safety"
       ],
       "resultIds": [
         "r-adavla-v2-sr-b1",
@@ -6814,6 +6879,9 @@
         "r-qwen-robotmanip-v2-libero-base",
         "r-qwen-robotmanip-v2-libero-context",
         "r-qwen-vla-v2-libero-instruct",
+        "r-safeloop-v1-libero-safety",
+        "r-savla-v1-libero-groot",
+        "r-savla-v1-libero-savla",
         "r-temporalflow-v1-libero-main",
         "r-thaw-v2-libero-base",
         "r-thaw-v2-libero-distilled",
@@ -6830,8 +6898,8 @@
         "r-w2vla-v1-libero-w2",
         "r-xiaomi0-v2-libero-xiaomi-robotics-0"
       ],
-      "resultCount": 108,
-      "paperCount": 20,
+      "resultCount": 111,
+      "paperCount": 22,
       "paperIds": [
         "p030",
         "p043",
@@ -6847,6 +6915,8 @@
         "p027",
         "p114",
         "p113",
+        "p120",
+        "p117",
         "p014",
         "p106",
         "p002",
@@ -6854,7 +6924,7 @@
         "p010",
         "p112"
       ],
-      "methodCount": 97,
+      "methodCount": 100,
       "primaryTrackId": "libero-oft-single-view",
       "trainingOptions": [
         {
@@ -6964,6 +7034,18 @@
           "label": "训练数据未完整披露 · p113",
           "known": false,
           "count": 1
+        },
+        {
+          "id": "unknown-p120",
+          "label": "训练数据未完整披露 · p120",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "unknown-p117",
+          "label": "训练数据未完整披露 · p117",
+          "known": false,
+          "count": 2
         },
         {
           "id": "unknown-p014",
@@ -7096,6 +7178,9 @@
         "r-qwen-robotmanip-v2-libero-base": "unknown-p114",
         "r-qwen-robotmanip-v2-libero-context": "unknown-p114",
         "r-qwen-vla-v2-libero-instruct": "unknown-p113",
+        "r-safeloop-v1-libero-safety": "unknown-p120",
+        "r-savla-v1-libero-groot": "unknown-p117",
+        "r-savla-v1-libero-savla": "unknown-p117",
         "r-temporalflow-v1-libero-main": "unknown-p014",
         "r-thaw-v2-libero-base": "unknown-p106",
         "r-thaw-v2-libero-distilled": "unknown-p106",
@@ -17630,6 +17715,59 @@
       ],
       "trainingByResult": {
         "r-xiaomi0-v2-simpler-google-xiaomi-robotics-0": "unknown-p112"
+      }
+    },
+    {
+      "id": "setting-libero-pro-success-184df936d4-10-b2f572646ca1",
+      "dataset": "LIBERO-PRO",
+      "evalId": "auto:success-184df936d4-10",
+      "name": "LIBERO-PRO · 10 Tasks · Success Rate",
+      "tasks": "Object / Goal / Spatial × Pos / Task; 10 tasks per split",
+      "split": "six LIBERO-PRO splits",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Average"
+      ],
+      "protocol": "WAA evaluates 60 episodes per split (6 per task); Average is the mean over six split success rates. Reporting paper notes some baseline rollout budgets and system costs differ.",
+      "trackIds": [
+        "waa-v1-libero-pro"
+      ],
+      "resultIds": [
+        "r-waa-v1-libero-pro-aspire",
+        "r-waa-v1-libero-pro-evolved",
+        "r-waa-v1-libero-pro-noskills",
+        "r-waa-v1-libero-pro-pi05",
+        "r-waa-v1-libero-pro-showharness"
+      ],
+      "resultCount": 5,
+      "paperCount": 1,
+      "paperIds": [
+        "p119"
+      ],
+      "methodCount": 5,
+      "primaryTrackId": "waa-v1-libero-pro",
+      "trainingOptions": [
+        {
+          "id": "unknown-p119",
+          "label": "训练数据未完整披露 · p119",
+          "known": false,
+          "count": 4
+        },
+        {
+          "id": "data-dc0bec56bd12",
+          "label": "Multimodal skills evolved from LIBERO-90 sources only and frozen before LIBERO-PRO evaluation",
+          "known": true,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-waa-v1-libero-pro-aspire": "unknown-p119",
+        "r-waa-v1-libero-pro-evolved": "data-dc0bec56bd12",
+        "r-waa-v1-libero-pro-noskills": "unknown-p119",
+        "r-waa-v1-libero-pro-pi05": "unknown-p119",
+        "r-waa-v1-libero-pro-showharness": "unknown-p119"
       }
     }
   ],
@@ -36396,6 +36534,70 @@
       "supersedes": ""
     },
     {
+      "id": "r-safeloop-v1-libero-safety",
+      "paperId": "p120",
+      "method": "SafeLoop",
+      "trackId": "safeloop-v1-libero-safety",
+      "values": {
+        "Success": 59.6,
+        "Haz-B": 5.2,
+        "Haz-O": 6.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.26313v1",
+      "sourceVersion": "arXiv 2609.26313v1",
+      "locator": "main safety comparison",
+      "attribution": "author-reported",
+      "trainingData": "Frozen base VLA plus separately trained SafeLoop risk predictor and meta safety decider.",
+      "evaluationNotes": "24 LIBERO tasks, 16 seeds each. Success is higher-better while hazard rates are lower-better; VLA-Radar does not collapse them into one ranking metric.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-savla-v1-libero-groot",
+      "paperId": "p117",
+      "method": "GR00T N1.5",
+      "trackId": "savla-v1-libero-table1",
+      "values": {
+        "Spatial": 95.3,
+        "Object": 92.4,
+        "Goal": 91.6,
+        "Long": 66.7,
+        "Average": 86.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.16641v1",
+      "sourceVersion": "arXiv 2609.16641v1",
+      "locator": "Table I",
+      "attribution": "reported-baseline",
+      "trainingData": "GR00T N1.5 baseline as reported in SAVLA Table I; training details are not normalized by VLA-Radar.",
+      "evaluationNotes": "Same reporting table and LIBERO suite columns as SAVLA; retained as cited baseline, not an independent reproduction.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-savla-v1-libero-savla",
+      "paperId": "p117",
+      "method": "SAVLA",
+      "trackId": "savla-v1-libero-table1",
+      "values": {
+        "Spatial": 96.7,
+        "Object": 92.9,
+        "Goal": 97.5,
+        "Long": 79.3,
+        "Average": 91.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.16641v1",
+      "sourceVersion": "arXiv 2609.16641v1",
+      "locator": "Table I",
+      "attribution": "author-reported",
+      "trainingData": "Reporting-paper SAVLA training setup; frozen VLM backbone with SO(3)-equivariant action head and learned canonicalizer.",
+      "evaluationNotes": "Author-reported standard LIBERO suite success rates; 500 episodes per suite, three random seeds. Keep paper-reported Average and do not mix with rotated-camera stress tests.",
+      "supersedes": ""
+    },
+    {
       "id": "r-seelike-v1-fusion-pc-mlp",
       "paperId": "p011",
       "method": "RGB + Point cloud (MLP, concat)",
@@ -41035,6 +41237,96 @@
       "attribution": "author-reported",
       "trainingData": "2,500-demo protocol",
       "evaluationNotes": "不可与25k random示范协议混排。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-waa-v1-libero-pro-aspire",
+      "paperId": "p119",
+      "method": "ASPIRE",
+      "trackId": "waa-v1-libero-pro",
+      "values": {
+        "Average": 72
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.29964v1",
+      "sourceVersion": "arXiv 2609.29964v1",
+      "locator": "LIBERO-PRO main comparison",
+      "attribution": "reported-baseline",
+      "trainingData": "Baseline configuration as cited/reported by World Action Agent paper.",
+      "evaluationNotes": "Reported baseline; rollout budget/tooling may differ from WAA, so this is source-table context rather than a fairness rank.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-waa-v1-libero-pro-evolved",
+      "paperId": "p119",
+      "method": "WAA + evolved skills",
+      "trackId": "waa-v1-libero-pro",
+      "values": {
+        "Average": 75.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.29964v1",
+      "sourceVersion": "arXiv 2609.29964v1",
+      "locator": "LIBERO-PRO main comparison",
+      "attribution": "author-reported",
+      "trainingData": "Multimodal skills evolved from LIBERO-90 sources only and frozen before LIBERO-PRO evaluation; Gemini 3.7 Flash main agent.",
+      "evaluationNotes": "60 episodes per split / 6 per task for WAA. System includes Contact views, rehearsal, in-view correction and Skill Agent; do not interpret as an end-to-end VLA-only score.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-waa-v1-libero-pro-noskills",
+      "paperId": "p119",
+      "method": "WAA · no skills",
+      "trackId": "waa-v1-libero-pro",
+      "values": {
+        "Average": 28.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.29964v1",
+      "sourceVersion": "arXiv 2609.29964v1",
+      "locator": "LIBERO-PRO main comparison",
+      "attribution": "author-reported",
+      "trainingData": "Same WAA harness without the evolved skill library.",
+      "evaluationNotes": "Ablative system-level comparison within WAA; other harness components remain active.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-waa-v1-libero-pro-pi05",
+      "paperId": "p119",
+      "method": "π0.5",
+      "trackId": "waa-v1-libero-pro",
+      "values": {
+        "Average": 12.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.29964v1",
+      "sourceVersion": "arXiv 2609.29964v1",
+      "locator": "LIBERO-PRO main comparison",
+      "attribution": "reported-baseline",
+      "trainingData": "π0.5 baseline as reported in the WAA paper.",
+      "evaluationNotes": "Reported baseline under the paper's LIBERO-PRO comparison; not a VLA-Radar independent rerun.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-waa-v1-libero-pro-showharness",
+      "paperId": "p119",
+      "method": "Show-Harness · same VLM backbone",
+      "trackId": "waa-v1-libero-pro",
+      "values": {
+        "Average": 6.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-09-29",
+      "source": "https://arxiv.org/html/2609.29964v1",
+      "sourceVersion": "arXiv 2609.29964v1",
+      "locator": "LIBERO-PRO main comparison",
+      "attribution": "reported-baseline",
+      "trainingData": "Show-Harness rerun using the same Gemini 3.7 Flash backbone according to the WAA paper.",
+      "evaluationNotes": "The reporting paper notes Show-Harness uses a different rollout count/call budget; kept only as a same-paper context row.",
       "supersedes": ""
     },
     {

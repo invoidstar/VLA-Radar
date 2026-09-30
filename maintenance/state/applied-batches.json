@@ -83,6 +83,20 @@
         "p115",
         "p116"
       ]
+    },
+    {
+      "id": "2026-09-29-weekly-repair",
+      "sha256": "9bd8a3a245927171f970a218140572d9cdb0c1a591393a3828da7265a5b2c978",
+      "date": "2026-09-29",
+      "notes": [],
+      "tracks": [
+        "savla-v1-libero-table1",
+        "waa-v1-libero-pro",
+        "safeloop-v1-libero-safety"
+      ],
+      "results": 8,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
