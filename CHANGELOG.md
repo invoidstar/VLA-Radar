@@ -1,3 +1,9 @@
+## 2026-10-01 · 不蒜子改为当前页面统计
+
+- 页脚计数从 `busuanzi_site_pv / busuanzi_site_uv` 切换为 `busuanzi_page_pv / busuanzi_page_uv`，避免多个 `invoidstar.github.io/<project>/` 项目表现为共享站点级计数。
+- 继续同时显示 PV（浏览量）与 UV（访客数），统计范围限定为当前 VLA-Radar 页面；生产域名白名单逻辑保持不变，本地开发和 CI 仍不会加载不蒜子。
+- “关于与维护”的隐私说明同步改为当前项目页面统计，并新增浏览器回归防止误退回 `site_*` 计数器。
+
 ## 2026-09-29 — 2026-09-29-weekly-repair
 
 补齐 2026-09-27 中断周更并覆盖至 9 月 29 日：正式纳入 SAVLA、Self-Adaptive VLA、World Action Agent、SafeLoop 四篇正文级深读（均达到新论文深度门槛），补 LIBERO/LIBERO-PRO safety 证据，并完成 discovery、周报、publication 与 source-health 维护；publication refresh 仅保留经主源确认且不破坏历史精度语义的变更；p011 v2 正确进入 needs_review 队列；历史回归测试已改为验证增长安全的不变量，而非固定旧规模。
