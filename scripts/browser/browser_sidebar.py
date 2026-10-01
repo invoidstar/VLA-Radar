@@ -77,6 +77,8 @@ try:
         star=page.locator('.github-star-cta')
         yes('GitHub Star CTA is present', star.count() == 1 and 'Star VLA-Radar' in star.inner_text())
         yes('GitHub Star CTA uses official repo and safe external target', star.get_attribute('href') == 'https://github.com/invoidstar/VLA-Radar' and star.get_attribute('target') == '_blank' and 'noopener' in (star.get_attribute('rel') or ''))
+        yes('Busuanzi uses page-level PV and UV counters', page.locator('#busuanzi_page_pv').count() == 1 and page.locator('#busuanzi_page_uv').count() == 1 and page.locator('#busuanzi_site_pv').count() == 0 and page.locator('#busuanzi_site_uv').count() == 0)
+        yes('traffic counter is described as current-project page statistics', page.locator('.footer-traffic').get_attribute('aria-label') == '当前项目页面访问统计' and '当前项目页面的 PV / UV' in page.locator('#about-section').inner_text())
         topic_panel=page.locator('.side-topic-panel')
         yes('topic shortcuts are nested and collapsed by default', not topic_panel.evaluate('(d)=>d.open'))
         topic_panel.locator('summary').click(); yes('topic shortcuts expand on demand', topic_panel.evaluate('(d)=>d.open') and page.locator('#side-topics .side-topic').count() > 0)
