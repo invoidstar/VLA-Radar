@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p122",
+    "name": "ProAct",
+    "title": "World-Calibrated Proposal-to-Action Flow for Vision-Language-Action Models",
+    "team": "Jie He、Wei Li、Junwen Tong、Rui Shao、Wei-Shi Zheng、Liqiang Nie",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 预印本",
+    "firstPublished": "2026-10-01",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不以本站发现日期替代。",
+    "collectionMonth": "2026-10",
+    "versionNote": "10月1日首次公开｜阅读 arXiv v1",
+    "topics": [
+      "action",
+      "world",
+      "efficiency"
+    ],
+    "tags": [
+      "flow matching",
+      "proposal",
+      "world model",
+      "V-JEPA 2",
+      "LIBERO-Plus",
+      "RoboTwin"
+    ],
+    "priority": "deep",
+    "contribution": "把 flow VLA 的生成源从任务无关高斯改为由近期已执行动作提出、再经未来世界表征校准的 proposal-centered anisotropic source，以 propose→calibrate→refine 三阶段缩短动作运输路径。",
+    "findings": "ProAct 报告 LIBERO 98.4%、LIBERO-Plus 86.8%、RoboTwin 2.0 randomized-hard 60.3%；相对 π0.5 在 LIBERO 将延迟121.26ms降到89.98ms、吞吐82.47Hz升到111.14Hz。",
+    "limitations": "系统同时改变 proposal、world expert 与 source geometry；真实机器人指标依赖两套平台和作者复现实验。proposal 利用局部运动连续性，在突变接触/阶段切换处仍需 world calibration 才可靠。",
+    "insight": "flow matching 不必永远从无信息高斯开始；如果近期动作能提供局部先验，世界预测可以负责决定“偏离多少、沿哪些动作维度偏离”，把未来推理直接写进生成起点。",
+    "readingFocus": "motion extrapolation、Proposal Expert、V-JEPA 2 World Expert、refinement extent/geometry、LIBERO-Plus、RoboTwin randomized hard、真机 checkpoint 与效率。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-06 按 arXiv v1 正文与官方项目/代码入口复核；表中基线按论文归属，不等同本站独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文",
+        "url": "https://arxiv.org/html/2610.02323v1"
+      },
+      {
+        "label": "arXiv 元数据",
+        "url": "https://arxiv.org/abs/2610.02323"
+      },
+      {
+        "label": "作者项目页",
+        "url": "https://jiutian-vl.github.io/ProAct-page/"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/JiuTian-VL/ProAct"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.02323",
+    "arxiv": "2610.02323",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-01",
+    "firstArxivSource": "https://arxiv.org/abs/2610.02323v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-01",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-06",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-01",
+        "observedAt": "2026-10-06",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.02323v1",
+        "note": "arXiv v1 首次公开日期；作为 firstPublished 锁定。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-06",
+    "verifiedAt": "2026-10-06",
+    "version": "arXiv:2610.02323v1（2026-10-01），propose-calibrate-refine、V-JEPA 2 world expert、source calibration、三类仿真 benchmark、双真机平台与效率；2026-10-06复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题：flow VLA 的起点通常完全忽略刚刚发生的运动",
+        "body": "标准 flow-based VLA 常从各向同性高斯噪声出发，再通过多步积分运输到动作分布。这个 source 与最近执行轨迹和即将发生的世界变化都无关：一方面丢掉机器人动作局部连续性，另一方面即使网络内部有未来表征，也只是影响 velocity field，而没有决定生成从哪里开始、允许偏离多远以及应沿哪些动作维度修正。ProAct 因此把“source distribution 本身”变成可预测对象，让最近动作提供软先验、未来世界推理负责校准，而不是让每个 chunk 都从零信息噪声重新走完整路径。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "proposal",
+        "title": "Proposal Expert：近期动作只是一条软假设，不是必须遵守的轨迹",
+        "body": "系统从已执行动作历史计算指数平滑运动增量，再向未来 H 步做衰减 extrapolation，gripper 保持最近状态，得到解析 motion proposal。这个 proposal 能保留局部方向和速度，但在接触、换阶段、重新抓取时可能错误，因此作者再用浅层 Proposal Expert 读取 VLM context，通过一次 endpoint flow step 对解析轨迹做 scene-aware grounding。重要的是 proposal 始终被当作 source anchor，而不是直接执行结果，所以后续模块仍可以在视觉证据表明连续性失效时明显偏离。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "world",
+        "title": "World Expert：用未来表征判断 proposal 是否符合任务进展",
+        "body": "World Expert 以 proposal 为软 motion prior，同时预测任务一致的 latent future；目标特征来自冻结 V-JEPA 2，使未来监督和 proposal 本身保持不对称关系：proposal 可以帮助理解接下来可能发生什么，但未来目标不应因为 proposal 错了就被一起拖偏。系统进一步从 proposal–future compatibility 预测每个 horizon step 的 refinement extent 与 geometry，把“未来是否支持当前延续方向”转成动作生成源的参数，而不是只作为额外 feature 拼进 action head。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "calibration",
+        "title": "Source calibration：一个量控制修多远，一个低秩几何控制往哪里修",
+        "body": "ProAct 不再使用统一方差的高斯 source。每个时间步预测 bounded refinement extent σ，控制最终动作允许离 proposal 多远；同时预测低秩矩阵 B 构造 anisotropic covariance，在 translation、rotation 和 gripper 等耦合维度间重新分配修正。作者对 covariance 做 trace normalization，避免 geometry 偷偷改变平均尺度，并限制 Frobenius norm 来约束 condition number。这样 magnitude 与 directionality 分开学习，减少用一个大方差同时覆盖所有可能修正的低效做法。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "action-expert",
+        "title": "Action Expert 保留原 flow 参数化，改变的是运输起点而不是整个生成器",
+        "body": "最终 Action Expert 仍使用基础 VLA 的 flow velocity parameterization，只把原来的 isotropic Gaussian source 替换成 proposal-centered calibrated source。训练目标同时包含 proposal、future、extent、geometry 和 action flow 五部分。推理时先构造 proposal 与 world feature，预测 extent/geometry 后从校准 source 采样，再积分到动作。由于 source 已靠近可执行 action manifold，论文可以用更粗的 integration grid；这也是其减少 denoising steps 而非简单缩小网络的核心效率来源。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "simulation",
+        "title": "仿真主结果：标准 LIBERO 接近饱和时，扰动与长程任务更能拉开差距",
+        "body": "标准 LIBERO 每 suite 500 rollouts，ProAct 为 Spatial 99.4、Object 99.6、Goal 98.4、Long 96.0、平均98.4%；π0.5 同表平均96.9，最大差距出现在 Long。LIBERO-Plus 七类扰动下 ProAct Total 86.8%，π0.5 为73.6%，说明当相机、机器人、语言、光照、背景、噪声与布局改变后，单纯延续最近动作更不可靠，proposal 必须结合未来状态校准。Radar 将标准 LIBERO 与 LIBERO-Plus 分轨，不把二者做统一总榜。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "robotwin",
+        "title": "RoboTwin 2.0：Clean 训练、Randomized-hard 零样本评测更强调分布外校准",
+        "body": "论文在 RoboTwin 2.0 选择10项任务，所有 policy 只在 Clean setting 训练，再在 Randomized hard 上每任务100 rollouts。ProAct 平均60.3%，π0.5 为28.6%，Spatial Forcing 34.6%，X-WAM 28.3%。这是很大的差距，但该表是作者统一实验环境中的 zero-shot randomized subset，并非本站对所有 RoboTwin 方法的同训练预算复现；尤其不同基线的预训练背景仍不同，因此 Radar 保留原始 track 与 trainingRegime，而不把结果解释成完全公平的模型排名。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "real",
+        "title": "真机：优势主要出现在需要阶段转换和重新 grounding 的后半程",
+        "body": "作者在 GALAXEA R1 Lite 和 AgileX Cobot Magic 上各评六项多阶段任务，并报告 Task Success Rate 与 Cumulative Success Rate。ProAct 在 GALAXEA 为78.7% TSR / 86.1% CSR，在 AgileX 为74.7% / 82.3%；π0.5 分别为64.7/74.0 与62.3/74.9。checkpoint 分析显示初始抓取往往各方法都较可靠，差异更多累积在开抽屉后取物、放置、连续分类等需要重新理解场景状态的转换点，这与“局部运动连续性并非全程可信”的设计动机一致。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "efficiency",
+        "title": "效率收益来自更短运输，而不是声称每个平台都固定快25.8%",
+        "body": "LIBERO/A800 默认推理中，π0.5 为121.26 ms、82.47 Hz、96.9%，ProAct 为89.98 ms、111.14 Hz、98.4%，对应论文所述最高25.8% latency reduction、34.8% throughput increase；真机 RTX5090 上则从104.62 ms降到87.52 ms、吞吐477.92升至571.30 Hz。不同硬件上的百分比并不相同，所以25.8%只能按论文环境解释。作者还将 denoising steps 减半，支持“校准 source 缩短 flow transport”这一机制。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "边界：proposal、world representation 与 calibration 的收益不可被简化成一种先验",
+        "body": "消融显示直接复用 last action chunk 反而比高斯 source 略差；motion extrapolation 有改善，而 scene-aware proposal、World Expert、proposal conditioning、future supervision、extent 和 geometry 都继续贡献。这说明“从最近动作出发”本身不是答案，真正有效的是允许未来世界证据推翻局部连续性。方法仍需要近期 action history、冻结 V-JEPA 2 target 和额外专家模块；真实机器人结果来自作者复现的特定任务/平台，部署到不同控制频率或高度非连续行为时仍需验证。",
+        "sources": [
+          {
+            "label": "arXiv v1 正文",
+            "url": "https://arxiv.org/html/2610.02323v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.02323v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "ProAct · LIBERO / LIBERO-Plus 主结果",
+        "columns": [
+          "Method",
+          "LIBERO Avg",
+          "LIBERO-Plus Total"
+        ],
+        "rows": [
+          [
+            "ProAct",
+            "98.4%",
+            "86.8%"
+          ],
+          [
+            "π0.5",
+            "96.9%",
+            "73.6%"
+          ],
+          [
+            "OpenVLA-OFT",
+            "97.1%",
+            "69.6%"
+          ]
+        ],
+        "locator": "Table 1",
+        "caption": "作者报告；LIBERO 与 LIBERO-Plus 是不同评测问题，Radar 分成独立 track/setting，不合成总榜。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-06",
+      "note": "标准 LIBERO 与 LIBERO-Plus 主表均可源定位；本轮结构化 ProAct 与主要同表基线，RoboTwin/真机数值保留在深读证据中以避免本轮过度扩张 track。"
+    }
+  }
+}
