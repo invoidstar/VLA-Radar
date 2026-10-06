@@ -1064,6 +1064,24 @@
       "level": "baseline",
       "note": "Baseline official-resource review completed. The official SafeLoop code repository is recorded in Resources; other dimensions remain unknown unless explicitly evidenced.",
       "items": {}
+    },
+    "p121": {
+      "verifiedAt": "2026-10-06",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. The authors' project page is recorded in Resources; other dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p122": {
+      "verifiedAt": "2026-10-06",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. Official Project and Code are recorded in Resources; other release dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
+    },
+    "p124": {
+      "verifiedAt": "2026-10-06",
+      "level": "baseline",
+      "note": "Baseline official-resource review completed. The official ForeAct3D code repository is recorded in Resources; other release dimensions remain unknown unless explicitly evidenced.",
+      "items": {}
     }
   }
 }
