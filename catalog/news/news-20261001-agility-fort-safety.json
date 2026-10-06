@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261001-agility-fort-safety",
+  "eventKey": "agility-fort-digit5-safety-partnership-20261001",
+  "title": "Agility 与 FORT Robotics 为 Digit 5 建立三层人形机器人安全架构",
+  "primaryCategory": "robot",
+  "tags": [
+    "Agility Robotics",
+    "FORT Robotics",
+    "Digit 5",
+    "机器人安全",
+    "Physical AI",
+    "真实部署"
+  ],
+  "eventDate": "2026-10-01",
+  "publishedAt": "2026-10-01",
+  "dateNote": "按 Agility Robotics 官方新闻稿 2026-10-01 日期归档；MOU 已签署，但部分 Digit 5 能力和后续部署属于未来计划。",
+  "observedAt": "2026-10-06",
+  "updatedAt": "2026-10-06",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "ecosystem",
+  "whatHappened": "Agility Robotics 与 FORT Robotics 签署合作备忘录，计划围绕 Digit 5 扩展人形机器人安全基础设施。官方描述的三层架构包括 safety pendant、机器人端通信，以及连接外部安全系统的 off-robot interface / Offboard Safety Bridge，并将合作延伸到硬件、解决方案工程、监管合规和部署支持。",
+  "whyItMatters": "通用人形机器人进入仓储、制造和物流后，安全不再只是 policy 输出是否合理，还包含独立急停、环境侧安全输入、通信与监管合规。把安全层做成机器人内外共同架构，说明 physical AI 大规模部署需要可独立于高层智能策略工作的 runtime assurance 和人工覆盖通道。",
+  "vlaRelevance": "该事件没有发布新的 VLA 模型，但直接涉及自主机器人在人员附近持续工作的部署边界。对于 VLA/具身策略，外部 Safety Bridge、manual override 和 safe human detection 代表模型之外必须存在的安全执行层，与 VLA runtime safety 研究形成现实工程对照。",
+  "limits": "官方稿件中的 65,000+ 小时和客户部署是 Agility 自报运营数据，未提供统一任务成功率或事故率；Digit 5 的部分安全能力、部署规模和未来合作条款仍是前瞻性陈述。本站不把合作备忘录视为第三方安全认证，也不推断它能消除所有 policy failure。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Agility and FORT Robotics Announce Strategic Partnership to Advance Humanoid Robot Safety",
+      "publisher": "Agility Robotics",
+      "url": "https://www.agilityrobotics.com/content/agility-and-fort-robotics-announce-strategic-partnership-to-advance-humanoid-robot-safety",
+      "kind": "official",
+      "publishedAt": "2026-10-01",
+      "access": "full-page",
+      "note": "核对 MOU、三层安全架构、Offboard Safety Bridge、部署支持范围及前瞻性声明边界。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
