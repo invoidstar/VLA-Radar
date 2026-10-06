@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-10-06",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -6559,6 +6559,120 @@
         "Haz-O"
       ],
       "source": "https://arxiv.org/html/2609.26313v1"
+    },
+    {
+      "id": "toast-v1-libero-data-scale",
+      "dataset": "LIBERO",
+      "name": "TOAST v1 · LIBERO training-data scale paper table",
+      "version": "arXiv 2610.00899v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long; aggregate reported across suites",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "For every training-data fraction, evaluation is fixed: 500 rollouts per suite (50/task), 2,000 rollouts per seed, three independently trained seeds; columns differ only in policy training-data fraction.",
+      "trainingRegime": "PaliGemma-3B autoregressive VLA; identical subsets/settings per fraction across tokenizer methods; columns 1/1..1/16 are training-data fractions, not distinct evaluation settings.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "1/1",
+        "1/2",
+        "1/4",
+        "1/8",
+        "1/16"
+      ],
+      "source": "https://arxiv.org/html/2610.00899v1"
+    },
+    {
+      "id": "proact-v1-libero",
+      "dataset": "LIBERO",
+      "name": "ProAct v1 · standard LIBERO four-suite table",
+      "version": "arXiv 2610.02323v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Standard LIBERO evaluation following pi0.5; 500 rollouts per suite. Paper-table rows retain heterogeneous pretraining/backbone differences.",
+      "trainingRegime": "Reporting-paper comparison; ProAct uses proposal/world/action experts over a flow-based VLA while baselines have different pretraining and architectures.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.02323v1"
+    },
+    {
+      "id": "proact-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "ProAct v1 · LIBERO-Plus seven perturbation dimensions",
+      "version": "arXiv 2610.02323v1",
+      "tasks": "LIBERO-Plus perturbation evaluation",
+      "split": "Camera / Robot / Language / Light / Background / Noise / Layout",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Seven LIBERO-Plus perturbation dimensions reported in the same paper; Total is the paper-reported aggregate. This is not standard LIBERO.",
+      "trainingRegime": "Reporting-paper comparison with heterogeneous model/pretraining backgrounds; no VLA-Radar fairness normalization.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Total"
+      ],
+      "source": "https://arxiv.org/html/2610.02323v1"
+    },
+    {
+      "id": "foreact3d-v1-libero-all-suites",
+      "dataset": "LIBERO",
+      "name": "ForeAct3D v1 · one model for all LIBERO suites",
+      "version": "arXiv 2610.04607v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "One policy is trained/evaluated across all four LIBERO suites; kept separate from one-model-per-suite rows in the source table.",
+      "trainingRegime": "ForeAct3D and StarVLA-OFT base share the reporting paper's one-model-for-all training setup; no robot pretraining is claimed for this comparison.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.04607v1"
+    },
+    {
+      "id": "foreact3d-v1-calvin-abc-no-pretrain",
+      "dataset": "CALVIN",
+      "name": "ForeAct3D v1 · CALVIN ABC→D without robot pretraining",
+      "version": "arXiv 2610.04607v1",
+      "tasks": "Five-step language-conditioned chains",
+      "split": "ABC train → unseen D evaluation",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "CALVIN ABC→D long-horizon evaluation. The track only keeps the without-robot-pretraining group for the ForeAct3D/base comparison.",
+      "trainingRegime": "No robot pretraining group; ForeAct3D and reproduced StarVLA-OFT share the reporting-paper training configuration.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length",
+        "Task 1",
+        "Task 2",
+        "Task 3",
+        "Task 4",
+        "Task 5"
+      ],
+      "source": "https://arxiv.org/html/2610.04607v1"
     }
   ],
   "settings": [
@@ -6752,7 +6866,12 @@
         "Average",
         "Success",
         "Haz-B",
-        "Haz-O"
+        "Haz-O",
+        "1/1",
+        "1/2",
+        "1/4",
+        "1/8",
+        "1/16"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
@@ -6783,7 +6902,10 @@
         "qwen-vla-v2-libero",
         "qwen-robotmanip-v2-libero",
         "savla-v1-libero-table1",
-        "safeloop-v1-libero-safety"
+        "safeloop-v1-libero-safety",
+        "toast-v1-libero-data-scale",
+        "proact-v1-libero",
+        "foreact3d-v1-libero-all-suites"
       ],
       "resultIds": [
         "r-adavla-v2-sr-b1",
@@ -6814,6 +6936,8 @@
         "r-dms-ieee-libero-pi0",
         "r-dms-ieee-libero-univla-dms",
         "r-dms-ieee-libero-univla",
+        "r-foreact3d-v1-libero-ours",
+        "r-foreact3d-v1-libero-starvla",
         "r-gwm-v1-libero-gwm",
         "r-gwm-v1-libero-jepa",
         "r-gwm-v1-libero-oft",
@@ -6876,6 +7000,9 @@
         "r-libero-turbovla-v2-vision-query",
         "r-libero-turbovla-v2-vla-adapter",
         "r-libero-turbovla-v2-vla-jepa",
+        "r-proact-v1-libero-openvlaoft",
+        "r-proact-v1-libero-pi05",
+        "r-proact-v1-libero-proact",
         "r-qwen-robotmanip-v2-libero-base",
         "r-qwen-robotmanip-v2-libero-context",
         "r-qwen-vla-v2-libero-instruct",
@@ -6885,6 +7012,13 @@
         "r-temporalflow-v1-libero-main",
         "r-thaw-v2-libero-base",
         "r-thaw-v2-libero-distilled",
+        "r-toast-v1-libero-beast",
+        "r-toast-v1-libero-binning",
+        "r-toast-v1-libero-deterministic",
+        "r-toast-v1-libero-fastplus",
+        "r-toast-v1-libero-fastrebuilt",
+        "r-toast-v1-libero-toast",
+        "r-toast-v1-libero-vqvla",
         "r-vlaflow-v2-libero-lpi",
         "r-vlaflow-v2-libero-lwpi",
         "r-vlaflow-v2-libero-pi-frozen",
@@ -6898,11 +7032,12 @@
         "r-w2vla-v1-libero-w2",
         "r-xiaomi0-v2-libero-xiaomi-robotics-0"
       ],
-      "resultCount": 111,
-      "paperCount": 22,
+      "resultCount": 123,
+      "paperCount": 25,
       "paperIds": [
         "p030",
         "p043",
+        "p124",
         "p009",
         "p111",
         "p028",
@@ -6913,18 +7048,20 @@
         "p082",
         "p081",
         "p027",
+        "p122",
         "p114",
         "p113",
         "p120",
         "p117",
         "p014",
         "p106",
+        "p121",
         "p002",
         "p006",
         "p010",
         "p112"
       ],
-      "methodCount": 100,
+      "methodCount": 110,
       "primaryTrackId": "libero-oft-single-view",
       "trainingOptions": [
         {
@@ -6938,6 +7075,12 @@
           "label": "训练数据未完整披露 · p043",
           "known": false,
           "count": 17
+        },
+        {
+          "id": "unknown-p124",
+          "label": "训练数据未完整披露 · p124",
+          "known": false,
+          "count": 2
         },
         {
           "id": "data-cf81e449b35e",
@@ -7024,6 +7167,12 @@
           "count": 27
         },
         {
+          "id": "unknown-p122",
+          "label": "训练数据未完整披露 · p122",
+          "known": false,
+          "count": 3
+        },
+        {
           "id": "unknown-p114",
           "label": "训练数据未完整披露 · p114",
           "known": false,
@@ -7058,6 +7207,12 @@
           "label": "训练数据未完整披露 · p106",
           "known": false,
           "count": 2
+        },
+        {
+          "id": "data-30c16405ec23",
+          "label": "Columns are LIBERO policy-training fractions 1/1",
+          "known": true,
+          "count": 7
         },
         {
           "id": "unknown-p002",
@@ -7113,6 +7268,8 @@
         "r-dms-ieee-libero-pi0": "unknown-p043",
         "r-dms-ieee-libero-univla-dms": "unknown-p043",
         "r-dms-ieee-libero-univla": "unknown-p043",
+        "r-foreact3d-v1-libero-ours": "unknown-p124",
+        "r-foreact3d-v1-libero-starvla": "unknown-p124",
         "r-gwm-v1-libero-gwm": "data-cf81e449b35e",
         "r-gwm-v1-libero-jepa": "data-cf81e449b35e",
         "r-gwm-v1-libero-oft": "data-cf81e449b35e",
@@ -7175,6 +7332,9 @@
         "r-libero-turbovla-v2-vision-query": "unknown-p027",
         "r-libero-turbovla-v2-vla-adapter": "unknown-p027",
         "r-libero-turbovla-v2-vla-jepa": "unknown-p027",
+        "r-proact-v1-libero-openvlaoft": "unknown-p122",
+        "r-proact-v1-libero-pi05": "unknown-p122",
+        "r-proact-v1-libero-proact": "unknown-p122",
         "r-qwen-robotmanip-v2-libero-base": "unknown-p114",
         "r-qwen-robotmanip-v2-libero-context": "unknown-p114",
         "r-qwen-vla-v2-libero-instruct": "unknown-p113",
@@ -7184,6 +7344,13 @@
         "r-temporalflow-v1-libero-main": "unknown-p014",
         "r-thaw-v2-libero-base": "unknown-p106",
         "r-thaw-v2-libero-distilled": "unknown-p106",
+        "r-toast-v1-libero-beast": "data-30c16405ec23",
+        "r-toast-v1-libero-binning": "data-30c16405ec23",
+        "r-toast-v1-libero-deterministic": "data-30c16405ec23",
+        "r-toast-v1-libero-fastplus": "data-30c16405ec23",
+        "r-toast-v1-libero-fastrebuilt": "data-30c16405ec23",
+        "r-toast-v1-libero-toast": "data-30c16405ec23",
+        "r-toast-v1-libero-vqvla": "data-30c16405ec23",
         "r-vlaflow-v2-libero-lpi": "unknown-p002",
         "r-vlaflow-v2-libero-lwpi": "unknown-p002",
         "r-vlaflow-v2-libero-pi-frozen": "unknown-p002",
@@ -17769,6 +17936,102 @@
         "r-waa-v1-libero-pro-pi05": "unknown-p119",
         "r-waa-v1-libero-pro-showharness": "unknown-p119"
       }
+    },
+    {
+      "id": "setting-libero-plus-success-fbcbc58ca4-na-769ed40140e4",
+      "dataset": "LIBERO-Plus",
+      "evalId": "auto:success-fbcbc58ca4-na",
+      "name": "LIBERO-Plus · Camera / Robot / Language / … · Success Rate",
+      "tasks": "LIBERO-Plus perturbation evaluation",
+      "split": "Camera / Robot / Language / Light / Background / Noise / Layout",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Total"
+      ],
+      "protocol": "Seven LIBERO-Plus perturbation dimensions reported in the same paper; Total is the paper-reported aggregate. This is not standard LIBERO.",
+      "trackIds": [
+        "proact-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-proact-v1-libero-plus-openvlaoft",
+        "r-proact-v1-libero-plus-pi05",
+        "r-proact-v1-libero-plus-proact"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p122"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "proact-v1-libero-plus",
+      "trainingOptions": [
+        {
+          "id": "unknown-p122",
+          "label": "训练数据未完整披露 · p122",
+          "known": false,
+          "count": 3
+        }
+      ],
+      "trainingByResult": {
+        "r-proact-v1-libero-plus-openvlaoft": "unknown-p122",
+        "r-proact-v1-libero-plus-pi05": "unknown-p122",
+        "r-proact-v1-libero-plus-proact": "unknown-p122"
+      }
+    },
+    {
+      "id": "setting-calvin-average-completed-tasks-in-a-five-task-chain-c55207c5-2944b225f603",
+      "dataset": "CALVIN",
+      "evalId": "auto:average-completed-tasks-in-a-five-task-chain-c55207c5",
+      "name": "CALVIN · Average length / Task 1 / Task 2 / … · Average completed tasks in a five-task chain",
+      "tasks": "Five-step language-conditioned chains",
+      "split": "ABC train → unseen D evaluation",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "Average length",
+        "Task 1",
+        "Task 2",
+        "Task 3",
+        "Task 4",
+        "Task 5"
+      ],
+      "protocol": "CALVIN ABC→D long-horizon evaluation. The track only keeps the without-robot-pretraining group for the ForeAct3D/base comparison.",
+      "trackIds": [
+        "foreact3d-v1-calvin-abc-no-pretrain"
+      ],
+      "resultIds": [
+        "r-foreact3d-v1-calvin-ours",
+        "r-foreact3d-v1-calvin-starvla"
+      ],
+      "resultCount": 2,
+      "paperCount": 1,
+      "paperIds": [
+        "p124"
+      ],
+      "methodCount": 2,
+      "primaryTrackId": "foreact3d-v1-calvin-abc-no-pretrain",
+      "trainingOptions": [
+        {
+          "id": "unknown-p124",
+          "label": "训练数据未完整披露 · p124",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-foreact3d-v1-calvin-ours": "unknown-p124",
+        "r-foreact3d-v1-calvin-starvla": "unknown-p124"
+      }
     }
   ],
   "taxonomy": {
@@ -23512,6 +23775,96 @@
       "attribution": "reported-baseline",
       "trainingData": "采用本文已微调策略；不把微调、缓存冷启动与系统优化成本隐去；运行条件仅对应本表。",
       "evaluationNotes": "原值ms=[29.2, 38.9, 26.6, 34.2]，存seconds需除1000；基于各自列的比较，不能将四列作统一硬件排行榜。 原作者报告，非本站复现。未明确的检查点选择、版本细节与误差定义不补猜；不可与其他论文同名方法直接公平排名。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-foreact3d-v1-calvin-ours",
+      "paperId": "p124",
+      "method": "ForeAct3D",
+      "trackId": "foreact3d-v1-calvin-abc-no-pretrain",
+      "values": {
+        "Average length": 3.73,
+        "Task 1": 94.2,
+        "Task 2": 85.3,
+        "Task 3": 74.4,
+        "Task 4": 64.4,
+        "Task 5": 54.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.04607v1",
+      "sourceVersion": "arXiv 2610.04607v1",
+      "locator": "Table 2 · without robot pretraining",
+      "attribution": "author-reported",
+      "trainingData": "ABC train; without robot pretraining group. ForeAct3D and reproduced StarVLA-OFT share the reporting-paper setup.",
+      "evaluationNotes": "Average length is a 0–5 score; Task 1..5 are completion percentages. Track unit follows primary headline metric and raw columns preserve source table.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-foreact3d-v1-calvin-starvla",
+      "paperId": "p124",
+      "method": "StarVLA-OFT",
+      "trackId": "foreact3d-v1-calvin-abc-no-pretrain",
+      "values": {
+        "Average length": 2.94,
+        "Task 1": 86.4,
+        "Task 2": 70.2,
+        "Task 3": 55.5,
+        "Task 4": 45.2,
+        "Task 5": 36.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.04607v1",
+      "sourceVersion": "arXiv 2610.04607v1",
+      "locator": "Table 2 · without robot pretraining",
+      "attribution": "reported-baseline",
+      "trainingData": "ABC train; without robot pretraining group. ForeAct3D and reproduced StarVLA-OFT share the reporting-paper setup.",
+      "evaluationNotes": "Average length is a 0–5 score; Task 1..5 are completion percentages. Track unit follows primary headline metric and raw columns preserve source table.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-foreact3d-v1-libero-ours",
+      "paperId": "p124",
+      "method": "ForeAct3D",
+      "trackId": "foreact3d-v1-libero-all-suites",
+      "values": {
+        "Spatial": 99.2,
+        "Object": 99.2,
+        "Goal": 98.4,
+        "Long": 96.2,
+        "Average": 98.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.04607v1",
+      "sourceVersion": "arXiv 2610.04607v1",
+      "locator": "Table 1 · one model for all suites",
+      "attribution": "author-reported",
+      "trainingData": "One-model-for-all-suites setup in the ForeAct3D paper; base and proposed method share the reporting-paper configuration.",
+      "evaluationNotes": "Do not compare directly with one-model-per-suite rows from the same source table.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-foreact3d-v1-libero-starvla",
+      "paperId": "p124",
+      "method": "StarVLA-OFT",
+      "trackId": "foreact3d-v1-libero-all-suites",
+      "values": {
+        "Spatial": 97.8,
+        "Object": 98.6,
+        "Goal": 96.2,
+        "Long": 93.8,
+        "Average": 96.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.04607v1",
+      "sourceVersion": "arXiv 2610.04607v1",
+      "locator": "Table 1 · one model for all suites",
+      "attribution": "reported-baseline",
+      "trainingData": "One-model-for-all-suites setup in the ForeAct3D paper; base and proposed method share the reporting-paper configuration.",
+      "evaluationNotes": "Do not compare directly with one-model-per-suite rows from the same source table.",
       "supersedes": ""
     },
     {
@@ -30388,6 +30741,147 @@
       "attribution": "author-reported",
       "trainingData": "base-scale data",
       "evaluationNotes": "v2摘要精确值。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-proact-v1-libero-openvlaoft",
+      "paperId": "p122",
+      "method": "OpenVLA-OFT",
+      "trackId": "proact-v1-libero",
+      "values": {
+        "Spatial": 97.6,
+        "Object": 98.4,
+        "Goal": 97.9,
+        "Long": 94.5,
+        "Average": 97.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.02323v1",
+      "sourceVersion": "arXiv 2610.02323v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Reporting-paper configurations; model/pretraining backgrounds differ and are not normalized by VLA-Radar.",
+      "evaluationNotes": "Standard LIBERO four-suite table; paper states 500 rollouts per suite. Kept separate from LIBERO-Plus.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-proact-v1-libero-pi05",
+      "paperId": "p122",
+      "method": "π0.5",
+      "trackId": "proact-v1-libero",
+      "values": {
+        "Spatial": 98.8,
+        "Object": 98.2,
+        "Goal": 98,
+        "Long": 92.4,
+        "Average": 96.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.02323v1",
+      "sourceVersion": "arXiv 2610.02323v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Reporting-paper configurations; model/pretraining backgrounds differ and are not normalized by VLA-Radar.",
+      "evaluationNotes": "Standard LIBERO four-suite table; paper states 500 rollouts per suite. Kept separate from LIBERO-Plus.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-proact-v1-libero-plus-openvlaoft",
+      "paperId": "p122",
+      "method": "OpenVLA-OFT",
+      "trackId": "proact-v1-libero-plus",
+      "values": {
+        "Camera": 56.4,
+        "Robot": 31.9,
+        "Language": 79.5,
+        "Light": 88.7,
+        "Background": 93.3,
+        "Noise": 75.8,
+        "Layout": 74.2,
+        "Total": 69.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.02323v1",
+      "sourceVersion": "arXiv 2610.02323v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Reporting-paper configurations with heterogeneous pretraining/backbones.",
+      "evaluationNotes": "LIBERO-Plus seven perturbation dimensions; Total is paper-reported. Not merged with standard LIBERO.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-proact-v1-libero-plus-pi05",
+      "paperId": "p122",
+      "method": "π0.5",
+      "trackId": "proact-v1-libero-plus",
+      "values": {
+        "Camera": 59.7,
+        "Robot": 65.5,
+        "Language": 75.3,
+        "Light": 87,
+        "Background": 82.4,
+        "Noise": 72.1,
+        "Layout": 80.3,
+        "Total": 73.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.02323v1",
+      "sourceVersion": "arXiv 2610.02323v1",
+      "locator": "Table 1",
+      "attribution": "reported-baseline",
+      "trainingData": "Reporting-paper configurations with heterogeneous pretraining/backbones.",
+      "evaluationNotes": "LIBERO-Plus seven perturbation dimensions; Total is paper-reported. Not merged with standard LIBERO.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-proact-v1-libero-plus-proact",
+      "paperId": "p122",
+      "method": "ProAct",
+      "trackId": "proact-v1-libero-plus",
+      "values": {
+        "Camera": 76.1,
+        "Robot": 80.3,
+        "Language": 87.4,
+        "Light": 97.8,
+        "Background": 95.5,
+        "Noise": 90.2,
+        "Layout": 86.2,
+        "Total": 86.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.02323v1",
+      "sourceVersion": "arXiv 2610.02323v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "Reporting-paper configurations with heterogeneous pretraining/backbones.",
+      "evaluationNotes": "LIBERO-Plus seven perturbation dimensions; Total is paper-reported. Not merged with standard LIBERO.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-proact-v1-libero-proact",
+      "paperId": "p122",
+      "method": "ProAct",
+      "trackId": "proact-v1-libero",
+      "values": {
+        "Spatial": 99.4,
+        "Object": 99.6,
+        "Goal": 98.4,
+        "Long": 96,
+        "Average": 98.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.02323v1",
+      "sourceVersion": "arXiv 2610.02323v1",
+      "locator": "Table 1",
+      "attribution": "author-reported",
+      "trainingData": "Reporting-paper configurations; model/pretraining backgrounds differ and are not normalized by VLA-Radar.",
+      "evaluationNotes": "Standard LIBERO four-suite table; paper states 500 rollouts per suite. Kept separate from LIBERO-Plus.",
       "supersedes": ""
     },
     {
@@ -38483,6 +38977,160 @@
       "attribution": "author-reported",
       "trainingData": "Same 0.8B student; frozen world-model features cached offline and used via representation-alignment loss; projector discarded after training.",
       "evaluationNotes": "Mean over 4 evaluation runs = 2 seeds × 2 GPUs; deployed graph unchanged from undistilled baseline.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-toast-v1-libero-beast",
+      "paperId": "p121",
+      "method": "BEAST",
+      "trackId": "toast-v1-libero-data-scale",
+      "values": {
+        "1/1": 91.5,
+        "1/2": 82.6,
+        "1/4": 69.8,
+        "1/8": 55.2,
+        "1/16": 37.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.00899v1",
+      "sourceVersion": "arXiv 2610.00899v1",
+      "locator": "Table III",
+      "attribution": "reported-baseline",
+      "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+      "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-toast-v1-libero-binning",
+      "paperId": "p121",
+      "method": "Binning",
+      "trackId": "toast-v1-libero-data-scale",
+      "values": {
+        "1/1": 89.5,
+        "1/2": 80,
+        "1/4": 70.7,
+        "1/8": 56.4,
+        "1/16": 37.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.00899v1",
+      "sourceVersion": "arXiv 2610.00899v1",
+      "locator": "Table III",
+      "attribution": "reported-baseline",
+      "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+      "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-toast-v1-libero-deterministic",
+      "paperId": "p121",
+      "method": "TOAST (deterministic)",
+      "trackId": "toast-v1-libero-data-scale",
+      "values": {
+        "1/1": 90.9,
+        "1/2": 82.7,
+        "1/4": 69.8,
+        "1/8": 55,
+        "1/16": 36
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.00899v1",
+      "sourceVersion": "arXiv 2610.00899v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+      "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-toast-v1-libero-fastplus",
+      "paperId": "p121",
+      "method": "FAST+",
+      "trackId": "toast-v1-libero-data-scale",
+      "values": {
+        "1/1": 85.7,
+        "1/2": 59.4,
+        "1/4": 40.6,
+        "1/8": 30.1,
+        "1/16": 17.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.00899v1",
+      "sourceVersion": "arXiv 2610.00899v1",
+      "locator": "Table III",
+      "attribution": "reported-baseline",
+      "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+      "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-toast-v1-libero-fastrebuilt",
+      "paperId": "p121",
+      "method": "FAST (rebuilt)",
+      "trackId": "toast-v1-libero-data-scale",
+      "values": {
+        "1/1": 92.4,
+        "1/2": 83.8,
+        "1/4": 71.3,
+        "1/8": 55.7,
+        "1/16": 34.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.00899v1",
+      "sourceVersion": "arXiv 2610.00899v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+      "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-toast-v1-libero-toast",
+      "paperId": "p121",
+      "method": "TOAST",
+      "trackId": "toast-v1-libero-data-scale",
+      "values": {
+        "1/1": 91.4,
+        "1/2": 84.9,
+        "1/4": 75.3,
+        "1/8": 60.2,
+        "1/16": 42.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.00899v1",
+      "sourceVersion": "arXiv 2610.00899v1",
+      "locator": "Table III",
+      "attribution": "author-reported",
+      "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+      "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-toast-v1-libero-vqvla",
+      "paperId": "p121",
+      "method": "VQ-VLA",
+      "trackId": "toast-v1-libero-data-scale",
+      "values": {
+        "1/1": 82.8,
+        "1/2": 74.7,
+        "1/4": 58.3,
+        "1/8": 46.8,
+        "1/16": 31.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-06",
+      "source": "https://arxiv.org/html/2610.00899v1",
+      "sourceVersion": "arXiv 2610.00899v1",
+      "locator": "Table III",
+      "attribution": "reported-baseline",
+      "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+      "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
       "supersedes": ""
     },
     {

@@ -6558,6 +6558,120 @@
         "Haz-O"
       ],
       "source": "https://arxiv.org/html/2609.26313v1"
+    },
+    {
+      "id": "toast-v1-libero-data-scale",
+      "dataset": "LIBERO",
+      "name": "TOAST v1 · LIBERO training-data scale paper table",
+      "version": "arXiv 2610.00899v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long; aggregate reported across suites",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "For every training-data fraction, evaluation is fixed: 500 rollouts per suite (50/task), 2,000 rollouts per seed, three independently trained seeds; columns differ only in policy training-data fraction.",
+      "trainingRegime": "PaliGemma-3B autoregressive VLA; identical subsets/settings per fraction across tokenizer methods; columns 1/1..1/16 are training-data fractions, not distinct evaluation settings.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "1/1",
+        "1/2",
+        "1/4",
+        "1/8",
+        "1/16"
+      ],
+      "source": "https://arxiv.org/html/2610.00899v1"
+    },
+    {
+      "id": "proact-v1-libero",
+      "dataset": "LIBERO",
+      "name": "ProAct v1 · standard LIBERO four-suite table",
+      "version": "arXiv 2610.02323v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Standard LIBERO evaluation following pi0.5; 500 rollouts per suite. Paper-table rows retain heterogeneous pretraining/backbone differences.",
+      "trainingRegime": "Reporting-paper comparison; ProAct uses proposal/world/action experts over a flow-based VLA while baselines have different pretraining and architectures.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.02323v1"
+    },
+    {
+      "id": "proact-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "ProAct v1 · LIBERO-Plus seven perturbation dimensions",
+      "version": "arXiv 2610.02323v1",
+      "tasks": "LIBERO-Plus perturbation evaluation",
+      "split": "Camera / Robot / Language / Light / Background / Noise / Layout",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Seven LIBERO-Plus perturbation dimensions reported in the same paper; Total is the paper-reported aggregate. This is not standard LIBERO.",
+      "trainingRegime": "Reporting-paper comparison with heterogeneous model/pretraining backgrounds; no VLA-Radar fairness normalization.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Total"
+      ],
+      "source": "https://arxiv.org/html/2610.02323v1"
+    },
+    {
+      "id": "foreact3d-v1-libero-all-suites",
+      "dataset": "LIBERO",
+      "name": "ForeAct3D v1 · one model for all LIBERO suites",
+      "version": "arXiv 2610.04607v1",
+      "tasks": "40 tasks / four standard suites",
+      "split": "Spatial / Object / Goal / Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "One policy is trained/evaluated across all four LIBERO suites; kept separate from one-model-per-suite rows in the source table.",
+      "trainingRegime": "ForeAct3D and StarVLA-OFT base share the reporting paper's one-model-for-all training setup; no robot pretraining is claimed for this comparison.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.04607v1"
+    },
+    {
+      "id": "foreact3d-v1-calvin-abc-no-pretrain",
+      "dataset": "CALVIN",
+      "name": "ForeAct3D v1 · CALVIN ABC→D without robot pretraining",
+      "version": "arXiv 2610.04607v1",
+      "tasks": "Five-step language-conditioned chains",
+      "split": "ABC train → unseen D evaluation",
+      "metric": "Average completed tasks in a five-task chain",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "CALVIN ABC→D long-horizon evaluation. The track only keeps the without-robot-pretraining group for the ForeAct3D/base comparison.",
+      "trainingRegime": "No robot pretraining group; ForeAct3D and reproduced StarVLA-OFT share the reporting-paper training configuration.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average length",
+        "Task 1",
+        "Task 2",
+        "Task 3",
+        "Task 4",
+        "Task 5"
+      ],
+      "source": "https://arxiv.org/html/2610.04607v1"
     }
   ]
 }

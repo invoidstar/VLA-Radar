@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-09-29",
+  "checkedAt": "2026-10-06",
   "items": [
     {
       "title": "Skild S1 相关9月报道",
@@ -25,6 +25,18 @@
       "status": "deferred",
       "source": "https://www.agibot.com/news",
       "reason": "官方有9月21日现场展示，但技术开放与可核验指标有限；不为凑数单独收录。"
+    },
+    {
+      "title": "10月初更多人形机器人产品/融资报道",
+      "status": "deferred",
+      "source": "https://www.agilityrobotics.com/content",
+      "reason": "本期优先收录具有明确安全/部署技术细节的一手事件；纯融资或重复产品宣传不为凑数加入周报。"
+    },
+    {
+      "title": "10月5日以后新一批 VLA/机器人动态",
+      "status": "deferred",
+      "source": "https://cold-young.github.io/robotics_paper_daily/vla.html",
+      "reason": "超出本次 2026-10-04 周窗口，留到下一轮周更，避免事后扩大本周 checkpoint。"
     }
   ]
 }

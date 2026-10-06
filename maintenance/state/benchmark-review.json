@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-29",
+  "reviewedAt": "2026-10-06",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p064": {
@@ -2393,6 +2393,52 @@
         "r-safeloop-v1-libero-safety"
       ],
       "note": "LIBERO 24-task safety 评测的 success/body hazard/object hazard 可核验；作为独立 safety paper-table，不合成为总分。"
+    },
+    "p121": {
+      "status": "extracted",
+      "trackIds": [
+        "toast-v1-libero-data-scale"
+      ],
+      "resultIds": [
+        "r-toast-v1-libero-binning",
+        "r-toast-v1-libero-fastplus",
+        "r-toast-v1-libero-fastrebuilt",
+        "r-toast-v1-libero-beast",
+        "r-toast-v1-libero-vqvla",
+        "r-toast-v1-libero-deterministic",
+        "r-toast-v1-libero-toast"
+      ],
+      "note": "TOAST Table III 的五个训练数据比例均为同一 LIBERO 评测框架下的 paper-table；结果按原表保存，不把训练比例解释成独立 Evaluation Setting。"
+    },
+    "p122": {
+      "status": "extracted",
+      "trackIds": [
+        "proact-v1-libero",
+        "proact-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-proact-v1-libero-proact",
+        "r-proact-v1-libero-pi05",
+        "r-proact-v1-libero-openvlaoft",
+        "r-proact-v1-libero-plus-proact",
+        "r-proact-v1-libero-plus-pi05",
+        "r-proact-v1-libero-plus-openvlaoft"
+      ],
+      "note": "ProAct Table 1 的标准 LIBERO 与 LIBERO-Plus 分开结构化；二者为不同评测问题，不合榜。"
+    },
+    "p124": {
+      "status": "extracted",
+      "trackIds": [
+        "foreact3d-v1-libero-all-suites",
+        "foreact3d-v1-calvin-abc-no-pretrain"
+      ],
+      "resultIds": [
+        "r-foreact3d-v1-libero-ours",
+        "r-foreact3d-v1-libero-starvla",
+        "r-foreact3d-v1-calvin-ours",
+        "r-foreact3d-v1-calvin-starvla"
+      ],
+      "note": "ForeAct3D Table 1 的 one-model-for-all LIBERO 与 Table 2 的 CALVIN ABC→D/no-robot-pretraining 分轨；成功率与平均链长不混用。"
     }
   }
 }

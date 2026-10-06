@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20260930-htx-h2rc",
+  "eventKey": "htx-h2rc-embodied-ai-public-safety-20260930",
+  "title": "新加坡 HTX 启用 H2RC，面向公共安全训练具身智能人形机器人",
+  "primaryCategory": "robot",
+  "tags": [
+    "HTX",
+    "H2RC",
+    "人形机器人",
+    "具身智能",
+    "VLA",
+    "公共安全"
+  ],
+  "eventDate": "2026-09-30",
+  "publishedAt": "2026-09-30",
+  "dateNote": "采用 HTX 官方媒体稿的 2026-09-30 dateline；页面后续更新时间不替代事件日期。",
+  "observedAt": "2026-10-06",
+  "updatedAt": "2026-10-06",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "新加坡 Home Team Science and Technology Agency（HTX）宣布启用 Home Team Humanoid Robotics Centre（H2RC），用于训练具身智能人形机器人服务公共安全场景。中心覆盖动作捕捉、遥操作、人类示范、仿真、VLA 训练与评测，并与 ST Engineering 签署合作备忘录；首台机器人目标是在 2028 年进入定义明确的真实 Home Team 工作场景。",
+  "whyItMatters": "这不是单次机器人演示，而是面向特定高风险任务建立从数据采集、模型训练到现实验证的完整设施。公共安全中的 HazMat、爆炸后现场和监狱搜索等任务会把可靠性、网络安全、数据稀缺与真实环境验证同时带入具身智能工程，展示 VLA 从实验室 benchmark 走向受监管部署需要的额外系统层。",
+  "vlaRelevance": "HTX 官方明确说明专用公共安全数据需要采集、审核与标注后用于训练 Vision-Language-Action 模型，H2RC 也提供 VLA 训练和评估能力，因此该事件与 VLA 数据基础设施和真实部署闭环直接相关。",
+  "limits": "这是政府机构对新中心能力与未来计划的官方公告，不是公开统一 benchmark。2028 年真实工作目标仍属于计划时间线；本站不把设施面积、GPU 基础设施或潜在用例当作已经证明的 VLA 性能，也不推断中心采用了某个具体基础模型。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "HTX opens Humanoid Robotics Centre to advance Embodied AI for public safety",
+      "publisher": "HTX (Home Team Science and Technology Agency)",
+      "url": "https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/media-release-htx-opens-humanoid-robotics-centre-to-advance-embodied-ai-for-public-safety",
+      "kind": "official",
+      "publishedAt": "2026-09-30",
+      "access": "full-page",
+      "note": "核对 H2RC 开放日期、公共安全用例、VLA 数据/训练/评测能力、ST Engineering MOU 与 2028 目标边界。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

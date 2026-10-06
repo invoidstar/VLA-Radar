@@ -50,9 +50,9 @@ def test_september_resources_are_verified_or_absent_not_placeholder():
     assert 'p103' not in resources and 'p109' not in resources
     assert resources['p108']['code']=='https://github.com/AutoLab-SAI-SJTU/RoboFollow'
 
-def test_latest_main_candidate_is_september_not_august():
+def test_latest_main_candidate_is_not_older_than_september_backfill():
     papers=[j(f'catalog/papers/{pid}.json')['paper'] for pid in j('catalog/manifest.json')['paperOrder']]
     exact=[p for p in papers if isinstance(p['firstPublished'],str) and len(p['firstPublished'])==10]
     latest=max(p['firstPublished'] for p in exact)
-    assert latest.startswith('2026-09') and latest>='2026-09-23'
+    assert latest>='2026-09-23'
     assert any(p['id']=='p110' and p['firstPublished']=='2026-09-23' for p in exact)

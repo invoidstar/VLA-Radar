@@ -1,0 +1,22 @@
+{
+  "id": "r-foreact3d-v1-libero-starvla",
+  "paperId": "p124",
+  "method": "StarVLA-OFT",
+  "trackId": "foreact3d-v1-libero-all-suites",
+  "values": {
+    "Spatial": 97.8,
+    "Object": 98.6,
+    "Goal": 96.2,
+    "Long": 93.8,
+    "Average": 96.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-06",
+  "source": "https://arxiv.org/html/2610.04607v1",
+  "sourceVersion": "arXiv 2610.04607v1",
+  "locator": "Table 1 · one model for all suites",
+  "attribution": "reported-baseline",
+  "trainingData": "One-model-for-all-suites setup in the ForeAct3D paper; base and proposed method share the reporting-paper configuration.",
+  "evaluationNotes": "Do not compare directly with one-model-per-suite rows from the same source table.",
+  "supersedes": ""
+}

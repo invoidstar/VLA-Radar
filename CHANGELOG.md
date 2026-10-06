@@ -1,3 +1,7 @@
+## 2026-10-06 — 2026-10-04-weekly
+
+闭环补齐 2026-10-04 周更：新增 TOAST、ProAct、ForeAct3D 三篇正文级深读，结构化 LIBERO/LIBERO-Plus/CALVIN 主表，并将旧“最新论文必须停在9月”的回归改为未来增长安全不变量；DSD、Vela 等保持 deferred。Publication metadata 以 dry-run 完成 116/116 due 检查且不自动改写历史记录；source-health 本轮轮检 100 个 URL，剩余 158 个按既有 bounded rotation 继续后续周期。
+
 ## 2026-10-01 · 不蒜子改为当前页面统计
 
 - 页脚计数从 `busuanzi_site_pv / busuanzi_site_uv` 切换为 `busuanzi_page_pv / busuanzi_page_uv`，避免多个 `invoidstar.github.io/<project>/` 项目表现为共享站点级计数。

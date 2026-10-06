@@ -1,0 +1,25 @@
+{
+  "id": "r-proact-v1-libero-plus-pi05",
+  "paperId": "p122",
+  "method": "π0.5",
+  "trackId": "proact-v1-libero-plus",
+  "values": {
+    "Camera": 59.7,
+    "Robot": 65.5,
+    "Language": 75.3,
+    "Light": 87,
+    "Background": 82.4,
+    "Noise": 72.1,
+    "Layout": 80.3,
+    "Total": 73.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-06",
+  "source": "https://arxiv.org/html/2610.02323v1",
+  "sourceVersion": "arXiv 2610.02323v1",
+  "locator": "Table 1",
+  "attribution": "reported-baseline",
+  "trainingData": "Reporting-paper configurations with heterogeneous pretraining/backbones.",
+  "evaluationNotes": "LIBERO-Plus seven perturbation dimensions; Total is paper-reported. Not merged with standard LIBERO.",
+  "supersedes": ""
+}

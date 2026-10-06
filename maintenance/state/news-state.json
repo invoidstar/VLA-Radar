@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-09-29",
+  "asOf": "2026-10-06",
   "status": "complete",
-  "lastAttemptAt": "2026-09-29",
-  "lastSuccessfulSearchAt": "2026-09-29",
+  "lastAttemptAt": "2026-10-06",
+  "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "完成 2026-09-16—2026-09-29 的中英文具身智能周报补扫，重点复核最近7天；新增 LeRobot humanoid workflow、AGIBOT 300+机器人规模部署、AMD/World Labs physical AI 产业事件 3 条。原始来源与日期边界已核对，本轮计划内扫描完成。",
+  "summary": "完成 2026-09-21—2026-10-04 的具身智能周报扫描，重点复核最近7天；新增 HTX H2RC、Agility×FORT Digit 5 安全架构、ANYbotics Shift 三条官方事件。",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -24,6 +24,12 @@
       "to": "2026-09-29",
       "status": "complete",
       "note": "2026-09-29 修复周更：覆盖官方项目/公司新闻室、开源机器人生态与可靠原始媒体报道；精选3条近期事件，不重复已有9月18日前条目。"
+    },
+    {
+      "from": "2026-09-21",
+      "to": "2026-10-04",
+      "status": "complete",
+      "note": "2026-10-06 补齐中断的10月4日周更：扫描官方机器人/Physical AI公告与公开报道，精选3条有完整一手页面的事件；不以10月5日以后事件反推10月4日周窗口。"
     }
   ]
 }
