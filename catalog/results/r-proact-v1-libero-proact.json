@@ -1,0 +1,22 @@
+{
+  "id": "r-proact-v1-libero-proact",
+  "paperId": "p122",
+  "method": "ProAct",
+  "trackId": "proact-v1-libero",
+  "values": {
+    "Spatial": 99.4,
+    "Object": 99.6,
+    "Goal": 98.4,
+    "Long": 96,
+    "Average": 98.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-06",
+  "source": "https://arxiv.org/html/2610.02323v1",
+  "sourceVersion": "arXiv 2610.02323v1",
+  "locator": "Table 1",
+  "attribution": "author-reported",
+  "trainingData": "Reporting-paper configurations; model/pretraining backgrounds differ and are not normalized by VLA-Radar.",
+  "evaluationNotes": "Standard LIBERO four-suite table; paper states 500 rollouts per suite. Kept separate from LIBERO-Plus.",
+  "supersedes": ""
+}

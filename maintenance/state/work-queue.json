@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "plannedAt": "2026-09-30",
+  "plannedAt": "2026-10-06",
   "notes": [
     {
       "paperId": "p011",
@@ -20,6 +20,6 @@
   },
   "remainingNotes": 1,
   "sourceHealth": "check_sources.py: check up to 100 URLs overdue by 30 days; continue until full cycle complete",
-  "quarterlyReview": "2026-Q3",
+  "quarterlyReview": "2026-Q4",
   "instructions": "For each selected note read primary methods, contributions, experiment protocol, ablations, limitations; cite each section. Discovery/metadata/notes/results have independent completion semantics. No private research context."
 }

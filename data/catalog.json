@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-10-06",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,219 @@
     }
   ],
   "papers": [
+    {
+      "id": "p124",
+      "name": "ForeAct3D",
+      "title": "ForeAct3D: Policy-Grounded Future World Modeling for VLA Policies",
+      "team": "Zhe Tao、Feiran Wang、Gaowen Liu、Ramana Rao Kompella、Yan Yan",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-10-03",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以后续收录时间替代。",
+      "collectionMonth": "2026-10",
+      "versionNote": "10月3日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "world",
+        "spatial",
+        "action"
+      ],
+      "tags": [
+        "semantic 3D",
+        "future prediction",
+        "physical consistency",
+        "action conditioning",
+        "LIBERO",
+        "CALVIN"
+      ],
+      "priority": "deep",
+      "contribution": "把未来世界监督从 RGB/latent appearance 提升为动作条件化的 semantic 3D state，联合预测 depth、三类 segmentation 与 camera pose，并用背景静止、物体刚性和腕相机-末端运动学约束当前/未来状态。",
+      "findings": "单一模型覆盖 LIBERO 四套件平均98.3%，无机器人预训练的 CALVIN ABC→D 平均链长3.73；三项真机任务累计消融中平均成功从 StarVLA-OFT 的6.7%提升到37.8%。",
+      "limitations": "所有物体共享一个 object 类且无 instance correspondence；物理 closure 假设背景静止和对象近似刚体。未来预测只作为训练监督，不在测试时显式用于重规划或动作筛选。",
+      "insight": "世界变化监督若要真正帮助动作，不只要预测“未来长什么样”，还应在共同3D坐标中约束物理一致性，并明确条件于 policy 实际准备执行的 action chunk。",
+      "readingFocus": "semantic 3D state、geometric queries、physical-consistency closure、action conditioning、LIBERO/CALVIN 协议、future geometry 指标和真机累计消融。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-06 按 arXiv v1 全文与官方代码仓库复核；结果为作者报告。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2610.04607v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2610.04607"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/anthonytao80-crypto/ForeAct3D"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.04607",
+      "arxiv": "2610.04607",
+      "doi": "",
+      "detailUrl": "data/details/p124.json?v=5ab0f50a009e2021",
+      "resultUrl": "data/paper-results/p124.336dddb1cee7aab9.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/anthonytao80-crypto/ForeAct3D"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p124.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-03",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "p122",
+      "name": "ProAct",
+      "title": "World-Calibrated Proposal-to-Action Flow for Vision-Language-Action Models",
+      "team": "Jie He、Wei Li、Junwen Tong、Rui Shao、Wei-Shi Zheng、Liqiang Nie",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-10-01",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以本站发现日期替代。",
+      "collectionMonth": "2026-10",
+      "versionNote": "10月1日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "action",
+        "world",
+        "efficiency"
+      ],
+      "tags": [
+        "flow matching",
+        "proposal",
+        "world model",
+        "V-JEPA 2",
+        "LIBERO-Plus",
+        "RoboTwin"
+      ],
+      "priority": "deep",
+      "contribution": "把 flow VLA 的生成源从任务无关高斯改为由近期已执行动作提出、再经未来世界表征校准的 proposal-centered anisotropic source，以 propose→calibrate→refine 三阶段缩短动作运输路径。",
+      "findings": "ProAct 报告 LIBERO 98.4%、LIBERO-Plus 86.8%、RoboTwin 2.0 randomized-hard 60.3%；相对 π0.5 在 LIBERO 将延迟121.26ms降到89.98ms、吞吐82.47Hz升到111.14Hz。",
+      "limitations": "系统同时改变 proposal、world expert 与 source geometry；真实机器人指标依赖两套平台和作者复现实验。proposal 利用局部运动连续性，在突变接触/阶段切换处仍需 world calibration 才可靠。",
+      "insight": "flow matching 不必永远从无信息高斯开始；如果近期动作能提供局部先验，世界预测可以负责决定“偏离多少、沿哪些动作维度偏离”，把未来推理直接写进生成起点。",
+      "readingFocus": "motion extrapolation、Proposal Expert、V-JEPA 2 World Expert、refinement extent/geometry、LIBERO-Plus、RoboTwin randomized hard、真机 checkpoint 与效率。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-06 按 arXiv v1 正文与官方项目/代码入口复核；表中基线按论文归属，不等同本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2610.02323v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2610.02323"
+        },
+        {
+          "label": "作者项目页",
+          "url": "https://jiutian-vl.github.io/ProAct-page/"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/JiuTian-VL/ProAct"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.02323",
+      "arxiv": "2610.02323",
+      "doi": "",
+      "detailUrl": "data/details/p122.json?v=85910c58f1f626e5",
+      "resultUrl": "data/paper-results/p122.e5f499e613fd6995.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://jiutian-vl.github.io/ProAct-page/",
+        "code": "https://github.com/JiuTian-VL/ProAct"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p122.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-01",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "p121",
+      "name": "TOAST",
+      "title": "TOAST: Stochastic Robot Action Tokenization for Autoregressive Vision-Language-Action Models",
+      "team": "Keisuke Shirai、Tomohiro Motoda、Hanbit Oh、Ryoichi Nakajo、Roman Mykhailyshyn、Ryo Hanai、Shotaro Miwa、Yukiyasu Domae",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 预印本",
+      "firstPublished": "2026-10-01",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不以本站发现日期或后续修订日期替代。",
+      "collectionMonth": "2026-10",
+      "versionNote": "10月1日首次公开｜阅读 arXiv v1",
+      "topics": [
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "action tokenization",
+        "autoregressive VLA",
+        "stochastic tokenization",
+        "data efficiency",
+        "LIBERO"
+      ],
+      "priority": "deep",
+      "contribution": "把同一量化动作序列存在的多种等价分词视为可利用的监督冗余，用 unigram tokenizer 在训练时随机采样不同 token segmentation，而不改变连续动作、策略架构或 next-token 目标。",
+      "findings": "LIBERO 全数据到 1/16 数据均优于 deterministic counterpart；1/16 时 42.8% 对 36.0%，提升6.8个百分点。四项真机任务平均成功率50.8%，相对 deterministic counterpart 提升15.8个百分点。",
+      "limitations": "收益依赖离散动作 tokenizer 存在可替代 segmentation；当前实验集中于 PaliGemma-3B 自回归 VLA、LIBERO 与一套 Franka 真机平台，不能直接外推到 flow policy 或所有动作空间。",
+      "insight": "动作 token 的唯一性并不是物理必需条件；在保持解码动作完全一致时随机化符号表示，可以像 subword regularization 一样增加监督多样性，尤其适合示范稀缺场景。",
+      "readingFocus": "unigram tokenizer 构造、dimension-major flattening、n-best sampling、数据量缩放实验、真机执行时序、deterministic 对照和 tokenizer 设计消融。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-06 按 arXiv v1 全文与作者项目入口复核；数值均为作者报告，非本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文",
+          "url": "https://arxiv.org/html/2610.00899v1"
+        },
+        {
+          "label": "arXiv 元数据",
+          "url": "https://arxiv.org/abs/2610.00899"
+        },
+        {
+          "label": "作者项目页",
+          "url": "https://kskshr.github.io/toast/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.00899",
+      "arxiv": "2610.00899",
+      "doi": "",
+      "detailUrl": "data/details/p121.json?v=e284fb94422d9cea",
+      "resultUrl": "data/paper-results/p121.15d60ee58941ac81.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://kskshr.github.io/toast/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p121.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-01",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-06"
+      }
+    },
     {
       "id": "p119",
       "name": "World Action Agent",

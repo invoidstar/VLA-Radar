@@ -1,0 +1,22 @@
+{
+  "id": "r-toast-v1-libero-toast",
+  "paperId": "p121",
+  "method": "TOAST",
+  "trackId": "toast-v1-libero-data-scale",
+  "values": {
+    "1/1": 91.4,
+    "1/2": 84.9,
+    "1/4": 75.3,
+    "1/8": 60.2,
+    "1/16": 42.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-06",
+  "source": "https://arxiv.org/html/2610.00899v1",
+  "sourceVersion": "arXiv 2610.00899v1",
+  "locator": "Table III",
+  "attribution": "author-reported",
+  "trainingData": "Columns are LIBERO policy-training fractions 1/1, 1/2, 1/4, 1/8, 1/16; identical subsets are used across methods within a fraction.",
+  "evaluationNotes": "Evaluation remains 500 rollouts/suite, 2,000/seed and three independently trained seeds for every fraction. Training fraction is result metadata, not a new evaluation setting.",
+  "supersedes": ""
+}
