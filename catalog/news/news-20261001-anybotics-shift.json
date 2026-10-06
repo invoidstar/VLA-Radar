@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261001-anybotics-shift",
+  "eventKey": "anybotics-shift-fleet-operations-20261001",
+  "title": "ANYbotics 发布 Shift，将机器人巡检、资产模型与维护工单连成闭环",
+  "primaryCategory": "industry",
+  "tags": [
+    "ANYbotics",
+    "ANYmal",
+    "机器人集群",
+    "工业巡检",
+    "Physical AI",
+    "运维平台"
+  ],
+  "eventDate": "2026-10-01",
+  "publishedAt": "2026-10-01",
+  "dateNote": "采用 ANYbotics 官方新闻稿明确的 2026-10-01 发布日期。",
+  "observedAt": "2026-10-06",
+  "updatedAt": "2026-10-06",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "ANYbotics 发布 Shift 机器人运营平台，把 plant model、机器人 fleet、巡检 AI 数据和维护系统组织成连续工作流。平台包含 Fleet、Insight、Connect、Maps 等模块，并通过 API 与 DCS、CMMS/ERP、APM 和数字孪生系统双向连接；官方还提供 managed cloud、自有云和必要时 on-premise 的部署选项。",
+  "whyItMatters": "随着工业机器人从单机试点扩展到多机器人长期巡检，核心问题从“机器人能否完成一次任务”转向调度、资产上下文、异常解释和维护闭环。Shift 把机器人输出直接连接到企业维护动作，体现真实 physical AI 系统在长期部署中对 fleet orchestration、数据治理和业务系统集成的需求。",
+  "vlaRelevance": "Shift 并非 VLA policy 发布，但它提供了具身系统的上层运营与任务编排基础设施。未来通用 VLA 或 embodied agent 若进入工业巡检，仍需要把任务分配、机器人状态、现场数据、异常与企业工单系统连接起来；这类平台展示了模型能力之外的生产部署接口。",
+  "limits": "机器人部署数、巡检量和客户案例来自 ANYbotics 官方材料，不能作为独立性能审计。Shift AI 的“持续学习”与未来支持第三方机器人等描述没有公开模型/benchmark 细节；本站只记录产品工作流和官方部署口径，不将其解释为 VLA 或 agent 性能已经得到验证。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "ANYbotics Launches Shift to Streamline Robot Fleet Operations and Power Autonomous Industrial Inspection at Scale",
+      "publisher": "ANYbotics",
+      "url": "https://www.anybotics.com/news/shift-launch/",
+      "kind": "official",
+      "publishedAt": "2026-10-01",
+      "access": "full-page",
+      "note": "核对 Shift 发布日期、Fleet/Insight/Connect/Maps 工作流、API/部署方式和官方规模口径。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
