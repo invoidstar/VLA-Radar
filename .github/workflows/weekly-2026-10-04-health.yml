@@ -1,0 +1,39 @@
+name: Weekly 2026-10-04 health closeout
+on:
+  push:
+    branches: ['release/batch-weekly-2026-10-04']
+    paths: ['.github/workflows/weekly-2026-10-04-health.yml']
+permissions:
+  contents: write
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run publication refresh as dry-run only
+        run: |
+          set -eu
+          python scripts/maintenance/sync_publications.py --limit 100 --due-days 7 > /tmp/publication-check.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          src=Path('/tmp/publication-check.json')
+          obj=json.loads(src.read_text())
+          Path('maintenance/state/publication-check.json').write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Run bounded source-health rotation
+        run: python scripts/maintenance/check_sources.py --limit 100 --due-days 30 --max-seconds 180
+      - name: Commit health state to weekly branch only
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          test "$BRANCH" = "release/batch-weekly-2026-10-04"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add maintenance/state/publication-check.json maintenance/state/source-health.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh weekly publication and source health'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
