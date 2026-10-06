@@ -1,6 +1,461 @@
 {
   "schemaVersion": 2,
-  "window": {"from": "2026-09-15", "to": "2026-10-04"},
-  "status": "partial",
-  "candidates": []
+  "id": "discovery-2026-09-15-2026-10-04-weekly",
+  "window": {
+    "from": "2026-09-15",
+    "to": "2026-10-04",
+    "attemptedAt": "2026-10-06",
+    "completedAt": "2026-10-06"
+  },
+  "scope": "VLA / WAM / robot manipulation discovery, including action representation, world modeling, post-training/RL, memory, spatial/3D, efficiency, safety and evaluation; completion of the interrupted 2026-10-04 weekly run.",
+  "sources": [
+    {
+      "id": "arxiv-primary",
+      "lane": "primary-preprints",
+      "provider": "arXiv",
+      "kind": "direct primary preprint search and exact-ID verification",
+      "status": "success",
+      "coverage": {
+        "from": "2026-09-15",
+        "to": "2026-10-04"
+      },
+      "query": "Recent cs.RO/cs.AI Vision-Language-Action, VLA, world-action model, robot manipulation, action tokenization, safety, memory and efficiency papers; exact candidate identity/version verified at arXiv.",
+      "resultCount": 22,
+      "note": "Primary lane used for exact first-public/version identity and full-text reads of selected papers."
+    },
+    {
+      "id": "arxivsignals-index",
+      "lane": "academic-index",
+      "provider": "ArXivSignals / scholarly web index search",
+      "kind": "independent academic-index search",
+      "status": "success",
+      "coverage": {
+        "from": "2026-09-15",
+        "to": "2026-10-04"
+      },
+      "query": "Recent VLA / WAM titles and identifiers across the weekly overlap window; independent index search used as a missed-paper cross-check.",
+      "resultCount": 1,
+      "note": "Index coverage was sparse for very recent records; zero/low indexing was retained honestly rather than used as evidence of absence."
+    },
+    {
+      "id": "robotics-daily",
+      "lane": "curated-robotics",
+      "provider": "robotics_paper_daily",
+      "kind": "curated robotics/VLA index",
+      "status": "success",
+      "coverage": {
+        "from": "2026-09-15",
+        "to": "2026-10-04"
+      },
+      "query": "VLA category rows dated 2026-09-15 through 2026-10-04, with focus on 9/28–10/04 dense update cluster.",
+      "resultCount": 38,
+      "note": "Curated lane exposed the dense Oct-1/Oct-2/Oct-4 candidate cluster; scientific claims for selected papers were still checked against primary sources."
+    },
+    {
+      "id": "official-reverse",
+      "lane": "reverse-discovery",
+      "provider": "Official project/repository pages",
+      "kind": "official project/code reverse check",
+      "status": "success",
+      "coverage": {
+        "from": "2026-09-15",
+        "to": "2026-10-04"
+      },
+      "query": "Reverse-check author project pages and official repositories for selected/recent VLA papers and released resources.",
+      "resultCount": 5,
+      "note": "TOAST project, ProAct project/code and ForeAct3D repository were checked as official resource entry points; reverse checks do not replace paper evidence."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "TOAST: Stochastic Robot Action Tokenization for Autoregressive Vision-Language-Action Models",
+      "arxiv": "2610.00899",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily",
+        "official-reverse"
+      ],
+      "status": "selected",
+      "reason": "一手 arXiv 全文、作者项目入口和完整实验表可核验；完成正文级深读后入库。",
+      "paperId": "p121",
+      "duplicateOf": null
+    },
+    {
+      "title": "World-Calibrated Proposal-to-Action Flow for Vision-Language-Action Models",
+      "arxiv": "2610.02323",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily",
+        "official-reverse"
+      ],
+      "status": "selected",
+      "reason": "一手 arXiv 全文、作者项目页和官方代码可核验；完成正文级深读后入库。",
+      "paperId": "p122",
+      "duplicateOf": null
+    },
+    {
+      "title": "ForeAct3D: Policy-Grounded Future World Modeling for VLA Policies",
+      "arxiv": "2610.04607",
+      "doi": "",
+      "date": "2026-10-03",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily",
+        "official-reverse"
+      ],
+      "status": "selected",
+      "reason": "一手 arXiv 全文与官方代码仓库可核验；完成正文级深读后入库。",
+      "paperId": "p124",
+      "duplicateOf": null
+    },
+    {
+      "title": "SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation",
+      "arxiv": "2609.16641",
+      "doi": "",
+      "date": "2026-09-15",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily"
+      ],
+      "status": "duplicate",
+      "reason": "已在上一轮完整入库并深读。",
+      "paperId": null,
+      "duplicateOf": "p117"
+    },
+    {
+      "title": "Self-Adaptive VLA for Robust Robot Deployment",
+      "arxiv": "2609.30092",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily",
+        "official-reverse"
+      ],
+      "status": "duplicate",
+      "reason": "已在上一轮完整入库并深读。",
+      "paperId": null,
+      "duplicateOf": "p118"
+    },
+    {
+      "title": "World Action Agent: Harnessing VLMs for Robot Manipulation via World Action Rehearsal",
+      "arxiv": "2609.29964",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily"
+      ],
+      "status": "duplicate",
+      "reason": "已在上一轮完整入库并深读。",
+      "paperId": null,
+      "duplicateOf": "p119"
+    },
+    {
+      "title": "SafeLoop: Risk-Aware Rollback for Vision-Language-Action Manipulation",
+      "arxiv": "2609.26313",
+      "doi": "",
+      "date": "2026-09-22",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily",
+        "official-reverse"
+      ],
+      "status": "duplicate",
+      "reason": "已在上一轮完整入库并深读。",
+      "paperId": null,
+      "duplicateOf": "p120"
+    },
+    {
+      "title": "Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models",
+      "arxiv": "2609.28865",
+      "doi": "",
+      "date": "2026-09-24",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "上次中断任务已识别，但本轮无法稳定取得一手全文主体用于正文级核验；保留候选而不从摘要级强行入库。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Vela: Scaling Vision-Language-Action Models with Adaptive Action Curve Parametrization",
+      "arxiv": "2610.05230",
+      "doi": "",
+      "date": "2026-10-04",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "高度相关，但本轮可访问材料不足以按当前深读门槛完整核验正文与全部协议；留后续版本复核。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "A Safe Action Is Not Enough: Feasible-Future Decoding for Vision-Language-Action Policies",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-04",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "VLA 安全与 future feasibility 高相关，待完成一手全文与安全协议核验。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Beyond LLM Serving: Characterizing Vision-Language-Action Workloads for Embodied AI System Design",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-04",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "VLA 系统/部署方向相关，待核验硬件、deadline 与任务成功之间的完整实验定义。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "PerturBot: Breaking Shortcut Priors in Vision-Language-Action Models with Perturbative Training",
+      "arxiv": "2610.04616",
+      "doi": "",
+      "date": "2026-10-03",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "已定位一手全文，但本轮深读配额优先三篇更高证据密度工作；保留下一批。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "MixVLA: Adaptive Mixing of Non-Invariant Information for Generalizable Vision-Language-Action Models",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-02",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "OOD/generalization 相关；待正文级消融和 benchmark 协议核验。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "PointWAM: 3D World Action Modeling for Dexterous Robotic Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-02",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "重要 3D WAM 候选，需单独完整核验世界表示、动作接口与真机协议。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "FastOPD: On-Policy Distillation for Lightweight VLA Deployment",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-02",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "轻量部署方向相关；待核验 on-policy distillation 成本、延迟与性能口径。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "SARI: Phase-Split Sim-Real Co-Training for Contact-Rich Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-02",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "sim-real/contact-rich 方向相关；需全文确认真实数据预算和 phase split 边界。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "RoboBridge: A Self-Evolving Embodied Agent Framework for Sim-to-Real Transfer",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-02",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "具身 agent/sim-to-real 相关；待确认是否达到 VLA-Radar 主库的动作模型证据门槛。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Divide-and-Remember: Recursive Action-Relevant Memory for Long-Horizon VLA Policies",
+      "arxiv": "2610.00982",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "arxiv-primary",
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "长程记忆方向高度相关；保留下一轮正文级深读。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "UniWAM: Unified World-Action Model",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "统一 VLA/WAM 方向重要，需完整核验预训练数据、世界监督和下游协议。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "SocialVLA: A Social Perception Gateway for Human-Reaction-Based Failure Detection and Recovery in VLA Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "failure detection/recovery 相关；待核验人类反馈协议与 policy-agnostic 边界。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "eRLT: Efficient VLA Reinforcement Learning via Action-Relevant Token Routing",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "VLA RL 后训练相关；需全文核验在线样本效率和计算预算。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Kinematic MeanFlow: One-Step Action Generation Policy for Robotic Foundation Models",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "单步 action generation/效率方向相关；待核验 flow dynamics 与部署指标。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Is Success All You Need? Investigating the Impact of Input Perturbations on VLA Behaviour in Tabletop Manipulation Tasks",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "评测方法与行为鲁棒性相关；待核验 proposed metrics 与标准 benchmark 的对应关系。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "WBAG: A Whole-Body and Attached-Geometry Safety Framework for Vision-Language-Action Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "VLA runtime safety 相关；待完整核验安全约束与碰撞评测。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Spatial Grafting: Grounding 3D Features for Flow-Matching Robot Policies",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-09-28",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "deferred",
+      "reason": "空间3D与 flow policy 相关；保留后续深读。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Localized Conformal Safety Monitoring with Vision-Language Models for Autonomous Driving",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-02",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "excluded",
+      "reason": "核心对象是自动驾驶轨迹安全监测，不属于当前机器人操作/具身 VLA 主库。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "GeoScaffold: Learning Compact Geometric Latents via Reconstruction for Efficient Vision-Language Navigation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-02",
+      "sourceIds": [
+        "robotics-daily"
+      ],
+      "status": "excluded",
+      "reason": "核心为 Vision-Language Navigation，不是机器人操作/低层 VLA action policy 主线。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Spurious Sources in High-Resolution VLA Surveys",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-09-30",
+      "sourceIds": [
+        "arxivsignals-index"
+      ],
+      "status": "excluded",
+      "reason": "VLA 指 Very Large Array 天文观测，与 Vision-Language-Action 无关。",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 28,
+    "selected": 3,
+    "deferred": 18,
+    "excluded": 3,
+    "duplicate": 4,
+    "crossSource": 11
+  },
+  "status": "success",
+  "notes": "Completes the interrupted 2026-10-04 weekly discovery. Three papers have full primary-source deep reads and are selected; high-value candidates whose full evidence was not closed remain deferred, including the previously staged DSD and Vela rather than being shallowly admitted."
 }
