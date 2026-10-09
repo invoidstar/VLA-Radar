@@ -1,3 +1,7 @@
+## 2026-10-09 — 2026-10-09-barybind
+
+应用户提供的官方项目入口，新增 BaryBind（arXiv:2609.33800，NeurIPS 2026）的正文级研究笔记。核验多模态 Wasserstein barycenter、BVC/DAM、原始分类/检索/模态缺失结果；完整记录官方项目与代码，区分尚待开放的 BaryBind pretrained weights；作为跨领域表征基础工作收录，不添加机器人 VLA Benchmark/Result Report，也不改变本周 Discovery/News 完整扫描 checkpoint。
+
 ## 2026-10-06 — 2026-10-04-weekly
 
 闭环补齐 2026-10-04 周更：新增 TOAST、ProAct、ForeAct3D 三篇正文级深读，结构化 LIBERO/LIBERO-Plus/CALVIN 主表，并将旧“最新论文必须停在9月”的回归改为未来增长安全不变量；DSD、Vela 等保持 deferred。Publication metadata 以 dry-run 完成 116/116 due 检查且不自动改写历史记录；source-health 本轮轮检 100 个 URL，剩余 158 个按既有 bounded rotation 继续后续周期。

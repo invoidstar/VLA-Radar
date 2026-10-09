@@ -113,6 +113,20 @@
       "results": 17,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-09-barybind",
+      "sha256": "1b3022809d069f6c991c0016b481e5285c61f472a16169a6ddc4c370a76f4f66",
+      "date": "2026-10-09",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [
+        "p123"
+      ],
+      "reproducibility": [
+        "p123"
+      ]
     }
   ]
 }
