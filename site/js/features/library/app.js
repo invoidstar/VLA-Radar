@@ -146,14 +146,25 @@
   }
 
   // Damerau-Levenshtein is only used for Latin title/tag words; numeric evidence is never fuzzy-matched.
+  let cachedHighlightQuery=null,cachedHighlightRegex=null;
   function highlight(text){
     if(!state.q)return esc(text);
-    const terms=norm(state.q).split(/\s+/).filter(x=>x.length>1).sort((a,b)=>b.length-a.length);
-    if(!terms.length)return esc(text);
+    if(cachedHighlightQuery!==state.q){
+      cachedHighlightQuery=state.q;
+  const terms=norm(state.q).split(/\s+/).filter(x=>x.length>1).sort((a,b)=>b.length-a.length);
+      if(!terms.length)cachedHighlightRegex=null;
+      else{
     const pattern=terms.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
-    try{const re=new RegExp(pattern,'gi');let out='',at=0;String(text).replace(re,(hit,pos)=>{out+=esc(String(text).slice(at,pos))+'<mark>'+esc(hit)+'</mark>';at=pos+hit.length;return hit;});return out+esc(String(text).slice(at));}catch{return esc(text);}
+        try{cachedHighlightRegex=new RegExp(pattern,'gi');}catch{cachedHighlightRegex=null;}
+      }
+    }
+    if(!cachedHighlightRegex)return esc(text);
+    try{
+      const re=cachedHighlightRegex;re.lastIndex=0;
+      let out='',at=0;String(text).replace(re,(hit,pos)=>{out+=esc(String(text).slice(at,pos))+'<mark>'+esc(hit)+'</mark>';at=pos+hit.length;return hit;});return out+esc(String(text).slice(at));
+    }catch{return esc(text);}
   }
-  function getFiltered(){
+    function getFiltered(){
     const tokens=norm(state.q).split(/\s+/).filter(Boolean).slice(0,12);
     const matches=[];
     for(const entry of index){const p=entry.paper, l=local(p.id);
