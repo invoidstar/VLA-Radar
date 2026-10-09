@@ -26,7 +26,18 @@
       else rows=await localSearch(q);
       cache.set(q,rows);return rows;
     }
-    return {query};
+    // Warm the full-text worker only after the user shows search intent.
+    // A warmup never changes search results and does not fetch during startup.
+    let warmed=false;
+    function warmup(){
+      if(warmed)return;
+      warmed=true;startWorker();
+      if(workerReady){
+        try{worker.postMessage({id:0,path,warmup:true});}
+        catch{failWorker();source().catch(()=>{});}
+      }else source().catch(()=>{});
+    }
+    return {query,warmup};
   }
   g.RadarSearchClient={create};
 })(typeof window!=='undefined'?window:globalThis);

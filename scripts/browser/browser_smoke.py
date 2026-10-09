@@ -59,6 +59,23 @@ try:
   assert not math_audit['pageOverflow'],math_audit
   page.locator('#math-smoke').evaluate('(el)=>el.remove()')
   assert not any('search-index.' in u or 'board-index.' in u or '/details/' in u or '/reproducibility/' in u for u in requests), requests
+  # Search intent warms the index before typing, without requesting it at startup.
+  page.locator('#search').focus()
+  page.wait_for_timeout(700)
+  assert any('search-index.' in u for u in requests), 'Search focus did not warm the full-text index'
+  # Detail must not wait for a slow/blocked independent reproducibility shard.
+  isolated=browser.new_page(viewport={'width':1100,'height':850})
+  isolated.goto(f'http://127.0.0.1:{port}/',wait_until='networkidle')
+  isolated.wait_for_selector('.paper-card')
+  isolated.evaluate("""() => {
+    const original=window.RadarRuntime.loadJson;
+    window.RadarRuntime.loadJson=path=>path.includes('/reproducibility/')
+      ? new Promise(()=>{}) : original(path);
+  }""")
+  isolated.locator('.detail-btn').first.click()
+  isolated.wait_for_selector('.note-section',timeout=8000)
+  assert isolated.locator('.note-section').count()>=8, 'Paper note was blocked by pending resource metadata'
+  isolated.close()
   # Official resources are separate from evidence: render only when verified and never add placeholders.
   page.locator('#search').fill('OpenVLA');page.wait_for_timeout(900)
   openvla=page.locator('[data-paper="p064"]').first;assert openvla.count()==1

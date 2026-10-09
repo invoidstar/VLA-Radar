@@ -171,12 +171,12 @@
       return para(block);
     }).join('');
   }
-  async function enhance(p,root){
+  async function enhance(p,root,preloadedDetail=null){
     root.dataset.paperId=p.id;
     const token=Symbol(p.id);root._researchToken=token;
     const hint=document.createElement('div');hint.className='research-loading';hint.setAttribute('role','status');hint.textContent='正在载入详细笔记与发表历程…';root.querySelector('.date-grid')?.after(hint);
     try{
-      const r=await detail(p);if(root._researchToken!==token)return;if(!r){hint.remove();return;}
+      const r=preloadedDetail || await detail(p);if(root._researchToken!==token)return;if(!r){hint.remove();return;}
       const note=r.note, stale=note.status==='needs_review';
       root.querySelectorAll('.detail-section:not(.relation-section),.evidence-status').forEach(e=>e.remove());
       const panel=document.createElement('div');panel.className='research-detail';
@@ -285,6 +285,6 @@
       await draw();
     }catch(err){if(token!==boardToken)return;host.innerHTML='<div class="research-empty"><h2>榜单暂未载入</h2><p>请刷新重试。未载入不代表没有结果或分数为零。</p><button id="retry-board" class="btn">重试</button></div>';host.querySelector('#retry-board').onclick=()=>renderBoards(host);console.warn('Leaderboard:',err.message);}
   }
-  global.RadarResearch={cancelBoards:()=>{boardToken++;},loadBoards,loadTrack,loadSetting,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,sourceKey,boardGroups,protocolGroups,methodKey,methodGroups,familyMethodsHtml,pageWindow,rankRows,sortRows,boardRows,sortDirection,metricDirection,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks,richText:rich,richParagraphs:para};
+  global.RadarResearch={cancelBoards:()=>{boardToken++;},prefetchBoards:loadBoards,loadBoards,loadTrack,loadSetting,loadPaperResults,lifecycle,links,scopeNotice,configure,detail,enhance,renderBoards,sourceKey,boardGroups,protocolGroups,methodKey,methodGroups,familyMethodsHtml,pageWindow,rankRows,sortRows,boardRows,sortDirection,metricDirection,visibleResults,metricValue,benchmarkFamilies,richEvidence,datasetNames,formatScore,noteBlocks,richText:rich,richParagraphs:para};
   if(typeof module!=='undefined')module.exports=global.RadarResearch;
 })(typeof window!=='undefined'?window:globalThis);

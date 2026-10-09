@@ -92,7 +92,7 @@
     for(const v of ['radar','topics','timeline','about','leaderboards','reader','compare','updates','coverage','news'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
     $('#reading-notice').classList.toggle('hidden',state.view!=='reading');
     $('#section-title').textContent=state.view==='reading'?'我的阅读清单':'论文文库';
-    updateControls();renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
+    updateControls();if(['papers','reading'].includes(state.view))renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
     if(state.view==='radar'){window.RadarWorkspace.leave();window.RadarTools.show($('#radar-content'));}else if(['reader','compare','updates','coverage','news'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
     document.title=`${views[state.view]} · VLA Research Radar`;
   }
@@ -146,12 +146,23 @@
   }
 
   // Damerau-Levenshtein is only used for Latin title/tag words; numeric evidence is never fuzzy-matched.
+  let cachedHighlightQuery=null,cachedHighlightRegex=null;
   function highlight(text){
     if(!state.q)return esc(text);
-    const terms=norm(state.q).split(/\s+/).filter(x=>x.length>1).sort((a,b)=>b.length-a.length);
-    if(!terms.length)return esc(text);
-    const pattern=terms.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
-    try{const re=new RegExp(pattern,'gi');let out='',at=0;String(text).replace(re,(hit,pos)=>{out+=esc(String(text).slice(at,pos))+'<mark>'+esc(hit)+'</mark>';at=pos+hit.length;return hit;});return out+esc(String(text).slice(at));}catch{return esc(text);}
+    if(cachedHighlightQuery!==state.q){
+      cachedHighlightQuery=state.q;
+      const terms=norm(state.q).split(/\s+/).filter(x=>x.length>1).sort((a,b)=>b.length-a.length);
+      if(!terms.length)cachedHighlightRegex=null;
+      else{
+        const pattern=terms.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
+        try{cachedHighlightRegex=new RegExp(pattern,'gi');}catch{cachedHighlightRegex=null;}
+      }
+    }
+    if(!cachedHighlightRegex)return esc(text);
+    try{
+      const re=cachedHighlightRegex;re.lastIndex=0;
+      let out='',at=0;String(text).replace(re,(hit,pos)=>{out+=esc(String(text).slice(at,pos))+'<mark>'+esc(hit)+'</mark>';at=pos+hit.length;return hit;});return out+esc(String(text).slice(at));
+    }catch{return esc(text);}
   }
   function getFiltered(){
     const tokens=norm(state.q).split(/\s+/).filter(Boolean).slice(0,12);
@@ -223,9 +234,8 @@
     const fallback=baseReproducibility(p);
     if(!p.reproducibilityUrl)return fallback;
     try{
-      const response=await fetch(p.reproducibilityUrl,{cache:'no-cache',credentials:'omit'});
-      if(!response.ok)throw new Error('HTTP '+response.status);
-      const payload=await response.json();
+      // Re-use the bounded in-session shard cache; keep the previous fallback semantics.
+      const payload=await window.RadarRuntime.loadJson(p.reproducibilityUrl);
       if(payload.schemaVersion!==1||payload.paperId!==p.id||!payload.items)throw new Error('invalid reproducibility shard');
       return {verifiedAt:payload.verifiedAt||null,level:payload.level||null,note:payload.note||'',items:payload.items};
     }catch(error){console.warn('Reproducibility card:',error.message);return fallback;}
@@ -273,10 +283,20 @@
   function toggleSave(id){reading[id]={...local(id),saved:!local(id).saved};saveState();renderResults();if($('#paper-dialog').open)renderDetail(id);notify(local(id).saved?'已加入本地阅读清单':'已取消收藏');}
   async function renderDetail(id){
     const brief=data.papers.find(p=>p.id===id);if(!brief)return;const request=++detailSequence;
-    $('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p role="status">正在载入详细笔记…</p>';
-    let p=brief;
-    try{const [r,reproducibility]=await Promise.all([window.RadarResearch.detail(brief),loadReproducibility(brief)]);if(request!==detailSequence)return;if(r)p={...r.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{},relations:brief.relations||{previous:[],followups:[],series:[]},reproducibility};}
-    catch(error){if(request!==detailSequence)return;$('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p class="research-warning">详细笔记暂不可用，网站可能已更新。请刷新页面后重试。</p>';return;}
+    // Show the source-backed summary immediately; do not make the full note wait for
+    // an unrelated Reproducibility request (which can be slow on some networks).
+    $('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p class="dialog-full-title">'+esc(brief.title)+'</p><p class="detail-prose">'+esc(brief.findings)+'</p><p role="status">正在载入详细笔记…</p>';
+    const reproPromise=loadReproducibility(brief);
+    let p=brief,detailRecord=null;
+    try{
+      detailRecord=await window.RadarResearch.detail(brief);
+      if(request!==detailSequence)return;
+      if(detailRecord)p={...detailRecord.paper,detailUrl:brief.detailUrl,resultUrl:brief.resultUrl,resources:brief.resources||{},relations:brief.relations||{previous:[],followups:[],series:[]},reproducibility:baseReproducibility(brief)};
+    }catch(error){
+      if(request!==detailSequence)return;
+      $('#paper-detail').innerHTML='<h2 id="dialog-title">'+esc(brief.name)+'</h2><p class="research-warning">详细笔记暂不可用，网站可能已更新。请刷新页面后重试。</p>';
+      return;
+    }
     const l=local(id);
     $('#paper-detail').innerHTML=`<div class="dialog-labels">${badge(p)}<span class="venue-label">${esc(p.venue)}</span>${p.topics.map(t=>`<button class="tag" data-topic="${esc(t)}">${esc(topicMap[t].name)}</button>`).join('')}</div><h2 id="dialog-title">${esc(p.name)}</h2><p class="dialog-full-title">${esc(p.title)}</p><div class="dialog-team">${esc(p.team)}</div>
       <div class="date-grid"><div><label>首次公开</label><span>${esc(p.firstPublished||p.dateNote)}</span></div><div><label>收录批次</label><span>${esc(p.collectionMonth)}</span></div><div class="wide"><label>首发周（ISO 8601）</label><span>${esc(Dates.isoWeek(p.firstPublished)?Dates.label(Dates.isoWeek(p.firstPublished).key):'日期未精确到日，不指定周次')}</span></div><div class="wide"><label>日期口径</label><span>${esc(p.dateNote||'以所列原始来源记录的日期为准；不以修订或收录日期替代。')}</span></div><div class="wide"><label>发表状态与阅读版本</label><span>${esc(p.publicationStatus).replaceAll('\n',' · ')}<br>${esc(p.versionNote)}</span></div></div>
@@ -292,7 +312,15 @@
       <div class="source-links">${p.sources.map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('')}</div>
       <div class="dialog-actions"><div class="action-group"><a class="btn primary" href="${esc(safeUrl(p.paperUrl))}" target="_blank" rel="noopener noreferrer">阅读原文 ${icon('external')}</a><button class="btn" data-save="${p.id}">${icon('bookmark')}${l.saved?'已收藏':'收藏'}</button><button class="btn" data-bib="${p.id}">BibTeX</button><button class="btn" data-share-paper="${p.id}">${icon('link')}分享</button></div><label class="status-label">本地进度<select class="status-select" id="detail-status" data-id="${p.id}">${Object.entries(statusText).map(([v,t])=>`<option value="${v}" ${l.status===v?'selected':''}>${t}</option>`).join('')}</select></label></div>`;
     $('#paper-detail').insertAdjacentHTML('afterbegin',`<div class="quick-note-tools"><button class="btn primary" data-focus="${p.id}">进入专注阅读 ↗</button><button class="btn" data-compare="${p.id}">＋ 加入对比</button><span>先看结论，再沿章节深入。</span></div>`);
-    window.RadarResearch.enhance(p,$('#paper-detail'));
+    const host=$('#paper-detail');
+    // Pass the already fetched note to avoid a second detail resolution.
+    window.RadarResearch.enhance(p,host,detailRecord);
+    // Update only the resource panel when ready; do not rebuild or scroll the note.
+    reproPromise.then(view=>{
+      if(request!==detailSequence || !host.isConnected)return;
+      const panel=host.querySelector('.reproducibility-card');
+      if(panel)panel.outerHTML=reproducibilityHtml({...p,reproducibility:view});
+    });
   }
   function openPaper(id,update=true){if(!data.papers.some(p=>p.id===id)){notify('文献记录不存在或已移除');return;}lastFocused=document.activeElement;renderDetail(id);const d=$('#paper-dialog');if(!d.open)d.showModal();$('#paper-detail').parentElement.scrollTop=0;if(update){const u=makeUrl(false);u.hash='paper='+encodeURIComponent(id);try{history.pushState({},'',u);}catch{}}document.title=data.papers.find(p=>p.id===id).name+' · VLA Research Radar';}
   function closePaper(){detailSequence++;const d=$('#paper-dialog');if(d.open)d.close();if(location.hash.startsWith('#paper=')){const u=new URL(location.href);u.hash='';try{history.replaceState({},'',u);}catch{}}document.title=`${views[state.view]} · VLA Research Radar`;if(lastFocused?.isConnected)lastFocused.focus();}
@@ -339,6 +367,26 @@
       else if(el.dataset.reset)resetFilters();
       else if(el.dataset.bib)window.RadarWorkspace.action('cite',el.dataset.bib);
       else if(el.dataset.sharePaper){const u=makeUrl(false,true);u.hash='paper='+el.dataset.sharePaper;copy(u.href,'已复制论文链接，不含本地阅读状态。');}
+    });
+    // First search pays for the full-text index only after focus or pointer intent.
+    $('#search').addEventListener('focus',()=>searchClient?.warmup());
+    $('#search').addEventListener('pointerenter',()=>searchClient?.warmup(),{passive:true});
+    // Prefetch only the hovered/focused detail or Benchmark index. No startup
+    // search, detail, or board data requests are introduced.
+    let intentTimer;
+    function intentPrefetch(el){
+      if(el.dataset.paper){
+        const brief=data?.papers.find(p=>p.id===el.dataset.paper);
+        if(brief){window.RadarResearch.detail(brief).catch(()=>{});if(brief.reproducibilityUrl)window.RadarRuntime.loadJson(brief.reproducibilityUrl).catch(()=>{});}
+      }else if(el.dataset.view==='leaderboards')window.RadarResearch.prefetchBoards().catch(()=>{});
+    }
+    document.addEventListener('pointerover',e=>{
+      const el=e.target.closest?.('[data-paper], [data-view="leaderboards"]');if(!el)return;
+      clearTimeout(intentTimer);intentTimer=setTimeout(()=>intentPrefetch(el),100);
+    },{passive:true});
+    document.addEventListener('focusin',e=>{
+      const el=e.target.closest?.('[data-paper], [data-view="leaderboards"]');
+      if(el){clearTimeout(intentTimer);intentPrefetch(el);}
     });
     $('#search').addEventListener('input',e=>{clearTimeout(queryTimer);queryTimer=setTimeout(()=>{state.q=e.target.value;state.page=1;syncUrl();renderResults();},160);});
     for(const key of ['topic','month','year','week','venue','priority','status'])$('#filter-'+key).addEventListener('change',e=>{state[key]=e.target.value;if(key==='year')state.week='';if(key==='week'&&Dates.fromKey(state.week))state.year=Dates.fromKey(state.week).year;state.page=1;syncUrl();updateControls();renderResults();});

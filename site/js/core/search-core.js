@@ -13,13 +13,22 @@
   ];
   function distance(a,b,max){
     if(Math.abs(a.length-b.length)>max)return max+1;
-    const m=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0));
-    for(let i=0;i<=a.length;i++)m[i][0]=i;for(let j=0;j<=b.length;j++)m[0][j]=j;
-    for(let i=1;i<=a.length;i++){let rowMin=Infinity;for(let j=1;j<=b.length;j++){
-      m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
-      if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])m[i][j]=Math.min(m[i][j],m[i-2][j-2]+1);
-      rowMin=Math.min(rowMin,m[i][j]);
-    }if(rowMin>max)return max+1;}return m[a.length][b.length];
+    // Banded O(max * token length) Damerau-Levenshtein instead of allocating
+    // a full (a.length+1) × (b.length+1) matrix for every fuzzy title match.
+    let prev2=null,prev=Array.from({length:b.length+1},(_,j)=>j);
+    for(let i=1;i<=a.length;i++){
+      const row=Array(b.length+1).fill(max+1);
+      row[0]=i;
+      let rowMin=Infinity;
+      for(let j=Math.max(1,i-max);j<=Math.min(b.length,i+max);j++){
+        row[j]=Math.min(prev[j]+1,row[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));
+        if(prev2&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])row[j]=Math.min(row[j],prev2[j-2]+1);
+        rowMin=Math.min(rowMin,row[j]);
+      }
+      if(rowMin>max)return max+1;
+      prev2=prev;prev=row;
+    }
+    return prev[b.length];
   }
   function score(entry,tokens){
     let total=0;

@@ -106,6 +106,18 @@ try:
         yes('Setting identity is evaluation-only','EVALUATION PROTOCOL ONLY' in page.locator('.setting-summary').inner_text())
         yes('Training Data is a row column and filter',page.locator('#setting-train option').count()>=5 and page.locator('.setting-training-cell').count()>0)
         yes('Method and Source filters are available',page.locator('#setting-method option').count()>2 and page.locator('#setting-source option').count()>=10)
+        # Sort must update only result rows, preserving taxonomy and open protocol DOM.
+        page.evaluate("""() => {
+          window.__benchmarkNav= document.querySelector('.benchmark-taxonomy');
+          window.__benchmarkProtocol= document.querySelector('.setting-summary');
+        }""")
+        page.locator('.setting-protocol summary').click()
+        page.locator('#setting-order').select_option('asc')
+        page.wait_for_function('new URLSearchParams(location.search).get("lbOrder")==="asc"')
+        yes('row sort retains the Benchmark navigation DOM',page.evaluate("document.querySelector('.benchmark-taxonomy')===window.__benchmarkNav"))
+        yes('row sort preserves the expanded protocol',page.evaluate("document.querySelector('.setting-summary')===window.__benchmarkProtocol && document.querySelector('.setting-protocol').open"))
+        page.locator('#setting-order').select_option('auto')
+        page.wait_for_function('new URLSearchParams(location.search).get("lbOrder")==="auto"')
         before=page.locator('.setting-table tbody tr').count()
         train_value=page.locator('#setting-train option').nth(1).get_attribute('value')
         page.locator('#setting-train').select_option(train_value);page.wait_for_function('(v)=>document.querySelector("#setting-train")?.value===v',arg=train_value)
