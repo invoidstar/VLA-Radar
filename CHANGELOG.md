@@ -1,3 +1,11 @@
+## 2026-10-09 · 论文、Benchmark 与搜索交互性能优化
+
+- 论文详情先显示已核验的目录摘要，再读取正文；Reproducibility Card 异步独立填充，不再阻塞正文，已加载的详情记录直接复用。
+- 搜索框获得焦点或鼠标意图时预热 Worker/全文索引，保留初次打开网站不下载全文索引的原有懒加载边界；模糊拼写匹配改为有限编辑距离窗口，减少临时矩阵分配，并缓存卡片高亮正则。
+- Benchmark 排序、Training Data/Method/Source 筛选和翻页只更新表格行、状态与分页，不重复构建分类导航和协议说明；打开的协议说明不会因为换排序自动折叠。
+- 非文献视图切换不再无意义地重新渲染 12 张文献卡；论文、Benchmark 导航仅在用户 hover/focus 后尝试意图预取，不影响初始请求边界。
+- 新增真实 HTTP 浏览器回归：搜索意图预热、论文正文不受资源卡慢请求阻塞、Benchmark 局部重绘和协议展开状态保留。内容、评测口径和公开数据不变；GitHub Pages 部署方式不变。
+
 ## 2026-10-09 — 2026-10-09-barybind
 
 应用户提供的官方项目入口，新增 BaryBind（arXiv:2609.33800，NeurIPS 2026）的正文级研究笔记。核验多模态 Wasserstein barycenter、BVC/DAM、原始分类/检索/模态缺失结果；完整记录官方项目与代码，区分尚待开放的 BaryBind pretrained weights；作为跨领域表征基础工作收录，不添加机器人 VLA Benchmark/Result Report，也不改变本周 Discovery/News 完整扫描 checkpoint。
