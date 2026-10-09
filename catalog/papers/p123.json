@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p123",
+    "name": "BaryBind",
+    "title": "Binding Multiple Modalities via Multimodal Wasserstein Barycenter",
+    "team": "Xiaole Tang、Jiayi Xu、Xiang Gu、Yan Yang、Jian Sun",
+    "venue": "NeurIPS 2026",
+    "publicationType": "conference",
+    "publicationStatus": "NeurIPS 2026 官网列录；Oral 为作者仓库与 arXiv 的报告标注",
+    "firstPublished": "2026-09-27",
+    "dateNote": "arXiv v1 于 2026-09-27（UTC）首次公开；NeurIPS 2026 官网列表确认论文收录，未从官网列表推断口头报告时段或录用日期。",
+    "collectionMonth": "2026-10",
+    "versionNote": "9月27日首发｜10月9日新增至 Radar｜阅读 arXiv v1",
+    "topics": [
+      "pretraining"
+    ],
+    "tags": [
+      "multimodal representation",
+      "optimal transport",
+      "Wasserstein barycenter",
+      "volumetric contrastive",
+      "missing modality",
+      "retrieval",
+      "cross-domain foundation"
+    ],
+    "priority": "deep",
+    "contribution": "提出以多模态特征分布共同优化的 Wasserstein barycenter（MWB）作为共享锚点，并用 barycenter-anchored volumetric contrastive（BVC）比较正负样本的联合几何，替代单纯围绕文本/视觉中心的成对对齐。",
+    "findings": "在作者报告的 VGGSound5K 零样本音视频分类中 A+V Acc@1 为55.6%，VAST 为48.1%；MSR-VTT T-VA 零样本文本↔视频检索 R@1 为56.1/53.6%，VAST 为49.3/43.7%；缺失视频时音频 Acc@1 为49.4%，高于 VAST 的40.8%。",
+    "limitations": "这是一篇通用文本/视频/音频/字幕/深度的表征对齐论文，不产生机器人动作，也没有报告任何 VLA 任务成功率；所述几何表征优势尚未经闭环机器人操作验证。BaryBind 自身预训练权重在作者 README 中仍标为下载链接待提供。",
+    "insight": "不同模态不必永久以语言或视觉为唯一中心；可学习的分布级共享中心和高阶匹配约束，为未来多传感器机器人预训练提供候选模块，但不能把检索增益直接等同于动作能力提升。",
+    "readingFocus": "MWB 分布目标与可训练映射、双变量优化、barycenter simplex/Gram 行列式、BVC/DAM、VAST-150K 训练、T-VA/T-VASD 评测、missing-modality 对照、loss 消融与计算代价。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-09 逐节核对 arXiv:2609.33800v1 正文/附录、NeurIPS 官网2026列表与作者项目/代码 README。全部性能为论文作者报告，未独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 正文（含方法、表格与附录）",
+        "url": "https://arxiv.org/html/2609.33800v1"
+      },
+      {
+        "label": "arXiv 元数据与首发记录",
+        "url": "https://arxiv.org/abs/2609.33800"
+      },
+      {
+        "label": "NeurIPS 2026 官方论文列表",
+        "url": "https://neurips.cc/Downloads/2026"
+      },
+      {
+        "label": "作者官方项目页",
+        "url": "https://xl-tang3.github.io/BaryBind/"
+      },
+      {
+        "label": "作者代码仓库及资源说明",
+        "url": "https://github.com/xl-tang3/BaryBind"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.33800",
+    "arxiv": "2609.33800",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-27",
+    "firstArxivSource": "https://arxiv.org/abs/2609.33800v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-27",
+    "status": "accepted",
+    "venue": "NeurIPS 2026",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-09",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-27",
+        "observedAt": "2026-10-09",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.33800v1",
+        "note": "首次公开日期锁定；作者与标题按 arXiv v1。"
+      },
+      {
+        "kind": "accepted",
+        "date": null,
+        "observedAt": "2026-10-09",
+        "venue": "NeurIPS 2026",
+        "source": "https://neurips.cc/Downloads/2026",
+        "note": "NeurIPS 官方2026论文清单列有本题名；未猜测正式录用日期。作者 README/arXiv 注释标为 Oral，官网此清单本身不证明口头报告类别。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-09",
+    "verifiedAt": "2026-10-09",
+    "version": "arXiv:2609.33800v1（2026-09-27），MWB 优化、BVC/DAM、跨模态检索/分类/缺失模态、消融与复杂度、作者仓库资源复核；2026-10-09",
+    "sections": [
+      {
+        "id": "scope",
+        "title": "研究定位：多模态表示学习基础，而非机器人 VLA 策略",
+        "body": "本工作处理文本、视频、音频、字幕和由视频估计的深度在统一嵌入空间中的对齐。输入是若干模态编码器产生的特征，输出是更平衡的多模态表征及检索/分类打分；论文没有机器人状态、动作 token、动作头、控制环或机器人闭环评测。Radar 将它作为与 VLA 预训练可能相关的跨领域基础方法收录，并保留非机器人任务的原始结果于阅读笔记，不把它混入 LIBERO、RoboTwin 等机器人成功率 Setting。",
+        "sources": [
+          {
+            "label": "arXiv v1 · Abstract/§1/§4",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "problem",
+        "title": "问题：固定语言/视觉锚点会使多模态对齐产生中心偏置",
+        "body": "传统 ImageBind/LanguageBind 类方法常选视觉或文本作为统一参照，让其他模态通过成对对比学习靠近参照。进入三种及以上模态后，参照模态的固有表示偏差可能主导共享空间：即使多个单对检索指标上升，也未必能保持音视频、字幕等所有模态间的全局关系。作者以双向检索性能差异与可视化为动机，希望共享语义中心由多模态分布共同决定，而不是先验指定某个传感器具有最高权威。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §1/§2",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "mwb",
+        "title": "MWB：以多模态分布的平均 Wasserstein 距离定义可学习共享中心",
+        "body": "设各模态编码特征的概率分布为 P_k，方法寻找 Q，使其到所有 P_k 的加权 Wasserstein 距离和最小；实验中各模态权重等分。这里的 Q 是分布级目标，不是每条视频都要精确找到物理世界的潜在真值。直接优化分布困难，作者引入双问题的可训练势函数与可训练映射 Tθ，用一个初始化特征 m0 产生样本级 barycenter embedding b=Tθ(m0)。默认 m0 使用可用模态嵌入的平均值，也可选单模态初始化。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §3.1–3.2",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "optimization",
+        "title": "双目标实现：MLP 势函数与 barycenter 映射交替优化",
+        "body": "论文以多组 potential f_k 构造 Wasserstein barycenter 的 max–min 训练目标。为了满足加权 potential 的和为零，先用独立的两层 MLP g_k 参数化，再减去其加权均值；映射 Tθ 则由轻量 MLP 负责把初始化点推向学习到的 barycenter。目标通过跨模态的分布运输约束优化，不等于简单计算每个 paired sample 的平均特征。附录给出在潜在函数平滑/强凸等额外条件下的近似误差分析；这些定理条件不能被直接解读为任意真实多模态神经网络已具有全局最优性证明。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §3.2/Appendix A",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "simplex",
+        "title": "Barycenter simplex：联合使用共享中心和各模态相对中心的差向量",
+        "body": "得到 b 后，作者计算每个模态的 gap r_k=b−m_k，把 b 与所有 r_k 作为一组向量组成 R，并用 Gram 矩阵 RᵀR 的行列式构造平方体积度量。相较只计算两个 embedding 的 cosine，相应体积同时受模态到 barycenter 的偏差大小、不同 gap 的相互相关性以及中心几何约束影响。论文称之为 barycenter simplex/volumetric geometry，强调的是多模态联合关系，而不只是对齐任意一对传感器。体积并非机器人状态空间中的真实物理体积。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §3.3/Eq.9",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "bvc",
+        "title": "BVC：匹配样本体积小，错配中心或 gap 体积大",
+        "body": "训练 batch 中，同一个样本的 barycenter b_i 与其各模态 gap r_i 构成正配对；负例通过把 b_i 和其他样本的 gap 组合，或固定 gap 而替换成别的样本 b_j 构建。BVC 对上述体积的负值做双向 softmax 对比，使正例在候选集中取得更小体积、错配取得相对更大体积。它不是给每个传感器分别加同一个 pairwise InfoNCE；目标直接比较含所有模态的联合几何。若缺少某一模态，构造与优化需按当前可用集合重新定义。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §3.3/Eq.10",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "完整监督与训练数据：MWB + BVC + DAM，在 VAST 基础上继续预训练",
+        "body": "作者再加入 Data-Anchor Matching（DAM）区分 barycenter 与整组多模态特征是否属于同一个事件，联合目标为 MWB、BVC、DAM 的加权组合。视觉/音频/语言编码器采用 EVA-CLIP ViT-G、BEATs、BERT-B，在 VAST 模型和 VAST-150K 数据子集基础上继续训练；文本、视频、音频可扩展字幕与深度。其中 depth 由 ChronoDepth 从视频估计，并非真实机器人深度相机采集。论文给出温度0.07、两项损失权重1与0.1。作者仓库提供 Python 3.9/CUDA 11.7 配置与训练脚本，但下载媒体/外部 encoder 权重仍是运行前提。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §3.4/§4.1/Appendix B.2",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "retrieval",
+        "title": "跨模态检索：明确输入模态与方向，不只报告一个平均分",
+        "body": "Table 2 的 T-VA 设置中，BaryBind 在 MSR-VTT 的 T2V/V2T Recall@1 为56.1/53.6，对照 VAST 49.3/43.7；DiDeMo 为56.3/54.0、ActivityNet 为60.6/57.2、VATEX 为84.7/81.8。扩展到 T-VASD 时，MSR-VTT 变为57.8/54.6、VATEX 为86.1/85.4，说明有额外模态时有收益；但不同模态配置不能横向声称是相同输入条件下的模型改进。原文正文某一处将 DiDeMo 的 T2V 写成56.1，和 Table 2 的56.3略有不一致，Radar 以原表为准，并显式保留该差异。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §4.1/Table 2",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "classification",
+        "title": "分类结果：VGGSound5K 音视频联合输入比音频单独输入提升更明显",
+        "body": "Table 1 报告 VGGSound5K 零样本事件分类：音频单独输入 A 的 Acc@1/Acc@5 为45.7/75.2，视频 V 为48.3/76.4，音视频 A+V 为55.6/83.4；同文 VAST 对应40.3/71.7、46.3/72.7、48.1/79.6。作者强调音频较弱模态的提升与联合模态的互补性；但这些是在 VGGSound 音视频语义分类任务中观察到的结果，不能外推成多传感器机器人在遮挡、接触或控制扰动下必然鲁棒。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §4.1/Table 1",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "missing",
+        "title": "模态缺失：明确区分训练时缺失与推理时缺失",
+        "body": "Table 3 在 AudioCaps 测试缺失训练音频时，BaryBind 的 T2A/A2T R@1 为21.2/14.5，VAST 为10.4/6.7；这是训练模态变化，不是仅在同一个训练模型推理时遮掉输入。Table 4 则是在训练有音频与视频的前提下，推理只保留音频：BaryBind VGGSound5K Acc@1/Acc@5 为49.4/78.3，VAST 为40.8/71.6。两类 missing-modality 试验的比较对象、输入条件不同，不能把数字简单并入一条“缺失模态鲁棒性”统一分数。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §4.2/Tables 3–4",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "消融：分布中心与体积对比需要联合起来读，不能只归因于单一 loss",
+        "body": "Table 5 的基线成对 TV+TA 对比结合 DAM 时，VGGSound A+V Acc@1 为46.3、MSR-VTT T2V/V2T 为49.3/43.7；仅 MWB+BVC（不使用成对对比/DAM）已达到54.7、54.8/51.1；MWB+BVC+DAM 最终为55.6、56.1/53.6。说明既有分布中心约束也有体积联合几何与 matching 的贡献；同时 BVC 本身可以有一定作用。不同 ablation 更改了损失构成，不能把每两行差值当完全独立的单模块效应。实验还展示 batch size 从16到256时变化相对较小，但不等于所有分布规模、模态数都稳定。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §4.3/Tables 5–6",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "cost",
+        "title": "计算与开放状态：额外训练开销存在，自身 checkpoint 尚未完整开放",
+        "body": "附录 Table 19 在2×A100 80GB、batch 64 下，VAST 与 BaryBind 的参数量分别约1.28B与1.34B，单步前反向耗时约8.8秒与9.7秒，epoch 约5.7小时与6.3小时；这不是免费对齐，也不代表机器人端延迟。作者 GitHub 已包含模型实现、训练配置、评测脚本和 MIT 代码许可证，但 Model Zoo 中四模态 BaryBind 预训练模型的下载链接仍标注 pending；README 的 VAST-150K 注释下载不等于完整音视频媒体及原始 pretrained checkpoint 都能直接获取。",
+        "sources": [
+          {
+            "label": "arXiv v1 · Appendix B.11 + 作者仓库",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      },
+      {
+        "id": "boundary",
+        "title": "适用边界：多模态感知先验值得参考，但不能替代动作条件化建模",
+        "body": "BaryBind 的直接贡献是表示空间中的跨模态语义一致性和联合几何，而不是未来世界状态转移、动作条件动态或机器人操控。论文实证只在检索、分类、VideoQA 与跨模态图像生成评测中完成；没有任何 VLA action-policy、LIBERO、RoboTwin、真机成功率或闭环 latency 实验。对具身学习而言，它可能为视觉/语言/音频/深度的预训练对齐提供候选先验，但从感知对齐到动作选择仍需机器人示范、状态/动作接口与闭环实验。当前研究证据还依赖所选 VAST backbone、VAST-150K 以及若干损失/对齐实现假设，不应把未来应用设想当成已经证明的贡献。",
+        "sources": [
+          {
+            "label": "arXiv v1 · §5/Appendix B.16",
+            "url": "https://arxiv.org/html/2609.33800v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.33800v1"
+    },
+    "figures": [
+      {
+        "title": "BaryBind pipeline",
+        "url": "https://arxiv.org/html/2609.33800v1#S3.F3",
+        "caption": "Figure 3：编码器到 WB 优化，再以 barycenter/gap 形成体积对比；查看作者原图。"
+      },
+      {
+        "title": "模态嵌入可视化",
+        "url": "https://arxiv.org/html/2609.33800v1#S1.F2",
+        "caption": "Figure 2：VGGSound embedding 对齐可视化，仅为表示分析而非机器人任务证据。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "BaryBind · VGGSound5K zero-shot classification（Acc@1 / Acc@5）",
+        "columns": [
+          "Method",
+          "A",
+          "V",
+          "A+V"
+        ],
+        "rows": [
+          [
+            "VAST",
+            "40.3 / 71.7",
+            "46.3 / 72.7",
+            "48.1 / 79.6"
+          ],
+          [
+            "BaryBind",
+            "45.7 / 75.2",
+            "48.3 / 76.4",
+            "55.6 / 83.4"
+          ]
+        ],
+        "locator": "Table 1",
+        "caption": "作者报告百分比；A=音频、V=视频。"
+      },
+      {
+        "title": "BaryBind · 零样本 Text↔Video retrieval（T2V / V2T R@1）",
+        "columns": [
+          "Method",
+          "MSR-VTT",
+          "DiDeMo",
+          "ActivityNet",
+          "VATEX"
+        ],
+        "rows": [
+          [
+            "VAST · T-VA",
+            "49.3 / 43.7",
+            "49.5 / 48.2",
+            "51.4 / 46.8",
+            "80.0 / 77.3"
+          ],
+          [
+            "BaryBind · T-VA",
+            "56.1 / 53.6",
+            "56.3 / 54.0",
+            "60.6 / 57.2",
+            "84.7 / 81.8"
+          ],
+          [
+            "BaryBind · T-VASD",
+            "57.8 / 54.6",
+            "—",
+            "—",
+            "86.1 / 85.4"
+          ]
+        ],
+        "locator": "Table 2",
+        "caption": "作者报告百分比；额外 S=字幕、D=估计深度，模态输入不同不可直接比较同协议公平排名。"
+      },
+      {
+        "title": "缺失模态专项实验",
+        "columns": [
+          "Setting",
+          "VAST",
+          "BaryBind"
+        ],
+        "rows": [
+          [
+            "VGGSound：训练 A+V，推理 A（Acc@1）",
+            "40.8%",
+            "49.4%"
+          ],
+          [
+            "AudioCaps：缺失音频训练，T2A R@1",
+            "10.4%",
+            "21.2%"
+          ],
+          [
+            "AudioCaps：缺失音频训练，A2T R@1",
+            "6.7%",
+            "14.5%"
+          ]
+        ],
+        "locator": "Tables 3–4",
+        "caption": "训练期和推理期的缺失场景分开解释；原表数值不构成机器人 Benchmark。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "not-applicable",
+      "checkedAt": "2026-10-09",
+      "note": "本文为通用多模态表征方法；VGGSound5K、MSR-VTT、DiDeMo、ActivityNet、VATEX、AudioCaps 等都是检索/分类评测，原文没有 VLA/机器人动作成功率。非机器人指标保留于论文深读原表，不新增或污染现有机器人 Evaluation Setting/Result Report。"
+    }
+  }
+}
