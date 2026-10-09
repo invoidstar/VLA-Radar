@@ -32,7 +32,8 @@
         "weights": {
           "status": "unavailable",
           "note": "截至2026-10-09，作者 README 的 Model Zoo 把四模态 BaryBind pretrained checkpoint 明确写为 Download link pending；外部 VAST 初始化与 EVA-CLIP/BEATs/BERT 权重不替代它。",
-          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md"
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md",
+          "url": null
         },
         "dataset": {
           "status": "partial",
