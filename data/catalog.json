@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06",
+  "updatedAt": "2026-10-09",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,84 @@
     }
   ],
   "papers": [
+    {
+      "id": "p123",
+      "name": "BaryBind",
+      "title": "Binding Multiple Modalities via Multimodal Wasserstein Barycenter",
+      "team": "Xiaole Tang、Jiayi Xu、Xiang Gu、Yan Yang、Jian Sun",
+      "venue": "NeurIPS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "NeurIPS 2026 官网列录；Oral 为作者仓库与 arXiv 的报告标注",
+      "firstPublished": "2026-09-27",
+      "dateNote": "arXiv v1 于 2026-09-27（UTC）首次公开；NeurIPS 2026 官网列表确认论文收录，未从官网列表推断口头报告时段或录用日期。",
+      "collectionMonth": "2026-10",
+      "versionNote": "9月27日首发｜10月9日新增至 Radar｜阅读 arXiv v1",
+      "topics": [
+        "pretraining"
+      ],
+      "tags": [
+        "multimodal representation",
+        "optimal transport",
+        "Wasserstein barycenter",
+        "volumetric contrastive",
+        "missing modality",
+        "retrieval",
+        "cross-domain foundation"
+      ],
+      "priority": "deep",
+      "contribution": "提出以多模态特征分布共同优化的 Wasserstein barycenter（MWB）作为共享锚点，并用 barycenter-anchored volumetric contrastive（BVC）比较正负样本的联合几何，替代单纯围绕文本/视觉中心的成对对齐。",
+      "findings": "在作者报告的 VGGSound5K 零样本音视频分类中 A+V Acc@1 为55.6%，VAST 为48.1%；MSR-VTT T-VA 零样本文本↔视频检索 R@1 为56.1/53.6%，VAST 为49.3/43.7%；缺失视频时音频 Acc@1 为49.4%，高于 VAST 的40.8%。",
+      "limitations": "这是一篇通用文本/视频/音频/字幕/深度的表征对齐论文，不产生机器人动作，也没有报告任何 VLA 任务成功率；所述几何表征优势尚未经闭环机器人操作验证。BaryBind 自身预训练权重在作者 README 中仍标为下载链接待提供。",
+      "insight": "不同模态不必永久以语言或视觉为唯一中心；可学习的分布级共享中心和高阶匹配约束，为未来多传感器机器人预训练提供候选模块，但不能把检索增益直接等同于动作能力提升。",
+      "readingFocus": "MWB 分布目标与可训练映射、双变量优化、barycenter simplex/Gram 行列式、BVC/DAM、VAST-150K 训练、T-VA/T-VASD 评测、missing-modality 对照、loss 消融与计算代价。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-09 逐节核对 arXiv:2609.33800v1 正文/附录、NeurIPS 官网2026列表与作者项目/代码 README。全部性能为论文作者报告，未独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 正文（含方法、表格与附录）",
+          "url": "https://arxiv.org/html/2609.33800v1"
+        },
+        {
+          "label": "arXiv 元数据与首发记录",
+          "url": "https://arxiv.org/abs/2609.33800"
+        },
+        {
+          "label": "NeurIPS 2026 官方论文列表",
+          "url": "https://neurips.cc/Downloads/2026"
+        },
+        {
+          "label": "作者官方项目页",
+          "url": "https://xl-tang3.github.io/BaryBind/"
+        },
+        {
+          "label": "作者代码仓库及资源说明",
+          "url": "https://github.com/xl-tang3/BaryBind"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.33800",
+      "arxiv": "2609.33800",
+      "doi": "",
+      "detailUrl": "data/details/p123.json?v=83d172cbeea98e0b",
+      "resultUrl": null,
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://xl-tang3.github.io/BaryBind/",
+        "code": "https://github.com/xl-tang3/BaryBind"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p123.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-09-27",
+        "latestArxivVersion": "v1",
+        "status": "accepted",
+        "lastCheckedAt": "2026-10-09"
+      }
+    },
     {
       "id": "p124",
       "name": "ForeAct3D",

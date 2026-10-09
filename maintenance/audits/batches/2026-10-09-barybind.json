@@ -1,0 +1,71 @@
+{
+  "id": "2026-10-09-barybind",
+  "date": "2026-10-09",
+  "summary": "应用户提供的官方项目入口，新增 BaryBind（arXiv:2609.33800，NeurIPS 2026）的正文级研究笔记。核验多模态 Wasserstein barycenter、BVC/DAM、原始分类/检索/模态缺失结果；完整记录官方项目与代码，区分尚待开放的 BaryBind pretrained weights；作为跨领域表征基础工作收录，不添加机器人 VLA Benchmark/Result Report，也不改变本周 Discovery/News 完整扫描 checkpoint。",
+  "notes": [],
+  "tracks": [],
+  "results": [],
+  "resources": {
+    "p123": {
+      "project": "https://xl-tang3.github.io/BaryBind/",
+      "code": "https://github.com/xl-tang3/BaryBind"
+    }
+  },
+  "reproducibility": {
+    "p123": {
+      "verifiedAt": "2026-10-09",
+      "level": "deep",
+      "note": "2026-10-09 深度核验作者 README、训练/评测目录和仓库 MIT LICENSE。代码已开放；BaryBind 4模态预训练 checkpoint 的官方 Model Zoo 下载仍标记 pending。外部 VAST/BEATs/EVA-CLIP/BERT 权重与原始数据不等于该论文自己的完整 checkpoint 或全量训练数据。以下为资源开放状态而不是第三方复现。",
+      "items": {
+        "project": {
+          "status": "available",
+          "note": "作者官方研究项目页由仓库 README 直接指向，提供研究概览/图示。",
+          "url": "https://xl-tang3.github.io/BaryBind/",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md"
+        },
+        "code": {
+          "status": "available",
+          "note": "官方仓库包含 model/barybind.py、model/potentials.py、训练/评测 run.py、配置与脚本；与仅发布 README 的信息型仓库不同。",
+          "url": "https://github.com/xl-tang3/BaryBind",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md"
+        },
+        "weights": {
+          "status": "unavailable",
+          "note": "截至2026-10-09，作者 README 的 Model Zoo 把四模态 BaryBind pretrained checkpoint 明确写为 Download link pending；外部 VAST 初始化与 EVA-CLIP/BEATs/BERT 权重不替代它。",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md",
+          "url": null
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "README 提供 VAST-150K 子集标注下载和 VAST 数据准备指引；标注不包含对应音视频媒体，原始数据获取需另行遵循上游仓库。",
+          "url": "https://github.com/xl-tang3/BaryBind#data-preparation",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md"
+        },
+        "training": {
+          "status": "partial",
+          "note": "公开了继续预训练与下游微调脚本/配置，但需要额外准备 VAST 预训练起点、外部 encoder checkpoints 和原始媒体，不能认定开箱即复现论文全训练链路。",
+          "url": "https://github.com/xl-tang3/BaryBind/tree/main/scripts/barybind",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md"
+        },
+        "inference": {
+          "status": "partial",
+          "note": "作者提供按 task config 使用 run.py 的 testing 模式与保存 checkpoint 的命令；目前官方 BaryBind pretrained model zoo 仍待权重链接，因此需要用户自备或训练 checkpoint。",
+          "url": "https://github.com/xl-tang3/BaryBind/blob/main/run.py",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md"
+        },
+        "evaluation": {
+          "status": "partial",
+          "note": "仓库公布跨模态检索和分类相关配置及 testing 入口，适合检查实现；缺官方 BaryBind 预训练 checkpoint/媒体时不能直接重跑全部原表。",
+          "url": "https://github.com/xl-tang3/BaryBind/tree/main/config/barybind/finetune_cfg",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/README.md"
+        },
+        "license": {
+          "status": "partial",
+          "note": "本仓库代码 LICENSE 为 MIT；运行依赖的 VAST、预训练 encoders、模型权重和各 benchmark 数据仍受其上游许可约束，不能用 MIT 覆盖所有外部资产。",
+          "url": "https://github.com/xl-tang3/BaryBind/blob/main/LICENSE",
+          "source": "https://github.com/xl-tang3/BaryBind/blob/main/LICENSE"
+        }
+      }
+    }
+  }
+}

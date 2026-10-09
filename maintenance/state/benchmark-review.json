@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-06",
+  "reviewedAt": "2026-10-09",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p064": {
@@ -2439,6 +2439,12 @@
         "r-foreact3d-v1-calvin-starvla"
       ],
       "note": "ForeAct3D Table 1 的 one-model-for-all LIBERO 与 Table 2 的 CALVIN ABC→D/no-robot-pretraining 分轨；成功率与平均链长不混用。"
+    },
+    "p123": {
+      "status": "not-applicable",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "BaryBind 是通用多模态表示对齐方法；VGGSound5K/MSR-VTT/DiDeMo/ActivityNet/VATEX/AudioCaps 的指标是分类/检索，不是机器人 VLA 动作成功率。原表留在深读中，不创建机器人 Benchmark/Setting/Result。"
     }
   }
 }
