@@ -151,10 +151,10 @@
     if(!state.q)return esc(text);
     if(cachedHighlightQuery!==state.q){
       cachedHighlightQuery=state.q;
-  const terms=norm(state.q).split(/\s+/).filter(x=>x.length>1).sort((a,b)=>b.length-a.length);
+      const terms=norm(state.q).split(/\s+/).filter(x=>x.length>1).sort((a,b)=>b.length-a.length);
       if(!terms.length)cachedHighlightRegex=null;
       else{
-    const pattern=terms.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
+        const pattern=terms.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
         try{cachedHighlightRegex=new RegExp(pattern,'gi');}catch{cachedHighlightRegex=null;}
       }
     }
@@ -164,7 +164,7 @@
       let out='',at=0;String(text).replace(re,(hit,pos)=>{out+=esc(String(text).slice(at,pos))+'<mark>'+esc(hit)+'</mark>';at=pos+hit.length;return hit;});return out+esc(String(text).slice(at));
     }catch{return esc(text);}
   }
-    function getFiltered(){
+  function getFiltered(){
     const tokens=norm(state.q).split(/\s+/).filter(Boolean).slice(0,12);
     const matches=[];
     for(const entry of index){const p=entry.paper, l=local(p.id);
