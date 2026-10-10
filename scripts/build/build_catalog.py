@@ -68,6 +68,19 @@ def curated_benchmark(root, tracks, results):
         display.append(copy)
     active={r['trackId'] for r in display}
     curated_tracks=[t for t in tracks if t['id'] in active]
+    # No new one-method, one-paper dataset may accidentally become a
+    # standalone public Benchmark merely because a single result was imported.
+    method_sets={}
+    reporting_papers={}
+    for row in display:
+        if row['evidence']!='checked':
+            continue
+        dataset=trackmap[row['trackId']]['dataset']
+        method_sets.setdefault(dataset,set()).add(row['method'].strip().casefold())
+        reporting_papers.setdefault(dataset,set()).add(row['paperId'])
+    for dataset,methods in method_sets.items():
+        if len(methods)<2 and len(reporting_papers[dataset])==1:
+            raise ValueError('Single-method standalone Benchmark requires curation: '+dataset)
     audited_papers={r['paperId'] for r in results if r['evidence']=='checked'}
     comparison_papers={r['paperId'] for r in display if r['evidence']=='checked'}
     if not comparison_papers<=audited_papers:

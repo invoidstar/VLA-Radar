@@ -93,6 +93,12 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('OC-VLA++ real robot',hidden)
         self.assertIn('ManiSkill2',hidden)
         self.assertTrue({'LIBERO','RoboTwin','CALVIN','RoboCasa','RoboDojo'}<=visible)
+        trackmap={t['id']:t for t in shown_tracks}
+        reported_methods={}
+        for result in shown:
+            if result['evidence']=='checked':
+                reported_methods.setdefault(trackmap[result['trackId']]['dataset'],set()).add(result['method'].casefold())
+        self.assertTrue(all(len(methods)>=2 for methods in reported_methods.values()))
         self.assertEqual(len({r['id'] for r in results}),len(results))
         self.assertEqual(len(shown),len(results)-len([
             r for r in results if r['trackId'] not in {t['id'] for t in shown_tracks}
