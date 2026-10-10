@@ -1,3 +1,7 @@
+## 2026-10-10 — 2026-10-10-rss-venue-alias
+
+合并 RSS 2026 与 Robotics: Science and Systems XXII（第 22 届）的重复出处分类；保留会议发表日期和研究内容，不对论文状态做未经核验的改变。
+
 ## 2026-10-10 — 2026-10-10-venue-method-curation
 
 规范论文出处为正式发表期刊或单一 arXiv 类别（统一 IEEE Robotics and Automation Letters，核实 Diffusion Policy 的 IJRR 扩展发表），并按独立方法/基线精简 Benchmark 的消融实验配置。原始 1,134 条 Result Report 仍保存在 catalog 和论文详情证据中，主 Benchmark 比较保留 933 条已核验记录；不更改第一公开日期、Benchmark 评测定义或实验数值。
