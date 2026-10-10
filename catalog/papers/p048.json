@@ -5,7 +5,7 @@
     "name": "CALVIN",
     "title": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
     "team": "University of Freiburg / University of Technology Nuremberg；Oier Mees、Lukas Hermann 等",
-    "venue": "IEEE RA-L",
+    "venue": "IEEE Robotics and Automation Letters",
     "publicationType": "journal",
     "publicationStatus": "IEEE元数据确认在线发表2022-06-03；卷期为2022年7月；录用日另据v4首页。",
     "firstPublished": "2021-12-06",
@@ -63,7 +63,7 @@
     "latestArxivVersion": "v4",
     "latestArxivAt": "2022-07-13",
     "status": "published",
-    "venue": "IEEE RA-L",
+    "venue": "IEEE Robotics and Automation Letters",
     "doi": "10.1109/LRA.2022.3180108",
     "acceptedAt": "2022-05-22",
     "publishedAt": "2022-06-03",
@@ -73,7 +73,7 @@
         "kind": "imported",
         "date": null,
         "observedAt": "2026-09-17",
-        "venue": "IEEE RA-L",
+        "venue": "IEEE Robotics and Automation Letters",
         "source": "https://arxiv.org/abs/2112.03227",
         "note": "既有文献记录；本次结构迁移不重新认证发表状态。"
       },
@@ -97,7 +97,7 @@
         "kind": "published",
         "date": "2022-06-03",
         "observedAt": "2026-09-19",
-        "venue": "IEEE RA-L",
+        "venue": "IEEE Robotics and Automation Letters",
         "source": "https://ieeexplore.ieee.org/document/9788026",
         "note": "IEEE元数据确认在线发表2022-06-03；卷期为2022年7月；录用日另据v4首页。"
       },
@@ -105,7 +105,7 @@
         "kind": "accepted",
         "date": "2022-05-22",
         "observedAt": "2026-09-19",
-        "venue": "IEEE RA-L",
+        "venue": "IEEE Robotics and Automation Letters",
         "source": "https://arxiv.org/pdf/2112.03227v4#page=1",
         "note": "v4首页明确Manuscript accepted May22,2022；与在线出版日分开。"
       }

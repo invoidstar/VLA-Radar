@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-10",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -2178,7 +2178,7 @@
       "name": "Co-training Study",
       "title": "A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation",
       "team": "Fanqi Lin、Kushal Arora、Jean Mercat、Haruki Nishimura、Jose Barreiros等\nTRI相关研究团队；完整机构列表未核验",
-      "venue": "Robotics: Science and Systems XXII",
+      "venue": "RSS 2026",
       "publicationType": "conference",
       "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.007",
       "firstPublished": "2026-02-01",
@@ -2223,7 +2223,7 @@
       "paperUrl": "https://arxiv.org/abs/2602.01067",
       "arxiv": "2602.01067",
       "doi": "10.15607/rss.2026.xxii.007",
-      "detailUrl": "data/details/p035.json?v=f8948e6dd8c15f84",
+      "detailUrl": "data/details/p035.json?v=2d2f06d4d7cd6d1c",
       "resultUrl": "data/paper-results/p035.96ca7927d6797737.json",
       "noteStatus": "expanded",
       "resources": {
@@ -2507,7 +2507,7 @@
       "name": "mimic-video",
       "title": "mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs",
       "team": "mimic robotics／Microsoft Zurich／ETH Zurich／UC Berkeley\nJonas Pai、Liam Achenbach、Victoriano Montesinos、Oier Mees、Elvis Nava等",
-      "venue": "Robotics: Science and Systems XXII",
+      "venue": "RSS 2026",
       "publicationType": "conference",
       "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.077",
       "firstPublished": "2025-12-17",
@@ -2553,7 +2553,7 @@
       "paperUrl": "https://arxiv.org/abs/2512.15692",
       "arxiv": "2512.15692",
       "doi": "10.15607/rss.2026.xxii.077",
-      "detailUrl": "data/details/p038.json?v=6c1170b5ad60117d",
+      "detailUrl": "data/details/p038.json?v=1c58c1bed5975fb6",
       "resultUrl": "data/paper-results/p038.a020b2c84e7f8923.json",
       "noteStatus": "expanded",
       "resources": {
@@ -3125,7 +3125,7 @@
       "name": "HALO",
       "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control",
       "team": "得克萨斯大学奥斯汀分校\nRutav Shah、Yisu Li、Femi Bello、Yuke Zhu、Roberto Martín-Martín",
-      "venue": "Robotics: Science and Systems XXII",
+      "venue": "RSS 2026",
       "publicationType": "conference",
       "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.010",
       "firstPublished": "2026-06-23",
@@ -3170,7 +3170,7 @@
       "paperUrl": "https://arxiv.org/abs/2606.25136",
       "arxiv": "2606.25136",
       "doi": "10.15607/rss.2026.xxii.010",
-      "detailUrl": "data/details/p036.json?v=895fb92f2d0bef26",
+      "detailUrl": "data/details/p036.json?v=5744241f1eb405a6",
       "resultUrl": "data/paper-results/p036.a7bc8165a791a06b.json",
       "noteStatus": "expanded",
       "resources": {
@@ -3194,7 +3194,7 @@
       "name": "VERITAS",
       "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
       "team": "普林斯顿大学\nMingtong Zhang、Dhruv Shah",
-      "venue": "Robotics: Science and Systems XXII",
+      "venue": "RSS 2026",
       "publicationType": "conference",
       "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.079",
       "firstPublished": "2026-06-16",
@@ -3240,7 +3240,7 @@
       "paperUrl": "https://arxiv.org/abs/2606.18247",
       "arxiv": "2606.18247",
       "doi": "10.15607/rss.2026.xxii.079",
-      "detailUrl": "data/details/p039.json?v=5480e74e8eb4c77e",
+      "detailUrl": "data/details/p039.json?v=5dfe320e5f43f578",
       "resultUrl": "data/paper-results/p039.cef82ec20f98b7f3.json",
       "noteStatus": "expanded",
       "resources": {
@@ -3881,7 +3881,7 @@
       "name": "CauVA / LingBot-VA",
       "title": "Causal World Modeling for Robot Control",
       "team": "Robbyant 灵波科技（作者项目发布团队）\nLin Li、Qihang Zhang、Yiming Luo、Yujun Shen、Yinghao Xu等",
-      "venue": "Robotics: Science and Systems XXII",
+      "venue": "RSS 2026",
       "publicationType": "conference",
       "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.016",
       "firstPublished": "2026-01-29",
@@ -3931,7 +3931,7 @@
       "paperUrl": "https://arxiv.org/abs/2601.21998",
       "arxiv": "2601.21998",
       "doi": "10.15607/rss.2026.xxii.016",
-      "detailUrl": "data/details/p037.json?v=11b984f52fc5e507",
+      "detailUrl": "data/details/p037.json?v=824d4e955622246b",
       "resultUrl": "data/paper-results/p037.c79351afba100ba5.json",
       "noteStatus": "expanded",
       "resources": {
@@ -4067,7 +4067,7 @@
       "paperUrl": "https://arxiv.org/abs/2507.17294",
       "arxiv": "2507.17294",
       "doi": "10.1109/lra.2026.3692345",
-      "detailUrl": "data/details/p044.json?v=e758dadf9c09b730",
+      "detailUrl": "data/details/p044.json?v=653ee05ea7534c8a",
       "resultUrl": "data/paper-results/p044.96e90254eaf11d15.json",
       "noteStatus": "expanded",
       "resources": {
@@ -4519,7 +4519,7 @@
       "name": "DMS-VLA",
       "title": "Dynamic Maclaurin-Series-Based Vision-Language-Action Model",
       "team": "Chong Yu、Zhongxue Gan｜Fudan University, College of Intelligent Robotics and Advanced Manufacturing",
-      "venue": "IEEE RA-L",
+      "venue": "IEEE Robotics and Automation Letters",
       "publicationType": "journal",
       "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259；online 2026-04-13；DOI:10.1109/LRA.2026.3683324",
       "firstPublished": null,
@@ -4559,7 +4559,7 @@
       "paperUrl": "https://doi.org/10.1109/LRA.2026.3683324",
       "arxiv": "",
       "doi": "10.1109/LRA.2026.3683324",
-      "detailUrl": "data/details/p043.json?v=53b58af96e198c08",
+      "detailUrl": "data/details/p043.json?v=5522c74ad3e6a8f7",
       "resultUrl": "data/paper-results/p043.4432b551e88d50c9.json",
       "noteStatus": "expanded",
       "resources": {},
@@ -4838,7 +4838,7 @@
       "name": "Beyond Binary Success",
       "title": "Beyond Binary Success: Sample-Efficient and Statistically Rigorous Robot Policy Comparison",
       "team": "宾夕法尼亚大学／Toyota Research Institute／普林斯顿大学\nDavid Snyder、Apurva Badithela、Nikolai Matni、George Pappas等",
-      "venue": "Robotics: Science and Systems XXII",
+      "venue": "RSS 2026",
       "publicationType": "conference",
       "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.076",
       "firstPublished": "2026-03-13",
@@ -4883,7 +4883,7 @@
       "paperUrl": "https://arxiv.org/abs/2603.13616",
       "arxiv": "2603.13616",
       "doi": "10.15607/rss.2026.xxii.076",
-      "detailUrl": "data/details/p040.json?v=0fd20d15ed84c4a2",
+      "detailUrl": "data/details/p040.json?v=586bd3f4868242e4",
       "resultUrl": null,
       "noteStatus": "expanded",
       "resources": {
@@ -5046,7 +5046,7 @@
       "name": "CALVIN",
       "title": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
       "team": "University of Freiburg / University of Technology Nuremberg；Oier Mees、Lukas Hermann 等",
-      "venue": "IEEE RA-L",
+      "venue": "IEEE Robotics and Automation Letters",
       "publicationType": "journal",
       "publicationStatus": "IEEE元数据确认在线发表2022-06-03；卷期为2022年7月；录用日另据v4首页。",
       "firstPublished": "2021-12-06",
@@ -5097,7 +5097,7 @@
       "paperUrl": "https://arxiv.org/abs/2112.03227",
       "arxiv": "2112.03227",
       "doi": "10.1109/LRA.2022.3180108",
-      "detailUrl": "data/details/p048.json?v=16671a906f7d6fbc",
+      "detailUrl": "data/details/p048.json?v=e4fbfefa4f7d8fc9",
       "resultUrl": "data/paper-results/p048.f44283fb1f0aca5b.json",
       "noteStatus": "expanded",
       "resources": {
@@ -5574,13 +5574,13 @@
       "name": "Diffusion Policy",
       "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
       "team": "Cheng Chi、Zhenjia Xu、Siyuan Feng、Eric Cousineau、Yilun Du、Benjamin Burchfiel、Russ Tedrake、Shuran Song（署名作者）",
-      "venue": "RSS 2023 / arXiv 扩展版",
-      "publicationType": "conference",
-      "publicationStatus": "arXiv 明确说明为 RSS 2023 论文扩展版",
+      "venue": "The International Journal of Robotics Research",
+      "publicationType": "journal",
+      "publicationStatus": "先发表于 RSS 2023；扩展版正式发表于 IJRR，2024-10-11 在线发表（2025 年第 44 卷 10–11 期）；DOI: 10.1177/02783649241273668",
       "firstPublished": "2023-03-07",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv v5（2024-03-14）摘要；RSS 2023 的扩展版本",
+      "versionNote": "arXiv v5（2024-03-14）对应 IJRR 扩展版；原始会议版本发表于 RSS 2023",
       "topics": [
         "action"
       ],
@@ -5607,12 +5607,24 @@
         {
           "label": "当前复核版本 · v5",
           "url": "https://arxiv.org/html/2303.04137v5"
+        },
+        {
+          "label": "RSS 2023 正式会议论文",
+          "url": "https://www.roboticsproceedings.org/rss19/p026.html"
+        },
+        {
+          "label": "IJRR 期刊扩展版 · DOI",
+          "url": "https://doi.org/10.1177/02783649241273668"
+        },
+        {
+          "label": "作者项目页 · 双版本说明",
+          "url": "https://diffusion-policy.cs.columbia.edu/"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2303.04137",
       "arxiv": "2303.04137",
-      "doi": "",
-      "detailUrl": "data/details/p055.json?v=add1889c9ee9d644",
+      "doi": "10.1177/02783649241273668",
+      "detailUrl": "data/details/p055.json?v=f4ec0478c7ac6f7c",
       "resultUrl": "data/paper-results/p055.237dea8f0205a603.json",
       "noteStatus": "expanded",
       "resources": {
@@ -5628,8 +5640,8 @@
       "lifecycle": {
         "firstArxivAt": "2023-03-07",
         "latestArxivVersion": "v5",
-        "status": "legacy",
-        "lastCheckedAt": "2026-09-20"
+        "status": "published",
+        "lastCheckedAt": "2026-10-10"
       }
     },
     {
@@ -8618,9 +8630,9 @@
       "name": "MVP (Motor Control)",
       "title": "Masked Visual Pre-training for Motor Control",
       "team": "Tete Xiao、Ilija Radosavovic、Trevor Darrell、Jitendra Malik；UC Berkeley",
-      "venue": "arXiv / Tech report 2022",
-      "publicationType": "report",
-      "publicationStatus": "作者技术报告/arXiv预印本；不将后续同名工作的会议身份移植到本篇。",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2203.06173 预印本（2022）；作者项目页引用为 arXiv 论文。",
       "firstPublished": "2022-03-11",
       "dateNote": "arXiv v1 Submission history核对UTC首次公开日；不以修订或出版日期覆盖。",
       "collectionMonth": "2026-09",
@@ -8660,7 +8672,7 @@
       "paperUrl": "https://arxiv.org/abs/2203.06173",
       "arxiv": "2203.06173",
       "doi": "",
-      "detailUrl": "data/details/p097.json?v=a4d0936bb04d5464",
+      "detailUrl": "data/details/p097.json?v=3065c599474181e1",
       "resultUrl": "data/paper-results/p097.152cb928b802c3c2.json",
       "noteStatus": "expanded",
       "resources": {

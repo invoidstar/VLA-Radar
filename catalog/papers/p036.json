@@ -5,7 +5,7 @@
     "name": "HALO",
     "title": "Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control",
     "team": "得克萨斯大学奥斯汀分校\nRutav Shah、Yisu Li、Femi Bello、Yuke Zhu、Roberto Martín-Martín",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "publicationType": "conference",
     "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.010",
     "firstPublished": "2026-06-23",
@@ -57,7 +57,7 @@
     "latestArxivVersion": "v1",
     "latestArxivAt": "2026-06-23",
     "status": "published",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "doi": "10.15607/rss.2026.xxii.010",
     "acceptedAt": null,
     "publishedAt": "2026-07-13",
@@ -91,7 +91,7 @@
         "kind": "published",
         "date": "2026-07-13",
         "observedAt": "2026-09-18",
-        "venue": "Robotics: Science and Systems XXII",
+        "venue": "RSS 2026",
         "source": "https://doi.org/10.15607/rss.2026.xxii.010",
         "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }

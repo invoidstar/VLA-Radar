@@ -102,6 +102,8 @@ def validate_record(rec, topic_ids=None):
     require(p['priority'] in {'deep','selective','overview'},'priority')
     require(p['evidence'] in {'notes','metadata','checked'},'evidence')
     require(p['publicationType'] in {'preprint','conference','journal','report'},'publicationType')
+    require(p['venue'] not in {'IEEE RA-L','Robotics: Science and Systems XXII'} and not re.search(r'[/／]\s*(?:arxiv|tech\s*report|扩展版)',p['venue'],re.I),
+            'paper venue must be the canonical publication outlet, not a mixed version/category label')
     require(type(p['hasCautionaryResult']) is bool,'boolean caution marker')
     require(isinstance(p['tags'],list) and all(isinstance(t,str) for t in p['tags']),'tags')
     require(isinstance(p['topics'],list) and p['topics'] and all(isinstance(t,str) for t in p['topics']),'topics')
@@ -115,6 +117,8 @@ def validate_record(rec, topic_ids=None):
     require(pub['status'] in {'legacy','preprint','accepted','published','report','withdrawn'},'publication status')
     require(pub['latestArxivVersion'] is None or (isinstance(pub['latestArxivVersion'],str) and re.fullmatch(r'v[1-9]\d*',pub['latestArxivVersion'])),'arxiv version')
     for k in ('firstArxivSource','venue','doi'): require(isinstance(pub[k],str),'publication text')
+    require(pub['venue'] not in {'IEEE RA-L','Robotics: Science and Systems XXII'} and not re.search(r'[/／]\s*(?:arxiv|tech\s*report|扩展版)',pub['venue'],re.I),
+            'publication venue must be canonical')
     if pub['firstArxivAt']: require(p['arxiv'] and pub['firstArxivSource'],'first arxiv requires exact source'); public_url(pub['firstArxivSource'])
     require(isinstance(pub['alerts'],list) and all(isinstance(x,str) for x in pub['alerts']),'alerts')
     require(isinstance(pub['history'],list),'history')

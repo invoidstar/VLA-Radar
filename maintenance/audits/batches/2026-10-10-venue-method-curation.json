@@ -1,0 +1,8 @@
+{
+  "id": "2026-10-10-venue-method-curation",
+  "date": "2026-10-10",
+  "summary": "规范论文出处为正式发表期刊或单一 arXiv 类别（统一 IEEE Robotics and Automation Letters，核实 Diffusion Policy 的 IJRR 扩展发表），并按独立方法/基线精简 Benchmark 的消融实验配置。原始 1,134 条 Result Report 仍保存在 catalog 和论文详情证据中，主 Benchmark 比较保留 933 条已核验记录；不更改第一公开日期、Benchmark 评测定义或实验数值。",
+  "notes": [],
+  "tracks": [],
+  "results": []
+}

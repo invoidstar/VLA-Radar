@@ -5,7 +5,7 @@
     "name": "VERITAS",
     "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
     "team": "普林斯顿大学\nMingtong Zhang、Dhruv Shah",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "publicationType": "conference",
     "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.079",
     "firstPublished": "2026-06-16",
@@ -58,7 +58,7 @@
     "latestArxivVersion": "v1",
     "latestArxivAt": "2026-06-16",
     "status": "published",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "doi": "10.15607/rss.2026.xxii.079",
     "acceptedAt": null,
     "publishedAt": "2026-07-13",
@@ -92,7 +92,7 @@
         "kind": "published",
         "date": "2026-07-13",
         "observedAt": "2026-09-18",
-        "venue": "Robotics: Science and Systems XXII",
+        "venue": "RSS 2026",
         "source": "https://doi.org/10.15607/rss.2026.xxii.079",
         "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }

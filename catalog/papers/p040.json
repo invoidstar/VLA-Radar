@@ -5,7 +5,7 @@
     "name": "Beyond Binary Success",
     "title": "Beyond Binary Success: Sample-Efficient and Statistically Rigorous Robot Policy Comparison",
     "team": "宾夕法尼亚大学／Toyota Research Institute／普林斯顿大学\nDavid Snyder、Apurva Badithela、Nikolai Matni、George Pappas等",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "publicationType": "conference",
     "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.076",
     "firstPublished": "2026-03-13",
@@ -57,7 +57,7 @@
     "latestArxivVersion": "v1",
     "latestArxivAt": "2026-03-13",
     "status": "published",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "doi": "10.15607/rss.2026.xxii.076",
     "acceptedAt": null,
     "publishedAt": "2026-07-13",
@@ -91,7 +91,7 @@
         "kind": "published",
         "date": "2026-07-13",
         "observedAt": "2026-09-18",
-        "venue": "Robotics: Science and Systems XXII",
+        "venue": "RSS 2026",
         "source": "https://doi.org/10.15607/rss.2026.xxii.076",
         "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }

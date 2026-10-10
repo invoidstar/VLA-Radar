@@ -127,6 +127,26 @@
       "reproducibility": [
         "p123"
       ]
+    },
+    {
+      "id": "2026-10-10-venue-method-curation",
+      "sha256": "23abc6843c6f8ae41f4e66562fdf27f17d4a908be882c90f3634bfd7f17265bc",
+      "date": "2026-10-10",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
+    },
+    {
+      "id": "2026-10-10-rss-venue-alias",
+      "sha256": "7d9bbd0ffd51bb128605e9d4747da1ce536bb8cecd6b0b80ef4a08cfbfe05a12",
+      "date": "2026-10-10",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
