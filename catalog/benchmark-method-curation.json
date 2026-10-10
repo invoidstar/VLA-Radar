@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "Comparison-facing Benchmark views only. Original checked Result Reports, including ablations, remain in catalog/results and each paper's evidence archive.",
+  "scope": "Benchmark comparison display: exclude internal ablations and paper-specific, isolated single-method evaluations from public Benchmark/Setting/Method navigation and follow/coverage indexes. All canonical results and paper-detail archives remain intact.",
   "excludedTracks": [
     "bridge-real-octo-v2-ablation",
     "dmsvla-ieee-metric-ablation",
@@ -182,5 +182,23 @@
     "r-vlaflow-v2-lplus-pi-full": "MindPI",
     "r-vlaflow-v2-rt1-pi-full": "MindPI",
     "r-vlaflow-v2-widowx-pi-full": "MindPI"
-  }
+  },
+  "excludedDatasets": [
+    "Deltoris hardware",
+    "DreamZero real",
+    "DSWAM real sorting",
+    "Dyna-2 real",
+    "FAST training",
+    "GF-VLA real",
+    "Lumo-2 probe",
+    "ManiSkill2",
+    "OC-VLA++ real robot",
+    "OTQL real",
+    "PixMC",
+    "RECAP real",
+    "RoboCerebra",
+    "Track4Action real",
+    "TRI-Ramen",
+    "TRI-Ramen real"
+  ]
 }

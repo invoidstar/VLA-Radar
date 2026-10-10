@@ -59,3 +59,11 @@ RT-1/RT-2原作者Google机器人真机实验不能因硬件相似就归入Simpl
 - 显式维护 `catalog/benchmark-method-curation.json`：整组内部消融用 `excludedTracks`，混合主表中的消融行用 `excludedResults`，已核验代表性配置可用 `methodLabels` 显示方法名。原文的具体配置应保留在结果证据说明。
 - **不删除原始核验结果。** `catalog/results`、论文逐条结果和阅读笔记仍保留完整消融与复现实验数据；仅派生 Benchmark 比较目录、Method 下拉和对外榜单时应用精简。不得把不同实验协议或训练预算错误合并为公平排名。
 - 新增主结果时同步复核 Method 命名与配置，避免把同一方法的多行消融误标成独立方法。
+
+## 单方法、孤立 Benchmark 类别精简（2026-10-11）
+
+- Benchmark 目录应突出可复用、可横向比较的评测集合。若某个单独的 `dataset` 只由一篇论文提供结果，且所列方法只是该论文自身的版本、训练规模、模块开关、部署条件或仅有一条方法记录，就不应以独立 Benchmark 分类占用网站导航。
+- `catalog/benchmark-method-curation.json` 的 `excludedDatasets` 显式管理这些暂不展示的孤立类别；排除作用于对外 Benchmark、Evaluation Setting、方法筛选、Evidence Coverage 和 My Radar 的数据集菜单。保留 `catalog/benchmark-taxonomy.json` 的完整规范登记及原始 `catalog/benchmarks.json` 协议。
+- 如果该类别随后出现其他论文真实核验且协议可对齐的结果，构建会提示重新审核，不允许长期隐藏已经具有跨论文比较价值的 Benchmark。
+- **不可仅以某个 Track 或 Setting 当前只有一行而排除标准公共 Benchmark。** LIBERO、CALVIN、RoboTwin 等公共数据集里的单篇论文结果仍然可供其他来源对齐；相反，OC-VLA++ real robot、GF-VLA real 等论文特有自测不应独立成类。
+- 完整实验和消融一律保留在 `catalog/results`、按论文分片的 `data/paper-results` 与论文阅读详情。此处的「不展示」不等于删除核验数字或修改论文。

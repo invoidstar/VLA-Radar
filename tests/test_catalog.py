@@ -64,8 +64,10 @@ class CatalogTests(unittest.TestCase):
         _,records,tracks,results=read_catalog(ROOT)
         shown_tracks,shown=curated_benchmark(ROOT,tracks,results)
         self.assertLess(len(shown),len(results))
-        self.assertEqual({r['paperId'] for r in results if r['evidence']=='checked'},
-                         {r['paperId'] for r in shown if r['evidence']=='checked'})
+        self.assertLessEqual({r['paperId'] for r in shown if r['evidence']=='checked'},
+                             {r['paperId'] for r in results if r['evidence']=='checked'})
+        self.assertIn('p012',{r['paperId'] for r in results})
+        self.assertNotIn('p012',{r['paperId'] for r in shown})
         self.assertFalse(any(r['method'] in {'Interaction depth 2','No language','OpenVLA-DMS · 8 templates'}
                              for r in shown))
         self.assertTrue(any(r['method']=='TurboVLA' for r in shown))
@@ -79,6 +81,40 @@ class CatalogTests(unittest.TestCase):
                             if k.startswith('data/paper-results/p030.'))
         self.assertIn('r-adavla-v2-sr-pr-adp25',{r['id'] for r in source_archive['results']})
         self.assertNotIn('r-adavla-v2-sr-pr-adp25',{r['id'] for r in shown})
+
+    def test_isolated_single_method_datasets_only_hidden_from_public_comparison(self):
+        from scripts.build.build_catalog import curated_benchmark
+        _,records,tracks,results=read_catalog(ROOT)
+        shown_tracks,shown=curated_benchmark(ROOT,tracks,results)
+        registry=load(ROOT/'catalog/benchmark-method-curation.json')
+        hidden=set(registry['excludedDatasets'])
+        visible={t['dataset'] for t in shown_tracks}
+        self.assertTrue(hidden.isdisjoint(visible))
+        self.assertIn('OC-VLA++ real robot',hidden)
+        self.assertIn('ManiSkill2',hidden)
+        self.assertTrue({'LIBERO','RoboTwin','CALVIN','RoboCasa','RoboDojo'}<=visible)
+        self.assertEqual(len({r['id'] for r in results}),len(results))
+        self.assertEqual(len(shown),len(results)-len([
+            r for r in results if r['trackId'] not in {t['id'] for t in shown_tracks}
+        ])-len([r for r in results if r['trackId'] in {t['id'] for t in shown_tracks}
+                 and r['id'] in registry['excludedResults']]))
+        out=outputs(ROOT)
+        lib=json.loads(out['data/library.json'])
+        boards=json.loads(out['data/leaderboards.json'])
+        index=json.loads(out[lib['boardIndexUrl']])
+        self.assertEqual(visible,{t['dataset'] for t in boards['tracks']})
+        self.assertEqual(visible,set(index['taxonomy']['benchmarks']))
+        self.assertEqual(visible,set(boards['taxonomy']['benchmarks']))
+        exp=json.loads(out[lib['experienceUrl']])
+        coverage=json.loads(out[exp['coverageUrl']])
+        tools=json.loads(out[lib['toolsUrl']])
+        self.assertEqual(visible,set(coverage['datasets']))
+        self.assertEqual(visible,set(tools['datasets']))
+        archive=next(json.loads(blob) for path,blob in out.items()
+                     if path.startswith('data/paper-results/p012.'))
+        self.assertIn('r-ocvlapp-v1-dita-plus',{r['id'] for r in archive['results']})
+        self.assertNotIn('r-ocvlapp-v1-dita-plus',{r['id'] for r in shown})
+        self.assertTrue(all(r['id'] in {row['id'] for row in results} for r in archive['results']))
 
     def test_public_keys(self):
         self.rec['privateNotes']='not allowed'
