@@ -127,6 +127,16 @@
       "reproducibility": [
         "p123"
       ]
+    },
+    {
+      "id": "2026-10-10-venue-method-curation",
+      "sha256": "23abc6843c6f8ae41f4e66562fdf27f17d4a908be882c90f3634bfd7f17265bc",
+      "date": "2026-10-10",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

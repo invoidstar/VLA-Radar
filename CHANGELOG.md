@@ -1,3 +1,7 @@
+## 2026-10-10 — 2026-10-10-venue-method-curation
+
+规范论文出处为正式发表期刊或单一 arXiv 类别（统一 IEEE Robotics and Automation Letters，核实 Diffusion Policy 的 IJRR 扩展发表），并按独立方法/基线精简 Benchmark 的消融实验配置。原始 1,134 条 Result Report 仍保存在 catalog 和论文详情证据中，主 Benchmark 比较保留 933 条已核验记录；不更改第一公开日期、Benchmark 评测定义或实验数值。
+
 ## 2026-10-09 · 论文、Benchmark 与搜索交互性能优化
 
 - 论文详情先显示已核验的目录摘要，再读取正文；Reproducibility Card 异步独立填充，不再阻塞正文，已加载的详情记录直接复用。

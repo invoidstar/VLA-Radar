@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-10",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -4067,7 +4067,7 @@
       "paperUrl": "https://arxiv.org/abs/2507.17294",
       "arxiv": "2507.17294",
       "doi": "10.1109/lra.2026.3692345",
-      "detailUrl": "data/details/p044.json?v=e758dadf9c09b730",
+      "detailUrl": "data/details/p044.json?v=653ee05ea7534c8a",
       "resultUrl": "data/paper-results/p044.96e90254eaf11d15.json",
       "noteStatus": "expanded",
       "resources": {
@@ -4519,7 +4519,7 @@
       "name": "DMS-VLA",
       "title": "Dynamic Maclaurin-Series-Based Vision-Language-Action Model",
       "team": "Chong Yu、Zhongxue Gan｜Fudan University, College of Intelligent Robotics and Advanced Manufacturing",
-      "venue": "IEEE RA-L",
+      "venue": "IEEE Robotics and Automation Letters",
       "publicationType": "journal",
       "publicationStatus": "IEEE Robotics and Automation Letters 11(7):8252–8259；online 2026-04-13；DOI:10.1109/LRA.2026.3683324",
       "firstPublished": null,
@@ -4559,7 +4559,7 @@
       "paperUrl": "https://doi.org/10.1109/LRA.2026.3683324",
       "arxiv": "",
       "doi": "10.1109/LRA.2026.3683324",
-      "detailUrl": "data/details/p043.json?v=53b58af96e198c08",
+      "detailUrl": "data/details/p043.json?v=5522c74ad3e6a8f7",
       "resultUrl": "data/paper-results/p043.4432b551e88d50c9.json",
       "noteStatus": "expanded",
       "resources": {},
@@ -5046,7 +5046,7 @@
       "name": "CALVIN",
       "title": "CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks",
       "team": "University of Freiburg / University of Technology Nuremberg；Oier Mees、Lukas Hermann 等",
-      "venue": "IEEE RA-L",
+      "venue": "IEEE Robotics and Automation Letters",
       "publicationType": "journal",
       "publicationStatus": "IEEE元数据确认在线发表2022-06-03；卷期为2022年7月；录用日另据v4首页。",
       "firstPublished": "2021-12-06",
@@ -5097,7 +5097,7 @@
       "paperUrl": "https://arxiv.org/abs/2112.03227",
       "arxiv": "2112.03227",
       "doi": "10.1109/LRA.2022.3180108",
-      "detailUrl": "data/details/p048.json?v=16671a906f7d6fbc",
+      "detailUrl": "data/details/p048.json?v=e4fbfefa4f7d8fc9",
       "resultUrl": "data/paper-results/p048.f44283fb1f0aca5b.json",
       "noteStatus": "expanded",
       "resources": {
@@ -5574,13 +5574,13 @@
       "name": "Diffusion Policy",
       "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
       "team": "Cheng Chi、Zhenjia Xu、Siyuan Feng、Eric Cousineau、Yilun Du、Benjamin Burchfiel、Russ Tedrake、Shuran Song（署名作者）",
-      "venue": "RSS 2023 / arXiv 扩展版",
-      "publicationType": "conference",
-      "publicationStatus": "arXiv 明确说明为 RSS 2023 论文扩展版",
+      "venue": "The International Journal of Robotics Research",
+      "publicationType": "journal",
+      "publicationStatus": "先发表于 RSS 2023；扩展版正式发表于 IJRR，2024-10-11 在线发表（2025 年第 44 卷 10–11 期）；DOI: 10.1177/02783649241273668",
       "firstPublished": "2023-03-07",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
-      "versionNote": "arXiv v5（2024-03-14）摘要；RSS 2023 的扩展版本",
+      "versionNote": "arXiv v5（2024-03-14）对应 IJRR 扩展版；原始会议版本发表于 RSS 2023",
       "topics": [
         "action"
       ],
@@ -5607,12 +5607,24 @@
         {
           "label": "当前复核版本 · v5",
           "url": "https://arxiv.org/html/2303.04137v5"
+        },
+        {
+          "label": "RSS 2023 正式会议论文",
+          "url": "https://www.roboticsproceedings.org/rss19/p026.html"
+        },
+        {
+          "label": "IJRR 期刊扩展版 · DOI",
+          "url": "https://doi.org/10.1177/02783649241273668"
+        },
+        {
+          "label": "作者项目页 · 双版本说明",
+          "url": "https://diffusion-policy.cs.columbia.edu/"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2303.04137",
       "arxiv": "2303.04137",
-      "doi": "",
-      "detailUrl": "data/details/p055.json?v=add1889c9ee9d644",
+      "doi": "10.1177/02783649241273668",
+      "detailUrl": "data/details/p055.json?v=f4ec0478c7ac6f7c",
       "resultUrl": "data/paper-results/p055.237dea8f0205a603.json",
       "noteStatus": "expanded",
       "resources": {
@@ -5628,8 +5640,8 @@
       "lifecycle": {
         "firstArxivAt": "2023-03-07",
         "latestArxivVersion": "v5",
-        "status": "legacy",
-        "lastCheckedAt": "2026-09-20"
+        "status": "published",
+        "lastCheckedAt": "2026-10-10"
       }
     },
     {
@@ -8618,9 +8630,9 @@
       "name": "MVP (Motor Control)",
       "title": "Masked Visual Pre-training for Motor Control",
       "team": "Tete Xiao、Ilija Radosavovic、Trevor Darrell、Jitendra Malik；UC Berkeley",
-      "venue": "arXiv / Tech report 2022",
-      "publicationType": "report",
-      "publicationStatus": "作者技术报告/arXiv预印本；不将后续同名工作的会议身份移植到本篇。",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2203.06173 预印本（2022）；作者项目页引用为 arXiv 论文。",
       "firstPublished": "2022-03-11",
       "dateNote": "arXiv v1 Submission history核对UTC首次公开日；不以修订或出版日期覆盖。",
       "collectionMonth": "2026-09",
@@ -8660,7 +8672,7 @@
       "paperUrl": "https://arxiv.org/abs/2203.06173",
       "arxiv": "2203.06173",
       "doi": "",
-      "detailUrl": "data/details/p097.json?v=a4d0936bb04d5464",
+      "detailUrl": "data/details/p097.json?v=3065c599474181e1",
       "resultUrl": "data/paper-results/p097.152cb928b802c3c2.json",
       "noteStatus": "expanded",
       "resources": {
