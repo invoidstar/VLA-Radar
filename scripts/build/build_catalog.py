@@ -25,25 +25,39 @@ def hashed(prefix,obj,out):
 def curated_benchmark(root, tracks, results):
     """Keep ablation evidence in canonical records; publish independent-method comparisons."""
     registry=json.loads((Path(root)/'catalog/benchmark-method-curation.json').read_text(encoding='utf-8'))
-    if registry.get('schemaVersion')!=1 or set(registry)!={'schemaVersion','scope','excludedTracks','excludedResults','methodLabels'}:
+    expected={'schemaVersion','scope','excludedDatasets','excludedTracks','excludedResults','methodLabels'}
+    if registry.get('schemaVersion')!=1 or set(registry)!=expected:
         raise ValueError('Benchmark method curation has an unexpected schema')
+    blocked_datasets=registry['excludedDatasets']
     blocked_tracks=registry['excludedTracks'];blocked_results=registry['excludedResults'];labels=registry['methodLabels']
-    if not isinstance(blocked_tracks,list) or not isinstance(blocked_results,list) or not isinstance(labels,dict):
-        raise ValueError('Benchmark method curation requires track/result ID lists and labels')
-    known_tracks={t['id'] for t in tracks};known_results={r['id'] for r in results}
-    if (len(blocked_tracks)!=len(set(blocked_tracks)) or len(blocked_results)!=len(set(blocked_results))
-            or set(blocked_tracks)-known_tracks or set(blocked_results)-known_results or set(labels)-known_results):
-        raise ValueError('Stale or duplicated Benchmark method curation ID')
-    blocked_t=set(blocked_tracks);blocked_r=set(blocked_results)
+    if not all(isinstance(v,list) and all(isinstance(x,str) for x in v)
+               for v in (blocked_datasets,blocked_tracks,blocked_results)) or not isinstance(labels,dict):
+        raise ValueError('Benchmark curation requires dataset/track/result ID lists and labels')
+    trackmap={t['id']:t for t in tracks};resultmap={r['id']:r for r in results}
+    known_datasets={t['dataset'] for t in tracks};known_results=set(resultmap)
+    if (any(len(items)!=len(set(items)) for items in (blocked_datasets,blocked_tracks,blocked_results))
+            or set(blocked_datasets)-known_datasets or set(blocked_tracks)-set(trackmap)
+            or set(blocked_results)-known_results or set(labels)-known_results):
+        raise ValueError('Stale or duplicated Benchmark curation identity')
+    blocked_d=set(blocked_datasets);blocked_t=set(blocked_tracks);blocked_r=set(blocked_results)
+    # A hidden dataset may already have per-row ablations excluded. Keep
+    # those existing curation decisions for any future re-admission.
     if any(r['trackId'] in blocked_t for r in results if r['id'] in blocked_r):
-        raise ValueError('Ablation track and row exclusions must not overlap')
-    if any(r['id'] in blocked_r or r['trackId'] in blocked_t for r in results if r['id'] in labels):
+        raise ValueError('Track and row exclusions must not overlap')
+    if any(rid in blocked_r or resultmap[rid]['trackId'] in blocked_t for rid in labels):
         raise ValueError('Benchmark canonical label must refer to a retained row')
     if any(not isinstance(s,str) or not s.strip() for s in labels.values()):
         raise ValueError('Benchmark canonical labels must be nonempty text')
+    # An isolated paper-specific evaluation should be reconsidered once another
+    # reporting paper supplies independently checked results for that dataset.
+    for dataset in blocked_d:
+        reporting={r['paperId'] for r in results
+                   if r['evidence']=='checked' and trackmap[r['trackId']]['dataset']==dataset}
+        if len(reporting)>1:
+            raise ValueError('Re-review now-shared Benchmark before excluding: '+dataset)
     display=[]
     for row in results:
-        if row['id'] in blocked_r or row['trackId'] in blocked_t:
+        if row['id'] in blocked_r or row['trackId'] in blocked_t or trackmap[row['trackId']]['dataset'] in blocked_d:
             continue
         if row['id'] not in labels:
             display.append(row)
@@ -54,17 +68,36 @@ def curated_benchmark(root, tracks, results):
         display.append(copy)
     active={r['trackId'] for r in display}
     curated_tracks=[t for t in tracks if t['id'] in active]
+    # No new one-method, one-paper dataset may accidentally become a
+    # standalone public Benchmark merely because a single result was imported.
+    method_sets={}
+    reporting_papers={}
+    for row in display:
+        if row['evidence']!='checked':
+            continue
+        dataset=trackmap[row['trackId']]['dataset']
+        method_sets.setdefault(dataset,set()).add(row['method'].strip().casefold())
+        reporting_papers.setdefault(dataset,set()).add(row['paperId'])
+    for dataset,methods in method_sets.items():
+        if len(methods)<2 and len(reporting_papers[dataset])==1:
+            raise ValueError('Single-method standalone Benchmark requires curation: '+dataset)
     audited_papers={r['paperId'] for r in results if r['evidence']=='checked'}
     comparison_papers={r['paperId'] for r in display if r['evidence']=='checked'}
-    if audited_papers!=comparison_papers:
-        raise ValueError('Method pruning must leave at least one checked comparison per audited paper')
+    if not comparison_papers<=audited_papers:
+        raise ValueError('Benchmark comparison references an unaudited paper')
+    # Some papers have only internal experiments; their original checked rows
+    # remain in catalog/results and hashed per-paper evidence archives.
     return curated_tracks,display
 
 
 def outputs(root):
     m,records,tracks,results=read_catalog(root)
     comparison_tracks,comparison_results=curated_benchmark(root,tracks,results)
-    taxonomy=load_taxonomy(root,comparison_tracks)
+    full_taxonomy=load_taxonomy(root,tracks)  # full catalog stays academically auditable
+    visible_datasets={t['dataset'] for t in comparison_tracks}
+    taxonomy={**full_taxonomy,'benchmarks':{
+        name:item for name,item in full_taxonomy['benchmarks'].items() if name in visible_datasets
+    }}
     paper_ids={r['paper']['id'] for r in records}
     resources=load_resources(root,paper_ids)
     relations=load_relations(root,paper_ids)
@@ -111,9 +144,11 @@ def outputs(root):
     searchkeys={'id','name','title','team','tags','topics','contribution','findings','insight','limitations','venue','publicationStatus','arxiv','firstPublished'}
     searchurl=hashed('data/search-index',{'schemaVersion':1,'topics':m['topics'],'papers':[{k:r['paper'][k] for k in sorted(searchkeys)} for r in records]},out)
     boardurl=hashed('data/board-index',{'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':indexed_tracks,'settings':indexed_settings,'taxonomy':taxonomy,'resultCount':len(comparison_results),'settingCount':len(indexed_settings)},out)
-    experience,indexurl=experience_outputs(root,records,tracks,results);out.update(experience)
+    # Coverage and follow/navigation use the same public comparison universe.
+    # Canonical Result Reports and paper-detail evidence above remain complete.
+    experience,indexurl=experience_outputs(root,records,comparison_tracks,comparison_results);out.update(experience)
     news,newsurl=news_outputs(root,records);out.update(news)
-    tools,toolsurl=tools_outputs(root,records,tracks,results,experience,indexurl);out.update(tools)
+    tools,toolsurl=tools_outputs(root,records,comparison_tracks,comparison_results,experience,indexurl);out.update(tools)
     out['data/library.json']=compact({'schemaVersion':1,**meta,'searchUrl':searchurl,'boardIndexUrl':boardurl,'experienceUrl':indexurl,'newsUrl':newsurl,'toolsUrl':toolsurl,'papers':light})
     out['data/leaderboards.json']=dumps({'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':comparison_tracks,'settings':setting_records,'taxonomy':taxonomy,'results':comparison_results})
     return out

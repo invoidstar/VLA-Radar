@@ -1,3 +1,7 @@
+## 2026-10-11 — 2026-10-11-singleton-benchmark-cleanup
+
+根据用户反馈，清理仅包含同一论文单方法或同方法变体的孤立 Benchmark 分类：以 OC-VLA++ real robot 为例，共精简 16 个孤立类别，保留公共 Benchmark 的独立方法比较；不删除 catalog/results 的任何原始实验或论文详情，统一更新 Benchmark 导航、Setting、Evidence Coverage 和 My Radar 的数据集范围。新增显式 curation 登记和防回归校验，不新增 V3.0 功能。 修复与旧版细粒度消融行排除规则的重叠校验；若该类别重新纳入，既有消融筛选仍然有效。 更新前端筛选回归断言，明确 GF-VLA real 已不属于公开 Benchmark 数据集。
+
 ## 2026-10-10 — 2026-10-10-rss-venue-alias
 
 合并 RSS 2026 与 Robotics: Science and Systems XXII（第 22 届）的重复出处分类；保留会议发表日期和研究内容，不对论文状态做未经核验的改变。

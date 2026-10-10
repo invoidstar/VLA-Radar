@@ -147,6 +147,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-11-singleton-benchmark-cleanup",
+      "sha256": "70b3d6f0955e4a94239c4c38c5c8dc14cbdd4832c373d12cc97be51e8c1edc21",
+      "date": "2026-10-11",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
