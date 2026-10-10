@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-10",
+  "updatedAt": "2026-10-11",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -3873,60 +3873,6 @@
       "source": "https://arxiv.org/html/2608.16885v1#S6.T3"
     },
     {
-      "id": "cotrain-v1-sim-unseen-final",
-      "dataset": "TRI-Ramen",
-      "name": "Co-training Study · Final Model · 仿真未见任务",
-      "version": "arXiv 2602.01067v1 / RSS 2026",
-      "tasks": "8 unseen simulation tasks",
-      "split": "empirical mean in §III-C",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "正文明确绝对均值72.6%；不由36.4% improvement反推baseline。",
-      "trainingRegime": "Final Model组合有效共训练模态。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Average"
-      ],
-      "source": "https://arxiv.org/html/2602.01067v1#S3.SS3"
-    },
-    {
-      "id": "cotrain-v1-real-language-final",
-      "dataset": "TRI-Ramen real",
-      "name": "Co-training Study · Final Model · 真实语言跟随",
-      "version": "arXiv 2602.01067v1 / RSS 2026",
-      "tasks": "3 language-following settings",
-      "split": "45 rollouts per setting; reported overall mean",
-      "metric": "Average task completion",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "正文明确平均69.4%；不反推各子设置或baseline。",
-      "trainingRegime": "Final Model组合有效共训练模态。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Average"
-      ],
-      "source": "https://arxiv.org/html/2602.01067v1#S3.SS3"
-    },
-    {
-      "id": "cotrain-v1-ft-long-horizon",
-      "dataset": "TRI-Ramen real",
-      "name": "Co-training Study · 200示范长时程适配",
-      "version": "arXiv 2602.01067v1 / RSS 2026",
-      "tasks": "3 unseen long-horizon tasks",
-      "split": "200 demos/task; 30 rollouts/checkpoint-task",
-      "metric": "Average task completion",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "正文精确给出FT Final Model 90.2%；相对改进率不反算对照。",
-      "trainingRegime": "从Final Model微调；每任务200示范。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Average"
-      ],
-      "source": "https://arxiv.org/html/2602.01067v1#S3.SS4"
-    },
-    {
       "id": "halo-rss26-sim-main",
       "dataset": "HALO long-horizon (sim)",
       "name": "HALO RSS 2026 · Table I · 仿真主表",
@@ -4035,44 +3981,6 @@
       "source": "https://arxiv.org/pdf/2607.04927v1"
     },
     {
-      "id": "dswam-v1-sorting-sr",
-      "dataset": "DSWAM real sorting",
-      "name": "DSWAM v1 · 子任务监督分拣成功率",
-      "version": "arXiv 2607.04927v1",
-      "tasks": "sorting",
-      "split": "6000 / 18000 steps",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "训练监督形式变化，不当作纯推理开关。",
-      "trainingRegime": "同文分拣实验。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "6000 steps",
-        "18000 steps"
-      ],
-      "source": "https://arxiv.org/pdf/2607.04927v1"
-    },
-    {
-      "id": "dswam-v1-sorting-errors",
-      "dataset": "DSWAM real sorting",
-      "name": "DSWAM v1 · 子任务监督分拣错误数",
-      "version": "arXiv 2607.04927v1",
-      "tasks": "sorting",
-      "split": "6000 / 18000 steps",
-      "metric": "Mistakes per rollout",
-      "unit": "score",
-      "direction": "lower",
-      "protocol": "错误数与成功率分开建轨。",
-      "trainingRegime": "同文分拣实验。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "6000 steps",
-        "18000 steps"
-      ],
-      "source": "https://arxiv.org/pdf/2607.04927v1"
-    },
-    {
       "id": "veritas-v1-simpler-ft-stack",
       "dataset": "SimplerEnv",
       "name": "VERITAS v1 · Stack Blocks自主数据微调",
@@ -4107,62 +4015,6 @@
         "Success"
       ],
       "source": "https://arxiv.org/pdf/2606.18247v1"
-    },
-    {
-      "id": "ocvlapp-v1-maniskill2-ablation",
-      "dataset": "ManiSkill2",
-      "name": "OC-VLA++ v1 · Table 3 · 同架构视角监督消融",
-      "version": "arXiv 2608.01066v1",
-      "tasks": "5 task categories",
-      "split": "multi-view simulation",
-      "metric": "Average task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "ManiSkill2五类任务论文内部消融；同Dita架构。只比较OC-VLA及监督变体。",
-      "trainingRegime": "同文Dita设置；paired-view/等变监督按行变化。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Average"
-      ],
-      "source": "https://arxiv.org/pdf/2608.01066v1"
-    },
-    {
-      "id": "ocvlapp-v1-real-dita-view",
-      "dataset": "OC-VLA++ real robot",
-      "name": "OC-VLA++ v1 · Dita · 固定/最大相机位移",
-      "version": "arXiv 2608.01066v1",
-      "tasks": "real Franka tasks",
-      "split": "fixed camera vs largest tested displacement",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "真实Franka；每任务10条示范，每任务每相机设置20次rollout；最大位移约30.48cm/23.40deg。",
-      "trainingRegime": "Dita架构内部OC-VLA与OC-VLA++对照。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Fixed view",
-        "Largest displacement"
-      ],
-      "source": "https://arxiv.org/pdf/2608.01066v1"
-    },
-    {
-      "id": "ocvlapp-v1-real-qwen-view",
-      "dataset": "OC-VLA++ real robot",
-      "name": "OC-VLA++ v1 · Qwen3-VL flow · 固定/最大相机位移",
-      "version": "arXiv 2608.01066v1",
-      "tasks": "real Franka tasks",
-      "split": "fixed camera vs largest tested displacement",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "真实Franka；每任务10条示范，每任务每相机设置20次rollout。与Dita架构分轨。",
-      "trainingRegime": "Qwen3-VL-2B + flow action expert；同架构内部比较。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Fixed view",
-        "Largest displacement"
-      ],
-      "source": "https://arxiv.org/pdf/2608.01066v1"
     },
     {
       "id": "temporalflow-v1-libero-main",
@@ -4511,61 +4363,6 @@
       "source": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf"
     },
     {
-      "id": "lumo2-v1-semantic-probe",
-      "dataset": "Lumo-2 probe",
-      "name": "Lumo-2 v1 · Table 7 · 动作语义探针",
-      "version": "arXiv 2607.11270v1",
-      "tasks": "18 atomic action classes / 7,200 samples",
-      "split": "4:1 train/test",
-      "metric": "Top-1 action semantic classification accuracy",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "初始帧DINO特征加不同阶段动作表示；分类器实际为两层MLP，虽原文称linear probing。此轨是表征诊断，不是机器人任务SR。",
-      "trainingRegime": "400样本/类；两层MLP hidden1024、ReLU、dropout0.1。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Accuracy"
-      ],
-      "source": "https://arxiv.org/abs/2607.11270"
-    },
-    {
-      "id": "fast-v1-training-speedup",
-      "dataset": "FAST training",
-      "name": "FAST v1 · 大规模训练加速上限",
-      "version": "arXiv 2501.09747v1",
-      "tasks": "pi0 VLA on ~10k robot hours",
-      "split": "FAST vs diffusion VLA training",
-      "metric": "Maximum reported training speedup",
-      "unit": "score",
-      "direction": "higher",
-      "protocol": "摘要明确“match diffusion VLA performance while reducing training time by up to 5x”；这是训练效率而非闭环频率。",
-      "trainingRegime": "FAST tokenization + pi0；约10k小时机器人数据。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Speedup factor"
-      ],
-      "source": "https://arxiv.org/abs/2501.09747"
-    },
-    {
-      "id": "deltoris-v1-hardware-speedup",
-      "dataset": "Deltoris hardware",
-      "name": "Deltoris v1 · 摘要硬件加速上限",
-      "version": "arXiv 2608.04428v1",
-      "tasks": "diffusion VLA inference",
-      "split": "dedicated accelerator evaluation",
-      "metric": "Maximum reported inference speedup",
-      "unit": "score",
-      "direction": "higher",
-      "protocol": "摘要精确报告34.2x与6.1x；专用加速器、RTL/周期模拟条件，不解释为普通GPU软件加速。",
-      "trainingRegime": "算法-硬件协同；非统一闭环任务榜。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "vs mobile GPU",
-        "vs prior accelerator"
-      ],
-      "source": "https://arxiv.org/abs/2608.04428"
-    },
-    {
       "id": "embcpp-v2-vla-success",
       "dataset": "Embodied.cpp",
       "name": "Embodied.cpp v2 · VLA闭环部署成功率",
@@ -4600,43 +4397,6 @@
         "Latency"
       ],
       "source": "https://arxiv.org/html/2607.02501v2"
-    },
-    {
-      "id": "gfvla-2026-basic-ops",
-      "dataset": "GF-VLA real",
-      "name": "GF-VLA · 基础操作成功率",
-      "version": "Information Fusion 131 (2026) 104193",
-      "tasks": "dual-arm block assembly",
-      "split": "490 real-world trials reported across experiments",
-      "metric": "Operation success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "正式摘要明确94%抓取、89%放置；与图准确率/分割准确率分开。",
-      "trainingRegime": "GF-VLA dual-arm execution。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Grasp",
-        "Placement"
-      ],
-      "source": "https://doi.org/10.1016/j.inffus.2026.104193"
-    },
-    {
-      "id": "gfvla-2026-overall-tsr",
-      "dataset": "GF-VLA real",
-      "name": "GF-VLA · 结构化双臂任务总体成功率",
-      "version": "Information Fusion 131 (2026) 104193",
-      "tasks": "four structured dual-arm assembly tasks",
-      "split": "reported overall across scenarios",
-      "metric": "Overall task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "正式摘要明确90% overall task success；不与95%图准确率或93%分割准确率求平均。",
-      "trainingRegime": "GF-VLA dual-arm execution。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Overall"
-      ],
-      "source": "https://doi.org/10.1016/j.inffus.2026.104193"
     },
     {
       "id": "stwam-v1-libero-plus-ablation",
@@ -4691,43 +4451,6 @@
         "Average"
       ],
       "source": "https://arxiv.org/abs/2608.24115"
-    },
-    {
-      "id": "recap-v2-throughput-factor",
-      "dataset": "RECAP real",
-      "name": "pi*0.6 / RECAP v2 · 困难任务吞吐提升",
-      "version": "arXiv 2511.14759v2",
-      "tasks": "laundry / long-horizon box assembly",
-      "split": "real deployment iterations",
-      "metric": "Reported throughput factor relative to pre-RECAP reference",
-      "unit": "score",
-      "direction": "higher",
-      "protocol": "正文精确描述laundry +50%与box assembly 2x；分别记为1.5x与2.0x，属于不同任务，不求平均。",
-      "trainingRegime": "RECAP含on-policy数据与专家纠正。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Laundry factor",
-        "Box-assembly factor"
-      ],
-      "source": "https://arxiv.org/html/2511.14759v2"
-    },
-    {
-      "id": "recap-v2-targeted-failure-success",
-      "dataset": "RECAP real",
-      "name": "pi*0.6 / RECAP v2 · 定向失败消除成功率",
-      "version": "arXiv 2511.14759v2",
-      "tasks": "targeted failure-removal task",
-      "split": "two iterations; 600 trajectories each iteration",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "正文明确两轮后97%成功率；每轮收集600条轨迹。不是全任务统一成功率。",
-      "trainingRegime": "RECAP targeted failure-removal experiment。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Success"
-      ],
-      "source": "https://arxiv.org/html/2511.14759v2"
     },
     {
       "id": "meco-v1-robotwin",
@@ -4813,42 +4536,6 @@
       "source": "https://arxiv.org/html/2503.20020v1"
     },
     {
-      "id": "dreamzero-v1-progress",
-      "dataset": "DreamZero real",
-      "name": "DreamZero v1 · Table 3 · 收桌面Task Progress",
-      "version": "arXiv 2602.15922v1",
-      "tasks": "table-clearing task",
-      "split": "4-step vs 1-step / Flash",
-      "metric": "Task progress",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "Task Progress不是最终二值SR；±标准误保留在说明，不塞进主值。",
-      "trainingRegime": "原模型/Flash不同采样配置。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Task Progress"
-      ],
-      "source": "https://arxiv.org/html/2602.15922v1"
-    },
-    {
-      "id": "dreamzero-v1-latency",
-      "dataset": "DreamZero real",
-      "name": "DreamZero v1 · Table 3 · 单次模型延迟",
-      "version": "arXiv 2602.15922v1",
-      "tasks": "table-clearing task",
-      "split": "same Table 3",
-      "metric": "Model latency",
-      "unit": "seconds",
-      "direction": "lower",
-      "protocol": "350/150ms精确换算秒；不是完整机器人回路端到端延迟。",
-      "trainingRegime": "原模型/Flash不同采样配置。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Latency"
-      ],
-      "source": "https://arxiv.org/html/2602.15922v1"
-    },
-    {
       "id": "adavla-v2-libero-sr",
       "dataset": "LIBERO",
       "name": "AdaVLA v2 · Table III · pi0.5组件/阈值成功率",
@@ -4883,42 +4570,6 @@
         "Latency"
       ],
       "source": "https://arxiv.org/html/2608.29208v2"
-    },
-    {
-      "id": "dyna2-2026-scaling",
-      "dataset": "Dyna-2 real",
-      "name": "Dyna-2 · 14任务人类视频预训练规模律",
-      "version": "Dyna official technical report Aug 2026",
-      "tasks": "14 real robot tasks",
-      "split": "matched post-training at four human-video scales",
-      "metric": "Mean normalized on-robot performance",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "1k/10k/100k/1M小时为嵌套人类视频集合；每级相同机器人后训练配方。",
-      "trainingRegime": "每任务最多10小时机器人后训练；14任务宏观归一化表现。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Normalized performance"
-      ],
-      "source": "https://www.dyna.co/dyna-2"
-    },
-    {
-      "id": "dyna2-2026-customer-pass",
-      "dataset": "Dyna-2 real",
-      "name": "Dyna-2 · 客户现场零样本production pass",
-      "version": "Dyna official technical report Aug 2026",
-      "tasks": "production deployment tasks",
-      "split": "matched post-training; unseen customer sites",
-      "metric": "Production pass-criteria rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "官方报告Dyna-1 46%、Dyna-2 87%；相同后训练预算，现场数据未参与训练。",
-      "trainingRegime": "Dyna-1 vs early Dyna-2 matched comparison。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "On-site pass"
-      ],
-      "source": "https://www.dyna.co/dyna-2"
     },
     {
       "id": "mimic-v2-simpler",
@@ -4976,78 +4627,6 @@
       "source": "https://arxiv.org/html/2608.05738v1"
     },
     {
-      "id": "sparkvla-v1-task-sr",
-      "dataset": "RoboCerebra",
-      "name": "SparkVLA v1 · Table 3 · 层级选择任务成功率",
-      "version": "arXiv 2608.16172v1",
-      "tasks": "RoboCerebra long-horizon",
-      "split": "internal decision ablation",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "固定长度/AQC/配对排名/统一排名受控比较。",
-      "trainingRegime": "同文层级VLA决策接口。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "SR"
-      ],
-      "source": "https://arxiv.org/html/2608.16172v1"
-    },
-    {
-      "id": "sparkvla-v1-stop-acc",
-      "dataset": "RoboCerebra",
-      "name": "SparkVLA v1 · Table 3 · Stop准确率",
-      "version": "arXiv 2608.16172v1",
-      "tasks": "RoboCerebra long-horizon",
-      "split": "same ablation",
-      "metric": "Stop decision accuracy",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "Stop准确率与整任务SR是不同指标，分轨。",
-      "trainingRegime": "同文层级VLA决策接口。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Accuracy"
-      ],
-      "source": "https://arxiv.org/html/2608.16172v1"
-    },
-    {
-      "id": "otql-v1-single-policy",
-      "dataset": "OTQL real",
-      "name": "OTQL v1 · 单任务flow policy经验后训练",
-      "version": "arXiv 2607.06262v1",
-      "tasks": "single-task policies",
-      "split": "50-60 interaction episodes",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "摘要报告平均36%→86%；需要在线交互/RL后训练，不是training-free。",
-      "trainingRegime": "same single-task policy before/after OTQL。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Success"
-      ],
-      "source": "https://arxiv.org/abs/2607.06262"
-    },
-    {
-      "id": "otql-v1-pretrained-vla",
-      "dataset": "OTQL real",
-      "name": "OTQL v1 · 预训练VLA经验后训练",
-      "version": "arXiv 2607.06262v1",
-      "tasks": "pretrained VLA tasks",
-      "split": "50-60 interaction episodes",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "摘要报告38%→76%；与单任务policy分轨。",
-      "trainingRegime": "same pretrained VLA before/after OTQL。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Success"
-      ],
-      "source": "https://arxiv.org/abs/2607.06262"
-    },
-    {
       "id": "track4action-v1-libero-plus",
       "dataset": "LIBERO-Plus",
       "name": "Track4Action v1 · 零样本LIBERO-Plus",
@@ -5058,24 +4637,6 @@
       "unit": "percent",
       "direction": "higher",
       "protocol": "无3D对齐74.7→Track4Action82.3；部署时不运行tracker。",
-      "trainingRegime": "alignment-free vs Track4Action。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Average"
-      ],
-      "source": "https://arxiv.org/abs/2608.03727"
-    },
-    {
-      "id": "track4action-v1-real",
-      "dataset": "Track4Action real",
-      "name": "Track4Action v1 · 四个真实双臂任务",
-      "version": "arXiv 2608.03727v1",
-      "tasks": "4 bimanual tasks",
-      "split": "physical evaluation",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "protocol": "四任务平均42.5→67.5；不是任意真实任务总体。",
       "trainingRegime": "alignment-free vs Track4Action。",
       "comparisonScope": "paper-table",
       "columns": [
@@ -5327,25 +4888,6 @@
       "familyPrimaryTrackId": "lingbot-v2-robotwin",
       "recipeName": "27.5K mixed · LingBot-VA main report",
       "recipeType": "training"
-    },
-    {
-      "id": "mvp-v1-pixmc-textual-count",
-      "dataset": "PixMC",
-      "name": "MVP v1 · PixMC正文定性计数",
-      "version": "arXiv 2203.06173v1",
-      "tasks": "8 PixMC tasks",
-      "split": "frozen representation + RL control",
-      "metric": "Count of 8 tasks satisfying textual outcome",
-      "unit": "score",
-      "direction": "higher",
-      "protocol": "正文明确7/8优于监督表示、5/8接近state oracle；原论文主要曲线，不从图高生成精确任务分数。",
-      "trainingRegime": "MVP frozen visual representation。",
-      "comparisonScope": "paper-table",
-      "columns": [
-        "Outperform supervised count",
-        "Near state-oracle count"
-      ],
-      "source": "https://arxiv.org/abs/2203.06173"
     },
     {
       "id": "dmsvla-ieee-libero-main",
@@ -13099,93 +12641,6 @@
       }
     },
     {
-      "id": "setting-tri-ramen-success-184df936d4-na-1e6a28de10f0",
-      "dataset": "TRI-Ramen",
-      "evalId": "auto:success-184df936d4-na",
-      "name": "TRI-Ramen · Success Rate · Success Rate",
-      "tasks": "8 unseen simulation tasks",
-      "split": "empirical mean in §III-C",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Average"
-      ],
-      "protocol": "正文明确绝对均值72.6%；不由36.4% improvement反推baseline。",
-      "trackIds": [
-        "cotrain-v1-sim-unseen-final"
-      ],
-      "resultIds": [
-        "r-cotrain-v1-sim-unseen-final"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p035"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "cotrain-v1-sim-unseen-final",
-      "trainingOptions": [
-        {
-          "id": "unknown-p035",
-          "label": "训练数据未完整披露 · p035",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-cotrain-v1-sim-unseen-final": "unknown-p035"
-      }
-    },
-    {
-      "id": "setting-tri-ramen-real-average-task-completion-184df936d4-na-9650bd406edb",
-      "dataset": "TRI-Ramen real",
-      "evalId": "auto:average-task-completion-184df936d4-na",
-      "name": "TRI-Ramen real · Average task completion · Average task completion",
-      "tasks": "3 language-following settings",
-      "split": "多来源评测描述；详见各行 Evidence",
-      "metric": "Average task completion",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Average"
-      ],
-      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
-      "trackIds": [
-        "cotrain-v1-real-language-final",
-        "cotrain-v1-ft-long-horizon"
-      ],
-      "resultIds": [
-        "r-cotrain-v1-ft-long-final",
-        "r-cotrain-v1-real-language-final"
-      ],
-      "resultCount": 2,
-      "paperCount": 1,
-      "paperIds": [
-        "p035"
-      ],
-      "methodCount": 2,
-      "primaryTrackId": "cotrain-v1-real-language-final",
-      "trainingOptions": [
-        {
-          "id": "data-0ec9d03e54fe",
-          "label": "每新任务200示范",
-          "known": true,
-          "count": 1
-        },
-        {
-          "id": "unknown-p035",
-          "label": "训练数据未完整披露 · p035",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-cotrain-v1-ft-long-final": "data-0ec9d03e54fe",
-        "r-cotrain-v1-real-language-final": "unknown-p035"
-      }
-    },
-    {
       "id": "setting-halo-long-horizon-sim-success-95ca2da4af-na-f1eafb5a6cb3",
       "dataset": "HALO long-horizon (sim)",
       "evalId": "auto:success-95ca2da4af-na",
@@ -13373,90 +12828,6 @@
       }
     },
     {
-      "id": "setting-dswam-real-sorting-success-669e8e5358-na-d5c44a0f77d3",
-      "dataset": "DSWAM real sorting",
-      "evalId": "auto:success-669e8e5358-na",
-      "name": "DSWAM real sorting · 6000 steps / 18000 steps · Success Rate",
-      "tasks": "sorting",
-      "split": "6000 / 18000 steps",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "6000 steps",
-        "18000 steps"
-      ],
-      "protocol": "训练监督形式变化，不当作纯推理开关。",
-      "trackIds": [
-        "dswam-v1-sorting-sr"
-      ],
-      "resultIds": [
-        "r-dswam-v1-sort-sr-raw",
-        "r-dswam-v1-sort-sr-subtask"
-      ],
-      "resultCount": 2,
-      "paperCount": 1,
-      "paperIds": [
-        "p023"
-      ],
-      "methodCount": 2,
-      "primaryTrackId": "dswam-v1-sorting-sr",
-      "trainingOptions": [
-        {
-          "id": "unknown-p023",
-          "label": "训练数据未完整披露 · p023",
-          "known": false,
-          "count": 2
-        }
-      ],
-      "trainingByResult": {
-        "r-dswam-v1-sort-sr-raw": "unknown-p023",
-        "r-dswam-v1-sort-sr-subtask": "unknown-p023"
-      }
-    },
-    {
-      "id": "setting-dswam-real-sorting-mistakes-per-rollout-669e8e5358-na-6f75d9cbcd22",
-      "dataset": "DSWAM real sorting",
-      "evalId": "auto:mistakes-per-rollout-669e8e5358-na",
-      "name": "DSWAM real sorting · 6000 steps / 18000 steps · Mistakes per rollout",
-      "tasks": "sorting",
-      "split": "6000 / 18000 steps",
-      "metric": "Mistakes per rollout",
-      "unit": "score",
-      "direction": "lower",
-      "columns": [
-        "6000 steps",
-        "18000 steps"
-      ],
-      "protocol": "错误数与成功率分开建轨。",
-      "trackIds": [
-        "dswam-v1-sorting-errors"
-      ],
-      "resultIds": [
-        "r-dswam-v1-sort-errors-raw",
-        "r-dswam-v1-sort-errors-subtask"
-      ],
-      "resultCount": 2,
-      "paperCount": 1,
-      "paperIds": [
-        "p023"
-      ],
-      "methodCount": 2,
-      "primaryTrackId": "dswam-v1-sorting-errors",
-      "trainingOptions": [
-        {
-          "id": "unknown-p023",
-          "label": "训练数据未完整披露 · p023",
-          "known": false,
-          "count": 2
-        }
-      ],
-      "trainingByResult": {
-        "r-dswam-v1-sort-errors-raw": "unknown-p023",
-        "r-dswam-v1-sort-errors-subtask": "unknown-p023"
-      }
-    },
-    {
       "id": "setting-simplerenv-success-reported-aee40884-55a2bedfc395",
       "dataset": "SimplerEnv",
       "evalId": "auto:success-reported-aee40884",
@@ -13536,100 +12907,6 @@
       "trainingByResult": {
         "r-veritas-v1-carrot50-auto": "data-c7b2708f695d",
         "r-veritas-v1-carrot50-human": "data-c7b2708f695d"
-      }
-    },
-    {
-      "id": "setting-maniskill2-success-184df936d4-5-ec32fb644aa4",
-      "dataset": "ManiSkill2",
-      "evalId": "auto:success-184df936d4-5",
-      "name": "ManiSkill2 · 5 Tasks · Success Rate",
-      "tasks": "5 task categories",
-      "split": "multi-view simulation",
-      "metric": "Average task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Average"
-      ],
-      "protocol": "ManiSkill2五类任务论文内部消融；同Dita架构。只比较OC-VLA及监督变体。",
-      "trackIds": [
-        "ocvlapp-v1-maniskill2-ablation"
-      ],
-      "resultIds": [
-        "r-ocvlapp-v1-maniskill-base",
-        "r-ocvlapp-v1-maniskill-full"
-      ],
-      "resultCount": 2,
-      "paperCount": 1,
-      "paperIds": [
-        "p012"
-      ],
-      "methodCount": 2,
-      "primaryTrackId": "ocvlapp-v1-maniskill2-ablation",
-      "trainingOptions": [
-        {
-          "id": "unknown-p012",
-          "label": "训练数据未完整披露 · p012",
-          "known": false,
-          "count": 2
-        }
-      ],
-      "trainingByResult": {
-        "r-ocvlapp-v1-maniskill-base": "unknown-p012",
-        "r-ocvlapp-v1-maniskill-full": "unknown-p012"
-      }
-    },
-    {
-      "id": "setting-oc-vla-real-robot-success-68d52e4a71-na-7f96761189bc",
-      "dataset": "OC-VLA++ real robot",
-      "evalId": "auto:success-68d52e4a71-na",
-      "name": "OC-VLA++ real robot · Fixed view / Largest displacement · Success Rate",
-      "tasks": "real Franka tasks",
-      "split": "fixed camera vs largest tested displacement",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Fixed view",
-        "Largest displacement"
-      ],
-      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
-      "trackIds": [
-        "ocvlapp-v1-real-dita-view",
-        "ocvlapp-v1-real-qwen-view"
-      ],
-      "resultIds": [
-        "r-ocvlapp-v1-dita-ocvla",
-        "r-ocvlapp-v1-dita-plus",
-        "r-ocvlapp-v1-qwen-ocvla",
-        "r-ocvlapp-v1-qwen-plus"
-      ],
-      "resultCount": 4,
-      "paperCount": 1,
-      "paperIds": [
-        "p012"
-      ],
-      "methodCount": 2,
-      "primaryTrackId": "ocvlapp-v1-real-dita-view",
-      "trainingOptions": [
-        {
-          "id": "data-c5ab415b1029",
-          "label": "每任务10示范",
-          "known": true,
-          "count": 2
-        },
-        {
-          "id": "unknown-p012",
-          "label": "训练数据未完整披露 · p012",
-          "known": false,
-          "count": 2
-        }
-      ],
-      "trainingByResult": {
-        "r-ocvlapp-v1-dita-ocvla": "data-c5ab415b1029",
-        "r-ocvlapp-v1-dita-plus": "data-c5ab415b1029",
-        "r-ocvlapp-v1-qwen-ocvla": "unknown-p012",
-        "r-ocvlapp-v1-qwen-plus": "unknown-p012"
       }
     },
     {
@@ -14152,128 +13429,6 @@
       }
     },
     {
-      "id": "setting-lumo-2-probe-top-1-action-semantic-classification-accuracy-5879092f86-na-f4db581bf64d",
-      "dataset": "Lumo-2 probe",
-      "evalId": "auto:top-1-action-semantic-classification-accuracy-5879092f86-na",
-      "name": "Lumo-2 probe · Accuracy · Top-1 action semantic classification accuracy",
-      "tasks": "18 atomic action classes / 7,200 samples",
-      "split": "4:1 train/test",
-      "metric": "Top-1 action semantic classification accuracy",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Accuracy"
-      ],
-      "protocol": "初始帧DINO特征加不同阶段动作表示；分类器实际为两层MLP，虽原文称linear probing。此轨是表征诊断，不是机器人任务SR。",
-      "trackIds": [
-        "lumo2-v1-semantic-probe"
-      ],
-      "resultIds": [
-        "r-lumo2-v1-probe-dino",
-        "r-lumo2-v1-probe-stage1",
-        "r-lumo2-v1-probe-stage2"
-      ],
-      "resultCount": 3,
-      "paperCount": 1,
-      "paperIds": [
-        "p003"
-      ],
-      "methodCount": 3,
-      "primaryTrackId": "lumo2-v1-semantic-probe",
-      "trainingOptions": [
-        {
-          "id": "unknown-p003",
-          "label": "训练数据未完整披露 · p003",
-          "known": false,
-          "count": 3
-        }
-      ],
-      "trainingByResult": {
-        "r-lumo2-v1-probe-dino": "unknown-p003",
-        "r-lumo2-v1-probe-stage1": "unknown-p003",
-        "r-lumo2-v1-probe-stage2": "unknown-p003"
-      }
-    },
-    {
-      "id": "setting-fast-training-maximum-reported-training-speedup-7a69d92d5e-na-a930415fa227",
-      "dataset": "FAST training",
-      "evalId": "auto:maximum-reported-training-speedup-7a69d92d5e-na",
-      "name": "FAST training · Speedup factor · Maximum reported training speedup",
-      "tasks": "pi0 VLA on ~10k robot hours",
-      "split": "FAST vs diffusion VLA training",
-      "metric": "Maximum reported training speedup",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "Speedup factor"
-      ],
-      "protocol": "摘要明确“match diffusion VLA performance while reducing training time by up to 5x”；这是训练效率而非闭环频率。",
-      "trackIds": [
-        "fast-v1-training-speedup"
-      ],
-      "resultIds": [
-        "r-fast-v1-train-speed"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p067"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "fast-v1-training-speedup",
-      "trainingOptions": [
-        {
-          "id": "unknown-p067",
-          "label": "训练数据未完整披露 · p067",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-fast-v1-train-speed": "unknown-p067"
-      }
-    },
-    {
-      "id": "setting-deltoris-hardware-maximum-reported-inference-speedup-86b626f545-na-67650fa0654a",
-      "dataset": "Deltoris hardware",
-      "evalId": "auto:maximum-reported-inference-speedup-86b626f545-na",
-      "name": "Deltoris hardware · vs mobile GPU / vs prior accelerator · Maximum reported inference speedup",
-      "tasks": "diffusion VLA inference",
-      "split": "dedicated accelerator evaluation",
-      "metric": "Maximum reported inference speedup",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "vs mobile GPU",
-        "vs prior accelerator"
-      ],
-      "protocol": "摘要精确报告34.2x与6.1x；专用加速器、RTL/周期模拟条件，不解释为普通GPU软件加速。",
-      "trackIds": [
-        "deltoris-v1-hardware-speedup"
-      ],
-      "resultIds": [
-        "r-deltoris-v1-speed"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p032"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "deltoris-v1-hardware-speedup",
-      "trainingOptions": [
-        {
-          "id": "unknown-p032",
-          "label": "训练数据未完整披露 · p032",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-deltoris-v1-speed": "unknown-p032"
-      }
-    },
-    {
       "id": "setting-embodied-cpp-success-aee408847d-na-35e5e163ad86",
       "dataset": "Embodied.cpp",
       "evalId": "auto:success-aee408847d-na",
@@ -14353,85 +13508,6 @@
       "trainingByResult": {
         "r-embcpp-v2-blocklat-cpp": "unknown-p031",
         "r-embcpp-v2-blocklat-py": "unknown-p031"
-      }
-    },
-    {
-      "id": "setting-gf-vla-real-success-d310b41023-na-69822ba03fb4",
-      "dataset": "GF-VLA real",
-      "evalId": "auto:success-d310b41023-na",
-      "name": "GF-VLA real · Grasp / Placement · Success Rate",
-      "tasks": "dual-arm block assembly",
-      "split": "490 real-world trials reported across experiments",
-      "metric": "Operation success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Grasp",
-        "Placement"
-      ],
-      "protocol": "正式摘要明确94%抓取、89%放置；与图准确率/分割准确率分开。",
-      "trackIds": [
-        "gfvla-2026-basic-ops"
-      ],
-      "resultIds": [
-        "r-gfvla-ops"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p045"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "gfvla-2026-basic-ops",
-      "trainingOptions": [
-        {
-          "id": "unknown-p045",
-          "label": "训练数据未完整披露 · p045",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-gfvla-ops": "unknown-p045"
-      }
-    },
-    {
-      "id": "setting-gf-vla-real-success-c1deb3268b-na-75ec0b41c8b3",
-      "dataset": "GF-VLA real",
-      "evalId": "auto:success-c1deb3268b-na",
-      "name": "GF-VLA real · Success Rate · Success Rate",
-      "tasks": "four structured dual-arm assembly tasks",
-      "split": "reported overall across scenarios",
-      "metric": "Overall task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Overall"
-      ],
-      "protocol": "正式摘要明确90% overall task success；不与95%图准确率或93%分割准确率求平均。",
-      "trackIds": [
-        "gfvla-2026-overall-tsr"
-      ],
-      "resultIds": [
-        "r-gfvla-overall"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p045"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "gfvla-2026-overall-tsr",
-      "trainingOptions": [
-        {
-          "id": "unknown-p045",
-          "label": "训练数据未完整披露 · p045",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-gfvla-overall": "unknown-p045"
       }
     },
     {
@@ -14523,85 +13599,6 @@
         "r-ponder-v2-base-p08": "unknown-p018",
         "r-ponder-v2-base-p9": "unknown-p018",
         "r-ponder-v2-base-pi05": "unknown-p018"
-      }
-    },
-    {
-      "id": "setting-recap-real-reported-throughput-factor-relative-to-pre-recap-reference-0a311908f4-na-f5adc54f35b9",
-      "dataset": "RECAP real",
-      "evalId": "auto:reported-throughput-factor-relative-to-pre-recap-reference-0a311908f4-na",
-      "name": "RECAP real · Laundry factor / Box-assembly factor · Reported throughput factor relative to pre-RECAP reference",
-      "tasks": "laundry / long-horizon box assembly",
-      "split": "real deployment iterations",
-      "metric": "Reported throughput factor relative to pre-RECAP reference",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "Laundry factor",
-        "Box-assembly factor"
-      ],
-      "protocol": "正文精确描述laundry +50%与box assembly 2x；分别记为1.5x与2.0x，属于不同任务，不求平均。",
-      "trackIds": [
-        "recap-v2-throughput-factor"
-      ],
-      "resultIds": [
-        "r-recap-v2-throughput"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p075"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "recap-v2-throughput-factor",
-      "trainingOptions": [
-        {
-          "id": "unknown-p075",
-          "label": "训练数据未完整披露 · p075",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-recap-v2-throughput": "unknown-p075"
-      }
-    },
-    {
-      "id": "setting-recap-real-success-aee408847d-na-74774e2e18bd",
-      "dataset": "RECAP real",
-      "evalId": "auto:success-aee408847d-na",
-      "name": "RECAP real · Success · Success Rate",
-      "tasks": "targeted failure-removal task",
-      "split": "two iterations; 600 trajectories each iteration",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Success"
-      ],
-      "protocol": "正文明确两轮后97%成功率；每轮收集600条轨迹。不是全任务统一成功率。",
-      "trackIds": [
-        "recap-v2-targeted-failure-success"
-      ],
-      "resultIds": [
-        "r-recap-v2-targeted97"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p075"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "recap-v2-targeted-failure-success",
-      "trainingOptions": [
-        {
-          "id": "unknown-p075",
-          "label": "训练数据未完整披露 · p075",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-recap-v2-targeted97": "unknown-p075"
       }
     },
     {
@@ -14730,92 +13727,6 @@
       }
     },
     {
-      "id": "setting-dreamzero-real-task-progress-9efb482c40-na-615a1b7c3cf8",
-      "dataset": "DreamZero real",
-      "evalId": "auto:task-progress-9efb482c40-na",
-      "name": "DreamZero real · Task Progress · Task progress",
-      "tasks": "table-clearing task",
-      "split": "4-step vs 1-step / Flash",
-      "metric": "Task progress",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Task Progress"
-      ],
-      "protocol": "Task Progress不是最终二值SR；±标准误保留在说明，不塞进主值。",
-      "trackIds": [
-        "dreamzero-v1-progress"
-      ],
-      "resultIds": [
-        "r-dreamzero-v1-progress-1step",
-        "r-dreamzero-v1-progress-4step",
-        "r-dreamzero-v1-progress-flash"
-      ],
-      "resultCount": 3,
-      "paperCount": 1,
-      "paperIds": [
-        "p077"
-      ],
-      "methodCount": 3,
-      "primaryTrackId": "dreamzero-v1-progress",
-      "trainingOptions": [
-        {
-          "id": "unknown-p077",
-          "label": "训练数据未完整披露 · p077",
-          "known": false,
-          "count": 3
-        }
-      ],
-      "trainingByResult": {
-        "r-dreamzero-v1-progress-1step": "unknown-p077",
-        "r-dreamzero-v1-progress-4step": "unknown-p077",
-        "r-dreamzero-v1-progress-flash": "unknown-p077"
-      }
-    },
-    {
-      "id": "setting-dreamzero-real-latency-3fdb7e873d-na-23b63b90bfd9",
-      "dataset": "DreamZero real",
-      "evalId": "auto:latency-3fdb7e873d-na",
-      "name": "DreamZero real · Latency · Latency",
-      "tasks": "table-clearing task",
-      "split": "same Table 3",
-      "metric": "Model latency",
-      "unit": "seconds",
-      "direction": "lower",
-      "columns": [
-        "Latency"
-      ],
-      "protocol": "350/150ms精确换算秒；不是完整机器人回路端到端延迟。",
-      "trackIds": [
-        "dreamzero-v1-latency"
-      ],
-      "resultIds": [
-        "r-dreamzero-v1-lat-1step",
-        "r-dreamzero-v1-lat-4step",
-        "r-dreamzero-v1-lat-flash"
-      ],
-      "resultCount": 3,
-      "paperCount": 1,
-      "paperIds": [
-        "p077"
-      ],
-      "methodCount": 3,
-      "primaryTrackId": "dreamzero-v1-latency",
-      "trainingOptions": [
-        {
-          "id": "unknown-p077",
-          "label": "训练数据未完整披露 · p077",
-          "known": false,
-          "count": 3
-        }
-      ],
-      "trainingByResult": {
-        "r-dreamzero-v1-lat-1step": "unknown-p077",
-        "r-dreamzero-v1-lat-4step": "unknown-p077",
-        "r-dreamzero-v1-lat-flash": "unknown-p077"
-      }
-    },
-    {
       "id": "setting-libero-latency-hw-jetson-b2e2c8afc1b3",
       "dataset": "LIBERO",
       "evalId": "auto:latency-hw-jetson",
@@ -14854,92 +13765,6 @@
       "trainingByResult": {
         "r-adavla-v2-lat-b10": "unknown-p030",
         "r-adavla-v2-lat-pr-adp20": "unknown-p030"
-      }
-    },
-    {
-      "id": "setting-dyna-2-real-mean-normalized-on-robot-performance-1a8a271f42-14-c3436e5f971b",
-      "dataset": "Dyna-2 real",
-      "evalId": "auto:mean-normalized-on-robot-performance-1a8a271f42-14",
-      "name": "Dyna-2 real · 14 Tasks · Mean normalized on-robot performance",
-      "tasks": "14 real robot tasks",
-      "split": "matched post-training at four human-video scales",
-      "metric": "Mean normalized on-robot performance",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Normalized performance"
-      ],
-      "protocol": "1k/10k/100k/1M小时为嵌套人类视频集合；每级相同机器人后训练配方。",
-      "trackIds": [
-        "dyna2-2026-scaling"
-      ],
-      "resultIds": [
-        "r-dyna2-scale-100k",
-        "r-dyna2-scale-10k",
-        "r-dyna2-scale-1k",
-        "r-dyna2-scale-1m"
-      ],
-      "resultCount": 4,
-      "paperCount": 1,
-      "paperIds": [
-        "p005"
-      ],
-      "methodCount": 4,
-      "primaryTrackId": "dyna2-2026-scaling",
-      "trainingOptions": [
-        {
-          "id": "unknown-p005",
-          "label": "训练数据未完整披露 · p005",
-          "known": false,
-          "count": 4
-        }
-      ],
-      "trainingByResult": {
-        "r-dyna2-scale-100k": "unknown-p005",
-        "r-dyna2-scale-10k": "unknown-p005",
-        "r-dyna2-scale-1k": "unknown-p005",
-        "r-dyna2-scale-1m": "unknown-p005"
-      }
-    },
-    {
-      "id": "setting-dyna-2-real-production-pass-criteria-rate-3ff69519a0-na-2228e63c1350",
-      "dataset": "Dyna-2 real",
-      "evalId": "auto:production-pass-criteria-rate-3ff69519a0-na",
-      "name": "Dyna-2 real · On-site pass · Production pass-criteria rate",
-      "tasks": "production deployment tasks",
-      "split": "matched post-training; unseen customer sites",
-      "metric": "Production pass-criteria rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "On-site pass"
-      ],
-      "protocol": "官方报告Dyna-1 46%、Dyna-2 87%；相同后训练预算，现场数据未参与训练。",
-      "trackIds": [
-        "dyna2-2026-customer-pass"
-      ],
-      "resultIds": [
-        "r-dyna2-site-d1",
-        "r-dyna2-site-d2"
-      ],
-      "resultCount": 2,
-      "paperCount": 1,
-      "paperIds": [
-        "p005"
-      ],
-      "methodCount": 2,
-      "primaryTrackId": "dyna2-2026-customer-pass",
-      "trainingOptions": [
-        {
-          "id": "unknown-p005",
-          "label": "训练数据未完整披露 · p005",
-          "known": false,
-          "count": 2
-        }
-      ],
-      "trainingByResult": {
-        "r-dyna2-site-d1": "unknown-p005",
-        "r-dyna2-site-d2": "unknown-p005"
       }
     },
     {
@@ -15046,183 +13871,6 @@
         "r-mimic-v2-libero-mimic": "unknown-p038",
         "r-mimic-v2-libero-oft": "unknown-p038",
         "r-mimic-v2-libero-pi": "unknown-p038"
-      }
-    },
-    {
-      "id": "setting-robocerebra-success-cc8844298c-na-23606b620da6",
-      "dataset": "RoboCerebra",
-      "evalId": "auto:success-cc8844298c-na",
-      "name": "RoboCerebra · SR · Success Rate",
-      "tasks": "RoboCerebra long-horizon",
-      "split": "internal decision ablation",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "SR"
-      ],
-      "protocol": "固定长度/AQC/配对排名/统一排名受控比较。",
-      "trackIds": [
-        "sparkvla-v1-task-sr"
-      ],
-      "resultIds": [
-        "r-spark-v1-sr-aqc",
-        "r-spark-v1-sr-fixed",
-        "r-spark-v1-sr-paired",
-        "r-spark-v1-sr-unified"
-      ],
-      "resultCount": 4,
-      "paperCount": 1,
-      "paperIds": [
-        "p019"
-      ],
-      "methodCount": 4,
-      "primaryTrackId": "sparkvla-v1-task-sr",
-      "trainingOptions": [
-        {
-          "id": "unknown-p019",
-          "label": "训练数据未完整披露 · p019",
-          "known": false,
-          "count": 4
-        }
-      ],
-      "trainingByResult": {
-        "r-spark-v1-sr-aqc": "unknown-p019",
-        "r-spark-v1-sr-fixed": "unknown-p019",
-        "r-spark-v1-sr-paired": "unknown-p019",
-        "r-spark-v1-sr-unified": "unknown-p019"
-      }
-    },
-    {
-      "id": "setting-robocerebra-stop-decision-accuracy-5879092f86-na-f88bd942f29d",
-      "dataset": "RoboCerebra",
-      "evalId": "auto:stop-decision-accuracy-5879092f86-na",
-      "name": "RoboCerebra · Accuracy · Stop decision accuracy",
-      "tasks": "RoboCerebra long-horizon",
-      "split": "same ablation",
-      "metric": "Stop decision accuracy",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Accuracy"
-      ],
-      "protocol": "Stop准确率与整任务SR是不同指标，分轨。",
-      "trackIds": [
-        "sparkvla-v1-stop-acc"
-      ],
-      "resultIds": [
-        "r-spark-v1-stop-aqc",
-        "r-spark-v1-stop-fixed",
-        "r-spark-v1-stop-paired",
-        "r-spark-v1-stop-unified"
-      ],
-      "resultCount": 4,
-      "paperCount": 1,
-      "paperIds": [
-        "p019"
-      ],
-      "methodCount": 4,
-      "primaryTrackId": "sparkvla-v1-stop-acc",
-      "trainingOptions": [
-        {
-          "id": "unknown-p019",
-          "label": "训练数据未完整披露 · p019",
-          "known": false,
-          "count": 4
-        }
-      ],
-      "trainingByResult": {
-        "r-spark-v1-stop-aqc": "unknown-p019",
-        "r-spark-v1-stop-fixed": "unknown-p019",
-        "r-spark-v1-stop-paired": "unknown-p019",
-        "r-spark-v1-stop-unified": "unknown-p019"
-      }
-    },
-    {
-      "id": "setting-otql-real-success-aee408847d-na-aadd35186cbd",
-      "dataset": "OTQL real",
-      "evalId": "auto:success-aee408847d-na",
-      "name": "OTQL real · Success · Success Rate",
-      "tasks": "single-task policies",
-      "split": "50-60 interaction episodes",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Success"
-      ],
-      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
-      "trackIds": [
-        "otql-v1-single-policy",
-        "otql-v1-pretrained-vla"
-      ],
-      "resultIds": [
-        "r-otql-single-after",
-        "r-otql-single-before",
-        "r-otql-vla-after",
-        "r-otql-vla-before"
-      ],
-      "resultCount": 4,
-      "paperCount": 1,
-      "paperIds": [
-        "p033"
-      ],
-      "methodCount": 4,
-      "primaryTrackId": "otql-v1-single-policy",
-      "trainingOptions": [
-        {
-          "id": "unknown-p033",
-          "label": "训练数据未完整披露 · p033",
-          "known": false,
-          "count": 4
-        }
-      ],
-      "trainingByResult": {
-        "r-otql-single-after": "unknown-p033",
-        "r-otql-single-before": "unknown-p033",
-        "r-otql-vla-after": "unknown-p033",
-        "r-otql-vla-before": "unknown-p033"
-      }
-    },
-    {
-      "id": "setting-track4action-real-success-184df936d4-na-e507fb66dd98",
-      "dataset": "Track4Action real",
-      "evalId": "auto:success-184df936d4-na",
-      "name": "Track4Action real · Success Rate · Success Rate",
-      "tasks": "4 bimanual tasks",
-      "split": "physical evaluation",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Average"
-      ],
-      "protocol": "四任务平均42.5→67.5；不是任意真实任务总体。",
-      "trackIds": [
-        "track4action-v1-real"
-      ],
-      "resultIds": [
-        "r-track4-v1-real-base",
-        "r-track4-v1-real-track"
-      ],
-      "resultCount": 2,
-      "paperCount": 1,
-      "paperIds": [
-        "p007"
-      ],
-      "methodCount": 2,
-      "primaryTrackId": "track4action-v1-real",
-      "trainingOptions": [
-        {
-          "id": "unknown-p007",
-          "label": "训练数据未完整披露 · p007",
-          "known": false,
-          "count": 2
-        }
-      ],
-      "trainingByResult": {
-        "r-track4-v1-real-base": "unknown-p007",
-        "r-track4-v1-real-track": "unknown-p007"
       }
     },
     {
@@ -15649,46 +14297,6 @@
         "r-baton-v1-csr-baton": "unknown-p016",
         "r-baton-v1-csr-frame": "unknown-p016",
         "r-baton-v1-csr-harness": "unknown-p016"
-      }
-    },
-    {
-      "id": "setting-pixmc-count-of-8-tasks-satisfying-textual-outcome-d2bb764202-na-867e8a219282",
-      "dataset": "PixMC",
-      "evalId": "auto:count-of-8-tasks-satisfying-textual-outcome-d2bb764202-na",
-      "name": "PixMC · Outperform supervised count / Near state-oracle count · Count of 8 tasks satisfying textual outcome",
-      "tasks": "8 PixMC tasks",
-      "split": "frozen representation + RL control",
-      "metric": "Count of 8 tasks satisfying textual outcome",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "Outperform supervised count",
-        "Near state-oracle count"
-      ],
-      "protocol": "正文明确7/8优于监督表示、5/8接近state oracle；原论文主要曲线，不从图高生成精确任务分数。",
-      "trackIds": [
-        "mvp-v1-pixmc-textual-count"
-      ],
-      "resultIds": [
-        "r-mvp-v1-pixmc-count"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p097"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "mvp-v1-pixmc-textual-count",
-      "trainingOptions": [
-        {
-          "id": "unknown-p097",
-          "label": "训练数据未完整披露 · p097",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-mvp-v1-pixmc-count": "unknown-p097"
       }
     },
     {
@@ -16949,23 +15557,6 @@
           "language-compositional"
         ]
       },
-      "TRI-Ramen": {
-        "focus": "generalization-robustness",
-        "environment": "simulation",
-        "tags": [
-          "robustness-ood",
-          "language-compositional"
-        ]
-      },
-      "TRI-Ramen real": {
-        "focus": "generalization-robustness",
-        "environment": "real",
-        "tags": [
-          "robustness-ood",
-          "long-horizon",
-          "language-compositional"
-        ]
-      },
       "HALO long-horizon (sim)": {
         "focus": "long-horizon-memory",
         "environment": "simulation",
@@ -16987,29 +15578,6 @@
         "environment": "real",
         "tags": [
           "contact-rich",
-          "tabletop"
-        ]
-      },
-      "DSWAM real sorting": {
-        "focus": "general-manipulation",
-        "environment": "real",
-        "tags": [
-          "tabletop"
-        ]
-      },
-      "ManiSkill2": {
-        "focus": "general-manipulation",
-        "environment": "simulation",
-        "tags": [
-          "multi-task",
-          "tabletop"
-        ]
-      },
-      "OC-VLA++ real robot": {
-        "focus": "generalization-robustness",
-        "environment": "real",
-        "tags": [
-          "robustness-ood",
           "tabletop"
         ]
       },
@@ -17044,27 +15612,6 @@
           "robustness-ood"
         ]
       },
-      "Lumo-2 probe": {
-        "focus": "language-planning-compositionality",
-        "environment": "mixed",
-        "tags": [
-          "language-compositional"
-        ]
-      },
-      "FAST training": {
-        "focus": "efficiency-deployment",
-        "environment": "mixed",
-        "tags": [
-          "latency-efficiency"
-        ]
-      },
-      "Deltoris hardware": {
-        "focus": "efficiency-deployment",
-        "environment": "mixed",
-        "tags": [
-          "latency-efficiency"
-        ]
-      },
       "Embodied.cpp": {
         "focus": "efficiency-deployment",
         "environment": "mixed",
@@ -17072,27 +15619,11 @@
           "latency-efficiency"
         ]
       },
-      "GF-VLA real": {
-        "focus": "dexterous-contact",
-        "environment": "real",
-        "tags": [
-          "bimanual-dual-arm",
-          "industrial-assembly"
-        ]
-      },
       "RoboMME": {
         "focus": "general-manipulation",
         "environment": "mixed",
         "tags": [
           "multi-task"
-        ]
-      },
-      "RECAP real": {
-        "focus": "efficiency-deployment",
-        "environment": "real",
-        "tags": [
-          "latency-efficiency",
-          "long-horizon"
         ]
       },
       "MECo-WAM real": {
@@ -17108,44 +15639,6 @@
         "tags": [
           "bimanual-dual-arm",
           "tabletop"
-        ]
-      },
-      "DreamZero real": {
-        "focus": "general-manipulation",
-        "environment": "real",
-        "tags": [
-          "tabletop",
-          "latency-efficiency"
-        ]
-      },
-      "Dyna-2 real": {
-        "focus": "generalization-robustness",
-        "environment": "real",
-        "tags": [
-          "robustness-ood",
-          "multi-task"
-        ]
-      },
-      "RoboCerebra": {
-        "focus": "long-horizon-memory",
-        "environment": "simulation",
-        "tags": [
-          "long-horizon",
-          "memory"
-        ]
-      },
-      "OTQL real": {
-        "focus": "generalization-robustness",
-        "environment": "real",
-        "tags": [
-          "robustness-ood"
-        ]
-      },
-      "Track4Action real": {
-        "focus": "dexterous-contact",
-        "environment": "real",
-        "tags": [
-          "bimanual-dual-arm"
         ]
       },
       "World-to-Wrist inference": {
@@ -17168,13 +15661,6 @@
         "tags": [
           "long-horizon",
           "memory"
-        ]
-      },
-      "PixMC": {
-        "focus": "generalization-robustness",
-        "environment": "simulation",
-        "tags": [
-          "robustness-ood"
         ]
       },
       "DMS-VLA real": {
@@ -19000,79 +17486,6 @@
       "supersedes": ""
     },
     {
-      "id": "r-cotrain-v1-ft-long-final",
-      "paperId": "p035",
-      "method": "FT Final Model",
-      "trackId": "cotrain-v1-ft-long-horizon",
-      "values": {
-        "Average": 90.2
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/html/2602.01067v1",
-      "sourceVersion": "arXiv 2602.01067v1; RSS 2026",
-      "locator": "§III-D; Fig.11",
-      "attribution": "author-reported",
-      "trainingData": "每新任务200示范。",
-      "evaluationNotes": "22.8%/42.9%为相对改进率，不反算对照绝对值。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-cotrain-v1-real-language-final",
-      "paperId": "p035",
-      "method": "Final Model",
-      "trackId": "cotrain-v1-real-language-final",
-      "values": {
-        "Average": 69.4
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/html/2602.01067v1",
-      "sourceVersion": "arXiv 2602.01067v1; RSS 2026",
-      "locator": "§III-C; Fig.10",
-      "attribution": "author-reported",
-      "trainingData": "Final Model组合有效共训练模态。",
-      "evaluationNotes": "不由45.3% improvement反推baseline或子设置。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-cotrain-v1-sim-unseen-final",
-      "paperId": "p035",
-      "method": "Final Model",
-      "trackId": "cotrain-v1-sim-unseen-final",
-      "values": {
-        "Average": 72.6
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/html/2602.01067v1",
-      "sourceVersion": "arXiv 2602.01067v1; RSS 2026",
-      "locator": "§III-C; Fig.10",
-      "attribution": "author-reported",
-      "trainingData": "Final Model组合有效共训练模态。",
-      "evaluationNotes": "正文明确绝对均值；不由36.4% improvement反推baseline。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-deltoris-v1-speed",
-      "paperId": "p032",
-      "method": "Deltoris",
-      "trackId": "deltoris-v1-hardware-speedup",
-      "values": {
-        "vs mobile GPU": 34.2,
-        "vs prior accelerator": 6.1
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2608.04428",
-      "sourceVersion": "arXiv 2608.04428v1",
-      "locator": "Abstract",
-      "attribution": "author-reported",
-      "trainingData": "dedicated accelerator",
-      "evaluationNotes": "摘要headline；正文另有更高局部数字冲突，本站不替换摘要口径。",
-      "supersedes": ""
-    },
-    {
       "paperId": "p070",
       "trackId": "dexmg-gr00t-appendix-30",
       "evidence": "checked",
@@ -20632,114 +19045,6 @@
       "supersedes": ""
     },
     {
-      "id": "r-dreamzero-v1-lat-1step",
-      "paperId": "p077",
-      "method": "Original model, 1 step",
-      "trackId": "dreamzero-v1-latency",
-      "values": {
-        "Latency": 0.15
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2602.15922v1",
-      "sourceVersion": "arXiv 2602.15922v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same evaluation",
-      "evaluationNotes": "原始ms换秒。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dreamzero-v1-lat-4step",
-      "paperId": "p077",
-      "method": "Original model, 4 steps",
-      "trackId": "dreamzero-v1-latency",
-      "values": {
-        "Latency": 0.35
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2602.15922v1",
-      "sourceVersion": "arXiv 2602.15922v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same evaluation",
-      "evaluationNotes": "原始ms换秒。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dreamzero-v1-lat-flash",
-      "paperId": "p077",
-      "method": "DreamZero-Flash, 1 step",
-      "trackId": "dreamzero-v1-latency",
-      "values": {
-        "Latency": 0.15
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2602.15922v1",
-      "sourceVersion": "arXiv 2602.15922v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same evaluation",
-      "evaluationNotes": "原始ms换秒。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dreamzero-v1-progress-1step",
-      "paperId": "p077",
-      "method": "Original model, 1 step",
-      "trackId": "dreamzero-v1-progress",
-      "values": {
-        "Task Progress": 52
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2602.15922v1",
-      "sourceVersion": "arXiv 2602.15922v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "table-clearing evaluation",
-      "evaluationNotes": "点估计；标准误不改变主值。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dreamzero-v1-progress-4step",
-      "paperId": "p077",
-      "method": "Original model, 4 steps",
-      "trackId": "dreamzero-v1-progress",
-      "values": {
-        "Task Progress": 83
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2602.15922v1",
-      "sourceVersion": "arXiv 2602.15922v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "table-clearing evaluation",
-      "evaluationNotes": "点估计；标准误不改变主值。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dreamzero-v1-progress-flash",
-      "paperId": "p077",
-      "method": "DreamZero-Flash, 1 step",
-      "trackId": "dreamzero-v1-progress",
-      "values": {
-        "Task Progress": 74
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2602.15922v1",
-      "sourceVersion": "arXiv 2602.15922v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "table-clearing evaluation",
-      "evaluationNotes": "点估计；标准误不改变主值。",
-      "supersedes": ""
-    },
-    {
       "id": "r-droid-v2-real-figure10-diversity-20-scenes",
       "paperId": "p062",
       "method": "Diffusion Policy／DROID 7k・20场景",
@@ -21037,190 +19342,6 @@
       "supersedes": ""
     },
     {
-      "id": "r-dswam-v1-sort-errors-raw",
-      "paperId": "p023",
-      "method": "Global/raw instruction",
-      "trackId": "dswam-v1-sorting-errors",
-      "values": {
-        "6000 steps": 3.75,
-        "18000 steps": 3.3
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2607.04927v1",
-      "sourceVersion": "arXiv 2607.04927v1",
-      "locator": "Table 3; §4.3",
-      "attribution": "author-reported",
-      "trainingData": "分拣不同监督形式。",
-      "evaluationNotes": "Mistakes per rollout，越低越好。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dswam-v1-sort-errors-subtask",
-      "paperId": "p023",
-      "method": "Subtask supervision",
-      "trackId": "dswam-v1-sorting-errors",
-      "values": {
-        "6000 steps": 1,
-        "18000 steps": 0.3
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2607.04927v1",
-      "sourceVersion": "arXiv 2607.04927v1",
-      "locator": "Table 3; §4.3",
-      "attribution": "author-reported",
-      "trainingData": "分拣不同监督形式。",
-      "evaluationNotes": "Mistakes per rollout，越低越好。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dswam-v1-sort-sr-raw",
-      "paperId": "p023",
-      "method": "Global/raw instruction",
-      "trackId": "dswam-v1-sorting-sr",
-      "values": {
-        "6000 steps": 71.4,
-        "18000 steps": 80
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2607.04927v1",
-      "sourceVersion": "arXiv 2607.04927v1",
-      "locator": "Table 3; §4.3",
-      "attribution": "author-reported",
-      "trainingData": "分拣不同监督形式。",
-      "evaluationNotes": "训练监督改变，不是固定执行器只开关规划；试验次数不补猜。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dswam-v1-sort-sr-subtask",
-      "paperId": "p023",
-      "method": "Subtask supervision",
-      "trackId": "dswam-v1-sorting-sr",
-      "values": {
-        "6000 steps": 100,
-        "18000 steps": 100
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2607.04927v1",
-      "sourceVersion": "arXiv 2607.04927v1",
-      "locator": "Table 3; §4.3",
-      "attribution": "author-reported",
-      "trainingData": "分拣不同监督形式。",
-      "evaluationNotes": "训练监督改变，不是固定执行器只开关规划；试验次数不补猜。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dyna2-scale-100k",
-      "paperId": "p005",
-      "method": "100k hours",
-      "trackId": "dyna2-2026-scaling",
-      "values": {
-        "Normalized performance": 45
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://www.dyna.co/dyna-2",
-      "sourceVersion": "Dyna official technical report Aug 2026",
-      "locator": "§3.3 / Figure scaling discussion",
-      "attribution": "author-reported",
-      "trainingData": "matched robot post-training",
-      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dyna2-scale-10k",
-      "paperId": "p005",
-      "method": "10k hours",
-      "trackId": "dyna2-2026-scaling",
-      "values": {
-        "Normalized performance": 28
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://www.dyna.co/dyna-2",
-      "sourceVersion": "Dyna official technical report Aug 2026",
-      "locator": "§3.3 / Figure scaling discussion",
-      "attribution": "author-reported",
-      "trainingData": "matched robot post-training",
-      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dyna2-scale-1k",
-      "paperId": "p005",
-      "method": "1k human-video hours",
-      "trackId": "dyna2-2026-scaling",
-      "values": {
-        "Normalized performance": 20
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://www.dyna.co/dyna-2",
-      "sourceVersion": "Dyna official technical report Aug 2026",
-      "locator": "§3.3 / Figure scaling discussion",
-      "attribution": "author-reported",
-      "trainingData": "matched robot post-training",
-      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dyna2-scale-1m",
-      "paperId": "p005",
-      "method": "1M hours",
-      "trackId": "dyna2-2026-scaling",
-      "values": {
-        "Normalized performance": 53
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://www.dyna.co/dyna-2",
-      "sourceVersion": "Dyna official technical report Aug 2026",
-      "locator": "§3.3 / Figure scaling discussion",
-      "attribution": "author-reported",
-      "trainingData": "matched robot post-training",
-      "evaluationNotes": "14任务均值；normalized to attainable maximum，不称二值SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dyna2-site-d1",
-      "paperId": "p005",
-      "method": "Dyna-1",
-      "trackId": "dyna2-2026-customer-pass",
-      "values": {
-        "On-site pass": 46
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://www.dyna.co/dyna-2",
-      "sourceVersion": "Dyna official technical report Aug 2026",
-      "locator": "§4.2 / Figure 14",
-      "attribution": "author-reported",
-      "trainingData": "matched pre/post-training; unseen customer sites",
-      "evaluationNotes": "官方现场验收pass rate；in-house接近100为近似值未入榜。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-dyna2-site-d2",
-      "paperId": "p005",
-      "method": "Dyna-2",
-      "trackId": "dyna2-2026-customer-pass",
-      "values": {
-        "On-site pass": 87
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://www.dyna.co/dyna-2",
-      "sourceVersion": "Dyna official technical report Aug 2026",
-      "locator": "§4.2 / Figure 14",
-      "attribution": "author-reported",
-      "trainingData": "matched pre/post-training; unseen customer sites",
-      "evaluationNotes": "官方现场验收pass rate；in-house接近100为近似值未入榜。",
-      "supersedes": ""
-    },
-    {
       "id": "r-embcpp-v2-blocklat-cpp",
       "paperId": "p031",
       "method": "Embodied.cpp Q4_K",
@@ -21290,24 +19411,6 @@
       "attribution": "author-reported",
       "trainingData": "Embodied.cpp runtime",
       "evaluationNotes": "闭环成功率作者报告；两种VLA不是同任务/同模型配置的严格单因素消融。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-fast-v1-train-speed",
-      "paperId": "p067",
-      "method": "FAST + pi0",
-      "trackId": "fast-v1-training-speedup",
-      "values": {
-        "Speedup factor": 5.0
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2501.09747",
-      "sourceVersion": "arXiv 2501.09747v1",
-      "locator": "Abstract",
-      "attribution": "author-reported",
-      "trainingData": "~10k hours robot data",
-      "evaluationNotes": "“up to 5x”训练时间缩短；不是推理或控制频率。",
       "supersedes": ""
     },
     {
@@ -21630,43 +19733,6 @@
       "attribution": "author-reported",
       "trainingData": "ALOHA2 simulation code-control",
       "evaluationNotes": "七任务×50随机初始条件；两列控制方式不同。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-gfvla-ops",
-      "paperId": "p045",
-      "method": "GF-VLA",
-      "trackId": "gfvla-2026-basic-ops",
-      "values": {
-        "Grasp": 94.0,
-        "Placement": 89.0
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://doi.org/10.1016/j.inffus.2026.104193",
-      "sourceVersion": "Information Fusion 131 (2026) 104193",
-      "locator": "Published abstract",
-      "attribution": "author-reported",
-      "trainingData": "490 real-world trials across study",
-      "evaluationNotes": "抓取/放置为不同基础操作。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-gfvla-overall",
-      "paperId": "p045",
-      "method": "GF-VLA",
-      "trackId": "gfvla-2026-overall-tsr",
-      "values": {
-        "Overall": 90.0
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://doi.org/10.1016/j.inffus.2026.104193",
-      "sourceVersion": "Information Fusion 131 (2026) 104193",
-      "locator": "Published abstract",
-      "attribution": "author-reported",
-      "trainingData": "four structured dual-arm tasks",
-      "evaluationNotes": "正式摘要的overall task success。",
       "supersedes": ""
     },
     {
@@ -25286,60 +23352,6 @@
       "supersedes": ""
     },
     {
-      "id": "r-lumo2-v1-probe-dino",
-      "paperId": "p003",
-      "method": "DINO only",
-      "trackId": "lumo2-v1-semantic-probe",
-      "values": {
-        "Accuracy": 84.1
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/pdf/2607.11270v1",
-      "sourceVersion": "arXiv 2607.11270v1",
-      "locator": "Table 7; §4.5",
-      "attribution": "author-reported",
-      "trainingData": "18类×400样本；4:1划分；两层MLP分类器。",
-      "evaluationNotes": "这是语义表征探针，不是机器人任务成功率；“linear probing”标签与实际两层MLP结构有差异。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-lumo2-v1-probe-stage1",
-      "paperId": "p003",
-      "method": "DINO + Stage 1 action",
-      "trackId": "lumo2-v1-semantic-probe",
-      "values": {
-        "Accuracy": 92.85
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/pdf/2607.11270v1",
-      "sourceVersion": "arXiv 2607.11270v1",
-      "locator": "Table 7; §4.5",
-      "attribution": "author-reported",
-      "trainingData": "18类×400样本；4:1划分；两层MLP分类器。",
-      "evaluationNotes": "这是语义表征探针，不是机器人任务成功率；“linear probing”标签与实际两层MLP结构有差异。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-lumo2-v1-probe-stage2",
-      "paperId": "p003",
-      "method": "DINO + Stage 2 semantic action",
-      "trackId": "lumo2-v1-semantic-probe",
-      "values": {
-        "Accuracy": 95.0
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/pdf/2607.11270v1",
-      "sourceVersion": "arXiv 2607.11270v1",
-      "locator": "Table 7; §4.5",
-      "attribution": "author-reported",
-      "trainingData": "18类×400样本；4:1划分；两层MLP分类器。",
-      "evaluationNotes": "这是语义表征探针，不是机器人任务成功率；“linear probing”标签与实际两层MLP结构有差异。",
-      "supersedes": ""
-    },
-    {
       "id": "r-mapwam-v1-rmbench-dp",
       "paperId": "p100",
       "method": "Diffusion Policy",
@@ -26242,25 +24254,6 @@
       "supersedes": ""
     },
     {
-      "id": "r-mvp-v1-pixmc-count",
-      "paperId": "p097",
-      "method": "MVP frozen visual representation",
-      "trackId": "mvp-v1-pixmc-textual-count",
-      "values": {
-        "Outperform supervised count": 7,
-        "Near state-oracle count": 5
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2203.06173",
-      "sourceVersion": "arXiv 2203.06173v1",
-      "locator": "§5.1 textual summary",
-      "attribution": "author-reported",
-      "trainingData": "8 PixMC tasks",
-      "evaluationNotes": "只是8任务中的正文计数；不从Figure 5–11曲线读取逐任务精确分数。",
-      "supersedes": ""
-    },
-    {
       "id": "r-octo-real-v2-finetune-octo",
       "paperId": "p063",
       "method": "Octo（本报告微调）",
@@ -26330,118 +24323,6 @@
       "attribution": "reported-baseline",
       "trainingData": "VC-1 ViT-B视觉预训练＋MLP；完整模型MSE微调",
       "evaluationNotes": "作者跨平台真机归档，非统一公共benchmark，不归入SimplerEnv或ALOHA-Sim。主表称每域20次，F-C双臂写10次，保留冲突；种子/checkpoint选择未完整给出。原表平均VC1=15（分项算术平均约15.83），Octo=72，均不重算替换。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-ocvlapp-v1-dita-ocvla",
-      "paperId": "p012",
-      "method": "OC-VLA",
-      "trackId": "ocvlapp-v1-real-dita-view",
-      "values": {
-        "Fixed view": 68.3,
-        "Largest displacement": 40.8
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2608.01066v1",
-      "sourceVersion": "arXiv 2608.01066v1",
-      "locator": "Real-robot viewpoint evaluation",
-      "attribution": "author-reported",
-      "trainingData": "每任务10示范；每任务每相机设置20 rollout。",
-      "evaluationNotes": "固定视角无提升；最大位移下提升，不能概括为所有视角都更好。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-ocvlapp-v1-dita-plus",
-      "paperId": "p012",
-      "method": "OC-VLA++",
-      "trackId": "ocvlapp-v1-real-dita-view",
-      "values": {
-        "Fixed view": 68.3,
-        "Largest displacement": 48.3
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2608.01066v1",
-      "sourceVersion": "arXiv 2608.01066v1",
-      "locator": "Real-robot viewpoint evaluation",
-      "attribution": "author-reported",
-      "trainingData": "每任务10示范；每任务每相机设置20 rollout。",
-      "evaluationNotes": "固定视角无提升；最大位移下提升，不能概括为所有视角都更好。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-ocvlapp-v1-maniskill-base",
-      "paperId": "p012",
-      "method": "OC-VLA (Dita)",
-      "trackId": "ocvlapp-v1-maniskill2-ablation",
-      "values": {
-        "Average": 52.4
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2608.01066v1",
-      "sourceVersion": "arXiv 2608.01066v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "同Dita架构；paired-view/等变监督按变体变化。",
-      "evaluationNotes": "五类ManiSkill2平均；论文内部消融。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-ocvlapp-v1-maniskill-full",
-      "paperId": "p012",
-      "method": "OC-VLA++",
-      "trackId": "ocvlapp-v1-maniskill2-ablation",
-      "values": {
-        "Average": 56.8
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2608.01066v1",
-      "sourceVersion": "arXiv 2608.01066v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "同Dita架构；paired-view/等变监督按变体变化。",
-      "evaluationNotes": "五类ManiSkill2平均；论文内部消融。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-ocvlapp-v1-qwen-ocvla",
-      "paperId": "p012",
-      "method": "OC-VLA",
-      "trackId": "ocvlapp-v1-real-qwen-view",
-      "values": {
-        "Fixed view": 60.0,
-        "Largest displacement": 37.5
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2608.01066v1",
-      "sourceVersion": "arXiv 2608.01066v1",
-      "locator": "Real-robot viewpoint evaluation",
-      "attribution": "author-reported",
-      "trainingData": "Qwen3-VL-2B + flow action expert。",
-      "evaluationNotes": "固定视角60.0→59.2的轻微下降保留；最大位移37.5→43.3。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-ocvlapp-v1-qwen-plus",
-      "paperId": "p012",
-      "method": "OC-VLA++",
-      "trackId": "ocvlapp-v1-real-qwen-view",
-      "values": {
-        "Fixed view": 59.2,
-        "Largest displacement": 43.3
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-19",
-      "source": "https://arxiv.org/pdf/2608.01066v1",
-      "sourceVersion": "arXiv 2608.01066v1",
-      "locator": "Real-robot viewpoint evaluation",
-      "attribution": "author-reported",
-      "trainingData": "Qwen3-VL-2B + flow action expert。",
-      "evaluationNotes": "固定视角60.0→59.2的轻微下降保留；最大位移37.5→43.3。",
       "supersedes": ""
     },
     {
@@ -26553,78 +24434,6 @@
       "attribution": "author-reported",
       "trainingData": "基础policy冻结；memory/value模块按阶段训练。",
       "evaluationNotes": "只覆盖两个RMBench任务；0是真实作者报告值，不是缺失值。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-otql-single-after",
-      "paperId": "p033",
-      "method": "After OTQL",
-      "trackId": "otql-v1-single-policy",
-      "values": {
-        "Success": 86
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2607.06262",
-      "sourceVersion": "arXiv 2607.06262v1",
-      "locator": "Abstract",
-      "attribution": "author-reported",
-      "trainingData": "50-60 online episodes",
-      "evaluationNotes": "需要RL经验后训练。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-otql-single-before",
-      "paperId": "p033",
-      "method": "Before OTQL",
-      "trackId": "otql-v1-single-policy",
-      "values": {
-        "Success": 36
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2607.06262",
-      "sourceVersion": "arXiv 2607.06262v1",
-      "locator": "Abstract",
-      "attribution": "author-reported",
-      "trainingData": "50-60 online episodes",
-      "evaluationNotes": "需要RL经验后训练。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-otql-vla-after",
-      "paperId": "p033",
-      "method": "Pretrained VLA after OTQL",
-      "trackId": "otql-v1-pretrained-vla",
-      "values": {
-        "Success": 76
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2607.06262",
-      "sourceVersion": "arXiv 2607.06262v1",
-      "locator": "Abstract",
-      "attribution": "author-reported",
-      "trainingData": "50-60 online episodes",
-      "evaluationNotes": "与单任务policy分轨。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-otql-vla-before",
-      "paperId": "p033",
-      "method": "Pretrained VLA before OTQL",
-      "trackId": "otql-v1-pretrained-vla",
-      "values": {
-        "Success": 38
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2607.06262",
-      "sourceVersion": "arXiv 2607.06262v1",
-      "locator": "Abstract",
-      "attribution": "author-reported",
-      "trainingData": "50-60 online episodes",
-      "evaluationNotes": "与单任务policy分轨。",
       "supersedes": ""
     },
     {
@@ -27945,43 +25754,6 @@
       "attribution": "author-reported",
       "trainingData": "200k脚本视频均有动作注释用于逆动力学；其余视频/基线训练见Appendix A。",
       "evaluationNotes": "原表±[3.6, 3.1, 3.7]按列保留，统计定义/种子未知；不生成总平均，不套用CLIPort原生操作原语、示范预算或部分完成指标。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-recap-v2-targeted97",
-      "paperId": "p075",
-      "method": "RECAP after two iterations",
-      "trackId": "recap-v2-targeted-failure-success",
-      "values": {
-        "Success": 97.0
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2511.14759v2",
-      "sourceVersion": "arXiv 2511.14759v2",
-      "locator": "Targeted failure removal",
-      "attribution": "author-reported",
-      "trainingData": "600 trajectories per iteration",
-      "evaluationNotes": "97%只对应定向失败消除实验。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-recap-v2-throughput",
-      "paperId": "p075",
-      "method": "Full RECAP",
-      "trackId": "recap-v2-throughput-factor",
-      "values": {
-        "Laundry factor": 1.5,
-        "Box-assembly factor": 2.0
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2511.14759v2",
-      "sourceVersion": "arXiv 2511.14759v2",
-      "locator": "Results: deployment iterations",
-      "attribution": "author-reported",
-      "trainingData": "on-robot RECAP",
-      "evaluationNotes": "+50%精确转为1.5x；2x保持原表述。两个任务不同，不求平均。",
       "supersedes": ""
     },
     {
@@ -33722,150 +31494,6 @@
       "supersedes": ""
     },
     {
-      "id": "r-spark-v1-sr-aqc",
-      "paperId": "p019",
-      "method": "Adaptive length AQC",
-      "trackId": "sparkvla-v1-task-sr",
-      "values": {
-        "SR": 40.92
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "任务SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-spark-v1-sr-fixed",
-      "paperId": "p019",
-      "method": "Fixed length + independent Stop",
-      "trackId": "sparkvla-v1-task-sr",
-      "values": {
-        "SR": 34.26
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "任务SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-spark-v1-sr-paired",
-      "paperId": "p019",
-      "method": "Paired ranking",
-      "trackId": "sparkvla-v1-task-sr",
-      "values": {
-        "SR": 42.53
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "任务SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-spark-v1-sr-unified",
-      "paperId": "p019",
-      "method": "Unified ranking",
-      "trackId": "sparkvla-v1-task-sr",
-      "values": {
-        "SR": 47.12
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "任务SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-spark-v1-stop-aqc",
-      "paperId": "p019",
-      "method": "Adaptive length AQC",
-      "trackId": "sparkvla-v1-stop-acc",
-      "values": {
-        "Accuracy": 80.43
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "Stop准确率不等于任务SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-spark-v1-stop-fixed",
-      "paperId": "p019",
-      "method": "Fixed length + independent Stop",
-      "trackId": "sparkvla-v1-stop-acc",
-      "values": {
-        "Accuracy": 79.52
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "Stop准确率不等于任务SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-spark-v1-stop-paired",
-      "paperId": "p019",
-      "method": "Paired ranking",
-      "trackId": "sparkvla-v1-stop-acc",
-      "values": {
-        "Accuracy": 80.37
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "Stop准确率不等于任务SR。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-spark-v1-stop-unified",
-      "paperId": "p019",
-      "method": "Unified ranking",
-      "trackId": "sparkvla-v1-stop-acc",
-      "values": {
-        "Accuracy": 96.65
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/html/2608.16172v1",
-      "sourceVersion": "arXiv 2608.16172v1",
-      "locator": "Table 3",
-      "attribution": "author-reported",
-      "trainingData": "same hierarchy",
-      "evaluationNotes": "Stop准确率不等于任务SR。",
-      "supersedes": ""
-    },
-    {
       "id": "r-spatialvla-v1-va-octo",
       "paperId": "p068",
       "method": "Octo-Base",
@@ -34578,42 +32206,6 @@
       "attribution": "author-reported",
       "trainingData": "paper protocol",
       "evaluationNotes": "82.3较74.7 +7.6个百分点。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-track4-v1-real-base",
-      "paperId": "p007",
-      "method": "Alignment-free",
-      "trackId": "track4action-v1-real",
-      "values": {
-        "Average": 42.5
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2608.03727",
-      "sourceVersion": "arXiv 2608.03727v1",
-      "locator": "Abstract / real results",
-      "attribution": "author-reported",
-      "trainingData": "4 physical bimanual tasks",
-      "evaluationNotes": "只对应所测四任务。",
-      "supersedes": ""
-    },
-    {
-      "id": "r-track4-v1-real-track",
-      "paperId": "p007",
-      "method": "Track4Action",
-      "trackId": "track4action-v1-real",
-      "values": {
-        "Average": 67.5
-      },
-      "evidence": "checked",
-      "verifiedAt": "2026-09-20",
-      "source": "https://arxiv.org/abs/2608.03727",
-      "sourceVersion": "arXiv 2608.03727v1",
-      "locator": "Abstract / real results",
-      "attribution": "author-reported",
-      "trainingData": "4 physical bimanual tasks",
-      "evaluationNotes": "只对应所测四任务。",
       "supersedes": ""
     },
     {
