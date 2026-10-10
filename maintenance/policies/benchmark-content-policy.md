@@ -52,3 +52,10 @@ RoboTwin50×50clean的co-train与每任务独立checkpoint分开；2,500clean与
 ## 原始真机报告与同表异质指标（第七批）
 
 RT-1/RT-2原作者Google机器人真机实验不能因硬件相似就归入SimplerEnv；新归档组`Google Robot (real)`明确是作者报告集合，不是一个统一公开复现基准，逐轨保持论文、场景、训练及评测差异。PaLM-E的Language Table Table2即使同为百分数，Task1也是验证准确率、Task2/3才是模拟rollout成功；Appendix E.2/Table9修改奖励的结果另对待。失败检测/可供性F1必须独立于操作成功率。重复主表/附表同源只入一次，未报告值为null，未确定种子/检查点不猜。
+
+## Benchmark Method 展示精简（2026-10-10）
+
+- **Benchmark Method 是独立方法/基线，不是消融实验变量。** 论文的模块开关、阈值搜索、骨干冻结、模板数、采样步数等内部对照，原则上不应占据对外主方法列表。
+- 显式维护 `catalog/benchmark-method-curation.json`：整组内部消融用 `excludedTracks`，混合主表中的消融行用 `excludedResults`，已核验代表性配置可用 `methodLabels` 显示方法名。原文的具体配置应保留在结果证据说明。
+- **不删除原始核验结果。** `catalog/results`、论文逐条结果和阅读笔记仍保留完整消融与复现实验数据；仅派生 Benchmark 比较目录、Method 下拉和对外榜单时应用精简。不得把不同实验协议或训练预算错误合并为公平排名。
+- 新增主结果时同步复核 Method 命名与配置，避免把同一方法的多行消融误标成独立方法。

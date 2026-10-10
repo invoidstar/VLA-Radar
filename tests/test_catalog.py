@@ -45,6 +45,39 @@ class CatalogTests(unittest.TestCase):
         bad=copy.deepcopy(audit);bad['items']['weights']['status']='unknown'
         with self.assertRaises(ValueError):prepare_reproducibility(ROOT,ids,{'p001':bad})
 
+    def test_venue_canonicalization(self):
+        m,records,_,_=read_catalog(ROOT)
+        venues={r['paper']['id']:r['paper']['venue'] for r in records}
+        self.assertEqual(venues['p043'],'IEEE Robotics and Automation Letters')
+        self.assertEqual(venues['p044'],'IEEE Robotics and Automation Letters')
+        self.assertEqual(venues['p048'],'IEEE Robotics and Automation Letters')
+        self.assertEqual(venues['p055'],'The International Journal of Robotics Research')
+        self.assertEqual(venues['p097'],'arXiv')
+        for r in records:
+            with self.subTest(paper=r['paper']['id']):
+                self.assertNotIn(' / arXiv',r['paper']['venue'])
+
+    def test_benchmark_method_curation_retains_source_evidence(self):
+        from scripts.build.build_catalog import curated_benchmark
+        _,records,tracks,results=read_catalog(ROOT)
+        shown_tracks,shown=curated_benchmark(ROOT,tracks,results)
+        self.assertLess(len(shown),len(results))
+        self.assertEqual({r['paperId'] for r in results if r['evidence']=='checked'},
+                         {r['paperId'] for r in shown if r['evidence']=='checked'})
+        self.assertFalse(any(r['method'] in {'Interaction depth 2','No language','OpenVLA-DMS · 8 templates'}
+                             for r in shown))
+        self.assertTrue(any(r['method']=='TurboVLA' for r in shown))
+        self.assertTrue(any(r['method']=='AdaVLA' for r in shown))
+        self.assertTrue(any(r['method']=='ActionCache' for r in shown))
+        out=outputs(ROOT)
+        leaderboard=json.loads(out['data/leaderboards.json'])
+        self.assertEqual(len(leaderboard['results']),len(shown))
+        self.assertEqual(len(leaderboard['tracks']),len(shown_tracks))
+        source_archive=next(json.loads(v) for k,v in out.items()
+                            if k.startswith('data/paper-results/p030.'))
+        self.assertIn('r-adavla-v2-sr-pr-adp25',{r['id'] for r in source_archive['results']})
+        self.assertNotIn('r-adavla-v2-sr-pr-adp25',{r['id'] for r in shown})
+
     def test_public_keys(self):
         self.rec['privateNotes']='not allowed'
         with self.assertRaises(ValueError):validate_record(self.rec)
