@@ -5,7 +5,7 @@
     "name": "CauVA / LingBot-VA",
     "title": "Causal World Modeling for Robot Control",
     "team": "Robbyant 灵波科技（作者项目发布团队）\nLin Li、Qihang Zhang、Yiming Luo、Yujun Shen、Yinghao Xu等",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "publicationType": "conference",
     "publicationStatus": "正式发表于 Robotics: Science and Systems XXII；出版日期 2026-07-13；DOI:10.15607/rss.2026.xxii.016",
     "firstPublished": "2026-01-29",
@@ -62,7 +62,7 @@
     "latestArxivVersion": "v2",
     "latestArxivAt": "2026-03-22",
     "status": "published",
-    "venue": "Robotics: Science and Systems XXII",
+    "venue": "RSS 2026",
     "doi": "10.15607/rss.2026.xxii.016",
     "acceptedAt": null,
     "publishedAt": "2026-07-13",
@@ -96,7 +96,7 @@
         "kind": "published",
         "date": "2026-07-13",
         "observedAt": "2026-09-18",
-        "venue": "Robotics: Science and Systems XXII",
+        "venue": "RSS 2026",
         "source": "https://doi.org/10.15607/rss.2026.xxii.016",
         "note": "由 arXiv/既有记录直接关联 DOI，且出版元数据标题匹配。日期精度遵循出版方。"
       }

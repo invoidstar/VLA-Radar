@@ -53,6 +53,8 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(venues['p048'],'IEEE Robotics and Automation Letters')
         self.assertEqual(venues['p055'],'The International Journal of Robotics Research')
         self.assertEqual(venues['p097'],'arXiv')
+        for pid in ('p035','p036','p037','p038','p039','p040','p041'):
+            self.assertEqual(venues[pid],'RSS 2026')
         for r in records:
             with self.subTest(paper=r['paper']['id']):
                 self.assertNotIn(' / arXiv',r['paper']['venue'])
