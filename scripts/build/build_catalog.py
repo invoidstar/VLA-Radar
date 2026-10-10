@@ -40,13 +40,11 @@ def curated_benchmark(root, tracks, results):
             or set(blocked_results)-known_results or set(labels)-known_results):
         raise ValueError('Stale or duplicated Benchmark curation identity')
     blocked_d=set(blocked_datasets);blocked_t=set(blocked_tracks);blocked_r=set(blocked_results)
-    if any(trackmap[tid]['dataset'] in blocked_d for tid in blocked_t):
-        raise ValueError('Do not duplicate dataset-wide and track-level exclusions')
-    if any(r['trackId'] in blocked_t or trackmap[r['trackId']]['dataset'] in blocked_d
-           for r in results if r['id'] in blocked_r):
-        raise ValueError('Dataset, track and row exclusions must not overlap')
-    if any(rid in blocked_r or resultmap[rid]['trackId'] in blocked_t
-           or trackmap[resultmap[rid]['trackId']]['dataset'] in blocked_d for rid in labels):
+    # A hidden dataset may already have per-row ablations excluded. Keep
+    # those existing curation decisions for any future re-admission.
+    if any(r['trackId'] in blocked_t for r in results if r['id'] in blocked_r):
+        raise ValueError('Track and row exclusions must not overlap')
+    if any(rid in blocked_r or resultmap[rid]['trackId'] in blocked_t for rid in labels):
         raise ValueError('Benchmark canonical label must refer to a retained row')
     if any(not isinstance(s,str) or not s.strip() for s in labels.values()):
         raise ValueError('Benchmark canonical labels must be nonempty text')
