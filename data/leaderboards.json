@@ -43,6 +43,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -88,6 +98,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -133,6 +157,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -178,6 +216,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -203,6 +255,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -228,6 +286,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -253,6 +317,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -293,6 +363,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -403,6 +485,46 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Open Drawer": "higher",
+        "Slide Block": "higher",
+        "Sweep to Dustpan": "higher",
+        "Meat off Grill": "higher",
+        "Turn Tap": "higher",
+        "Put in Drawer": "higher",
+        "Close Jar": "higher",
+        "Drag Stick": "higher",
+        "Stack Blocks": "higher",
+        "Screw Bulb": "higher",
+        "Put in Safe": "higher",
+        "Place Wine": "higher",
+        "Put in Cupboard": "higher",
+        "Sort Shape": "higher",
+        "Push Buttons": "higher",
+        "Insert Peg": "higher",
+        "Stack Cups": "higher",
+        "Place Cups": "higher"
+      },
+      "columnUnits": {
+        "Open Drawer": "percent",
+        "Slide Block": "percent",
+        "Sweep to Dustpan": "percent",
+        "Meat off Grill": "percent",
+        "Turn Tap": "percent",
+        "Put in Drawer": "percent",
+        "Close Jar": "percent",
+        "Drag Stick": "percent",
+        "Stack Blocks": "percent",
+        "Screw Bulb": "percent",
+        "Put in Safe": "percent",
+        "Place Wine": "percent",
+        "Put in Cupboard": "percent",
+        "Sort Shape": "percent",
+        "Push Buttons": "percent",
+        "Insert Peg": "percent",
+        "Stack Cups": "percent",
+        "Place Cups": "percent"
       }
     },
     {
@@ -443,6 +565,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Pick Coke Can": "higher",
+        "Move Near": "higher",
+        "Open/Close Drawer": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Pick Coke Can": "percent",
+        "Move Near": "percent",
+        "Open/Close Drawer": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -483,6 +617,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Pick Coke Can": "higher",
+        "Move Near": "higher",
+        "Open/Close Drawer": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Pick Coke Can": "percent",
+        "Move Near": "percent",
+        "Open/Close Drawer": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -528,6 +674,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spoon on towel": "higher",
+        "Carrot on plate": "higher",
+        "Stack block": "higher",
+        "Eggplant in basket": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spoon on towel": "percent",
+        "Carrot on plate": "percent",
+        "Stack block": "percent",
+        "Eggplant in basket": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -553,6 +713,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -578,6 +744,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -623,6 +795,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Lift": "higher",
+        "Can": "higher",
+        "Square": "higher",
+        "Transport": "higher",
+        "Tool Hang": "higher"
+      },
+      "columnUnits": {
+        "Lift": "percent",
+        "Can": "percent",
+        "Square": "percent",
+        "Transport": "percent",
+        "Tool Hang": "percent"
       }
     },
     {
@@ -668,6 +854,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Lift": "higher",
+        "Can": "higher",
+        "Square": "higher",
+        "Transport": "higher",
+        "Tool Hang": "higher"
+      },
+      "columnUnits": {
+        "Lift": "percent",
+        "Can": "percent",
+        "Square": "percent",
+        "Transport": "percent",
+        "Tool Hang": "percent"
       }
     },
     {
@@ -708,6 +908,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Lift": "higher",
+        "Can": "higher",
+        "Square": "higher",
+        "Transport": "higher"
+      },
+      "columnUnits": {
+        "Lift": "percent",
+        "Can": "percent",
+        "Square": "percent",
+        "Transport": "percent"
       }
     },
     {
@@ -733,6 +945,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Coverage ratio": "higher"
+      },
+      "columnUnits": {
+        "Coverage ratio": "score"
       }
     },
     {
@@ -773,6 +991,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "At least 1": "higher",
+        "At least 2": "higher",
+        "At least 3": "higher",
+        "At least 4": "higher"
+      },
+      "columnUnits": {
+        "At least 1": "percent",
+        "At least 2": "percent",
+        "At least 3": "percent",
+        "At least 4": "percent"
       }
     },
     {
@@ -803,6 +1033,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Cube Transfer": "higher",
+        "Bimanual Insertion": "higher"
+      },
+      "columnUnits": {
+        "Cube Transfer": "percent",
+        "Bimanual Insertion": "percent"
       }
     },
     {
@@ -833,6 +1071,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Cube Transfer": "higher",
+        "Bimanual Insertion": "higher"
+      },
+      "columnUnits": {
+        "Cube Transfer": "percent",
+        "Bimanual Insertion": "percent"
       }
     },
     {
@@ -858,6 +1104,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -888,6 +1140,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher",
+        "All perturbations": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent",
+        "All perturbations": "percent"
       }
     },
     {
@@ -913,6 +1173,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -938,6 +1204,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -983,6 +1255,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Easy": "higher",
+        "Medium": "higher",
+        "Hard": "higher",
+        "Very hard": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Easy": "percent",
+        "Medium": "percent",
+        "Hard": "percent",
+        "Very hard": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1008,6 +1294,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -1033,6 +1325,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "score"
       }
     },
     {
@@ -1058,6 +1356,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -1083,6 +1387,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -1129,6 +1439,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Arrange vegetables": "higher",
+        "Microwave thawing": "higher",
+        "Restock pantry": "higher",
+        "Pre-soak pan": "higher",
+        "Prepare coffee": "higher"
+      },
+      "columnUnits": {
+        "Arrange vegetables": "percent",
+        "Microwave thawing": "percent",
+        "Restock pantry": "percent",
+        "Pre-soak pan": "percent",
+        "Prepare coffee": "percent"
       }
     },
     {
@@ -1169,6 +1493,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1209,6 +1545,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1249,6 +1597,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1289,6 +1649,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1329,6 +1701,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1369,6 +1753,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1414,6 +1810,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1474,6 +1884,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Camera": "higher",
+        "Robot": "higher",
+        "Language": "higher",
+        "Light": "higher",
+        "Background": "higher",
+        "Noise": "higher",
+        "Layout": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Camera": "percent",
+        "Robot": "percent",
+        "Language": "percent",
+        "Light": "percent",
+        "Background": "percent",
+        "Noise": "percent",
+        "Layout": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1519,6 +1949,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Move near": "higher",
+        "Close drawer": "higher",
+        "Open drawer": "higher",
+        "Pick coke can": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Move near": "percent",
+        "Close drawer": "percent",
+        "Open drawer": "percent",
+        "Pick coke can": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1564,6 +2008,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Move near": "higher",
+        "Close drawer": "higher",
+        "Open drawer": "higher",
+        "Pick coke can": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Move near": "percent",
+        "Close drawer": "percent",
+        "Open drawer": "percent",
+        "Pick coke can": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1609,6 +2067,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Put carrot": "higher",
+        "Put eggplant": "higher",
+        "Put spoon": "higher",
+        "Stack cube": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Put carrot": "percent",
+        "Put eggplant": "percent",
+        "Put spoon": "percent",
+        "Stack cube": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1634,6 +2106,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -1674,6 +2152,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Atomic": "higher",
+        "Seen composite": "higher",
+        "Unseen composite": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Atomic": "percent",
+        "Seen composite": "percent",
+        "Unseen composite": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1719,6 +2209,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Put spoon": "higher",
+        "Put carrot": "higher",
+        "Stack cube": "higher",
+        "Put eggplant": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Put spoon": "percent",
+        "Put carrot": "percent",
+        "Stack cube": "percent",
+        "Put eggplant": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1757,6 +2261,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent"
       }
     },
     {
@@ -1797,6 +2309,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Easy (28)": "higher",
+        "Medium (11)": "higher",
+        "Hard (6)": "higher",
+        "Very hard (5)": "higher"
+      },
+      "columnUnits": {
+        "Easy (28)": "percent",
+        "Medium (11)": "percent",
+        "Hard (6)": "percent",
+        "Very hard (5)": "percent"
       }
     },
     {
@@ -1837,6 +2361,18 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "ARX X5": "higher",
+        "Piper": "higher",
+        "Piper X": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "ARX X5": "score",
+        "Piper": "score",
+        "Piper X": "score",
+        "Average": "score"
       }
     },
     {
@@ -1877,6 +2413,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "ARX X5": "higher",
+        "Piper": "higher",
+        "Piper X": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "ARX X5": "percent",
+        "Piper": "percent",
+        "Piper X": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1920,6 +2468,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -1963,6 +2521,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -2018,6 +2586,24 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Gen standard": "higher",
+        "Gen randomized": "higher",
+        "Precision": "higher",
+        "Long-horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Gen standard": "score",
+        "Gen randomized": "score",
+        "Precision": "score",
+        "Long-horizon": "score",
+        "Memory": "score",
+        "Open": "score",
+        "Average": "score"
       }
     },
     {
@@ -2073,6 +2659,24 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Gen standard": "higher",
+        "Gen randomized": "higher",
+        "Precision": "higher",
+        "Long-horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Gen standard": "percent",
+        "Gen randomized": "percent",
+        "Precision": "percent",
+        "Long-horizon": "percent",
+        "Memory": "percent",
+        "Open": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -2128,6 +2732,24 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Gen standard": "higher",
+        "Gen randomized": "higher",
+        "Precision": "higher",
+        "Long-horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Gen standard": "score",
+        "Gen randomized": "score",
+        "Precision": "score",
+        "Long-horizon": "score",
+        "Memory": "score",
+        "Open": "score",
+        "Average": "score"
       }
     },
     {
@@ -2183,6 +2805,24 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Gen standard": "higher",
+        "Gen randomized": "higher",
+        "Precision": "higher",
+        "Long-horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Gen standard": "percent",
+        "Gen randomized": "percent",
+        "Precision": "percent",
+        "Long-horizon": "percent",
+        "Memory": "percent",
+        "Open": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -2298,6 +2938,48 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher",
+        "Close Jar": "higher",
+        "Drag Stick": "higher",
+        "Insert Peg": "higher",
+        "Meat off Grill": "higher",
+        "Open Drawer": "higher",
+        "Place Cups": "higher",
+        "Place Wine": "higher",
+        "Push Buttons": "higher",
+        "Put in Cupboard": "higher",
+        "Put in Drawer": "higher",
+        "Put in Safe": "higher",
+        "Screw Bulb": "higher",
+        "Slide Block": "higher",
+        "Sort Shape": "higher",
+        "Stack Blocks": "higher",
+        "Stack Cups": "higher",
+        "Sweep to Dustpan": "higher",
+        "Turn Tap": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent",
+        "Close Jar": "percent",
+        "Drag Stick": "percent",
+        "Insert Peg": "percent",
+        "Meat off Grill": "percent",
+        "Open Drawer": "percent",
+        "Place Cups": "percent",
+        "Place Wine": "percent",
+        "Push Buttons": "percent",
+        "Put in Cupboard": "percent",
+        "Put in Drawer": "percent",
+        "Put in Safe": "percent",
+        "Screw Bulb": "percent",
+        "Slide Block": "percent",
+        "Sort Shape": "percent",
+        "Stack Blocks": "percent",
+        "Stack Cups": "percent",
+        "Sweep to Dustpan": "percent",
+        "Turn Tap": "percent"
       }
     },
     {
@@ -2413,6 +3095,48 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher",
+        "Close Jar": "higher",
+        "Drag Stick": "higher",
+        "Insert Peg": "higher",
+        "Meat off Grill": "higher",
+        "Open Drawer": "higher",
+        "Place Cups": "higher",
+        "Place Wine": "higher",
+        "Push Buttons": "higher",
+        "Put in Cupboard": "higher",
+        "Put in Drawer": "higher",
+        "Put in Safe": "higher",
+        "Screw Bulb": "higher",
+        "Slide Block": "higher",
+        "Sort Shape": "higher",
+        "Stack Blocks": "higher",
+        "Stack Cups": "higher",
+        "Sweep to Dustpan": "higher",
+        "Turn Tap": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent",
+        "Close Jar": "percent",
+        "Drag Stick": "percent",
+        "Insert Peg": "percent",
+        "Meat off Grill": "percent",
+        "Open Drawer": "percent",
+        "Place Cups": "percent",
+        "Place Wine": "percent",
+        "Push Buttons": "percent",
+        "Put in Cupboard": "percent",
+        "Put in Drawer": "percent",
+        "Put in Safe": "percent",
+        "Screw Bulb": "percent",
+        "Slide Block": "percent",
+        "Sort Shape": "percent",
+        "Stack Blocks": "percent",
+        "Stack Cups": "percent",
+        "Sweep to Dustpan": "percent",
+        "Turn Tap": "percent"
       }
     },
     {
@@ -2528,6 +3252,48 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher",
+        "Close Jar": "higher",
+        "Drag Stick": "higher",
+        "Insert Peg": "higher",
+        "Meat off Grill": "higher",
+        "Open Drawer": "higher",
+        "Place Cups": "higher",
+        "Place Wine": "higher",
+        "Push Buttons": "higher",
+        "Put in Cupboard": "higher",
+        "Put in Drawer": "higher",
+        "Put in Safe": "higher",
+        "Screw Bulb": "higher",
+        "Slide Block": "higher",
+        "Sort Shape": "higher",
+        "Stack Blocks": "higher",
+        "Stack Cups": "higher",
+        "Sweep to Dustpan": "higher",
+        "Turn Tap": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent",
+        "Close Jar": "percent",
+        "Drag Stick": "percent",
+        "Insert Peg": "percent",
+        "Meat off Grill": "percent",
+        "Open Drawer": "percent",
+        "Place Cups": "percent",
+        "Place Wine": "percent",
+        "Push Buttons": "percent",
+        "Put in Cupboard": "percent",
+        "Put in Drawer": "percent",
+        "Put in Safe": "percent",
+        "Screw Bulb": "percent",
+        "Slide Block": "percent",
+        "Sort Shape": "percent",
+        "Stack Blocks": "percent",
+        "Stack Cups": "percent",
+        "Sweep to Dustpan": "percent",
+        "Turn Tap": "percent"
       }
     },
     {
@@ -2603,6 +3369,32 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher",
+        "Close Jar": "higher",
+        "Open Drawer": "higher",
+        "Sweep to Dustpan": "higher",
+        "Meat off Grill": "higher",
+        "Turn Tap": "higher",
+        "Slide Block": "higher",
+        "Put in Drawer": "higher",
+        "Drag Stick": "higher",
+        "Push Buttons": "higher",
+        "Stack Blocks": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent",
+        "Close Jar": "percent",
+        "Open Drawer": "percent",
+        "Sweep to Dustpan": "percent",
+        "Meat off Grill": "percent",
+        "Turn Tap": "percent",
+        "Slide Block": "percent",
+        "Put in Drawer": "percent",
+        "Drag Stick": "percent",
+        "Push Buttons": "percent",
+        "Stack Blocks": "percent"
       }
     },
     {
@@ -2628,6 +3420,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "score"
       }
     },
     {
@@ -2748,6 +3546,50 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "basketball_in_hoop": "higher",
+        "close_box": "higher",
+        "close_laptop_lid": "higher",
+        "empty_dishwasher": "higher",
+        "get_ice_from_fridge": "higher",
+        "hockey": "higher",
+        "meat_on_grill": "higher",
+        "move_hanger": "higher",
+        "wipe_desk": "higher",
+        "open_drawer": "higher",
+        "slide_block_to_target": "higher",
+        "reach_and_drag": "higher",
+        "put_money_in_safe": "higher",
+        "place_wine_at_rack_location": "higher",
+        "insert_onto_square_peg": "higher",
+        "stack_cups": "higher",
+        "turn_oven_on": "higher",
+        "straighten_rope": "higher",
+        "setup_chess": "higher",
+        "scoop_with_spatula": "higher"
+      },
+      "columnUnits": {
+        "basketball_in_hoop": "percent",
+        "close_box": "percent",
+        "close_laptop_lid": "percent",
+        "empty_dishwasher": "percent",
+        "get_ice_from_fridge": "percent",
+        "hockey": "percent",
+        "meat_on_grill": "percent",
+        "move_hanger": "percent",
+        "wipe_desk": "percent",
+        "open_drawer": "percent",
+        "slide_block_to_target": "percent",
+        "reach_and_drag": "percent",
+        "put_money_in_safe": "percent",
+        "place_wine_at_rack_location": "percent",
+        "insert_onto_square_peg": "percent",
+        "stack_cups": "percent",
+        "turn_oven_on": "percent",
+        "straighten_rope": "percent",
+        "setup_chess": "percent",
+        "scoop_with_spatula": "percent"
       }
     },
     {
@@ -2868,6 +3710,50 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "basketball_in_hoop": "higher",
+        "close_box": "higher",
+        "close_laptop_lid": "higher",
+        "empty_dishwasher": "higher",
+        "get_ice_from_fridge": "higher",
+        "hockey": "higher",
+        "meat_on_grill": "higher",
+        "move_hanger": "higher",
+        "wipe_desk": "higher",
+        "open_drawer": "higher",
+        "slide_block_to_target": "higher",
+        "reach_and_drag": "higher",
+        "put_money_in_safe": "higher",
+        "place_wine_at_rack_location": "higher",
+        "insert_onto_square_peg": "higher",
+        "stack_cups": "higher",
+        "turn_oven_on": "higher",
+        "straighten_rope": "higher",
+        "setup_chess": "higher",
+        "scoop_with_spatula": "higher"
+      },
+      "columnUnits": {
+        "basketball_in_hoop": "percent",
+        "close_box": "percent",
+        "close_laptop_lid": "percent",
+        "empty_dishwasher": "percent",
+        "get_ice_from_fridge": "percent",
+        "hockey": "percent",
+        "meat_on_grill": "percent",
+        "move_hanger": "percent",
+        "wipe_desk": "percent",
+        "open_drawer": "percent",
+        "slide_block_to_target": "percent",
+        "reach_and_drag": "percent",
+        "put_money_in_safe": "percent",
+        "place_wine_at_rack_location": "percent",
+        "insert_onto_square_peg": "percent",
+        "stack_cups": "percent",
+        "turn_oven_on": "percent",
+        "straighten_rope": "percent",
+        "setup_chess": "percent",
+        "scoop_with_spatula": "percent"
       }
     },
     {
@@ -2893,6 +3779,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -2918,6 +3810,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -2993,6 +3891,32 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "close_jar": "higher",
+        "open_drawer": "higher",
+        "sweep_to_dustpan": "higher",
+        "meat_off_grill": "higher",
+        "turn_tap": "higher",
+        "slide_block": "higher",
+        "put_in_drawer": "higher",
+        "drag_stick": "higher",
+        "push_buttons": "higher",
+        "stack_blocks": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "close_jar": "percent",
+        "open_drawer": "percent",
+        "sweep_to_dustpan": "percent",
+        "meat_off_grill": "percent",
+        "turn_tap": "percent",
+        "slide_block": "percent",
+        "put_in_drawer": "percent",
+        "drag_stick": "percent",
+        "push_buttons": "percent",
+        "stack_blocks": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -3048,6 +3972,24 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "drag_D": "higher",
+        "slide_L": "higher",
+        "slide_S": "higher",
+        "open_N": "higher",
+        "turn_N": "higher",
+        "push_D": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "drag_D": "percent",
+        "slide_L": "percent",
+        "slide_S": "percent",
+        "open_N": "percent",
+        "turn_N": "percent",
+        "push_D": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -3123,6 +4065,32 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "close_jar": "higher",
+        "open_drawer": "higher",
+        "sweep_to_dustpan": "higher",
+        "meat_off_grill": "higher",
+        "turn_tap": "higher",
+        "slide_block": "higher",
+        "put_in_drawer": "higher",
+        "drag_stick": "higher",
+        "push_buttons": "higher",
+        "stack_blocks": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "close_jar": "percent",
+        "open_drawer": "percent",
+        "sweep_to_dustpan": "percent",
+        "meat_off_grill": "percent",
+        "turn_tap": "percent",
+        "slide_block": "percent",
+        "put_in_drawer": "percent",
+        "drag_stick": "percent",
+        "push_buttons": "percent",
+        "stack_blocks": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -3198,6 +4166,32 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "pick_and_lift": "higher",
+        "pick_up_cup": "higher",
+        "push_button": "higher",
+        "put_knife": "higher",
+        "put_money": "higher",
+        "reach_target": "higher",
+        "slide_block": "higher",
+        "stack_wine": "higher",
+        "take_money": "higher",
+        "take_umbrella": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "pick_and_lift": "percent",
+        "pick_up_cup": "percent",
+        "push_button": "percent",
+        "put_knife": "percent",
+        "put_money": "percent",
+        "reach_target": "percent",
+        "slide_block": "percent",
+        "stack_wine": "percent",
+        "take_money": "percent",
+        "take_umbrella": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -3273,6 +4267,32 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "unplug_charger": "higher",
+        "close_door": "higher",
+        "open_box": "higher",
+        "open_fridge": "higher",
+        "frame_off_hanger": "higher",
+        "open_oven": "higher",
+        "books_on_shelf": "higher",
+        "wipe_desk": "higher",
+        "cup_in_cabinet": "higher",
+        "shoes_out_of_box": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "unplug_charger": "percent",
+        "close_door": "percent",
+        "open_box": "percent",
+        "open_fridge": "percent",
+        "frame_off_hanger": "percent",
+        "open_oven": "percent",
+        "books_on_shelf": "percent",
+        "wipe_desk": "percent",
+        "cup_in_cabinet": "percent",
+        "shoes_out_of_box": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -3348,6 +4368,32 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "pick_and_lift": "higher",
+        "pick_up_cup": "higher",
+        "push_button": "higher",
+        "put_knife": "higher",
+        "put_money": "higher",
+        "reach_target": "higher",
+        "slide_block": "higher",
+        "stack_wine": "higher",
+        "take_money": "higher",
+        "take_umbrella": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "pick_and_lift": "percent",
+        "pick_up_cup": "percent",
+        "push_button": "percent",
+        "put_knife": "percent",
+        "put_money": "percent",
+        "reach_target": "percent",
+        "slide_block": "percent",
+        "stack_wine": "percent",
+        "take_money": "percent",
+        "take_umbrella": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -3393,6 +4439,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Lift": "higher",
+        "Can": "higher",
+        "Square": "higher",
+        "Transport": "higher",
+        "Tool Hang": "higher"
+      },
+      "columnUnits": {
+        "Lift": "percent",
+        "Can": "percent",
+        "Square": "percent",
+        "Transport": "percent",
+        "Tool Hang": "percent"
       }
     },
     {
@@ -3433,6 +4493,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Lift": "higher",
+        "Can": "higher",
+        "Square": "higher",
+        "Transport": "higher"
+      },
+      "columnUnits": {
+        "Lift": "percent",
+        "Can": "percent",
+        "Square": "percent",
+        "Transport": "percent"
       }
     },
     {
@@ -3478,6 +4550,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Lift": "higher",
+        "Can": "higher",
+        "Square": "higher",
+        "Transport": "higher",
+        "Tool Hang": "higher"
+      },
+      "columnUnits": {
+        "Lift": "percent",
+        "Can": "percent",
+        "Square": "percent",
+        "Transport": "percent",
+        "Tool Hang": "percent"
       }
     },
     {
@@ -3518,6 +4604,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Lift": "higher",
+        "Can": "higher",
+        "Square": "higher",
+        "Transport": "higher"
+      },
+      "columnUnits": {
+        "Lift": "percent",
+        "Can": "percent",
+        "Square": "percent",
+        "Transport": "percent"
       }
     },
     {
@@ -3553,6 +4651,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Piece Assembly": "higher",
+        "Threading": "higher",
+        "Transport": "higher"
+      },
+      "columnUnits": {
+        "Piece Assembly": "percent",
+        "Threading": "percent",
+        "Transport": "percent"
       }
     },
     {
@@ -3588,6 +4696,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Box Cleanup": "higher",
+        "Drawer Cleanup": "higher",
+        "Tray Lift": "higher"
+      },
+      "columnUnits": {
+        "Box Cleanup": "percent",
+        "Drawer Cleanup": "percent",
+        "Tray Lift": "percent"
       }
     },
     {
@@ -3623,6 +4741,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Pouring": "higher",
+        "Coffee": "higher",
+        "Can Sorting": "higher"
+      },
+      "columnUnits": {
+        "Pouring": "percent",
+        "Coffee": "percent",
+        "Can Sorting": "percent"
       }
     },
     {
@@ -3688,6 +4816,28 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Pick-Horizontal": "higher",
+        "Pick-Vertical": "higher",
+        "Pick-Standing": "higher",
+        "Pick-Average": "higher",
+        "Move Near": "higher",
+        "Open Drawer": "higher",
+        "Close Drawer": "higher",
+        "Drawer-Average": "higher",
+        "Open Drawer + Apple": "higher"
+      },
+      "columnUnits": {
+        "Pick-Horizontal": "percent",
+        "Pick-Vertical": "percent",
+        "Pick-Standing": "percent",
+        "Pick-Average": "percent",
+        "Move Near": "percent",
+        "Open Drawer": "percent",
+        "Close Drawer": "percent",
+        "Drawer-Average": "percent",
+        "Open Drawer + Apple": "percent"
       }
     },
     {
@@ -3753,6 +4903,28 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Pick-Horizontal": "higher",
+        "Pick-Vertical": "higher",
+        "Pick-Standing": "higher",
+        "Pick-Average": "higher",
+        "Move Near": "higher",
+        "Open Drawer": "higher",
+        "Close Drawer": "higher",
+        "Drawer-Average": "higher",
+        "Open Drawer + Apple": "higher"
+      },
+      "columnUnits": {
+        "Pick-Horizontal": "percent",
+        "Pick-Vertical": "percent",
+        "Pick-Standing": "percent",
+        "Pick-Average": "percent",
+        "Move Near": "percent",
+        "Open Drawer": "percent",
+        "Close Drawer": "percent",
+        "Drawer-Average": "percent",
+        "Open Drawer + Apple": "percent"
       }
     },
     {
@@ -3793,6 +4965,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Put Spoon on Towel": "higher",
+        "Put Carrot on Plate": "higher",
+        "Stack Green on Yellow": "higher",
+        "Put Eggplant in Basket": "higher"
+      },
+      "columnUnits": {
+        "Put Spoon on Towel": "percent",
+        "Put Carrot on Plate": "percent",
+        "Stack Green on Yellow": "percent",
+        "Put Eggplant in Basket": "percent"
       }
     },
     {
@@ -3838,6 +5022,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -3878,6 +5076,18 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "score",
+        "Object": "score",
+        "Goal": "score",
+        "Long": "score"
       }
     },
     {
@@ -3918,6 +5128,18 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Spatial": "lower",
+        "Object": "lower",
+        "Goal": "lower",
+        "Long": "lower"
+      },
+      "columnUnits": {
+        "Spatial": "score",
+        "Object": "score",
+        "Goal": "score",
+        "Long": "score"
       }
     },
     {
@@ -3958,6 +5180,18 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "score",
+        "Object": "score",
+        "Goal": "score",
+        "Long": "score"
       }
     },
     {
@@ -3983,6 +5217,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4008,6 +5248,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4033,6 +5279,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4058,6 +5310,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4083,6 +5341,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4108,6 +5372,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4133,6 +5403,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4158,6 +5434,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -4198,6 +5480,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Seen": "higher",
+        "Unseen": "higher",
+        "Distractors": "higher",
+        "Backgrounds": "higher"
+      },
+      "columnUnits": {
+        "Seen": "percent",
+        "Unseen": "percent",
+        "Distractors": "percent",
+        "Backgrounds": "percent"
       }
     },
     {
@@ -4233,6 +5527,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "RealObjectsSeenSkill": "higher",
+        "SimObjectsSeenSkill": "higher",
+        "SimObjectsUnseenSkill": "higher"
+      },
+      "columnUnits": {
+        "RealObjectsSeenSkill": "percent",
+        "SimObjectsSeenSkill": "percent",
+        "SimObjectsUnseenSkill": "percent"
       }
     },
     {
@@ -4263,6 +5567,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Classroom": "higher",
+        "BinPicking": "higher"
+      },
+      "columnUnits": {
+        "Classroom": "percent",
+        "BinPicking": "percent"
       }
     },
     {
@@ -4323,6 +5635,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Seen": "higher",
+        "ObjectsEasy": "higher",
+        "ObjectsHard": "higher",
+        "BackgroundEasy": "higher",
+        "BackgroundHard": "higher",
+        "EnvironmentEasy": "higher",
+        "EnvironmentHard": "higher",
+        "UnseenAverage": "higher"
+      },
+      "columnUnits": {
+        "Seen": "percent",
+        "ObjectsEasy": "percent",
+        "ObjectsHard": "percent",
+        "BackgroundEasy": "percent",
+        "BackgroundHard": "percent",
+        "EnvironmentEasy": "percent",
+        "EnvironmentHard": "percent",
+        "UnseenAverage": "percent"
       }
     },
     {
@@ -4363,6 +5695,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Symbols": "higher",
+        "Reasoning": "higher",
+        "PersonRecognition": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Symbols": "percent",
+        "Reasoning": "percent",
+        "PersonRecognition": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -4398,6 +5742,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Demos10": "higher",
+        "Demos20": "higher",
+        "Demos40": "higher"
+      },
+      "columnUnits": {
+        "Demos10": "percent",
+        "Demos20": "percent",
+        "Demos40": "percent"
       }
     },
     {
@@ -4448,6 +5802,22 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Task2D10": "higher",
+        "Task2D20": "higher",
+        "Task2D40": "higher",
+        "Task3D10": "higher",
+        "Task3D20": "higher",
+        "Task3D80": "higher"
+      },
+      "columnUnits": {
+        "Task2D10": "percent",
+        "Task2D20": "percent",
+        "Task2D40": "percent",
+        "Task3D10": "percent",
+        "Task3D20": "percent",
+        "Task3D80": "percent"
       }
     },
     {
@@ -4478,6 +5848,14 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "FailureDetection": "higher",
+        "Affordance": "higher"
+      },
+      "columnUnits": {
+        "FailureDetection": "score",
+        "Affordance": "score"
       }
     },
     {
@@ -4503,6 +5881,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -4528,6 +5912,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -4553,6 +5943,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -4583,6 +5979,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Emergent": "higher",
+        "Generalization": "higher"
+      },
+      "columnUnits": {
+        "Emergent": "percent",
+        "Generalization": "percent"
       }
     },
     {
@@ -4638,6 +6042,24 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Insertion": "higher",
+        "Coffee": "higher",
+        "Baking": "higher",
+        "PickUp": "higher",
+        "Coke": "higher",
+        "Bimanual": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Insertion": "percent",
+        "Coffee": "percent",
+        "Baking": "percent",
+        "PickUp": "percent",
+        "Coke": "percent",
+        "Bimanual": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -4673,6 +6095,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "MushroomInPot": "higher",
+        "SpoonOnCloth": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "MushroomInPot": "percent",
+        "SpoonOnCloth": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -4708,6 +6140,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "FlipCup": "higher",
+        "BlockInSlot": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "FlipCup": "percent",
+        "BlockInSlot": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -4733,6 +6175,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "MTLC": "higher"
+      },
+      "columnUnits": {
+        "MTLC": "percent"
       }
     },
     {
@@ -4778,6 +6226,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Chain1": "higher",
+        "Chain2": "higher",
+        "Chain3": "higher",
+        "Chain4": "higher",
+        "Chain5": "higher"
+      },
+      "columnUnits": {
+        "Chain1": "percent",
+        "Chain2": "percent",
+        "Chain3": "percent",
+        "Chain4": "percent",
+        "Chain5": "percent"
       }
     },
     {
@@ -4803,6 +6265,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "MTLC": "higher"
+      },
+      "columnUnits": {
+        "MTLC": "percent"
       }
     },
     {
@@ -4848,6 +6316,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Chain1": "higher",
+        "Chain2": "higher",
+        "Chain3": "higher",
+        "Chain4": "higher",
+        "Chain5": "higher"
+      },
+      "columnUnits": {
+        "Chain1": "percent",
+        "Chain2": "percent",
+        "Chain3": "percent",
+        "Chain4": "percent",
+        "Chain5": "percent"
       }
     },
     {
@@ -4873,6 +6355,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "MTLC": "higher"
+      },
+      "columnUnits": {
+        "MTLC": "percent"
       }
     },
     {
@@ -4918,6 +6406,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Chain1": "higher",
+        "Chain2": "higher",
+        "Chain3": "higher",
+        "Chain4": "higher",
+        "Chain5": "higher"
+      },
+      "columnUnits": {
+        "Chain1": "percent",
+        "Chain2": "percent",
+        "Chain3": "percent",
+        "Chain4": "percent",
+        "Chain5": "percent"
       }
     },
     {
@@ -4973,6 +6475,24 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "WaffleMaker": "higher",
+        "ChipsOnPlate": "higher",
+        "AppleInPot": "higher",
+        "Toasting": "higher",
+        "CleanDesk": "higher",
+        "CookLentils": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "WaffleMaker": "percent",
+        "ChipsOnPlate": "percent",
+        "AppleInPot": "percent",
+        "Toasting": "percent",
+        "CleanDesk": "percent",
+        "CookLentils": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -5033,6 +6553,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "WaffleDistractors": "higher",
+        "ChipsDistractors": "higher",
+        "ChipsNovel": "higher",
+        "AppleDistractors": "higher",
+        "ToastNovel": "higher",
+        "DeskDistractors": "higher",
+        "LentilsDistractorsCamera": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "WaffleDistractors": "percent",
+        "ChipsDistractors": "percent",
+        "ChipsNovel": "percent",
+        "AppleDistractors": "percent",
+        "ToastNovel": "percent",
+        "DeskDistractors": "percent",
+        "LentilsDistractorsCamera": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -5073,6 +6613,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "ToastNovel": "higher",
+        "DeskDistractors": "higher",
+        "LentilsDistractorsCamera": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "ToastNovel": "percent",
+        "DeskDistractors": "percent",
+        "LentilsDistractorsCamera": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -5133,6 +6685,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Single": "higher",
+        "Nouns": "higher",
+        "Verbs": "higher",
+        "Structured": "higher",
+        "Embodiment": "higher",
+        "Crowd": "higher",
+        "LongHorizon": "higher",
+        "Total": "higher"
+      },
+      "columnUnits": {
+        "Single": "percent",
+        "Nouns": "percent",
+        "Verbs": "percent",
+        "Structured": "percent",
+        "Embodiment": "percent",
+        "Crowd": "percent",
+        "LongHorizon": "percent",
+        "Total": "percent"
       }
     },
     {
@@ -5193,6 +6765,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Single": "higher",
+        "Nouns": "higher",
+        "Verbs": "higher",
+        "Structured": "higher",
+        "Embodiment": "higher",
+        "Crowd": "higher",
+        "LongHorizon": "higher",
+        "Total": "higher"
+      },
+      "columnUnits": {
+        "Single": "percent",
+        "Nouns": "percent",
+        "Verbs": "percent",
+        "Structured": "percent",
+        "Embodiment": "percent",
+        "Crowd": "percent",
+        "LongHorizon": "percent",
+        "Total": "percent"
       }
     },
     {
@@ -5253,6 +6845,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Single": "higher",
+        "Nouns": "higher",
+        "Verbs": "higher",
+        "Structured": "higher",
+        "Embodiment": "higher",
+        "Crowd": "higher",
+        "LongHorizon": "higher",
+        "Total": "higher"
+      },
+      "columnUnits": {
+        "Single": "percent",
+        "Nouns": "percent",
+        "Verbs": "percent",
+        "Structured": "percent",
+        "Embodiment": "percent",
+        "Crowd": "percent",
+        "LongHorizon": "percent",
+        "Total": "percent"
       }
     },
     {
@@ -5313,6 +6925,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Single": "higher",
+        "Nouns": "higher",
+        "Verbs": "higher",
+        "Structured": "higher",
+        "Embodiment": "higher",
+        "Crowd": "higher",
+        "LongHorizon": "higher",
+        "Total": "higher"
+      },
+      "columnUnits": {
+        "Single": "percent",
+        "Nouns": "percent",
+        "Verbs": "percent",
+        "Structured": "percent",
+        "Embodiment": "percent",
+        "Crowd": "percent",
+        "LongHorizon": "percent",
+        "Total": "percent"
       }
     },
     {
@@ -5423,6 +7055,46 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "BoxPairsSeen": "higher",
+        "BoxPairsUnseen": "higher",
+        "GoogleSeqSeen": "higher",
+        "GoogleSeqUnseen": "higher",
+        "GoogleGroupSeen": "higher",
+        "GoogleGroupUnseen": "higher",
+        "PyramidSeen": "higher",
+        "PyramidUnseen": "higher",
+        "PilesSeen": "higher",
+        "PilesUnseen": "higher",
+        "HanoiSeen": "higher",
+        "HanoiUnseen": "higher",
+        "AlignRope": "higher",
+        "PackingUnseenShapes": "higher",
+        "KitsSeenColors": "higher",
+        "KitsUnseenColors": "higher",
+        "BlocksBowlSeen": "higher",
+        "BlocksBowlUnseen": "higher"
+      },
+      "columnUnits": {
+        "BoxPairsSeen": "score",
+        "BoxPairsUnseen": "score",
+        "GoogleSeqSeen": "score",
+        "GoogleSeqUnseen": "score",
+        "GoogleGroupSeen": "score",
+        "GoogleGroupUnseen": "score",
+        "PyramidSeen": "score",
+        "PyramidUnseen": "score",
+        "PilesSeen": "score",
+        "PilesUnseen": "score",
+        "HanoiSeen": "score",
+        "HanoiUnseen": "score",
+        "AlignRope": "score",
+        "PackingUnseenShapes": "score",
+        "KitsSeenColors": "score",
+        "KitsUnseenColors": "score",
+        "BlocksBowlSeen": "score",
+        "BlocksBowlUnseen": "score"
       }
     },
     {
@@ -5533,6 +7205,46 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "BoxPairsSeen": "higher",
+        "BoxPairsUnseen": "higher",
+        "GoogleSeqSeen": "higher",
+        "GoogleSeqUnseen": "higher",
+        "GoogleGroupSeen": "higher",
+        "GoogleGroupUnseen": "higher",
+        "PyramidSeen": "higher",
+        "PyramidUnseen": "higher",
+        "PilesSeen": "higher",
+        "PilesUnseen": "higher",
+        "HanoiSeen": "higher",
+        "HanoiUnseen": "higher",
+        "AlignRope": "higher",
+        "PackingUnseenShapes": "higher",
+        "KitsSeenColors": "higher",
+        "KitsUnseenColors": "higher",
+        "BlocksBowlSeen": "higher",
+        "BlocksBowlUnseen": "higher"
+      },
+      "columnUnits": {
+        "BoxPairsSeen": "score",
+        "BoxPairsUnseen": "score",
+        "GoogleSeqSeen": "score",
+        "GoogleSeqUnseen": "score",
+        "GoogleGroupSeen": "score",
+        "GoogleGroupUnseen": "score",
+        "PyramidSeen": "score",
+        "PyramidUnseen": "score",
+        "PilesSeen": "score",
+        "PilesUnseen": "score",
+        "HanoiSeen": "score",
+        "HanoiUnseen": "score",
+        "AlignRope": "score",
+        "PackingUnseenShapes": "score",
+        "KitsSeenColors": "score",
+        "KitsUnseenColors": "score",
+        "BlocksBowlSeen": "score",
+        "BlocksBowlUnseen": "score"
       }
     },
     {
@@ -5643,6 +7355,46 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "BoxPairsSeen": "higher",
+        "BoxPairsUnseen": "higher",
+        "GoogleSeqSeen": "higher",
+        "GoogleSeqUnseen": "higher",
+        "GoogleGroupSeen": "higher",
+        "GoogleGroupUnseen": "higher",
+        "PyramidSeen": "higher",
+        "PyramidUnseen": "higher",
+        "PilesSeen": "higher",
+        "PilesUnseen": "higher",
+        "HanoiSeen": "higher",
+        "HanoiUnseen": "higher",
+        "AlignRope": "higher",
+        "PackingUnseenShapes": "higher",
+        "KitsSeenColors": "higher",
+        "KitsUnseenColors": "higher",
+        "BlocksBowlSeen": "higher",
+        "BlocksBowlUnseen": "higher"
+      },
+      "columnUnits": {
+        "BoxPairsSeen": "score",
+        "BoxPairsUnseen": "score",
+        "GoogleSeqSeen": "score",
+        "GoogleSeqUnseen": "score",
+        "GoogleGroupSeen": "score",
+        "GoogleGroupUnseen": "score",
+        "PyramidSeen": "score",
+        "PyramidUnseen": "score",
+        "PilesSeen": "score",
+        "PilesUnseen": "score",
+        "HanoiSeen": "score",
+        "HanoiUnseen": "score",
+        "AlignRope": "score",
+        "PackingUnseenShapes": "score",
+        "KitsSeenColors": "score",
+        "KitsUnseenColors": "score",
+        "BlocksBowlSeen": "score",
+        "BlocksBowlUnseen": "score"
       }
     },
     {
@@ -5753,6 +7505,46 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "BoxPairsSeen": "higher",
+        "BoxPairsUnseen": "higher",
+        "GoogleSeqSeen": "higher",
+        "GoogleSeqUnseen": "higher",
+        "GoogleGroupSeen": "higher",
+        "GoogleGroupUnseen": "higher",
+        "PyramidSeen": "higher",
+        "PyramidUnseen": "higher",
+        "PilesSeen": "higher",
+        "PilesUnseen": "higher",
+        "HanoiSeen": "higher",
+        "HanoiUnseen": "higher",
+        "AlignRope": "higher",
+        "PackingUnseenShapes": "higher",
+        "KitsSeenColors": "higher",
+        "KitsUnseenColors": "higher",
+        "BlocksBowlSeen": "higher",
+        "BlocksBowlUnseen": "higher"
+      },
+      "columnUnits": {
+        "BoxPairsSeen": "score",
+        "BoxPairsUnseen": "score",
+        "GoogleSeqSeen": "score",
+        "GoogleSeqUnseen": "score",
+        "GoogleGroupSeen": "score",
+        "GoogleGroupUnseen": "score",
+        "PyramidSeen": "score",
+        "PyramidUnseen": "score",
+        "PilesSeen": "score",
+        "PilesUnseen": "score",
+        "HanoiSeen": "score",
+        "HanoiUnseen": "score",
+        "AlignRope": "score",
+        "PackingUnseenShapes": "score",
+        "KitsSeenColors": "score",
+        "KitsUnseenColors": "score",
+        "BlocksBowlSeen": "score",
+        "BlocksBowlUnseen": "score"
       }
     },
     {
@@ -5918,6 +7710,68 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "SpongeTray": "higher",
+        "GrapesRedBowl": "higher",
+        "ApplePaperCup": "higher",
+        "WipeTraySponge": "higher",
+        "BananaCeramicBowl": "higher",
+        "BottleRedBowl": "higher",
+        "GrapesCeramicBowl": "higher",
+        "BottleTable": "higher",
+        "WhiteSpongePurpleBowl": "higher",
+        "WhiteSpongeTray": "higher",
+        "AppleCeramicBowl": "higher",
+        "BottlePurpleBowl": "higher",
+        "BananaCeramicCup": "higher",
+        "BananaWhiteSponge": "higher",
+        "MetalCupRedBowl": "higher",
+        "PickGrapes": "higher",
+        "PickApple": "higher",
+        "PickTowel": "higher",
+        "PickPepper": "higher",
+        "PickBottle": "higher",
+        "PickRedBowl": "higher",
+        "DragGrapes": "higher",
+        "WipeTableBanana": "higher",
+        "WipeTrayWhiteSponge": "higher",
+        "WipeBowlBrush": "higher",
+        "PushPurpleBowl": "higher",
+        "PushTray": "higher",
+        "PushRedBowl": "higher",
+        "Overall": "higher"
+      },
+      "columnUnits": {
+        "SpongeTray": "percent",
+        "GrapesRedBowl": "percent",
+        "ApplePaperCup": "percent",
+        "WipeTraySponge": "percent",
+        "BananaCeramicBowl": "percent",
+        "BottleRedBowl": "percent",
+        "GrapesCeramicBowl": "percent",
+        "BottleTable": "percent",
+        "WhiteSpongePurpleBowl": "percent",
+        "WhiteSpongeTray": "percent",
+        "AppleCeramicBowl": "percent",
+        "BottlePurpleBowl": "percent",
+        "BananaCeramicCup": "percent",
+        "BananaWhiteSponge": "percent",
+        "MetalCupRedBowl": "percent",
+        "PickGrapes": "percent",
+        "PickApple": "percent",
+        "PickTowel": "percent",
+        "PickPepper": "percent",
+        "PickBottle": "percent",
+        "PickRedBowl": "percent",
+        "DragGrapes": "percent",
+        "WipeTableBanana": "percent",
+        "WipeTrayWhiteSponge": "percent",
+        "WipeBowlBrush": "percent",
+        "PushPurpleBowl": "percent",
+        "PushTray": "percent",
+        "PushRedBowl": "percent",
+        "Overall": "percent"
       }
     },
     {
@@ -6083,6 +7937,68 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "SpongeTray": "higher",
+        "GrapesRedBowl": "higher",
+        "ApplePaperCup": "higher",
+        "WipeTraySponge": "higher",
+        "BananaCeramicBowl": "higher",
+        "BottleRedBowl": "higher",
+        "GrapesCeramicBowl": "higher",
+        "BottleTable": "higher",
+        "WhiteSpongePurpleBowl": "higher",
+        "WhiteSpongeTray": "higher",
+        "AppleCeramicBowl": "higher",
+        "BottlePurpleBowl": "higher",
+        "BananaCeramicCup": "higher",
+        "BananaWhiteSponge": "higher",
+        "MetalCupRedBowl": "higher",
+        "PickGrapes": "higher",
+        "PickApple": "higher",
+        "PickTowel": "higher",
+        "PickPepper": "higher",
+        "PickBottle": "higher",
+        "PickRedBowl": "higher",
+        "DragGrapes": "higher",
+        "WipeTableBanana": "higher",
+        "WipeTrayWhiteSponge": "higher",
+        "WipeBowlBrush": "higher",
+        "PushPurpleBowl": "higher",
+        "PushTray": "higher",
+        "PushRedBowl": "higher",
+        "Overall": "higher"
+      },
+      "columnUnits": {
+        "SpongeTray": "percent",
+        "GrapesRedBowl": "percent",
+        "ApplePaperCup": "percent",
+        "WipeTraySponge": "percent",
+        "BananaCeramicBowl": "percent",
+        "BottleRedBowl": "percent",
+        "GrapesCeramicBowl": "percent",
+        "BottleTable": "percent",
+        "WhiteSpongePurpleBowl": "percent",
+        "WhiteSpongeTray": "percent",
+        "AppleCeramicBowl": "percent",
+        "BottlePurpleBowl": "percent",
+        "BananaCeramicCup": "percent",
+        "BananaWhiteSponge": "percent",
+        "MetalCupRedBowl": "percent",
+        "PickGrapes": "percent",
+        "PickApple": "percent",
+        "PickTowel": "percent",
+        "PickPepper": "percent",
+        "PickBottle": "percent",
+        "PickRedBowl": "percent",
+        "DragGrapes": "percent",
+        "WipeTableBanana": "percent",
+        "WipeTrayWhiteSponge": "percent",
+        "WipeBowlBrush": "percent",
+        "PushPurpleBowl": "percent",
+        "PushTray": "percent",
+        "PushRedBowl": "percent",
+        "Overall": "percent"
       }
     },
     {
@@ -6123,6 +8039,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "SeenPlace": "higher",
+        "SeenRelation": "higher",
+        "NovelPlace": "higher",
+        "NovelRelation": "higher"
+      },
+      "columnUnits": {
+        "SeenPlace": "percent",
+        "SeenRelation": "percent",
+        "NovelPlace": "percent",
+        "NovelRelation": "percent"
       }
     },
     {
@@ -6158,6 +8086,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "PlaceBowl": "higher",
+        "PackObject": "higher",
+        "PackPair": "higher"
+      },
+      "columnUnits": {
+        "PlaceBowl": "percent",
+        "PackObject": "percent",
+        "PackPair": "percent"
       }
     },
     {
@@ -6193,6 +8131,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "CupPlace": "higher",
+        "WipeComplete": "higher",
+        "PeelComplete": "higher"
+      },
+      "columnUnits": {
+        "CupPlace": "percent",
+        "WipeComplete": "percent",
+        "PeelComplete": "percent"
       }
     },
     {
@@ -6228,6 +8176,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Cup": "higher",
+        "Wipe": "higher",
+        "Peel": "higher"
+      },
+      "columnUnits": {
+        "Cup": "percent",
+        "Wipe": "percent",
+        "Peel": "percent"
       }
     },
     {
@@ -6263,6 +8221,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Force": "higher",
+        "Roughness": "higher",
+        "Hardness": "higher"
+      },
+      "columnUnits": {
+        "Force": "percent",
+        "Roughness": "percent",
+        "Hardness": "percent"
       }
     },
     {
@@ -6308,6 +8276,20 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Bowls": "higher",
+        "Pour": "higher",
+        "PickPlace": "higher",
+        "Drawer": "higher",
+        "Towel": "higher"
+      },
+      "columnUnits": {
+        "Bowls": "score",
+        "Pour": "score",
+        "PickPlace": "score",
+        "Drawer": "score",
+        "Towel": "score"
       }
     },
     {
@@ -6353,6 +8335,20 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Bowls": "lower",
+        "Pour": "lower",
+        "PickPlace": "lower",
+        "Drawer": "lower",
+        "Towel": "lower"
+      },
+      "columnUnits": {
+        "Bowls": "seconds",
+        "Pour": "seconds",
+        "PickPlace": "seconds",
+        "Drawer": "seconds",
+        "Towel": "seconds"
       }
     },
     {
@@ -6398,6 +8394,20 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Bowls": "lower",
+        "Pour": "lower",
+        "PickPlace": "lower",
+        "Drawer": "lower",
+        "Towel": "lower"
+      },
+      "columnUnits": {
+        "Bowls": "score",
+        "Pour": "score",
+        "PickPlace": "score",
+        "Drawer": "score",
+        "Towel": "score"
       }
     },
     {
@@ -6443,6 +8453,20 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Bowls": "lower",
+        "Pour": "lower",
+        "PickPlace": "lower",
+        "Drawer": "lower",
+        "Towel": "lower"
+      },
+      "columnUnits": {
+        "Bowls": "score",
+        "Pour": "score",
+        "PickPlace": "score",
+        "Drawer": "score",
+        "Towel": "score"
       }
     },
     {
@@ -6488,6 +8512,20 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Bowls": "lower",
+        "Pour": "lower",
+        "PickPlace": "lower",
+        "Drawer": "lower",
+        "Towel": "lower"
+      },
+      "columnUnits": {
+        "Bowls": "score",
+        "Pour": "score",
+        "PickPlace": "score",
+        "Drawer": "score",
+        "Towel": "score"
       }
     },
     {
@@ -6533,6 +8571,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -6558,6 +8610,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6583,6 +8641,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6608,6 +8672,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6633,6 +8703,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6678,6 +8754,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -6711,6 +8801,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6744,6 +8840,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6769,6 +8871,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6794,6 +8902,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Average": "lower"
+      },
+      "columnUnits": {
+        "Average": "seconds"
       }
     },
     {
@@ -6819,6 +8933,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -6844,6 +8964,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Average": "lower"
+      },
+      "columnUnits": {
+        "Average": "seconds"
       }
     },
     {
@@ -6889,6 +9015,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -6914,6 +9054,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Average": "lower"
+      },
+      "columnUnits": {
+        "Average": "seconds"
       }
     },
     {
@@ -6939,6 +9085,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -6969,6 +9121,14 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "ActionHead": "lower",
+        "Overall": "lower"
+      },
+      "columnUnits": {
+        "ActionHead": "seconds",
+        "Overall": "seconds"
       }
     },
     {
@@ -6994,6 +9154,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -7024,6 +9190,14 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "ActionHead": "lower",
+        "Overall": "lower"
+      },
+      "columnUnits": {
+        "ActionHead": "seconds",
+        "Overall": "seconds"
       }
     },
     {
@@ -7049,6 +9223,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -7079,6 +9259,14 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "ActionHead": "lower",
+        "Overall": "lower"
+      },
+      "columnUnits": {
+        "ActionHead": "seconds",
+        "Overall": "seconds"
       }
     },
     {
@@ -7104,6 +9292,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -7139,6 +9333,16 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "VLM": "lower",
+        "ActionHead": "lower",
+        "Overall": "lower"
+      },
+      "columnUnits": {
+        "VLM": "seconds",
+        "ActionHead": "seconds",
+        "Overall": "seconds"
       }
     },
     {
@@ -7184,6 +9388,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7229,6 +9447,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7274,6 +9506,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7317,6 +9563,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7360,6 +9616,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7403,6 +9669,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7446,6 +9722,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7471,6 +9757,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -7496,6 +9788,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -7529,6 +9827,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -7562,6 +9866,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -7602,6 +9912,18 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "RTX4090_2views": "lower",
+        "RTX4090_3views": "lower",
+        "RTX5090_2views": "lower",
+        "RTX5090_3views": "lower"
+      },
+      "columnUnits": {
+        "RTX4090_2views": "seconds",
+        "RTX4090_3views": "seconds",
+        "RTX5090_2views": "seconds",
+        "RTX5090_3views": "seconds"
       }
     },
     {
@@ -7647,6 +9969,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean Room": "higher",
+        "Prepare Ingredients": "higher",
+        "Tomato and Egg Stir Fry": "higher",
+        "Make Milk Tea": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean Room": "percent",
+        "Prepare Ingredients": "percent",
+        "Tomato and Egg Stir Fry": "percent",
+        "Make Milk Tea": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7687,6 +10023,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Collect Laundry": "higher",
+        "Cotton Pad": "higher",
+        "Eyelash Curler": "higher",
+        "Makeup Puff": "higher"
+      },
+      "columnUnits": {
+        "Collect Laundry": "percent",
+        "Cotton Pad": "percent",
+        "Eyelash Curler": "percent",
+        "Makeup Puff": "percent"
       }
     },
     {
@@ -7722,6 +10070,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Make Milk Tea": "higher",
+        "Book Organization": "higher",
+        "Clean Room": "higher"
+      },
+      "columnUnits": {
+        "Make Milk Tea": "percent",
+        "Book Organization": "percent",
+        "Clean Room": "percent"
       }
     },
     {
@@ -7767,6 +10125,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Retrieve Object": "higher",
+        "Return to Same Container": "higher",
+        "Store N Objects": "higher",
+        "Heat Stove T mins": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Retrieve Object": "percent",
+        "Return to Same Container": "percent",
+        "Store N Objects": "percent",
+        "Heat Stove T mins": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7817,6 +10189,22 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Retrieve Object": "higher",
+        "Return to Same Container": "higher",
+        "Store N Objects": "higher",
+        "Heat Stove T mins": "higher",
+        "Store N Objects Human-Robot": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Retrieve Object": "percent",
+        "Return to Same Container": "percent",
+        "Store N Objects": "percent",
+        "Heat Stove T mins": "percent",
+        "Store N Objects Human-Robot": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -7855,6 +10243,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent"
       }
     },
     {
@@ -7880,6 +10276,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -7905,6 +10307,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Average": "lower"
+      },
+      "columnUnits": {
+        "Average": "seconds"
       }
     },
     {
@@ -7930,6 +10338,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -7955,6 +10369,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -7985,6 +10405,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -8010,6 +10438,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8035,6 +10469,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8060,6 +10500,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Total": "higher"
+      },
+      "columnUnits": {
+        "Total": "percent"
       }
     },
     {
@@ -8085,6 +10531,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "WidowX Average": "higher"
+      },
+      "columnUnits": {
+        "WidowX Average": "percent"
       }
     },
     {
@@ -8115,6 +10567,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "RT-1 VM": "higher",
+        "RT-1 VA": "higher"
+      },
+      "columnUnits": {
+        "RT-1 VM": "percent",
+        "RT-1 VA": "percent"
       }
     },
     {
@@ -8140,6 +10600,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8170,6 +10636,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "SwapBlocks": "higher",
+        "SwapT": "higher"
+      },
+      "columnUnits": {
+        "SwapBlocks": "percent",
+        "SwapT": "percent"
       }
     },
     {
@@ -8195,6 +10669,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8225,6 +10705,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Seen": "higher",
+        "Unseen": "higher"
+      },
+      "columnUnits": {
+        "Seen": "percent",
+        "Unseen": "percent"
       }
     },
     {
@@ -8250,6 +10738,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -8275,6 +10769,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Seconds per action": "lower"
+      },
+      "columnUnits": {
+        "Seconds per action": "seconds"
       }
     },
     {
@@ -8300,6 +10800,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8325,6 +10831,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8350,6 +10862,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -8375,6 +10893,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Five-task success": "higher"
+      },
+      "columnUnits": {
+        "Five-task success": "percent"
       }
     },
     {
@@ -8400,6 +10924,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -8425,6 +10955,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Five-task success": "higher"
+      },
+      "columnUnits": {
+        "Five-task success": "percent"
       }
     },
     {
@@ -8450,6 +10986,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -8475,6 +11017,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
       }
     },
     {
@@ -8500,6 +11048,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Latency": "lower"
+      },
+      "columnUnits": {
+        "Latency": "seconds"
       }
     },
     {
@@ -8525,6 +11079,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "SR": "higher"
+      },
+      "columnUnits": {
+        "SR": "percent"
       }
     },
     {
@@ -8550,6 +11110,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8575,6 +11141,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8613,6 +11185,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent"
       }
     },
     {
@@ -8643,6 +11223,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Stack blocks": "higher",
+        "Sort by size": "higher"
+      },
+      "columnUnits": {
+        "Stack blocks": "percent",
+        "Sort by size": "percent"
       }
     },
     {
@@ -8668,6 +11256,12 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Corrections": "lower"
+      },
+      "columnUnits": {
+        "Corrections": "score"
       }
     },
     {
@@ -8698,6 +11292,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Zero-shot code": "higher",
+        "In-context demos": "higher"
+      },
+      "columnUnits": {
+        "Zero-shot code": "percent",
+        "In-context demos": "percent"
       }
     },
     {
@@ -8723,6 +11325,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8748,6 +11356,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Latency": "lower"
+      },
+      "columnUnits": {
+        "Latency": "seconds"
       }
     },
     {
@@ -8773,6 +11387,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8798,6 +11418,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8828,6 +11454,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher",
+        "Long": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent",
+        "Long": "percent"
       }
     },
     {
@@ -8853,6 +11487,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8891,6 +11531,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent"
       }
     },
     {
@@ -8916,6 +11564,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -8954,6 +11608,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Easy": "higher",
+        "Hard": "higher"
+      },
+      "columnUnits": {
+        "Easy": "percent",
+        "Hard": "percent"
       }
     },
     {
@@ -8979,6 +11641,12 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Latency": "lower"
+      },
+      "columnUnits": {
+        "Latency": "seconds"
       }
     },
     {
@@ -9004,6 +11672,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average Score": "higher"
+      },
+      "columnUnits": {
+        "Average Score": "score"
       }
     },
     {
@@ -9029,6 +11703,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average SR": "higher"
+      },
+      "columnUnits": {
+        "Average SR": "percent"
       }
     },
     {
@@ -9054,6 +11734,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Overall Score": "higher"
+      },
+      "columnUnits": {
+        "Overall Score": "score"
       }
     },
     {
@@ -9079,6 +11765,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Overall SR": "higher"
+      },
+      "columnUnits": {
+        "Overall SR": "percent"
       }
     },
     {
@@ -9109,6 +11801,14 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Standard": "higher",
+        "Random": "higher"
+      },
+      "columnUnits": {
+        "Standard": "score",
+        "Random": "score"
       }
     },
     {
@@ -9139,6 +11839,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average TSR": "higher",
+        "Transferring TSR": "higher"
+      },
+      "columnUnits": {
+        "Average TSR": "percent",
+        "Transferring TSR": "percent"
       }
     },
     {
@@ -9164,6 +11872,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average CSR": "higher"
+      },
+      "columnUnits": {
+        "Average CSR": "percent"
       }
     },
     {
@@ -9202,6 +11916,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Easy": "higher",
+        "Hard": "higher"
+      },
+      "columnUnits": {
+        "Easy": "percent",
+        "Hard": "percent"
       }
     },
     {
@@ -9247,6 +11969,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -9287,6 +12023,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Pick Coke Can": "higher",
+        "Move Near": "higher",
+        "Open/Close Drawer": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Pick Coke Can": "percent",
+        "Move Near": "percent",
+        "Open/Close Drawer": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -9327,6 +12075,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Put Balls Into Box": "higher",
+        "Clean Table": "higher",
+        "Stack Bowls": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Put Balls Into Box": "percent",
+        "Clean Table": "percent",
+        "Stack Bowls": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -9367,6 +12127,18 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Put Balls Into Box": "higher",
+        "Clean Table": "higher",
+        "Stack Bowls": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Put Balls Into Box": "percent",
+        "Clean Table": "percent",
+        "Stack Bowls": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -9392,6 +12164,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -9422,6 +12200,14 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Jetson Orin": "higher",
+        "H100": "higher"
+      },
+      "columnUnits": {
+        "Jetson Orin": "score",
+        "H100": "score"
       }
     },
     {
@@ -9457,6 +12243,16 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Jetson Orin": "higher",
+        "RTX4090": "higher",
+        "H100": "higher"
+      },
+      "columnUnits": {
+        "Jetson Orin": "score",
+        "RTX4090": "score",
+        "H100": "score"
       }
     },
     {
@@ -9492,6 +12288,16 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Jetson Orin": "higher",
+        "RTX4090": "higher",
+        "H100": "higher"
+      },
+      "columnUnits": {
+        "Jetson Orin": "score",
+        "RTX4090": "score",
+        "H100": "score"
       }
     },
     {
@@ -9522,6 +12328,14 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Gear assembly": "higher",
+        "Beam assembly": "higher"
+      },
+      "columnUnits": {
+        "Gear assembly": "score",
+        "Beam assembly": "score"
       }
     },
     {
@@ -9552,6 +12366,14 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Gear assembly": "lower",
+        "Beam assembly": "lower"
+      },
+      "columnUnits": {
+        "Gear assembly": "seconds",
+        "Beam assembly": "seconds"
       }
     },
     {
@@ -9582,6 +12404,14 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Gear assembly": "lower",
+        "Beam assembly": "lower"
+      },
+      "columnUnits": {
+        "Gear assembly": "score",
+        "Beam assembly": "score"
       }
     },
     {
@@ -9612,6 +12442,14 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Gear assembly": "lower",
+        "Beam assembly": "lower"
+      },
+      "columnUnits": {
+        "Gear assembly": "score",
+        "Beam assembly": "score"
       }
     },
     {
@@ -9662,6 +12500,22 @@
           "unit": "seconds",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Gear1": "lower",
+        "Gear2": "lower",
+        "Gear3": "lower",
+        "Peg1": "lower",
+        "Peg2": "lower",
+        "Beam": "lower"
+      },
+      "columnUnits": {
+        "Gear1": "seconds",
+        "Gear2": "seconds",
+        "Gear3": "seconds",
+        "Peg1": "seconds",
+        "Peg2": "seconds",
+        "Beam": "seconds"
       }
     },
     {
@@ -9702,6 +12556,18 @@
           "unit": "score",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Intent-action planner": "lower",
+        "Visual detector": "lower",
+        "Numeric action planner": "lower",
+        "Action monitor": "lower"
+      },
+      "columnUnits": {
+        "Intent-action planner": "score",
+        "Visual detector": "score",
+        "Numeric action planner": "score",
+        "Action monitor": "score"
       }
     },
     {
@@ -9762,6 +12628,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Camera": "higher",
+        "Robot": "higher",
+        "Language": "higher",
+        "Light": "higher",
+        "Background": "higher",
+        "Noise": "higher",
+        "Layout": "higher",
+        "Overall": "higher"
+      },
+      "columnUnits": {
+        "Camera": "percent",
+        "Robot": "percent",
+        "Language": "percent",
+        "Light": "percent",
+        "Background": "percent",
+        "Noise": "percent",
+        "Layout": "percent",
+        "Overall": "percent"
       }
     },
     {
@@ -9787,6 +12673,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -9831,6 +12723,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -9856,6 +12758,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -9901,6 +12809,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -9936,6 +12858,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Intent Score": "higher",
+        "Execution Score": "higher",
+        "Completion Rate": "higher"
+      },
+      "columnUnits": {
+        "Intent Score": "percent",
+        "Execution Score": "percent",
+        "Completion Rate": "percent"
       }
     },
     {
@@ -9971,6 +12903,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Official Random": "higher",
+        "Physical Random": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Official Random": "percent",
+        "Physical Random": "percent"
       }
     },
     {
@@ -10016,6 +12958,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -10059,6 +13015,16 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Random": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Random": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -10104,6 +13070,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -10129,6 +13109,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -10154,6 +13140,12 @@
           "unit": "score",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score"
       }
     },
     {
@@ -10184,6 +13176,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "VM": "higher",
+        "VA": "higher"
+      },
+      "columnUnits": {
+        "VM": "percent",
+        "VA": "percent"
       }
     },
     {
@@ -10209,6 +13209,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -10234,6 +13240,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -10259,6 +13271,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -10297,6 +13315,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Easy": "higher",
+        "Hard": "higher"
+      },
+      "columnUnits": {
+        "Easy": "percent",
+        "Hard": "percent"
       }
     },
     {
@@ -10322,6 +13348,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -10360,6 +13392,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Easy": "higher",
+        "Hard": "higher"
+      },
+      "columnUnits": {
+        "Easy": "percent",
+        "Hard": "percent"
       }
     },
     {
@@ -10385,6 +13425,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -10410,6 +13456,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Total": "higher"
+      },
+      "columnUnits": {
+        "Total": "percent"
       }
     },
     {
@@ -10455,6 +13507,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -10480,6 +13546,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     },
     {
@@ -10516,6 +13588,16 @@
           "unit": "percent",
           "direction": "lower"
         }
+      },
+      "columnDirections": {
+        "Success": "higher",
+        "Haz-B": "lower",
+        "Haz-O": "lower"
+      },
+      "columnUnits": {
+        "Success": "percent",
+        "Haz-B": "percent",
+        "Haz-O": "percent"
       }
     },
     {
@@ -10562,6 +13644,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "1/1": "higher",
+        "1/2": "higher",
+        "1/4": "higher",
+        "1/8": "higher",
+        "1/16": "higher"
+      },
+      "columnUnits": {
+        "1/1": "percent",
+        "1/2": "percent",
+        "1/4": "percent",
+        "1/8": "percent",
+        "1/16": "percent"
       }
     },
     {
@@ -10607,6 +13703,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -10667,6 +13777,26 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Camera": "higher",
+        "Robot": "higher",
+        "Language": "higher",
+        "Light": "higher",
+        "Background": "higher",
+        "Noise": "higher",
+        "Layout": "higher",
+        "Total": "higher"
+      },
+      "columnUnits": {
+        "Camera": "percent",
+        "Robot": "percent",
+        "Language": "percent",
+        "Light": "percent",
+        "Background": "percent",
+        "Noise": "percent",
+        "Layout": "percent",
+        "Total": "percent"
       }
     },
     {
@@ -10712,6 +13842,20 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
       }
     },
     {
@@ -10762,6 +13906,22 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average length": "higher",
+        "Task 1": "higher",
+        "Task 2": "higher",
+        "Task 3": "higher",
+        "Task 4": "higher",
+        "Task 5": "higher"
+      },
+      "columnUnits": {
+        "Average length": "score",
+        "Task 1": "percent",
+        "Task 2": "percent",
+        "Task 3": "percent",
+        "Task 4": "percent",
+        "Task 5": "percent"
       }
     },
     {
@@ -10800,6 +13960,14 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Easy": "higher",
+        "Hard": "higher"
+      },
+      "columnUnits": {
+        "Easy": "percent",
+        "Hard": "percent"
       }
     },
     {
@@ -10825,6 +13993,12 @@
           "unit": "percent",
           "direction": "higher"
         }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
       }
     }
   ],
