@@ -94,7 +94,15 @@ try:
         yes('pointer capture and cursor cleaned up', not page.evaluate('document.documentElement.classList.contains("sidebar-resizing")'))
         page.reload(wait_until='networkidle')
         yes('width survives reload', width(page) == 328)
-        page.locator('.nav-link[data-view="news"]').click(); page.wait_for_selector('.news-story')
+        page.locator('.nav-link[data-view="news"]').click()
+        page.wait_for_selector('#news-issue-number')
+        # The current week can genuinely have zero verified stories. Exercise navigation
+        # on the newest populated issue rather than assuming a published event every week.
+        archive = page.locator('#news-week option').evaluate_all(
+            r'''opts => opts.find(o => !/·\s*0\s*条/.test(o.textContent))?.value || '' ''')
+        yes('news archive contains a populated issue', bool(archive))
+        page.locator('#news-week').select_option(archive)
+        page.wait_for_selector('.news-story')
         yes('news route preserves width', width(page) == 328 and label_fits(page))
         drag(page, 50); yes('lower bound', width(page) == 244 and label_fits(page))
         drag(page, 850); yes('upper bound', width(page) == 380)
