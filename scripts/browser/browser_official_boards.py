@@ -65,6 +65,19 @@ try:
             'p125' in page.locator('[data-official-model="VPP2"] .official-paper-id').inner_text())
         check('Official model without verified paper stays visible',
             page.locator('[data-official-model="PhysicalRSI"]').count()==1)
+        check('Simate-beta stays unpublished despite official eval adapter',
+            page.locator('[data-official-model="Simate-beta"] .official-model-status').count()==1 and
+            page.locator('[data-official-model="Simate-beta"] .official-model-resource').count()==1 and
+            '论文关系未核验' in page.locator('[data-official-model="Simate-beta"]').inner_text())
+        check('Rex-M1 Preview exposes pinned adapter, not a paper ID',
+            page.locator('[data-official-model="Rex-M1 Preview"] .official-model-resource').count()==1 and
+            '论文未发布' in page.locator('[data-official-model="Rex-M1 Preview"]').inner_text())
+        check('Liber-0 Lite inference reference does not imply training released',
+            page.locator('[data-official-model="Liber-0 Lite"] .official-model-resource').count()==1 and
+            '论文待发布' in page.locator('[data-official-model="Liber-0 Lite"]').inner_text())
+        check('Liber-0 Preview remains distinct with no guessed adapter link',
+            page.locator('[data-official-model="Liber-0 Preview"] .official-model-status').count()==1 and
+            page.locator('[data-official-model="Liber-0 Preview"] .official-model-resource').count()==0)
         page.locator('[data-official-measure]').select_option('sr')
         check('RoboDojo SR is percent, never partial-progress Score',
             '32.26%' in page.locator('[data-official-model="VPP2"] .official-score').inner_text())
