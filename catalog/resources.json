@@ -362,6 +362,18 @@
     },
     "p124": {
       "code": "https://github.com/anthonytao80-crypto/ForeAct3D"
+    },
+    "p125": {
+      "project": "https://robert-gyj.github.io/video-prediction-policy-2/",
+      "code": "https://github.com/roboterax/video-prediction-policy-2"
+    },
+    "p126": {
+      "project": "https://internrobotics.github.io/InternW0-Delta/",
+      "code": "https://github.com/InternRobotics/InternW0-Delta"
+    },
+    "p127": {
+      "project": "https://robodojo-benchmark.com/report/gpt-6-astra-eval",
+      "code": "https://github.com/RoboProbe/RoboProbe"
     }
   }
 }

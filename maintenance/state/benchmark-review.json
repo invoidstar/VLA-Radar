@@ -1,19 +1,319 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-09",
+  "reviewedAt": "2026-10-13",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
-    "p064": {
+    "p001": {
       "status": "extracted",
       "trackIds": [
-        "libero-openvla-v3-singleview-cleaned"
+        "robodojo-20260824-score",
+        "robodojo-20260824-sr",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
       ],
       "resultIds": [
-        "r-libero-openvla-v3-singleview-cleaned-dp",
-        "r-libero-openvla-v3-singleview-cleaned-octo",
-        "r-libero-openvla-v3-singleview-cleaned-openvla"
+        "r-robodojo-20260824-score-dm",
+        "r-robodojo-20260824-score-g05",
+        "r-robodojo-20260824-score-pi05",
+        "r-robodojo-20260824-score-vlact",
+        "r-robodojo-20260824-score-xiaomi",
+        "r-robodojo-20260824-sr-dm",
+        "r-robodojo-20260824-sr-g05",
+        "r-robodojo-20260824-sr-pi05",
+        "r-robodojo-20260824-sr-vlact",
+        "r-robodojo-20260824-sr-xiaomi",
+        "r-robodojo-official-sim-multi-score-vlact",
+        "r-robodojo-official-sim-multi-sr-vlact"
       ],
-      "note": "本批核对v3 Appendix E/Table12，新增3条原报告成功率记录；单相机、清洗数量、LoRA和标准误已定位，其他真机实验未声称全部入榜。"
+      "note": "保留10条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p002": {
+      "status": "extracted",
+      "trackIds": [
+        "vlaflow-v2-libero",
+        "vlaflow-v2-libero-plus",
+        "vlaflow-v2-simpler-widowx",
+        "vlaflow-v2-simpler-rt1"
+      ],
+      "resultIds": [
+        "r-vlaflow-v2-libero-pi-nopt",
+        "r-vlaflow-v2-lplus-pi-nopt",
+        "r-vlaflow-v2-widowx-pi-nopt",
+        "r-vlaflow-v2-rt1-pi-nopt",
+        "r-vlaflow-v2-libero-wpi-nopt",
+        "r-vlaflow-v2-lplus-wpi-nopt",
+        "r-vlaflow-v2-widowx-wpi-nopt",
+        "r-vlaflow-v2-rt1-wpi-nopt",
+        "r-vlaflow-v2-libero-pi-frozen",
+        "r-vlaflow-v2-lplus-pi-frozen",
+        "r-vlaflow-v2-widowx-pi-frozen",
+        "r-vlaflow-v2-rt1-pi-frozen",
+        "r-vlaflow-v2-libero-pi-full",
+        "r-vlaflow-v2-lplus-pi-full",
+        "r-vlaflow-v2-widowx-pi-full",
+        "r-vlaflow-v2-rt1-pi-full",
+        "r-vlaflow-v2-libero-lpi",
+        "r-vlaflow-v2-lplus-lpi",
+        "r-vlaflow-v2-widowx-lpi",
+        "r-vlaflow-v2-rt1-lpi",
+        "r-vlaflow-v2-libero-wpi",
+        "r-vlaflow-v2-lplus-wpi",
+        "r-vlaflow-v2-widowx-wpi",
+        "r-vlaflow-v2-rt1-wpi",
+        "r-vlaflow-v2-libero-lwpi",
+        "r-vlaflow-v2-lplus-lwpi",
+        "r-vlaflow-v2-widowx-lwpi",
+        "r-vlaflow-v2-rt1-lwpi"
+      ],
+      "note": "第十四批：新增28条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
+    },
+    "p003": {
+      "status": "extracted",
+      "trackIds": [
+        "lumo2-v1-semantic-probe"
+      ],
+      "resultIds": [
+        "r-lumo2-v1-probe-dino",
+        "r-lumo2-v1-probe-stage1",
+        "r-lumo2-v1-probe-stage2"
+      ],
+      "note": "第十五批：新增3条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
+    },
+    "p004": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa24-xiaomi-300demos",
+        "robocasa365-xiaomi-50tasks",
+        "robocasa365-official-101",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robocasa24-xiaomi-300demos-xiaomi-robotics-1",
+        "r-robocasa365-xiaomi-50tasks-xiaomi-robotics-1",
+        "r-robocasa365-official-101-xiaomi-robotics-2026-07-08",
+        "r-robodojo-official-sim-multi-score-xiaomi-robotics-1",
+        "r-robodojo-official-sim-multi-sr-xiaomi-robotics-1"
+      ],
+      "note": "保留2条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p005": {
+      "status": "extracted",
+      "trackIds": [
+        "dyna2-2026-scaling",
+        "dyna2-2026-customer-pass"
+      ],
+      "resultIds": [
+        "r-dyna2-scale-1k",
+        "r-dyna2-scale-10k",
+        "r-dyna2-scale-100k",
+        "r-dyna2-scale-1m",
+        "r-dyna2-site-d1",
+        "r-dyna2-site-d2"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
+    },
+    "p006": {
+      "status": "extracted",
+      "trackIds": [
+        "vlatalker-v1-libero"
+      ],
+      "resultIds": [
+        "r-vlatalker-v1-libero-gen",
+        "r-vlatalker-v1-libero-talker"
+      ],
+      "note": "最终24篇清理：2条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
+    },
+    "p007": {
+      "status": "extracted",
+      "trackIds": [
+        "track4action-v1-libero-plus",
+        "track4action-v1-real",
+        "track4action-v1-robotwin"
+      ],
+      "resultIds": [
+        "r-track4-v1-plus-base",
+        "r-track4-v1-plus-track",
+        "r-track4-v1-real-base",
+        "r-track4-v1-real-track",
+        "r-track4-v1-robotwin"
+      ],
+      "note": "最终24篇清理：5条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+    },
+    "p008": {
+      "status": "extracted",
+      "trackIds": [
+        "meco-v1-robotwin",
+        "meco-v1-real-success",
+        "meco-v1-real-corrections"
+      ],
+      "resultIds": [
+        "r-meco-v1-rt-fast",
+        "r-meco-v1-rt-meco",
+        "r-meco-v1-real-fast",
+        "r-meco-v1-real-meco",
+        "r-meco-v1-corr-fast",
+        "r-meco-v1-corr-meco"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
+    },
+    "p009": {
+      "status": "extracted",
+      "trackIds": [
+        "gwm-v1-libero",
+        "gwm-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-gwm-v1-libero-oft",
+        "r-gwm-v1-plus-oft",
+        "r-gwm-v1-libero-jepa",
+        "r-gwm-v1-plus-jepa",
+        "r-gwm-v1-libero-gwm",
+        "r-gwm-v1-plus-gwm"
+      ],
+      "note": "第十五批：新增6条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
+    },
+    "p010": {
+      "status": "extracted",
+      "trackIds": [
+        "w2vla-v1-libero",
+        "w2vla-v1-robotwin2500",
+        "w2vla-v1-chunk-latency"
+      ],
+      "resultIds": [
+        "r-w2vla-v1-libero-w2",
+        "r-w2vla-v1-libero-star",
+        "r-w2vla-v1-rt-w2",
+        "r-w2vla-v1-rt-up",
+        "r-w2vla-v1-lat-w2",
+        "r-w2vla-v1-lat-pi0",
+        "r-w2vla-v1-lat-jepa"
+      ],
+      "note": "最终24篇清理：7条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+    },
+    "p011": {
+      "status": "extracted",
+      "trackIds": [
+        "seelike-v1-geometry-ablation",
+        "seelike-v1-fusion-ablation",
+        "seelike-v1-view-robustness",
+        "seelike-v1-pretrained-robocasa",
+        "seelike-v1-real-view"
+      ],
+      "resultIds": [
+        "r-seelike-v1-geom-rgb",
+        "r-seelike-v1-geom-plucker",
+        "r-seelike-v1-geom-plucker-depth",
+        "r-seelike-v1-geom-pointmap",
+        "r-seelike-v1-fusion-rgb",
+        "r-seelike-v1-fusion-pc-mlp",
+        "r-seelike-v1-fusion-pc-ptv3",
+        "r-seelike-v1-fusion-pm-concat",
+        "r-seelike-v1-fusion-pm-add",
+        "r-seelike-v1-view-rgb",
+        "r-seelike-v1-view-base",
+        "r-seelike-v1-view-ee",
+        "r-seelike-v1-pretrained-fp3",
+        "r-seelike-v1-pretrained-ocvla",
+        "r-seelike-v1-pretrained-kyc",
+        "r-seelike-v1-pretrained-geovla",
+        "r-seelike-v1-pretrained-pointvla",
+        "r-seelike-v1-pretrained-pi05",
+        "r-seelike-v1-pretrained-pi05-pm",
+        "r-seelike-v1-pretrained-smolvla",
+        "r-seelike-v1-pretrained-smolvla-pm",
+        "r-seelike-v1-real-dp3",
+        "r-seelike-v1-real-pi05",
+        "r-seelike-v1-real-pi05-pm"
+      ],
+      "note": "第十五批：新增24条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
+    },
+    "p012": {
+      "status": "extracted",
+      "trackIds": [
+        "ocvlapp-v1-maniskill2-ablation",
+        "ocvlapp-v1-real-dita-view",
+        "ocvlapp-v1-real-qwen-view"
+      ],
+      "resultIds": [
+        "r-ocvlapp-v1-maniskill-base",
+        "r-ocvlapp-v1-maniskill-synth",
+        "r-ocvlapp-v1-maniskill-equiv",
+        "r-ocvlapp-v1-maniskill-full",
+        "r-ocvlapp-v1-dita-ocvla",
+        "r-ocvlapp-v1-dita-plus",
+        "r-ocvlapp-v1-qwen-ocvla",
+        "r-ocvlapp-v1-qwen-plus"
+      ],
+      "note": "第十四批：新增8条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
+    },
+    "p013": {
+      "status": "extracted",
+      "trackIds": [
+        "colosseum-bridgepp-table3",
+        "rlbench-18-bridgepp-table1"
+      ],
+      "resultIds": [
+        "r-colosseum-bridgepp-table3-bridge",
+        "r-colosseum-bridgepp-table3-bridgepp",
+        "r-colosseum-bridgepp-table3-rvt2",
+        "r-rlbench-18-bridgepp-table1-3d-diffuser",
+        "r-rlbench-18-bridgepp-table1-act3d",
+        "r-rlbench-18-bridgepp-table1-bridge",
+        "r-rlbench-18-bridgepp-table1-bridgepp",
+        "r-rlbench-18-bridgepp-table1-peract",
+        "r-rlbench-18-bridgepp-table1-rvt",
+        "r-rlbench-18-bridgepp-table1-rvt2",
+        "r-rlbench-18-bridgepp-table1-sam2act"
+      ],
+      "note": "保留11条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p014": {
+      "status": "extracted",
+      "trackIds": [
+        "temporalflow-v1-libero-main",
+        "temporalflow-v1-robotwin12-ablation"
+      ],
+      "resultIds": [
+        "r-temporalflow-v1-libero-main",
+        "r-temporalflow-v1-rt12-base",
+        "r-temporalflow-v1-rt12-multiframe",
+        "r-temporalflow-v1-rt12-queries",
+        "r-temporalflow-v1-rt12-full"
+      ],
+      "note": "第十四批：新增5条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
+    },
+    "p015": {
+      "status": "extracted",
+      "trackIds": [
+        "onevomemory-v1-libero-long",
+        "onevomemory-v1-rmbench"
+      ],
+      "resultIds": [
+        "r-onevomemory-v1-long-base",
+        "r-onevomemory-v1-long-offline",
+        "r-onevomemory-v1-long-online",
+        "r-onevomemory-v1-rmbench-base",
+        "r-onevomemory-v1-rmbench-offline",
+        "r-onevomemory-v1-rmbench-online"
+      ],
+      "note": "第十四批：新增6条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
+    },
+    "p016": {
+      "status": "extracted",
+      "trackIds": [
+        "baton-v1-task-success",
+        "baton-v1-cumulative"
+      ],
+      "resultIds": [
+        "r-baton-v1-tsr-frame",
+        "r-baton-v1-csr-frame",
+        "r-baton-v1-tsr-harness",
+        "r-baton-v1-csr-harness",
+        "r-baton-v1-tsr-baton",
+        "r-baton-v1-csr-baton"
+      ],
+      "note": "最终24篇清理：6条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p017": {
       "status": "extracted",
@@ -37,149 +337,91 @@
       ],
       "note": "第十三批：明确版本原文/正式PDF复核，新增11条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
-    "p035": {
+    "p018": {
       "status": "extracted",
       "trackIds": [
-        "cotrain-v1-sim-unseen-final",
-        "cotrain-v1-real-language-final",
-        "cotrain-v1-ft-long-horizon"
+        "ponder-v2-robomme-base",
+        "ponder-v2-robomme-9x",
+        "ponder-v2-cognition-ablation"
       ],
       "resultIds": [
-        "r-cotrain-v1-sim-unseen-final",
-        "r-cotrain-v1-real-language-final",
-        "r-cotrain-v1-ft-long-final"
+        "r-ponder-v2-base-p9",
+        "r-ponder-v2-base-p08",
+        "r-ponder-v2-base-frame",
+        "r-ponder-v2-base-pi05",
+        "r-ponder-v2-9x-p9",
+        "r-ponder-v2-9x-frame",
+        "r-ponder-v2-ablate-full",
+        "r-ponder-v2-ablate-nodemo",
+        "r-ponder-v2-ablate-noground",
+        "r-ponder-v2-ablate-text"
       ],
-      "note": "第十三批：明确版本原文/正式PDF复核，新增3条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
+      "note": "最终24篇清理：10条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
-    "p052": {
+    "p019": {
       "status": "extracted",
       "trackIds": [
-        "google-real-rt1-v2-table2",
-        "google-real-rt1-v2-sim-transfer",
-        "google-real-rt1-v2-kuka-transfer"
+        "sparkvla-v1-task-sr",
+        "sparkvla-v1-stop-acc"
       ],
       "resultIds": [
-        "r-google-real-rt1-v2-table2-gato",
-        "r-google-real-rt1-v2-table2-bcz",
-        "r-google-real-rt1-v2-table2-bcz-xl",
-        "r-google-real-rt1-v2-table2-rt1",
-        "r-google-real-rt1-v2-sim-transfer-real",
-        "r-google-real-rt1-v2-sim-transfer-real-sim",
-        "r-google-real-rt1-v2-kuka-transfer-mixed",
-        "r-google-real-rt1-v2-kuka-transfer-edr",
-        "r-google-real-rt1-v2-kuka-transfer-kuka"
+        "r-spark-v1-sr-fixed",
+        "r-spark-v1-stop-fixed",
+        "r-spark-v1-sr-aqc",
+        "r-spark-v1-stop-aqc",
+        "r-spark-v1-sr-paired",
+        "r-spark-v1-stop-paired",
+        "r-spark-v1-sr-unified",
+        "r-spark-v1-stop-unified"
       ],
-      "note": "2026-09-19原文回补9条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
+      "note": "最终24篇清理：8条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
     },
-    "p047": {
+    "p020": {
       "status": "extracted",
       "trackIds": [
-        "ravens-cliport-corl21-test-1d",
-        "ravens-cliport-corl21-test-10d",
-        "ravens-cliport-corl21-test-100d",
-        "ravens-cliport-corl21-test-1000d"
+        "smile-v1-calvin-chain",
+        "smile-v1-calvin-action-time"
       ],
       "resultIds": [
-        "r-ravens-cliport-corl21-test-1d-transporter",
-        "r-ravens-cliport-corl21-test-1d-clip-only",
-        "r-ravens-cliport-corl21-test-1d-rn50-bert",
-        "r-ravens-cliport-corl21-test-1d-single",
-        "r-ravens-cliport-corl21-test-1d-multi",
-        "r-ravens-cliport-corl21-test-1d-multi-attr",
-        "r-ravens-cliport-corl21-test-10d-transporter",
-        "r-ravens-cliport-corl21-test-10d-clip-only",
-        "r-ravens-cliport-corl21-test-10d-rn50-bert",
-        "r-ravens-cliport-corl21-test-10d-single",
-        "r-ravens-cliport-corl21-test-10d-multi",
-        "r-ravens-cliport-corl21-test-10d-multi-attr",
-        "r-ravens-cliport-corl21-test-100d-transporter",
-        "r-ravens-cliport-corl21-test-100d-clip-only",
-        "r-ravens-cliport-corl21-test-100d-rn50-bert",
-        "r-ravens-cliport-corl21-test-100d-single",
-        "r-ravens-cliport-corl21-test-100d-multi",
-        "r-ravens-cliport-corl21-test-100d-multi-attr",
-        "r-ravens-cliport-corl21-test-1000d-transporter",
-        "r-ravens-cliport-corl21-test-1000d-clip-only",
-        "r-ravens-cliport-corl21-test-1000d-rn50-bert",
-        "r-ravens-cliport-corl21-test-1000d-single",
-        "r-ravens-cliport-corl21-test-1000d-multi",
-        "r-ravens-cliport-corl21-test-1000d-multi-attr"
+        "r-smile-v1-chain-dawn",
+        "r-smile-v1-time-dawn",
+        "r-smile-v1-chain-smile-dawn",
+        "r-smile-v1-time-smile-dawn",
+        "r-smile-v1-chain-vpp",
+        "r-smile-v1-time-vpp",
+        "r-smile-v1-chain-smile-vpp",
+        "r-smile-v1-time-smile-vpp"
       ],
-      "note": "第十批：完成所列原表24行与相应协议；原作者报告，非本站复现；未入榜附加实验另见审计。"
+      "note": "第十五批：新增8条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
     },
-    "p036": {
+    "p021": {
       "status": "extracted",
       "trackIds": [
-        "halo-rss26-sim-main",
-        "halo-rss26-real-main",
-        "halo-rss26-sim-memory-arch"
+        "robotwin2-selfwam-27500"
       ],
       "resultIds": [
-        "r-halo-rss26-sim-std",
-        "r-halo-rss26-sim-scene",
-        "r-halo-rss26-sim-sam2",
-        "r-halo-rss26-sim-remember",
-        "r-halo-rss26-sim-hand",
-        "r-halo-rss26-sim-merge",
-        "r-halo-rss26-sim-novqa",
-        "r-halo-rss26-sim-halo",
-        "r-halo-rss26-real-std",
-        "r-halo-rss26-real-halo",
-        "r-halo-rss26-arch-lstm",
-        "r-halo-rss26-arch-mamba",
-        "r-halo-rss26-arch-txl",
-        "r-halo-rss26-arch-window",
-        "r-halo-rss26-arch-strided",
-        "r-halo-rss26-arch-hier",
-        "r-halo-rss26-arch-gated",
-        "r-halo-rss26-arch-halo"
+        "r-robotwin2-selfwam-27500-fastwam",
+        "r-robotwin2-selfwam-27500-gigaworld-policy",
+        "r-robotwin2-selfwam-27500-motus",
+        "r-robotwin2-selfwam-27500-pi0",
+        "r-robotwin2-selfwam-27500-pi0-5",
+        "r-robotwin2-selfwam-27500-selfwam"
       ],
-      "note": "第十三批：明确版本原文/正式PDF复核，新增18条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
+      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
     },
-    "p066": {
+    "p022": {
       "status": "extracted",
       "trackIds": [
-        "robocasa365-official-100",
-        "robotwin2-official-2500clean-sft",
-        "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-multi-sr"
+        "stwam-v1-libero-plus-ablation"
       ],
       "resultIds": [
-        "r-robocasa365-official-100-pi0-2026-04-02",
-        "r-robotwin2-official-2500clean-sft-sft-pi0",
-        "r-robodojo-official-sim-multi-score-pi-0",
-        "r-robodojo-official-sim-multi-sr-pi-0"
+        "r-stwam-v1-ablate-fast",
+        "r-stwam-v1-ablate-dino",
+        "r-stwam-v1-ablate-dual",
+        "r-stwam-v1-ablate-history",
+        "r-stwam-v1-ablate-full"
       ],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV；Appendix A-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p062": {
-      "status": "extracted",
-      "trackIds": [
-        "droid-v2-real-figure8-id",
-        "droid-v2-real-figure8-ood",
-        "droid-v2-real-figure10-diversity"
-      ],
-      "resultIds": [
-        "r-droid-v2-real-figure8-id-target-only",
-        "r-droid-v2-real-figure8-id-oxe",
-        "r-droid-v2-real-figure8-id-droid",
-        "r-droid-v2-real-figure8-ood-target-only",
-        "r-droid-v2-real-figure8-ood-oxe",
-        "r-droid-v2-real-figure8-ood-droid",
-        "r-droid-v2-real-figure10-diversity-20-scenes",
-        "r-droid-v2-real-figure10-diversity-diverse"
-      ],
-      "note": "第九批：重读实际版本并补8条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
-    },
-    "p067": {
-      "status": "extracted",
-      "trackIds": [
-        "fast-v1-training-speedup"
-      ],
-      "resultIds": [
-        "r-fast-v1-train-speed"
-      ],
-      "note": "最终24篇清理：1条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
+      "note": "最终24篇清理：5条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
     },
     "p023": {
       "status": "extracted",
@@ -210,100 +452,15 @@
       ],
       "note": "第十三批：明确版本原文/正式PDF复核，新增16条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
     },
-    "p039": {
+    "p024": {
       "status": "extracted",
       "trackIds": [
-        "veritas-v1-simpler-ft-stack",
-        "veritas-v1-real-carrot50"
+        "robocasa365-official-101"
       ],
       "resultIds": [
-        "r-veritas-v1-stack-ft-base",
-        "r-veritas-v1-stack-ft-ft",
-        "r-veritas-v1-carrot50-auto",
-        "r-veritas-v1-carrot50-human"
+        "r-robocasa365-official-101-abot-m0-5-2026-06-29"
       ],
-      "note": "第十三批：明确版本原文/正式PDF复核，新增4条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
-    },
-    "p012": {
-      "status": "extracted",
-      "trackIds": [
-        "ocvlapp-v1-maniskill2-ablation",
-        "ocvlapp-v1-real-dita-view",
-        "ocvlapp-v1-real-qwen-view"
-      ],
-      "resultIds": [
-        "r-ocvlapp-v1-maniskill-base",
-        "r-ocvlapp-v1-maniskill-synth",
-        "r-ocvlapp-v1-maniskill-equiv",
-        "r-ocvlapp-v1-maniskill-full",
-        "r-ocvlapp-v1-dita-ocvla",
-        "r-ocvlapp-v1-dita-plus",
-        "r-ocvlapp-v1-qwen-ocvla",
-        "r-ocvlapp-v1-qwen-plus"
-      ],
-      "note": "第十四批：新增8条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
-    },
-    "p021": {
-      "status": "extracted",
-      "trackIds": [
-        "robotwin2-selfwam-27500"
-      ],
-      "resultIds": [
-        "r-robotwin2-selfwam-27500-fastwam",
-        "r-robotwin2-selfwam-27500-gigaworld-policy",
-        "r-robotwin2-selfwam-27500-motus",
-        "r-robotwin2-selfwam-27500-pi0",
-        "r-robotwin2-selfwam-27500-pi0-5",
-        "r-robotwin2-selfwam-27500-selfwam"
-      ],
-      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
-    },
-    "p032": {
-      "status": "extracted",
-      "trackIds": [
-        "deltoris-v1-hardware-speedup"
-      ],
-      "resultIds": [
-        "r-deltoris-v1-speed"
-      ],
-      "note": "最终24篇清理：1条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
-    },
-    "p014": {
-      "status": "extracted",
-      "trackIds": [
-        "temporalflow-v1-libero-main",
-        "temporalflow-v1-robotwin12-ablation"
-      ],
-      "resultIds": [
-        "r-temporalflow-v1-libero-main",
-        "r-temporalflow-v1-rt12-base",
-        "r-temporalflow-v1-rt12-multiframe",
-        "r-temporalflow-v1-rt12-queries",
-        "r-temporalflow-v1-rt12-full"
-      ],
-      "note": "第十四批：新增5条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
-    },
-    "p044": {
-      "status": "extracted",
-      "trackIds": [
-        "vlatouch-v2-real-manipulation",
-        "vlatouch-v2-real-interleaved",
-        "vlatouch-v2-property-decisions"
-      ],
-      "resultIds": [
-        "r-vlatouch-v2-real-manipulation-rdt",
-        "r-vlatouch-v2-real-manipulation-residual",
-        "r-vlatouch-v2-real-manipulation-interpolant",
-        "r-vlatouch-v2-real-manipulation-no-touch",
-        "r-vlatouch-v2-real-manipulation-no-vision",
-        "r-vlatouch-v2-real-interleaved-no-planning",
-        "r-vlatouch-v2-real-interleaved-no-control",
-        "r-vlatouch-v2-real-interleaved-full",
-        "r-vlatouch-v2-property-decisions-no-tactile",
-        "r-vlatouch-v2-property-decisions-raw-tactile",
-        "r-vlatouch-v2-property-decisions-structured"
-      ],
-      "note": "第十一批：完成所列原始结果11行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p025": {
       "status": "extracted",
@@ -323,17 +480,11 @@
       ],
       "note": "第十四批：新增8条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
     },
-    "p003": {
-      "status": "extracted",
-      "trackIds": [
-        "lumo2-v1-semantic-probe"
-      ],
-      "resultIds": [
-        "r-lumo2-v1-probe-dino",
-        "r-lumo2-v1-probe-stage1",
-        "r-lumo2-v1-probe-stage2"
-      ],
-      "note": "第十五批：新增3条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
+    "p026": {
+      "status": "not-applicable",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "本页为理论与证明范围解读；不从理论命题推导或补造机器人成功率。"
     },
     "p027": {
       "status": "extracted",
@@ -384,385 +535,93 @@
       ],
       "note": "第十二批：明确版本原文及原表核验，新增38条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
     },
-    "p031": {
+    "p028": {
       "status": "extracted",
       "trackIds": [
-        "embcpp-v2-vla-success",
-        "embcpp-v2-wam-block-latency"
+        "vlabench-actioncache-v2-pi05",
+        "vlabench-actioncache-v2-pi05-head",
+        "vlabench-actioncache-v2-gr00t",
+        "vlabench-actioncache-v2-gr00t-head",
+        "libero-actioncache-v2-pi05",
+        "libero-actioncache-v2-pi05-head",
+        "actioncache-v2-real-sausage",
+        "actioncache-v2-real-sausage-latency",
+        "actioncache-v2-real-close",
+        "actioncache-v2-real-close-latency",
+        "actioncache-v2-real-button",
+        "actioncache-v2-real-button-latency",
+        "vlabench-actioncache-v2-combination",
+        "vlabench-actioncache-v2-combination-latency"
       ],
       "resultIds": [
-        "r-embcpp-v2-success-hy",
-        "r-embcpp-v2-success-pi05",
-        "r-embcpp-v2-blocklat-py",
-        "r-embcpp-v2-blocklat-cpp"
+        "r-vlabench-actioncache-v2-pi05-base-full",
+        "r-vlabench-actioncache-v2-pi05-head-base-full",
+        "r-vlabench-actioncache-v2-pi05-base-one",
+        "r-vlabench-actioncache-v2-pi05-head-base-one",
+        "r-vlabench-actioncache-v2-pi05-efficient-two",
+        "r-vlabench-actioncache-v2-pi05-head-efficient-two",
+        "r-vlabench-actioncache-v2-pi05-efficient-one",
+        "r-vlabench-actioncache-v2-pi05-head-efficient-one",
+        "r-vlabench-actioncache-v2-pi05-falcon-first",
+        "r-vlabench-actioncache-v2-pi05-head-falcon-first",
+        "r-vlabench-actioncache-v2-pi05-falcon-second",
+        "r-vlabench-actioncache-v2-pi05-head-falcon-second",
+        "r-vlabench-actioncache-v2-pi05-cache-two",
+        "r-vlabench-actioncache-v2-pi05-head-cache-two",
+        "r-vlabench-actioncache-v2-pi05-cache-one",
+        "r-vlabench-actioncache-v2-pi05-head-cache-one",
+        "r-vlabench-actioncache-v2-pi05-cache-zero",
+        "r-vlabench-actioncache-v2-pi05-head-cache-zero",
+        "r-vlabench-actioncache-v2-gr00t-base-full",
+        "r-vlabench-actioncache-v2-gr00t-head-base-full",
+        "r-vlabench-actioncache-v2-gr00t-base-one",
+        "r-vlabench-actioncache-v2-gr00t-head-base-one",
+        "r-vlabench-actioncache-v2-gr00t-efficient-two",
+        "r-vlabench-actioncache-v2-gr00t-head-efficient-two",
+        "r-vlabench-actioncache-v2-gr00t-efficient-one",
+        "r-vlabench-actioncache-v2-gr00t-head-efficient-one",
+        "r-vlabench-actioncache-v2-gr00t-falcon-first",
+        "r-vlabench-actioncache-v2-gr00t-head-falcon-first",
+        "r-vlabench-actioncache-v2-gr00t-falcon-second",
+        "r-vlabench-actioncache-v2-gr00t-head-falcon-second",
+        "r-vlabench-actioncache-v2-gr00t-cache-two",
+        "r-vlabench-actioncache-v2-gr00t-head-cache-two",
+        "r-vlabench-actioncache-v2-gr00t-cache-one",
+        "r-vlabench-actioncache-v2-gr00t-head-cache-one",
+        "r-vlabench-actioncache-v2-gr00t-cache-zero",
+        "r-vlabench-actioncache-v2-gr00t-head-cache-zero",
+        "r-libero-actioncache-v2-pi05-base-full",
+        "r-libero-actioncache-v2-pi05-head-base-full",
+        "r-libero-actioncache-v2-pi05-base-one",
+        "r-libero-actioncache-v2-pi05-head-base-one",
+        "r-libero-actioncache-v2-pi05-cache-two",
+        "r-libero-actioncache-v2-pi05-head-cache-two",
+        "r-libero-actioncache-v2-pi05-cache-one",
+        "r-libero-actioncache-v2-pi05-head-cache-one",
+        "r-libero-actioncache-v2-pi05-cache-zero",
+        "r-libero-actioncache-v2-pi05-head-cache-zero",
+        "r-actioncache-v2-real-sausage-base",
+        "r-actioncache-v2-real-sausage-cache",
+        "r-actioncache-v2-real-sausage-latency-base",
+        "r-actioncache-v2-real-sausage-latency-cache",
+        "r-actioncache-v2-real-close-base",
+        "r-actioncache-v2-real-close-cache",
+        "r-actioncache-v2-real-close-latency-base",
+        "r-actioncache-v2-real-close-latency-cache",
+        "r-actioncache-v2-real-button-base",
+        "r-actioncache-v2-real-button-cache",
+        "r-actioncache-v2-real-button-latency-base",
+        "r-actioncache-v2-real-button-latency-cache",
+        "r-vlabench-actioncache-v2-combination-base",
+        "r-vlabench-actioncache-v2-combination-latency-base",
+        "r-vlabench-actioncache-v2-combination-vla-cache",
+        "r-vlabench-actioncache-v2-combination-latency-vla-cache",
+        "r-vlabench-actioncache-v2-combination-actioncache",
+        "r-vlabench-actioncache-v2-combination-latency-actioncache",
+        "r-vlabench-actioncache-v2-combination-both",
+        "r-vlabench-actioncache-v2-combination-latency-both"
       ],
-      "note": "最终24篇清理：4条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
-    },
-    "p058": {
-      "status": "extracted",
-      "trackIds": [
-        "google-real-rt2-v1-generalization",
-        "google-real-rt2-v1-emergent"
-      ],
-      "resultIds": [
-        "r-google-real-rt2-v1-generalization-r3m",
-        "r-google-real-rt2-v1-generalization-vc1",
-        "r-google-real-rt2-v1-generalization-rt1",
-        "r-google-real-rt2-v1-generalization-moo",
-        "r-google-real-rt2-v1-generalization-palix",
-        "r-google-real-rt2-v1-generalization-palme",
-        "r-google-real-rt2-v1-emergent-vc1",
-        "r-google-real-rt2-v1-emergent-rt1",
-        "r-google-real-rt2-v1-emergent-palix",
-        "r-google-real-rt2-v1-emergent-palme"
-      ],
-      "note": "2026-09-19原文回补10条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
-    },
-    "p002": {
-      "status": "extracted",
-      "trackIds": [
-        "vlaflow-v2-libero",
-        "vlaflow-v2-libero-plus",
-        "vlaflow-v2-simpler-widowx",
-        "vlaflow-v2-simpler-rt1"
-      ],
-      "resultIds": [
-        "r-vlaflow-v2-libero-pi-nopt",
-        "r-vlaflow-v2-lplus-pi-nopt",
-        "r-vlaflow-v2-widowx-pi-nopt",
-        "r-vlaflow-v2-rt1-pi-nopt",
-        "r-vlaflow-v2-libero-wpi-nopt",
-        "r-vlaflow-v2-lplus-wpi-nopt",
-        "r-vlaflow-v2-widowx-wpi-nopt",
-        "r-vlaflow-v2-rt1-wpi-nopt",
-        "r-vlaflow-v2-libero-pi-frozen",
-        "r-vlaflow-v2-lplus-pi-frozen",
-        "r-vlaflow-v2-widowx-pi-frozen",
-        "r-vlaflow-v2-rt1-pi-frozen",
-        "r-vlaflow-v2-libero-pi-full",
-        "r-vlaflow-v2-lplus-pi-full",
-        "r-vlaflow-v2-widowx-pi-full",
-        "r-vlaflow-v2-rt1-pi-full",
-        "r-vlaflow-v2-libero-lpi",
-        "r-vlaflow-v2-lplus-lpi",
-        "r-vlaflow-v2-widowx-lpi",
-        "r-vlaflow-v2-rt1-lpi",
-        "r-vlaflow-v2-libero-wpi",
-        "r-vlaflow-v2-lplus-wpi",
-        "r-vlaflow-v2-widowx-wpi",
-        "r-vlaflow-v2-rt1-wpi",
-        "r-vlaflow-v2-libero-lwpi",
-        "r-vlaflow-v2-lplus-lwpi",
-        "r-vlaflow-v2-widowx-lwpi",
-        "r-vlaflow-v2-rt1-lwpi"
-      ],
-      "note": "第十四批：新增28条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
-    },
-    "p011": {
-      "status": "extracted",
-      "trackIds": [
-        "seelike-v1-geometry-ablation",
-        "seelike-v1-fusion-ablation",
-        "seelike-v1-view-robustness",
-        "seelike-v1-pretrained-robocasa",
-        "seelike-v1-real-view"
-      ],
-      "resultIds": [
-        "r-seelike-v1-geom-rgb",
-        "r-seelike-v1-geom-plucker",
-        "r-seelike-v1-geom-plucker-depth",
-        "r-seelike-v1-geom-pointmap",
-        "r-seelike-v1-fusion-rgb",
-        "r-seelike-v1-fusion-pc-mlp",
-        "r-seelike-v1-fusion-pc-ptv3",
-        "r-seelike-v1-fusion-pm-concat",
-        "r-seelike-v1-fusion-pm-add",
-        "r-seelike-v1-view-rgb",
-        "r-seelike-v1-view-base",
-        "r-seelike-v1-view-ee",
-        "r-seelike-v1-pretrained-fp3",
-        "r-seelike-v1-pretrained-ocvla",
-        "r-seelike-v1-pretrained-kyc",
-        "r-seelike-v1-pretrained-geovla",
-        "r-seelike-v1-pretrained-pointvla",
-        "r-seelike-v1-pretrained-pi05",
-        "r-seelike-v1-pretrained-pi05-pm",
-        "r-seelike-v1-pretrained-smolvla",
-        "r-seelike-v1-pretrained-smolvla-pm",
-        "r-seelike-v1-real-dp3",
-        "r-seelike-v1-real-pi05",
-        "r-seelike-v1-real-pi05-pm"
-      ],
-      "note": "第十五批：新增24条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
-    },
-    "p001": {
-      "status": "extracted",
-      "trackIds": [
-        "robodojo-20260824-score",
-        "robodojo-20260824-sr",
-        "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-multi-sr"
-      ],
-      "resultIds": [
-        "r-robodojo-20260824-score-dm",
-        "r-robodojo-20260824-score-g05",
-        "r-robodojo-20260824-score-pi05",
-        "r-robodojo-20260824-score-vlact",
-        "r-robodojo-20260824-score-xiaomi",
-        "r-robodojo-20260824-sr-dm",
-        "r-robodojo-20260824-sr-g05",
-        "r-robodojo-20260824-sr-pi05",
-        "r-robodojo-20260824-sr-vlact",
-        "r-robodojo-20260824-sr-xiaomi",
-        "r-robodojo-official-sim-multi-score-vlact",
-        "r-robodojo-official-sim-multi-sr-vlact"
-      ],
-      "note": "保留10条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p074": {
-      "status": "extracted",
-      "trackIds": [
-        "calvin-abc-d-adapter-table6"
-      ],
-      "resultIds": [
-        "r-calvin-abc-d-adapter-table6-adapter",
-        "r-calvin-abc-d-adapter-table6-mode",
-        "r-calvin-abc-d-adapter-table6-oft",
-        "r-calvin-abc-d-adapter-table6-openvla",
-        "r-calvin-abc-d-adapter-table6-roboflamingo",
-        "r-calvin-abc-d-adapter-table6-seer-large",
-        "r-calvin-abc-d-adapter-table6-vpp"
-      ],
-      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
-    },
-    "p015": {
-      "status": "extracted",
-      "trackIds": [
-        "onevomemory-v1-libero-long",
-        "onevomemory-v1-rmbench"
-      ],
-      "resultIds": [
-        "r-onevomemory-v1-long-base",
-        "r-onevomemory-v1-long-offline",
-        "r-onevomemory-v1-long-online",
-        "r-onevomemory-v1-rmbench-base",
-        "r-onevomemory-v1-rmbench-offline",
-        "r-onevomemory-v1-rmbench-online"
-      ],
-      "note": "第十四批：新增6条源定位结果；主结果与消融按协议分轨，负面结果和真实0值保留；不表示全文数值穷尽或本站复现。"
-    },
-    "p004": {
-      "status": "extracted",
-      "trackIds": [
-        "robocasa24-xiaomi-300demos",
-        "robocasa365-xiaomi-50tasks",
-        "robocasa365-official-101",
-        "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-multi-sr"
-      ],
-      "resultIds": [
-        "r-robocasa24-xiaomi-300demos-xiaomi-robotics-1",
-        "r-robocasa365-xiaomi-50tasks-xiaomi-robotics-1",
-        "r-robocasa365-official-101-xiaomi-robotics-2026-07-08",
-        "r-robodojo-official-sim-multi-score-xiaomi-robotics-1",
-        "r-robodojo-official-sim-multi-sr-xiaomi-robotics-1"
-      ],
-      "note": "保留2条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p060": {
-      "status": "extracted",
-      "trackIds": [
-        "roboflamingo-iclr24-abcd-chain",
-        "roboflamingo-iclr24-abcd-five",
-        "roboflamingo-iclr24-abc-chain",
-        "roboflamingo-iclr24-abc-five",
-        "roboflamingo-iclr24-enriched-chain"
-      ],
-      "resultIds": [
-        "r-roboflamingo-abcd-chain-rf",
-        "r-roboflamingo-abcd-five-rf",
-        "r-roboflamingo-abcd-chain-hulc-full",
-        "r-roboflamingo-abcd-five-hulc-full",
-        "r-roboflamingo-abcd-chain-hulc-lang",
-        "r-roboflamingo-abcd-five-hulc-lang",
-        "r-roboflamingo-abcd-chain-rt1",
-        "r-roboflamingo-abcd-five-rt1",
-        "r-roboflamingo-abc-chain-rf",
-        "r-roboflamingo-abc-five-rf",
-        "r-roboflamingo-abc-chain-rt1",
-        "r-roboflamingo-abc-five-rt1",
-        "r-roboflamingo-abc-chain-hulc-full",
-        "r-roboflamingo-abc-five-hulc-full",
-        "r-roboflamingo-enriched-rf",
-        "r-roboflamingo-enriched-freeze",
-        "r-roboflamingo-enriched-hulc",
-        "r-roboflamingo-enriched-rt1"
-      ],
-      "note": "第十五批：新增18条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
-    },
-    "p048": {
-      "status": "extracted",
-      "trackIds": [
-        "calvin-original-v4-d-d-mtlc",
-        "calvin-original-v4-d-d-chain",
-        "calvin-original-v4-abcd-d-mtlc",
-        "calvin-original-v4-abcd-d-chain",
-        "calvin-original-v4-abc-d-mtlc",
-        "calvin-original-v4-abc-d-chain"
-      ],
-      "resultIds": [
-        "r-calvin-original-v4-d-d-mtlc-static",
-        "r-calvin-original-v4-d-d-mtlc-rgb-wrist",
-        "r-calvin-original-v4-d-d-mtlc-rgb-tactile",
-        "r-calvin-original-v4-d-d-mtlc-rgbd-wrist",
-        "r-calvin-original-v4-d-d-chain-static",
-        "r-calvin-original-v4-d-d-chain-rgb-wrist",
-        "r-calvin-original-v4-d-d-chain-rgb-tactile",
-        "r-calvin-original-v4-d-d-chain-rgbd-wrist",
-        "r-calvin-original-v4-abcd-d-mtlc-static",
-        "r-calvin-original-v4-abcd-d-mtlc-rgb-wrist",
-        "r-calvin-original-v4-abcd-d-mtlc-rgb-tactile",
-        "r-calvin-original-v4-abcd-d-mtlc-rgbd-wrist",
-        "r-calvin-original-v4-abcd-d-chain-static",
-        "r-calvin-original-v4-abcd-d-chain-rgb-wrist",
-        "r-calvin-original-v4-abcd-d-chain-rgb-tactile",
-        "r-calvin-original-v4-abcd-d-chain-rgbd-wrist",
-        "r-calvin-original-v4-abc-d-mtlc-static",
-        "r-calvin-original-v4-abc-d-mtlc-rgb-wrist",
-        "r-calvin-original-v4-abc-d-mtlc-rgb-tactile",
-        "r-calvin-original-v4-abc-d-mtlc-rgbd-wrist",
-        "r-calvin-original-v4-abc-d-chain-static",
-        "r-calvin-original-v4-abc-d-chain-rgb-wrist",
-        "r-calvin-original-v4-abc-d-chain-rgb-tactile",
-        "r-calvin-original-v4-abc-d-chain-rgbd-wrist"
-      ],
-      "note": "第九批：重读实际版本并补24条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
-    },
-    "p061": {
-      "status": "extracted",
-      "trackIds": [
-        "calvin-gr1-v2-abc-chain",
-        "calvin-gr1-v2-abcd-chain"
-      ],
-      "resultIds": [
-        "r-gr1-abc-hulc",
-        "r-gr1-abc-length",
-        "r-gr1-abc-rt1",
-        "r-gr1-abcd-hulc",
-        "r-gr1-abcd-length",
-        "r-gr1-abcd-rt1"
-      ],
-      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
-    },
-    "p045": {
-      "status": "extracted",
-      "trackIds": [
-        "gfvla-2026-basic-ops",
-        "gfvla-2026-overall-tsr"
-      ],
-      "resultIds": [
-        "r-gfvla-ops",
-        "r-gfvla-overall"
-      ],
-      "note": "最终24篇清理：2条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
-    },
-    "p078": {
-      "status": "extracted",
-      "trackIds": [
-        "robotwin2-official-2500clean-cotrain",
-        "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-multi-sr"
-      ],
-      "resultIds": [
-        "r-robotwin2-official-2500clean-cotrain-cotrain-fastwam",
-        "r-robodojo-official-sim-multi-score-fast-wam",
-        "r-robodojo-official-sim-multi-sr-fast-wam"
-      ],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p009": {
-      "status": "extracted",
-      "trackIds": [
-        "gwm-v1-libero",
-        "gwm-v1-libero-plus"
-      ],
-      "resultIds": [
-        "r-gwm-v1-libero-oft",
-        "r-gwm-v1-plus-oft",
-        "r-gwm-v1-libero-jepa",
-        "r-gwm-v1-plus-jepa",
-        "r-gwm-v1-libero-gwm",
-        "r-gwm-v1-plus-gwm"
-      ],
-      "note": "第十五批：新增6条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
-    },
-    "p020": {
-      "status": "extracted",
-      "trackIds": [
-        "smile-v1-calvin-chain",
-        "smile-v1-calvin-action-time"
-      ],
-      "resultIds": [
-        "r-smile-v1-chain-dawn",
-        "r-smile-v1-time-dawn",
-        "r-smile-v1-chain-smile-dawn",
-        "r-smile-v1-time-smile-dawn",
-        "r-smile-v1-chain-vpp",
-        "r-smile-v1-time-vpp",
-        "r-smile-v1-chain-smile-vpp",
-        "r-smile-v1-time-smile-vpp"
-      ],
-      "note": "第十五批：新增8条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
-    },
-    "p076": {
-      "status": "extracted",
-      "trackIds": [
-        "libero-cosmos-3seeds",
-        "robocasa24-cosmos-50demos",
-        "robocasa24-cosmos-table"
-      ],
-      "resultIds": [
-        "r-libero-cosmos-3seeds-cosmos-policy",
-        "r-robocasa24-cosmos-50demos-cosmos-policy",
-        "r-robocasa24-cosmos-table-cosmos-policy",
-        "r-robocasa24-cosmos-table-dp-vla",
-        "r-robocasa24-cosmos-table-flare",
-        "r-robocasa24-cosmos-table-gr00t-n1",
-        "r-robocasa24-cosmos-table-gr00t-n1-5",
-        "r-robocasa24-cosmos-table-gr00t-n1-5-hamlet",
-        "r-robocasa24-cosmos-table-gr00t-n1-dreamgen",
-        "r-robocasa24-cosmos-table-gr00t-n1-dust",
-        "r-robocasa24-cosmos-table-pi0",
-        "r-robocasa24-cosmos-table-uva",
-        "r-robocasa24-cosmos-table-uwm",
-        "r-robocasa24-cosmos-table-video-policy"
-      ],
-      "note": "保留14条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
-    },
-    "p049": {
-      "status": "extracted",
-      "trackIds": [
-        "google-real-bcz-heldout-1",
-        "google-real-bcz-heldout-4to5",
-        "google-real-bcz-train21",
-        "google-real-bcz-bottle-ablation",
-        "google-real-bcz-intervention"
-      ],
-      "resultIds": [
-        "r-google-real-bcz-heldout-1-language",
-        "r-google-real-bcz-heldout-4to5-language",
-        "r-google-real-bcz-heldout-4to5-video",
-        "r-google-real-bcz-train21-onehot",
-        "r-google-real-bcz-train21-language",
-        "r-google-real-bcz-train21-video",
-        "r-google-real-bcz-bottle-ablation-multi-language",
-        "r-google-real-bcz-bottle-ablation-multi-onehot",
-        "r-google-real-bcz-bottle-ablation-single",
-        "r-google-real-bcz-bottle-ablation-no-adaptive",
-        "r-google-real-bcz-intervention-expert",
-        "r-google-real-bcz-intervention-mixture"
-      ],
-      "note": "第十批：完成所列原表12行与相应协议；原作者报告，非本站复现；未入榜附加实验另见审计。"
+      "note": "第十二批：明确版本原文及原表核验，新增66条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
     },
     "p029": {
       "status": "extracted",
@@ -806,6 +665,261 @@
         "r-flashvla-v1-inference-latency-flash"
       ],
       "note": "第十二批：明确版本原文及原表核验，新增23条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
+    },
+    "p030": {
+      "status": "extracted",
+      "trackIds": [
+        "adavla-v2-libero-sr",
+        "adavla-v2-libero-latency"
+      ],
+      "resultIds": [
+        "r-adavla-v2-sr-b10",
+        "r-adavla-v2-lat-b10",
+        "r-adavla-v2-sr-pr-adp15",
+        "r-adavla-v2-lat-pr-adp15",
+        "r-adavla-v2-sr-svd-adp",
+        "r-adavla-v2-lat-svd-adp",
+        "r-adavla-v2-sr-fixed-adp",
+        "r-adavla-v2-lat-fixed-adp",
+        "r-adavla-v2-sr-noprun-adp",
+        "r-adavla-v2-lat-noprun-adp",
+        "r-adavla-v2-sr-pr-noadp",
+        "r-adavla-v2-lat-pr-noadp",
+        "r-adavla-v2-sr-pr-adp20",
+        "r-adavla-v2-lat-pr-adp20",
+        "r-adavla-v2-sr-pr-adp25",
+        "r-adavla-v2-lat-pr-adp25",
+        "r-adavla-v2-sr-b1",
+        "r-adavla-v2-lat-b1",
+        "r-adavla-v2-sr-b5",
+        "r-adavla-v2-lat-b5",
+        "r-adavla-v2-sr-brand",
+        "r-adavla-v2-lat-brand"
+      ],
+      "note": "最终24篇清理：22条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
+    },
+    "p031": {
+      "status": "extracted",
+      "trackIds": [
+        "embcpp-v2-vla-success",
+        "embcpp-v2-wam-block-latency"
+      ],
+      "resultIds": [
+        "r-embcpp-v2-success-hy",
+        "r-embcpp-v2-success-pi05",
+        "r-embcpp-v2-blocklat-py",
+        "r-embcpp-v2-blocklat-cpp"
+      ],
+      "note": "最终24篇清理：4条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
+    },
+    "p032": {
+      "status": "extracted",
+      "trackIds": [
+        "deltoris-v1-hardware-speedup"
+      ],
+      "resultIds": [
+        "r-deltoris-v1-speed"
+      ],
+      "note": "最终24篇清理：1条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
+    },
+    "p033": {
+      "status": "extracted",
+      "trackIds": [
+        "otql-v1-single-policy",
+        "otql-v1-pretrained-vla"
+      ],
+      "resultIds": [
+        "r-otql-single-before",
+        "r-otql-single-after",
+        "r-otql-vla-before",
+        "r-otql-vla-after"
+      ],
+      "note": "最终24篇清理：4条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+    },
+    "p034": {
+      "status": "extracted",
+      "trackIds": [
+        "robodojo-v3-sim-score",
+        "robodojo-v3-sim-sr",
+        "robodojo-v3-real-score",
+        "robodojo-v3-real-sr",
+        "robodojo-v3-randomization"
+      ],
+      "resultIds": [
+        "r-robodojo-v3-simscore-hy",
+        "r-robodojo-v3-simsr-hy",
+        "r-robodojo-v3-simscore-spatial",
+        "r-robodojo-v3-simsr-spatial",
+        "r-robodojo-v3-simscore-pi05",
+        "r-robodojo-v3-simsr-pi05",
+        "r-robodojo-v3-simscore-xvla",
+        "r-robodojo-v3-simsr-xvla",
+        "r-robodojo-v3-realscore-pi05",
+        "r-robodojo-v3-realsr-pi05",
+        "r-robodojo-v3-realscore-intern",
+        "r-robodojo-v3-realsr-intern",
+        "r-robodojo-v3-realscore-galaxea",
+        "r-robodojo-v3-realsr-galaxea",
+        "r-robodojo-v3-rand-hy",
+        "r-robodojo-v3-rand-spatial",
+        "r-robodojo-v3-rand-pi05"
+      ],
+      "note": "最终24篇清理：17条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+    },
+    "p035": {
+      "status": "extracted",
+      "trackIds": [
+        "cotrain-v1-sim-unseen-final",
+        "cotrain-v1-real-language-final",
+        "cotrain-v1-ft-long-horizon"
+      ],
+      "resultIds": [
+        "r-cotrain-v1-sim-unseen-final",
+        "r-cotrain-v1-real-language-final",
+        "r-cotrain-v1-ft-long-final"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增3条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
+    },
+    "p036": {
+      "status": "extracted",
+      "trackIds": [
+        "halo-rss26-sim-main",
+        "halo-rss26-real-main",
+        "halo-rss26-sim-memory-arch"
+      ],
+      "resultIds": [
+        "r-halo-rss26-sim-std",
+        "r-halo-rss26-sim-scene",
+        "r-halo-rss26-sim-sam2",
+        "r-halo-rss26-sim-remember",
+        "r-halo-rss26-sim-hand",
+        "r-halo-rss26-sim-merge",
+        "r-halo-rss26-sim-novqa",
+        "r-halo-rss26-sim-halo",
+        "r-halo-rss26-real-std",
+        "r-halo-rss26-real-halo",
+        "r-halo-rss26-arch-lstm",
+        "r-halo-rss26-arch-mamba",
+        "r-halo-rss26-arch-txl",
+        "r-halo-rss26-arch-window",
+        "r-halo-rss26-arch-strided",
+        "r-halo-rss26-arch-hier",
+        "r-halo-rss26-arch-gated",
+        "r-halo-rss26-arch-halo"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增18条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
+    },
+    "p037": {
+      "status": "extracted",
+      "trackIds": [
+        "lingbot-v2-robotwin",
+        "lingbot-v2-async"
+      ],
+      "resultIds": [
+        "r-lingbot-v2-rt-motus",
+        "r-lingbot-v2-rt-ling",
+        "r-lingbot-v2-async-sync",
+        "r-lingbot-v2-async-fdm",
+        "r-lingbot-v2-async-naive"
+      ],
+      "note": "最终24篇清理：5条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+    },
+    "p038": {
+      "status": "extracted",
+      "trackIds": [
+        "mimic-v2-simpler",
+        "mimic-v2-libero3"
+      ],
+      "resultIds": [
+        "r-mimic-v2-simpler-pi",
+        "r-mimic-v2-simpler-default",
+        "r-mimic-v2-simpler-tuned",
+        "r-mimic-v2-libero-pi",
+        "r-mimic-v2-libero-mimic",
+        "r-mimic-v2-libero-oft"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
+    },
+    "p039": {
+      "status": "extracted",
+      "trackIds": [
+        "veritas-v1-simpler-ft-stack",
+        "veritas-v1-real-carrot50"
+      ],
+      "resultIds": [
+        "r-veritas-v1-stack-ft-base",
+        "r-veritas-v1-stack-ft-ft",
+        "r-veritas-v1-carrot50-auto",
+        "r-veritas-v1-carrot50-human"
+      ],
+      "note": "第十三批：明确版本原文/正式PDF复核，新增4条结果；指标分轨，负面结果与未报告项保留；不从柱高、相对改进率或其他实验反推精确值。"
+    },
+    "p040": {
+      "status": "not-applicable",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "本页为理论与证明范围解读；不从理论命题推导或补造机器人成功率。"
+    },
+    "p041": {
+      "status": "extracted",
+      "trackIds": [
+        "legato-v2-main-score",
+        "legato-v2-main-time",
+        "legato-v2-main-nldlj",
+        "legato-v2-main-nsparc",
+        "legato-v2-main-rmse",
+        "legato-v2-later-n-sensitivity"
+      ],
+      "resultIds": [
+        "r-legato-v2-main-score-rtc",
+        "r-legato-v2-main-score-legato",
+        "r-legato-v2-main-time-rtc",
+        "r-legato-v2-main-time-legato",
+        "r-legato-v2-main-nldlj-rtc",
+        "r-legato-v2-main-nldlj-legato",
+        "r-legato-v2-main-nsparc-rtc",
+        "r-legato-v2-main-nsparc-legato",
+        "r-legato-v2-main-rmse-rtc",
+        "r-legato-v2-main-rmse-legato",
+        "r-legato-v2-main-score-training-rtc",
+        "r-legato-v2-main-time-training-rtc",
+        "r-legato-v2-main-nsparc-training-rtc",
+        "r-legato-v2-main-nldlj-training-rtc",
+        "r-legato-v2-main-time-one-shot",
+        "r-legato-v2-main-nsparc-one-shot",
+        "r-legato-v2-main-nldlj-one-shot",
+        "r-legato-v2-main-rmse-one-shot",
+        "r-legato-v2-later-n-sensitivity-no-cond",
+        "r-legato-v2-later-n-sensitivity-with-cond"
+      ],
+      "note": "第十二批：明确版本原文及原表核验，新增20条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
+    },
+    "p042": {
+      "status": "extracted",
+      "trackIds": [
+        "libero-infoentropy-v1-100",
+        "libero-infoentropy-v1-budget60",
+        "libero-infoentropy-v1-budget80",
+        "libero-infoentropy-v1-budget120",
+        "libero-infoentropy-v1-budget140"
+      ],
+      "resultIds": [
+        "r-libero-infoentropy-v1-100-openvla",
+        "r-libero-infoentropy-v1-100-sparsevlm",
+        "r-libero-infoentropy-v1-100-fastv",
+        "r-libero-infoentropy-v1-100-vla-cache",
+        "r-libero-infoentropy-v1-100-sp-vla",
+        "r-libero-infoentropy-v1-100-spec-vla",
+        "r-libero-infoentropy-v1-100-ours",
+        "r-libero-infoentropy-v1-100-visual",
+        "r-libero-infoentropy-v1-100-attention",
+        "r-libero-infoentropy-v1-100-static",
+        "r-libero-infoentropy-v1-budget60-ours",
+        "r-libero-infoentropy-v1-budget80-ours",
+        "r-libero-infoentropy-v1-budget120-ours",
+        "r-libero-infoentropy-v1-budget140-ours"
+      ],
+      "note": "第十二批：明确版本原文及原表核验，新增14条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
     },
     "p043": {
       "status": "extracted",
@@ -900,675 +1014,39 @@
       ],
       "note": "用户提供IEEE正式全文后完成最终复核：72条、13个paper-scoped设置；Tables I–VII与Fig.6精确值，保留负面单元格、INT4额外变量及摘要速度字符串歧义。"
     },
-    "p022": {
+    "p044": {
       "status": "extracted",
       "trackIds": [
-        "stwam-v1-libero-plus-ablation"
+        "vlatouch-v2-real-manipulation",
+        "vlatouch-v2-real-interleaved",
+        "vlatouch-v2-property-decisions"
       ],
       "resultIds": [
-        "r-stwam-v1-ablate-fast",
-        "r-stwam-v1-ablate-dino",
-        "r-stwam-v1-ablate-dual",
-        "r-stwam-v1-ablate-history",
-        "r-stwam-v1-ablate-full"
+        "r-vlatouch-v2-real-manipulation-rdt",
+        "r-vlatouch-v2-real-manipulation-residual",
+        "r-vlatouch-v2-real-manipulation-interpolant",
+        "r-vlatouch-v2-real-manipulation-no-touch",
+        "r-vlatouch-v2-real-manipulation-no-vision",
+        "r-vlatouch-v2-real-interleaved-no-planning",
+        "r-vlatouch-v2-real-interleaved-no-control",
+        "r-vlatouch-v2-real-interleaved-full",
+        "r-vlatouch-v2-property-decisions-no-tactile",
+        "r-vlatouch-v2-property-decisions-raw-tactile",
+        "r-vlatouch-v2-property-decisions-structured"
       ],
-      "note": "最终24篇清理：5条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
+      "note": "第十一批：完成所列原始结果11行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
     },
-    "p013": {
+    "p045": {
       "status": "extracted",
       "trackIds": [
-        "colosseum-bridgepp-table3",
-        "rlbench-18-bridgepp-table1"
+        "gfvla-2026-basic-ops",
+        "gfvla-2026-overall-tsr"
       ],
       "resultIds": [
-        "r-colosseum-bridgepp-table3-bridge",
-        "r-colosseum-bridgepp-table3-bridgepp",
-        "r-colosseum-bridgepp-table3-rvt2",
-        "r-rlbench-18-bridgepp-table1-3d-diffuser",
-        "r-rlbench-18-bridgepp-table1-act3d",
-        "r-rlbench-18-bridgepp-table1-bridge",
-        "r-rlbench-18-bridgepp-table1-bridgepp",
-        "r-rlbench-18-bridgepp-table1-peract",
-        "r-rlbench-18-bridgepp-table1-rvt",
-        "r-rlbench-18-bridgepp-table1-rvt2",
-        "r-rlbench-18-bridgepp-table1-sam2act"
-      ],
-      "note": "保留11条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
-    },
-    "p063": {
-      "status": "extracted",
-      "trackIds": [
-        "octo-real-v2-finetune",
-        "bridge-real-octo-v2-ablation",
-        "bridge-real-octo-v2-novel-env",
-        "bridge-real-octo-v2-novel-skill"
-      ],
-      "resultIds": [
-        "r-octo-real-v2-finetune-scratch",
-        "r-octo-real-v2-finetune-vc1",
-        "r-octo-real-v2-finetune-octo",
-        "r-bridge-real-octo-v2-ablation-octo",
-        "r-bridge-real-octo-v2-ablation-rtx-mix",
-        "r-bridge-real-octo-v2-ablation-bridge-only",
-        "r-bridge-real-octo-v2-ablation-discrete",
-        "r-bridge-real-octo-v2-ablation-mse",
-        "r-bridge-real-octo-v2-ablation-resnet",
-        "r-bridge-real-octo-v2-novel-env-octo-small",
-        "r-bridge-real-octo-v2-novel-skill-octo-small"
-      ],
-      "note": "2026-09-19第八批原文回补11条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
-    },
-    "p018": {
-      "status": "extracted",
-      "trackIds": [
-        "ponder-v2-robomme-base",
-        "ponder-v2-robomme-9x",
-        "ponder-v2-cognition-ablation"
-      ],
-      "resultIds": [
-        "r-ponder-v2-base-p9",
-        "r-ponder-v2-base-p08",
-        "r-ponder-v2-base-frame",
-        "r-ponder-v2-base-pi05",
-        "r-ponder-v2-9x-p9",
-        "r-ponder-v2-9x-frame",
-        "r-ponder-v2-ablate-full",
-        "r-ponder-v2-ablate-nodemo",
-        "r-ponder-v2-ablate-noground",
-        "r-ponder-v2-ablate-text"
-      ],
-      "note": "最终24篇清理：10条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
-    },
-    "p075": {
-      "status": "extracted",
-      "trackIds": [
-        "recap-v2-throughput-factor",
-        "recap-v2-targeted-failure-success"
-      ],
-      "resultIds": [
-        "r-recap-v2-throughput",
-        "r-recap-v2-targeted97"
+        "r-gfvla-ops",
+        "r-gfvla-overall"
       ],
       "note": "最终24篇清理：2条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
-    },
-    "p026": {
-      "status": "not-applicable",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "本页为理论与证明范围解读；不从理论命题推导或补造机器人成功率。"
-    },
-    "p068": {
-      "status": "extracted",
-      "trackIds": [
-        "simpler-spatialvla-v1-google-va",
-        "simpler-spatialvla-v1-google-vm",
-        "simpler-spatialvla-v1-widowx"
-      ],
-      "resultIds": [
-        "r-spatialvla-v1-va",
-        "r-spatialvla-v1-va-octo",
-        "r-spatialvla-v1-va-openvla",
-        "r-spatialvla-v1-vm",
-        "r-spatialvla-v1-vm-octo",
-        "r-spatialvla-v1-vm-openvla",
-        "r-spatialvla-v1-widowx",
-        "r-spatialvla-v1-widowx-octo",
-        "r-spatialvla-v1-widowx-openvla"
-      ],
-      "note": "保留9条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
-    },
-    "p055": {
-      "status": "extracted",
-      "trackIds": [
-        "kitchen-dp23-state-last10",
-        "pusht-dp23-image-coverage-last10",
-        "robomimic-dp23-image-mh-last10",
-        "robomimic-dp23-image-ph-best",
-        "robomimic-dp23-image-ph-last10",
-        "robocasa365-official-100",
-        "robotwin2-official-2500clean-sft"
-      ],
-      "resultIds": [
-        "r-dp23-kitchen-c",
-        "r-dp23-kitchen-lstm",
-        "r-dp23-kitchen-t",
-        "r-dp23-mh-last-c",
-        "r-dp23-mh-last-lstm",
-        "r-dp23-mh-last-t",
-        "r-dp23-ph-best-c",
-        "r-dp23-ph-best-lstm",
-        "r-dp23-ph-best-t",
-        "r-dp23-ph-last-c",
-        "r-dp23-ph-last-lstm",
-        "r-dp23-ph-last-t",
-        "r-dp23-pusht-last-c",
-        "r-dp23-pusht-last-lstm",
-        "r-dp23-pusht-last-t",
-        "r-robocasa365-official-100-dp-2026-04-02",
-        "r-robotwin2-official-2500clean-sft-sft-dp"
-      ],
-      "note": "保留15条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p042": {
-      "status": "extracted",
-      "trackIds": [
-        "libero-infoentropy-v1-100",
-        "libero-infoentropy-v1-budget60",
-        "libero-infoentropy-v1-budget80",
-        "libero-infoentropy-v1-budget120",
-        "libero-infoentropy-v1-budget140"
-      ],
-      "resultIds": [
-        "r-libero-infoentropy-v1-100-openvla",
-        "r-libero-infoentropy-v1-100-sparsevlm",
-        "r-libero-infoentropy-v1-100-fastv",
-        "r-libero-infoentropy-v1-100-vla-cache",
-        "r-libero-infoentropy-v1-100-sp-vla",
-        "r-libero-infoentropy-v1-100-spec-vla",
-        "r-libero-infoentropy-v1-100-ours",
-        "r-libero-infoentropy-v1-100-visual",
-        "r-libero-infoentropy-v1-100-attention",
-        "r-libero-infoentropy-v1-100-static",
-        "r-libero-infoentropy-v1-budget60-ours",
-        "r-libero-infoentropy-v1-budget80-ours",
-        "r-libero-infoentropy-v1-budget120-ours",
-        "r-libero-infoentropy-v1-budget140-ours"
-      ],
-      "note": "第十二批：明确版本原文及原表核验，新增14条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
-    },
-    "p008": {
-      "status": "extracted",
-      "trackIds": [
-        "meco-v1-robotwin",
-        "meco-v1-real-success",
-        "meco-v1-real-corrections"
-      ],
-      "resultIds": [
-        "r-meco-v1-rt-fast",
-        "r-meco-v1-rt-meco",
-        "r-meco-v1-real-fast",
-        "r-meco-v1-real-meco",
-        "r-meco-v1-corr-fast",
-        "r-meco-v1-corr-meco"
-      ],
-      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p069": {
-      "status": "extracted",
-      "trackIds": [
-        "libero-oft-multi-view",
-        "libero-oft-single-view",
-        "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-multi-sr"
-      ],
-      "resultIds": [
-        "r-libero-oft-multi-view-openvla-oft",
-        "r-libero-oft-single-view-openvla",
-        "r-libero-oft-single-view-openvla-pd-ac",
-        "r-libero-oft-single-view-openvla-pd-ac-diffusion",
-        "r-libero-oft-single-view-openvla-pd-ac-l1",
-        "r-robodojo-official-sim-multi-score-openvla-oft",
-        "r-robodojo-official-sim-multi-sr-openvla-oft"
-      ],
-      "note": "保留5条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p024": {
-      "status": "extracted",
-      "trackIds": [
-        "robocasa365-official-101"
-      ],
-      "resultIds": [
-        "r-robocasa365-official-101-abot-m0-5-2026-06-29"
-      ],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 2–3。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增1条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p071": {
-      "status": "extracted",
-      "trackIds": [
-        "gemini-er-v1-aloha2-sim"
-      ],
-      "resultIds": [
-        "r-gemini-er-v1-flash",
-        "r-gemini-er-v1-er"
-      ],
-      "note": "最终24篇清理：2条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p077": {
-      "status": "extracted",
-      "trackIds": [
-        "dreamzero-v1-progress",
-        "dreamzero-v1-latency"
-      ],
-      "resultIds": [
-        "r-dreamzero-v1-progress-4step",
-        "r-dreamzero-v1-lat-4step",
-        "r-dreamzero-v1-progress-1step",
-        "r-dreamzero-v1-lat-1step",
-        "r-dreamzero-v1-progress-flash",
-        "r-dreamzero-v1-lat-flash"
-      ],
-      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p057": {
-      "status": "extracted",
-      "trackIds": [
-        "libero-original-neurips23-fwt",
-        "libero-original-neurips23-nbt",
-        "libero-original-neurips23-auc"
-      ],
-      "resultIds": [
-        "r-libero-original-neurips23-fwt-er-resnet-rnn",
-        "r-libero-original-neurips23-fwt-packnet-resnet-rnn",
-        "r-libero-original-neurips23-fwt-er-resnet-t",
-        "r-libero-original-neurips23-fwt-packnet-resnet-t",
-        "r-libero-original-neurips23-fwt-er-vit-t",
-        "r-libero-original-neurips23-fwt-packnet-vit-t",
-        "r-libero-original-neurips23-fwt-seql-resnet-t",
-        "r-libero-original-neurips23-fwt-ewc-resnet-t",
-        "r-libero-original-neurips23-nbt-er-resnet-rnn",
-        "r-libero-original-neurips23-nbt-packnet-resnet-rnn",
-        "r-libero-original-neurips23-nbt-er-resnet-t",
-        "r-libero-original-neurips23-nbt-packnet-resnet-t",
-        "r-libero-original-neurips23-nbt-er-vit-t",
-        "r-libero-original-neurips23-nbt-packnet-vit-t",
-        "r-libero-original-neurips23-nbt-seql-resnet-t",
-        "r-libero-original-neurips23-nbt-ewc-resnet-t",
-        "r-libero-original-neurips23-auc-er-resnet-rnn",
-        "r-libero-original-neurips23-auc-packnet-resnet-rnn",
-        "r-libero-original-neurips23-auc-er-resnet-t",
-        "r-libero-original-neurips23-auc-packnet-resnet-t",
-        "r-libero-original-neurips23-auc-er-vit-t",
-        "r-libero-original-neurips23-auc-packnet-vit-t",
-        "r-libero-original-neurips23-auc-seql-resnet-t",
-        "r-libero-original-neurips23-auc-ewc-resnet-t"
-      ],
-      "note": "正式PDF Tables1–2核验24条（8种架构/算法×3指标）；重复ResNet-T表项不重复收录，NBT越低越好，FWT/AUC越高越好；无自造总体平均。"
-    },
-    "p030": {
-      "status": "extracted",
-      "trackIds": [
-        "adavla-v2-libero-sr",
-        "adavla-v2-libero-latency"
-      ],
-      "resultIds": [
-        "r-adavla-v2-sr-b10",
-        "r-adavla-v2-lat-b10",
-        "r-adavla-v2-sr-pr-adp15",
-        "r-adavla-v2-lat-pr-adp15",
-        "r-adavla-v2-sr-svd-adp",
-        "r-adavla-v2-lat-svd-adp",
-        "r-adavla-v2-sr-fixed-adp",
-        "r-adavla-v2-lat-fixed-adp",
-        "r-adavla-v2-sr-noprun-adp",
-        "r-adavla-v2-lat-noprun-adp",
-        "r-adavla-v2-sr-pr-noadp",
-        "r-adavla-v2-lat-pr-noadp",
-        "r-adavla-v2-sr-pr-adp20",
-        "r-adavla-v2-lat-pr-adp20",
-        "r-adavla-v2-sr-pr-adp25",
-        "r-adavla-v2-lat-pr-adp25",
-        "r-adavla-v2-sr-b1",
-        "r-adavla-v2-lat-b1",
-        "r-adavla-v2-sr-b5",
-        "r-adavla-v2-lat-b5",
-        "r-adavla-v2-sr-brand",
-        "r-adavla-v2-lat-brand"
-      ],
-      "note": "最终24篇清理：22条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p005": {
-      "status": "extracted",
-      "trackIds": [
-        "dyna2-2026-scaling",
-        "dyna2-2026-customer-pass"
-      ],
-      "resultIds": [
-        "r-dyna2-scale-1k",
-        "r-dyna2-scale-10k",
-        "r-dyna2-scale-100k",
-        "r-dyna2-scale-1m",
-        "r-dyna2-site-d1",
-        "r-dyna2-site-d2"
-      ],
-      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p028": {
-      "status": "extracted",
-      "trackIds": [
-        "vlabench-actioncache-v2-pi05",
-        "vlabench-actioncache-v2-pi05-head",
-        "vlabench-actioncache-v2-gr00t",
-        "vlabench-actioncache-v2-gr00t-head",
-        "libero-actioncache-v2-pi05",
-        "libero-actioncache-v2-pi05-head",
-        "actioncache-v2-real-sausage",
-        "actioncache-v2-real-sausage-latency",
-        "actioncache-v2-real-close",
-        "actioncache-v2-real-close-latency",
-        "actioncache-v2-real-button",
-        "actioncache-v2-real-button-latency",
-        "vlabench-actioncache-v2-combination",
-        "vlabench-actioncache-v2-combination-latency"
-      ],
-      "resultIds": [
-        "r-vlabench-actioncache-v2-pi05-base-full",
-        "r-vlabench-actioncache-v2-pi05-head-base-full",
-        "r-vlabench-actioncache-v2-pi05-base-one",
-        "r-vlabench-actioncache-v2-pi05-head-base-one",
-        "r-vlabench-actioncache-v2-pi05-efficient-two",
-        "r-vlabench-actioncache-v2-pi05-head-efficient-two",
-        "r-vlabench-actioncache-v2-pi05-efficient-one",
-        "r-vlabench-actioncache-v2-pi05-head-efficient-one",
-        "r-vlabench-actioncache-v2-pi05-falcon-first",
-        "r-vlabench-actioncache-v2-pi05-head-falcon-first",
-        "r-vlabench-actioncache-v2-pi05-falcon-second",
-        "r-vlabench-actioncache-v2-pi05-head-falcon-second",
-        "r-vlabench-actioncache-v2-pi05-cache-two",
-        "r-vlabench-actioncache-v2-pi05-head-cache-two",
-        "r-vlabench-actioncache-v2-pi05-cache-one",
-        "r-vlabench-actioncache-v2-pi05-head-cache-one",
-        "r-vlabench-actioncache-v2-pi05-cache-zero",
-        "r-vlabench-actioncache-v2-pi05-head-cache-zero",
-        "r-vlabench-actioncache-v2-gr00t-base-full",
-        "r-vlabench-actioncache-v2-gr00t-head-base-full",
-        "r-vlabench-actioncache-v2-gr00t-base-one",
-        "r-vlabench-actioncache-v2-gr00t-head-base-one",
-        "r-vlabench-actioncache-v2-gr00t-efficient-two",
-        "r-vlabench-actioncache-v2-gr00t-head-efficient-two",
-        "r-vlabench-actioncache-v2-gr00t-efficient-one",
-        "r-vlabench-actioncache-v2-gr00t-head-efficient-one",
-        "r-vlabench-actioncache-v2-gr00t-falcon-first",
-        "r-vlabench-actioncache-v2-gr00t-head-falcon-first",
-        "r-vlabench-actioncache-v2-gr00t-falcon-second",
-        "r-vlabench-actioncache-v2-gr00t-head-falcon-second",
-        "r-vlabench-actioncache-v2-gr00t-cache-two",
-        "r-vlabench-actioncache-v2-gr00t-head-cache-two",
-        "r-vlabench-actioncache-v2-gr00t-cache-one",
-        "r-vlabench-actioncache-v2-gr00t-head-cache-one",
-        "r-vlabench-actioncache-v2-gr00t-cache-zero",
-        "r-vlabench-actioncache-v2-gr00t-head-cache-zero",
-        "r-libero-actioncache-v2-pi05-base-full",
-        "r-libero-actioncache-v2-pi05-head-base-full",
-        "r-libero-actioncache-v2-pi05-base-one",
-        "r-libero-actioncache-v2-pi05-head-base-one",
-        "r-libero-actioncache-v2-pi05-cache-two",
-        "r-libero-actioncache-v2-pi05-head-cache-two",
-        "r-libero-actioncache-v2-pi05-cache-one",
-        "r-libero-actioncache-v2-pi05-head-cache-one",
-        "r-libero-actioncache-v2-pi05-cache-zero",
-        "r-libero-actioncache-v2-pi05-head-cache-zero",
-        "r-actioncache-v2-real-sausage-base",
-        "r-actioncache-v2-real-sausage-cache",
-        "r-actioncache-v2-real-sausage-latency-base",
-        "r-actioncache-v2-real-sausage-latency-cache",
-        "r-actioncache-v2-real-close-base",
-        "r-actioncache-v2-real-close-cache",
-        "r-actioncache-v2-real-close-latency-base",
-        "r-actioncache-v2-real-close-latency-cache",
-        "r-actioncache-v2-real-button-base",
-        "r-actioncache-v2-real-button-cache",
-        "r-actioncache-v2-real-button-latency-base",
-        "r-actioncache-v2-real-button-latency-cache",
-        "r-vlabench-actioncache-v2-combination-base",
-        "r-vlabench-actioncache-v2-combination-latency-base",
-        "r-vlabench-actioncache-v2-combination-vla-cache",
-        "r-vlabench-actioncache-v2-combination-latency-vla-cache",
-        "r-vlabench-actioncache-v2-combination-actioncache",
-        "r-vlabench-actioncache-v2-combination-latency-actioncache",
-        "r-vlabench-actioncache-v2-combination-both",
-        "r-vlabench-actioncache-v2-combination-latency-both"
-      ],
-      "note": "第十二批：明确版本原文及原表核验，新增66条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
-    },
-    "p051": {
-      "status": "extracted",
-      "trackIds": [
-        "rlbench-peract-100d"
-      ],
-      "resultIds": [
-        "r-peract-100-c2farm",
-        "r-peract-100-main",
-        "r-peract-100-no-language"
-      ],
-      "note": "保留3条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
-    },
-    "p038": {
-      "status": "extracted",
-      "trackIds": [
-        "mimic-v2-simpler",
-        "mimic-v2-libero3"
-      ],
-      "resultIds": [
-        "r-mimic-v2-simpler-pi",
-        "r-mimic-v2-simpler-default",
-        "r-mimic-v2-simpler-tuned",
-        "r-mimic-v2-libero-pi",
-        "r-mimic-v2-libero-mimic",
-        "r-mimic-v2-libero-oft"
-      ],
-      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p072": {
-      "status": "extracted",
-      "trackIds": [
-        "robocasa365-official-100",
-        "robotwin2-official-2500clean-cotrain",
-        "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-multi-sr"
-      ],
-      "resultIds": [
-        "r-robocasa365-official-100-pi05-2026-04-02",
-        "r-robotwin2-official-2500clean-cotrain-cotrain-pi-05",
-        "r-robodojo-official-sim-multi-score-pi-05",
-        "r-robodojo-official-sim-multi-sr-pi-05"
-      ],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p065": {
-      "status": "extracted",
-      "trackIds": [
-        "robotwin2-official-2500clean-sft",
-        "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-multi-sr"
-      ],
-      "resultIds": [
-        "r-robotwin2-official-2500clean-sft-sft-rdt",
-        "r-robodojo-official-sim-multi-score-rdt",
-        "r-robodojo-official-sim-multi-sr-rdt"
-      ],
-      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p059": {
-      "status": "extracted",
-      "trackIds": [
-        "bridge-real-rtx-v9-iris",
-        "bridge-real-rtx-v9-rail",
-        "google-real-rtx-v9-capacity",
-        "google-real-rtx-v9-emergent-generalization"
-      ],
-      "resultIds": [
-        "r-bridge-real-rtx-v9-iris-lcbc",
-        "r-bridge-real-rtx-v9-iris-rt1",
-        "r-bridge-real-rtx-v9-iris-rt1x",
-        "r-bridge-real-rtx-v9-iris-rt2x55b",
-        "r-bridge-real-rtx-v9-rail-lcbc",
-        "r-bridge-real-rtx-v9-rail-rt1",
-        "r-bridge-real-rtx-v9-rail-rt1x",
-        "r-bridge-real-rtx-v9-rail-rt2x55b",
-        "r-google-real-rtx-v9-capacity-rt1",
-        "r-google-real-rtx-v9-capacity-rt1x",
-        "r-google-real-rtx-v9-capacity-rt2x55b",
-        "r-google-real-rtx-v9-emergent-generalization-rt2",
-        "r-google-real-rtx-v9-emergent-generalization-rt2x55b",
-        "r-google-real-rtx-v9-emergent-generalization-no-bridge",
-        "r-google-real-rtx-v9-emergent-generalization-5b-history",
-        "r-google-real-rtx-v9-emergent-generalization-5b-no-history",
-        "r-google-real-rtx-v9-emergent-generalization-5b-scratch",
-        "r-google-real-rtx-v9-emergent-generalization-5b-no-co"
-      ],
-      "note": "2026-09-19第八批原文回补18条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
-    },
-    "p006": {
-      "status": "extracted",
-      "trackIds": [
-        "vlatalker-v1-libero"
-      ],
-      "resultIds": [
-        "r-vlatalker-v1-libero-gen",
-        "r-vlatalker-v1-libero-talker"
-      ],
-      "note": "最终24篇清理：2条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p019": {
-      "status": "extracted",
-      "trackIds": [
-        "sparkvla-v1-task-sr",
-        "sparkvla-v1-stop-acc"
-      ],
-      "resultIds": [
-        "r-spark-v1-sr-fixed",
-        "r-spark-v1-stop-fixed",
-        "r-spark-v1-sr-aqc",
-        "r-spark-v1-stop-aqc",
-        "r-spark-v1-sr-paired",
-        "r-spark-v1-stop-paired",
-        "r-spark-v1-sr-unified",
-        "r-spark-v1-stop-unified"
-      ],
-      "note": "最终24篇清理：8条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
-    },
-    "p053": {
-      "status": "extracted",
-      "trackIds": [
-        "unipi-neurips23-compositional",
-        "ravens-unipi-neurips23-transfer"
-      ],
-      "resultIds": [
-        "r-unipi-neurips23-compositional-state-bc",
-        "r-unipi-neurips23-compositional-image-bc",
-        "r-unipi-neurips23-compositional-image-tt",
-        "r-unipi-neurips23-compositional-diffuser",
-        "r-unipi-neurips23-compositional-unipi",
-        "r-unipi-neurips23-compositional-no-components",
-        "r-unipi-neurips23-compositional-frame-only",
-        "r-unipi-neurips23-compositional-frame-consistency",
-        "r-ravens-unipi-neurips23-transfer-state-bc",
-        "r-ravens-unipi-neurips23-transfer-image-bc",
-        "r-ravens-unipi-neurips23-transfer-image-tt",
-        "r-ravens-unipi-neurips23-transfer-diffuser",
-        "r-ravens-unipi-neurips23-transfer-unipi"
-      ],
-      "note": "第十一批：完成所列原始结果13行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
-    },
-    "p033": {
-      "status": "extracted",
-      "trackIds": [
-        "otql-v1-single-policy",
-        "otql-v1-pretrained-vla"
-      ],
-      "resultIds": [
-        "r-otql-single-before",
-        "r-otql-single-after",
-        "r-otql-vla-before",
-        "r-otql-vla-after"
-      ],
-      "note": "最终24篇清理：4条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
-    },
-    "p041": {
-      "status": "extracted",
-      "trackIds": [
-        "legato-v2-main-score",
-        "legato-v2-main-time",
-        "legato-v2-main-nldlj",
-        "legato-v2-main-nsparc",
-        "legato-v2-main-rmse",
-        "legato-v2-later-n-sensitivity"
-      ],
-      "resultIds": [
-        "r-legato-v2-main-score-rtc",
-        "r-legato-v2-main-score-legato",
-        "r-legato-v2-main-time-rtc",
-        "r-legato-v2-main-time-legato",
-        "r-legato-v2-main-nldlj-rtc",
-        "r-legato-v2-main-nldlj-legato",
-        "r-legato-v2-main-nsparc-rtc",
-        "r-legato-v2-main-nsparc-legato",
-        "r-legato-v2-main-rmse-rtc",
-        "r-legato-v2-main-rmse-legato",
-        "r-legato-v2-main-score-training-rtc",
-        "r-legato-v2-main-time-training-rtc",
-        "r-legato-v2-main-nsparc-training-rtc",
-        "r-legato-v2-main-nldlj-training-rtc",
-        "r-legato-v2-main-time-one-shot",
-        "r-legato-v2-main-nsparc-one-shot",
-        "r-legato-v2-main-nldlj-one-shot",
-        "r-legato-v2-main-rmse-one-shot",
-        "r-legato-v2-later-n-sensitivity-no-cond",
-        "r-legato-v2-later-n-sensitivity-with-cond"
-      ],
-      "note": "第十二批：明确版本原文及原表核验，新增20条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
-    },
-    "p007": {
-      "status": "extracted",
-      "trackIds": [
-        "track4action-v1-libero-plus",
-        "track4action-v1-real",
-        "track4action-v1-robotwin"
-      ],
-      "resultIds": [
-        "r-track4-v1-plus-base",
-        "r-track4-v1-plus-track",
-        "r-track4-v1-real-base",
-        "r-track4-v1-real-track",
-        "r-track4-v1-robotwin"
-      ],
-      "note": "最终24篇清理：5条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
-    },
-    "p050": {
-      "status": "extracted",
-      "trackIds": [
-        "google-real-saycan-v2-mock-plan",
-        "google-real-saycan-v2-mock-execute",
-        "google-real-saycan-v2-office-plan",
-        "google-real-saycan-v2-office-execute"
-      ],
-      "resultIds": [
-        "r-google-real-saycan-v2-mock-plan-palm",
-        "r-google-real-saycan-v2-mock-plan-no-vf",
-        "r-google-real-saycan-v2-mock-plan-generative",
-        "r-google-real-saycan-v2-mock-plan-flan",
-        "r-google-real-saycan-v2-mock-execute-palm",
-        "r-google-real-saycan-v2-mock-execute-bc-nl",
-        "r-google-real-saycan-v2-mock-execute-bc-use",
-        "r-google-real-saycan-v2-mock-execute-flan",
-        "r-google-real-saycan-v2-office-plan-palm",
-        "r-google-real-saycan-v2-office-execute-palm"
-      ],
-      "note": "第九批：重读实际版本并补10条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
-    },
-    "p040": {
-      "status": "not-applicable",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "本页为理论与证明范围解读；不从理论命题推导或补造机器人成功率。"
-    },
-    "p010": {
-      "status": "extracted",
-      "trackIds": [
-        "w2vla-v1-libero",
-        "w2vla-v1-robotwin2500",
-        "w2vla-v1-chunk-latency"
-      ],
-      "resultIds": [
-        "r-w2vla-v1-libero-w2",
-        "r-w2vla-v1-libero-star",
-        "r-w2vla-v1-rt-w2",
-        "r-w2vla-v1-rt-up",
-        "r-w2vla-v1-lat-w2",
-        "r-w2vla-v1-lat-pi0",
-        "r-w2vla-v1-lat-jepa"
-      ],
-      "note": "最终24篇清理：7条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
     },
     "p046": {
       "status": "extracted",
@@ -1613,6 +1091,182 @@
       ],
       "note": "用户提供ScienceDirect正式全文后完成最终复核：29条、6个paper-scoped设置；Tables 3–6精确值，成功对象数/时间/人工交互分轨，缺失项保持null。"
     },
+    "p047": {
+      "status": "extracted",
+      "trackIds": [
+        "ravens-cliport-corl21-test-1d",
+        "ravens-cliport-corl21-test-10d",
+        "ravens-cliport-corl21-test-100d",
+        "ravens-cliport-corl21-test-1000d"
+      ],
+      "resultIds": [
+        "r-ravens-cliport-corl21-test-1d-transporter",
+        "r-ravens-cliport-corl21-test-1d-clip-only",
+        "r-ravens-cliport-corl21-test-1d-rn50-bert",
+        "r-ravens-cliport-corl21-test-1d-single",
+        "r-ravens-cliport-corl21-test-1d-multi",
+        "r-ravens-cliport-corl21-test-1d-multi-attr",
+        "r-ravens-cliport-corl21-test-10d-transporter",
+        "r-ravens-cliport-corl21-test-10d-clip-only",
+        "r-ravens-cliport-corl21-test-10d-rn50-bert",
+        "r-ravens-cliport-corl21-test-10d-single",
+        "r-ravens-cliport-corl21-test-10d-multi",
+        "r-ravens-cliport-corl21-test-10d-multi-attr",
+        "r-ravens-cliport-corl21-test-100d-transporter",
+        "r-ravens-cliport-corl21-test-100d-clip-only",
+        "r-ravens-cliport-corl21-test-100d-rn50-bert",
+        "r-ravens-cliport-corl21-test-100d-single",
+        "r-ravens-cliport-corl21-test-100d-multi",
+        "r-ravens-cliport-corl21-test-100d-multi-attr",
+        "r-ravens-cliport-corl21-test-1000d-transporter",
+        "r-ravens-cliport-corl21-test-1000d-clip-only",
+        "r-ravens-cliport-corl21-test-1000d-rn50-bert",
+        "r-ravens-cliport-corl21-test-1000d-single",
+        "r-ravens-cliport-corl21-test-1000d-multi",
+        "r-ravens-cliport-corl21-test-1000d-multi-attr"
+      ],
+      "note": "第十批：完成所列原表24行与相应协议；原作者报告，非本站复现；未入榜附加实验另见审计。"
+    },
+    "p048": {
+      "status": "extracted",
+      "trackIds": [
+        "calvin-original-v4-d-d-mtlc",
+        "calvin-original-v4-d-d-chain",
+        "calvin-original-v4-abcd-d-mtlc",
+        "calvin-original-v4-abcd-d-chain",
+        "calvin-original-v4-abc-d-mtlc",
+        "calvin-original-v4-abc-d-chain"
+      ],
+      "resultIds": [
+        "r-calvin-original-v4-d-d-mtlc-static",
+        "r-calvin-original-v4-d-d-mtlc-rgb-wrist",
+        "r-calvin-original-v4-d-d-mtlc-rgb-tactile",
+        "r-calvin-original-v4-d-d-mtlc-rgbd-wrist",
+        "r-calvin-original-v4-d-d-chain-static",
+        "r-calvin-original-v4-d-d-chain-rgb-wrist",
+        "r-calvin-original-v4-d-d-chain-rgb-tactile",
+        "r-calvin-original-v4-d-d-chain-rgbd-wrist",
+        "r-calvin-original-v4-abcd-d-mtlc-static",
+        "r-calvin-original-v4-abcd-d-mtlc-rgb-wrist",
+        "r-calvin-original-v4-abcd-d-mtlc-rgb-tactile",
+        "r-calvin-original-v4-abcd-d-mtlc-rgbd-wrist",
+        "r-calvin-original-v4-abcd-d-chain-static",
+        "r-calvin-original-v4-abcd-d-chain-rgb-wrist",
+        "r-calvin-original-v4-abcd-d-chain-rgb-tactile",
+        "r-calvin-original-v4-abcd-d-chain-rgbd-wrist",
+        "r-calvin-original-v4-abc-d-mtlc-static",
+        "r-calvin-original-v4-abc-d-mtlc-rgb-wrist",
+        "r-calvin-original-v4-abc-d-mtlc-rgb-tactile",
+        "r-calvin-original-v4-abc-d-mtlc-rgbd-wrist",
+        "r-calvin-original-v4-abc-d-chain-static",
+        "r-calvin-original-v4-abc-d-chain-rgb-wrist",
+        "r-calvin-original-v4-abc-d-chain-rgb-tactile",
+        "r-calvin-original-v4-abc-d-chain-rgbd-wrist"
+      ],
+      "note": "第九批：重读实际版本并补24条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
+    },
+    "p049": {
+      "status": "extracted",
+      "trackIds": [
+        "google-real-bcz-heldout-1",
+        "google-real-bcz-heldout-4to5",
+        "google-real-bcz-train21",
+        "google-real-bcz-bottle-ablation",
+        "google-real-bcz-intervention"
+      ],
+      "resultIds": [
+        "r-google-real-bcz-heldout-1-language",
+        "r-google-real-bcz-heldout-4to5-language",
+        "r-google-real-bcz-heldout-4to5-video",
+        "r-google-real-bcz-train21-onehot",
+        "r-google-real-bcz-train21-language",
+        "r-google-real-bcz-train21-video",
+        "r-google-real-bcz-bottle-ablation-multi-language",
+        "r-google-real-bcz-bottle-ablation-multi-onehot",
+        "r-google-real-bcz-bottle-ablation-single",
+        "r-google-real-bcz-bottle-ablation-no-adaptive",
+        "r-google-real-bcz-intervention-expert",
+        "r-google-real-bcz-intervention-mixture"
+      ],
+      "note": "第十批：完成所列原表12行与相应协议；原作者报告，非本站复现；未入榜附加实验另见审计。"
+    },
+    "p050": {
+      "status": "extracted",
+      "trackIds": [
+        "google-real-saycan-v2-mock-plan",
+        "google-real-saycan-v2-mock-execute",
+        "google-real-saycan-v2-office-plan",
+        "google-real-saycan-v2-office-execute"
+      ],
+      "resultIds": [
+        "r-google-real-saycan-v2-mock-plan-palm",
+        "r-google-real-saycan-v2-mock-plan-no-vf",
+        "r-google-real-saycan-v2-mock-plan-generative",
+        "r-google-real-saycan-v2-mock-plan-flan",
+        "r-google-real-saycan-v2-mock-execute-palm",
+        "r-google-real-saycan-v2-mock-execute-bc-nl",
+        "r-google-real-saycan-v2-mock-execute-bc-use",
+        "r-google-real-saycan-v2-mock-execute-flan",
+        "r-google-real-saycan-v2-office-plan-palm",
+        "r-google-real-saycan-v2-office-execute-palm"
+      ],
+      "note": "第九批：重读实际版本并补10条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
+    },
+    "p051": {
+      "status": "extracted",
+      "trackIds": [
+        "rlbench-peract-100d"
+      ],
+      "resultIds": [
+        "r-peract-100-c2farm",
+        "r-peract-100-main",
+        "r-peract-100-no-language"
+      ],
+      "note": "保留3条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p052": {
+      "status": "extracted",
+      "trackIds": [
+        "google-real-rt1-v2-table2",
+        "google-real-rt1-v2-sim-transfer",
+        "google-real-rt1-v2-kuka-transfer"
+      ],
+      "resultIds": [
+        "r-google-real-rt1-v2-table2-gato",
+        "r-google-real-rt1-v2-table2-bcz",
+        "r-google-real-rt1-v2-table2-bcz-xl",
+        "r-google-real-rt1-v2-table2-rt1",
+        "r-google-real-rt1-v2-sim-transfer-real",
+        "r-google-real-rt1-v2-sim-transfer-real-sim",
+        "r-google-real-rt1-v2-kuka-transfer-mixed",
+        "r-google-real-rt1-v2-kuka-transfer-edr",
+        "r-google-real-rt1-v2-kuka-transfer-kuka"
+      ],
+      "note": "2026-09-19原文回补9条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
+    },
+    "p053": {
+      "status": "extracted",
+      "trackIds": [
+        "unipi-neurips23-compositional",
+        "ravens-unipi-neurips23-transfer"
+      ],
+      "resultIds": [
+        "r-unipi-neurips23-compositional-state-bc",
+        "r-unipi-neurips23-compositional-image-bc",
+        "r-unipi-neurips23-compositional-image-tt",
+        "r-unipi-neurips23-compositional-diffuser",
+        "r-unipi-neurips23-compositional-unipi",
+        "r-unipi-neurips23-compositional-no-components",
+        "r-unipi-neurips23-compositional-frame-only",
+        "r-unipi-neurips23-compositional-frame-consistency",
+        "r-ravens-unipi-neurips23-transfer-state-bc",
+        "r-ravens-unipi-neurips23-transfer-image-bc",
+        "r-ravens-unipi-neurips23-transfer-image-tt",
+        "r-ravens-unipi-neurips23-transfer-diffuser",
+        "r-ravens-unipi-neurips23-transfer-unipi"
+      ],
+      "note": "第十一批：完成所列原始结果13行与相应协议；作者报告非本站复现；未入榜的代理/中间阶段或附录指标另见审计。"
+    },
     "p054": {
       "status": "extracted",
       "trackIds": [
@@ -1642,6 +1296,38 @@
       ],
       "note": "2026-09-19原文回补18条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
     },
+    "p055": {
+      "status": "extracted",
+      "trackIds": [
+        "kitchen-dp23-state-last10",
+        "pusht-dp23-image-coverage-last10",
+        "robomimic-dp23-image-mh-last10",
+        "robomimic-dp23-image-ph-best",
+        "robomimic-dp23-image-ph-last10",
+        "robocasa365-official-100",
+        "robotwin2-official-2500clean-sft"
+      ],
+      "resultIds": [
+        "r-dp23-kitchen-c",
+        "r-dp23-kitchen-lstm",
+        "r-dp23-kitchen-t",
+        "r-dp23-mh-last-c",
+        "r-dp23-mh-last-lstm",
+        "r-dp23-mh-last-t",
+        "r-dp23-ph-best-c",
+        "r-dp23-ph-best-lstm",
+        "r-dp23-ph-best-t",
+        "r-dp23-ph-last-c",
+        "r-dp23-ph-last-lstm",
+        "r-dp23-ph-last-t",
+        "r-dp23-pusht-last-c",
+        "r-dp23-pusht-last-lstm",
+        "r-dp23-pusht-last-t",
+        "r-robocasa365-official-100-dp-2026-04-02",
+        "r-robotwin2-official-2500clean-sft-sft-dp"
+      ],
+      "note": "保留15条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
     "p056": {
       "status": "extracted",
       "trackIds": [
@@ -1664,51 +1350,270 @@
       ],
       "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
-    "p034": {
+    "p057": {
       "status": "extracted",
       "trackIds": [
-        "robodojo-v3-sim-score",
-        "robodojo-v3-sim-sr",
-        "robodojo-v3-real-score",
-        "robodojo-v3-real-sr",
-        "robodojo-v3-randomization"
+        "libero-original-neurips23-fwt",
+        "libero-original-neurips23-nbt",
+        "libero-original-neurips23-auc"
       ],
       "resultIds": [
-        "r-robodojo-v3-simscore-hy",
-        "r-robodojo-v3-simsr-hy",
-        "r-robodojo-v3-simscore-spatial",
-        "r-robodojo-v3-simsr-spatial",
-        "r-robodojo-v3-simscore-pi05",
-        "r-robodojo-v3-simsr-pi05",
-        "r-robodojo-v3-simscore-xvla",
-        "r-robodojo-v3-simsr-xvla",
-        "r-robodojo-v3-realscore-pi05",
-        "r-robodojo-v3-realsr-pi05",
-        "r-robodojo-v3-realscore-intern",
-        "r-robodojo-v3-realsr-intern",
-        "r-robodojo-v3-realscore-galaxea",
-        "r-robodojo-v3-realsr-galaxea",
-        "r-robodojo-v3-rand-hy",
-        "r-robodojo-v3-rand-spatial",
-        "r-robodojo-v3-rand-pi05"
+        "r-libero-original-neurips23-fwt-er-resnet-rnn",
+        "r-libero-original-neurips23-fwt-packnet-resnet-rnn",
+        "r-libero-original-neurips23-fwt-er-resnet-t",
+        "r-libero-original-neurips23-fwt-packnet-resnet-t",
+        "r-libero-original-neurips23-fwt-er-vit-t",
+        "r-libero-original-neurips23-fwt-packnet-vit-t",
+        "r-libero-original-neurips23-fwt-seql-resnet-t",
+        "r-libero-original-neurips23-fwt-ewc-resnet-t",
+        "r-libero-original-neurips23-nbt-er-resnet-rnn",
+        "r-libero-original-neurips23-nbt-packnet-resnet-rnn",
+        "r-libero-original-neurips23-nbt-er-resnet-t",
+        "r-libero-original-neurips23-nbt-packnet-resnet-t",
+        "r-libero-original-neurips23-nbt-er-vit-t",
+        "r-libero-original-neurips23-nbt-packnet-vit-t",
+        "r-libero-original-neurips23-nbt-seql-resnet-t",
+        "r-libero-original-neurips23-nbt-ewc-resnet-t",
+        "r-libero-original-neurips23-auc-er-resnet-rnn",
+        "r-libero-original-neurips23-auc-packnet-resnet-rnn",
+        "r-libero-original-neurips23-auc-er-resnet-t",
+        "r-libero-original-neurips23-auc-packnet-resnet-t",
+        "r-libero-original-neurips23-auc-er-vit-t",
+        "r-libero-original-neurips23-auc-packnet-vit-t",
+        "r-libero-original-neurips23-auc-seql-resnet-t",
+        "r-libero-original-neurips23-auc-ewc-resnet-t"
       ],
-      "note": "最终24篇清理：17条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+      "note": "正式PDF Tables1–2核验24条（8种架构/算法×3指标）；重复ResNet-T表项不重复收录，NBT越低越好，FWT/AUC越高越好；无自造总体平均。"
     },
-    "p016": {
+    "p058": {
       "status": "extracted",
       "trackIds": [
-        "baton-v1-task-success",
-        "baton-v1-cumulative"
+        "google-real-rt2-v1-generalization",
+        "google-real-rt2-v1-emergent"
       ],
       "resultIds": [
-        "r-baton-v1-tsr-frame",
-        "r-baton-v1-csr-frame",
-        "r-baton-v1-tsr-harness",
-        "r-baton-v1-csr-harness",
-        "r-baton-v1-tsr-baton",
-        "r-baton-v1-csr-baton"
+        "r-google-real-rt2-v1-generalization-r3m",
+        "r-google-real-rt2-v1-generalization-vc1",
+        "r-google-real-rt2-v1-generalization-rt1",
+        "r-google-real-rt2-v1-generalization-moo",
+        "r-google-real-rt2-v1-generalization-palix",
+        "r-google-real-rt2-v1-generalization-palme",
+        "r-google-real-rt2-v1-emergent-vc1",
+        "r-google-real-rt2-v1-emergent-rt1",
+        "r-google-real-rt2-v1-emergent-palix",
+        "r-google-real-rt2-v1-emergent-palme"
       ],
-      "note": "最终24篇清理：6条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+      "note": "2026-09-19原文回补10条，分离真实/模拟、执行/准确率/F1及训练设置；作者报告非本站复现。未提取其他原表不声称全文数值穷尽。"
+    },
+    "p059": {
+      "status": "extracted",
+      "trackIds": [
+        "bridge-real-rtx-v9-iris",
+        "bridge-real-rtx-v9-rail",
+        "google-real-rtx-v9-capacity",
+        "google-real-rtx-v9-emergent-generalization"
+      ],
+      "resultIds": [
+        "r-bridge-real-rtx-v9-iris-lcbc",
+        "r-bridge-real-rtx-v9-iris-rt1",
+        "r-bridge-real-rtx-v9-iris-rt1x",
+        "r-bridge-real-rtx-v9-iris-rt2x55b",
+        "r-bridge-real-rtx-v9-rail-lcbc",
+        "r-bridge-real-rtx-v9-rail-rt1",
+        "r-bridge-real-rtx-v9-rail-rt1x",
+        "r-bridge-real-rtx-v9-rail-rt2x55b",
+        "r-google-real-rtx-v9-capacity-rt1",
+        "r-google-real-rtx-v9-capacity-rt1x",
+        "r-google-real-rtx-v9-capacity-rt2x55b",
+        "r-google-real-rtx-v9-emergent-generalization-rt2",
+        "r-google-real-rtx-v9-emergent-generalization-rt2x55b",
+        "r-google-real-rtx-v9-emergent-generalization-no-bridge",
+        "r-google-real-rtx-v9-emergent-generalization-5b-history",
+        "r-google-real-rtx-v9-emergent-generalization-5b-no-history",
+        "r-google-real-rtx-v9-emergent-generalization-5b-scratch",
+        "r-google-real-rtx-v9-emergent-generalization-5b-no-co"
+      ],
+      "note": "2026-09-19第八批原文回补18条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
+    },
+    "p060": {
+      "status": "extracted",
+      "trackIds": [
+        "roboflamingo-iclr24-abcd-chain",
+        "roboflamingo-iclr24-abcd-five",
+        "roboflamingo-iclr24-abc-chain",
+        "roboflamingo-iclr24-abc-five",
+        "roboflamingo-iclr24-enriched-chain"
+      ],
+      "resultIds": [
+        "r-roboflamingo-abcd-chain-rf",
+        "r-roboflamingo-abcd-five-rf",
+        "r-roboflamingo-abcd-chain-hulc-full",
+        "r-roboflamingo-abcd-five-hulc-full",
+        "r-roboflamingo-abcd-chain-hulc-lang",
+        "r-roboflamingo-abcd-five-hulc-lang",
+        "r-roboflamingo-abcd-chain-rt1",
+        "r-roboflamingo-abcd-five-rt1",
+        "r-roboflamingo-abc-chain-rf",
+        "r-roboflamingo-abc-five-rf",
+        "r-roboflamingo-abc-chain-rt1",
+        "r-roboflamingo-abc-five-rt1",
+        "r-roboflamingo-abc-chain-hulc-full",
+        "r-roboflamingo-abc-five-hulc-full",
+        "r-roboflamingo-enriched-rf",
+        "r-roboflamingo-enriched-freeze",
+        "r-roboflamingo-enriched-hulc",
+        "r-roboflamingo-enriched-rt1"
+      ],
+      "note": "第十五批：新增18条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
+    },
+    "p061": {
+      "status": "extracted",
+      "trackIds": [
+        "calvin-gr1-v2-abc-chain",
+        "calvin-gr1-v2-abcd-chain"
+      ],
+      "resultIds": [
+        "r-gr1-abc-hulc",
+        "r-gr1-abc-length",
+        "r-gr1-abc-rt1",
+        "r-gr1-abcd-hulc",
+        "r-gr1-abcd-length",
+        "r-gr1-abcd-rt1"
+      ],
+      "note": "保留6条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p062": {
+      "status": "extracted",
+      "trackIds": [
+        "droid-v2-real-figure8-id",
+        "droid-v2-real-figure8-ood",
+        "droid-v2-real-figure10-diversity"
+      ],
+      "resultIds": [
+        "r-droid-v2-real-figure8-id-target-only",
+        "r-droid-v2-real-figure8-id-oxe",
+        "r-droid-v2-real-figure8-id-droid",
+        "r-droid-v2-real-figure8-ood-target-only",
+        "r-droid-v2-real-figure8-ood-oxe",
+        "r-droid-v2-real-figure8-ood-droid",
+        "r-droid-v2-real-figure10-diversity-20-scenes",
+        "r-droid-v2-real-figure10-diversity-diverse"
+      ],
+      "note": "第九批：重读实际版本并补8条原始结果；单位/环境/训练输入严格分开，作者报告非本站复现；完成的是所列原表，不表示所有后续版本/图已穷尽。"
+    },
+    "p063": {
+      "status": "extracted",
+      "trackIds": [
+        "octo-real-v2-finetune",
+        "bridge-real-octo-v2-ablation",
+        "bridge-real-octo-v2-novel-env",
+        "bridge-real-octo-v2-novel-skill"
+      ],
+      "resultIds": [
+        "r-octo-real-v2-finetune-scratch",
+        "r-octo-real-v2-finetune-vc1",
+        "r-octo-real-v2-finetune-octo",
+        "r-bridge-real-octo-v2-ablation-octo",
+        "r-bridge-real-octo-v2-ablation-rtx-mix",
+        "r-bridge-real-octo-v2-ablation-bridge-only",
+        "r-bridge-real-octo-v2-ablation-discrete",
+        "r-bridge-real-octo-v2-ablation-mse",
+        "r-bridge-real-octo-v2-ablation-resnet",
+        "r-bridge-real-octo-v2-novel-env-octo-small",
+        "r-bridge-real-octo-v2-novel-skill-octo-small"
+      ],
+      "note": "2026-09-19第八批原文回补11条；跨域真机/数据消融/不同测试及预算分别保存，作者报告非本站复现。未提取的图中精确值仍待核验，不声称全表穷尽。"
+    },
+    "p064": {
+      "status": "extracted",
+      "trackIds": [
+        "libero-openvla-v3-singleview-cleaned"
+      ],
+      "resultIds": [
+        "r-libero-openvla-v3-singleview-cleaned-dp",
+        "r-libero-openvla-v3-singleview-cleaned-octo",
+        "r-libero-openvla-v3-singleview-cleaned-openvla"
+      ],
+      "note": "本批核对v3 Appendix E/Table12，新增3条原报告成功率记录；单相机、清洗数量、LoRA和标准误已定位，其他真机实验未声称全部入榜。"
+    },
+    "p065": {
+      "status": "extracted",
+      "trackIds": [
+        "robotwin2-official-2500clean-sft",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robotwin2-official-2500clean-sft-sft-rdt",
+        "r-robodojo-official-sim-multi-score-rdt",
+        "r-robodojo-official-sim-multi-sr-rdt"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Table 2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p066": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-100",
+        "robotwin2-official-2500clean-sft",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-100-pi0-2026-04-02",
+        "r-robotwin2-official-2500clean-sft-sft-pi0",
+        "r-robodojo-official-sim-multi-score-pi-0",
+        "r-robodojo-official-sim-multi-sr-pi-0"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV；Appendix A-D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p067": {
+      "status": "extracted",
+      "trackIds": [
+        "fast-v1-training-speedup"
+      ],
+      "resultIds": [
+        "r-fast-v1-train-speed"
+      ],
+      "note": "最终24篇清理：1条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
+    },
+    "p068": {
+      "status": "extracted",
+      "trackIds": [
+        "simpler-spatialvla-v1-google-va",
+        "simpler-spatialvla-v1-google-vm",
+        "simpler-spatialvla-v1-widowx"
+      ],
+      "resultIds": [
+        "r-spatialvla-v1-va",
+        "r-spatialvla-v1-va-octo",
+        "r-spatialvla-v1-va-openvla",
+        "r-spatialvla-v1-vm",
+        "r-spatialvla-v1-vm-octo",
+        "r-spatialvla-v1-vm-openvla",
+        "r-spatialvla-v1-widowx",
+        "r-spatialvla-v1-widowx-octo",
+        "r-spatialvla-v1-widowx-openvla"
+      ],
+      "note": "保留9条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p069": {
+      "status": "extracted",
+      "trackIds": [
+        "libero-oft-multi-view",
+        "libero-oft-single-view",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-libero-oft-multi-view-openvla-oft",
+        "r-libero-oft-single-view-openvla",
+        "r-libero-oft-single-view-openvla-pd-ac",
+        "r-libero-oft-single-view-openvla-pd-ac-diffusion",
+        "r-libero-oft-single-view-openvla-pd-ac-l1",
+        "r-robodojo-official-sim-multi-score-openvla-oft",
+        "r-robodojo-official-sim-multi-sr-openvla-oft"
+      ],
+      "note": "保留5条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p070": {
       "status": "extracted",
@@ -1726,6 +1631,33 @@
         "r-robocasa365-official-101-gr00t-n1-6-2026-05-14"
       ],
       "note": "保留4条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p071": {
+      "status": "extracted",
+      "trackIds": [
+        "gemini-er-v1-aloha2-sim"
+      ],
+      "resultIds": [
+        "r-gemini-er-v1-flash",
+        "r-gemini-er-v1-er"
+      ],
+      "note": "最终24篇清理：2条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
+    },
+    "p072": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-100",
+        "robotwin2-official-2500clean-cotrain",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-100-pi05-2026-04-02",
+        "r-robotwin2-official-2500clean-cotrain-cotrain-pi-05",
+        "r-robodojo-official-sim-multi-score-pi-05",
+        "r-robodojo-official-sim-multi-sr-pi-05"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；§IV-B–D。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p073": {
       "status": "extracted",
@@ -1747,20 +1679,88 @@
       ],
       "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。 2026-09-18官网/原表回补：新增2条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
-    "p037": {
+    "p074": {
       "status": "extracted",
       "trackIds": [
-        "lingbot-v2-robotwin",
-        "lingbot-v2-async"
+        "calvin-abc-d-adapter-table6"
       ],
       "resultIds": [
-        "r-lingbot-v2-rt-motus",
-        "r-lingbot-v2-rt-ling",
-        "r-lingbot-v2-async-sync",
-        "r-lingbot-v2-async-fdm",
-        "r-lingbot-v2-async-naive"
+        "r-calvin-abc-d-adapter-table6-adapter",
+        "r-calvin-abc-d-adapter-table6-mode",
+        "r-calvin-abc-d-adapter-table6-oft",
+        "r-calvin-abc-d-adapter-table6-openvla",
+        "r-calvin-abc-d-adapter-table6-roboflamingo",
+        "r-calvin-abc-d-adapter-table6-seer-large",
+        "r-calvin-abc-d-adapter-table6-vpp"
       ],
-      "note": "最终24篇清理：5条精确/字面定量证据已结构化；未从图高、近似宣传值或未报告项补数。"
+      "note": "保留7条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p075": {
+      "status": "extracted",
+      "trackIds": [
+        "recap-v2-throughput-factor",
+        "recap-v2-targeted-failure-success"
+      ],
+      "resultIds": [
+        "r-recap-v2-throughput",
+        "r-recap-v2-targeted97"
+      ],
+      "note": "最终24篇清理：2条源定位结果；指标边界、版本与负面结果保留，不从图高或缺失值推导。"
+    },
+    "p076": {
+      "status": "extracted",
+      "trackIds": [
+        "libero-cosmos-3seeds",
+        "robocasa24-cosmos-50demos",
+        "robocasa24-cosmos-table"
+      ],
+      "resultIds": [
+        "r-libero-cosmos-3seeds-cosmos-policy",
+        "r-robocasa24-cosmos-50demos-cosmos-policy",
+        "r-robocasa24-cosmos-table-cosmos-policy",
+        "r-robocasa24-cosmos-table-dp-vla",
+        "r-robocasa24-cosmos-table-flare",
+        "r-robocasa24-cosmos-table-gr00t-n1",
+        "r-robocasa24-cosmos-table-gr00t-n1-5",
+        "r-robocasa24-cosmos-table-gr00t-n1-5-hamlet",
+        "r-robocasa24-cosmos-table-gr00t-n1-dreamgen",
+        "r-robocasa24-cosmos-table-gr00t-n1-dust",
+        "r-robocasa24-cosmos-table-pi0",
+        "r-robocasa24-cosmos-table-uva",
+        "r-robocasa24-cosmos-table-uwm",
+        "r-robocasa24-cosmos-table-video-policy"
+      ],
+      "note": "保留14条具有来源版本及原表定位的核验记录；只代表这些行，不声称已穷尽全文结果。"
+    },
+    "p077": {
+      "status": "extracted",
+      "trackIds": [
+        "dreamzero-v1-progress",
+        "dreamzero-v1-latency"
+      ],
+      "resultIds": [
+        "r-dreamzero-v1-progress-4step",
+        "r-dreamzero-v1-lat-4step",
+        "r-dreamzero-v1-progress-1step",
+        "r-dreamzero-v1-lat-1step",
+        "r-dreamzero-v1-progress-flash",
+        "r-dreamzero-v1-lat-flash"
+      ],
+      "note": "最终24篇清理：6条源定位结果；不同指标/协议/训练条件不合并，负面结果保留。"
+    },
+    "p078": {
+      "status": "extracted",
+      "trackIds": [
+        "robotwin2-official-2500clean-cotrain",
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robotwin2-official-2500clean-cotrain-cotrain-fastwam",
+        "r-robodojo-official-sim-multi-score-fast-wam",
+        "r-robodojo-official-sim-multi-sr-fast-wam"
+      ],
+      "note": "笔记有分节来源与解释，但尚未完成相应结果的标准赛道映射；Tables 1–2。保留原报告指标与训练条件，待逐表确认后入榜；缺失不按零分。 2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p079": {
       "status": "extracted",
@@ -1800,6 +1800,32 @@
       ],
       "note": "2026-09-18官网/原表回补：新增10条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
+    "p081": {
+      "status": "extracted",
+      "trackIds": [
+        "robocasa365-official-101",
+        "libero-rldx-v2",
+        "libero-plus-rldx-v2",
+        "simpler-google-rldx-vm",
+        "simpler-google-rldx-va",
+        "simpler-widowx-rldx-v2",
+        "robocasa24-rldx-v2",
+        "robocasa365-rldx-paper-v2"
+      ],
+      "resultIds": [
+        "r-robocasa365-official-101-rldx-1-2026-05-20",
+        "r-libero-rldx-v2-rldx-1",
+        "r-libero-plus-rldx-v2-rldx-1",
+        "r-simpler-google-rldx-vm-rldx-1",
+        "r-simpler-google-rldx-va-rldx-1",
+        "r-simpler-widowx-rldx-v2-rldx-1",
+        "r-robocasa24-rldx-v2-rldx-1",
+        "r-robocasa24-rldx-v2-0-5",
+        "r-robocasa24-rldx-v2-0",
+        "r-robocasa365-rldx-paper-v2-rldx-1"
+      ],
+      "note": "2026-09-18官网/原表回补：新增10条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
     "p082": {
       "status": "extracted",
       "trackIds": [
@@ -1836,45 +1862,6 @@
       ],
       "note": "2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
-    "p081": {
-      "status": "extracted",
-      "trackIds": [
-        "robocasa365-official-101",
-        "libero-rldx-v2",
-        "libero-plus-rldx-v2",
-        "simpler-google-rldx-vm",
-        "simpler-google-rldx-va",
-        "simpler-widowx-rldx-v2",
-        "robocasa24-rldx-v2",
-        "robocasa365-rldx-paper-v2"
-      ],
-      "resultIds": [
-        "r-robocasa365-official-101-rldx-1-2026-05-20",
-        "r-libero-rldx-v2-rldx-1",
-        "r-libero-plus-rldx-v2-rldx-1",
-        "r-simpler-google-rldx-vm-rldx-1",
-        "r-simpler-google-rldx-va-rldx-1",
-        "r-simpler-widowx-rldx-v2-rldx-1",
-        "r-robocasa24-rldx-v2-rldx-1",
-        "r-robocasa24-rldx-v2-0-5",
-        "r-robocasa24-rldx-v2-0",
-        "r-robocasa365-rldx-paper-v2-rldx-1"
-      ],
-      "note": "2026-09-18官网/原表回补：新增10条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
-    "p085": {
-      "status": "extracted",
-      "trackIds": [
-        "metaworld-dp3-v7-10demo",
-        "robotwin2-official-2500clean-sft"
-      ],
-      "resultIds": [
-        "r-metaworld-dp3-v7-10demo-dp3",
-        "r-metaworld-dp3-v7-10demo-diffusion-policy",
-        "r-robotwin2-official-2500clean-sft-sft-dp3"
-      ],
-      "note": "2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
-    },
     "p084": {
       "status": "extracted",
       "trackIds": [
@@ -1888,6 +1875,19 @@
         "r-robodojo-real-xpolicylab-v3-sr-0"
       ],
       "note": "2026-09-18官网/原表回补：新增4条，保留版本、预算、报告方和指标单位；非本站复现。"
+    },
+    "p085": {
+      "status": "extracted",
+      "trackIds": [
+        "metaworld-dp3-v7-10demo",
+        "robotwin2-official-2500clean-sft"
+      ],
+      "resultIds": [
+        "r-metaworld-dp3-v7-10demo-dp3",
+        "r-metaworld-dp3-v7-10demo-diffusion-policy",
+        "r-robotwin2-official-2500clean-sft-sft-dp3"
+      ],
+      "note": "2026-09-18官网/原表回补：新增3条，保留版本、预算、报告方和指标单位；非本站复现。"
     },
     "p086": {
       "status": "extracted",
@@ -2426,6 +2426,12 @@
       ],
       "note": "ProAct Table 1 的标准 LIBERO 与 LIBERO-Plus 分开结构化；二者为不同评测问题，不合榜。"
     },
+    "p123": {
+      "status": "not-applicable",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "BaryBind 是通用多模态表示对齐方法；VGGSound5K/MSR-VTT/DiDeMo/ActivityNet/VATEX/AudioCaps 的指标是分类/检索，不是机器人 VLA 动作成功率。原表留在深读中，不创建机器人 Benchmark/Setting/Result。"
+    },
     "p124": {
       "status": "extracted",
       "trackIds": [
@@ -2440,11 +2446,41 @@
       ],
       "note": "ForeAct3D Table 1 的 one-model-for-all LIBERO 与 Table 2 的 CALVIN ABC→D/no-robot-pretraining 分轨；成功率与平均链长不混用。"
     },
-    "p123": {
-      "status": "not-applicable",
-      "trackIds": [],
-      "resultIds": [],
-      "note": "BaryBind 是通用多模态表示对齐方法；VGGSound5K/MSR-VTT/DiDeMo/ActivityNet/VATEX/AudioCaps 的指标是分类/检索，不是机器人 VLA 动作成功率。原表留在深读中，不创建机器人 Benchmark/Setting/Result。"
+    "p125": {
+      "status": "extracted",
+      "trackIds": [
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robodojo-20261009-p125-score",
+        "r-robodojo-20261009-p125-sr"
+      ],
+      "note": "VPP2在RoboDojo-Sim官方2026-10-09榜和论文原表均有Score/SR；复用已有sim-multi两赛道，不建单论文Benchmark。VPP2两项Generalization细分值原文缺失保留null。"
+    },
+    "p126": {
+      "status": "extracted",
+      "trackIds": [
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robodojo-20261009-p126-score",
+        "r-robodojo-20261009-p126-sr"
+      ],
+      "note": "InternW0-Δ在RoboDojo-Sim官方2026-10-09榜和论文原表均有Score/SR；复用已有sim-multi两赛道，不建单论文Benchmark。VPP2两项Generalization细分值原文缺失保留null。"
+    },
+    "p127": {
+      "status": "extracted",
+      "trackIds": [
+        "robodojo-official-sim-multi-score",
+        "robodojo-official-sim-multi-sr"
+      ],
+      "resultIds": [
+        "r-robodojo-20261009-p127-score",
+        "r-robodojo-20261009-p127-sr"
+      ],
+      "note": "GPT-6 Astra (RoboDojo Evaluation)在RoboDojo-Sim官方2026-10-09榜和论文原表均有Score/SR；复用已有sim-multi两赛道，不建单论文Benchmark。VPP2两项Generalization细分值原文缺失保留null。"
     }
   }
 }

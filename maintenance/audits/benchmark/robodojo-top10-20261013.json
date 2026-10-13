@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-13",
+  "benchmark": "RoboDojo-Sim",
+  "sort": "Average Score descending",
+  "source": "https://robodojo-benchmark.com/",
+  "sourceUpdatedAt": "2026-10-09",
+  "scope": "Targeted reverse-discovery of official public Top 10, not comprehensive multi-lane weekly discovery",
+  "status": "partial-discovery-only",
+  "coveredCandidates": 10,
+  "selectedPapers": 3,
+  "rowsAdded": 6,
+  "criteria": "A ranked model is not automatically a separately published research paper; only a verifiable full text with an unambiguous model relationship qualifies.",
+  "candidates": [
+    {
+      "rank": 1,
+      "model": "VPP2",
+      "score": 39.26,
+      "sr": 32.26,
+      "disposition": "selected",
+      "paperId": "p125",
+      "paperUrl": "https://arxiv.org/abs/2610.10270",
+      "note": "对应2026-10-08 arXiv v2；与VPP2-Preview是同系列不同版本"
+    },
+    {
+      "rank": 2,
+      "model": "PhysicalRSI",
+      "score": 36.27,
+      "sr": 31.38,
+      "disposition": "deferred",
+      "projectUrl": "https://mmlab.hk/research/PhysicalRSI",
+      "note": "仅核验到官方项目主页；缺可确认的独立全文身份"
+    },
+    {
+      "rank": 3,
+      "model": "Awomo-0.5",
+      "score": 35.34,
+      "sr": 29.64,
+      "disposition": "deferred",
+      "projectUrl": "https://huggingface.co/Auwomo/Awomo-0.5-Robodojo",
+      "note": "仅见模型/权重入口；Awomo-SimDataEngine并不能自动视为本模型的正式论文"
+    },
+    {
+      "rank": 4,
+      "model": "Simate-beta",
+      "score": 33.95,
+      "sr": 27.96,
+      "disposition": "deferred",
+      "note": "Preview提交；尚无可确认公开方法全文"
+    },
+    {
+      "rank": 5,
+      "model": "Rex-M1 Preview",
+      "score": 33.79,
+      "sr": 27.44,
+      "disposition": "deferred",
+      "note": "Preview模型提交；不等于独立正式论文"
+    },
+    {
+      "rank": 6,
+      "model": "VPP2-Preview",
+      "score": 31.4,
+      "sr": 25.62,
+      "disposition": "duplicate",
+      "canonicalPaperId": "p125",
+      "note": "同一VPP2方法的早期模型版本，不创建第二篇paperId"
+    },
+    {
+      "rank": 7,
+      "model": "InternW0-Δ",
+      "score": 30.77,
+      "sr": 23.91,
+      "disposition": "selected",
+      "paperId": "p126",
+      "paperUrl": "https://arxiv.org/abs/2609.31394",
+      "note": "arXiv 2026-09-25 v1，Table12完整分项"
+    },
+    {
+      "rank": 8,
+      "model": "Liber-0 Preview",
+      "score": 30.74,
+      "sr": 25.52,
+      "disposition": "deferred",
+      "note": "尚无可确认的独立公开论文身份"
+    },
+    {
+      "rank": 9,
+      "model": "Liber-0 Lite",
+      "score": 29.24,
+      "sr": 24.23,
+      "disposition": "deferred",
+      "note": "与Liber-0 Preview为同系列不同模型，但缺可核验独立全文"
+    },
+    {
+      "rank": 10,
+      "model": "GPT-6 Astra",
+      "score": 28.97,
+      "sr": 22.48,
+      "disposition": "selected",
+      "paperId": "p127",
+      "paperUrl": "https://arxiv.org/abs/2609.24170",
+      "note": "该论文是模型的机器人策略评测研究，而不是基础模型权重发布；2026-09历史第一名≠当前第一名"
+    }
+  ]
+}

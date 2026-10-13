@@ -1,0 +1,24 @@
+{
+  "id": "r-robodojo-20261009-p125-score",
+  "paperId": "p125",
+  "method": "VPP2",
+  "trackId": "robodojo-official-sim-multi-score",
+  "values": {
+    "Gen standard": null,
+    "Gen randomized": null,
+    "Precision": 43.03,
+    "Long-horizon": 56.28,
+    "Memory": 56.01,
+    "Open": 4.61,
+    "Average": 39.26
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2610.10270v2",
+  "sourceVersion": "arXiv 2610.10270v2; official RoboDojo-Sim 2026-10-09",
+  "locator": "Appendix C.2, Table 7; official RoboDojo-Sim model VPP2 (2026-10-09)",
+  "attribution": "author-reported",
+  "trainingData": "VPP2 video-WAM+MoT; RoboDojo-specific post-training including history conditioning; not zero-shot benchmark inference",
+  "evaluationNotes": "VPP2只报告Generalization pooled across standard/randomized: Score36.39、SR29.50；Std/Rand原表没有分别报告，必须保留null。42项RoboDojo仿真任务；榜单2026-10-09快照，作者报告非本站独立复现。",
+  "supersedes": ""
+}
