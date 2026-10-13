@@ -112,6 +112,18 @@ try:
         page.wait_for_function('!new URLSearchParams(location.search).has("lbType")')
         page.wait_for_selector('.setting-table')
         yes('return to public benchmark navigation',page.locator('[data-setting-dataset]').count()==len(public_tax))
+        yes('official registry link remains available in standardized view',
+            page.locator('.benchmark-dataset-context a').count()>=0)
+        page.locator('#benchmark-search-input').fill('VLA-InfoEntropy')
+        page.locator('#benchmark-search-form').press('Enter')
+        page.wait_for_function('new URLSearchParams(location.search).get("lbSearch")==="VLA-InfoEntropy"')
+        page.wait_for_selector('#setting-select')
+        yes('model search crosses Benchmark and Setting metadata',
+            page.locator('[data-setting-dataset="LIBERO"]').count()==1)
+        page.locator('#benchmark-search-clear').click()
+        page.wait_for_function('!new URLSearchParams(location.search).has("lbSearch")')
+        page.wait_for_selector('#setting-select')
+
         # The default list must not silently re-introduce paper-only protocol rows.
         page.goto(base+'?view=leaderboards&dataset=RoboTwin',wait_until='networkidle')
         page.wait_for_selector('#setting-select')
