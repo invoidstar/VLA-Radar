@@ -64,6 +64,220 @@
   ],
   "papers": [
     {
+      "id": "p131",
+      "name": "ViGAR",
+      "title": "Rethinking World-Action Model for Compositional and In-Context Robotic Manipulation",
+      "team": "Shukai Gong、Xuanran Zhai、Yintianrun Zhang、Ruopeng Cui、Ye Huang 等（Peking University / AgiBot / CocoMatrix）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1 预印本",
+      "firstPublished": "2026-10-01",
+      "dateNote": "按 arXiv 2610.02368v1 的UTC首发日（2026-10-01）锁定，不以后续版本或本站收录日替代。",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-01 首发 · 深读 arXiv v1 · 2026-10-13 来源复核",
+      "topics": [
+        "world",
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "visual subgoal",
+        "hierarchical control",
+        "world-action model",
+        "RoboTwin",
+        "in-context learning",
+        "real robot"
+      ],
+      "priority": "deep",
+      "contribution": "用视觉子目标规划器和目标条件化World-Action executor，将长程机器人组合任务拆成可预测的中间场景与对应动作；以子任务边界前瞻和末端ROI加权稳定规划，并允许测试时以目标图像改变任务组合。",
+      "findings": "RoboTwin Clean-only多任务训练下，Clean 82.00%、Random 67.02%、平均74.51%；同文控制Cosmos3-Nano-RoboTwin平均49.76%。AgiBot A2真机五项长程任务比较采用进度指标，不是二元最终成功率。",
+      "limitations": "依赖子任务分段及准确的视觉子目标；执行期中间目标误判会传递给动作策略。真实机器人900小时预训练与仿真Clean-only任务使用不同训练来源，不能按分数直接并列。",
+      "insight": "将视觉子目标作为VLA与World-Action预测的显式接口，有助于区分长时程任务分解与局部动作实现；不过全局目标图像下的重组还需检验中间阶段错误与OOD动作可达性。",
+      "readingFocus": "planner与executor训练边界、视觉子目标注入路径、Clean2Random受控协议、消融真实性、真机任务进度和in-context适用范围。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-13 对照 arXiv v1 完整HTML的方法、结果原表与公开官方入口；所有成绩均为作者报告或独立官方快照，非本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文",
+          "url": "https://arxiv.org/html/2610.02368v1"
+        },
+        {
+          "label": "作者项目主页",
+          "url": "https://dagroup-pku.github.io/ViGAR/"
+        },
+        {
+          "label": "官方实现、训练与评测入口",
+          "url": "https://github.com/DAGroup-PKU/ViGAR"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.02368",
+      "arxiv": "2610.02368",
+      "doi": "",
+      "detailUrl": "data/details/p131.json?v=fe547bb8e28e2c2f",
+      "resultUrl": "data/paper-results/p131.b1d37b47f546a373.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://dagroup-pku.github.io/ViGAR/",
+        "code": "https://github.com/DAGroup-PKU/ViGAR"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p131.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-01",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-13"
+      }
+    },
+    {
+      "id": "p132",
+      "name": "PatchWAM",
+      "title": "An Action Is Worth One Patch: Unified World–Action Modeling with PatchWAM",
+      "team": "Tianheng Wang、Zhou Xie、Heng Jia、Jianhua Xu、Tong Zhang、Kaicheng Yu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1 预印本",
+      "firstPublished": "2026-09-22",
+      "dateNote": "按 arXiv 2609.25961v1 的UTC首发日（2026-09-22）锁定，不以后续版本或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "2026-09-22 首发 · 深读 arXiv v1 · 2026-10-13 来源复核",
+      "topics": [
+        "world",
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "action-as-patch",
+        "single-stream",
+        "flow matching",
+        "RoboTwin",
+        "LIBERO",
+        "LIBERO-Plus",
+        "world action model"
+      ],
+      "priority": "deep",
+      "contribution": "提出固定、无训练参数的Action-as-Patch映射，将连续Action Chunk写成与未来视频相容的patch token，沿用单个图像生成Transformer完成视觉未来与动作联合去噪，避免独立Action Expert。",
+      "findings": "RoboTwin 27,500+增强示范全数据平均96.12%，Clean-only官方对齐平均79.14%；LIBERO标准四套98.4%，使用增强LIBERO-Plus训练达到91.8%。在匹配控制实验中优于双expert，但推理时间更长。",
+      "limitations": "去除独立动作专家并不等于低延迟：联合DiT更慢；高分受额外训练数据与增强影响，单种子没有方差。RoboDojo历史9月15日分数不是10月9日当前榜单排名。",
+      "insight": "预训练视觉生成器若接口设计合理，可以直接接纳低维机器人动作，但要同时核验数据预算、动作编码可逆性和端到端延迟，避免将架构简化误写为全系统部署加速。",
+      "readingFocus": "固定Action-as-Patch编码与反映射、统一Transformer去噪、混合示范/clean-only双训练协议、匹配双expert对照、RoboDojo历史快照与部署延迟。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-13 对照 arXiv v1 完整HTML的方法、结果原表与公开官方入口；所有成绩均为作者报告或独立官方快照，非本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1完整全文",
+          "url": "https://arxiv.org/html/2609.25961v1"
+        },
+        {
+          "label": "RoboTwin官方榜单",
+          "url": "https://robotwin-platform.github.io/leaderboard"
+        },
+        {
+          "label": "作者RoboCasa365发布代码与实测资料",
+          "url": "https://github.com/TianhengW/PatchWAM-RoboCasa"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.25961",
+      "arxiv": "2609.25961",
+      "doi": "",
+      "detailUrl": "data/details/p132.json?v=4b6f107abb884709",
+      "resultUrl": "data/paper-results/p132.2a6d6418623f25ed.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/TianhengW/PatchWAM-RoboCasa"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p132.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-09-22",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-13"
+      }
+    },
+    {
+      "id": "p133",
+      "name": "ME-Dex 1.0",
+      "title": "ME-Dex 1.0: Bringing Heterogeneous Tactile Sensing into World Action Modeling",
+      "team": "Li Auto Inc. Foundation Model / MachEmbodied（官方技术报告）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v2 预印本",
+      "firstPublished": "2026-09-18",
+      "dateNote": "按 arXiv 2609.21449v1 的UTC首发日（2026-09-18）锁定，不以后续版本或本站收录日替代。",
+      "collectionMonth": "2026-09",
+      "versionNote": "2026-09-18 首发 · 深读 arXiv v2 · 2026-10-13 来源复核",
+      "topics": [
+        "tactile",
+        "world",
+        "action"
+      ],
+      "tags": [
+        "tactile dynamics",
+        "multi-expert",
+        "H-Bridge",
+        "RoboTwin",
+        "DexJoCo",
+        "ManiFeel",
+        "contact-rich"
+      ],
+      "priority": "deep",
+      "contribution": "通过统一触觉表征、三专家World-Action-Tactile联合流匹配、跨视频/动作/触觉的H-Bridge共享注意力，以及现实触觉轨迹回放引擎，学习接触相关的视觉与动作未来。",
+      "findings": "RoboTwin 27500混合示范训练下Clean91.56%、Random91.92%；2500 Clean-only下论文四舍五入值89.6/68.1/Avg78.9，官方快照精度89.58/68.12/78.85。DexJoCo 11任务平均65.3%，零化当前触觉输入的效果仍接近完整模型。",
+      "limitations": "混合模型对当前触觉输入敏感度有限，Zero-Tac变体几乎不降；真实硬件触觉数据分布和统一手模型假设限制跨机型推广。官方仓库后续AE/VAE checkpoint已更新，不可替代论文v2原始实验。",
+      "insight": "预测未来触觉与接触状态能补充视觉模型，但当前触觉条件、未来触觉监督和H-Bridge结构的收益应区分验证；评测时不能将关闭触觉输入误解成从未使用触觉监督。",
+      "readingFocus": "Canonical Hand Model、Unified Tactile AE、三专家H-Bridge、agentic tactile replay、两种RoboTwin训练数据、DexJoCo与ManiFeel消融和当前输入零化结论。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-13 对照 arXiv v2 完整HTML的方法、结果原表与公开官方入口；所有成绩均为作者报告或独立官方快照，非本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v2作者技术报告",
+          "url": "https://arxiv.org/html/2609.21449v2"
+        },
+        {
+          "label": "Li Auto / MachEmbodied项目主页",
+          "url": "https://machembodied.com/ME-Dex/ME-Dex1.0.html"
+        },
+        {
+          "label": "官方实现及训练/评测说明",
+          "url": "https://github.com/MachEmbodied/ME-Dex-1.0"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.21449",
+      "arxiv": "2609.21449",
+      "doi": "",
+      "detailUrl": "data/details/p133.json?v=2a840e8237ecf666",
+      "resultUrl": "data/paper-results/p133.972752a614a3baf6.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://machembodied.com/ME-Dex/ME-Dex1.0.html",
+        "code": "https://github.com/MachEmbodied/ME-Dex-1.0"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p133.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-09-18",
+        "latestArxivVersion": "v2",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-13"
+      }
+    },
+    {
       "id": "p130",
       "name": "Dual-Stream Memory",
       "title": "Dual-Stream Memory for Vision-Language-Action Policies",

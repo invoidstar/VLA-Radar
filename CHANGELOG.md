@@ -1,3 +1,7 @@
+## 2026-10-13 — 2026-10-13-source-paper-catchup
+
+核验ViGAR、PatchWAM、ME-Dex 1.0三篇完整正文并新增8条精确表格结果；对RoboTwin官方模型与论文身份建立版本对齐，RoboDojo PhysicalRSI/Awomo-0.5仅补一手项目/模型卡链接，不虚构论文。两种RoboTwin训练预算及LIBERO/Plus任务分开；Discovery checkpoint不前移。 深读对照表严格以字符串保留原报告数字和单位。 新论文增加原始track后，测试验证既有六个核心协议族不丢失，同时允许已核验的新来源track，不把历史分类数量设为永久上限。
+
 ## 2026-10-13 — LIBERO / RoboTwin / RoboDojo 核心 Benchmark 专项
 
 - 核查标准四套 LIBERO 与原始终身学习 FWT/NBT/AUC 的身份，保持 LIBERO-Plus/PRO/Safety 独立。
