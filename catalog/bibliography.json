@@ -3368,6 +3368,120 @@
         }
       ],
       "verifiedAt": "2026-10-13"
+    },
+    "p131": {
+      "item": {
+        "type": "article",
+        "title": "Rethinking World-Action Model for Compositional and In-Context Robotic Manipulation",
+        "author": [
+          {
+            "literal": "Shukai Gong"
+          },
+          {
+            "literal": "Xuanran Zhai"
+          },
+          {
+            "literal": "Yintianrun Zhang"
+          },
+          {
+            "literal": "Ruopeng Cui"
+          },
+          {
+            "literal": "Ye Huang"
+          },
+          {
+            "literal": "Yiyang Fu"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              1
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2610.02368"
+      },
+      "sources": [
+        {
+          "label": "arXiv 2610.02368 v1 正文及首发日期",
+          "url": "https://arxiv.org/abs/2610.02368"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    "p132": {
+      "item": {
+        "type": "article",
+        "title": "An Action Is Worth One Patch: Unified World–Action Modeling with PatchWAM",
+        "author": [
+          {
+            "literal": "Tianheng Wang"
+          },
+          {
+            "literal": "Zhou Xie"
+          },
+          {
+            "literal": "Heng Jia"
+          },
+          {
+            "literal": "Jianhua Xu"
+          },
+          {
+            "literal": "Tong Zhang"
+          },
+          {
+            "literal": "Kaicheng Yu"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              22
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2609.25961"
+      },
+      "sources": [
+        {
+          "label": "arXiv 2609.25961 v1 正文及首发日期",
+          "url": "https://arxiv.org/abs/2609.25961"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    "p133": {
+      "item": {
+        "type": "article",
+        "title": "ME-Dex 1.0: Bringing Heterogeneous Tactile Sensing into World Action Modeling",
+        "author": [
+          {
+            "literal": "Li Auto Inc. Foundation Model"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              18
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2609.21449"
+      },
+      "sources": [
+        {
+          "label": "arXiv 2609.21449 v2 正文及首发日期",
+          "url": "https://arxiv.org/abs/2609.21449"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
     }
   }
 }

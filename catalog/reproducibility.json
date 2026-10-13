@@ -1173,6 +1173,24 @@
       "level": "baseline",
       "note": "2026-10-13核查论文全文、项目与代码归属；不把不同论文同名memory仓库误作官方代码。",
       "items": {}
+    },
+    "p131": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "官方项目与RoboTwin训练/权重已见仓库；真机900h标注数据仍未全公开，未将部分开放夸大成全部复现。",
+      "items": {}
+    },
+    "p132": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "已见官方RoboCasa365专用实现和checkpoint；未证明RoboTwin全数据预训练代码/权重全部公开。",
+      "items": {}
+    },
+    "p133": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "官方仓库公开RoboTwin实现、触觉数据与后续AE/VAE权重；更新checkpoint与论文v2主表版本不同，资源状态需逐项核验。",
+      "items": {}
     }
   }
 }
