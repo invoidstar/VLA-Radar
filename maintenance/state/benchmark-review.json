@@ -2515,6 +2515,45 @@
         "r-dualstream-robomme-pi05"
       ],
       "note": "arXiv 2610.13262v1 RoboMME 16任务平均成功率表，4行来源齐全；Piper四任务真实评测非公共Benchmark，保留于深读而不单设榜单。"
+    },
+    "p131": {
+      "status": "extracted",
+      "trackIds": [
+        "vigar-v1-robotwin-clean2500"
+      ],
+      "resultIds": [
+        "r-vigar-v1-robotwin-main",
+        "r-vigar-v1-robotwin-cosmos"
+      ],
+      "note": "ViGAR arXiv 2610.02368v1 Table1a：2500 Clean受控主方法与同训练Cosmos3-Nano基线；官方ViGAR同分可独立快照核实。"
+    },
+    "p132": {
+      "status": "extracted",
+      "trackIds": [
+        "patchwam-v1-robotwin-full",
+        "patchwam-v1-robotwin-clean",
+        "patchwam-v1-libero-standard",
+        "patchwam-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-patchwam-v1-robotwin-full",
+        "r-patchwam-v1-robotwin-clean",
+        "r-patchwam-v1-libero",
+        "r-patchwam-v1-libero-plus"
+      ],
+      "note": "PatchWAM原文v1 Table1、2、4、5：RoboTwin全数据/仅Clean分开，LIBERO和LIBERO-Plus分开；RoboDojo历史2026-09-15记录保留笔记，不当10月9日当前官方榜。"
+    },
+    "p133": {
+      "status": "extracted",
+      "trackIds": [
+        "medex-v2-robotwin-mixed",
+        "medex-v2-robotwin-clean"
+      ],
+      "resultIds": [
+        "r-medex-v2-robotwin-mixed",
+        "r-medex-v2-robotwin-clean"
+      ],
+      "note": "ME-Dex v2 Table1、2：Mixed 27500只提供Clean/Random，Clean-only用原文一位精度；官方二位精度不覆盖原文。DexJoCo/ManiFeel保留深读，未自动新增单论文Benchmark。"
     }
   }
 }

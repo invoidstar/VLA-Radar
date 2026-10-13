@@ -1,0 +1,25 @@
+{
+  "id": "r-patchwam-v1-libero-plus",
+  "paperId": "p132",
+  "method": "PatchWAM",
+  "trackId": "patchwam-v1-libero-plus",
+  "values": {
+    "Camera": 97.9,
+    "Robot": 71,
+    "Language": 89.1,
+    "Light": 98.5,
+    "Background": 96.9,
+    "Noise": 97.9,
+    "Layout": 92.3,
+    "Total": 91.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2609.25961v1",
+  "sourceVersion": "arXiv 2609.25961v1 · Table 5, LIBERO-Plus augmented",
+  "locator": "Table 5, LIBERO-Plus augmented",
+  "attribution": "author-reported",
+  "trainingData": "LIBERO-Plus augmented perturbation training ~75k updates; original LIBERO-only train has different 80.2% Total.",
+  "evaluationNotes": "LIBERO-Plus使用该基准增强训练，非纯zero-shot OOD；7个扰动分类各自有分数。",
+  "supersedes": ""
+}

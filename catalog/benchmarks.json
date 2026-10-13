@@ -6717,6 +6717,152 @@
         "Average"
       ],
       "source": "https://arxiv.org/html/2610.13262v1"
+    },
+    {
+      "id": "vigar-v1-robotwin-clean2500",
+      "dataset": "RoboTwin",
+      "name": "ViGAR · 2500 Clean · Clean2Random",
+      "version": "arXiv 2610.02368v1 · RoboTwin 2.0",
+      "tasks": "50",
+      "split": "Aloha-AgileX · 50 Tasks · Clean / Random · 100 rollouts/task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "作者Table1a；与2026-10-11官方2500 Clean模式ViGAR记录核对；其受控Cosmos3-Nano同行基线保留。",
+      "trainingRegime": "50 clean expert demonstrations per task; 2,500 total. No randomized training demonstrations; pretrain Cosmos3-Nano; multitask train.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.02368v1"
+    },
+    {
+      "id": "patchwam-v1-robotwin-full",
+      "dataset": "RoboTwin",
+      "name": "PatchWAM · mixed 27500 + 2100 augment",
+      "version": "arXiv 2609.25961v1 · Table 1",
+      "tasks": "50",
+      "split": "RoboTwin 2.0 50 tasks; eval Clean + Random 100 trials/task; independent mixed-data training",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table1 full-data；原文100 eval trials per task for Clean/Random；此成绩非官网2500 Clean-only赛道。",
+      "trainingRegime": "50 Clean + 500 Randomized demonstrations per task = 27,500; plus 2,100 additional augmented demonstrations for seven weak tasks, 110k updates.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.25961v1"
+    },
+    {
+      "id": "patchwam-v1-robotwin-clean",
+      "dataset": "RoboTwin",
+      "name": "PatchWAM · Clean2500 official C2R",
+      "version": "arXiv 2609.25961v1 · Table 2",
+      "tasks": "50",
+      "split": "Aloha-AgileX · 50 Tasks · Clean / Random · 100 rollouts/task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table2与10月11日官网Clean2Random中的同一提交91.56/66.72/79.14；不将论文Full-data当作受控赛道。",
+      "trainingRegime": "50 Clean demonstrations per task = 2,500, no randomized expert demonstrations. Online photometric/AdaIN/FFT image augmentation, ~140k updates.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.25961v1"
+    },
+    {
+      "id": "patchwam-v1-libero-standard",
+      "dataset": "LIBERO",
+      "name": "PatchWAM · standard 4 suites",
+      "version": "arXiv 2609.25961v1 · Table 4",
+      "tasks": "40",
+      "split": "LIBERO Spatial / Object / Goal / Long, 10 tasks each; author original evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table4 standard LIBERO 40-task four suite experiment; per-author training; no official all-paper fair rank.",
+      "trainingRegime": "PatchWAM source LIBERO training recipe; distinct action dimensionality and data from RoboTwin.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.25961v1"
+    },
+    {
+      "id": "patchwam-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "PatchWAM · LIBERO-Plus augmented robustness",
+      "version": "arXiv 2609.25961v1 · Table 5",
+      "tasks": "7 perturbation axes",
+      "split": "LIBERO-Plus seven perturbation categories; author trained on augmented LIBERO-Plus data",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table5 is augmented-data training success, not zero-shot LIBERO-Plus generalization. Total is original table aggregation.",
+      "trainingRegime": "LIBERO-Plus augmented perturbation training ~75k updates; original LIBERO-only train has different 80.2% Total.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Total"
+      ],
+      "source": "https://arxiv.org/html/2609.25961v1"
+    },
+    {
+      "id": "medex-v2-robotwin-mixed",
+      "dataset": "RoboTwin",
+      "name": "ME-Dex 1.0 · mixed 27500 tactile",
+      "version": "arXiv 2609.21449v2 · Table 1",
+      "tasks": "50",
+      "split": "RoboTwin 2.0 50 tasks; Clean / Random evaluation; mixed-demonstration training",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table1 only reports separate Clean and Random columns; do not infer an author-reported Average. Offline tactile supervision and current-touch conditions differ from official Clean2500.",
+      "trainingRegime": "50 Clean + 500 Randomized demonstrations per task, 27,500 total; tactile replay and future tactile prediction; current tactile observed.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random"
+      ],
+      "source": "https://arxiv.org/html/2609.21449v2"
+    },
+    {
+      "id": "medex-v2-robotwin-clean",
+      "dataset": "RoboTwin",
+      "name": "ME-Dex 1.0 · Clean2500 C2R",
+      "version": "arXiv 2609.21449v2 · Table 2",
+      "tasks": "50",
+      "split": "Aloha-AgileX · 50 Tasks · Clean / Random; official Clean2Random compatible",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Paper Table2 rounds Clean89.6, Random68.1, Avg78.9. Official Oct11 entry uses finer precision 89.58/68.12/78.85. Later AE/VAE checkpoint 80.4/82.5 is different release.",
+      "trainingRegime": "50 Clean demonstrations per task, total 2,500; tactile observations zeroed at both evaluation conditions; model still trained with tactile targets.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Random",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2609.21449v2"
     }
   ]
 }
