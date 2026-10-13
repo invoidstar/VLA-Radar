@@ -21,7 +21,15 @@
         "Easy",
         "Hard"
       ],
-      "source": "https://arxiv.org/html/2610.13732v1"
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "LAPT-Scale v1 multi-stage reporting table",
+      "recipeType": "report"
     },
     {
       "id": "dualstream-v1-robomme-16task",
