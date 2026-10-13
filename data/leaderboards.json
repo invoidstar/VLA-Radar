@@ -29015,12 +29015,14 @@
       "RoboTwin": {
         "kind": "benchmark",
         "officialUrl": "https://robotwin-platform.github.io/leaderboard",
-        "officialVerifiedAt": "2026-10-13"
+        "officialVerifiedAt": "2026-10-13",
+        "auditSummary": "本页收录跨论文 RoboTwin 成绩；官方榜单严格要求 Aloha-AgileX 的 50×50 Clean 示范和 Clean/Random 各任务100次评测，请在官方快照中查看受控排名。"
       },
       "LIBERO": {
         "kind": "benchmark",
         "officialUrl": "https://libero-project.github.io/main.html",
-        "officialVerifiedAt": "2026-10-13"
+        "officialVerifiedAt": "2026-10-13",
+        "auditSummary": "标准四套成功率、原始终身学习 FWT/NBT/AUC、LIBERO-Plus 和 Safety 任务不可混榜。作者训练配方不同，不产生跨来源公平名次。"
       },
       "RoboCasa": {
         "kind": "benchmark",
@@ -29080,7 +29082,8 @@
       "RoboDojo": {
         "kind": "benchmark",
         "officialUrl": "https://robodojo-benchmark.com/",
-        "officialVerifiedAt": "2026-10-13"
+        "officialVerifiedAt": "2026-10-13",
+        "auditSummary": "42项仿真任务的官方 Score 与 SR 属于两种指标；官方模型提交可先于论文公开，不能把未知论文模型虚构为已深读文献。"
       },
       "Google Robot (real)": {
         "kind": "case-study",
@@ -29186,7 +29189,8 @@
       "RoboDojo real": {
         "kind": "benchmark",
         "officialUrl": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
-        "officialVerifiedAt": "2026-10-13"
+        "officialVerifiedAt": "2026-10-13",
+        "auditSummary": "18项真机任务、三种机器人（ARX X5 / Piper / Piper X）；独立官方快照不与仿真任务/论文配置混为排名。"
       },
       "RoboMemArena": {
         "kind": "benchmark",
@@ -29222,6 +29226,116 @@
     },
     "primaryResultCount": 678,
     "archivedResultCount": 222
+  },
+  "officialBoards": {
+    "RoboTwin": {
+      "id": "robotwin2",
+      "benchmark": "RoboTwin",
+      "sourceUpdatedAt": "2026-10-11",
+      "capturedAt": "2026-10-13",
+      "sourceUrl": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "boardUrl": "https://robotwin-platform.github.io/leaderboard",
+      "sourceRepoRevision": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
+      "sourceBlobSha": "e5a8af33d319649022ef124b1bbaf11767068dc3",
+      "entryCount": 25,
+      "metricSchema": "clean-random",
+      "topThree": [
+        {
+          "model": "PatchWAM",
+          "rank": 1,
+          "average": 79.14
+        },
+        {
+          "model": "ME-Dex-1.0",
+          "rank": 2,
+          "average": 78.85
+        },
+        {
+          "model": "ViGAR",
+          "rank": 3,
+          "average": 74.51
+        }
+      ],
+      "resultUrl": "data/official-boards/robotwin2.a733814f90c1bcee.json"
+    },
+    "RoboDojo": {
+      "id": "robodojo-sim",
+      "benchmark": "RoboDojo",
+      "sourceUpdatedAt": "2026-10-09",
+      "capturedAt": "2026-10-13",
+      "sourceUrl": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "boardUrl": "https://robodojo-benchmark.com/LeaderBoard",
+      "sourceRepoRevision": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
+      "sourceBlobSha": "d4664cc087e123b813530882f54273f932723eca",
+      "entryCount": 57,
+      "metricSchema": "score-success",
+      "topThree": [
+        {
+          "model": "VPP2",
+          "rank": 1,
+          "average": {
+            "score": 39.26,
+            "sr": 32.26
+          }
+        },
+        {
+          "model": "PhysicalRSI",
+          "rank": 2,
+          "average": {
+            "score": 36.27,
+            "sr": 31.38
+          }
+        },
+        {
+          "model": "Awomo-0.5",
+          "rank": 3,
+          "average": {
+            "score": 35.34,
+            "sr": 29.64
+          }
+        }
+      ],
+      "resultUrl": "data/official-boards/robodojo-sim.2ef24310191b26b5.json"
+    },
+    "RoboDojo real": {
+      "id": "robodojo-real",
+      "benchmark": "RoboDojo real",
+      "sourceUpdatedAt": "2026-10-09",
+      "capturedAt": "2026-10-13",
+      "sourceUrl": "https://robotwin-platform.github.io/data/robodojo_real_leaderboard.json",
+      "boardUrl": "https://robodojo-benchmark.com/LeaderBoard",
+      "sourceRepoRevision": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
+      "sourceBlobSha": "b14162faec38751f0bd6afdaaf7d83825800e421",
+      "entryCount": 11,
+      "metricSchema": "score-success",
+      "topThree": [
+        {
+          "model": "OpenWAM-α",
+          "rank": 1,
+          "average": {
+            "score": 37.6,
+            "sr": 24.4
+          }
+        },
+        {
+          "model": "Pi-05",
+          "rank": 2,
+          "average": {
+            "score": 22.9,
+            "sr": 12.8
+          }
+        },
+        {
+          "model": "InternVLA-A1",
+          "rank": 3,
+          "average": {
+            "score": 12,
+            "sr": 7.2
+          }
+        }
+      ],
+      "resultUrl": "data/official-boards/robodojo-real.e5a5d77ddee6e6da.json"
+    }
   },
   "results": [
     {
