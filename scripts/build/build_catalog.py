@@ -13,6 +13,7 @@ from paper_relations import load_relations,build_relation_views
 from reproducibility import load_reproducibility,build_reproducibility_views
 from benchmark_settings import build_settings
 from benchmark_quality import apply_quality
+from official_boards import official_board_outputs
 from benchmark_taxonomy import load_taxonomy
 from experience_build import outputs as experience_outputs
 from news_core import outputs as news_outputs
@@ -145,14 +146,15 @@ def outputs(root):
     out['data/catalog.json']=dumps({'schemaVersion':1,**meta,'papers':summaries}) # old integrations
     searchkeys={'id','name','title','team','tags','topics','contribution','findings','insight','limitations','venue','publicationStatus','arxiv','firstPublished'}
     searchurl=hashed('data/search-index',{'schemaVersion':1,'topics':m['topics'],'papers':[{k:r['paper'][k] for k in sorted(searchkeys)} for r in records]},out)
-    boardurl=hashed('data/board-index',{'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':indexed_tracks,'settings':indexed_settings,'taxonomy':taxonomy,'benchmarkRegistry':benchmark_registry,'resultCount':len(comparison_results),'settingCount':len(indexed_settings)},out)
+    official_boards=official_board_outputs(root,out,paper_ids,hashed)
+    boardurl=hashed('data/board-index',{'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':indexed_tracks,'settings':indexed_settings,'taxonomy':taxonomy,'benchmarkRegistry':benchmark_registry,'officialBoards':official_boards,'resultCount':len(comparison_results),'settingCount':len(indexed_settings)},out)
     # Coverage and follow/navigation use the same public comparison universe.
     # Canonical Result Reports and paper-detail evidence above remain complete.
     experience,indexurl=experience_outputs(root,records,comparison_tracks,comparison_results);out.update(experience)
     news,newsurl=news_outputs(root,records);out.update(news)
     tools,toolsurl=tools_outputs(root,records,comparison_tracks,comparison_results,experience,indexurl);out.update(tools)
     out['data/library.json']=compact({'schemaVersion':1,**meta,'searchUrl':searchurl,'boardIndexUrl':boardurl,'experienceUrl':indexurl,'newsUrl':newsurl,'toolsUrl':toolsurl,'papers':light})
-    out['data/leaderboards.json']=dumps({'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':comparison_tracks,'settings':setting_records,'taxonomy':taxonomy,'benchmarkRegistry':benchmark_registry,'results':comparison_results})
+    out['data/leaderboards.json']=dumps({'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':comparison_tracks,'settings':setting_records,'taxonomy':taxonomy,'benchmarkRegistry':benchmark_registry,'officialBoards':official_boards,'results':comparison_results})
     return out
 
 def build(root,check=False):
@@ -162,7 +164,7 @@ def build(root,check=False):
         if not f.exists() or f.read_text(encoding='utf-8')!=text:
             stale.append(path)
             if not check:f.parent.mkdir(parents=True,exist_ok=True);f.write_text(text,encoding='utf-8')
-    patterns=['data/tools/*.json','data/news/*.json','data/experience/*.json','data/details/p*.json','data/boards/*.json','data/settings/*.json','data/paper-results/*.json','data/reproducibility/*.json','data/search-index.*.json','data/board-index.*.json']
+    patterns=['data/tools/*.json','data/news/*.json','data/experience/*.json','data/details/p*.json','data/boards/*.json','data/settings/*.json','data/paper-results/*.json','data/reproducibility/*.json','data/search-index.*.json','data/board-index.*.json','data/official-boards/*.json']
     for pattern in patterns:
         for p in root.glob(pattern):
             if str(p.relative_to(root)) not in generated:

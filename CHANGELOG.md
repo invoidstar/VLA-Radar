@@ -1,3 +1,10 @@
+## 2026-10-13 — LIBERO / RoboTwin / RoboDojo 核心 Benchmark 专项
+
+- 核查标准四套 LIBERO 与原始终身学习 FWT/NBT/AUC 的身份，保持 LIBERO-Plus/PRO/Safety 独立。
+- 固定 RoboTwin 2.0 官方 25 条模型提交（来源更新 10 月 11 日）、RoboDojo 仿真 57 条/真机 11 条（两者来源更新 10 月 9 日），保留源 Git SHA、Blob SHA，指标、版本、列含义不改写。
+- 官方榜单与既有作者论文成绩严格分层；无已核实完整全文/模型对应关系的提交仅保留官方模型身份，不虚构论文或独立复现。原始 900 条公开论文比较和 1,140 条 canonical 核验数字保持完整。
+- 新增按需加载的官方榜单及 Top10/全部、维度和 Score/SR 切换；独立审计保存在 maintenance/audits/benchmark/core-libero-robotwin-robodojo-20261013.json。此专项不推进全部周更检索 checkpoint。
+
 ## 2026-10-13 — Benchmark 质量专项治理（V3.0）
 
 - 不改变任何 catalog/results 原始数字、Result ID、Track ID、论文笔记或首发日期；在投影层建立 `benchmark-quality.json` 规范登记，对27个公共Benchmark与21类论文专属真实机器人/效率实验分别提供导航。
