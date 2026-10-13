@@ -39,4 +39,35 @@ ok('taxonomy filters compose focus environment and tags',()=>{const x=S.filterSe
 ok('taxonomy filtering is non-mutating',()=>{const before=JSON.stringify(realSettings);S.filterSettingsByTaxonomy(realSettings,taxonomy,'general-manipulation','simulation',['multi-task']);a.equal(JSON.stringify(realSettings),before);});
 
 ok('Benchmark view separates registry and archived evidence presentation',()=>{const src=require('node:fs').readFileSync('site/js/features/research/benchmark-settings.js','utf8');a(src.includes('data-board-kind'));a(src.includes('data-rows-mode'));a(src.includes('setting-columns-toggle'));const registry=require('../../data/leaderboards.json').benchmarkRegistry;a(registry.benchmarks['LIBERO'].kind==='benchmark');a(registry.benchmarks['VLAbot real'].kind==='case-study');});
+ok('official score and SR remain independent sortable metrics',()=>{
+ const rows=[{model:'A',rank:1,values:{Average:{score:39,sr:22}}},{model:'B',rank:2,values:{Average:{score:35,sr:30}}}];
+ a.deepEqual(S.officialSorted(rows,'Average','score').map(x=>x.model),['A','B']);
+ a.deepEqual(S.officialSorted(rows,'Average','sr').map(x=>x.model),['B','A']);
+ a.equal(rows[0].rank,1);
+});
+ok('RoboTwin official success values show percent, not RoboDojo progress score',()=>{
+ const board={id:'robotwin2',benchmark:'RoboTwin',columns:['Average','Clean','Random'],metricSchema:'clean-random',
+ officialUpdatedAt:'2026-10-11',capturedAt:'2026-10-13',boardUrl:'https://robotwin-platform.github.io/leaderboard',
+ sourceRepoUrl:'https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io',
+ entries:[{model:'PatchWAM',rank:1,track:'cotrain',contributor:'PatchWAM Team',values:{Average:79.14,Clean:91.56,Random:66.72}}]};
+ a.equal(S.officialValue(board.entries[0],'Random','score'),66.72);
+ a.equal(S.officialValue(board.entries[0],'Random','sr'),null);
+ a(S.officialTableHtml(board).includes('79.14%'));
+});
+ok('RoboDojo SR is a rate, not the 39.26 progress score',()=>{
+ const board={id:'robodojo-sim',benchmark:'RoboDojo',columns:['Average'],metricSchema:'score-success',
+ officialUpdatedAt:'2026-10-09',capturedAt:'2026-10-13',boardUrl:'https://robodojo-benchmark.com/',
+ sourceRepoUrl:'https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io',
+ entries:[{model:'VPP2',rank:1,contributor:'RobotEra',values:{Average:{score:39.26,sr:32.26}}}]};
+ const h=S.officialTableHtml(board,'Average','sr');
+ a(h.includes('32.26%'));a(h.includes('非官网原始 Average 排名'));a(!h.includes('39.26%'));
+});
+ok('verified official model names appear in compact search index without full rows',()=>{
+ const source=require('../../data/library.json'),index=require('../../'+source.boardIndexUrl);
+ a(index.officialBoards.RoboTwin.modelNames.includes('ViGAR'));
+ a(index.officialBoards.RoboDojo.modelNames.includes('PhysicalRSI'));
+ a(index.officialBoards['RoboDojo real'].modelNames.includes('OpenWAM-α'));
+ for(const x of Object.values(index.officialBoards))a(!Object.hasOwn(x,'entries'));
+});
+
 console.log(`PASS: ${count} Setting-table sorting / search / taxonomy assertions.`);
