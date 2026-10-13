@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p126",
+    "name": "InternW0-Δ",
+    "title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+    "team": "Physical Intelligence Team · Shanghai AI Laboratory（Xingyu Miao等48位作者，详见原文完整署名）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2609.31394v1预印本，2026-09-25首发；开放组件发布状态按官方仓库实际记录。",
+    "firstPublished": "2026-09-25",
+    "dateNote": "arXiv v1 Submission history (UTC)，首次公开日期不随排行榜更新。",
+    "collectionMonth": "2026-10",
+    "versionNote": "arXiv 2609.31394v1，完整 §1–7、Table 12、实验和训练部署细节，2026-10-13",
+    "topics": [
+      "world",
+      "pretraining",
+      "action",
+      "memory",
+      "spatial"
+    ],
+    "tags": [
+      "world action model",
+      "20K+ hours",
+      "MoT",
+      "causal imprint",
+      "4D distillation",
+      "RoboDojo",
+      "RoboTwin",
+      "LIBERO-Plus"
+    ],
+    "priority": "deep",
+    "contribution": "提出结合视频专家、冻结VLM、动作专家的有向MoT模型，以Causal Imprint和训练期4D蒸馏把未来/几何先验写入可直接用于动作预测的表示，并建立20K+小时统一数据训练链路。",
+    "findings": "RoboDojo官方仿真榜单Score30.77、SR23.91%（2026-10-09第七）；LIBERO-Plus 92.8%；RoboTwin Clean2Clean90.0%、Clean2Random71.9%；特定真机RTX5090往返延迟152.8ms。",
+    "limitations": "大型异构数据与骨干组合难严格归因；主要外部Benchmark均有专门后训练，4D教师只在训练期；部分代码、权重与数据属于未来开源计划，不能默认为完全可复现。",
+    "insight": "将未来监督变为当前条件可读的隐藏因果状态，并通过4D动作几何约束补充单纯视频先验，有利于避免在线生成完整未来视频的计算负担。",
+    "readingFocus": "20K+小时数据过滤/转换，Sparse Memory Context，Causal Imprint，4D蒸馏，MoT定向注意力，RoboDojo六列Score/SR以及速度协议。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-13对照arXiv v1正文Table12和RoboDojo官方Simulation榜，全部性能为原文/官方报告；核验不等于独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 全文",
+        "url": "https://arxiv.org/html/2609.31394v1"
+      },
+      {
+        "label": "arXiv首次公开身份",
+        "url": "https://arxiv.org/abs/2609.31394"
+      },
+      {
+        "label": "InternW0-Δ 官方项目",
+        "url": "https://internrobotics.github.io/InternW0-Delta/"
+      },
+      {
+        "label": "作者开源仓库与开放状态",
+        "url": "https://github.com/InternRobotics/InternW0-Delta"
+      },
+      {
+        "label": "RoboDojo官方排行榜",
+        "url": "https://robodojo-benchmark.com/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.31394",
+    "arxiv": "2609.31394",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-25",
+    "firstArxivSource": "https://arxiv.org/abs/2609.31394v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-25",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-13",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-25",
+        "observedAt": "2026-10-13",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.31394v1",
+        "note": "arXiv v1首次公开；模型榜单独立于文章发表日期。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-13",
+    "verifiedAt": "2026-10-13",
+    "version": "arXiv:2609.31394v1（2026-09-25），§1–7，Table 12和实验消融，2026-10-13核验",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究问题：如何让预测世界变化真正改善动作，而非增加无效推理？",
+        "body": "World Action Model（WAM）通常利用大规模视频生成先验学习未来演化，但生成视觉上合理的未来并不自动意味着理解机器人可执行的物体接触、坐标变换和误差反馈。InternW0-Δ 关注三个互补问题：视频预测信息怎样转成动作专家直接可读的表示，如何补足场景语义和4D运动几何，以及怎样将不同机器人、人手和便携采集数据统一为可用的大规模动作训练资料。其路线没有在部署时要求先合成完整未来视频，而是让训练期预测监督内化到模型状态，从而在当前观察条件下直接生成动作。这个设计应与需要多次在线视频 rollout 的方法分开比较，不能以相同WAM名称推断相同算力需求。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · problem",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "整体架构：有方向的 Video–Action MoT 与冻结语义专家",
+        "body": "方法以预训练视频专家为动态表征来源，配合动作 Diffusion Transformer 的混合 Transformer 交互结构；另有冻结的视觉语言模型向动作流提供场景、物体与任务语义。视频专家在多视角视觉输入和稀疏历史中编码发生过什么以及下一步可能变化什么，动作专家在这些条件下预测连续 action chunk。为避免动作生成信息不合理地反馈给训练期未来分支，模块之间设计带方向的注意力与信息接口，视频侧隐状态成为行动侧可读取的 context。文章区分可训练视频骨干、冻结VLM和只在训练中调用的额外teacher；部署成本应按实际保留的模块计，而不是把全部训练教师视为在线策略组成。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · architecture",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "memory",
+        "title": "稀疏记忆和多模态上下文：保存关键变化，而非全部历史帧",
+        "body": "机器人长时操作既需要当前物体/夹爪状态，也可能需要阶段开始时看到却暂时不可见的目标。InternW0-Δ 的 Sparse Memory Context 组织 anchor、recent 和 current 三类时序观测，保留初始环境锚点、近期交互片段以及当前视角，避免把漫长历史逐帧塞进注意力窗口。不同视角、机器人本体状态、当前指令被映射到统一条件空间，并与 Action DiT 对齐。该记忆机制旨在减少历史遗忘和时间混淆，但文中的记忆收益来自具体训练/推理配置；不应将“支持稀疏记忆”自动理解为严格的外部长期记忆检索系统，也不能宣称它能完美解决不可观测环境。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · memory",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "causal",
+        "title": "Causal Imprint：未来变化只用于训练监督，推理只读当前状态",
+        "body": "方法的关键创新是 Causal Imprint：在有训练轨迹时利用未来视频潜变量与视频专家目标表征，迫使当前与历史条件下的隐藏状态编码即将发生的任务相关变化；训练过程中可使用真实未来片段作为学习目标，但模型实际决策时不接受真实未来图像，也不需要先生成未来视频再等待动作专家。这样未来预测所学到的交互方向能通过中间状态直接参与 action decoding。评估时须坚持严格的因果边界：真实部署可见的只有当前及过去的观测和任务信息，teacher未来特征属于离线监督。若读者把训练阶段的未来状态当成测试输入，就会高估模型在控制时获得的信息。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · causal",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "4D运动几何蒸馏：将 Track4World 教师知识迁移到视频专家",
+        "body": "单纯的视频纹理变化无法可靠表示末端与物体之间的三维关系、运动轨迹和可达方向，因此作者采用预训练 Track4World 作为4D时空表征教师，对视频专家施加辅助特征蒸馏约束。监督提供跨时刻几何与运动先验，而无需在动作执行时再调用Track4World或在线估计完整4D场。几何蒸馏与 Causal Imprint 的训练作用不同：前者帮助内部表征保留空间/轨迹结构，后者强调动作条件下的未来相关变化。论文通过删减两种监督的消融来支持互补性，但其结果仍与基础VLM、数据对齐和动作专家训练耦合，不能把最终全部增益直接划给4D模块。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · geometry",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "20K+ 小时异构数据：统一状态—动作表示与质量过滤",
+        "body": "作者整合机器人操作演示、UMI、第一视角人手、Ego2Robot 转换数据，规模超过2万小时，包含 AgiBotWorld、InternData-A1、RoboMIND、RDT、Dexora、RoboCOIN、RH20T 等不同来源。数据并非直接按视频统一拼接：处理链路先规范机器人动作坐标、观测视角和控制时间间隔，再过滤信号异常、静止边界、图像退化、超范围动作与语言不匹配样本，对人手到机器人动作转换还执行动作、运动学、视觉和速度对齐。论文声称使用大量开放数据，但许可、部分来源可下载性与可转换质量不能从累计小时数推出；更不能拿未经统一清洗的其他模型训练小时数简单与此值相除比较数据效率。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · data",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "预训练与后训练：共享骨干不代表零样本跨平台无需适配",
+        "body": "训练流程先在统一数据语义下学习视频动态和动作生成，再针对具体仿真协议或真实机器人本体做post-training。实现将视频自编码器latent、冻结VLM特征及teacher输出缓存以避免多次训练重复算特征，并结合分层MoT编译和激活检查点来支持模型实验迭代。推理侧又通过视觉prefill缓存、action-only去噪和异步控制减少延迟，论文给出单张RTX5090上的控制端到端往返约152.8ms，相比所述基线runtime约5.11倍加速。需注意这只是特定部署链路与显卡上的量测；从VLM到真实机器人控制协议的系统时延不应与单模型前向时间混同。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · training",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "仿真与真实结果：重点区分目标任务、训练数据和指标",
+        "body": "论文报告 LIBERO-Plus Total 92.8%，RoboTwin 2.0 Clean2Clean 90.0%、Clean2Random 71.9%，EBench总体SR 49.2%、Score66.0；这些测试由不同任务集合、扰动条件和评价定义构成，不可合成一个总排名。作者还在两类夹爪和两类灵巧手真实机器人上进行了适配实验，展示模型经后训练可服务不同动作接口，而非宣称用同一个未经适配的checkpoint直接完成所有实体设备。针对LIBERO-Plus等的组件消融依次检查记忆、语义、Causal Imprint、4D监督，有助于分析组合收益，但跨论文比较仍受到预训练数据规模和训练预算差异的限制。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · results",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "robodojo",
+        "title": "RoboDojo Top 10 证据：拆开过程Score与任务成功SR",
+        "body": "2026-10-09 RoboDojo-Sim官方榜单中，InternW0-Δ 的 Average Score为30.77，Average Success Rate为23.91%，按Score排名第七。作者Table12提供 Gen standard Score40.98/SR33.78%、Gen randomized Score19.19/SR11.78%、Precision Score31.98/SR23.25%、Long-horizon Score46.29/SR29.33%、Memory Score34.67/SR34.00%、Open Score10.84/SR10.17%，与官网两套平均指标一致。前者允许过程得分、后者只统计完整成功，两者量纲与排序意义不同。雷达复用已存在的RoboDojo官方Simulation多任务赛道，单独记录同一个模型的Score和SR，不再制造“InternW0专属Benchmark”，也不把论文中其他仿真任务指标误填到RoboDojo列。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · robodojo",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "局限与阅读建议：区分训练期教师、发布承诺及可复现资产",
+        "body": "多组模块相加很难完全隔离训练数据质量、特征预训练和后训练配方对泛化成绩的影响；来自Ego2Robot的人类数据存在映射误差，跨本体对齐不等价于所有关节语义一致。论文对代码、checkpoint、过滤数据和训练部署基础设施作出开源计划，但正式“将会公开”不能等价于已开放可运行训练或已下载到的权重；资源卡必须按实际官方链接逐项审查。RoboDojo榜单反映特定检查点与提交时点，不能与实时成绩混为一谈，也不能把训练阶段的未来视觉teacher当成部署期信息。若研究WAM是否真正需要在线future rollout，本论文是将训练监督和在线决策明确分开的重要对照。",
+        "sources": [
+          {
+            "label": "arXiv 2609.31394v1 · limits",
+            "url": "https://arxiv.org/html/2609.31394v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.31394v1"
+    },
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-13",
+      "note": "论文Table12与2026-10-09 RoboDojo榜单互证；复用官方sim-multi两条Score/SR track，记录六分项和两平均值。LIBERO-Plus、RoboTwin、EBench其它结果保留深读，本轮不创建单论文专属Setting。"
+    }
+  }
+}

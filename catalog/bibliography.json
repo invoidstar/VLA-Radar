@@ -3170,6 +3170,204 @@
         }
       ],
       "verifiedAt": "2026-09-19"
+    },
+    "p125": {
+      "item": {
+        "type": "article",
+        "title": "Video Prediction Policy 2: Predict Better, Act Better",
+        "author": [
+          {
+            "given": "Yanjiang",
+            "family": "Guo"
+          },
+          {
+            "given": "Haodong",
+            "family": "Yan"
+          },
+          {
+            "given": "Zhide",
+            "family": "Zhong"
+          },
+          {
+            "given": "Zhongru",
+            "family": "Zhang"
+          },
+          {
+            "given": "Qingyuan",
+            "family": "Yang"
+          },
+          {
+            "given": "Qingzhou",
+            "family": "Lu"
+          },
+          {
+            "given": "Xiaoyu",
+            "family": "Chen"
+          },
+          {
+            "given": "Yen-Jen",
+            "family": "Wang"
+          },
+          {
+            "given": "Shuying",
+            "family": "Deng"
+          },
+          {
+            "given": "Chenghan",
+            "family": "Yang"
+          },
+          {
+            "given": "Puzhen",
+            "family": "Yuan"
+          },
+          {
+            "given": "Chenxin",
+            "family": "Liu"
+          },
+          {
+            "given": "Tun",
+            "family": "Ban"
+          },
+          {
+            "given": "Xiang",
+            "family": "Zhu"
+          },
+          {
+            "given": "Yichen",
+            "family": "Liu"
+          },
+          {
+            "given": "Kun",
+            "family": "Feng"
+          },
+          {
+            "given": "Haoang",
+            "family": "Li"
+          },
+          {
+            "given": "Jianyu",
+            "family": "Chen"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              7
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2610.10270"
+      },
+      "sources": [
+        {
+          "label": "arXiv元数据与作者署名",
+          "url": "https://arxiv.org/abs/2610.10270"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    "p126": {
+      "item": {
+        "type": "article",
+        "title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+        "author": [
+          {
+            "literal": "Physical Intelligence Team, Shanghai AI Laboratory"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              25
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2609.31394"
+      },
+      "sources": [
+        {
+          "label": "arXiv元数据与作者署名",
+          "url": "https://arxiv.org/abs/2609.31394"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
+    },
+    "p127": {
+      "item": {
+        "type": "article",
+        "title": "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond",
+        "author": [
+          {
+            "given": "Wenbo",
+            "family": "Zhang"
+          },
+          {
+            "given": "Kaixuan",
+            "family": "Wang"
+          },
+          {
+            "given": "Yutao",
+            "family": "Ouyang"
+          },
+          {
+            "given": "Xiaoyu",
+            "family": "Huang"
+          },
+          {
+            "given": "Liyang",
+            "family": "Li"
+          },
+          {
+            "given": "Kailun",
+            "family": "Su"
+          },
+          {
+            "given": "Weiyang",
+            "family": "Jin"
+          },
+          {
+            "given": "Wenhao",
+            "family": "Chai"
+          },
+          {
+            "given": "Haotian",
+            "family": "Liang"
+          },
+          {
+            "given": "Zhiyang",
+            "family": "Dou"
+          },
+          {
+            "given": "Yue",
+            "family": "Chen"
+          },
+          {
+            "given": "Tianxing",
+            "family": "Chen"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              21
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2609.24170"
+      },
+      "sources": [
+        {
+          "label": "arXiv元数据与作者署名",
+          "url": "https://arxiv.org/abs/2609.24170"
+        }
+      ],
+      "verifiedAt": "2026-10-13"
     }
   }
 }

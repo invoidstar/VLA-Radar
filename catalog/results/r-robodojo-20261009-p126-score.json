@@ -1,0 +1,24 @@
+{
+  "id": "r-robodojo-20261009-p126-score",
+  "paperId": "p126",
+  "method": "InternW0-Δ",
+  "trackId": "robodojo-official-sim-multi-score",
+  "values": {
+    "Gen standard": 40.98,
+    "Gen randomized": 19.19,
+    "Precision": 31.98,
+    "Long-horizon": 46.29,
+    "Memory": 34.67,
+    "Open": 10.84,
+    "Average": 30.77
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2609.31394v1",
+  "sourceVersion": "arXiv 2609.31394v1 Table 12; official RoboDojo-Sim 2026-10-09",
+  "locator": "§7.2.4 Table 12 (Score columns); official RoboDojo 2026-10-09",
+  "attribution": "author-reported",
+  "trainingData": "20K+ h heterogeneous multi-embodiment pretraining; RoboDojo-specific post-training; sparse memory and Causal Imprint",
+  "evaluationNotes": "同时报告过程得分和全任务成功率；本表数据均来自原文Table12，按RoboDojo官方Score/SR口径分别入库；不混入LIBERO、RoboTwin或真机成绩。",
+  "supersedes": ""
+}

@@ -1,0 +1,24 @@
+{
+  "id": "r-robodojo-20261009-p127-sr",
+  "paperId": "p127",
+  "method": "GPT-6 Astra",
+  "trackId": "robodojo-official-sim-multi-sr",
+  "values": {
+    "Gen standard": 32.67,
+    "Gen randomized": 28.33,
+    "Precision": 4,
+    "Long-horizon": 8.25,
+    "Memory": 38.67,
+    "Open": 31,
+    "Average": 22.48
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2609.24170v1",
+  "sourceVersion": "arXiv 2609.24170v1 Table 1 and Appendix B; official RoboDojo-Sim 2026-10-09",
+  "locator": "§4.1 Table 1; Appendix B; official RoboDojo-Sim model GPT-6-Astra 2026-10-09",
+  "attribution": "author-reported",
+  "trainingData": "Frozen external language model, no robot task fine-tuning; move_eef tools, IK/motion planning and wiki-derived task recipes; medium reasoning effort",
+  "evaluationNotes": "原文2026-09-10榜首仅为历史快照；2026-10-09官网榜单按Score为第10名。42 tasks×50=2100 trials；LLM额外wiki配方与其他策略不同；不得解释为RoboDojo-Real成绩。",
+  "supersedes": ""
+}

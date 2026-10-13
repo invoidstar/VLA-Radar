@@ -1,3 +1,14 @@
+## 2026-10-13 — 2026-10-13-robodojo-top10
+
+定向补全RoboDojo-Sim 2026-10-09 Top10文献：新增3篇完整正文核验的VPP2、InternW0-Δ和GPT-6 Astra评测论文，复用官方Score/SR多任务赛道补6条带原文证据的结果；无独立全文的Preview或权重条目保留在审计候选、不虚构论文，原始已有结果和Benchmark协议保持。其他来源日期与统计边界在Result Report注明，完整Discovery checkpoint不前移。
+
+## 2026-10-13 — RoboDojo Top 10 文献与证据补全
+
+- 对RoboDojo-Sim 2026-10-09官方Top 10逐一核对：新增VPP2、InternW0-Δ、GPT-6 Astra评测论文共3篇，均有完整来源定位、结构化8节以上深度笔记、publication lifecycle、Resources、Reproducibility baseline、Bibliography和Benchmark Review。
+- 复用RoboDojo官方仿真多任务Score/SR现有两条Track，核实6条作者报告；VPP2的Gen standard和Gen randomized未单独报告，保留null。保留原有历史分数，按Result版本区分时间，不伪造新方法名/重复模型版本。
+- VPP2-Preview与VPP2属于同一研究版本；PhysicalRSI、Awomo-0.5、Simate-beta、Rex-M1 Preview、Liber-0 Preview和Liber-0 Lite等未取得可明确匹配的独立论文，留候选审计而不虚构收录。
+- 本次仅做RoboDojo Top 10定向核查，不前移完整Discovery checkpoint。站点仍只以GitHub Pages发布。
+
 ## 2026-10-11 — 2026-10-11-singleton-benchmark-cleanup
 
 根据用户反馈，清理仅包含同一论文单方法或同方法变体的孤立 Benchmark 分类：以 OC-VLA++ real robot 为例，共精简 16 个孤立类别，保留公共 Benchmark 的独立方法比较；不删除 catalog/results 的任何原始实验或论文详情，统一更新 Benchmark 导航、Setting、Evidence Coverage 和 My Radar 的数据集范围。新增显式 curation 登记和防回归校验，不新增 V3.0 功能。 修复与旧版细粒度消融行排除规则的重叠校验；若该类别重新纳入，既有消融筛选仍然有效。 更新前端筛选回归断言，明确 GF-VLA real 已不属于公开 Benchmark 数据集。

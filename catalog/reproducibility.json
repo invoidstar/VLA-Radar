@@ -1137,6 +1137,24 @@
       "level": "baseline",
       "note": "Baseline official-resource review completed. The official ForeAct3D code repository is recorded in Resources; other release dimensions remain unknown unless explicitly evidenced.",
       "items": {}
+    },
+    "p125": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "2026-10-13核对VPP2官方代码仓库：包含视频预训练、RoboDojo/LIBERO训练评估脚本以及已公布的阶段性模型权重；数据包含多上游资源，不能认定所有预训练媒体可一键重现。其他资源维度待完整deep audit。",
+      "items": {}
+    },
+    "p126": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "2026-10-13核对InternW0-Delta官方仓库：包含数据准备、pretraining、4D distillation、post-training与评测入口；HF页仍提示coming soon，具体权重和数据可得性不等同仓库源码开放。",
+      "items": {}
+    },
+    "p127": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "2026-10-13核对论文作者提供的RoboDojo在线报告与RoboProbe源码，属于评测控制/工具接口，不是GPT-6 Astra基础模型参数或预训练配方；无从确认外部模型权重。",
+      "items": {}
     }
   }
 }
