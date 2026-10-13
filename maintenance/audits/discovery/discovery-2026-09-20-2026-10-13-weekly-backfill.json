@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-13-weekly-backfill",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-13",
+    "attemptedAt": "2026-10-13",
+    "completedAt": null
+  },
+  "scope": "Partial catch-up for the 2026-10-11 missed weekly update through Oct13: human-video latent actions, VLA memory, sim-to-real personalization, camera robustness, world models and benchmarks. Partial source coverage must not advance the full discovery checkpoint.",
+  "sources": [
+    {
+      "id": "arxiv-primary-oct",
+      "lane": "primary-preprints",
+      "provider": "arXiv",
+      "kind": "Direct original paper/abstract and full-text verification for selected October papers",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-09",
+        "to": "2026-10-09"
+      },
+      "query": "arXiv:2610.13262,2610.13732,2610.13945; verify original arXiv submission and full Methods/Results; browse other recent cs.RO VLA results from Oct5-9.",
+      "resultCount": 3,
+      "note": "Three paper IDs and all their source versions verified. No exhaustive direct arXiv provider run over all Sep20–Oct13 dates; not full window coverage."
+    },
+    {
+      "id": "semantic-openalex-index",
+      "lane": "academic-index",
+      "provider": "OpenAlex / Semantic Scholar",
+      "kind": "Attempted independent academic-index verification",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "OpenAlex Works search VLA robotic manipulation 2026-09-20..2026-10-13 and Semantic Scholar lookup arXiv:2610.13732 / Dual-Stream Memory",
+      "resultCount": 0,
+      "note": "OpenAlex filtered works endpoint inaccessible; Semantic Scholar link resolved to indexed paper but full index page/request was inaccessible. No claim of independent broad query coverage."
+    },
+    {
+      "id": "robotics-daily-oct",
+      "lane": "curated-robotics",
+      "provider": "robotics_paper_daily",
+      "kind": "Curated VLA research list (public Oct12 snapshot)",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-12"
+      },
+      "query": "VLA index https://cold-young.github.io/robotics_paper_daily/vla.html, entries dated Oct5-Oct9 plus earlier overlap; shortlist 19 named high-relevance papers and recirculated deferred records.",
+      "resultCount": 19,
+      "note": "Index page explicitly updated 2026-10-12, so Oct13 is not yet covered; candidates and dates cross-checked where possible."
+    },
+    {
+      "id": "official-reverse-oct",
+      "lane": "reverse-discovery",
+      "provider": "Author / RoboDojo / official research sites",
+      "kind": "Project/leaderboard reverse checks",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-07",
+        "to": "2026-10-13"
+      },
+      "query": "Author project https://splat2act.github.io, RoboDojo-Sim official 2026-10-09 score table (existing p125-p127), direct LAPT and Dual-Stream paper cross-check; related labs.",
+      "resultCount": 5,
+      "note": "Splat2Act project says Code/Dataset coming soon. RoboDojo three papers were already merged 2026-10-13. Source checks do not cover all official labs for September overlap."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+      "arxiv": "2610.13945",
+      "doi": "",
+      "date": "2026-10-09",
+      "sourceIds": [
+        "arxiv-primary-oct",
+        "robotics-daily-oct",
+        "official-reverse-oct"
+      ],
+      "status": "selected",
+      "reason": "完整arXiv v1、作者项目/数据边界和方法/实验核验；九章深入阅读已写入p128。",
+      "paperId": "p128",
+      "duplicateOf": null
+    },
+    {
+      "title": "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos",
+      "arxiv": "2610.13732",
+      "doi": "",
+      "date": "2026-10-09",
+      "sourceIds": [
+        "arxiv-primary-oct",
+        "robotics-daily-oct"
+      ],
+      "status": "selected",
+      "reason": "完整arXiv v1、RoboTwin 2.0原表与多阶段数据规模已核验；九章深入阅读p129。",
+      "paperId": "p129",
+      "duplicateOf": null
+    },
+    {
+      "title": "Dual-Stream Memory for Vision-Language-Action Policies",
+      "arxiv": "2610.13262",
+      "doi": "",
+      "date": "2026-10-09",
+      "sourceIds": [
+        "arxiv-primary-oct",
+        "robotics-daily-oct"
+      ],
+      "status": "selected",
+      "reason": "完整arXiv v1、RoboMME 16任务表与负结果核验；九章深入阅读p130。",
+      "paperId": "p130",
+      "duplicateOf": null
+    },
+    {
+      "title": "VPP2",
+      "arxiv": "2610.10270",
+      "doi": "",
+      "date": "2026-10-07",
+      "sourceIds": [
+        "arxiv-primary-oct",
+        "official-reverse-oct"
+      ],
+      "status": "duplicate",
+      "reason": "RoboDojo官方Top10局部反向发现已于2026-10-13记录为p125，不重建Paper。",
+      "paperId": null,
+      "duplicateOf": "p125"
+    },
+    {
+      "title": "InternW0-Delta",
+      "arxiv": "2609.31394",
+      "doi": "",
+      "date": "2026-09-25",
+      "sourceIds": [
+        "official-reverse-oct"
+      ],
+      "status": "duplicate",
+      "reason": "RoboDojo局部补齐既有p126，不重建。",
+      "paperId": null,
+      "duplicateOf": "p126"
+    },
+    {
+      "title": "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond",
+      "arxiv": "2609.24170",
+      "doi": "",
+      "date": "2026-09-21",
+      "sourceIds": [
+        "official-reverse-oct"
+      ],
+      "status": "duplicate",
+      "reason": "RoboDojo局部补齐既有p127，属于评测论文非基础策略模型。",
+      "paperId": null,
+      "duplicateOf": "p127"
+    },
+    {
+      "title": "ForeAct3D: Policy-Grounded Future World Modeling for VLA Policies",
+      "arxiv": "2610.04607",
+      "doi": "",
+      "date": "2026-10-03",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "duplicate",
+      "reason": "前一轮已收录并深入阅读p124。",
+      "paperId": null,
+      "duplicateOf": "p124"
+    },
+    {
+      "title": "VersaCamVLA: Camera-Configurable VLA Policies for Robotic Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-08",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "尚未完成一手全文级摄像机条件/评测协议核验。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-08",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "未来表征、world supervision及动作协议需全文核验。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Spa-Bench: A Real-Robot Benchmark for Spatial Grounding in Vision-Language-Action Models",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-08",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "重要基准候选；需官方数据集/真实机器人protocol/评价维度确认。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "SimVLA: Zero-Shot Sim-to-Real VLA Learning for Mobile Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-08",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "检查移动操作而非导航、训练数据边界与真实部署。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "RARA: Robust Policy Fine-Tuning through Retrieval-Anchored Representation Alignment for Robotic Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-09",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "需完整核验检索锚点、适配预算和跨域负结果。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Evo-World: A Lightweight Vision-Language-Action Model with Future Motion Prediction via Optical-Flow Supervision",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-09",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "未来运动监督与轻量实时性需要读到原表，尚未完成。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "PathTime-VLA: Path-Time Decoupling for Factorized Post-Training of Vision-Language-Action Policies",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-08",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "速度/几何解耦任务是否具统一协议仍待一手全文阅读。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Gamma: Grounded Multi-Agent Memory with Mechanical Audit for Memory-Intensive Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-08",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "记忆工作高相关；需要外部监督、记忆完整性与任务设定核验。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "REMM: Revisable Embodied Memory for Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-08",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "记忆撤回与复核机制需要完整primary-source证据。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "MIM-VLA: Learning Physical Interaction Representations from Gripper Motor Feedback",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-06",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "触觉/电机反馈的额外传感器条件与消融表尚未完整复核。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "ViDAL: A Visual Dynamics-Grounded Action Latent Space for Vision-Language-Action Models",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-06",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "视觉动力学动作latent的监督与行动指标需对照原表。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Encoded but Not in Control: Revealing the Grounding Gap in Vision-Language Robot Policies",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-05",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "语言接地评测候选；需任务干预协议与结论可信度验证。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "How (and How Not) to Use Data Augmentation in VLA Post-Training",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-05",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "OOD扩增与RL后训练相关；核验训练/测评干预边界后再收录。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "When to Switch: Reliable Action-Chunk Extension for Vision-Language-Action Models",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-05",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "动作chunk切换对实时控制重要；等待完整延迟/成功协议。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "BiGym 2.0: Benchmarking Learned and Agent-Developed Policies for Humanoid Household Manipulation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-06",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "deferred",
+      "reason": "新基准候选，应核验任务划分及官方结果后决定是否建真实Benchmark。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "StageVLN: Spatial and Trajectory Auxiliary Guidance for Efficient Vision-Language Navigation",
+      "arxiv": "",
+      "doi": "",
+      "date": "2026-10-05",
+      "sourceIds": [
+        "robotics-daily-oct"
+      ],
+      "status": "excluded",
+      "reason": "主要是Vision-Language Navigation的导航政策，与本库低层操作VLA边界不同。",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 23,
+    "selected": 3,
+    "deferred": 15,
+    "excluded": 1,
+    "duplicate": 4,
+    "crossSource": 4
+  },
+  "status": "partial",
+  "notes": "Public papers p128-p130 are deeply read and separately verified. Curated source covered through Oct12 only; OpenAlex/Semantic Scholar broad scholarly lookup inaccessible. Therefore this is a documented partial attempt, NOT complete weekly discovery; retain previous successful checkpoint 2026-10-04 and all previously deferred candidates."
+}
