@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-14",
+  "scope": "RoboDojo-Sim top10 outstanding model identities; source-only evidence; no synthetic publications or guessed leaderboard scores",
+  "priorAudit": "maintenance/audits/benchmark/paper-source-followup-20261013.json",
+  "officialBoardSource": {
+    "modelCount": 57,
+    "updatedAt": "2026-10-09",
+    "repoSha": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
+    "sourceBlobSha": "d4664cc087e123b813530882f54273f932723eca"
+  },
+  "xpolicyLabSource": {
+    "url": "https://github.com/XPolicyLab/XPolicyLab/tree/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy",
+    "commit": "f6e309e8ece20bfa33c0e5d7b05a5f3287522757",
+    "note": "Pin adapter README to exact public commit. Adapter or checkpoint release != full independent method paper."
+  },
+  "candidates": [
+    {
+      "model": "Simate-beta",
+      "rank": 4,
+      "score": 33.95,
+      "sr": 27.96,
+      "adapter": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Simate_beta/README.md",
+      "status": "官方XPolicyLab推理适配器（eval-only；未提供论文）",
+      "sourceNote": "官方适配器写明 Paper / arXiv Not provided，训练资料未发布。适配器列出SIPAILab/sipai-robodojo-eval-ae权重，但模型卡称SIPAI evaluation；尚不以这份模型卡证明Simate-beta完整训练身份。"
+    },
+    {
+      "model": "Rex-M1 Preview",
+      "rank": 5,
+      "score": 33.79,
+      "sr": 27.44,
+      "adapter": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Rex_M1_preview/README.md",
+      "status": "XPolicyLab Preview推理适配器（论文未发布）",
+      "sourceNote": "适配器明确写明Paper/ArXiv Not released、训练流水线不开放；其vendored Xiaomi-Robotics-1代码并非Rex-M1 Preview完整后训练复现代码。安装说明另外列有ModelScope checkpoint，但不推定训练代码完整。"
+    },
+    {
+      "model": "Liber-0 Preview",
+      "rank": 8,
+      "score": 30.74,
+      "sr": 25.52,
+      "adapter": null,
+      "status": "官方RoboDojo Preview模型提交（无独立全文/适配器）",
+      "sourceNote": "2026-09-17 RoboDojo榜单历史提交：Score30.74、SR25.52%；缺可确认的LiberAI正式方法全文。不可与Liber-0 Lite合并为同一模型/权重。"
+    },
+    {
+      "model": "Liber-0 Lite",
+      "rank": 9,
+      "score": 29.24,
+      "sr": 24.23,
+      "adapter": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Liber_0_lite/README.md",
+      "status": "LiberAI eval-only推理适配器（论文待发布）",
+      "sourceNote": "XPolicyLab明确标注Paper/ArXiv Pending，推理代码bundled；训练代码计划随论文发布。README引用LiberAI/Liber0-Lite-Robodojo checkpoint，但未据此认证训练数据或完整论文。"
+    }
+  ],
+  "additionalSources": [
+    {
+      "model": "Simate-beta",
+      "type": "adapter-not-paper",
+      "url": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Simate_beta/README.md",
+      "evidence": "Paper/ArXiv not provided, eval-only; training unavailable; model supplier naming differs from linked SIPAI HF card."
+    },
+    {
+      "model": "Rex-M1 Preview",
+      "type": "adapter-not-paper",
+      "url": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Rex_M1_preview/README.md",
+      "evidence": "Paper Not released, source vendored from Xiaomi, exact Rex training history sampler not released."
+    },
+    {
+      "model": "Liber-0 Lite",
+      "type": "adapter-not-paper",
+      "url": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Liber_0_lite/README.md",
+      "evidence": "Paper pending; evaluation code release, training release promised for later."
+    },
+    {
+      "model": "Liber-0 Preview",
+      "type": "leaderboard-only",
+      "url": "https://robodojo-benchmark.com/LeaderBoard",
+      "evidence": "Official entry only; no independently verified exact full-text publication."
+    }
+  ],
+  "note": "Official scoring 2026-10-09 remains unchanged; listing is not proof of code open-sourcing, model reproducibility or independent paper publication.",
+  "allFourHaveNoVerifiedIndependentFullPaper": true,
+  "editorialStatus": "deferred-until-publisher-or-arxiv-identity",
+  "globalDiscoverySuccessCheckpointAdvanced": false
+}
