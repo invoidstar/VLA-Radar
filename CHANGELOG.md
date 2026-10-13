@@ -1,3 +1,7 @@
+## 2026-10-14 — 2026-10-14-robodojo-source-followup
+
+RoboDojo缺失论文与结果来源专项：完成Embodied Turing Machines（COAP, arXiv2610.12369v1）与PhysEvo（arXiv2610.08995v1）的正文级深读，新增4条42任务作者报告的Score/SR记录并明确五维宏平均、不同开发预算及非官方模型提交；核验XPolicyLab中Simate-beta、Rex-M1 Preview、Liber-0 Lite推理适配器的论文待发布边界与Liber-0 Preview官方模型身份。保留独立官方快照及源Git版本，不虚构论文或最新排名；完整Discovery checkpoint不前移。本批将已编辑的canonical源、构建索引、验证与审计统一纳入可追溯发布链路。
+
 ## 2026-10-14 — 2026-10-14-robodojo-sources
 
 补全RoboDojo四个未发表Preview模型的XPolicyLab官方适配器及资源证据，全文深读COAP/PhysEvo两篇新的具身智能论文，保存4条不同任务/聚合口径的作者报告Score/SR；不将官方模型当作已发表论文，不改写官方模型成绩或四lane Discovery成功检查点。

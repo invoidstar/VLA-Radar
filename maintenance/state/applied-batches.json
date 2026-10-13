@@ -200,6 +200,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-14-robodojo-source-followup",
+      "sha256": "3f2b3c532bdfe84d50f727e5ebb70dc7ad49c522acc2f7d305b225ec6effe347",
+      "date": "2026-10-14",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
