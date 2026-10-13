@@ -31,6 +31,23 @@ def test_original_paper_results_not_replaced_by_official_model_submissions():
     no_paper={x["model"]:x for x in sim["entries"] if x["model"] in {"PhysicalRSI","Awomo-0.5"}}
     assert len(no_paper)==2 and all(x.get("resourceLink") and not x.get("paperLink") for x in no_paper.values())
 
+def test_unpublished_robodojo_preview_submissions_keep_source_without_papers():
+    _,records,_,_=read_catalog(ROOT)
+    ids={r["paper"]["id"] for r in records}
+    sim=next(b for b in load_snapshots(ROOT,ids) if b["id"]=="robodojo-sim")
+    requested={"Simate-beta":(33.95,27.96),"Rex-M1 Preview":(33.79,27.44),
+               "Liber-0 Preview":(30.74,25.52),"Liber-0 Lite":(29.24,24.23)}
+    found={x["model"]:x for x in sim["entries"] if x["model"] in requested}
+    assert set(found)==set(requested)
+    for name,(score,sr) in requested.items():
+        item=found[name]
+        assert item["values"]["Average"]=={"score":score,"sr":sr}
+        assert item.get("resourceKind") and item.get("resourceNote")
+        assert item["resourceCheckedAt"]=="2026-10-14"
+        assert not item.get("paperLink")
+    assert sum(bool(x.get("resourceLink")) for x in found.values())==3
+
+
 def test_generation_shards_are_lazy_and_do_not_leak_all_official_rows():
     manifest,records,tracks,results=read_catalog(ROOT)
     ids={rec["paper"]["id"] for rec in records}

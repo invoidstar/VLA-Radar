@@ -128,9 +128,10 @@
     const rows=current.map((r,i)=>{
       const val=officialValue(r,key,metric);
       const relation=r.paperLink?esc(r.paperLink.paperId)+' · '+esc(r.paperLink.relation):'官方提交 · 论文关系未核验';
-      const modelLink=r.resourceLink?'<a class="official-model-resource" href="'+esc(safe(r.resourceLink))+'" target="_blank" rel="noopener noreferrer">已核验模型卡 / 项目来源 ↗</a>':'';
+      const modelStatus=r.resourceKind?'<small class="official-model-status" title="'+esc(r.resourceNote||'')+'">'+esc(r.resourceKind)+'</small>':'';
+      const modelLink=r.resourceLink?'<a class="official-model-resource" href="'+esc(safe(r.resourceLink))+'" target="_blank" rel="noopener noreferrer" title="'+esc(r.resourceNote||'')+'">核验来源 / 评测实现 ↗</a>':'';
       return '<tr data-official-model="'+esc(r.model)+'"><td class="numeric">'+(siteRank?r.rank:i+1)+'</td>'+
-       '<td class="official-method"><strong>'+esc(r.model)+'</strong><small class="official-paper-id">'+relation+'</small>'+modelLink+'</td>'+
+       '<td class="official-method"><strong>'+esc(r.model)+'</strong><small class="official-paper-id">'+relation+'</small>'+modelStatus+modelLink+'</td>'+
        '<td class="numeric official-score">'+fmt(val)+'</td>'+
        (twin?'<td>'+esc(r.track==='cotrain'?'Co-train':'Single-task SFT')+'</td>':'')+
        '<td class="official-contributor">'+esc(r.contributor)+(twin&&r.listedAt?'<small>Listed '+esc(r.listedAt)+'</small>':'')+'</td></tr>';

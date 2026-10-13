@@ -266,3 +266,6 @@
 
 .official-model-resource{display:block;margin-top:3px;font-size:9px;line-height:1.6;color:#607ba8;text-decoration:none;overflow-wrap:anywhere}
 .official-model-resource:hover{text-decoration:underline}
+
+/* Preview-model provenance is distinct from reviewed publications. */
+.official-model-status{display:block;line-height:1.6;font-size:8px;color:#858ba7;overflow-wrap:anywhere;margin-top:3px}

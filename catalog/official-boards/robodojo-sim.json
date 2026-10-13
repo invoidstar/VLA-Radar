@@ -173,7 +173,11 @@
           "score": 9.12,
           "sr": 8.5
         }
-      }
+      },
+      "resourceLink": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Simate_beta/README.md",
+      "resourceKind": "官方XPolicyLab推理适配器（eval-only；未提供论文）",
+      "resourceNote": "官方适配器写明 Paper / arXiv Not provided，训练资料未发布。适配器列出SIPAILab/sipai-robodojo-eval-ae权重，但模型卡称SIPAI evaluation；尚不以这份模型卡证明Simate-beta完整训练身份。",
+      "resourceCheckedAt": "2026-10-14"
     },
     {
       "model": "Rex-M1 Preview",
@@ -208,7 +212,11 @@
           "score": 6.67,
           "sr": 6.08
         }
-      }
+      },
+      "resourceLink": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Rex_M1_preview/README.md",
+      "resourceKind": "XPolicyLab Preview推理适配器（论文未发布）",
+      "resourceNote": "适配器明确写明Paper/ArXiv Not released、训练流水线不开放；其vendored Xiaomi-Robotics-1代码并非Rex-M1 Preview完整后训练复现代码。安装说明另外列有ModelScope checkpoint，但不推定训练代码完整。",
+      "resourceCheckedAt": "2026-10-14"
     },
     {
       "model": "VPP2-Preview",
@@ -321,7 +329,10 @@
           "score": 6.68,
           "sr": 5.33
         }
-      }
+      },
+      "resourceKind": "官方RoboDojo Preview模型提交（无独立全文/适配器）",
+      "resourceNote": "2026-09-17 RoboDojo榜单历史提交：Score30.74、SR25.52%；缺可确认的LiberAI正式方法全文。不可与Liber-0 Lite合并为同一模型/权重。",
+      "resourceCheckedAt": "2026-10-14"
     },
     {
       "model": "Liber-0 Lite",
@@ -356,7 +367,11 @@
           "score": 3.06,
           "sr": 2.58
         }
-      }
+      },
+      "resourceLink": "https://github.com/XPolicyLab/XPolicyLab/blob/f6e309e8ece20bfa33c0e5d7b05a5f3287522757/policy/Liber_0_lite/README.md",
+      "resourceKind": "LiberAI eval-only推理适配器（论文待发布）",
+      "resourceNote": "XPolicyLab明确标注Paper/ArXiv Pending，推理代码bundled；训练代码计划随论文发布。README引用LiberAI/Liber0-Lite-Robodojo checkpoint，但未据此认证训练数据或完整论文。",
+      "resourceCheckedAt": "2026-10-14"
     },
     {
       "model": "GPT-6-Astra",

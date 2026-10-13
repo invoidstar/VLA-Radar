@@ -78,5 +78,17 @@ ok('official-only projects show source links without fake paper IDs',()=>{
  a(html.includes('官方提交 · 论文关系未核验'));
  a(html.includes('official-model-resource'));
 });
+ok('unpublished preview models show explicit provenance status instead of fake papers',()=>{
+ const row={model:'Simate-beta',rank:1,contributor:'SIPAILab',values:{Average:{score:33.95,sr:27.96}},
+   resourceKind:'官方XPolicyLab推理适配器（eval-only；未提供论文）',resourceNote:'训练资源未公开',
+   resourceLink:'https://github.com/XPolicyLab/XPolicyLab/blob/abcdef/policy/Simate_beta/README.md'};
+ const b={benchmark:'RoboDojo',metricSchema:'score-success',officialUpdatedAt:'2026-10-09',capturedAt:'2026-10-14',
+   columns:['Average'],boardUrl:'https://robodojo-benchmark.com/',sourceRepoUrl:'https://github.com/XPolicyLab/XPolicyLab',entries:[row]};
+ const html=S.officialTableHtml(b);
+ a(html.includes('论文关系未核验'));
+ a(html.includes('推理适配器'));
+ a(html.includes('评测实现 ↗'));
+ a(!html.includes('已核验论文'));
+});
 
 console.log(`PASS: ${count} Setting-table sorting / search / taxonomy assertions.`);
