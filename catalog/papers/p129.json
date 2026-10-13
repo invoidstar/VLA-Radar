@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p129",
+    "name": "LAPT-Scale",
+    "title": "LAPT-Scale: Learning Action Priors from Human Videos for Scalable Vision-Language-Action Policies",
+    "team": "Zhiyuan Xiang、Peidong Liu、Mingyang Li、Jiawei Li、Wenhao Li、Wenbo Ding、Xiang Deng",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 2610.13732v1 预印本；论文自述CoRL 2026录用尚未独立确认",
+    "firstPublished": "2026-10-09",
+    "dateNote": "首次公开依照arXiv v1提交日；录用/会议公开状态等待官方证据。",
+    "collectionMonth": "2026-10",
+    "versionNote": "2026-10-09首次公开｜arXiv v1",
+    "topics": [
+      "pretraining",
+      "action",
+      "spatial"
+    ],
+    "tags": [
+      "human video",
+      "latent action",
+      "VAE",
+      "action representation",
+      "RoboTwin",
+      "RoboCasa"
+    ],
+    "priority": "deep",
+    "contribution": "通过时空VAE学习32维人类视频连续潜在动作，联合感知、DINO和光流目标，在大规模无动作标注视频上预训练VLA后再做机器人本体对齐。",
+    "findings": "23,300小时人类视频学习潜在动作、5,100小时预训练、250小时本体对齐；RoboTwin2.0 Easy/Hard达到90.0%/89.3%，RoboCasa-GR1报告64.8%。",
+    "limitations": "仍需机器人真实动作对齐；不同基线预训练预算不同；少量真机任务不证明跨机器人零样本泛化。",
+    "insight": "视频预训练中的中间目标若刻画动作诱发的连续视觉变化，比纯未来外观重建更易形成可迁移操作先验，但必须校验机器人可执行性。",
+    "readingFocus": "32维latent VAE、RAFT/DINO/LPIPS目标、三阶段数据用量、本体对齐、RoboTwin2 Easy/Hard主表与删损失消融。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-13按arXiv v1一手全文核验；会议状态不超出直接证据；所有数字均为作者报告。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv正文与实验表",
+        "url": "https://arxiv.org/html/2610.13732v1"
+      },
+      {
+        "label": "arXiv首版元数据",
+        "url": "https://arxiv.org/abs/2610.13732"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.13732",
+    "arxiv": "2610.13732",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-09",
+    "firstArxivSource": "https://arxiv.org/abs/2610.13732v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-09",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-13",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-09",
+        "observedAt": "2026-10-13",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.13732v1",
+        "note": "初版一手正文核对，会议录用需独立核验。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-13",
+    "verifiedAt": "2026-10-13",
+    "version": "arXiv:2610.13732v1（2026-10-09），方法/训练/评测主表/消融，2026-10-13核验",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "动机：人类视频中的动作先验如何服务真实机器人控制？",
+        "body": "机器人示范轨迹昂贵且跨本体难以直接重用，而公开视频具有更大规模和丰富的物体交互，但缺少精确机器人动作标签。直接以未来图像特征或光流训练VLA，容易把“看见场景变化”与“学到可迁移的动作先验”混淆；仅靠少量真机示范则难以覆盖物体、视角和动态变化。LAPT-Scale要回答的问题是：能否从无机器人本体标签的人类视频中学习一个结构化、连续的潜在动作表征，将它作为VLA预训练监督，再用有限机器人数据把该先验对齐到机器人可执行的动作空间。研究聚焦大规模视频动作预训练加少量本体适配，而不是提出新的机器人评测基准。对论文中的human video、robot alignment和下游task data，不能把总时长相加或视为同一统计口径。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "contribution",
+        "title": "三阶段路线与核心创新：先学习视觉变化，再校准机器人动作",
+        "body": "方法首先训练latent action model，把相邻人类视频帧的视觉变化压入可预测的连续动作变量；然后通过高容量的人类视频训练，使视频模型表示对潜在动作变化而非纯粹静态外观敏感；最后在有限真实机器人示范上对齐策略的action expert并完成特定任务后训练。这里的latent human action并不被直接发送给电机。它主要提供机器人数据稀缺时的预训练监督，而部署动作来自经过robot-domain校准的控制头。论文的技术贡献是构造连续潜在动作与多粒度视觉运动目标的耦合，再证实这种“视觉变化—潜在动作—具身动作”迁移可规模化。需要注意，分阶段训练和更大视频量同时作用，仅凭最终排行榜不能单独归因于latent action建模。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "latent",
+        "title": "连续潜在动作构造：时空VAE和32维动态变量",
+        "body": "作者采用面向视频帧对的时空变分自编码器，将两帧图像间的变化映射为32维连续latent action。与直接把帧间变化离散分桶不同，连续变量允许保留动作幅度和局部几何方向信息，再通过重建约束使编码结果不至于退化为只反映场景纹理。训练包含像素重建、LPIPS感知相似、DINO语义特征一致性以及基于RAFT的光流变化约束，配合KL正则控制潜在空间。不同损失在不同维度强化可见性：像素与感知保持外观，语义特征抑制无关视角变化，光流直接强调运动轨迹。32维latents是训练时的代理动作空间，不等于机械臂有32个关节、也不能推断出每维变量天然具有物理语义。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "pipeline",
+        "title": "模型输入输出与冻结边界：视觉动作先验和真实动作专家",
+        "body": "潜在动作提取阶段输入人类视频连续观察，并通过训练好的encoder得到自监督动作目标；大规模预训练VLA读取视觉帧和语言目标，学习预测这些潜在动态信号，使视觉语言骨干对未来交互更敏感。机器人对齐阶段将连续控制的动作expert接入策略，以机器人实际执行的状态和动作标签替换人类代理监督；最后根据任务数据进行SFT或专用后训练。训练时的latent prediction、机器人action flow expert和实际控制输出处于不同阶段，不能把人类视频轨迹直接看作机器人轨迹。实验建立在JoyAI-RA/Perceiver以及flow matching action head体系上，推理期主要通过机器人适配后的头预测动作序列，不需要现场获得未来两帧图像或计算人类视频的后验latent。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "数据来源与预算：23,300小时视频、5,100小时清洗预训练和250小时机器人对齐",
+        "body": "论文给出潜在动作模型约23,300小时人类视频，用于获得面向一般操作视觉动态的潜在表征；随后使用清洗后的约5,100小时数据开展预训练扩展实验，再用约250小时机器人动作数据做本体对齐。不同阶段的数据经过筛选与用途划分，不能表述为“28,650小时统一机器人示范”，也不能假设所有视频含同一粒度的文字指令。作者还比较较小规模的1K/3K/5K视频量，在固定下游任务上观察预训练收益。机器人对齐步骤尤其关键：未经对齐的人类视频潜在空间不一定具有机器人动力学可执行性。数据处理、预训练基础模型及最终任务微调成本仍影响横向性能对比，应在Result Report保存这些差异，而不是另建Training Data身份的Evaluation Setting。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "benchmark",
+        "title": "评测协议：RoboTwin2、RoboCasa-GR1与有限真机任务分别看待",
+        "body": "RoboTwin 2.0使用Easy/Hard两种评测条件，报告的是成功率百分比；原论文的主表混合了不同机器人预训练底座，因此比较行需要保留reporting-paper来源，不能称为统一预算的公平榜。RoboCasa-GR1使用面向GR1设置的任务成功率，但该范围可能与现有RoboCasa任务切分不一致，所以不直接并入原来的RoboCasa Setting。真实机器人实验则覆盖有限的放置、拿取与光照/背景变化情形，按每任务20次trial统计。论文报告部分实验采用7个具体真实任务，而不是覆盖所有厨房、双臂或人体视频动作类别。结果的环境、视角和机器人系统不同，必须分别说明，不能直接对Easy、Hard、RoboCasa和真机成功率做平均。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "result",
+        "title": "核心定量结果：Easy 90.0、Hard 89.3，跨场景优势需谨慎解释",
+        "body": "LAPT-Scale在RoboTwin2.0主表报告Easy成功率90.0%、Hard成功率89.3%；同文列出π0分别65.9/58.4、π0.5分别82.7/76.8、Motus分别88.7/87.0、LingBot-VLA分别88.6/86.7、JoyAI-RA分别88.6/87.2。由于预训练、模型规模及数据来源不完全相同，这些是论文原表报告，不代表本站重新训练和独立评价。作者在RoboCasa-GR1另报告64.8%的成功率，并和同文若干基线比较；暂不因为数值高于某个现有RoboCasa项目就重建跨协议排名。真实机器人三任务中本文85.0%、π0.5 56.7%、JoyAI-RA80.0%；在更困难的空间位置与光照等变化情形，整体表现也存在下降。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "消融：动作语义、运动一致性与视频规模各有可辨影响",
+        "body": "作者通过逐步增加预训练视频规模，报告三项任务上的聚合成功率大致从1K小时数据63.3%升至3K的80.0%、5K的85.0%；但规模增长伴随数据覆盖增加，不能单独归因为参数量效应。以RoboTwin Hard为例，完整版本报告89.3%，移除光流目标后降至77.8%，移除DINO一致性降至84.1%，移除LPIPS降至82.5%，只保留重建损失时约74.2%。这些结果支持多个训练目标都有贡献，尤其动态监督对操作相关的动作先验有用，但损失权重与数据分布同样会影响幅度。论文还对无第一阶段latent-action pretraining的对照报告较低下游成绩，说明“使用大量人类视频”与“选择可学习的动态目标”需要配合。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "不足与阅读边界：跨本体仍靠真实数据校准，部分比较不统一",
+        "body": "最重要的边界是人类视频监督并未消除机器人动作标签的需求：文中仍使用约250小时机器人数据以及任务级后训练。系统也基于具体视觉语言骨干、动作专家和数据过滤策略，无法从当前实验中单独证明任何VLA架构都能重用同样潜在动作。RoboTwin的Easy/Hard分数、RoboCasa-GR1成绩和真机样本属于不同评测设置，且若干基线的预训练背景存在差异。本文没有证明未知机器人本体能够零样本输出有效动作。更高的视频训练预算、VAE预训练开销和可复现资源释放范围需要在资源卡中单独核验。本站记录原表和消融，但不把消融方法当作额外独立Benchmark方法。",
+        "sources": [
+          {
+            "label": "LAPT-Scale arXiv:2610.13732v1",
+            "url": "https://arxiv.org/html/2610.13732v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.13732v1"
+    },
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-13",
+      "note": "核验原文RoboTwin2.0 Easy/Hard 主表，5个报告基线+本文方法作为paper-table；RoboCasa-GR1任务定义尚不足以安全对齐已有RoboCasa Setting，真实任务属自定义实验，仅在深读记录。"
+    }
+  }
+}
