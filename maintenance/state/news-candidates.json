@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-06",
+  "checkedAt": "2026-10-13",
   "items": [
     {
       "title": "Skild S1 相关9月报道",
@@ -37,6 +37,12 @@
       "status": "deferred",
       "source": "https://cold-young.github.io/robotics_paper_daily/vla.html",
       "reason": "超出本次 2026-10-04 周窗口，留到下一轮周更，避免事后扩大本周 checkpoint。"
+    },
+    {
+      "title": "2026-10-08至2026-10-13其余具身智能模型及工业部署事件",
+      "status": "deferred",
+      "source": "https://cold-young.github.io/robotics_paper_daily/vla.html",
+      "reason": "已经补录3条10月6/7日官方事件；仍需对后续各实验室/公司公告做完整14天新闻扫描、时间溯源与去重，未将局部源覆盖冒充新闻全量完成。"
     }
   ]
 }
