@@ -377,6 +377,17 @@
     },
     "p128": {
       "project": "https://splat2act.github.io/"
+    },
+    "p131": {
+      "project": "https://dagroup-pku.github.io/ViGAR/",
+      "code": "https://github.com/DAGroup-PKU/ViGAR"
+    },
+    "p132": {
+      "code": "https://github.com/TianhengW/PatchWAM-RoboCasa"
+    },
+    "p133": {
+      "project": "https://machembodied.com/ME-Dex/ME-Dex1.0.html",
+      "code": "https://github.com/MachEmbodied/ME-Dex-1.0"
     }
   }
 }

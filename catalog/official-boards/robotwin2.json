@@ -32,6 +32,10 @@
         "Clean": 91.56,
         "Random": 66.72,
         "Average": 79.14
+      },
+      "paperLink": {
+        "paperId": "p132",
+        "relation": "named method in verified paper; source-specific Clean-only checkpoint"
       }
     },
     {
@@ -45,6 +49,10 @@
         "Clean": 89.58,
         "Random": 68.12,
         "Average": 78.85
+      },
+      "paperLink": {
+        "paperId": "p133",
+        "relation": "named method in verified paper; source-specific Clean-only checkpoint"
       }
     },
     {
@@ -58,6 +66,10 @@
         "Clean": 82,
         "Random": 67.02,
         "Average": 74.51
+      },
+      "paperLink": {
+        "paperId": "p131",
+        "relation": "named method in verified paper; source-specific Clean-only checkpoint"
       }
     },
     {

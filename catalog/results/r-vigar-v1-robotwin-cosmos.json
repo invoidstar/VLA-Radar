@@ -1,0 +1,20 @@
+{
+  "id": "r-vigar-v1-robotwin-cosmos",
+  "paperId": "p131",
+  "method": "Cosmos3-Nano-RoboTwin",
+  "trackId": "vigar-v1-robotwin-clean2500",
+  "values": {
+    "Clean": 77.06,
+    "Random": 22.46,
+    "Average": 49.76
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2610.02368v1",
+  "sourceVersion": "arXiv 2610.02368v1 · Table 1a, controlled no-subgoal baseline",
+  "locator": "Table 1a, controlled no-subgoal baseline",
+  "attribution": "reported-baseline",
+  "trainingData": "50 clean expert demonstrations per task; 2,500 total. No randomized training demonstrations; pretrain Cosmos3-Nano; multitask train.",
+  "evaluationNotes": "作者同文受控重训练的无subgoal Cosmos3-Nano-RoboTwin基线，不等于其独立论文新增模型。",
+  "supersedes": ""
+}

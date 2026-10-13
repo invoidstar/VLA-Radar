@@ -180,6 +180,16 @@
       "results": 10,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-13-source-paper-catchup",
+      "sha256": "2e1ab40171ca3b0c69ec4a6f03e5abf51350ad7c0afb3c3bd7e0bb33902c28b8",
+      "date": "2026-10-13",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

@@ -97,7 +97,10 @@
           "score": 28.88,
           "sr": 24.92
         }
-      }
+      },
+      "resourceLink": "https://mmlab.hk/research/PhysicalRSI",
+      "resourceKind": "official project only, no matched full-text method paper",
+      "resourceNote": "Repo https://github.com/PhysicalRSI/PhysicalRSI is preview infrastructure, not proof of full RoboDojo weights or paper."
     },
     {
       "model": "Awomo-0.5",
@@ -132,7 +135,10 @@
           "score": 24.09,
           "sr": 22.92
         }
-      }
+      },
+      "resourceLink": "https://huggingface.co/Auwomo/Awomo-0.5-Robodojo",
+      "resourceKind": "official model card, no verified full-text paper",
+      "resourceNote": "Evaluation-only model card; do not auto-identify with Awomo-SimDataEngine arXiv."
     },
     {
       "model": "Simate-beta",

@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-13",
+  "scope": "Follow-up to immutable 2026-10-13 core Benchmark official-source audit. Full-text checked candidates selected into the paper catalog; unresolved entries remain official-only.",
+  "sourceAudit": "maintenance/audits/benchmark/core-libero-robotwin-robodojo-20261013.json",
+  "sourceSnapshots": {
+    "roboTwinUpstreamDate": "2026-10-11",
+    "roboDojoUpstreamDate": "2026-10-09",
+    "officialScoreFieldsUnchanged": true
+  },
+  "selected": [
+    {
+      "paperId": "p131",
+      "name": "ViGAR",
+      "arxiv": "2610.02368",
+      "readVersion": "v1",
+      "verifiedAt": "2026-10-13",
+      "officialModel": "ViGAR",
+      "benchmark": "RoboTwin",
+      "alignedOfficialScore": {
+        "Clean": 82,
+        "Random": 67.02,
+        "Average": 74.51
+      },
+      "resultIds": [
+        "r-vigar-v1-robotwin-main",
+        "r-vigar-v1-robotwin-cosmos"
+      ],
+      "sources": [
+        "https://arxiv.org/html/2610.02368v1",
+        "https://github.com/DAGroup-PKU/ViGAR"
+      ],
+      "status": "full-text-checked"
+    },
+    {
+      "paperId": "p132",
+      "name": "PatchWAM",
+      "arxiv": "2609.25961",
+      "readVersion": "v1",
+      "verifiedAt": "2026-10-13",
+      "officialModel": "PatchWAM",
+      "benchmark": "RoboTwin",
+      "alignedOfficialScore": {
+        "Clean": 91.56,
+        "Random": 66.72,
+        "Average": 79.14
+      },
+      "otherPaperReportedScore": {
+        "training": "27500 mixed+2100 augmented",
+        "Clean": 96.04,
+        "Random": 96.2,
+        "Average": 96.12
+      },
+      "source": "https://arxiv.org/html/2609.25961v1",
+      "status": "full-text-checked"
+    },
+    {
+      "paperId": "p133",
+      "name": "ME-Dex 1.0",
+      "arxiv": "2609.21449",
+      "readVersion": "v2",
+      "verifiedAt": "2026-10-13",
+      "officialModel": "ME-Dex-1.0",
+      "benchmark": "RoboTwin",
+      "officialHighPrecision": {
+        "Clean": 89.58,
+        "Random": 68.12,
+        "Average": 78.85
+      },
+      "paperRounded": {
+        "Clean": 89.6,
+        "Random": 68.1,
+        "Average": 78.9
+      },
+      "source": "https://arxiv.org/html/2609.21449v2",
+      "status": "full-text-checked"
+    }
+  ],
+  "officialOnlyWithVerifiedResources": [
+    {
+      "model": "PhysicalRSI",
+      "benchmark": "RoboDojo",
+      "score": 36.27,
+      "sr": 31.38,
+      "project": "https://mmlab.hk/research/PhysicalRSI",
+      "sourceRepo": "https://github.com/PhysicalRSI/PhysicalRSI",
+      "disposition": "official-model-entry / preview-infrastructure only",
+      "reason": "Project and preview tool are public but no unambiguous complete VLA/RoboDojo model paper has been verified. Do not create a paper record."
+    },
+    {
+      "model": "Awomo-0.5",
+      "benchmark": "RoboDojo",
+      "score": 35.34,
+      "sr": 29.64,
+      "modelCard": "https://huggingface.co/Auwomo/Awomo-0.5-Robodojo",
+      "disposition": "official-model-entry / model-card only",
+      "reason": "Model card supports an evaluation submission; does not prove correspondence to a complete method paper or open training code; Awomo-SimDataEngine is not an automatic same-work paper identity."
+    }
+  ],
+  "deferred": [
+    {
+      "model": "Simate-beta",
+      "benchmark": "RoboDojo",
+      "status": "deferred",
+      "reason": "Model appears in source-pinned official snapshot, but complete publication and exact version relationship remain unconfirmed."
+    },
+    {
+      "model": "Rex-M1 Preview",
+      "benchmark": "RoboDojo",
+      "status": "deferred",
+      "reason": "Model appears in source-pinned official snapshot, but complete publication and exact version relationship remain unconfirmed."
+    },
+    {
+      "model": "Liber-0 Preview",
+      "benchmark": "RoboDojo",
+      "status": "deferred",
+      "reason": "Model appears in source-pinned official snapshot, but complete publication and exact version relationship remain unconfirmed."
+    },
+    {
+      "model": "Liber-0 Lite",
+      "benchmark": "RoboDojo",
+      "status": "deferred",
+      "reason": "Model appears in source-pinned official snapshot, but complete publication and exact version relationship remain unconfirmed."
+    }
+  ],
+  "notReinvented": [
+    "p107 IndustrialVLA-Bench already deep-read; source audit previous deferred candidate was stale",
+    "VPP2 Preview remains same paper p125 model variant, not a second independent paper."
+  ],
+  "benchmarkProtection": [
+    "RoboTwin official 2500 Clean conditions differ from author-reported 27500+mixed data; both preserve distinct training metadata.",
+    "ME-Dex mixed paper Table1 lacks an author-reported Average; do not infer one.",
+    "PatchWAM LIBERO-Plus trained on augmented perturbation data, not zero-shot.",
+    "RoboDojo PatchWAM 29.39 Score is a 2026-09-15 historical result; not the Oct09 live official snapshot."
+  ],
+  "sourceProvenance": [
+    "https://arxiv.org/html/2610.02368v1",
+    "https://arxiv.org/html/2609.25961v1",
+    "https://arxiv.org/html/2609.21449v2",
+    "https://github.com/DAGroup-PKU/ViGAR",
+    "https://github.com/TianhengW/PatchWAM-RoboCasa",
+    "https://github.com/MachEmbodied/ME-Dex-1.0",
+    "https://mmlab.hk/research/PhysicalRSI",
+    "https://huggingface.co/Auwomo/Awomo-0.5-Robodojo"
+  ],
+  "fullWeeklyDiscovery": false,
+  "advanceGlobalDiscoveryCheckpoint": false,
+  "totals": {
+    "newPapers": 3,
+    "addedPaperReportedResults": 8,
+    "sourceLinkedRoboTwinModels": 3,
+    "officialOnlyResourceUpdates": 2
+  }
+}

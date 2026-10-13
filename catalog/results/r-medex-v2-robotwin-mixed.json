@@ -1,0 +1,19 @@
+{
+  "id": "r-medex-v2-robotwin-mixed",
+  "paperId": "p133",
+  "method": "ME-Dex-1.0",
+  "trackId": "medex-v2-robotwin-mixed",
+  "values": {
+    "Clean": 91.56,
+    "Random": 91.92
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2609.21449v2",
+  "sourceVersion": "arXiv 2609.21449v2 · Table 1, mixed-data tactile main",
+  "locator": "Table 1, mixed-data tactile main",
+  "attribution": "author-reported",
+  "trainingData": "50 Clean + 500 Randomized demonstrations per task, 27,500 total; tactile replay and future tactile prediction; current tactile observed.",
+  "evaluationNotes": "arXiv v2 Table1仅提供Clean/Random，无Average列；触觉输入、未来触觉和H-Bridge作为训练机制。",
+  "supersedes": ""
+}

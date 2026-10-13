@@ -263,3 +263,6 @@
  .official-controls label{flex:1 1 100px}
  .official-table td,.official-table th{font-size:9px}
 }
+
+.official-model-resource{display:block;margin-top:3px;font-size:9px;line-height:1.6;color:#607ba8;text-decoration:none;overflow-wrap:anywhere}
+.official-model-resource:hover{text-decoration:underline}

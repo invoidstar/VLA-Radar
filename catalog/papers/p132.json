@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p132",
+    "name": "PatchWAM",
+    "title": "An Action Is Worth One Patch: Unified World–Action Modeling with PatchWAM",
+    "team": "Tianheng Wang、Zhou Xie、Heng Jia、Jianhua Xu、Tong Zhang、Kaicheng Yu",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv v1 预印本",
+    "firstPublished": "2026-09-22",
+    "dateNote": "按 arXiv 2609.25961v1 的UTC首发日（2026-09-22）锁定，不以后续版本或本站收录日替代。",
+    "collectionMonth": "2026-09",
+    "versionNote": "2026-09-22 首发 · 深读 arXiv v1 · 2026-10-13 来源复核",
+    "topics": [
+      "world",
+      "action",
+      "efficiency"
+    ],
+    "tags": [
+      "action-as-patch",
+      "single-stream",
+      "flow matching",
+      "RoboTwin",
+      "LIBERO",
+      "LIBERO-Plus",
+      "world action model"
+    ],
+    "priority": "deep",
+    "contribution": "提出固定、无训练参数的Action-as-Patch映射，将连续Action Chunk写成与未来视频相容的patch token，沿用单个图像生成Transformer完成视觉未来与动作联合去噪，避免独立Action Expert。",
+    "findings": "RoboTwin 27,500+增强示范全数据平均96.12%，Clean-only官方对齐平均79.14%；LIBERO标准四套98.4%，使用增强LIBERO-Plus训练达到91.8%。在匹配控制实验中优于双expert，但推理时间更长。",
+    "limitations": "去除独立动作专家并不等于低延迟：联合DiT更慢；高分受额外训练数据与增强影响，单种子没有方差。RoboDojo历史9月15日分数不是10月9日当前榜单排名。",
+    "insight": "预训练视觉生成器若接口设计合理，可以直接接纳低维机器人动作，但要同时核验数据预算、动作编码可逆性和端到端延迟，避免将架构简化误写为全系统部署加速。",
+    "readingFocus": "固定Action-as-Patch编码与反映射、统一Transformer去噪、混合示范/clean-only双训练协议、匹配双expert对照、RoboDojo历史快照与部署延迟。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-13 对照 arXiv v1 完整HTML的方法、结果原表与公开官方入口；所有成绩均为作者报告或独立官方快照，非本站复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1完整全文",
+        "url": "https://arxiv.org/html/2609.25961v1"
+      },
+      {
+        "label": "RoboTwin官方榜单",
+        "url": "https://robotwin-platform.github.io/leaderboard"
+      },
+      {
+        "label": "作者RoboCasa365发布代码与实测资料",
+        "url": "https://github.com/TianhengW/PatchWAM-RoboCasa"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2609.25961",
+    "arxiv": "2609.25961",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-22",
+    "firstArxivSource": "https://arxiv.org/abs/2609.25961v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-13",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-22",
+        "observedAt": "2026-10-13",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2609.25961v1",
+        "note": "首发版本v1及UTC日期已核对；当前深读版本 v1，不推断正式录用。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-13",
+    "verifiedAt": "2026-10-13",
+    "version": "arXiv:2609.25961v1 · 2026-10-13 依正文、表格及官方资源核验",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "为什么世界与动作联合预测未必需要两个Transformer",
+        "body": "传统WAM把未来视频和低维动作同时预测时，通常额外增加可训练动作头或Action Expert。它们确实能补偿图像像素与动作坐标的表示不匹配，却会产生双分支同步、条件交互与额外推理成本。PatchWAM提出不同假设：真正的障碍可能是动作token接口不适合预训练视频生成器，而非生成器没有控制能力。作者将Action Chunk写成图像patch形态后，把视觉未来与机器人控制放进同一个flow-matching去噪序列，因此分析重点应放在固定编码是否保留动作信息、共同网络是否学到耦合动力学，而不是仅比较模型结构图中有没有“Action Expert”文字。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "codec",
+        "title": "Action-as-Patch：固定、可逆、无新增可学习动作投影",
+        "body": "PatchWAM使用固定的扩展和压缩规则，将连续动作维度转成可与视频latent token一起处理的128维patch表示；例如RoboTwin 14维动作通过重复扩展到126维并做两位padding，LIBERO的7维动作可用更大重复因子。译码按原分量聚合和反向映射得到真实机器人动作，并不依赖另一个可训练的动作头。无参不代表无表示代价：动作信息会占据统一Transformer序列的计算量和注意力预算，动作维数、patch长度、噪声日程以及模型架构仍然决定网络运行速度。动作编码可以无损并不保证预测动作就没有误差。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "network",
+        "title": "共享视觉DiT和统一flow-matching目标的实际数据流",
+        "body": "论文以FLUX.2-Klein base 4B生成主干为基础，冻结视频潜空间中的VAE和文本编码器，联合对未来视觉潜变量与经过codec变换的动作patch加入噪声，再由同一Transformer预测流场。训练目标把视觉未来与动作在同一生成过程内监督，动作不是在预测视频后才通过附加网络还原。对比常见dual-expert架构，PatchWAM最直接的差别是移除独立的参数化Action Expert，但两种模态仍有不同量纲和物理意义。查看结构创新时不能把所有性能提升自动归因于这一点：它同时取决于视频预训练、数据扩充、动作归一化与完整训练窗口。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "两套RoboTwin训练协议是两个明确的实验，不可合榜",
+        "body": "Full-data使用每任务50条Clean与500条Randomized专家示范，共27500条，另外针对七个困难任务增补2100条增强示范；作者经过约110k参数更新得到Table1的最高全数据结果。Clean-to-Random严格只用每任务50条Clean示范共2500条，配合在线photometric、AdaIN、FFT等视觉增强，约140k更新；评测仍在Clean与Randomized场景分别采样100次/任务。后者可以与RoboTwin当前官方Clean-only赛道的预算进行比较，前者不能因为评测列同为Clean/Random/Avg就冒充同一受控排名。站点因此为同一方法保存两条带训练来源的作者报告。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "robotwin-full",
+        "title": "全数据主表：96.12%的适用范围和优势边界",
+        "body": "arXiv v1 Table1报告PatchWAM Clean96.04%、Random96.20%、Avg96.12%，最佳同表基线MotuBrain平均95.94%，仅差0.18个百分点。作者的全数据配置比25个官方Clean-only提交使用更多随机化示范和额外增强轨迹，因此这个96.12%不能拿来替代RoboTwin官网PatchWAM官方位次。该表其他方法采用不同的训练配方与checkpoint，论文也明确所有主实验是单次评测运行、未给标准差。高平均成功率说明当前配置在给定测试中很强，却不单独证明无动作expert的结构是唯一关键因素。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "robotwin-c2r",
+        "title": "官方Clean-only快照：79.14%与全数据96.12%都是正确值",
+        "body": "Clean-to-Random Table2在同一Aloha-AgileX 50任务上报告Clean91.56%、Random66.72%、Avg79.14%，与2026年10月11日RoboTwin官方固定快照完全一致。相比GigaBrain-0.7和OLA-Sem，它的Clean场景明显更高，但Random条件仍略低于二者的67.90%和67.56%，不能写成所有随机化评测维度均第一。该设置中额外的图片增强不是额外Randomized专家演示；因此可以说官方控制了演示数量，但不能假定图像增强、训练步数或预训练权重也完全相同。主榜通过训练行元数据展示该差别，而非挑一个更高的数字。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "matched-control",
+        "title": "与双专家架构匹配的控制实验比跨论文排名更支持结构判断",
+        "body": "论文专设subsampled windows控制实验，使PatchWAM与dual-expert control使用匹配的数据抽样和训练更新，在此局部控制中PatchWAM平均成功约88.0%、双expert约78.4%，提高9.6个百分点。作者还测试了可学习Action接口、视觉/动作噪声耦合等机制，以分析固定编码和跨模态同路径联合学习的贡献。但是这一受控实验评测规模与主榜的100次/任务不同，不能把88.0%当作PatchWAM完整RoboTwin官方成绩。由于结构改变同时影响参数共享和注意力计算，也不能声称严格隔离了所有表示收益来源。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "libero",
+        "title": "LIBERO四套与LIBERO-Plus：指标相似却不是同一评测",
+        "body": "标准LIBERO 40任务四套件中PatchWAM的Spatial96.5、Object100、Goal99、Long98、Avg98.4；同表QuoVLA的平均达到99.6，因此PatchWAM并非全场最佳。LIBERO-Plus作者分别报告只用原版LIBERO训练时总体80.2，改用增强LIBERO-Plus扰动数据训练后总体91.8，其Camera97.9、Robot71.0、Language89.1、Light98.5、Background96.9、Noise97.9、Layout92.3。后一个91.8%不能当作未经扰动训练的零样本鲁棒性，应与任务、增强和权重已对齐的其他报告再比较。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "robodojo-cost",
+        "title": "RoboDojo历史得分与部署开销揭示不应只看成功率",
+        "body": "论文报告PatchWAM在2026年9月15日当时RoboDojo官方榜单的平均Score29.39、SR23.60；这描述特定历史来源，不能凭历史名次把它插入10月9日RoboDojo官方当前Top10。虽然固定patch接口省去了独立Action Expert，单次Action Chunk在作者指定硬件与solver设置下推理却约0.446秒，而匹配dual-expert控制约0.239秒，反而约1.87倍慢。论文没有证明所有动作频率或机械臂接口都满足实时要求。评价时应同时看架构简洁性、动作质量和真正端到端时延，避免把减少一个网络分支误称为速度优化。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "repro",
+        "title": "复现与可迁移性：代码发布范围不等于全论文全部权重已公开",
+        "body": "RoboTwin官网固定Clean-only提交有可追溯的成绩，作者还开源了针对RoboCasa365的单独实现与检查点，支持检查Action Patch codec、参数配置、Human300训练数据及50任务实测日志。但这份公开仓库具体是PatchWAM在RoboCasa365的运行代码和模型，不应因此宣称完整RoboTwin全数据预训练流水线与权重已全部开放。跨RoboTwin、LIBERO与RoboCasa365，action dimensionality、视频latent输入和训练样本来源都有变化；适配实验的成功率、聚合方法与硬件延迟需要各自保留原始出处。真正独立复现仍需固定源码、输入相机、norm stats、演示预算和测试脚本。",
+        "sources": [
+          {
+            "label": "arXiv:2609.25961v1 · 正文章节 / 表格",
+            "url": "https://arxiv.org/html/2609.25961v1"
+          },
+          {
+            "label": "作者RoboCasa365发布代码与实测资料",
+            "url": "https://github.com/TianhengW/PatchWAM-RoboCasa"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2609.25961v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "PatchWAM · 必须分开的三类主成绩",
+        "columns": [
+          "Evaluation",
+          "Clean/Spatial",
+          "Random/Object",
+          "Average/Total"
+        ],
+        "rows": [
+          [
+            "RoboTwin 2.0 Full-data",
+            "96.04%",
+            "96.20%",
+            "96.12%"
+          ],
+          [
+            "RoboTwin 2.0 Clean-only",
+            "91.56%",
+            "66.72%",
+            "79.14%"
+          ],
+          [
+            "LIBERO Standard",
+            "96.5%",
+            "100.0%",
+            "98.4%"
+          ],
+          [
+            "LIBERO-Plus Augmented",
+            "Camera 97.9%",
+            "Robot 71.0%",
+            "Total 91.8%"
+          ]
+        ],
+        "locator": "Tables 1, 2, 4, 5",
+        "caption": "训练数据、任务维度及指标含义不同；只用于解释各原表，不能跨行直接排名。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-13",
+      "note": "已核对patchwam-v1-robotwin-full、patchwam-v1-robotwin-clean、patchwam-v1-libero-standard、patchwam-v1-libero-plus并登记4条原表成绩；其他论文自测/部分进度保留笔记，不伪造公共Benchmark。"
+    }
+  }
+}

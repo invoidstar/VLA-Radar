@@ -306,7 +306,7 @@ try:
         yes('return to group preserves exact track',page.locator('#lb-track').input_value()==t)
         open_track(page,'robotwin2-selfwam-27500')
         page.wait_for_selector('.protocol-family-panel')
-        yes('RoboTwin uses six protocol families',page.locator('#lb-group option').count()==6)
+        yes('RoboTwin preserves at least six core protocol families while exposing new source groups',page.locator('#lb-group option').count()>=6)
         yes('standard family hides full-track clutter',page.locator('#lb-track option').count()<len([track for track in boards['tracks'] if track['dataset']=='RoboTwin']))
         yes('family view is method-first','先选评测协议族' in page.locator('.board-browse-heading').inner_text() and page.locator('.family-method').count()>0)
         pi=page.locator('.family-method').filter(has_text='pi0.5').first

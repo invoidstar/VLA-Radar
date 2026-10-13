@@ -25,6 +25,11 @@ def test_original_paper_results_not_replaced_by_official_model_submissions():
     assert any(x["model"]=="VPP2" for x in sim["entries"])
     assert any(x["model"]=="VPP2-Preview" for x in sim["entries"])
     assert next(x for x in sim["entries"] if x["model"]=="VPP2")["values"]["Average"]["score"]==39.26
+    twin=next(b for b in boards if b["id"]=="robotwin2")
+    links={x["model"]:x.get("paperLink",{}).get("paperId") for x in twin["entries"]}
+    assert links["ViGAR"]=="p131" and links["PatchWAM"]=="p132" and links["ME-Dex-1.0"]=="p133"
+    no_paper={x["model"]:x for x in sim["entries"] if x["model"] in {"PhysicalRSI","Awomo-0.5"}}
+    assert len(no_paper)==2 and all(x.get("resourceLink") and not x.get("paperLink") for x in no_paper.values())
 
 def test_generation_shards_are_lazy_and_do_not_leak_all_official_rows():
     manifest,records,tracks,results=read_catalog(ROOT)

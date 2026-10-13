@@ -1,0 +1,20 @@
+{
+  "id": "r-patchwam-v1-robotwin-full",
+  "paperId": "p132",
+  "method": "PatchWAM",
+  "trackId": "patchwam-v1-robotwin-full",
+  "values": {
+    "Clean": 96.04,
+    "Random": 96.2,
+    "Average": 96.12
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2609.25961v1",
+  "sourceVersion": "arXiv 2609.25961v1 · Table 1, mixed-demonstration full-data main",
+  "locator": "Table 1, mixed-demonstration full-data main",
+  "attribution": "author-reported",
+  "trainingData": "50 Clean + 500 Randomized demonstrations per task = 27,500; plus 2,100 additional augmented demonstrations for seven weak tasks, 110k updates.",
+  "evaluationNotes": "使用额外Randomized和Augment demonstration的Full-data协议，不能与2500 Clean-only官网赛道形成公平同训练排名。",
+  "supersedes": ""
+}
