@@ -76,7 +76,7 @@ def test_budget_sweeps_and_repeated_reports_remain_in_archives():
     assert sum(s['resultCount'] for s in settings)==len([x for x in rows if x['evidence']=='checked' and not x.get('superseded')])
 
 def test_robodojo_coap_and_physevo_are_paper_reports_not_official_ranks():
-    _,_,tracks,rows,_,settings=_data()
+    _,_,_,tracks,rows,_,settings=_data()
     canonical={"robodojo-coap-v1-sim-sr","robodojo-coap-v1-sim-score",
                "robodojo-physevo-v1-sim-sr","robodojo-physevo-v1-sim-score"}
     present={t['id'] for t in tracks}
