@@ -22,6 +22,8 @@ def test_registry_tracks_all_exposed_datasets_and_does_not_modify_canonical():
     assert len({x['id'] for x in rows})==len(rows)
     assert all(x['id'] in before for x in rows)
     assert all(s['columnMeta'] for s in settings)
+    assert all(s.get('latestReportVerifiedAt') for s in settings)
+    assert registry['benchmarks']['RoboCasa365']['officialUrl']=='https://robocasa.ai/leaderboard.html'
     assert all(s['primaryResultCount']<=s['resultCount'] for s in settings)
     assert any(x['qualityKind']=='case-study' for x in settings)
 

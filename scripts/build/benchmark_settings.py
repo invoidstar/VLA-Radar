@@ -331,6 +331,7 @@ def build_settings(tracks,results):
           'qualityKind':primary.get('qualityKind','benchmark'),
           'primaryResultCount':len(primary_rows),
           'primaryPaperCount':len({r['paperId'] for r in primary_rows}),
+          'latestReportVerifiedAt':max((r.get('verifiedAt') or '' for r in rows),default='') or None,
           'methodNames':list(dict.fromkeys(r['method'] for r in rows))
         })
     settings.sort(key=lambda s:(track_order[s['primaryTrackId']],s['id']))
