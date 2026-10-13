@@ -1,3 +1,7 @@
+## 2026-10-13 — 2026-10-13-robodojo-top10
+
+定向补全RoboDojo-Sim 2026-10-09 Top10文献：新增3篇完整正文核验的VPP2、InternW0-Δ和GPT-6 Astra评测论文，复用官方Score/SR多任务赛道补6条带原文证据的结果；无独立全文的Preview或权重条目保留在审计候选、不虚构论文，原始已有结果和Benchmark协议保持。其他来源日期与统计边界在Result Report注明，完整Discovery checkpoint不前移。
+
 ## 2026-10-13 — RoboDojo Top 10 文献与证据补全
 
 - 对RoboDojo-Sim 2026-10-09官方Top 10逐一核对：新增VPP2、InternW0-Δ、GPT-6 Astra评测论文共3篇，均有完整来源定位、结构化8节以上深度笔记、publication lifecycle、Resources、Reproducibility baseline、Bibliography和Benchmark Review。

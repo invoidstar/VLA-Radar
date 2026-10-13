@@ -157,6 +157,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-13-robodojo-top10",
+      "sha256": "d396166f7b5ef7046aed0f8460e9558f66a715e78a164bae6a6b1033100bc720",
+      "date": "2026-10-13",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

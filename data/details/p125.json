@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p125",
+    "name": "VPP2",
+    "title": "Video Prediction Policy 2: Predict Better, Act Better",
+    "team": "Yanjiang Guo、Haodong Yan、Zhide Zhong、Zhongru Zhang、Qingyuan Yang、Qingzhou Lu、Xiaoyu Chen、Yen-Jen Wang、Shuying Deng、Chenghan Yang、Puzhen Yuan、Chenxin Liu、Tun Ban、Xiang Zhu、Yichen Liu、Kun Feng、Haoang Li、Jianyu Chen",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv:2610.10270 预印本；v2发表于2026-10-08。RoboDojo榜单记录的是经benchmark-specific post-training的VPP2。",
+    "firstPublished": "2026-10-07",
+    "dateNote": "以 arXiv v1 首次提交日（UTC）为准；v2 修订与榜单更新分别记录。",
+    "collectionMonth": "2026-10",
+    "versionNote": "arXiv v2（2026-10-08）完整正文与附录，2026-10-13核验",
+    "topics": [
+      "world",
+      "action",
+      "pretraining"
+    ],
+    "tags": [
+      "world action model",
+      "video prediction",
+      "MoT",
+      "RoboDojo",
+      "LIBERO-Pro",
+      "ALOHA",
+      "cross-embodiment"
+    ],
+    "priority": "deep",
+    "contribution": "以事件级操控视频持续预训练、固定时域单步一致性蒸馏和MoT动作专家组合VPP2，改善未见操作指令中的未来运动预测与动作生成。",
+    "findings": "RoboDojo-Sim官方2026-10-09榜单：Average Score 39.26、SR 32.26%；任务定向后训练LIBERO-Pro 45.0%、LIBERO-OOD 63.9%；真实ALOHA十类零样本任务平均成功率58.5%。",
+    "limitations": "RoboDojo/LIBERO结果含基准特定后训练，不能作为完全零样本；长任务有可选外部VLM规划器；视频模型训练与资产依赖大量混合数据及算力。官方原表只有合并Generalization结果，不能拆出Gen standard/randomized分值。",
+    "insight": "把“先正确想象完整操作事件”与“随后解码局部动作”分成两个可验证问题；保留事件字幕、对齐坐标与蒸馏推理边界，防止视频流畅度被误当作可执行性。",
+    "readingFocus": "数据事件分段与字幕、Wan2.1 14B持续预训练、视频单步蒸馏、MoT动作专家、VLM规划边界、RoboDojo Score/SR和定向后训练。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-13 按arXiv v2正文与附录、RoboDojo官方仿真榜核对；排行榜为2026-10-09快照，非本站复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "论文完整正文与附录 · arXiv v2",
+        "url": "https://arxiv.org/html/2610.10270v2"
+      },
+      {
+        "label": "arXiv 论文身份与首发记录",
+        "url": "https://arxiv.org/abs/2610.10270"
+      },
+      {
+        "label": "作者项目页",
+        "url": "https://robert-gyj.github.io/video-prediction-policy-2/"
+      },
+      {
+        "label": "作者代码与模型说明",
+        "url": "https://github.com/roboterax/video-prediction-policy-2"
+      },
+      {
+        "label": "RoboDojo官方榜单",
+        "url": "https://robodojo-benchmark.com/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.10270",
+    "arxiv": "2610.10270",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-07",
+    "firstArxivSource": "https://arxiv.org/abs/2610.10270v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-10-08",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-13",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-07",
+        "observedAt": "2026-10-13",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.10270v1",
+        "note": "arXiv v1 首发，不以前瞻榜单或 v2 日期覆盖。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-10-08",
+        "observedAt": "2026-10-13",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/html/2610.10270v2",
+        "note": "阅读并核验 arXiv v2 版本及附录。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-13",
+    "verifiedAt": "2026-10-13",
+    "version": "arXiv:2610.10270v2（2026-10-08）；§1–4、Appendix A–C、RoboDojo Table 7/8，2026-10-13复核",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究问题：为什么视频世界模型能想象未来，却未必能完成未知操控任务？",
+        "body": "视觉世界动作模型希望利用大规模视频模型学习物体运动、接触关系与操作的因果先验，再由未来状态生成动作。但论文指出两类实际失效：一是通用视频模型主要被优化为生成自然、美观的视频，未必准确执行抓取、移动、摆放等指令；二是直接把动作损失接入视频主干，可能改变原先可泛化的动态表示，使模型重新适应训练集而牺牲未见任务表现。作者因此不是只把模型参数做大，而是首先使视频预测与完整操作事件的语言条件对齐，再让独立动作分支读取预测表示。要注意，视频好看、视频可遵循指令和机器人动作能真正成功是三种不同证据，不能用其中一个指标替代另一个。",
+        "sources": [
+          {
+            "label": "problem · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "数据与跨本体对齐：先减小动作语义和坐标系歧义",
+        "body": "训练来源包含单臂、双臂、移动及灵巧操作的机器人视频，人手第一视角活动，以及过滤后与操控相关的通用视频。视频片段先去掉传感器错误或明显不连续轨迹，再根据手/末端速度、夹爪状态等切分为完整事件，利用视觉语言模型补充操作对象、末端执行器、运动过程与相机视角的细粒度文字描述。对于来自不同机器人的动作，系统分别对齐工作空间和末端执行器局部坐标系，降低“向左运动”被编码为不同轴符号的歧义。多相机画面被整理为主相机加两辅助视角的 T 形复合输入；视角不足时以空槽填充。这个统一方案便利跨本体学习，但并不意味着不同机器人都拥有完全等价的动作空间或传感器能力。",
+        "sources": [
+          {
+            "label": "data · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "pretraining",
+        "title": "第一阶段：以完整操控事件持续预训练视频主干",
+        "body": "底座是 Wan2.1-I2V-14B。作者认为，如果固定间隔预测的短片段没有涵盖完整事件，文字说“把物体放进容器”而监督画面只记录到抓起过程，模型便容易学习不完整的语义—轨迹映射。因此第一阶段按事件跨度采样初始观测和未来视频帧，使用 flow matching 学习从噪声恢复事件级未来，并以包含目标、末端、动作意图的文字作为条件。论文披露该阶段预测49帧、416×240分辨率、训练约30,000步、batch size 1,024及学习率1e-5。预训练视频模型并不是直接输出控制指令；其可迁移价值需要后续零样本任务及动作生成评估共同验证。",
+        "sources": [
+          {
+            "label": "pretraining · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "distillation",
+        "title": "第二阶段：固定时间跨度预测与单步一致性蒸馏",
+        "body": "事件可能持续长短不同，按固定帧数均匀采样会让相邻输出帧的物理时间间隔随事件变化，不利于下游与长度固定的 action chunk 对齐。第二阶段因此将预测目标改成固定时间跨度的未来片段：作者在人手数据上使用约2秒，在机器人操控数据上使用约8秒，再通过 consistency distillation 把原先需要多个去噪积分步骤的未来潜变量预测压缩为一次前向。训练时学生和指数移动平均教师的终态预测受到一致性约束；推理时可从噪声直接生成固定 horizon 的未来潜变量。核心是减少推理开销并统一时间语义，而非声称单步蒸馏能保证所有接触动态在像素和几何层面均正确。",
+        "sources": [
+          {
+            "label": "distillation · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "action",
+        "title": "第三阶段：MoT 动作专家读取预测未来而非重新学习视频世界",
+        "body": "动作分支采用约0.9B参数的 Diffusion Transformer，经 Mixture-of-Transformers（MoT）架构访问视频主干产生的表征与 KV context，从而在视觉未来线索条件下预测动作 chunk。动作专家初始化后，为避免动作训练立刻覆盖视频模型的泛化能力，早期冻结视频主干的基础参数，并以 LoRA 形式进行有限适配。这构成视频世界先验与动作学习之间的明确分工：世界部分提供与操作指令一致的未来表征，动作头负责把它变成可执行轨迹。论文报告视频侧约0.12秒、动作侧五步去噪约0.10秒，合计约0.22秒每个 action chunk；它是指定精度和 torch.compile 条件下的分模块推理量测，不能直接解释为完整机器人控制闭环的固定频率。",
+        "sources": [
+          {
+            "label": "action · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "planning",
+        "title": "长任务执行：外部 VLM 子任务规划的作用与零样本边界",
+        "body": "开放指令可能同时包含多次抓放和依赖上下文的阶段转换，因此系统可以由高层 VLM 把自然语言请求拆成明确的子任务，并扩展成与事件字幕训练相匹配的细粒度指令，再由 VPP2 产生未来与局部动作。这个规划器可以在本地部署，也可通过 API 访问其他视觉语言模型，不能将规划器提供的常识、语义分解和记忆收益全部归因于底层 Video Prediction Policy。论文所说的零样本 ALOHA 操作是不对指定任务额外微调，但底座仍经过大量操作视频与动作数据训练；标准 LIBERO、LIBERO-Pro、LIBERO-OOD 和 RoboDojo 的表格还包含 benchmark-specific post-training，与纯零样本结果必须分别解读。",
+        "sources": [
+          {
+            "label": "planning · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "核心实验：视频指令一致性、真实 ALOHA 与仿真评测",
+        "body": "视频预测指令跟随表中，VPP2在人手与机器人场景的成功率分别为0.80和0.90，而 Cosmos3-64B 对应为0.70和0.78；这是评价预测视频是否依照指令的指标，不是机器人操作成功率。真实 ALOHA 十类未见具体任务平均成功率为58.5%，相同对照表的 π0.5 为40.0%、Fast-WAM为20.5%；论文同时披露这些对照模型使用了相关 ALOHA 数据进行训练。在 LIBERO 正式训练/测试设置中，标准四套平均98.8%，LIBERO-Pro为45.0%，LIBERO-OOD为63.9%。这三个评测的扰动难度与指标范围不同，不能合成一个“总体机器人成功率”。上述全部是作者报告，不等于本站独立复现。",
+        "sources": [
+          {
+            "label": "results · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "robodojo",
+        "title": "RoboDojo Top 10：Score、SR 与缺失列处理",
+        "body": "RoboDojo-Sim 有42个双臂任务，涵盖泛化、精细操作、长程、记忆与开放任务；泛化另有 standard 和 randomized 条件。官方榜单于2026-10-09记录 VPP2 的 Average Score 39.26、Average Success Rate 32.26%，按该次 Score 排序位于第一名。论文附录给出合并的 Generalization Score 36.39、Precision 43.03、Long-Horizon 56.28、Memory 56.01、Open 4.61；SR对应 Generalization 29.50、Precision35.17、Long-Horizon37.00、Memory55.56、Open4.08。现有Radar表单把泛化细分为 Gen standard/randomized 两列，但原表未提供可直接确认的两列数值，故这两列必须保持 null，不能把合并的Generalization一分为二。VPP2-Preview是该模型更早预览版本，而不是另一篇独立论文。",
+        "sources": [
+          {
+            "label": "robodojo · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "局限与复现边界：把阶段贡献和评测身份分开",
+        "body": "系统性能来自数据清洗与详细事件字幕、视频底座领域预训练、定长时域蒸馏、MoT动作分支、跨本体坐标对齐和可能使用的外部高层规划器；只凭最终成功率不能证明其中任一模块单独产生全部提升。RoboDojo的第一名成绩是面向该基准的后训练结果，不能拿它直接代表零样本跨本体泛化；相反，ALOHＡ无任务级微调结果也不能等同在未见硬件上免配置使用。训练数据同时含自采与多个上游数据集，真实复现还受数据访问、算力、权重与许可证约束。官方项目与代码能帮助复核实现，但仓库存在并不自动说明所有预训练轨迹与模型资产完整公开；应逐项查看资源卡，而非把链接等同于端到端可复现。",
+        "sources": [
+          {
+            "label": "limits · arXiv:2610.10270v2",
+            "url": "https://arxiv.org/html/2610.10270v2"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.10270v2"
+    },
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-13",
+      "note": "RoboDojo-Sim官方2026-10-09模型项与论文附录Table7/8一致；Score与SR分别落在现有官方多任务track；Gen standard/randomized未被原表分别报告，保持null，其他LIBERO/ALOHA结果保留深读。"
+    }
+  }
+}

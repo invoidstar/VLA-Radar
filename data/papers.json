@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-11",
+  "updatedAt": "2026-10-13",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,191 @@
     }
   ],
   "papers": [
+    {
+      "id": "p125",
+      "name": "VPP2",
+      "title": "Video Prediction Policy 2: Predict Better, Act Better",
+      "team": "Yanjiang Guo、Haodong Yan、Zhide Zhong、Zhongru Zhang、Qingyuan Yang、Qingzhou Lu、Xiaoyu Chen、Yen-Jen Wang、Shuying Deng、Chenghan Yang、Puzhen Yuan、Chenxin Liu、Tun Ban、Xiang Zhu、Yichen Liu、Kun Feng、Haoang Li、Jianyu Chen",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2610.10270 预印本；v2发表于2026-10-08。RoboDojo榜单记录的是经benchmark-specific post-training的VPP2。",
+      "firstPublished": "2026-10-07",
+      "dateNote": "以 arXiv v1 首次提交日（UTC）为准；v2 修订与榜单更新分别记录。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv v2（2026-10-08）完整正文与附录，2026-10-13核验",
+      "topics": [
+        "world",
+        "action",
+        "pretraining"
+      ],
+      "tags": [
+        "world action model",
+        "video prediction",
+        "MoT",
+        "RoboDojo",
+        "LIBERO-Pro",
+        "ALOHA",
+        "cross-embodiment"
+      ],
+      "priority": "deep",
+      "contribution": "以事件级操控视频持续预训练、固定时域单步一致性蒸馏和MoT动作专家组合VPP2，改善未见操作指令中的未来运动预测与动作生成。",
+      "findings": "RoboDojo-Sim官方2026-10-09榜单：Average Score 39.26、SR 32.26%；任务定向后训练LIBERO-Pro 45.0%、LIBERO-OOD 63.9%；真实ALOHA十类零样本任务平均成功率58.5%。",
+      "limitations": "RoboDojo/LIBERO结果含基准特定后训练，不能作为完全零样本；长任务有可选外部VLM规划器；视频模型训练与资产依赖大量混合数据及算力。官方原表只有合并Generalization结果，不能拆出Gen standard/randomized分值。",
+      "insight": "把“先正确想象完整操作事件”与“随后解码局部动作”分成两个可验证问题；保留事件字幕、对齐坐标与蒸馏推理边界，防止视频流畅度被误当作可执行性。",
+      "readingFocus": "数据事件分段与字幕、Wan2.1 14B持续预训练、视频单步蒸馏、MoT动作专家、VLM规划边界、RoboDojo Score/SR和定向后训练。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-13 按arXiv v2正文与附录、RoboDojo官方仿真榜核对；排行榜为2026-10-09快照，非本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "论文完整正文与附录 · arXiv v2",
+          "url": "https://arxiv.org/html/2610.10270v2"
+        },
+        {
+          "label": "arXiv 论文身份与首发记录",
+          "url": "https://arxiv.org/abs/2610.10270"
+        },
+        {
+          "label": "作者项目页",
+          "url": "https://robert-gyj.github.io/video-prediction-policy-2/"
+        },
+        {
+          "label": "作者代码与模型说明",
+          "url": "https://github.com/roboterax/video-prediction-policy-2"
+        },
+        {
+          "label": "RoboDojo官方榜单",
+          "url": "https://robodojo-benchmark.com/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.10270",
+      "arxiv": "2610.10270",
+      "doi": ""
+    },
+    {
+      "id": "p126",
+      "name": "InternW0-Δ",
+      "title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+      "team": "Physical Intelligence Team · Shanghai AI Laboratory（Xingyu Miao等48位作者，详见原文完整署名）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2609.31394v1预印本，2026-09-25首发；开放组件发布状态按官方仓库实际记录。",
+      "firstPublished": "2026-09-25",
+      "dateNote": "arXiv v1 Submission history (UTC)，首次公开日期不随排行榜更新。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv 2609.31394v1，完整 §1–7、Table 12、实验和训练部署细节，2026-10-13",
+      "topics": [
+        "world",
+        "pretraining",
+        "action",
+        "memory",
+        "spatial"
+      ],
+      "tags": [
+        "world action model",
+        "20K+ hours",
+        "MoT",
+        "causal imprint",
+        "4D distillation",
+        "RoboDojo",
+        "RoboTwin",
+        "LIBERO-Plus"
+      ],
+      "priority": "deep",
+      "contribution": "提出结合视频专家、冻结VLM、动作专家的有向MoT模型，以Causal Imprint和训练期4D蒸馏把未来/几何先验写入可直接用于动作预测的表示，并建立20K+小时统一数据训练链路。",
+      "findings": "RoboDojo官方仿真榜单Score30.77、SR23.91%（2026-10-09第七）；LIBERO-Plus 92.8%；RoboTwin Clean2Clean90.0%、Clean2Random71.9%；特定真机RTX5090往返延迟152.8ms。",
+      "limitations": "大型异构数据与骨干组合难严格归因；主要外部Benchmark均有专门后训练，4D教师只在训练期；部分代码、权重与数据属于未来开源计划，不能默认为完全可复现。",
+      "insight": "将未来监督变为当前条件可读的隐藏因果状态，并通过4D动作几何约束补充单纯视频先验，有利于避免在线生成完整未来视频的计算负担。",
+      "readingFocus": "20K+小时数据过滤/转换，Sparse Memory Context，Causal Imprint，4D蒸馏，MoT定向注意力，RoboDojo六列Score/SR以及速度协议。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-13对照arXiv v1正文Table12和RoboDojo官方Simulation榜，全部性能为原文/官方报告；核验不等于独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 全文",
+          "url": "https://arxiv.org/html/2609.31394v1"
+        },
+        {
+          "label": "arXiv首次公开身份",
+          "url": "https://arxiv.org/abs/2609.31394"
+        },
+        {
+          "label": "InternW0-Δ 官方项目",
+          "url": "https://internrobotics.github.io/InternW0-Delta/"
+        },
+        {
+          "label": "作者开源仓库与开放状态",
+          "url": "https://github.com/InternRobotics/InternW0-Delta"
+        },
+        {
+          "label": "RoboDojo官方排行榜",
+          "url": "https://robodojo-benchmark.com/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.31394",
+      "arxiv": "2609.31394",
+      "doi": ""
+    },
+    {
+      "id": "p127",
+      "name": "GPT-6 Astra (RoboDojo Evaluation)",
+      "title": "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond",
+      "team": "Wenbo Zhang、Kaixuan Wang、Yutao Ouyang、Xiaoyu Huang、Liyang Li、Kailun Su、Weiyang Jin、Wenhao Chai、Haotian Liang、Zhiyang Dou、Yue Chen、Tianxing Chen（RoboProbe / RoboDojo）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv:2609.24170v1预印本；外部语言模型机器人控制的评测研究，而不是GPT-6 Astra的模型方法发布。",
+      "firstPublished": "2026-09-21",
+      "dateNote": "以arXiv 2609.24170v1首次提交日(UTC)为准，排名使用独立的官方榜单日期。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv v1 2026-09-21，全文§1–6及附录B–H，2026-10-13核验",
+      "topics": [
+        "evaluation",
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "LLM as policy",
+        "RoboDojo",
+        "robot planning",
+        "tool use",
+        "benchmark protocols",
+        "real-robot safety"
+      ],
+      "priority": "deep",
+      "contribution": "系统测试语言模型直接选择机器人末端目标的LLM-as-policy控制方案，采用固定工具/运动学执行链，并在42个RoboDojo任务、消融和有限真机诊断中分析能力与风险。",
+      "findings": "RoboDojo-Sim官方2026-10-09榜单：GPT-6 Astra Score28.97、SR22.48%，位列当前Top10第十；原文2100次仿真回合成功472次。Precision SR仅4.00%，Memory SR38.67%，呈显著能力分化。",
+      "limitations": "原文历史第一名对应2026年9月40策略旧快照；其他基线未收到同样的wiki任务配方；DeepSeek-Flash评估回合更少；RoboDojo-Real未完成且发现危险行为，不提供正式真机成绩。",
+      "insight": "任务理解和自适应工具调用可以在没有机器人任务微调的情况下形成一定闭环能力，但精确接触与安全执行仍需要单独的运动控制、约束及连续反馈机制。",
+      "readingFocus": "42任务×50回合协议，五轴宏平均与micro统计，三视角和wiki任务配方，move_eef动作转换，异常拒绝处理，精细控制失败及真机边界。",
+      "evidence": "checked",
+      "evidenceNote": "按arXiv v1全文/附录和2026-10-09 RoboDojo官网对照；本条是外部研究报告，不代表模型提供方或本站对系统能力的额外认证。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文及附录",
+          "url": "https://arxiv.org/html/2609.24170v1"
+        },
+        {
+          "label": "arXiv身份/提交记录",
+          "url": "https://arxiv.org/abs/2609.24170"
+        },
+        {
+          "label": "研究作者的在线评测报告",
+          "url": "https://robodojo-benchmark.com/report/gpt-6-astra-eval"
+        },
+        {
+          "label": "RoboProbe评测仓库",
+          "url": "https://github.com/RoboProbe/RoboProbe"
+        },
+        {
+          "label": "RoboDojo官方排行榜",
+          "url": "https://robodojo-benchmark.com/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2609.24170",
+      "arxiv": "2609.24170",
+      "doi": ""
+    },
     {
       "id": "p123",
       "name": "BaryBind",
