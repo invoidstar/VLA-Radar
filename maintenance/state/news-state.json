@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-06",
-  "status": "complete",
-  "lastAttemptAt": "2026-10-06",
+  "asOf": "2026-10-13",
+  "status": "partial",
+  "lastAttemptAt": "2026-10-13",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "完成 2026-09-21—2026-10-04 的具身智能周报扫描，重点复核最近7天；新增 HTX H2RC、Agility×FORT Digit 5 安全架构、ANYbotics Shift 三条官方事件。",
+  "summary": "补录10月6日Open Robotics ROSCon、10月7日NVIDIA GB300实操与AWS Physical AI Toolchain三条官方来源；仅有限源核验，不将本次10月5—13日视为所有行业新闻完整扫描，成功checkpoint仍为2026-10-04。",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -30,6 +30,12 @@
       "to": "2026-10-04",
       "status": "complete",
       "note": "2026-10-06 补齐中断的10月4日周更：扫描官方机器人/Physical AI公告与公开报道，精选3条有完整一手页面的事件；不以10月5日以后事件反推10月4日周窗口。"
+    },
+    {
+      "from": "2026-09-29",
+      "to": "2026-10-13",
+      "status": "partial",
+      "note": "2026-10-13补录3条首次公开官方事件，核验其独立报道日期/技术边界；10月8日至13日等部分中文/产业来源与历史14天去重尚待完整核对，因此不提升lastSuccessfulSearchAt。"
     }
   ]
 }
