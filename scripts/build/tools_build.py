@@ -8,6 +8,7 @@ for _name in ('build','validate','browser','maintenance','discovery','migrations
     if _candidate not in _sys.path:_sys.path.insert(0,_candidate)
 import hashlib,json,re
 from datetime import date
+from catalog_core import today
 from pathlib import Path
 from news_core import CATEGORIES,url
 
@@ -18,7 +19,7 @@ def bibliography(root,papers):
  allowed={'type','title','author','issued','container-title','volume','issue','page','publisher','DOI','URL'}
  for pid,e in obj['entries'].items():
   assert pid in papers and set(e)=={'item','sources','verifiedAt'},'Unknown bibliography identity/field'
-  assert date.fromisoformat(e['verifiedAt'])<=date.today() and e['sources'],'Bibliography verification required'
+  assert date.fromisoformat(e['verifiedAt'])<=date.fromisoformat(today()) and e['sources'],'Bibliography verification required'
   for s in e['sources']:assert set(s)=={'url','label'} and s['label'];url(s['url'])
   b=e['item'];assert set(b)<=allowed and b.get('type') in {'article','article-journal','paper-conference','report'},'Bibliography fields/type'
   assert b.get('title')==papers[pid]['paper']['title'],'Citation title must match tracked identity'
@@ -29,7 +30,7 @@ def bibliography(root,papers):
   if b['type'] in {'article-journal','paper-conference'}:assert 'issued' in b,'Final citation needs its own source-verified issue/online date'
   if 'issued' in b:
    parts=b['issued'].get('date-parts');assert isinstance(parts,list) and len(parts)==1 and 1<=len(parts[0])<=3
-   d=parts[0];assert all(type(v) is int for v in d) and date(*(d+[1]*(3-len(d))))<=date.today(),'Invalid citation date'
+   d=parts[0];assert all(type(v) is int for v in d) and date(*(d+[1]*(3-len(d))))<=date.fromisoformat(today()),'Invalid citation date'
   for k,v in b.items():
    if k not in {'author','issued'}:assert isinstance(v,str) and len(v)<=2000,'Citation text required'
   if b.get('URL'):url(b['URL'])
