@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "description": "Presentation-only Benchmark identity and evidence curation. Original catalog tracks/results stay intact; a case study is not automatically a standard leaderboard.",
+  "benchmarks": {
+    "RoboTwin": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "LIBERO": {
+      "kind": "benchmark",
+      "officialUrl": "https://libero-project.github.io/main.html"
+    },
+    "RoboCasa": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "RoboCasa365": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "RLBench": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "SimplerEnv": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "CALVIN": {
+      "kind": "benchmark",
+      "officialUrl": "https://github.com/mees/calvin"
+    },
+    "RoboMimic": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "Push-T": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "Franka Kitchen": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "ALOHA-Sim": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "COLOSSEUM": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "DexMimicGen": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "Meta-World": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "RoboDojo": {
+      "kind": "benchmark",
+      "officialUrl": "https://robodojo-benchmark.com/leaderboard?bench=simulation"
+    },
+    "Google Robot (real)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "Language Table": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "BridgeData (real)": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "Octo fine-tuning (real)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "DROID (real)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "Ravens (CLIPort)": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "UniPi compositional (sim)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "VLA-Touch (real)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "Legato (real)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "VLABench": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "ActionCache (real)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "FlashVLA inference": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "Tau0-VLA real robot": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "HALO long-horizon (sim)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "HALO long-horizon (real)": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "DSWAM real folding": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "VT-WAM real robot": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "LIBERO-Plus": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "RMBench": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "SeeLikeRobot real": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "Embodied.cpp": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "RoboMME": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "MECo-WAM real": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "ALOHA2 sim": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "World-to-Wrist inference": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "RoboDojo real": {
+      "kind": "benchmark",
+      "officialUrl": "https://robodojo-benchmark.com/leaderboard?bench=realworld"
+    },
+    "RoboMemArena": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "DMS-VLA real": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "DMS-VLA deployment": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "VLAbot real": {
+      "kind": "case-study",
+      "officialUrl": null
+    },
+    "LIBERO-PRO": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "RoboFollow": {
+      "kind": "benchmark",
+      "officialUrl": null
+    },
+    "RoboTwin-Phys": {
+      "kind": "benchmark",
+      "officialUrl": null
+    }
+  },
+  "datasetAliases": {
+    "libero-plus-rldx-v2": "LIBERO-Plus"
+  },
+  "scopeOverrides": {
+    "safeloop-v1-libero-safety": "safety-24",
+    "toast-v1-libero-data-scale": "training-fractions-40",
+    "robocasa-original-5composite-v1": "5-composite",
+    "gam-v1-robotwin50-single-task": "gam-reported-50"
+  },
+  "trackTiers": {
+    "safeloop-v1-libero-safety": "paper",
+    "toast-v1-libero-data-scale": "sweep",
+    "robocasa-original-5composite-v1": "paper",
+    "gam-v1-robotwin50-single-task": "paper"
+  },
+  "resultTiers": {
+    "r-libero-infoentropy-v1-budget60-ours": "sweep",
+    "r-libero-infoentropy-v1-budget80-ours": "sweep",
+    "r-libero-infoentropy-v1-budget120-ours": "sweep",
+    "r-libero-infoentropy-v1-budget140-ours": "sweep"
+  },
+  "legacySettingTracks": {
+    "setting-libero-plus-d7a11d009077": "libero-plus-rldx-v2"
+  }
+}
