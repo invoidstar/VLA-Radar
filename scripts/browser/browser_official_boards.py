@@ -71,7 +71,9 @@ try:
         page.locator('[data-official-all]').click()
         check('All 57 official RoboDojo simulation submissions remain visible',
             page.locator('.official-table tbody tr').count()==57)
-        show(page,'RoboDojo real',cases=True)
+        show(page,'RoboDojo real')
+        check('RoboDojo Real is a public standardized Benchmark, not a paper case study',
+            page.locator('[data-board-kind="benchmark"]').get_attribute('aria-pressed')=='true')
         page.locator('.benchmark-official summary').click()
         page.wait_for_selector('[data-official-model="OpenWAM-α"]')
         page.locator('[data-official-all]').click()
