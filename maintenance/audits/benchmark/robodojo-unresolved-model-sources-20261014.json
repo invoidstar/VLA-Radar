@@ -78,8 +78,22 @@
       "evidence": "Official entry only; no independently verified exact full-text publication."
     }
   ],
-  "note": "Official scoring 2026-10-09 remains unchanged; listing is not proof of code open-sourcing, model reproducibility or independent paper publication.",
+  "note": "Official scoring 2026-10-09 remains unchanged; listing is not proof of code open-sourcing, model reproducibility or independent paper publication. Two distinct full-text RoboDojo research papers are added to VLA-Radar under their own paper IDs; author-reported metrics remain separate source-scoped comparison records.",
   "allFourHaveNoVerifiedIndependentFullPaper": true,
   "editorialStatus": "deferred-until-publisher-or-arxiv-identity",
-  "globalDiscoverySuccessCheckpointAdvanced": false
+  "globalDiscoverySuccessCheckpointAdvanced": false,
+  "relatedPapers": [
+    {
+      "paperId": "p134",
+      "arxiv": "2610.12369",
+      "role": "Independent code-only policy research, not a named Simate/Rex/Liber checkpoint or RoboDojo official snapshot submission",
+      "status": "source-verified-deep-read"
+    },
+    {
+      "paperId": "p135",
+      "arxiv": "2610.08995",
+      "role": "Physical self-improving harness; cites official preview model results but is not a rebrand of the PhysicalRSI or Liber model",
+      "status": "source-verified-deep-read"
+    }
+  ]
 }

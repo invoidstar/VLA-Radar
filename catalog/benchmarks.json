@@ -6863,6 +6863,93 @@
         "Average"
       ],
       "source": "https://arxiv.org/html/2609.21449v2"
+    },
+    {
+      "id": "robodojo-coap-v1-sim-sr",
+      "dataset": "RoboDojo",
+      "name": "COAP v1 · RoboDojo 42 tasks · author SR",
+      "version": "2610.12369v1 Table 2, §4.1",
+      "tasks": "42 simulation tasks",
+      "split": "coap author 42 sr",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report, not an official leaderboard submission",
+      "trainingRegime": "Offline code search on development/validation layouts using public RoboDojo geometry assets; no VLM/VLA runtime",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Memory",
+        "Precision",
+        "Open",
+        "Generalization",
+        "Long-Horizon",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.12369v1"
+    },
+    {
+      "id": "robodojo-coap-v1-sim-score",
+      "dataset": "RoboDojo",
+      "name": "COAP v1 · RoboDojo 42 tasks · author Score",
+      "version": "2610.12369v1 Table 2, §4.1",
+      "tasks": "42 simulation tasks",
+      "split": "coap author 42 score",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report; progress Score not SR",
+      "trainingRegime": "Offline code search, known simulator CAD and calibration, code-only runtime",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.12369v1"
+    },
+    {
+      "id": "robodojo-physevo-v1-sim-sr",
+      "dataset": "RoboDojo",
+      "name": "PhysEvo v1 · RoboDojo 42 tasks · five-dimension macro SR",
+      "version": "2610.08995v1 Table 1",
+      "tasks": "42 simulation tasks",
+      "split": "physevo author 42 macro sr",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
+      "trainingRegime": "Frozen Astra model with evolving task/meta tool harness; task-specific retained versions, five layouts/test task",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.08995v1"
+    },
+    {
+      "id": "robodojo-physevo-v1-sim-score",
+      "dataset": "RoboDojo",
+      "name": "PhysEvo v1 · RoboDojo 42 tasks · five-dimension macro Score",
+      "version": "2610.08995v1 Table 1",
+      "tasks": "42 simulation tasks",
+      "split": "physevo author 42 macro score",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
+      "trainingRegime": "Frozen Astra model with evolving tool harness, no model weight updates",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.08995v1"
     }
   ]
 }

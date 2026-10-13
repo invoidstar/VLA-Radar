@@ -1,0 +1,23 @@
+{
+  "id": "r-physevo-v1-robodojo-sim-sr",
+  "paperId": "p135",
+  "method": "PhysEvo",
+  "trackId": "robodojo-physevo-v1-sim-sr",
+  "values": {
+    "Generalization": 45,
+    "Precision": 40,
+    "Long-Horizon": 45,
+    "Memory": 100,
+    "Open": 80,
+    "Average": 62
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-14",
+  "source": "https://arxiv.org/html/2610.08995v1",
+  "sourceVersion": "arXiv 2610.08995v1",
+  "locator": "Table 1 PhysEvo row, SR columns",
+  "attribution": "author-reported",
+  "trainingData": "Frozen Astra agent, task-specific retained harness; five held-out layouts/task",
+  "evaluationNotes": "Equal weight across five capability dimensions, not equal weight over all 42 tasks (the latter SR 58.57%). Author-reported, not official leaderboard entry.",
+  "supersedes": ""
+}
