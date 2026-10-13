@@ -3,8 +3,8 @@
   "paper": {
     "id": "p129",
     "name": "LAPT-Scale",
-    "title": "LAPT-Scale: Learning Action Priors from Human Videos for Scalable Vision-Language-Action Policies",
-    "team": "Zhiyuan Xiang、Peidong Liu、Mingyang Li、Jiawei Li、Wenhao Li、Wenbo Ding、Xiang Deng",
+    "title": "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos",
+    "team": "Zhiyuan Xiang、Peidong Liu、Mingyang Li、Jiawei Li、Wenhow Li、Wenbo Ding、Xiang Deng",
     "venue": "arXiv",
     "publicationType": "preprint",
     "publicationStatus": "arXiv 2610.13732v1 预印本；论文自述CoRL 2026录用尚未独立确认",
