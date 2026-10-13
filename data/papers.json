@@ -64,6 +64,150 @@
   ],
   "papers": [
     {
+      "id": "p130",
+      "name": "Dual-Stream Memory",
+      "title": "Dual-Stream Memory for Vision-Language-Action Policies",
+      "team": "Yang Wang、Ping Liu、Ruiyu Wang、Xuhua Chen、Lingfeng Zhang、Tao Zhang",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.13262v1 预印本",
+      "firstPublished": "2026-10-09",
+      "dateNote": "按arXiv 2610.13262v1初版提交日UTC（2026-10-09）记录。",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-09 arXiv v1 · 16 RoboMME tasks / 4 real tasks",
+      "topics": [
+        "memory",
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "long-horizon memory",
+        "Gated DeltaNet",
+        "visual retrieval",
+        "RoboMME",
+        "dual-stream",
+        "Piper robot"
+      ],
+      "priority": "deep",
+      "contribution": "将任务进度摘要的单时间token与按语言目标检索的多尺度历史视觉token相结合，冻结预训练时间压缩器并联合优化检索/动作策略。",
+      "findings": "RoboMME 16任务平均成功率49.22%，对照FrameSamp+Modul 44.51%；四真机任务平均成功率62.5%对照37.5%，但Cup Swap存在明显失败。",
+      "limitations": "固定阈值与历史检索开销、相似物体身份混淆、真实机器人任务少，跨协议基线可能存在训练预算差异。",
+      "insight": "任务执行状态和历史空间证据应采用不同的记忆表示；高分Counting不能代替复杂对象身份持续追踪。",
+      "readingFocus": "DeltaNet预训练监督、冻结策略、SigLIP/MiniLM选帧阈值、每帧16 token、多任务统计、Cup Swap失败与现实机器人协议。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-13按arXiv v1完整HTML与表I–III核验，所有成功率均为论文作者报告。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1完整正文",
+          "url": "https://arxiv.org/html/2610.13262v1"
+        },
+        {
+          "label": "arXiv首次公开记录",
+          "url": "https://arxiv.org/abs/2610.13262"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.13262",
+      "arxiv": "2610.13262",
+      "doi": ""
+    },
+    {
+      "id": "p129",
+      "name": "LAPT-Scale",
+      "title": "LAPT-Scale: Scaling Embodied Policies with Latent Action Pre-Training on Human Videos",
+      "team": "Zhiyuan Xiang、Peidong Liu、Mingyang Li、Jiawei Li、Wenhow Li、Wenbo Ding、Xiang Deng",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.13732v1 预印本；论文自述CoRL 2026录用尚未独立确认",
+      "firstPublished": "2026-10-09",
+      "dateNote": "首次公开依照arXiv v1提交日；录用/会议公开状态等待官方证据。",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-09首次公开｜arXiv v1",
+      "topics": [
+        "pretraining",
+        "action",
+        "spatial"
+      ],
+      "tags": [
+        "human video",
+        "latent action",
+        "VAE",
+        "action representation",
+        "RoboTwin",
+        "RoboCasa"
+      ],
+      "priority": "deep",
+      "contribution": "通过时空VAE学习32维人类视频连续潜在动作，联合感知、DINO和光流目标，在大规模无动作标注视频上预训练VLA后再做机器人本体对齐。",
+      "findings": "23,300小时人类视频学习潜在动作、5,100小时预训练、250小时本体对齐；RoboTwin2.0 Easy/Hard达到90.0%/89.3%，RoboCasa-GR1报告64.8%。",
+      "limitations": "仍需机器人真实动作对齐；不同基线预训练预算不同；少量真机任务不证明跨机器人零样本泛化。",
+      "insight": "视频预训练中的中间目标若刻画动作诱发的连续视觉变化，比纯未来外观重建更易形成可迁移操作先验，但必须校验机器人可执行性。",
+      "readingFocus": "32维latent VAE、RAFT/DINO/LPIPS目标、三阶段数据用量、本体对齐、RoboTwin2 Easy/Hard主表与删损失消融。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-13按arXiv v1一手全文核验；会议状态不超出直接证据；所有数字均为作者报告。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv正文与实验表",
+          "url": "https://arxiv.org/html/2610.13732v1"
+        },
+        {
+          "label": "arXiv首版元数据",
+          "url": "https://arxiv.org/abs/2610.13732"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.13732",
+      "arxiv": "2610.13732",
+      "doi": ""
+    },
+    {
+      "id": "p128",
+      "name": "Splat2Act",
+      "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+      "team": "Xiaomeng Ye、Krishna Jaganathan、Gyubeum Lim、Gunjan Chhablani、Muhammad Zubair Irshad、Zsolt Kira",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.13945v1 预印本",
+      "firstPublished": "2026-10-09",
+      "dateNote": "首次公开按arXiv v1 UTC提交日；10月13日为本站阅读复核日。",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-09首次公开｜arXiv v1全文复核",
+      "topics": [
+        "action",
+        "pretraining",
+        "world"
+      ],
+      "tags": [
+        "scene personalization",
+        "sim-to-real",
+        "Gaussian splatting",
+        "synthetic demonstrations",
+        "Stretch 3",
+        "π0.5"
+      ],
+      "priority": "deep",
+      "contribution": "使用手机扫描构造3DGS场景数字孪生、碰撞几何与模拟oracle示范，两阶段适配预训练VLA到用户自有场景和物品。",
+      "findings": "101处扫描室内环境、852承载面、约68,021条模拟示范；个性化Office抓取聚合成功62.5%，Stretch3真机12任务36次实验成功63.9%。",
+      "limitations": "仿真任务组非跨论文统一Benchmark，首次环境扫描/碰撞建模和sim-to-real偏差仍有成本，真实试验数量及跨本体覆盖有限。",
+      "insight": "环境特定数字孪生能够把昂贵的用户真实操作示范转化为可筛选的模拟oracle训练数据，但需与统一基准和独立真实世界泛化证据严格区分。",
+      "readingFocus": "3DGS/碰撞几何、receptacle自动发现、模拟oracle筛选、Office1k/Multi1k两阶段数据、真机Stretch3对照和难例负结果。",
+      "evidence": "checked",
+      "evidenceNote": "仅依据arXiv v1全文及其方法/实验表，数字为作者报告，非独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv 2610.13945v1完整正文",
+          "url": "https://arxiv.org/html/2610.13945v1"
+        },
+        {
+          "label": "arXiv首次公开",
+          "url": "https://arxiv.org/abs/2610.13945"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.13945",
+      "arxiv": "2610.13945",
+      "doi": ""
+    },
+    {
       "id": "p125",
       "name": "VPP2",
       "title": "Video Prediction Policy 2: Predict Better, Act Better",

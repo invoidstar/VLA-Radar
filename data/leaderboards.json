@@ -5784,6 +5784,51 @@
         "Task 5"
       ],
       "source": "https://arxiv.org/html/2610.04607v1"
+    },
+    {
+      "id": "lapt-scale-v1-robotwin-easy-hard",
+      "dataset": "RoboTwin",
+      "name": "LAPT-Scale v1 · RoboTwin 2.0 Easy / Hard",
+      "version": "arXiv 2610.13732v1",
+      "tasks": "RoboTwin 2.0 official task suite",
+      "split": "Easy / Hard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Official 50-task RoboTwin 2.0 Easy standard and Hard varied randomized layout; 50 clean and 500 randomized demos/task are training, not eval settings. Results by reporting paper.",
+      "trainingRegime": "LAPT 5.1K human videos + 250 hours alignment + robot task posttraining; cited baseline models have different pretraining architectures and data budgets.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Easy",
+        "Hard"
+      ],
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "familyId": "robotwin2-easy-hard-reports",
+      "familyName": "RoboTwin 2.0 · Easy / Hard Reports",
+      "familySummary": "完整任务上的 Easy / Hard 报告。不同工作使用的训练数据规模仍保留在 recipe 中；页面不因为标签相同而抹去训练预算差异。",
+      "familyKind": "alternative",
+      "familyMode": "aligned",
+      "familyPrimaryTrackId": "lingbot-v2-robotwin",
+      "recipeName": "LAPT-Scale v1 multi-stage reporting table",
+      "recipeType": "report"
+    },
+    {
+      "id": "dualstream-v1-robomme-16task",
+      "dataset": "RoboMME",
+      "name": "Dual-Stream Memory v1 · RoboMME 16 tasks",
+      "version": "arXiv 2610.13262v1",
+      "tasks": "16 memory manipulation tasks",
+      "split": "Counting / Permanence / Reference / Imitation",
+      "metric": "Mean task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "16 tasks, 50 test episodes per task and seed, 3 evaluation seeds 0/7/42; reported task-equal overall mean. FrameSamp baseline differs by checkpoint aggregation.",
+      "trainingRegime": "Policy trained 80K steps with frozen temporal compressor, retrieved spatial tokens; reported baseline checkpoint aggregation may differ.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.13262v1"
     }
   ],
   "settings": [
@@ -13946,9 +13991,16 @@
         "w2vla-v1-robotwin2500",
         "lingbot-v2-robotwin",
         "qwen-vla-v2-robotwin",
-        "qwen-robotmanip-v2-robotwin"
+        "qwen-robotmanip-v2-robotwin",
+        "lapt-scale-v1-robotwin-easy-hard"
       ],
       "resultIds": [
+        "r-lapt-scale-robotwin-joyai",
+        "r-lapt-scale-robotwin-lapt",
+        "r-lapt-scale-robotwin-lingbot",
+        "r-lapt-scale-robotwin-motus",
+        "r-lapt-scale-robotwin-pi0",
+        "r-lapt-scale-robotwin-pi05",
         "r-lingbot-v2-rt-ling",
         "r-lingbot-v2-rt-motus",
         "r-qwen-robotmanip-v2-robotwin-base",
@@ -13957,17 +14009,24 @@
         "r-w2vla-v1-rt-up",
         "r-w2vla-v1-rt-w2"
       ],
-      "resultCount": 7,
-      "paperCount": 4,
+      "resultCount": 13,
+      "paperCount": 5,
       "paperIds": [
+        "p129",
         "p037",
         "p114",
         "p113",
         "p010"
       ],
-      "methodCount": 7,
+      "methodCount": 12,
       "primaryTrackId": "w2vla-v1-robotwin2500",
       "trainingOptions": [
+        {
+          "id": "unknown-p129",
+          "label": "训练数据未完整披露 · p129",
+          "known": false,
+          "count": 6
+        },
         {
           "id": "data-c20fcf04f9d4",
           "label": "2,500 clean +25,000 randomized demos",
@@ -13994,6 +14053,12 @@
         }
       ],
       "trainingByResult": {
+        "r-lapt-scale-robotwin-joyai": "unknown-p129",
+        "r-lapt-scale-robotwin-lapt": "unknown-p129",
+        "r-lapt-scale-robotwin-lingbot": "unknown-p129",
+        "r-lapt-scale-robotwin-motus": "unknown-p129",
+        "r-lapt-scale-robotwin-pi0": "unknown-p129",
+        "r-lapt-scale-robotwin-pi05": "unknown-p129",
         "r-lingbot-v2-rt-ling": "data-c20fcf04f9d4",
         "r-lingbot-v2-rt-motus": "data-c20fcf04f9d4",
         "r-qwen-robotmanip-v2-robotwin-base": "unknown-p114",
@@ -15255,6 +15320,51 @@
       "trainingByResult": {
         "r-foreact3d-v1-calvin-ours": "unknown-p124",
         "r-foreact3d-v1-calvin-starvla": "unknown-p124"
+      }
+    },
+    {
+      "id": "setting-robomme-success-184df936d4-16-9a0ec0a6c1a3",
+      "dataset": "RoboMME",
+      "evalId": "auto:success-184df936d4-16",
+      "name": "RoboMME · 16 Tasks · Success Rate",
+      "tasks": "16 memory manipulation tasks",
+      "split": "Counting / Permanence / Reference / Imitation",
+      "metric": "Mean task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Average"
+      ],
+      "protocol": "16 tasks, 50 test episodes per task and seed, 3 evaluation seeds 0/7/42; reported task-equal overall mean. FrameSamp baseline differs by checkpoint aggregation.",
+      "trackIds": [
+        "dualstream-v1-robomme-16task"
+      ],
+      "resultIds": [
+        "r-dualstream-robomme-framesamp",
+        "r-dualstream-robomme-nativemem",
+        "r-dualstream-robomme-ours",
+        "r-dualstream-robomme-pi05"
+      ],
+      "resultCount": 4,
+      "paperCount": 1,
+      "paperIds": [
+        "p130"
+      ],
+      "methodCount": 4,
+      "primaryTrackId": "dualstream-v1-robomme-16task",
+      "trainingOptions": [
+        {
+          "id": "unknown-p130",
+          "label": "训练数据未完整披露 · p130",
+          "known": false,
+          "count": 4
+        }
+      ],
+      "trainingByResult": {
+        "r-dualstream-robomme-framesamp": "unknown-p130",
+        "r-dualstream-robomme-nativemem": "unknown-p130",
+        "r-dualstream-robomme-ours": "unknown-p130",
+        "r-dualstream-robomme-pi05": "unknown-p130"
       }
     }
   ],
@@ -19396,6 +19506,78 @@
       "supersedes": ""
     },
     {
+      "id": "r-dualstream-robomme-framesamp",
+      "paperId": "p130",
+      "method": "FrameSamp+Modul",
+      "trackId": "dualstream-v1-robomme-16task",
+      "values": {
+        "Average": 44.51
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13262v1",
+      "sourceVersion": "arXiv 2610.13262v1",
+      "locator": "Table II · Overall mean",
+      "attribution": "reported-baseline",
+      "trainingData": "16 RoboMME tasks with 50 test episodes/task/seed for three seeds; FrameSamp published checkpoint aggregation differs.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dualstream-robomme-nativemem",
+      "paperId": "p130",
+      "method": "NativeMEM",
+      "trackId": "dualstream-v1-robomme-16task",
+      "values": {
+        "Average": 20.54
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13262v1",
+      "sourceVersion": "arXiv 2610.13262v1",
+      "locator": "Table II · Overall mean",
+      "attribution": "reported-baseline",
+      "trainingData": "16 RoboMME tasks with 50 test episodes/task/seed for three seeds; FrameSamp published checkpoint aggregation differs.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dualstream-robomme-ours",
+      "paperId": "p130",
+      "method": "Dual-Stream Memory",
+      "trackId": "dualstream-v1-robomme-16task",
+      "values": {
+        "Average": 49.22
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13262v1",
+      "sourceVersion": "arXiv 2610.13262v1",
+      "locator": "Table II · Overall mean",
+      "attribution": "author-reported",
+      "trainingData": "16 RoboMME tasks with 50 test episodes/task/seed for three seeds; FrameSamp published checkpoint aggregation differs.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-dualstream-robomme-pi05",
+      "paperId": "p130",
+      "method": "π0.5 (no memory)",
+      "trackId": "dualstream-v1-robomme-16task",
+      "values": {
+        "Average": 17.93
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13262v1",
+      "sourceVersion": "arXiv 2610.13262v1",
+      "locator": "Table II · Overall mean",
+      "attribution": "reported-baseline",
+      "trainingData": "16 RoboMME tasks with 50 test episodes/task/seed for three seeds; FrameSamp published checkpoint aggregation differs.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
       "id": "r-embcpp-v2-blocklat-cpp",
       "paperId": "p031",
       "method": "Embodied.cpp Q4_K",
@@ -21352,6 +21534,120 @@
       "attribution": "author-reported",
       "trainingData": "Full mixture；LLM+ViT预训练；LLM unfrozen；无目标Task finetune",
       "evaluationNotes": "原表 Method / 配置：PaLM-E-12B / full unfrozen generalist。任务2/3各80条模拟rollout，以自动奖励判定，高层每4秒重新观察并指令低层策略。Table9任务3奖励调整后的77.0不混入主表56.3；没有统一总平均。种子/检查点未完整公开，数值保留原文舍入不反推回合。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lapt-scale-robotwin-joyai",
+      "paperId": "p129",
+      "method": "JoyAI-RA",
+      "trackId": "lapt-scale-v1-robotwin-easy-hard",
+      "values": {
+        "Easy": 88.6,
+        "Hard": 87.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "sourceVersion": "arXiv 2610.13732v1",
+      "locator": "Table 1 · RoboTwin 2.0 Easy/Hard",
+      "attribution": "reported-baseline",
+      "trainingData": "LAPT multi-stage 5.1K human-video/250h robot alignment; historical methods have nonmatched pretraining.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lapt-scale-robotwin-lapt",
+      "paperId": "p129",
+      "method": "LAPT-Scale",
+      "trackId": "lapt-scale-v1-robotwin-easy-hard",
+      "values": {
+        "Easy": 90,
+        "Hard": 89.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "sourceVersion": "arXiv 2610.13732v1",
+      "locator": "Table 1 · RoboTwin 2.0 Easy/Hard",
+      "attribution": "author-reported",
+      "trainingData": "LAPT multi-stage 5.1K human-video/250h robot alignment; historical methods have nonmatched pretraining.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lapt-scale-robotwin-lingbot",
+      "paperId": "p129",
+      "method": "LingBot-VLA",
+      "trackId": "lapt-scale-v1-robotwin-easy-hard",
+      "values": {
+        "Easy": 88.6,
+        "Hard": 86.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "sourceVersion": "arXiv 2610.13732v1",
+      "locator": "Table 1 · RoboTwin 2.0 Easy/Hard",
+      "attribution": "reported-baseline",
+      "trainingData": "LAPT multi-stage 5.1K human-video/250h robot alignment; historical methods have nonmatched pretraining.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lapt-scale-robotwin-motus",
+      "paperId": "p129",
+      "method": "Motus",
+      "trackId": "lapt-scale-v1-robotwin-easy-hard",
+      "values": {
+        "Easy": 88.7,
+        "Hard": 87
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "sourceVersion": "arXiv 2610.13732v1",
+      "locator": "Table 1 · RoboTwin 2.0 Easy/Hard",
+      "attribution": "reported-baseline",
+      "trainingData": "LAPT multi-stage 5.1K human-video/250h robot alignment; historical methods have nonmatched pretraining.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lapt-scale-robotwin-pi0",
+      "paperId": "p129",
+      "method": "π0",
+      "trackId": "lapt-scale-v1-robotwin-easy-hard",
+      "values": {
+        "Easy": 65.9,
+        "Hard": 58.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "sourceVersion": "arXiv 2610.13732v1",
+      "locator": "Table 1 · RoboTwin 2.0 Easy/Hard",
+      "attribution": "reported-baseline",
+      "trainingData": "LAPT multi-stage 5.1K human-video/250h robot alignment; historical methods have nonmatched pretraining.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-lapt-scale-robotwin-pi05",
+      "paperId": "p129",
+      "method": "π0.5",
+      "trackId": "lapt-scale-v1-robotwin-easy-hard",
+      "values": {
+        "Easy": 82.7,
+        "Hard": 76.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-13",
+      "source": "https://arxiv.org/html/2610.13732v1",
+      "sourceVersion": "arXiv 2610.13732v1",
+      "locator": "Table 1 · RoboTwin 2.0 Easy/Hard",
+      "attribution": "reported-baseline",
+      "trainingData": "LAPT multi-stage 5.1K human-video/250h robot alignment; historical methods have nonmatched pretraining.",
+      "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
       "supersedes": ""
     },
     {

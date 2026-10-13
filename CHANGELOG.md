@@ -1,3 +1,7 @@
+## 2026-10-13 — 2026-10-13-weekly-catchup
+
+补录2026-10-11遗漏维护部分：Splat2Act/LAPT-Scale/Dual-Stream Memory三篇一手深读；RoboTwin和RoboMME 2份原表10条结果；ROSCon/NVIDIA/AWS官方新闻三条。检索仍partial，前一个complete搜索checkpoint保持10月4日。 历史9月回归已改用成功checkpoint不变量，同时允许有据可查的partial后续审计。
+
 ## 2026-10-13 — 2026-10-13-robodojo-top10
 
 定向补全RoboDojo-Sim 2026-10-09 Top10文献：新增3篇完整正文核验的VPP2、InternW0-Δ和GPT-6 Astra评测论文，复用官方Score/SR多任务赛道补6条带原文证据的结果；无独立全文的Preview或权重条目保留在审计候选、不虚构论文，原始已有结果和Benchmark协议保持。其他来源日期与统计边界在Result Report注明，完整Discovery checkpoint不前移。

@@ -1,0 +1,19 @@
+{
+  "id": "r-lapt-scale-robotwin-joyai",
+  "paperId": "p129",
+  "method": "JoyAI-RA",
+  "trackId": "lapt-scale-v1-robotwin-easy-hard",
+  "values": {
+    "Easy": 88.6,
+    "Hard": 87.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2610.13732v1",
+  "sourceVersion": "arXiv 2610.13732v1",
+  "locator": "Table 1 · RoboTwin 2.0 Easy/Hard",
+  "attribution": "reported-baseline",
+  "trainingData": "LAPT multi-stage 5.1K human-video/250h robot alignment; historical methods have nonmatched pretraining.",
+  "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+  "supersedes": ""
+}
