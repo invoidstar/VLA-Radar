@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-13",
+  "auditType": "official-leaderboard-versus-paper-evidence",
+  "status": "source-check-complete / paper-candidate-backlog-open",
+  "targetBenchmarks": [
+    "LIBERO",
+    "RoboTwin",
+    "RoboDojo"
+  ],
+  "scope": "Protocol identity, official board snapshots, method/model identity, paper-table and source coverage. This targeted audit is not the four-lane whole-literature weekly discovery.",
+  "policy": "Official leaderboard submissions are first-party result evidence even if no separate paper exists; they must not invent paper records. Official scores have a different trust/protocol regime from heterogeneous cited paper tables.",
+  "baseline": {
+    "LIBERO": {
+      "settings": 13,
+      "tracks": 42,
+      "visibleReports": 134,
+      "mainReports": 117,
+      "sourcePapers": 28
+    },
+    "RoboTwin": {
+      "settings": 9,
+      "tracks": 22,
+      "visibleReports": 61,
+      "mainReports": 59,
+      "sourcePapers": 21
+    },
+    "RoboDojo": {
+      "settings": 9,
+      "tracks": 11,
+      "visibleReports": 49,
+      "mainReports": 49,
+      "sourcePapers": 14
+    },
+    "RoboDojoReal": {
+      "settings": 2,
+      "visibleReports": 6,
+      "sourcePapers": 1
+    }
+  },
+  "sources": [
+    {
+      "benchmark": "LIBERO",
+      "type": "official-benchmark",
+      "url": "https://libero-project.github.io/main.html",
+      "paper": "https://arxiv.org/abs/2306.03310",
+      "note": "LIBERO standard Spatial/Object/Goal/LIBERO-10 versus original lifelong benchmark; no official 40-task cross-method master ranking claimed."
+    },
+    {
+      "benchmark": "LIBERO",
+      "type": "official-code",
+      "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "note": "LIBERO-100 / LIBERO-90 / LIBERO-10 original identities must remain distinct from VLA standard four 10-task suites."
+    },
+    {
+      "benchmark": "RoboTwin",
+      "type": "official-project",
+      "url": "https://robotwin-platform.github.io/leaderboard",
+      "note": "Official requires 50 Clean demos x50 tasks, 100 rollouts/task for Clean and Random, and public code/weights/technical report for listing."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "type": "official-project",
+      "url": "https://robodojo-benchmark.com/",
+      "note": "42 sim and 18 real tasks; Score and SR kept separate. 2026-10-09 leaderboard snapshots."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "type": "official-repo",
+      "url": "https://github.com/RoboDojo-Benchmark/RoboDojo",
+      "note": "Sep 16–17 simulator get_obs/RGB fixes; not re-running or independently reproducing any method."
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "robotwin2",
+      "benchmark": "RoboTwin",
+      "sourceUpdatedAt": "2026-10-11",
+      "entries": 25,
+      "top3": [
+        {
+          "model": "PatchWAM",
+          "average": 79.14
+        },
+        {
+          "model": "ME-Dex-1.0",
+          "average": 78.85
+        },
+        {
+          "model": "ViGAR",
+          "average": 74.51
+        }
+      ],
+      "paperLinks": 0,
+      "sourceBlobSha": "e5a8af33d319649022ef124b1bbaf11767068dc3"
+    },
+    {
+      "id": "robodojo-sim",
+      "benchmark": "RoboDojo",
+      "sourceUpdatedAt": "2026-10-09",
+      "entries": 57,
+      "top3": [
+        {
+          "model": "VPP2",
+          "average": {
+            "score": 39.26,
+            "sr": 32.26
+          }
+        },
+        {
+          "model": "PhysicalRSI",
+          "average": {
+            "score": 36.27,
+            "sr": 31.38
+          }
+        },
+        {
+          "model": "Awomo-0.5",
+          "average": {
+            "score": 35.34,
+            "sr": 29.64
+          }
+        }
+      ],
+      "paperLinks": 4,
+      "sourceBlobSha": "d4664cc087e123b813530882f54273f932723eca"
+    },
+    {
+      "id": "robodojo-real",
+      "benchmark": "RoboDojo real",
+      "sourceUpdatedAt": "2026-10-09",
+      "entries": 11,
+      "top3": [
+        {
+          "model": "OpenWAM-α",
+          "average": {
+            "score": 37.6,
+            "sr": 24.4
+          }
+        },
+        {
+          "model": "Pi-05",
+          "average": {
+            "score": 22.9,
+            "sr": 12.8
+          }
+        },
+        {
+          "model": "InternVLA-A1",
+          "average": {
+            "score": 12,
+            "sr": 7.2
+          }
+        }
+      ],
+      "paperLinks": 0,
+      "sourceBlobSha": "b14162faec38751f0bd6afdaaf7d83825800e421"
+    }
+  ],
+  "findings": [
+    {
+      "benchmark": "LIBERO",
+      "type": "benchmark-identity",
+      "status": "verified",
+      "detail": "Standard VLA four-suite success-rate tables remain separate from LIBERO original lifelong FWT/NBT/AUC, LIBERO-Plus, LIBERO-PRO and LIBERO-Safety. Distinct demonstrations and views are reporting metadata; stricter comparability still requires reading original recipe."
+    },
+    {
+      "benchmark": "LIBERO",
+      "type": "baseline-attribution",
+      "status": "needs-further-case-review",
+      "detail": "Multiple papers re-report OpenVLA-OFT / π0.5 scores. Existing Result IDs and source versions remain; duplicate cited scores must not be treated as new independent method evaluations."
+    },
+    {
+      "benchmark": "RoboTwin",
+      "type": "training-comparability",
+      "status": "verified",
+      "detail": "Official 2,500-clean demo board cannot be called the same controlled leaderboard as paper comparisons using 27,500 mixed clean+random demos, despite equivalent Clean/Random metric columns."
+    },
+    {
+      "benchmark": "RoboTwin",
+      "type": "new-official-models",
+      "status": "official-only",
+      "detail": "2026-10-11 official snapshot adds ViGAR; 2026-10-02 lists PatchWAM; also ME-Dex-1.0, UniWAM and other models. Show exact official results without pretending that full paper reviews are complete."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "type": "paper-coverage",
+      "status": "official-complete-snapshot / paper-review-incomplete",
+      "detail": "All 57 simulation and 11 real official model submissions preserved in separate snapshots; p125 VPP2, p126 InternW0-Δ and p127 GPT-6 Astra have prior full-text reviews. Other model rows must not become fictional paper records."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "type": "variant-safety",
+      "status": "verified",
+      "detail": "VPP2-Preview is the prior model version of VPP2, not another scientific paper; two different official rankings and scores are both retained, with explicit variant relation."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "type": "measurements",
+      "status": "verified",
+      "detail": "Official partial-progress Score and complete-task Success Rate are separate dimensions, never rank a percentage value in a Score leaderboard."
+    }
+  ],
+  "candidateBacklog": [
+    {
+      "benchmark": "LIBERO",
+      "name": "IndustrialVLA-Bench",
+      "source": "https://arxiv.org/abs/2609.25562",
+      "status": "deferred",
+      "reason": "Related benchmark audit / multi-axis evaluation, not an automatic standard LIBERO ranking row without aligning evaluation settings and reading the original full text."
+    },
+    {
+      "benchmark": "LIBERO",
+      "name": "LIBERO-Safety",
+      "source": "https://github.com/LIBERO-SAFETY/LIBERO-Safety",
+      "status": "separate-benchmark",
+      "reason": "Physical and semantic safety suites use distinct tasks and metrics; not an ordinary LIBERO four-suite SR row."
+    },
+    {
+      "benchmark": "RoboTwin",
+      "name": "ViGAR",
+      "source": "https://dagroup-pku.github.io/ViGAR/",
+      "status": "official-snapshot-only",
+      "reason": "2026-10-11 official entry is already displayable in its original controlled protocol; full paper and reproducibility identity still requires editorial review."
+    },
+    {
+      "benchmark": "RoboTwin",
+      "name": "PatchWAM",
+      "source": "https://robotwin-platform.github.io/leaderboard",
+      "status": "official-snapshot-only",
+      "reason": "2026-10-02 official listing available; independent paper ID has not been asserted."
+    },
+    {
+      "benchmark": "RoboTwin",
+      "name": "ME-Dex 1.0",
+      "source": "https://arxiv.org/abs/2609.21449",
+      "status": "official-snapshot-only",
+      "reason": "Public full text is a reading candidate, not an automatically reviewed VLA-Radar paper."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "name": "PhysicalRSI",
+      "source": "https://robodojo-benchmark.com/leaderboard",
+      "status": "official-snapshot-only",
+      "reason": "Official model identity and measurements confirmed; no independently verified matching complete paper read in this audit."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "name": "Awomo-0.5",
+      "source": "https://robodojo-benchmark.com/leaderboard",
+      "status": "official-snapshot-only",
+      "reason": "Official model identity and measurements confirmed; no independently verified matching complete paper read in this audit."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "name": "Simate-beta",
+      "source": "https://robodojo-benchmark.com/leaderboard",
+      "status": "official-snapshot-only",
+      "reason": "Official model identity and measurements confirmed; no independently verified matching complete paper read in this audit."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "name": "Rex-M1 Preview",
+      "source": "https://robodojo-benchmark.com/leaderboard",
+      "status": "official-snapshot-only",
+      "reason": "Official model identity and measurements confirmed; no independently verified matching complete paper read in this audit."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "name": "Liber-0 Preview",
+      "source": "https://robodojo-benchmark.com/leaderboard",
+      "status": "official-snapshot-only",
+      "reason": "Official model identity and measurements confirmed; no independently verified matching complete paper read in this audit."
+    },
+    {
+      "benchmark": "RoboDojo",
+      "name": "Liber-0 Lite",
+      "source": "https://robodojo-benchmark.com/leaderboard",
+      "status": "official-snapshot-only",
+      "reason": "Official model identity and measurements confirmed; no independently verified matching complete paper read in this audit."
+    }
+  ],
+  "noNewPapersOrFabricatedScores": true,
+  "wholeDiscoveryCheckpointAdvanced": false,
+  "remaining": "Future targeted passes may deep-read publicly available primary full texts and link verified model submissions to exact paper IDs, preserving variant history and explicit original source."
+}
