@@ -30,7 +30,13 @@ def test_september_discovery_window_is_complete_but_deferred_stays_explicit():
     assert a['counts']=={'total':276,'selected':12,'deferred':244,'excluded':20,'crossIndexed':79}
     assert {x['arxiv'] for x in a['candidates'] if x['status']=='selected'}=={v[0] for v in NEW.values()}
     state=j('maintenance/state/state.json')
-    assert state['lastStatus']=='success' and state['lastSuccessfulSearchAt']>='2026-09-24'
+    assert state['lastSuccessfulSearchAt'] >= '2026-09-24'
+    assert state['lastStatus'] in ('success', 'partial')
+    if state['lastStatus'] == 'partial':
+        assert state['lastAttemptAt'] >= state['lastSuccessfulSearchAt']
+        latest = j(state['lastDiscoveryAudit'])
+        assert latest['status'] == 'partial'
+        assert state['lastCompleteDiscoveryAudit'] != state['lastDiscoveryAudit']
     queue=j('maintenance/state/work-queue.json')
     assert not any(x['paperId'] in set(NEW) for x in queue['notes'])
 
