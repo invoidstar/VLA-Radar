@@ -95,6 +95,89 @@
     const official=meta.officialUrl?'<a href="'+esc(safe(meta.officialUrl))+'" target="_blank" rel="noopener noreferrer">官方主页 / 榜单 ↗</a>':'';
     return '<section class="benchmark-dataset-context"><strong>'+esc(dataset)+'</strong><span>'+kind+'</span>'+official+'</section>';
   }
+
+  function officialValue(row,dimension,measure){
+    const value=row?.values?.[dimension];
+    if(typeof value==='number')return measure==='score'?value:null;
+    return typeof value?.[measure]==='number'?value[measure]:null;
+  }
+  function officialSorted(rows,dimension='Average',measure='score'){
+    return [...rows].sort((a,b)=>{
+      const x=officialValue(a,dimension,measure),y=officialValue(b,dimension,measure);
+      if(x==null||y==null)return x===y?a.rank-b.rank:x==null?1:-1;
+      return y-x||a.rank-b.rank;
+    });
+  }
+  function officialPanelHtml(meta){
+    if(!meta)return '';
+    const fmt=x=>typeof x==='number'?x.toFixed(2):x?.score!=null?Number(x.score).toFixed(2):'—';
+    const leaders=(meta.topThree||[]).map(x=>esc(x.model)+' '+fmt(x.average)).join(' · ');
+    return '<details class="benchmark-official" data-official-board="'+esc(meta.id)+'">'+
+      '<summary><span class="official-head"><strong>官方榜单快照</strong><small>'+
+      esc(meta.entryCount)+' 个模型 · 官方源更新 '+esc(meta.sourceUpdatedAt)+'</small></span>'+
+      '<span class="official-preview">'+leaders+'</span><span class="official-expand">展开榜单 ↘</span></summary>'+
+      '<p class="official-description">官方模型提交与下方论文 Result Reports 属于不同证据层。只在该官方协议内排序；未核验独立全文的提交不会冒充已收录论文。</p>'+
+      '<div class="official-content" aria-label="官方榜单排名"><p class="research-loading">展开后载入精确来源的榜单数据。</p></div></details>';
+  }
+  function officialTableHtml(board,dimension='Average',measure='score',showAll=false){
+    const cols=board.columns||[],twin=board.metricSchema==='clean-random';
+    const key=cols.includes(dimension)?dimension:'Average',metric=twin?'score':measure==='sr'?'sr':'score';
+    const sorted=officialSorted(board.entries,key,metric),current=showAll?sorted:sorted.slice(0,10);
+    const siteRank=key==='Average'&&metric==='score';
+    const fmt=n=>n==null?'—':Number(n).toFixed(2)+(metric==='sr'?'%':'');
+    const rows=current.map((r,i)=>{
+      const val=officialValue(r,key,metric);
+      const relation=r.paperLink?esc(r.paperLink.paperId)+' · '+esc(r.paperLink.relation):'官方提交 · 论文关系未核验';
+      return '<tr data-official-model="'+esc(r.model)+'"><td class="numeric">'+(siteRank?r.rank:i+1)+'</td>'+
+       '<td class="official-method"><strong>'+esc(r.model)+'</strong><small class="official-paper-id">'+relation+'</small></td>'+
+       '<td class="numeric official-score">'+fmt(val)+'</td>'+
+       (twin?'<td>'+esc(r.track==='cotrain'?'Co-train':'Single-task SFT')+'</td>':'')+
+       '<td class="official-contributor">'+esc(r.contributor)+(twin&&r.listedAt?'<small>Listed '+esc(r.listedAt)+'</small>':'')+'</td></tr>';
+    }).join('');
+    const selectors='<div class="official-controls"><label>评测维度<select data-official-dimension>'+
+      cols.map(c=>'<option value="'+esc(c)+'" '+(c===key?'selected':'')+'>'+esc(c)+'</option>').join('')+'</select></label>'+
+      (twin?'':'<label>成绩类型<select data-official-measure><option value="score" '+(metric==='score'?'selected':'')+'>Score（过程得分）</option><option value="sr" '+(metric==='sr'?'selected':'')+'>SR（完整成功率）</option></select></label>')+
+      (board.entries.length>10?'<button class="btn" type="button" data-official-all>'+(showAll?'只看 Top 10':'展开全部 '+board.entries.length+' 条')+'</button>':'')+'</div>';
+    const source='<p class="official-source-links"><a href="'+esc(safe(board.boardUrl))+'" target="_blank" rel="noopener noreferrer">官方主页 ↗</a>'+
+     '<a href="'+esc(safe(board.sourceRepoUrl))+'" target="_blank" rel="noopener noreferrer">精确源文件 ↗</a>'+
+     '<span>来源更新 '+esc(board.officialUpdatedAt)+' · 本站核验 '+esc(board.capturedAt)+'</span></p>';
+    return selectors+
+      '<p class="official-sort-explain">'+(siteRank?'官网 Average Score 名次':'按当前指标重新排序，左侧为当前次序，非官网原始 Average 排名')+' · 无数据不当作0</p>'+
+      '<div class="board-table-scroll official-table-scroll" role="region" tabindex="0"><table class="board-table official-table"><caption>'+
+      esc(board.benchmark)+' · 官方 '+esc(board.officialUpdatedAt)+' · '+esc(key)+' · '+(metric==='sr'?'SR (%)':'Score')+
+      '</caption><thead><tr><th scope="col">'+(siteRank?'官网名次':'当前次序')+'</th><th scope="col">Method / 公开身份</th>'+
+      '<th scope="col">'+esc(key)+' '+(metric==='sr'?'SR (%)':'Score')+'</th>'+
+      (twin?'<th scope="col">Training Mode</th>':'')+'<th scope="col">Contributor</th></tr></thead><tbody>'+
+      rows+'</tbody></table></div>'+source;
+  }
+  function bindOfficialPanel(host,meta){
+    if(!meta)return;
+    const details=host.querySelector('[data-official-board="'+meta.id+'"]');
+    if(!details)return;
+    let pending=null,board=null,dimension='Average',measure='score',expanded=false;
+    const mount=details.querySelector('.official-content');
+    function paint(){
+      if(!board||!host.contains(details))return;
+      mount.innerHTML=officialTableHtml(board,dimension,measure,expanded);
+      mount.querySelector('[data-official-dimension]').onchange=e=>{dimension=e.target.value;paint();};
+      mount.querySelector('[data-official-measure]')?.addEventListener('change',e=>{measure=e.target.value;paint();});
+      mount.querySelector('[data-official-all]')?.addEventListener('click',()=>{expanded=!expanded;paint();});
+    }
+    details.addEventListener('toggle',()=>{
+      if(!details.open||!host.contains(details))return;
+      if(board){paint();return;}
+      if(pending)return;
+      mount.innerHTML='<p class="research-loading">正在加载源版本已核验的官方成绩…</p>';
+      pending=g.RadarRuntime.loadJson(meta.resultUrl).then(data=>{
+        if(data.id!==meta.id||!Array.isArray(data.entries)||data.entries.length!==meta.entryCount)throw Error('Official board shard mismatch');
+        if(host.contains(details)){board=data;paint();}
+      }).catch(()=>{
+        pending=null;
+        if(host.contains(details))mount.innerHTML='<p class="research-warning">暂未载入官方快照。折叠后重新展开可以重试，或使用官方源链接。</p>';
+      });
+    });
+  }
+
   function paperMap(papers){return new Map((papers||[]).map(p=>[p.id,p.name||p.title||p.id]));}
   function setDataset(dataset,host){
     const u=new URL(location.href);u.searchParams.set('view','leaderboards');u.searchParams.set('dataset',dataset);
@@ -248,6 +331,6 @@
     }
     await draw();
   }
-  g.RadarBenchmarkSettings={render,sortRows,direction,searchNorm,searchSettings,filterSettingsByTaxonomy,protocolFacts,compatibilityLevel,compatibilitySummary};
+  g.RadarBenchmarkSettings={render,sortRows,direction,searchNorm,searchSettings,filterSettingsByTaxonomy,protocolFacts,compatibilityLevel,compatibilitySummary,officialValue,officialSorted,officialPanelHtml,officialTableHtml};
   if(typeof module!=='undefined')module.exports=g.RadarBenchmarkSettings;
 })(typeof window!=='undefined'?window:globalThis);
