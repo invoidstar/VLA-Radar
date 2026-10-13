@@ -82,21 +82,65 @@ try:
         page.locator('#benchmark-search-clear').click();page.wait_for_function('!new URLSearchParams(location.search).has("lbSearch")');page.wait_for_selector('#benchmark-search-input')
         yes('clearing search restores all Benchmark tabs',page.locator('[data-setting-dataset]').count()>10)
         taxonomy=boards['taxonomy'];bench_tax=taxonomy['benchmarks']
+        quality=boards['benchmarkRegistry']['benchmarks']
+        public_tax={d:m for d,m in bench_tax.items() if quality[d]['kind']=='benchmark'}
+        case_tax={d:m for d,m in bench_tax.items() if quality[d]['kind']=='case-study'}
+        yes('registry separates public benchmarks and paper-specific case studies',len(public_tax)==27 and len(case_tax)==21)
         yes('taxonomy controls are visible',page.locator('.benchmark-taxonomy').count()==1 and page.locator('[data-tax-focus]').count()==len(taxonomy['focuses'])+1)
         page.locator('[data-tax-focus="long-horizon-memory"]').click();page.wait_for_function('new URLSearchParams(location.search).get("lbFocus")==="long-horizon-memory"');page.wait_for_selector('.setting-table')
-        focus_expected={d for d,m in bench_tax.items() if m['focus']=='long-horizon-memory'}
+        focus_expected={d for d,m in public_tax.items() if m['focus']=='long-horizon-memory'}
         focus_visible=set(page.locator('[data-setting-dataset]').all_text_contents())
         yes('Focus filter narrows Benchmark navigation exactly',focus_visible==focus_expected)
-        page.locator('[data-tax-env="real"]').click();page.wait_for_function('new URLSearchParams(location.search).get("lbEnv")==="real"');page.wait_for_selector('.setting-table')
-        real_expected={d for d in focus_expected if bench_tax[d]['environment']=='real'}
-        yes('Environment composes with Focus',set(page.locator('[data-setting-dataset]').all_text_contents())==real_expected)
+        page.locator('[data-tax-env="simulation"]').click();page.wait_for_function('new URLSearchParams(location.search).get("lbEnv")==="simulation"');page.wait_for_selector('.setting-table')
+        env_expected={d for d in focus_expected if bench_tax[d]['environment']=='simulation'}
+        yes('Environment composes with Focus',set(page.locator('[data-setting-dataset]').all_text_contents())==env_expected)
         page.locator('.taxonomy-tags summary').click();page.locator('label:has([data-tax-tag="memory"])').click();page.wait_for_function('new URLSearchParams(location.search).get("lbTags")==="memory"');page.wait_for_selector('.setting-table')
-        tag_expected={d for d in real_expected if 'memory' in bench_tax[d]['tags']}
+        tag_expected={d for d in env_expected if 'memory' in bench_tax[d]['tags']}
         yes('tag checkbox composes with Focus and Environment',set(page.locator('[data-setting-dataset]').all_text_contents())==tag_expected)
         page.reload(wait_until='networkidle');page.wait_for_selector('.benchmark-taxonomy')
-        yes('taxonomy filters persist across refresh',page.locator('[data-tax-focus="long-horizon-memory"]').get_attribute('aria-pressed')=='true' and page.locator('[data-tax-env="real"]').get_attribute('aria-pressed')=='true' and page.locator('[data-tax-tag="memory"]').is_checked())
+        yes('taxonomy filters persist across refresh',page.locator('[data-tax-focus="long-horizon-memory"]').get_attribute('aria-pressed')=='true' and page.locator('[data-tax-env="simulation"]').get_attribute('aria-pressed')=='true' and page.locator('[data-tax-tag="memory"]').is_checked())
         page.locator('#taxonomy-clear').click();page.wait_for_function('!new URLSearchParams(location.search).has("lbFocus") && !new URLSearchParams(location.search).has("lbEnv") && !new URLSearchParams(location.search).has("lbTags")');page.wait_for_selector('.setting-table')
-        yes('clearing taxonomy restores complete Benchmark navigation',page.locator('[data-setting-dataset]').count()==len(bench_tax))
+        yes('clearing taxonomy restores standard Benchmark navigation',page.locator('[data-setting-dataset]').count()==len(public_tax))
+        page.locator('[data-board-kind="case-study"]').click()
+        page.wait_for_function('new URLSearchParams(location.search).get("lbType")==="cases"')
+        page.wait_for_selector('.setting-table')
+        yes('case-study navigation remains fully available',page.locator('[data-setting-dataset]').count()==len(case_tax))
+        yes('VLAbot original real robot evidence remains accessible',page.locator('[data-setting-dataset="VLAbot real"]').count()==1)
+        page.reload(wait_until='networkidle')
+        yes('case-study mode persists across reload',page.locator('[data-board-kind="case-study"]').get_attribute('aria-pressed')=='true')
+        page.locator('[data-board-kind="benchmark"]').click()
+        page.wait_for_function('!new URLSearchParams(location.search).has("lbType")')
+        page.wait_for_selector('.setting-table')
+        yes('return to public benchmark navigation',page.locator('[data-setting-dataset]').count()==len(public_tax))
+        page.goto(base+'?view=leaderboards&dataset=RoboTwin',wait_until='networkidle')
+        page.wait_for_selector('.benchmark-dataset-context a')
+        yes('verified Benchmark official URL available',
+            'robotwin-platform.github.io' in page.locator('.benchmark-dataset-context a').get_attribute('href'))
+        page.locator('#benchmark-search-input').fill('VLA-InfoEntropy')
+        page.locator('#benchmark-search-form').press('Enter')
+        page.wait_for_function('new URLSearchParams(location.search).get("lbSearch")==="VLA-InfoEntropy"')
+        page.wait_for_selector('#setting-select')
+        yes('model search crosses Benchmark and Setting metadata',
+            page.locator('[data-setting-dataset="LIBERO"]').count()==1)
+        page.locator('#benchmark-search-clear').click()
+        page.wait_for_function('!new URLSearchParams(location.search).has("lbSearch")')
+        page.wait_for_selector('#setting-select')
+
+        # The default list must not silently re-introduce paper-only protocol rows.
+        page.goto(base+'?view=leaderboards&dataset=RoboTwin',wait_until='networkidle')
+        page.wait_for_selector('#setting-select')
+        yes('paper-only GAM setting absent from default main navigation',
+            page.locator('#setting-select option').filter(has_text='GAM-specific').count()==0)
+        page.locator('[data-rows-mode="all"]').click()
+        page.wait_for_function('new URLSearchParams(location.search).get("lbRows")==="all"')
+        page.wait_for_selector('#setting-select')
+        yes('paper-only GAM setting accessible in complete-evidence mode',
+            page.locator('#setting-select option').filter(has_text='GAM-specific').count()>=1)
+        page.locator('[data-rows-mode="main"]').click()
+        page.wait_for_function('!new URLSearchParams(location.search).has("lbRows")')
+        yes('returning to main comparison removes archive-only Settings',
+            page.locator('#setting-select option').filter(has_text='GAM-specific').count()==0)
+
         rt=next(s for s in all_settings if s['dataset']=='RoboTwin' and s['evalId']=='auto:50-clean-random')
         yes('RoboTwin evaluation settings collapse track clutter',len([s for s in all_settings if s['dataset']=='RoboTwin'])<len([t for t in boards['tracks'] if t['dataset']=='RoboTwin']))
         yes('RoboTwin main Setting is genuinely cross-paper and cross-training',rt['paperCount']>=10 and len(rt['trainingOptions'])>=5 and len(rt['trackIds'])>=6)
@@ -127,7 +171,12 @@ try:
         pi_option=page.locator('#setting-method option').filter(has_text='π0.5').first
         if pi_option.count():
             page.locator('#setting-method').select_option(pi_option.get_attribute('value'));page.wait_for_timeout(120)
-            yes('same Method can keep multiple source reports',page.locator('.setting-table tbody tr').count()>=2)
+            primary_count=page.locator('.setting-table tbody tr').count()
+            page.locator('[data-rows-mode="all"]').click()
+            page.wait_for_function('new URLSearchParams(location.search).get("lbRows")==="all"')
+            yes('complete evidence view preserves same Method source reports',page.locator('.setting-table tbody tr').count()>=2 and page.locator('.setting-table tbody tr').count()>=primary_count)
+            page.locator('[data-rows-mode="main"]').click()
+            page.wait_for_function('!new URLSearchParams(location.search).has("lbRows")')
             page.locator('#setting-method').select_option('all')
         source_ids=page.locator('.setting-source .board-paper-link').evaluate_all('(els)=>[...new Set(els.map(e=>e.dataset.paper))]')
         yes('same Setting preserves separate source papers',len(source_ids)>=5)
@@ -140,8 +189,12 @@ try:
         page.set_viewport_size({'width':1440,'height':1100})
         rm=next(s for s in all_settings if s['dataset']=='RoboMimic' and {'robomimic-corl21-lowdim-ph-best','robomimic-corl21-image-ph-best'}<=set(s['trackIds']))
         page.goto(base+'?'+urlencode({'view':'leaderboards','dataset':'RoboMimic','setting':rm['id']}),wait_until='networkidle');page.wait_for_selector('.setting-table')
-        yes('same method reports are never deduplicated',page.locator('.setting-method strong').all_text_contents().count('BC-RNN')>=2)
+        page.locator('[data-rows-mode="all"]').click()
+        page.wait_for_function('new URLSearchParams(location.search).get("lbRows")==="all"')
+        yes('same method source reports remain individually inspectable',page.locator('.setting-method strong').all_text_contents().count('BC-RNN')>=2)
         li=next(s for s in all_settings if s['dataset']=='LIBERO' and s['evalId']=='auto:standard40')
+        yes('main LIBERO results exclude safety and fraction-sweep columns',not any(c in li['columns'] for c in ['Haz-B','Haz-O','1/1','1/16']))
+        yes('RLBench task column aliases are resolved before presentation',len(next(s for s in all_settings if s['dataset']=='RLBench' and s['evalId']=='auto:18-main')['columns'])==19)
         page.goto(base+'?'+urlencode({'view':'leaderboards','dataset':'LIBERO','setting':li['id']}),wait_until='networkidle');page.wait_for_selector('.setting-table')
         yes('LIBERO standard Setting aggregates many papers',li['paperCount']>=10 and li['resultCount']>=50)
         page.evaluate('localStorage.setItem("vla-radar.reading.v1", JSON.stringify({p001:{status:"reading",saved:true}}))')

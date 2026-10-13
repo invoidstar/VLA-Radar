@@ -104,6 +104,10 @@ def eval_context(track):
 
 def dataset_scope(track):
     ds=track['dataset'];cols=canon_columns(track['columns']);kind=metric_class(track['metric']);text=text_of(track);ctx=eval_context(track);count=task_count(track)
+    if track.get('evaluationScope'):
+        return str(track['evaluationScope'])
+    if ds=='RoboCasa' and kind=='success' and count==5 and 'composite' in text:
+        return '5-composite'
     # Major benchmarks: normalize paper-specific wording into stable evaluation questions.
     if ds=='RoboTwin':
         if {'clean','random'}<=set(cols):
@@ -232,7 +236,11 @@ def scope_label(track,scope):
       ('LIBERO','standard40'):'Standard 40 Tasks · Four Suites',
       ('LIBERO','plus'):'LIBERO-Plus',
       ('LIBERO','pro'):'LIBERO-PRO',
-      ('RoboCasa','24-main'):'24 Tasks',
+      ('RoboCasa','24-main'):'24 Atomic Tasks',
+      ('RoboCasa','5-composite'):'5 Composite Tasks',
+      ('LIBERO','safety-24'):'24 Selected Tasks · Safety / Hazard',
+      ('LIBERO','training-fractions-40'):'Training-data Fractions · Source Experiment',
+      ('RoboTwin','gam-reported-50'):'GAM-specific 50-task Report',
       ('RoboCasa365','50-main-pretraining-kitchens'):'50 Tasks · Pretraining Kitchens',
       ('RoboCasa365','50-main-target-kitchens'):'50 Tasks · Target Kitchens',
       ('LIBERO','long10'):'Long-Horizon 10 Tasks',
@@ -289,6 +297,14 @@ def build_settings(tracks,results):
         rows=sorted(rows,key=lambda r:result_order[r['id']])
         member_tracks=sorted({r['trackId'] for r in rows},key=lambda tid:track_order[tid])
         candidates=[trackmap[tid] for tid in member_tracks];primary=candidates[0]
+        primary_rows=[r for r in rows if r.get('displayTier','primary')=='primary']
+        column_meta={}
+        for candidate in candidates:
+            for col in candidate['columns']:
+                definition=candidate.get('columnSpecs',{}).get(col,{'unit':candidate['unit'],'direction':candidate['direction']})
+                if col in column_meta and column_meta[col]!=definition:
+                    raise ValueError('Conflicting units/directions within Setting '+str(key)+': '+col)
+                column_meta[col]=definition
         columns=[]
         for t in candidates:
             for col in t['columns']:
@@ -310,7 +326,13 @@ def build_settings(tracks,results):
           'resultCount':len(rows),'paperCount':len({r['paperId'] for r in rows}),
           'paperIds':list(dict.fromkeys(r['paperId'] for r in rows)),
           'methodCount':len({norm(r['method']) for r in rows}),'primaryTrackId':primary['id'],
-          'trainingOptions':training_options,'trainingByResult':training_by_result
+          'trainingOptions':training_options,'trainingByResult':training_by_result,
+          'columnMeta':column_meta,
+          'qualityKind':primary.get('qualityKind','benchmark'),
+          'primaryResultCount':len(primary_rows),
+          'primaryPaperCount':len({r['paperId'] for r in primary_rows}),
+          'latestReportVerifiedAt':max((r.get('verifiedAt') or '' for r in rows),default='') or None,
+          'methodNames':list(dict.fromkeys(r['method'] for r in rows))
         })
     settings.sort(key=lambda s:(track_order[s['primaryTrackId']],s['id']))
     return settings

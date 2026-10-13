@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-13",
+  "scope": "Presentation-quality and protocol-identity repair. No new scientific score and no claim of independent replication.",
+  "baseline": {
+    "datasetGroups": 48,
+    "settings": 168,
+    "displayResults": 900,
+    "canonicalCheckedResults": 1140
+  },
+  "output": {
+    "benchmarkGroups": 27,
+    "caseStudyGroups": 21,
+    "settings": 172,
+    "primaryResults": 678,
+    "archiveVisibleResults": 222,
+    "allDisplayResults": 900,
+    "canonicalCheckedResults": 1140
+  },
+  "protocolCorrections": [
+    {
+      "issue": "RoboCasa 24 atomic tasks mixed with five composite tasks",
+      "resolution": "separate 24-main / 5-composite",
+      "track": "robocasa-original-5composite-v1"
+    },
+    {
+      "issue": "LIBERO 40-task setting includes 24-task safety evaluation",
+      "resolution": "safety-24 isolated; Haz-B/Haz-O are lower-is-better percentages",
+      "track": "safeloop-v1-libero-safety"
+    },
+    {
+      "issue": "LIBERO 40-task task columns include 1/1...1/16 training proportions",
+      "resolution": "data-scale track isolated as a source experiment",
+      "track": "toast-v1-libero-data-scale"
+    },
+    {
+      "issue": "LIBERO-Plus result hidden within LIBERO dataset",
+      "resolution": "projected dataset alias to LIBERO-Plus",
+      "track": "libero-plus-rldx-v2"
+    },
+    {
+      "issue": "RoboCasa former 24-main contains 5 composite column values",
+      "resolution": "all canonical values preserved, distinct derived setting",
+      "track": "robocasa-original-5composite-v1"
+    },
+    {
+      "issue": "RoboTwin GAM paper uses unsupported split wording for common grouping",
+      "resolution": "scope separately until protocol evidence is consistent",
+      "track": "gam-v1-robotwin50-single-task"
+    },
+    {
+      "issue": "RLBench 18-task display has 37 columns due to capitalisation/wording aliases",
+      "resolution": "19 canonical task and aggregate labels, no changes to original value/source",
+      "track": "rlbench-peract-100d"
+    },
+    {
+      "issue": "CALVIN Task 1-5 percentage columns inherit score unit",
+      "resolution": "per-column percentage directions and units; average length remains score",
+      "track": "foreact3d-v1-calvin-abc-no-pretrain"
+    }
+  ],
+  "standards": [
+    "Only evaluation conditions/task-set/metric/aggregation determine Setting identity",
+    "Training budgets and model recipe remain evidence on Result Reports",
+    "No removed or guessed canonical results, first-public dates or scientific claims",
+    "Only explicitly verified official links published",
+    "A reported-baseline is not presented as independent reproduction",
+    "Case studies are accessible but not represented as official shared leaderboards"
+  ],
+  "primarySources": [
+    "https://libero-project.github.io/main.html",
+    "https://github.com/sylvestf/LIBERO-plus",
+    "https://robocasa.ai/",
+    "https://robocasa.ai/leaderboard.html",
+    "https://github.com/stepjam/RLBench",
+    "https://github.com/mees/calvin",
+    "https://robotwin-platform.github.io/doc/",
+    "https://robodojo-benchmark.com/"
+  ],
+  "limitations": "Only 12 verified official entry points are registered. Many heterogeneous paper tables remain author-reported; protocol grouping, even with compatible labels, does not establish training fairness, independent replication or complete leaderboards. Full original evidence remains in per-paper records."
+}

@@ -67,3 +67,13 @@ RT-1/RT-2原作者Google机器人真机实验不能因硬件相似就归入Simpl
 - 如果该类别随后出现其他论文真实核验且协议可对齐的结果，构建会提示重新审核，不允许长期隐藏已经具有跨论文比较价值的 Benchmark。
 - **不可仅以某个 Track 或 Setting 当前只有一行而排除标准公共 Benchmark。** LIBERO、CALVIN、RoboTwin 等公共数据集里的单篇论文结果仍然可供其他来源对齐；相反，OC-VLA++ real robot、GF-VLA real 等论文特有自测不应独立成类。
 - 完整实验和消融一律保留在 `catalog/results`、按论文分片的 `data/paper-results` 与论文阅读详情。此处的「不展示」不等于删除核验数字或修改论文。
+
+
+## Benchmark 质量专项：数据正确性与双层展示（2026-10-13）
+
+- Registry：`catalog/benchmark-quality.json` 将公共 Benchmark 和论文专属真机/效率案例分层，并保存经过核验的官方入口及极少数明确的 track 数据集别名；新曝光的 dataset 须先分类。此分类不抹除单篇论文提出的正式公开 Benchmark。
+- Identity：`scripts/build/benchmark_settings.py` 的 Evaluation Setting 仍仅描述评测问题；`benchmark_quality.py` 为 RoboCasa 5 composite、LIBERO 安全24任务/训练比例扫描和 RoboTwin 来源不明的 GAM 专项表设置保守范围，绝不把它们强塞到主榜。LIBERO-Plus 与 LIBERO 统一按正式的不同 Benchmark 组织。
+- Metric/Tasks：结果的任务列可在展示层规范化，如 RLBench 18任务中的 Open drawer/Open Drawer 和 Sweep/Sweep to Dustpan。CALVIN chain Task 1–5 使用百分比；安全危险指标列为越低越好，不继承成功率越高越好。原文数值和原始列名保持在 canonical 数据层。
+- Presentation：`primary / paper / sweep / reference / case-study` 是展示标签，不是证据强弱的学术判定。主界面默认突出独立主方法；完整记录可切换查看，同分的重复引用不会假冒独立评测，也绝不删除原始来源或训练配置。
+- Source：官方快照、作者报告、论文引用基线和独立复现明确区分。不同来源的同名方法不自动合并分数，不从分数最大值推断代表性；缺失分数保持 null，0 依然是0。
+- Backward compatibility：原始 resultId、trackId、数据文件及论文详情仍保存；部分被修复的历史 Setting 链接通过原 track 重定向到新的结构化 Setting。新任务数据先接受协议和指标核验，避免新增错误分组。

@@ -1,3 +1,10 @@
+## 2026-10-13 — Benchmark 质量专项治理（V3.0）
+
+- 不改变任何 catalog/results 原始数字、Result ID、Track ID、论文笔记或首发日期；在投影层建立 `benchmark-quality.json` 规范登记，对27个公共Benchmark与21类论文专属真实机器人/效率实验分别提供导航。
+- 修复 RoboCasa 24原子任务/5复合任务、LIBERO 40主任务/24安全任务/训练数据比例、RoboTwin不明确GAM配置的错误归并；LIBERO-Plus旧轨道统一归属正式Benchmark；RLBench 18任务列别名归一，CALVIN分步率/平均长度及LIBERO危险指标独立携带单位与优化方向。
+- 主比较视图678条、附加档案222条；总公开核验900条、完整canonical结果1140条均保留。重复引用仅降低展示优先级，不冒充第三方复现，也不据不同预算取最大值。
+- 增加官方入口、模型方法跨Benchmark检索、主比较/全部记录切换、复杂多任务表按需展开、逐条来源和最近一条报告核验日期。全部变更须经PR完整离线与浏览器回归、正常合并及Pages生产检查。
+
 ## 2026-10-13 — 2026-10-13-weekly-catchup
 
 补录2026-10-11遗漏维护部分：Splat2Act/LAPT-Scale/Dual-Stream Memory三篇一手深读；RoboTwin和RoboMME 2份原表10条结果；ROSCon/NVIDIA/AWS官方新闻三条。检索仍partial，前一个complete搜索checkpoint保持10月4日。 历史9月回归已改用成功checkpoint不变量，同时允许有据可查的partial后续审计。

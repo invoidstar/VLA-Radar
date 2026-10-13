@@ -2,7 +2,15 @@ name: Prepare validated content batch
 on:
   push:
     branches: ['release/batch-*']
-    paths: ['maintenance/audits/batches/*.json']
+    paths:
+      - 'maintenance/audits/batches/*.json'
+      - 'catalog/benchmark-quality.json'
+      - 'catalog/benchmark-method-curation.json'
+      - 'scripts/build/benchmark_quality.py'
+      - 'scripts/build/benchmark_settings.py'
+      - 'scripts/build/build_catalog.py'
+      - 'site/js/features/research/benchmark-settings.js'
+      - 'tests/test_benchmark_quality.py'
 permissions:
   contents: write
 concurrency:

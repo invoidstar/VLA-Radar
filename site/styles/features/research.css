@@ -208,3 +208,22 @@
 
 /* Expanded benchmark navigation and evidence tables */
 .dataset-tabs{flex-wrap:wrap}.note-data-table{font-size:.85rem}.note-section p{line-height:1.85}.note-section .board-table-scroll{max-width:100%;margin:16px 0}.note-section>div{min-width:0}
+
+/* Benchmark quality explorer: standardized benchmarks versus source-bound studies. */
+.benchmark-mode-switch{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}
+.benchmark-mode-switch button{appearance:none;border:1px solid #dfe3ee;background:#fff;color:#737d96;border-radius:10px;padding:10px 14px;font-size:11px;font-weight:600;cursor:pointer}
+.benchmark-mode-switch button[aria-pressed="true"]{background:#eef0fc;border-color:#adb9ed;color:#5265a0}
+.benchmark-mode-switch b{font-size:10px;margin-left:5px;font-weight:700;opacity:.8}
+.benchmark-dataset-context{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:11px 14px;border-radius:10px;margin:12px 0;border:1px solid #e2e7f0;background:#fbfcff}
+.benchmark-dataset-context strong{font-size:12px;color:#5a6585}
+.benchmark-dataset-context span{color:#8b93a8;font-size:10px}
+.benchmark-dataset-context a{margin-left:auto;font-size:10px;color:#6677b1;text-decoration:none}
+.setting-row-modes{display:flex;gap:5px;flex-wrap:wrap;margin:12px 0 7px}
+.setting-row-modes button{border:1px solid #e0e5ef;background:#fff;border-radius:8px;padding:8px 12px;color:#737c94;font-size:10px;cursor:pointer}
+.setting-row-modes button[aria-pressed="true"]{border-color:#b4c0ed;background:#eff2fc;color:#50639f;font-weight:700}
+.setting-columns-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 2px}
+.setting-columns-bar span{font-size:9px;color:#8e98ab}
+.setting-columns-bar button{font-size:9px;color:#6879ac;border:1px solid #dce3ee;border-radius:7px;background:#fff;padding:7px 10px;cursor:pointer}
+.leaderboard-top .dataset-tabs{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding-bottom:7px}
+.leaderboard-top .dataset-tabs button{flex:0 0 auto;scroll-snap-align:start}
+@media(max-width:650px){.benchmark-mode-switch button{flex:1 1 150px}.benchmark-dataset-context a{width:100%;margin-left:0}.setting-row-modes button{flex:1 1 140px}}
