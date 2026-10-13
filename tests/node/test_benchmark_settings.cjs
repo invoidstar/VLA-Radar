@@ -70,4 +70,13 @@ ok('verified official model names appear in compact search index without full ro
  for(const x of Object.values(index.officialBoards))a(!Object.hasOwn(x,'entries'));
 });
 
+ok('official-only projects show source links without fake paper IDs',()=>{
+ const b={id:'robodojo-sim',benchmark:'RoboDojo',officialUpdatedAt:'2026-10-09',capturedAt:'2026-10-13',metricSchema:'score-success',
+ columns:['Average'],boardUrl:'https://robodojo-benchmark.com/',sourceRepoUrl:'https://github.com/A/B',
+ entries:[{model:'PhysicalRSI',rank:1,contributor:'Team',values:{Average:{score:36.27,sr:31.38}},resourceLink:'https://mmlab.hk/research/PhysicalRSI'}]};
+ const html=S.officialTableHtml(b);
+ a(html.includes('官方提交 · 论文关系未核验'));
+ a(html.includes('official-model-resource'));
+});
+
 console.log(`PASS: ${count} Setting-table sorting / search / taxonomy assertions.`);
