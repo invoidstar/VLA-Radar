@@ -112,8 +112,10 @@ try:
         page.wait_for_function('!new URLSearchParams(location.search).has("lbType")')
         page.wait_for_selector('.setting-table')
         yes('return to public benchmark navigation',page.locator('[data-setting-dataset]').count()==len(public_tax))
-        yes('official registry link remains available in standardized view',
-            page.locator('.benchmark-dataset-context a').count()>=0)
+        page.goto(base+'?view=leaderboards&dataset=RoboTwin',wait_until='networkidle')
+        page.wait_for_selector('.benchmark-dataset-context a')
+        yes('verified Benchmark official URL available',
+            'robotwin-platform.github.io' in page.locator('.benchmark-dataset-context a').get_attribute('href'))
         page.locator('#benchmark-search-input').fill('VLA-InfoEntropy')
         page.locator('#benchmark-search-form').press('Enter')
         page.wait_for_function('new URLSearchParams(location.search).get("lbSearch")==="VLA-InfoEntropy"')
