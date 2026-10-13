@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261007-aws-physical-ai-toolchain",
+  "eventKey": "aws-physical-ai-toolchain-20261007",
+  "title": "AWS 发布 Physical AI Toolchain，串联机器人数据、仿真训练与边缘部署",
+  "primaryCategory": "industry",
+  "tags": [
+    "AWS",
+    "NVIDIA Isaac",
+    "GR00T",
+    "LeRobot",
+    "Physical AI",
+    "MLOps"
+  ],
+  "eventDate": "2026-10-07",
+  "publishedAt": "2026-10-07",
+  "dateNote": "基于Amazon Web Services官方发布于2026-10-07的原始网页；不把活动日期、计划和后续转载当作同一天事件。",
+  "observedAt": "2026-10-13",
+  "updatedAt": "2026-10-13",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "ecosystem",
+  "whatHappened": "AWS于10月7日发布Physical AI Toolchain，通过参考架构、Terraform基础设施模板及部署自动化，把数据格式转换、Isaac Sim/Isaac Lab仿真训练、GR00T策略、Cosmos合成数据、云端验证与机器人边缘部署连接为可复用流程。其组件允许从Zarr转换到LeRobot，并使用URDF、ONNX、ROS2等开放接口。",
+  "whyItMatters": "具身训练往往跨越机器人数据采集、仿真、分布式GPU训练、模型质量验证和实际部署。系统集成与数据资产转移是长期成本，工程工作流标准化有助于提高实验复现和持续回归的可操作性。",
+  "vlaRelevance": "该工具链能够承载VLA策略训练与复现实验的工程基础设施，但不等同AWS发布了一个新的VLA基础模型。训练与推理所需的数据、GPU、权限和机器人设备仍需研究者自行提供。",
+  "limits": "AWS官方强调面向开发者的架构与示例，不提供经过独立验收的通用机器人操作成功率。云端管理、数据治理不能代替安全关键的本地实时控制；某些第三方组件的安装、许可和服务成本需要另行检查。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Introducing AWS Physical AI Toolchain",
+      "publisher": "Amazon Web Services",
+      "url": "https://aws.amazon.com/blogs/physical-ai/introducing-aws-physical-ai-toolchain/",
+      "kind": "official",
+      "publishedAt": "2026-10-07",
+      "access": "full-page",
+      "note": "核对首次报道日期、发布范围、技术内容、工程限制和官方性能声称；未据此认证独立性能。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
