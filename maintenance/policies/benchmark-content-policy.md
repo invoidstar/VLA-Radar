@@ -77,3 +77,11 @@ RT-1/RT-2原作者Google机器人真机实验不能因硬件相似就归入Simpl
 - Presentation：`primary / paper / sweep / reference / case-study` 是展示标签，不是证据强弱的学术判定。主界面默认突出独立主方法；完整记录可切换查看，同分的重复引用不会假冒独立评测，也绝不删除原始来源或训练配置。
 - Source：官方快照、作者报告、论文引用基线和独立复现明确区分。不同来源的同名方法不自动合并分数，不从分数最大值推断代表性；缺失分数保持 null，0 依然是0。
 - Backward compatibility：原始 resultId、trackId、数据文件及论文详情仍保存；部分被修复的历史 Setting 链接通过原 track 重定向到新的结构化 Setting。新任务数据先接受协议和指标核验，避免新增错误分组。
+
+## LIBERO、RoboTwin、RoboDojo 官方榜单来源维护（2026-10-13）
+
+- `catalog/official-boards/` 为已核验官方公开模型提交快照，包含不可变的上游Git commit与Blob SHA；本站不会把一条官方模型排名未经核验变成一篇论文或一个canonical Result Report。
+- 官方排名必须只在该官网声明的原始协议内成立。RoboTwin的2500条clean demo基准不与使用27500 mixed demo的论文结果合为训练受控排行；RoboDojo的Score与SR、仿真与真机不得混榜。
+- 更新时从源仓库读取机器可读JSON、独立固定源SHA并重算排序，保留早期模型变体，显示来源日期、核验日期与原始发布方；无法核对时不推断发布日期或缺失成绩。
+- LIBERO标准四套件成功率、原始LIBERO终身学习FWT/NBT/AUC、LIBERO-Plus/PRO及安全任务各自使用真实协议，不将同名Benchmark泛化为同一测试问题。
+- `maintenance/audits/benchmark/core-libero-robotwin-robodojo-20261013.json` 是本次有据可查的专项审计；完整文献发现lane未闭环则不移动全局success checkpoint。

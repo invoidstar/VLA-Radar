@@ -95,6 +95,6 @@ def official_board_outputs(root, out, paper_ids, hash_writer):
             "sourceUrl": board["sourceUrl"], "boardUrl": board["boardUrl"],
             "sourceRepoRevision": board["sourceRepoRevision"], "sourceBlobSha": board["sourceBlobSha"],
             "entryCount": len(board["entries"]), "metricSchema": board["metricSchema"],
-            "topThree": first_three, "resultUrl": url,
+            "topThree": first_three, "modelNames": [e["model"] for e in board["entries"]], "resultUrl": url,
         }
     return index

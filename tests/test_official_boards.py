@@ -39,6 +39,7 @@ def test_generation_shards_are_lazy_and_do_not_leak_all_official_rows():
         assert info["entryCount"]>=len(info["topThree"])>0
         assert info["resultUrl"] in output
         assert "entries" not in info
+        assert len(info["modelNames"])==info["entryCount"]
         assert info["sourceUpdatedAt"]
     assert index["RoboTwin"]["metricSchema"]=="clean-random"
     assert index["RoboDojo"]["metricSchema"]=="score-success"
