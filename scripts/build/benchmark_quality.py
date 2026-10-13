@@ -101,6 +101,9 @@ def apply_quality(root, tracks, results):
             t['evaluationScope'] = registry['scopeOverrides'][t['id']]
         t['columns'] = list(dict.fromkeys(canonical_column(t['dataset'], c) for c in t['columns']))
         t['columnSpecs'] = {c: column_spec(t, c) for c in t['columns']}
+        # Advanced raw-track charts and ranking must honour metric-level direction.
+        t['columnDirections'] = {c: item['direction'] for c, item in t['columnSpecs'].items()}
+        t['columnUnits'] = {c: item['unit'] for c, item in t['columnSpecs'].items()}
         projected_tracks.append(t)
     track_by_id = {t['id']:t for t in projected_tracks}
     source_by_id = {t['id']:t for t in tracks}
