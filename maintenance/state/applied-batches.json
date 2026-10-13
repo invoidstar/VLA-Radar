@@ -190,6 +190,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-14-robodojo-sources",
+      "sha256": "f215faab0cf5259b5a2f1fc0abf967f625eb5a6366273d9f6b29acaab753e4d7",
+      "date": "2026-10-14",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

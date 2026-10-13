@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-14",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -14356,6 +14356,239 @@
         "Clean": "percent",
         "Random": "percent",
         "Average": "percent"
+      }
+    },
+    {
+      "id": "robodojo-coap-v1-sim-sr",
+      "dataset": "RoboDojo",
+      "name": "COAP v1 · RoboDojo 42 tasks · author SR",
+      "version": "2610.12369v1 Table 2, §4.1",
+      "tasks": "42 simulation tasks",
+      "split": "coap author 42 sr",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report, not an official leaderboard submission",
+      "trainingRegime": "Offline code search on development/validation layouts using public RoboDojo geometry assets; no VLM/VLA runtime",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Memory",
+        "Precision",
+        "Open",
+        "Generalization",
+        "Long-Horizon",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.12369v1",
+      "qualityKind": "benchmark",
+      "evaluationScope": "coap-author-42-sr",
+      "columnSpecs": {
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Memory": "higher",
+        "Precision": "higher",
+        "Open": "higher",
+        "Generalization": "higher",
+        "Long-Horizon": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Memory": "percent",
+        "Precision": "percent",
+        "Open": "percent",
+        "Generalization": "percent",
+        "Long-Horizon": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "robodojo-coap-v1-sim-score",
+      "dataset": "RoboDojo",
+      "name": "COAP v1 · RoboDojo 42 tasks · author Score",
+      "version": "2610.12369v1 Table 2, §4.1",
+      "tasks": "42 simulation tasks",
+      "split": "coap author 42 score",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report; progress Score not SR",
+      "trainingRegime": "Offline code search, known simulator CAD and calibration, code-only runtime",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.12369v1",
+      "qualityKind": "benchmark",
+      "evaluationScope": "coap-author-42-score",
+      "columnSpecs": {
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "score"
+      }
+    },
+    {
+      "id": "robodojo-physevo-v1-sim-sr",
+      "dataset": "RoboDojo",
+      "name": "PhysEvo v1 · RoboDojo 42 tasks · five-dimension macro SR",
+      "version": "2610.08995v1 Table 1",
+      "tasks": "42 simulation tasks",
+      "split": "physevo author 42 macro sr",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
+      "trainingRegime": "Frozen Astra model with evolving task/meta tool harness; task-specific retained versions, five layouts/test task",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.08995v1",
+      "qualityKind": "benchmark",
+      "evaluationScope": "physevo-author-42-macro-sr",
+      "columnSpecs": {
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Generalization": "higher",
+        "Precision": "higher",
+        "Long-Horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Generalization": "percent",
+        "Precision": "percent",
+        "Long-Horizon": "percent",
+        "Memory": "percent",
+        "Open": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "robodojo-physevo-v1-sim-score",
+      "dataset": "RoboDojo",
+      "name": "PhysEvo v1 · RoboDojo 42 tasks · five-dimension macro Score",
+      "version": "2610.08995v1 Table 1",
+      "tasks": "42 simulation tasks",
+      "split": "physevo author 42 macro score",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
+      "trainingRegime": "Frozen Astra model with evolving tool harness, no model weight updates",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.08995v1",
+      "qualityKind": "benchmark",
+      "evaluationScope": "physevo-author-42-macro-score",
+      "columnSpecs": {
+        "Generalization": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Generalization": "higher",
+        "Precision": "higher",
+        "Long-Horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Generalization": "score",
+        "Precision": "score",
+        "Long-Horizon": "score",
+        "Memory": "score",
+        "Open": "score",
+        "Average": "score"
       }
     }
   ],
@@ -28930,6 +29163,289 @@
         "Dual-Stream Memory",
         "π0.5 (no memory)"
       ]
+    },
+    {
+      "id": "setting-robodojo-coap-author-42-sr-771bc2063c83",
+      "dataset": "RoboDojo",
+      "evalId": "auto:coap-author-42-sr",
+      "name": "RoboDojo · 42 Tasks · Success Rate",
+      "tasks": "42 simulation tasks",
+      "split": "coap author 42 sr",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Memory",
+        "Precision",
+        "Open",
+        "Generalization",
+        "Long-Horizon",
+        "Average"
+      ],
+      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report, not an official leaderboard submission",
+      "trackIds": [
+        "robodojo-coap-v1-sim-sr"
+      ],
+      "resultIds": [
+        "r-coap-v1-robodojo-sim-sr"
+      ],
+      "resultCount": 1,
+      "paperCount": 1,
+      "paperIds": [
+        "p134"
+      ],
+      "methodCount": 1,
+      "primaryTrackId": "robodojo-coap-v1-sim-sr",
+      "trainingOptions": [
+        {
+          "id": "unknown-p134",
+          "label": "训练数据未完整披露 · p134",
+          "known": false,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-coap-v1-robodojo-sim-sr": "unknown-p134"
+      },
+      "columnMeta": {
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-14",
+      "methodNames": [
+        "Code-Only-as-Policy (COAP)"
+      ]
+    },
+    {
+      "id": "setting-robodojo-coap-author-42-score-e433803fc2b5",
+      "dataset": "RoboDojo",
+      "evalId": "auto:coap-author-42-score",
+      "name": "RoboDojo · 42 Tasks · Score",
+      "tasks": "42 simulation tasks",
+      "split": "coap author 42 score",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "Average"
+      ],
+      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report; progress Score not SR",
+      "trackIds": [
+        "robodojo-coap-v1-sim-score"
+      ],
+      "resultIds": [
+        "r-coap-v1-robodojo-sim-score"
+      ],
+      "resultCount": 1,
+      "paperCount": 1,
+      "paperIds": [
+        "p134"
+      ],
+      "methodCount": 1,
+      "primaryTrackId": "robodojo-coap-v1-sim-score",
+      "trainingOptions": [
+        {
+          "id": "unknown-p134",
+          "label": "训练数据未完整披露 · p134",
+          "known": false,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-coap-v1-robodojo-sim-score": "unknown-p134"
+      },
+      "columnMeta": {
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-14",
+      "methodNames": [
+        "Code-Only-as-Policy (COAP)"
+      ]
+    },
+    {
+      "id": "setting-robodojo-physevo-author-42-macro-sr-49ded2d71471",
+      "dataset": "RoboDojo",
+      "evalId": "auto:physevo-author-42-macro-sr",
+      "name": "RoboDojo · 42 Tasks · Success Rate",
+      "tasks": "42 simulation tasks",
+      "split": "physevo author 42 macro sr",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
+      "trackIds": [
+        "robodojo-physevo-v1-sim-sr"
+      ],
+      "resultIds": [
+        "r-physevo-v1-robodojo-sim-sr"
+      ],
+      "resultCount": 1,
+      "paperCount": 1,
+      "paperIds": [
+        "p135"
+      ],
+      "methodCount": 1,
+      "primaryTrackId": "robodojo-physevo-v1-sim-sr",
+      "trainingOptions": [
+        {
+          "id": "unknown-p135",
+          "label": "训练数据未完整披露 · p135",
+          "known": false,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-physevo-v1-robodojo-sim-sr": "unknown-p135"
+      },
+      "columnMeta": {
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-14",
+      "methodNames": [
+        "PhysEvo"
+      ]
+    },
+    {
+      "id": "setting-robodojo-physevo-author-42-macro-score-7f87c118466c",
+      "dataset": "RoboDojo",
+      "evalId": "auto:physevo-author-42-macro-score",
+      "name": "RoboDojo · 42 Tasks · Score",
+      "tasks": "42 simulation tasks",
+      "split": "physevo author 42 macro score",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
+      "trackIds": [
+        "robodojo-physevo-v1-sim-score"
+      ],
+      "resultIds": [
+        "r-physevo-v1-robodojo-sim-score"
+      ],
+      "resultCount": 1,
+      "paperCount": 1,
+      "paperIds": [
+        "p135"
+      ],
+      "methodCount": 1,
+      "primaryTrackId": "robodojo-physevo-v1-sim-score",
+      "trainingOptions": [
+        {
+          "id": "unknown-p135",
+          "label": "训练数据未完整披露 · p135",
+          "known": false,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-physevo-v1-robodojo-sim-score": "unknown-p135"
+      },
+      "columnMeta": {
+        "Generalization": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-14",
+      "methodNames": [
+        "PhysEvo"
+      ]
     }
   ],
   "taxonomy": {
@@ -29658,7 +30174,7 @@
       "setting-libero-plus-d7a11d009077": "libero-plus-rldx-v2"
     },
     "primaryResultCount": 686,
-    "archivedResultCount": 222
+    "archivedResultCount": 226
   },
   "officialBoards": {
     "RoboTwin": {
@@ -29814,7 +30330,7 @@
         "TinyVLA",
         "OpenVLA-OFT"
       ],
-      "resultUrl": "data/official-boards/robodojo-sim.d5cea83f7e7fc017.json"
+      "resultUrl": "data/official-boards/robodojo-sim.37c49a1e05bfabd1.json"
     },
     "RoboDojo real": {
       "id": "robodojo-real",
@@ -31512,6 +32028,53 @@
       "supersedes": "",
       "methodId": "mcilrgb",
       "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-coap-v1-robodojo-sim-score",
+      "paperId": "p134",
+      "method": "Code-Only-as-Policy (COAP)",
+      "trackId": "robodojo-coap-v1-sim-score",
+      "values": {
+        "Average": 75.45
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-14",
+      "source": "https://arxiv.org/html/2610.12369v1",
+      "sourceVersion": "arXiv 2610.12369v1",
+      "locator": "Table 2, COAP (ours) row, Overall Score",
+      "attribution": "author-reported",
+      "trainingData": "Same author offline code development; 42-task simulation protocol",
+      "evaluationNotes": "Progress score distinct from task success; no per-dimension Score column in original Table 2, so no inferred values.",
+      "supersedes": "",
+      "methodId": "codeonlyaspolicycoap",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-coap-v1-robodojo-sim-sr",
+      "paperId": "p134",
+      "method": "Code-Only-as-Policy (COAP)",
+      "trackId": "robodojo-coap-v1-sim-sr",
+      "values": {
+        "Memory": 89.9,
+        "Precision": 75.1,
+        "Open": 64.1,
+        "Generalization": 65.7,
+        "Long-Horizon": 56.4,
+        "Average": 70.24
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-14",
+      "source": "https://arxiv.org/html/2610.12369v1",
+      "sourceVersion": "arXiv 2610.12369v1",
+      "locator": "Table 2, COAP (ours) row",
+      "attribution": "author-reported",
+      "trainingData": "Offline code search / known robot-object CAD / 3 seeds x 50 layouts each",
+      "evaluationNotes": "42 tasks; author-reported full-task SR. No VLM in runtime; development stage uses coding agents and simulator analysis. No official 2026-10-09 model submission.",
+      "supersedes": "",
+      "methodId": "codeonlyaspolicycoap",
+      "displayTier": "paper",
       "sourceClass": "paper-reported"
     },
     {
@@ -40291,6 +40854,58 @@
       "supersedes": "",
       "methodId": "peract",
       "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-physevo-v1-robodojo-sim-score",
+      "paperId": "p135",
+      "method": "PhysEvo",
+      "trackId": "robodojo-physevo-v1-sim-score",
+      "values": {
+        "Generalization": 51.08,
+        "Precision": 50.38,
+        "Long-Horizon": 56.38,
+        "Memory": 100,
+        "Open": 82.88,
+        "Average": 68.14
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-14",
+      "source": "https://arxiv.org/html/2610.08995v1",
+      "sourceVersion": "arXiv 2610.08995v1",
+      "locator": "Table 1 PhysEvo row, Score columns",
+      "attribution": "author-reported",
+      "trainingData": "Frozen Astra online, evolving task/meta tools, five held-out layouts/task",
+      "evaluationNotes": "Five dimensions equal-weight. Equivalent all-42-task equal-weight Score 65.00 is a different aggregation and not substituted. Paper uses other test budget than RoboDojo official snapshots.",
+      "supersedes": "",
+      "methodId": "physevo",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-physevo-v1-robodojo-sim-sr",
+      "paperId": "p135",
+      "method": "PhysEvo",
+      "trackId": "robodojo-physevo-v1-sim-sr",
+      "values": {
+        "Generalization": 45,
+        "Precision": 40,
+        "Long-Horizon": 45,
+        "Memory": 100,
+        "Open": 80,
+        "Average": 62
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-14",
+      "source": "https://arxiv.org/html/2610.08995v1",
+      "sourceVersion": "arXiv 2610.08995v1",
+      "locator": "Table 1 PhysEvo row, SR columns",
+      "attribution": "author-reported",
+      "trainingData": "Frozen Astra agent, task-specific retained harness; five held-out layouts/task",
+      "evaluationNotes": "Equal weight across five capability dimensions, not equal weight over all 42 tasks (the latter SR 58.57%). Author-reported, not official leaderboard entry.",
+      "supersedes": "",
+      "methodId": "physevo",
+      "displayTier": "paper",
       "sourceClass": "paper-reported"
     },
     {
