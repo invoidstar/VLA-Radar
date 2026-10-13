@@ -112,6 +112,21 @@ try:
         page.wait_for_function('!new URLSearchParams(location.search).has("lbType")')
         page.wait_for_selector('.setting-table')
         yes('return to public benchmark navigation',page.locator('[data-setting-dataset]').count()==len(public_tax))
+        # The default list must not silently re-introduce paper-only protocol rows.
+        page.goto(base+'?view=leaderboards&dataset=RoboTwin',wait_until='networkidle')
+        page.wait_for_selector('#setting-select')
+        yes('paper-only GAM setting absent from default main navigation',
+            page.locator('#setting-select option').filter(has_text='GAM-specific').count()==0)
+        page.locator('[data-rows-mode="all"]').click()
+        page.wait_for_function('new URLSearchParams(location.search).get("lbRows")==="all"')
+        page.wait_for_selector('#setting-select')
+        yes('paper-only GAM setting accessible in complete-evidence mode',
+            page.locator('#setting-select option').filter(has_text='GAM-specific').count()>=1)
+        page.locator('[data-rows-mode="main"]').click()
+        page.wait_for_function('!new URLSearchParams(location.search).has("lbRows")')
+        yes('returning to main comparison removes archive-only Settings',
+            page.locator('#setting-select option').filter(has_text='GAM-specific').count()==0)
+
         rt=next(s for s in all_settings if s['dataset']=='RoboTwin' and s['evalId']=='auto:50-clean-random')
         yes('RoboTwin evaluation settings collapse track clutter',len([s for s in all_settings if s['dataset']=='RoboTwin'])<len([t for t in boards['tracks'] if t['dataset']=='RoboTwin']))
         yes('RoboTwin main Setting is genuinely cross-paper and cross-training',rt['paperCount']>=10 and len(rt['trainingOptions'])>=5 and len(rt['trackIds'])>=6)
