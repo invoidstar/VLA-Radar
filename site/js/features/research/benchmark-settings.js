@@ -124,7 +124,7 @@
     const key=cols.includes(dimension)?dimension:'Average',metric=twin?'score':measure==='sr'?'sr':'score';
     const sorted=officialSorted(board.entries,key,metric),current=showAll?sorted:sorted.slice(0,10);
     const siteRank=key==='Average'&&metric==='score';
-    const fmt=n=>n==null?'—':Number(n).toFixed(2)+(metric==='sr'?'%':'');
+    const fmt=n=>n==null?'—':Number(n).toFixed(2)+(twin||metric==='sr'?'%':'');
     const rows=current.map((r,i)=>{
       const val=officialValue(r,key,metric);
       const relation=r.paperLink?esc(r.paperLink.paperId)+' · '+esc(r.paperLink.relation):'官方提交 · 论文关系未核验';
@@ -144,9 +144,9 @@
     return selectors+
       '<p class="official-sort-explain">'+(siteRank?'官网 Average Score 名次':'按当前指标重新排序，左侧为当前次序，非官网原始 Average 排名')+' · 无数据不当作0</p>'+
       '<div class="board-table-scroll official-table-scroll" role="region" tabindex="0"><table class="board-table official-table"><caption>'+
-      esc(board.benchmark)+' · 官方 '+esc(board.officialUpdatedAt)+' · '+esc(key)+' · '+(metric==='sr'?'SR (%)':'Score')+
+      esc(board.benchmark)+' · 官方 '+esc(board.officialUpdatedAt)+' · '+esc(key)+' · '+(twin?'Success Rate (%)':metric==='sr'?'SR (%)':'Score')+
       '</caption><thead><tr><th scope="col">'+(siteRank?'官网名次':'当前次序')+'</th><th scope="col">Method / 公开身份</th>'+
-      '<th scope="col">'+esc(key)+' '+(metric==='sr'?'SR (%)':'Score')+'</th>'+
+      '<th scope="col">'+esc(key)+' '+(twin?'Success Rate (%)':metric==='sr'?'SR (%)':'Score')+'</th>'+
       (twin?'<th scope="col">Training Mode</th>':'')+'<th scope="col">Contributor</th></tr></thead><tbody>'+
       rows+'</tbody></table></div>'+source;
   }
@@ -197,7 +197,11 @@
     const tagFilters=[...new Set((query.get('lbTags')||'').split(',').filter(x=>tagIds.has(x)))];
     const scopeSettings=data.settings.filter(s=>(registry.benchmarks?.[s.dataset]?.kind||'benchmark')===kind);
     const taxonomySettings=taxonomy?filterSettingsByTaxonomy(scopeSettings,taxonomy,focusFilter,environmentFilter,tagFilters):scopeSettings;
-    const discoveredSettings=searchSettings(taxonomySettings,searchTerm);
+    const officialTerms=searchNorm(searchTerm).split(' ').filter(Boolean);
+    const officialMatches=new Set(Object.entries(data.officialBoards||{}).filter(([name,meta])=>
+      officialTerms.length&&officialTerms.every(term=>searchNorm([name,...(meta.modelNames||[])].join(' ')).includes(term))
+    ).map(([name])=>name));
+    const discoveredSettings=taxonomySettings.filter(s=>searchSettings([s],searchTerm).length||officialMatches.has(s.dataset));
     const matchedSettings=kind==='benchmark'&&rowMode==='main'?discoveredSettings.filter(s=>(s.primaryResultCount??s.resultCount)>0||s.id===query.get('setting')):discoveredSettings;
     const visibleDatasets=[...new Set(matchedSettings.map(s=>s.dataset))];
     let dataset=datasets.includes(query.get('dataset'))?query.get('dataset'):(datasets.includes('LIBERO')?'LIBERO':datasets[0]);
@@ -317,6 +321,8 @@
       }
       host.innerHTML=modeHtml+searchBarHtml(searchTerm,matchedSettings.length,visibleDatasets.length)+taxonomyBarHtml(taxonomy,focusFilter,environmentFilter,tagFilters,visibleDatasets.length,matchedSettings.length)+`<div class="leaderboard-top"><div class="dataset-tabs" role="group" aria-label="数据集">${visibleDatasets.map(d=>`<button data-setting-dataset="${esc(d)}" aria-pressed="${d===dataset}">${esc(d)}</button>`).join('')}</div><div class="board-update">目录更新 ${esc(data.updatedAt)} · ${settings.length} evaluation settings</div></div>
         ${datasetContextHtml(registry,dataset)}
+        ${registry.benchmarks?.[dataset]?.auditSummary?'<p class="benchmark-audit-note">协议核验：'+esc(registry.benchmarks[dataset].auditSummary)+'</p>':''}
+        ${officialPanelHtml(data.officialBoards?.[dataset])}
         <div class="setting-picker"><label><span>SETTING · EVALUATION PROTOCOL</span><select id="setting-select">${settings.map(s=>`<option value="${esc(s.id)}" ${s.id===settingId?'selected':''}>${esc(settingLabel(s))} · 主 ${s.primaryResultCount??s.resultCount} / 全 ${s.resultCount} 条</option>`).join('')}</select></label><a class="btn setting-advanced-link" href="?view=leaderboards&amp;dataset=${encodeURIComponent(dataset)}&amp;track=${encodeURIComponent(setting.primaryTrackId)}">高级：原始 track / 图表</a></div>
         <section class="setting-summary" data-setting-id="${esc(setting.id)}"><div class="setting-summary-main"><span class="setting-kicker">SETTING · EVALUATION PROTOCOL ONLY</span><h2>${esc(setting.name)}</h2><p class="setting-definition">Training Data、训练 recipe、base model 与来源论文不再拆 Setting；它们直接显示在下方结果行。</p></div><div class="setting-facts"><span>Tasks <b>${esc(setting.tasks)}</b></span><span>Eval <b>${esc(setting.split)}</b></span><span>Metric <b>${esc(setting.metric)}</b></span><span>主比较 / 全记录 <b>${setting.primaryResultCount??setting.resultCount} / ${setting.resultCount}</b></span><span>Papers <b>${setting.paperCount}</b></span><span>最近一条结果核验 <b>${esc(setting.latestReportVerifiedAt||'未知')}</b></span><span>Training Data <b>${(setting.trainingOptions||[]).length} variants</b></span></div><details class="setting-protocol"><summary>展开结构化评测协议</summary><div class="recipe-evidence-grid">${protocolView.fields.map(([k,v])=>`<span>${esc(k)} <b>${esc(v)}</b></span>`).join('')}</div><p>${esc(setting.protocol)}</p><small>Protocol fingerprint <b>${esc(protocolView.fingerprint)}</b> · Track compatibility: exact ${compatibility.exact} / compatible ${compatibility.compatible} / partial ${compatibility.partial}. Training Data、recipe、base model、来源论文以及仅报告层的回合数/种子差异不会单独制造新 Setting；真实任务范围、评测条件或指标变化仍会拆分。</small></details></section>
         <div class="setting-filter-bar"><label>Training Data<select id="setting-train">${options(trains,trainFilter,'全部训练数据')}</select></label><label>Method<select id="setting-method">${options(methods.map(x=>[x,x]),methodFilter,'全部方法')}</select></label><label>Source<select id="setting-source">${options(sources,sourceFilter,'全部来源')}</select></label></div>
@@ -328,6 +334,7 @@
         <div class="pagination">${Array.from({length:pages},(_,i)=>i+1).slice(Math.max(0,page-3),Math.min(pages,page+2)).map(n=>`<button data-setting-page="${n}" class="${n===page?'active':''}">${n}</button>`).join('')}<span>每页20条；同一 Method 的不同论文 / recipe 报告始终保留。</span></div>`;
       renderedSettingId=setting.id;
       bindResultControls();
+      bindOfficialPanel(host,data.officialBoards?.[dataset]);
     }
     await draw();
   }

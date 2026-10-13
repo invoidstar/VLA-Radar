@@ -227,3 +227,39 @@
 .leaderboard-top .dataset-tabs{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding-bottom:7px}
 .leaderboard-top .dataset-tabs button{flex:0 0 auto;scroll-snap-align:start}
 @media(max-width:650px){.benchmark-mode-switch button{flex:1 1 150px}.benchmark-dataset-context a{width:100%;margin-left:0}.setting-row-modes button{flex:1 1 140px}}
+
+/* Official leaderboard snapshots are source-traceable and separate from paper reports. */
+.benchmark-audit-note{padding:9px 12px;border-radius:9px;margin:8px 0;color:#69788a;font-size:10px;line-height:1.75;background:#f5f7fc;border-left:3px solid #c4d0eb}
+.benchmark-official{margin:12px 0 16px;border-radius:13px;border:1px solid #d9e4f3;background:linear-gradient(130deg,#fbfdff,#f5f8ff);overflow:hidden}
+.benchmark-official>summary{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:13px 15px;cursor:pointer}
+.benchmark-official .official-head{display:grid;gap:4px;min-width:170px}
+.benchmark-official .official-head strong{font-size:12px;color:#556a98}
+.benchmark-official .official-head small{font-size:9px;color:#8998ae}
+.official-preview{flex:1 1 230px;min-width:0;color:#6e7b92;font-size:10px;line-height:1.6}
+.official-expand{font-size:10px;color:#6279b9;font-weight:700}
+.official-description{margin:2px 15px 10px;font-size:9px;color:#8490a1;line-height:1.7}
+.official-content{padding:0 13px 12px}
+.official-controls{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin:10px 0}
+.official-controls label{font-size:9px;color:#8290a3;display:grid;gap:4px;flex:1 1 135px;max-width:260px}
+.official-controls select{min-width:120px;border-radius:8px;border:1px solid #dce4ee;background:#fff;padding:8px;color:#5c6b84;font-size:10px}
+.official-controls .btn{font-size:10px;min-height:34px}
+.official-sort-explain{color:#8792a5;font-size:9px;margin:7px 0}
+.official-table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px}
+.official-table{width:100%}
+.official-table td,.official-table th{font-size:10px}
+.official-method{min-width:160px}
+.official-method strong{display:block;color:#546985}
+.official-paper-id{display:block;font-size:8px;color:#969eaf;max-width:230px;line-height:1.6;overflow-wrap:anywhere}
+.official-contributor{min-width:115px;color:#6a768e}
+.official-contributor small{display:block;color:#939caf;font-size:8px}
+.official-score{font-variant-numeric:tabular-nums;font-weight:700;color:#5269a3}
+.official-source-links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 2px 2px;font-size:9px;color:#949eac}
+.official-source-links a{color:#6478ad;text-decoration:none}
+@media(max-width:650px){
+ .benchmark-official>summary{padding:11px;gap:7px}
+ .benchmark-official .official-preview{order:3;flex-basis:100%}
+ .benchmark-official .official-head{flex:1}
+ .official-content{padding:0 8px 10px}
+ .official-controls label{flex:1 1 100px}
+ .official-table td,.official-table th{font-size:9px}
+}
