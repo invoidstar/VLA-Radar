@@ -11007,6 +11007,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 27,
       "primaryPaperCount": 14,
+      "latestReportVerifiedAt": "2026-09-25",
       "methodNames": [
         "LaWAM",
         "Fast-WAM",
@@ -11454,6 +11455,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 75,
       "primaryPaperCount": 22,
+      "latestReportVerifiedAt": "2026-10-06",
       "methodNames": [
         "π0.5",
         "AdaVLA",
@@ -11697,6 +11699,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 26,
       "primaryPaperCount": 5,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "BC-Transformer",
         "Cosmos Policy",
@@ -11814,6 +11817,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 3,
+      "latestReportVerifiedAt": "2026-09-25",
       "methodNames": [
         "Qwen-RobotManip",
         "Qwen-RobotManip-Context",
@@ -12038,6 +12042,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 22,
       "primaryPaperCount": 6,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "C2FARM-BC",
         "PerAct",
@@ -12163,6 +12168,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 11,
       "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Octo-DMS",
         "Octo",
@@ -12248,6 +12254,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Octo-Base",
         "OpenVLA",
@@ -12331,6 +12338,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Octo-Base",
         "OpenVLA",
@@ -12518,6 +12526,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 32,
       "primaryPaperCount": 6,
+      "latestReportVerifiedAt": "2026-09-25",
       "methodNames": [
         "3D Diffuser Actor",
         "ChainedDiffuser（本文作者适配）",
@@ -12653,6 +12662,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 16,
       "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "DiffusionPolicy-C",
         "LSTM-GMM",
@@ -12760,6 +12770,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 13,
       "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "DiffusionPolicy-C",
         "LSTM-GMM",
@@ -12823,6 +12834,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "DiffusionPolicy-C",
         "LSTM-GMM",
@@ -12907,6 +12919,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "DiffusionPolicy-C",
         "LSTM-GMM",
@@ -12994,6 +13007,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 6,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "BeT (ACT paper implementation)",
         "ACT",
@@ -13056,6 +13070,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "BridgeVLA",
         "BridgeVLA++",
@@ -13122,6 +13137,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Diffusion Policy",
         "GR00T-N1-2B"
@@ -13222,6 +13238,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 11,
       "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Diffusion Policy (no robot PT)",
         "pi0 Paligemma (no robot PT)",
@@ -13291,6 +13308,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "DM0.5",
         "GalaxeaVLA G0.5",
@@ -13354,6 +13372,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "DM0.5",
         "GalaxeaVLA G0.5",
@@ -13429,6 +13448,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "BC-Transformer · atomic pretrain + fine-tune"
       ]
@@ -13538,6 +13558,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 13,
       "primaryPaperCount": 10,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Diffusion Policy",
         "π0",
@@ -13637,6 +13658,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 6,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "GR00T N1.5 · simulation pretrain + target",
         "GR00T N1.5 · target only"
@@ -13724,6 +13746,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "RLDX-1"
       ]
@@ -13795,6 +13818,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "RLDX-1"
       ]
@@ -13866,6 +13890,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "RLDX-1"
       ]
@@ -13937,6 +13962,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "RLDX-1"
       ]
@@ -14012,6 +14038,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "π0.5",
         "π0",
@@ -14082,6 +14109,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Diffusion Policy",
         "DP3"
@@ -14151,6 +14179,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "π0.5",
         "π0"
@@ -14220,6 +14249,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "π0.5",
         "π0"
@@ -14402,6 +14432,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 12,
       "primaryPaperCount": 12,
+      "latestReportVerifiedAt": "2026-10-13",
       "methodNames": [
         "VPP2",
         "InternW0-Δ",
@@ -14594,6 +14625,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 12,
       "primaryPaperCount": 12,
+      "latestReportVerifiedAt": "2026-10-13",
       "methodNames": [
         "VPP2",
         "InternW0-Δ",
@@ -14710,6 +14742,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "3D Diffuser Actor",
         "Act3D（作者训练单视图）",
@@ -14873,6 +14906,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 8,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "MVP-MLP",
         "PerAct",
@@ -14941,6 +14975,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Act3D (10 demos)",
         "Act3D (100 demos)",
@@ -15055,6 +15090,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "GNFactor",
         "PerAct",
@@ -15141,6 +15177,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "GNFactor",
         "PerAct"
@@ -15249,6 +15286,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Auto-λ",
         "ChainedDiffuser",
@@ -15359,6 +15397,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Act3D + motion planner",
         "ChainedDiffuser",
@@ -15465,6 +15504,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "ChainedDiffuser",
         "HiveFormer"
@@ -15539,6 +15579,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Diffusion Policy (generated)",
         "BC-RNN-GMM (generated)",
@@ -15615,6 +15656,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Diffusion Policy (generated)",
         "BC-RNN-GMM (generated)",
@@ -15691,6 +15733,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Diffusion Policy (generated)",
         "BC-RNN-GMM (generated)",
@@ -15791,6 +15834,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Octo-Base",
         "RT-1",
@@ -15891,6 +15935,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Octo-Base",
         "RT-1",
@@ -15964,6 +16009,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-18",
       "methodNames": [
         "Octo-Base",
         "Octo-Small",
@@ -16046,6 +16092,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 8,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "ER / ResNet-RNN",
         "ER / ResNet-T",
@@ -16133,6 +16180,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 8,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "ER / ResNet-RNN",
         "ER / ResNet-T",
@@ -16220,6 +16268,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 8,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "ER / ResNet-RNN",
         "ER / ResNet-T",
@@ -16288,6 +16337,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MoCo-Ego4D (R3M evaluation)",
         "MVP (ViT-B / Ego-Soup; R3M evaluation)",
@@ -16341,6 +16391,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "R3M"
       ]
@@ -16398,6 +16449,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Multi-task PPO",
         "Multi-task SAC",
@@ -16463,6 +16515,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 6,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MAML",
         "PEARL",
@@ -16527,6 +16580,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 6,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MAML",
         "PEARL",
@@ -16601,6 +16655,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "BC-Z XL (RT-1 data)",
         "BC-Z (RT-1 data)",
@@ -16673,6 +16728,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "RT-1 / Real + Sim",
         "RT-1 / Real only"
@@ -16740,6 +16796,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "RT-1 / EDR only",
         "RT-1 / Kuka only",
@@ -16838,6 +16895,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MOO (RT-2 report)",
         "RT-2-PaLI-X-55B",
@@ -16915,6 +16973,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "RT-2-PaLI-X-55B",
         "RT-2-PaLM-E-12B",
@@ -16981,6 +17040,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "PaLM-E-84B",
         "PaLM-E-12B"
@@ -17060,6 +17120,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "PaLM-E-84B",
         "PaLM-E-12B"
@@ -17125,6 +17186,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "CLIP-FT",
         "CLIP-FT-hindsight",
@@ -17201,6 +17263,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 6,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "LCBC（原报告基线）",
         "RT-1（本报告单域）",
@@ -17265,6 +17328,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "RT-1（本报告单域）",
         "RT-1-X",
@@ -17327,6 +17391,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "RT-2-X 5B",
         "RT-2 55B",
@@ -17426,6 +17491,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Octo（本报告微调）",
         "ResNet+Transformer Scratch",
@@ -17489,6 +17555,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Octo-Small"
       ]
@@ -17550,6 +17617,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Octo-Small"
       ]
@@ -17625,6 +17693,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 12,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MCIL／静态RGB＋触觉",
         "MCIL／静态＋腕部RGB",
@@ -17723,6 +17792,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 12,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MCIL／静态RGB＋触觉",
         "MCIL／静态＋腕部RGB",
@@ -17823,6 +17893,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Diffusion Policy／目标＋DROID",
         "Diffusion Policy／目标＋OXE（本报告）",
@@ -17927,6 +17998,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Diffusion Policy／目标＋DROID",
         "Diffusion Policy／目标＋OXE（本报告）",
@@ -17997,6 +18069,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Diffusion Policy／DROID 7k・20场景",
         "Diffusion Policy／DROID 7k・多样场景"
@@ -18090,6 +18163,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "FLAN-SayCan",
         "PaLM／Generative＋USE",
@@ -18185,6 +18259,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "BC NL",
         "BC USE",
@@ -18274,6 +18349,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "PaLM-SayCan"
       ]
@@ -18360,6 +18436,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "PaLM-SayCan"
       ]
@@ -18555,6 +18632,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 20,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "CLIPort (multi-attr)",
         "CLIPort (multi)",
@@ -18750,6 +18828,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "BC-Z (语言)"
       ]
@@ -18943,6 +19022,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "BC-Z (语言)",
         "BC-Z (视频)"
@@ -19018,6 +19098,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Diffuser（本文适配）",
         "Image + Transformer BC",
@@ -19091,6 +19172,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Diffuser（本文适配）",
         "Image + Transformer BC",
@@ -19160,6 +19242,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "插值控制器",
         "RDT",
@@ -19223,6 +19306,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "VLA-Touch 完整系统"
       ]
@@ -19288,6 +19372,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "仅场景图像",
         "原始触觉图像",
@@ -19365,6 +19450,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Legato",
         "RTC",
@@ -19444,6 +19530,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Legato",
         "One-shot guidance",
@@ -19524,6 +19611,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Legato",
         "One-shot guidance",
@@ -19604,6 +19692,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Legato",
         "One-shot guidance",
@@ -19682,6 +19771,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Legato",
         "One-shot guidance",
@@ -19756,6 +19846,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 11,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "TurboVLA",
         "π0.5",
@@ -19832,6 +19923,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 8,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "GR00T N1.6",
         "ActionCache",
@@ -19902,6 +19994,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 8,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "GR00T N1.6",
         "ActionCache",
@@ -19957,6 +20050,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "ActionCache"
       ]
@@ -20010,6 +20104,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "ActionCache"
@@ -20069,6 +20164,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "ActionCache"
@@ -20123,6 +20219,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "ActionCache"
@@ -20182,6 +20279,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "ActionCache"
@@ -20236,6 +20334,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "ActionCache"
@@ -20295,6 +20394,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "ActionCache"
@@ -20353,6 +20453,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "ActionCache",
         "π0.5",
@@ -20423,6 +20524,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "ActionCache",
         "π0.5",
@@ -20510,6 +20612,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "FlashVLA",
@@ -20596,6 +20699,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "FlashVLA",
         "StreamingVLA",
@@ -20669,6 +20773,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "VLASH"
       ]
@@ -20732,6 +20837,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "FlashVLA"
@@ -20796,6 +20902,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "FlashVLA"
@@ -20860,6 +20967,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0.5",
         "FlashVLA"
@@ -20914,6 +21022,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "LingBot-VLA",
         "FlashVLA"
@@ -20966,6 +21075,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "FlashVLA"
       ]
@@ -21036,6 +21146,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "FlashVLA",
         "π0.5",
@@ -21117,6 +21228,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "GR00T N1.7",
         "LingBot-VLA",
@@ -21193,6 +21305,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "GR00T N1.7",
         "LingBot-VLA",
@@ -21259,6 +21372,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Plan Once",
         "TTC"
@@ -21343,6 +21457,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "HALO",
         "Hand-Designed Features",
@@ -21427,6 +21542,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "HALO",
         "Standard Transformer"
@@ -21483,6 +21599,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "DeMaVLA",
         "DSWAM",
@@ -21540,6 +21657,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "DeMaVLA",
         "DSWAM",
@@ -21595,6 +21713,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "π0-Bridge base",
         "Fine-tuned on verified autonomous rollouts"
@@ -21649,6 +21768,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "50 verified autonomous trajectories",
         "50 human demonstrations"
@@ -21705,6 +21825,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Fast-WAM",
         "OmniVTLA",
@@ -21764,6 +21885,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MindLPI",
         "MindLWPI",
@@ -21824,6 +21946,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MindLPI",
         "MindLWPI",
@@ -21889,6 +22012,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "MindLPI",
         "MindLWPI",
@@ -21947,6 +22071,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Base QwenOFT",
         "Offline-initialized memory",
@@ -22009,6 +22134,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-19",
       "methodNames": [
         "Base QwenOFT",
         "Offline-initialized memory",
@@ -22071,6 +22197,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "DP3",
         "π0.5 + Pointmap",
@@ -22130,6 +22257,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "DAWN (H=10)",
         "SMILE-DAWN (H=15)",
@@ -22212,6 +22340,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 7,
       "primaryPaperCount": 3,
+      "latestReportVerifiedAt": "2026-09-25",
       "methodNames": [
         "GWM-VLA",
         "VLA-JEPA (robot-only)",
@@ -22282,6 +22411,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 7,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "HULC (Full)",
         "RoboFlamingo M-3B-IFT (Lang)",
@@ -22342,6 +22472,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "RoboFlamingo freeze-emb",
         "HULC",
@@ -22398,6 +22529,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "HY-VLA",
         "pi0.5"
@@ -22452,6 +22584,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Embodied.cpp Q4_K",
         "Python BF16"
@@ -22506,6 +22639,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "FastWAM",
         "ST-WAM"
@@ -22569,6 +22703,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 6,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "FrameSamp+Modul",
         "PonderPounce 9B",
@@ -22630,6 +22765,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Fast-WAM",
         "MECo-WAM"
@@ -22684,6 +22820,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Fast-WAM",
         "MECo-WAM"
@@ -22743,6 +22880,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Gemini Robotics-ER",
         "Gemini 2.0 Flash"
@@ -22797,6 +22935,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "π0.5",
         "AdaVLA"
@@ -22873,6 +23012,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 3,
+      "latestReportVerifiedAt": "2026-09-25",
       "methodNames": [
         "mimic-video default",
         "pi0.5-style internal reference",
@@ -22932,6 +23072,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "mimic-video",
         "OpenVLA-OFT external",
@@ -23046,6 +23187,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 12,
       "primaryPaperCount": 5,
+      "latestReportVerifiedAt": "2026-10-13",
       "methodNames": [
         "JoyAI-RA",
         "LAPT-Scale",
@@ -23112,6 +23254,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLA-JEPA (chunk 7)",
         "pi0 (chunk 50)",
@@ -23171,6 +23314,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Hy-Embodied-0.5-VLA",
         "pi0.5",
@@ -23231,6 +23375,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Hy-Embodied-0.5-VLA",
         "pi0.5",
@@ -23289,6 +23434,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "GalaxeaVLA G0",
         "InternVLA-A1",
@@ -23346,6 +23492,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "GalaxeaVLA G0",
         "InternVLA-A1",
@@ -23408,6 +23555,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Hy-Embodied-0.5-VLA",
         "pi0.5",
@@ -23470,6 +23618,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "BATON",
         "FrameSamp+Modul",
@@ -23527,6 +23676,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "BATON",
         "FrameSamp+Modul",
@@ -23610,6 +23760,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "OpenVLA-DMS",
         "OpenVLA",
@@ -23681,6 +23832,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLA-Cache (BF16)",
         "DeeR-VLA (BF16)",
@@ -23759,6 +23911,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "Octo-DMS",
         "OpenVLA-DMS",
@@ -23825,6 +23978,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLAbot trial 1",
         "VLAbot trial 2",
@@ -23893,6 +24047,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLAbot trial 1",
         "VLAbot trial 2",
@@ -23961,6 +24116,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLAbot trial 1",
         "VLAbot trial 2",
@@ -24029,6 +24185,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLAbot trial 1",
         "VLAbot trial 2",
@@ -24113,6 +24270,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLAbot active regulation",
         "Manual user",
@@ -24189,6 +24347,7 @@
       "qualityKind": "case-study",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-20",
       "methodNames": [
         "VLAbot trial 1",
         "VLAbot trial 2",
@@ -24289,6 +24448,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-24",
       "methodNames": [
         "GE-Act 2.0",
         "π0.5",
@@ -24358,6 +24518,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 6,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-24",
       "methodNames": [
         "Diffusion Policy",
         "LingBot-VA",
@@ -24424,6 +24585,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-24",
       "methodNames": [
         "GAM"
       ]
@@ -24483,6 +24645,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-24",
       "methodNames": [
         "GAM",
         "π0.5"
@@ -24561,6 +24724,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 9,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-24",
       "methodNames": [
         "ACoT-VLA",
         "FastWAM",
@@ -24638,6 +24802,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-24",
       "methodNames": [
         "FACT",
         "Fast-WAM",
@@ -24698,6 +24863,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 1,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-25",
       "methodNames": [
         "Xiaomi-Robotics-0"
       ]
@@ -24763,6 +24929,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 5,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-09-29",
       "methodNames": [
         "ASPIRE",
         "WAA + evolved skills",
@@ -24828,6 +24995,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-09-29",
       "methodNames": [
         "SafeLoop"
       ]
@@ -24911,6 +25079,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 0,
       "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-06",
       "methodNames": [
         "BEAST",
         "Binning",
@@ -25007,6 +25176,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 3,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-10-06",
       "methodNames": [
         "OpenVLA-OFT",
         "π0.5",
@@ -25087,6 +25257,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 2,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-10-06",
       "methodNames": [
         "ForeAct3D",
         "StarVLA-OFT"
@@ -25145,6 +25316,7 @@
       "qualityKind": "benchmark",
       "primaryResultCount": 4,
       "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-10-13",
       "methodNames": [
         "FrameSamp+Modul",
         "NativeMEM",
@@ -25668,35 +25840,43 @@
     "benchmarks": {
       "RoboTwin": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://robotwin-platform.github.io/leaderboard",
+        "officialVerifiedAt": "2026-10-13"
       },
       "LIBERO": {
         "kind": "benchmark",
-        "officialUrl": "https://libero-project.github.io/main.html"
+        "officialUrl": "https://libero-project.github.io/main.html",
+        "officialVerifiedAt": "2026-10-13"
       },
       "RoboCasa": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://robocasa.ai/",
+        "officialVerifiedAt": "2026-10-13"
       },
       "RoboCasa365": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://robocasa.ai/leaderboard.html",
+        "officialVerifiedAt": "2026-10-13"
       },
       "RLBench": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://github.com/stepjam/RLBench",
+        "officialVerifiedAt": "2026-10-13"
       },
       "SimplerEnv": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://github.com/simpler-env/SimplerEnv",
+        "officialVerifiedAt": "2026-10-13"
       },
       "CALVIN": {
         "kind": "benchmark",
-        "officialUrl": "https://github.com/mees/calvin"
+        "officialUrl": "https://github.com/mees/calvin",
+        "officialVerifiedAt": "2026-10-13"
       },
       "RoboMimic": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://robomimic.github.io/",
+        "officialVerifiedAt": "2026-10-13"
       },
       "Push-T": {
         "kind": "benchmark",
@@ -25720,11 +25900,13 @@
       },
       "Meta-World": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://github.com/Farama-Foundation/Metaworld",
+        "officialVerifiedAt": "2026-10-13"
       },
       "RoboDojo": {
         "kind": "benchmark",
-        "officialUrl": "https://robodojo-benchmark.com/leaderboard?bench=simulation"
+        "officialUrl": "https://robodojo-benchmark.com/",
+        "officialVerifiedAt": "2026-10-13"
       },
       "Google Robot (real)": {
         "kind": "case-study",
@@ -25796,7 +25978,8 @@
       },
       "LIBERO-Plus": {
         "kind": "benchmark",
-        "officialUrl": null
+        "officialUrl": "https://github.com/sylvestf/LIBERO-plus",
+        "officialVerifiedAt": "2026-10-13"
       },
       "RMBench": {
         "kind": "benchmark",
@@ -25828,7 +26011,8 @@
       },
       "RoboDojo real": {
         "kind": "benchmark",
-        "officialUrl": "https://robodojo-benchmark.com/leaderboard?bench=realworld"
+        "officialUrl": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
+        "officialVerifiedAt": "2026-10-13"
       },
       "RoboMemArena": {
         "kind": "benchmark",
