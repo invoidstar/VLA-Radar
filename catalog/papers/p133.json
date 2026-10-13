@@ -215,27 +215,27 @@
         "rows": [
           [
             "27500 Clean+Random (paper Table1)",
-            91.56,
-            91.92,
+            "91.56",
+            "91.92",
             "原表未提供"
           ],
           [
             "27500 Mixed · Zero Tac Input",
-            91.7,
-            91.74,
+            "91.7",
+            "91.74",
             "原表未提供"
           ],
           [
             "2500 Clean (paper Table2)",
-            89.6,
-            68.1,
-            78.9
+            "89.6",
+            "68.1",
+            "78.9"
           ],
           [
             "2500 Clean (official snapshot)",
-            89.58,
-            68.12,
-            78.85
+            "89.58",
+            "68.12",
+            "78.85"
           ]
         ],
         "locator": "arXiv v2 Tables 1–2 and Oct 11 official RoboTwin snapshot",
