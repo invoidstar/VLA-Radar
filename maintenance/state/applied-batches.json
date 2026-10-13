@@ -167,6 +167,19 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-13-weekly-catchup",
+      "sha256": "4bd957085f3dd236d087072875c9c3fb318ab566deae3b198a04a3687a17dc99",
+      "date": "2026-10-13",
+      "notes": [],
+      "tracks": [
+        "lapt-scale-v1-robotwin-easy-hard",
+        "dualstream-v1-robomme-16task"
+      ],
+      "results": 10,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

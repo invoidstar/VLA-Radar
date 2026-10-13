@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261006-roscon-global-2026",
+  "eventKey": "roscon-global-2026-20261006",
+  "title": "ROSCon Global 2026 发布机器人开放生态与标准合作进展",
+  "primaryCategory": "industry",
+  "tags": [
+    "Open Robotics",
+    "ROSCon Global",
+    "ROS 2",
+    "开源生态",
+    "机器人标准"
+  ],
+  "eventDate": "2026-10-06",
+  "publishedAt": "2026-10-06",
+  "dateNote": "基于Open Robotics官方发布于2026-10-06的原始网页；不把活动日期、计划和后续转载当作同一天事件。",
+  "observedAt": "2026-10-13",
+  "updatedAt": "2026-10-13",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "ecosystem",
+  "whatHappened": "Open Robotics于10月6日发布ROSCon Global 2026回顾。活动在多地ROS社群之间集中交流机器人基础软件、开发实践与开放标准，官方报告主场活动参与规模超过千人，并介绍ROS 2生态与机器人组件协作的后续工作。该事件是开发者社区进展，而不是新机器人策略权重或统一成功率测评发布。",
+  "whyItMatters": "机器人训练、仿真和真机部署需要持续维护的中间件、标准接口和工程社区，开源生态的互操作与工具协作关系到科研模型跨平台复现成本。",
+  "vlaRelevance": "通用VLA仍需要与ROS控制接口、机器人状态、数据记录及场景安全系统对接，ROSCon体现从单篇模型走向可部署系统的基础设施需求。",
+  "limits": "官方报道中关于参加人数和计划均按组织方口径记录。活动总结不等于声明其中提及的ROS版本或产品都在10月6日首次正式发布，也不代表任何VLA方法性能经过检验。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "ROSCon Global 2026: A record-breaking event",
+      "publisher": "Open Robotics",
+      "url": "https://www.openrobotics.org/blog/2026/10/6/roscon-global-2026-a-record-breaking-event",
+      "kind": "official",
+      "publishedAt": "2026-10-06",
+      "access": "full-page",
+      "note": "核对首次报道日期、发布范围、技术内容、工程限制和官方性能声称；未据此认证独立性能。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

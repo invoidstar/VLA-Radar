@@ -374,6 +374,9 @@
     "p127": {
       "project": "https://robodojo-benchmark.com/report/gpt-6-astra-eval",
       "code": "https://github.com/RoboProbe/RoboProbe"
+    },
+    "p128": {
+      "project": "https://splat2act.github.io/"
     }
   }
 }

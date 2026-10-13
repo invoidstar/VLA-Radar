@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261007-nvidia-gb300-assembly",
+  "eventKey": "nvidia-gb300-assembly-20261007",
+  "title": "NVIDIA 公布 GB300 服务器测试托盘机器人装配技术实践",
+  "primaryCategory": "robot",
+  "tags": [
+    "NVIDIA",
+    "工业机器人",
+    "精密装配",
+    "视觉定位",
+    "接触控制",
+    "sim-to-real"
+  ],
+  "eventDate": "2026-10-07",
+  "publishedAt": "2026-10-07",
+  "dateNote": "基于NVIDIA Developer官方发布于2026-10-07的原始网页；不把活动日期、计划和后续转载当作同一天事件。",
+  "observedAt": "2026-10-13",
+  "updatedAt": "2026-10-13",
+  "stage": "reported",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "NVIDIA Seattle Robotics Lab和Isaac团队公开GB300测试托盘两类复杂装配研究：母排搬运、插入与多位置拧螺丝，以及线缆连接器抓取/插入。母排任务采用FoundationPose或专用姿态估计、几何规划、Lissajous运动原语和阻抗控制的模块化系统；连接器任务则使用Isaac Lab仿真强化学习及真实残差策略等组件。",
+  "whyItMatters": "真实工业部署需要综合考虑精密接触、滑移、工装约束、控制周期和整体节拍，而非单一模型的离线准确率。文中报告母排装配成功率超过95%，但完整循环约160秒，高于制造方提出的124秒目标。",
+  "vlaRelevance": "文章专门讨论何时使用VLA、传统规划、感知模型及接触强化学习，揭示具身策略需要与模块化机器人控制和工程约束协同，不能把装配成功全部归因于端到端VLA。",
+  "limits": "超过95%及160秒来自NVIDIA项目团队自述，未公开同等规模第三方独立测试。文章同时承认精密抓取与节拍仍未全部达到量产门槛，不应写成全面实现工业无人化。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "The Machines that Make the Machines",
+      "publisher": "NVIDIA Developer",
+      "url": "https://developer.nvidia.com/blog/the-machines-that-make-the-machines/",
+      "kind": "official",
+      "publishedAt": "2026-10-07",
+      "access": "full-page",
+      "note": "核对首次报道日期、发布范围、技术内容、工程限制和官方性能声称；未据此认证独立性能。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

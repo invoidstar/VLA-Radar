@@ -2481,6 +2481,40 @@
         "r-robodojo-20261009-p127-sr"
       ],
       "note": "GPT-6 Astra (RoboDojo Evaluation)在RoboDojo-Sim官方2026-10-09榜和论文原表均有Score/SR；复用已有sim-multi两赛道，不建单论文Benchmark。VPP2两项Generalization细分值原文缺失保留null。"
+    },
+    "p128": {
+      "status": "deferred",
+      "trackIds": [],
+      "resultIds": [],
+      "note": "Splat2Act训练和评测由其自采建筑环境Office/Conference及Stretch 3定制案例构成；无可核实公共协议，不建单论文Benchmark，保留完整数字与负结果于深读。"
+    },
+    "p129": {
+      "status": "extracted",
+      "trackIds": [
+        "lapt-scale-v1-robotwin-easy-hard"
+      ],
+      "resultIds": [
+        "r-lapt-scale-robotwin-lapt",
+        "r-lapt-scale-robotwin-pi0",
+        "r-lapt-scale-robotwin-pi05",
+        "r-lapt-scale-robotwin-motus",
+        "r-lapt-scale-robotwin-lingbot",
+        "r-lapt-scale-robotwin-joyai"
+      ],
+      "note": "核实arXiv 2610.13732v1 RoboTwin2.0 Easy/Hard Table主表；记录原论文引用基线，异构预训练只作为paper-table。RoboCasa-GR1任务定义未与既有Setting安全对齐。"
+    },
+    "p130": {
+      "status": "extracted",
+      "trackIds": [
+        "dualstream-v1-robomme-16task"
+      ],
+      "resultIds": [
+        "r-dualstream-robomme-ours",
+        "r-dualstream-robomme-framesamp",
+        "r-dualstream-robomme-nativemem",
+        "r-dualstream-robomme-pi05"
+      ],
+      "note": "arXiv 2610.13262v1 RoboMME 16任务平均成功率表，4行来源齐全；Piper四任务真实评测非公共Benchmark，保留于深读而不单设榜单。"
     }
   }
 }

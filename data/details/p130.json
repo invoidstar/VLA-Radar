@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p130",
+    "name": "Dual-Stream Memory",
+    "title": "Dual-Stream Memory for Vision-Language-Action Policies",
+    "team": "Yang Wang、Ping Liu、Ruiyu Wang、Xuhua Chen、Lingfeng Zhang、Tao Zhang",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 2610.13262v1 预印本",
+    "firstPublished": "2026-10-09",
+    "dateNote": "按arXiv 2610.13262v1初版提交日UTC（2026-10-09）记录。",
+    "collectionMonth": "2026-10",
+    "versionNote": "2026-10-09 arXiv v1 · 16 RoboMME tasks / 4 real tasks",
+    "topics": [
+      "memory",
+      "action",
+      "evaluation"
+    ],
+    "tags": [
+      "long-horizon memory",
+      "Gated DeltaNet",
+      "visual retrieval",
+      "RoboMME",
+      "dual-stream",
+      "Piper robot"
+    ],
+    "priority": "deep",
+    "contribution": "将任务进度摘要的单时间token与按语言目标检索的多尺度历史视觉token相结合，冻结预训练时间压缩器并联合优化检索/动作策略。",
+    "findings": "RoboMME 16任务平均成功率49.22%，对照FrameSamp+Modul 44.51%；四真机任务平均成功率62.5%对照37.5%，但Cup Swap存在明显失败。",
+    "limitations": "固定阈值与历史检索开销、相似物体身份混淆、真实机器人任务少，跨协议基线可能存在训练预算差异。",
+    "insight": "任务执行状态和历史空间证据应采用不同的记忆表示；高分Counting不能代替复杂对象身份持续追踪。",
+    "readingFocus": "DeltaNet预训练监督、冻结策略、SigLIP/MiniLM选帧阈值、每帧16 token、多任务统计、Cup Swap失败与现实机器人协议。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-13按arXiv v1完整HTML与表I–III核验，所有成功率均为论文作者报告。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1完整正文",
+        "url": "https://arxiv.org/html/2610.13262v1"
+      },
+      {
+        "label": "arXiv首次公开记录",
+        "url": "https://arxiv.org/abs/2610.13262"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.13262",
+    "arxiv": "2610.13262",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-09",
+    "firstArxivSource": "https://arxiv.org/abs/2610.13262v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-09",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-13",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-09",
+        "observedAt": "2026-10-13",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.13262v1",
+        "note": "初版全文核验，评测采用16个RoboMME任务。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-13",
+    "verifiedAt": "2026-10-13",
+    "version": "arXiv:2610.13262v1（2026-10-09），全8页、6图与3表，2026-10-13核验",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "记忆任务的双重需求：知道做到哪一步、记住早已消失的证据",
+        "body": "常规VLA用当前图片、文字和机器人状态生成动作，在多阶段操作里容易丢掉此前已经发生的动作、物体身份与环境事件。把所有历史图片一股脑拼接输入，会造成视觉token快速膨胀与推理成本过高；只压缩成一个历史向量又可能把必须重新看清的物体外观、位置与任务相关证据混在一起。本文将“估计执行进度”与“回看具有任务意义的历史图像”拆成两个互补记忆流：一个时间流用压缩状态追踪任务阶段，另一个空间流按当前语言目标选择高价值的旧帧。提出的目标不是无限长期在线存储，而是在可控token预算内，保留会改变动作决策的信息。论文选择RoboMME记忆型操作基准验证，不能仅凭“有记忆模块”就推定所有长程VLA任务都能解决。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "method",
+        "title": "方法总览：单一时间token与按任务检索的历史视觉token",
+        "body": "Dual-Stream Memory接收机器人观察序列、自然语言任务指令和当前策略特征，将历史信息送入两条分工不同的路径。Temporal Stream由任务无关Gated DeltaNet压缩历史图像/动作关联动态，输出一个较稳定的时间记忆token；Spatial Stream通过任务相关检索器从历史帧库挑选和当前指令最相关的关键视觉证据，再用多尺度空间池化编码为有限数量token。两个结果汇入策略骨干，参与连续动作生成。单token适合压缩“阶段和变化”，检索帧适合回答“当时那个东西长什么样、在哪里”；但两条路径没有显式的全物体身份图谱，因而仍可能在外观相似物体调换时犯错。论文报告的提升主要来自联合使用两种表示，而不是简单增加保存的历史帧数。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "temporal",
+        "title": "时间流训练：Gated DeltaNet 的状态摘要与预训练监督",
+        "body": "作者以Gated DeltaNet结构构建递归时间状态，对历史动态进行压缩，每个决策时刻只向下游策略提供一个时间token，避免回放所有过去视频片段。训练信号包含任务/轨迹进度预测以及动作条件的历史视觉特征重建：前者要求向量保留执行阶段信息，后者防止时间编码丢弃对动作决策有用的视觉演化。时间压缩器先单独训练，再在联合策略阶段冻结，减少动作微调过程对既有进度记忆的破坏。需要区分“模型能预测某种进度目标”和“模型知道真实任务成功标志”：部署时仍只根据已有观察估计进度，不直接获得仿真器的隐藏成功标签。单token的优点是常数级接口，但压缩瓶颈也使它无法完整记忆多个近似物体的各次接触。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "spatial",
+        "title": "空间流检索：任务条件相似度与16-token多尺度融合",
+        "body": "空间路径首先为历史帧建立可检索视觉表示，论文使用冻结SigLIP特征做视觉编码并由MiniLM类语言编码器表示当前任务目标。检索器结合目标和候选帧的相似分数，通过明确的相关性门槛判断帧是否值得保留，而不是不加选择保留最新N帧。文中采用归一化log-sum-exp聚合的检索评分与约0.6的固定阈值，需要注意该分值不是通常softmax概率，也不能把0.6解释为“60%的相关概率”。保留帧再由8×8、4×4、2×2等多尺度操作形成紧凑空间信息，每帧最终融合为约16个token；因此总记忆输入随被选帧数增长，而不是无界保存全分辨率patch。检索错误仍可能丢失关键过去事件。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "optimization",
+        "title": "训练与推理边界：冻结压缩器并联合优化策略和检索",
+        "body": "训练分为时间压缩器预训练、冻结后的任务条件检索优化，以及与VLA动作策略的联合学习。作者通过独立的进度/历史重建监督让时间路径先建立稳定动态摘要；在下游阶段，选帧器与策略共同更新，使检索偏好直接服务动作损失，避免单纯离线相似检索与控制目标不一致。论文报告策略训练约80k步、batch64与5e-5量级学习率，具体超参需要和原表对应。推理时每次输入当前视觉观察、任务文本和记录的历史信息，时间流输出单token，空间流输出若干历史视觉token，策略生成动作；历史帧索引与视觉编码仍有缓存/计算开销，不能仅因递归网络是常数状态便宣称整个系统的历史内存和延迟严格O(1)。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "评测：RoboMME的16项记忆任务、重复试验与真实机械臂",
+        "body": "作者将主评测放在RoboMME的16个任务上，按Counting、Permanence、Reference、Imitation四类记忆需求组织，对每个任务进行多轮回合评估，实验设置报告3个评测种子、每任务每种子50个episode。主表总体成绩是mean task success rate百分比；不能和只看某项任务、不同数据规模的RoboMME历史行直接混排。真机部分采用Piper双臂机器人，选择4种有记忆依赖的操作任务，每个方法每任务30个回合，且训练端每任务约100条示范。真机实验是作者特定设置，不是通用RoboMME现实世界协议，因此本站保留真实结果在深读正文，不新建单一论文的real-robot Benchmark。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主结果：RoboMME均值49.22%，真机均值62.5%",
+        "body": "RoboMME 16任务中作者报告完整双流模型平均49.22%；相对同文报告的FrameSamp+Modul 44.51%、NativeMEM 20.54%、无显式记忆π0.5基线17.93%，它提高了14/16任务成功率，并在四个记忆类别的均值上都取得提升。分任务类别，例如Counting约70.83%、Permanence约27.75%、Reference约45.31%、Imitation约53.00%，不能把高得多的Counting成功率代表复杂遮挡和持续身份追踪已经解决。真机4任务平均成功率62.5%，与FrameSamp+Modul37.5%、NativeMEM31.7%、无记忆15.0%形成对照。所有分数均为作者按其环境与配置报告，本文未做独立重复测量或提供对所有历史方法的统一训练预算复现证明。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "对照与失败：重复动作受益明显，杯子调换仍难",
+        "body": "在需要记住重复动作已经执行几次的任务上，结合时间进度和历史视觉检索可以减少重复/漏做。作者报告真实任务Swing最高可达93.3%，Pick×3约80%，说明显式进度记忆对动作次数类问题很重要。然而在Cup Swap一类物体外观相似、身份与位置不断改变的场景，完整方法仅约40%，甚至低于某个基线约53.3%，反映“回看相关帧”不等于“可靠跟踪同一个物体”。在RoboMME个别任务上也出现小幅负迁移，例如视频解除遮挡与PatternLock相关任务相对比较方法出现下降。对比表涉及不同历史记忆的保留、编码和训练路径，增益应解释为整套dual-stream系统的结果，不是独立识别每一种loss的唯一因果贡献。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "局限：阈值固定、身份绑定薄弱以及真实长期部署未知",
+        "body": "门槛筛选对视觉语义相似度敏感，当前语言目标稍有变化就可能选错事件帧；一个固定阈值在历史长度、摄像机视角和任务分布改变后不一定最优。时间压缩成一个token节省下游输入，但仍需要维护可检索帧库，检索过程与编码成本没有完全消失。方法没有显式object identity及关系图，因此在杯子交换和类似遮挡任务中会混淆当前/过去实体。真机仅4任务，每任务30个回合，不能保证更长时间、更多干扰与不同本体条件的性能。引用FrameSamp+Modul是论文报告中的比较，不构成本站对相同代码、同一随机种子和预算的统一重评。若未来论文修订改变协议或数据，应更新结果来源版本并保留历史记录。",
+        "sources": [
+          {
+            "label": "Dual-Stream Memory · arXiv:2610.13262v1",
+            "url": "https://arxiv.org/html/2610.13262v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.13262v1"
+    },
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-13",
+      "note": "核验16任务RoboMME总体成功率主表和四类任务组，新增paper-table 4条比较记录；Piper真机4任务属独立定制协议，不创建单论文Benchmark。"
+    }
+  }
+}

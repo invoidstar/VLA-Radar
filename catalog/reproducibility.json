@@ -1155,6 +1155,24 @@
       "level": "baseline",
       "note": "2026-10-13核对论文作者提供的RoboDojo在线报告与RoboProbe源码，属于评测控制/工具接口，不是GPT-6 Astra基础模型参数或预训练配方；无从确认外部模型权重。",
       "items": {}
+    },
+    "p128": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "2026-10-13核查Splat2Act作者官方项目：代码与完整场景数据明确标注coming soon，未将预告写成公开代码。",
+      "items": {}
+    },
+    "p129": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "2026-10-13核查论文一手全文及入口；未找到明确已开放的全流程代码/权重，保留unknown。",
+      "items": {}
+    },
+    "p130": {
+      "verifiedAt": "2026-10-13",
+      "level": "baseline",
+      "note": "2026-10-13核查论文全文、项目与代码归属；不把不同论文同名memory仓库误作官方代码。",
+      "items": {}
     }
   }
 }

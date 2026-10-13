@@ -1,0 +1,18 @@
+{
+  "id": "r-dualstream-robomme-nativemem",
+  "paperId": "p130",
+  "method": "NativeMEM",
+  "trackId": "dualstream-v1-robomme-16task",
+  "values": {
+    "Average": 20.54
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-13",
+  "source": "https://arxiv.org/html/2610.13262v1",
+  "sourceVersion": "arXiv 2610.13262v1",
+  "locator": "Table II · Overall mean",
+  "attribution": "reported-baseline",
+  "trainingData": "16 RoboMME tasks with 50 test episodes/task/seed for three seeds; FrameSamp published checkpoint aggregation differs.",
+  "evaluationNotes": "Original source Table, heterogeneous reported results; not an independently normalized global ranking or ablation method.",
+  "supersedes": ""
+}

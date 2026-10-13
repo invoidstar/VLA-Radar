@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-10-06",
-  "lastStatus": "success",
-  "lastSummary": "完整文献发现窗口 2026-09-15—2026-10-04 已通过多来源覆盖门禁；28 candidates，selected 3，deferred 18，excluded 3，duplicate 4。",
+  "lastAttemptAt": "2026-10-13",
+  "lastStatus": "partial",
+  "lastSummary": "2026-09-20—2026-10-13跨来源候选 23 条：selected 3、deferred 15、excluded 1、duplicate 4；独立学术索引受限，curated更新仅截至10月12日，完整检索检查点保持10月4日。",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-13-weekly-backfill.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }
