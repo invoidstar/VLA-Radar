@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-18",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -14381,7 +14381,7 @@
       ],
       "source": "https://arxiv.org/html/2610.12369v1",
       "qualityKind": "benchmark",
-      "evaluationScope": "coap-author-42-sr",
+      "evaluationScope": "success-e577f06e",
       "columnSpecs": {
         "Memory": {
           "unit": "percent",
@@ -14443,7 +14443,7 @@
       ],
       "source": "https://arxiv.org/html/2610.12369v1",
       "qualityKind": "benchmark",
-      "evaluationScope": "coap-author-42-score",
+      "evaluationScope": "score-e577f06e",
       "columnSpecs": {
         "Average": {
           "unit": "score",
@@ -14480,7 +14480,7 @@
       ],
       "source": "https://arxiv.org/html/2610.08995v1",
       "qualityKind": "benchmark",
-      "evaluationScope": "physevo-author-42-macro-sr",
+      "evaluationScope": "success-e577f06e",
       "columnSpecs": {
         "Generalization": {
           "unit": "percent",
@@ -14547,7 +14547,7 @@
       ],
       "source": "https://arxiv.org/html/2610.08995v1",
       "qualityKind": "benchmark",
-      "evaluationScope": "physevo-author-42-macro-score",
+      "evaluationScope": "score-e577f06e",
       "columnSpecs": {
         "Generalization": {
           "unit": "score",
@@ -18101,14 +18101,20 @@
         "Long-horizon",
         "Memory",
         "Open",
-        "Average"
+        "Average",
+        "Generalization",
+        "Long-Horizon"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
         "robodojo-official-sim-multi-score",
-        "robodojo-official-sim-single-score"
+        "robodojo-official-sim-single-score",
+        "robodojo-coap-v1-sim-score",
+        "robodojo-physevo-v1-sim-score"
       ],
       "resultIds": [
+        "r-coap-v1-robodojo-sim-score",
+        "r-physevo-v1-robodojo-sim-score",
         "r-robodojo-20261009-p125-score",
         "r-robodojo-20261009-p126-score",
         "r-robodojo-20261009-p127-score",
@@ -18122,9 +18128,11 @@
         "r-robodojo-official-sim-single-score-act-single-task",
         "r-robodojo-official-sim-single-score-smolvla-single-task"
       ],
-      "resultCount": 12,
-      "paperCount": 12,
+      "resultCount": 14,
+      "paperCount": 14,
       "paperIds": [
+        "p134",
+        "p135",
         "p125",
         "p126",
         "p127",
@@ -18138,9 +18146,21 @@
         "p056",
         "p073"
       ],
-      "methodCount": 12,
+      "methodCount": 14,
       "primaryTrackId": "robodojo-official-sim-multi-score",
       "trainingOptions": [
+        {
+          "id": "unknown-p134",
+          "label": "训练数据未完整披露 · p134",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "unknown-p135",
+          "label": "训练数据未完整披露 · p135",
+          "known": false,
+          "count": 1
+        },
         {
           "id": "unknown-p125",
           "label": "训练数据未完整披露 · p125",
@@ -18215,6 +18235,8 @@
         }
       ],
       "trainingByResult": {
+        "r-coap-v1-robodojo-sim-score": "unknown-p134",
+        "r-physevo-v1-robodojo-sim-score": "unknown-p135",
         "r-robodojo-20261009-p125-score": "unknown-p125",
         "r-robodojo-20261009-p126-score": "unknown-p126",
         "r-robodojo-20261009-p127-score": "unknown-p127",
@@ -18256,13 +18278,23 @@
         "Average": {
           "unit": "score",
           "direction": "higher"
+        },
+        "Generalization": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "score",
+          "direction": "higher"
         }
       },
       "qualityKind": "benchmark",
       "primaryResultCount": 12,
       "primaryPaperCount": 12,
-      "latestReportVerifiedAt": "2026-10-13",
+      "latestReportVerifiedAt": "2026-10-14",
       "methodNames": [
+        "Code-Only-as-Policy (COAP)",
+        "PhysEvo",
         "VPP2",
         "InternW0-Δ",
         "GPT-6 Astra",
@@ -18294,14 +18326,20 @@
         "Long-horizon",
         "Memory",
         "Open",
-        "Average"
+        "Average",
+        "Generalization",
+        "Long-Horizon"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
         "robodojo-official-sim-multi-sr",
-        "robodojo-official-sim-single-sr"
+        "robodojo-official-sim-single-sr",
+        "robodojo-coap-v1-sim-sr",
+        "robodojo-physevo-v1-sim-sr"
       ],
       "resultIds": [
+        "r-coap-v1-robodojo-sim-sr",
+        "r-physevo-v1-robodojo-sim-sr",
         "r-robodojo-20261009-p125-sr",
         "r-robodojo-20261009-p126-sr",
         "r-robodojo-20261009-p127-sr",
@@ -18315,9 +18353,11 @@
         "r-robodojo-official-sim-single-sr-act-single-task",
         "r-robodojo-official-sim-single-sr-smolvla-single-task"
       ],
-      "resultCount": 12,
-      "paperCount": 12,
+      "resultCount": 14,
+      "paperCount": 14,
       "paperIds": [
+        "p134",
+        "p135",
         "p125",
         "p126",
         "p127",
@@ -18331,9 +18371,21 @@
         "p056",
         "p073"
       ],
-      "methodCount": 12,
+      "methodCount": 14,
       "primaryTrackId": "robodojo-official-sim-multi-sr",
       "trainingOptions": [
+        {
+          "id": "unknown-p134",
+          "label": "训练数据未完整披露 · p134",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "unknown-p135",
+          "label": "训练数据未完整披露 · p135",
+          "known": false,
+          "count": 1
+        },
         {
           "id": "unknown-p125",
           "label": "训练数据未完整披露 · p125",
@@ -18408,6 +18460,8 @@
         }
       ],
       "trainingByResult": {
+        "r-coap-v1-robodojo-sim-sr": "unknown-p134",
+        "r-physevo-v1-robodojo-sim-sr": "unknown-p135",
         "r-robodojo-20261009-p125-sr": "unknown-p125",
         "r-robodojo-20261009-p126-sr": "unknown-p126",
         "r-robodojo-20261009-p127-sr": "unknown-p127",
@@ -18449,13 +18503,23 @@
         "Average": {
           "unit": "percent",
           "direction": "higher"
+        },
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
         }
       },
       "qualityKind": "benchmark",
       "primaryResultCount": 12,
       "primaryPaperCount": 12,
-      "latestReportVerifiedAt": "2026-10-13",
+      "latestReportVerifiedAt": "2026-10-14",
       "methodNames": [
+        "Code-Only-as-Policy (COAP)",
+        "PhysEvo",
         "VPP2",
         "InternW0-Δ",
         "GPT-6 Astra",
@@ -29162,289 +29226,6 @@
         "NativeMEM",
         "Dual-Stream Memory",
         "π0.5 (no memory)"
-      ]
-    },
-    {
-      "id": "setting-robodojo-coap-author-42-sr-771bc2063c83",
-      "dataset": "RoboDojo",
-      "evalId": "auto:coap-author-42-sr",
-      "name": "RoboDojo · 42 Tasks · Success Rate",
-      "tasks": "42 simulation tasks",
-      "split": "coap author 42 sr",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Memory",
-        "Precision",
-        "Open",
-        "Generalization",
-        "Long-Horizon",
-        "Average"
-      ],
-      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report, not an official leaderboard submission",
-      "trackIds": [
-        "robodojo-coap-v1-sim-sr"
-      ],
-      "resultIds": [
-        "r-coap-v1-robodojo-sim-sr"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p134"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "robodojo-coap-v1-sim-sr",
-      "trainingOptions": [
-        {
-          "id": "unknown-p134",
-          "label": "训练数据未完整披露 · p134",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-coap-v1-robodojo-sim-sr": "unknown-p134"
-      },
-      "columnMeta": {
-        "Memory": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Precision": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Open": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Generalization": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Long-Horizon": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Average": {
-          "unit": "percent",
-          "direction": "higher"
-        }
-      },
-      "qualityKind": "benchmark",
-      "primaryResultCount": 0,
-      "primaryPaperCount": 0,
-      "latestReportVerifiedAt": "2026-10-14",
-      "methodNames": [
-        "Code-Only-as-Policy (COAP)"
-      ]
-    },
-    {
-      "id": "setting-robodojo-coap-author-42-score-e433803fc2b5",
-      "dataset": "RoboDojo",
-      "evalId": "auto:coap-author-42-score",
-      "name": "RoboDojo · 42 Tasks · Score",
-      "tasks": "42 simulation tasks",
-      "split": "coap author 42 score",
-      "metric": "Partial-progress score",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "Average"
-      ],
-      "protocol": "RoboDojo 42 tasks; three seeds x 50 layouts per task; author report; progress Score not SR",
-      "trackIds": [
-        "robodojo-coap-v1-sim-score"
-      ],
-      "resultIds": [
-        "r-coap-v1-robodojo-sim-score"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p134"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "robodojo-coap-v1-sim-score",
-      "trainingOptions": [
-        {
-          "id": "unknown-p134",
-          "label": "训练数据未完整披露 · p134",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-coap-v1-robodojo-sim-score": "unknown-p134"
-      },
-      "columnMeta": {
-        "Average": {
-          "unit": "score",
-          "direction": "higher"
-        }
-      },
-      "qualityKind": "benchmark",
-      "primaryResultCount": 0,
-      "primaryPaperCount": 0,
-      "latestReportVerifiedAt": "2026-10-14",
-      "methodNames": [
-        "Code-Only-as-Policy (COAP)"
-      ]
-    },
-    {
-      "id": "setting-robodojo-physevo-author-42-macro-sr-49ded2d71471",
-      "dataset": "RoboDojo",
-      "evalId": "auto:physevo-author-42-macro-sr",
-      "name": "RoboDojo · 42 Tasks · Success Rate",
-      "tasks": "42 simulation tasks",
-      "split": "physevo author 42 macro sr",
-      "metric": "Task success rate",
-      "unit": "percent",
-      "direction": "higher",
-      "columns": [
-        "Generalization",
-        "Precision",
-        "Long-Horizon",
-        "Memory",
-        "Open",
-        "Average"
-      ],
-      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
-      "trackIds": [
-        "robodojo-physevo-v1-sim-sr"
-      ],
-      "resultIds": [
-        "r-physevo-v1-robodojo-sim-sr"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p135"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "robodojo-physevo-v1-sim-sr",
-      "trainingOptions": [
-        {
-          "id": "unknown-p135",
-          "label": "训练数据未完整披露 · p135",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-physevo-v1-robodojo-sim-sr": "unknown-p135"
-      },
-      "columnMeta": {
-        "Generalization": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Precision": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Long-Horizon": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Memory": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Open": {
-          "unit": "percent",
-          "direction": "higher"
-        },
-        "Average": {
-          "unit": "percent",
-          "direction": "higher"
-        }
-      },
-      "qualityKind": "benchmark",
-      "primaryResultCount": 0,
-      "primaryPaperCount": 0,
-      "latestReportVerifiedAt": "2026-10-14",
-      "methodNames": [
-        "PhysEvo"
-      ]
-    },
-    {
-      "id": "setting-robodojo-physevo-author-42-macro-score-7f87c118466c",
-      "dataset": "RoboDojo",
-      "evalId": "auto:physevo-author-42-macro-score",
-      "name": "RoboDojo · 42 Tasks · Score",
-      "tasks": "42 simulation tasks",
-      "split": "physevo author 42 macro score",
-      "metric": "Partial-progress score",
-      "unit": "score",
-      "direction": "higher",
-      "columns": [
-        "Generalization",
-        "Precision",
-        "Long-Horizon",
-        "Memory",
-        "Open",
-        "Average"
-      ],
-      "protocol": "Five held-out layouts per task, task-specific deployment variants; five dimensions equal weight; not 42-task micro average",
-      "trackIds": [
-        "robodojo-physevo-v1-sim-score"
-      ],
-      "resultIds": [
-        "r-physevo-v1-robodojo-sim-score"
-      ],
-      "resultCount": 1,
-      "paperCount": 1,
-      "paperIds": [
-        "p135"
-      ],
-      "methodCount": 1,
-      "primaryTrackId": "robodojo-physevo-v1-sim-score",
-      "trainingOptions": [
-        {
-          "id": "unknown-p135",
-          "label": "训练数据未完整披露 · p135",
-          "known": false,
-          "count": 1
-        }
-      ],
-      "trainingByResult": {
-        "r-physevo-v1-robodojo-sim-score": "unknown-p135"
-      },
-      "columnMeta": {
-        "Generalization": {
-          "unit": "score",
-          "direction": "higher"
-        },
-        "Precision": {
-          "unit": "score",
-          "direction": "higher"
-        },
-        "Long-Horizon": {
-          "unit": "score",
-          "direction": "higher"
-        },
-        "Memory": {
-          "unit": "score",
-          "direction": "higher"
-        },
-        "Open": {
-          "unit": "score",
-          "direction": "higher"
-        },
-        "Average": {
-          "unit": "score",
-          "direction": "higher"
-        }
-      },
-      "qualityKind": "benchmark",
-      "primaryResultCount": 0,
-      "primaryPaperCount": 0,
-      "latestReportVerifiedAt": "2026-10-14",
-      "methodNames": [
-        "PhysEvo"
       ]
     }
   ],

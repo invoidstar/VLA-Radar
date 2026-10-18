@@ -210,6 +210,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-18-robodojo-setting-compatibility",
+      "sha256": "b38731e60b137e6f9200f3cdb97b1e67c37fd500b8d78f6ea3d3b1404c9079e5",
+      "date": "2026-10-18",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

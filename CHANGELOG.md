@@ -1,3 +1,7 @@
+## 2026-10-18 — 2026-10-18-robodojo-setting-compatibility
+
+修正RoboDojo 42任务作者论文报告与既有官网42任务协议的Evaluation Setting映射：COAP/PhysEvo仍保留原始track、训练预算、种子/回合、不同原表任务列及paper-table展示，却不因报告论文和列覆盖差异制造4个新Setting；增加回归测试确保两类指标独立、部分列覆盖与官方口径对齐。无新增或篡改结果值，不推进不完整的Discovery或News成功检查点。
+
 ## 2026-10-14 — 2026-10-14-robodojo-source-followup
 
 RoboDojo缺失论文与结果来源专项：完成Embodied Turing Machines（COAP, arXiv2610.12369v1）与PhysEvo（arXiv2610.08995v1）的正文级深读，新增4条42任务作者报告的Score/SR记录并明确五维宏平均、不同开发预算及非官方模型提交；核验XPolicyLab中Simate-beta、Rex-M1 Preview、Liber-0 Lite推理适配器的论文待发布边界与Liber-0 Preview官方模型身份。保留独立官方快照及源Git版本，不虚构论文或最新排名；完整Discovery checkpoint不前移。本批将已编辑的canonical源、构建索引、验证与审计统一纳入可追溯发布链路。
