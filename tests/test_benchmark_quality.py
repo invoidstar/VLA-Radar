@@ -86,3 +86,20 @@ def test_robodojo_coap_and_physevo_are_paper_reports_not_official_ranks():
     assert all(r['displayTier']=='paper' for r in selected)
     assert sum(s['primaryResultCount'] for s in settings if set(s['trackIds'])&canonical)==0
     assert all(s['dataset']=='RoboDojo' for s in settings if set(s['trackIds'])&canonical)
+
+def test_robodojo_author_report_partial_columns_reuse_official_42_task_settings():
+    """Same 42-task evaluation question must not split by source paper or reported columns."""
+    _,_,_,tracks,rows,_,settings=_data()
+    from benchmark_settings import protocol_compatibility
+    track_by_id={t['id']:t for t in tracks}
+    for method in ('coap','physevo'):
+        for metric in ('sr','score'):
+            tid=f'robodojo-{method}-v1-sim-{metric}'
+            official=f'robodojo-official-sim-multi-{metric}'
+            matched=[s for s in settings if tid in s['trackIds']]
+            assert len(matched)==1
+            assert official in matched[0]['trackIds']
+            assert protocol_compatibility(track_by_id[tid],track_by_id[official])=='partial'
+            assert track_by_id[tid]['comparisonScope']=='paper-table'
+    assert all(r['displayTier']=='paper' for r in rows if r['trackId'].startswith(
+        ('robodojo-coap-v1-sim-', 'robodojo-physevo-v1-sim-')))
