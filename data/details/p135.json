@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p135",
+    "name": "PhysEvo",
+    "title": "PhysEvo: Astra Can Act, Let It",
+    "team": "Wenqing Tian、Zeyu Zhang、Zhaocheng Liu、Fengwei Liu、Qiang Liu、Liang Wang",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv v1预印本",
+    "firstPublished": "2026-10-06",
+    "dateNote": "首发2026-10-06（UTC）按arXiv v1锁定，2026-10-14深读验证。",
+    "collectionMonth": "2026-10",
+    "versionNote": "2026-10-06首次公开 · v1核验",
+    "topics": [
+      "evaluation",
+      "action",
+      "memory"
+    ],
+    "tags": [
+      "physical RSI",
+      "RoboDojo",
+      "agent harness",
+      "tool revision",
+      "real robot",
+      "Astra"
+    ],
+    "priority": "deep",
+    "contribution": "以一个冻结Astra模型运行任务代理与元代理两层Harness；后者依据动作失败修订控制、观察、技能和诊断工具，通过实测门禁保留可复用修改而不改变模型权重。",
+    "findings": "RoboDojo 42项任务五维等权Score68.14、SR62%，按42任务等权Score65.00、SR58.57%；AgileX PiPER五项真机任务共25次报告Score90.60、SR84%。均为作者报告，不是官方RoboDojo-Real统一排名。",
+    "limitations": "每任务选定不同的工具和技能部署版本，在线模型调用和离线Meta-Agent开发开销不能忽略；五维宏平均与42任务平均不同；真机仅25次实验，完整复现代码/日志开放状态缺证据。",
+    "insight": "机器人可用动作与观察工具的质量可能决定冻结模型执行能力；可维护的工具和失败诊断对长期任务有价值，但不能仅比较系统最终成功率而忽略调试资源。",
+    "readingFocus": "任务/元代理、冻结模型、工具改动和回归门禁、RoboDojo双平均口径、困难子集负结果、真机动作修订。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-14依据arXiv v1全文Table1–4及附录核验；成绩为作者报告，未作独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1全文",
+        "url": "https://arxiv.org/html/2610.08995v1"
+      },
+      {
+        "label": "首发元数据",
+        "url": "https://arxiv.org/abs/2610.08995"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.08995",
+    "arxiv": "2610.08995",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-06",
+    "firstArxivSource": "https://arxiv.org/abs/2610.08995v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-06",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-14",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-06",
+        "observedAt": "2026-10-14",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.08995v1",
+        "note": "按UTC初版日期核验，未推断后续录用。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-14",
+    "verifiedAt": "2026-10-14",
+    "version": "arXiv:2610.08995v1 · 2026-10-14",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "为何冻结的VLM仍需不断改进周围的控制接口",
+        "body": "视觉语言模型具备理解任务的潜力，却经常因末端坐标、行动工具、视觉观测时机或错误后的反馈机制而执行失败。PhysEvo把可改进对象放在模型外部：Task Agent使用工具进行实际操作，Meta Agent读取轨迹后修改技能和诊断代码。基础模型权重保持冻结。核心科学问题不是“更多提示词是否有用”，而是物理后果能否形成可审计、可测试并保留到下一任务的软件修订。这个路径还引入额外的模型调用和开发试验，因此与一遍前馈VLA不能只比较成功率。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · 为何冻结的VLM仍需不断改进周围的控制接口",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "roles",
+        "title": "Task Harness和Meta Harness的权限与状态区分",
+        "body": "同一冻结Astra模型分别承担任务执行和元改进两种角色，但使用相互隔离的上下文和工具权限。前者取得指令、图像、机器人关节数据，调用运动或测量接口并获得结果；后者查看连续轨迹、复盘失败、创建或编辑技能及诊断工具，然后在受控布局上验证。评测器和机器人动力学不可由代理编辑。当前执行episode可暂存观测，跨episode的持久变化则只来自被接受的工具修订；作者明确测试布局不作为版本选择的开发数据。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · Task Harness和Meta Harness的权限与状态区分",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "motor",
+        "title": "用关节级控制和姿态重排修补工具层缺陷",
+        "body": "最初Harness支持TCP末端目标与本地逆运动学，但机械臂可能因关节限制、夹爪朝向或碰撞而无法可靠接近目标。作者通过失败轨迹在工具中增加关节级命令、姿态候选选择、接近路径与夹持检查，让高层模型决定何时需要重新定位与改变角度。研究价值是把姿态和执行手段也作为策略可选择的决策，而非仅生成一次末端位置。由于不同机器人硬件的动作和相机配置不同，工具改进的可移植性仍是未解决问题。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · 用关节级控制和姿态重排修补工具层缺陷",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "perception",
+        "title": "主动视觉观测何以改变最终执行",
+        "body": "机器人在不同距离读取同一物体时，像素、深度和标定误差的实际影响不同。PhysEvo提供不会自动推进动作状态的观察工具、历史帧回看以及几何估计接口，允许任务代理主动获取更合适的证据。论文在真实PiPER上发现远处直接使用几何定位不稳定，于是把流程改为视觉引导粗接近、到近处再以几何细调。这说明观测的时间和地点也是控制策略的一部分；额外图像获取与推理具有实质延迟和反馈成本，不能被当成免费的oracle环境状态。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · 主动视觉观测何以改变最终执行",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "self-improve",
+        "title": "继承式诊断：修的不只是动作技能",
+        "body": "执行后元代理查看对齐的图像、关节和工具执行记录，提出代码级修订并在独立场景测试。一个案例中盒子最后无法到达目标位置，回放显示真正原因是更早阶段手腕与盒边接触，之前的工具只看最终错误会归因到抓放逻辑；新修订要求先越过盒边再进行转向。作者进一步让元代理复用此前开发的轨迹审阅和原因定位工具，形成对诊断方法本身的改进。论文主要提供了行为案例，并未量化所有任务都能递归获益的范围。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · 继承式诊断：修的不只是动作技能",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "RoboDojo五维宏平均并非简单42任务平均",
+        "body": "论文覆盖RoboDojo仿真42项任务，每项使用5个held-out布局、每布局一次执行；不同任务的固定部署技能版本允许在开发期分别形成，但测试时不修改。主表先在Generalization、Precision、Long-Horizon、Memory和Open各类内部平均，再对五类使用相同权重，因此类别有多少任务不改变最终权重。作者另算42个任务各自等权的聚合，得到不同SR与Score。开始测试时还会清理临时历史帧索引和会话状态，以限制测试集信息向持久工具的泄漏。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · RoboDojo五维宏平均并非简单42任务平均",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "scores",
+        "title": "Score68.14、SR62.00及42任务等权结果均须保留",
+        "body": "Table1五维宏平均下，PhysEvo的Score为68.14/100、完整成功率SR为62.00%；各类SR是Generalization45、Precision40、Long-Horizon45、Memory100、Open80。作为参考，RoboDawn one-shot得到Score54.63、SR47.17，但两种Agent系统的工具流程和开发费用并不相同。作者同时给出对42任务等权的Score65.00和SR58.57，这不是前一组数值的误差，而是聚合公式发生变化。任何Benchmark排名都必须连同具体指标和权重解释。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · Score68.14、SR62.00及42任务等权结果均须保留",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "failure",
+        "title": "困难任务子集显示收益与明显反例",
+        "body": "论文在外部预设的8项对直接Astra特别困难的任务上报告PhysEvo SR55%、Score62.88，相比直接Astra只有1.25% SR有显著提高。但并非全面领先：Build tower只达到20%成功，低于Simate-beta的83.33%；Laptop/headphones与Fill pen holder两任务仍未成功。在另外10项与Direct和Hybrid比较的操作任务中，作者报告PhysEvo 68% SR，对照分别为26%与48%。这些任务由不同条件筛选，不可用更高的局部数字覆盖42项任务整体结果。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · 困难任务子集显示收益与明显反例",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "real",
+        "title": "五项PiPER真机任务各测5次，共25次",
+        "body": "作者以经过仿真改进的工具库在AgileX PiPER上继续运行和修改技能，评测任务为叠方块、叠碗、放置笔、倒水和书写PhysEvo。Table4中前面三项每项均5/5成功，后两项各3/5成功，因此共25次中的21次完整成功，对应SR84%、Score90.60。倒水失败促使元代理调整瓶口与杯子相对位置以补偿水流惯性，远端定位失败促使工具改为视觉先行和近距离几何辅助。该试验不是RoboDojo Real官方18任务跨三机器人协议，不能形成官方同榜名次。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · 五项PiPER真机任务各测5次，共25次",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "系统演化不等于训练一个更强的VLA权重",
+        "body": "运行时PhysEvo仍多次调用冻结Astra，并允许为不同任务保存不同的已验证技能版本；Meta Agent的诊断和改代码还需要额外模型调用、模拟器运行与硬件试验。相对于固定单一checkpoint的VLA，比较应控制执行时间、开发数据、软件工具以及任务定制。论文没有展示独立第三方对全套Harness与25次真机试验的复现，完整代码和轨迹开放状态也需另行查证。它证明了特定系统接口可被实测改善，而非无需新的工程投入就通用解决真实操纵。",
+        "sources": [
+          {
+            "label": "arXiv:2610.08995v1 · 系统演化不等于训练一个更强的VLA权重",
+            "url": "https://arxiv.org/html/2610.08995v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.08995v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "PhysEvo · RoboDojo与PiPER原始结果",
+        "columns": [
+          "Protocol",
+          "Score",
+          "SR (%)",
+          "Test scope"
+        ],
+        "rows": [
+          [
+            "RoboDojo five dimensions equal weight",
+            "68.14",
+            "62.00",
+            "42 tasks, five held-out layouts/task"
+          ],
+          [
+            "RoboDojo all 42 tasks equal weight",
+            "65.00",
+            "58.57",
+            "Different task aggregation"
+          ],
+          [
+            "AgileX PiPER five real tasks",
+            "90.60",
+            "84.00",
+            "25 real trials, not RoboDojo Real"
+          ]
+        ],
+        "locator": "Tables 1 and 4, §§5.1–5.6",
+        "caption": "五维等权和任务等权不是同一总分；真机平台与官方RoboDojo-Real协议不同。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-14",
+      "note": "RoboDojo 42任务Score/SR按作者原文分轨；五维宏平均，不与官方固定模型快照同榜。PiPER定制真实任务只保留阅读正文。"
+    }
+  }
+}

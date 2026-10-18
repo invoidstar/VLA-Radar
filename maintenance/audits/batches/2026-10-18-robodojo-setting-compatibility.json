@@ -1,0 +1,8 @@
+{
+  "id": "2026-10-18-robodojo-setting-compatibility",
+  "date": "2026-10-18",
+  "summary": "修正RoboDojo 42任务作者论文报告与既有官网42任务协议的Evaluation Setting映射：COAP/PhysEvo仍保留原始track、训练预算、种子/回合、不同原表任务列及paper-table展示，却不因报告论文和列覆盖差异制造4个新Setting；增加回归测试确保两类指标独立、部分列覆盖与官方口径对齐。无新增或篡改结果值，不推进不完整的Discovery或News成功检查点。",
+  "notes": [],
+  "tracks": [],
+  "results": []
+}

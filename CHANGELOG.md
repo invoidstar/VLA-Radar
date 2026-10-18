@@ -1,3 +1,15 @@
+## 2026-10-18 — 2026-10-18-robodojo-setting-compatibility
+
+修正RoboDojo 42任务作者论文报告与既有官网42任务协议的Evaluation Setting映射：COAP/PhysEvo仍保留原始track、训练预算、种子/回合、不同原表任务列及paper-table展示，却不因报告论文和列覆盖差异制造4个新Setting；增加回归测试确保两类指标独立、部分列覆盖与官方口径对齐。无新增或篡改结果值，不推进不完整的Discovery或News成功检查点。
+
+## 2026-10-14 — 2026-10-14-robodojo-source-followup
+
+RoboDojo缺失论文与结果来源专项：完成Embodied Turing Machines（COAP, arXiv2610.12369v1）与PhysEvo（arXiv2610.08995v1）的正文级深读，新增4条42任务作者报告的Score/SR记录并明确五维宏平均、不同开发预算及非官方模型提交；核验XPolicyLab中Simate-beta、Rex-M1 Preview、Liber-0 Lite推理适配器的论文待发布边界与Liber-0 Preview官方模型身份。保留独立官方快照及源Git版本，不虚构论文或最新排名；完整Discovery checkpoint不前移。本批将已编辑的canonical源、构建索引、验证与审计统一纳入可追溯发布链路。
+
+## 2026-10-14 — 2026-10-14-robodojo-sources
+
+补全RoboDojo四个未发表Preview模型的XPolicyLab官方适配器及资源证据，全文深读COAP/PhysEvo两篇新的具身智能论文，保存4条不同任务/聚合口径的作者报告Score/SR；不将官方模型当作已发表论文，不改写官方模型成绩或四lane Discovery成功检查点。
+
 ## 2026-10-13 — 2026-10-13-source-paper-catchup
 
 核验ViGAR、PatchWAM、ME-Dex 1.0三篇完整正文并新增8条精确表格结果；对RoboTwin官方模型与论文身份建立版本对齐，RoboDojo PhysicalRSI/Awomo-0.5仅补一手项目/模型卡链接，不虚构论文。两种RoboTwin训练预算及LIBERO/Plus任务分开；Discovery checkpoint不前移。 深读对照表严格以字符串保留原报告数字和单位。 新论文增加原始track后，测试验证既有六个核心协议族不丢失，同时允许已核验的新来源track，不把历史分类数量设为永久上限。

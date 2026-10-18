@@ -3482,6 +3482,89 @@
         }
       ],
       "verifiedAt": "2026-10-13"
+    },
+    "p134": {
+      "item": {
+        "type": "article",
+        "title": "Embodied Turing Machines: Stateful Code for Robot Recursive Self-Improvement",
+        "author": [
+          {
+            "literal": "Kairui Hu"
+          },
+          {
+            "literal": "Siyuan Hu"
+          },
+          {
+            "literal": "Fangzhou Hong"
+          },
+          {
+            "literal": "Zhaoxi Chen"
+          },
+          {
+            "literal": "Ziwei Liu"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              8
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2610.12369"
+      },
+      "sources": [
+        {
+          "label": "arXiv v1 作者及初始日期",
+          "url": "https://arxiv.org/abs/2610.12369"
+        }
+      ],
+      "verifiedAt": "2026-10-14"
+    },
+    "p135": {
+      "item": {
+        "type": "article",
+        "title": "PhysEvo: Astra Can Act, Let It",
+        "author": [
+          {
+            "literal": "Wenqing Tian"
+          },
+          {
+            "literal": "Zeyu Zhang"
+          },
+          {
+            "literal": "Zhaocheng Liu"
+          },
+          {
+            "literal": "Fengwei Liu"
+          },
+          {
+            "literal": "Qiang Liu"
+          },
+          {
+            "literal": "Liang Wang"
+          }
+        ],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              6
+            ]
+          ]
+        },
+        "URL": "https://arxiv.org/abs/2610.08995"
+      },
+      "sources": [
+        {
+          "label": "arXiv v1 作者及初始日期",
+          "url": "https://arxiv.org/abs/2610.08995"
+        }
+      ],
+      "verifiedAt": "2026-10-14"
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "id": "r-physevo-v1-robodojo-sim-score",
+  "paperId": "p135",
+  "method": "PhysEvo",
+  "trackId": "robodojo-physevo-v1-sim-score",
+  "values": {
+    "Generalization": 51.08,
+    "Precision": 50.38,
+    "Long-Horizon": 56.38,
+    "Memory": 100,
+    "Open": 82.88,
+    "Average": 68.14
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-14",
+  "source": "https://arxiv.org/html/2610.08995v1",
+  "sourceVersion": "arXiv 2610.08995v1",
+  "locator": "Table 1 PhysEvo row, Score columns",
+  "attribution": "author-reported",
+  "trainingData": "Frozen Astra online, evolving task/meta tools, five held-out layouts/task",
+  "evaluationNotes": "Five dimensions equal-weight. Equivalent all-42-task equal-weight Score 65.00 is a different aggregation and not substituted. Paper uses other test budget than RoboDojo official snapshots.",
+  "supersedes": ""
+}

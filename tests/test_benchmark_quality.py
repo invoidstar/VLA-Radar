@@ -74,3 +74,36 @@ def test_budget_sweeps_and_repeated_reports_remain_in_archives():
     assert len(sweep)==1 and sweep[0]['displayTier']=='sweep'
     assert sum(s['primaryResultCount'] for s in settings)==registry['primaryResultCount']
     assert sum(s['resultCount'] for s in settings)==len([x for x in rows if x['evidence']=='checked' and not x.get('superseded')])
+
+def test_robodojo_coap_and_physevo_are_paper_reports_not_official_ranks():
+    _,_,_,tracks,rows,_,settings=_data()
+    canonical={"robodojo-coap-v1-sim-sr","robodojo-coap-v1-sim-score",
+               "robodojo-physevo-v1-sim-sr","robodojo-physevo-v1-sim-score"}
+    present={t['id'] for t in tracks}
+    assert canonical<=present
+    selected=[r for r in rows if r['trackId'] in canonical]
+    assert len(selected)==4
+    assert all(r['displayTier']=='paper' for r in selected)
+    # A shared official Evaluation Setting may legitimately contain primary rows from other tracks.
+    # The invariant is that these four author-reported tracks themselves remain paper-table evidence,
+    # not that every Setting containing them has zero primary rows.
+    track_by_id={t['id']:t for t in tracks}
+    assert all(track_by_id[r['trackId']]['comparisonScope']=='paper-table' for r in selected)
+    assert all(s['dataset']=='RoboDojo' for s in settings if set(s['trackIds'])&canonical)
+
+def test_robodojo_author_report_partial_columns_reuse_official_42_task_settings():
+    """Same 42-task evaluation question must not split by source paper or reported columns."""
+    _,_,_,tracks,rows,_,settings=_data()
+    from benchmark_settings import protocol_compatibility
+    track_by_id={t['id']:t for t in tracks}
+    for method in ('coap','physevo'):
+        for metric in ('sr','score'):
+            tid=f'robodojo-{method}-v1-sim-{metric}'
+            official=f'robodojo-official-sim-multi-{metric}'
+            matched=[s for s in settings if tid in s['trackIds']]
+            assert len(matched)==1
+            assert official in matched[0]['trackIds']
+            assert protocol_compatibility(track_by_id[tid],track_by_id[official])=='partial'
+            assert track_by_id[tid]['comparisonScope']=='paper-table'
+    assert all(r['displayTier']=='paper' for r in rows if r['trackId'].startswith(
+        ('robodojo-coap-v1-sim-', 'robodojo-physevo-v1-sim-')))

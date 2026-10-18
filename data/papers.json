@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-18",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,101 @@
     }
   ],
   "papers": [
+    {
+      "id": "p134",
+      "name": "Embodied Turing Machines (COAP)",
+      "title": "Embodied Turing Machines: Stateful Code for Robot Recursive Self-Improvement",
+      "team": "Kairui Hu、Siyuan Hu、Fangzhou Hong、Zhaoxi Chen、Ziwei Liu",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1预印本",
+      "firstPublished": "2026-10-08",
+      "dateNote": "arXiv v1 首发2026-10-08（UTC），2026-10-14原文核验。",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-08首发 · v1深读",
+      "topics": [
+        "evaluation",
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "COAP",
+        "code-only policy",
+        "embodied RSI",
+        "RoboDojo",
+        "programmatic perception"
+      ],
+      "priority": "deep",
+      "contribution": "提出Code-Only-as-Policy，以可编程状态和共享的机器人控制代码替代执行中反复调用VLA/VLM，离线编码代理通过多分支验证和失败修订更新程序库。",
+      "findings": "RoboDojo 42项仿真任务作者报告SR70.24%、Score75.45，Memory成功率89.9%、Precision75.1%；与官网固定模型提交快照不同。",
+      "limitations": "依赖相机和已知几何资产、完整可执行任务程序及可准确测量的接触状态；全部结果在仿真中，离线代码优化仍有不小计算/开发开销。",
+      "insight": "显式状态和代码恢复为VLA提供值得关注的强基线，但必须同时报告任务专用逻辑、已知环境先验和开发资源，不能将单次执行效率视为通用智能。",
+      "readingFocus": "状态结构、几何测量、共享动作库、编码代理验证、RoboDojo全任务结果、错误分布与真实迁移限制。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-14依据arXiv v1完整HTML与Table2及附录核验；成绩仅为作者报告，非官网提交或本站独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文",
+          "url": "https://arxiv.org/html/2610.12369v1"
+        },
+        {
+          "label": "arXiv最早公开",
+          "url": "https://arxiv.org/abs/2610.12369"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.12369",
+      "arxiv": "2610.12369",
+      "doi": ""
+    },
+    {
+      "id": "p135",
+      "name": "PhysEvo",
+      "title": "PhysEvo: Astra Can Act, Let It",
+      "team": "Wenqing Tian、Zeyu Zhang、Zhaocheng Liu、Fengwei Liu、Qiang Liu、Liang Wang",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1预印本",
+      "firstPublished": "2026-10-06",
+      "dateNote": "首发2026-10-06（UTC）按arXiv v1锁定，2026-10-14深读验证。",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-06首次公开 · v1核验",
+      "topics": [
+        "evaluation",
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "physical RSI",
+        "RoboDojo",
+        "agent harness",
+        "tool revision",
+        "real robot",
+        "Astra"
+      ],
+      "priority": "deep",
+      "contribution": "以一个冻结Astra模型运行任务代理与元代理两层Harness；后者依据动作失败修订控制、观察、技能和诊断工具，通过实测门禁保留可复用修改而不改变模型权重。",
+      "findings": "RoboDojo 42项任务五维等权Score68.14、SR62%，按42任务等权Score65.00、SR58.57%；AgileX PiPER五项真机任务共25次报告Score90.60、SR84%。均为作者报告，不是官方RoboDojo-Real统一排名。",
+      "limitations": "每任务选定不同的工具和技能部署版本，在线模型调用和离线Meta-Agent开发开销不能忽略；五维宏平均与42任务平均不同；真机仅25次实验，完整复现代码/日志开放状态缺证据。",
+      "insight": "机器人可用动作与观察工具的质量可能决定冻结模型执行能力；可维护的工具和失败诊断对长期任务有价值，但不能仅比较系统最终成功率而忽略调试资源。",
+      "readingFocus": "任务/元代理、冻结模型、工具改动和回归门禁、RoboDojo双平均口径、困难子集负结果、真机动作修订。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-14依据arXiv v1全文Table1–4及附录核验；成绩为作者报告，未作独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文",
+          "url": "https://arxiv.org/html/2610.08995v1"
+        },
+        {
+          "label": "首发元数据",
+          "url": "https://arxiv.org/abs/2610.08995"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.08995",
+      "arxiv": "2610.08995",
+      "doi": ""
+    },
     {
       "id": "p131",
       "name": "ViGAR",

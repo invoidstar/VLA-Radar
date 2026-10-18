@@ -1191,6 +1191,18 @@
       "level": "baseline",
       "note": "官方仓库公开RoboTwin实现、触觉数据与后续AE/VAE权重；更新checkpoint与论文v2主表版本不同，资源状态需逐项核验。",
       "items": {}
+    },
+    "p134": {
+      "verifiedAt": "2026-10-14",
+      "level": "baseline",
+      "note": "论文全文与RoboDojo仿真作者结果已核查；完整COAP共享库和每任务可复现脚本未由本批证实对外开放。",
+      "items": {}
+    },
+    "p135": {
+      "verifiedAt": "2026-10-14",
+      "level": "baseline",
+      "note": "论文全文、仿真与PiPER真机原表已核查；Meta/Task Harness、可执行工具及训练日志全流程公开程度仍未知。",
+      "items": {}
     }
   }
 }

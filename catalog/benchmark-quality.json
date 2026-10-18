@@ -218,13 +218,21 @@
     "safeloop-v1-libero-safety": "safety-24",
     "toast-v1-libero-data-scale": "training-fractions-40",
     "robocasa-original-5composite-v1": "5-composite",
-    "gam-v1-robotwin50-single-task": "gam-reported-50"
+    "gam-v1-robotwin50-single-task": "gam-reported-50",
+    "robodojo-coap-v1-sim-sr": "success-e577f06e",
+    "robodojo-coap-v1-sim-score": "score-e577f06e",
+    "robodojo-physevo-v1-sim-sr": "success-e577f06e",
+    "robodojo-physevo-v1-sim-score": "score-e577f06e"
   },
   "trackTiers": {
     "safeloop-v1-libero-safety": "paper",
     "toast-v1-libero-data-scale": "sweep",
     "robocasa-original-5composite-v1": "paper",
-    "gam-v1-robotwin50-single-task": "paper"
+    "gam-v1-robotwin50-single-task": "paper",
+    "robodojo-coap-v1-sim-sr": "paper",
+    "robodojo-coap-v1-sim-score": "paper",
+    "robodojo-physevo-v1-sim-sr": "paper",
+    "robodojo-physevo-v1-sim-score": "paper"
   },
   "resultTiers": {
     "r-libero-infoentropy-v1-budget60-ours": "sweep",
