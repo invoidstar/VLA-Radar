@@ -84,7 +84,11 @@ def test_robodojo_coap_and_physevo_are_paper_reports_not_official_ranks():
     selected=[r for r in rows if r['trackId'] in canonical]
     assert len(selected)==4
     assert all(r['displayTier']=='paper' for r in selected)
-    assert sum(s['primaryResultCount'] for s in settings if set(s['trackIds'])&canonical)==0
+    # A shared official Evaluation Setting may legitimately contain primary rows from other tracks.
+    # The invariant is that these four author-reported tracks themselves remain paper-table evidence,
+    # not that every Setting containing them has zero primary rows.
+    track_by_id={t['id']:t for t in tracks}
+    assert all(track_by_id[r['trackId']]['comparisonScope']=='paper-table' for r in selected)
     assert all(s['dataset']=='RoboDojo' for s in settings if set(s['trackIds'])&canonical)
 
 def test_robodojo_author_report_partial_columns_reuse_official_42_task_settings():
