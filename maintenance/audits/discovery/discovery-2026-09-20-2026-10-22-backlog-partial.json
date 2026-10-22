@@ -200,7 +200,7 @@
     "deferred": 6,
     "excluded": 0,
     "duplicate": 3,
-    "crossSource": 8
+    "crossSource": 9
   },
   "status": "partial",
   "notes": "The academic-index lane is blocked; this maintenance batch is a verified content update, not full multi-provider discovery. Keep historical deferred candidates and lastSuccessfulSearchAt 2026-10-04; re-run four lanes later before advancing checkpoint."
