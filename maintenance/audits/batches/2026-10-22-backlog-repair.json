@@ -1,0 +1,823 @@
+{
+  "id": "2026-10-22-backlog-repair",
+  "date": "2026-10-22",
+  "summary": "正文级复核TurboVLA v3与SeeR-VLA v2（p027、p011），保留v2/v1旧证据，新增四条来源限定评测轨道与八条主结果（RoboCasa、Franka、LIBERO、RoboTwin）；校正pointmap项目源码身份，并将TurboVLA、Fast-VLA复现资源提升为逐维deep审计。不同训练预算不合并排名。",
+  "notes": [
+    {
+      "paperId": "p011",
+      "expectedVersion": "arXiv 2607.11498 v1；§3–6、附录B–D",
+      "note": {
+        "status": "expanded",
+        "updatedAt": "2026-10-22",
+        "verifiedAt": "2026-10-22",
+        "version": "arXiv:2607.11498v2 · 2026-10-22全文核验",
+        "sections": [
+          {
+            "id": "problem",
+            "title": "研究问题：相机坐标的观察，为什么难以预测机器人坐标的动作？",
+            "body": "同一个目标物在相机移动后会出现在不同像素位置，但机器人需要执行的末端位移可能完全相同。固定相机时模型可以记住观察到动作的映射，多相机或移动视角则暴露出坐标系不匹配。本文将几何变换在输入端显式完成，而不是要求VLA自己从相机参数中学出完整坐标转换。\n其重点是表示设计而非新型动作头：把每个像素的三维位置写成机器人坐标，仍保留二维图像网格，兼容已有视觉编码器和视觉语言骨干。",
+            "sources": [
+              {
+                "label": "原文v2 · 研究问题：相机坐标的观察，为什么难以预测机器人坐标的动作？",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          },
+          {
+            "id": "novelty",
+            "title": "贡献：同样的几何信息，不同的表示方式",
+            "body": "v2明确把机器人中心pointmap的几何信息分成坐标原点与坐标轴方向两种设计自由度。Table III中基座原点/基座轴34.4%、基座原点/末端轴33.4%、末端原点/末端轴34.9%、末端原点/基座轴36.8%。末端原点让相对抓取距离更稳定，基座轴不因手腕旋转让物体坐标跟着旋转。上述是受控表示实验，不是主表π0.5的61.5%成绩；需要区分初始化、示范量、随机种子和可见场景差异。",
+            "sources": [
+              {
+                "label": "原文v2 · 贡献：同样的几何信息，不同的表示方式",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          },
+          {
+            "id": "geometry",
+            "title": "pointmap构造：提升、变换、重定心",
+            "body": "v2将RGB-D相机每个像素利用深度和内参反投影为三维点，按外参转换到机器人基座，再减去当前末端位置。最重要的是原点采用末端执行器、方向轴仍与基座对齐：前者显式刻画对象相对夹爪位置，后者避免手腕旋转改变场景坐标轴。输出保留与RGB相同的H×W网格而不是稀疏点云，使预训练视觉特征能逐空间token融合。相机标定、深度和末端运动学不可缺少，坐标一致也无法保证遮挡的视野完全不变。",
+            "sources": [
+              {
+                "label": "原文v2 · pointmap构造：提升、变换、重定心",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          },
+          {
+            "id": "fusion",
+            "title": "怎样接入既有VLA而不增加序列长度",
+            "body": "模型用单独的预训练权重初始化的pointmap视觉编码器，按patch位置将几何token与RGB token逐元素相加，不增加送入后续动作策略的token数量，却增加了几何编码器与深度投影开销。v2 Table II明确比较点云加法31.4%、pointmap token拼接30.3%、通道拼接31.6%、pointmap加法34.4%；这些受控结果说明稠密图像对齐与融合接口值得重视，而不是证明任意点云方法都不适用。不能把额外传感、标定数据视为免费输入。",
+            "sources": [
+              {
+                "label": "原文v2 · 怎样接入既有VLA而不增加序列长度",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          },
+          {
+            "id": "protocol",
+            "title": "控制分析与最终模型比较不是同一初始化",
+            "body": "v2主实验使用RoboCasa原版24项原子任务，不是RoboCasa365；每任务50条人类示范，按三个训练随机种子报告，并保留任务类别的成功率。四类为抓放8、开关6、旋钮杠杆5以及按键插入5；v2的总平均由作者原表给出。真机测试使用Franka Research 3，四项具体操作、每项20次测试与相机观测配置均与仿真独立；不能把Franka作者四任务报告当作统一官方排行榜。历史v1受控几何表与v2主表训练/评测条件不同，保留原v1 Result ID及来源。",
+            "sources": [
+              {
+                "label": "原文v2 · 控制分析与最终模型比较不是同一初始化",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          },
+          {
+            "id": "results",
+            "title": "关键结果：预计算坐标和末端中心化都有可见作用",
+            "body": "v2 Table I：RoboCasa24任务RGB-only π0.5为55.1%±0.3%，PointVLA为58.0%±0.7%，SeeR-VLA为61.5%±1.2%；相较RGB提升6.4个百分点，相较PointVLA提升3.5个百分点。Franka四任务每任务20回合：RGB-only 37.5%，PointVLA 46.3%，SeeR-VLA 70.0%，提升32.5与23.7个百分点。真机各项SeeR成功率75%、55%、85%、65%，不能把均值外推为任意接触操作通用成功率。v1报告的RGB-only等旧数字对应不同实验条件，不再作为v2结果。",
+            "sources": [
+              {
+                "label": "原文v2 · 关键结果：预计算坐标和末端中心化都有可见作用",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          },
+          {
+            "id": "limits",
+            "title": "局限：坐标一致不等于图像完全视角不变",
+            "body": "pointmap确保可见物理点的坐标一致，但视角变化仍会改变遮挡、可见区域和像素采样，因而不能称为彻底消除视角差异。深度空洞、透明反光物体、标定偏移与状态延迟可能直接破坏输入几何。\n二维编码器对pointmap值域和局部结构的适应，也需要训练而非直接套用RGB语义。该方法特别适合有可靠RGB-D和相机标定的操作系统；在只有单目视频、缺少外参或移动相机难标定时，其前置条件不能被忽略。",
+            "sources": [
+              {
+                "label": "原文v2 · 局限：坐标一致不等于图像完全视角不变",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          },
+          {
+            "id": "reading",
+            "title": "图表阅读：将坐标变换和网络学习分开",
+            "body": "阅读v2应先看pointmap从深度到基座坐标与末端原点的转换，再核对Table II的RGB/深度/Plücker/点图输入对照及Table III的坐标选择消融，最后看Table I的24个RoboCasa任务和四个真实Franka任务。受控RGB-only25.6%、仅深度29.6%、仅Plücker29.3%、深度+射线31.7%、点图相加34.4%，这些对照不应混同于预训练π0.5的55.1%与61.5%。回看相机多样性研究时还需检查训练视角和真实标定误差。",
+            "sources": [
+              {
+                "label": "原文v2 · 图表阅读：将坐标变换和网络学习分开",
+                "url": "https://arxiv.org/html/2607.11498v2"
+              }
+            ]
+          }
+        ],
+        "coverage": {
+          "level": "deep",
+          "scope": "primary-methods-experiments",
+          "source": "https://arxiv.org/html/2607.11498v2"
+        },
+        "figures": [
+          {
+            "title": "SeeR-VLA v2 几何输入构造与网络结构",
+            "url": "https://arxiv.org/html/2607.11498v2",
+            "caption": "从原图阅读深度反投影、相机外参、末端原点和基座轴固定的区别；链接一手来源而非复制未核实许可的图片。"
+          }
+        ],
+        "tables": [
+          {
+            "title": "SeeR-VLA v2 RoboCasa24",
+            "columns": [
+              "Model",
+              "Pick&Place",
+              "Open/Close",
+              "Knob/Lever",
+              "Button/Insert",
+              "Average"
+            ],
+            "rows": [
+              [
+                "RGB-only π0.5",
+                "45.2±0.8",
+                "81.6±2.1",
+                "41.6±2.4",
+                "52.7±1.4",
+                "55.1±0.3"
+              ],
+              [
+                "PointVLA",
+                "47.7±1.8",
+                "86.6±0.2",
+                "42.5±2.8",
+                "55.7±1.0",
+                "58.0±0.7"
+              ],
+              [
+                "SeeR-VLA",
+                "52.9±0.3",
+                "88.0±1.7",
+                "46.1±1.4",
+                "58.8±2.9",
+                "61.5±1.2"
+              ]
+            ],
+            "locator": "v2 Table I / §IV-B",
+            "caption": "作者主表成功率均值及误差；与旧v1受控几何实验的分数及设置不混合。"
+          },
+          {
+            "title": "SeeR-VLA v2 Franka四任务",
+            "columns": [
+              "Model",
+              "PickPlace",
+              "Stack",
+              "OpenDrawer",
+              "PegHole",
+              "Average"
+            ],
+            "rows": [
+              [
+                "RGB-only π0.5",
+                "50.0",
+                "15.0",
+                "65.0",
+                "20.0",
+                "37.5"
+              ],
+              [
+                "PointVLA",
+                "45.0",
+                "30.0",
+                "75.0",
+                "35.0",
+                "46.3"
+              ],
+              [
+                "SeeR-VLA",
+                "75.0",
+                "55.0",
+                "85.0",
+                "65.0",
+                "70.0"
+              ]
+            ],
+            "locator": "v2 Table I / §IV-B",
+            "caption": "四任务每任务20次的作者真机报告，独立于RoboCasa仿真和官方榜单。"
+          },
+          {
+            "title": "SeeR-VLA v2 坐标设计消融",
+            "columns": [
+              "Origin",
+              "Axes",
+              "SR"
+            ],
+            "rows": [
+              [
+                "Robot base",
+                "Robot base",
+                "34.4"
+              ],
+              [
+                "Robot base",
+                "End effector",
+                "33.4"
+              ],
+              [
+                "End effector",
+                "End effector",
+                "34.9"
+              ],
+              [
+                "End effector",
+                "Robot base",
+                "36.8"
+              ]
+            ],
+            "locator": "v2 Table III",
+            "caption": "坐标选择受控消融与完整预训练模型主表属于不同实验设置。"
+          }
+        ],
+        "benchmarkReview": {
+          "status": "extracted",
+          "checkedAt": "2026-10-22",
+          "note": "历史v1 24条来源结果继续保留；新增v2 RoboCasa24任务与Franka四任务独立track，原表主方法与报告基线逐行保留，避免假设不同版本同一初始化。"
+        }
+      }
+    },
+    {
+      "paperId": "p027",
+      "expectedVersion": "arXiv:2607.27205v2 · 2026-10-22复核正文与官方项目",
+      "note": {
+        "status": "expanded",
+        "updatedAt": "2026-10-22",
+        "verifiedAt": "2026-10-22",
+        "version": "arXiv:2607.27205v3 · 2026-10-22全文及附录核验",
+        "sections": [
+          {
+            "id": "problem",
+            "title": "研究问题：执行级语言指令，是否每次都需要经过大语言骨干？",
+            "body": "v3沿用TurboVLA的V+L→A核心思想：不让大语言模型成为每次机器人控制推理的中心桥梁，而是分别编码视觉和指令，让轻量图文交互直接产生用于动作解码的控制条件。它目标是低层执行级指令的速度和显存效率，不代表复杂语言问答、开放任务分解、长程逻辑推理都可以直接删去LLM。新版本增加mixed demo的RoboTwin双臂评测，应结合不同数据预算与模型大小理解，而不是只记新的最高平均SR。",
+            "sources": [
+              {
+                "label": "原文v3 · 研究问题：执行级语言指令，是否每次都需要经过大语言骨干？",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "encoding",
+            "title": "输入表示：保留词级语义与多视角位置，不只给任务编号",
+            "body": "图像用DINOv3多视角视觉编码器：LIBERO为ViT-B、RoboTwin为ViT-L；使用视觉patch位置及相机身份保留空间关系。语言由BERT-base-uncased进行词级编码，并投影进入256维图文交互空间，本体状态由独立状态输入到动作解码器。交互初始化使用Grounding DINO特征增强模块，故没有额外机器人预训练不等于语言、视觉和grounding都未使用预训练。v3代码发布于官方Github，权重另外托管Hugging Face，DINOv3及权重的许可不必等同于代码Apache-2.0。",
+            "sources": [
+              {
+                "label": "原文v3 · 输入表示：保留词级语义与多视角位置，不只给任务编号",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "interaction",
+            "title": "双向交叉注意力为什么不等同于直接拼接",
+            "body": "六层轻量模块执行双向cross-attention：视觉query根据任务指令识别重要区域，语言query也从视觉特征中更新对象与属性语义，随后分别进行FFN与残差更新。v3 Table5报告在LIBERO无交互96.3%、语言query视觉96.8%、视觉query语言97.2%、完整双向97.6%；Appendix C Table10对应RoboTwin成绩82.58%、86.62%、87.08%、88.06%。支持在作者配置下双向交互更好，却不是跨论文不同训练预算下普遍最优的理论定理，更不能简单将模块增益相加。",
+            "sources": [
+              {
+                "label": "原文v3 · 双向交叉注意力为什么不等同于直接拼接",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "action",
+            "title": "动作生成与训练：一次并行回归整段，而不是少步扩散",
+            "body": "TurboVLA的动作生成是ACT式紧凑Transformer：H个可学习action query读取融合的视觉语言表示和机器人状态，MLP一次并行回归完整连续动作chunk，行为克隆使用L1动作误差监督，不是π0.5或其他策略中的多步Flow Matching去噪。LIBERO使用12步7维动作，RoboTwin使用50步14维绝对关节动作。较长chunk减少策略调用次数但可能降低对新观测的反应速度；仅31.2毫秒模型推理倒数不能称整机在视觉采集、通信、轨迹执行和接触控制全过程都有32Hz反馈。",
+            "sources": [
+              {
+                "label": "原文v3 · 动作生成与训练：一次并行回归整段，而不是少步扩散",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "protocol",
+            "title": "0.2B、32Hz与RoboTwin配置不能混用",
+            "body": "v3标准LIBERO四套共40任务使用no_noops RLDS，联合训练DINOv3 ViT-B配置40k步、有效batch128、4×RTX4090；每任务50次测试，总2000次。RoboTwin2.0的0.4B ViT-L模型改为2,500条clean和25,000条randomized混合示范，训练150k步、有效batch512、8×H100，50个任务的Clean与Randomized每条件100次评估，各5000次。此前v2 RoboTwin仅clean示范、55k步与独立checkpoint，不能把v3 mixed后的88.06%强行替换v2 clean-only的60.2%历史记录或包装为同预算模块增益。",
+            "sources": [
+              {
+                "label": "原文v3 · 0.2B、32Hz与RoboTwin配置不能混用",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "results",
+            "title": "主要结果：轻量执行有竞争力，但预训练先验仍存在",
+            "body": "v3 Table1的0.2B在LIBERO Spatial97.0、Object100.0、Goal98.2、Long95.2，原表平均97.6%；RTX4090 batch1标准推理31.2ms、显存0.9GiB。v3 Table2的RoboTwin50任务Clean88.02%、Randomized88.10%，二者平均88.06%；ViT-L推理43.4ms。真实AgileX Piper测试四任务，每任务40次，共160次，作者自报平均87.5%，通过从LIBERO模型继续微调每项65个示范约12.5k步获得，因此不等于260个真机示范从零训练；也不是RoboTwin或RoboDojo统一真机排行榜。",
+            "sources": [
+              {
+                "label": "原文v3 · 主要结果：轻量执行有竞争力，但预训练先验仍存在",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "ablation",
+            "title": "消融：语言含义、双向交流与适中容量都重要",
+            "body": "v3无语言平均68.5%、任务ID条件96.6%、完整语义指令97.6%，说明任务目标和物体语义很难完全用图像替代。文本编码器比较BERT与T5-Base均为97.6%、SigLIP-Base97.3%；这个表不是把DINOv3视觉编码器替换成SigLIP，而是替换指令文本表示。交互深度2层95.4%、4层96.9%、6层97.6%，8层并不一定继续提高。RoboTwin的无交互82.58%与完整双向88.06%是同文额外结构消融，但外部基线和本模型不保证预训练和训练预算完全一致。",
+            "sources": [
+              {
+                "label": "原文v3 · 消融：语言含义、双向交流与适中容量都重要",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "reading",
+            "title": "读图路线：省掉LLM中心，不是省掉跨模态理解",
+            "body": "阅读顺序应先核对Figure3的数据流和六层双向交互，再读Table1的LIBERO40任务成功率与RoboTwin50任务双环境Table2，特别关注v3训练数据变化与旧v2区别。之后按Table5、Appendix C Table10的两端交互消融、Table6的CUDA Graph加速逐项核对。代码和模型卡中的真实权重、数据清洗与action chunk控制接口对复现很关键。论文声称效率强但不能将小于1GiB显存套用0.4B ViT-L或整机部署。",
+            "sources": [
+              {
+                "label": "原文v3 · 读图路线：省掉LLM中心，不是省掉跨模态理解",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          },
+          {
+            "id": "source-scope",
+            "title": "提取边界与复现要求：保留作者对照，不造统一公平榜",
+            "body": "v3公开完整正文与附录A–C：LIBERO采用40k步及有效batch128，RoboTwin采用mixed 27,500 demo、150k步8×H100，不是v2的clean-only与55k配置。Table6普通前向31.2ms、CUDA Graph11.3ms，优化后7.42ms；这些是单RTX4090的策略运行范围，不包括机器人传感和控制。原v2的38条Results继续保留源版本，不用v3覆盖旧分数。对v3新版SR只新增两个来源限定track；没有报告的seed置信区间不猜。代码与权重的许可可能分别受Apache-2.0及DINOv3非同一条件限制，必须逐项注明。",
+            "sources": [
+              {
+                "label": "原文v3 · 提取边界与复现要求：保留作者对照，不造统一公平榜",
+                "url": "https://arxiv.org/html/2607.27205v3"
+              }
+            ]
+          }
+        ],
+        "coverage": {
+          "level": "deep",
+          "scope": "primary-methods-experiments",
+          "source": "https://arxiv.org/html/2607.27205v3"
+        },
+        "figures": [
+          {
+            "title": "TurboVLA v3 视觉语言交互结构",
+            "url": "https://arxiv.org/html/2607.27205v3",
+            "caption": "原文模型图展示独立图像/指令编码、词级双向交互与状态输入动作chunk解码器的对应关系；仅提供官方原文出处。"
+          },
+          {
+            "title": "TurboVLA v3 RoboTwin和效率附录",
+            "url": "https://arxiv.org/html/2607.27205v3",
+            "caption": "附录A–C验证v3 mixed数据、训练配置与CUDA Graph计时，避免以论文v2的旧方法结果取代新版表格。"
+          }
+        ],
+        "tables": [
+          {
+            "title": "v3 LIBERO 四套",
+            "columns": [
+              "Spatial",
+              "Object",
+              "Goal",
+              "Long",
+              "Average"
+            ],
+            "rows": [
+              [
+                "97.0",
+                "100.0",
+                "98.2",
+                "95.2",
+                "97.6"
+              ]
+            ],
+            "locator": "v3 Table 1",
+            "caption": "0.2B ViT-B型号；四套40个任务，单GPU推理31.2ms与显存0.9GiB不属于成功率列。"
+          },
+          {
+            "title": "v3 RoboTwin mixed 50任务",
+            "columns": [
+              "Clean",
+              "Randomized",
+              "Average"
+            ],
+            "rows": [
+              [
+                "88.02",
+                "88.10",
+                "88.06"
+              ]
+            ],
+            "locator": "v3 Table 2",
+            "caption": "0.4B ViT-L使用27,500条clean+randomized混合示范；旧v2 clean-only记录仍独立。"
+          },
+          {
+            "title": "v3 双向交互消融",
+            "columns": [
+              "Mode",
+              "LIBERO",
+              "RoboTwin"
+            ],
+            "rows": [
+              [
+                "No interaction",
+                "96.3",
+                "82.58"
+              ],
+              [
+                "Language query vision",
+                "96.8",
+                "86.62"
+              ],
+              [
+                "Vision query language",
+                "97.2",
+                "87.08"
+              ],
+              [
+                "Bidirectional",
+                "97.6",
+                "88.06"
+              ]
+            ],
+            "locator": "v3 Table 5 and Appendix C Table 10",
+            "caption": "作者同文对应结果，不是统一训练预算的跨论文排行榜。"
+          }
+        ],
+        "benchmarkReview": {
+          "status": "extracted",
+          "checkedAt": "2026-10-22",
+          "note": "旧v2结果独立保留；v3新建标准LIBERO与RoboTwin50 mixed clean/random协议track。交互与CUDA Graph消融保留深读，不与主要SR混合。"
+        }
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "id": "seer-v2-robocasa24-main",
+      "dataset": "RoboCasa",
+      "name": "SeeR-VLA v2 · RoboCasa原版24任务主表",
+      "version": "arXiv 2607.11498v2",
+      "tasks": "24 atomic tasks",
+      "split": "RoboCasa original 24 tasks; paper-reported three seeds",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Original RoboCasa 24 atomic tasks, 50 demos/task, three-seed author-reported means, not RoboCasa365; Table I.",
+      "trainingRegime": "pi0.5 pretraining and RGB-D pointmap augmentation under paper-defined task-specific fine-tuning.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickPlace",
+        "OpenClose",
+        "KnobLever",
+        "ButtonInsert",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.11498v2"
+    },
+    {
+      "id": "seer-v2-franka-real4",
+      "dataset": "SeeLikeRobot real",
+      "name": "SeeR-VLA v2 · Franka四任务真机",
+      "version": "arXiv 2607.11498v2",
+      "tasks": "4 real-world manipulation tasks",
+      "split": "Franka Research 3 real-robot seen camera; 20 trials/task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Four robot tasks 20 trials each, paper Table I; not RoboCasa24 or an official standardized real-robot leaderboard.",
+      "trainingRegime": "Franka RGB-D and calibrated robot-frame pointmaps; task-specific human demonstrations.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickPlace",
+        "Stack",
+        "OpenDrawer",
+        "PegHole",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.11498v2"
+    },
+    {
+      "id": "turbovla-v3-libero-main",
+      "dataset": "LIBERO",
+      "name": "TurboVLA v3 · 标准LIBERO四套件",
+      "version": "arXiv 2607.27205v3",
+      "tasks": "40 tasks / 4 suites",
+      "split": "Spatial / Object / Goal / Long; standard LIBERO",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Each suite has 10 tasks x50 rollouts = 2000 total; author-reported Table1; no uncertainty given.",
+      "trainingRegime": "DINOv3 ViT-B 0.2B, BERT, no_noops 40-task joint training, 40k steps, effective batch128 and four RTX4090; H12.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.27205v3"
+    },
+    {
+      "id": "turbovla-v3-robotwin50-mixed",
+      "dataset": "RoboTwin",
+      "name": "TurboVLA v3 · RoboTwin2.0 50任务混合示范",
+      "version": "arXiv 2607.27205v3",
+      "tasks": "50 tasks, Clean and Randomized",
+      "split": "Clean / Randomized (two evaluation settings)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin 2.0, 50 tasks, 100 trials/task/condition. 27,500 mixed demo training. Independent paper reported result, not the official 2500-clean co-train leaderboard.",
+      "trainingRegime": "DINOv3 ViT-L 0.4B, 2500 clean + 25000 randomized demonstrations, 150k training steps, effective batch512 on eight H100 GPUs; H50, 14D absolute joints.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.27205v3"
+    }
+  ],
+  "results": [
+    {
+      "id": "r-seer-v2-robocasa24-pi05-rgb",
+      "paperId": "p011",
+      "method": "π0.5 RGB-only",
+      "trackId": "seer-v2-robocasa24-main",
+      "values": {
+        "PickPlace": 45.2,
+        "OpenClose": 81.6,
+        "KnobLever": 41.6,
+        "ButtonInsert": 52.7,
+        "Average": 55.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · RoboCasa 24 tasks",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboCasa 24 tasks; 50 human demonstrations/task; 3 training seeds; source Table I; RGB-D with camera calibration.",
+      "evaluationNotes": "Table I reports separate group means and three-seed uncertainties; values here retain point estimates, exact ± appears in deep-read table. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-seer-v2-robocasa24-pointvla",
+      "paperId": "p011",
+      "method": "PointVLA",
+      "trackId": "seer-v2-robocasa24-main",
+      "values": {
+        "PickPlace": 47.7,
+        "OpenClose": 86.6,
+        "KnobLever": 42.5,
+        "ButtonInsert": 55.7,
+        "Average": 58
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · RoboCasa 24 tasks",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboCasa 24 tasks; 50 human demonstrations/task; 3 training seeds; source Table I; RGB-D with camera calibration.",
+      "evaluationNotes": "Table I reports separate group means and three-seed uncertainties; values here retain point estimates, exact ± appears in deep-read table. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-seer-v2-robocasa24-seer",
+      "paperId": "p011",
+      "method": "SeeR-VLA",
+      "trackId": "seer-v2-robocasa24-main",
+      "values": {
+        "PickPlace": 52.9,
+        "OpenClose": 88,
+        "KnobLever": 46.1,
+        "ButtonInsert": 58.8,
+        "Average": 61.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · RoboCasa 24 tasks",
+      "attribution": "author-reported",
+      "trainingData": "RoboCasa 24 tasks; 50 human demonstrations/task; 3 training seeds; source Table I; RGB-D with camera calibration.",
+      "evaluationNotes": "Table I reports separate group means and three-seed uncertainties; values here retain point estimates, exact ± appears in deep-read table. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-seer-v2-franka4-pi05-rgb",
+      "paperId": "p011",
+      "method": "π0.5 RGB-only",
+      "trackId": "seer-v2-franka-real4",
+      "values": {
+        "PickPlace": 50,
+        "Stack": 15,
+        "OpenDrawer": 65,
+        "PegHole": 20,
+        "Average": 37.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · Real-world four task trials",
+      "attribution": "reported-baseline",
+      "trainingData": "Franka Research 3 RGB-D manipulation; four real tasks, 20 test episodes per task; real dataset separate from RoboCasa simulation.",
+      "evaluationNotes": "Only source paper real-robot case study, not RoboDojo Real official setting. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-seer-v2-franka4-pointvla",
+      "paperId": "p011",
+      "method": "PointVLA",
+      "trackId": "seer-v2-franka-real4",
+      "values": {
+        "PickPlace": 45,
+        "Stack": 30,
+        "OpenDrawer": 75,
+        "PegHole": 35,
+        "Average": 46.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · Real-world four task trials",
+      "attribution": "reported-baseline",
+      "trainingData": "Franka Research 3 RGB-D manipulation; four real tasks, 20 test episodes per task; real dataset separate from RoboCasa simulation.",
+      "evaluationNotes": "Only source paper real-robot case study, not RoboDojo Real official setting. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-seer-v2-franka4-seer",
+      "paperId": "p011",
+      "method": "SeeR-VLA",
+      "trackId": "seer-v2-franka-real4",
+      "values": {
+        "PickPlace": 75,
+        "Stack": 55,
+        "OpenDrawer": 85,
+        "PegHole": 65,
+        "Average": 70
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · Real-world four task trials",
+      "attribution": "author-reported",
+      "trainingData": "Franka Research 3 RGB-D manipulation; four real tasks, 20 test episodes per task; real dataset separate from RoboCasa simulation.",
+      "evaluationNotes": "Only source paper real-robot case study, not RoboDojo Real official setting. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-turbovla-v3-libero-ours",
+      "paperId": "p027",
+      "method": "TurboVLA (v3 0.2B)",
+      "trackId": "turbovla-v3-libero-main",
+      "values": {
+        "Spatial": 97,
+        "Object": 100,
+        "Goal": 98.2,
+        "Long": 95.2,
+        "Average": 97.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.27205v3",
+      "sourceVersion": "arXiv 2607.27205v3",
+      "locator": "v3 Table 1 · Main LIBERO results",
+      "attribution": "author-reported",
+      "trainingData": "Standard LIBERO 40 tasks, joint ViT-B training, no_noops RLDS, 40k steps, effective batch 128, 4x RTX4090, 50 rollouts/task.",
+      "evaluationNotes": "Model inference 31.2ms RTX4090 batch1; 0.9GiB VRAM; no ± was published. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    },
+    {
+      "id": "r-turbovla-v3-robotwin-mixed-ours",
+      "paperId": "p027",
+      "method": "TurboVLA (v3 0.4B)",
+      "trackId": "turbovla-v3-robotwin50-mixed",
+      "values": {
+        "Clean": 88.02,
+        "Randomized": 88.1,
+        "Average": 88.06
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.27205v3",
+      "sourceVersion": "arXiv 2607.27205v3",
+      "locator": "v3 Table 2 · RoboTwin 2.0 mixed demonstrations",
+      "attribution": "author-reported",
+      "trainingData": "RoboTwin2.0 all 50 tasks, 2500 Clean + 25000 Randomized demonstrations, ViT-L model, 150k steps, effective batch512, 8x H100; 100 trials per task per condition.",
+      "evaluationNotes": "Result not comparable to earlier v2 clean-only 55k training. Policy latency 43.4ms is not robot cycle latency. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": ""
+    }
+  ],
+  "resources": {
+    "p011": {
+      "code": null
+    }
+  },
+  "reproducibility": {
+    "p011": {
+      "verifiedAt": "2026-10-22",
+      "level": "deep",
+      "note": "v2全文、官方项目站点和Github内容实查；该Github仓库只有index.html/static项目介绍，尚不能当作可执行训练/评估实现；不将未知等同未开放声明。",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "仅官方项目主页静态HTML，无可执行模型源码；需真实策略实现才能称完整Code available。",
+          "url": "https://github.com/DAVIAN-Robotics/pointmap",
+          "source": "https://github.com/DAVIAN-Robotics/pointmap"
+        }
+      }
+    },
+    "p027": {
+      "verifiedAt": "2026-10-22",
+      "level": "deep",
+      "note": "检查TurboVLA官方源仓库及模型卡；代码Apache-2.0与DINOv3模型依赖许可需分开核对，未做独立复现。",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "官方Github提供可执行policy、训练、推理与RoboTwin/LIBERO实验代码。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "weights": {
+          "status": "available",
+          "note": "官方HuggingFace提供已发布模型权重及归一化元数据。",
+          "url": "https://huggingface.co/H-EmbodVis/TurboVLA",
+          "source": "https://huggingface.co/H-EmbodVis/TurboVLA"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "提供RoboTwin官方转换数据下载流程和LIBERO处理脚本；完整上游图文/预训练数据的重发布许可不统一。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "training": {
+          "status": "available",
+          "note": "公开LIBERO与RoboTwin的训练脚本和配置。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "inference": {
+          "status": "available",
+          "note": "公开policy与推理接口。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "公开LIBERO及RoboTwin对应实验/评估指导。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "license": {
+          "status": "partial",
+          "note": "项目代码Apache-2.0；DINOv3视觉权重和预训练来源许可不能自动视为相同Apache许可。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA/blob/main/LICENSE",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        }
+      }
+    },
+    "p136": {
+      "verifiedAt": "2026-10-22",
+      "level": "deep",
+      "note": "逐项核对Fast-VLA官方代码、公开checkpoint、训练/评测文档；4B冻结DM0.5 Gemma权重许可证独立，不表示完整无条件商用。",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "官方仓库提供模型实现和服务端，Apache-2.0代码许可。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "weights": {
+          "status": "available",
+          "note": "作者发布FastVLA-robotwin和fastvla-libero的actor权重；冻结DM0.5需独立下载。",
+          "url": "https://huggingface.co/kehong/FastVLA-weights",
+          "source": "https://huggingface.co/kehong/FastVLA-weights"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "RoboTwin/LIBERO评测及演示可依赖官方公开基准，但DM0.5预训练数据不属于本模型可完整重发的数据。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "training": {
+          "status": "available",
+          "note": "官方仓库docs/TRAINING.md和首帧缓存构建指令。",
+          "url": "https://github.com/Garfield-kh/FastVLA/blob/main/docs/TRAINING.md",
+          "source": "https://github.com/Garfield-kh/FastVLA/blob/main/docs/TRAINING.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "官方源码含policy server与推理示例。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "官方RoboTwin和LIBERO/Plus评测适配器。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "license": {
+          "status": "partial",
+          "note": "FastVLA仓库代码Apache-2.0，冻结DM0.5权重采用Gemma单独许可，不能把整系统一归为Apache。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        }
+      }
+    }
+  }
+}
