@@ -103,19 +103,12 @@
           {
             "id": "source-scope",
             "title": "提取边界与复现要求：保留作者对照，不造统一公平榜",
-            "body": "本次按明确arXiv v2的16页原文核对方法图和Tables1–6，共记录38条SR结果，覆盖LIBERO17个主表方法、10个不重复组件变体，以及RoboTwin11个按训练类别分开的方法。RTX4090延迟仍作为有原表定位的配套说明；没有为每个基线补造未报告的置信区间、最佳checkpoint或训练样本数量。\n真正复现时应先锁定no_noops数据、40任务联合训练和ViT-B配置，再核对RoboTwin的ViT-L、clean示范、绝对关节动作与55k步设置。一个共享方法名不足以保证输入、动作空间、预训练和训练预算相同。本站因此将这些行标为论文表格证据，而不是宣称在统一赛道重跑的名次；保留旧KEY RESULT与首次公开日期。",
+            "body": "本次按明确arXiv v2的16页原文核对方法图和Tables1–6，共记录38条SR结果，覆盖LIBERO17个主表方法、10个不重复组件变体，以及RoboTwin11个按训练类别分开的方法。RTX4090延迟仍作为有原表定位的配套说明；没有为每个基线补造未报告的置信区间、最佳checkpoint或训练样本数量。\n真正复现时应先锁定no_noops数据、40任务联合训练和ViT-B配置，再核对RoboTwin的ViT-L、clean示范、绝对关节动作与55k步设置。一个共享方法名不足以保证输入、动作空间、预训练和训练预算相同。本站因此将这些行标为论文表格证据，而不是宣称在统一赛道重跑的名次；保留旧KEY RESULT与首次公开日期。\n\n版本与官方来源复核：官方项目页、GitHub仓库与Hugging Face模型卡显示，项目README在2026-09-27更新说明中另报TurboVLA在RoboTwin 2.0达到88.06%平均成功率，并称论文、代码与checkpoint已更新。该项目级声明未在当前README摘要中给出与论文v2表格完全一致的逐项口径，因此不覆盖既有论文v2的clean-only和多任务结果，也不强行映射到旧track。后续如需纳入正式结果，应先核对更新版论文原表、任务集合、Clean/Randomized定义、训练步数及checkpoint来源。",
             "sources": [
               {
                 "label": "§5.1–5.4；Tables 1–6 · 已核验的明确版本原文",
                 "url": "https://arxiv.org/pdf/2607.27205v2"
-              }
-            ]
-          },
-          {
-            "id": "version-source",
-            "title": "论文v2与当前官方项目结果必须分开记录",
-            "body": "重新核对官方项目页、GitHub仓库与Hugging Face模型卡后，需要将论文v2的原始结果与官方项目后续更新区分。论文v2的LIBERO表格报告平均97.7%，其RoboTwin记录包含clean-only单任务/多任务训练等不同配置；当前官方仓库README另有2026-09-27更新，宣称TurboVLA在RoboTwin 2.0达到88.06%平均成功率，并更新了论文、代码和checkpoint。该项目级数字未在当前README摘要中给出与旧表相同的逐项口径，因此不覆盖既有60.2% clean-only记录，也不把88.06%强行映射到旧track。后续若需纳入正式结果，应先核对更新版论文原表、任务集合、clean/randomized定义、训练步数和checkpoint来源。",
-            "sources": [
+              },
               {
                 "label": "官方代码仓库与更新说明",
                 "url": "https://github.com/H-EmbodVis/TurboVLA"
