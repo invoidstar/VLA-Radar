@@ -312,5 +312,13 @@
       "project": "https://garfield-kh.github.io/FastVLA",
       "code": "https://github.com/Garfield-kh/FastVLA"
     }
+  },
+  "reproducibility": {
+    "p136": {
+      "verifiedAt": "2026-10-22",
+      "level": "baseline",
+      "note": "已核对论文、官方项目页、公开代码仓库和模型下载入口；训练脚本、checkpoint及评测入口可访问，完整独立复现仍未由VLA-Radar执行。具体环境/硬件复现状态保持未核验。",
+      "items": {}
+    }
   }
 }
