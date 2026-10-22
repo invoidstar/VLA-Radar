@@ -220,6 +220,27 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-22-fast-vla-turbovla",
+      "sha256": "9974055dbe122df0214ad28af7cc08e30f20465a5c47f2af8ae46a018f017de1",
+      "date": "2026-10-22",
+      "notes": [
+        "p027"
+      ],
+      "tracks": [
+        "fastvla-v1-robotwin2-clean-randomized",
+        "fastvla-v1-libero",
+        "fastvla-v1-libero-plus"
+      ],
+      "results": 3,
+      "resources": [
+        "p027",
+        "p136"
+      ],
+      "reproducibility": [
+        "p136"
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18",
+  "updatedAt": "2026-10-22",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,62 @@
     }
   ],
   "papers": [
+    {
+      "id": "p136",
+      "name": "Fast-VLA",
+      "title": "Fast-VLA: You Only Think Once for Robot Manipulation",
+      "team": "Kehong Gong、Guanli Hou、Xiaoxu Zheng、Qi Wang、Mingxi Xu、Anbang Zhai、Xiaoyu He、Mingyuan Zhang、Michael Bi Mi",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1预印本",
+      "firstPublished": "2026-10-15",
+      "dateNote": "arXiv v1首发2026-10-15（UTC）；2026-10-22依据原文、项目页与官方仓库核验。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv:2610.21389v1 · 2026-10-22深读",
+      "topics": [
+        "efficiency",
+        "memory",
+        "action"
+      ],
+      "tags": [
+        "Fast-VLA",
+        "task memory",
+        "KV cache",
+        "inference efficiency",
+        "RoboTwin",
+        "LIBERO"
+      ],
+      "priority": "deep",
+      "contribution": "提出episode级一次性任务语境预填充：冻结4B DM0.5 VLM将指令和初始视图编码为逐层KV任务记忆，轻量在线actor结合当前视觉与本体状态查询该记忆并预测动作chunk，避免每个动作块重复运行大VLM。",
+      "findings": "作者报告RoboTwin 2.0 Clean/Randomized SR为92.46%/92.40%，LIBERO平均95.95%，LIBERO-Plus平均79.11%；RoboTwin摊销推理1.437 ms/step、在线常驻内存1.22 GiB。以上为作者报告，不是本站独立复现。",
+      "limitations": "首个episode仍需运行冻结4B VLM并建立缓存；固定任务记忆依赖初始观测与episode边界。延迟、内存及加速比受硬件、prefill计时、视角和评测管线影响，不能直接等同端到端机器人周期。",
+      "insight": "将慢变的任务语境与快变的机器人状态拆开，是VLA推理优化的一条清晰路径；评估此类方法时应同时报告首次预填充、摊销每步延迟、在线内存与任务记忆失配风险。",
+      "readingFocus": "逐层KV缓存的表示与读取、episode记忆绑定、actor查询结构、memory swap实验、prefill与online计时边界、RoboTwin/LIBERO/LIBERO-Plus协议。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-22依据arXiv v1、作者项目页与公开代码仓库核对；量化成绩均标记为作者报告，未声称独立复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文",
+          "url": "https://arxiv.org/html/2610.21389"
+        },
+        {
+          "label": "arXiv元数据",
+          "url": "https://arxiv.org/abs/2610.21389"
+        },
+        {
+          "label": "作者官方代码",
+          "url": "https://github.com/Garfield-kh/FastVLA"
+        },
+        {
+          "label": "作者项目页",
+          "url": "https://garfield-kh.github.io/FastVLA"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.21389",
+      "arxiv": "2610.21389",
+      "doi": ""
+    },
     {
       "id": "p134",
       "name": "Embodied Turing Machines (COAP)",
@@ -3421,7 +3477,7 @@
       "publicationType": "preprint",
       "publicationStatus": "arXiv:2607.27205\n技术预印本",
       "firstPublished": "2026-07-29",
-      "dateNote": "",
+      "dateNote": "arXiv v1首发2026-07-29（UTC）；v2于2026-08-16提交。2026-10-22复核论文、项目页与官方代码仓库。",
       "collectionMonth": "2026-07",
       "versionNote": "7月首发；8月16日v2｜阅读v2",
       "topics": [
@@ -3438,17 +3494,25 @@
       "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
       "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
       "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
-      "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-22重新核对arXiv v2正文与作者官方项目、代码、模型卡；论文v2报告、当前项目README更新声明及官方checkpoint的评测口径分别保留，不将不同版本和训练预算混为同一结果。",
       "hasCautionaryResult": false,
       "sources": [
         {
-          "label": "原文 · v2",
+          "label": "arXiv v2全文",
           "url": "https://arxiv.org/html/2607.27205v2"
         },
         {
-          "label": "arXiv 元数据",
-          "url": "https://arxiv.org/abs/2607.27205"
+          "label": "官方项目页",
+          "url": "https://h-embodvis.github.io/TurboVLA/"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        {
+          "label": "官方模型卡与checkpoint说明",
+          "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2607.27205",

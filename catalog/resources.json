@@ -61,7 +61,8 @@
       "project": "https://vt-wam.github.io/"
     },
     "p027": {
-      "code": "https://github.com/H-EmbodVis/TurboVLA"
+      "code": "https://github.com/H-EmbodVis/TurboVLA",
+      "project": "https://h-embodvis.github.io/TurboVLA/"
     },
     "p029": {
       "code": "https://github.com/z-lab/flashvla"
@@ -388,6 +389,10 @@
     "p133": {
       "project": "https://machembodied.com/ME-Dex/ME-Dex1.0.html",
       "code": "https://github.com/MachEmbodied/ME-Dex-1.0"
+    },
+    "p136": {
+      "project": "https://garfield-kh.github.io/FastVLA",
+      "code": "https://github.com/Garfield-kh/FastVLA"
     }
   }
 }
