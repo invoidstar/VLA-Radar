@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-14",
+  "reviewedAt": "2026-10-22",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p001": {
@@ -2578,6 +2578,20 @@
         "r-physevo-v1-robodojo-sim-score"
       ],
       "note": "PhysEvo arXiv2610.08995v1 Table1五维等权SR/Score，测试每任务5布局且task-specific Harness；42任务等权均值不同，PiPER真机定制任务不并入RoboDojo-Real。"
+    },
+    "p136": {
+      "status": "extracted",
+      "trackIds": [
+        "fastvla-v1-robotwin2-clean-randomized",
+        "fastvla-v1-libero",
+        "fastvla-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-fastvla-v1-robotwin2",
+        "r-fastvla-v1-libero",
+        "r-fastvla-v1-libero-plus"
+      ],
+      "note": "新增三条有原文/官方README来源定位的作者报告结果；RoboTwin Clean/Randomized分列，标准LIBERO与LIBERO-Plus分轨。摊销延迟和在线内存保留在深读中，不与成功率混为一谈。"
     }
   }
 }
