@@ -5583,7 +5583,7 @@
       "team": "Spirit AI／上海交通大学／清华大学／同济大学／中国科学技术大学\nYufeng Liu、Hang Yu、Juntu Zhao、Junliang Guo等",
       "venue": "RSS 2026",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文058（作者发表页确认）\narXiv:2602.12978",
+      "publicationStatus": "RSS 2026 官方会议论文集已发表",
       "firstPublished": "2026-02-13",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -5604,7 +5604,7 @@
       "insight": "连续执行能力可以进入训练分布，而非全部依赖推理后处理。平滑续接与快速纠正之间仍需权衡。",
       "readingFocus": "原生续接；已知动作条件；延迟适应；与RTC的本质区别。",
       "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。 2026-10-22另由RSS官方论文集核验发表状态，不等于新版技术全文复核。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -5623,7 +5623,7 @@
       "paperUrl": "https://arxiv.org/abs/2602.12978",
       "arxiv": "2602.12978",
       "doi": "",
-      "detailUrl": "data/details/p041.json?v=a3c044dbd489b36b",
+      "detailUrl": "data/details/p041.json?v=06b499bd2bfeef74",
       "resultUrl": "data/paper-results/p041.7d73dfa562aec789.json",
       "noteStatus": "expanded",
       "resources": {
@@ -5639,8 +5639,8 @@
       "lifecycle": {
         "firstArxivAt": "2026-02-13",
         "latestArxivVersion": "v2",
-        "status": "legacy",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-10-22"
       }
     },
     {
@@ -7450,9 +7450,9 @@
       "name": "SpatialVLA",
       "title": "SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models",
       "team": "Shanghai AI Laboratory；Delin Qu、Haoming Song、Qizhi Chen 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "RSS 2025",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2025 官方会议论文集已发表",
       "firstPublished": "2025-01-27",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
@@ -7474,7 +7474,7 @@
       "insight": "空间表示需要同时考虑输入坐标和输出动作分布，几何增强应连同其数据及标定假设阅读。",
       "readingFocus": "Ego3D 坐标定义、动作网格适配、表 I 和模块消融。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。 2026-10-22另由RSS官方论文集核验发表状态，不等于新版技术全文复核。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -7489,7 +7489,7 @@
       "paperUrl": "https://arxiv.org/abs/2501.15830",
       "arxiv": "2501.15830",
       "doi": "",
-      "detailUrl": "data/details/p068.json?v=fea7e6a8bb304f6d",
+      "detailUrl": "data/details/p068.json?v=ebf96db996f050cb",
       "resultUrl": "data/paper-results/p068.51ef96d6c55d867d.json",
       "noteStatus": "expanded",
       "resources": {
@@ -7505,8 +7505,8 @@
       "lifecycle": {
         "firstArxivAt": "2025-01-27",
         "latestArxivVersion": "v5",
-        "status": "preprint",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-10-22"
       }
     },
     {
