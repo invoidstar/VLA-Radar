@@ -234,6 +234,11 @@
         "locator": "arXiv abstract and official repository README",
         "caption": "成功率、摊销推理时间和在线内存属于不同指标；未报告项保持缺失。"
       }
-    ]
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-22",
+      "note": "核对arXiv v1摘要与官方README的RoboTwin、LIBERO、LIBERO-Plus主结果；建立三个来源限定track和三条作者报告结果。仅提取来源明确的聚合值，未推断缺失的LIBERO分套件分数，延迟/内存未混入SR。"
+    }
   }
 }
