@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-13",
+  "asOf": "2026-10-22",
   "status": "partial",
-  "lastAttemptAt": "2026-10-13",
+  "lastAttemptAt": "2026-10-22",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "补录10月6日Open Robotics ROSCon、10月7日NVIDIA GB300实操与AWS Physical AI Toolchain三条官方来源；仅有限源核验，不将本次10月5—13日视为所有行业新闻完整扫描，成功checkpoint仍为2026-10-04。",
+  "summary": "补录2026-10-21 NVIDIA Isaac、NVIDIA Cosmos及Agility Robotics三项官方一手事件；10月8—20日尚未完成全部中英文产业/科研来源14日去重扫描，故保持partial，完整成功检查点仍为2026-10-04。",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -36,6 +36,12 @@
       "to": "2026-10-13",
       "status": "partial",
       "note": "2026-10-13补录3条首次公开官方事件，核验其独立报道日期/技术边界；10月8日至13日等部分中文/产业来源与历史14天去重尚待完整核对，因此不提升lastSuccessfulSearchAt。"
+    },
+    {
+      "from": "2026-10-08",
+      "to": "2026-10-22",
+      "status": "partial",
+      "note": "2026-10-22核验10月21日三项一手官方事件，缺少对10月8—20日所有模型、工业与中文公告的完整覆盖和历史窗口去重；此前10月6/7日已收录记录保留。"
     }
   ]
 }
