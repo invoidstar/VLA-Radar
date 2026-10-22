@@ -2,41 +2,53 @@
   "schemaVersion": 2,
   "paper": {
     "id": "p011",
-    "name": "See like a Robot",
+    "name": "SeeR-VLA",
     "title": "See like a Robot: Robot-Centric Pointmaps for VLA Models",
     "team": "Byungkun Lee、Dongyoon Hwang、Dongjin Kim、Hojoon Lee、Hyunseung Kim、Jaegul Choo、Minho Park",
     "venue": "arXiv",
     "publicationType": "preprint",
-    "publicationStatus": "arXiv 预印本；当前 v2（2026-09-21）",
+    "publicationStatus": "arXiv v2 预印本",
     "firstPublished": "2026-07-13",
-    "dateNote": "",
+    "dateNote": "arXiv v1于2026-07-13首次公开；v2于2026-09-21更新标题、作者、坐标系消融及实验主结果。两版数据不可互换，原始v1结果保留独立来源轨道。",
     "collectionMonth": "2026-07",
-    "versionNote": "7月13日首次公开｜9月21日修订 v2｜正文深读仍基于 v1，待复核",
+    "versionNote": "2026-07-13首发 · 2026-09-21 v2 · 2026-10-22完整复核",
     "topics": [
       "spatial"
     ],
     "tags": [
       "VLA",
-      "pointmap",
-      "coordinates"
+      "SeeR-VLA",
+      "robot-centric pointmaps",
+      "RGB-D",
+      "viewpoint generalization",
+      "Franka Research 3",
+      "RoboCasa"
     ],
-    "priority": "selective",
-    "contribution": "把像素三维点映射到机器人坐标系，保持图像网格结构，并用末端中心化缓解视觉坐标与动作坐标的不一致。",
-    "findings": "RoboCasa 24任务：π0.5 55.3%→62.9%；SmolVLA 37.2%→41.4%。\n相机变化增大时，RGB版本34.5%→24.9%，RGB+pointmap为37.6%→35.8%。",
-    "limitations": "涉及相机/机器人几何标定与点图质量；每任务50示范、50评测。不同容量策略都获益不代表标定误差可忽略。",
-    "insight": "统一视觉几何与机器人动作的坐标系本身就有价值。鲁棒性收益需要连同标定和点图质量一起看。",
-    "readingFocus": "坐标系选择；末端中心化；相机变化下的退化幅度。",
-    "evidence": "notes",
-    "evidenceNote": "2026-09-29 核对 arXiv 当前元数据：v2 改题并更新作者列表；现有深入笔记仍基于 v1，因此标记 needs_review，不自动认证 v2 正文。",
-    "hasCautionaryResult": false,
+    "priority": "deep",
+    "contribution": "提出SeeR-VLA：将多视角RGB-D恢复为以末端为原点、机器人基座轴向固定的稠密3D pointmap，采用与RGB空间token对齐的附加编码器进行加法融合，从输入端缓解相机视角与机器人动作坐标之间的偏差。",
+    "findings": "arXiv v2作者报告：RoboCasa 24任务三种子平均SeeR-VLA 61.5%±1.2%，RGB-only π0.5为55.1%±0.3%；Franka真机四任务平均70.0%对37.5%；与PointVLA对照分别为58.0%±0.7%和46.3%。上述结果不与v1来源配置混用。",
+    "limitations": "需要相机深度、内外参和机器人末端运动学；点图不保证遮挡不变，真实RGB-D噪声与标定误差可能影响结果。RoboCasa为24任务与有限示范，真机仅四任务、每任务20次，不能宣称任意场景鲁棒。",
+    "insight": "点图坐标不仅需机器人系表达，还应区分原点与轴向：末端原点提高抓取相对位置可比性，保持机器人基座轴向降低腕部旋转引起的伪几何变化。",
+    "readingFocus": "逐像素深度投影与基座变换、末端原点/基座轴的对照、三种融合方式、24任务三种子协议、Franka四任务、实测视角外推与局限。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-22重新核对arXiv:2607.11498v2完整HTML、官方项目页、Tables I–III及§IV；v1历史结果保留但不作为v2分数；暂不推断正式录用。",
+    "hasCautionaryResult": true,
     "sources": [
       {
-        "label": "原文 · v1",
+        "label": "v2全文 · Tables I–III",
+        "url": "https://arxiv.org/html/2607.11498v2"
+      },
+      {
+        "label": "arXiv原始v1（历史记录）",
         "url": "https://arxiv.org/html/2607.11498v1"
       },
       {
-        "label": "arXiv 元数据",
-        "url": "https://arxiv.org/abs/2607.11498"
+        "label": "官方项目页",
+        "url": "https://davian-robotics.github.io/pointmap/"
+      },
+      {
+        "label": "官方项目站点源仓库（非策略代码）",
+        "url": "https://github.com/DAVIAN-Robotics/pointmap"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2607.11498",
@@ -53,7 +65,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-29",
+    "lastCheckedAt": "2026-10-22",
     "history": [
       {
         "kind": "imported",
@@ -86,6 +98,14 @@
         "venue": "arXiv",
         "source": "https://arxiv.org/abs/2607.11498v2",
         "note": "arXiv 当前页确认 v2 于 2026-09-21 修订，并将标题更新为 “See like a Robot: Robot-Centric Pointmaps for VLA Models”；现有深读仍为 v1。"
+      },
+      {
+        "kind": "source_check",
+        "date": "2026-10-22",
+        "observedAt": "2026-10-22",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.11498v2",
+        "note": "确认v2正文、作者与主要结果；历史v1深读标为待核验的差异已逐段复核并将新旧实验分开。"
       }
     ],
     "alerts": []
