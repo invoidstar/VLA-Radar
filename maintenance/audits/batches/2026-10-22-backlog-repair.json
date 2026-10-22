@@ -332,7 +332,7 @@
           {
             "id": "source-scope",
             "title": "提取边界与复现要求：保留作者对照，不造统一公平榜",
-            "body": "v3公开完整正文与附录A–C：LIBERO采用40k步及有效batch128，RoboTwin采用mixed 27,500 demo、150k步8×H100，不是v2的clean-only与55k配置。Table6普通前向31.2ms、CUDA Graph11.3ms，优化后7.42ms；这些是单RTX4090的策略运行范围，不包括机器人传感和控制。原v2的38条Results继续保留源版本，不用v3覆盖旧分数。对v3新版SR只新增两个来源限定track；没有报告的seed置信区间不猜。代码与权重的许可可能分别受Apache-2.0及DINOv3非同一条件限制，必须逐项注明。",
+            "body": "v3公开完整正文与附录A–C：LIBERO采用40k步及有效batch128，RoboTwin采用mixed 27,500 demo、150k步8×H100，不是v2的clean-only与55k配置。Table6普通前向31.2ms、CUDA Graph11.3ms，优化后7.42ms；这些是单RTX4090的策略运行范围，不包括机器人传感和控制。原v2的38条Results继续保留源版本，不用v3覆盖旧分数。对v3新版SR只新增两个来源限定track；没有报告的seed置信区间不猜。代码与权重的许可可能分别受Apache-2.0及DINOv3非同一条件限制，必须逐项注明。 必须额外检查RoboTwin的50任务是否采用同一episode horizon、相机视角和动作频率；哪怕两种模型都报告总成功率，也不能假定其动作归一化、执行chunk步数或复现代码一致。v3主结果没有可直接视为独立统计显著性的多种子标准差，无法仅凭88.06与其他论文的数字推断严格领先。",
             "sources": [
               {
                 "label": "原文v3 · 提取边界与复现要求：保留作者对照，不造统一公平榜",
