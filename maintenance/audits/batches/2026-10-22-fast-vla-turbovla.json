@@ -1,7 +1,7 @@
 {
   "id": "2026-10-22-fast-vla-turbovla",
   "date": "2026-10-22",
-  "summary": "新增Fast-VLA（arXiv:2610.21389）正文级深读、官方代码/项目来源与三条分协议结果；升级既有TurboVLA（p027）的来源核验，补充论文v2与官方仓库后续RoboTwin成绩声明的口径边界，不覆盖旧结果。保留Clean/Randomized、LIBERO、LIBERO-Plus分轨，所有数值均标记作者报告，未声称独立复现。 已补齐逐篇Benchmark disposition与可复现性审计登记。",
+  "summary": "新增Fast-VLA（arXiv:2610.21389）正文级深读、官方代码/项目来源与三条分协议结果；升级既有TurboVLA（p027）的来源核验，补充论文v2与官方仓库后续RoboTwin成绩声明的口径边界，不覆盖旧结果。保留Clean/Randomized、LIBERO、LIBERO-Plus分轨，所有数值均标记作者报告，未声称独立复现。 已补齐逐篇Benchmark disposition与可复现性审计登记。 深读补充了固定任务记忆在场景变化与episode重置条件下的失败模式。",
   "notes": [
     {
       "paperId": "p027",
