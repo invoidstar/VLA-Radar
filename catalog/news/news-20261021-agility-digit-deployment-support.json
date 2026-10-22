@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261021-agility-digit-deployment-support",
+  "eventKey": "agility-digit-deployment-support-20261021",
+  "title": "Agility Robotics 公布匹兹堡 Digit 部署与技能开发中心扩建计划",
+  "primaryCategory": "robot",
+  "tags": [
+    "Agility Robotics",
+    "Digit",
+    "人形机器人",
+    "工业部署",
+    "客户支持"
+  ],
+  "eventDate": "2026-10-21",
+  "publishedAt": "2026-10-21",
+  "dateNote": "2026-10-22阅读一手官方页面；将公告发生日与未来计划及二次转述严格区分。",
+  "observedAt": "2026-10-22",
+  "updatedAt": "2026-10-22",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "deployment",
+  "whatHappened": "Agility Robotics于10月21日公布在匹兹堡扩建约50,000平方英尺设施的计划，拟整合Digit机器人软件和AI技能开发、测试、服务与客户部署支持；同时披露汽车、消费品及农业行业的新客户关系。设施是规划扩建，不是当天全部投入使用。",
+  "whyItMatters": "真实机器人产品的长期可靠性依赖部署后的故障定位、现场服务与持续技能验证，展示物理AI从单次演示走向客户运营需要持续的工程组织。",
+  "vlaRelevance": "部署经验可为机器人技能训练、示范采集和回归测试提供反馈，但官方扩建设施或订单信息不能替代VLA模型的受控Benchmark及真机成功率。",
+  "limits": "客户与订单、设施建成时点为公司自述或前瞻信息；不得把未来扩建计划、合同条件或融资披露写成已实现机器人性能。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Agility Robotics Expands Pittsburgh Presence to Support Growing Customer Deployments",
+      "publisher": "Agility Robotics",
+      "url": "https://www.agilityrobotics.com/content/agility-robotics-expands-pittsburgh-presence-to-support-growing-customer-deployments",
+      "kind": "official",
+      "publishedAt": "2026-10-21",
+      "access": "full-page",
+      "note": "正文与发布日期、实际开放状态及未来承诺边界经一手页面核对；不表示能力独立评测。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
