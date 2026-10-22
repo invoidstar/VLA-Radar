@@ -9,7 +9,7 @@
     "publicationType": "preprint",
     "publicationStatus": "arXiv:2607.27205\n技术预印本",
     "firstPublished": "2026-07-29",
-    "dateNote": "",
+    "dateNote": "arXiv v1首发2026-07-29（UTC）；v2于2026-08-16提交。2026-10-22复核论文、项目页与官方代码仓库。",
     "collectionMonth": "2026-07",
     "versionNote": "7月首发；8月16日v2｜阅读v2",
     "topics": [
@@ -26,17 +26,25 @@
     "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
     "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
     "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-22重新核对arXiv v2正文与作者官方项目、代码、模型卡；论文v2报告、当前项目README更新声明及官方checkpoint的评测口径分别保留，不将不同版本和训练预算混为同一结果。",
     "hasCautionaryResult": false,
     "sources": [
       {
-        "label": "原文 · v2",
+        "label": "arXiv v2全文",
         "url": "https://arxiv.org/html/2607.27205v2"
       },
       {
-        "label": "arXiv 元数据",
-        "url": "https://arxiv.org/abs/2607.27205"
+        "label": "官方项目页",
+        "url": "https://h-embodvis.github.io/TurboVLA/"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/H-EmbodVis/TurboVLA"
+      },
+      {
+        "label": "官方模型卡与checkpoint说明",
+        "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2607.27205",
@@ -53,7 +61,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-10-22",
     "history": [
       {
         "kind": "imported",
@@ -78,6 +86,14 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2607.27205v2",
         "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "source_check",
+        "date": "2026-10-22",
+        "observedAt": "2026-10-22",
+        "venue": "arXiv / official project",
+        "source": "https://github.com/H-EmbodVis/TurboVLA",
+        "note": "重新核对官方仓库与模型卡。README后续更新了RoboTwin成绩声明；该值与论文v2表格中的clean-only、多任务旧checkpoint记录口径不同，未覆盖旧结果。"
       }
     ],
     "alerts": []
