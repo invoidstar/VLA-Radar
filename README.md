@@ -110,16 +110,16 @@ Result Report
 
 | 内容 | 当前规模 |
 |---|---:|
-| 论文 | **135** |
+| 论文 | **136** |
 | Benchmark 与论文实验类别（合计） | **48** |
-| Evaluation Setting（协议与实验合计） | **172** |
+| Evaluation Setting（协议与实验合计） | **173** |
 | 主方法比较结果记录 | **686** |
-| 对外已核验结果记录（含论文实验及重复引用） | **912** |
-| 原始核验结果（含消融实验） | **1152** |
+| 对外已核验结果记录（含论文实验及重复引用） | **915** |
+| 原始核验结果（含消融实验） | **1155** |
 
 Benchmark Explorer 现区分 **27 个公共 Benchmark 与 21 个论文专属实验/真机案例**；主方法比较默认隐藏论文内部预算扫描和同分重复引用，完整原始报告可一键查看。
 
-**核心基准官方快照（独立于912条论文报告）**：RoboTwin 2.0 25个官方模型（源更新2026-10-11）；RoboDojo-Sim 57个模型、RoboDojo-Real 11个模型（源更新2026-10-09）。官方模型提交不代表存在独立全文论文，Score和SR分开，源 Git 修订版固定。三篇新完成全文深读与原表结果核对的论文：**ViGAR (p131)、PatchWAM (p132)、ME-Dex 1.0 (p133)**。各自在官方RoboTwin受控快照中建立版本对应；PatchWAM的全数据96.12%与Clean-only79.14%使用不同训练预算，不能互换；ME-Dex论文四舍五入分数与官网高精度分数仍各保留原始出处。COAP / Embodied Turing Machines（p134）和 PhysEvo（p135）也已完成全文深读；其 RoboDojo 成功率/进度分为**论文作者自报**，依照实验口径各自留档，不编造成官网模型提交。PhysicalRSI、Awomo-0.5，以及 Simate-beta、Rex-M1 Preview、Liber-0 Lite 的官方项目/推理适配器来源均记录清楚，但这些预览模型暂时没有可核实的独立完整论文；Liber-0 Preview 仍只有官方提交记录，因此没有伪造论文 ID。所有 canonical 核验记录保留，以上规模会随维护与核验更新。
+**核心基准官方快照（独立于915条论文报告）**：RoboTwin 2.0 25个官方模型（源更新2026-10-11）；RoboDojo-Sim 57个模型、RoboDojo-Real 11个模型（源更新2026-10-09）。官方模型提交不代表存在独立全文论文，Score和SR分开，源 Git 修订版固定。三篇新完成全文深读与原表结果核对的论文：**ViGAR (p131)、PatchWAM (p132)、ME-Dex 1.0 (p133)**。各自在官方RoboTwin受控快照中建立版本对应；PatchWAM的全数据96.12%与Clean-only79.14%使用不同训练预算，不能互换；ME-Dex论文四舍五入分数与官网高精度分数仍各保留原始出处。COAP / Embodied Turing Machines（p134）、PhysEvo（p135）和 Fast-VLA（p136）均已完成全文深读；Fast-VLA 的 RoboTwin Clean/Randomized、标准 LIBERO 与 LIBERO-Plus 结果分轨保存，推理时延和在线内存不与成功率混合。TurboVLA（p027）已重新核对官方项目、代码与模型卡，并明确区分论文 v2 表格和官方仓库后续更新声明。COAP / PhysEvo 的 RoboDojo 成功率/进度分仍为**论文作者自报**，依照各自评测口径留档，不编造成官网模型提交。PhysicalRSI、Awomo-0.5，以及 Simate-beta、Rex-M1 Preview、Liber-0 Lite 的官方项目/推理适配器来源均记录清楚，但这些预览模型暂时没有可核实的独立完整论文；Liber-0 Preview 仍只有官方提交记录，因此没有伪造论文 ID。所有 canonical 核验记录保留，以上规模会随维护与核验更新。
 
 VLA-Radar 关注的不只是收录数量，更强调：
 
