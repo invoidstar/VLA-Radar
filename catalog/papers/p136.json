@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p136",
+    "name": "Fast-VLA",
+    "title": "Fast-VLA: You Only Think Once for Robot Manipulation",
+    "team": "Kehong Gong、Guanli Hou、Xiaoxu Zheng、Qi Wang、Mingxi Xu、Anbang Zhai、Xiaoyu He、Mingyuan Zhang、Michael Bi Mi",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv v1预印本",
+    "firstPublished": "2026-10-15",
+    "dateNote": "arXiv v1首发2026-10-15（UTC）；2026-10-22依据原文、项目页与官方仓库核验。",
+    "collectionMonth": "2026-10",
+    "versionNote": "arXiv:2610.21389v1 · 2026-10-22深读",
+    "topics": [
+      "efficiency",
+      "memory",
+      "action"
+    ],
+    "tags": [
+      "Fast-VLA",
+      "task memory",
+      "KV cache",
+      "inference efficiency",
+      "RoboTwin",
+      "LIBERO"
+    ],
+    "priority": "deep",
+    "contribution": "提出episode级一次性任务语境预填充：冻结4B DM0.5 VLM将指令和初始视图编码为逐层KV任务记忆，轻量在线actor结合当前视觉与本体状态查询该记忆并预测动作chunk，避免每个动作块重复运行大VLM。",
+    "findings": "作者报告RoboTwin 2.0 Clean/Randomized SR为92.46%/92.40%，LIBERO平均95.95%，LIBERO-Plus平均79.11%；RoboTwin摊销推理1.437 ms/step、在线常驻内存1.22 GiB。以上为作者报告，不是本站独立复现。",
+    "limitations": "首个episode仍需运行冻结4B VLM并建立缓存；固定任务记忆依赖初始观测与episode边界。延迟、内存及加速比受硬件、prefill计时、视角和评测管线影响，不能直接等同端到端机器人周期。",
+    "insight": "将慢变的任务语境与快变的机器人状态拆开，是VLA推理优化的一条清晰路径；评估此类方法时应同时报告首次预填充、摊销每步延迟、在线内存与任务记忆失配风险。",
+    "readingFocus": "逐层KV缓存的表示与读取、episode记忆绑定、actor查询结构、memory swap实验、prefill与online计时边界、RoboTwin/LIBERO/LIBERO-Plus协议。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-22依据arXiv v1、作者项目页与公开代码仓库核对；量化成绩均标记为作者报告，未声称独立复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1全文",
+        "url": "https://arxiv.org/html/2610.21389"
+      },
+      {
+        "label": "arXiv元数据",
+        "url": "https://arxiv.org/abs/2610.21389"
+      },
+      {
+        "label": "作者官方代码",
+        "url": "https://github.com/Garfield-kh/FastVLA"
+      },
+      {
+        "label": "作者项目页",
+        "url": "https://garfield-kh.github.io/FastVLA"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.21389",
+    "arxiv": "2610.21389",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-15",
+    "firstArxivSource": "https://arxiv.org/abs/2610.21389v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-15",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-22",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-15",
+        "observedAt": "2026-10-22",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.21389v1",
+        "note": "按arXiv v1首发日期登记；未推断后续录用状态。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-22",
+    "verifiedAt": "2026-10-22",
+    "version": "arXiv:2610.21389v1 · 2026-10-22",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "问题定义：为何每个动作块都重新运行大VLM？",
+        "body": "多数VLA在每次反馈控制时都将图像和指令送入大视觉语言模型，重复计算相对稳定的任务语义。Fast-VLA提出任务语境的变化频率低于机器人状态变化这一假设：任务理解可在episode开始时建立，执行过程中则持续读取新的图像与本体状态。目标是减少闭环执行中的重复骨干计算，而不是取消反馈控制。",
+        "sources": [
+          {
+            "label": "原文 · 问题定义：为何每个动作块都重新运行大VLM？",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "整体结构：一次性任务记忆与在线动作Actor",
+        "body": "episode首次调用冻结的4B DM0.5视觉语言模型，将指令和初始相机观测编码为逐层Key/Value缓存，并将其作为固定task memory。后续控制周期不再运行4B骨干，而由轻量actor读取当前视觉观测和机器人状态，形成查询并检索固定记忆以预测动作片段。必须区分首次prefill开销与后续online actor开销。",
+        "sources": [
+          {
+            "label": "原文 · 整体结构：一次性任务记忆与在线动作Actor",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "memory",
+        "title": "KV缓存如何变成任务记忆",
+        "body": "Fast-VLA不是只缓存最后一层的单一文本向量，而是保留VLM各层的key/value上下文，使actor能从多层任务表示中检索指令和初始场景线索。缓存与episode绑定，切换任务需要重新建立；方法将任务语义预计算成本摊销到整段执行，而不是消除它。若初始视角遗漏关键状态，固定记忆也不能恢复从未观察到的信息。",
+        "sources": [
+          {
+            "label": "原文 · KV缓存如何变成任务记忆",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "actor",
+        "title": "在线Actor：当前状态仍决定下一步动作",
+        "body": "在线actor以当前多视角视觉输入与机器人本体状态构造动作查询，查询利用时间索引并考虑双臂执行结构，通过task memory读取固定上下文。它输出连续动作chunk，闭环状态仍随时间更新。关键权衡是将昂贵的任务语义处理与高频低延迟动作反馈分开；actor轻量不代表系统不需要4B模型、预填充或初始观测。",
+        "sources": [
+          {
+            "label": "原文 · 在线Actor：当前状态仍决定下一步动作",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "模型大小、数据与评测协议",
+        "body": "官方仓库说明RoboTwin actor checkpoint为272M，训练使用27,500条演示（每任务50条clean与500条randomized，共50任务）；LIBERO actor为185M，使用四套标准LIBERO的2,000条演示。冻结的DM0.5 VLM在运行时下载并用于episode首次prefill。RoboTwin clean/randomized分别评估；LIBERO与LIBERO-Plus应分轨，不能合成一个总分。",
+        "sources": [
+          {
+            "label": "原文 · 模型大小、数据与评测协议",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主要结果：成功率与推理开销分开记录",
+        "body": "作者报告RoboTwin 2.0 Clean成功率92.46%、Randomized 92.40%，摊销推理时间1.437 ms/step、在线常驻内存1.22 GiB；LIBERO平均95.95%、摊销推理时间3.975 ms/step、在线常驻内存0.86 GiB；LIBERO-Plus平均79.11%。这些是作者报告，不是本站复现。延迟依赖硬件和计时范围，且首个episode prefill应与在线actor时间分开理解。",
+        "sources": [
+          {
+            "label": "原文 · 主要结果：成功率与推理开销分开记录",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "efficiency",
+        "title": "10.9–17.1倍加速的适用范围",
+        "body": "论文/官方项目称在RoboTwin同硬件对比中，Fast-VLA相较Faster-WAM、DM0.5与Fast-WAM的摊销每步推理时间降低，对应约10.9–17.1倍。这个数字不能泛化为所有VLA、GPU或端到端机器人周期的固定加速比；应核对比较基线、输入视角、缓存预填充是否计入，以及仿真器、通信和控制执行时间是否纳入。",
+        "sources": [
+          {
+            "label": "原文 · 10.9–17.1倍加速的适用范围",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "任务记忆交换实验验证了什么",
+        "body": "作者报告交换不同episode的task memory会影响actor表现，作为actor依赖与当前任务匹配上下文的证据。它比单纯展示低延迟更直接地检验缓存是否携带任务相关信息，但不能单独证明所有信息都来自记忆，也不能代替不同初始观测、任务切换、记忆失效和长期执行的全面评测。",
+        "sources": [
+          {
+            "label": "原文 · 任务记忆交换实验验证了什么",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "适用边界与复现注意事项",
+        "body": "固定task memory有利于稳定任务内语义，但若任务目标、场景布置或语言指令在episode中途变化，可能需要重建记忆或额外机制。性能同时依赖冻结的4B DM0.5、预填充、在线actor、相机配置和动作接口。作者报告的模型大小指actor checkpoint而非完整运行系统总参数；延迟和显存也需按prefill与online阶段分别比较。",
+        "sources": [
+          {
+            "label": "原文 · 适用边界与复现注意事项",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      },
+      {
+        "id": "repro",
+        "title": "开源实现与可复现性检查",
+        "body": "官方仓库提供训练、first-frame cache构建、policy server、RoboTwin 2.0、LIBERO与LIBERO-Plus评测入口，并发布fastvla-robotwin与fastvla-libero checkpoint。复现时应固定仓库commit、DM0.5权重版本、OpenDM依赖、仿真器版本、每任务episode数及缓存构建流程；官方readme所述结果仅作为来源记录，不能视为独立复现结果。",
+        "sources": [
+          {
+            "label": "原文 · 开源实现与可复现性检查",
+            "url": "https://arxiv.org/html/2610.21389"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.21389"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "Fast-VLA · 作者报告主结果与在线效率",
+        "columns": [
+          "Protocol",
+          "Success rate",
+          "Amortized inference",
+          "Online resident memory"
+        ],
+        "rows": [
+          [
+            "RoboTwin 2.0 Clean / Randomized",
+            "92.46% / 92.40%",
+            "1.437 ms/step",
+            "1.22 GiB"
+          ],
+          [
+            "LIBERO",
+            "95.95% average",
+            "3.975 ms/step",
+            "0.86 GiB"
+          ],
+          [
+            "LIBERO-Plus",
+            "79.11% average",
+            "未在该汇总表给出",
+            "未在该汇总表给出"
+          ]
+        ],
+        "locator": "arXiv abstract and official repository README",
+        "caption": "成功率、摊销推理时间和在线内存属于不同指标；未报告项保持缺失。"
+      }
+    ]
+  }
+}
