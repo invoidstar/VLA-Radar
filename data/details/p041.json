@@ -7,7 +7,7 @@
     "team": "Spirit AI／上海交通大学／清华大学／同济大学／中国科学技术大学\nYufeng Liu、Hang Yu、Juntu Zhao、Junliang Guo等",
     "venue": "RSS 2026",
     "publicationType": "conference",
-    "publicationStatus": "RSS 2026，论文058（作者发表页确认）\narXiv:2602.12978",
+    "publicationStatus": "RSS 2026 官方会议论文集已发表",
     "firstPublished": "2026-02-13",
     "dateNote": "",
     "collectionMonth": "2026-07",
@@ -28,7 +28,7 @@
     "insight": "连续执行能力可以进入训练分布，而非全部依赖推理后处理。平滑续接与快速纠正之间仍需权衡。",
     "readingFocus": "原生续接；已知动作条件；延迟适应；与RTC的本质区别。",
     "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。 2026-10-22另由RSS官方论文集核验发表状态，不等于新版技术全文复核。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -53,12 +53,12 @@
     "firstArxivSource": "https://arxiv.org/abs/2602.12978v1",
     "latestArxivVersion": "v2",
     "latestArxivAt": "2026-05-17",
-    "status": "legacy",
+    "status": "published",
     "venue": "RSS 2026",
     "doi": "",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "publishedAt": "2026-07",
+    "lastCheckedAt": "2026-10-22",
     "history": [
       {
         "kind": "imported",
@@ -83,6 +83,14 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2602.12978v2",
         "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2026-07",
+        "observedAt": "2026-10-22",
+        "venue": "RSS 2026",
+        "source": "https://www.roboticsproceedings.org/rss22/p058.html",
+        "note": "RSS XXII 官方论文集索引与论文同题同作者，按2026年7月会议出版月登记；不推断精确录用日。"
       }
     ],
     "alerts": []

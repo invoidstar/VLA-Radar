@@ -3,6 +3,15 @@
 仓库：https://github.com/invoidstar/VLA-Radar  
 网站：https://invoidstar.github.io/VLA-Radar/
 
+## 2026-10-22 遗留修复与明确未完成边界
+
+- **已核验内容**：TurboVLA v3与SeeR-VLA v2全文及新协议结果；RoboTwin官方快照2026-10-21（27个模型）；3项2026-10-21官方具身智能新闻；p041/p068的RSS会议论文集；另外p045/p055此前已在公开元数据中确认出版。
+- **Discovery仍为partial**：独立学术索引缺少覆盖2026-09-20—10-22窗口的可验证成功结果，因此`lastSuccessfulSearchAt`仍为2026-10-04；新增6篇候选保持deferred，不会按摘要直接编造Benchmark结果。
+- **News仍为partial**：10月21日官方事件已入库，但10月8—20日尚未完成跨来源14天扫描，不将新增3条新闻包装成完整行业周报。
+- **Publication剩余4项**：p015（ECCV Workshop）、p030（IROS）、p042（ICME）及p065（会议身份）需依据原始会议/出版方页面最终核验后逐项结案；不是未收录论文。
+- **Source-health**：最新保存的限额检查仍为2026-10-06，历史`dueRemaining=158`仅表示到期轮检工作而非158个失效URL。下一次运行`check_sources.py --limit 100 --due-days 30`须如实保存实际HTTP状态，不能直接改写为全部可达。
+- **分支清理**：已合并分支在6小时恢复窗口后由周日housekeeping通过来源PR、精确head SHA和已部署main检查删除；`docs/`已纳入可管理前缀，无法通过条件的分支继续保留并记录原因。禁止绕过安全等待期手工强制删除。
+
 ## 数据与构建
 
 ```
@@ -87,7 +96,7 @@ Resources 与 Reproducibility 分层维护：`catalog/resources.json` 保存稳�
 - `deep`：逐维读取官方仓库/项目材料，只有明确证据才写 available / partial / unavailable；
 - `baseline`：已经完成当前官方入口核验，但没有足够证据的维度继续保持 unknown，不把“没找到”写成“未开放”。
 
-当前 **116 / 116 papers 均有 audit record**：10 篇 deep、106 篇 baseline。构建器要求 reproducibility registry 与当前 paper ID 集合完全一致；新增论文若没有同步创建 baseline/deep audit，CI 会失败，因此全库覆盖不会静默退化。
+截至2026-10-22，**136 / 136 papers 均有 reproducibility audit record**：14 篇 deep、122 篇 baseline。此处为结构覆盖与审计级别，不代表136篇均已由第三方独立复现；新增论文仍必须同步审计，后续维护按源文件重新计算数量。构建器要求 reproducibility registry 与当前 paper ID 集合完全一致；新增论文若没有同步创建 baseline/deep audit，CI 会失败，因此全库覆盖不会静默退化。
 
 构建器为每篇论文生成固定8维懒加载卡片；首页只保存 `reproducibilityUrl`，打开论文详情时才加载 `data/reproducibility/pNNN.json`。Project/Code 可由 Resources 作为基础状态，其他未被明确审计的维度保持 unknown。
 
@@ -148,7 +157,7 @@ python scripts/validate/validate_all.py
 
 ## 运行维护与规模（2026-09-18）
 
-具体策略见 `maintenance/docs/operations.md`。发表同步使用端点明确的Accept、官方摘要页Submission history回退、3.1秒间隔、限次和失败熔断；按到期时间轮转，每次默认最多100篇。只检索到期子集不等于全库更新，报告totalTracked/dueCount/metadataChecked/dueRemaining。403/429不开替代通道规避限制。标题身份冲突、首发日期冲突和录用注释仍需源复核。只修改lastCheckedAt不刷新文献内容updatedAt。
+具体策略见 `maintenance/docs/operations.md`。先按照最新 `maintenance/policies/benchmark-content-policy.md` 的纯评测Evaluation Setting口径开展维护；本手册后文早期按Training Data划分Setting的历史说明不能覆盖2026-10-13以后实施的当前协议归一化原则。发表同步使用端点明确的Accept、官方摘要页Submission history回退、3.1秒间隔、限次和失败熔断；按到期时间轮转，每次默认最多100篇。只检索到期子集不等于全库更新，报告totalTracked/dueCount/metadataChecked/dueRemaining。403/429不开替代通道规避限制。标题身份冲突、首发日期冲突和录用注释仍需源复核。只修改lastCheckedAt不刷新文献内容updatedAt。
 
 每周执行安全分支清理，部署成功后也有独立housekeeping工作流。仅清理同仓库已合并到main、head SHA没有新提交且超过6小时恢复窗口的托管分支，最多10个。main/备份/保护分支、未合并分支、任何open PR的head或base均保留。删除使用精确SHA lease条件删除，不做任何强制历史更新。完整审计包含原SHA、PR、结果，作为30天Actions artifact；未合并旧分支只报告。
 

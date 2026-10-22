@@ -14690,6 +14690,228 @@
       "columnUnits": {
         "Average": "percent"
       }
+    },
+    {
+      "id": "seer-v2-robocasa24-main",
+      "dataset": "RoboCasa",
+      "name": "SeeR-VLA v2 · RoboCasa原版24任务主表",
+      "version": "arXiv 2607.11498v2",
+      "tasks": "24 atomic tasks",
+      "split": "RoboCasa original 24 tasks; paper-reported three seeds",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Original RoboCasa 24 atomic tasks, 50 demos/task, three-seed author-reported means, not RoboCasa365; Table I.",
+      "trainingRegime": "pi0.5 pretraining and RGB-D pointmap augmentation under paper-defined task-specific fine-tuning.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickPlace",
+        "OpenClose",
+        "KnobLever",
+        "ButtonInsert",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "PickPlace": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "OpenClose": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "KnobLever": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "ButtonInsert": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "PickPlace": "higher",
+        "OpenClose": "higher",
+        "KnobLever": "higher",
+        "ButtonInsert": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "PickPlace": "percent",
+        "OpenClose": "percent",
+        "KnobLever": "percent",
+        "ButtonInsert": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "seer-v2-franka-real4",
+      "dataset": "SeeLikeRobot real",
+      "name": "SeeR-VLA v2 · Franka四任务真机",
+      "version": "arXiv 2607.11498v2",
+      "tasks": "4 real-world manipulation tasks",
+      "split": "Franka Research 3 real-robot seen camera; 20 trials/task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Four robot tasks 20 trials each, paper Table I; not RoboCasa24 or an official standardized real-robot leaderboard.",
+      "trainingRegime": "Franka RGB-D and calibrated robot-frame pointmaps; task-specific human demonstrations.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickPlace",
+        "Stack",
+        "OpenDrawer",
+        "PegHole",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "qualityKind": "case-study",
+      "columnSpecs": {
+        "PickPlace": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Stack": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "OpenDrawer": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "PegHole": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "PickPlace": "higher",
+        "Stack": "higher",
+        "OpenDrawer": "higher",
+        "PegHole": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "PickPlace": "percent",
+        "Stack": "percent",
+        "OpenDrawer": "percent",
+        "PegHole": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "turbovla-v3-libero-main",
+      "dataset": "LIBERO",
+      "name": "TurboVLA v3 · 标准LIBERO四套件",
+      "version": "arXiv 2607.27205v3",
+      "tasks": "40 tasks / 4 suites",
+      "split": "Spatial / Object / Goal / Long; standard LIBERO",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Each suite has 10 tasks x50 rollouts = 2000 total; author-reported Table1; no uncertainty given.",
+      "trainingRegime": "DINOv3 ViT-B 0.2B, BERT, no_noops 40-task joint training, 40k steps, effective batch128 and four RTX4090; H12.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.27205v3",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Spatial": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Object": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Goal": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "turbovla-v3-robotwin50-mixed",
+      "dataset": "RoboTwin",
+      "name": "TurboVLA v3 · RoboTwin2.0 50任务混合示范",
+      "version": "arXiv 2607.27205v3",
+      "tasks": "50 tasks, Clean and Randomized",
+      "split": "Clean / Randomized (two evaluation settings)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin 2.0, 50 tasks, 100 trials/task/condition. 27,500 mixed demo training. Independent paper reported result, not the official 2500-clean co-train leaderboard.",
+      "trainingRegime": "DINOv3 ViT-L 0.4B, 2500 clean + 25000 randomized demonstrations, 150k training steps, effective batch512 on eight H100 GPUs; H50, 14D absolute joints.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.27205v3",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Clean": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Randomized": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Randomized": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Randomized": "percent",
+        "Average": "percent"
+      }
     }
   ],
   "settings": [
@@ -14996,7 +15218,8 @@
         "proact-v1-libero",
         "foreact3d-v1-libero-all-suites",
         "patchwam-v1-libero-standard",
-        "fastvla-v1-libero"
+        "fastvla-v1-libero",
+        "turbovla-v3-libero-main"
       ],
       "resultIds": [
         "r-adavla-v2-sr-b10",
@@ -15076,6 +15299,7 @@
         "r-temporalflow-v1-libero-main",
         "r-thaw-v2-libero-base",
         "r-thaw-v2-libero-distilled",
+        "r-turbovla-v3-libero-ours",
         "r-vlaflow-v2-libero-lpi",
         "r-vlaflow-v2-libero-lwpi",
         "r-vlaflow-v2-libero-pi-full",
@@ -15086,7 +15310,7 @@
         "r-w2vla-v1-libero-w2",
         "r-xiaomi0-v2-libero-xiaomi-robotics-0"
       ],
-      "resultCount": 86,
+      "resultCount": 87,
       "paperCount": 24,
       "paperIds": [
         "p030",
@@ -15114,7 +15338,7 @@
         "p010",
         "p112"
       ],
-      "methodCount": 72,
+      "methodCount": 73,
       "primaryTrackId": "libero-oft-single-view",
       "trainingOptions": [
         {
@@ -15256,6 +15480,12 @@
           "count": 2
         },
         {
+          "id": "data-a9b88ec178b7",
+          "label": "Standard LIBERO 40 tasks",
+          "known": true,
+          "count": 1
+        },
+        {
           "id": "unknown-p002",
           "label": "训练数据未完整披露 · p002",
           "known": false,
@@ -15358,6 +15588,7 @@
         "r-temporalflow-v1-libero-main": "unknown-p014",
         "r-thaw-v2-libero-base": "unknown-p106",
         "r-thaw-v2-libero-distilled": "unknown-p106",
+        "r-turbovla-v3-libero-ours": "data-a9b88ec178b7",
         "r-vlaflow-v2-libero-lpi": "unknown-p002",
         "r-vlaflow-v2-libero-lwpi": "unknown-p002",
         "r-vlaflow-v2-libero-pi-full": "unknown-p002",
@@ -15391,7 +15622,7 @@
         }
       },
       "qualityKind": "benchmark",
-      "primaryResultCount": 77,
+      "primaryResultCount": 78,
       "primaryPaperCount": 24,
       "latestReportVerifiedAt": "2026-10-22",
       "methodNames": [
@@ -15458,6 +15689,7 @@
         "TemporalFlow-VLA",
         "QwenGR00T 0.8B · no distillation",
         "THAW-VLA · QwenGR00T 0.8B distilled",
+        "TurboVLA (v3 0.2B)",
         "MindLPI",
         "MindLWPI",
         "MindPI",
@@ -15480,7 +15712,11 @@
       "unit": "percent",
       "direction": "higher",
       "columns": [
-        "Average"
+        "Average",
+        "PickPlace",
+        "OpenClose",
+        "KnobLever",
+        "ButtonInsert"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
@@ -15489,7 +15725,8 @@
         "robocasa24-xiaomi-300demos",
         "robocasa-original-24atomic-v1",
         "robocasa24-rldx-v2",
-        "seelike-v1-pretrained-robocasa"
+        "seelike-v1-pretrained-robocasa",
+        "seer-v2-robocasa24-main"
       ],
       "resultIds": [
         "r-robocasa-original-24atomic-v1-bc-transformer-generated-3000",
@@ -15519,9 +15756,12 @@
         "r-seelike-v1-pretrained-pi05",
         "r-seelike-v1-pretrained-pointvla",
         "r-seelike-v1-pretrained-smolvla-pm",
-        "r-seelike-v1-pretrained-smolvla"
+        "r-seelike-v1-pretrained-smolvla",
+        "r-seer-v2-robocasa24-pi05-rgb",
+        "r-seer-v2-robocasa24-pointvla",
+        "r-seer-v2-robocasa24-seer"
       ],
-      "resultCount": 28,
+      "resultCount": 31,
       "paperCount": 5,
       "paperIds": [
         "p079",
@@ -15530,7 +15770,7 @@
         "p004",
         "p011"
       ],
-      "methodCount": 25,
+      "methodCount": 27,
       "primaryTrackId": "robocasa24-cosmos-50demos",
       "trainingOptions": [
         {
@@ -15598,6 +15838,12 @@
           "label": "训练数据未完整披露 · p011",
           "known": false,
           "count": 9
+        },
+        {
+          "id": "data-7fa48042c2ba",
+          "label": "RoboCasa 24 tasks；50 human demonstrations/task",
+          "known": true,
+          "count": 3
         }
       ],
       "trainingByResult": {
@@ -15628,18 +15874,37 @@
         "r-seelike-v1-pretrained-pi05": "unknown-p011",
         "r-seelike-v1-pretrained-pointvla": "unknown-p011",
         "r-seelike-v1-pretrained-smolvla-pm": "unknown-p011",
-        "r-seelike-v1-pretrained-smolvla": "unknown-p011"
+        "r-seelike-v1-pretrained-smolvla": "unknown-p011",
+        "r-seer-v2-robocasa24-pi05-rgb": "data-7fa48042c2ba",
+        "r-seer-v2-robocasa24-pointvla": "data-7fa48042c2ba",
+        "r-seer-v2-robocasa24-seer": "data-7fa48042c2ba"
       },
       "columnMeta": {
         "Average": {
           "unit": "percent",
           "direction": "higher"
+        },
+        "PickPlace": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "OpenClose": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "KnobLever": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "ButtonInsert": {
+          "unit": "percent",
+          "direction": "higher"
         }
       },
       "qualityKind": "benchmark",
-      "primaryResultCount": 26,
+      "primaryResultCount": 29,
       "primaryPaperCount": 5,
-      "latestReportVerifiedAt": "2026-09-20",
+      "latestReportVerifiedAt": "2026-10-22",
       "methodNames": [
         "BC-Transformer",
         "Cosmos Policy",
@@ -15665,7 +15930,9 @@
         "π0.5 + Pointmap",
         "PointVLA",
         "SmolVLA + Pointmap",
-        "SmolVLA"
+        "SmolVLA",
+        "π0.5 RGB-only",
+        "SeeR-VLA"
       ]
     },
     {
@@ -29406,6 +29673,146 @@
       "methodNames": [
         "Fast-VLA"
       ]
+    },
+    {
+      "id": "setting-seelikerobot-real-success-1d62b1b115-na-6245f85a695b",
+      "dataset": "SeeLikeRobot real",
+      "evalId": "auto:success-1d62b1b115-na",
+      "name": "SeeLikeRobot real · PickPlace / Stack / OpenDrawer / … · Success Rate",
+      "tasks": "4 real-world manipulation tasks",
+      "split": "Franka Research 3 real-robot seen camera; 20 trials/task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "PickPlace",
+        "Stack",
+        "OpenDrawer",
+        "PegHole",
+        "Average"
+      ],
+      "protocol": "Four robot tasks 20 trials each, paper Table I; not RoboCasa24 or an official standardized real-robot leaderboard.",
+      "trackIds": [
+        "seer-v2-franka-real4"
+      ],
+      "resultIds": [
+        "r-seer-v2-franka4-pi05-rgb",
+        "r-seer-v2-franka4-pointvla",
+        "r-seer-v2-franka4-seer"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p011"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "seer-v2-franka-real4",
+      "trainingOptions": [
+        {
+          "id": "data-48f5e8d77257",
+          "label": "real dataset separate from RoboCasa simulation.",
+          "known": true,
+          "count": 3
+        }
+      ],
+      "trainingByResult": {
+        "r-seer-v2-franka4-pi05-rgb": "data-48f5e8d77257",
+        "r-seer-v2-franka4-pointvla": "data-48f5e8d77257",
+        "r-seer-v2-franka4-seer": "data-48f5e8d77257"
+      },
+      "columnMeta": {
+        "PickPlace": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Stack": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "OpenDrawer": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "PegHole": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "case-study",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-22",
+      "methodNames": [
+        "π0.5 RGB-only",
+        "PointVLA",
+        "SeeR-VLA"
+      ]
+    },
+    {
+      "id": "setting-robotwin-success-437b4a91ee-50-839a5713b2fb",
+      "dataset": "RoboTwin",
+      "evalId": "auto:success-437b4a91ee-50",
+      "name": "RoboTwin · 50 Tasks · Success Rate",
+      "tasks": "50 tasks, Clean and Randomized",
+      "split": "Clean / Randomized (two evaluation settings)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "protocol": "RoboTwin 2.0, 50 tasks, 100 trials/task/condition. 27,500 mixed demo training. Independent paper reported result, not the official 2500-clean co-train leaderboard.",
+      "trackIds": [
+        "turbovla-v3-robotwin50-mixed"
+      ],
+      "resultIds": [
+        "r-turbovla-v3-robotwin-mixed-ours"
+      ],
+      "resultCount": 1,
+      "paperCount": 1,
+      "paperIds": [
+        "p027"
+      ],
+      "methodCount": 1,
+      "primaryTrackId": "turbovla-v3-robotwin50-mixed",
+      "trainingOptions": [
+        {
+          "id": "data-960b33395936",
+          "label": "RoboTwin2.0 all 50 tasks，2500 Clean + 25000 Randomized demonstrations",
+          "known": true,
+          "count": 1
+        }
+      ],
+      "trainingByResult": {
+        "r-turbovla-v3-robotwin-mixed-ours": "data-960b33395936"
+      },
+      "columnMeta": {
+        "Clean": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Randomized": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 1,
+      "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-10-22",
+      "methodNames": [
+        "TurboVLA (v3 0.4B)"
+      ]
     }
   ],
   "taxonomy": {
@@ -30133,39 +30540,41 @@
     "legacySettingTracks": {
       "setting-libero-plus-d7a11d009077": "libero-plus-rldx-v2"
     },
-    "primaryResultCount": 689,
-    "archivedResultCount": 226
+    "primaryResultCount": 694,
+    "archivedResultCount": 229
   },
   "officialBoards": {
     "RoboTwin": {
       "id": "robotwin2",
       "benchmark": "RoboTwin",
-      "sourceUpdatedAt": "2026-10-11",
-      "capturedAt": "2026-10-13",
+      "sourceUpdatedAt": "2026-10-21",
+      "capturedAt": "2026-10-22",
       "sourceUrl": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
       "boardUrl": "https://robotwin-platform.github.io/leaderboard",
-      "sourceRepoRevision": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
-      "sourceBlobSha": "e5a8af33d319649022ef124b1bbaf11767068dc3",
-      "entryCount": 25,
+      "sourceRepoRevision": "49ab2255e4fcaa16fc3608b9326cc081dbd9dca8",
+      "sourceBlobSha": "ff882227fa2119ccb2d9a83d3986261739dfcdbb",
+      "entryCount": 27,
       "metricSchema": "clean-random",
       "topThree": [
         {
-          "model": "PatchWAM",
+          "model": "CloudRobo-WM",
           "rank": 1,
-          "average": 79.14
+          "average": 81.95
         },
         {
-          "model": "ME-Dex-1.0",
+          "model": "MWA-Phoenix",
           "rank": 2,
-          "average": 78.85
+          "average": 79.48
         },
         {
-          "model": "ViGAR",
+          "model": "PatchWAM",
           "rank": 3,
-          "average": 74.51
+          "average": 79.14
         }
       ],
       "modelNames": [
+        "CloudRobo-WM",
+        "MWA-Phoenix",
         "PatchWAM",
         "ME-Dex-1.0",
         "ViGAR",
@@ -30192,7 +30601,7 @@
         "ACT",
         "DP"
       ],
-      "resultUrl": "data/official-boards/robotwin2.1fb903b0f2dac389.json"
+      "resultUrl": "data/official-boards/robotwin2.dfaef9051bfeff86.json"
     },
     "RoboDojo": {
       "id": "robodojo-sim",
@@ -48430,6 +48839,156 @@
       "sourceClass": "paper-reported"
     },
     {
+      "id": "r-seer-v2-franka4-pi05-rgb",
+      "paperId": "p011",
+      "method": "π0.5 RGB-only",
+      "trackId": "seer-v2-franka-real4",
+      "values": {
+        "PickPlace": 50,
+        "Stack": 15,
+        "OpenDrawer": 65,
+        "PegHole": 20,
+        "Average": 37.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · Real-world four task trials",
+      "attribution": "reported-baseline",
+      "trainingData": "Franka Research 3 RGB-D manipulation; four real tasks, 20 test episodes per task; real dataset separate from RoboCasa simulation.",
+      "evaluationNotes": "Only source paper real-robot case study, not RoboDojo Real official setting. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "pi05rgbonly",
+      "displayTier": "case-study",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-seer-v2-franka4-pointvla",
+      "paperId": "p011",
+      "method": "PointVLA",
+      "trackId": "seer-v2-franka-real4",
+      "values": {
+        "PickPlace": 45,
+        "Stack": 30,
+        "OpenDrawer": 75,
+        "PegHole": 35,
+        "Average": 46.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · Real-world four task trials",
+      "attribution": "reported-baseline",
+      "trainingData": "Franka Research 3 RGB-D manipulation; four real tasks, 20 test episodes per task; real dataset separate from RoboCasa simulation.",
+      "evaluationNotes": "Only source paper real-robot case study, not RoboDojo Real official setting. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "pointvla",
+      "displayTier": "case-study",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-seer-v2-franka4-seer",
+      "paperId": "p011",
+      "method": "SeeR-VLA",
+      "trackId": "seer-v2-franka-real4",
+      "values": {
+        "PickPlace": 75,
+        "Stack": 55,
+        "OpenDrawer": 85,
+        "PegHole": 65,
+        "Average": 70
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · Real-world four task trials",
+      "attribution": "author-reported",
+      "trainingData": "Franka Research 3 RGB-D manipulation; four real tasks, 20 test episodes per task; real dataset separate from RoboCasa simulation.",
+      "evaluationNotes": "Only source paper real-robot case study, not RoboDojo Real official setting. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "seervla",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-seer-v2-robocasa24-pi05-rgb",
+      "paperId": "p011",
+      "method": "π0.5 RGB-only",
+      "trackId": "seer-v2-robocasa24-main",
+      "values": {
+        "PickPlace": 45.2,
+        "OpenClose": 81.6,
+        "KnobLever": 41.6,
+        "ButtonInsert": 52.7,
+        "Average": 55.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · RoboCasa 24 tasks",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboCasa 24 tasks; 50 human demonstrations/task; 3 training seeds; source Table I; RGB-D with camera calibration.",
+      "evaluationNotes": "Table I reports separate group means and three-seed uncertainties; values here retain point estimates, exact ± appears in deep-read table. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "pi05rgbonly",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-seer-v2-robocasa24-pointvla",
+      "paperId": "p011",
+      "method": "PointVLA",
+      "trackId": "seer-v2-robocasa24-main",
+      "values": {
+        "PickPlace": 47.7,
+        "OpenClose": 86.6,
+        "KnobLever": 42.5,
+        "ButtonInsert": 55.7,
+        "Average": 58
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · RoboCasa 24 tasks",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboCasa 24 tasks; 50 human demonstrations/task; 3 training seeds; source Table I; RGB-D with camera calibration.",
+      "evaluationNotes": "Table I reports separate group means and three-seed uncertainties; values here retain point estimates, exact ± appears in deep-read table. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "pointvla",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-seer-v2-robocasa24-seer",
+      "paperId": "p011",
+      "method": "SeeR-VLA",
+      "trackId": "seer-v2-robocasa24-main",
+      "values": {
+        "PickPlace": 52.9,
+        "OpenClose": 88,
+        "KnobLever": 46.1,
+        "ButtonInsert": 58.8,
+        "Average": 61.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.11498v2",
+      "sourceVersion": "arXiv 2607.11498v2",
+      "locator": "v2 Table I · RoboCasa 24 tasks",
+      "attribution": "author-reported",
+      "trainingData": "RoboCasa 24 tasks; 50 human demonstrations/task; 3 training seeds; source Table I; RGB-D with camera calibration.",
+      "evaluationNotes": "Table I reports separate group means and three-seed uncertainties; values here retain point estimates, exact ± appears in deep-read table. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "seervla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
       "id": "r-simpler-google-rldx-va-rldx-1",
       "paperId": "p081",
       "method": "RLDX-1",
@@ -49887,6 +50446,54 @@
       "evaluationNotes": "缺精确对齐基线时不补0。",
       "supersedes": "",
       "methodId": "track4action",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-turbovla-v3-libero-ours",
+      "paperId": "p027",
+      "method": "TurboVLA (v3 0.2B)",
+      "trackId": "turbovla-v3-libero-main",
+      "values": {
+        "Spatial": 97,
+        "Object": 100,
+        "Goal": 98.2,
+        "Long": 95.2,
+        "Average": 97.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.27205v3",
+      "sourceVersion": "arXiv 2607.27205v3",
+      "locator": "v3 Table 1 · Main LIBERO results",
+      "attribution": "author-reported",
+      "trainingData": "Standard LIBERO 40 tasks, joint ViT-B training, no_noops RLDS, 40k steps, effective batch 128, 4x RTX4090, 50 rollouts/task.",
+      "evaluationNotes": "Model inference 31.2ms RTX4090 batch1; 0.9GiB VRAM; no ± was published. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "turbovlav302b",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-turbovla-v3-robotwin-mixed-ours",
+      "paperId": "p027",
+      "method": "TurboVLA (v3 0.4B)",
+      "trackId": "turbovla-v3-robotwin50-mixed",
+      "values": {
+        "Clean": 88.02,
+        "Randomized": 88.1,
+        "Average": 88.06
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-22",
+      "source": "https://arxiv.org/html/2607.27205v3",
+      "sourceVersion": "arXiv 2607.27205v3",
+      "locator": "v3 Table 2 · RoboTwin 2.0 mixed demonstrations",
+      "attribution": "author-reported",
+      "trainingData": "RoboTwin2.0 all 50 tasks, 2500 Clean + 25000 Randomized demonstrations, ViT-L model, 150k steps, effective batch512, 8x H100; 100 trials per task per condition.",
+      "evaluationNotes": "Result not comparable to earlier v2 clean-only 55k training. Policy latency 43.4ms is not robot cycle latency. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+      "supersedes": "",
+      "methodId": "turbovlav304b",
       "displayTier": "primary",
       "sourceClass": "paper-reported"
     },

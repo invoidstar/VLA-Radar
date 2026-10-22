@@ -241,6 +241,40 @@
       "reproducibility": [
         "p136"
       ]
+    },
+    {
+      "id": "2026-10-22-backlog-repair",
+      "sha256": "a2f423c2776fad89dd540df5b3304afd72835b27c9f12e3b274d3d3f2bc21bbd",
+      "date": "2026-10-22",
+      "notes": [
+        "p011",
+        "p027"
+      ],
+      "tracks": [
+        "seer-v2-robocasa24-main",
+        "seer-v2-franka-real4",
+        "turbovla-v3-libero-main",
+        "turbovla-v3-robotwin50-mixed"
+      ],
+      "results": 8,
+      "resources": [
+        "p011"
+      ],
+      "reproducibility": [
+        "p011",
+        "p027",
+        "p136"
+      ]
+    },
+    {
+      "id": "2026-10-22-official-publication-sync",
+      "sha256": "ffa2138aa8e8f7738b70262c0462c8564bb37ad7190f269c1d34c74972d2bf12",
+      "date": "2026-10-22",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

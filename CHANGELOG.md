@@ -1,3 +1,11 @@
+## 2026-10-22 — 2026-10-22-official-publication-sync
+
+核对RSS官方论文集并完成Legato p041（RSS 2026）与SpatialVLA p068（RSS 2025）的发表生命周期记录，旧首发与论文深读版本不变；清理已出版p045/p055的失效待核验提示，其余p015/p030/p042/p065仍须官方入口确认。重建源数据的兼容输出和活动索引。
+
+## 2026-10-22 — 2026-10-22-backlog-repair
+
+正文级复核TurboVLA v3与SeeR-VLA v2（p027、p011），保留v2/v1旧证据，新增四条来源限定评测轨道与八条主结果（RoboCasa、Franka、LIBERO、RoboTwin）；校正pointmap项目源码身份，并将TurboVLA、Fast-VLA复现资源提升为逐维deep审计。不同训练预算不合并排名。 本批同时刷新RoboTwin官方27模型快照、完善Oct22来源受限发现审计与10月21日具身智能官方新闻；来源检索并未达到四lane完整成功。
+
 ## 2026-10-22 — 2026-10-22-fast-vla-turbovla
 
 新增Fast-VLA（arXiv:2610.21389）正文级深读、官方代码/项目来源与三条分协议结果；升级既有TurboVLA（p027）的来源核验，补充论文v2与官方仓库后续RoboTwin成绩声明的口径边界，不覆盖旧结果。保留Clean/Randomized、LIBERO、LIBERO-Plus分轨，所有数值均标记作者报告，未声称独立复现。 已补齐逐篇Benchmark disposition与可复现性审计登记。 深读补充了固定任务记忆在场景变化与episode重置条件下的失败模式。 同时明确缓存reset成本应与steady-state latency分开报告。

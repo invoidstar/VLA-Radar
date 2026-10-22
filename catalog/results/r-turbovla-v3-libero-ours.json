@@ -1,0 +1,22 @@
+{
+  "id": "r-turbovla-v3-libero-ours",
+  "paperId": "p027",
+  "method": "TurboVLA (v3 0.2B)",
+  "trackId": "turbovla-v3-libero-main",
+  "values": {
+    "Spatial": 97,
+    "Object": 100,
+    "Goal": 98.2,
+    "Long": 95.2,
+    "Average": 97.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-22",
+  "source": "https://arxiv.org/html/2607.27205v3",
+  "sourceVersion": "arXiv 2607.27205v3",
+  "locator": "v3 Table 1 · Main LIBERO results",
+  "attribution": "author-reported",
+  "trainingData": "Standard LIBERO 40 tasks, joint ViT-B training, no_noops RLDS, 40k steps, effective batch 128, 4x RTX4090, 50 rollouts/task.",
+  "evaluationNotes": "Model inference 31.2ms RTX4090 batch1; 0.9GiB VRAM; no ± was published. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+  "supersedes": ""
+}

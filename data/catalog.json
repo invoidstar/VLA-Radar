@@ -3672,52 +3672,63 @@
     },
     {
       "id": "p011",
-      "name": "See like a Robot",
+      "name": "SeeR-VLA",
       "title": "See like a Robot: Robot-Centric Pointmaps for VLA Models",
       "team": "Byungkun Lee、Dongyoon Hwang、Dongjin Kim、Hojoon Lee、Hyunseung Kim、Jaegul Choo、Minho Park",
       "venue": "arXiv",
       "publicationType": "preprint",
-      "publicationStatus": "arXiv 预印本；当前 v2（2026-09-21）",
+      "publicationStatus": "arXiv v2 预印本",
       "firstPublished": "2026-07-13",
-      "dateNote": "",
+      "dateNote": "arXiv v1于2026-07-13首次公开；v2于2026-09-21更新标题、作者、坐标系消融及实验主结果。两版数据不可互换，原始v1结果保留独立来源轨道。",
       "collectionMonth": "2026-07",
-      "versionNote": "7月13日首次公开｜9月21日修订 v2｜正文深读仍基于 v1，待复核",
+      "versionNote": "2026-07-13首发 · 2026-09-21 v2 · 2026-10-22完整复核",
       "topics": [
         "spatial"
       ],
       "tags": [
         "VLA",
-        "pointmap",
-        "coordinates"
+        "SeeR-VLA",
+        "robot-centric pointmaps",
+        "RGB-D",
+        "viewpoint generalization",
+        "Franka Research 3",
+        "RoboCasa"
       ],
-      "priority": "selective",
-      "contribution": "把像素三维点映射到机器人坐标系，保持图像网格结构，并用末端中心化缓解视觉坐标与动作坐标的不一致。",
-      "findings": "RoboCasa 24任务：π0.5 55.3%→62.9%；SmolVLA 37.2%→41.4%。\n相机变化增大时，RGB版本34.5%→24.9%，RGB+pointmap为37.6%→35.8%。",
-      "limitations": "涉及相机/机器人几何标定与点图质量；每任务50示范、50评测。不同容量策略都获益不代表标定误差可忽略。",
-      "insight": "统一视觉几何与机器人动作的坐标系本身就有价值。鲁棒性收益需要连同标定和点图质量一起看。",
-      "readingFocus": "坐标系选择；末端中心化；相机变化下的退化幅度。",
-      "evidence": "notes",
-      "evidenceNote": "2026-09-29 核对 arXiv 当前元数据：v2 改题并更新作者列表；现有深入笔记仍基于 v1，因此标记 needs_review，不自动认证 v2 正文。",
-      "hasCautionaryResult": false,
+      "priority": "deep",
+      "contribution": "提出SeeR-VLA：将多视角RGB-D恢复为以末端为原点、机器人基座轴向固定的稠密3D pointmap，采用与RGB空间token对齐的附加编码器进行加法融合，从输入端缓解相机视角与机器人动作坐标之间的偏差。",
+      "findings": "arXiv v2作者报告：RoboCasa 24任务三种子平均SeeR-VLA 61.5%±1.2%，RGB-only π0.5为55.1%±0.3%；Franka真机四任务平均70.0%对37.5%；与PointVLA对照分别为58.0%±0.7%和46.3%。上述结果不与v1来源配置混用。",
+      "limitations": "需要相机深度、内外参和机器人末端运动学；点图不保证遮挡不变，真实RGB-D噪声与标定误差可能影响结果。RoboCasa为24任务与有限示范，真机仅四任务、每任务20次，不能宣称任意场景鲁棒。",
+      "insight": "点图坐标不仅需机器人系表达，还应区分原点与轴向：末端原点提高抓取相对位置可比性，保持机器人基座轴向降低腕部旋转引起的伪几何变化。",
+      "readingFocus": "逐像素深度投影与基座变换、末端原点/基座轴的对照、三种融合方式、24任务三种子协议、Franka四任务、实测视角外推与局限。",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-22重新核对arXiv:2607.11498v2完整HTML、官方项目页、Tables I–III及§IV；v1历史结果保留但不作为v2分数；暂不推断正式录用。",
+      "hasCautionaryResult": true,
       "sources": [
         {
-          "label": "原文 · v1",
+          "label": "v2全文 · Tables I–III",
+          "url": "https://arxiv.org/html/2607.11498v2"
+        },
+        {
+          "label": "arXiv原始v1（历史记录）",
           "url": "https://arxiv.org/html/2607.11498v1"
         },
         {
-          "label": "arXiv 元数据",
-          "url": "https://arxiv.org/abs/2607.11498"
+          "label": "官方项目页",
+          "url": "https://davian-robotics.github.io/pointmap/"
+        },
+        {
+          "label": "官方项目站点源仓库（非策略代码）",
+          "url": "https://github.com/DAVIAN-Robotics/pointmap"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2607.11498",
       "arxiv": "2607.11498",
       "doi": "",
-      "detailUrl": "data/details/p011.json?v=ffe9e4372ecf6820",
-      "resultUrl": "data/paper-results/p011.99e2bb699ff5d013.json",
-      "noteStatus": "needs_review",
+      "detailUrl": "data/details/p011.json?v=e2f88b1fb18278ce",
+      "resultUrl": "data/paper-results/p011.1978ba396d6e0a1e.json",
+      "noteStatus": "expanded",
       "resources": {
-        "project": "https://davian-robotics.github.io/pointmap/",
-        "code": "https://github.com/DAVIAN-Robotics/pointmap"
+        "project": "https://davian-robotics.github.io/pointmap/"
       },
       "relations": {
         "previous": [],
@@ -3729,7 +3740,7 @@
         "firstArxivAt": "2026-07-13",
         "latestArxivVersion": "v2",
         "status": "preprint",
-        "lastCheckedAt": "2026-09-29"
+        "lastCheckedAt": "2026-10-22"
       }
     },
     {
@@ -4942,14 +4953,14 @@
       "id": "p027",
       "name": "TurboVLA",
       "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
-      "team": "华中科技大学\nHengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang等",
+      "team": "Hengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang、Xiang Bai、Han Ding",
       "venue": "arXiv",
       "publicationType": "preprint",
-      "publicationStatus": "arXiv:2607.27205\n技术预印本",
+      "publicationStatus": "arXiv v3 预印本",
       "firstPublished": "2026-07-29",
-      "dateNote": "arXiv v1首发2026-07-29（UTC）；v2于2026-08-16提交。2026-10-22复核论文、项目页与官方代码仓库。",
+      "dateNote": "arXiv v1首次公开2026-07-29，v2发表于2026-08-16；v3于2026-09-27重新报告LIBERO与RoboTwin实验。历史v2结果按原版本保留并与v3新数据分轨。",
       "collectionMonth": "2026-07",
-      "versionNote": "7月首发；8月16日v2｜阅读v2",
+      "versionNote": "2026-07-29首发 · 2026-09-27 v3 · 2026-10-22完整复核",
       "topics": [
         "efficiency"
       ],
@@ -4959,37 +4970,41 @@
         "real-time"
       ],
       "priority": "selective",
-      "contribution": "用独立视觉/语言编码器与轻量跨模态交互代替大语言模型控制瓶颈，直接生成连续动作片段。",
-      "findings": "0.2B参数；LIBERO平均97.7%；RTX 4090上延迟31.2ms、显存约0.9GB（约32Hz模型推理）。",
-      "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
-      "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
-      "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
+      "contribution": "提出无大型LLM中心桥接的V+L→A轻量VLA：DINOv3和BERT分别编码当前图像与指令，经Grounding DINO预训练初始化的六层双向图文交互，结合机器人状态由ACT式动作解码器单次并行回归连续动作chunk。",
+      "findings": "arXiv v3报告：0.2B的TurboVLA在LIBERO四套平均97.6%（Spatial97.0/Object100.0/Goal98.2/Long95.2），RTX4090 batch1延迟31.2ms、推理VRAM0.9GiB；0.4B在RoboTwin2.0 Clean88.02%/Randomized88.10%，平均88.06%，延迟43.4ms，训练使用27,500条示范。与旧v2 clean-only结果不同。",
+      "limitations": "执行级语言条件并非无语言策略；视觉、文本和Grounding DINO交互层仍使用非机器人预训练。v3的RoboTwin训练27,500示范、150k步，与v2仅clean的55k步不能直接作为同预算版本提升；32Hz属于模型推理非整机闭环速度。",
+      "insight": "v3增强了不同具身训练预算下的双臂实验。对比时需锁定论文版本、模型规格、Clean/Randomized、训练步骤和端到端时延口径；更新不能仅把88.06作为旧clean-only60.2的替换。",
+      "readingFocus": "对齐v2/v3实验协议变化、ViT-B/ViT-L容量、L1行为克隆与双向交互、RoboTwin mixed 27,500 demo、新版消融、Piper四任务、CUDA graph局部加速与开放权重许可。",
       "evidence": "checked",
-      "evidenceNote": "2026-10-22重新核对arXiv v2正文与作者官方项目、代码、模型卡；论文v2报告、当前项目README更新声明及官方checkpoint的评测口径分别保留，不将不同版本和训练预算混为同一结果。",
-      "hasCautionaryResult": false,
+      "evidenceNote": "2026-10-22依据arXiv:2607.27205v3完整HTML、Appendices A–C及官方代码复核；v2 canonical结果仍为原版本作者报告。",
+      "hasCautionaryResult": true,
       "sources": [
         {
-          "label": "arXiv v2全文",
+          "label": "arXiv v3正文与实验",
+          "url": "https://arxiv.org/html/2607.27205v3"
+        },
+        {
+          "label": "历史v2原文",
           "url": "https://arxiv.org/html/2607.27205v2"
+        },
+        {
+          "label": "官方代码与2026-09-27更新",
+          "url": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        {
+          "label": "官方权重模型卡",
+          "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
         },
         {
           "label": "官方项目页",
           "url": "https://h-embodvis.github.io/TurboVLA/"
-        },
-        {
-          "label": "官方代码仓库",
-          "url": "https://github.com/H-EmbodVis/TurboVLA"
-        },
-        {
-          "label": "官方模型卡与checkpoint说明",
-          "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2607.27205",
       "arxiv": "2607.27205",
       "doi": "",
-      "detailUrl": "data/details/p027.json?v=4e144713543f8a4a",
-      "resultUrl": "data/paper-results/p027.62f57a73a8999c79.json",
+      "detailUrl": "data/details/p027.json?v=4d39f3d7bea978c0",
+      "resultUrl": "data/paper-results/p027.919bd87b4ffbb725.json",
       "noteStatus": "expanded",
       "resources": {
         "code": "https://github.com/H-EmbodVis/TurboVLA",
@@ -5003,7 +5018,7 @@
       "reproducibilityUrl": "data/reproducibility/p027.json",
       "lifecycle": {
         "firstArxivAt": "2026-07-29",
-        "latestArxivVersion": "v2",
+        "latestArxivVersion": "v3",
         "status": "preprint",
         "lastCheckedAt": "2026-10-22"
       }
@@ -5568,7 +5583,7 @@
       "team": "Spirit AI／上海交通大学／清华大学／同济大学／中国科学技术大学\nYufeng Liu、Hang Yu、Juntu Zhao、Junliang Guo等",
       "venue": "RSS 2026",
       "publicationType": "conference",
-      "publicationStatus": "RSS 2026，论文058（作者发表页确认）\narXiv:2602.12978",
+      "publicationStatus": "RSS 2026 官方会议论文集已发表",
       "firstPublished": "2026-02-13",
       "dateNote": "",
       "collectionMonth": "2026-07",
@@ -5589,7 +5604,7 @@
       "insight": "连续执行能力可以进入训练分布，而非全部依赖推理后处理。平滑续接与快速纠正之间仍需权衡。",
       "readingFocus": "原生续接；已知动作条件；延迟适应；与RTC的本质区别。",
       "evidence": "notes",
-      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+      "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。 2026-10-22另由RSS官方论文集核验发表状态，不等于新版技术全文复核。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -5608,7 +5623,7 @@
       "paperUrl": "https://arxiv.org/abs/2602.12978",
       "arxiv": "2602.12978",
       "doi": "",
-      "detailUrl": "data/details/p041.json?v=a3c044dbd489b36b",
+      "detailUrl": "data/details/p041.json?v=06b499bd2bfeef74",
       "resultUrl": "data/paper-results/p041.7d73dfa562aec789.json",
       "noteStatus": "expanded",
       "resources": {
@@ -5624,8 +5639,8 @@
       "lifecycle": {
         "firstArxivAt": "2026-02-13",
         "latestArxivVersion": "v2",
-        "status": "legacy",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-10-22"
       }
     },
     {
@@ -7435,9 +7450,9 @@
       "name": "SpatialVLA",
       "title": "SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models",
       "team": "Shanghai AI Laboratory；Delin Qu、Haoming Song、Qizhi Chen 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "RSS 2025",
+      "publicationType": "conference",
+      "publicationStatus": "RSS 2025 官方会议论文集已发表",
       "firstPublished": "2025-01-27",
       "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
       "collectionMonth": "2026-09",
@@ -7459,7 +7474,7 @@
       "insight": "空间表示需要同时考虑输入坐标和输出动作分布，几何增强应连同其数据及标定假设阅读。",
       "readingFocus": "Ego3D 坐标定义、动作网格适配、表 I 和模块消融。",
       "evidence": "checked",
-      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+      "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。 2026-10-22另由RSS官方论文集核验发表状态，不等于新版技术全文复核。",
       "hasCautionaryResult": false,
       "sources": [
         {
@@ -7474,7 +7489,7 @@
       "paperUrl": "https://arxiv.org/abs/2501.15830",
       "arxiv": "2501.15830",
       "doi": "",
-      "detailUrl": "data/details/p068.json?v=fea7e6a8bb304f6d",
+      "detailUrl": "data/details/p068.json?v=ebf96db996f050cb",
       "resultUrl": "data/paper-results/p068.51ef96d6c55d867d.json",
       "noteStatus": "expanded",
       "resources": {
@@ -7490,8 +7505,8 @@
       "lifecycle": {
         "firstArxivAt": "2025-01-27",
         "latestArxivVersion": "v5",
-        "status": "preprint",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-10-22"
       }
     },
     {

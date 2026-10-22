@@ -198,7 +198,9 @@
         "seelike-v1-fusion-ablation",
         "seelike-v1-view-robustness",
         "seelike-v1-pretrained-robocasa",
-        "seelike-v1-real-view"
+        "seelike-v1-real-view",
+        "seer-v2-robocasa24-main",
+        "seer-v2-franka-real4"
       ],
       "resultIds": [
         "r-seelike-v1-geom-rgb",
@@ -224,9 +226,15 @@
         "r-seelike-v1-pretrained-smolvla-pm",
         "r-seelike-v1-real-dp3",
         "r-seelike-v1-real-pi05",
-        "r-seelike-v1-real-pi05-pm"
+        "r-seelike-v1-real-pi05-pm",
+        "r-seer-v2-robocasa24-pi05-rgb",
+        "r-seer-v2-robocasa24-pointvla",
+        "r-seer-v2-robocasa24-seer",
+        "r-seer-v2-franka4-pi05-rgb",
+        "r-seer-v2-franka4-pointvla",
+        "r-seer-v2-franka4-seer"
       ],
-      "note": "第十五批：新增24条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。"
+      "note": "第十五批：新增24条源定位结果；协议/指标分轨并保留负面结果与真实0值。不表示全文数值穷尽或本站复现。 v2新验证SeeR-VLA 原始结果和旧版独立保存，2026-10-22完成新版本正文/官方源码核对；原始协议单独留存，未独立复现。"
     },
     "p012": {
       "status": "extracted",
@@ -491,7 +499,9 @@
       "trackIds": [
         "libero-turbovla-v2",
         "robotwin2-turbovla-v2-clean-per-task",
-        "robotwin2-turbovla-v2-clean-multi-task"
+        "robotwin2-turbovla-v2-clean-multi-task",
+        "turbovla-v3-libero-main",
+        "turbovla-v3-robotwin50-mixed"
       ],
       "resultIds": [
         "r-libero-turbovla-v2-dp",
@@ -531,9 +541,11 @@
         "r-robotwin2-turbovla-v2-clean-multi-task-upvla",
         "r-robotwin2-turbovla-v2-clean-multi-task-pi05",
         "r-robotwin2-turbovla-v2-clean-multi-task-starvla",
-        "r-robotwin2-turbovla-v2-clean-multi-task-ours"
+        "r-robotwin2-turbovla-v2-clean-multi-task-ours",
+        "r-turbovla-v3-libero-ours",
+        "r-turbovla-v3-robotwin-mixed-ours"
       ],
-      "note": "第十二批：明确版本原文及原表核验，新增38条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
+      "note": "第十二批：明确版本原文及原表核验，新增38条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。 TurboVLA v3新验证 原始结果和旧版独立保存，2026-10-22完成新版本正文/官方源码核对；原始协议单独留存，未独立复现。"
     },
     "p028": {
       "status": "extracted",

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-22-backlog-partial",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-22",
+    "attemptedAt": "2026-10-22",
+    "completedAt": null
+  },
+  "scope": "VLA-Radar Oct22 backlog repair: primary papers and revisions, recent VLA/WAM efficiency, memory and benchmark sources, official RoboTwin reverse discovery, and independent academic-index attempts; not exhaustive Sep20–Oct22 four-lane coverage.",
+  "sources": [
+    {
+      "id": "primary-revisions",
+      "lane": "primary-preprints",
+      "provider": "arXiv",
+      "kind": "Primary paper version and selected recent paper verification",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-21",
+        "to": "2026-10-22"
+      },
+      "query": "arxiv exact ID 2607.11498v2, 2607.27205v3, 2610.21389; recent 2610.27861/2610.25043/2610.22951/2610.27917/2610.27657/2610.28626; no full cs.RO global window scan.",
+      "resultCount": 9,
+      "note": "Read source papers for p011/p027; newly discovered recent articles are identity/abstract-only, not yet full reads. The source lane did not exhaustively query every date and topic since Sep20."
+    },
+    {
+      "id": "academic-index-oct",
+      "lane": "academic-index",
+      "provider": "OpenAlex / Semantic Scholar",
+      "kind": "Independent scholarly index check",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "Broad VLA / embodied robot manipulation scholarly-index search from Sep20 to Oct22; third-party index endpoints inaccessible or insufficient to verify full range.",
+      "resultCount": 0,
+      "note": "Could not obtain complete independent index coverage. Must retain discovery status partial and lastSuccessfulSearchAt 2026-10-04."
+    },
+    {
+      "id": "curated-recent-oct",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily",
+      "kind": "Curated VLA article feed",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-16",
+        "to": "2026-10-22"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html checked 2026-10-22; high relevance VLA, memory, world change and efficient action generation.",
+      "resultCount": 6,
+      "note": "Curated page updated Oct22 but earlier Sep20–Oct15 segment not exhaustively rescanned; identity checks on selected titles and exact arXiv links."
+    },
+    {
+      "id": "official-reverse-oct",
+      "lane": "reverse-discovery",
+      "provider": "RoboTwin Platform / official project repositories",
+      "kind": "Official Benchmark and model/project pages",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-22"
+      },
+      "query": "Official RoboTwin2 2026-10-21 source snapshot, RoboDojo unchanged, TurboVLA official github/HF, SeeR-VLA project repository.",
+      "resultCount": 4,
+      "note": "Official RoboTwin source adds 2 model submissions; no exhaustive cross-lab, all-benchmark or related/citation reverse discovery for Sep20–Oct22."
+    }
+  ],
+  "candidates": [
+    {
+      "doi": "",
+      "title": "See like a Robot: Robot-Centric Pointmaps for VLA Models (v2 update)",
+      "arxiv": "2607.11498",
+      "date": "2026-09-21",
+      "sourceIds": [
+        "primary-revisions",
+        "official-reverse-oct"
+      ],
+      "status": "duplicate",
+      "paperId": null,
+      "duplicateOf": "p011",
+      "reason": "现有p011，更新版本与实验结果而不新建论文。"
+    },
+    {
+      "doi": "",
+      "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM (v3 update)",
+      "arxiv": "2607.27205",
+      "date": "2026-09-27",
+      "sourceIds": [
+        "primary-revisions",
+        "official-reverse-oct"
+      ],
+      "status": "duplicate",
+      "paperId": null,
+      "duplicateOf": "p027",
+      "reason": "现有p027，原始v2数据与v3新表分轨，不能重复收录。"
+    },
+    {
+      "doi": "",
+      "title": "Fast-VLA: You Only Think Once for Robot Manipulation",
+      "arxiv": "2610.21389",
+      "date": "2026-10-15",
+      "sourceIds": [
+        "primary-revisions",
+        "curated-recent-oct"
+      ],
+      "status": "duplicate",
+      "paperId": null,
+      "duplicateOf": "p136",
+      "reason": "已在2026-10-22单独收录为p136，此处防重复。"
+    },
+    {
+      "doi": "",
+      "title": "RoboCasa-Shift: Stage-Aware Robustness Evaluation of Vision-Language-Action Policies in Long-Horizon Household Manipulation",
+      "arxiv": "2610.27861",
+      "date": "2026-10-20",
+      "sourceIds": [
+        "curated-recent-oct",
+        "primary-revisions"
+      ],
+      "status": "deferred",
+      "paperId": null,
+      "duplicateOf": null,
+      "reason": "核实arXiv身份/摘要及代码入口；未完成24任务? 真正协议、完整正文与表格级核验，保留后续深读。"
+    },
+    {
+      "doi": "",
+      "title": "VLA-Rolling: Fewer Denoising Steps, Better Control via Adaptive Action Reuse",
+      "arxiv": "2610.25043",
+      "date": "2026-10-20",
+      "sourceIds": [
+        "curated-recent-oct",
+        "primary-revisions"
+      ],
+      "status": "deferred",
+      "paperId": null,
+      "duplicateOf": null,
+      "reason": "已核对arXiv身份和公开摘要；模型-基准组合及动作尾部复用实验仍需原表全文核验。"
+    },
+    {
+      "doi": "",
+      "title": "MambaAct: Efficient Mamba Action Experts for Flow-Matching Vision-Language-Action Models",
+      "arxiv": "2610.22951",
+      "date": "2026-10-16",
+      "sourceIds": [
+        "curated-recent-oct",
+        "primary-revisions"
+      ],
+      "status": "deferred",
+      "paperId": null,
+      "duplicateOf": null,
+      "reason": "已定位arXiv全文与公开代码/模型来源，尚未完成至少8节正文与实验协议逐表阅读。"
+    },
+    {
+      "doi": "",
+      "title": "EventSync: Event-Driven Memory Updates for History-Dependent Manipulation",
+      "arxiv": "2610.27917",
+      "date": "2026-10-20",
+      "sourceIds": [
+        "curated-recent-oct",
+        "primary-revisions"
+      ],
+      "status": "deferred",
+      "paperId": null,
+      "duplicateOf": null,
+      "reason": "已核实arXiv v1；RoboMME及四项真机的评测预算/负结果尚需全文核验，不以摘要数据入榜。"
+    },
+    {
+      "doi": "",
+      "title": "PLaCA: Learning Patch-Level Future Latent Change for Action Generation",
+      "arxiv": "2610.27657",
+      "date": "2026-10-20",
+      "sourceIds": [
+        "curated-recent-oct",
+        "primary-revisions"
+      ],
+      "status": "deferred",
+      "paperId": null,
+      "duplicateOf": null,
+      "reason": "已核实v1及LIBERO-Long/CALVIN摘要，须补齐动作条件与未来潜变量消融的全文定位再收录。"
+    },
+    {
+      "doi": "",
+      "title": "UniWALM: Unified World Action Language Model for Embodied Robot Control",
+      "arxiv": "2610.28626",
+      "date": "2026-10-20",
+      "sourceIds": [
+        "curated-recent-oct",
+        "primary-revisions"
+      ],
+      "status": "deferred",
+      "paperId": null,
+      "duplicateOf": null,
+      "reason": "核实arXiv文献身份；统一世界动作语言建模的训练协议与基准来源尚未完成正文级核对。"
+    }
+  ],
+  "counts": {
+    "total": 9,
+    "selected": 0,
+    "deferred": 6,
+    "excluded": 0,
+    "duplicate": 3,
+    "crossSource": 9
+  },
+  "status": "partial",
+  "notes": "The academic-index lane is blocked; this maintenance batch is a verified content update, not full multi-provider discovery. Keep historical deferred candidates and lastSuccessfulSearchAt 2026-10-04; re-run four lanes later before advancing checkpoint."
+}

@@ -7005,6 +7005,92 @@
         "Average"
       ],
       "source": "https://arxiv.org/html/2610.21389"
+    },
+    {
+      "id": "seer-v2-robocasa24-main",
+      "dataset": "RoboCasa",
+      "name": "SeeR-VLA v2 · RoboCasa原版24任务主表",
+      "version": "arXiv 2607.11498v2",
+      "tasks": "24 atomic tasks",
+      "split": "RoboCasa original 24 tasks; paper-reported three seeds",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Original RoboCasa 24 atomic tasks, 50 demos/task, three-seed author-reported means, not RoboCasa365; Table I.",
+      "trainingRegime": "pi0.5 pretraining and RGB-D pointmap augmentation under paper-defined task-specific fine-tuning.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickPlace",
+        "OpenClose",
+        "KnobLever",
+        "ButtonInsert",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.11498v2"
+    },
+    {
+      "id": "seer-v2-franka-real4",
+      "dataset": "SeeLikeRobot real",
+      "name": "SeeR-VLA v2 · Franka四任务真机",
+      "version": "arXiv 2607.11498v2",
+      "tasks": "4 real-world manipulation tasks",
+      "split": "Franka Research 3 real-robot seen camera; 20 trials/task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Four robot tasks 20 trials each, paper Table I; not RoboCasa24 or an official standardized real-robot leaderboard.",
+      "trainingRegime": "Franka RGB-D and calibrated robot-frame pointmaps; task-specific human demonstrations.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickPlace",
+        "Stack",
+        "OpenDrawer",
+        "PegHole",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.11498v2"
+    },
+    {
+      "id": "turbovla-v3-libero-main",
+      "dataset": "LIBERO",
+      "name": "TurboVLA v3 · 标准LIBERO四套件",
+      "version": "arXiv 2607.27205v3",
+      "tasks": "40 tasks / 4 suites",
+      "split": "Spatial / Object / Goal / Long; standard LIBERO",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Each suite has 10 tasks x50 rollouts = 2000 total; author-reported Table1; no uncertainty given.",
+      "trainingRegime": "DINOv3 ViT-B 0.2B, BERT, no_noops 40-task joint training, 40k steps, effective batch128 and four RTX4090; H12.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.27205v3"
+    },
+    {
+      "id": "turbovla-v3-robotwin50-mixed",
+      "dataset": "RoboTwin",
+      "name": "TurboVLA v3 · RoboTwin2.0 50任务混合示范",
+      "version": "arXiv 2607.27205v3",
+      "tasks": "50 tasks, Clean and Randomized",
+      "split": "Clean / Randomized (two evaluation settings)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin 2.0, 50 tasks, 100 trials/task/condition. 27,500 mixed demo training. Independent paper reported result, not the official 2500-clean co-train leaderboard.",
+      "trainingRegime": "DINOv3 ViT-L 0.4B, 2500 clean + 25000 randomized demonstrations, 150k training steps, effective batch512 on eight H100 GPUs; H50, 14D absolute joints.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2607.27205v3"
     }
   ]
 }

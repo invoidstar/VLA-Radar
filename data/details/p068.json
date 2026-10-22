@@ -5,9 +5,9 @@
     "name": "SpatialVLA",
     "title": "SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Models",
     "team": "Shanghai AI Laboratory；Delin Qu、Haoming Song、Qizhi Chen 等",
-    "venue": "arXiv",
-    "publicationType": "preprint",
-    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "venue": "RSS 2025",
+    "publicationType": "conference",
+    "publicationStatus": "RSS 2025 官方会议论文集已发表",
     "firstPublished": "2025-01-27",
     "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
     "collectionMonth": "2026-09",
@@ -29,7 +29,7 @@
     "insight": "空间表示需要同时考虑输入坐标和输出动作分布，几何增强应连同其数据及标定假设阅读。",
     "readingFocus": "Ego3D 坐标定义、动作网格适配、表 I 和模块消融。",
     "evidence": "checked",
-    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。",
+    "evidenceNote": "2026-09-17 核对了所列原文段落 / 官方项目说明，非整篇认证或独立复现。 2026-10-22另由RSS官方论文集核验发表状态，不等于新版技术全文复核。",
     "hasCautionaryResult": false,
     "sources": [
       {
@@ -50,12 +50,12 @@
     "firstArxivSource": "https://arxiv.org/abs/2501.15830v1",
     "latestArxivVersion": "v5",
     "latestArxivAt": "2025-05-19",
-    "status": "preprint",
-    "venue": "arXiv",
+    "status": "published",
+    "venue": "RSS 2025",
     "doi": "",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "publishedAt": "2025-06",
+    "lastCheckedAt": "2026-10-22",
     "history": [
       {
         "kind": "imported",
@@ -80,6 +80,14 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2501.15830v5",
         "note": "元数据版本 v5；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2025-06",
+        "observedAt": "2026-10-22",
+        "venue": "RSS 2025",
+        "source": "https://www.roboticsproceedings.org/rss21/p011.html",
+        "note": "RSS XXI 官方论文集p011与SpatialVLA同题同作者，2025年6月会议发表，保留2025年1月arXiv首次公开日。"
       }
     ],
     "alerts": []

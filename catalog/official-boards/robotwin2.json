@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "id": "robotwin2",
   "benchmark": "RoboTwin",
-  "capturedAt": "2026-10-13",
-  "officialUpdatedAt": "2026-10-11",
+  "capturedAt": "2026-10-22",
+  "officialUpdatedAt": "2026-10-21",
   "sourceUrl": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
-  "sourceRepoUrl": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd/data/robotwin_leaderboard.json",
-  "sourceRepoRevision": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
-  "sourceBlobSha": "e5a8af33d319649022ef124b1bbaf11767068dc3",
+  "sourceRepoUrl": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/49ab2255e4fcaa16fc3608b9326cc081dbd9dca8/data/robotwin_leaderboard.json",
+  "sourceRepoRevision": "49ab2255e4fcaa16fc3608b9326cc081dbd9dca8",
+  "sourceBlobSha": "ff882227fa2119ccb2d9a83d3986261739dfcdbb",
   "provenance": "RoboTwin 2.0 official machine-readable leaderboard, evaluated via XPolicyLab",
   "sourceOfRecord": "RoboTwin Team",
   "boardUrl": "https://robotwin-platform.github.io/leaderboard",
@@ -19,12 +19,38 @@
     "Clean",
     "Random"
   ],
-  "notes": "Train budget constrained within official board. Values are author/team submissions reproduced by XPolicyLab, not VLA-Radar reproductions. Do not equate with heterogeneous research paper summaries.",
+  "notes": "2026-10-21官方机器可读快照：27条原始模型提交，含新增CloudRobo-WM和MWA-Phoenix，保留源记录精度、排序与Co-train/Single类别。此榜为官方2,500条Clean共同预算，和论文27,500条混合示范不直接同榜；来源提交不意味着已核验对应论文。",
   "entries": [
+    {
+      "model": "CloudRobo-WM",
+      "sourceEntryId": "cotrain:CloudRobo_WM",
+      "rank": 1,
+      "track": "cotrain",
+      "contributor": "CloudRobo Team",
+      "listedAt": "26.10.19",
+      "values": {
+        "Clean": 88.9,
+        "Random": 75,
+        "Average": 81.95
+      }
+    },
+    {
+      "model": "MWA-Phoenix",
+      "sourceEntryId": "cotrain:MWA_Phoenix",
+      "rank": 2,
+      "track": "cotrain",
+      "contributor": "Anyverse & OpenPhoenix",
+      "listedAt": "26.10.21",
+      "values": {
+        "Clean": 86.54,
+        "Random": 72.42,
+        "Average": 79.48
+      }
+    },
     {
       "model": "PatchWAM",
       "sourceEntryId": "cotrain:PatchWAM",
-      "rank": 1,
+      "rank": 3,
       "track": "cotrain",
       "contributor": "PatchWAM Team",
       "listedAt": "26.10.02",
@@ -41,7 +67,7 @@
     {
       "model": "ME-Dex-1.0",
       "sourceEntryId": "cotrain:ME_Dex_1_0",
-      "rank": 2,
+      "rank": 4,
       "track": "cotrain",
       "contributor": "Li Auto Inc.",
       "listedAt": "26.09.24",
@@ -58,7 +84,7 @@
     {
       "model": "ViGAR",
       "sourceEntryId": "cotrain:ViGAR",
-      "rank": 3,
+      "rank": 5,
       "track": "cotrain",
       "contributor": "PKU DAGroup & AGIBOT",
       "listedAt": "26.10.11",
@@ -75,7 +101,7 @@
     {
       "model": "UniWAM",
       "sourceEntryId": "cotrain:UniWAM",
-      "rank": 4,
+      "rank": 6,
       "track": "cotrain",
       "contributor": "OLA-HKUSTGZ",
       "listedAt": "26.09.01",
@@ -88,20 +114,20 @@
     {
       "model": "GigaBrain-0.7",
       "sourceEntryId": "cotrain:GigaBrain_0_7",
-      "rank": 5,
+      "rank": 7,
       "track": "cotrain",
       "contributor": "GigaAI",
       "listedAt": "26.08.15",
       "values": {
         "Clean": 66.8,
-        "Random": 67.9,
-        "Average": 67.35
+        "Random": 67.92,
+        "Average": 67.36
       }
     },
     {
       "model": "WorldScape Policy 2.0",
       "sourceEntryId": "cotrain:WorldScape_Policy_2_0",
-      "rank": 6,
+      "rank": 8,
       "track": "cotrain",
       "contributor": "ManiFold AI",
       "listedAt": "26.09.24",
@@ -114,7 +140,7 @@
     {
       "model": "4D-WAM",
       "sourceEntryId": "cotrain:4D_WAM",
-      "rank": 7,
+      "rank": 9,
       "track": "cotrain",
       "contributor": "OpenHelix Robotics",
       "listedAt": "26.08.18",
@@ -127,20 +153,20 @@
     {
       "model": "π0.5",
       "sourceEntryId": "cotrain:Pi_05",
-      "rank": 8,
+      "rank": 10,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.10",
       "values": {
-        "Clean": 70.7,
+        "Clean": 70.66,
         "Random": 46,
-        "Average": 58.35
+        "Average": 58.33
       }
     },
     {
       "model": "OLA-Geo",
       "sourceEntryId": "cotrain:OLA_Geo",
-      "rank": 9,
+      "rank": 11,
       "track": "cotrain",
       "contributor": "OLA-HKUSTGZ",
       "listedAt": "26.09.01",
@@ -153,46 +179,46 @@
     {
       "model": "Spatial Forcing",
       "sourceEntryId": "cotrain:Spatial_Forcing",
-      "rank": 10,
+      "rank": 12,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.17",
       "values": {
-        "Clean": 77.2,
+        "Clean": 77.18,
         "Random": 26.74,
-        "Average": 51.97
+        "Average": 51.96
       }
     },
     {
       "model": "X-WAM",
       "sourceEntryId": "cotrain:X_WAM",
-      "rank": 11,
+      "rank": 13,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.10",
       "values": {
-        "Clean": 70,
-        "Random": 25.8,
-        "Average": 47.9
+        "Clean": 69.98,
+        "Random": 25.84,
+        "Average": 47.91
       }
     },
     {
       "model": "X-VLA",
       "sourceEntryId": "cotrain:X_VLA",
-      "rank": 12,
+      "rank": 14,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.10",
       "values": {
-        "Clean": 68,
-        "Random": 20.9,
-        "Average": 44.45
+        "Clean": 67.96,
+        "Random": 20.95,
+        "Average": 44.46
       }
     },
     {
       "model": "Abot-M0",
       "sourceEntryId": "cotrain:Abot_M0",
-      "rank": 13,
+      "rank": 15,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.17",
@@ -205,59 +231,59 @@
     {
       "model": "EventVLA",
       "sourceEntryId": "cotrain:EventVLA",
-      "rank": 14,
-      "track": "cotrain",
-      "contributor": "RoboTwin Team",
-      "listedAt": "26.08.10",
-      "values": {
-        "Clean": 65.6,
-        "Random": 15.7,
-        "Average": 40.65
-      }
-    },
-    {
-      "model": "Xiaomi Robotics-0",
-      "sourceEntryId": "cotrain:Xiaomi_Robotics_0",
-      "rank": 15,
-      "track": "cotrain",
-      "contributor": "RoboTwin Team",
-      "listedAt": "26.08.10",
-      "values": {
-        "Clean": 62.9,
-        "Random": 18.2,
-        "Average": 40.55
-      }
-    },
-    {
-      "model": "FastWAM",
-      "sourceEntryId": "cotrain:FastWAM",
       "rank": 16,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.10",
       "values": {
-        "Clean": 77.8,
-        "Random": 1.9,
-        "Average": 39.85
+        "Clean": 65.58,
+        "Random": 15.74,
+        "Average": 40.66
+      }
+    },
+    {
+      "model": "Xiaomi Robotics-0",
+      "sourceEntryId": "cotrain:Xiaomi_Robotics_0",
+      "rank": 17,
+      "track": "cotrain",
+      "contributor": "RoboTwin Team",
+      "listedAt": "26.08.10",
+      "values": {
+        "Clean": 62.86,
+        "Random": 18.22,
+        "Average": 40.54
+      }
+    },
+    {
+      "model": "FastWAM",
+      "sourceEntryId": "cotrain:FastWAM",
+      "rank": 18,
+      "track": "cotrain",
+      "contributor": "RoboTwin Team",
+      "listedAt": "26.08.10",
+      "values": {
+        "Clean": 77.76,
+        "Random": 1.92,
+        "Average": 39.84
       }
     },
     {
       "model": "GalaxeaVLA",
       "sourceEntryId": "cotrain:GalaxeaVLA",
-      "rank": 17,
+      "rank": 19,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.17",
       "values": {
-        "Clean": 62.7,
+        "Clean": 62.72,
         "Random": 12.72,
-        "Average": 37.71
+        "Average": 37.72
       }
     },
     {
       "model": "Discrete Forcing",
       "sourceEntryId": "cotrain:Discrete_Forcing",
-      "rank": 18,
+      "rank": 20,
       "track": "cotrain",
       "contributor": "OpenHelix Team",
       "listedAt": "26.10.10",
@@ -270,20 +296,20 @@
     {
       "model": "AHA-WAM",
       "sourceEntryId": "cotrain:AHA_WAM",
-      "rank": 19,
+      "rank": 21,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.10",
       "values": {
-        "Clean": 64.3,
+        "Clean": 64.32,
         "Random": 3.2,
-        "Average": 33.75
+        "Average": 33.76
       }
     },
     {
       "model": "π0",
       "sourceEntryId": "sft:π0",
-      "rank": 20,
+      "rank": 22,
       "track": "sft",
       "contributor": "RoboTwin Team",
       "listedAt": "25.08.04",
@@ -296,7 +322,7 @@
     {
       "model": "DP3",
       "sourceEntryId": "sft:DP3",
-      "rank": 21,
+      "rank": 23,
       "track": "sft",
       "contributor": "RoboTwin Team",
       "listedAt": "25.08.04",
@@ -309,7 +335,7 @@
     {
       "model": "starVLA",
       "sourceEntryId": "cotrain:starVLA",
-      "rank": 22,
+      "rank": 24,
       "track": "cotrain",
       "contributor": "RoboTwin Team",
       "listedAt": "26.08.17",
@@ -322,7 +348,7 @@
     {
       "model": "RDT",
       "sourceEntryId": "sft:RDT",
-      "rank": 23,
+      "rank": 25,
       "track": "sft",
       "contributor": "RoboTwin Team",
       "listedAt": "25.08.04",
@@ -335,7 +361,7 @@
     {
       "model": "ACT",
       "sourceEntryId": "sft:ACT",
-      "rank": 24,
+      "rank": 26,
       "track": "sft",
       "contributor": "RoboTwin Team",
       "listedAt": "25.08.04",
@@ -348,7 +374,7 @@
     {
       "model": "DP",
       "sourceEntryId": "sft:DP",
-      "rank": 25,
+      "rank": 27,
       "track": "sft",
       "contributor": "RoboTwin Team",
       "listedAt": "25.08.04",
