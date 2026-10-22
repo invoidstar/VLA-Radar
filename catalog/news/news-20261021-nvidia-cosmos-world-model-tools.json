@@ -20,7 +20,7 @@
   "evidence": "official",
   "status": "verified",
   "featured": true,
-  "importance": "research",
+  "importance": "research-resource",
   "whatHappened": "NVIDIA于10月21日介绍Cosmos世界模型生态新增数据处理、模型训练、评估与部署工具，以及与物理AI合成训练数据相关的模型检查点和工作流。公告强调使研究者能够对世界模型进行微调、验证与优化。",
   "whyItMatters": "世界模型对具身智能的潜在价值在于理解状态变化、合成数据及验证行为后果；公开训练和评估接口可能减少工具链割裂带来的成本。",
   "vlaRelevance": "此项属于视频/世界模型基础设施进展，可供机器人策略的数据生成与动态建模参考，并不意味着公告中的世界模型已经构成统一动作策略或公开VLA成功率榜。",
