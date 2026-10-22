@@ -4,14 +4,14 @@
     "id": "p027",
     "name": "TurboVLA",
     "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
-    "team": "华中科技大学\nHengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang等",
+    "team": "Hengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang、Xiang Bai、Han Ding",
     "venue": "arXiv",
     "publicationType": "preprint",
-    "publicationStatus": "arXiv:2607.27205\n技术预印本",
+    "publicationStatus": "arXiv v3 预印本",
     "firstPublished": "2026-07-29",
-    "dateNote": "arXiv v1首发2026-07-29（UTC）；v2于2026-08-16提交。2026-10-22复核论文、项目页与官方代码仓库。",
+    "dateNote": "arXiv v1首次公开2026-07-29，v2发表于2026-08-16；v3于2026-09-27重新报告LIBERO与RoboTwin实验。历史v2结果按原版本保留并与v3新数据分轨。",
     "collectionMonth": "2026-07",
-    "versionNote": "7月首发；8月16日v2｜阅读v2",
+    "versionNote": "2026-07-29首发 · 2026-09-27 v3 · 2026-10-22完整复核",
     "topics": [
       "efficiency"
     ],
@@ -21,30 +21,34 @@
       "real-time"
     ],
     "priority": "selective",
-    "contribution": "用独立视觉/语言编码器与轻量跨模态交互代替大语言模型控制瓶颈，直接生成连续动作片段。",
-    "findings": "0.2B参数；LIBERO平均97.7%；RTX 4090上延迟31.2ms、显存约0.9GB（约32Hz模型推理）。",
-    "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
-    "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
-    "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
+    "contribution": "提出无大型LLM中心桥接的V+L→A轻量VLA：DINOv3和BERT分别编码当前图像与指令，经Grounding DINO预训练初始化的六层双向图文交互，结合机器人状态由ACT式动作解码器单次并行回归连续动作chunk。",
+    "findings": "arXiv v3报告：0.2B的TurboVLA在LIBERO四套平均97.6%（Spatial97.0/Object100.0/Goal98.2/Long95.2），RTX4090 batch1延迟31.2ms、推理VRAM0.9GiB；0.4B在RoboTwin2.0 Clean88.02%/Randomized88.10%，平均88.06%，延迟43.4ms，训练使用27,500条示范。与旧v2 clean-only结果不同。",
+    "limitations": "执行级语言条件并非无语言策略；视觉、文本和Grounding DINO交互层仍使用非机器人预训练。v3的RoboTwin训练27,500示范、150k步，与v2仅clean的55k步不能直接作为同预算版本提升；32Hz属于模型推理非整机闭环速度。",
+    "insight": "v3增强了不同具身训练预算下的双臂实验。对比时需锁定论文版本、模型规格、Clean/Randomized、训练步骤和端到端时延口径；更新不能仅把88.06作为旧clean-only60.2的替换。",
+    "readingFocus": "对齐v2/v3实验协议变化、ViT-B/ViT-L容量、L1行为克隆与双向交互、RoboTwin mixed 27,500 demo、新版消融、Piper四任务、CUDA graph局部加速与开放权重许可。",
     "evidence": "checked",
-    "evidenceNote": "2026-10-22重新核对arXiv v2正文与作者官方项目、代码、模型卡；论文v2报告、当前项目README更新声明及官方checkpoint的评测口径分别保留，不将不同版本和训练预算混为同一结果。",
-    "hasCautionaryResult": false,
+    "evidenceNote": "2026-10-22依据arXiv:2607.27205v3完整HTML、Appendices A–C及官方代码复核；v2 canonical结果仍为原版本作者报告。",
+    "hasCautionaryResult": true,
     "sources": [
       {
-        "label": "arXiv v2全文",
+        "label": "arXiv v3正文与实验",
+        "url": "https://arxiv.org/html/2607.27205v3"
+      },
+      {
+        "label": "历史v2原文",
         "url": "https://arxiv.org/html/2607.27205v2"
+      },
+      {
+        "label": "官方代码与2026-09-27更新",
+        "url": "https://github.com/H-EmbodVis/TurboVLA"
+      },
+      {
+        "label": "官方权重模型卡",
+        "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
       },
       {
         "label": "官方项目页",
         "url": "https://h-embodvis.github.io/TurboVLA/"
-      },
-      {
-        "label": "官方代码仓库",
-        "url": "https://github.com/H-EmbodVis/TurboVLA"
-      },
-      {
-        "label": "官方模型卡与checkpoint说明",
-        "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2607.27205",
@@ -54,8 +58,8 @@
   "publication": {
     "firstArxivAt": "2026-07-29",
     "firstArxivSource": "https://arxiv.org/abs/2607.27205v1",
-    "latestArxivVersion": "v2",
-    "latestArxivAt": "2026-08-16",
+    "latestArxivVersion": "v3",
+    "latestArxivAt": "2026-09-27",
     "status": "preprint",
     "venue": "arXiv",
     "doi": "",
@@ -94,6 +98,14 @@
         "venue": "arXiv / official project",
         "source": "https://github.com/H-EmbodVis/TurboVLA",
         "note": "重新核对官方仓库与模型卡。README后续更新了RoboTwin成绩声明；该值与论文v2表格中的clean-only、多任务旧checkpoint记录口径不同，未覆盖旧结果。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-09-27",
+        "observedAt": "2026-10-22",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.27205v3",
+        "note": "v3在已公开的RoboTwin2.0混合示范训练上报告88.06%平均值，独立于v2仅clean对比；LIBERO新版均值97.6%。"
       }
     ],
     "alerts": []
