@@ -1,7 +1,7 @@
 {
   "id": "2026-10-22-backlog-repair",
   "date": "2026-10-22",
-  "summary": "正文级复核TurboVLA v3与SeeR-VLA v2（p027、p011），保留v2/v1旧证据，新增四条来源限定评测轨道与八条主结果（RoboCasa、Franka、LIBERO、RoboTwin）；校正pointmap项目源码身份，并将TurboVLA、Fast-VLA复现资源提升为逐维deep审计。不同训练预算不合并排名。",
+  "summary": "正文级复核TurboVLA v3与SeeR-VLA v2（p027、p011），保留v2/v1旧证据，新增四条来源限定评测轨道与八条主结果（RoboCasa、Franka、LIBERO、RoboTwin）；校正pointmap项目源码身份，并将TurboVLA、Fast-VLA复现资源提升为逐维deep审计。不同训练预算不合并排名。 本批同时刷新RoboTwin官方27模型快照、完善Oct22来源受限发现审计与10月21日具身智能官方新闻；来源检索并未达到四lane完整成功。",
   "notes": [
     {
       "paperId": "p011",
