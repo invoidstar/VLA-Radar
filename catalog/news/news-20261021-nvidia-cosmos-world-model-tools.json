@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261021-nvidia-cosmos-world-model-tools",
+  "eventKey": "nvidia-cosmos-world-model-tools-20261021",
+  "title": "NVIDIA 更新 Cosmos 世界模型训练、评估与部署工具",
+  "primaryCategory": "research",
+  "tags": [
+    "NVIDIA Cosmos",
+    "World Models",
+    "Physical AI",
+    "数据生成",
+    "机器人"
+  ],
+  "eventDate": "2026-10-21",
+  "publishedAt": "2026-10-21",
+  "dateNote": "2026-10-22阅读一手官方页面；将公告发生日与未来计划及二次转述严格区分。",
+  "observedAt": "2026-10-22",
+  "updatedAt": "2026-10-22",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research",
+  "whatHappened": "NVIDIA于10月21日介绍Cosmos世界模型生态新增数据处理、模型训练、评估与部署工具，以及与物理AI合成训练数据相关的模型检查点和工作流。公告强调使研究者能够对世界模型进行微调、验证与优化。",
+  "whyItMatters": "世界模型对具身智能的潜在价值在于理解状态变化、合成数据及验证行为后果；公开训练和评估接口可能减少工具链割裂带来的成本。",
+  "vlaRelevance": "此项属于视频/世界模型基础设施进展，可供机器人策略的数据生成与动态建模参考，并不意味着公告中的世界模型已经构成统一动作策略或公开VLA成功率榜。",
+  "limits": "工具开放、模型训练能力与真机控制性能是不同证据层；官方展示或自述排名没有经过本站独立复现，也未把世界模型指标转换为机器人任务成功率。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models",
+      "publisher": "NVIDIA Blog",
+      "url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/",
+      "kind": "official",
+      "publishedAt": "2026-10-21",
+      "access": "full-page",
+      "note": "正文与发布日期、实际开放状态及未来承诺边界经一手页面核对；不表示能力独立评测。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
