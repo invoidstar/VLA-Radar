@@ -1,0 +1,53 @@
+{
+  "id": "publication-candidate-review-2026-10-22",
+  "reviewedAt": "2026-10-22",
+  "scope": "Official RSS proceedings and already-published lifecycle audit; arXiv venue comments not independently certifying other pending candidates.",
+  "resolved": [
+    {
+      "paperId": "p041",
+      "status": "published",
+      "source": "https://www.roboticsproceedings.org/rss22/p058.html",
+      "note": "RSS2026 official proceedings confirmed; publishedAt=2026-07, acceptedAt not inferred."
+    },
+    {
+      "paperId": "p068",
+      "status": "published",
+      "source": "https://www.roboticsproceedings.org/rss21/p011.html",
+      "note": "RSS2025 official proceedings confirmed; publishedAt=2025-06; arXiv first-public date retained."
+    },
+    {
+      "paperId": "p045",
+      "status": "already-published",
+      "source": "https://doi.org/10.1016/j.inffus.2026.104193",
+      "note": "Existing published journal metadata already contains title-linked DOI and publication event; removed stale venue mention from pending queue."
+    },
+    {
+      "paperId": "p055",
+      "status": "already-published",
+      "source": "https://doi.org/10.1177/02783649241273668",
+      "note": "Existing record already tracks RSS2023 paper and IJRR expanded publication; candidate no longer open."
+    }
+  ],
+  "pending": [
+    {
+      "paperId": "p015",
+      "source": "https://arxiv.org/abs/2608.08749",
+      "reason": "Current evidence consists of author/arXiv venue mention or incomplete outlet identification; await original proceedings/publisher page rather than infer acceptance."
+    },
+    {
+      "paperId": "p030",
+      "source": "https://arxiv.org/abs/2608.29208",
+      "reason": "Current evidence consists of author/arXiv venue mention or incomplete outlet identification; await original proceedings/publisher page rather than infer acceptance."
+    },
+    {
+      "paperId": "p042",
+      "source": "https://arxiv.org/abs/2604.05323",
+      "reason": "Current evidence consists of author/arXiv venue mention or incomplete outlet identification; await original proceedings/publisher page rather than infer acceptance."
+    },
+    {
+      "paperId": "p065",
+      "source": "https://arxiv.org/abs/2410.07864",
+      "reason": "Current evidence consists of author/arXiv venue mention or incomplete outlet identification; await original proceedings/publisher page rather than infer acceptance."
+    }
+  ]
+}
