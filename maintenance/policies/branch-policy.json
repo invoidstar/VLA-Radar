@@ -1,9 +1,24 @@
 {
   "repository": "invoidstar/VLA-Radar",
   "defaultBranch": "main",
-  "keepNames": ["main", "master", "develop", "gh-pages"],
-  "keepPrefixes": ["pre-update-safety", "backup/", "archive/", "keep/"],
-  "managedPrefixes": ["weekly-update-", "release/batch-", "feature/"],
+  "keepNames": [
+    "main",
+    "master",
+    "develop",
+    "gh-pages"
+  ],
+  "keepPrefixes": [
+    "pre-update-safety",
+    "backup/",
+    "archive/",
+    "keep/"
+  ],
+  "managedPrefixes": [
+    "weekly-update-",
+    "release/batch-",
+    "feature/",
+    "docs/"
+  ],
   "minMergedHours": 6,
   "maxDeletes": 10,
   "unmergedPolicy": "report-only; never delete solely based on age",
