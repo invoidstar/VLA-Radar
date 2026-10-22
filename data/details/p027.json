@@ -9,7 +9,7 @@
     "publicationType": "preprint",
     "publicationStatus": "arXiv:2607.27205\n技术预印本",
     "firstPublished": "2026-07-29",
-    "dateNote": "",
+    "dateNote": "arXiv v1首发2026-07-29（UTC）；v2于2026-08-16提交。2026-10-22复核论文、项目页与官方代码仓库。",
     "collectionMonth": "2026-07",
     "versionNote": "7月首发；8月16日v2｜阅读v2",
     "topics": [
@@ -26,17 +26,25 @@
     "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
     "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
     "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
-    "evidence": "notes",
-    "evidenceNote": "沿用首批文献笔记及所列版本；本次网站迁移未重新逐项核对全文。",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-22重新核对arXiv v2正文与作者官方项目、代码、模型卡；论文v2报告、当前项目README更新声明及官方checkpoint的评测口径分别保留，不将不同版本和训练预算混为同一结果。",
     "hasCautionaryResult": false,
     "sources": [
       {
-        "label": "原文 · v2",
+        "label": "arXiv v2全文",
         "url": "https://arxiv.org/html/2607.27205v2"
       },
       {
-        "label": "arXiv 元数据",
-        "url": "https://arxiv.org/abs/2607.27205"
+        "label": "官方项目页",
+        "url": "https://h-embodvis.github.io/TurboVLA/"
+      },
+      {
+        "label": "官方代码仓库",
+        "url": "https://github.com/H-EmbodVis/TurboVLA"
+      },
+      {
+        "label": "官方模型卡与checkpoint说明",
+        "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2607.27205",
@@ -53,7 +61,7 @@
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-10-22",
     "history": [
       {
         "kind": "imported",
@@ -78,15 +86,23 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2607.27205v2",
         "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "source_check",
+        "date": "2026-10-22",
+        "observedAt": "2026-10-22",
+        "venue": "arXiv / official project",
+        "source": "https://github.com/H-EmbodVis/TurboVLA",
+        "note": "重新核对官方仓库与模型卡。README后续更新了RoboTwin成绩声明；该值与论文v2表格中的clean-only、多任务旧checkpoint记录口径不同，未覆盖旧结果。"
       }
     ],
     "alerts": []
   },
   "note": {
     "status": "expanded",
-    "updatedAt": "2026-09-19",
-    "verifiedAt": "2026-09-19",
-    "version": "arXiv 2607.27205v2；16页PDF正文§4方法、§5实验与§6结论；Figures 2–6、Tables 1–6原生表页核验；未声称有独立附录",
+    "updatedAt": "2026-10-22",
+    "verifiedAt": "2026-10-22",
+    "version": "arXiv:2607.27205v2 · 2026-10-22复核正文与官方项目",
     "sections": [
       {
         "id": "problem",
@@ -179,11 +195,27 @@
       {
         "id": "source-scope",
         "title": "提取边界与复现要求：保留作者对照，不造统一公平榜",
-        "body": "本次按明确arXiv v2的16页原文核对方法图和Tables1–6，共记录38条SR结果，覆盖LIBERO17个主表方法、10个不重复组件变体，以及RoboTwin11个按训练类别分开的方法。RTX4090延迟仍作为有原表定位的配套说明；没有为每个基线补造未报告的置信区间、最佳checkpoint或训练样本数量。\n真正复现时应先锁定no_noops数据、40任务联合训练和ViT-B配置，再核对RoboTwin的ViT-L、clean示范、绝对关节动作与55k步设置。一个共享方法名不足以保证输入、动作空间、预训练和训练预算相同。本站因此将这些行标为论文表格证据，而不是宣称在统一赛道重跑的名次；保留旧KEY RESULT与首次公开日期。",
+        "body": "本次按明确arXiv v2的16页原文核对方法图和Tables1–6，共记录38条SR结果，覆盖LIBERO17个主表方法、10个不重复组件变体，以及RoboTwin11个按训练类别分开的方法。RTX4090延迟仍作为有原表定位的配套说明；没有为每个基线补造未报告的置信区间、最佳checkpoint或训练样本数量。\n真正复现时应先锁定no_noops数据、40任务联合训练和ViT-B配置，再核对RoboTwin的ViT-L、clean示范、绝对关节动作与55k步设置。一个共享方法名不足以保证输入、动作空间、预训练和训练预算相同。本站因此将这些行标为论文表格证据，而不是宣称在统一赛道重跑的名次；保留旧KEY RESULT与首次公开日期。\n\n版本与官方来源复核：官方项目页、GitHub仓库与Hugging Face模型卡显示，项目README在2026-09-27更新说明中另报TurboVLA在RoboTwin 2.0达到88.06%平均成功率，并称论文、代码与checkpoint已更新。该项目级声明未在当前README摘要中给出与论文v2表格完全一致的逐项口径，因此不覆盖既有论文v2的clean-only和多任务结果，也不强行映射到旧track。后续如需纳入正式结果，应先核对更新版论文原表、任务集合、Clean/Randomized定义、训练步数及checkpoint来源。",
         "sources": [
           {
             "label": "§5.1–5.4；Tables 1–6 · 已核验的明确版本原文",
             "url": "https://arxiv.org/pdf/2607.27205v2"
+          },
+          {
+            "label": "官方代码仓库与更新说明",
+            "url": "https://github.com/H-EmbodVis/TurboVLA"
+          },
+          {
+            "label": "官方项目页",
+            "url": "https://h-embodvis.github.io/TurboVLA/"
+          },
+          {
+            "label": "官方模型卡",
+            "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
+          },
+          {
+            "label": "arXiv v2原文",
+            "url": "https://arxiv.org/html/2607.27205v2"
           }
         ]
       }

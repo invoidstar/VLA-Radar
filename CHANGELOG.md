@@ -1,3 +1,7 @@
+## 2026-10-22 — 2026-10-22-fast-vla-turbovla
+
+新增Fast-VLA（arXiv:2610.21389）正文级深读、官方代码/项目来源与三条分协议结果；升级既有TurboVLA（p027）的来源核验，补充论文v2与官方仓库后续RoboTwin成绩声明的口径边界，不覆盖旧结果。保留Clean/Randomized、LIBERO、LIBERO-Plus分轨，所有数值均标记作者报告，未声称独立复现。 已补齐逐篇Benchmark disposition与可复现性审计登记。 深读补充了固定任务记忆在场景变化与episode重置条件下的失败模式。 同时明确缓存reset成本应与steady-state latency分开报告。
+
 ## 2026-10-18 — 2026-10-18-robodojo-setting-compatibility
 
 修正RoboDojo 42任务作者论文报告与既有官网42任务协议的Evaluation Setting映射：COAP/PhysEvo仍保留原始track、训练预算、种子/回合、不同原表任务列及paper-table展示，却不因报告论文和列覆盖差异制造4个新Setting；增加回归测试确保两类指标独立、部分列覆盖与官方口径对齐。无新增或篡改结果值，不推进不完整的Discovery或News成功检查点。

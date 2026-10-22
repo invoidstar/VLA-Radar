@@ -1,0 +1,19 @@
+{
+  "id": "r-fastvla-v1-robotwin2",
+  "paperId": "p136",
+  "method": "Fast-VLA",
+  "trackId": "fastvla-v1-robotwin2-clean-randomized",
+  "values": {
+    "Clean": 92.46,
+    "Randomized": 92.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-22",
+  "source": "https://arxiv.org/html/2610.21389",
+  "sourceVersion": "arXiv 2610.21389v1",
+  "locator": "Abstract; official repository README performance table",
+  "attribution": "author-reported",
+  "trainingData": "27,500 demonstrations across 50 RoboTwin tasks: 50 clean + 500 randomized demonstrations per task; 272M actor with frozen 4B DM0.5 VLM.",
+  "evaluationNotes": "Clean and Randomized success rates are kept separate. README also reports amortized inference 1.437 ms/step and 1.22 GiB online resident memory; these are separate metrics and are not encoded as success-rate values. Not independently reproduced by VLA-Radar.",
+  "supersedes": ""
+}
