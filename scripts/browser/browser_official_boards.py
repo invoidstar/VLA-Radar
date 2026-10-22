@@ -45,17 +45,19 @@ try:
         show(page,'RoboTwin')
         page.wait_for_selector('.benchmark-official summary')
         check('RoboTwin snapshot is dated and pinned',
-            '2026-10-11' in page.locator('.benchmark-official summary').inner_text())
+            '2026-10-21' in page.locator('.benchmark-official summary').inner_text())
         page.locator('.benchmark-official summary').click()
         page.wait_for_selector('[data-official-model="PatchWAM"]')
+        check('CloudRobo-WM official source addition is present', page.locator('[data-official-model="CloudRobo-WM"]').count()==1)
+        check('MWA-Phoenix official source addition is present', page.locator('[data-official-model="MWA-Phoenix"]').count()==1)
         check('RoboTwin top score keeps percent semantics',
             '79.14%' in page.locator('[data-official-model="PatchWAM"] .official-score').inner_text())
         page.locator('[data-official-dimension]').select_option('Random')
         check('RoboTwin random evaluation remains distinct',
             '66.72%' in page.locator('[data-official-model="PatchWAM"] .official-score').inner_text())
         page.locator('[data-official-all]').click()
-        check('All 25 official RoboTwin submissions remain available',
-            page.locator('.official-table tbody tr').count()==25)
+        check('All 27 source-pinned RoboTwin submissions remain available',
+            page.locator('.official-table tbody tr').count()==27)
         check('Research paper comparison remains a separate table',
             page.locator('.setting-table').count()==1)
         show(page,'RoboDojo')
