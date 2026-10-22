@@ -4,14 +4,14 @@
     "id": "p027",
     "name": "TurboVLA",
     "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
-    "team": "华中科技大学\nHengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang等",
+    "team": "Hengyi Xie、Chenfei Yao、Xianjin Wu、Yingying Zhu、Dingkang Liang、Xiang Bai、Han Ding",
     "venue": "arXiv",
     "publicationType": "preprint",
-    "publicationStatus": "arXiv:2607.27205\n技术预印本",
+    "publicationStatus": "arXiv v3 预印本",
     "firstPublished": "2026-07-29",
-    "dateNote": "arXiv v1首发2026-07-29（UTC）；v2于2026-08-16提交。2026-10-22复核论文、项目页与官方代码仓库。",
+    "dateNote": "arXiv v1首次公开2026-07-29，v2发表于2026-08-16；v3于2026-09-27重新报告LIBERO与RoboTwin实验。历史v2结果按原版本保留并与v3新数据分轨。",
     "collectionMonth": "2026-07",
-    "versionNote": "7月首发；8月16日v2｜阅读v2",
+    "versionNote": "2026-07-29首发 · 2026-09-27 v3 · 2026-10-22完整复核",
     "topics": [
       "efficiency"
     ],
@@ -21,30 +21,34 @@
       "real-time"
     ],
     "priority": "selective",
-    "contribution": "用独立视觉/语言编码器与轻量跨模态交互代替大语言模型控制瓶颈，直接生成连续动作片段。",
-    "findings": "0.2B参数；LIBERO平均97.7%；RTX 4090上延迟31.2ms、显存约0.9GB（约32Hz模型推理）。",
-    "limitations": "仍然有语言条件，是VLA而非无语言VA。LIBERO高分不足以证明复杂开放语言推理与大VLM等价；硬件/输入设置影响延迟。",
-    "insight": "轻量视觉语言融合可以在标准操作基准上很强，但不足以证明复杂语言能力可无损替代。",
-    "readingFocus": "轻量融合架构；语言如何保留；参数、显存与时延口径。",
+    "contribution": "提出无大型LLM中心桥接的V+L→A轻量VLA：DINOv3和BERT分别编码当前图像与指令，经Grounding DINO预训练初始化的六层双向图文交互，结合机器人状态由ACT式动作解码器单次并行回归连续动作chunk。",
+    "findings": "arXiv v3报告：0.2B的TurboVLA在LIBERO四套平均97.6%（Spatial97.0/Object100.0/Goal98.2/Long95.2），RTX4090 batch1延迟31.2ms、推理VRAM0.9GiB；0.4B在RoboTwin2.0 Clean88.02%/Randomized88.10%，平均88.06%，延迟43.4ms，训练使用27,500条示范。与旧v2 clean-only结果不同。",
+    "limitations": "执行级语言条件并非无语言策略；视觉、文本和Grounding DINO交互层仍使用非机器人预训练。v3的RoboTwin训练27,500示范、150k步，与v2仅clean的55k步不能直接作为同预算版本提升；32Hz属于模型推理非整机闭环速度。",
+    "insight": "v3增强了不同具身训练预算下的双臂实验。对比时需锁定论文版本、模型规格、Clean/Randomized、训练步骤和端到端时延口径；更新不能仅把88.06作为旧clean-only60.2的替换。",
+    "readingFocus": "对齐v2/v3实验协议变化、ViT-B/ViT-L容量、L1行为克隆与双向交互、RoboTwin mixed 27,500 demo、新版消融、Piper四任务、CUDA graph局部加速与开放权重许可。",
     "evidence": "checked",
-    "evidenceNote": "2026-10-22重新核对arXiv v2正文与作者官方项目、代码、模型卡；论文v2报告、当前项目README更新声明及官方checkpoint的评测口径分别保留，不将不同版本和训练预算混为同一结果。",
-    "hasCautionaryResult": false,
+    "evidenceNote": "2026-10-22依据arXiv:2607.27205v3完整HTML、Appendices A–C及官方代码复核；v2 canonical结果仍为原版本作者报告。",
+    "hasCautionaryResult": true,
     "sources": [
       {
-        "label": "arXiv v2全文",
+        "label": "arXiv v3正文与实验",
+        "url": "https://arxiv.org/html/2607.27205v3"
+      },
+      {
+        "label": "历史v2原文",
         "url": "https://arxiv.org/html/2607.27205v2"
+      },
+      {
+        "label": "官方代码与2026-09-27更新",
+        "url": "https://github.com/H-EmbodVis/TurboVLA"
+      },
+      {
+        "label": "官方权重模型卡",
+        "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
       },
       {
         "label": "官方项目页",
         "url": "https://h-embodvis.github.io/TurboVLA/"
-      },
-      {
-        "label": "官方代码仓库",
-        "url": "https://github.com/H-EmbodVis/TurboVLA"
-      },
-      {
-        "label": "官方模型卡与checkpoint说明",
-        "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2607.27205",
@@ -54,8 +58,8 @@
   "publication": {
     "firstArxivAt": "2026-07-29",
     "firstArxivSource": "https://arxiv.org/abs/2607.27205v1",
-    "latestArxivVersion": "v2",
-    "latestArxivAt": "2026-08-16",
+    "latestArxivVersion": "v3",
+    "latestArxivAt": "2026-09-27",
     "status": "preprint",
     "venue": "arXiv",
     "doi": "",
@@ -94,6 +98,14 @@
         "venue": "arXiv / official project",
         "source": "https://github.com/H-EmbodVis/TurboVLA",
         "note": "重新核对官方仓库与模型卡。README后续更新了RoboTwin成绩声明；该值与论文v2表格中的clean-only、多任务旧checkpoint记录口径不同，未覆盖旧结果。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-09-27",
+        "observedAt": "2026-10-22",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2607.27205v3",
+        "note": "v3在已公开的RoboTwin2.0混合示范训练上报告88.06%平均值，独立于v2仅clean对比；LIBERO新版均值97.6%。"
       }
     ],
     "alerts": []
@@ -102,120 +114,104 @@
     "status": "expanded",
     "updatedAt": "2026-10-22",
     "verifiedAt": "2026-10-22",
-    "version": "arXiv:2607.27205v2 · 2026-10-22复核正文与官方项目",
+    "version": "arXiv:2607.27205v3 · 2026-10-22全文及附录核验",
     "sections": [
       {
         "id": "problem",
         "title": "研究问题：执行级语言指令，是否每次都需要经过大语言骨干？",
-        "body": "许多VLA先把图像投影到LLM空间，再从该多模态表示解码动作。TurboVLA针对较具体的对象、属性与空间关系指令，独立编码视觉和文字，用轻量双向交互直接形成控制条件，绕过大型生成语言模型这个中心接口。\n它没有证明所有机器人推理都不需要LLM；目标是执行级操作，而非开放式任务分解、长程规划或一般问答。复杂语义仍可在更高层处理，本文检验的是低层每次动作调用是否必须支付相同语言计算成本。",
+        "body": "v3沿用TurboVLA的V+L→A核心思想：不让大语言模型成为每次机器人控制推理的中心桥梁，而是分别编码视觉和指令，让轻量图文交互直接产生用于动作解码的控制条件。它目标是低层执行级指令的速度和显存效率，不代表复杂语言问答、开放任务分解、长程逻辑推理都可以直接删去LLM。新版本增加mixed demo的RoboTwin双臂评测，应结合不同数据预算与模型大小理解，而不是只记新的最高平均SR。",
         "sources": [
           {
-            "label": "§1、§4–5 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 研究问题：执行级语言指令，是否每次都需要经过大语言骨干？",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "encoding",
         "title": "输入表示：保留词级语义与多视角位置，不只给任务编号",
-        "body": "DINOv3编码各相机空间特征，加入patch位置与相机视角嵌入；BERT保留完整指令token，经过投影进入256维共享空间。对象名、属性和关系因而仍可分别影响视觉，而不是先压成单个任务向量。\n本体状态独立投影，直接交给动作解码器，不进入视觉语言对应模块。这样前半部分专注“当前场景中哪部分对应指令”，后半部分再结合机器人配置执行，避免把结构简单误解为完全丢弃语言或状态。\n视觉空间位置和相机身份被保留，动作query能够对多路图像中相应目标定位；文字编码器则提供词级而非单个任务号的输入。这个拆分减少大型生成语言主干的开销，但不意味着图文预训练无用。DINOv3、BERT和grounding交互层的来源，与“没有额外机器人预训练”是不同数据轴。",
+        "body": "图像用DINOv3多视角视觉编码器：LIBERO为ViT-B、RoboTwin为ViT-L；使用视觉patch位置及相机身份保留空间关系。语言由BERT-base-uncased进行词级编码，并投影进入256维图文交互空间，本体状态由独立状态输入到动作解码器。交互初始化使用Grounding DINO特征增强模块，故没有额外机器人预训练不等于语言、视觉和grounding都未使用预训练。v3代码发布于官方Github，权重另外托管Hugging Face，DINOv3及权重的许可不必等同于代码Apache-2.0。",
         "sources": [
           {
-            "label": "§4.1；Figure 3；§5.1 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 输入表示：保留词级语义与多视角位置，不只给任务编号",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "interaction",
         "title": "双向交叉注意力为什么不等同于直接拼接",
-        "body": "六层交互中，视觉query读取语言以强调任务相关区域，语言query读取视觉以形成场景条件化的指令表示，再经各自FFN和残差更新。交互层用grounding预训练的特征增强权重初始化，并非全部从随机参数学习图文对应。\n最终两流拼接给动作解码器。它没有自回归生成语言，但语义grounding仍是核心能力来源；不应将其归为仅靠task-ID记忆的无语言控制器。相反，任务编号和无语言消融正是论文用来检验这一点的对照。\n一层中的双向更新各自以另一模态提供条件，残差保留自身信息，再迭代形成共享语义。Table5的两个单向对照分别96.1%和96.5%，无交互95.2%，完整97.7%；因此实验支持的是当前网络与训练下的交互收益，而不是所有轻量跨注意力都可替代开放式推理。",
+        "body": "六层轻量模块执行双向cross-attention：视觉query根据任务指令识别重要区域，语言query也从视觉特征中更新对象与属性语义，随后分别进行FFN与残差更新。v3 Table5报告在LIBERO无交互96.3%、语言query视觉96.8%、视觉query语言97.2%、完整双向97.6%；Appendix C Table10对应RoboTwin成绩82.58%、86.62%、87.08%、88.06%。支持在作者配置下双向交互更好，却不是跨论文不同训练预算下普遍最优的理论定理，更不能简单将模块增益相加。",
         "sources": [
           {
-            "label": "§4.2；Table 5 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 双向交叉注意力为什么不等同于直接拼接",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "action",
         "title": "动作生成与训练：一次并行回归整段，而不是少步扩散",
-        "body": "ACT式轻量Transformer解码器用H个可学习动作query读取融合表示与本体状态，单次前向并行预测连续动作片段，以L1行为克隆训练，不需要动作离散化、逐词生成或多步去噪。\n这种回归接口计算便宜，但多模态示范中的不同可行行为可能受平均化影响；本文结果不说明其在任意复杂动作分布上都比flow或扩散更好。较长片段同样可能降低对新观察的反应性，H的选择仍需任务验证。\nL1监督直接来自示范动作序列，没有未来图像生成目标或额外世界状态预测。每次推理输出的是一块动作，而实际执行前缀、重规划频率、传感延迟共同决定真实控制反应；把31.2ms的模型调用倒数写成32Hz时，必须保留测量范围，不能推出整机每31.2ms必然完成一次感知—通信—动作闭环。",
+        "body": "TurboVLA的动作生成是ACT式紧凑Transformer：H个可学习action query读取融合的视觉语言表示和机器人状态，MLP一次并行回归完整连续动作chunk，行为克隆使用L1动作误差监督，不是π0.5或其他策略中的多步Flow Matching去噪。LIBERO使用12步7维动作，RoboTwin使用50步14维绝对关节动作。较长chunk减少策略调用次数但可能降低对新观测的反应速度；仅31.2毫秒模型推理倒数不能称整机在视觉采集、通信、轨迹执行和接触控制全过程都有32Hz反馈。",
         "sources": [
           {
-            "label": "§4.3；§5.1；Table 1 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 动作生成与训练：一次并行回归整段，而不是少步扩散",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "protocol",
         "title": "0.2B、32Hz与RoboTwin配置不能混用",
-        "body": "LIBERO使用DINOv3 ViT-B、12步7维动作，联合40任务训练80k步、每任务50次测试；完整模型约216.1M。RoboTwin改用ViT-L、50步14维绝对关节动作，约0.4B，55k步训练，仅用官方clean示范并评测50任务clean条件。\nRTX4090 batch1测量从多模态输入到完整动作片段的前向，LIBERO为31.2毫秒、峰值0.9GB，约32次调用/秒；RoboTwin为43.4毫秒。标题中的32Hz和小于1GB对应具体模型与测量范围，不能套给所有相机、本体和控制链路。\n本批保留Table2中per-task与multi-task两类训练：单任务ACT/DP等不与一个模型覆盖50任务的TurboVLA混成同预算排名。LIBERO基线成绩来源和额外具身预训练不同，表中SmolVLA等规格也按作者实际报告，不以同名模型常见规格自动替换。训练步数、示范来源和测量硬件都比仅看Average重要。",
+        "body": "v3标准LIBERO四套共40任务使用no_noops RLDS，联合训练DINOv3 ViT-B配置40k步、有效batch128、4×RTX4090；每任务50次测试，总2000次。RoboTwin2.0的0.4B ViT-L模型改为2,500条clean和25,000条randomized混合示范，训练150k步、有效batch512、8×H100，50个任务的Clean与Randomized每条件100次评估，各5000次。此前v2 RoboTwin仅clean示范、55k步与独立checkpoint，不能把v3 mixed后的88.06%强行替换v2 clean-only的60.2%历史记录或包装为同预算模块增益。",
         "sources": [
           {
-            "label": "§5.1–5.2；Tables 1–2 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 0.2B、32Hz与RoboTwin配置不能混用",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "results",
         "title": "主要结果：轻量执行有竞争力，但预训练先验仍存在",
-        "body": "LIBERO平均97.7%，RoboTwin clean平均60.2%；真实AgileX Piper四任务各65条示范，从LIBERO检查点微调，每任务40次测试，分别达到92.5%、80%、90%、87.5%。这些结果支持紧凑执行路径的可用性。\n“无具身预训练”仅指对应仿真基准外没有额外机器人预训练，DINO、BERT及grounding交互层仍有预训练。真实实验还继承LIBERO模型，因此不能描述为只靠260条真实示范从零获得全部视觉语言能力。\n主表的97.7%是原作者Average而非网站从四列重算；Long94.2仍低于某些对照的95%以上，因此“效率与平均性能有竞争力”不等于每列最高。RoboTwin60.2只属于本文clean评测；FlashVLA报告的混合示范训练成绩不能与其拼成一个最高分表。真实Piper的推理部署和每任务微调也分别记录，不把继承LIBERO权重的实验说成完全无预训练。",
+        "body": "v3 Table1的0.2B在LIBERO Spatial97.0、Object100.0、Goal98.2、Long95.2，原表平均97.6%；RTX4090 batch1标准推理31.2ms、显存0.9GiB。v3 Table2的RoboTwin50任务Clean88.02%、Randomized88.10%，二者平均88.06%；ViT-L推理43.4ms。真实AgileX Piper测试四任务，每任务40次，共160次，作者自报平均87.5%，通过从LIBERO模型继续微调每项65个示范约12.5k步获得，因此不等于260个真机示范从零训练；也不是RoboTwin或RoboDojo统一真机排行榜。",
         "sources": [
           {
-            "label": "Tables 1–2；§5.2–5.3 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 主要结果：轻量执行有竞争力，但预训练先验仍存在",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "ablation",
         "title": "消融：语言含义、双向交流与适中容量都重要",
-        "body": "无语言平均70.8%，任务编号95.4%，语义指令97.7%；尤其Goal在无语言时只有11.6%，说明任务语义不是可省略输入。无交互95.2%，单向交互96.1%或96.5%，双向97.7%。\n交互层从2层到6层由93.5%升至97.7%，8层反而96.6%；H从8到12改善，15步降到95.6%。因此既不是网络越深越好，也不是片段越长越高效且不损性能。表中某些外部模型配置与通常所指小模型不同，应保留作者实际测量口径。\n本批提取语言、编码器、交互方向及深度的完整原表行：无语言Goal11.6而Object99.4，说明不同套件对指令消融的敏感性差异很大，不能只讲总平均。四张消融表反复出现的完整六层模型只记一次；这些重复不是四次独立复现。敏感性曲线仍用图源解释，不估未标注的精确像素数值。\nTable4比较的是指令文本编码器：BERT-Base97.7%、T5-Base97.1%、SigLIP-Base95.5%；这里的SigLIP变体不是把DINOv3视觉编码器替换掉，二者的模态职责不能混淆。",
+        "body": "v3无语言平均68.5%、任务ID条件96.6%、完整语义指令97.6%，说明任务目标和物体语义很难完全用图像替代。文本编码器比较BERT与T5-Base均为97.6%、SigLIP-Base97.3%；这个表不是把DINOv3视觉编码器替换成SigLIP，而是替换指令文本表示。交互深度2层95.4%、4层96.9%、6层97.6%，8层并不一定继续提高。RoboTwin的无交互82.58%与完整双向88.06%是同文额外结构消融，但外部基线和本模型不保证预训练和训练预算完全一致。",
         "sources": [
           {
-            "label": "Tables 3–6；Figures 5–6 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 消融：语言含义、双向交流与适中容量都重要",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "reading",
         "title": "读图路线：省掉LLM中心，不是省掉跨模态理解",
-        "body": "先对比Figure 2的两条信息路径，再在Figure 3逐项定位独立编码、双向交互和并行动作query。随后读语言消融，确认效率不是通过忽略指令取得；最后看H、深度与两基准不同模型规格。\n读完应能说明哪部分计算被移除、哪些预训练能力仍被保留、为什么执行级指令可以由轻量编码器完成，以及为什么这些证据不能直接推出复杂高层任务同样不需要大模型。",
+        "body": "阅读顺序应先核对Figure3的数据流和六层双向交互，再读Table1的LIBERO40任务成功率与RoboTwin50任务双环境Table2，特别关注v3训练数据变化与旧v2区别。之后按Table5、Appendix C Table10的两端交互消融、Table6的CUDA Graph加速逐项核对。代码和模型卡中的真实权重、数据清洗与action chunk控制接口对复现很关键。论文声称效率强但不能将小于1GiB显存套用0.4B ViT-L或整机部署。",
         "sources": [
           {
-            "label": "Figures 2–3；§5.4；Conclusion · 指定版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
+            "label": "原文v3 · 读图路线：省掉LLM中心，不是省掉跨模态理解",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       },
       {
         "id": "source-scope",
         "title": "提取边界与复现要求：保留作者对照，不造统一公平榜",
-        "body": "本次按明确arXiv v2的16页原文核对方法图和Tables1–6，共记录38条SR结果，覆盖LIBERO17个主表方法、10个不重复组件变体，以及RoboTwin11个按训练类别分开的方法。RTX4090延迟仍作为有原表定位的配套说明；没有为每个基线补造未报告的置信区间、最佳checkpoint或训练样本数量。\n真正复现时应先锁定no_noops数据、40任务联合训练和ViT-B配置，再核对RoboTwin的ViT-L、clean示范、绝对关节动作与55k步设置。一个共享方法名不足以保证输入、动作空间、预训练和训练预算相同。本站因此将这些行标为论文表格证据，而不是宣称在统一赛道重跑的名次；保留旧KEY RESULT与首次公开日期。\n\n版本与官方来源复核：官方项目页、GitHub仓库与Hugging Face模型卡显示，项目README在2026-09-27更新说明中另报TurboVLA在RoboTwin 2.0达到88.06%平均成功率，并称论文、代码与checkpoint已更新。该项目级声明未在当前README摘要中给出与论文v2表格完全一致的逐项口径，因此不覆盖既有论文v2的clean-only和多任务结果，也不强行映射到旧track。后续如需纳入正式结果，应先核对更新版论文原表、任务集合、Clean/Randomized定义、训练步数及checkpoint来源。",
+        "body": "v3公开完整正文与附录A–C：LIBERO采用40k步及有效batch128，RoboTwin采用mixed 27,500 demo、150k步8×H100，不是v2的clean-only与55k配置。Table6普通前向31.2ms、CUDA Graph11.3ms，优化后7.42ms；这些是单RTX4090的策略运行范围，不包括机器人传感和控制。原v2的38条Results继续保留源版本，不用v3覆盖旧分数。对v3新版SR只新增两个来源限定track；没有报告的seed置信区间不猜。代码与权重的许可可能分别受Apache-2.0及DINOv3非同一条件限制，必须逐项注明。 必须额外检查RoboTwin的50任务是否采用同一episode horizon、相机视角和动作频率；哪怕两种模型都报告总成功率，也不能假定其动作归一化、执行chunk步数或复现代码一致。v3主结果没有可直接视为独立统计显著性的多种子标准差，无法仅凭88.06与其他论文的数字推断严格领先。",
         "sources": [
           {
-            "label": "§5.1–5.4；Tables 1–6 · 已核验的明确版本原文",
-            "url": "https://arxiv.org/pdf/2607.27205v2"
-          },
-          {
-            "label": "官方代码仓库与更新说明",
-            "url": "https://github.com/H-EmbodVis/TurboVLA"
-          },
-          {
-            "label": "官方项目页",
-            "url": "https://h-embodvis.github.io/TurboVLA/"
-          },
-          {
-            "label": "官方模型卡",
-            "url": "https://huggingface.co/H-EmbodVis/TurboVLA"
-          },
-          {
-            "label": "arXiv v2原文",
-            "url": "https://arxiv.org/html/2607.27205v2"
+            "label": "原文v3 · 提取边界与复现要求：保留作者对照，不造统一公平榜",
+            "url": "https://arxiv.org/html/2607.27205v3"
           }
         ]
       }
@@ -223,53 +219,96 @@
     "coverage": {
       "level": "deep",
       "scope": "primary-methods-experiments",
-      "source": "https://arxiv.org/pdf/2607.27205v2"
+      "source": "https://arxiv.org/html/2607.27205v3"
     },
     "figures": [
       {
-        "title": "Figure 3：独立编码与双向图文交互",
-        "url": "https://arxiv.org/pdf/2607.27205v2#page=5",
-        "caption": "原文架构；跟踪视觉与词级语言的双向信息交换，以及状态进入动作解码器的独立位置，不把方法误读成无语言策略。"
+        "title": "TurboVLA v3 视觉语言交互结构",
+        "url": "https://arxiv.org/html/2607.27205v3",
+        "caption": "原文模型图展示独立图像/指令编码、词级双向交互与状态输入动作chunk解码器的对应关系；仅提供官方原文出处。"
       },
       {
-        "title": "Tables 3–6：语言与组件消融",
-        "url": "https://arxiv.org/pdf/2607.27205v2#page=11",
-        "caption": "原生表页；查看无语言Goal退化、单向与双向交互差异，以及8层低于6层，完整模型重复行不算多次独立实验。"
+        "title": "TurboVLA v3 RoboTwin和效率附录",
+        "url": "https://arxiv.org/html/2607.27205v3",
+        "caption": "附录A–C验证v3 mixed数据、训练配置与CUDA Graph计时，避免以论文v2的旧方法结果取代新版表格。"
       }
     ],
     "tables": [
       {
-        "title": "语义输入与交互方式的内部对照",
+        "title": "v3 LIBERO 四套",
         "columns": [
-          "配置",
-          "LIBERO平均SR"
+          "Spatial",
+          "Object",
+          "Goal",
+          "Long",
+          "Average"
         ],
         "rows": [
           [
-            "无语言",
-            "70.8%"
-          ],
-          [
-            "任务编号嵌入",
-            "95.4%"
-          ],
-          [
-            "语义指令但无显式交互",
-            "95.2%"
-          ],
-          [
-            "语义指令＋双向交互",
-            "97.7%"
+            "97.0",
+            "100.0",
+            "98.2",
+            "95.2",
+            "97.6"
           ]
         ],
-        "locator": "Tables 3、5",
-        "caption": "不同消融控制对应的模块；不能据此将独立的语言和交互增益简单相加。"
+        "locator": "v3 Table 1",
+        "caption": "0.2B ViT-B型号；四套40个任务，单GPU推理31.2ms与显存0.9GiB不属于成功率列。"
+      },
+      {
+        "title": "v3 RoboTwin mixed 50任务",
+        "columns": [
+          "Clean",
+          "Randomized",
+          "Average"
+        ],
+        "rows": [
+          [
+            "88.02",
+            "88.10",
+            "88.06"
+          ]
+        ],
+        "locator": "v3 Table 2",
+        "caption": "0.4B ViT-L使用27,500条clean+randomized混合示范；旧v2 clean-only记录仍独立。"
+      },
+      {
+        "title": "v3 双向交互消融",
+        "columns": [
+          "Mode",
+          "LIBERO",
+          "RoboTwin"
+        ],
+        "rows": [
+          [
+            "No interaction",
+            "96.3",
+            "82.58"
+          ],
+          [
+            "Language query vision",
+            "96.8",
+            "86.62"
+          ],
+          [
+            "Vision query language",
+            "97.2",
+            "87.08"
+          ],
+          [
+            "Bidirectional",
+            "97.6",
+            "88.06"
+          ]
+        ],
+        "locator": "v3 Table 5 and Appendix C Table 10",
+        "caption": "作者同文对应结果，不是统一训练预算的跨论文排行榜。"
       }
     ],
     "benchmarkReview": {
       "status": "extracted",
-      "checkedAt": "2026-09-19",
-      "note": "第十二批：明确版本原文及原表核验，新增38条源定位结果；主表重复行去重、SR/评分/时间分离，负面结果与未报告项保留。未入榜的图表/补充实验详见本批审计；不表示全文所有数值穷尽或本站复现。"
+      "checkedAt": "2026-10-22",
+      "note": "旧v2结果独立保留；v3新建标准LIBERO与RoboTwin50 mixed clean/random协议track。交互与CUDA Graph消融保留深读，不与主要SR混合。"
     }
   }
 }

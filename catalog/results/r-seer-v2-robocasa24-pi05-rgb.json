@@ -1,0 +1,22 @@
+{
+  "id": "r-seer-v2-robocasa24-pi05-rgb",
+  "paperId": "p011",
+  "method": "π0.5 RGB-only",
+  "trackId": "seer-v2-robocasa24-main",
+  "values": {
+    "PickPlace": 45.2,
+    "OpenClose": 81.6,
+    "KnobLever": 41.6,
+    "ButtonInsert": 52.7,
+    "Average": 55.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-22",
+  "source": "https://arxiv.org/html/2607.11498v2",
+  "sourceVersion": "arXiv 2607.11498v2",
+  "locator": "v2 Table I · RoboCasa 24 tasks",
+  "attribution": "reported-baseline",
+  "trainingData": "RoboCasa 24 tasks; 50 human demonstrations/task; 3 training seeds; source Table I; RGB-D with camera calibration.",
+  "evaluationNotes": "Table I reports separate group means and three-seed uncertainties; values here retain point estimates, exact ± appears in deep-read table. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+  "supersedes": ""
+}

@@ -121,10 +121,17 @@
       "items": {}
     },
     "p011": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Project and Code are already verified in the Resources registry; no additional reproducibility dimension is promoted without explicit source evidence.",
-      "items": {}
+      "verifiedAt": "2026-10-22",
+      "level": "deep",
+      "note": "v2全文、官方项目站点和Github内容实查；该Github仓库只有index.html/static项目介绍，尚不能当作可执行训练/评估实现；不将未知等同未开放声明。",
+      "items": {
+        "code": {
+          "status": "partial",
+          "note": "仅官方项目主页静态HTML，无可执行模型源码；需真实策略实现才能称完整Code available。",
+          "url": "https://github.com/DAVIAN-Robotics/pointmap",
+          "source": "https://github.com/DAVIAN-Robotics/pointmap"
+        }
+      }
     },
     "p012": {
       "verifiedAt": "2026-09-25",
@@ -217,10 +224,53 @@
       "items": {}
     },
     "p027": {
-      "verifiedAt": "2026-09-25",
-      "level": "baseline",
-      "note": "Baseline official-resource review completed. Official Code is already verified in the Resources registry; other dimensions remain unknown unless explicitly evidenced.",
-      "items": {}
+      "verifiedAt": "2026-10-22",
+      "level": "deep",
+      "note": "检查TurboVLA官方源仓库及模型卡；代码Apache-2.0与DINOv3模型依赖许可需分开核对，未做独立复现。",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "官方Github提供可执行policy、训练、推理与RoboTwin/LIBERO实验代码。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "weights": {
+          "status": "available",
+          "note": "官方HuggingFace提供已发布模型权重及归一化元数据。",
+          "url": "https://huggingface.co/H-EmbodVis/TurboVLA",
+          "source": "https://huggingface.co/H-EmbodVis/TurboVLA"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "提供RoboTwin官方转换数据下载流程和LIBERO处理脚本；完整上游图文/预训练数据的重发布许可不统一。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "training": {
+          "status": "available",
+          "note": "公开LIBERO与RoboTwin的训练脚本和配置。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "inference": {
+          "status": "available",
+          "note": "公开policy与推理接口。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "公开LIBERO及RoboTwin对应实验/评估指导。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        },
+        "license": {
+          "status": "partial",
+          "note": "项目代码Apache-2.0；DINOv3视觉权重和预训练来源许可不能自动视为相同Apache许可。",
+          "url": "https://github.com/H-EmbodVis/TurboVLA/blob/main/LICENSE",
+          "source": "https://github.com/H-EmbodVis/TurboVLA"
+        }
+      }
     },
     "p028": {
       "verifiedAt": "2026-09-25",
@@ -1206,9 +1256,52 @@
     },
     "p136": {
       "verifiedAt": "2026-10-22",
-      "level": "baseline",
-      "note": "已核对论文、官方项目页、公开代码仓库和模型下载入口；训练脚本、checkpoint及评测入口可访问，完整独立复现仍未由VLA-Radar执行。具体环境/硬件复现状态保持未核验。",
-      "items": {}
+      "level": "deep",
+      "note": "逐项核对Fast-VLA官方代码、公开checkpoint、训练/评测文档；4B冻结DM0.5 Gemma权重许可证独立，不表示完整无条件商用。",
+      "items": {
+        "code": {
+          "status": "available",
+          "note": "官方仓库提供模型实现和服务端，Apache-2.0代码许可。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "weights": {
+          "status": "available",
+          "note": "作者发布FastVLA-robotwin和fastvla-libero的actor权重；冻结DM0.5需独立下载。",
+          "url": "https://huggingface.co/kehong/FastVLA-weights",
+          "source": "https://huggingface.co/kehong/FastVLA-weights"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "RoboTwin/LIBERO评测及演示可依赖官方公开基准，但DM0.5预训练数据不属于本模型可完整重发的数据。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "training": {
+          "status": "available",
+          "note": "官方仓库docs/TRAINING.md和首帧缓存构建指令。",
+          "url": "https://github.com/Garfield-kh/FastVLA/blob/main/docs/TRAINING.md",
+          "source": "https://github.com/Garfield-kh/FastVLA/blob/main/docs/TRAINING.md"
+        },
+        "inference": {
+          "status": "available",
+          "note": "官方源码含policy server与推理示例。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "evaluation": {
+          "status": "available",
+          "note": "官方RoboTwin和LIBERO/Plus评测适配器。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        },
+        "license": {
+          "status": "partial",
+          "note": "FastVLA仓库代码Apache-2.0，冻结DM0.5权重采用Gemma单独许可，不能把整系统一归为Apache。",
+          "url": "https://github.com/Garfield-kh/FastVLA",
+          "source": "https://github.com/Garfield-kh/FastVLA"
+        }
+      }
     }
   }
 }

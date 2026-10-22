@@ -1,0 +1,20 @@
+{
+  "id": "r-turbovla-v3-robotwin-mixed-ours",
+  "paperId": "p027",
+  "method": "TurboVLA (v3 0.4B)",
+  "trackId": "turbovla-v3-robotwin50-mixed",
+  "values": {
+    "Clean": 88.02,
+    "Randomized": 88.1,
+    "Average": 88.06
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-22",
+  "source": "https://arxiv.org/html/2607.27205v3",
+  "sourceVersion": "arXiv 2607.27205v3",
+  "locator": "v3 Table 2 · RoboTwin 2.0 mixed demonstrations",
+  "attribution": "author-reported",
+  "trainingData": "RoboTwin2.0 all 50 tasks, 2500 Clean + 25000 Randomized demonstrations, ViT-L model, 150k steps, effective batch512, 8x H100; 100 trials per task per condition.",
+  "evaluationNotes": "Result not comparable to earlier v2 clean-only 55k training. Policy latency 43.4ms is not robot cycle latency. 作者报告，本站未独立复现；不与历史v1/v2不同预算来源自动合榜。",
+  "supersedes": ""
+}
