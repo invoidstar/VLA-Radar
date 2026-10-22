@@ -3,6 +3,15 @@
 仓库：https://github.com/invoidstar/VLA-Radar  
 网站：https://invoidstar.github.io/VLA-Radar/
 
+## 2026-10-22 遗留修复与明确未完成边界
+
+- **已核验内容**：TurboVLA v3与SeeR-VLA v2全文及新协议结果；RoboTwin官方快照2026-10-21（27个模型）；3项2026-10-21官方具身智能新闻；p041/p068的RSS会议论文集；另外p045/p055此前已在公开元数据中确认出版。
+- **Discovery仍为partial**：独立学术索引缺少覆盖2026-09-20—10-22窗口的可验证成功结果，因此`lastSuccessfulSearchAt`仍为2026-10-04；新增6篇候选保持deferred，不会按摘要直接编造Benchmark结果。
+- **News仍为partial**：10月21日官方事件已入库，但10月8—20日尚未完成跨来源14天扫描，不将新增3条新闻包装成完整行业周报。
+- **Publication剩余4项**：p015（ECCV Workshop）、p030（IROS）、p042（ICME）及p065（会议身份）需依据原始会议/出版方页面最终核验后逐项结案；不是未收录论文。
+- **Source-health**：最新保存的限额检查仍为2026-10-06，历史`dueRemaining=158`仅表示到期轮检工作而非158个失效URL。下一次运行`check_sources.py --limit 100 --due-days 30`须如实保存实际HTTP状态，不能直接改写为全部可达。
+- **分支清理**：已合并分支在6小时恢复窗口后由周日housekeeping通过来源PR、精确head SHA和已部署main检查删除；`docs/`已纳入可管理前缀，无法通过条件的分支继续保留并记录原因。禁止绕过安全等待期手工强制删除。
+
 ## 数据与构建
 
 ```
