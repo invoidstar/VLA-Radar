@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261021-nvidia-isaac-platform-3",
+  "eventKey": "nvidia-isaac-platform-3-20261021",
+  "title": "NVIDIA 扩展 Isaac 平台，公布 Isaac Lab 3.0 与人形机器人参考系统",
+  "primaryCategory": "industry",
+  "tags": [
+    "NVIDIA",
+    "Isaac Lab 3.0",
+    "Isaac OS",
+    "GR00T",
+    "机器人仿真",
+    "安全"
+  ],
+  "eventDate": "2026-10-21",
+  "publishedAt": "2026-10-21",
+  "dateNote": "2026-10-22阅读一手官方页面；将公告发生日与未来计划及二次转述严格区分。",
+  "observedAt": "2026-10-22",
+  "updatedAt": "2026-10-22",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "ecosystem",
+  "whatHappened": "NVIDIA在10月21日GTC Berlin公告中介绍已正式开放的Isaac Lab 3.0、基于Holoscan的Isaac OS运行框架、仿真资产与机器人学习参考工作流，同时展示Agile Robots的Agile ONE SN参考人形机器人。该机器人计划2027年初提供，并非此次已批量交付。",
+  "whyItMatters": "机器人研究的关键成本不仅在VLA模型本身，也在仿真数据、运行时、传感器和运动控制接口的一致性；新工具链可能降低将实验原型迁移到真实平台的工程障碍。",
+  "vlaRelevance": "Isaac Lab 3.0提供多GPU机器人策略学习、评测与数据生成环境；Isaac OS强调连接控制与传感硬件。该发布不能直接等同任何VLA在公开基准上取得新的独立成功率。",
+  "limits": "Isaac Lab正式开放与Agile ONE SN计划交付是不同阶段；参考机器人参数及生态应用以NVIDIA和合作方公布为准，不证明机器人量产或泛化操作性能已第三方确认。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "NVIDIA Advances Isaac Platform for General-Purpose Robotics With New Reference Humanoid, Frameworks, Simulation Pipelines and Data",
+      "publisher": "NVIDIA Newsroom",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data/",
+      "kind": "official",
+      "publishedAt": "2026-10-21",
+      "access": "full-page",
+      "note": "正文与发布日期、实际开放状态及未来承诺边界经一手页面核对；不表示能力独立评测。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
