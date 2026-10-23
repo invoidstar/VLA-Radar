@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-23-partial",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-23",
+    "attemptedAt": "2026-10-23",
+    "completedAt": null
+  },
+  "scope": "Backfill follow-up through Oct23: exact primary arXiv identity checks for recent VLA/WAM action efficiency, memory and post-training; curated robotics browse and limited official reverse discovery. The full Sep20–Oct23 four-lane scholarly search remains incomplete.",
+  "sources": [
+    {
+      "id": "arxiv-oct23-exact",
+      "lane": "primary-preprints",
+      "provider": "arXiv",
+      "kind": "Exact submission and version source checks",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-21",
+        "to": "2026-10-22"
+      },
+      "query": "Five exact arXiv IDs 2610.30735,2610.29329,2610.29161,2610.30136,2610.31166; read abstract and submission history, not full methodology tables or all cs.RO dates.",
+      "resultCount": 5,
+      "note": "All five exact arXiv metadata and versions checked on Oct23. No exhaustive primary source search for earlier Sep20-Oct20."
+    },
+    {
+      "id": "openalex-oct23",
+      "lane": "academic-index",
+      "provider": "OpenAlex",
+      "kind": "Independent academic-index candidate search",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "OpenAlex Works filtered by publication date 2026-09-20 through 2026-10-23 and vision-language-action robotics terms; API resource not accessible, so no complete independent index inventory.",
+      "resultCount": 0,
+      "note": "Direct public API filtered result could not be retrieved; do not count search-engine snippets as a successful provider-wide academic index scan."
+    },
+    {
+      "id": "robotics-daily-oct23",
+      "lane": "curated-robotics",
+      "provider": "robotics_paper_daily",
+      "kind": "Curated VLA feed updated Oct23",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-16",
+        "to": "2026-10-23"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html ; inspect new Oct21-Oct22 VLA/WAM efficiency, memory, world model, online post-training titles and URLs.",
+      "resultCount": 5,
+      "note": "Curated page updated 2026-10-23, but September and early-October window was not exhaustively revisited in this pass."
+    },
+    {
+      "id": "official-reverse-oct23",
+      "lane": "reverse-discovery",
+      "provider": "Official RoboTwin / model project pages",
+      "kind": "Model and benchmark reverse checks",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-13",
+        "to": "2026-10-23"
+      },
+      "query": "RoboTwin official source revision and benchmark model 27-entry Oct21 snapshot; Fast-VLA, TurboVLA official project/weights; Pi API beta Oct13. No full lab/benchmark/citation network crawl.",
+      "resultCount": 4,
+      "note": "Official sources sampled and model identities verified for prior canonical updates; not comprehensive reverse discovery for all candidate papers."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "When One Step Is Enough: An Empirical Study of Euler Integration in Flow-Matching Policies",
+      "arxiv": "2610.30735",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "arxiv-oct23-exact",
+        "robotics-daily-oct23"
+      ],
+      "status": "deferred",
+      "reason": "单步Euler积分对VLA推理预算的挑战很重要；目前核验arXiv v1身份与摘要，但六模型训练预算、重训/蒸馏对照和时延原表尚需逐项核验。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Plan First, Act Later: Streaming Reasoning for Executable Memory in Robot Control",
+      "arxiv": "2610.29329",
+      "doi": "",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "arxiv-oct23-exact",
+        "robotics-daily-oct23"
+      ],
+      "status": "deferred",
+      "reason": "PAL的执行级记忆与任务列表用于RoboMME和真机；需确认其对照、任务协议、历史缓存和是否新增代码与模型可下载。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "SimPT: An Automated Simulation Framework for Intervention-Based VLA Post-Training",
+      "arxiv": "2610.29161",
+      "doi": "",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "arxiv-oct23-exact",
+        "robotics-daily-oct23"
+      ],
+      "status": "deferred",
+      "reason": "含仿真干预、进度图、回退恢复与真机在线后训练；需核验RoboTwin七任务、25真机场景及额外纠正样本的预算，不能只取摘要SR。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Agentic World Action Models",
+      "arxiv": "2610.30136",
+      "doi": "",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "arxiv-oct23-exact",
+        "robotics-daily-oct23"
+      ],
+      "status": "deferred",
+      "reason": "具备世界模型+代码规划的潜在新分支；需验证动作条件的世界变化模块、具体实机/仿真设定和开源资源。",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Memory before Goal: Role of Pre-History Memory for Humanoid Loco-Manipulation",
+      "arxiv": "2610.31166",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "arxiv-oct23-exact",
+        "robotics-daily-oct23"
+      ],
+      "status": "deferred",
+      "reason": "非Markov任务与对象前史记忆值得收录，但需确认全身动作接口、SAM3依赖与真正评测/消融，不以摘要完成深读。",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 5,
+    "selected": 0,
+    "deferred": 5,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 5
+  },
+  "status": "partial",
+  "notes": "This audit adds five identity-checked high-priority deferred candidates, without promoting them to the paper catalog. All required lanes have incomplete full-window coverage; academic index is blocked. Keep lastSuccessfulSearchAt at 2026-10-04. Re-run multi-provider coverage and deep reads in regular weekly workflow."
+}
