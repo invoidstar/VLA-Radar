@@ -29,6 +29,10 @@ jobs:
       - name: Validate canonical records, generated files and regression tests
         run: python scripts/validate/validate_all.py
       - name: Verify pinned browser engines and test runtime
+        env:
+          # GitHub sets HOME=/github/home (pwuser-owned) while container steps
+          # execute as root. Firefox refuses that mismatch; use root's HOME.
+          HOME: /root
         run: |
           python -m pip install --disable-pip-version-check playwright==1.57.0
           node --version
@@ -49,6 +53,8 @@ jobs:
                   print('PASS pinned browser',name)
           PY
       - name: Browser HTTP, worker, persistence and responsive regression
+        env:
+          HOME: /root
         run: |
           python scripts/browser/browser_smoke.py
           python scripts/browser/browser_math.py
