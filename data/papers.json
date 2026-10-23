@@ -3627,11 +3627,11 @@
       "name": "AdaVLA",
       "title": "AdaVLA: Adaptive Step Flow Matching for Training-free Acceleration of Vision-Language-Action Models",
       "team": "西江大学（Sogang University）\nSunghwan Han、Youngtae Han、Youngmin Yi",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "arXiv:2608.29208\n此表按8月预印本记载",
+      "venue": "IROS 2026",
+      "publicationType": "conference",
+      "publicationStatus": "IROS 2026 已录用、已现场报告（Sogang大学官方公告）；IEEE正式论文集条目待核验",
       "firstPublished": "2026-08-29",
-      "dateNote": "",
+      "dateNote": " 2026-10-06 Sogang大学官方新闻确认同题、同作者论文已在IROS2026录用并报告；不凭校方公告推断IEEE Xplore正式出版日期。",
       "collectionMonth": "2026-08",
       "versionNote": "8月首次公开｜阅读v1；不混入9月新增结果",
       "topics": [
@@ -3663,6 +3663,10 @@
         {
           "label": "当前复核版本 · v2",
           "url": "https://arxiv.org/html/2608.29208v2"
+        },
+        {
+          "label": "Sogang大学2026-10-06官方新闻（录用及会议报告）",
+          "url": "https://computing.sogang.ac.kr/ko/community/news/detail/281"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2608.29208",

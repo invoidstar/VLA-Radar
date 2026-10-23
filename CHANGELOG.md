@@ -1,3 +1,7 @@
+## 2026-10-23 — 2026-10-23-release-closeout
+
+VLA-Radar V3.0遗留善后：RDT-1B ICLR2025论文集核验及AdaVLA IROS2026校方一手公告录用核验（不推断IEEE正式出版）；Pi API Beta官方新闻补录；5篇VLA/WAM新论文身份与deferred候选审计；442条到期来源URL有界轮检，dueRemaining0，403/timeout保留告警；PR70/71/72/73四个旧合并分支按精确SHA安全清理。修正main保护策略的required check为真实quality job并加入回归，保护实际安装仍受GitHub Administration(write)权限阻塞；论文/新闻跨来源全量扫描仍为partial且成功检查点不前移。重新构建canonical派生数据，所有来源与历史版本不覆盖。
+
 ## 2026-10-23 — 2026-10-23-publication-news-closeout
 
 确认RDT-1B（p065）在ICLR 2025官方会议论文集发表，保留2024-10-10 arXiv首次公开；p015/p030/p042作者录用声明保留候选，未凭arXiv自述推断出版。核验Pi API Beta（2026-10-13）并收录，审计中文AGIBOT WORLD 2026第四期但因官方第四期文件归属尚不明确保持待核验；具身新闻和跨来源论文发现完整检查点均不虚报推进。

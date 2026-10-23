@@ -285,6 +285,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-23-release-closeout",
+      "sha256": "3a82e72f3d90df12484e1158a73c3460ce52962307c0c0b8db7812f43fff082a",
+      "date": "2026-10-23",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
