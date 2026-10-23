@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "news-bilingual-followup-2026-10-23",
+  "checkedAt": "2026-10-23",
+  "window": {
+    "from": "2026-10-08",
+    "to": "2026-10-23"
+  },
+  "status": "partial",
+  "scope": "Targeted bilingual primary official/company, laboratory, dataset-repository, original reporting and developer ecosystem cross-check to fill the Oct8-23 hole without claiming exhaustive worldwide news coverage.",
+  "sources": [
+    {
+      "provider": "SenseNova official GitHub and model card",
+      "kind": "official-and-repository",
+      "url": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+      "observedWindow": "Oct16, Oct20, Oct22",
+      "status": "checked",
+      "note": "Separate harness release, additional benchmark adapters and 27B Preview weight publication. Company-reported RoboDojo scores remain separate from the official leaderboard."
+    },
+    {
+      "provider": "AgiBot official corporate press",
+      "kind": "official",
+      "url": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "observedWindow": "Oct22",
+      "status": "checked",
+      "note": "AI WAVE launch names 150h Physical Reasoning initial dataset. Later advertised releases cannot be treated as already published."
+    },
+    {
+      "provider": "AgiBot Hugging Face dataset tree",
+      "kind": "official-repository",
+      "url": "https://huggingface.co/datasets/agibot-world/AgiBotWorld2026/tree/main/PhysicalReasoning",
+      "observedWindow": "Oct22",
+      "status": "checked",
+      "note": "PhysicalReasoning folder verified, source license cc-by-nc-sa-4.0; did not independently download every sharded episode."
+    },
+    {
+      "provider": "Tsinghua university official press",
+      "kind": "official-reposted-news",
+      "url": "https://www.tsinghua.edu.cn/info/1182/128871.htm",
+      "observedWindow": "Oct14–16 event / Oct20 source article / Oct22 host publication",
+      "status": "checked",
+      "note": "Release of 2026 embodied intelligence industry report confirmed during conference, coverage is a media summary not an official full-report reading."
+    },
+    {
+      "provider": "Tsinghua EDI Lab and RoboValue project",
+      "kind": "official-and-repository",
+      "url": "https://github.com/RoboValue-Benchmark/RoboValue",
+      "observedWindow": "Oct19–20",
+      "status": "checked",
+      "note": "Source arXiv 2610.26663 v1 first posted Oct19; EDI Lab home gives Oct20 release news; benchmark 15 sim / 20 real tasks and organizer-held test set."
+    },
+    {
+      "provider": "Physical Intelligence Pi API primary blog",
+      "kind": "official",
+      "url": "https://www.pi.website/blog/api-beta",
+      "observedWindow": "Oct13",
+      "status": "checked-duplicate",
+      "note": "Already admitted 2026-10-13 news item; do not repeat."
+    },
+    {
+      "provider": "NVIDIA and Agility 2026 announcements",
+      "kind": "official",
+      "url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/",
+      "observedWindow": "Oct21",
+      "status": "checked-duplicate",
+      "note": "Prior source-checked Oct21 stories exist; no new record."
+    },
+    {
+      "provider": "Open Robotics official community",
+      "kind": "official",
+      "url": "https://discourse.openrobotics.org/t/these-weeks-at-open-robotics-hq-since-pre-roscon-global/58845",
+      "observedWindow": "Oct14",
+      "status": "checked-non-selected",
+      "note": "Community follow-up mostly duplicates ROSCon Oct6 activity already recorded, insufficient distinct technical release."
+    }
+  ],
+  "dispositions": [
+    {
+      "event": "SenseNova RoboRSI 27B preview open weights",
+      "status": "selected",
+      "eventDate": "2026-10-22",
+      "newsId": "news-20261022-sensenova-roborsi-27b-weights",
+      "reason": "Public weights and harness code evidenced by official repository/linked model card; performance is author report."
+    },
+    {
+      "event": "AgiBot World PhysicalReasoning phase4",
+      "status": "selected",
+      "eventDate": "2026-10-22",
+      "newsId": "news-20261022-agibot-world-physical-reasoning",
+      "reason": "Official corporate announcement explicitly dates data release; official HF tree shows PhysicalReasoning assets."
+    },
+    {
+      "event": "CAICT-Tsinghua 2026 embodied AI report",
+      "status": "selected",
+      "eventDate": "2026-10-16",
+      "newsId": "news-20261016-embodied-ai-report-2026",
+      "reason": "Tsinghua official press confirms report launched at Oct14–16 conference; descriptive summary, not full report."
+    },
+    {
+      "event": "RoboValue benchmark",
+      "status": "selected",
+      "eventDate": "2026-10-20",
+      "newsId": "news-20261020-robovalue-benchmark",
+      "reason": "University EDI Lab release headline and original project repository; value model benchmark not manipulation policy success rate."
+    },
+    {
+      "event": "Pi API Beta October13",
+      "status": "duplicate",
+      "eventDate": "2026-10-13",
+      "newsId": "news-20261013-pi-api-beta",
+      "reason": "Already published in previous batch, no duplicate."
+    },
+    {
+      "event": "NVIDIA Oct21 releases",
+      "status": "duplicate",
+      "eventDate": "2026-10-21",
+      "newsId": "news-20261021-nvidia-cosmos-world-model-tools",
+      "reason": "Previously recorded source-checked announcement."
+    },
+    {
+      "event": "Open Robotics Oct14 follow-up",
+      "status": "excluded",
+      "eventDate": "2026-10-14",
+      "newsId": null,
+      "reason": "Community scheduling and reporting, no distinct release exceeding the previously reported ROSCon update."
+    }
+  ],
+  "summary": {
+    "selected": 4,
+    "duplicate": 2,
+    "excluded": 1,
+    "deferred": 0
+  },
+  "notes": "Partial by design: checks cover multiple Chinese and English official sources around Oct8–23 and verify listed events, but cannot establish exhaustive release coverage across all industry/media/labs. Retain lastSuccessfulSearchAt=2026-10-04; absence of other news is unknown."
+}

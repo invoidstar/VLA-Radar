@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "id": "news-scan-2026-10-23",
+  "attemptedAt": "2026-10-23",
+  "window": {
+    "from": "2026-10-08",
+    "to": "2026-10-23"
+  },
+  "status": "partial",
+  "scope": "Targeted English/Chinese original robotics/Physical AI announcements; not a comprehensive source-complete 14-day industry news crawl.",
+  "sources": [
+    {
+      "provider": "Physical Intelligence official blog",
+      "url": "https://www.pi.website/blog",
+      "coverage": "2026-10-13",
+      "status": "checked",
+      "items": 1
+    },
+    {
+      "provider": "NVIDIA Blog",
+      "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+      "coverage": "2026-10-09",
+      "status": "checked",
+      "items": 1
+    },
+    {
+      "provider": "Open Robotics Discourse",
+      "url": "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-october-12th-2026/58909",
+      "coverage": "2026-10-12 to 2026-10-16",
+      "status": "checked",
+      "items": 1
+    },
+    {
+      "provider": "Hugging Face LeRobot blog",
+      "url": "https://huggingface.co/blog/lerobot-release-v060",
+      "coverage": "Source is 2026-07-07, out of window",
+      "status": "checked",
+      "items": 0
+    },
+    {
+      "provider": "AGIBOT official dataset resource",
+      "url": "https://huggingface.co/datasets/agibot-world/AgiBotWorld2026",
+      "coverage": "Overall AgiBot 2026 dataset, October fourth release files not separately located",
+      "status": "partial",
+      "items": 1
+    },
+    {
+      "provider": "Chinese dated original reporting cross-check",
+      "url": "https://www.shobserver.com/staticsg/res/html/web/newsDetail.html?id=1199086",
+      "coverage": "2026-10-22 event corroborated by reporter, official fourth-phase file identity unresolved",
+      "status": "partial",
+      "items": 1
+    }
+  ],
+  "dispositions": [
+    {
+      "event": "Pi API Beta",
+      "status": "selected",
+      "eventDate": "2026-10-13",
+      "newsId": "news-20261013-pi-api-beta",
+      "reason": "Official primary blog explicitly dates hosted fine-tuning and inference beta; clarify early access and no benchmark numbers."
+    },
+    {
+      "event": "NVIDIA Omniverse agent simulations article",
+      "status": "excluded",
+      "eventDate": "2026-10-09",
+      "newsId": null,
+      "reason": "Explainer/project examples, no clearly new model release; information value too low relative to major official releases already captured."
+    },
+    {
+      "event": "LeRobot v0.6 blog",
+      "status": "duplicate-old",
+      "eventDate": "2026-07-07",
+      "newsId": null,
+      "reason": "Older July release, not a new event within 14-day scan window."
+    },
+    {
+      "event": "AGIBOT WORLD 2026 phase-four Physical Reasoning",
+      "status": "deferred",
+      "eventDate": "2026-10-22",
+      "newsId": null,
+      "reason": "Original Chinese reporting consistent; exact public fourth-phase files and official release page not independently verified."
+    },
+    {
+      "event": "October 21 NVIDIA/Agility updates",
+      "status": "duplicate",
+      "eventDate": "2026-10-21",
+      "newsIds": [
+        "news-20261021-nvidia-isaac-platform-3",
+        "news-20261021-nvidia-cosmos-world-model-tools",
+        "news-20261021-agility-digit-deployment-support"
+      ],
+      "reason": "Already published in previous content batch; do not count again."
+    }
+  ],
+  "notes": "Do not advance news-state.lastSuccessfulSearchAt beyond 2026-10-04: major English and Chinese sources across Oct08–23 were sampled, not exhaustively enumerated. Remaining undiscovered events are unknown, not zero."
+}

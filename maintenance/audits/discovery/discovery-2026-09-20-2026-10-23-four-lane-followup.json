@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-23-four-lane-followup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-23",
+    "attemptedAt": "2026-10-23",
+    "completedAt": null
+  },
+  "scope": "VLA-Radar four-lane second-pass follow-up after Oct23 source index investigation: dated arXiv originals, independent academic discovery indexes (including partial mlsanity only through Oct20), curated VLA index through Oct23, official project / benchmark reverse checks; selected high-value new papers entered as deferred until full protocol evidence.",
+  "sources": [
+    {
+      "id": "primary-oct23",
+      "lane": "primary-preprints",
+      "provider": "arXiv cs.RO and arXiv source pages",
+      "kind": "Direct arXiv exact-ID and archive search",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-23"
+      },
+      "query": "ArXiv original and direct search for VLA / world action model / robot memory / efficiency / post-training 2026-09-20..2026-10-23, with exact ID checks 2610.26663,2610.25961,2610.26487,2610.00575,2610.29692 and previously tracked papers.",
+      "resultCount": 5,
+      "note": "Five exact IDs verified; this is selected title/abstract verification, not a complete enumeration across all arXiv archive pages; mark partial."
+    },
+    {
+      "id": "academic-mlsanity-oct20",
+      "lane": "academic-index",
+      "provider": "mlsanity independent VLA research map",
+      "kind": "Independent scholarly index for VLA and embodied world model research",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-20"
+      },
+      "query": "https://mlsanity.com/vla/ and https://mlsanity.com/wm/; browse efficient VLA, memory, world-model paper families and newest entries; index explicitly says Data to 20 Oct 2026.",
+      "resultCount": 16,
+      "note": "Independent topic index exists with dated paper corpus and 16 works labelled 'this week', but source cutoff is Oct20; it does not cover Oct21-23, so academic lane cannot be counted fully successful. SPAR visible in the efficiency cluster."
+    },
+    {
+      "id": "academic-openalex-oct23",
+      "lane": "academic-index",
+      "provider": "OpenAlex Works API",
+      "kind": "Independent scholarly indexing attempted",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?search=vision%20language%20action%20robot&filter=from_publication_date:2026-09-20,to_publication_date:2026-10-23&per-page=5",
+      "resultCount": 0,
+      "note": "API request not accessible from current web environment. Indexed individual public OpenAlex pages found but cannot replace a full date-filtered broad query. No success claimed."
+    },
+    {
+      "id": "academic-semanticscholar-oct23",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar graph API",
+      "kind": "Independent scholarly indexing attempted",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.semanticscholar.org/graph/v1/paper/search?query=vision%20language%20action%20robot&limit=5&fields=title,year,publicationDate,url",
+      "resultCount": 0,
+      "note": "Unable to access provider API through current browser; no date-scoped research inventory obtained."
+    },
+    {
+      "id": "curated-oct23",
+      "lane": "curated-robotics",
+      "provider": "robotics_paper_daily",
+      "kind": "Specialist curated VLA literature feed",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-23"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html ; inspect 2026-10-19..23 newest, VLA/WAM/action efficiency/online RL, compare older deferred candidate list",
+      "resultCount": 5,
+      "note": "Index last updated Oct23, includes Oct21-22 papers and older items; focused five-source candidate cross-check made, no exhaustive re-enumeration of every prior day. Do not label complete."
+    },
+    {
+      "id": "curated-arxivsignals-oct21",
+      "lane": "curated-robotics",
+      "provider": "ArXivSignals",
+      "kind": "Independent recent AI/robotics curation",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-21",
+        "to": "2026-10-21"
+      },
+      "query": "https://arxivsignals.io/explore (weekly top papers dated 2026-10-21)",
+      "resultCount": 0,
+      "note": "Current public explore snapshot is dated Wed Oct21, not full through Oct23 and not specifically exhaustive robotics topics; retained as supplementary rather than a required success."
+    },
+    {
+      "id": "official-reverse-oct23",
+      "lane": "reverse-discovery",
+      "provider": "RoboValue, SenseNova, AgiBot and RoboTwin official sources",
+      "kind": "Original benchmark, model weight and dataset reverse discovery",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-16",
+        "to": "2026-10-23"
+      },
+      "query": "https://github.com/RoboValue-Benchmark/RoboValue; https://github.com/OpenSenseNova/SenseNova-RoboRSI; https://huggingface.co/datasets/agibot-world/AgiBotWorld2026/tree/main/PhysicalReasoning; official RoboTwin Oct21 snapshot",
+      "resultCount": 4,
+      "note": "Exact official sources and resources checked for new events; reverse checking all project/lab/citation graph links for Sep20–Oct23 not complete."
+    }
+  ],
+  "candidates": [
+    {
+      "doi": "",
+      "paperId": null,
+      "duplicateOf": null,
+      "title": "RoboValue: A Fine-Grained Sim-and-Real Benchmark for Unified Evaluation of Robotic Value Models",
+      "arxiv": "2610.26663",
+      "date": "2026-10-19",
+      "sourceIds": [
+        "primary-oct23",
+        "official-reverse-oct23"
+      ],
+      "status": "deferred",
+      "reason": "原始arXiv论文及RoboValue Benchmark官方代码/项目链接已定位，新闻中有来源限定说明；需要完整表格、value/score与sim/real协议对齐后才能作为独立Benchmark和全文论文入库。"
+    },
+    {
+      "doi": "",
+      "paperId": null,
+      "duplicateOf": null,
+      "title": "PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models",
+      "arxiv": "2610.25961",
+      "date": "2026-10-19",
+      "sourceIds": [
+        "primary-oct23",
+        "curated-oct23"
+      ],
+      "status": "deferred",
+      "reason": "arXiv v1和Robotics Paper Daily对应，动作量化、路由与三套仿真六项真机尚未完整解析论文配置与结果表。"
+    },
+    {
+      "doi": "",
+      "paperId": null,
+      "duplicateOf": null,
+      "title": "SPAR: Structural Pruning and Action Recovery for Vision-Language-Action Models",
+      "arxiv": "2610.26487",
+      "date": "2026-10-19",
+      "sourceIds": [
+        "primary-oct23",
+        "academic-mlsanity-oct20"
+      ],
+      "status": "deferred",
+      "reason": "已核对arXiv v1摘要及VLA效率索引；模型参数剪枝和RL恢复实验需核验LIBERO原表、完整模型推理时延、数据预算，不以摘要单一平均值入榜。"
+    },
+    {
+      "doi": "",
+      "paperId": null,
+      "duplicateOf": null,
+      "title": "Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation",
+      "arxiv": "2610.00575",
+      "date": "2026-09-30",
+      "sourceIds": [
+        "primary-oct23"
+      ],
+      "status": "deferred",
+      "reason": "arXiv原始论文身份已核；需要核验潜变量动作世界变化建模、未来rollout、真实对照测试与代码开放状态，旧发现窗口可能遗漏此条。"
+    },
+    {
+      "doi": "",
+      "paperId": null,
+      "duplicateOf": null,
+      "title": "FlowVLA: Learning Flow-Aware Physical Completion for Quantitative Robotic Pouring",
+      "arxiv": "2610.29692",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "primary-oct23",
+        "curated-oct23"
+      ],
+      "status": "deferred",
+      "reason": "arXiv v1及机器人专题索引显示该方法区分物理流量/完成条件和动作chunk；论文完成率与重量误差不可当作标准VLA任务成功率，待全文及单位核验。"
+    }
+  ],
+  "counts": {
+    "total": 5,
+    "selected": 0,
+    "deferred": 5,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 4
+  },
+  "status": "partial",
+  "notes": "This is an honest second pass, not a complete weekly discovery. A genuinely successful academic-index provider for Oct21-23 and full-window verified primary/curated/reverse enumeration are outstanding. Prior verified candidate records persist. lastSuccessfulSearchAt stays 2026-10-04."
+}

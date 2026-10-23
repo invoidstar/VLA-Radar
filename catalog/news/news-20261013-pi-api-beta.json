@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261013-pi-api-beta",
+  "eventKey": "pi-api-beta-20261013",
+  "title": "Physical Intelligence 启动 Pi API Beta：数据上传、模型微调与托管机器人推理",
+  "primaryCategory": "industry",
+  "tags": [
+    "Physical Intelligence",
+    "Pi API",
+    "VLA",
+    "机器人微调",
+    "托管推理",
+    "模型服务"
+  ],
+  "eventDate": "2026-10-13",
+  "publishedAt": "2026-10-13",
+  "dateNote": "Physical Intelligence官方博客明确发表于2026-10-13；公告为受限Beta服务开放，不能误写为所有机器人模型/权重全面开源。",
+  "observedAt": "2026-10-23",
+  "updatedAt": "2026-10-23",
+  "stage": "partial-release",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "major-release",
+  "whatHappened": "Physical Intelligence于10月13日公布Pi API Beta，使初期合作开发者可上传机器人数据，在其管理的云端算力上微调最新机器人模型，再通过托管网关执行策略推理。官方展示轮式装载机、双臂装配等多个合作方应用案例，并允许希望参与者报名Beta；目前不是所有开发者无需申请即可使用的公开服务，也不等于完整基础模型训练管线和权重全面放出。",
+  "whyItMatters": "机器人通用模型的应用通常要求准备示范、训练、部署和失败反馈闭环，云端接口将算力及模型版本运维从本地团队转移给服务提供者，有可能降低中小机器人团队试验门槛。",
+  "vlaRelevance": "Pi API将VLA模型微调与实际推理暴露为可复用接口，能够收集针对不同机器人本体的真实使用经验；但API反馈学习、网络依赖和本体执行安全仍是实际部署的独立工程条件，不能等同于统一Benchmark性能。",
+  "limits": "Beta访问范围、云端延迟及模型版本由平台控制；部分部署受到网络连接约束。官方视频/合作案例和合作方评价均为厂商报告，不是统一任务协议下的独立真机性能验证；没有给出可直接录入本站SR排行榜的标准化指标。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Frontier Models for Every Robot: Announcing our API beta",
+      "publisher": "Physical Intelligence",
+      "url": "https://www.pi.website/blog/api-beta",
+      "kind": "official",
+      "publishedAt": "2026-10-13",
+      "access": "full-page",
+      "note": "2026-10-23核对官方首次日期、托管训练与推理流程、limited beta开放边界和合作展示。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

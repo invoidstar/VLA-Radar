@@ -1,5 +1,10 @@
 {
-  "required_status_checks": {"strict": true, "contexts": ["validate"]},
+  "required_status_checks": {
+    "strict": true,
+    "contexts": [
+      "quality"
+    ]
+  },
   "enforce_admins": true,
   "required_pull_request_reviews": {
     "dismiss_stale_reviews": true,

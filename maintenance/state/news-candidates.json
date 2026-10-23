@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-13",
+  "checkedAt": "2026-10-23",
   "items": [
     {
       "title": "Skild S1 相关9月报道",
@@ -43,6 +43,12 @@
       "status": "deferred",
       "source": "https://cold-young.github.io/robotics_paper_daily/vla.html",
       "reason": "已经补录3条10月6/7日官方事件；仍需对后续各实验室/公司公告做完整14天新闻扫描、时间溯源与去重，未将局部源覆盖冒充新闻全量完成。"
+    },
+    {
+      "title": "AGIBOT WORLD 2026第四期具身推理数据集",
+      "status": "selected",
+      "source": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "reason": "2026-10-23官方智元AI WAVE公告核对首次发布日期、首批150小时声明；官方HF目录实际含PhysicalReasoning文件树，与媒体10月22日报道交叉确认。已收录news-20261022-agibot-world-physical-reasoning，训练划分和逐条标注未独立检查。"
     }
   ]
 }

@@ -5,11 +5,11 @@
     "name": "RDT-1B",
     "title": "RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation",
     "team": "Tsinghua University；Songming Liu、Lingxuan Wu、Bangguo Li 等",
-    "venue": "arXiv",
-    "publicationType": "preprint",
-    "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+    "venue": "ICLR 2025",
+    "publicationType": "conference",
+    "publicationStatus": "ICLR 2025 官方论文集已发表",
     "firstPublished": "2024-10-10",
-    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+    "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。 2026-10-23通过ICLR官方论文集核对2025年正式发表；2024-10-10的arXiv首次公开日保持不变。",
     "collectionMonth": "2026-09",
     "versionNote": "arXiv v2；摘要、Section 3–4",
     "topics": [
@@ -39,6 +39,10 @@
       {
         "label": "原文 v2 · 动作空间 / 数据",
         "url": "https://arxiv.org/html/2410.07864v2"
+      },
+      {
+        "label": "ICLR 2025 正式论文集",
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2410.07864",
@@ -50,12 +54,12 @@
     "firstArxivSource": "https://arxiv.org/abs/2410.07864v1",
     "latestArxivVersion": "v2",
     "latestArxivAt": "2025-03-01",
-    "status": "preprint",
-    "venue": "arXiv",
+    "status": "published",
+    "venue": "ICLR 2025",
     "doi": "",
     "acceptedAt": null,
-    "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "publishedAt": "2025",
+    "lastCheckedAt": "2026-10-23",
     "history": [
       {
         "kind": "imported",
@@ -80,6 +84,14 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2410.07864v2",
         "note": "元数据版本 v2；并不表示已重读该版本。"
+      },
+      {
+        "kind": "published",
+        "date": "2025",
+        "observedAt": "2026-10-23",
+        "venue": "ICLR 2025",
+        "source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+        "note": "ICLR官方论文集刊载完全相同标题与作者的正式Conference版本；未由论文集页面推断录用具体日期，arXiv首次公开仍为2024-10-10。"
       }
     ],
     "alerts": []

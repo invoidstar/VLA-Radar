@@ -1,0 +1,8 @@
+{
+  "id": "2026-10-23-bilingual-discovery-ci-recovery",
+  "date": "2026-10-23",
+  "summary": "完成Oct23四类来源二次检索与诚实partial审计：mlsanity学术索引仅截至Oct20、Oct23 curated来源以及arXiv/官方反向来源核验，OpenAlex和Semantic Scholar完整API访问受限；新增5篇高价值deferred候选。补录SenseNova 27B开放权重、智元PhysicalReasoning第四期官方HF数据、清华信通院具身发展报告及RoboValue价值模型Benchmark四条中英文一手具身新闻；来源与活动日期独立保存，不以新闻数字捏造VLA成绩。修复GitHub Actions Playwright 1.57容器与Firefox root HOME导致的安装和启动失败，保留全部浏览器引擎回归。main保护仍无admin权限，Issue75跟踪；文献/新闻lastSuccessfulSearchAt保持Oct04，直到真实全量覆盖。",
+  "notes": [],
+  "tracks": [],
+  "results": []
+}

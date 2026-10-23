@@ -3,14 +3,35 @@
 仓库：https://github.com/invoidstar/VLA-Radar  
 网站：https://invoidstar.github.io/VLA-Radar/
 
-## 2026-10-22 遗留修复与明确未完成边界
+## 2026-10-23 最新跟进：CI容器修复与多语种证据回补
+
+本轮最终构建说明：2026-10-23将四项进一步核验的一手具身新闻及一个更精确的四来源检索审计纳入`maintenance/audits/batches/2026-10-23-bilingual-discovery-ci-recovery.json`，源数据和哈希网站分片仅通过构建器生成。完整PR质量门禁使用`.github/workflows/site.yml`中官方Playwright 1.57.0容器（含Node 22、`HOME=/root`），保留Chromium/Firefox/WebKit三引擎；只有精确head全部回归成功才允许正常合并。学术索引数据更新落后时应记录partial并在下一轮周更重试，不得为清除报警降低检索覆盖门槛。
+
+
+- **CI P0**：改用与 Playwright 1.57.0 匹配的官方 Ubuntu 24.04 容器，同时安装 Node 22，并在Firefox/浏览器测试步骤设置 `HOME=/root`。既不运行曾超时的 `playwright install --with-deps`（大量APT多媒体包），也不丢掉 Chromium/Firefox/WebKit 的任一浏览器回归测试。更换环境后须以最终PR exact-head重新跑 `validate_all.py` 和全部HTTP/browser tests；旧成功run不自动认证新的head。
+- **论文四来源P1**：在 `maintenance/audits/discovery/discovery-2026-09-20-2026-10-23-four-lane-followup.json` 记录原始arXiv、mlsanity跨领域研究索引（仅更新至2026-10-20）、Robotics Paper Daily（至10月23日）以及真实官方模型/Benchmark反向发现；OpenAlex/Semantic Scholar批量日期查询访问受限。新增5篇来源确认但未完成全文深读的候选，仍为 `deferred`。独立索引缺10月21–23日及其他必需来源不完整，`lastSuccessfulSearchAt`不得前移。
+- **中英文新闻P1**：新增10月16–22日4项一手材料：SenseNova RoboRSI-27B Preview公开权重、智元AGIBOT WORLD2026 PhysicalReasoning第四期与HF实际目录、清华/信通院《具身智能发展报告（2026）》、RoboValue价值模型评测发布。日期、实际开放程度、原始来源在 `maintenance/audits/news/news-bilingual-followup-2026-10-23.json`；此前Pi API Beta/NVIDIA等不重复收录。完整英文/中文行业新闻覆盖仍不宣称穷尽。
+- **正式发表P2**：p065的ICLR2025官方论文集已核验；p030的IROS2026作者校方官方公告仅证明已录用及报告，IEEE正式卷期未核；p015 ECCV EMR Workshop poster与p042 ICME 2026录用信息仍需主办方正式名单或出版社论文页，保留三条细化候选。
+- **GitHub主分支保护P0（权限阻塞）**：本仓库`main.protected=false`，现有GitHub App无Administration(write)权限。真实PR job名`quality`已经写入候选保护策略并经测试；实际启用必须由管理员按 [Issue #75](https://github.com/invoidstar/VLA-Radar/issues/75) 操作并重新核对受保护状态，禁止绕开/伪称启用。
+
+## 2026-10-23 善后状态（以最新 main 和审计文件为准）
+
+- **论文和实验版本**：TurboVLA v3、SeeR-VLA v2及旧结果均已来源分轨；公开文库136篇、175个Evaluation Setting、923条对外核验结果及1163条原始canonical结果。正式论文RDT-1B（p065）已确认收入ICLR 2025官方论文集，保持2024-10-10原始arXiv首发日。
+- **发表状态**：p065经ICLR2025官方论文集正式核验；p030（AdaVLA）另由Sogang大学2026-10-06原始新闻明确证明IROS2026录用与报告，因此publication.status=accepted、acceptedAt/publishedAt仍为null，继续等待IEEE正式论文集证据。p015（ECCV EMR workshop poster）及p042（ICME）仍只有作者/实验室及arXiv线索，需会议主办方/出版社入口。三项保留细化候选，见 `maintenance/audits/editorial/publication-closeout-20261023.json` 与后续 `publication-adavla-iros-20261023.json`。
+- **来源健康**：`maintenance/audits/maintenance/source-health-closeout-20261023.json` 记录2026-10-23实际核查442条到期URL，当前月龄轮检 `dueRemaining=0`，涉及636条当前参考来源。全历史来源缓存记录611条reachable、27条blocked-or-transient和4条unknown（含不再属于当前参考集合的缓存），403/429/超时不是404和可靠性证明。没有因此删除论文。
+- **安全分支**：`Safe merged-branch housekeeping` 于2026-10-23依据精确PR head、主分支成功Pages部署及6小时保护窗口，删除PR #70/#71/#72/#73对应的4个旧分支，保留main和当前尚未合并的维护分支。当前维护分支正常合并后由下次安全housekeeping清理。
+- **新闻和论文发现**：新增Pi API Beta十月官方公告，并新增5个arXiv身份核实但未完整深读的deferred候选。由于2026-09-20—10-23区间的independent academic index完整查询被阻塞、其他检索lane/中英文新闻扫描也未达到完整覆盖，论文与新闻的`lastSuccessfulSearchAt`仍均为**2026-10-04**。不得把局部补录或因工具受限无法检索的日期标成complete。
+- **唯一权限阻塞**：GitHub API显示`main.protected=false`，自动housekeeping的保护状态审计为`blocked-administration-permission`；当前连接没有Administration(write)。候选保护策略现以实际PR工作流job `quality`为必需状态检查，而非不存在的`validate`。管理员仍需在GitHub Settings → Branches/Rulesets为main设定PR与required `quality` 检查，保留防force push/删除及conversation resolution；不得声称保护已生效，也不可绕过权限。
+- **后续自动化**：唯一启用的每周日08:00（Asia/Singapore）VLA-Radar维护任务继续处理3条会议候选、deferred新论文、academic-index恢复和下一批月龄链接轮检。若工具不可用继续保存partial并报告具体来源，不构造虚假的全量checkpoint。
+
+## 2026-10-22 修复历史快照（非当前状态）
 
 - **已核验内容**：TurboVLA v3与SeeR-VLA v2全文及新协议结果；RoboTwin官方快照2026-10-21（27个模型）；3项2026-10-21官方具身智能新闻；p041/p068的RSS会议论文集；另外p045/p055此前已在公开元数据中确认出版。
 - **Discovery仍为partial**：独立学术索引缺少覆盖2026-09-20—10-22窗口的可验证成功结果，因此`lastSuccessfulSearchAt`仍为2026-10-04；新增6篇候选保持deferred，不会按摘要直接编造Benchmark结果。
 - **News仍为partial**：10月21日官方事件已入库，但10月8—20日尚未完成跨来源14天扫描，不将新增3条新闻包装成完整行业周报。
-- **Publication剩余4项**：p015（ECCV Workshop）、p030（IROS）、p042（ICME）及p065（会议身份）需依据原始会议/出版方页面最终核验后逐项结案；不是未收录论文。
-- **Source-health**：最新保存的限额检查仍为2026-10-06，历史`dueRemaining=158`仅表示到期轮检工作而非158个失效URL。下一次运行`check_sources.py --limit 100 --due-days 30`须如实保存实际HTTP状态，不能直接改写为全部可达。
-- **分支清理**：已合并分支在6小时恢复窗口后由周日housekeeping通过来源PR、精确head SHA和已部署main检查删除；`docs/`已纳入可管理前缀，无法通过条件的分支继续保留并记录原因。禁止绕过安全等待期手工强制删除。
+- **当日Publication剩余4项**（后续2026-10-23解决p065，当前还剩3项）：p015（ECCV Workshop）、p030（IROS）、p042（ICME）及p065（会议身份）需依据原始会议/出版方页面最终核验后逐项结案；不是未收录论文。
+- **当日Source-health**：彼时最新保存的限额检查仍为2026-10-06，历史`dueRemaining=158`仅表示到期轮检工作而非158个失效URL。下一次运行`check_sources.py --limit 100 --due-days 30`须如实保存实际HTTP状态，不能直接改写为全部可达。
+- **当日分支清理计划**（已于2026-10-23执行，删除4个旧分支）：已合并分支在6小时恢复窗口后由周日housekeeping通过来源PR、精确head SHA和已部署main检查删除；`docs/`已纳入可管理前缀，无法通过条件的分支继续保留并记录原因。禁止绕过安全等待期手工强制删除。
 
 ## 数据与构建
 

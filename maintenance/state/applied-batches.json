@@ -275,6 +275,36 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-23-publication-news-closeout",
+      "sha256": "b3505eef426179b1ace45a73ee56d234ee612c82434b4cd6ecbd31fe81f4df51",
+      "date": "2026-10-23",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
+    },
+    {
+      "id": "2026-10-23-release-closeout",
+      "sha256": "3a82e72f3d90df12484e1158a73c3460ce52962307c0c0b8db7812f43fff082a",
+      "date": "2026-10-23",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
+    },
+    {
+      "id": "2026-10-23-bilingual-discovery-ci-recovery",
+      "sha256": "d9160953f948f2cc7a4fe6fb14d8e977fda08020879af7fa6a85693d9b99ad84",
+      "date": "2026-10-23",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

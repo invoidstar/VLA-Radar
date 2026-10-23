@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "branch-cleanup-20261023",
+  "requestedAt": "2026-10-23",
+  "mode": "apply",
+  "repo": "invoidstar/VLA-Radar",
+  "constraints": {
+    "minMergedHours": 6,
+    "requiresMergedPrToMain": true,
+    "requiresExactUnchangedHead": true,
+    "requiresPublishedMain": true,
+    "deleteByShaLease": true,
+    "noForcePush": true,
+    "noOpenPrBranchDeletion": true
+  },
+  "scope": "Delete only expired, exact-SHA, already-merged release/docs branches from the public VLA-Radar repository. Retain main, current unmerged branch, protected/unknown branches."
+}

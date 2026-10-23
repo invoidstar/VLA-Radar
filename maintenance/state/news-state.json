@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "status": "partial",
-  "lastAttemptAt": "2026-10-22",
+  "lastAttemptAt": "2026-10-23",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "补录2026-10-21 NVIDIA Isaac、NVIDIA Cosmos及Agility Robotics三项官方一手事件；10月8—20日尚未完成全部中英文产业/科研来源14日去重扫描，故保持partial，完整成功检查点仍为2026-10-04。",
+  "summary": "2026-10-23跨来源回补10月16–22重要具身新闻：清华/信通院发展报告、清华RoboValue价值模型评测、智元AGIBOT WORLD2026第四期、SenseNova 27B Preview权重；10月13 Pi API Beta与10月21 NVIDIA/Agility先前已收录并去重。虽覆盖多语种一手公司/实验室/高校与原始报道，10月8–23仍未逐日穷尽所有国内外来源，维持partial，完整成功检查点仍是2026-10-04。",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -42,6 +42,18 @@
       "to": "2026-10-22",
       "status": "partial",
       "note": "2026-10-22核验10月21日三项一手官方事件，缺少对10月8—20日所有模型、工业与中文公告的完整覆盖和历史窗口去重；此前10月6/7日已收录记录保留。"
+    },
+    {
+      "from": "2026-10-08",
+      "to": "2026-10-23",
+      "status": "partial",
+      "note": "2026-10-23额外复核pi.website官方API Beta发布、NVIDIA/ROS官方博客、部分中国AGIBOT材料与HF数据仓库；完成1条Pi API事实核验。AGIBOT WORLD第四期的数据文件与对应发布时间尚待匹配，保留候选。尚未跨行业媒体/实验室/全部中文发布渠道穷尽扫描，不能把抽样检查当作complete。"
+    },
+    {
+      "from": "2026-10-08",
+      "to": "2026-10-23",
+      "status": "partial",
+      "note": "10月23日回补高校/官方代码/HF/智元企业发布及清华媒体报道；验证新报道4项和既有旧记录，校对发布阶段与日期。未完成按全部实验室/企业/媒体逐日广泛检索与跨源穷尽去重，不可提高完整成功检查点。"
     }
   ]
 }

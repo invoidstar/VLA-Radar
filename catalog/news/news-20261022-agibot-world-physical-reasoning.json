@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261022-agibot-world-physical-reasoning",
+  "eventKey": "agibot-world-2026-phase-four-physical-reasoning-20261022",
+  "title": "智元开放 AGIBOT WORLD 2026 第四期具身推理数据",
+  "primaryCategory": "dataset",
+  "tags": [
+    "智元",
+    "AGIBOT WORLD",
+    "Physical Reasoning",
+    "真实机器人数据",
+    "任务记忆",
+    "Agent",
+    "开放数据"
+  ],
+  "eventDate": "2026-10-22",
+  "publishedAt": "2026-10-22",
+  "dateNote": "2026-10-22 17:00智元官方AI WAVE公告确认当日发布第四期Physical Reasoning；Hugging Face官方资源库存在PhysicalReasoning目录，具体开放文件与原始总量按资源库为准。",
+  "observedAt": "2026-10-23",
+  "updatedAt": "2026-10-23",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research-resource",
+  "whatHappened": "智元于10月22日公布AGIBOT WORLD 2026第四期Physical Reasoning数据集，官方发布计划称首批150小时真机数据，针对不同现实状态下的决策、任务记忆和物体数量/条件判断；公开数据仓库含PhysicalReasoning目录。较前期纯动作模仿素材，此批强调高层任务结构与底层机器人轨迹对应，配有步骤/物体标注，支持研究者探索推理与执行的对齐。",
+  "whyItMatters": "具身任务往往因场景初态而需要不同策略，按任务目标、条件和执行过程组织的数据能够帮助衡量模型是否依据真实状态选择动作，而非记忆固定任务脚本。该批数据可成为任务规划和行动对齐研究的公开素材。",
+  "vlaRelevance": "对VLA来说，Physical Reasoning样本提供语言任务、推理前提、任务阶段与机器人轨迹的关联；但数据集开放并不自动提供一套可复现的VLA策略或标准Benchmark排名。需要核对不同难度、机器人本体、动作坐标与许可后才能用于统一训练比较。",
+  "limits": "150小时及首个Physical Agent等措辞属于智元发布方口径；未独立下载核验全部PhysicalReasoning子文件的训练划分或逐条标注。Hugging Face数据集标有cc-by-nc-sa-4.0，不能默认为无限制商业使用；后续AI WAVE产品预告不当作已经实现。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "智元官方 AI WAVE 发布计划及首期具身推理数据",
+      "publisher": "智元创新",
+      "url": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "kind": "official",
+      "publishedAt": "2026-10-22",
+      "access": "full-page",
+      "note": "官方10月22日公告明确第四期名称、数据量声明及后续计划；将计划与实际日期分开。"
+    },
+    {
+      "id": "s2",
+      "title": "AGIBOT WORLD 2026 — PhysicalReasoning official dataset",
+      "publisher": "AgiBot World / Hugging Face",
+      "url": "https://huggingface.co/datasets/agibot-world/AgiBotWorld2026/tree/main/PhysicalReasoning",
+      "kind": "repository",
+      "publishedAt": "2026-10-22",
+      "access": "repository",
+      "note": "官方公开文件树PhysicalReasoning目录，许可和实际可下载资产范围按仓库所示核验。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
