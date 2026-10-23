@@ -5,6 +5,9 @@
 
 ## 2026-10-23 最新跟进：CI容器修复与多语种证据回补
 
+本轮最终构建说明：2026-10-23将四项进一步核验的一手具身新闻及一个更精确的四来源检索审计纳入`maintenance/audits/batches/2026-10-23-bilingual-discovery-ci-recovery.json`，源数据和哈希网站分片仅通过构建器生成。完整PR质量门禁使用`.github/workflows/site.yml`中官方Playwright 1.57.0容器（含Node 22、`HOME=/root`），保留Chromium/Firefox/WebKit三引擎；只有精确head全部回归成功才允许正常合并。学术索引数据更新落后时应记录partial并在下一轮周更重试，不得为清除报警降低检索覆盖门槛。
+
+
 - **CI P0**：改用与 Playwright 1.57.0 匹配的官方 Ubuntu 24.04 容器，同时安装 Node 22，并在Firefox/浏览器测试步骤设置 `HOME=/root`。既不运行曾超时的 `playwright install --with-deps`（大量APT多媒体包），也不丢掉 Chromium/Firefox/WebKit 的任一浏览器回归测试。更换环境后须以最终PR exact-head重新跑 `validate_all.py` 和全部HTTP/browser tests；旧成功run不自动认证新的head。
 - **论文四来源P1**：在 `maintenance/audits/discovery/discovery-2026-09-20-2026-10-23-four-lane-followup.json` 记录原始arXiv、mlsanity跨领域研究索引（仅更新至2026-10-20）、Robotics Paper Daily（至10月23日）以及真实官方模型/Benchmark反向发现；OpenAlex/Semantic Scholar批量日期查询访问受限。新增5篇来源确认但未完成全文深读的候选，仍为 `deferred`。独立索引缺10月21–23日及其他必需来源不完整，`lastSuccessfulSearchAt`不得前移。
 - **中英文新闻P1**：新增10月16–22日4项一手材料：SenseNova RoboRSI-27B Preview公开权重、智元AGIBOT WORLD2026 PhysicalReasoning第四期与HF实际目录、清华/信通院《具身智能发展报告（2026）》、RoboValue价值模型评测发布。日期、实际开放程度、原始来源在 `maintenance/audits/news/news-bilingual-followup-2026-10-23.json`；此前Pi API Beta/NVIDIA等不重复收录。完整英文/中文行业新闻覆盖仍不宣称穷尽。
