@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261016-embodied-ai-report-2026",
+  "eventKey": "caict-tsinghua-embodied-ai-industry-report-20261016",
+  "title": "中国信通院与清华发布《具身智能发展报告（2026年）》",
+  "primaryCategory": "research",
+  "tags": [
+    "中国信通院",
+    "清华大学",
+    "具身智能",
+    "Benchmark",
+    "技术评测",
+    "产业报告"
+  ],
+  "eventDate": "2026-10-16",
+  "publishedAt": "2026-10-22",
+  "dateNote": "报告在10月14–16日人工智能产业大会期间发布，eventDate取会议最后一天以免虚构精确日；清华大学官方新闻页10月22日转载10月20日光明日报报道，本条报道源日期记10月22日。未找到可自由下载的完整报告PDF。",
+  "observedAt": "2026-10-23",
+  "updatedAt": "2026-10-23",
+  "stage": "reported",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "ecosystem",
+  "whatHappened": "在2026年10月14日至16日人工智能产业大会期间，中国信通院联合清华大学团队发布中文《具身智能发展报告（2026年）》。清华大学新闻网引用的原报道将当前具身智能发展区分为模型、数据、本体和算力协同，梳理技术研究到产业部署的瓶颈，并提出认知、导航、操作、安全四类评测基准及相应局限。",
+  "whyItMatters": "对具身技术的研究和交付判断不能只依靠模型排行榜；仿真任务完成率、真机实际节拍、成本、干扰与长期稳定性回答不同问题。报告的框架可帮助研究者在产业和科研之间明确指标边界。",
+  "vlaRelevance": "该报告强调VLA、世界模型、后训练和Agent系统并行发展，同时指出纯桌面成功率不足以证明强接触恢复、开放任务和真实连续作业能力。其行业统计仍需回到原报告和统计口径，不作为本站核验的独立模型测评成绩。",
+  "limits": "来源是清华官方新闻网转载的媒体摘要而非完整报告正文；产业规模、性能趋势和市场判断均按报道归属，不称作本站独立事实核验。报告发布的具体日未单独证实，仅限定于10月14–16日活动窗口。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "《具身智能发展报告（2026年）》：具身智能处在向试点应用的过渡节点",
+      "publisher": "清华大学新闻网（转载光明日报）",
+      "url": "https://www.tsinghua.edu.cn/info/1182/128871.htm",
+      "kind": "official",
+      "publishedAt": "2026-10-22",
+      "access": "full-page",
+      "note": "核对活动日期、报告发布方、四类Benchmark与来源属于摘要报道而非报告全文。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
