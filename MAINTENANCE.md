@@ -6,7 +6,7 @@
 ## 2026-10-23 善后状态（以最新 main 和审计文件为准）
 
 - **论文和实验版本**：TurboVLA v3、SeeR-VLA v2及旧结果均已来源分轨；公开文库136篇、175个Evaluation Setting、923条对外核验结果及1163条原始canonical结果。正式论文RDT-1B（p065）已确认收入ICLR 2025官方论文集，保持2024-10-10原始arXiv首发日。
-- **发表状态**：四条旧候选现有一条p065经官方论文集解决，仍有p015（ECCV workshop作者自述）、p030（IROS作者自述）、p042（ICME作者/实验室自述）缺对应会议/IEEE原始论文条目；保留待办，不把录用线索直接写成官方发表证明。见 `maintenance/audits/editorial/publication-closeout-20261023.json`。
+- **发表状态**：p065经ICLR2025官方论文集正式核验；p030（AdaVLA）另由Sogang大学2026-10-06原始新闻明确证明IROS2026录用与报告，因此publication.status=accepted、acceptedAt/publishedAt仍为null，继续等待IEEE正式论文集证据。p015（ECCV EMR workshop poster）及p042（ICME）仍只有作者/实验室及arXiv线索，需会议主办方/出版社入口。三项保留细化候选，见 `maintenance/audits/editorial/publication-closeout-20261023.json` 与后续 `publication-adavla-iros-20261023.json`。
 - **来源健康**：`maintenance/audits/maintenance/source-health-closeout-20261023.json` 记录2026-10-23实际核查442条到期URL，当前月龄轮检 `dueRemaining=0`，涉及636条当前参考来源。全历史来源缓存记录611条reachable、27条blocked-or-transient和4条unknown（含不再属于当前参考集合的缓存），403/429/超时不是404和可靠性证明。没有因此删除论文。
 - **安全分支**：`Safe merged-branch housekeeping` 于2026-10-23依据精确PR head、主分支成功Pages部署及6小时保护窗口，删除PR #70/#71/#72/#73对应的4个旧分支，保留main和当前尚未合并的维护分支。当前维护分支正常合并后由下次安全housekeeping清理。
 - **新闻和论文发现**：新增Pi API Beta十月官方公告，并新增5个arXiv身份核实但未完整深读的deferred候选。由于2026-09-20—10-23区间的independent academic index完整查询被阻塞、其他检索lane/中英文新闻扫描也未达到完整覆盖，论文与新闻的`lastSuccessfulSearchAt`仍均为**2026-10-04**。不得把局部补录或因工具受限无法检索的日期标成complete。
