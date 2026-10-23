@@ -1,0 +1,86 @@
+name: Bounded source-health sweep
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['release/batch-*']
+    paths:
+      - 'maintenance/audits/maintenance/source-health-request-*.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: source-health-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  health:
+    if: github.repository == 'invoidstar/VLA-Radar' && startsWith(github.ref, 'refs/heads/release/batch-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check overdue sources with bounded public HEAD requests
+        run: |
+          python - <<'PY'
+          import json, subprocess, sys
+          from collections import Counter
+          from pathlib import Path
+          state=Path("maintenance/state/source-health.json")
+          sweeps=[]
+          total_attempted=0
+          for i in range(5):
+              subprocess.run([sys.executable,"scripts/maintenance/check_sources.py","--limit","100","--due-days","30","--max-seconds","80"],check=True)
+              data=json.loads(state.read_text(encoding="utf-8"))
+              total_attempted+=data["checkedThisRun"]
+              sweeps.append({"round":i+1,"attempted":data["checkedThisRun"],"dueRemaining":data["dueRemaining"]})
+              if data["dueRemaining"]==0 or data["checkedThisRun"]==0:
+                  break
+          data=json.loads(state.read_text(encoding="utf-8"))
+          statuses=dict(sorted(Counter(x["status"] for x in data["sources"].values()).items()))
+          summary={
+            "schemaVersion":1,
+            "id":"source-health-closeout-2026-10-23",
+            "checkedAt":data["lastAttemptAt"],
+            "scope":"Bounded HEAD/GET reachability only; 403/429/timeout not proof that an academic result is invalid",
+            "totalSources":data["totalSources"],
+            "checkedDuringRun":total_attempted,
+            "checkedThisRun":data["checkedThisRun"],
+            "dueRemaining":data["dueRemaining"],
+            "status":"due-rotation-complete" if data["dueRemaining"]==0 else "partial-bounded",
+            "statusCounts":statuses,
+            "sweeps":sweeps,
+            "notes":"No papers or results removed based on link errors. Dataset/publisher identity and content evidence need independent audit."
+          }
+          out=Path("maintenance/audits/maintenance/source-health-closeout-20261023.json")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
+          PY
+      - name: Validate after health sweep
+        run: python scripts/validate/validate_all.py
+      - name: Commit checked health status to this release branch only
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          case "$BRANCH" in release/batch-*) ;; *) exit 1 ;; esac
+          actual=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; refusing overwrite'; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add maintenance/state/source-health.json maintenance/audits/maintenance/source-health-closeout-20261023.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Sweep and audit overdue public evidence URLs"
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-health-audit-${{ github.run_id }}
+          path: |
+            maintenance/state/source-health.json
+            maintenance/audits/maintenance/source-health-closeout-20261023.json
+          retention-days: 30
