@@ -1,3 +1,7 @@
+## 2026-10-23 — 2026-10-23-bilingual-discovery-ci-recovery
+
+完成Oct23四类来源二次检索与诚实partial审计：mlsanity学术索引仅截至Oct20、Oct23 curated来源以及arXiv/官方反向来源核验，OpenAlex和Semantic Scholar完整API访问受限；新增5篇高价值deferred候选。补录SenseNova 27B开放权重、智元PhysicalReasoning第四期官方HF数据、清华信通院具身发展报告及RoboValue价值模型Benchmark四条中英文一手具身新闻；来源与活动日期独立保存，不以新闻数字捏造VLA成绩。修复GitHub Actions Playwright 1.57容器与Firefox root HOME导致的安装和启动失败，保留全部浏览器引擎回归。main保护仍无admin权限，Issue75跟踪；文献/新闻lastSuccessfulSearchAt保持Oct04，直到真实全量覆盖。
+
 ## 2026-10-23 — 2026-10-23-release-closeout
 
 VLA-Radar V3.0遗留善后：RDT-1B ICLR2025论文集核验及AdaVLA IROS2026校方一手公告录用核验（不推断IEEE正式出版）；Pi API Beta官方新闻补录；5篇VLA/WAM新论文身份与deferred候选审计；442条到期来源URL有界轮检，dueRemaining0，403/timeout保留告警；PR70/71/72/73四个旧合并分支按精确SHA安全清理。修正main保护策略的required check为真实quality job并加入回归，保护实际安装仍受GitHub Administration(write)权限阻塞；论文/新闻跨来源全量扫描仍为partial且成功检查点不前移。重新构建canonical派生数据，所有来源与历史版本不覆盖。
