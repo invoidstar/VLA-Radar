@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-10-22",
+  "lastAttemptAt": "2026-10-23",
   "lastStatus": "partial",
-  "lastSummary": "10月22日补查TurboVLA v3、SeeR-VLA v2及6篇近期候选，恢复官方RoboTwin榜单；候选9条（duplicate3、deferred6）。academic-index受限，四lane非完整覆盖；完整成功检索日期仍为2026-10-04。",
+  "lastSummary": "2026-10-23补核arXiv新增5篇VLA/具身世界模型论文（全部deferred，未深读入榜），Robotics Paper Daily更新至10月23日；独立OpenAlex学术索引无法覆盖2026-09-20—10-23完整窗口，其他三个lane亦为部分覆盖。lastSuccessfulSearchAt仍为2026-10-04。",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-22-backlog-partial.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-23-partial.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }
