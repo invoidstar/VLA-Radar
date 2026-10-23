@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261022-sensenova-roborsi-27b-weights",
+  "eventKey": "sensenova-roborsi-27b-preview-weights-20261022",
+  "title": "SenseNova-RoboRSI 开放 27B Preview 模型权重及多基准 Harness",
+  "primaryCategory": "opensource",
+  "tags": [
+    "SenseNova",
+    "RoboRSI",
+    "Open Weights",
+    "RoboDojo",
+    "LIBERO-PRO",
+    "具身评测",
+    "Agent Harness"
+  ],
+  "eventDate": "2026-10-22",
+  "publishedAt": "2026-10-22",
+  "dateNote": "2026-10-22 官方GitHub更新记录明确开放27B-preview权重/使用指南；另有2026-10-16/20先后开放的Benchmark工具，不视为同日首次发布。",
+  "observedAt": "2026-10-23",
+  "updatedAt": "2026-10-23",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "major-release",
+  "whatHappened": "SenseNova团队在10月22日更新RoboRSI项目，公布SenseNova-RoboRSI-27B-Preview的公开模型权重与部署指南，并开放RoboCasa365 Target50适配。其Harness先后于10月16日开放LIBERO系列、10月20日扩展BEHAVIOR-1K、Bench2Dex及DexJoCo。本次是具体模型权重与评测工具的阶段式释放，技术报告仍待发布，并非所有训练数据或完整训练权重已公开。",
+  "whyItMatters": "大型具身模型的测试不仅涉及权重，还依赖统一环境镜像、模型到评测器的接口、协议和数据版本。发布可运行权重及对应Harness有助于开发者确认能否实际搭建评测和改动模型，而不是只看榜单数值。",
+  "vlaRelevance": "该系统把通用具身VLM、VLA协同执行和评测环境连接起来，涵盖RoboDojo、LIBERO-PRO及RoboCasa365。但27B-preview的系统接口、动作专家与训练过程需要分别核验，模型在同一系统里的成功率不等同于独立训练的标准VLA成绩。",
+  "limits": "官方README报告的RoboDojo得分与LIBERO-PRO数字属于团队自报，部分设置与官方榜单不同，未被本站独立复现；模型权重公开不证明训练代码、全部数据、官方排名或完整许可均已开放。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "SenseNova-RoboRSI · Official GitHub release history",
+      "publisher": "SenseNova",
+      "url": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+      "kind": "repository",
+      "publishedAt": "2026-10-22",
+      "access": "repository",
+      "note": "逐条核对10月16、20、22的代码/模型开放时间、评测基准及官方自报性质；不能当成独立官方榜单。"
+    },
+    {
+      "id": "s2",
+      "title": "SenseNova-RoboRSI 27B Preview official model card",
+      "publisher": "SenseNova / Hugging Face",
+      "url": "https://huggingface.co/sensenova/sensenova-roborsi-27b-preview",
+      "kind": "official",
+      "publishedAt": "2026-10-22",
+      "access": "full-page",
+      "note": "作者模型权重页面与使用说明，模型能力和开源边界按官方所列。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
