@@ -1,0 +1,44 @@
+{
+  "id": "publication-closeout-2026-10-23",
+  "checkedAt": "2026-10-23",
+  "scope": "Identity-matched formal publication review; publisher proceedings vs author-claimed acceptance.",
+  "verified": [
+    {
+      "paperId": "p065",
+      "kind": "published",
+      "venue": "ICLR 2025",
+      "publishedAt": "2025",
+      "source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+      "note": "Formal ICLR publisher proceedings with matching title and authors; original arXiv v1 remains 2024-10-10; acceptance date not inferred."
+    }
+  ],
+  "pending": [
+    {
+      "paperId": "p015",
+      "claimedVenue": "ECCV 2026 EMR Workshop Poster",
+      "authorSources": [
+        "https://arxiv.org/abs/2608.08749",
+        "https://chenzhongxi-sjtu.github.io/"
+      ],
+      "reason": "Author homepage and arXiv comment corroborate workshop poster, but no event-organizer program/acceptance list independently located. Keep publication lifecycle preprint pending formal primary venue confirmation."
+    },
+    {
+      "paperId": "p030",
+      "claimedVenue": "IROS 2026",
+      "authorSources": [
+        "https://arxiv.org/abs/2608.29208"
+      ],
+      "reason": "arXiv authors claim IROS 2026 acceptance; conference final paper index/proceedings could not be independently matched to the exact paper. Do not create a false proceedings record or date."
+    },
+    {
+      "paperId": "p042",
+      "claimedVenue": "ICME 2026",
+      "authorSources": [
+        "https://arxiv.org/abs/2604.05323",
+        "https://largeaudiomodel.com/publication/"
+      ],
+      "reason": "Lab publication listing and arXiv acceptance comment agree, but no IEEE ICME proceedings/official paper page independently matched. Preserve existing historical conference label without promoting publication.status from legacy."
+    }
+  ],
+  "instruction": "Re-check official workshop/program/publisher proceedings, DOI and author exact title; author claims are useful clues but not sufficient for an official publication event. Keep pending records without inventing acceptedAt."
+}
