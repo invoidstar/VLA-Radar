@@ -3,6 +3,14 @@
 仓库：https://github.com/invoidstar/VLA-Radar  
 网站：https://invoidstar.github.io/VLA-Radar/
 
+## 2026-10-23 最新跟进：CI容器修复与多语种证据回补
+
+- **CI P0**：改用与 Playwright 1.57.0 匹配的官方 Ubuntu 24.04 容器，同时安装 Node 22，并在Firefox/浏览器测试步骤设置 `HOME=/root`。既不运行曾超时的 `playwright install --with-deps`（大量APT多媒体包），也不丢掉 Chromium/Firefox/WebKit 的任一浏览器回归测试。更换环境后须以最终PR exact-head重新跑 `validate_all.py` 和全部HTTP/browser tests；旧成功run不自动认证新的head。
+- **论文四来源P1**：在 `maintenance/audits/discovery/discovery-2026-09-20-2026-10-23-four-lane-followup.json` 记录原始arXiv、mlsanity跨领域研究索引（仅更新至2026-10-20）、Robotics Paper Daily（至10月23日）以及真实官方模型/Benchmark反向发现；OpenAlex/Semantic Scholar批量日期查询访问受限。新增5篇来源确认但未完成全文深读的候选，仍为 `deferred`。独立索引缺10月21–23日及其他必需来源不完整，`lastSuccessfulSearchAt`不得前移。
+- **中英文新闻P1**：新增10月16–22日4项一手材料：SenseNova RoboRSI-27B Preview公开权重、智元AGIBOT WORLD2026 PhysicalReasoning第四期与HF实际目录、清华/信通院《具身智能发展报告（2026）》、RoboValue价值模型评测发布。日期、实际开放程度、原始来源在 `maintenance/audits/news/news-bilingual-followup-2026-10-23.json`；此前Pi API Beta/NVIDIA等不重复收录。完整英文/中文行业新闻覆盖仍不宣称穷尽。
+- **正式发表P2**：p065的ICLR2025官方论文集已核验；p030的IROS2026作者校方官方公告仅证明已录用及报告，IEEE正式卷期未核；p015 ECCV EMR Workshop poster与p042 ICME 2026录用信息仍需主办方正式名单或出版社论文页，保留三条细化候选。
+- **GitHub主分支保护P0（权限阻塞）**：本仓库`main.protected=false`，现有GitHub App无Administration(write)权限。真实PR job名`quality`已经写入候选保护策略并经测试；实际启用必须由管理员按 [Issue #75](https://github.com/invoidstar/VLA-Radar/issues/75) 操作并重新核对受保护状态，禁止绕开/伪称启用。
+
 ## 2026-10-23 善后状态（以最新 main 和审计文件为准）
 
 - **论文和实验版本**：TurboVLA v3、SeeR-VLA v2及旧结果均已来源分轨；公开文库136篇、175个Evaluation Setting、923条对外核验结果及1163条原始canonical结果。正式论文RDT-1B（p065）已确认收入ICLR 2025官方论文集，保持2024-10-10原始arXiv首发日。
