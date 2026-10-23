@@ -30,6 +30,12 @@ class MaintenanceTests(unittest.TestCase):
     def test_open_base_protected(self):
         p=copy.deepcopy(self.pr);p['state']='open';p['base']['ref']=self.b['name'];p['head']['ref']='other';self.assertEqual(self.result([self.pr,p])['action'],'keep')
     def test_main_protected(self):self.b['name']='main';self.assertEqual(self.result()['reason'],'reserved')
+    def test_main_protection_requires_real_pr_quality_job(self):
+        settings=load(ROOT/'maintenance/policies/main-protection.json')
+        workflow=(ROOT/'.github/workflows/site.yml').read_text(encoding='utf-8')
+        self.assertEqual(settings['required_status_checks']['contexts'],['quality'])
+        self.assertIn('  quality:\n',workflow)
+        self.assertIn("if: github.event_name == 'pull_request'",workflow)
     def test_backup_protected(self):self.b['name']='pre-update-safety-2026';self.assertEqual(self.result()['reason'],'reserved')
     def test_server_protected(self):self.b['protected']=True;self.assertEqual(self.result()['reason'],'protected')
     def test_unmerged_never_deleted(self):self.pr['merged_at']=None;self.assertEqual(self.result()['action'],'keep')
