@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261020-robovalue-benchmark",
+  "eventKey": "robovalue-value-model-benchmark-20261020",
+  "title": "清华合作团队发布 RoboValue 机器人价值模型评测基准",
+  "primaryCategory": "benchmark",
+  "tags": [
+    "RoboValue",
+    "机器人价值模型",
+    "真实机器人",
+    "Benchmark",
+    "奖励",
+    "进度评估"
+  ],
+  "eventDate": "2026-10-20",
+  "publishedAt": "2026-10-20",
+  "dateNote": "清华具身决策智能实验室官网新闻栏目将RoboValue发布列于2026-10-20，代码仓库以2026/10标记公开；采用实验室公告日期，不从arXiv推导发布日。",
+  "observedAt": "2026-10-23",
+  "updatedAt": "2026-10-23",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "research-resource",
+  "whatHappened": "清华EDI Lab等团队在10月20日公布RoboValue，一项评估机器人价值模型是否理解任务状态、进度及失败恢复的仿真与真机基准。其官方代码仓库描述15个仿真任务和20个真机任务，并提供评测适配器及不同value接口的支持说明。官方同时区分Zero-Shot和One-Shot，Full-Shot仍处于规划中，测试数据存在组织方控制部分。",
+  "whyItMatters": "机器人训练中的价值/奖励信号可能影响数据筛选、后训练及失败恢复，如果价值模型不能正确判断任务进度，即使策略模型很强也可能被错误反馈误导。针对这种评估可靠性的独立Benchmark具有研究价值。",
+  "vlaRelevance": "RoboValue服务于VLA、RL、世界模型下游的状态评估和学习，而不是一项新的动作策略；value/progress评分不能直接变成机器人动作成功率。与现有RoboDojo策略榜单应分开展示。",
+  "limits": "论文和仓库报告的排名为作者团队发布，测试集部分保留在组织方，公开代码和适配器不能说明全部测试数据可下载。不同value模型的支持操作不同，不支持的指标应为N/A而非零；暂不导入未经复核的完整分数。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "RoboValue official repository, evaluation protocol and scope",
+      "publisher": "RoboValue Benchmark team",
+      "url": "https://github.com/RoboValue-Benchmark/RoboValue",
+      "kind": "repository",
+      "publishedAt": "2026-10-20",
+      "access": "repository",
+      "note": "核对15仿真20真机任务、Zero/One-shot与计划Full-shot、held-out测试的来源限制。"
+    },
+    {
+      "id": "s2",
+      "title": "Tsinghua EDI Lab official news",
+      "publisher": "清华大学具身决策智能实验室",
+      "url": "https://thusigs-edi-lab.github.io/",
+      "kind": "official",
+      "publishedAt": "2026-10-20",
+      "access": "full-page",
+      "note": "实验室官网新闻栏目标示RoboValue于2026-10-20发布，日期与项目仓库2026/10月更新一致。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
