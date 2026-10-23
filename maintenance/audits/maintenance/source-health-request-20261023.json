@@ -1,0 +1,12 @@
+{
+  "id": "source-health-request-2026-10-23",
+  "requestedAt": "2026-10-23",
+  "scope": "VLA-Radar public paper, publication, figure, benchmark, result-source URL reachability",
+  "request": {
+    "dueDays": 30,
+    "maxRounds": 5,
+    "maxUrlsPerRound": 100,
+    "maxSecondsPerRound": 80
+  },
+  "constraints": "Keep source status warning-only; do not remove papers or claim 403/429 equals missing evidence. Commit only exact release branch head and keep audit summary."
+}
