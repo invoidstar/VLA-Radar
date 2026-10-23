@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "status": "partial",
-  "lastAttemptAt": "2026-10-22",
+  "lastAttemptAt": "2026-10-23",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "补录2026-10-21 NVIDIA Isaac、NVIDIA Cosmos及Agility Robotics三项官方一手事件；10月8—20日尚未完成全部中英文产业/科研来源14日去重扫描，故保持partial，完整成功检查点仍为2026-10-04。",
+  "summary": "10月23日补核并收录Physical Intelligence于10月13日的Pi API Beta公告；复查Open Robotics、NVIDIA、Hugging Face、Physical Intelligence与部分中文具身企业来源，识别AGIBOT WORLD 2026第四期新增新闻线索但未核定Phase 4对应可获取文件。独立多语种来源与10月8–23日完整覆盖不足，维持partial；完整成功检查点仍为10月4日。",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -42,6 +42,12 @@
       "to": "2026-10-22",
       "status": "partial",
       "note": "2026-10-22核验10月21日三项一手官方事件，缺少对10月8—20日所有模型、工业与中文公告的完整覆盖和历史窗口去重；此前10月6/7日已收录记录保留。"
+    },
+    {
+      "from": "2026-10-08",
+      "to": "2026-10-23",
+      "status": "partial",
+      "note": "2026-10-23额外复核pi.website官方API Beta发布、NVIDIA/ROS官方博客、部分中国AGIBOT材料与HF数据仓库；完成1条Pi API事实核验。AGIBOT WORLD第四期的数据文件与对应发布时间尚待匹配，保留候选。尚未跨行业媒体/实验室/全部中文发布渠道穷尽扫描，不能把抽样检查当作complete。"
     }
   ]
 }
