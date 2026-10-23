@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22",
+  "updatedAt": "2026-10-23",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -7223,11 +7223,11 @@
       "name": "RDT-1B",
       "title": "RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation",
       "team": "Tsinghua University；Songming Liu、Lingxuan Wu、Bangguo Li 等",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "按预印本记录；最终出版状态未在本条另行核对",
+      "venue": "ICLR 2025",
+      "publicationType": "conference",
+      "publicationStatus": "ICLR 2025 官方论文集已发表",
       "firstPublished": "2024-10-10",
-      "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。",
+      "dateNote": "日期采用 arXiv v1 提交日（UTC），不等同于修订日、会议举办日或网站收录日。 2026-10-23通过ICLR官方论文集核对2025年正式发表；2024-10-10的arXiv首次公开日保持不变。",
       "collectionMonth": "2026-09",
       "versionNote": "arXiv v2；摘要、Section 3–4",
       "topics": [
@@ -7257,12 +7257,16 @@
         {
           "label": "原文 v2 · 动作空间 / 数据",
           "url": "https://arxiv.org/html/2410.07864v2"
+        },
+        {
+          "label": "ICLR 2025 正式论文集",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2410.07864",
       "arxiv": "2410.07864",
       "doi": "",
-      "detailUrl": "data/details/p065.json?v=49b08ed795b750a1",
+      "detailUrl": "data/details/p065.json?v=01a782e92c76a1c2",
       "resultUrl": "data/paper-results/p065.c001f8ea097ff334.json",
       "noteStatus": "expanded",
       "resources": {
@@ -7278,8 +7282,8 @@
       "lifecycle": {
         "firstArxivAt": "2024-10-10",
         "latestArxivVersion": "v2",
-        "status": "preprint",
-        "lastCheckedAt": "2026-09-18"
+        "status": "published",
+        "lastCheckedAt": "2026-10-23"
       }
     },
     {

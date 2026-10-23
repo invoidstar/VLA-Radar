@@ -275,6 +275,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-23-publication-news-closeout",
+      "sha256": "b3505eef426179b1ace45a73ee56d234ee612c82434b4cd6ecbd31fe81f4df51",
+      "date": "2026-10-23",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
