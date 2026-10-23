@@ -46,9 +46,9 @@
     },
     {
       "title": "AGIBOT WORLD 2026第四期具身推理数据集",
-      "status": "deferred",
-      "source": "https://huggingface.co/datasets/agibot-world/AgiBotWorld2026",
-      "reason": "2026-10-22中文媒体一致报道第四期Physical Reasoning开放，但当前官方HF数据集卡仅能确认AGIBOT WORLD 2026整体及操作/分层标注，尚未独立定位第四期对应文件范围与正式首发日期；待官方Phase4资源/页面定位后才能声称该批数据已公开完整。"
+      "status": "selected",
+      "source": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "reason": "2026-10-23官方智元AI WAVE公告核对首次发布日期、首批150小时声明；官方HF目录实际含PhysicalReasoning文件树，与媒体10月22日报道交叉确认。已收录news-20261022-agibot-world-physical-reasoning，训练划分和逐条标注未独立检查。"
     }
   ]
 }
