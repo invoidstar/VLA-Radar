@@ -1,1546 +1,1546 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-10-06",
+  "lastAttemptAt": "2026-10-23",
   "scope": "link reachability only, not correctness or publication verification",
-  "checkedThisRun": 100,
-  "totalSources": 571,
-  "dueRemaining": 158,
+  "checkedThisRun": 42,
+  "totalSources": 636,
+  "dueRemaining": 0,
   "sources": {
     "https://arxiv.org/abs/2109.12098": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2109.12098",
       "error": ""
     },
     "https://arxiv.org/abs/2112.03227": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2112.03227",
       "error": ""
     },
     "https://arxiv.org/abs/2202.02005": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2202.02005",
       "error": ""
     },
     "https://arxiv.org/abs/2204.01691": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2204.01691",
       "error": ""
     },
     "https://arxiv.org/abs/2209.05451": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2209.05451",
       "error": ""
     },
     "https://arxiv.org/abs/2212.06817": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2212.06817",
       "error": ""
     },
     "https://arxiv.org/abs/2302.00111": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2302.00111",
       "error": ""
     },
     "https://arxiv.org/abs/2303.03378": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2303.03378",
       "error": ""
     },
     "https://arxiv.org/abs/2303.04137": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2303.04137",
       "error": ""
     },
     "https://arxiv.org/abs/2304.13705": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2304.13705",
       "error": ""
     },
     "https://arxiv.org/abs/2306.03310": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2306.03310",
       "error": ""
     },
     "https://arxiv.org/abs/2307.15818": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2307.15818",
       "error": ""
     },
     "https://arxiv.org/abs/2310.08864": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2310.08864",
       "error": ""
     },
     "https://arxiv.org/abs/2311.01378": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2311.01378",
       "error": ""
     },
     "https://arxiv.org/abs/2312.13139": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2312.13139",
       "error": ""
     },
     "https://arxiv.org/abs/2403.12945": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2403.12945",
       "error": ""
     },
     "https://arxiv.org/abs/2405.12213": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2405.12213",
       "error": ""
     },
     "https://arxiv.org/abs/2406.09246": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2406.09246",
       "error": ""
     },
     "https://arxiv.org/abs/2410.07864": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.07864",
       "error": ""
     },
     "https://arxiv.org/abs/2410.24164": {
-      "checkedAt": "2026-09-17",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.24164",
       "error": ""
     },
     "https://arxiv.org/abs/2109.12098v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2109.12098v1",
       "error": ""
     },
     "https://arxiv.org/abs/2112.03227v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2112.03227v1",
       "error": ""
     },
     "https://arxiv.org/abs/2112.03227v4": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2112.03227v4",
       "error": ""
     },
     "https://arxiv.org/abs/2202.02005v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2202.02005v1",
       "error": ""
     },
     "https://arxiv.org/abs/2204.01691v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2204.01691v1",
       "error": ""
     },
     "https://arxiv.org/abs/2204.01691v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2204.01691v2",
       "error": ""
     },
     "https://arxiv.org/abs/2209.05451v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2209.05451v1",
       "error": ""
     },
     "https://arxiv.org/abs/2209.05451v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2209.05451v2",
       "error": ""
     },
     "https://arxiv.org/abs/2212.06817v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2212.06817v1",
       "error": ""
     },
     "https://arxiv.org/abs/2212.06817v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2212.06817v2",
       "error": ""
     },
     "https://arxiv.org/abs/2302.00111v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2302.00111v1",
       "error": ""
     },
     "https://arxiv.org/abs/2302.00111v3": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2302.00111v3",
       "error": ""
     },
     "https://arxiv.org/abs/2303.03378v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2303.03378v1",
       "error": ""
     },
     "https://arxiv.org/abs/2303.04137v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2303.04137v1",
       "error": ""
     },
     "https://arxiv.org/abs/2303.04137v5": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2303.04137v5",
       "error": ""
     },
     "https://arxiv.org/abs/2304.13705v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2304.13705v1",
       "error": ""
     },
     "https://arxiv.org/abs/2306.03310v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2306.03310v1",
       "error": ""
     },
     "https://arxiv.org/abs/2306.03310v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2306.03310v2",
       "error": ""
     },
     "https://arxiv.org/abs/2307.15818v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2307.15818v1",
       "error": ""
     },
     "https://arxiv.org/abs/2310.08864v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2310.08864v1",
       "error": ""
     },
     "https://arxiv.org/abs/2310.08864v9": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2310.08864v9",
       "error": ""
     },
     "https://arxiv.org/abs/2311.01378v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2311.01378v1",
       "error": ""
     },
     "https://arxiv.org/abs/2311.01378v3": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2311.01378v3",
       "error": ""
     },
     "https://arxiv.org/abs/2312.13139v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2312.13139v1",
       "error": ""
     },
     "https://arxiv.org/abs/2312.13139v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2312.13139v2",
       "error": ""
     },
     "https://arxiv.org/abs/2403.12945v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2403.12945v1",
       "error": ""
     },
     "https://arxiv.org/abs/2403.12945v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2403.12945v2",
       "error": ""
     },
     "https://arxiv.org/abs/2405.12213v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2405.12213v1",
       "error": ""
     },
     "https://arxiv.org/abs/2405.12213v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2405.12213v2",
       "error": ""
     },
     "https://arxiv.org/abs/2406.09246v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2406.09246v1",
       "error": ""
     },
     "https://arxiv.org/abs/2406.09246v3": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2406.09246v3",
       "error": ""
     },
     "https://arxiv.org/abs/2410.07864v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.07864v1",
       "error": ""
     },
     "https://arxiv.org/abs/2410.07864v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.07864v2",
       "error": ""
     },
     "https://arxiv.org/abs/2410.24164v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.24164v1",
       "error": ""
     },
     "https://arxiv.org/abs/2410.24164v4": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.24164v4",
       "error": ""
     },
     "https://arxiv.org/abs/2501.09747": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2501.09747",
       "error": ""
     },
     "https://arxiv.org/abs/2501.09747v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2501.09747v1",
       "error": ""
     },
     "https://arxiv.org/abs/2501.15830": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2501.15830",
       "error": ""
     },
     "https://arxiv.org/abs/2501.15830v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2501.15830v1",
       "error": ""
     },
     "https://arxiv.org/abs/2501.15830v5": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2501.15830v5",
       "error": ""
     },
     "https://arxiv.org/abs/2502.19645": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2502.19645",
       "error": ""
     },
     "https://arxiv.org/abs/2502.19645v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2502.19645v1",
       "error": ""
     },
     "https://arxiv.org/abs/2502.19645v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2502.19645v2",
       "error": ""
     },
     "https://arxiv.org/abs/2503.14734": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2503.14734",
       "error": ""
     },
     "https://arxiv.org/abs/2503.14734v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2503.14734v1",
       "error": ""
     },
     "https://arxiv.org/abs/2503.14734v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2503.14734v2",
       "error": ""
     },
     "https://arxiv.org/abs/2503.20020": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2503.20020",
       "error": ""
     },
     "https://arxiv.org/abs/2503.20020v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2503.20020v1",
       "error": ""
     },
     "https://arxiv.org/abs/2504.16054": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2504.16054",
       "error": ""
     },
     "https://arxiv.org/abs/2504.16054v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2504.16054v1",
       "error": ""
     },
     "https://arxiv.org/abs/2506.01844": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2506.01844",
       "error": ""
     },
     "https://arxiv.org/abs/2506.01844v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2506.01844v1",
       "error": ""
     },
     "https://arxiv.org/abs/2507.17294": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2507.17294",
       "error": ""
     },
     "https://arxiv.org/abs/2507.17294v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2507.17294v1",
       "error": ""
     },
     "https://arxiv.org/abs/2507.17294v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2507.17294v2",
       "error": ""
     },
     "https://arxiv.org/abs/2508.05342": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2508.05342",
       "error": ""
     },
     "https://arxiv.org/abs/2508.05342v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2508.05342v1",
       "error": ""
     },
     "https://arxiv.org/abs/2508.05342v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2508.05342v2",
       "error": ""
     },
     "https://arxiv.org/abs/2509.09372": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2509.09372",
       "error": ""
     },
     "https://arxiv.org/abs/2509.09372v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2509.09372v1",
       "error": ""
     },
     "https://arxiv.org/abs/2509.09372v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2509.09372v2",
       "error": ""
     },
     "https://arxiv.org/abs/2511.14759": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2511.14759",
       "error": ""
     },
     "https://arxiv.org/abs/2511.14759v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2511.14759v1",
       "error": ""
     },
     "https://arxiv.org/abs/2511.14759v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2511.14759v2",
       "error": ""
     },
     "https://arxiv.org/abs/2512.15692": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2512.15692",
       "error": ""
     },
     "https://arxiv.org/abs/2512.15692v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2512.15692v1",
       "error": ""
     },
     "https://arxiv.org/abs/2512.15692v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2512.15692v2",
       "error": ""
     },
     "https://arxiv.org/abs/2601.16163": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2601.16163",
       "error": ""
     },
     "https://arxiv.org/abs/2601.16163v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2601.16163v1",
       "error": ""
     },
     "https://arxiv.org/abs/2601.21998": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2601.21998",
       "error": ""
     },
     "https://arxiv.org/abs/2601.21998v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2601.21998v1",
       "error": ""
     },
     "https://arxiv.org/abs/2601.21998v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2601.21998v2",
       "error": ""
     },
     "https://arxiv.org/abs/2602.01067": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2602.01067",
       "error": ""
     },
     "https://arxiv.org/abs/2602.01067v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2602.01067v1",
       "error": ""
     },
     "https://arxiv.org/abs/2602.12978": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2602.12978",
       "error": ""
     },
     "https://arxiv.org/abs/2602.12978v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2602.12978v1",
       "error": ""
     },
     "https://arxiv.org/abs/2602.12978v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2602.12978v2",
       "error": ""
     },
     "https://arxiv.org/abs/2602.15922": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2602.15922",
       "error": ""
     },
     "https://arxiv.org/abs/2602.15922v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2602.15922v1",
       "error": ""
     },
     "https://arxiv.org/abs/2603.13616": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.13616",
       "error": ""
     },
     "https://arxiv.org/abs/2603.13616v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.13616v1",
       "error": ""
     },
     "https://arxiv.org/abs/2603.16666": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.16666",
       "error": ""
     },
     "https://arxiv.org/abs/2603.16666v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.16666v1",
       "error": ""
     },
     "https://arxiv.org/abs/2603.16666v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.16666v2",
       "error": ""
     },
     "https://arxiv.org/abs/2604.05323": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2604.05323",
       "error": ""
     },
     "https://arxiv.org/abs/2604.05323v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2604.05323v1",
       "error": ""
     },
     "https://arxiv.org/abs/2606.18247": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2606.18247",
       "error": ""
     },
     "https://arxiv.org/abs/2606.18247v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2606.18247v1",
       "error": ""
     },
     "https://arxiv.org/abs/2606.25136": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2606.25136",
       "error": ""
     },
     "https://arxiv.org/abs/2606.25136v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2606.25136v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.00678": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.00678",
       "error": ""
     },
     "https://arxiv.org/abs/2607.00678v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.00678v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.00678v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.00678v2",
       "error": ""
     },
     "https://arxiv.org/abs/2607.01586": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.01586",
       "error": ""
     },
     "https://arxiv.org/abs/2607.01586v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.01586v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.01586v2": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.01586v2",
       "error": ""
     },
     "https://arxiv.org/abs/2607.02501": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.02501",
       "error": ""
     },
     "https://arxiv.org/abs/2607.02501v1": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.02501v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.02501v3": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.02501v3",
       "error": ""
     },
     "https://arxiv.org/abs/2607.02503": {
-      "checkedAt": "2026-09-18",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.02503",
       "error": ""
     },
     "https://ar5iv.labs.arxiv.org/html/1910.10897": {
-      "checkedAt": "2026-09-20",
-      "status": "reachable",
-      "httpStatus": 200,
+      "checkedAt": "2026-10-23",
+      "status": "unknown",
+      "httpStatus": null,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/1910.10897",
-      "error": ""
+      "error": "The read operation timed out"
     },
     "https://ar5iv.labs.arxiv.org/html/2109.12098": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/2109.12098",
       "error": ""
     },
     "https://ar5iv.labs.arxiv.org/html/2202.02005": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/2202.02005",
       "error": ""
     },
     "https://ar5iv.labs.arxiv.org/html/2203.06173": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/2203.06173",
       "error": ""
     },
     "https://ar5iv.labs.arxiv.org/html/2203.12601": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/2203.12601",
       "error": ""
     },
     "https://ar5iv.labs.arxiv.org/html/2204.01691": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/2204.01691",
       "error": ""
     },
     "https://ar5iv.labs.arxiv.org/html/2302.00111": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/2302.00111",
       "error": ""
     },
     "https://ar5iv.labs.arxiv.org/html/2307.15818": {
-      "checkedAt": "2026-09-20",
-      "status": "reachable",
-      "httpStatus": 200,
+      "checkedAt": "2026-10-23",
+      "status": "unknown",
+      "httpStatus": null,
       "finalUrl": "https://ar5iv.labs.arxiv.org/html/2307.15818",
-      "error": ""
+      "error": "The read operation timed out"
     },
     "https://arxiv.org/abs/1910.10897": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/1910.10897",
       "error": ""
     },
     "https://arxiv.org/abs/1910.10897v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/1910.10897v1",
       "error": ""
     },
     "https://arxiv.org/abs/2108.03298": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2108.03298",
       "error": ""
     },
     "https://arxiv.org/abs/2108.03298v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2108.03298v1",
       "error": ""
     },
     "https://arxiv.org/abs/2203.06173": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2203.06173",
       "error": ""
     },
     "https://arxiv.org/abs/2203.06173v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2203.06173v1",
       "error": ""
     },
     "https://arxiv.org/abs/2203.12601": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2203.12601",
       "error": ""
     },
     "https://arxiv.org/abs/2203.12601v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2203.12601v1",
       "error": ""
     },
     "https://arxiv.org/abs/2306.14896": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2306.14896",
       "error": ""
     },
     "https://arxiv.org/abs/2306.14896v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2306.14896v1",
       "error": ""
     },
     "https://arxiv.org/abs/2306.17817": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2306.17817",
       "error": ""
     },
     "https://arxiv.org/abs/2306.17817v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2306.17817v1",
       "error": ""
     },
     "https://arxiv.org/abs/2308.16891": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2308.16891",
       "error": ""
     },
     "https://arxiv.org/abs/2308.16891v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2308.16891v1",
       "error": ""
     },
     "https://arxiv.org/abs/2402.08191": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2402.08191",
       "error": ""
     },
     "https://arxiv.org/abs/2402.08191v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2402.08191v1",
       "error": ""
     },
     "https://arxiv.org/abs/2402.08191v2": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2402.08191v2",
       "error": ""
     },
     "https://arxiv.org/abs/2402.10885": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2402.10885",
       "error": ""
     },
     "https://arxiv.org/abs/2402.10885v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2402.10885v1",
       "error": ""
     },
     "https://arxiv.org/abs/2402.10885v3": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2402.10885v3",
       "error": ""
     },
     "https://arxiv.org/abs/2403.03954": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2403.03954",
       "error": ""
     },
     "https://arxiv.org/abs/2403.03954v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2403.03954v1",
       "error": ""
     },
     "https://arxiv.org/abs/2403.03954v7": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2403.03954v7",
       "error": ""
     },
     "https://arxiv.org/abs/2405.05941": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2405.05941",
       "error": ""
     },
     "https://arxiv.org/abs/2405.05941v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2405.05941v1",
       "error": ""
     },
     "https://arxiv.org/abs/2406.02523": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2406.02523",
       "error": ""
     },
     "https://arxiv.org/abs/2406.02523v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2406.02523v1",
       "error": ""
     },
     "https://arxiv.org/abs/2406.08545": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2406.08545",
       "error": ""
     },
     "https://arxiv.org/abs/2406.08545v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2406.08545v1",
       "error": ""
     },
     "https://arxiv.org/abs/2410.24185": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.24185",
       "error": ""
     },
     "https://arxiv.org/abs/2410.24185v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2410.24185v1",
       "error": ""
     },
     "https://arxiv.org/abs/2603.04356": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.04356",
       "error": ""
     },
     "https://arxiv.org/abs/2603.04356v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.04356v1",
       "error": ""
     },
     "https://arxiv.org/abs/2603.17240": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.17240",
       "error": ""
     },
     "https://arxiv.org/abs/2603.17240v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.17240v1",
       "error": ""
     },
     "https://arxiv.org/abs/2603.17240v2": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2603.17240v2",
       "error": ""
     },
     "https://arxiv.org/abs/2604.27472": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2604.27472",
       "error": ""
     },
     "https://arxiv.org/abs/2604.27472v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2604.27472v1",
       "error": ""
     },
     "https://arxiv.org/abs/2605.03269": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2605.03269",
       "error": ""
     },
     "https://arxiv.org/abs/2605.03269v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2605.03269v1",
       "error": ""
     },
     "https://arxiv.org/abs/2605.03269v2": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2605.03269v2",
       "error": ""
     },
     "https://arxiv.org/abs/2607.02503v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.02503v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.04434": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.04434",
       "error": ""
     },
     "https://arxiv.org/abs/2607.04434v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.04434v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.04434v3": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.04434v3",
       "error": ""
     },
     "https://arxiv.org/abs/2607.04927": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.04927",
       "error": ""
     },
     "https://arxiv.org/abs/2607.04927v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.04927v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.05468": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.05468",
       "error": ""
     },
     "https://arxiv.org/abs/2607.05468v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.05468v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.06262": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.06262",
       "error": ""
     },
     "https://arxiv.org/abs/2607.06262v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.06262v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.06370": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.06370",
       "error": ""
     },
     "https://arxiv.org/abs/2607.06370v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.06370v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.06370v2": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.06370v2",
       "error": ""
     },
     "https://arxiv.org/abs/2607.11270": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.11270",
       "error": ""
     },
     "https://arxiv.org/abs/2607.11270v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.11270v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.11498": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.11498",
       "error": ""
     },
     "https://arxiv.org/abs/2607.11498v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.11498v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.15330": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.15330",
       "error": ""
     },
     "https://arxiv.org/abs/2607.15330v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.15330v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.15330v2": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.15330v2",
       "error": ""
     },
     "https://arxiv.org/abs/2607.27205": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.27205",
       "error": ""
     },
     "https://arxiv.org/abs/2607.27205v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.27205v1",
       "error": ""
     },
     "https://arxiv.org/abs/2607.27205v2": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.27205v2",
       "error": ""
     },
     "https://arxiv.org/abs/2607.28993": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.28993",
       "error": ""
     },
     "https://arxiv.org/abs/2607.28993v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2607.28993v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.00725": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.00725",
       "error": ""
     },
     "https://arxiv.org/abs/2608.00725v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.00725v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.01066": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.01066",
       "error": ""
     },
     "https://arxiv.org/abs/2608.01066v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.01066v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.03727": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.03727",
       "error": ""
     },
     "https://arxiv.org/abs/2608.03727v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.03727v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.04428": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.04428",
       "error": ""
     },
     "https://arxiv.org/abs/2608.04428v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.04428v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.05042": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.05042",
       "error": ""
     },
     "https://arxiv.org/abs/2608.05042v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.05042v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.05369": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.05369",
       "error": ""
     },
     "https://arxiv.org/abs/2608.05369v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.05369v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.05738": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.05738",
       "error": ""
     },
     "https://arxiv.org/abs/2608.05738v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.05738v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.07619": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.07619",
       "error": ""
     },
     "https://arxiv.org/abs/2608.07619v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.07619v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.08749": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.08749",
       "error": ""
     },
     "https://arxiv.org/abs/2608.08749v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.08749v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.09892": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.09892",
       "error": ""
     },
     "https://arxiv.org/abs/2608.09892v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.09892v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.09892v3": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.09892v3",
       "error": ""
     },
     "https://arxiv.org/abs/2608.16172": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.16172",
       "error": ""
     },
     "https://arxiv.org/abs/2608.16172v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.16172v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.16885": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.16885",
       "error": ""
     },
     "https://arxiv.org/abs/2608.16885v1": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.16885v1",
       "error": ""
     },
     "https://arxiv.org/abs/2608.16889": {
-      "checkedAt": "2026-09-20",
+      "checkedAt": "2026-10-23",
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.16889",
@@ -2944,6 +2944,1560 @@
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/pdf/2304.13705v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.21449v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.21449v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.24170": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.24170",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.24170v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.24170v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.25961v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.25961v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.31394": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.31394",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.31394v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.31394v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.33800": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.33800",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2609.33800v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.33800v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.02368v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.02368v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.08995": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.08995",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.08995v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.08995v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.10270": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.10270",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.10270v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.10270v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.12369": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.12369",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.12369v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.12369v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.13262": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.13262",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.13262v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.13262v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.13732": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.13732",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.13732v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.13732v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.13945": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.13945",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.13945v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.13945v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.21389": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.21389",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.21389v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.21389v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2607.11498v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2607.11498v2",
+      "error": ""
+    },
+    "https://arxiv.org/html/2607.27205v3": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2607.27205v3",
+      "error": ""
+    },
+    "https://arxiv.org/html/2609.21449v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2609.21449v2",
+      "error": ""
+    },
+    "https://arxiv.org/html/2609.24170v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2609.24170v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2609.25961v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2609.25961v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2609.31394v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2609.31394v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2609.33800v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2609.33800v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.02368v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.02368v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.08995v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.08995v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.10270v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.10270v2",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.12369v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.12369v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.13262v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.13262v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.13732v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.13732v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.13945v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.13945v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.21389": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.21389",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2312.13139v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2312.13139v2",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2403.12945v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2403.12945v2",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2507.17294v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2507.17294v2",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2602.12978v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2602.12978v2",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2604.05323v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2604.05323v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2606.18247v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2606.18247v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2607.02503v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2607.02503v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2607.04927v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2607.04927v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2607.06370v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2607.06370v2",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2607.11270v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2607.11270v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2607.27205v2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2607.27205v2",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2608.01066v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2608.01066v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2608.07619v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2608.07619v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2608.08749v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2608.08749v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2608.27384v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2608.27384v1",
+      "error": ""
+    },
+    "https://arxiv.org/pdf/2608.29432v1": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/pdf/2608.29432v1",
+      "error": ""
+    },
+    "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://blog.google/innovation-and-ai/products/google-deepmind-rt2-robotics-vla-model/",
+      "error": ""
+    },
+    "https://ccdcs.github.io/LiMA_repo/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://ccdcs.github.io/LiMA_repo/",
+      "error": ""
+    },
+    "https://clear-nus.github.io/blog/vla-touch": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://clear-nus.github.io/blog/vla-touch",
+      "error": ""
+    },
+    "https://cliport.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://cliport.github.io/",
+      "error": ""
+    },
+    "https://dagroup-pku.github.io/ViGAR/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://dagroup-pku.github.io/ViGAR/",
+      "error": ""
+    },
+    "https://davian-robotics.github.io/pointmap/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://davian-robotics.github.io/pointmap/",
+      "error": ""
+    },
+    "https://diffusion-policy.cs.columbia.edu/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://diffusion-policy.cs.columbia.edu/",
+      "error": ""
+    },
+    "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf",
+      "error": ""
+    },
+    "https://doi.org/10.1016/j.inffus.2026.104193": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S1566253526000722",
+      "error": ""
+    },
+    "https://doi.org/10.1016/j.rcim.2026.103268": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0736584526000475",
+      "error": ""
+    },
+    "https://doi.org/10.1109/ICRA55743.2025.11127809": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 202,
+      "finalUrl": "https://ieeexplore.ieee.org/document/11127809/",
+      "error": ""
+    },
+    "https://doi.org/10.1109/LRA.2026.3683324": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 202,
+      "finalUrl": "https://ieeexplore.ieee.org/document/11479850/",
+      "error": ""
+    },
+    "https://doi.org/10.1109/lra.2026.3692345": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 202,
+      "finalUrl": "https://ieeexplore.ieee.org/document/11515075/",
+      "error": ""
+    },
+    "https://doi.org/10.1177/02783649241273668": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://doi.org/10.1177/02783649241273668",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://doi.org/10.15607/rss.2026.xxii.007": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://doi.org/10.15607/rss.2026.xxii.007",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://doi.org/10.15607/rss.2026.xxii.010": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://doi.org/10.15607/rss.2026.xxii.010",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://doi.org/10.15607/rss.2026.xxii.016": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://doi.org/10.15607/rss.2026.xxii.016",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://doi.org/10.15607/rss.2026.xxii.076": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://doi.org/10.15607/rss.2026.xxii.076",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://doi.org/10.15607/rss.2026.xxii.077": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://doi.org/10.15607/rss.2026.xxii.077",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://doi.org/10.15607/rss.2026.xxii.079": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://doi.org/10.15607/rss.2026.xxii.079",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://droid-dataset.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://droid-dataset.github.io/",
+      "error": ""
+    },
+    "https://elib.dlr.de/205810/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://elib.dlr.de/205810/",
+      "error": ""
+    },
+    "https://garfield-kh.github.io/FastVLA": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://garfield-kh.github.io/FastVLA/",
+      "error": ""
+    },
+    "https://ge-act-v2.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://ge-act-v2.github.io/",
+      "error": ""
+    },
+    "https://github.com/AutoLab-SAI-SJTU/RoboFollow": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/AutoLab-SAI-SJTU/RoboFollow",
+      "error": ""
+    },
+    "https://github.com/DAGroup-PKU/ViGAR": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/DAGroup-PKU/ViGAR",
+      "error": ""
+    },
+    "https://github.com/DAVIAN-Robotics/pointmap": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/DAVIAN-Robotics/pointmap",
+      "error": ""
+    },
+    "https://github.com/Garfield-kh/FastVLA": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Garfield-kh/FastVLA",
+      "error": ""
+    },
+    "https://github.com/H-EmbodVis/TurboVLA": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/H-EmbodVis/TurboVLA",
+      "error": ""
+    },
+    "https://github.com/InternRobotics/InternW0-Delta": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/InternRobotics/InternW0-Delta",
+      "error": ""
+    },
+    "https://github.com/JiuTian-VL/ProAct": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/JiuTian-VL/ProAct",
+      "error": ""
+    },
+    "https://github.com/Loule0-0/SafeLoop": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Loule0-0/SafeLoop",
+      "error": ""
+    },
+    "https://github.com/MachEmbodied/ME-Dex-1.0": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/MachEmbodied/ME-Dex-1.0",
+      "error": ""
+    },
+    "https://github.com/MindVLA-Team/VLAFlow": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/MindVLA-Team/VLAFlow",
+      "error": ""
+    },
+    "https://github.com/QwenLM/Qwen-RobotManip": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/QwenLM/Qwen-RobotManip",
+      "error": ""
+    },
+    "https://github.com/QwenLM/Qwen-RobotNav": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/QwenLM/Qwen-RobotNav",
+      "error": ""
+    },
+    "https://github.com/QwenLM/Qwen-VLA": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/QwenLM/Qwen-VLA",
+      "error": ""
+    },
+    "https://github.com/RLinf/LaWAM": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RLinf/LaWAM",
+      "error": ""
+    },
+    "https://github.com/RoboProbe/RoboProbe": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RoboProbe/RoboProbe",
+      "error": ""
+    },
+    "https://github.com/TianhengW/PatchWAM-RoboCasa": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/TianhengW/PatchWAM-RoboCasa",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0",
+      "error": ""
+    },
+    "https://github.com/anthonytao80-crypto/ForeAct3D": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/anthonytao80-crypto/ForeAct3D",
+      "error": ""
+    },
+    "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-gervet23a.md": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-gervet23a.md",
+      "error": ""
+    },
+    "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-xian23a.md": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-xian23a.md",
+      "error": ""
+    },
+    "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-ze23a.md": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/mlresearch/v229/blob/gh-pages/_posts/2023-12-02-ze23a.md",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/PRTS-2026_08_18.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/PRTS-2026_08_18.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/Xiaomi-Robotics_2026_07_08.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/Xiaomi-Robotics_2026_07_08.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/abot-m0.5_2026_06_29.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/abot-m0.5_2026_06_29.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/dp_2026_04_02.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/dp_2026_04_02.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.5_2026_05_19.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.5_2026_05_19.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.6_2026_05_14.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gr00t_n1.6_2026_05_14.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gwp01_2026_05_11.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/gwp01_2026_05_11.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi05_2026-04-02.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi05_2026-04-02.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi0_2026-04-02.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/pi0_2026-04-02.json",
+      "error": ""
+    },
+    "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/rldx-1_2026_05_20.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa-benchmark/leaderboard/blob/main/submissions/rldx-1_2026_05_20.json",
+      "error": ""
+    },
+    "https://github.com/roboterax/video-prediction-policy-2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/roboterax/video-prediction-policy-2",
+      "error": ""
+    },
+    "https://github.com/xiaoqi-7/IndustrialVLA-Bench": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/xiaoqi-7/IndustrialVLA-Bench",
+      "error": ""
+    },
+    "https://github.com/xl-tang3/BaryBind": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/xl-tang3/BaryBind",
+      "error": ""
+    },
+    "https://gr1-manipulation.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://gr1-manipulation.github.io/",
+      "error": ""
+    },
+    "https://grounded-action-model.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://grounded-action-model.github.io/",
+      "error": ""
+    },
+    "https://h-embodvis.github.io/TurboVLA/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://h-embodvis.github.io/TurboVLA/",
+      "error": ""
+    },
+    "https://huggingface.co/H-EmbodVis/TurboVLA": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/H-EmbodVis/TurboVLA",
+      "error": ""
+    },
+    "https://huiqiongli.github.io/LIBERO-VPro/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huiqiongli.github.io/LIBERO-VPro/",
+      "error": ""
+    },
+    "https://icefoxzhx.github.io/self-adaptive-vla/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://icefoxzhx.github.io/self-adaptive-vla/",
+      "error": ""
+    },
+    "https://ieeexplore.ieee.org/document/11479850": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 202,
+      "finalUrl": "https://ieeexplore.ieee.org/document/11479850",
+      "error": ""
+    },
+    "https://ieeexplore.ieee.org/document/11479850/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 202,
+      "finalUrl": "https://ieeexplore.ieee.org/document/11479850/",
+      "error": ""
+    },
+    "https://ieeexplore.ieee.org/document/9788026": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 202,
+      "finalUrl": "https://ieeexplore.ieee.org/document/9788026",
+      "error": ""
+    },
+    "https://internrobotics.github.io/InternW0-Delta/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://internrobotics.github.io/InternW0-Delta/",
+      "error": ""
+    },
+    "https://jiutian-vl.github.io/ProAct-page/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://jiutian-vl.github.io/ProAct-page/",
+      "error": ""
+    },
+    "https://kskshr.github.io/toast/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://kskshr.github.io/toast/",
+      "error": ""
+    },
+    "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/",
+      "error": ""
+    },
+    "https://lemmonation.github.io/publications/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://lemmonation.github.io/publications/",
+      "error": ""
+    },
+    "https://libero-project.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://libero-project.github.io/",
+      "error": ""
+    },
+    "https://machembodied.com/ME-Dex/ME-Dex1.0.html": {
+      "checkedAt": "2026-10-23",
+      "status": "unknown",
+      "httpStatus": null,
+      "finalUrl": "https://machembodied.com/ME-Dex/ME-Dex1.0.html",
+      "error": "<urlopen error [Errno 104] Connection reset by peer>"
+    },
+    "https://neurips.cc/Downloads/2026": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://neurips.cc/Downloads/2026",
+      "error": ""
+    },
+    "https://octo-models.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://octo-models.github.io/",
+      "error": ""
+    },
+    "https://openvla-oft.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openvla-oft.github.io/",
+      "error": ""
+    },
+    "https://openvla.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openvla.github.io/",
+      "error": ""
+    },
+    "https://palm-e.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://palm-e.github.io/",
+      "error": ""
+    },
+    "https://peract.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://peract.github.io/",
+      "error": ""
+    },
+    "https://peract.github.io/paper/peract_corl2022.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://peract.github.io/paper/peract_corl2022.pdf",
+      "error": ""
+    },
+    "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.iclr.cc/paper_files/paper/2024/file/71639c317fb0bf398835627b4418693e-Paper-Conference.pdf",
+      "error": ""
+    },
+    "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/71639c317fb0bf398835627b4418693e-Abstract-Conference.html",
+      "error": ""
+    },
+    "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/49f80e4d2471ad4f2edf4f5f1ab62339-Abstract-Conference.html",
+      "error": ""
+    },
+    "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05003fdb1e9562ab0c0a9719ea4de10-Abstract-Conference.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05003fdb1e9562ab0c0a9719ea4de10-Abstract-Conference.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v100/yu20a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v100/yu20a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v164/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v164/",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v164/jang22a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v164/jang22a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v164/jang22a/jang22a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v164/mandlekar22a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v164/mandlekar22a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v164/mandlekar22a/mandlekar22a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v164/shridhar22a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v164/shridhar22a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v164/shridhar22a/shridhar22a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v164/shridhar22a/shridhar22a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v202/driess23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v202/driess23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v202/driess23a/driess23a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v205/ichter23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v205/ichter23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v205/nair23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v205/nair23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v205/shridhar23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v205/shridhar23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/gervet23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/gervet23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/gervet23a/gervet23a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/gervet23a/gervet23a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/goyal23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/goyal23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/goyal23a/goyal23a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/xian23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/xian23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/xian23a/xian23a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/ze23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/ze23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/ze23a/ze23a.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/ze23a/ze23a.pdf",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v229/zitkovich23a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v229/zitkovich23a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v270/ke25a.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v270/ke25a.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v270/kim25c.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v270/kim25c.html",
+      "error": ""
+    },
+    "https://proceedings.mlr.press/v270/li25c.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.mlr.press/v270/li25c.html",
+      "error": ""
+    },
+    "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1d5b9233ad716a43be5c0d3023cb82d0-Paper-Conference.pdf",
+      "error": ""
+    },
+    "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/file/8c3c666820ea055a77726d66fc7d447f-Paper-Datasets_and_Benchmarks.pdf",
+      "error": ""
+    },
+    "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1d5b9233ad716a43be5c0d3023cb82d0-Abstract-Conference.html",
+      "error": ""
+    },
+    "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html",
+      "error": ""
+    },
+    "https://qwen.ai/blog?id=qwen-robotmanip": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://qwen.ai/blog?id=qwen-robotmanip",
+      "error": ""
+    },
+    "https://qwen.ai/blog?id=qwen-robotnav": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://qwen.ai/blog?id=qwen-robotnav",
+      "error": ""
+    },
+    "https://qwen.ai/blog?id=qwen-robotworld": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://qwen.ai/blog?id=qwen-robotworld",
+      "error": ""
+    },
+    "https://qwen.ai/blog?id=qwenvla": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://qwen.ai/blog?id=qwenvla",
+      "error": ""
+    },
+    "https://rcl-robotics.github.io/Awesome-World-Action-Models": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://rcl-robotics.github.io/Awesome-World-Action-Models/",
+      "error": ""
+    },
+    "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://research.polyu.edu.hk/en/publications/vlabot-a-human-visionlanguageaction-models-interaction-framework-/",
+      "error": ""
+    },
+    "https://rlinf.github.io/LaWAM/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://rlinf.github.io/LaWAM/",
+      "error": ""
+    },
+    "https://robert-gyj.github.io/video-prediction-policy-2/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robert-gyj.github.io/video-prediction-policy-2/",
+      "error": ""
+    },
+    "https://robocasa.ai/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robocasa.ai/",
+      "error": ""
+    },
+    "https://robocasa.ai/leaderboard.html": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robocasa.ai/leaderboard.html",
+      "error": ""
+    },
+    "https://robodojo-benchmark.com/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robodojo-benchmark.com/",
+      "error": ""
+    },
+    "https://robodojo-benchmark.com/report/gpt-6-astra-eval": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robodojo-benchmark.com/report/gpt-6-astra-eval",
+      "error": ""
+    },
+    "https://roboflamingo.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://roboflamingo.github.io/",
+      "error": ""
+    },
+    "https://robotics-transformer-x.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robotics-transformer-x.github.io/",
+      "error": ""
+    },
+    "https://robotics-transformer1.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robotics-transformer1.github.io/",
+      "error": ""
+    },
+    "https://robotics-transformer2.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robotics-transformer2.github.io/",
+      "error": ""
+    },
+    "https://robotics.xiaomi.com/xiaomi-robotics-0.html": {
+      "checkedAt": "2026-10-23",
+      "status": "unknown",
+      "httpStatus": null,
+      "finalUrl": "https://robotics.xiaomi.com/xiaomi-robotics-0.html",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'robotics.xiaomi.com'. (_ssl.c:1000)>"
+    },
+    "https://roboticsproceedings.org/rss19/p025.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://roboticsproceedings.org/rss19/p025.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://robotwin-platform.github.io/data/robodojo_leaderboard.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+      "error": ""
+    },
+    "https://robotwin-platform.github.io/data/robotwin_leaderboard.json": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robotwin-platform.github.io/data/robotwin_leaderboard.json",
+      "error": ""
+    },
+    "https://robotwin-platform.github.io/leaderboard": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robotwin-platform.github.io/leaderboard",
+      "error": ""
+    },
+    "https://say-can.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://say-can.github.io/",
+      "error": ""
+    },
+    "https://sizhezhao.github.io/projects/MaP-WAM/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://sizhezhao.github.io/projects/MaP-WAM/",
+      "error": ""
+    },
+    "https://starvla.github.io/VLAct/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://starvla.github.io/VLAct/",
+      "error": ""
+    },
+    "https://tetexiao.com/projects/mvp": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://tetexiao.com/projects/mvp",
+      "error": ""
+    },
+    "https://thaw-vla.trung-dt.com/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://thaw-vla.trung-dt.com/",
+      "error": ""
+    },
+    "https://tonyzhaozh.github.io/aloha/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://tonyzhaozh.github.io/aloha/",
+      "error": ""
+    },
+    "https://vt-wam.github.io/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://vt-wam.github.io/",
+      "error": ""
+    },
+    "https://wuji.tech/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://wuji.tech/",
+      "error": ""
+    },
+    "https://www.dyna.co/dyna-2": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.dyna.co/dyna-2",
+      "error": ""
+    },
+    "https://www.oiermees.com/publication/fast/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.oiermees.com/publication/fast/",
+      "error": ""
+    },
+    "https://www.pi.website/research/fast": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.pi.website/research/fast",
+      "error": ""
+    },
+    "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.research.ed.ac.uk/en/publications/open-x-embodiment-robotic-learning-datasets-and-rt-x-models/",
+      "error": ""
+    },
+    "https://www.roboticsproceedings.org/rss19/p026.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss19/p026.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss20/p050.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss20/p050.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss20/p055.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss20/p055.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss20/p067.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss20/p067.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss20/p090.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss20/p090.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss20/p090.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss20/p090.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss20/p120.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss20/p120.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss20/p133.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss20/p133.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss21/p011.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss21/p011.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss21/p017.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss21/p017.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p007.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p007.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p010.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p010.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p010.pdf": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p010.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p016.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p016.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p058.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p058.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p076.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p076.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p077.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p077.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.roboticsproceedings.org/rss22/p079.html": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.roboticsproceedings.org/rss22/p079.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.sciencedirect.com/science/article/pii/S0736584526000475": {
+      "checkedAt": "2026-10-23",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.sciencedirect.com/science/article/pii/S0736584526000475",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://xl-tang3.github.io/BaryBind/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://xl-tang3.github.io/BaryBind/",
+      "error": ""
+    },
+    "https://zbzyjya.github.io/WholeBodyWAM/": {
+      "checkedAt": "2026-10-23",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://zbzyjya.github.io/WholeBodyWAM/",
       "error": ""
     }
   }

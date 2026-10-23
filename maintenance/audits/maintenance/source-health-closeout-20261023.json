@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "source-health-closeout-2026-10-23",
+  "checkedAt": "2026-10-23",
+  "scope": "Bounded HEAD/GET reachability only; 403/429/timeout not proof that an academic result is invalid",
+  "totalSources": 636,
+  "checkedDuringRun": 442,
+  "checkedThisRun": 42,
+  "dueRemaining": 0,
+  "status": "due-rotation-complete",
+  "statusCounts": {
+    "blocked-or-transient": 27,
+    "reachable": 611,
+    "unknown": 4
+  },
+  "sweeps": [
+    {
+      "round": 1,
+      "attempted": 100,
+      "dueRemaining": 342
+    },
+    {
+      "round": 2,
+      "attempted": 100,
+      "dueRemaining": 242
+    },
+    {
+      "round": 3,
+      "attempted": 100,
+      "dueRemaining": 142
+    },
+    {
+      "round": 4,
+      "attempted": 100,
+      "dueRemaining": 42
+    },
+    {
+      "round": 5,
+      "attempted": 42,
+      "dueRemaining": 0
+    }
+  ],
+  "notes": "No papers or results removed based on link errors. Dataset/publisher identity and content evidence need independent audit."
+}
