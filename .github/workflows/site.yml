@@ -15,33 +15,39 @@ jobs:
   quality:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    # Pin browsers and all native dependencies together. The previous Ubuntu
+    # host install exceeded 20 minutes on apt mirrors; downloading browsers
+    # alone then failed WebKit due to missing shared libraries.
+    container:
+      image: mcr.microsoft.com/playwright/python:v1.57.0-noble
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Validate canonical records, generated files and regression tests
         run: python scripts/validate/validate_all.py
-      # Cache only browser binaries. System dependencies are provided by the
-      # Ubuntu runner; --with-deps unexpectedly downloads an entire multimedia
-      # apt dependency tree and can exhaust the job's 20-minute timeout.
-      - name: Cache Playwright browser binaries
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-1.57.0-ubuntu-24.04-firefox-webkit-v1
-      - name: Install browser test drivers (without slow apt --with-deps)
+      - name: Verify pinned browser engines and test runtime
         run: |
           python -m pip install --disable-pip-version-check playwright==1.57.0
-          python -m playwright install firefox webkit
-          # Preserve all three browser engines in the regression suite. Fail
-          # rather than silently skipping Firefox or WebKit if a dependency is
-          # genuinely absent from the runner image.
-      - name: Ensure CJK test fonts (only if absent)
-        run: |
-          if ! fc-list :lang=zh | grep -q .; then
-            echo "::notice::No CJK font detected. Installing minimal Noto CJK fonts."
-            sudo apt-get -o Acquire::Retries=2 update -qq
-            sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends fonts-noto-cjk
-          fi
+          node --version
+          python - <<'PY'
+          import shutil
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              for name in ('chromium', 'firefox', 'webkit'):
+                  engine=getattr(p,name)
+                  opts={'headless':True}
+                  if name=='chromium':
+                      opts['executable_path']=shutil.which('google-chrome') or shutil.which('chromium')
+                  browser=engine.launch(**opts)
+                  page=browser.new_page()
+                  page.goto('data:text/html,<title>health</title>')
+                  assert page.title()=='health', name
+                  browser.close()
+                  print('PASS pinned browser',name)
+          PY
       - name: Browser HTTP, worker, persistence and responsive regression
         run: |
           python scripts/browser/browser_smoke.py
