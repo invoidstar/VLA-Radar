@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261019-ropedia-w0-world-model-report",
+  "eventKey": "ropedia-w0-locomani-world-model-report-20261019",
+  "title": "Ropedia W0 发布跨人类与机器人的移动操作世界模型技术报告与项目入口",
+  "primaryCategory": "model",
+  "tags": [
+    "Ropedia W0",
+    "world model",
+    "loco-manipulation",
+    "cross-embodiment",
+    "Xp-Data",
+    "simulation"
+  ],
+  "eventDate": "2026-10-19",
+  "publishedAt": "2026-10-19",
+  "dateNote": "以arXiv:2610.26855v1 Submission history 的2026-10-19为技术报告首次公开日；不从GitHub建库或提交时间推断模型权重首次开放日。",
+  "observedAt": "2026-10-25",
+  "updatedAt": "2026-10-25",
+  "stage": "partial-release",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research-resource",
+  "whatHappened": "Ropedia团队10月19日公开W0技术报告，提出跨人类第一视角视频与多种机器人本体的移动操作世界模型。作者报告Xp-Data汇集约1万小时人类视角数据和3千小时机器人数据，采用相机姿态与骨架投影统一表征移动与操作，并提出长时程Xp-Teleop评测。论文官方页面指向项目及代码仓库；已有公开研究说明与实现入口，但不能由此认定全部数据、权重、训练流程和许可证同时齐备。",
+  "whyItMatters": "现有具身世界模型通常难同时处理移动与操作、不同机器人动作空间及人类视频；相机运动和跨本体骨架表示提供了一个可检验的统一方向。Xp-Teleop等协议值得独立阅读，但当前只把报告视为候选研究事件，不先造榜单。",
+  "vlaRelevance": "作为世界变化预测与未来rollout的基础设施，W0可能服务于VLA动作后果模拟、规划和数据生成，但论文中的五个跨本体世界模型评测不是同一VLA动作成功率。团队所称零样本/小样本优势和实时长rollout均是作者报告，需后续原表与部署条件核验。",
+  "limits": "本期核验arXiv首发元数据、摘要及官方GitHub入口，未完成正文逐表协议复核与独立复现；因此不新增VLA-Radar论文深读条目、Evaluation Setting或结果。项目代码入口存在并不能证明完整预训练人类视频数据可下载；权重、模型许可证和训练脚本开放范围仍待逐维核查。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Ropedia W0 arXiv v1 original submission",
+      "publisher": "Ropedia W0 authors / arXiv",
+      "url": "https://arxiv.org/abs/2610.26855",
+      "kind": "paper",
+      "publishedAt": "2026-10-19",
+      "access": "excerpt",
+      "note": "核验题名、作者、arXiv 2026-10-19提交记录及摘要；不是完整表格核对。"
+    },
+    {
+      "id": "s2",
+      "title": "Ropedia W0 official public repository",
+      "publisher": "Ropedia team",
+      "url": "https://github.com/Ropedia/ropedia-w0",
+      "kind": "repository",
+      "publishedAt": null,
+      "access": "repository",
+      "note": "官方论文链接的公开仓库包含项目介绍和实现文件，未核实所有模型/训练/数据维度。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
