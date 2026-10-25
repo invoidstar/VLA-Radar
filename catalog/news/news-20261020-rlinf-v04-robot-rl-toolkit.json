@@ -21,7 +21,7 @@
   "stage": "released",
   "evidence": "official",
   "status": "verified",
-  "featured": true,
+  "featured": false,
   "importance": "major-release",
   "whatHappened": "RLinf团队于10月20日发布v0.4，官方release列出模块化真实机器人接口rlinf.robotics，以及双臂Franka遥操作、DAgger采集、PyTorch版OpenPI π₀/π₀.₅ SFT与部署的示例流程；扩展AgileX Piper、SO-101等硬件接入，同时介绍多类机器人后训练算法和异步控制接口。这是一套工具链和案例开放，不是一个新的统一VLA模型权重。",
   "whyItMatters": "真实机器人强化学习和在线后训练经常受限于异构驱动、数据采集与部署工程；将驱动、任务和训练过程模块化，有助于研究者建立可审计的真机实验闭环。官方提供可实际访问的release和文档入口，后续复现仍需要逐项核验硬件、依赖与数据。",
