@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261020-rlinf-v04-robot-rl-toolkit",
+  "eventKey": "rlinf-v04-real-robot-rl-release-20261020",
+  "title": "RLinf v0.4 发布：扩展真实机器人强化学习、双臂采集训练部署链路",
+  "primaryCategory": "opensource",
+  "tags": [
+    "RLinf",
+    "robot reinforcement learning",
+    "OpenPI",
+    "real robots",
+    "Piper",
+    "Franka",
+    "release"
+  ],
+  "eventDate": "2026-10-20",
+  "publishedAt": "2026-10-20",
+  "dateNote": "以GitHub官方release v0.4的published_at=2026-10-20T10:46:17Z为发布日；不将示例声称的能力测试转作独立验证。",
+  "observedAt": "2026-10-25",
+  "updatedAt": "2026-10-25",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "major-release",
+  "whatHappened": "RLinf团队于10月20日发布v0.4，官方release列出模块化真实机器人接口rlinf.robotics，以及双臂Franka遥操作、DAgger采集、PyTorch版OpenPI π₀/π₀.₅ SFT与部署的示例流程；扩展AgileX Piper、SO-101等硬件接入，同时介绍多类机器人后训练算法和异步控制接口。这是一套工具链和案例开放，不是一个新的统一VLA模型权重。",
+  "whyItMatters": "真实机器人强化学习和在线后训练经常受限于异构驱动、数据采集与部署工程；将驱动、任务和训练过程模块化，有助于研究者建立可审计的真机实验闭环。官方提供可实际访问的release和文档入口，后续复现仍需要逐项核验硬件、依赖与数据。",
+  "vlaRelevance": "与VLA相关的是OpenPI策略训练、在线强化学习、遥操作示范写入及真实机器人推理服务的连接路径；release中称30步达到96%以上成功率和约2ms推理等待等指标属于作者示例报告，不可混入本站统一Benchmark/Setting排行榜，也不能推论其它机器人或任务等价。",
+  "limits": "v0.4公告同时包含已发布软件、实例及项目方性能主张，三者证据不同；未针对所有列出平台独立复现实机成功率，也未检查每种后训练算法完整checkpoint、训练预算、种子和episode。发布开放不等于整套硬件/数据/权重都已开放。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "RLinf v0.4 Release",
+      "publisher": "RLinf maintainers",
+      "url": "https://github.com/RLinf/RLinf/releases/tag/v0.4",
+      "kind": "repository",
+      "publishedAt": "2026-10-20",
+      "access": "repository",
+      "note": "核验GitHub Releases API原始发布日期和v0.4发布说明，数字仅按项目方声明归属。"
+    },
+    {
+      "id": "s2",
+      "title": "RLinf dual-Franka OpenPI real-robot workflow",
+      "publisher": "RLinf documentation",
+      "url": "https://rlinf.readthedocs.io/en/latest/rst_source/examples/embodied/dual_franka_openpi_pytorch.html",
+      "kind": "official",
+      "publishedAt": null,
+      "access": "full-page",
+      "note": "官方实例文档说明双臂策略SFT及部署链路；不推断未经实机核验的通用性能。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
