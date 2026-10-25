@@ -305,6 +305,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-25-partial-discovery-news",
+      "sha256": "9587fd1bfacf36247a96939a67b578971acc2f0b49aaac8b3c270b379b1078e0",
+      "date": "2026-10-25",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
