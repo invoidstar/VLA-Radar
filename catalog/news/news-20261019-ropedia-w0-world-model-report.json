@@ -20,7 +20,7 @@
   "stage": "partial-release",
   "evidence": "official",
   "status": "verified",
-  "featured": true,
+  "featured": false,
   "importance": "research-resource",
   "whatHappened": "Ropedia团队10月19日公开W0技术报告，提出跨人类第一视角视频与多种机器人本体的移动操作世界模型。作者报告Xp-Data汇集约1万小时人类视角数据和3千小时机器人数据，采用相机姿态与骨架投影统一表征移动与操作，并提出长时程Xp-Teleop评测。论文官方页面指向项目及代码仓库；已有公开研究说明与实现入口，但不能由此认定全部数据、权重、训练流程和许可证同时齐备。",
   "whyItMatters": "现有具身世界模型通常难同时处理移动与操作、不同机器人动作空间及人类视频；相机运动和跨本体骨架表示提供了一个可检验的统一方向。Xp-Teleop等协议值得独立阅读，但当前只把报告视为候选研究事件，不先造榜单。",
