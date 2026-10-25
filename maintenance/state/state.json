@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-10-23",
+  "lastAttemptAt": "2026-10-25",
   "lastStatus": "partial",
-  "lastSummary": "2026-10-23完成四来源二次核查：arXiv原文、独立研究地图mlsanity（数据仅截至10月20日）、Oct23 Robotics Paper Daily与RoboValue/SenseNova/AgiBot/RoboTwin等官方反向来源。补录5篇原始身份可证的deferred论文及历史候选去重；OpenAlex/Semantic Scholar广泛日期筛选不可访问且独立索引缺Oct21-23，其他lane未穷尽覆盖Sep20-Oct23，故保持partial，最近完整成功仍为2026-10-04。",
+  "lastSummary": "2026-10-25 selected-source four-lane follow-up for 2026-09-20..2026-10-25: 5 original arXiv candidate IDs deferred, independent mlsanity snapshot only through Oct20, OpenAlex and Semantic Scholar inaccessible to full dated queries, Oct19-24 curated robotics shortlist and Oct19-23 official project/release reverse checks. Entire discovery window remains partial; 0 selected, 5 deferred, 0 excluded, 0 duplicate in this audit. No full-text deep-read or new leaderboard results. No successful search checkpoint advance.",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-23-four-lane-followup.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-25-partial-followup.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }
