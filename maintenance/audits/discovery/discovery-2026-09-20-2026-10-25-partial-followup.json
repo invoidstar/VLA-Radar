@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-25-partial-followup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-25",
+    "attemptedAt": "2026-10-25",
+    "completedAt": null
+  },
+  "scope": "VLA-Radar follow-up Oct25: original arXiv selected-ID checks, independent literature map to Oct20, curated robotics Oct19-24, Ropedia/RLinf/NVIDIA official reverse evidence. Not a complete four-lane publication discovery; earlier deferred candidates remain in preceding audits.",
+  "sources": [
+    {
+      "id": "primary-arxiv-oct25",
+      "lane": "primary-preprints",
+      "provider": "arXiv primary paper pages",
+      "kind": "Direct original paper identity and metadata checks",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-25"
+      },
+      "query": "arxiv.org/abs/2610.26855; /abs/2610.31423; /abs/2610.31569; /abs/2610.31613; /abs/2610.31427 — VLA/world-model/realtime-action Oct2026 original papers; partial selected-ID read, not every cs.RO/cs.CV search page",
+      "resultCount": 5,
+      "note": "Five arXiv records checked via exact original IDs; did not exhaustively enumerate entire Sept20-Oct25 time window."
+    },
+    {
+      "id": "academic-mlsanity-oct25",
+      "lane": "academic-index",
+      "provider": "mlsanity.com independent VLA/WM index",
+      "kind": "Independent AI research index browsing",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-20"
+      },
+      "query": "https://mlsanity.com/vla/ and https://mlsanity.com/wm/; latest index visibly says Data to 20 Oct 2026, showing 16 works this week; no direct full-window dated query",
+      "resultCount": 16,
+      "note": "Displayed site index newest 16 works, but indexing cutoff Oct20 and coverage outside newest page not exhaustively checked; no Oct21–25 success."
+    },
+    {
+      "id": "academic-openalex-oct25",
+      "lane": "academic-index",
+      "provider": "OpenAlex API",
+      "kind": "Attempted independent works search",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "OpenAlex dated Works API search 2026-09-20..2026-10-25 for vision language action robot, world action model, embodiment",
+      "resultCount": 0,
+      "note": "Cannot verify full date-filtered query from current access path; do not claim successful search."
+    },
+    {
+      "id": "academic-semanticscholar-oct25",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API",
+      "kind": "Attempted second academic index",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "Semantic Scholar Graph API dated robot VLA world models candidate search for 2026-09-20..2026-10-25",
+      "resultCount": 0,
+      "note": "No independently verified complete window result set; failed access is not evidence of zero papers."
+    },
+    {
+      "id": "curated-robotics-daily-oct25",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily curated VLA index",
+      "kind": "Specialized curated literature cross-check",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-24"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html; Oct19–24 VLA, action-control and world-model shortlist; cross-check FocusVLA, Echo, Progress Probes P², FastHarness",
+      "resultCount": 4,
+      "note": "Manually matched four visible current candidate entries; prior days in the requested Sept20-Oct25 full window not exhaustively enumerated."
+    },
+    {
+      "id": "official-reverse-robotics-oct25",
+      "lane": "reverse-discovery",
+      "provider": "Ropedia/RLinf/NVIDIA public primary sources",
+      "kind": "Public official lab/release/robotics workflow reverse discovery",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-23"
+      },
+      "query": "https://github.com/Ropedia/ropedia-w0; https://github.com/RLinf/RLinf/releases/tag/v0.4; https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/ plus official literature links",
+      "resultCount": 3,
+      "note": "Confirmed three selected public sources and paper identity linkage, not full lab/benchmark/citation reverse-discovery sweep back to Sept20."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+      "arxiv": "2610.26855",
+      "doi": "",
+      "date": "2026-10-19",
+      "sourceIds": [
+        "primary-arxiv-oct25",
+        "official-reverse-robotics-oct25"
+      ],
+      "status": "deferred",
+      "reason": "arXiv v1 and author repo verified; deep technical reading, original Xp-Teleop benchmark tables/protocol and all reproducibility resource dimensions still unverified; news-only coverage, not catalog paper.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+      "arxiv": "2610.31423",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-oct25",
+        "curated-robotics-daily-oct25"
+      ],
+      "status": "deferred",
+      "reason": "Recent source-identified VLA candidate. No 8+ source-linked full-text read, training and experiment protocol review or table extraction this run.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+      "arxiv": "2610.31569",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-oct25",
+        "curated-robotics-daily-oct25"
+      ],
+      "status": "deferred",
+      "reason": "Original identity and curated index available; no verified full-text sections/ablation tables or compatible Benchmark result assessment completed.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Progress Probes P²: Lightweight Runtime Monitoring for Vision-Language-Action Models",
+      "arxiv": "2610.31613",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-oct25",
+        "curated-robotics-daily-oct25"
+      ],
+      "status": "deferred",
+      "reason": "Original paper discovery only; probe signals, test protocol and reporting metrics need full source-located review prior to paper or result admission.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",
+      "arxiv": "2610.31427",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-oct25",
+        "curated-robotics-daily-oct25"
+      ],
+      "status": "deferred",
+      "reason": "Identified in primary and robotics curated source, but complete training/evaluation and original negative results have not been read or verified.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 5,
+    "selected": 0,
+    "deferred": 5,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 5
+  },
+  "status": "partial",
+  "notes": "No qualifying full-window independent academic index result to Oct25; OpenAlex/Semantic Scholar inaccessible here, mlSanity cutoff Oct20; other lanes sampled only. Distinct-provider successful full-window gate fails. Do not apply audit or advance lastSuccessfulSearchAt 2026-10-04. No paper/benchmark/repro changes from these five candidates."
+}
