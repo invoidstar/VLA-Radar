@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261023-nvidia-microduck-simulation-workflow",
+  "eventKey": "nvidia-microduck-agent-sim-policy-workflow-20261023",
+  "title": "NVIDIA 发布 Microduck 仿真机器人训练流程：AI Agent 建模与 Isaac Lab 策略训练",
+  "primaryCategory": "research",
+  "tags": [
+    "NVIDIA",
+    "Microduck",
+    "Isaac Sim",
+    "Isaac Lab",
+    "Newton",
+    "robotics",
+    "simulation"
+  ],
+  "eventDate": "2026-10-23",
+  "publishedAt": "2026-10-23",
+  "dateNote": "NVIDIA Developer Technical Blog正文标注Oct 23, 2026；是技术流程文章发布时间，不是全新模型权重发布或真机交付日。",
+  "observedAt": "2026-10-25",
+  "updatedAt": "2026-10-25",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "research-resource",
+  "whatHappened": "NVIDIA 10月23日技术文章详细展示Microduck训练流程：使用Hermes、Nemotron与Astra整理场景计划与CAD/USD素材，在Isaac Sim和Newton中建立具备传感器及动力学的障碍场景，在Isaac Lab中用头部深度与机器人状态训练步行策略，再返回本地仿真验证。官方实例描述一次适应训练使用4,096个并行环境及RTX PRO 6000 Blackwell工作站GPU。",
+  "whyItMatters": "该流程把场景素材生成、可编辑仿真资产、环境随机化、强化学习训练和仿真验证串成可追踪步骤，有利于研究者理解从3D任务设计到机器人策略学习之间的工程接口；其中生成的3D素材仍需核对几何假设和物理有效性。",
+  "vlaRelevance": "它主要是以深度视觉和本体状态驱动的机器人导航/步态强化学习范例，与VLA更广义的视觉行动系统有关，但不是新的语言条件VLA方法，更没有直接可比的LIBERO、RoboTwin等Benchmark成功率。",
+  "limits": "NVIDIA展示的是仿真任务构建与训练示例，不表示已经完成无条件sim-to-real迁移、真机大规模部署或独立评测。4,096并行环境是该文某次配置，不是所有训练硬件的最低条件；文章中方案与教程可复用不等于每个生成素材通过物理真实性验证。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
+      "publisher": "NVIDIA Developer Technical Blog",
+      "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/",
+      "kind": "official",
+      "publishedAt": "2026-10-23",
+      "access": "full-page",
+      "note": "核验2026-10-23官方日期、Isaac Sim/Newton/Isaac Lab串联和4096环境计数；文中明确sim-to-real是后续阶段。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

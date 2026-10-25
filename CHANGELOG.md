@@ -1,3 +1,7 @@
+## 2026-10-25 — 2026-10-25-partial-discovery-news
+
+2026-10-25 weekly public evidence update: publish 3 independently dated official release/report/robotics workflow news (RLinf v0.4, Ropedia W0, NVIDIA Microduck); save an honest schema-v2 four-lane partial discovery audit with five deferred papers and no fabricated deep reads, scores, venue status, or complete checkpoint. Existing five featured news for 2026-W43 remain unchanged. Canonical paper, Benchmark/Setting/Result, taxonomy, relations, reproducibility and README inventory counts unchanged. Both discovery and news lastSuccessfulSearchAt remain 2026-10-04.
+
 ## 2026-10-23 — 2026-10-23-bilingual-discovery-ci-recovery
 
 完成Oct23四类来源二次检索与诚实partial审计：mlsanity学术索引仅截至Oct20、Oct23 curated来源以及arXiv/官方反向来源核验，OpenAlex和Semantic Scholar完整API访问受限；新增5篇高价值deferred候选。补录SenseNova 27B开放权重、智元PhysicalReasoning第四期官方HF数据、清华信通院具身发展报告及RoboValue价值模型Benchmark四条中英文一手具身新闻；来源与活动日期独立保存，不以新闻数字捏造VLA成绩。修复GitHub Actions Playwright 1.57容器与Firefox root HOME导致的安装和启动失败，保留全部浏览器引擎回归。main保护仍无admin权限，Issue75跟踪；文献/新闻lastSuccessfulSearchAt保持Oct04，直到真实全量覆盖。
