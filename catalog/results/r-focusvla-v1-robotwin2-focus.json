@@ -1,0 +1,18 @@
+{
+  "id": "r-focusvla-v1-robotwin2-focus",
+  "paperId": "p137",
+  "method": "FocusVLA",
+  "trackId": "focusvla-v1-robotwin2-50task",
+  "values": {
+    "Average": 76.92
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.31423v1",
+  "sourceVersion": "arXiv 2610.31423v1",
+  "locator": "§4.1 Table 2 Overall Avg. FocusVLA",
+  "attribution": "author-reported",
+  "trainingData": "Identical author-controlled dataset, number of optimization steps, test seeds; task/recipe exact counts beyond Table2 not inferred.",
+  "evaluationNotes": "Author's Table 2 50-task average SR, 100 trials/task, 5 groups. This is a source-scoped paper-table comparison not re-run by VLA-Radar, nor an official RoboTwin platform snapshot.",
+  "supersedes": ""
+}

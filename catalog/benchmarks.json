@@ -7091,6 +7091,60 @@
         "Average"
       ],
       "source": "https://arxiv.org/html/2607.27205v3"
+    },
+    {
+      "id": "focusvla-v1-robotwin2-50task",
+      "dataset": "RoboTwin",
+      "name": "FocusVLA · RoboTwin 2.0 50-task mean SR",
+      "version": "RoboTwin 2.0 / arXiv 2610.31423v1 Table 2",
+      "tasks": "50 tasks × 100 trials per task",
+      "split": "Author's identical demonstration, optimization step and test seed evaluation protocol",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 2 source-reported 50-task mean SR from 5 groups × 10 tasks. RDT / π₀ / π₀.₅ / FocusVLA comparisons are in-paper re-evaluation under the authors' settings. No independent run or official RoboTwin submission implied.",
+      "trainingRegime": "π₀.₅ multi-view base with global + wrist view and intent auxiliary supervision for FocusVLA; author claims identical demonstration data/training steps for baselines, exact demos count not given in this evidence record.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.31423v1"
+    },
+    {
+      "id": "focusvla-v1-piper-real6",
+      "dataset": "Piper Real",
+      "name": "FocusVLA · Piper real six-task multi-view evaluation",
+      "version": "arXiv 2610.31423v1 §4.2",
+      "tasks": "6 real tasks × 30 trials per task",
+      "split": "Piper six-task global and local RealSense D435i views",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Six Piper hardware manipulation tasks, 30 real trials per task, author-reported mean SR; independent of RoboTwin50 task scores and of RoboDojo-Real.",
+      "trainingRegime": "FocusVLA π₀.₅ multi-view backbone plus future intent bridge/router; comparison with π₀.₅ reported by authors. Exact real demonstration budget not inferred.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.31423v1"
+    },
+    {
+      "id": "ropedia-w0-v1-fastwam-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "Ropedia W0 · FastWAM initialization LIBERO-Plus",
+      "version": "arXiv 2610.26855v1 §6.4 Table 6",
+      "tasks": "LIBERO-Plus out-of-domain perturbations",
+      "split": "Held-out LIBERO-Plus, full ~43 demos/task LIBERO FastWAM training",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Identical FastWAM action-head and training recipe, varying video backbone initialization only: FastWAM baseline vs FastWAM initialized from Ropedia W0 5B. Full-data row only, Overall success; not Ropedia world-model policy direct SR.",
+      "trainingRegime": "Full ≈43 demos/task downstream LIBERO training, LIBERO-Plus held-out; change only video backbone pretrained initialisation, no independent benchmark submission.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Overall"
+      ],
+      "source": "https://arxiv.org/html/2610.26855v1"
     }
   ]
 }

@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p137",
+    "name": "FocusVLA (Future Intent)",
+    "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+    "team": "Huixin Xu、Ziya Yu、Peng Li",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv v1；arXiv作者自述CoRL 2026录用，待会议正式记录核验",
+    "firstPublished": "2026-10-22",
+    "dateNote": "arXiv v1 2026-10-22 UTC；CoRL 2026仅按作者的arXiv Comments记为待核验会议线索。",
+    "collectionMonth": "2026-10",
+    "versionNote": "2026-10-26全文§3–4和附录深读，勿与arXiv 2603.28740同名工作混淆",
+    "topics": [
+      "spatial",
+      "action",
+      "evaluation"
+    ],
+    "tags": [
+      "multi-view VLA",
+      "dynamic routing",
+      "future intent",
+      "RoboTwin 2.0",
+      "Piper",
+      "π0.5"
+    ],
+    "priority": "deep",
+    "contribution": "通过Future Intent Bridge利用短期动作历史预测动作chunk每步的交互意图，并在动作生成侧动态分配全局与腕部视觉上下文；用示范末端运动构造弱监督标签，保持π₀.₅主骨干架构。",
+    "findings": "作者报告RoboTwin 2.0 50任务平均SR 76.92%（π₀.₅基线66.82%，+10.10pp）；Piper 6项真机任务85.0%（71.7%，+13.3pp）。增加70.13M参数，A100单chunk推理79.59→92.78ms。",
+    "limitations": "弱监督阶段标签来自启发式末端运动，可能与真实接触状态不一致；含两套不同测试协议；70M额外参数/16.6%延迟增加不可忽略；未核实到属于这篇论文作者的官方代码或权重。",
+    "insight": "动作预测内部也可以随未来步骤动态调整观测来源，但必须分清未来意图预测与使用未来动作真值，以及额外意图标签监督与模型容量造成的增益。",
+    "readingFocus": "§3.1遮蔽诊断、§3.2 Bridge和Router、Appendix A标签规则、§4.1 Table 2 50任务、§4.5 Table 3九任务消融、Appendix推理延迟",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-26依据原始arXiv HTML v1正文与表格深读；所有SR/CI/时延归属于作者报告，未作复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1全文与表格",
+        "url": "https://arxiv.org/html/2610.31423v1"
+      },
+      {
+        "label": "arXiv v1身份和首发",
+        "url": "https://arxiv.org/abs/2610.31423"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.31423",
+    "arxiv": "2610.31423",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-22",
+    "firstArxivSource": "https://arxiv.org/abs/2610.31423v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-26",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-22",
+        "observedAt": "2026-10-26",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.31423v1",
+        "note": "首次公开日期；arXiv Comments附CoRL 2026 accepted但未有会议官方正式来源，不据此升级会议生命周期。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "version": "arXiv:2610.31423v1 · 2026-10-26全文与主表核验",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究动机：不是摄像头数量不足，而是视角依赖随阶段变化",
+        "body": "多视角VLA通常把全局相机与腕部相机一同编码，之后在整段动作生成中使用相对固定的融合机制。然而全局寻找、路径移动、末端接触与精细抓取需要的观测粒度不同。作者通过π₀.₅的视觉注意力比率分析发现，依赖腕部局部视角的倾向会从早期延续到后续阶段，尤其在失败轨迹中表现得更明显。注意力本身不能证明因果，因此还在Stack Blocks Three任务的规划阶段单独遮蔽视角：无遮挡85%，遮全局65%，遮局部仅20%，每种设置20次执行。这个干预支持“过度依赖局部视角”的诊断，但单任务遮蔽实验不应直接推广为所有任务的通用结论。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "bridge",
+        "title": "Future Intent Bridge：预测未来动作需要哪一类视觉信息",
+        "body": "输入包含全局与局部相机画面、语言指令、机器人状态和短期已执行动作历史。作者在π₀.₅多模态前缀表示之上，为未来长度H的每一步预测一个连续交互意图概率。概率表示该动作更需要近距离手物交互信息，互补量近似代表空间移动与全局定位需求。桥接模块首先从历史动作提取时间动态，再用语言查询视觉及状态历史形成任务上下文，输出逐步意图序列与聚合的chunk级意图token。因此它不是对每张图生成一次固定权重，而是给未来动作片段每一步提供不同的视觉依赖信号。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "labels",
+        "title": "弱监督标签：依据末端轨迹推断操作阶段，推理时不看未来真值",
+        "body": "训练所需的二值意图并非人工逐帧打标，而是由示范轨迹的末端速度、旋转、夹爪闭合及局部往返运动自动构造。存在夹爪闭合时，以闭合事件前的时间窗作为高置信交互种子；缺少夹爪信号时，从高低速转换、位移长度、末端接近和双臂协作推断接触片段，并排除类似运输停顿的假阳性。附录算法明确给出平滑、分段、合并与清理规则；标记1对应局部交互，0对应全局运动。它们是运动学启发式标签，不是天然真实的任务状态。在测试阶段只使用预测的连续意图，不可以把标注用的未来示范轨迹当作在线可用输入。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "routing",
+        "title": "Action-Side Dynamic Routing：动作生成侧逐步调整全局与局部上下文",
+        "body": "路由器给动作chunk内第k步生成两项非负权重，权重和为1；作者采用有界线性映射，避免把另一视角完全关掉。全局/局部视觉上下文先分别由交叉注意力形成，再在动作生成侧按每一步路由权重混合；chunk级意图token同时参与整体动作预测。与前置视觉编码器做一次动态融合的设计不同，该模块面向同一预测动作片段的不同时间步分配上下文。论文声称不需要修改预训练VLA的主架构，但仍新增桥接和路由参数，并不等于零额外推理成本或无需重新训练。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "联合优化和训练边界：动作损失与意图BCE分开归因",
+        "body": "训练目标是原有动作生成的平方误差加上逐步意图标签的二元交叉熵，以权重系数控制辅助监督。先对意图分支进行预热，再联合训练，并在训练中少量使用真实意图teacher forcing稳定早期预测；测试时明确关闭teacher forcing。附录报告了正样本加权、预热步数及teacher-forcing退火日程。训练阶段利用示范动作构造标签，推理只根据历史和当前多模态观测预测未来意图，两阶段的信息边界不同。额外意图监督和额外网络容量同时存在，消融必须区分来源，不能把全部增益简单归因于一个未来语义token。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "RoboTwin 2.0与真机：两套独立成功率协议",
+        "body": "仿真主表采用RoboTwin 2.0的50项任务，每任务100次测试；论文称对照模型与FocusVLA使用同一示范、优化步数、测试种子和协议。对比为RDT、π₀与π₀.₅，覆盖短中长和超长/灵巧操作分组。真机则使用Piper机械臂与两台RealSense D435i提供全局/局部相机，6个操作任务，每任务30次重复。不能将真机平均率与RoboTwin整体成功率合并排名。论文主表未把作者设置直接映射为RoboTwin官网某个既有模型提交快照，因此本站只建立论文内部结果轨道，而非给官方模型改写数值。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主实验：76.92%与66.82%是同一主表口径",
+        "body": "RoboTwin 2.0作者报告50任务总体成功率为FocusVLA 76.92%、π₀.₅ 66.82%、π₀ 47.06%、RDT 34.76%，与最佳基线相差10.10个百分点。长程十任务分组FocusVLA 85.60%对π₀.₅ 77.10%，超长及灵巧十任务为76.50%对67.00%，并非所有单任务都优于基线。Piper六项真实操作平均成功率为85.0%，π₀.₅为71.7%，差13.3个百分点。这些均为作者报告；没有独立运行或相同GPU上的公平性复现。补充的性能分析也显示增加约70M参数和单chunk推理时间，应与成功率共同看。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "ablations",
+        "title": "消融：固定比率、当前视觉、时间状态与意图监督贡献各不相同",
+        "body": "九个子任务、两训练种子、每任务每种子100次测试的匹配消融中，Full 73.7%（95%CI 71.6—75.7），静态可学习路由67.5%，当前视觉路由57.4%，时间和状态58.5%，去掉显式意图监督55.7%，只保留逐步路由但不提供chunk意图token为63.3%，随机视角遮蔽54.6%。这些差异支持未来意图监督与逐步路由、chunk提示的共同作用；消融子集与50任务主表不是一个统计总体，73.7%绝不应取代主表76.92%。置信区间和训练种子是作者报告，不代表本站完成独立统计复核。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "efficiency",
+        "title": "系统代价：轻量模块仍会增加单次动作预测时延",
+        "body": "作者附录给出额外70.13M参数，在单张A100、batch1下每chunk推理从π₀.₅的79.59ms增加到92.78ms，增加13.19ms，即约16.6%。这种开销与论文摘要中的成功率增益必须一并展示，不能被“非侵入式”或“轻量”措辞遮蔽。真实机器人还包含摄像头采集、状态通信与执行，单chunk的模型前向时间不能等同整机完整周期。路由权重被限制在0.25与0.75之间，可缓解完全丢失另一视角的风险，却也限制了在极端遮挡场景完全依赖单一相机的自由度。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      },
+      {
+        "id": "limitations",
+        "title": "负面证据和复现风险：阶段代理不是真正的任务理解",
+        "body": "使用示范运动学推断阶段存在偏差：低速并不一定是接触，高速也未必全局规划；中途扰动或偏离示范时，历史动作可能无法充分表达任务进展。论文主要覆盖RoboTwin与Piper少量真机任务，没有验证所有相机布局、异形机器人和长期开放式任务；注意力依赖诊断仍受解释性限制。当前未核验到本文作者的官方实现及权重，不能误关联同名但不同作者、不同arXiv ID的旧FocusVLA仓库。复现时应固定π₀.₅底座、相机标定、意图标签启发式、训练步数和每任务episode数，另外检验推理时额外13.19ms是否影响实际控制频率。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–4及附录（请按章节定位）",
+            "url": "https://arxiv.org/html/2610.31423v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.31423v1"
+    },
+    "figures": [
+      {
+        "title": "Figure 4：Future Intent Bridge与动作侧动态视角路由",
+        "url": "https://arxiv.org/html/2610.31423v1",
+        "caption": "观察历史动作如何汇入逐步意图预测以及按步骤分配全局/局部视觉上下文。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "RoboTwin 2.0主实验（作者原表Table 2）",
+        "columns": [
+          "模型",
+          "50任务平均SR",
+          "是否本站独立复现"
+        ],
+        "rows": [
+          [
+            "RDT",
+            "34.76%",
+            "否"
+          ],
+          [
+            "π₀",
+            "47.06%",
+            "否"
+          ],
+          [
+            "π₀.₅",
+            "66.82%",
+            "否"
+          ],
+          [
+            "FocusVLA",
+            "76.92%",
+            "否"
+          ]
+        ],
+        "locator": "§4.1 / Table 2，50任务每任务100次",
+        "caption": "只代表该篇论文报告的同协议表格结果，不合并官网模型提交。"
+      },
+      {
+        "title": "九任务消融（原表Table 3）",
+        "columns": [
+          "方法",
+          "SR",
+          "95%CI"
+        ],
+        "rows": [
+          [
+            "Learned Static",
+            "67.5%",
+            "[65.3,69.6]"
+          ],
+          [
+            "Routing Only",
+            "63.3%",
+            "[61.0,65.5]"
+          ],
+          [
+            "Full",
+            "73.7%",
+            "[71.6,75.7]"
+          ]
+        ],
+        "locator": "§4.5 / Table 3；2 seeds × 100 trials per task",
+        "caption": "9任务子集，不能和50任务主结果互换。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-26",
+      "note": "对照arXiv 2610.31423v1 Table 2和Piper真机6任务说明建立独立作者报告结果轨道，消融另见正文；没有绑定官网官方榜单。"
+    }
+  }
+}
