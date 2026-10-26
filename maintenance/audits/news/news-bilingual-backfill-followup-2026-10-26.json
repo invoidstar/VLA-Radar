@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "news-bilingual-backfill-followup-2026-10-26",
+  "checkedAt": "2026-10-26",
+  "window": {
+    "from": "2026-10-11",
+    "to": "2026-10-26"
+  },
+  "status": "partial",
+  "scope": "English-Chinese targeted Oct11–26 official release audit with primary Google DeepMind Oct13 robotics update, review of source-dated previously cataloged Chinese AgiBot/Tsinghua/SenseNova official events and Oct21–24 previous records. Full dated Chinese/international media, lab, industry and newsroom list NOT exhaustively enumerated.",
+  "sources": [
+    {
+      "provider": "Google DeepMind original technical article",
+      "kind": "first-party official technical blog",
+      "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+      "observedWindow": "2026-10-13",
+      "status": "checked",
+      "note": "Oct13 English original technical article and model company announce, 87% ERQA is company benchmark, not real-robot SR. No weights or full robot-code claims."
+    },
+    {
+      "provider": "AgiBot company original release",
+      "kind": "Chinese official corporate statement",
+      "url": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "observedWindow": "2026-10-22",
+      "status": "checked-duplicate",
+      "note": "PhysicalReasoning phase4 announced/released content already source checked in Oct23, existing news ID preserved. Avoid treating older Genie Studio 2.0 as new Oct23 release."
+    },
+    {
+      "provider": "Tsinghua university official news",
+      "kind": "Chinese original university announcement",
+      "url": "https://www.tsinghua.edu.cn/info/1182/128871.htm",
+      "observedWindow": "2026-10-16..22",
+      "status": "checked-duplicate",
+      "note": "Academic/industry report original release already in news-20261016-embodied-ai-report-2026, no duplicate."
+    },
+    {
+      "provider": "SenseNova official GitHub",
+      "kind": "Chinese original code and model card",
+      "url": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+      "observedWindow": "2026-10-22",
+      "status": "checked-duplicate",
+      "note": "Preview weights open and harness updates previously tracked, do not conflate author's RoboDojo reported SR and official submissions."
+    },
+    {
+      "provider": "Horizon Robotics HoloMotion official repository",
+      "kind": "original code repo bilingual industry source",
+      "url": "https://github.com/HorizonRobotics/HoloMotion",
+      "observedWindow": "2026-10-24",
+      "status": "checked-duplicate",
+      "note": "Oct24 SuperMimic support already admitted to Oct26 first batch, don't duplicate."
+    },
+    {
+      "provider": "Singapore Government Press Centre",
+      "kind": "official government original source",
+      "url": "https://www.sgpc.gov.sg/detail?HomePage=home&page=%2Fdetail&url=%2Fmedia_releases%2Fastar%2Fpress_release%2FP-20261021-1",
+      "observedWindow": "2026-10-21",
+      "status": "checked-duplicate",
+      "note": "Manufacturing embodied AI challenge previously admitted, planned 2027 finals not treated as completed."
+    }
+  ],
+  "dispositions": [
+    {
+      "event": "Google DeepMind Gemini 4 Argon for Robotics first-party technical release",
+      "status": "selected",
+      "eventDate": "2026-10-13",
+      "newsId": "news-20261013-gemini4-argon-robotics-official",
+      "reason": "Original Google Developer Blog Oct13 describes robot-control, Real2Sim and physical reasoning. ERQA87% attributed, not actual robot benchmark SR."
+    },
+    {
+      "event": "AgiBot PhysicalReasoning phase4; Tsinghua 2026 embodied AI report; SenseNova preview weights",
+      "status": "duplicate",
+      "eventDate": null,
+      "newsId": null,
+      "reason": "Oct16 and Oct22 source-verified Chinese content already has stable story IDs; do not inflate Oct26 new count."
+    },
+    {
+      "event": "HoloMotion SuperMimic; Singapore A*STAR challenge",
+      "status": "duplicate",
+      "eventDate": null,
+      "newsId": null,
+      "reason": "Oct24 and Oct21 source-verified previous Oct26 entries are already in catalog."
+    },
+    {
+      "event": "AGIBOT Genie Studio 2.0 recycled Oct industry reporting",
+      "status": "deferred",
+      "eventDate": null,
+      "newsId": null,
+      "reason": "First-party original update precedes alleged Oct new-release article; not verified new material update. Keep separate candidate; don't backdate false new event."
+    }
+  ],
+  "summary": {
+    "selected": 1,
+    "duplicate": 2,
+    "excluded": 0,
+    "deferred": 1
+  },
+  "notes": "Focused original sources and English/Chinese de-dup; no complete lab+company+media cross-day scan from Oct11–Oct26. Keep news lastSuccessfulSearchAt 2026-10-04, status partial. Article dates vs event dates and stage/author claims preserved."
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "branch-cleanup-request-2026-10-26-backlog",
+  "requestedAt": "2026-10-26",
+  "scope": "invoidstar/VLA-Radar",
+  "reason": "Safely remove prior exact-head merged+published release branches after six-hour recovery grace; no unmerged/open PR or SHA-mismatched branch may be deleted.",
+  "policy": "maintenance/policies/branch-policy.json",
+  "expectedMainDeployedSha": "aa2d8b046972b4a6850acdbc0ea5c24e56ee3845",
+  "auditOnlyIfPolicyFails": true
+}

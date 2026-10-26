@@ -1,0 +1,21 @@
+{
+  "id": "r-p2-v1-vlabench-safe-mlp",
+  "paperId": "p140",
+  "method": "SAFE-MLP",
+  "trackId": "progress-probes-v1-vlabench-auroc",
+  "values": {
+    "Episode AUROC": 0.93,
+    "State AUROC": 0.894,
+    "Unseen Episode AUROC": 0.896,
+    "Unseen State AUROC": 0.866
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.31613v1",
+  "sourceVersion": "arXiv 2610.31613v1",
+  "locator": "§VI-A Table I; row SAFE-MLP",
+  "attribution": "reported-baseline",
+  "trainingData": "Failure-labeled baseline as described in the paper; not same label access as P² successful-only probe training.",
+  "evaluationNotes": "Reported baseline AUROC, state-level and episode-level detection. Different supervision; no absolute SR.",
+  "supersedes": ""
+}

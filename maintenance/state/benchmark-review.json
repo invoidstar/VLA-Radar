@@ -2631,6 +2631,40 @@
         "r-ropedia-w0-v1-libero-plus-init"
       ],
       "note": "Ropedia W0 arXiv v1 Table 6 downsteam FastWAM identical LIBERO-Plus evaluation with/without W0 initialization; PSNR video prediction metrics stay in note, never mixed with task SR."
+    },
+    "p139": {
+      "status": "extracted",
+      "trackIds": [
+        "echo-v1-real-five-task-score"
+      ],
+      "resultIds": [
+        "r-echo-v1-real-pi05",
+        "r-echo-v1-real-echo"
+      ],
+      "note": "Echo arXiv v1 §4.2 Table2 5×30 real robot trials, task completion score 0–10, baseline vs Echo; frame/trajectory F1 kept separate as monitoring metrics in original paper note."
+    },
+    "p140": {
+      "status": "extracted",
+      "trackIds": [
+        "progress-probes-v1-vlabench-auroc"
+      ],
+      "resultIds": [
+        "r-p2-v1-vlabench-p2",
+        "r-p2-v1-vlabench-safe-mlp",
+        "r-p2-v1-vlabench-safe-lstm",
+        "r-p2-v1-vlabench-fiper-ace"
+      ],
+      "note": "VLABench 6-task 600 simulation rollouts, Table I failure monitoring AUROC and mixed training label availability, not robot success rate. Real-robot task AUROC in note separate."
+    },
+    "p141": {
+      "status": "extracted",
+      "trackIds": [
+        "fastharness-v1-robodojo-four-task-sr"
+      ],
+      "resultIds": [
+        "r-fastharness-v1-robodojo-four-task"
+      ],
+      "note": "RoboDojo four author-selected tasks 16/20/20/9 episodes, Appendix Table6 raw per-task native success only. Cross-publication GPT-as-Policy baselines intentionally NOT entered into same track. Four-task average 97.19% in note, not official RoboDojo 42-task rank."
     }
   }
 }

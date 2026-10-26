@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261013-gemini4-argon-robotics-official",
+  "eventKey": "google-deepmind-gemini4-argon-robotics-applications-20261013",
+  "title": "Google DeepMind 展示 Gemini 4 Argon 机器人应用：仿真建模、闭环控制与具身推理",
+  "primaryCategory": "research",
+  "tags": [
+    "Google DeepMind",
+    "Gemini 4 Argon",
+    "robotics",
+    "physical reasoning",
+    "Real2Sim",
+    "ERQA",
+    "MuJoCo",
+    "robot control"
+  ],
+  "eventDate": "2026-10-13",
+  "publishedAt": "2026-10-13",
+  "dateNote": "Google DeepMind原始博文标注Oct.13, 2026；这是Argon针对机器人应用的官方展示日期，不应推断所有相关模型权重、训练数据或机器人代码已经开放。",
+  "observedAt": "2026-10-26",
+  "updatedAt": "2026-10-26",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "research-resource",
+  "whatHappened": "Google DeepMind于10月13日的《Gemini 4 Argon for Robotics》博文介绍把通用模型用于物理推理与多步机器人任务，涵盖MuJoCo模拟练习后的Spot移动操作、校准相机参考下的多轮机械臂控制、从观测建立Real2Sim仿真双胞胎、以及视频/机器人轨迹的回顾标注。官方声称其模型在Embodied Reasoning（ERQA）基准取得87%，并称Argon可通过特定订阅和付费API访问。",
+  "whyItMatters": "展示通用推理模型以代码、几何计算和仿真工具间接参与机器人控制，与低层实时VLA动作策略有不同信息与时间成本；需要将VLM/LLM代理的多轮工具调用和纯端到端VLA前馈时延分开评估。",
+  "vlaRelevance": "它是机器人代理工作流及具身物理推理的官方应用案例，不是以统一RoboTwin、LIBERO协议直接输出连续动作token的新VLA权重。文中的87%属于Google发布的ERQA指标，不可转写为机器人执行成功率，亦不是本站独立测量。",
+  "limits": "演示视频和作者自报指标没有说明大规模独立随机种子、真实碰撞恢复、安全认证或所有工具调用的端到端延迟。说明的API可访问性不等于机器人代码、训练数据和所有权重可下载；Spot和机械臂案例也不能自动外推到各类真实工业任务。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Gemini 4 Argon for Robotics",
+      "publisher": "Google DeepMind (Kanishka Rao)",
+      "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+      "kind": "official",
+      "publishedAt": "2026-10-13",
+      "access": "full-page",
+      "note": "Google DeepMind原文注明2026-10-13、四类应用、ERQA87%作者报告与付费接入边界。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

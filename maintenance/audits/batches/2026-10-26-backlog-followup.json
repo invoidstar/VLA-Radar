@@ -1,0 +1,223 @@
+{
+  "id": "2026-10-26-backlog-followup",
+  "date": "2026-10-26",
+  "summary": "VLA-Radar V3.0 Oct26 second source-verified maintenance: admit Echo p139, Progress Probes P² p140 and FastHarness p141 via 8+ section full-text arXiv v1 deep reading; isolate real robot 0–10 task-completion scores, VLABench failure AUROC and four-selected-task RoboDojo SR as three incomparable paper/case tracks (7 author and cited-baseline results). Official Echo-Sim simulation-only code, FastHarness source and baseline reproducibility scopes recorded. Verify p015 OnEvoMemory ECCV 2026 EMR Workshop Poster acceptance from organizer OpenReview and author site; do not invent official archival proceedings/DOI. Add one primary-source Google DeepMind Oct13 robotics technical news. Document Oct26 partial discovery/news audits and blocked official publisher and academic-index providers, keeping last full discovery/news checkpoints Oct04. Main protection still admin-only.",
+  "notes": [],
+  "tracks": [
+    {
+      "id": "echo-v1-real-five-task-score",
+      "dataset": "Echo Real",
+      "name": "Echo · Five real-robot tasks, task completion score",
+      "version": "arXiv 2610.31569v1 Table 2",
+      "tasks": "5 real robot tasks, 30 trials per method per task",
+      "split": "Insert Flower / Capsule Toy / Insert Pen / Make Tanghulu / Open Drawer",
+      "metric": "Task completion score (0 to 10)",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Author's actual dual-arm wheeled humanoid five-task real experiment; 30 trials per method per task, each column is task completion score 0–10, never success rate. Baseline pi0.5 and Echo trained with matching action demonstration set; Echo also has failure/status-only data.",
+      "trainingRegime": "Both models use identical action demonstrations and optimization settings in paper; Echo additionally supervises SS/FS from failure and intervention episodes. Amount and failure labels do not imply equal total data budgets.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Insert Flower",
+        "Capsule Toy",
+        "Insert Pen",
+        "Make Tanghulu",
+        "Open Drawer"
+      ],
+      "source": "https://arxiv.org/html/2610.31569v1"
+    },
+    {
+      "id": "progress-probes-v1-vlabench-auroc",
+      "dataset": "VLABench",
+      "name": "P² · VLABench runtime failure monitoring AUROC",
+      "version": "arXiv 2610.31613v1 Table I",
+      "tasks": "6 VLABench tasks / 600 monitored evaluation rollouts",
+      "split": "All-task and held-out task (Episode / State failure detection)",
+      "metric": "Failure detection AUROC (not policy task SR)",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Episode-level and state-level receiver-operator AUROC on original VLABench failure-detection dataset. Four columns use 0..1 AUROC, NOT robot manipulation success. 600 evaluated rollouts, separate successful-demo training for P2 probe; supervised baselines may use failure labels.",
+      "trainingRegime": "P2 uses 300 successful demonstrations (50/task) to train linear progress probes on fixed pi0.5 representations; SAFE-MLP/LSTM supervised comparison may use failure labels. Different label access, not equal training recipes.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Episode AUROC",
+        "State AUROC",
+        "Unseen Episode AUROC",
+        "Unseen State AUROC"
+      ],
+      "source": "https://arxiv.org/html/2610.31613v1"
+    },
+    {
+      "id": "fastharness-v1-robodojo-four-task-sr",
+      "dataset": "RoboDojo",
+      "name": "FastHarness · 4 selected RoboDojo simulation task success rates",
+      "version": "arXiv 2610.31427v1 Appendix D Table 6",
+      "tasks": "4 hand-selected tasks, 16/20/20/9 evaluation episodes",
+      "split": "Build tower / Fold clothes / Bottle disposal / Classify objects",
+      "metric": "Native task success rate (four selected tasks)",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Original author's four separate RoboDojo Isaac Sim tasks with 16,20,20,9 repeats respectively, frozen pi0.5 and GPT reviewer; not the official RoboDojo 42-task protocol, cannot blend with public leaderboard. Unweighted four-task average 97.19% differs from pooled 63/65 success.",
+      "trainingRegime": "No policy retraining; external GPT reviewer and accumulated per-task review experience across episodes. Token and latency measurement depends on service, GPU H20, 0.04s simulation control, and context reuse.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Build tower",
+        "Fold clothes",
+        "Bottle disposal",
+        "Classify objects"
+      ],
+      "source": "https://arxiv.org/html/2610.31427v1"
+    }
+  ],
+  "results": [
+    {
+      "id": "r-echo-v1-real-pi05",
+      "paperId": "p139",
+      "method": "π₀.₅",
+      "trackId": "echo-v1-real-five-task-score",
+      "values": {
+        "Insert Flower": 5.67,
+        "Capsule Toy": 8.4,
+        "Insert Pen": 6.87,
+        "Make Tanghulu": 4.33,
+        "Open Drawer": 5.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.31569v1",
+      "sourceVersion": "arXiv 2610.31569v1",
+      "locator": "§4.2 Table 2 baseline real robot Task Completion Score mean (0–10), 30 trials/task",
+      "attribution": "reported-baseline",
+      "trainingData": "Matched successful action demonstration and recovery training for action imitation; baseline lacks Echo's additional failure-state auxiliary supervision.",
+      "evaluationNotes": "Original task completion score on 0–10 scale, NOT SR. Author reported mean +/- SE (SE preserved in original); status detection F1 is separate metric.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-echo-v1-real-echo",
+      "paperId": "p139",
+      "method": "Echo",
+      "trackId": "echo-v1-real-five-task-score",
+      "values": {
+        "Insert Flower": 8.33,
+        "Capsule Toy": 8.57,
+        "Insert Pen": 8.6,
+        "Make Tanghulu": 5.33,
+        "Open Drawer": 7.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.31569v1",
+      "sourceVersion": "arXiv 2610.31569v1",
+      "locator": "§4.2 Table 2 Echo real robot Task Completion Score mean (0–10), 30 trials/task",
+      "attribution": "author-reported",
+      "trainingData": "Action demonstrations matched to π₀.₅ baseline; Echo also uses failure and intervention trajectories for SS/FS labels.",
+      "evaluationNotes": "Original 0–10 task completion score, NOT success rate. No independent reproduction and no interpretation of F1 as robot control ability.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-p2-v1-vlabench-p2",
+      "paperId": "p140",
+      "method": "Progress Probes P²",
+      "trackId": "progress-probes-v1-vlabench-auroc",
+      "values": {
+        "Episode AUROC": 0.909,
+        "State AUROC": 0.788,
+        "Unseen Episode AUROC": 0.9,
+        "Unseen State AUROC": 0.794
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.31613v1",
+      "sourceVersion": "arXiv 2610.31613v1",
+      "locator": "§VI-A Table I; row P²",
+      "attribution": "author-reported",
+      "trainingData": "300 successful demonstrations, 80/20 probe train/calibration, six VLABench tasks; no failed demonstrations used for probe supervision.",
+      "evaluationNotes": "The 600 evaluation rollouts are 300 success/300 failure with failure timing annotated for evaluation only. AUROC is NOT task SR.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-p2-v1-vlabench-safe-mlp",
+      "paperId": "p140",
+      "method": "SAFE-MLP",
+      "trackId": "progress-probes-v1-vlabench-auroc",
+      "values": {
+        "Episode AUROC": 0.93,
+        "State AUROC": 0.894,
+        "Unseen Episode AUROC": 0.896,
+        "Unseen State AUROC": 0.866
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.31613v1",
+      "sourceVersion": "arXiv 2610.31613v1",
+      "locator": "§VI-A Table I; row SAFE-MLP",
+      "attribution": "reported-baseline",
+      "trainingData": "Failure-labeled baseline as described in the paper; not same label access as P² successful-only probe training.",
+      "evaluationNotes": "Reported baseline AUROC, state-level and episode-level detection. Different supervision; no absolute SR.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-p2-v1-vlabench-safe-lstm",
+      "paperId": "p140",
+      "method": "SAFE-LSTM",
+      "trackId": "progress-probes-v1-vlabench-auroc",
+      "values": {
+        "Episode AUROC": 0.923,
+        "State AUROC": 0.851,
+        "Unseen Episode AUROC": 0.859,
+        "Unseen State AUROC": 0.803
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.31613v1",
+      "sourceVersion": "arXiv 2610.31613v1",
+      "locator": "§VI-A Table I; row SAFE-LSTM",
+      "attribution": "reported-baseline",
+      "trainingData": "Supervised baseline may use failure trajectory labels and sequence information, distinct from P² successful-only linear probe.",
+      "evaluationNotes": "Reported baseline AUROC only; detection time differs from compute latency.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-p2-v1-vlabench-fiper-ace",
+      "paperId": "p140",
+      "method": "FIPER (ACE)",
+      "trackId": "progress-probes-v1-vlabench-auroc",
+      "values": {
+        "Episode AUROC": 0.793,
+        "State AUROC": 0.79,
+        "Unseen Episode AUROC": 0.843,
+        "Unseen State AUROC": 0.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.31613v1",
+      "sourceVersion": "arXiv 2610.31613v1",
+      "locator": "§VI-A Table I; row FIPER (ACE)",
+      "attribution": "reported-baseline",
+      "trainingData": "Comparison method with originally reported observation and/or policy features; not matched to linear probe architecture.",
+      "evaluationNotes": "Author's source table reported AUROC, not robot task success.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-fastharness-v1-robodojo-four-task",
+      "paperId": "p141",
+      "method": "FastHarness",
+      "trackId": "fastharness-v1-robodojo-four-task-sr",
+      "values": {
+        "Build tower": 93.75,
+        "Fold clothes": 95,
+        "Bottle disposal": 100,
+        "Classify objects": 100
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.31427v1",
+      "sourceVersion": "arXiv 2610.31427v1",
+      "locator": "Appendix D Table 6 (successes 15/16, 19/20, 20/20, 9/9)",
+      "attribution": "author-reported",
+      "trainingData": "Frozen π₀.₅ model and GPT-6 Astra review scheduling, task-specific experience memory retained across episodic execution.",
+      "evaluationNotes": "Four selected tasks only. The 97.19% is unweighted four-task mean, not the 42-task official RoboDojo ranking or 63/65 pooled episode success.",
+      "supersedes": ""
+    }
+  ]
+}

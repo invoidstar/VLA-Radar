@@ -1314,6 +1314,24 @@
       "level": "baseline",
       "note": "Author project and Ropedia W0 source repository publicly identified for 5B inference. Full A14B, raw Xp-Data, training pipeline and model licenses require per-resource audit; unknown dimensions remain unknown.",
       "items": {}
+    },
+    "p139": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "Primary author Echo project page and separate official Echo-Sim repository checked. Repo contains simulation π0.5 and LIBERO-Recovery training/evaluation; do not infer matching full real-robot 20 DoF hardware implementation, all weights or real-world datasets. Further dimensions unknown pending deep resource review.",
+      "items": {}
+    },
+    "p140": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "ArXiv v1 full technical read; no definite official code, weights or evaluation data resource found from provided original paper. Keep unavailable-vs-unknown distinction: unspecified sources are unknown.",
+      "items": {}
+    },
+    "p141": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "Author-paper-linked FastHarness/fast-harness repository contains Python implementation, docs and tests; frozen pi0.5, licensed reviewer service, hardware and full replay dependencies are separate, not automatically reproducible.",
+      "items": {}
     }
   }
 }

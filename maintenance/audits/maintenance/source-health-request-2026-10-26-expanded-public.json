@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "requestedAt": "2026-10-26",
+  "scope": "Paper + result + news publisher + official project/code + reproducibility evidence URL reachability due-only audit, bounded",
+  "reason": "Close real gap in previous sweep: only 660 paper/track URLs were inventoried and cached history included retired entries. This invocation includes public news and resources and compacts live cache without touching canonical science records.",
+  "deletePapers": false,
+  "overwriteHistoricalAudits": false
+}

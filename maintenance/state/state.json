@@ -6,9 +6,9 @@
   "lastSuccessfulSearchAt": "2026-10-04",
   "lastAttemptAt": "2026-10-26",
   "lastStatus": "partial",
-  "lastSummary": "2026-10-26 original-full-text followup on two arXiv v1 papers (FocusVLA 2610.31423 and Ropedia W0 2610.26855), 2 selected as p137/p138 with evidence-scoped method and original results, 3 prior October candidate IDs remain deferred in this followup. Historical 2026-09-20..Oct26 four-lane scan still partial: no complete dated independent academic-index source; unchanged lastSuccessfulSearchAt 2026-10-04.",
+  "lastSummary": "2026-10-26 second original-source followup: p139 Echo, p140 Progress Probes P² and p141 FastHarness fully read and added with metric-separated, paper-table/case study result evidence. 3 selected, 4 new deferred (SimPT, GeoMem-VLA, GazeAct, VLA-Δ) in this audit; earlier deferred remain in immutable history. Required Sept20–Oct26 four-lane whole-window coverage remains partial, independent OpenAlex/Semantic Scholar date-scoped APIs blocked, accessible DeepPaper sampled only. No complete checkpoint advance beyond 2026-10-04.",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-26-sourced-followup.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-26-backlog-followup.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }

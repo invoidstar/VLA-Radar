@@ -4,10 +4,10 @@
   "candidates": [
     {
       "paperId": "p015",
-      "kind": "venue-mention",
-      "source": "https://arxiv.org/abs/2608.08749",
-      "value": "6 pages, 1 figure. Accepted as a poster at the ECCV 2026 Workshop on Embodied Multimodal Reasoning in Physical Environments (EMR)",
-      "note": "arXiv 注释或 journal-ref 为发现线索；需会议/期刊一手页面确认。"
+      "kind": "proceedings-unverified",
+      "source": "https://openreview.net/forum?id=hUZLqoDdqx",
+      "value": "Title-matched official OpenReview OnEvoMemory EMR 2026 Poster forum hUZLqoDdqx is publicly indexed; author homepage confirms ECCV 2026 EMR Workshop Poster. OpenReview live page currently has challenge gate; archival publication/DOI not verified.",
+      "note": "工作坊poster已可核验；正式归档full paper与non-archival abstract不能根据poster标签区分。仅追踪合法的归档Proceedings及DOI，不推断IEEE/主会录用。"
     },
     {
       "paperId": "p030",

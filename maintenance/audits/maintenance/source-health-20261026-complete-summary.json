@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-26",
+  "sourceJob": "https://github.com/invoidstar/VLA-Radar/actions/runs/40309154538",
+  "sourceAudit": "maintenance/audits/maintenance/source-health-closeout-20261026-run-40309154538.json",
+  "scope": "Updated current source references across papers, track/results, news source publishers, author project/code, reproducibility resources. HTTP reachability only; does not verify scientific claims, licenses, paper status or independent reproducibility.",
+  "metrics": {
+    "currentSourceURLs": 834,
+    "checkedOnThisSweep": 174,
+    "dueRemaining": 0,
+    "reachable": 797,
+    "blockedOrTransient": 30,
+    "unknown": 7
+  },
+  "sumConsistency": "797+30+7=834; live cache excludes stale/unreferenced URLs, immutable prior audits retained",
+  "process": "PR head must pass exact quality after this human-edited audit record, then normal merge -> Pages production smoke. Main protection unresolved requires admin."
+}

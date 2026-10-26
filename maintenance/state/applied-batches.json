@@ -329,6 +329,30 @@
       "results": 8,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-26-backlog-followup",
+      "sha256": "a9d204fe4facc13a94e7232ae184c82cda9b5393e7caa15ac6d99d4d89144f8c",
+      "date": "2026-10-26",
+      "notes": [],
+      "tracks": [
+        "echo-v1-real-five-task-score",
+        "progress-probes-v1-vlabench-auroc",
+        "fastharness-v1-robodojo-four-task-sr"
+      ],
+      "results": 7,
+      "resources": [],
+      "reproducibility": []
+    },
+    {
+      "id": "2026-10-26-final-audit-sync",
+      "sha256": "b197a5a08ff2c333ab22cf21837eb078ef0b57e5dab50a6d86e770c5e72ee388",
+      "date": "2026-10-26",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

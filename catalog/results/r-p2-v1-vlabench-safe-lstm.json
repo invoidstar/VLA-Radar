@@ -1,0 +1,21 @@
+{
+  "id": "r-p2-v1-vlabench-safe-lstm",
+  "paperId": "p140",
+  "method": "SAFE-LSTM",
+  "trackId": "progress-probes-v1-vlabench-auroc",
+  "values": {
+    "Episode AUROC": 0.923,
+    "State AUROC": 0.851,
+    "Unseen Episode AUROC": 0.859,
+    "Unseen State AUROC": 0.803
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.31613v1",
+  "sourceVersion": "arXiv 2610.31613v1",
+  "locator": "§VI-A Table I; row SAFE-LSTM",
+  "attribution": "reported-baseline",
+  "trainingData": "Supervised baseline may use failure trajectory labels and sequence information, distinct from P² successful-only linear probe.",
+  "evaluationNotes": "Reported baseline AUROC only; detection time differs from compute latency.",
+  "supersedes": ""
+}

@@ -635,6 +635,15 @@
         "tabletop",
         "multi-task"
       ]
+    },
+    "Echo Real": {
+      "focus": "general-manipulation",
+      "environment": "real",
+      "tags": [
+        "contact-rich",
+        "tabletop",
+        "multi-task"
+      ]
     }
   }
 }

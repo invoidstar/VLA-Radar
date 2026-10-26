@@ -1,0 +1,21 @@
+{
+  "id": "r-p2-v1-vlabench-p2",
+  "paperId": "p140",
+  "method": "Progress Probes P²",
+  "trackId": "progress-probes-v1-vlabench-auroc",
+  "values": {
+    "Episode AUROC": 0.909,
+    "State AUROC": 0.788,
+    "Unseen Episode AUROC": 0.9,
+    "Unseen State AUROC": 0.794
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.31613v1",
+  "sourceVersion": "arXiv 2610.31613v1",
+  "locator": "§VI-A Table I; row P²",
+  "attribution": "author-reported",
+  "trainingData": "300 successful demonstrations, 80/20 probe train/calibration, six VLABench tasks; no failed demonstrations used for probe supervision.",
+  "evaluationNotes": "The 600 evaluation rollouts are 300 success/300 failure with failure timing annotated for evaluation only. AUROC is NOT task SR.",
+  "supersedes": ""
+}
