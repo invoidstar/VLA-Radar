@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "lastAttemptAt": "2026-10-26",
-  "scope": "link reachability only, not correctness or publication verification",
-  "checkedThisRun": 24,
-  "totalSources": 660,
+  "scope": "current paper, experiment, news, project and reproducibility link reachability only; not content or publication verification",
+  "checkedThisRun": 74,
+  "totalSources": 834,
   "dueRemaining": 0,
   "sources": {
     "https://arxiv.org/abs/2109.12098": {
@@ -1544,48 +1544,6 @@
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://arxiv.org/abs/2608.16889",
-      "error": ""
-    },
-    "https://arxiv.org/abs/1910.10897v2": {
-      "checkedAt": "2026-09-29",
-      "status": "reachable",
-      "httpStatus": 200,
-      "finalUrl": "https://arxiv.org/abs/1910.10897v2",
-      "error": ""
-    },
-    "https://arxiv.org/abs/2108.03298v2": {
-      "checkedAt": "2026-09-29",
-      "status": "reachable",
-      "httpStatus": 200,
-      "finalUrl": "https://arxiv.org/abs/2108.03298v2",
-      "error": ""
-    },
-    "https://arxiv.org/abs/2203.12601v3": {
-      "checkedAt": "2026-09-29",
-      "status": "reachable",
-      "httpStatus": 200,
-      "finalUrl": "https://arxiv.org/abs/2203.12601v3",
-      "error": ""
-    },
-    "https://arxiv.org/abs/2306.17817v2": {
-      "checkedAt": "2026-09-29",
-      "status": "reachable",
-      "httpStatus": 200,
-      "finalUrl": "https://arxiv.org/abs/2306.17817v2",
-      "error": ""
-    },
-    "https://arxiv.org/abs/2308.16891v3": {
-      "checkedAt": "2026-09-29",
-      "status": "reachable",
-      "httpStatus": 200,
-      "finalUrl": "https://arxiv.org/abs/2308.16891v3",
-      "error": ""
-    },
-    "https://arxiv.org/abs/2410.24185v2": {
-      "checkedAt": "2026-09-29",
-      "status": "reachable",
-      "httpStatus": 200,
-      "finalUrl": "https://arxiv.org/abs/2410.24185v2",
       "error": ""
     },
     "https://arxiv.org/abs/2602.12684": {
@@ -4666,6 +4624,1224 @@
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://ropedia.github.io/ropedia-w0/",
+      "error": ""
+    },
+    "https://3d-diffuser-actor.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://3d-diffuser-actor.github.io/",
+      "error": ""
+    },
+    "https://3d-diffusion-policy.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://3d-diffusion-policy.github.io/",
+      "error": ""
+    },
+    "https://act3d.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://act3d.github.io/",
+      "error": ""
+    },
+    "https://ansocho.github.io/otql-flow/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://ansocho.github.io/otql-flow/",
+      "error": ""
+    },
+    "https://aws.amazon.com/blogs/physical-ai/introducing-aws-physical-ai-toolchain/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://aws.amazon.com/blogs/physical-ai/introducing-aws-physical-ai-toolchain/",
+      "error": ""
+    },
+    "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/",
+      "error": ""
+    },
+    "https://bridgevla-plus.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://bridgevla-plus.github.io/",
+      "error": ""
+    },
+    "https://calvin.cs.uni-freiburg.de/": {
+      "checkedAt": "2026-10-26",
+      "status": "unknown",
+      "httpStatus": null,
+      "finalUrl": "https://calvin.cs.uni-freiburg.de/",
+      "error": "<urlopen error [Errno 111] Connection refused>"
+    },
+    "https://chained-diffuser.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://chained-diffuser.github.io/",
+      "error": ""
+    },
+    "https://co-training-lbm.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://co-training-lbm.github.io/",
+      "error": ""
+    },
+    "https://deepmind.google/blog/gemini-4-argon-for-robotics/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://developers.googleblog.com/gemini-4-argon-for-robotics/?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content=",
+      "error": ""
+    },
+    "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/",
+      "error": ""
+    },
+    "https://developer.nvidia.com/blog/the-machines-that-make-the-machines/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://developer.nvidia.com/blog/the-machines-that-make-the-machines/",
+      "error": ""
+    },
+    "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/",
+      "error": ""
+    },
+    "https://developer.nvidia.com/isaac/gr00t": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://developer.nvidia.com/isaac/gr00t",
+      "error": ""
+    },
+    "https://dexmimicgen.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://dexmimicgen.github.io/",
+      "error": ""
+    },
+    "https://ds-wam.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://ds-wam.github.io/",
+      "error": ""
+    },
+    "https://github.com/ARISE-Initiative/robomimic": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/ARISE-Initiative/robomimic",
+      "error": ""
+    },
+    "https://github.com/BridgeVLA/BridgeVLA": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/BridgeVLA/BridgeVLA",
+      "error": ""
+    },
+    "https://github.com/Garfield-kh/FastVLA/blob/main/docs/TRAINING.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Garfield-kh/FastVLA/blob/main/docs/TRAINING.md",
+      "error": ""
+    },
+    "https://github.com/H-EmbodVis/TurboVLA/blob/main/LICENSE": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/H-EmbodVis/TurboVLA/blob/main/LICENSE",
+      "error": ""
+    },
+    "https://github.com/HorizonRobotics/HoloMotion": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/HorizonRobotics/HoloMotion",
+      "error": ""
+    },
+    "https://github.com/Lifelong-Robot-Learning/LIBERO": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "error": ""
+    },
+    "https://github.com/NVIDIA/Isaac-GR00T": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/NVIDIA/Isaac-GR00T",
+      "error": ""
+    },
+    "https://github.com/NVlabs/RVT": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/NVlabs/RVT",
+      "error": ""
+    },
+    "https://github.com/NVlabs/cosmos-policy": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/NVlabs/cosmos-policy",
+      "error": ""
+    },
+    "https://github.com/NVlabs/dexmimicgen": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/NVlabs/dexmimicgen",
+      "error": ""
+    },
+    "https://github.com/OpenHelix-Team/VLA-Adapter": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/OpenHelix-Team/VLA-Adapter",
+      "error": ""
+    },
+    "https://github.com/OpenSenseNova/SenseNova-RoboRSI": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+      "error": ""
+    },
+    "https://github.com/Physical-Intelligence/openpi": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Physical-Intelligence/openpi",
+      "error": ""
+    },
+    "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE",
+      "error": ""
+    },
+    "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE_GEMMA.txt": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Physical-Intelligence/openpi/blob/main/LICENSE_GEMMA.txt",
+      "error": ""
+    },
+    "https://github.com/Physical-Intelligence/openpi/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Physical-Intelligence/openpi/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/Physical-Intelligence/openpi/blob/main/scripts/train.py": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Physical-Intelligence/openpi/blob/main/scripts/train.py",
+      "error": ""
+    },
+    "https://github.com/Physical-Intelligence/openpi/tree/main/examples": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Physical-Intelligence/openpi/tree/main/examples",
+      "error": ""
+    },
+    "https://github.com/Physical-Intelligence/openpi/tree/main/examples/libero": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Physical-Intelligence/openpi/tree/main/examples/libero",
+      "error": ""
+    },
+    "https://github.com/QwenLM/Qwen-RobotManip/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/QwenLM/Qwen-RobotManip/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/QwenLM/Qwen-RobotNav/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/QwenLM/Qwen-RobotNav/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/RCL-Robotics/Awesome-World-Action-Models": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RCL-Robotics/Awesome-World-Action-Models",
+      "error": ""
+    },
+    "https://github.com/RLWRLD/RLDX-1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RLWRLD/RLDX-1",
+      "error": ""
+    },
+    "https://github.com/RLinf/LaWAM/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RLinf/LaWAM/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/RLinf/LaWAM/tree/main/deployment": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RLinf/LaWAM/tree/main/deployment",
+      "error": ""
+    },
+    "https://github.com/RLinf/LaWAM/tree/main/examples": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RLinf/LaWAM/tree/main/examples",
+      "error": ""
+    },
+    "https://github.com/RLinf/RLinf/releases/tag/v0.4": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RLinf/RLinf/releases/tag/v0.4",
+      "error": ""
+    },
+    "https://github.com/Robbyant/lingbot-va": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Robbyant/lingbot-va",
+      "error": ""
+    },
+    "https://github.com/RoboDojo-Benchmark/RoboDojo": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RoboDojo-Benchmark/RoboDojo",
+      "error": ""
+    },
+    "https://github.com/RoboFlamingo/RoboFlamingo": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RoboFlamingo/RoboFlamingo",
+      "error": ""
+    },
+    "https://github.com/RoboValue-Benchmark/RoboValue": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/RoboValue-Benchmark/RoboValue",
+      "error": ""
+    },
+    "https://github.com/SEU-PAISys/Embodied.cpp": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/SEU-PAISys/Embodied.cpp",
+      "error": ""
+    },
+    "https://github.com/SelfWAM/SelfWAM": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/SelfWAM/SelfWAM",
+      "error": ""
+    },
+    "https://github.com/SpatialVLA/SpatialVLA": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/SpatialVLA/SpatialVLA",
+      "error": ""
+    },
+    "https://github.com/TeleHuman/PRTS": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/TeleHuman/PRTS",
+      "error": ""
+    },
+    "https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model",
+      "error": ""
+    },
+    "https://github.com/X-Square-Robot/Xplanner/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/X-Square-Robot/Xplanner/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/XPolicyLab/XPolicyLab": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XPolicyLab/XPolicyLab",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/LICENSE",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/deploy": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/deploy",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/eval_libero": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/eval_libero",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-0/tree/main/xr0",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/LICENSE": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/LICENSE",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/deploy": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/deploy",
+      "error": ""
+    },
+    "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/xr1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1/tree/main/xr1",
+      "error": ""
+    },
+    "https://github.com/YanjieZe/3D-Diffusion-Policy": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/YanjieZe/3D-Diffusion-Policy",
+      "error": ""
+    },
+    "https://github.com/YanjieZe/GNFactor": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/YanjieZe/GNFactor",
+      "error": ""
+    },
+    "https://github.com/amap-cvlab/ABot-Manipulation": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/amap-cvlab/ABot-Manipulation",
+      "error": ""
+    },
+    "https://github.com/bytedance/GR-1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/bytedance/GR-1",
+      "error": ""
+    },
+    "https://github.com/cliport/cliport": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/cliport/cliport",
+      "error": ""
+    },
+    "https://github.com/dasnyder5/nscore": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/dasnyder5/nscore",
+      "error": ""
+    },
+    "https://github.com/dreamzero0/dreamzero": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/dreamzero0/dreamzero",
+      "error": ""
+    },
+    "https://github.com/droid-dataset/droid": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/droid-dataset/droid",
+      "error": ""
+    },
+    "https://github.com/facebookresearch/r3m": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/facebookresearch/r3m",
+      "error": ""
+    },
+    "https://github.com/google-deepmind/open_x_embodiment": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/google-deepmind/open_x_embodiment",
+      "error": ""
+    },
+    "https://github.com/huggingface/lerobot": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/huggingface/lerobot",
+      "error": ""
+    },
+    "https://github.com/huhuhushou/SparkVLA": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/huhuhushou/SparkVLA",
+      "error": ""
+    },
+    "https://github.com/lyfeng001/Legato-kinetix": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/lyfeng001/Legato-kinetix",
+      "error": ""
+    },
+    "https://github.com/mees/calvin": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/mees/calvin",
+      "error": ""
+    },
+    "https://github.com/mimic-video/mimic-video": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/mimic-video/mimic-video",
+      "error": ""
+    },
+    "https://github.com/moojink/openvla-oft": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/moojink/openvla-oft",
+      "error": ""
+    },
+    "https://github.com/moojink/openvla-oft/blob/main/LIBERO.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/moojink/openvla-oft/blob/main/LIBERO.md",
+      "error": ""
+    },
+    "https://github.com/moojink/openvla-oft/blob/main/LICENSE": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/moojink/openvla-oft/blob/main/LICENSE",
+      "error": ""
+    },
+    "https://github.com/moojink/openvla-oft/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/moojink/openvla-oft/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/nickgkan/3d_diffuser_actor": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/nickgkan/3d_diffuser_actor",
+      "error": ""
+    },
+    "https://github.com/octo-models/octo": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/octo-models/octo",
+      "error": ""
+    },
+    "https://github.com/open-gigaai/giga-world-policy": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/open-gigaai/giga-world-policy",
+      "error": ""
+    },
+    "https://github.com/openvla/openvla": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/openvla/openvla",
+      "error": ""
+    },
+    "https://github.com/openvla/openvla/blob/main/LICENSE": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/openvla/openvla/blob/main/LICENSE",
+      "error": ""
+    },
+    "https://github.com/openvla/openvla/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/openvla/openvla/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/openvla/openvla/blob/main/vla-scripts/deploy.py": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/openvla/openvla/blob/main/vla-scripts/deploy.py",
+      "error": ""
+    },
+    "https://github.com/openvla/openvla/tree/main/vla-scripts": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/openvla/openvla/tree/main/vla-scripts",
+      "error": ""
+    },
+    "https://github.com/peract/peract": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/peract/peract",
+      "error": ""
+    },
+    "https://github.com/princeton-prism/veritas": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/princeton-prism/veritas",
+      "error": ""
+    },
+    "https://github.com/real-stanford/diffusion_policy": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/real-stanford/diffusion_policy",
+      "error": ""
+    },
+    "https://github.com/robocasa/robocasa": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robocasa/robocasa",
+      "error": ""
+    },
+    "https://github.com/robot-colosseum/robot-colosseum": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/robot-colosseum/robot-colosseum",
+      "error": ""
+    },
+    "https://github.com/sii-research/tau-0-vla": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/sii-research/tau-0-vla",
+      "error": ""
+    },
+    "https://github.com/simpler-env/SimplerEnv": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/simpler-env/SimplerEnv",
+      "error": ""
+    },
+    "https://github.com/thu-ml/RoboticsDiffusionTransformer": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/thu-ml/RoboticsDiffusionTransformer",
+      "error": ""
+    },
+    "https://github.com/tonyzhaozh/act": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/tonyzhaozh/act",
+      "error": ""
+    },
+    "https://github.com/unitreerobotics/unifolm-wla": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/unitreerobotics/unifolm-wla",
+      "error": ""
+    },
+    "https://github.com/xl-tang3/BaryBind/blob/main/LICENSE": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/xl-tang3/BaryBind/blob/main/LICENSE",
+      "error": ""
+    },
+    "https://github.com/xl-tang3/BaryBind/blob/main/README.md": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/xl-tang3/BaryBind/blob/main/README.md",
+      "error": ""
+    },
+    "https://github.com/xl-tang3/BaryBind/blob/main/run.py": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/xl-tang3/BaryBind/blob/main/run.py",
+      "error": ""
+    },
+    "https://github.com/xl-tang3/BaryBind/tree/main/config/barybind/finetune_cfg": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/xl-tang3/BaryBind/tree/main/config/barybind/finetune_cfg",
+      "error": ""
+    },
+    "https://github.com/xl-tang3/BaryBind/tree/main/scripts/barybind": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/xl-tang3/BaryBind/tree/main/scripts/barybind",
+      "error": ""
+    },
+    "https://github.com/yuantianyuan01/FastWAM": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/yuantianyuan01/FastWAM",
+      "error": ""
+    },
+    "https://github.com/yyyyu120/W2-VLA": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/yyyyu120/W2-VLA",
+      "error": ""
+    },
+    "https://github.com/z-lab/flashvla": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/z-lab/flashvla",
+      "error": ""
+    },
+    "https://huggingface.co/blog/nepyope/bringing-humanoids-to-lerobot": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/blog/nepyope/bringing-humanoids-to-lerobot",
+      "error": ""
+    },
+    "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-0": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-0",
+      "error": ""
+    },
+    "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/collections/XiaomiRobotics/xiaomi-robotics-1",
+      "error": ""
+    },
+    "https://huggingface.co/collections/jialei02/lawam-checkpoints": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/collections/jialei02/lawam-checkpoints",
+      "error": ""
+    },
+    "https://huggingface.co/datasets/agibot-world/AgiBotWorld2026/tree/main/PhysicalReasoning": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/datasets/agibot-world/AgiBotWorld2026/tree/main/PhysicalReasoning",
+      "error": ""
+    },
+    "https://huggingface.co/datasets/jialei02/libero_merged_no_noops_20hz": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/datasets/jialei02/libero_merged_no_noops_20hz",
+      "error": ""
+    },
+    "https://huggingface.co/kehong/FastVLA-weights": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/kehong/FastVLA-weights",
+      "error": ""
+    },
+    "https://huggingface.co/moojink/openvla-7b-oft-finetuned-libero-spatial": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/moojink/openvla-7b-oft-finetuned-libero-spatial",
+      "error": ""
+    },
+    "https://huggingface.co/openvla/openvla-7b": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/openvla/openvla-7b",
+      "error": ""
+    },
+    "https://huggingface.co/sensenova/sensenova-roborsi-27b-preview": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/sensenova/sensenova-roborsi-27b-preview",
+      "error": ""
+    },
+    "https://huggingface.co/x-square-robot/X-Planner-9B-0916": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/x-square-robot/X-Planner-9B-0916",
+      "error": ""
+    },
+    "https://icr-lab.github.io/SparkVLA/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://icr-lab.github.io/SparkVLA/",
+      "error": ""
+    },
+    "https://jongwoopark7978.github.io/smilevla": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://jongwoopark7978.github.io/smilevla/",
+      "error": ""
+    },
+    "https://lyfeng001.github.io/Legato/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://lyfeng001.github.io/Legato/",
+      "error": ""
+    },
+    "https://meta-world.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://meta-world.github.io/",
+      "error": ""
+    },
+    "https://mimic-video.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://mimic-video.github.io/",
+      "error": ""
+    },
+    "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data/",
+      "error": ""
+    },
+    "https://rcl-robotics.github.io/Awesome-World-Action-Models/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://rcl-robotics.github.io/Awesome-World-Action-Models/",
+      "error": ""
+    },
+    "https://rdt-robotics.github.io/rdt-robotics/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://rdt-robotics.github.io/rdt-robotics/",
+      "error": ""
+    },
+    "https://rhodes-team-prts.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://rhodes-team-prts.github.io/",
+      "error": ""
+    },
+    "https://rlinf.readthedocs.io/en/latest/rst_source/examples/embodied/dual_franka_openpi_pytorch.html": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://rlinf.readthedocs.io/en/latest/rst_source/examples/embodied/dual_franka_openpi_pytorch.html",
+      "error": ""
+    },
+    "https://robin-lab.cs.utexas.edu/HALO/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robin-lab.cs.utexas.edu/HALO/",
+      "error": ""
+    },
+    "https://robomimic.github.io/study/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robomimic.github.io/study/",
+      "error": ""
+    },
+    "https://robot-colosseum.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robot-colosseum.github.io/",
+      "error": ""
+    },
+    "https://robotic-view-transformer.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robotic-view-transformer.github.io/",
+      "error": ""
+    },
+    "https://robotics.xiaomi.com/xiaomi-robotics-1.html": {
+      "checkedAt": "2026-10-26",
+      "status": "unknown",
+      "httpStatus": null,
+      "finalUrl": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'robotics.xiaomi.com'. (_ssl.c:1081)>"
+    },
+    "https://selfwam.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://selfwam.github.io/",
+      "error": ""
+    },
+    "https://simpler-env.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://simpler-env.github.io/",
+      "error": ""
+    },
+    "https://sites.google.com/view/bc-z/home": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://sites.google.com/view/bc-z/home",
+      "error": ""
+    },
+    "https://spatialvla.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://spatialvla.github.io/",
+      "error": ""
+    },
+    "https://splat2act.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://splat2act.github.io/",
+      "error": ""
+    },
+    "https://technology.robbyant.com/lingbot-va": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://technology.robbyant.com/lingbot-va",
+      "error": ""
+    },
+    "https://thusigs-edi-lab.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://thusigs-edi-lab.github.io/",
+      "error": ""
+    },
+    "https://unigen-x.github.io/unifolm-wla.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://unigen-x.github.io/unifolm-wla.github.io/",
+      "error": ""
+    },
+    "https://universal-policy.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://universal-policy.github.io/",
+      "error": ""
+    },
+    "https://veritas-improvement.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://veritas-improvement.github.io/",
+      "error": ""
+    },
+    "https://vla-adapter.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://vla-adapter.github.io/",
+      "error": ""
+    },
+    "https://wing0night.github.io/track4action-project-page": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://wing0night.github.io/track4action-project-page/",
+      "error": ""
+    },
+    "https://worv-ai.github.io/ponderpounce/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://worv-ai.github.io/ponderpounce/",
+      "error": ""
+    },
+    "https://www.agibot.com.cn/article/315/detail/250.html": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "error": ""
+    },
+    "https://www.agibot.com/article/231/detail/120.html": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agibot.com/article/231/detail/120.html",
+      "error": ""
+    },
+    "https://www.agibot.com/article/231/detail/121.html": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agibot.com/article/231/detail/121.html",
+      "error": ""
+    },
+    "https://www.agibot.com/article/231/detail/123.html": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agibot.com/article/231/detail/123.html",
+      "error": ""
+    },
+    "https://www.agilityrobotics.com/content/agility-and-fort-robotics-announce-strategic-partnership-to-advance-humanoid-robot-safety": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agilityrobotics.com/content/agility-and-fort-robotics-announce-strategic-partnership-to-advance-humanoid-robot-safety",
+      "error": ""
+    },
+    "https://www.agilityrobotics.com/content/agility-robotics-expands-pittsburgh-presence-to-support-growing-customer-deployments": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agilityrobotics.com/content/agility-robotics-expands-pittsburgh-presence-to-support-growing-customer-deployments",
+      "error": ""
+    },
+    "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale",
+      "error": ""
+    },
+    "https://www.agilityrobotics.com/solutions/digit-5": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agilityrobotics.com/solutions/digit-5",
+      "error": ""
+    },
+    "https://www.anybotics.com/news/shift-launch/": {
+      "checkedAt": "2026-10-26",
+      "status": "blocked-or-transient",
+      "httpStatus": 403,
+      "finalUrl": "https://www.anybotics.com/news/shift-launch/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "https://www.astribot.com/research/Lumo2": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.astribot.com/research/Lumo2/",
+      "error": ""
+    },
+    "https://www.genspi.com/en/motus-2/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.genspi.com/en/motus-2/",
+      "error": ""
+    },
+    "https://www.genspi.com/zh/news/luo-yihang-bund-summit/": {
+      "checkedAt": "2026-10-26",
+      "status": "unknown",
+      "httpStatus": null,
+      "finalUrl": "https://www.genspi.com/zh/news/luo-yihang-bund-summit/",
+      "error": "The read operation timed out"
+    },
+    "https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/media-release-htx-opens-humanoid-robotics-centre-to-advance-embodied-ai-for-public-safety": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/media-release-htx-opens-humanoid-robotics-centre-to-advance-embodied-ai-for-public-safety",
+      "error": ""
+    },
+    "https://www.nbd.com.cn/articles/2026-09-15/4581924.html": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nbd.com.cn/articles/2026-09-15/4581924.html",
+      "error": ""
+    },
+    "https://www.openrobotics.org/blog/2026/10/6/roscon-global-2026-a-record-breaking-event": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.openrobotics.org/blog/2026/10/6/roscon-global-2026-a-record-breaking-event",
+      "error": ""
+    },
+    "https://www.pi.website/blog/api-beta": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.pi.website/blog/api-beta",
+      "error": ""
+    },
+    "https://www.pi.website/blog/pistar06": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.pi.website/blog/pistar06",
+      "error": ""
+    },
+    "https://www.reuters.com/technology/amd-acquire-fei-fei-lis-world-labs-82-billion-deal-2026-09-28/": {
+      "checkedAt": "2026-10-26",
+      "status": "blocked-or-transient",
+      "httpStatus": 401,
+      "finalUrl": "https://www.reuters.com/technology/amd-acquire-fei-fei-lis-world-labs-82-billion-deal-2026-09-28/",
+      "error": "HTTP Error 401: HTTP Forbidden"
+    },
+    "https://www.reuters.com/world/asia-pacific/founder-chinese-startup-spirit-ai-says-robot-brains-set-2027-breakthrough-2026-09-18/": {
+      "checkedAt": "2026-10-26",
+      "status": "blocked-or-transient",
+      "httpStatus": 401,
+      "finalUrl": "https://www.reuters.com/world/asia-pacific/founder-chinese-startup-spirit-ai-says-robot-brains-set-2027-breakthrough-2026-09-18/",
+      "error": "HTTP Error 401: HTTP Forbidden"
+    },
+    "https://www.sgpc.gov.sg/detail?HomePage=home&page=%2Fdetail&url=%2Fmedia_releases%2Fastar%2Fpress_release%2FP-20261021-1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.sgpc.gov.sg/detail?HomePage=home&page=%2Fdetail&url=%2Fmedia_releases%2Fastar%2Fpress_release%2FP-20261021-1",
+      "error": ""
+    },
+    "https://www.skild.ai/blogs/skild-crosses-100m-arr": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.skild.ai/blogs/skild-crosses-100m-arr",
+      "error": ""
+    },
+    "https://www.tsinghua.edu.cn/info/1182/128871.htm": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.tsinghua.edu.cn/info/1182/128871.htm",
+      "error": ""
+    },
+    "https://xpolicylab.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://xpolicylab.github.io/",
+      "error": ""
+    },
+    "https://yanjieze.com/GNFactor/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://yanjieze.com/GNFactor/",
+      "error": ""
+    },
+    "https://yuantianyuan01.github.io/FastWAM/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://yuantianyuan01.github.io/FastWAM/",
       "error": ""
     }
   }
