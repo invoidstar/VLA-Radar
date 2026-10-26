@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "requestedAt": "2026-10-26",
+  "source": "issue-76-content-source-audit",
+  "scope": "Recheck due/new primary paper, project and news URLs after p139-p141 and p015 official publisher status; HEAD/GET reachability only.",
+  "limitPerSweep": 100,
+  "maxRounds": 5,
+  "noPaperDeletion": true
+}
