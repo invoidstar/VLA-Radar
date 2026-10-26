@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "news-bilingual-partial-followup-2026-10-26",
+  "checkedAt": "2026-10-26",
+  "window": {
+    "from": "2026-10-11",
+    "to": "2026-10-26"
+  },
+  "status": "partial",
+  "scope": "Incremental official-source catch-up after 2026-10-25; one government original manufacturing robotics challenge release and one source-code repository update added, previous Oct19-Oct23 primary items deduplicated. Not an exhaustive day-by-day Chinese and English lab/company/media scan.",
+  "sources": [
+    {
+      "provider": "Singapore Government Press Centre / A*STAR",
+      "kind": "government-first-party",
+      "url": "https://www.sgpc.gov.sg/detail?HomePage=home&page=%2Fdetail&url=%2Fmedia_releases%2Fastar%2Fpress_release%2FP-20261021-1",
+      "observedWindow": "Oct21",
+      "status": "checked",
+      "note": "Official original event launch; future Mar2027 finals and Oct-Dec2026 simulation deadline are proposed stages, not completed benchmark results."
+    },
+    {
+      "provider": "HorizonRobotics HoloMotion official GitHub",
+      "kind": "repository-first-party",
+      "url": "https://github.com/HorizonRobotics/HoloMotion",
+      "observedWindow": "Oct24",
+      "status": "checked",
+      "note": "README dated Oct24 adds SuperMimic training support. 80% LAFAN1 G1 claim is author-reported; distinct from standard VLA benchmarks."
+    },
+    {
+      "provider": "Existing RLinf/Ropedia/NVIDIA source-verified stories",
+      "kind": "existing-catalog-dedup",
+      "url": "https://github.com/RLinf/RLinf/releases/tag/v0.4",
+      "observedWindow": "Oct19–23",
+      "status": "checked-duplicate",
+      "note": "Existing Oct25 entries remain; no duplicate news IDs."
+    }
+  ],
+  "dispositions": [
+    {
+      "event": "Singapore Embodied AI Challenge for Manufacturing launch",
+      "status": "selected",
+      "eventDate": "2026-10-21",
+      "newsId": "news-20261021-sg-embodied-ai-manufacturing-challenge",
+      "reason": "Official government Oct21 announcement, future competition distinguished from actual scores."
+    },
+    {
+      "event": "HoloMotion adds SuperMimic G1 training support",
+      "status": "selected",
+      "eventDate": "2026-10-24",
+      "newsId": "news-20261024-holomotion-supermimic-support",
+      "reason": "Oct24 maintainer-dated original README update; author-reported training metrics only."
+    },
+    {
+      "event": "Previously admitted RLinf v0.4, Ropedia W0 and NVIDIA Microduck",
+      "status": "duplicate",
+      "eventDate": null,
+      "newsId": null,
+      "reason": "Oct25 source-verified news already exists; no additional repeat."
+    }
+  ],
+  "summary": {
+    "selected": 2,
+    "duplicate": 1,
+    "excluded": 0,
+    "deferred": 0
+  },
+  "notes": "Oct26 source-selective addition is not a complete Chinese and English Oct11-Oct26 media/lab/company sweep. Keep news lastSuccessfulSearchAt=2026-10-04 and status=partial."
+}
