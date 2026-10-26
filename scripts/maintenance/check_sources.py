@@ -22,9 +22,24 @@ def audit(root,limit=100,due_days=30,max_seconds=180):
     for r in records:
         urls.update(x['url'] for x in r['note'].get('figures',[]))
         urls.update(x['source'] for x in r['publication']['history'])
+    # Keep the current operational health snapshot aligned with all public source
+    # families, not just papers. Archives carry historical health evidence.
+    for f in sorted((root/'catalog/news').glob('news-*.json')):
+        urls.update(s['url'] for s in load(f).get('sources',[]))
+    resources=load(root/'catalog/resources.json').get('papers',{})
+    for item in resources.values():
+        urls.update(value for value in item.values() if value)
+    reproduction=load(root/'catalog/reproducibility.json').get('papers',{})
+    for record in reproduction.values():
+        for item in record.get('items',{}).values():
+            urls.update(item[k] for k in ('url','source') if item.get(k))
     urls={urldefrag(u)[0] for u in urls}
     started=time.monotonic();attempted=0
-    path=root/'maintenance/state/source-health.json';old=load(path) if path.exists() else {'sources':{}};cache=old['sources'];when=today()
+    path=root/'maintenance/state/source-health.json';old=load(path) if path.exists() else {'sources':{}}
+    # Expired/unreferenced URLs remain in immutable old GitHub audits, rather
+    # than inflating current statusCounts above current totalSources.
+    cache={u:entry for u,entry in old['sources'].items() if u in urls}
+    when=today()
     due=[u for u in sorted(urls,key=lambda u:(cache.get(u,{}).get('checkedAt',''),u)) if u not in cache or (date.fromisoformat(when)-date.fromisoformat(cache[u]['checkedAt'])).days>=due_days]
     for url in due[:limit]:
         if time.monotonic()-started>=max_seconds:break
@@ -39,7 +54,7 @@ def audit(root,limit=100,due_days=30,max_seconds=180):
         except HTTPError as e:code=e.code;status='not-found' if code in {404,410} else 'blocked-or-transient';error=str(e)
         except Exception as e:error=str(e)
         cache[url]={'checkedAt':when,'status':status,'httpStatus':code,'finalUrl':final,'error':error[:300]};time.sleep(.12)
-    report={'schemaVersion':1,'lastAttemptAt':when,'scope':'link reachability only, not correctness or publication verification','checkedThisRun':attempted,'totalSources':len(urls),'dueRemaining':max(0,len(due)-attempted),'sources':cache}
+    report={'schemaVersion':1,'lastAttemptAt':when,'scope':'current paper, experiment, news, project and reproducibility link reachability only; not content or publication verification','checkedThisRun':attempted,'totalSources':len(urls),'dueRemaining':max(0,len(due)-attempted),'sources':cache}
     write(path,report);print(f'WARN-ONLY: checked {attempted} URLs; {report["dueRemaining"]} remain due. No record removed.')
     return report
 if __name__=='__main__':
