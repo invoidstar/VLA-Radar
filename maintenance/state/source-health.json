@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "lastAttemptAt": "2026-10-26",
   "scope": "current paper, experiment, news, project and reproducibility link reachability only; not content or publication verification",
-  "checkedThisRun": 74,
-  "totalSources": 834,
+  "checkedThisRun": 14,
+  "totalSources": 848,
   "dueRemaining": 0,
   "sources": {
     "https://arxiv.org/abs/2109.12098": {
@@ -5842,6 +5842,104 @@
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://yuantianyuan01.github.io/FastWAM/",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.00575": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.00575",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.00575v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.00575v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.25961": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.25961",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.25961v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.25961v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.26487": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.26487",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.26487v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.26487v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.00575v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.00575v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.25961v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.25961v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.26487v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.26487v1",
+      "error": ""
+    },
+    "https://chuyaofu.github.io/Token-World/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://chuyaofu.github.io/Token-World/",
+      "error": ""
+    },
+    "https://english.scio.gov.cn/pressroom/2026-10/20/content_118741583.html": {
+      "checkedAt": "2026-10-26",
+      "status": "unknown",
+      "httpStatus": null,
+      "finalUrl": "https://english.scio.gov.cn/pressroom/2026-10/20/content_118741583.html",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'english.scio.gov.cn'. (_ssl.c:1081)>"
+    },
+    "https://github.com/ChuyaoFu/Token-World": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/ChuyaoFu/Token-World",
+      "error": ""
+    },
+    "https://pacevla.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://pacevla.github.io/",
+      "error": ""
+    },
+    "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2026/art_34e6e8e918bd424482287fc02a5cbffd.html": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2026/art_34e6e8e918bd424482287fc02a5cbffd.html",
       "error": ""
     }
   }
