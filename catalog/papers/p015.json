@@ -9,7 +9,7 @@
     "publicationType": "conference",
     "publicationStatus": "ECCV 2026 EMR Workshop Poster 已录用（非ECCV主会，未确认进入归档论文集）",
     "firstPublished": "2026-08-09",
-    "dateNote": "2026-10-26核对ECCV 2026 EMR Workshop组织者OpenReview公开分组搜索索引中OnEvoMemory Accept (Poster)，并与作者个人主页ECCV 2026 EMR Workshop(Poster)表述交叉确认。未查得对应官方Proceedings的题名/DOI；录用日期未知。",
+    "dateNote": "2026-10-26核对ECCV 2026 EMR Workshop官方OpenReview的同题Poster页面公开索引，作者主页提供一致证据；OpenReview实时详情因验证页不能完整读取，出版社出版状态未知。",
     "collectionMonth": "2026-08",
     "versionNote": "8月首次公开｜阅读v1",
     "topics": [
@@ -44,6 +44,10 @@
       {
         "label": "作者个人主页 OnEvoMemory ECCV 2026 EMR Poster",
         "url": "https://chenzhongxi-sjtu.github.io/"
+      },
+      {
+        "label": "官方 OpenReview：OnEvoMemory EMR 2026 Poster 单篇入口",
+        "url": "https://openreview.net/forum?id=hUZLqoDdqx"
       }
     ],
     "paperUrl": "https://arxiv.org/abs/2608.08749",
@@ -91,8 +95,8 @@
         "date": null,
         "observedAt": "2026-10-26",
         "venue": "ECCV 2026 EMR Workshop (Poster)",
-        "source": "https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/EMR",
-        "note": "官方EMR OpenReview venue搜索索引明确显示Accept (Poster) OnEvoMemory，作者主页也列同题Workshop Poster。该工作不是ECCV主会论文，组内支持归档和非归档两种论文类型，尚无能证明正式出版或独立DOI的对应条目。"
+        "source": "https://openreview.net/forum?id=hUZLqoDdqx",
+        "note": "EMR 2026 ECCV Workshop 官方OpenReview同题Poster单篇记录（Google索引搜索匹配OnEvoMemory及EMR 2026 Poster），作者个人主页另证实。OpenReview详情本环境遇人机验证，只能用公开搜索索引核验有限会议录用事实；未独立核验正式归档/DOI/出版时间，不是ECCV主会。"
       }
     ],
     "alerts": []
