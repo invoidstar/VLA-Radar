@@ -7,9 +7,9 @@
     "team": "平安科技／清华大学深圳国际研究生院\nChuhang Liu、Yayun He、Zuheng Kang、Xiaoyang Qu、Jianzong Wang",
     "venue": "ICME 2026",
     "publicationType": "conference",
-    "publicationStatus": "ICME 2026（作者发表页确认）\narXiv:2604.05323",
+    "publicationStatus": "ICME 2026（作者实验室正式发表列表核验）；IEEE Xplore出版社记录、DOI及出版日尚待核对",
     "firstPublished": "2026-04-07",
-    "dateNote": "",
+    "dateNote": "作者实验室2026-07 publication页明确列为IEEE ICME 2026；2026-10-26复核，IEEE正式题名匹配出版记录尚未核实。",
     "collectionMonth": "2026-07",
     "versionNote": "7月正式会议发表；4月已有预印本｜阅读v1",
     "topics": [
@@ -52,12 +52,12 @@
     "firstArxivSource": "https://arxiv.org/abs/2604.05323v1",
     "latestArxivVersion": "v1",
     "latestArxivAt": "2026-04-07",
-    "status": "legacy",
+    "status": "accepted",
     "venue": "ICME 2026",
     "doi": "",
     "acceptedAt": null,
     "publishedAt": null,
-    "lastCheckedAt": "2026-09-18",
+    "lastCheckedAt": "2026-10-26",
     "history": [
       {
         "kind": "imported",
@@ -82,6 +82,14 @@
         "venue": "",
         "source": "https://arxiv.org/abs/2604.05323v1",
         "note": "元数据版本 v1；并不表示已重读该版本。"
+      },
+      {
+        "kind": "accepted",
+        "date": null,
+        "observedAt": "2026-10-26",
+        "venue": "ICME 2026",
+        "source": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/",
+        "note": "作者实验室同题、同作者发表页明确列为2026 IEEE International Conference on Multimedia and Expo, July 2026。只确认会议收录/作者证据；无法从此页推断正式IEEE DOI、精确会议录用日或出版日，acceptedAt/publishedAt保持null。"
       }
     ],
     "alerts": []
