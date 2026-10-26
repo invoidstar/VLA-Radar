@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p143",
+    "name": "PaceVLA",
+    "title": "PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models",
+    "team": "Hojin Jeon、Jimin Lee、Taekwan Kim、Nayoung Oh、Taeyoung Kim、Myungkyu Koo、Jinmo Koo、Joonwoo Ahn、Jinwoo Shin",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 2610.25961v1预印本",
+    "firstPublished": "2026-10-19",
+    "dateNote": "arXiv v1 UTC 2026-10-19首发；2026-10-26核对官方项目页与实验原表。",
+    "collectionMonth": "2026-10",
+    "versionNote": "arXiv:2610.25961v1 · 2026-10-26全文与Table 1–6",
+    "topics": [
+      "efficiency",
+      "action",
+      "evaluation"
+    ],
+    "tags": [
+      "time quantization",
+      "action chunk",
+      "flow matching",
+      "GR00T N1.5",
+      "RLDX-1",
+      "RoboCasa-Kitchen",
+      "LIBERO",
+      "DexJoCo",
+      "ALLEX"
+    ],
+    "priority": "deep",
+    "contribution": "在共享Flow Matching动作专家旁设置不同时间量化级和预测horizon的模式解码器，用量化适合度judge加上下文router动态选择执行粒度，实现按阶段的速度—精度平衡。",
+    "findings": "作者报告ALLEX输送线任务86%/3.6包每分钟→94%/6.3包每分钟；Franka Air Fryer维持81.3%成功率的同时24.6→14.6秒。单步推理40.07→42.15ms，RLDX RoboCasa PnP仍有负面反例。",
+    "limitations": "需要真实控制器tracking/gripper增益适配，结果受示范频率/动作空间影响；TPR/ES与SR不能相混；部分多阶段任务有0.5得分；官方项目可查但完整源码/权重未核实开放。",
+    "insight": "推理延迟不是具身操作的全部执行效率；阶段化动作时间量化能改善完成时间，但必须报告失败惩罚、任务成功与硬件控制开销。",
+    "readingFocus": "§3模式解码/judge/router和动作聚合、§4 Table 1–4三类任务指标、Table 5消融、Table 6推理时延、附录控制器调节",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-26 arXiv 2610.25961v1全文，正文Table1–6及项目页核验；实机数字与速度为作者报告、非本站复现。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1全文",
+        "url": "https://arxiv.org/html/2610.25961v1"
+      },
+      {
+        "label": "arXiv提交信息",
+        "url": "https://arxiv.org/abs/2610.25961"
+      },
+      {
+        "label": "作者项目网站",
+        "url": "https://pacevla.github.io/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.25961",
+    "arxiv": "2610.25961",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-19",
+    "firstArxivSource": "https://arxiv.org/abs/2610.25961v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-19",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-26",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-19",
+        "observedAt": "2026-10-26",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.25961v1",
+        "note": "依原始v1 UTC首发，尚无正式会议出版或出版DOI证据。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "version": "arXiv:2610.25961v1 · 2026-10-26",
+    "sections": [
+      {
+        "id": "motivation",
+        "title": "研究动机：动作生成速度不等于机器人实际执行效率",
+        "body": "VLA模型每次生成一个动作chunk，实际机器人按采集示范中的节奏执行，因此即便推理模块延迟很低也可能缓慢完成任务。自由空间的接近与运输阶段能容忍较粗动作，但接触、抓取和最终放置又必须保持精细控制。盲目把整段动作加速或固定时间量化虽可能减少时钟时间，却易在接触阶段损失成功率。PaceVLA研究怎样依据当前视觉、语言与状态选择速度和预测长度，让策略能够快于示教节奏而不在关键步骤过冲。这里的效率目标是任务完成时长、success throughput和失败惩罚，而不仅是单次神经网络的毫秒延迟。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "共享Flow-Matching Action Expert与多个有语义的动作模式",
+        "body": "作者在GR00T N1.5与RLDX-1-IMG等预训练连续动作VLA上扩展一个共享flow matching动作专家，给不同时间量化倍数和预测horizon配备模式专属输出解码器。细粒度模式输出近似演示时间频率的动作，粗粒度模式把多个连续低层动作合成为更大步长的控制目标，用更少的控制周期覆盖同一操作距离。模式是有明确含义的执行粒度和时间跨度组合，而不是无解释的MoE expert索引；共享骨干并不意味着所有模式的输出在接触力学上严格等价。训练与部署还必须配置控制器追踪增益以避免大跨度命令被硬件误跟踪。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "judge",
+        "title": "Quantization Judge判断当前阶段能否粗粒度执行",
+        "body": "量化判断器从共享多模态条件向量预测一个量化适合度分数，先决定当前应在细粒度模式组还是粗粒度模式组。判断器的监督来自任务轨迹各时刻的量化可行性，而非假设所有移动越快越好。原文使用示范统计、自动化评价和大模型辅助构造弱标签，以KL和均衡项使模式选择更稳定；任务失败的位置附近通常被标注为不宜加速。作者对RoboCasa-Kitchen一条示范可视化发现搬运阶段分数高，接近抓取及放置转折时下降。此类标签不是接触传感器的真值，测试时也不能使用完整未来示范事件来替代判断器。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "router",
+        "title": "Router在细/粗模式组内部按当下语境选具体时间跨度",
+        "body": "进入某一组后，router再根据多模态上下文在多个时间分辨率与动作预测跨度之间选择，决定后续是保守短程反馈还是较大胆的较长命令。输出语义先由judge决定是否粗化，再由router决定模式，避免一个无约束混合路由同时负责接触安全和速度选择。模式概率通过任务相关训练目标、均衡约束与KL约束学习；消融显示无judge、无专属decoder都会导致成功率及有效吞吐下降。策略虽然可以减少硬件执行步骤，但每个在线VLA前向仍要额外运行judge和router，不能宣称推理步骤成本完全不变。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "controller",
+        "title": "真实控制闭环与动作量化的实际边界",
+        "body": "时间动作量化不是无条件地调高频率，而是把连续相邻示范动作的位移和姿态变化组合成粗步控制目标，仍必须经过机器人低层控制器的轨迹跟踪。作者指出默认控制增益不一定能跟踪较大的动作跳变，因此针对仿真与实体机器人的tracking/gripper控制参数分别调整。PaceVLA与Fixed Quantization、DemoSpeedUp及SAIL等对照因此包含模型侧模式选择及控制器部署共同条件。若实验控制器、示范频率或动作表示不同，时间节省无法纯粹归因于神经网络模块。RoboCasa和LIBERO采用delta动作，而DexJoCo使用absolute动作，三组不可合并指标。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "三类仿真与六个真机任务使用不同成功定义",
+        "body": "仿真涉及RoboCasa-Kitchen 24任务、每任务300条示范，LIBERO四个标准套件，以及DexJoCo六个单臂灵巧接触任务。实验报告SR、TPR和ES；ES按成功吞吐相对底座归一，失败任务按完整episode预算惩罚，故超过1表示真正考虑失败成本后仍有效加速。真实任务有Franka夹爪的Pick-and-Place、Air Fryer、Stack Cup，OpenArm双手的Table Sweeping、Pump-and-Scrub，及ALLEX人形输送线处理。前五项每任务32次，部分多阶段任务允许0.5的部分得分；真实执行Time仅对完全成功的episode统计，ALLEX则用每分钟成功包裹数而非秒数。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "simresults",
+        "title": "仿真Table 1/3：SR与TPR/ES的意义和负结果",
+        "body": "RLDX-1-IMG骨干的LIBERO Long中原始底座SR 88.6%、加入PaceVLA为90.2%；在RoboCasa-Kitchen非PnP任务分别76.3%与76.9%。然而其PnP对应48.5%到45.0%，而有效速度ES仅0.93，即某一任务组存在反效果，不能声称所有类别成功率均无下降。DexJoCo Table 3的GR00T N1.5底座SR76.3%、TPR1.83×10^-3，PaceVLA为77.3%、2.22×10^-3，ES1.11。用户不能把TPR标成百分比、把ES当成模型参数比，也不能把短程与长程套件平均成不存在的原文总SR。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "realresults",
+        "title": "真机Table 2/4：任务墙钟与成功率必须一同读",
+        "body": "Franka Air Fryer任务中底座GR00T N1.5成功率81.3%、完全成功耗时24.6秒，PaceVLA同为81.3%却耗时14.6秒；Pick-and-Place成功率81.3%到84.4%、耗时12.1到7.6秒。OpenArm Table Sweeping成功率62.5%到59.4%，耗时21.9到14.6秒，说明不是每一项都不降SR。ALLEX处理输送线包装任务由86%成功率与3.6件/分钟变为94%与6.3件/分钟，作者报告约1.75倍吞吐。ALLEX统计与前五项32次任务SR/成功回合耗时不同，数据不合并为一个统一排行。速度提升归因必须包含控制器与动作周期改变。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "ablations",
+        "title": "消融与推理代价：额外2毫秒不等于机器人执行变慢",
+        "body": "RoboCasa 24任务完整PaceVLA消融平均SR66.9%、TPR2.75和ES1.14；移除模式专属decoder得到63.3%、2.44、1.00，移除judge为65.1%、2.01、1.01。无KL项SR63.7%和ES0.98，说明学习模式路由受到训练目标影响。作者用RTX5090测量100次：GR00T N1.5单步前向40.07毫秒、PaceVLA 42.15毫秒，约增加5%计算开销；但Air Fryer端到端执行时间仍减少10秒。模型推理延迟、硬件墙钟、TPR、SR是四类不同指标，不能相互替代。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      },
+      {
+        "id": "limitations",
+        "title": "开放资源与外推限制：项目网站不等于训练代码开放",
+        "body": "官方项目网站展示原文、方法图和多个真机视频，本文可确认其为作者项目资源。当前没有充分来源能证明可执行训练/评测代码、所有模式配置、模型权重与真实数据集已公开，因此Resources只添加project，不虚构code链接。作者也指出量化接触动作时会引发控制器跟踪和抓取质量问题，需额外调参与实际硬件适配；不同机器人支持的动作表示和相机反馈频率改变速度收益。真实五项测试中部分任务有部分分数，需区分完成率与多阶段任务折中评分，避免“成功率保持不变”的泛化结论。",
+        "sources": [
+          {
+            "label": "arXiv 2610.25961v1 方法、原表和附录",
+            "url": "https://arxiv.org/html/2610.25961v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.25961v1"
+    },
+    "figures": [
+      {
+        "title": "Figure 2：多个动作粒度模式与Judge/Router",
+        "url": "https://arxiv.org/html/2610.25961v1",
+        "caption": "模式选择发生在动作执行时间尺度，不是自回归逐维动作预测。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "作者Table 2 / Table 4：三个实体平台不同任务效率与成功率",
+        "columns": [
+          "平台与任务",
+          "底座SR",
+          "PaceVLA SR",
+          "底座效率",
+          "PaceVLA 效率"
+        ],
+        "rows": [
+          [
+            "Franka · Air Fryer",
+            "81.3%",
+            "81.3%",
+            "24.6s",
+            "14.6s"
+          ],
+          [
+            "OpenArm · Table Sweeping",
+            "62.5%",
+            "59.4%",
+            "21.9s",
+            "14.6s"
+          ],
+          [
+            "ALLEX · Conveyor",
+            "86.0%",
+            "94.0%",
+            "3.6 packages/min",
+            "6.3 packages/min"
+          ]
+        ],
+        "locator": "Table 2，Table 4；实机不同统计方式",
+        "caption": "成功率、耗时和包裹吞吐是不同指标；统计边界不可混合。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-26",
+      "note": "仅建立有清晰版本/方法对照的RoboCasa-Kitchen非PnP SR、DexJoCo单臂SR、ALLEX实机Conveyor SR三个独立paper-table/case study轨道；TPR/ES、吞吐及墙钟留原文深读，不伪造统一速度排行。"
+    }
+  }
+}
