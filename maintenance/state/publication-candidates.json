@@ -5,9 +5,9 @@
     {
       "paperId": "p015",
       "kind": "proceedings-unverified",
-      "source": "https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/EMR",
-      "value": "Official ECCV 2026 EMR OpenReview venue search exposes title-matched OnEvoMemory Accept (Poster), corroborated by author homepage; workshop acceptance now verified, main-conference publication NOT implied; proceedings/DOI not verified.",
-      "note": "只保留Workshop正式论文集/归档类型核验任务，不再重复追踪poster是否录用。ECCV组织者工作坊有archival full paper与nonarchival extended abstract两种轨道，不从海报状态推断任何正式出版日。"
+      "source": "https://openreview.net/forum?id=hUZLqoDdqx",
+      "value": "Title-matched official OpenReview OnEvoMemory EMR 2026 Poster forum hUZLqoDdqx is publicly indexed; author homepage confirms ECCV 2026 EMR Workshop Poster. OpenReview live page currently has challenge gate; archival publication/DOI not verified.",
+      "note": "工作坊poster已可核验；正式归档full paper与non-archival abstract不能根据poster标签区分。仅追踪合法的归档Proceedings及DOI，不推断IEEE/主会录用。"
     },
     {
       "paperId": "p030",
