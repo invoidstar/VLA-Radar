@@ -24,7 +24,7 @@ jobs:
       - name: Check overdue sources with bounded public HEAD requests
         run: |
           python - <<'PY'
-          import json, subprocess, sys
+          import json, os, subprocess, sys
           from collections import Counter
           from pathlib import Path
           state=Path("maintenance/state/source-health.json")
@@ -41,7 +41,7 @@ jobs:
           statuses=dict(sorted(Counter(x["status"] for x in data["sources"].values()).items()))
           summary={
             "schemaVersion":1,
-            "id":"source-health-closeout-2026-10-23",
+            "id":"source-health-closeout-"+data["lastAttemptAt"]+"-run-"+os.environ.get("GITHUB_RUN_ID","local"),
             "checkedAt":data["lastAttemptAt"],
             "scope":"Bounded HEAD/GET reachability only; 403/429/timeout not proof that an academic result is invalid",
             "totalSources":data["totalSources"],
@@ -53,7 +53,9 @@ jobs:
             "sweeps":sweeps,
             "notes":"No papers or results removed based on link errors. Dataset/publisher identity and content evidence need independent audit."
           }
-          out=Path("maintenance/audits/maintenance/source-health-closeout-20261023.json")
+          dated=data["lastAttemptAt"].replace("-","")
+          run_id=os.environ.get("GITHUB_RUN_ID","local")
+          out=Path(f"maintenance/audits/maintenance/source-health-closeout-{dated}-run-{run_id}.json")
           out.parent.mkdir(parents=True,exist_ok=True)
           out.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           print(json.dumps(summary,ensure_ascii=False,indent=2))
@@ -71,7 +73,7 @@ jobs:
           test "$actual" = "$EXPECTED_SHA" || { echo 'Branch moved; refusing overwrite'; exit 1; }
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add maintenance/state/source-health.json maintenance/audits/maintenance/source-health-closeout-20261023.json
+          git add maintenance/state/source-health.json maintenance/audits/maintenance/source-health-closeout-*.json
           if ! git diff --cached --quiet; then
             git commit -m "Sweep and audit overdue public evidence URLs"
             git push origin "HEAD:refs/heads/$BRANCH"
@@ -82,5 +84,5 @@ jobs:
           name: source-health-audit-${{ github.run_id }}
           path: |
             maintenance/state/source-health.json
-            maintenance/audits/maintenance/source-health-closeout-20261023.json
+            maintenance/audits/maintenance/source-health-closeout-*.json
           retention-days: 30
