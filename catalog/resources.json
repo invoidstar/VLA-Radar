@@ -396,6 +396,13 @@
     "p138": {
       "project": "https://ropedia.github.io/ropedia-w0/",
       "code": "https://github.com/Ropedia/ropedia-w0"
+    },
+    "p139": {
+      "project": "https://lyfeng001.github.io/Echo/",
+      "code": "https://github.com/lyfeng001/Echo-Sim"
+    },
+    "p141": {
+      "code": "https://github.com/FastHarness/fast-harness"
     }
   }
 }
