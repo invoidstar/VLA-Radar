@@ -1,0 +1,21 @@
+{
+  "id": "r-p2-v1-vlabench-fiper-ace",
+  "paperId": "p140",
+  "method": "FIPER (ACE)",
+  "trackId": "progress-probes-v1-vlabench-auroc",
+  "values": {
+    "Episode AUROC": 0.793,
+    "State AUROC": 0.79,
+    "Unseen Episode AUROC": 0.843,
+    "Unseen State AUROC": 0.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.31613v1",
+  "sourceVersion": "arXiv 2610.31613v1",
+  "locator": "§VI-A Table I; row FIPER (ACE)",
+  "attribution": "reported-baseline",
+  "trainingData": "Comparison method with originally reported observation and/or policy features; not matched to linear probe architecture.",
+  "evaluationNotes": "Author's source table reported AUROC, not robot task success.",
+  "supersedes": ""
+}

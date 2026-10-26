@@ -64,6 +64,218 @@
   ],
   "papers": [
     {
+      "id": "p141",
+      "name": "FastHarness",
+      "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",
+      "team": "Tao Lin、Yuxin Du、Haoxiao Wang、Zile Zhong、Bo Zhao",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1预印本",
+      "firstPublished": "2026-10-22",
+      "dateNote": "arXiv:2610.31427v1 UTC 2026-10-22首次提交",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-26 §3–5及Appendix A–F源级深读",
+      "topics": [
+        "memory",
+        "efficiency",
+        "evaluation"
+      ],
+      "tags": [
+        "agent harness",
+        "review scheduling",
+        "GPT-6 Astra",
+        "π0.5",
+        "RoboDojo",
+        "recovery",
+        "memory"
+      ],
+      "priority": "deep",
+      "contribution": "在冻结π₀.₅外层构建基于历史复核成功/失败经验的动态审查调度器，并通过局部修复和已核验子目标恢复，提高重复任务执行效率，动作依然每轮根据新观测生成。",
+      "findings": "作者报告四RoboDojo仿真任务Build tower 15/16、Fold clothes 19/20、Bottle disposal 20/20、Classify objects 9/9；四任务等权成功率97.19%，前一研究报告中的GPT-as-Policy约80%；同方法首集到末五集token减57.2%/墙钟85.5→52.0分钟。",
+      "limitations": "RoboDojo仅四特定仿真任务非官方42项协议，跨研究混合基线不是匹配试验；GPT审查服务成本、模型输出与任务经验跨episode积累影响可比性，部分失败仍会漏检。",
+      "insight": "复核频率是系统性能预算的一部分；必须同时记录审查调用次数、端到端耗时、恢复成功条件和跨episode记忆，不能把token下降解释为底层VLA更快。",
+      "readingFocus": "§4阶段经验与审查触发、Wilson下界调度、§5四任务65 episodes成功分布、Figure4首集/末五集、Appendix Table2–7的硬件与来源边界",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26核验arXiv v1正文/附录与作者代码仓库，所有任务成功率和耗时为作者报告，和GPT-as-Policy跨研究比较有独立来源。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv 2610.31427v1原文",
+          "url": "https://arxiv.org/html/2610.31427v1"
+        },
+        {
+          "label": "arXiv首发信息",
+          "url": "https://arxiv.org/abs/2610.31427"
+        },
+        {
+          "label": "作者官方代码",
+          "url": "https://github.com/FastHarness/fast-harness"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.31427",
+      "arxiv": "2610.31427",
+      "doi": "",
+      "detailUrl": "data/details/p141.json?v=4d156a89116258df",
+      "resultUrl": "data/paper-results/p141.d30776af89ed5457.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/FastHarness/fast-harness"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p141.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-22",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
+    {
+      "id": "p140",
+      "name": "Progress Probes P²",
+      "title": "Progress Probes P²: Lightweight Runtime Monitoring for Vision-Language-Action Models",
+      "team": "Atiksh Bhardwaj、Edward W. Duan、Junwon Seo、Prithwish Dan、Wei-Chiu Ma、Andrea Bajcsy、Preston Culbertson",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1",
+      "firstPublished": "2026-10-22",
+      "dateNote": "arXiv 2610.31613v1 Thu 2026-10-22 UTC，2026-10-26深读正文",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv v1 · VLABench监控AUROC vs硬件分协议；不是策略SR",
+      "topics": [
+        "evaluation",
+        "memory",
+        "efficiency"
+      ],
+      "tags": [
+        "runtime monitoring",
+        "linear probe",
+        "progress",
+        "failure detection",
+        "AUROC",
+        "VLABench",
+        "π0.5"
+      ],
+      "priority": "deep",
+      "contribution": "从π₀.₅中间层激活训练约2K参数的线性进度探针，仅用成功示范的任务进度标签，再根据与同任务名义进度轨迹的偏差实时判定故障，无需外部大型VLM。",
+      "findings": "原文VLABench仿真Table I：P²监控Episode AUROC 0.909、State AUROC 0.788，未见任务Episode AUROC 0.900，RTX A6000仅探针额外延迟0.026ms；不能写成机器人任务成功率。",
+      "limitations": "仿真600条评测成功/失败rollout仍需手工故障时刻标签；时间进度近似物理任务阶段；部分状态级AUROC低于有失败监督的SAFE-MLP，某些硬件任务表现很弱。",
+      "insight": "模型内部的动作后训练表征可以用非常轻的头读取执行进度；但故障可分性、检测时机和真正触发恢复后的任务结果是三条不同的因果证据链。",
+      "readingFocus": "§III–V线性探针与进度基线，VI VLABench数据划分和Table I–III，VII真实硬件Task IV–V，监控成本与阈值的局限",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26核验arXiv v1 HTML逐节和原表，源范围仅论文作者报告；未独立复现任何成功率。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文",
+          "url": "https://arxiv.org/html/2610.31613v1"
+        },
+        {
+          "label": "arXiv首发元数据",
+          "url": "https://arxiv.org/abs/2610.31613"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.31613",
+      "arxiv": "2610.31613",
+      "doi": "",
+      "detailUrl": "data/details/p140.json?v=c630e2f692cacedf",
+      "resultUrl": "data/paper-results/p140.cd1e2aa7755f2968.json",
+      "noteStatus": "expanded",
+      "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p140.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-22",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
+    {
+      "id": "p139",
+      "name": "Echo",
+      "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+      "team": "Yufeng Liu、Bohao Fan、Juntu Zhao、Xinyi Wang、Hang Yu、Wenzhuan Luo、Yingzhi Wang、Qinghai Li、Yingdong Hu、Junliang Guo、Richard Wang、Dequan Wang、Yang Gao、Cheng Ma",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1预印本",
+      "firstPublished": "2026-10-22",
+      "dateNote": "arXiv:2610.31569v1 UTC 首发2026-10-22，2026-10-26一手全文核验",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv 2610.31569v1 · 真机Table2/3/4/5及独立Echo-Sim来源核验",
+      "topics": [
+        "action",
+        "evaluation",
+        "memory"
+      ],
+      "tags": [
+        "flow matching",
+        "task status",
+        "failure detection",
+        "recovery",
+        "Stop Signal",
+        "Failure Signal",
+        "real robot"
+      ],
+      "priority": "deep",
+      "contribution": "把任务停止和失败两个连续信号作为动作chunk的额外通道在同一VLA联合生成，通过四类轨迹监督、受控跨组注意力及异步去噪使状态信息反向改善纠偏动作。",
+      "findings": "原文真机五任务、每模型每任务30次的0–10 Task Completion Score：Insert Flower 5.67→8.33，Insert Pen 6.87→8.60，Open Drawer 5.40→7.90；这些不是成功率。",
+      "limitations": "额外失败与恢复数据不可忽略，依赖片段级标签/弱监督；OOD收益高但插花ID下降；官方Echo-Sim仿真实现不等于完整真机栈开源。",
+      "insight": "任务状态可以参与动作生成，而不只作为外部监控；研究中必须拆开失败数据收益、状态预测识别性能和动作侧注意力真正带来的因果收益。",
+      "readingFocus": "§3.2四类轨迹Table1、信号—动作attention/异步去噪、§4.2五真机Task Completion Score、§4.4 ID/OOD和消融、官方Echo-Sim协议",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26逐节核验arXiv 2610.31569v1 HTML §3–4及附录/作者项目，独立仿真README仅作配套来源；所有数值作者报告。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv原文v1",
+          "url": "https://arxiv.org/html/2610.31569v1"
+        },
+        {
+          "label": "arXiv身份及首发日期",
+          "url": "https://arxiv.org/abs/2610.31569"
+        },
+        {
+          "label": "作者项目页与原表",
+          "url": "https://lyfeng001.github.io/Echo/"
+        },
+        {
+          "label": "官方仅仿真实现Echo-Sim",
+          "url": "https://github.com/lyfeng001/Echo-Sim"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.31569",
+      "arxiv": "2610.31569",
+      "doi": "",
+      "detailUrl": "data/details/p139.json?v=ef292b431499a1df",
+      "resultUrl": "data/paper-results/p139.1e8db7d00dd29455.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://lyfeng001.github.io/Echo/",
+        "code": "https://github.com/lyfeng001/Echo-Sim"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p139.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-22",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
+    {
       "id": "p138",
       "name": "Ropedia W0",
       "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
@@ -4267,11 +4479,11 @@
       "name": "OnEvoMemory",
       "title": "OnEvoMemory: Evolving Memory through Online Robot Rollouts for Pretrained Robot Policies",
       "team": "上海交通大学／清华大学\nZhongxi Chen、Shenqi Zong",
-      "venue": "arXiv",
-      "publicationType": "preprint",
-      "publicationStatus": "arXiv:2608.08749\nECCV 2026 EMR Workshop poster（非主会）",
+      "venue": "ECCV 2026 EMR Workshop",
+      "publicationType": "conference",
+      "publicationStatus": "ECCV 2026 EMR Workshop Poster 已录用（非ECCV主会，未确认进入归档论文集）",
       "firstPublished": "2026-08-09",
-      "dateNote": "",
+      "dateNote": "2026-10-26核对ECCV 2026 EMR Workshop组织者OpenReview公开分组搜索索引中OnEvoMemory Accept (Poster)，并与作者个人主页ECCV 2026 EMR Workshop(Poster)表述交叉确认。未查得对应官方Proceedings的题名/DOI；录用日期未知。",
       "collectionMonth": "2026-08",
       "versionNote": "8月首次公开｜阅读v1",
       "topics": [
@@ -4298,12 +4510,20 @@
         {
           "label": "arXiv 元数据",
           "url": "https://arxiv.org/abs/2608.08749"
+        },
+        {
+          "label": "ECCV 2026 EMR Workshop 官方OpenReview venue（公开检索显示 Poster 录用）",
+          "url": "https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/EMR"
+        },
+        {
+          "label": "作者个人主页 OnEvoMemory ECCV 2026 EMR Poster",
+          "url": "https://chenzhongxi-sjtu.github.io/"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2608.08749",
       "arxiv": "2608.08749",
       "doi": "",
-      "detailUrl": "data/details/p015.json?v=d32bafd787dbbb92",
+      "detailUrl": "data/details/p015.json?v=6c09b0f119d67ec4",
       "resultUrl": "data/paper-results/p015.4398eea533aca14c.json",
       "noteStatus": "expanded",
       "resources": {},
@@ -4316,8 +4536,8 @@
       "lifecycle": {
         "firstArxivAt": "2026-08-09",
         "latestArxivVersion": "v1",
-        "status": "preprint",
-        "lastCheckedAt": "2026-09-18"
+        "status": "accepted",
+        "lastCheckedAt": "2026-10-26"
       }
     },
     {

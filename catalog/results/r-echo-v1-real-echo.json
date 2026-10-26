@@ -1,0 +1,22 @@
+{
+  "id": "r-echo-v1-real-echo",
+  "paperId": "p139",
+  "method": "Echo",
+  "trackId": "echo-v1-real-five-task-score",
+  "values": {
+    "Insert Flower": 8.33,
+    "Capsule Toy": 8.57,
+    "Insert Pen": 8.6,
+    "Make Tanghulu": 5.33,
+    "Open Drawer": 7.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.31569v1",
+  "sourceVersion": "arXiv 2610.31569v1",
+  "locator": "§4.2 Table 2 Echo real robot Task Completion Score mean (0–10), 30 trials/task",
+  "attribution": "author-reported",
+  "trainingData": "Action demonstrations matched to π₀.₅ baseline; Echo also uses failure and intervention trajectories for SS/FS labels.",
+  "evaluationNotes": "Original 0–10 task completion score, NOT success rate. No independent reproduction and no interpretation of F1 as robot control ability.",
+  "supersedes": ""
+}
