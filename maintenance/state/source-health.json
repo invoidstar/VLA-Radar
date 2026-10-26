@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-10-23",
+  "lastAttemptAt": "2026-10-26",
   "scope": "link reachability only, not correctness or publication verification",
-  "checkedThisRun": 42,
-  "totalSources": 636,
+  "checkedThisRun": 24,
+  "totalSources": 660,
   "dueRemaining": 0,
   "sources": {
     "https://arxiv.org/abs/2109.12098": {
@@ -4498,6 +4498,174 @@
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://zbzyjya.github.io/WholeBodyWAM/",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.26855": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.26855",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.26855v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.26855v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31423": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31423",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31423v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31423v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31427": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31427",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31427v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31427v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31569": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31569",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31569v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31569v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31613": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31613",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.31613v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.31613v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.26855v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.26855v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.31423v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.31423v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.31427v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.31427v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.31569v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.31569v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.31613v1": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.31613v1",
+      "error": ""
+    },
+    "https://chenzhongxi-sjtu.github.io/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://chenzhongxi-sjtu.github.io/",
+      "error": ""
+    },
+    "https://computing.sogang.ac.kr/ko/community/news/detail/281": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://computing.sogang.ac.kr/ko/community/news/detail/281",
+      "error": ""
+    },
+    "https://github.com/FastHarness/fast-harness": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/FastHarness/fast-harness",
+      "error": ""
+    },
+    "https://github.com/Ropedia/ropedia-w0": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/Ropedia/ropedia-w0",
+      "error": ""
+    },
+    "https://github.com/lyfeng001/Echo-Sim": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/lyfeng001/Echo-Sim",
+      "error": ""
+    },
+    "https://lyfeng001.github.io/Echo/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://lyfeng001.github.io/Echo/",
+      "error": ""
+    },
+    "https://openreview.net/forum?id=hUZLqoDdqx": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DhUZLqoDdqx",
+      "error": ""
+    },
+    "https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/EMR": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/EMR",
+      "error": ""
+    },
+    "https://ropedia.github.io/ropedia-w0/": {
+      "checkedAt": "2026-10-26",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://ropedia.github.io/ropedia-w0/",
       "error": ""
     }
   }
