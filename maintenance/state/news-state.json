@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-25",
+  "asOf": "2026-10-26",
   "status": "partial",
-  "lastAttemptAt": "2026-10-25",
+  "lastAttemptAt": "2026-10-26",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-10-25 reviewed public primary release/paper/technical blog dates: RLinf v0.4 Oct20, Ropedia W0 preprint Oct19 (not verified full model open release), NVIDIA Microduck simulation workflow Oct23; publication times and claims attributed. Previous Oct20–22 news de-duplicated. Independent full 14-day multilingual lab/media/newsroom scan Oct11–25 is incomplete; lastSuccessfulSearchAt remains 2026-10-04.",
+  "summary": "2026-10-26 official-source followup: Oct21 Singapore government first national embodied AI manufacturing challenge and Oct24 Horizon HoloMotion/SuperMimic G1 training code support verified; two new news entries, earlier Oct19–23 duplicates avoided. Planned Mar2027 finals and author-claimed training performance remain future/attributed. Exhaustive Oct11–26 bilingual company/lab/industry/media scan incomplete; lastSuccessfulSearchAt 2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -60,6 +60,12 @@
       "to": "2026-10-25",
       "status": "partial",
       "note": "Oct25 focused English-source 14-day news backcheck to Oct11 and three exact original dated events (Oct19, Oct20, Oct23). Earlier Oct20–22 existing items checked for duplication; no exhaustive day-by-day Chinese and international media/company scan, so maintain partial and do not advance checkpoint."
+    },
+    {
+      "from": "2026-10-11",
+      "to": "2026-10-26",
+      "status": "partial",
+      "note": "Oct26新增新加坡政府A*STAR制造业具身智能赛事与HorizonRobotics HoloMotion SuperMimic两条官方来源，复核已收录Oct19–23事件不重复。尚无覆盖Oct11–26所有中英文企业、学术实验室和媒体的完整逐日审计，lastSuccessfulSearchAt保持10月4日。"
     }
   ]
 }
