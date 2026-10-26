@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p141",
+    "name": "FastHarness",
+    "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",
+    "team": "Tao Lin、Yuxin Du、Haoxiao Wang、Zile Zhong、Bo Zhao",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv v1预印本",
+    "firstPublished": "2026-10-22",
+    "dateNote": "arXiv:2610.31427v1 UTC 2026-10-22首次提交",
+    "collectionMonth": "2026-10",
+    "versionNote": "2026-10-26 §3–5及Appendix A–F源级深读",
+    "topics": [
+      "memory",
+      "efficiency",
+      "evaluation"
+    ],
+    "tags": [
+      "agent harness",
+      "review scheduling",
+      "GPT-6 Astra",
+      "π0.5",
+      "RoboDojo",
+      "recovery",
+      "memory"
+    ],
+    "priority": "deep",
+    "contribution": "在冻结π₀.₅外层构建基于历史复核成功/失败经验的动态审查调度器，并通过局部修复和已核验子目标恢复，提高重复任务执行效率，动作依然每轮根据新观测生成。",
+    "findings": "作者报告四RoboDojo仿真任务Build tower 15/16、Fold clothes 19/20、Bottle disposal 20/20、Classify objects 9/9；四任务等权成功率97.19%，前一研究报告中的GPT-as-Policy约80%；同方法首集到末五集token减57.2%/墙钟85.5→52.0分钟。",
+    "limitations": "RoboDojo仅四特定仿真任务非官方42项协议，跨研究混合基线不是匹配试验；GPT审查服务成本、模型输出与任务经验跨episode积累影响可比性，部分失败仍会漏检。",
+    "insight": "复核频率是系统性能预算的一部分；必须同时记录审查调用次数、端到端耗时、恢复成功条件和跨episode记忆，不能把token下降解释为底层VLA更快。",
+    "readingFocus": "§4阶段经验与审查触发、Wilson下界调度、§5四任务65 episodes成功分布、Figure4首集/末五集、Appendix Table2–7的硬件与来源边界",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-26核验arXiv v1正文/附录与作者代码仓库，所有任务成功率和耗时为作者报告，和GPT-as-Policy跨研究比较有独立来源。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv 2610.31427v1原文",
+        "url": "https://arxiv.org/html/2610.31427v1"
+      },
+      {
+        "label": "arXiv首发信息",
+        "url": "https://arxiv.org/abs/2610.31427"
+      },
+      {
+        "label": "作者官方代码",
+        "url": "https://github.com/FastHarness/fast-harness"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.31427",
+    "arxiv": "2610.31427",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-22",
+    "firstArxivSource": "https://arxiv.org/abs/2610.31427v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-26",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-22",
+        "observedAt": "2026-10-26",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.31427v1",
+        "note": "首发记录，尚无官方正式会议出版证据。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "version": "arXiv 2610.31427v1 · 2026-10-26",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "逐动作复核的瓶颈：可靠性监督不应每次支付最高成本",
+        "body": "Agentic机器人可以用大型推理模型复核视觉与动作提案，并在失败时更正。但如果每执行一个动作chunk都调用GPT-6 Astra等昂贵审查模型，累计token、服务等待和真实时间可能远高于底层π₀.₅策略推理。FastHarness研究的是怎样根据已复核的相似状态与当前失败风险改变审查频率，而非训练新的VLA权重。作者将控制环分成低开销自动执行的fast path和异常触发的recovery path：熟悉阶段降低复核率；未知、歧义、任务变化、上次失败和安全相关事件仍强制审查。省掉部分审查不代表停止闭环观测，也不代表部署于真机已被验证。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "memory",
+        "title": "阶段经验和错误经验分别存储，不能把旧动作重新放给机器人",
+        "body": "Stage memory为每个经复核的状态存储576维三路8×8 RGB缩略图及14维关节和夹爪值，总计590维，用归一化RMS距离进行匹配；每阶段最多存128个样例。已核验transition被标注为ok、error或unknown，记入成功/失败计数。错误存储独立记录失败种类、触发特征与验证过的恢复路径；即使后续恢复成功，该失败仍留作危险相邻区域的复核提示。fast path每次都用当前相机和机器人状态让π₀.₅产生新的动作，只是减少GPT审查调用，并没有缓存动作序列无限回放。RGB缩略图的粗匹配可能漏掉接触、力觉、隐藏对象或细小几何差异，不能视为已认证的语义状态等价。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "schedule",
+        "title": "保守下置信界和触发优先级共同决定何时跳过",
+        "body": "对每个阶段的审查成功比例，作者采用Wilson近似下置信界而非直接用均值作为可靠性，结合样本数与成功后的clean streak确定最大审查间隔。评测配置m=2、cooldown成功3次、经验乘数上限6、interval尺度20；当证据不足或刚发生错误，间隔维持1。跨越评估范围的前置触发包括新episode、恢复中、未知/歧义场景、阶段变化、上次不确定、报警与错误邻域、控制步数上限及随机审查等，优先级高于按经验安排的定时跳过。每次自动执行还受最近复核后的最大控制步数约束，不能因为连续成功就无穷延长无人监督运行。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "recovery",
+        "title": "错误修复：先局部纠正，再返回此前确认的子目标",
+        "body": "GPT审查发现偏离目标或执行错误时进入recovery模式，此期间每个动作chunk恢复审查。先在当前位置重新接近、拾起或重试；若若干次局部修复失败，尝试返回episode早前验证过的关键子目标状态，并重新从最新观测规划动作。这与将环境恢复成过去快照不同，真实环境不会因为选择waypoint自动重置。只有通过核验的恢复才更新错误记忆并回到普通调度。论文的Bottle disposal展示瓶子掉落后重新抓取的轨迹，属于有针对性的案例；不表示所有未见故障都能被检测或修复，附录也记录Fold clothes未触发恢复而结束失败的episode。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "RoboDojo四任务的实验样本与官方42任务排行榜完全不同",
+        "body": "作者在RoboDojo Isaac Sim环境中运行双ARX X5臂，π₀.₅用3路RGB及关节状态，控制周期0.04s，动作维度14，单次政策可预测50步但实际执行提案前缀1–15步。四任务Build tower、Fold clothes、Bottle disposal、Classify objects分别完成16、20、20、9个episode，内存在同任务重复试验链内跨episode保留，任务间并非通用基础模型连续训练。每任务native_success定义成败，不把GPT审查通过、局部完成分数当作成功。报告GPU为NVIDIA H20并含CPU物理，审查器使用外部服务，端到端墙钟时间含网络等待与重试。该四任务样本不属于RoboDojo官方统一42任务协议，不能直接合并进官网模型榜。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "success",
+        "title": "主结果：97.19%为四任务等权成功率，不是65集总体百分比",
+        "body": "Table 6给出Build tower 15/16（93.75%）、Fold clothes 19/20（95%）、Bottle disposal 20/20（100%）、Classify objects 9/9（100%），四任务等权均值97.19%。论文与另一份GPT-as-Policy报告进行跨研究的四任务对照，其π₀.₅+GPT-6 Astra混合方法四任务平均80%；该对照报告使用自己的场景/随机条件和评测窗口，不能写成在完全一样65个episode上复现的公平消融。尤其Fold clothes基线100%、FastHarness95%，并非每项都提高；总体提升17.19个百分点仅反映论文给定任务均值，不等同真实机器人泛化或未公开任务性能。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "tokens",
+        "title": "调用节约与墙钟：首集到末五集并非同预算算法对照",
+        "body": "作者比较每条任务链首个评估episode与最后五个episode的平均值，记录GPT服务输入输出token，缓存命中输入只计一次。四任务分别下降68%、65%、64%、31%，等权平均下降57.2%，不是四任务token总量的直接缩减比例。四任务等权平均token从1.83M下降到0.93M，执行耗时从85.5分钟下降到52.0分钟（约39%）。两者是随经验不断累积的同一个Harness不同时间窗口，受到任务熟悉度、场景和重复试验影响；不能把首集与末五集的差异当作严格隔离的模型结构单因素消融。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "审查频率、自动执行连续长度和错误案例给出更细解释",
+        "body": "在Fold clothes与Bottle disposal两条20集任务链中，未知环境触发的审查从前五集的35/142次降到末五集的16/64次，自动执行span中位数均从30控制步增长到60步。作者报告审查交互分别占这两任务总墙钟的82.0%与89.7%，包含请求处理、等待、重试等，因此减少审查在该基础设施上特别有意义。但该比例未必适用于低时延本地模型或不同GPU/NPU网络。另有Classify objects前8集16次恢复事件最终都返回正常调度，而Fold clothes第17集有20次审查仍未识别触发恢复的失败；事件恢复计数不等于自动故障检测100%准确。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "repro",
+        "title": "代码与模型边界：公开Harness不意味着底座、复核服务免费",
+        "body": "论文指向官方FastHarness/fast-harness仓库，列出调度、错误记忆、控制与实验配置；π₀.₅检查点、RoboDojo任务资产和GPT审查器的外部服务属于不同依赖。读取源码入口可以帮助复核阈值、样本缓存和episode隔离，但未完成逐步软件部署与全部物理过程独立复现，因此Reproducibility Card仅将项目/代码资源记录为可访问，并将权重、真实任务数据、完全端到端评测适配和许可证等维度在缺乏具体证据时保持unknown。论文作者自报token与时间不是平台测量，也没有证明跨任务复用记忆不会发生错误迁移。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "论文局限和实质性后续研究问题",
+        "body": "实验只有四个模拟任务，样本量16、20、20、9不均衡，审查结果跨episode积累，无法推断陌生场景首次执行的均值成本。环境动作维度与相机布局固定为双臂视觉，本体更换或动态接触任务要求重设状态特征。GPT审查器会受到服务延迟、token计费、提示模板和自身判断变化的影响，不是固定可复现的函数。成功率比较混入另一份研究报告，训练条件与评测场景需逐项核对；论文记录的未检测故障说明“审查过”不等于安全。值得进一步研究的是固定审查预算下与均匀抽样、置信度门控、低成本专用监控器以及不使用GPT的消融，才能证明经验驱动调度的独立收益。",
+        "sources": [
+          {
+            "label": "arXiv v1 §3–5与Appendix A–F，原表与限制",
+            "url": "https://arxiv.org/html/2610.31427v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.31427v1"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "FastHarness RoboDojo 4任务原表Table 6",
+        "columns": [
+          "Task",
+          "Episodes",
+          "Successes",
+          "SR"
+        ],
+        "rows": [
+          [
+            "Build tower",
+            "16",
+            "15",
+            "93.75%"
+          ],
+          [
+            "Fold clothes",
+            "20",
+            "19",
+            "95.0%"
+          ],
+          [
+            "Bottle disposal",
+            "20",
+            "20",
+            "100%"
+          ],
+          [
+            "Classify objects",
+            "9",
+            "9",
+            "100%"
+          ]
+        ],
+        "locator": "arXiv v1 Appendix D Table6；无权作为RoboDojo官网42任务排名",
+        "caption": "四任务任务均值97.19%；不是65条轨迹按episode加权均值，也不是跨研究基线的匹配实验。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-26",
+      "note": "RoboDojo 4任务65 episodes的逐任务native SR作者报告，限paper-table不可与官方42任务统一结果并榜；token和墙钟保留在阅读笔记。"
+    }
+  }
+}
