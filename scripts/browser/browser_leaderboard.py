@@ -86,7 +86,12 @@ try:
         quality=boards['benchmarkRegistry']['benchmarks']
         public_tax={d:m for d,m in bench_tax.items() if quality[d]['kind']=='benchmark'}
         case_tax={d:m for d,m in bench_tax.items() if quality[d]['kind']=='case-study'}
-        yes('registry separates public benchmarks and paper-specific case studies',len(public_tax)==27 and len(case_tax)==21)
+        yes('registry separates public benchmarks and paper-specific case studies',
+            len(public_tax)>=27 and len(case_tax)>=21
+            and len(public_tax)+len(case_tax)==len(bench_tax)
+            and set(public_tax).isdisjoint(case_tax))
+        yes('new Piper real-world evaluation is case-study evidence not an official leaderboard',
+            'Piper Real' in case_tax and 'Piper Real' not in public_tax)
         yes('taxonomy controls are visible',page.locator('.benchmark-taxonomy').count()==1 and page.locator('[data-tax-focus]').count()==len(taxonomy['focuses'])+1)
         page.locator('[data-tax-focus="long-horizon-memory"]').click();page.wait_for_function('new URLSearchParams(location.search).get("lbFocus")==="long-horizon-memory"');page.wait_for_selector('.setting-table')
         focus_expected={d for d,m in public_tax.items() if m['focus']=='long-horizon-memory'}
