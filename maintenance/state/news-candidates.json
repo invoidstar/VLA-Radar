@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-23",
+  "checkedAt": "2026-10-26",
   "items": [
     {
       "title": "Skild S1 相关9月报道",
@@ -49,6 +49,12 @@
       "status": "selected",
       "source": "https://www.agibot.com.cn/article/315/detail/250.html",
       "reason": "2026-10-23官方智元AI WAVE公告核对首次发布日期、首批150小时声明；官方HF目录实际含PhysicalReasoning文件树，与媒体10月22日报道交叉确认。已收录news-20261022-agibot-world-physical-reasoning，训练划分和逐条标注未独立检查。"
+    },
+    {
+      "title": "AGIBOT Genie Studio 2.0十月转载日期问题",
+      "status": "deferred",
+      "source": "https://www.agibot.com.cn/article/315/detail/154",
+      "reason": "有10月二手报道将Genie Studio 2.0写成新品，但企业一手页面在更早的2026-05已出现相同2.0产品，需真正新版本或内容更新一手日期才能作为10月新事件；不制造虚假首次发布日期。"
     }
   ]
 }
