@@ -209,6 +209,11 @@
     "RoboTwin-Phys": {
       "kind": "benchmark",
       "officialUrl": null
+    },
+    "Piper Real": {
+      "kind": "case-study",
+      "officialUrl": null,
+      "auditSummary": "FocusVLA arXiv 2610.31423v1 Piper六项真机操作案例，各30次测试，只有作者论文表格聚合结果；不是公共Benchmark标准排名，也不是RoboDojo-Real。"
     }
   },
   "datasetAliases": {
@@ -232,7 +237,9 @@
     "robodojo-coap-v1-sim-sr": "paper",
     "robodojo-coap-v1-sim-score": "paper",
     "robodojo-physevo-v1-sim-sr": "paper",
-    "robodojo-physevo-v1-sim-score": "paper"
+    "robodojo-physevo-v1-sim-score": "paper",
+    "focusvla-v1-robotwin2-50task": "paper",
+    "ropedia-w0-v1-fastwam-libero-plus": "paper"
   },
   "resultTiers": {
     "r-libero-infoentropy-v1-budget60-ours": "sweep",
