@@ -627,6 +627,14 @@
         "multi-task",
         "bimanual-dual-arm"
       ]
+    },
+    "Piper Real": {
+      "focus": "general-manipulation",
+      "environment": "real",
+      "tags": [
+        "tabletop",
+        "multi-task"
+      ]
     }
   }
 }
