@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-26-backlog-followup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-26",
+    "attemptedAt": "2026-10-26",
+    "completedAt": null
+  },
+  "scope": "Batched Oct26 backlog triage after p137/p138: three full arXiv original papers cross-checked against Oct26 Robotics Paper Daily specialized index plus author repositories; sampled additional original IDs for future reading. Four-lane full date-window coverage from 2026-09-20 remains incomplete. Academic OpenAlex/Semantic Scholar period API cannot be certified successful; no full-search checkpoint advance.",
+  "sources": [
+    {
+      "id": "primary-arxiv-three-deep",
+      "lane": "primary-preprints",
+      "provider": "arXiv primary full-text pages",
+      "kind": "Selected original v1 PDFs/HTML, primary methods+tables",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-21",
+        "to": "2026-10-26"
+      },
+      "query": "arxiv.org/html/2610.31569v1 ; /html/2610.31613v1 ; /html/2610.31427v1 ; exact original IDs for 2610.29161, 2610.24507, 2610.29866 and 2610.21306. Full cs.RO/cs.CV Sept20–Oct26 iteration NOT completed.",
+      "resultCount": 7,
+      "note": "3 full text source reads; 4 new first-party metadata/abstract candidates; cannot extrapolate as coverage of every preprint in window."
+    },
+    {
+      "id": "independent-openalex-oct26",
+      "lane": "academic-index",
+      "provider": "OpenAlex Works API",
+      "kind": "Independent date-scoped works retrieval attempt",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?filter=from_publication_date:2026-09-20,to_publication_date:2026-10-26&search=vision-language-action ; access unavailable; old Oct23/25 failures corroborated",
+      "resultCount": 0,
+      "note": "Unverified date-filtered API; no zero-paper conclusion."
+    },
+    {
+      "id": "independent-semanticscholar-oct26",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API",
+      "kind": "Independent date-scoped works retrieval attempt",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.semanticscholar.org/graph/v1/paper/search?query=vision%20language%20action&limit=100&fields=title,year,publicationDate,externalIds ; no verified successful full-window response",
+      "resultCount": 0,
+      "note": "Unverified date-scoped independent academic index remains blocked; no full success."
+    },
+    {
+      "id": "independent-deeppaper-oct26",
+      "lane": "academic-index",
+      "provider": "Arxiv DeepPaper date-sorted cs.RO index",
+      "kind": "Independent curated academic subject index, pages sampled",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-20",
+        "to": "2026-10-22"
+      },
+      "query": "https://arxiv.deeppaper.ai/papers?locale=en&page=5&subject=cs.RO; https://arxiv.deeppaper.ai/papers?locale=en&order=desc&page=18&sort=date&subject=cs.RO; manually checked selected Oct20/22 results only",
+      "resultCount": 2,
+      "note": "Provider accessible for a subset, but page positions are not exhaustive for entire Sept20–Oct26, so source cannot be marked success."
+    },
+    {
+      "id": "robotics-daily-oct26",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily VLA feed",
+      "kind": "2026-10-26 specialized VLA daily list with source links",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-15",
+        "to": "2026-10-26"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html; Oct22 entries Echo/Progress Probes P²/FastHarness and Oct21 SimPT, other Oct15–23 candidates",
+      "resultCount": 7,
+      "note": "Source feed visibly updated Oct26. Read targeted Oct15–23 titles; Sept20–Oct14 and Oct24–26 full candidate enumeration not completed."
+    },
+    {
+      "id": "official-reverse-echo-fastharness",
+      "lane": "reverse-discovery",
+      "provider": "Official author Echo / FastHarness repos and robotics project sites",
+      "kind": "Original project source and code identity checks",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-22",
+        "to": "2026-10-26"
+      },
+      "query": "https://lyfeng001.github.io/Echo/ ; https://github.com/lyfeng001/Echo-Sim ; https://github.com/FastHarness/fast-harness ; primary arXiv 2610.31613 has no verified author implementation; publication p015 official OpenReview workshop as separate lifecycle check",
+      "resultCount": 3,
+      "note": "Official Echo-Sim covers simulation only; FastHarness code repo contains code/docs/tests, P² official code unverified; no full retrospective all labs/benchmarks/citation sweep."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+      "arxiv": "2610.31569",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-three-deep",
+        "robotics-daily-oct26",
+        "official-reverse-echo-fastharness"
+      ],
+      "status": "selected",
+      "reason": "Full v1 original technical+original Table2 five-task real robot source-read (0–10 Task Completion Score), Echo-Sim author code checked as simulation only, 8+ sections and separate track; admitted p139.",
+      "paperId": "p139",
+      "duplicateOf": null
+    },
+    {
+      "title": "Progress Probes P²: Lightweight Runtime Monitoring for Vision-Language-Action Models",
+      "arxiv": "2610.31613",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-three-deep",
+        "robotics-daily-oct26"
+      ],
+      "status": "selected",
+      "reason": "Full original v1 deep-note, VLABench Table I AUROC rows and success-only training label distinction; monitoring AUROC not task success, p140.",
+      "paperId": "p140",
+      "duplicateOf": null
+    },
+    {
+      "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",
+      "arxiv": "2610.31427",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-three-deep",
+        "robotics-daily-oct26",
+        "official-reverse-echo-fastharness"
+      ],
+      "status": "selected",
+      "reason": "Full primary v1+Appendix D deep-note and four RoboDojo tasks, author GitHub source confirmed, do not convert external GPT-as-Policy report to matched baseline or official 42-task model, p141.",
+      "paperId": "p141",
+      "duplicateOf": null
+    },
+    {
+      "title": "SimPT: An Automated Simulation Framework for Intervention-Based VLA Post-Training",
+      "arxiv": "2610.29161",
+      "doi": "",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "primary-arxiv-three-deep",
+        "robotics-daily-oct26"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv metadata and specialized curated Oct21 row located; missing complete full text/post-training baselines and per-task source-located result extraction, not admitted.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+      "arxiv": "2610.29866",
+      "doi": "",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "primary-arxiv-three-deep"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv abstract identified geometry-memory VLA with reported metrics; full training/inference leakage checks and original LIBERO/RoboTwin protocol tables still unread, not admitted.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "GazeAct: A Human-Gaze-Annotated Manipulation Dataset for Attention-Regularized Policies",
+      "arxiv": "2610.24507",
+      "doi": "",
+      "date": "2026-10-17",
+      "sourceIds": [
+        "primary-arxiv-three-deep"
+      ],
+      "status": "deferred",
+      "reason": "Exact arXiv candidate identified; full source/annotations/coverage and policy evaluation requirements not verified, no dataset or result admitted.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "VLA-Δ: Learning Physical State Transition for Vision-Language-Action Models",
+      "arxiv": "2610.21306",
+      "doi": "",
+      "date": "2026-10-15",
+      "sourceIds": [
+        "primary-arxiv-three-deep"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv candidate identity checked; no full original tables or benchmark protocol and resource review this batch, deferred.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 7,
+    "selected": 3,
+    "deferred": 4,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 4
+  },
+  "status": "partial",
+  "notes": "All cross-source selected rows refer to original dated works; no claim of full-window discovery. Academic APIs blocked and independent index pages incomplete, first-party/curated/reverse checks also partial. Both discover and news lastSuccessfulSearchAt remain 2026-10-04. Historical deferred candidates retained in earlier immutable audits."
+}
