@@ -1,0 +1,18 @@
+{
+  "id": "r-tokenworld-v1-feature-ctrl",
+  "paperId": "p142",
+  "method": "Ctrl-World",
+  "trackId": "tokenworld-v1-robotwin-feature-cosine",
+  "values": {
+    "Cosine": 0.7097
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.00575v1",
+  "sourceVersion": "arXiv 2610.00575v1",
+  "locator": "Table I · RoboTwin 50 tasks / frozen VLM feature cosine / Ctrl-World",
+  "attribution": "reported-baseline",
+  "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+  "evaluationNotes": "Continuous frozen-VLM feature cosine similarity (score, not SR); author table using aligned source trajectory split.",
+  "supersedes": ""
+}

@@ -1,0 +1,18 @@
+{
+  "id": "r-tokenworld-v1-action-ctrl",
+  "paperId": "p142",
+  "method": "Ctrl-World",
+  "trackId": "tokenworld-v1-robotwin-action-cosine",
+  "values": {
+    "Cosine": 0.9265
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.00575v1",
+  "sourceVersion": "arXiv 2610.00575v1",
+  "locator": "Table I · RoboTwin 50 tasks / frozen policy action cosine / Ctrl-World",
+  "attribution": "reported-baseline",
+  "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+  "evaluationNotes": "Continuous fixed-policy action cosine similarity (score, not SR) computed after predicted VLM feature reconstruction.",
+  "supersedes": ""
+}

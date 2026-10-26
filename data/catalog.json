@@ -64,6 +64,222 @@
   ],
   "papers": [
     {
+      "id": "p144",
+      "name": "SPAR",
+      "title": "SPAR: Structural Pruning and Action Recovery for Vision-Language-Action Models",
+      "team": "Shenli Zheng、Zhou Fang、Yuan Du、Yijiang Liu、Li Du",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.26487v1预印本",
+      "firstPublished": "2026-10-19",
+      "dateNote": "arXiv v1 2026-10-19 UTC首次公开，2026-10-26核对正文Tables I–VI。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv:2610.26487v1 · 2026-10-26论文分阶段剪枝和RL深读",
+      "topics": [
+        "efficiency",
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "structural pruning",
+        "π0.5",
+        "PAT",
+        "PPO",
+        "RLinf",
+        "LIBERO",
+        "LIBERO-Plus",
+        "AgileX",
+        "TensorRT"
+      ],
+      "priority": "deep",
+      "contribution": "分别对LLM hidden和FFN intermediate学习带预算约束的结构化通道掩码，物理裁切后先做SFT，再利用PPO强化学习恢复压缩损伤的机器人策略能力。",
+      "findings": "作者报告π₀.₅模型从3.37B压至1.12B（语言骨干2.34B→0.09B）时，LIBERO平均PAT-only84.55%→PAT+RL93.45%，Jetson完整推理295.04ms→148.71ms；LIBERO-Plus极端压缩RL后仅56.81%，明显低于未剪枝。",
+      "limitations": "LIBERO-Plus鲁棒性仍有大幅损失，真实AgileX只评FFN单维度剪枝20%保留而非最小联合剪枝；PPO训练使用多卡A800及模拟交互，未核验作者可执行代码和权重；跨硬件速度不能与EcoVLA直接比较。",
+      "insight": "剪掉VLA参数的比例不是最终能力的充分指标；要分别记录结构维度敏感性、SFT保留性能、RL恢复量与扰动分布下的缺口。",
+      "readingFocus": "Table I只剪FFN、Table II PAT与PAT+RL、Table III LIBERO-Plus、Table IV AgileX、Table V Jetson延迟/显存、Table VI loss ablations",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26 arXiv v1原始全文六张实验表逐项核验。所有数值为作者报告，未声称独立复现或已公开训练源码。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv原文 §III–V及Tables I–VI",
+          "url": "https://arxiv.org/html/2610.26487v1"
+        },
+        {
+          "label": "arXiv论文身份与首发",
+          "url": "https://arxiv.org/abs/2610.26487"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.26487",
+      "arxiv": "2610.26487",
+      "doi": "",
+      "detailUrl": "data/details/p144.json?v=8ece4f8781550fd0",
+      "resultUrl": "data/paper-results/p144.05c811d04708bb3e.json",
+      "noteStatus": "expanded",
+      "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p144.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-19",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
+    {
+      "id": "p143",
+      "name": "PaceVLA",
+      "title": "PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models",
+      "team": "Hojin Jeon、Jimin Lee、Taekwan Kim、Nayoung Oh、Taeyoung Kim、Myungkyu Koo、Jinmo Koo、Joonwoo Ahn、Jinwoo Shin",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.25961v1预印本",
+      "firstPublished": "2026-10-19",
+      "dateNote": "arXiv v1 UTC 2026-10-19首发；2026-10-26核对官方项目页与实验原表。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv:2610.25961v1 · 2026-10-26全文与Table 1–6",
+      "topics": [
+        "efficiency",
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "time quantization",
+        "action chunk",
+        "flow matching",
+        "GR00T N1.5",
+        "RLDX-1",
+        "RoboCasa-Kitchen",
+        "LIBERO",
+        "DexJoCo",
+        "ALLEX"
+      ],
+      "priority": "deep",
+      "contribution": "在共享Flow Matching动作专家旁设置不同时间量化级和预测horizon的模式解码器，用量化适合度judge加上下文router动态选择执行粒度，实现按阶段的速度—精度平衡。",
+      "findings": "作者报告ALLEX输送线任务86%/3.6包每分钟→94%/6.3包每分钟；Franka Air Fryer维持81.3%成功率的同时24.6→14.6秒。单步推理40.07→42.15ms，RLDX RoboCasa PnP仍有负面反例。",
+      "limitations": "需要真实控制器tracking/gripper增益适配，结果受示范频率/动作空间影响；TPR/ES与SR不能相混；部分多阶段任务有0.5得分；官方项目可查但完整源码/权重未核实开放。",
+      "insight": "推理延迟不是具身操作的全部执行效率；阶段化动作时间量化能改善完成时间，但必须报告失败惩罚、任务成功与硬件控制开销。",
+      "readingFocus": "§3模式解码/judge/router和动作聚合、§4 Table 1–4三类任务指标、Table 5消融、Table 6推理时延、附录控制器调节",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26 arXiv 2610.25961v1全文，正文Table1–6及项目页核验；实机数字与速度为作者报告、非本站复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文",
+          "url": "https://arxiv.org/html/2610.25961v1"
+        },
+        {
+          "label": "arXiv提交信息",
+          "url": "https://arxiv.org/abs/2610.25961"
+        },
+        {
+          "label": "作者项目网站",
+          "url": "https://pacevla.github.io/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.25961",
+      "arxiv": "2610.25961",
+      "doi": "",
+      "detailUrl": "data/details/p143.json?v=f0327a4a056d9dad",
+      "resultUrl": "data/paper-results/p143.65a015ef2bceed73.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://pacevla.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p143.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-19",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
+    {
+      "id": "p142",
+      "name": "Token-World",
+      "title": "Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation",
+      "team": "Chuyao Fu、Xiaowei Chi、Yuhan Rui、Yu-Kai Wang、Zezhong Qian、Xiaojie Zhang、Yunfan Lou、Kevin Zhang 等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.00575v1预印本",
+      "firstPublished": "2026-09-30",
+      "dateNote": "arXiv v1 UTC 2026-09-30首发；2026-10-26复核全文与作者资源。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv:2610.00575v1 · 2026-10-26 source-read，注意非VLA动作生成器",
+      "topics": [
+        "world",
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "world model",
+        "VLM tokens",
+        "compact state",
+        "autoregressive rollout",
+        "Qwen3-VL",
+        "RoboTwin",
+        "Franka",
+        "policy simulation"
+      ],
+      "priority": "deep",
+      "contribution": "不经未来RGB重建，利用冻结VLM视觉token的语义VAE通道压缩和动作条件时空Transformer/GRU直接自回归未来世界状态，并将其解码为策略消费的表示。",
+      "findings": "作者报告RoboTwin 50任务VLM特征余弦0.7714、策略动作余弦0.9439；Ctrl-World分别0.7097/0.9265。策略成功率相关Pearson r 0.794（Ctrl-World 0.583），模拟每步0.359s；这些均不是机器人任务SR。",
+      "limitations": "语义VAE与逐步动态模型仍可能累积误差；相似度和模拟成功率相关并非直接机器人成功率；官方代码仓库截至本次阅读仍是待发布占位说明，不标成可执行复现源码。",
+      "insight": "世界模型的预测目标可以直接是下游策略使用的状态表示；评估应区分特征重建、动作一致性、世界模拟准确性与真实执行结果。",
+      "readingFocus": "§III语义VAE、动作条件Transformer/GRU、flow objective与自回归；Table I VLM与动作相似度；Fig.6 Pearson与模拟延迟；官方代码开放边界",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26依据arXiv 2610.00575v1逐节阅读全文与Table I，核对作者项目页及GitHub占位README；原文数值为作者报告。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文和Table I",
+          "url": "https://arxiv.org/html/2610.00575v1"
+        },
+        {
+          "label": "arXiv论文身份",
+          "url": "https://arxiv.org/abs/2610.00575"
+        },
+        {
+          "label": "作者项目网站",
+          "url": "https://chuyaofu.github.io/Token-World/"
+        },
+        {
+          "label": "作者代码声明（当前只有占位README）",
+          "url": "https://github.com/ChuyaoFu/Token-World"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.00575",
+      "arxiv": "2610.00575",
+      "doi": "",
+      "detailUrl": "data/details/p142.json?v=56009fd93f3e53ee",
+      "resultUrl": "data/paper-results/p142.0ab3769778e3c78e.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://chuyaofu.github.io/Token-World/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p142.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-09-30",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
+    {
       "id": "p141",
       "name": "FastHarness",
       "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",

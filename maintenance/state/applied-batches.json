@@ -353,6 +353,24 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-26-remaining-evidence",
+      "sha256": "599722170623c56db943867bdadcb20e6b3cd01818cae79a527ea9546abd8a42",
+      "date": "2026-10-26",
+      "notes": [],
+      "tracks": [
+        "tokenworld-v1-robotwin-feature-cosine",
+        "tokenworld-v1-robotwin-action-cosine",
+        "pacevla-v1-robocasa-kitchen-rldx",
+        "pacevla-v1-libero-rldx",
+        "pacevla-v1-allex-real",
+        "spar-v1-libero-four-suite",
+        "spar-v1-libero-plus"
+      ],
+      "results": 20,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

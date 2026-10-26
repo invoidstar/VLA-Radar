@@ -1,0 +1,19 @@
+{
+  "id": "r-pacevla-v1-robocasa-base",
+  "paperId": "p143",
+  "method": "RLDX-1-IMG",
+  "trackId": "pacevla-v1-robocasa-kitchen-rldx",
+  "values": {
+    "PnP": 48.5,
+    "Others": 76.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.25961v1",
+  "sourceVersion": "arXiv 2610.25961v1",
+  "locator": "Table 1 RLDX-1-IMG source rows / RoboCasa-Kitchen success PnP and Others",
+  "attribution": "reported-baseline",
+  "trainingData": "RLDX-1-IMG backbone; 24 RoboCasa-Kitchen tasks trained from 300 demonstrations each, source simulation controller.",
+  "evaluationNotes": "The authors report two task-group SR values. TPR and effective speedup are distinct metrics, not encoded as success.",
+  "supersedes": ""
+}

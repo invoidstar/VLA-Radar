@@ -1,0 +1,22 @@
+{
+  "id": "r-spar-v1-libero-pat-rl",
+  "paperId": "p144",
+  "method": "SPAR 10%/10% PAT+RL",
+  "trackId": "spar-v1-libero-four-suite",
+  "values": {
+    "Spatial": 97,
+    "Object": 99.2,
+    "Goal": 93,
+    "Long": 84.6,
+    "Average": 93.45
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.26487v1",
+  "sourceVersion": "arXiv 2610.26487v1",
+  "locator": "Table II standard LIBERO / pat-rl / ρhid=0.1 ρint=0.1 when pruned",
+  "attribution": "author-reported",
+  "trainingData": "SPAR dual hidden/FFN retention 10%/10%, 1.12B total and 0.09B language backbone after pruning-aware tuning and SFT; optional PPO policy recovery. PPO with sparse success rewards.",
+  "evaluationNotes": "RL restores 8.90pp LIBERO, 9.35pp LIBERO-Plus relative to matching PAT-only, but remains below original base+RL. Author-reported SR, no independent replication.",
+  "supersedes": ""
+}

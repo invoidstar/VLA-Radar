@@ -1,0 +1,22 @@
+{
+  "id": "r-spar-v1-libero-pat",
+  "paperId": "p144",
+  "method": "SPAR 10%/10% PAT-only",
+  "trackId": "spar-v1-libero-four-suite",
+  "values": {
+    "Spatial": 94.2,
+    "Object": 82.8,
+    "Goal": 86.2,
+    "Long": 75,
+    "Average": 84.55
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.26487v1",
+  "sourceVersion": "arXiv 2610.26487v1",
+  "locator": "Table II standard LIBERO / pat / ρhid=0.1 ρint=0.1 when pruned",
+  "attribution": "author-reported",
+  "trainingData": "SPAR dual hidden/FFN retention 10%/10%, 1.12B total and 0.09B language backbone after pruning-aware tuning and SFT; optional PPO policy recovery.",
+  "evaluationNotes": "PAT + SFT only, without RL; same pruned architecture as PAT+RL. Author-reported SR, no independent replication.",
+  "supersedes": ""
+}

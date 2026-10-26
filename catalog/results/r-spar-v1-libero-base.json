@@ -1,0 +1,22 @@
+{
+  "id": "r-spar-v1-libero-base",
+  "paperId": "p144",
+  "method": "π₀.₅ original",
+  "trackId": "spar-v1-libero-four-suite",
+  "values": {
+    "Spatial": 98.8,
+    "Object": 98.8,
+    "Goal": 97.4,
+    "Long": 92.2,
+    "Average": 96.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.26487v1",
+  "sourceVersion": "arXiv 2610.26487v1",
+  "locator": "Table II standard LIBERO / base / ρhid=0.1 ρint=0.1 when pruned",
+  "attribution": "reported-baseline",
+  "trainingData": "π₀.₅ original 3.37B total / 2.34B LLM; same authors' LIBERO task evaluation.",
+  "evaluationNotes": "No PPO; author source original policy baseline. Author-reported SR, no independent replication.",
+  "supersedes": ""
+}
