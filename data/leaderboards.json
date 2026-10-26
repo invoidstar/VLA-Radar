@@ -31787,7 +31787,7 @@
       "ALLEX Real": {
         "kind": "case-study",
         "officialUrl": null,
-        "auditSummary": "PaceVLA arXiv:2610.25961v1 Table 4 author-reported humanoid ALLEX 15-DoF hand single conveyor package handling task. This is a paper case, not a standardized robotics leaderboard."
+        "auditSummary": "PaceVLA arXiv 2610.25961v1 Table4 10-package humanoid ALLEX conveyor task; author-reported SR 86.0/94.0 is distinct from 3.6/6.3 successful packages per minute, not a standard public leaderboard or independently reproduced robot evaluation."
       }
     },
     "legacySettingTracks": {
