@@ -110,16 +110,16 @@ Result Report
 
 | 内容 | 当前规模 |
 |---|---:|
-| 论文 | **141** |
-| Benchmark 与论文实验类别（合计） | **50** |
-| Evaluation Setting（协议与实验合计） | **181** |
+| 论文 | **144** |
+| Benchmark 与论文实验类别（合计） | **51** |
+| Evaluation Setting（协议与实验合计） | **184** |
 | 主方法比较结果记录 | **694** |
-| 对外已核验结果记录（含论文实验及重复引用） | **938** |
-| 原始核验结果（含消融实验） | **1178** |
+| 对外已核验结果记录（含论文实验及重复引用） | **958** |
+| 原始核验结果（含消融实验） | **1198** |
 
-Benchmark Explorer 现区分 **27 个公共 Benchmark 与 23 个论文专属实验/真机案例**；主方法比较默认隐藏论文内部预算扫描和同分重复引用，完整原始报告可一键查看。
+Benchmark Explorer 现区分 **27 个公共 Benchmark 与 24 个论文专属实验/真机案例**；主方法比较默认隐藏论文内部预算扫描和同分重复引用，完整原始报告可一键查看。
 
-**核心基准官方快照（独立于938条论文报告）**：RoboTwin 2.0 27个官方模型（源更新2026-10-21，新增CloudRobo-WM、MWA-Phoenix）；RoboDojo-Sim 57个模型、RoboDojo-Real 11个模型（源更新2026-10-09）。官方模型提交不代表存在独立全文论文，Score和SR分开，源 Git 修订版固定。三篇新完成全文深读与原表结果核对的论文：**ViGAR (p131)、PatchWAM (p132)、ME-Dex 1.0 (p133)**。各自在官方RoboTwin受控快照中建立版本对应；PatchWAM的全数据96.12%与Clean-only79.14%使用不同训练预算，不能互换；ME-Dex论文四舍五入分数与官网高精度分数仍各保留原始出处。COAP / Embodied Turing Machines（p134）、PhysEvo（p135）和 Fast-VLA（p136）均已完成全文深读；Fast-VLA 的 RoboTwin Clean/Randomized、标准 LIBERO 与 LIBERO-Plus 结果分轨保存，推理时延和在线内存不与成功率混合。TurboVLA（p027）已完成arXiv v3深读，新增LIBERO 0.2B与RoboTwin 0.4B混合示范的独立结果轨道，同时保留v2历史原表；SeeR-VLA（p011）完成v2全文修订与RoboCasa/Franka分协议回补。两篇均已复核公开资源及版本差异。COAP / PhysEvo 的 RoboDojo 成功率/进度分仍为**论文作者自报**，依照各自评测口径留档，不编造成官网模型提交。PhysicalRSI、Awomo-0.5，以及 Simate-beta、Rex-M1 Preview、Liber-0 Lite 的官方项目/推理适配器来源均记录清楚，但这些预览模型暂时没有可核实的独立完整论文；Liber-0 Preview 仍只有官方提交记录，因此没有伪造论文 ID。2026-10-26进一步完成**FocusVLA（p137）**与**Ropedia W0（p138）**原文深读：前者的RoboTwin 50任务和Piper真机作为两个独立论文表格协议存档；后者仅把FastWAM采用W0初始化后的LIBERO-Plus成功率作为下游结果，不将视频预测PSNR当作动作成功率。新加坡制造业具身智能赛事和HoloMotion SuperMimic更新按一手发布时间加入新闻，比赛未来决赛及作者自报数字明确标示证据边界。VLA-InfoEntropy（p042）补充作者实验室ICME 2026收录证据，IEEE出版日期与DOI仍待核验。**完整四渠道发现与中英文新闻搜索检查点依旧停留在2026-10-04；本次有真实增量，但不将partial写成complete。**2026-10-26第二轮补齐**Echo（p139）、Progress Probes P²（p140）、FastHarness（p141）**的正文级深读和来源定位：Echo真实机器人5任务0–10完成分数、P²的VLABench故障检测AUROC、FastHarness仅四项RoboDojo仿真任务SR分别存入论文表格/案例层级；均为作者报告，与公共42任务官方榜不可混排。**OnEvoMemory（p015）**获得ECCV 2026 EMR Workshop官方Poster录用证据，非主会录用亦未确认归档出版。10月13日Google DeepMind Gemini 4 Argon机器人应用有官方来源补录；其ERQA数值不是机器人成功率。四来源及中英文全窗口覆盖继续按partial审计，并保留出版社正式DOI候选。所有 canonical 核验记录保留，以上规模会随维护与核验更新。
+**核心基准官方快照（独立于958条论文报告）**：RoboTwin 2.0 27个官方模型（源更新2026-10-21，新增CloudRobo-WM、MWA-Phoenix）；RoboDojo-Sim 57个模型、RoboDojo-Real 11个模型（源更新2026-10-09）。官方模型提交不代表存在独立全文论文，Score和SR分开，源 Git 修订版固定。三篇新完成全文深读与原表结果核对的论文：**ViGAR (p131)、PatchWAM (p132)、ME-Dex 1.0 (p133)**。各自在官方RoboTwin受控快照中建立版本对应；PatchWAM的全数据96.12%与Clean-only79.14%使用不同训练预算，不能互换；ME-Dex论文四舍五入分数与官网高精度分数仍各保留原始出处。COAP / Embodied Turing Machines（p134）、PhysEvo（p135）和 Fast-VLA（p136）均已完成全文深读；Fast-VLA 的 RoboTwin Clean/Randomized、标准 LIBERO 与 LIBERO-Plus 结果分轨保存，推理时延和在线内存不与成功率混合。TurboVLA（p027）已完成arXiv v3深读，新增LIBERO 0.2B与RoboTwin 0.4B混合示范的独立结果轨道，同时保留v2历史原表；SeeR-VLA（p011）完成v2全文修订与RoboCasa/Franka分协议回补。两篇均已复核公开资源及版本差异。COAP / PhysEvo 的 RoboDojo 成功率/进度分仍为**论文作者自报**，依照各自评测口径留档，不编造成官网模型提交。PhysicalRSI、Awomo-0.5，以及 Simate-beta、Rex-M1 Preview、Liber-0 Lite 的官方项目/推理适配器来源均记录清楚，但这些预览模型暂时没有可核实的独立完整论文；Liber-0 Preview 仍只有官方提交记录，因此没有伪造论文 ID。2026-10-26进一步完成**FocusVLA（p137）**与**Ropedia W0（p138）**原文深读：前者的RoboTwin 50任务和Piper真机作为两个独立论文表格协议存档；后者仅把FastWAM采用W0初始化后的LIBERO-Plus成功率作为下游结果，不将视频预测PSNR当作动作成功率。新加坡制造业具身智能赛事和HoloMotion SuperMimic更新按一手发布时间加入新闻，比赛未来决赛及作者自报数字明确标示证据边界。VLA-InfoEntropy（p042）补充作者实验室ICME 2026收录证据，IEEE出版日期与DOI仍待核验。**完整四渠道发现与中英文新闻搜索检查点依旧停留在2026-10-04；本次有真实增量，但不将partial写成complete。**2026-10-26第二轮补齐**Echo（p139）、Progress Probes P²（p140）、FastHarness（p141）**的正文级深读和来源定位：Echo真实机器人5任务0–10完成分数、P²的VLABench故障检测AUROC、FastHarness仅四项RoboDojo仿真任务SR分别存入论文表格/案例层级；均为作者报告，与公共42任务官方榜不可混排。**OnEvoMemory（p015）**获得ECCV 2026 EMR Workshop官方Poster录用证据，非主会录用亦未确认归档出版。10月13日Google DeepMind Gemini 4 Argon机器人应用有官方来源补录；其ERQA数值不是机器人成功率。四来源及中英文全窗口覆盖继续按partial审计，并保留出版社正式DOI候选。**2026-10-26第三轮原始文献回补**：新增**Token-World（p142）**、**PaceVLA（p143）**与**SPAR（p144）**，三篇均含10节正文级阅读与明确原表定位。Token-World的特征/动作余弦是连续相似度而非机器人SR；PaceVLA按RoboCasa/LIBERO/ALLEX真机保存成功率、保留RoboCasa PnP退化的负面结果并把墙钟/吞吐与SR分离；SPAR标准LIBERO与LIBERO-Plus的剪枝前后及RL恢复轨道相互独立。原作者报告不等于本站复现，作者Token-World仓库仍只有代码将发布的占位说明，因此不标为已开源可执行实现。10月19日工信部人形机器人发布会经中文工信部与英文国新办一手证据交叉核验：当时的全年10万台为预测，非已实现产量；拟发布产业标准亦不作为正式上线。论文与新闻的全范围多来源检索仍为**partial**，不会因为这批实际补录而虚报已完成。所有 canonical 核验记录保留，以上规模会随维护与核验更新。
 
 VLA-Radar 关注的不只是收录数量，更强调：
 
