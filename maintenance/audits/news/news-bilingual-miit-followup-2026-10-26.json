@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "news-bilingual-miit-followup-2026-10-26",
+  "checkedAt": "2026-10-26",
+  "window": {
+    "from": "2026-10-11",
+    "to": "2026-10-26"
+  },
+  "status": "partial",
+  "scope": "Oct26 Chinese and English official-source partial followup focused on humanoid deployment/standardization briefing, cross-language confirmation and historical duplicate policy; NOT comprehensive all-day/all-company full-window news discovery.",
+  "sources": [
+    {
+      "provider": "PRC Ministry of Industry and Information Technology original Oct20 transcript",
+      "kind": "government-official",
+      "url": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2026/art_34e6e8e918bd424482287fc02a5cbffd.html",
+      "observedWindow": "Oct19 conference, Oct20 publication",
+      "status": "checked",
+      "note": "Verifies 400+ product variants, >40k H1 units, forecast >100k in 2026, 300+ planned/existing pilot scenes and future standard system guidance; no claim of audited independent 2026 output."
+    },
+    {
+      "provider": "State Council Information Office official English report",
+      "kind": "government-official",
+      "url": "https://english.scio.gov.cn/pressroom/2026-10/20/content_118741583.html",
+      "observedWindow": "Oct20",
+      "status": "checked-duplicate",
+      "note": "English reporting of same Oct19 briefing. Cross-language second official URL, not a second distinct event."
+    },
+    {
+      "provider": "Chinese original media report contemporaneous with Oct19 briefing",
+      "kind": "original-reported-media",
+      "url": "https://www.thepaper.cn/newsDetail_forward_34281306",
+      "observedWindow": "Oct19",
+      "status": "checked-duplicate",
+      "note": "Oct19 original journalist report supports event versus selected primary ministry Oct20 news publication date distinction; no duplicate separate news ID."
+    },
+    {
+      "provider": "Original arXiv abstracts and author PaceVLA/Token-World project pages",
+      "kind": "paper-candidate-discovery",
+      "url": "https://arxiv.org/abs/2610.25961",
+      "observedWindow": "Sep30–Oct19",
+      "status": "checked-non-selected",
+      "note": "Literature candidates are separately entered as p142–p144, not turned into news repeats or model releases."
+    }
+  ],
+  "dispositions": [
+    {
+      "event": "Oct19 MIIT humanoid industrial scale and upcoming standards press briefing",
+      "status": "selected",
+      "eventDate": "2026-10-19",
+      "newsId": "news-20261019-miit-humanoid-industry-briefing",
+      "reason": "MIIT original bilingual official sources; 2026 projected 100k is clearly labeled estimate, roadmap is planned."
+    },
+    {
+      "event": "Oct19 media and Oct20 official English coverage of same MIIT briefing",
+      "status": "duplicate",
+      "eventDate": "2026-10-19",
+      "newsId": "news-20261019-miit-humanoid-industry-briefing",
+      "reason": "Same official spokesperson and identical event, merged original/English coverage into one event ID."
+    },
+    {
+      "event": "PaceVLA, SPAR and Token-World arXiv original papers",
+      "status": "excluded",
+      "eventDate": null,
+      "newsId": null,
+      "reason": "Paper lifecycle handled in literature catalog; no distinct significant official software model release verified to justify another news event."
+    }
+  ],
+  "summary": {
+    "selected": 1,
+    "duplicate": 1,
+    "excluded": 1,
+    "deferred": 0
+  },
+  "notes": "Existing AgiBot/SenseNova/Tsinghua/NVIDIA/Gemini and other October stories retained. News policy requires genuine bilingual broad 14-day company/lab/media sweep and de-dup before complete; this scoped check does not certify Oct11–26 completeness. lastSuccessfulSearchAt stays 2026-10-04."
+}
