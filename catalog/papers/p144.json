@@ -229,7 +229,7 @@
             "10%/10% PAT+RL",
             "93.45%",
             "56.81%",
-            "148.71ms（相同结构，不等于实测RL时延）"
+            "未单独测定RL策略延迟"
           ]
         ],
         "locator": "Table II（LIBERO）、Table III（Plus）、Table V（Jetson延迟）",
