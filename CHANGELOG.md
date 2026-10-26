@@ -1,3 +1,7 @@
+## 2026-10-26 — 2026-10-26-evidence-maintenance
+
+2026-10-26 VLA-Radar V3.0 maintenance: deep-read and admit FocusVLA (p137) and Ropedia W0 (p138), audit source-scoped RoboTwin/Piper and FastWAM LIBERO-Plus author-reported metrics without conflating video PSNR or official benchmark leaderboard; add first-party Singapore NRP manufacturing challenge and HoloMotion SuperMimic Oct24 news; confirm p042 ICME author-lab acceptance but leave IEEE publishedAt/DOI unknown; preserve honest Oct26 partial four-lane discovery and bilingual news checkpoints at last complete Oct04; register resources/reproducibility and bounded dated source audits. Admin-only main protection remains unconfigured; avoid fabricated completion. The newly encountered Piper Real dataset is expressly classified a real-robot paper case study in benchmark quality and taxonomy; no new official leaderboard identity is inferred.
+
 ## 2026-10-25 — 2026-10-25-partial-discovery-news
 
 2026-10-25 weekly public evidence update: publish 3 independently dated official release/report/robotics workflow news (RLinf v0.4, Ropedia W0, NVIDIA Microduck); save an honest schema-v2 four-lane partial discovery audit with five deferred papers and no fabricated deep reads, scores, venue status, or complete checkpoint. Existing five featured news for 2026-W43 remain unchanged. Canonical paper, Benchmark/Setting/Result, taxonomy, relations, reproducibility and README inventory counts unchanged. Both discovery and news lastSuccessfulSearchAt remain 2026-10-04.

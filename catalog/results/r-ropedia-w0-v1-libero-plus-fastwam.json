@@ -1,0 +1,18 @@
+{
+  "id": "r-ropedia-w0-v1-libero-plus-fastwam",
+  "paperId": "p138",
+  "method": "FastWAM",
+  "trackId": "ropedia-w0-v1-fastwam-libero-plus",
+  "values": {
+    "Overall": 50.06
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.26855v1",
+  "sourceVersion": "arXiv 2610.26855v1",
+  "locator": "§6.4 Table 6 full (~43 demos/task), Overall LIBERO-Plus baseline",
+  "attribution": "reported-baseline",
+  "trainingData": "Identical FastWAM action head and downstream data and training recipe, full ≈43 demos/task, no W0 video backbone initialization.",
+  "evaluationNotes": "Held-out LIBERO-Plus Overall average SR only, author-reported. World model video PSNR must not be mixed into this SR track.",
+  "supersedes": ""
+}

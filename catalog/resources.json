@@ -392,6 +392,10 @@
     "p136": {
       "project": "https://garfield-kh.github.io/FastVLA",
       "code": "https://github.com/Garfield-kh/FastVLA"
+    },
+    "p138": {
+      "project": "https://ropedia.github.io/ropedia-w0/",
+      "code": "https://github.com/Ropedia/ropedia-w0"
     }
   }
 }

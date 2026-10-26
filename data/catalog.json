@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-25",
+  "updatedAt": "2026-10-26",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,145 @@
     }
   ],
   "papers": [
+    {
+      "id": "p138",
+      "name": "Ropedia W0",
+      "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+      "team": "Tianqi Liu、Hanfei Zhao、Qifeng Liang、Hui En Pang、Jiarui Xu 等",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.26855v1预印本",
+      "firstPublished": "2026-10-19",
+      "dateNote": "arXiv 2610.26855v1 2026-10-19 UTC首发；2026-10-26核验正文与官方仓库",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-26 §3–6/Table 3–6深读；动作条件视频世界模型，并非独立VLA策略",
+      "topics": [
+        "world",
+        "pretraining",
+        "spatial"
+      ],
+      "tags": [
+        "world model",
+        "loco-manipulation",
+        "human video",
+        "projected skeletons",
+        "Xp-Teleop",
+        "LIBERO-Plus"
+      ],
+      "priority": "deep",
+      "contribution": "用相机位姿Plücker射线和投影操纵骨架统一人类与机器人视觉运动条件，构建10k小时人+3k小时机器人视频语料Xp-Data及长程Xp-Teleop评测，训练跨本体视频扩散世界模型并研究对WAM的初始化收益。",
+      "findings": "原文报告DreamDojo/AgiBot等五类机器人预测Benchmark的视频质量增益；Table 6在固定FastWAM训练流程中，W0初始化使LIBERO-Plus成功率从50.06%提升至56.82%，但世界模型本身不直接预测机器人动作。",
+      "limitations": "视频画质指标不是操作成功率；相机和骨架条件未覆盖接触力/动力学；A14B、全量数据和完整训练链路开放情况不能从部分5B推理资源推断；长程视频仍有误差累积。",
+      "insight": "人类视频预训练通过共享运动投影条件为机器人世界模型提供尺度，而对控制策略的价值必须以明确下游WAM协议独立验证。",
+      "readingFocus": "Xp-Data标注与可用性、camera/skeleton条件、5B与A14B差异、Xp-Teleop划分、PSNR/SSIM/LPIPS与SR界限、Table 6下游FastWAM",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26核验arXiv v1 §3–6及Table 3、5、6，官方项目页与GitHub；所有结果均为作者报告。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文",
+          "url": "https://arxiv.org/html/2610.26855v1"
+        },
+        {
+          "label": "arXiv元数据",
+          "url": "https://arxiv.org/abs/2610.26855"
+        },
+        {
+          "label": "作者项目页",
+          "url": "https://ropedia.github.io/ropedia-w0/"
+        },
+        {
+          "label": "官方代码仓库",
+          "url": "https://github.com/Ropedia/ropedia-w0"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.26855",
+      "arxiv": "2610.26855",
+      "doi": "",
+      "detailUrl": "data/details/p138.json?v=153e357e69813c89",
+      "resultUrl": "data/paper-results/p138.546711141c172ff6.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://ropedia.github.io/ropedia-w0/",
+        "code": "https://github.com/Ropedia/ropedia-w0"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p138.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-19",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
+    {
+      "id": "p137",
+      "name": "FocusVLA (Future Intent)",
+      "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+      "team": "Huixin Xu、Ziya Yu、Peng Li",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1；arXiv作者自述CoRL 2026录用，待会议正式记录核验",
+      "firstPublished": "2026-10-22",
+      "dateNote": "arXiv v1 2026-10-22 UTC；CoRL 2026仅按作者的arXiv Comments记为待核验会议线索。",
+      "collectionMonth": "2026-10",
+      "versionNote": "2026-10-26全文§3–4和附录深读，勿与arXiv 2603.28740同名工作混淆",
+      "topics": [
+        "spatial",
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "multi-view VLA",
+        "dynamic routing",
+        "future intent",
+        "RoboTwin 2.0",
+        "Piper",
+        "π0.5"
+      ],
+      "priority": "deep",
+      "contribution": "通过Future Intent Bridge利用短期动作历史预测动作chunk每步的交互意图，并在动作生成侧动态分配全局与腕部视觉上下文；用示范末端运动构造弱监督标签，保持π₀.₅主骨干架构。",
+      "findings": "作者报告RoboTwin 2.0 50任务平均SR 76.92%（π₀.₅基线66.82%，+10.10pp）；Piper 6项真机任务85.0%（71.7%，+13.3pp）。增加70.13M参数，A100单chunk推理79.59→92.78ms。",
+      "limitations": "弱监督阶段标签来自启发式末端运动，可能与真实接触状态不一致；含两套不同测试协议；70M额外参数/16.6%延迟增加不可忽略；未核实到属于这篇论文作者的官方代码或权重。",
+      "insight": "动作预测内部也可以随未来步骤动态调整观测来源，但必须分清未来意图预测与使用未来动作真值，以及额外意图标签监督与模型容量造成的增益。",
+      "readingFocus": "§3.1遮蔽诊断、§3.2 Bridge和Router、Appendix A标签规则、§4.1 Table 2 50任务、§4.5 Table 3九任务消融、Appendix推理延迟",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-26依据原始arXiv HTML v1正文与表格深读；所有SR/CI/时延归属于作者报告，未作复现。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1全文与表格",
+          "url": "https://arxiv.org/html/2610.31423v1"
+        },
+        {
+          "label": "arXiv v1身份和首发",
+          "url": "https://arxiv.org/abs/2610.31423"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.31423",
+      "arxiv": "2610.31423",
+      "doi": "",
+      "detailUrl": "data/details/p137.json?v=c35f284e9ab0e058",
+      "resultUrl": "data/paper-results/p137.b2b42ea1e9673e60.json",
+      "noteStatus": "expanded",
+      "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p137.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-22",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-26"
+      }
+    },
     {
       "id": "p136",
       "name": "Fast-VLA",
@@ -5279,9 +5418,9 @@
       "team": "平安科技／清华大学深圳国际研究生院\nChuhang Liu、Yayun He、Zuheng Kang、Xiaoyang Qu、Jianzong Wang",
       "venue": "ICME 2026",
       "publicationType": "conference",
-      "publicationStatus": "ICME 2026（作者发表页确认）\narXiv:2604.05323",
+      "publicationStatus": "ICME 2026（作者实验室正式发表列表核验）；IEEE Xplore出版社记录、DOI及出版日尚待核对",
       "firstPublished": "2026-04-07",
-      "dateNote": "",
+      "dateNote": "作者实验室2026-07 publication页明确列为IEEE ICME 2026；2026-10-26复核，IEEE正式题名匹配出版记录尚未核实。",
       "collectionMonth": "2026-07",
       "versionNote": "7月正式会议发表；4月已有预印本｜阅读v1",
       "topics": [
@@ -5318,7 +5457,7 @@
       "paperUrl": "https://arxiv.org/abs/2604.05323",
       "arxiv": "2604.05323",
       "doi": "",
-      "detailUrl": "data/details/p042.json?v=0abc35b151b3fe89",
+      "detailUrl": "data/details/p042.json?v=78a6c3a3b9050895",
       "resultUrl": "data/paper-results/p042.5b85711d6894a185.json",
       "noteStatus": "expanded",
       "resources": {},
@@ -5331,8 +5470,8 @@
       "lifecycle": {
         "firstArxivAt": "2026-04-07",
         "latestArxivVersion": "v1",
-        "status": "legacy",
-        "lastCheckedAt": "2026-09-18"
+        "status": "accepted",
+        "lastCheckedAt": "2026-10-26"
       }
     },
     {

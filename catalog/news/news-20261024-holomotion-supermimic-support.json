@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261024-holomotion-supermimic-support",
+  "eventKey": "horizon-holomotion-supermimic-g1-support-20261024",
+  "title": "HoloMotion 10月24日新增 SuperMimic 支持：公开 G1 全身动作跟踪训练路径",
+  "primaryCategory": "opensource",
+  "tags": [
+    "Horizon Robotics",
+    "HoloMotion",
+    "SuperMimic",
+    "Unitree G1",
+    "MuJoCo Warp",
+    "Isaac PhysX",
+    "humanoid"
+  ],
+  "eventDate": "2026-10-24",
+  "publishedAt": "2026-10-24",
+  "dateNote": "官方HoloMotion README的Latest News将新增支持明确标记为2026.10.24；此日期是仓库维护者声明的更新日，非第三方复现实验日期。",
+  "observedAt": "2026-10-26",
+  "updatedAt": "2026-10-26",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "research-resource",
+  "whatHappened": "Horizon Robotics在HoloMotion官方仓库10月24日更新记录中宣布支持SuperMimic，可以利用MuJoCo Warp或Isaac PhysX在单GPU上从头训练Unitree G1动作跟踪策略。官方README称RTX 5090约30分钟在LAFAN1获得80%成功率，但未提供本站独立实测或完整公平对照。",
+  "whyItMatters": "人形机器人全身控制及模拟物理引擎的训练路径更容易被复现实验研究者审计；发布日志给出了可继续追踪的代码入口和特定硬件配置，但单GPU展示仍取决于实际数据和设备条件。",
+  "vlaRelevance": "本次发布属于人形机器人运动跟踪与强化学习控制工具，关联通用具身行动模型训练，但不是语言条件VLA策略的独立论文或已有多任务VLA基准提交。",
+  "limits": "官方80%和30分钟只能视作项目方报告；未证明在不同GPU、机器人动力学、真实Unitree G1或复杂语言指令下相同有效。README将HoloMotion v2标为Preview、v3/v4 Planned，不能将未来计划说成已开放。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "HoloMotion official Latest News — 2026.10.24 SuperMimic support",
+      "publisher": "HorizonRobotics HoloMotion maintainers",
+      "url": "https://github.com/HorizonRobotics/HoloMotion",
+      "kind": "repository",
+      "publishedAt": "2026-10-24",
+      "access": "repository",
+      "note": "官方README Latest News明示2026.10.24支持SuperMimic，单GPU与80%为作者自报，版本v2 preview/v3v4 planned分开。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

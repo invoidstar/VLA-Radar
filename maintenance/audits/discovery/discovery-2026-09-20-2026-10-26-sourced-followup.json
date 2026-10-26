@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-26-sourced-followup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-26",
+    "attemptedAt": "2026-10-26",
+    "completedAt": null
+  },
+  "scope": "Source-verified primary full-text followup to unresolved Oct25 audit. FocusVLA and Ropedia W0 now admitted after source-located detailed notes and distinct original Result Reports; three other IDs remain deferred. This is not a complete four-lane dated discovery for Sept20-Oct26.",
+  "sources": [
+    {
+      "id": "primary-arxiv-oct26",
+      "lane": "primary-preprints",
+      "provider": "arXiv source paper HTML (selected original IDs)",
+      "kind": "Direct arXiv v1 full text with methods, protocols, tables and supplementary details",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-22"
+      },
+      "query": "https://arxiv.org/html/2610.31423v1; https://arxiv.org/html/2610.26855v1 (from Oct25 deferred source IDs); remaining selected-ID candidates not reread",
+      "resultCount": 2,
+      "note": "Two full original papers read; no exhaustive cs.RO/cs.CV date-range enumeration back to Sept20."
+    },
+    {
+      "id": "academic-mlsanity-carryforward",
+      "lane": "academic-index",
+      "provider": "mlsanity research map (Oct25 cited snapshot)",
+      "kind": "Independent scholarly map inherited from preceding Oct25 audit",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-20"
+      },
+      "query": "https://mlsanity.com/vla/; https://mlsanity.com/wm/; Oct25 indexed cutoff (not a fresh full-window refresh)",
+      "resultCount": 16,
+      "note": "The Oct25 record's index stopped at Oct20, not valid full academic lane coverage to Oct26."
+    },
+    {
+      "id": "academic-openalex-unresolved",
+      "lane": "academic-index",
+      "provider": "OpenAlex Works date-scoped discovery",
+      "kind": "Previous provider access attempted; not repeated as success on Oct26",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "Oct23 and Oct25 attempts in preceding audits for 2026-09-20..Oct25; no successful full Oct26 run",
+      "resultCount": 0,
+      "note": "Do not interpret blocked provider as zero papers or completed sweep."
+    },
+    {
+      "id": "academic-semanticscholar-unresolved",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API date-scoped discovery",
+      "kind": "Previous provider access attempted; no verified successful Oct26 full-window request",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "2026-09-20..2026-10-26 VLA/world model search attempted historically",
+      "resultCount": 0,
+      "note": "No independent full-window coverage."
+    },
+    {
+      "id": "curated-robotics-oct25-carryforward",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily prior shortlist",
+      "kind": "Previous selected candidate source mapping, not a complete current feed crawl",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-24"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html; Oct25 selected ID candidate map",
+      "resultCount": 4,
+      "note": "Oct25 original curated read identifies FocusVLA; not exhaustive Sept20-Oct26."
+    },
+    {
+      "id": "official-reverse-ropedia-oct26",
+      "lane": "reverse-discovery",
+      "provider": "Ropedia author project/code + FocusVLA independent source identity check",
+      "kind": "Author resource and original-identity cross-check",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-26"
+      },
+      "query": "https://github.com/Ropedia/ropedia-w0; https://ropedia.github.io/ropedia-w0/; original arXiv 2610.31423; discriminate iLearn-Lab/FocusVLA arxiv 2603.28740 unrelated namesake",
+      "resultCount": 2,
+      "note": "Resource/paper identity confirmed for two selected titles; no full official labs and all citations sweep."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+      "arxiv": "2610.26855",
+      "doi": "",
+      "date": "2026-10-19",
+      "sourceIds": [
+        "primary-arxiv-oct26",
+        "official-reverse-ropedia-oct26"
+      ],
+      "status": "selected",
+      "reason": "Primary v1 full-body technical note (>2000 Chinese chars) and original Table6 downsteam FastWAM protocol-specific result with separately attributed author claims; project/code identity verified, note separates PSNR and SR.",
+      "paperId": "p138",
+      "duplicateOf": null
+    },
+    {
+      "title": "FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models",
+      "arxiv": "2610.31423",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "primary-arxiv-oct26",
+        "curated-robotics-oct25-carryforward"
+      ],
+      "status": "selected",
+      "reason": "ArXiv v1 full read (>2000 Chinese chars), RoboTwin 50-task and Piper real 6-task independent paper-table protocols, ablation held separately; avoid unrelated 2026 namesake code repo.",
+      "paperId": "p137",
+      "duplicateOf": null
+    },
+    {
+      "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+      "arxiv": "2610.31569",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "curated-robotics-oct25-carryforward"
+      ],
+      "status": "deferred",
+      "reason": "Retained from Oct25; full method/ablations/training/test table not independently checked this pass; do not invent result rows.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Progress Probes P²: Lightweight Runtime Monitoring for Vision-Language-Action Models",
+      "arxiv": "2610.31613",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "curated-robotics-oct25-carryforward"
+      ],
+      "status": "deferred",
+      "reason": "Retained from Oct25; no full source-located evaluation and negative probe/metric review, no catalog publication.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "FastHarness: Experience-Driven Review Scheduling for Vision-Language-Action Policies",
+      "arxiv": "2610.31427",
+      "doi": "",
+      "date": "2026-10-22",
+      "sourceIds": [
+        "curated-robotics-oct25-carryforward"
+      ],
+      "status": "deferred",
+      "reason": "Retained from Oct25; no full accessible training and experiment original-table audit, no catalog admission.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 5,
+    "selected": 2,
+    "deferred": 3,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 2
+  },
+  "status": "partial",
+  "notes": "Only two full-text reads completed and two tracked original result scopes extracted. The full academic-index lane still blocked/outdated; primary/curated/reverse scans partial, so discovery_coverage gate cannot mark the planned whole date range complete and lastSuccessfulSearchAt must remain 2026-10-04. Prior deferred candidates persist in earlier immutable audits."
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261021-sg-embodied-ai-manufacturing-challenge",
+  "eventKey": "astar-nrp-sg-embodied-ai-manufacturing-challenge-20261021",
+  "title": "新加坡启动制造业具身智能挑战赛：从半导体设备仿真到真机装配",
+  "primaryCategory": "research",
+  "tags": [
+    "Singapore",
+    "NRP",
+    "A*STAR",
+    "PINE Lab",
+    "Micron",
+    "embodied AI",
+    "manufacturing",
+    "robot manipulation"
+  ],
+  "eventDate": "2026-10-21",
+  "publishedAt": "2026-10-21",
+  "dateNote": "新加坡政府新闻中心2026-10-21官方新闻稿发布日期；2027-03-20现场决赛是未来计划，不是已发生的成果。",
+  "observedAt": "2026-10-26",
+  "updatedAt": "2026-10-26",
+  "stage": "announced",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "research-resource",
+  "whatHappened": "新加坡国家机器人计划NRP、A*STAR、南洋理工大学PINE Lab与美光等联合公布首届Singapore Embodied AI Challenge for Manufacturing，以半导体工艺舱模拟任务考察机械臂开舱、拆装、检测、清洁和复装。主办方称在线仿真阶段至2026-12-31，初选团队计划在2027-03-20 RoboSG!进行实体测试。新闻稿提及Galbot机器人平台及Lightwheel、NSCC等仿真和算力支持。",
+  "whyItMatters": "产业真实工序为具身智能提供了跨仿真与实体工业操作的约束样例，尤其适合观察单步精度、长程操作顺序、装配成功与可复现评测之间的差异；赛题实际评价细则、数据和baseline仍需依照正式发布内容核验。",
+  "vlaRelevance": "关注VLA在工业高精度操作和模拟到真实迁移中的部署可行性，但比赛公告本身不是新的VLA论文，不构成经认证的LIBERO、RoboTwin或其它已有Benchmark结果。",
+  "limits": "2026-10-21仅证实赛事启动与公布安排。未来的仿真分数、现场实机竞赛、晋级名单及冠军成绩均不得预先声称已产生；赞助和伙伴名录不代表任何实验性能经第三方复现。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Singapore launches first national embodied AI challenge to accelerate real-world robotics deployment in manufacturing",
+      "publisher": "Singapore Government Press Centre / A*STAR",
+      "url": "https://www.sgpc.gov.sg/detail?HomePage=home&page=%2Fdetail&url=%2Fmedia_releases%2Fastar%2Fpress_release%2FP-20261021-1",
+      "kind": "official",
+      "publishedAt": "2026-10-21",
+      "access": "full-page",
+      "note": "核验政府原始新闻稿发布日期、主办组织、工序任务、2026年仿真与2027年实体决赛边界。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

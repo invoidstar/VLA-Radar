@@ -1302,6 +1302,18 @@
           "source": "https://github.com/Garfield-kh/FastVLA"
         }
       }
+    },
+    "p137": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "arXiv v1 primary original read; no matching author project/code or weights independently verified. The similarly named earlier FocusVLA paper is not this work. Other dimensions unknown pending official resources.",
+      "items": {}
+    },
+    "p138": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "Author project and Ropedia W0 source repository publicly identified for 5B inference. Full A14B, raw Xp-Data, training pipeline and model licenses require per-resource audit; unknown dimensions remain unknown.",
+      "items": {}
     }
   }
 }

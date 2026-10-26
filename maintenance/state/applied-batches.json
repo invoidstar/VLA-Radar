@@ -315,6 +315,20 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-26-evidence-maintenance",
+      "sha256": "8db9d78c1c290416999d31371cbab1fe958bea5b04b62abdb569d6a06903fb7d",
+      "date": "2026-10-26",
+      "notes": [],
+      "tracks": [
+        "focusvla-v1-robotwin2-50task",
+        "focusvla-v1-piper-real6",
+        "ropedia-w0-v1-fastwam-libero-plus"
+      ],
+      "results": 8,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
