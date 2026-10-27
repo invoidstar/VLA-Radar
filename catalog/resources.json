@@ -409,6 +409,14 @@
     },
     "p143": {
       "project": "https://pacevla.github.io/"
+    },
+    "p145": {
+      "project": "https://geomem-vla.github.io/",
+      "code": "https://github.com/GeoMem-VLA/GeoMem-VLA"
+    },
+    "p146": {
+      "project": "https://zju-omniai.github.io/VLA-Delta/",
+      "code": "https://github.com/ZJU-OmniAI/VLA-Delta"
     }
   }
 }
