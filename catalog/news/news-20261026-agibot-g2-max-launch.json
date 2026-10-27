@@ -30,6 +30,16 @@
   "limits": "本次可确认公司规划的发布日和当天媒体报道的产品规格，不能证明第三方测得的负载精度、长期连续作业成功率、实际批量交付或训练权重/代码公开。11月2–3日便利店24小时演示仍属于未来计划，不得标为完成。此条为reported，不冒充厂商10月26日可访问完整技术论文。",
   "sources": [
     {
+      "id": "s2",
+      "title": "AGIBOT launches heavy-duty embodied robot to combine heavy lifting with precision handling",
+      "publisher": "RobotHOT",
+      "url": "https://www.robothot.com/agibot-launches-heavy-duty-embodied-robot-to-combine-heavy-lifting-with-precision-handling",
+      "kind": "media",
+      "publishedAt": "2026-10-26",
+      "access": "full-page",
+      "note": "10/26独立编辑报道确认已发布并引述厂商20/40/50kg及≤±0.5mm规格。没有独立评测，仍为厂商自报。"
+    },
+    {
       "id": "s1",
       "title": "智元AI WAVE七项技术发布官方计划",
       "publisher": "智元创新（上海）科技股份有限公司",
@@ -38,16 +48,6 @@
       "publishedAt": "2026-10-22",
       "access": "full-page",
       "note": "10/22厂商一手文件明确10/26 G2 Max产品计划；11月2–3演示尚未来临，此页面不是10/26实测报告。"
-    },
-    {
-      "id": "s2",
-      "title": "AGIBOT launches heavy-duty embodied robot to combine heavy lifting with precision handling",
-      "publisher": "RobotHOT",
-      "url": "https://www.robothot.com/agibot-launches-heavy-duty-embodied-robot-to-combine-heavy-lifting-with-precision-handling",
-      "kind": "reported",
-      "publishedAt": "2026-10-26",
-      "access": "full-page",
-      "note": "10/26独立编辑报道确认已发布并引述厂商20/40/50kg及≤±0.5mm规格。没有独立评测，仍为厂商自报。"
     }
   ],
   "paperLinks": [],
