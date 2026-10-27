@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-27-curated-original-intake",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-27",
+    "attemptedAt": "2026-10-27",
+    "completedAt": null
+  },
+  "scope": "Incremental public VLA source intake: Oct25–26 six curated candidates cross-matched to arXiv, plus Oct03 SWAP recovered through one OpenAlex work. No complete multi-lane Sept20–Oct27 full-text search claimed.",
+  "sources": [
+    {
+      "id": "arxiv-primary-seven",
+      "lane": "primary-preprints",
+      "provider": "arXiv official abstract and submission-history pages",
+      "kind": "Seven individually identified primary abstracts and version identities, not a broad category/date-window query",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-03",
+        "to": "2026-10-26"
+      },
+      "query": "https://arxiv.org/abs/2610.35010 ; https://arxiv.org/abs/2610.34649 ; https://arxiv.org/abs/2610.34717 ; https://arxiv.org/abs/2610.34519 ; https://arxiv.org/abs/2610.34356 ; https://arxiv.org/abs/2610.34105 ; https://arxiv.org/abs/2610.06926",
+      "resultCount": 7,
+      "note": "All seven arXiv abs pages title/date/ID observed; only abstract/submission-history and author-linked public access checked. Sampling cannot certify full September 20–October 27 arXiv/publisher coverage or full-text notes."
+    },
+    {
+      "id": "curated-robotics-oct27",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily VLA",
+      "kind": "Oct27 live curated VLA index section containing six selected Oct25–26 entries",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-25",
+        "to": "2026-10-26"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html ; inspected dated entries 2026-10-25 and 2026-10-26, linking six exact arXiv IDs",
+      "resultCount": 6,
+      "note": "Index page showed 'Updated on 2026.10.27', and six candidate entries were checked. This is not a complete specialist-index search over Sept20–Oct27 and its listed dates do not certify all other venues/feeds."
+    },
+    {
+      "id": "openalex-single-work",
+      "lane": "academic-index",
+      "provider": "OpenAlex individual public work page",
+      "kind": "One exact-title scholarly-index record, not a date-scoped independent search",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-03",
+        "to": "2026-10-03"
+      },
+      "query": "https://openalex.org/works/W7220956927 (SWAP); exact title and canonical arXiv 2610.06926 checked",
+      "resultCount": 1,
+      "note": "Individual public OpenAlex work is accessible; do NOT equate this single record with complete parameterized date-scoped OpenAlex query or resolve earlier API access failures. No claim of 2026-10-04–27 index coverage."
+    },
+    {
+      "id": "robotagentbench-author-page",
+      "lane": "reverse-discovery",
+      "provider": "RobotAgentBench author-linked official project page",
+      "kind": "One arXiv-author-linked project/benchmark identity check",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-26",
+        "to": "2026-10-26"
+      },
+      "query": "https://aetherlabsai.github.io/RobotAgentBench/ (from https://arxiv.org/abs/2610.34649)",
+      "resultCount": 1,
+      "note": "Verified paper/project title, benchmark description, and that the page advertises code, model, training-data and leaderboard links. Individual resource completeness, table evidence and release states not audited; not a lab/benchmark-wide reverse discovery."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "JevVLA: Jev-Inspired Energy-Based Adaptation for Vision-Language-Action Policies",
+      "arxiv": "2610.35010",
+      "doi": "",
+      "date": "2026-10-26",
+      "sourceIds": [
+        "arxiv-primary-seven",
+        "curated-robotics-oct27"
+      ],
+      "status": "deferred",
+      "reason": "Method and current artifact availability require a full original-source deep read. The arXiv abstract says source code will be open-sourced; do not state that it is already released.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "RobotAgentBench: Towards Open-world Robot Autonomy",
+      "arxiv": "2610.34649",
+      "doi": "",
+      "date": "2026-10-26",
+      "sourceIds": [
+        "arxiv-primary-seven",
+        "curated-robotics-oct27",
+        "robotagentbench-author-page"
+      ],
+      "status": "deferred",
+      "reason": "Paper, author project identity and open-world task taxonomy checked; full methods, five-dimension protocols and any result rows need original-table and release-level audit before admission.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware",
+      "arxiv": "2610.34717",
+      "doi": "",
+      "date": "2026-10-26",
+      "sourceIds": [
+        "arxiv-primary-seven",
+        "curated-robotics-oct27"
+      ],
+      "status": "deferred",
+      "reason": "Edge hardware inference breakdown is scientifically relevant; latency and platform-specific optimizations must not be converted into policy success rates. Full tables not yet independently read.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "TRIAGE: Efficient Vision-Language-Action Inference Needs Both Reuse and Pruning",
+      "arxiv": "2610.34519",
+      "doi": "",
+      "date": "2026-10-25",
+      "sourceIds": [
+        "arxiv-primary-seven",
+        "curated-robotics-oct27"
+      ],
+      "status": "deferred",
+      "reason": "Cache validity and token pruning mechanisms are relevant. Abstract-level Jetson prefill timing, success and action error are not verified against full tables/protocols; defer results.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions",
+      "arxiv": "2610.34356",
+      "doi": "",
+      "date": "2026-10-25",
+      "sourceIds": [
+        "arxiv-primary-seven",
+        "curated-robotics-oct27"
+      ],
+      "status": "deferred",
+      "reason": "New latent-action pretraining and cross-embodiment result candidate. First verify original training mixture, LIBERO/Plus/VLABench/RoboTwin evaluation scopes, methods, reported baselines and project resource availability.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "X-World: Transferring Video Priors to Variable-View Robot Control",
+      "arxiv": "2610.34105",
+      "doi": "",
+      "date": "2026-10-25",
+      "sourceIds": [
+        "arxiv-primary-seven",
+        "curated-robotics-oct27"
+      ],
+      "status": "deferred",
+      "reason": "Video-prior transfer, multi-view observations and asynchronous action execution candidate; full read must separate LIBERO, LIBERO-Plus, six real tasks and negative camera/background/noise shift details.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "SWAP: Stepwise Action Policy Routing for Vision-Language-Action Models",
+      "arxiv": "2610.06926",
+      "doi": "",
+      "date": "2026-10-03",
+      "sourceIds": [
+        "arxiv-primary-seven",
+        "openalex-single-work"
+      ],
+      "status": "deferred",
+      "reason": "Older candidate surfaced through one indexed OpenAlex work, title/authors/arXiv matched. Status only 'under review for ICRA 2027', NOT accepted; no full methods/results read yet.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 7,
+    "selected": 0,
+    "deferred": 7,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 7
+  },
+  "status": "partial",
+  "notes": "7 title/ID/date cross-matched public candidates for deferred primary-source deep reads. No new paper IDs, no invented result values, no publication upgrade and no change to 2026-10-04 full-search checkpoint. Older immutable deferred queues persist. Explicitly scoped sampling means the required independent academic-index full-window lane and broad arXiv/curated/reverse sweeps remain incomplete. The simultaneous release/batch-2026-10-27-deferred-reads workstream is independent; do not replace its canonical content."
+}
