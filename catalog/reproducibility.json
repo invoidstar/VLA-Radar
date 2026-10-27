@@ -1350,6 +1350,24 @@
       "level": "baseline",
       "note": "SPAR arXiv v1 fully read. Experiments explain PAT/PPO with RLinf and Jetson deployment; no matched author executable code or pretrained compressed weights confirmed, so do not infer availability from the generic RLinf project.",
       "items": {}
+    },
+    "p145": {
+      "verifiedAt": "2026-10-27",
+      "level": "baseline",
+      "note": "Primary arXiv and author GitHub: GeoMem training/evaluation code and limited release quickstart exist; default 20k one-task recipe is not full paper 200k/300k. Real-robot packages are not in public release. Exact weight/license/full-data dimensions require independent resource-level verification.",
+      "items": {}
+    },
+    "p146": {
+      "verifiedAt": "2026-10-27",
+      "level": "baseline",
+      "note": "Official ZJU-OmniAI GitHub contains training, three-stage pretraining and LIBERO/RoboTwin evaluation code and links base/fine-tuned checkpoint resources. External foundation weights and dataset licenses independent; no local reproduction claimed.",
+      "items": {}
+    },
+    "p147": {
+      "verifiedAt": "2026-10-27",
+      "level": "baseline",
+      "note": "ArXiv original article and simulations read. Author-source identity for executable SimPT framework and released expert recovery trajectories/checkpoints remains unverified; do not infer official code or missing weights from third-party sites.",
+      "items": {}
     }
   }
 }
