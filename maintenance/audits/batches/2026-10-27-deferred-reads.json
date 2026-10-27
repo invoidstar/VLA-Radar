@@ -1,0 +1,472 @@
+{
+  "id": "2026-10-27-deferred-reads",
+  "date": "2026-10-27",
+  "summary": "VLA-Radar V3.0 2026-10-27 original-source catch-up: p145 GeoMem-VLA geometry/memory causal episode (Qwen3-VL+VGGT), p146 VLA-Delta physical state transition supervision, p147 SimPT stage-guided intervention post-training; 3 complete original arXiv v1 deep reads, official resources limited to author-verified p145/p146, 6 source-scoped paper-table tracks and 17 original quantitative rows. LIBERO/RoboTwin/SimPT seven-task expert recovery are separate metrics. Retain counterexamples: SimPT FlowPRO PG decreases 76.07%->71.86%, and RECAP-CF-LPF Naive unreported. Author-reported results, not independent reproduction or official benchmark submissions. Full four-lane and bilingual news discovery still partial; 2026-10-04 lastSuccessfulSearchAt retained. Branch admin protection and publisher DOI remain unresolved without evidence.",
+  "notes": [],
+  "tracks": [
+    {
+      "id": "geomem-v1-libero-four-suite",
+      "dataset": "LIBERO",
+      "name": "GeoMem-VLA · four-suite original source ablations",
+      "version": "arXiv 2610.29866v1 Table 3",
+      "tasks": "40 tasks / 4 suites × 50 trials per task",
+      "split": "Standard Spatial/Object/Goal/Long; table 3 internal ablations",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Single-author within-paper matched geometry/memory intervention comparisons (not a new independent leaderboard). Each variant source-reported, not independently rerun.",
+      "trainingRegime": "Author's full 300k LIBERO training; frozen VGGT geometry teacher used for full and memory-removed but not no-geometry branch; external Qwen3-VL backbone.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.29866v1"
+    },
+    {
+      "id": "geomem-v1-robotwin2-clean-random",
+      "dataset": "RoboTwin",
+      "name": "GeoMem-VLA · RoboTwin 2.0 clean/random ablation",
+      "version": "arXiv 2610.29866v1 Table 4",
+      "tasks": "50 tasks; 100 episodes per task and setting",
+      "split": "RoboTwin 2.0 Aloha AgileX Clean and Randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "50-task mean for two distinct evaluation conditions, source author Table 4 internal component ablations. Never conflate with official RoboTwin leaderboard snapshot.",
+      "trainingRegime": "Full paper uses 200k RoboTwin steps, 14-D joint-target actions; author GitHub quickstart 20k is not this full published protocol.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.29866v1"
+    },
+    {
+      "id": "vladelta-v1-libero-four-suite",
+      "dataset": "LIBERO",
+      "name": "VLA-Delta · standard LIBERO original paper Table 1",
+      "version": "arXiv 2610.21306v1 Table 1",
+      "tasks": "40 tasks in standard 4 LIBERO suites",
+      "split": "Spatial/Object/Goal/Long after external three-stage physical-difference pretraining",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Full model and ZR-0 cited baseline rows from source Table1; pretrained datasets and checkpoints differ, paper-only comparison not independently controlled.",
+      "trainingRegime": "2B Qwen3-VL-based VLA-Delta three-stage pretraining with difference text, structured slots and optical flow, plus LIBERO downstream fine-tuning; referenced ZR-0 has different pretraining.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.21306v1"
+    },
+    {
+      "id": "vladelta-v1-robotwin2-clean-random",
+      "dataset": "RoboTwin",
+      "name": "VLA-Delta · RoboTwin 2.0 Clean/Random author paper",
+      "version": "arXiv 2610.21306v1 Table 2",
+      "tasks": "RoboTwin 2.0 50 tasks",
+      "split": "Clean and Random reported separately under author's task protocol",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Published Table2 two environment settings, full policy and cited ZR-0/π0.5 baselines. Source citations are not same-run reproduction or official submissions.",
+      "trainingRegime": "Downstream fine-tuning after VLA-Delta three-stage pretraining; referenced baselines use their own external recipes and pretraining.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized"
+      ],
+      "source": "https://arxiv.org/html/2610.21306v1"
+    },
+    {
+      "id": "simpt-v1-robotwin7-expert-recovery",
+      "dataset": "RoboTwin",
+      "name": "SimPT · seven-task expert recovery success",
+      "version": "arXiv 2610.29161v1 Table I",
+      "tasks": "7 RoboTwin tasks (not official 50-task)",
+      "split": "Fixed-interval Naive vs stage Progress Graph (PG) expert recovery",
+      "metric": "Expert recovery success rate on failed rollouts",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Pooled proportion of failed policy rollouts rescued by CuRobo expert, Table I aggregate; NOT a standalone VLA task success rate and NOT same denominator as Table II.",
+      "trainingRegime": "Same SFT parent policy, recovery expert and 240 collection seeds per task, distinct Naive/PG collection; privileged simulator Progress Graph is not policy inference.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Naive",
+        "Progress Graph"
+      ],
+      "source": "https://arxiv.org/html/2610.29161v1"
+    },
+    {
+      "id": "simpt-v1-robotwin7-policy-posttrain",
+      "dataset": "RoboTwin",
+      "name": "SimPT · seven-task 1400-holdout post-training SR",
+      "version": "arXiv 2610.29161v1 Table II / §IV-D",
+      "tasks": "7 RoboTwin tasks × 200 separate held-out seeds each (1400 trials/method)",
+      "split": "Naive-collected vs Progress Graph (PG)-collected interventions",
+      "metric": "Posttrained VLA task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table II tests trained policy alone without expert/progress graph/privileged simulator state; PG and Naive collection are independent. CF-LPF only reported for PG, so Naive remains null.",
+      "trainingRegime": "Common SFT parent 50 demonstrations per task; each post-training variant uses fixed 10000 training steps, 240 collection seeds/task and 40 validation seeds/task.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Naive",
+        "Progress Graph"
+      ],
+      "source": "https://arxiv.org/html/2610.29161v1"
+    }
+  ],
+  "results": [
+    {
+      "id": "r-geomem-v1-libero-full",
+      "paperId": "p145",
+      "method": "GeoMem-VLA",
+      "trackId": "geomem-v1-libero-four-suite",
+      "values": {
+        "Spatial": 99.6,
+        "Object": 99.8,
+        "Goal": 99.6,
+        "Long": 96.6,
+        "Average": 98.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29866v1",
+      "sourceVersion": "arXiv 2610.29866v1",
+      "locator": "§4.3 Table 3 GeoMem full",
+      "attribution": "author-reported",
+      "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+      "evaluationNotes": "Within-paper matched ablation not independent reproduction; LIBERO average is a four-suite reported mean and no inference from code default 20k.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geomem-v1-libero-no-geo",
+      "paperId": "p145",
+      "method": "GeoMem-VLA w/o geometry",
+      "trackId": "geomem-v1-libero-four-suite",
+      "values": {
+        "Spatial": 98,
+        "Object": 99.6,
+        "Goal": 98.8,
+        "Long": 95.2,
+        "Average": 97.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29866v1",
+      "sourceVersion": "arXiv 2610.29866v1",
+      "locator": "§4.3 Table 3 w/o geometry branch",
+      "attribution": "author-reported",
+      "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+      "evaluationNotes": "Within-paper matched ablation not independent reproduction; LIBERO average is a four-suite reported mean and no inference from code default 20k. Removes all geometry tokens, teacher loss, geometry memory and gated fusion.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geomem-v1-libero-no-memory",
+      "paperId": "p145",
+      "method": "GeoMem-VLA w/o temporal memory",
+      "trackId": "geomem-v1-libero-four-suite",
+      "values": {
+        "Spatial": 99.4,
+        "Object": 99.6,
+        "Goal": 99.4,
+        "Long": 94.2,
+        "Average": 98.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29866v1",
+      "sourceVersion": "arXiv 2610.29866v1",
+      "locator": "§4.3 Table 3 w/o temporal memory",
+      "attribution": "author-reported",
+      "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+      "evaluationNotes": "Within-paper matched ablation not independent reproduction; LIBERO average is a four-suite reported mean and no inference from code default 20k. Causal retrieval across banks disabled.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geomem-v1-robotwin-full",
+      "paperId": "p145",
+      "method": "GeoMem-VLA",
+      "trackId": "geomem-v1-robotwin2-clean-random",
+      "values": {
+        "Clean": 91.1,
+        "Randomized": 91.24,
+        "Average": 91.17
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29866v1",
+      "sourceVersion": "arXiv 2610.29866v1",
+      "locator": "§4.3 Table 4 GeoMem full",
+      "attribution": "author-reported",
+      "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+      "evaluationNotes": "RoboTwin 2.0 Clean vs Random100 trials/task, 50 tasks; author report, not official evaluated model.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geomem-v1-robotwin-no-geo",
+      "paperId": "p145",
+      "method": "GeoMem-VLA w/o geometry",
+      "trackId": "geomem-v1-robotwin2-clean-random",
+      "values": {
+        "Clean": 89.68,
+        "Randomized": 89.74,
+        "Average": 89.71
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29866v1",
+      "sourceVersion": "arXiv 2610.29866v1",
+      "locator": "§4.3 Table 4 w/o geometry branch",
+      "attribution": "author-reported",
+      "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+      "evaluationNotes": "Both settings matched within original paper. Full geometry branch deleted, not one separate supervision objective.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-geomem-v1-robotwin-no-memory",
+      "paperId": "p145",
+      "method": "GeoMem-VLA w/o temporal memory",
+      "trackId": "geomem-v1-robotwin2-clean-random",
+      "values": {
+        "Clean": 89.84,
+        "Randomized": 90.52,
+        "Average": 90.18
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29866v1",
+      "sourceVersion": "arXiv 2610.29866v1",
+      "locator": "§4.3 Table 4 w/o temporal memory",
+      "attribution": "author-reported",
+      "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+      "evaluationNotes": "Causal retrieval disabled under same author's RoboTwin protocol; no independent reproduction.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vladelta-v1-libero-full",
+      "paperId": "p146",
+      "method": "VLA-Δ",
+      "trackId": "vladelta-v1-libero-four-suite",
+      "values": {
+        "Spatial": 98.8,
+        "Object": 99.8,
+        "Goal": 98.6,
+        "Long": 96.4,
+        "Average": 98.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.21306v1",
+      "sourceVersion": "arXiv 2610.21306v1",
+      "locator": "§3.2 Table 1 VLA-Delta full 2B",
+      "attribution": "author-reported",
+      "trainingData": "Three-stage Physical State Difference Text, slots and optical-flow pretraining before standard LIBERO SFT.",
+      "evaluationNotes": "Author report; other paper baseline training protocols not guaranteed matched.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vladelta-v1-libero-zr0",
+      "paperId": "p146",
+      "method": "ZR-0",
+      "trackId": "vladelta-v1-libero-four-suite",
+      "values": {
+        "Spatial": 97.4,
+        "Object": 99.4,
+        "Goal": 97.8,
+        "Long": 96.4,
+        "Average": 97.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.21306v1",
+      "sourceVersion": "arXiv 2610.21306v1",
+      "locator": "§3.2 Table 1 ZR-0 2B comparison",
+      "attribution": "reported-baseline",
+      "trainingData": "External ZR-0 pretrained/fine-tuned checkpoint and recipe, not VLA-Delta original training.",
+      "evaluationNotes": "Baseline cited in source Table1; not independent reproduction.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vladelta-v1-robotwin-full",
+      "paperId": "p146",
+      "method": "VLA-Δ",
+      "trackId": "vladelta-v1-robotwin2-clean-random",
+      "values": {
+        "Clean": 90.06,
+        "Randomized": 89.74
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.21306v1",
+      "sourceVersion": "arXiv 2610.21306v1",
+      "locator": "§3.2 Table 2 AVG Clean/Random VLA-Delta",
+      "attribution": "author-reported",
+      "trainingData": "Three-stage explicit transition supervision and RoboTwin posttrain.",
+      "evaluationNotes": "Source-reported 50-task average; different baseline training budgets possible.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vladelta-v1-robotwin-zr0",
+      "paperId": "p146",
+      "method": "ZR-0",
+      "trackId": "vladelta-v1-robotwin2-clean-random",
+      "values": {
+        "Clean": 88.7,
+        "Randomized": 87.98
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.21306v1",
+      "sourceVersion": "arXiv 2610.21306v1",
+      "locator": "§3.2 Table 2 AVG Clean/Random ZR-0",
+      "attribution": "reported-baseline",
+      "trainingData": "External ZR-0 reference recipe, not standardized by VLA-Radar.",
+      "evaluationNotes": "Cited original baseline row, not reproduced here.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-vladelta-v1-robotwin-pi05",
+      "paperId": "p146",
+      "method": "π₀.₅",
+      "trackId": "vladelta-v1-robotwin2-clean-random",
+      "values": {
+        "Clean": 82.74,
+        "Randomized": 76.76
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.21306v1",
+      "sourceVersion": "arXiv 2610.21306v1",
+      "locator": "§3.2 Table 2 AVG Clean/Random pi0.5",
+      "attribution": "reported-baseline",
+      "trainingData": "External pi0.5 baseline recipe and pretrained weights; not matched pretraining.",
+      "evaluationNotes": "Cited original baseline row; do not infer common training budget.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-simpt-v1-recovery-pg-vs-naive",
+      "paperId": "p147",
+      "method": "SimPT expert recovery search",
+      "trackId": "simpt-v1-robotwin7-expert-recovery",
+      "values": {
+        "Naive": 93.4,
+        "Progress Graph": 98.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29161v1",
+      "sourceVersion": "arXiv 2610.29161v1",
+      "locator": "§IV-B Table I Aggregate row Recovery success (%)",
+      "attribution": "author-reported",
+      "trainingData": "CuRobo expert with same SFT policy, independent fixed-interval vs PG collection snapshot schedules.",
+      "evaluationNotes": "Recovery fraction conditioned on failed rollouts, not task success of learned policy. 3781 vs 945 attempts measured separately.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-simpt-v1-policy-recap",
+      "paperId": "p147",
+      "method": "RECAP",
+      "trackId": "simpt-v1-robotwin7-policy-posttrain",
+      "values": {
+        "Naive": 66.64,
+        "Progress Graph": 76.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29161v1",
+      "sourceVersion": "arXiv 2610.29161v1",
+      "locator": "§IV-C Table II RECAP row",
+      "attribution": "author-reported",
+      "trainingData": "Two separately collected intervention datasets, equal 10k-step posttraining, 1400 heldout trials.",
+      "evaluationNotes": "Only updated policy at evaluation, no expert rescue.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-simpt-v1-policy-hgdagger",
+      "paperId": "p147",
+      "method": "HG-DAgger",
+      "trackId": "simpt-v1-robotwin7-policy-posttrain",
+      "values": {
+        "Naive": 80.21,
+        "Progress Graph": 82.14
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29161v1",
+      "sourceVersion": "arXiv 2610.29161v1",
+      "locator": "§IV-C Table II HG-DAgger row",
+      "attribution": "author-reported",
+      "trainingData": "Two separately collected intervention datasets, equal 10k-step posttraining, 1400 heldout trials.",
+      "evaluationNotes": "Only updated policy at evaluation, no expert rescue.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-simpt-v1-policy-dpo-sft",
+      "paperId": "p147",
+      "method": "DPO+SFT",
+      "trackId": "simpt-v1-robotwin7-policy-posttrain",
+      "values": {
+        "Naive": 62.64,
+        "Progress Graph": 63.14
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29161v1",
+      "sourceVersion": "arXiv 2610.29161v1",
+      "locator": "§IV-C Table II DPO+SFT row",
+      "attribution": "author-reported",
+      "trainingData": "Two separately collected intervention datasets, equal 10k-step posttraining, 1400 heldout trials.",
+      "evaluationNotes": "Original author TableII comparison, not an independent reproduction.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-simpt-v1-policy-flowpro",
+      "paperId": "p147",
+      "method": "FlowPRO",
+      "trackId": "simpt-v1-robotwin7-policy-posttrain",
+      "values": {
+        "Naive": 76.07,
+        "Progress Graph": 71.86
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29161v1",
+      "sourceVersion": "arXiv 2610.29161v1",
+      "locator": "§IV-C Table II FlowPRO negative-gain row",
+      "attribution": "author-reported",
+      "trainingData": "Two separately collected intervention datasets, equal 10k-step posttraining, 1400 heldout trials.",
+      "evaluationNotes": "Negative -4.21 percentage point with PG is preserved; cannot claim universal improvement.",
+      "supersedes": ""
+    },
+    {
+      "id": "r-simpt-v1-policy-recap-cf-lpf",
+      "paperId": "p147",
+      "method": "RECAP-CF-LPF",
+      "trackId": "simpt-v1-robotwin7-policy-posttrain",
+      "values": {
+        "Naive": null,
+        "Progress Graph": 79.36
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-27",
+      "source": "https://arxiv.org/html/2610.29161v1",
+      "sourceVersion": "arXiv 2610.29161v1",
+      "locator": "§IV-D RECAP-CF-LPF seven-task holdout success rate",
+      "attribution": "author-reported",
+      "trainingData": "PG-collected dataset, five-fold value cross-fit and 1Hz Butterworth LPF, 1400 heldout trials.",
+      "evaluationNotes": "No Naive-collected value reported for this method; null is unknown, not zero. +2.86pp relative to PG RECAP.",
+      "supersedes": ""
+    }
+  ]
+}
