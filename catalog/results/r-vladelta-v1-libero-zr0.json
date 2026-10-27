@@ -1,0 +1,22 @@
+{
+  "id": "r-vladelta-v1-libero-zr0",
+  "paperId": "p146",
+  "method": "ZR-0",
+  "trackId": "vladelta-v1-libero-four-suite",
+  "values": {
+    "Spatial": 97.4,
+    "Object": 99.4,
+    "Goal": 97.8,
+    "Long": 96.4,
+    "Average": 97.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.21306v1",
+  "sourceVersion": "arXiv 2610.21306v1",
+  "locator": "§3.2 Table 1 ZR-0 2B comparison",
+  "attribution": "reported-baseline",
+  "trainingData": "External ZR-0 pretrained/fine-tuned checkpoint and recipe, not VLA-Delta original training.",
+  "evaluationNotes": "Baseline cited in source Table1; not independent reproduction.",
+  "supersedes": ""
+}

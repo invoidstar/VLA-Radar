@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "venue-publisher-2026-10-27-exact-title-check",
+  "checkedAt": "2026-10-27",
+  "status": "partial",
+  "scope": "Recheck three formally accepted workshop/conference titles against publisher item and DOI in search-accessible results, preserving author vs publisher evidence boundaries. Search failures and absent results here are NOT assertions that the publisher has not yet issued a record.",
+  "items": [
+    {
+      "paperId": "p015",
+      "title": "OnEvoMemory: Evolving Memory through Online Robot Rollouts for Pretrained Robot Policies",
+      "status": "poster-accepted-archive-unverified",
+      "verifiedEvidence": [
+        {
+          "source": "https://openreview.net/forum?id=hUZLqoDdqx",
+          "what": "Official ECCV 2026 EMR Workshop Poster title-matched OpenReview forum indexed, but direct archive details not fully accessible."
+        },
+        {
+          "source": "https://chenzhongxi-sjtu.github.io/",
+          "what": "Author page confirms workshop poster, not ECCV main track."
+        }
+      ],
+      "publisherProbe": "2026-10-27 public search by exact OnEvoMemory title, ECCV EMR Workshop, proceedings, archival DOI, OpenReview. No verified title+author matched archived proceedings DOI/date in accessible original publisher results.",
+      "result": "Keep workshop accepted/poster; acceptedAt/publishedAt null, DOI empty."
+    },
+    {
+      "paperId": "p030",
+      "title": "AdaVLA: Adaptive Step Flow Matching for Training-free Acceleration of Vision-Language-Action Models",
+      "status": "accepted-presented-ieee-item-unverified",
+      "verifiedEvidence": [
+        {
+          "source": "https://computing.sogang.ac.kr/ko/community/news/detail/281",
+          "what": "University confirms IROS 2026 presentation/acceptance, but this is not a formal IEEE Xplore paper item."
+        },
+        {
+          "source": "https://arxiv.org/abs/2608.29208",
+          "what": "ArXiv first version and conference acceptance comment, arXiv DOI not publisher DOI."
+        }
+      ],
+      "publisherProbe": "2026-10-27 exact IEEE IROS2026 title+author+DOI search did not yield accessible title-matched IEEE source item. Publication date cannot be inferred from the event end date.",
+      "result": "Remain accepted/presented. Do not add IEEE doi or publishedAt."
+    },
+    {
+      "paperId": "p042",
+      "title": "VLA-InfoEntropy: A Training-Free Vision-Attention Information Entropy Approach for Vision-Language-Action Models Inference Acceleration and Success",
+      "status": "accepted-author-lab-ieee-item-unverified",
+      "verifiedEvidence": [
+        {
+          "source": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/",
+          "what": "Author lab lists exact title and authors under ICME 2026."
+        },
+        {
+          "source": "https://arxiv.org/abs/2604.05323",
+          "what": "ArXiv DataCite 10.48550 DOI is explicitly not the IEEE publisher DOI."
+        }
+      ],
+      "publisherProbe": "2026-10-27 exact ICME/IEEE Xplore title+DOI search did not establish title+authors matched publisher entry and publication day.",
+      "result": "Remain accepted with acceptedAt and publishedAt null, publisher DOI unset."
+    }
+  ],
+  "notes": "Actual publisher content cannot be certified from absence of search results; no fabricated ISBN/DOI/meeting acceptance day. Repeat only on new publisher/organizer evidence."
+}

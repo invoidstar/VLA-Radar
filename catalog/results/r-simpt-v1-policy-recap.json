@@ -1,0 +1,19 @@
+{
+  "id": "r-simpt-v1-policy-recap",
+  "paperId": "p147",
+  "method": "RECAP",
+  "trackId": "simpt-v1-robotwin7-policy-posttrain",
+  "values": {
+    "Naive": 66.64,
+    "Progress Graph": 76.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.29161v1",
+  "sourceVersion": "arXiv 2610.29161v1",
+  "locator": "§IV-C Table II RECAP row",
+  "attribution": "author-reported",
+  "trainingData": "Two separately collected intervention datasets, equal 10k-step posttraining, 1400 heldout trials.",
+  "evaluationNotes": "Only updated policy at evaluation, no expert rescue.",
+  "supersedes": ""
+}

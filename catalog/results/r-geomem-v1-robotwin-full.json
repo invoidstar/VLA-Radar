@@ -1,0 +1,20 @@
+{
+  "id": "r-geomem-v1-robotwin-full",
+  "paperId": "p145",
+  "method": "GeoMem-VLA",
+  "trackId": "geomem-v1-robotwin2-clean-random",
+  "values": {
+    "Clean": 91.1,
+    "Randomized": 91.24,
+    "Average": 91.17
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.29866v1",
+  "sourceVersion": "arXiv 2610.29866v1",
+  "locator": "§4.3 Table 4 GeoMem full",
+  "attribution": "author-reported",
+  "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+  "evaluationNotes": "RoboTwin 2.0 Clean vs Random100 trials/task, 50 tasks; author report, not official evaluated model.",
+  "supersedes": ""
+}

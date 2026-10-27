@@ -1,0 +1,20 @@
+{
+  "id": "r-geomem-v1-robotwin-no-memory",
+  "paperId": "p145",
+  "method": "GeoMem-VLA w/o temporal memory",
+  "trackId": "geomem-v1-robotwin2-clean-random",
+  "values": {
+    "Clean": 89.84,
+    "Randomized": 90.52,
+    "Average": 90.18
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.29866v1",
+  "sourceVersion": "arXiv 2610.29866v1",
+  "locator": "§4.3 Table 4 w/o temporal memory",
+  "attribution": "author-reported",
+  "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+  "evaluationNotes": "Causal retrieval disabled under same author's RoboTwin protocol; no independent reproduction.",
+  "supersedes": ""
+}

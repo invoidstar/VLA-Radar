@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-10-26",
+  "lastAttemptAt": "2026-10-27",
   "lastStatus": "partial",
-  "lastSummary": "2026-10-26 further source-localized originals audit: 3 previously deferred papers added via full reads (Token-World p142, PaceVLA p143, SPAR p144), with separately protocol-typed Table I–VI metrics, no task-SR inference from cosine/ES/latency. Direct original source, authored projects and known curated shortlist were partial; OpenAlex dated API not accessible, Semantic Scholar 429, independent index full range not met. Last complete Oct04 retained, all older deferrals remain in immutable audits.",
+  "lastSummary": "2026-10-27 original full-text followup: previously deferred GeoMem-VLA 2610.29866, VLA-Delta 2610.21306, SimPT 2610.29161 selected into p145–p147 with six distinct paper-only/metric-specific evaluation tracks and 17 original table result reports, including negative SimPT FlowPRO. Official author resources scope audited. Four-lane Sept20–Oct27 whole-window discovery still partial: OpenAlex/Semantic Scholar dated APIs unavailable and curated/primary/reverse not comprehensively searched; lastSuccessfulSearchAt remains 2026-10-04.",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-26-remaining-evidence.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-10-27-deferred-followup.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }

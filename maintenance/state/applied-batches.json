@@ -371,6 +371,33 @@
       "results": 20,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-10-27-deferred-reads",
+      "sha256": "c3ba379e5eaeb45fe46c10082704873c51ec8c875668e2b88fd7c3a9a917153b",
+      "date": "2026-10-27",
+      "notes": [],
+      "tracks": [
+        "geomem-v1-libero-four-suite",
+        "geomem-v1-robotwin2-clean-random",
+        "vladelta-v1-libero-four-suite",
+        "vladelta-v1-robotwin2-clean-random",
+        "simpt-v1-robotwin7-expert-recovery",
+        "simpt-v1-robotwin7-policy-posttrain"
+      ],
+      "results": 17,
+      "resources": [],
+      "reproducibility": []
+    },
+    {
+      "id": "2026-10-27-news-publisher-audit",
+      "sha256": "e97b02dd979dc8b010e7da3305865c426203935bc2a34f5684499e4605d9c1b1",
+      "date": "2026-10-27",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

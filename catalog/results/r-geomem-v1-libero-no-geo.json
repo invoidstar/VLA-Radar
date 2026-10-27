@@ -1,0 +1,22 @@
+{
+  "id": "r-geomem-v1-libero-no-geo",
+  "paperId": "p145",
+  "method": "GeoMem-VLA w/o geometry",
+  "trackId": "geomem-v1-libero-four-suite",
+  "values": {
+    "Spatial": 98,
+    "Object": 99.6,
+    "Goal": 98.8,
+    "Long": 95.2,
+    "Average": 97.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.29866v1",
+  "sourceVersion": "arXiv 2610.29866v1",
+  "locator": "§4.3 Table 3 w/o geometry branch",
+  "attribution": "author-reported",
+  "trainingData": "Author experimental training/teacher protocol; one combined branch removed in geometry ablation and causal history removed in memory ablation. Source-only table extraction.",
+  "evaluationNotes": "Within-paper matched ablation not independent reproduction; LIBERO average is a four-suite reported mean and no inference from code default 20k. Removes all geometry tokens, teacher loss, geometry memory and gated fusion.",
+  "supersedes": ""
+}

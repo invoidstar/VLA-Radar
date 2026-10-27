@@ -7341,6 +7341,127 @@
         "Overall"
       ],
       "source": "https://arxiv.org/html/2610.26487v1"
+    },
+    {
+      "id": "geomem-v1-libero-four-suite",
+      "dataset": "LIBERO",
+      "name": "GeoMem-VLA · four-suite original source ablations",
+      "version": "arXiv 2610.29866v1 Table 3",
+      "tasks": "40 tasks / 4 suites × 50 trials per task",
+      "split": "Standard Spatial/Object/Goal/Long; table 3 internal ablations",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Single-author within-paper matched geometry/memory intervention comparisons (not a new independent leaderboard). Each variant source-reported, not independently rerun.",
+      "trainingRegime": "Author's full 300k LIBERO training; frozen VGGT geometry teacher used for full and memory-removed but not no-geometry branch; external Qwen3-VL backbone.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.29866v1"
+    },
+    {
+      "id": "geomem-v1-robotwin2-clean-random",
+      "dataset": "RoboTwin",
+      "name": "GeoMem-VLA · RoboTwin 2.0 clean/random ablation",
+      "version": "arXiv 2610.29866v1 Table 4",
+      "tasks": "50 tasks; 100 episodes per task and setting",
+      "split": "RoboTwin 2.0 Aloha AgileX Clean and Randomized",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "50-task mean for two distinct evaluation conditions, source author Table 4 internal component ablations. Never conflate with official RoboTwin leaderboard snapshot.",
+      "trainingRegime": "Full paper uses 200k RoboTwin steps, 14-D joint-target actions; author GitHub quickstart 20k is not this full published protocol.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.29866v1"
+    },
+    {
+      "id": "vladelta-v1-libero-four-suite",
+      "dataset": "LIBERO",
+      "name": "VLA-Delta · standard LIBERO original paper Table 1",
+      "version": "arXiv 2610.21306v1 Table 1",
+      "tasks": "40 tasks in standard 4 LIBERO suites",
+      "split": "Spatial/Object/Goal/Long after external three-stage physical-difference pretraining",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Full model and ZR-0 cited baseline rows from source Table1; pretrained datasets and checkpoints differ, paper-only comparison not independently controlled.",
+      "trainingRegime": "2B Qwen3-VL-based VLA-Delta three-stage pretraining with difference text, structured slots and optical flow, plus LIBERO downstream fine-tuning; referenced ZR-0 has different pretraining.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.21306v1"
+    },
+    {
+      "id": "vladelta-v1-robotwin2-clean-random",
+      "dataset": "RoboTwin",
+      "name": "VLA-Delta · RoboTwin 2.0 Clean/Random author paper",
+      "version": "arXiv 2610.21306v1 Table 2",
+      "tasks": "RoboTwin 2.0 50 tasks",
+      "split": "Clean and Random reported separately under author's task protocol",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Published Table2 two environment settings, full policy and cited ZR-0/π0.5 baselines. Source citations are not same-run reproduction or official submissions.",
+      "trainingRegime": "Downstream fine-tuning after VLA-Delta three-stage pretraining; referenced baselines use their own external recipes and pretraining.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized"
+      ],
+      "source": "https://arxiv.org/html/2610.21306v1"
+    },
+    {
+      "id": "simpt-v1-robotwin7-expert-recovery",
+      "dataset": "RoboTwin",
+      "name": "SimPT · seven-task expert recovery success",
+      "version": "arXiv 2610.29161v1 Table I",
+      "tasks": "7 RoboTwin tasks (not official 50-task)",
+      "split": "Fixed-interval Naive vs stage Progress Graph (PG) expert recovery",
+      "metric": "Expert recovery success rate on failed rollouts",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Pooled proportion of failed policy rollouts rescued by CuRobo expert, Table I aggregate; NOT a standalone VLA task success rate and NOT same denominator as Table II.",
+      "trainingRegime": "Same SFT parent policy, recovery expert and 240 collection seeds per task, distinct Naive/PG collection; privileged simulator Progress Graph is not policy inference.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Naive",
+        "Progress Graph"
+      ],
+      "source": "https://arxiv.org/html/2610.29161v1"
+    },
+    {
+      "id": "simpt-v1-robotwin7-policy-posttrain",
+      "dataset": "RoboTwin",
+      "name": "SimPT · seven-task 1400-holdout post-training SR",
+      "version": "arXiv 2610.29161v1 Table II / §IV-D",
+      "tasks": "7 RoboTwin tasks × 200 separate held-out seeds each (1400 trials/method)",
+      "split": "Naive-collected vs Progress Graph (PG)-collected interventions",
+      "metric": "Posttrained VLA task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table II tests trained policy alone without expert/progress graph/privileged simulator state; PG and Naive collection are independent. CF-LPF only reported for PG, so Naive remains null.",
+      "trainingRegime": "Common SFT parent 50 demonstrations per task; each post-training variant uses fixed 10000 training steps, 240 collection seeds/task and 40 validation seeds/task.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Naive",
+        "Progress Graph"
+      ],
+      "source": "https://arxiv.org/html/2610.29161v1"
     }
   ]
 }

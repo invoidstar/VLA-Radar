@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261026-agibot-g2-max-launch",
+  "eventKey": "agibot-aiwave-g2max-robot-20261026",
+  "title": "智元在 AI WAVE 推出重载 G2 Max 机器人：公布工业负载与定位规格",
+  "primaryCategory": "robot",
+  "tags": [
+    "智元",
+    "AGIBOT",
+    "G2 Max",
+    "具身智能",
+    "工业机器人",
+    "重载双臂",
+    "industrial robotics",
+    "AI WAVE"
+  ],
+  "eventDate": "2026-10-26",
+  "publishedAt": "2026-10-26",
+  "dateNote": "智元10月22日官方AI WAVE预告明确列10月26日G2 Max；2026-10-26机器人产业原始报道确认当天正式展示。这里的10月26日是产品发布事件，不是商业批量交付或经独立验证的达标日。",
+  "observedAt": "2026-10-27",
+  "updatedAt": "2026-10-27",
+  "stage": "reported",
+  "evidence": "reported",
+  "status": "verified",
+  "featured": false,
+  "importance": "ecosystem",
+  "whatHappened": "智元在AI WAVE的10月26日环节介绍重载具身工业机器人G2 Max。10月22日厂商预告确认这个发布日；10月26日的专业机器人报道称其单臂额定负载20kg、双臂额定40kg、双臂峰值50kg，手臂重复定位精度≤±0.5mm。这些均为厂商及媒体转述的产品参数声明，非本站独立测试。",
+  "whyItMatters": "重载搬运和精密定位同时存在时，物理机器人部署需考虑负载、安全限位、夹持接触以及任务失败后恢复；厂商设备规格可作为真机VLA/WAM研究背景，但需要完整部署日志、任务条件与安全认证后才能比较研究结果。",
+  "vlaRelevance": "G2 Max代表多负载工业操作硬件条件，不等于出现一个开放训练的新VLA模型、公共Benchmark提交或稳定24小时的独立可靠性证据。动作空间、控制频率、双臂柔顺及任务语义接口是否开放需另行核验。",
+  "limits": "本次可确认公司规划的发布日和当天媒体报道的产品规格，不能证明第三方测得的负载精度、长期连续作业成功率、实际批量交付或训练权重/代码公开。11月2–3日便利店24小时演示仍属于未来计划，不得标为完成。此条为reported，不冒充厂商10月26日可访问完整技术论文。",
+  "sources": [
+    {
+      "id": "s2",
+      "title": "AGIBOT launches heavy-duty embodied robot to combine heavy lifting with precision handling",
+      "publisher": "RobotHOT",
+      "url": "https://www.robothot.com/agibot-launches-heavy-duty-embodied-robot-to-combine-heavy-lifting-with-precision-handling",
+      "kind": "media",
+      "publishedAt": "2026-10-26",
+      "access": "full-page",
+      "note": "10/26独立编辑报道确认已发布并引述厂商20/40/50kg及≤±0.5mm规格。没有独立评测，仍为厂商自报。"
+    },
+    {
+      "id": "s1",
+      "title": "智元AI WAVE七项技术发布官方计划",
+      "publisher": "智元创新（上海）科技股份有限公司",
+      "url": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "kind": "official",
+      "publishedAt": "2026-10-22",
+      "access": "full-page",
+      "note": "10/22厂商一手文件明确10/26 G2 Max产品计划；11月2–3演示尚未来临，此页面不是10/26实测报告。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

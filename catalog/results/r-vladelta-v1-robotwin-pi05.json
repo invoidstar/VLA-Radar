@@ -1,0 +1,19 @@
+{
+  "id": "r-vladelta-v1-robotwin-pi05",
+  "paperId": "p146",
+  "method": "π₀.₅",
+  "trackId": "vladelta-v1-robotwin2-clean-random",
+  "values": {
+    "Clean": 82.74,
+    "Randomized": 76.76
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.21306v1",
+  "sourceVersion": "arXiv 2610.21306v1",
+  "locator": "§3.2 Table 2 AVG Clean/Random pi0.5",
+  "attribution": "reported-baseline",
+  "trainingData": "External pi0.5 baseline recipe and pretrained weights; not matched pretraining.",
+  "evaluationNotes": "Cited original baseline row; do not infer common training budget.",
+  "supersedes": ""
+}

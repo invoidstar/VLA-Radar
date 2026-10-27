@@ -1,0 +1,19 @@
+{
+  "id": "r-vladelta-v1-robotwin-full",
+  "paperId": "p146",
+  "method": "VLA-Δ",
+  "trackId": "vladelta-v1-robotwin2-clean-random",
+  "values": {
+    "Clean": 90.06,
+    "Randomized": 89.74
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.21306v1",
+  "sourceVersion": "arXiv 2610.21306v1",
+  "locator": "§3.2 Table 2 AVG Clean/Random VLA-Delta",
+  "attribution": "author-reported",
+  "trainingData": "Three-stage explicit transition supervision and RoboTwin posttrain.",
+  "evaluationNotes": "Source-reported 50-task average; different baseline training budgets possible.",
+  "supersedes": ""
+}

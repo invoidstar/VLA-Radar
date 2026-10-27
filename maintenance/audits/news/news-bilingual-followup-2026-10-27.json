@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "news-bilingual-followup-2026-10-27",
+  "checkedAt": "2026-10-27",
+  "window": {
+    "from": "2026-10-13",
+    "to": "2026-10-27"
+  },
+  "status": "partial",
+  "scope": "Selected original Chinese company scheduling announcement plus Oct26 independently dated English robotics trade reporting. Prior Oct19 ministry, Oct21 Singapore, Oct22 PhysicalReasoning and Oct24 HoloMotion news checked only for de-dup. Not exhaustive bilingual labs, robot firms, open source releases and newspapers across this full date window.",
+  "sources": [
+    {
+      "provider": "AGIBOT official AI WAVE Oct22 dated corporate pre-release",
+      "kind": "official",
+      "url": "https://www.agibot.com.cn/article/315/detail/250.html",
+      "observedWindow": "Oct22 original announcement for Oct26 launch",
+      "status": "checked",
+      "note": "Official original clearly scheduled Oct26 G2 Max, but does not document independently tested payload/accuracy or completed Nov2–3 convenience store shift."
+    },
+    {
+      "provider": "RobotHOT original dated Oct26 robotics industry report",
+      "kind": "original-reporting",
+      "url": "https://www.robothot.com/agibot-launches-heavy-duty-embodied-robot-to-combine-heavy-lifting-with-precision-handling",
+      "observedWindow": "Oct26 product coverage",
+      "status": "checked",
+      "note": "Confirms G2 Max described as launched and reports vendor-provided 20/40/50kg and ±0.5mm product specs. This is independent reporting of company claims, not lab replication."
+    },
+    {
+      "provider": "MIIT official Chinese and State Council English press from existing catalog",
+      "kind": "official-de-dup",
+      "url": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2026/art_34e6e8e918bd424482287fc02a5cbffd.html",
+      "observedWindow": "Oct19–20 prior issue",
+      "status": "checked-duplicate",
+      "note": "Existing Oct19 MIIT story is not republished or counted as new event; full media scan not claimed."
+    },
+    {
+      "provider": "Already source-backed official Singapore/AgiBot release and Horizon HoloMotion",
+      "kind": "existing-catalog-cross-check",
+      "url": "https://github.com/HorizonRobotics/HoloMotion",
+      "observedWindow": "Oct21–24 selected events",
+      "status": "checked-duplicate",
+      "note": "Previously admitted events retained, no new IDs."
+    }
+  ],
+  "dispositions": [
+    {
+      "event": "AGIBOT Genie G2 Max AI WAVE Oct26 heavy-duty launch",
+      "status": "selected",
+      "eventDate": "2026-10-26",
+      "newsId": "news-20261026-agibot-g2-max-launch",
+      "reason": "Oct22 original official schedule and Oct26 independently dated robotics trade report; company payload/precision numbers explicitly attributed, no claims of policy open release."
+    },
+    {
+      "event": "MIIT government humanoid briefing",
+      "status": "duplicate",
+      "eventDate": "2026-10-19",
+      "newsId": "news-20261019-miit-humanoid-industry-briefing",
+      "reason": "Existing source-verified combined Chinese/English official event; no duplication."
+    }
+  ],
+  "summary": {
+    "selected": 1,
+    "duplicate": 1,
+    "excluded": 0,
+    "deferred": 0
+  },
+  "notes": "Primary/source sampling still cannot certify complete Oct13–27 bilingual scientific/company/media scans nor Sept20+ overlap from Oct04 checkpoint. lastSuccessfulSearchAt remains 2026-10-04. Planned Genie Master Oct27 and Genie Sim Oct28 etc must not be treated as successfully launched without event-day evidence."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "r-simpt-v1-policy-hgdagger",
+  "paperId": "p147",
+  "method": "HG-DAgger",
+  "trackId": "simpt-v1-robotwin7-policy-posttrain",
+  "values": {
+    "Naive": 80.21,
+    "Progress Graph": 82.14
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.29161v1",
+  "sourceVersion": "arXiv 2610.29161v1",
+  "locator": "§IV-C Table II HG-DAgger row",
+  "attribution": "author-reported",
+  "trainingData": "Two separately collected intervention datasets, equal 10k-step posttraining, 1400 heldout trials.",
+  "evaluationNotes": "Only updated policy at evaluation, no expert rescue.",
+  "supersedes": ""
+}

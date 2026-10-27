@@ -257,7 +257,13 @@
     "pacevla-v1-robocasa-kitchen-rldx": "paper",
     "pacevla-v1-libero-rldx": "paper",
     "spar-v1-libero-four-suite": "paper",
-    "spar-v1-libero-plus": "paper"
+    "spar-v1-libero-plus": "paper",
+    "geomem-v1-libero-four-suite": "paper",
+    "geomem-v1-robotwin2-clean-random": "paper",
+    "vladelta-v1-libero-four-suite": "paper",
+    "vladelta-v1-robotwin2-clean-random": "paper",
+    "simpt-v1-robotwin7-expert-recovery": "paper",
+    "simpt-v1-robotwin7-policy-posttrain": "paper"
   },
   "resultTiers": {
     "r-libero-infoentropy-v1-budget60-ours": "sweep",

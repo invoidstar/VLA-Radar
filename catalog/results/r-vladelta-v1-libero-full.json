@@ -1,0 +1,22 @@
+{
+  "id": "r-vladelta-v1-libero-full",
+  "paperId": "p146",
+  "method": "VLA-Δ",
+  "trackId": "vladelta-v1-libero-four-suite",
+  "values": {
+    "Spatial": 98.8,
+    "Object": 99.8,
+    "Goal": 98.6,
+    "Long": 96.4,
+    "Average": 98.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.21306v1",
+  "sourceVersion": "arXiv 2610.21306v1",
+  "locator": "§3.2 Table 1 VLA-Delta full 2B",
+  "attribution": "author-reported",
+  "trainingData": "Three-stage Physical State Difference Text, slots and optical-flow pretraining before standard LIBERO SFT.",
+  "evaluationNotes": "Author report; other paper baseline training protocols not guaranteed matched.",
+  "supersedes": ""
+}
