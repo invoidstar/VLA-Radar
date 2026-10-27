@@ -1,0 +1,19 @@
+{
+  "id": "r-simpt-v1-policy-recap-cf-lpf",
+  "paperId": "p147",
+  "method": "RECAP-CF-LPF",
+  "trackId": "simpt-v1-robotwin7-policy-posttrain",
+  "values": {
+    "Naive": null,
+    "Progress Graph": 79.36
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.29161v1",
+  "sourceVersion": "arXiv 2610.29161v1",
+  "locator": "§IV-D RECAP-CF-LPF seven-task holdout success rate",
+  "attribution": "author-reported",
+  "trainingData": "PG-collected dataset, five-fold value cross-fit and 1Hz Butterworth LPF, 1400 heldout trials.",
+  "evaluationNotes": "No Naive-collected value reported for this method; null is unknown, not zero. +2.86pp relative to PG RECAP.",
+  "supersedes": ""
+}

@@ -1,0 +1,19 @@
+{
+  "id": "r-vladelta-v1-robotwin-zr0",
+  "paperId": "p146",
+  "method": "ZR-0",
+  "trackId": "vladelta-v1-robotwin2-clean-random",
+  "values": {
+    "Clean": 88.7,
+    "Randomized": 87.98
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.21306v1",
+  "sourceVersion": "arXiv 2610.21306v1",
+  "locator": "§3.2 Table 2 AVG Clean/Random ZR-0",
+  "attribution": "reported-baseline",
+  "trainingData": "External ZR-0 reference recipe, not standardized by VLA-Radar.",
+  "evaluationNotes": "Cited original baseline row, not reproduced here.",
+  "supersedes": ""
+}

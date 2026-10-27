@@ -1,0 +1,19 @@
+{
+  "id": "r-simpt-v1-policy-flowpro",
+  "paperId": "p147",
+  "method": "FlowPRO",
+  "trackId": "simpt-v1-robotwin7-policy-posttrain",
+  "values": {
+    "Naive": 76.07,
+    "Progress Graph": 71.86
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-27",
+  "source": "https://arxiv.org/html/2610.29161v1",
+  "sourceVersion": "arXiv 2610.29161v1",
+  "locator": "§IV-C Table II FlowPRO negative-gain row",
+  "attribution": "author-reported",
+  "trainingData": "Two separately collected intervention datasets, equal 10k-step posttraining, 1400 heldout trials.",
+  "evaluationNotes": "Negative -4.21 percentage point with PG is preserved; cannot claim universal improvement.",
+  "supersedes": ""
+}

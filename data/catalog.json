@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26",
+  "updatedAt": "2026-10-27",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,225 @@
     }
   ],
   "papers": [
+    {
+      "id": "p147",
+      "name": "SimPT",
+      "title": "SimPT: An Automated Simulation Framework for Intervention-Based VLA Post-Training",
+      "team": "Caicheng Wang、Zipeng Ye、Zhexuan Zhou、Zilong Huang、Xi Zhang、Yuchen Xie",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1 preprint",
+      "firstPublished": "2026-10-21",
+      "dateNote": "arXiv v1 first posted 2026-10-21 UTC. 2026-10-27 deep read.",
+      "collectionMonth": "2026-10",
+      "versionNote": "Source-read §III–IV Tables I–II, seven RoboTwin tasks/25-scenario real HIL evidence, 2026-10-27",
+      "topics": [
+        "evaluation",
+        "action",
+        "memory"
+      ],
+      "tags": [
+        "post-training",
+        "intervention",
+        "progress graph",
+        "RoboTwin",
+        "CuRobo",
+        "HIL",
+        "DAgger",
+        "simulation"
+      ],
+      "priority": "deep",
+      "contribution": "提出使用特权仿真状态编译任务阶段图、失败后优先从高级阶段恢复的自动纠正数据收集闭环，用受控七任务评测比较后训练方法并改进RECAP价值预测。",
+      "findings": "PG相对Naive恢复尝试3781→945（-75%），恢复率93.4%→98.9%；RECAP七任务成功率66.64%→76.50%，但FlowPRO76.07%→71.86%。真实网线插入25场景RECAP72%、CF-LPF96%，为作者报告。",
+      "limitations": "Progress Graph用仿真特权状态，真实部署不能直接获得；七任务作者内部协议不能视作RoboTwin官方50任务榜单，部分后训练方法负增益；无完整官方代码/数据发布核验证据。",
+      "insight": "算法迭代不仅应看动作损失，还需控制恢复数据采集选择偏差；value cross-fitting+时间滤波可提升部分任务，但与真实机器人HIL仍有分布差异。",
+      "readingFocus": "§III-B task progress compiled from privileged state、§III-C stage snapshots、§IV TableI vs II、7-task 1400 heldout、RECAP-CF-LPF and real HIL limitations",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-27 arXiv original full HTML v1 Table I/II and IV-D checked; no independent experimental runs or verified official code release.",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "Original arXiv full text",
+          "url": "https://arxiv.org/html/2610.29161v1"
+        },
+        {
+          "label": "Original arXiv metadata",
+          "url": "https://arxiv.org/abs/2610.29161"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.29161",
+      "arxiv": "2610.29161",
+      "doi": "",
+      "detailUrl": "data/details/p147.json?v=6a94526873e1bb4c",
+      "resultUrl": "data/paper-results/p147.7026915e45297761.json",
+      "noteStatus": "expanded",
+      "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p147.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-21",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-27"
+      }
+    },
+    {
+      "id": "p146",
+      "name": "VLA-Δ",
+      "title": "VLA-Δ: Learning Physical State Transition for Vision-Language-Action Models",
+      "team": "Qi Lu、Jiarun Li、Ce Zhang、Miao Pan、Yi Pan、Xu Wang、Wenqi Zhang、Xuhong Zhang",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv v1 preprint; formal venue unverified",
+      "firstPublished": "2026-10-15",
+      "dateNote": "arXiv v1 original submitted 2026-10-15 UTC; 2026-10-27 technical recheck",
+      "collectionMonth": "2026-10",
+      "versionNote": "Full §2–3 Table1–3 and structured slot appendix; code checked 2026-10-27",
+      "topics": [
+        "pretraining",
+        "world",
+        "action"
+      ],
+      "tags": [
+        "transition supervision",
+        "future difference",
+        "optical flow",
+        "physical state",
+        "VLA pretraining",
+        "RoboTwin",
+        "LIBERO"
+      ],
+      "priority": "deep",
+      "contribution": "以物理状态差异Query统一任务差分文本、结构化转换槽与图像稠密运动监督，在预训练中学习当前到未来的物理变化，再在下游直接生成连续动作。",
+      "findings": "作者报告LIBERO Avg98.4%，RoboTwin Clean90.06%和Random89.74%。LIBERO只保留动作损失的无查询dense基线95.70%，全监督98.40%；所有数值作者报告，预训练数据预算不同。",
+      "limitations": "新增大量离线伪标签与阶段训练；结构化状态标签和真实接触可能偏离，难确定单一监督来源的因果贡献。LIBERO-Plus部分结果仅曲线，未由本站估像素值；真机提升不等于统一榜单。",
+      "insight": "在训练时施加动作引起的状态变化监督，而部署时只产生动作，可以与WAM视觉后果建模形成对照；外部3D和显式接触标签的准确性/可移植性是关键变量。",
+      "readingFocus": "Structured Transition Slots九目标/七组Query、difference text与dense flow监督、阶段pretrain、Table3模块消融、train-only未来信息边界",
+      "evidence": "checked",
+      "evidenceNote": "2026-10-27 original arXiv v1 Table1–3, appendix and author ZJU-OmniAI GitHub verified, no independent reproduction.",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "Original arXiv v1 full text",
+          "url": "https://arxiv.org/html/2610.21306v1"
+        },
+        {
+          "label": "Official code and training/benchmark guides",
+          "url": "https://github.com/ZJU-OmniAI/VLA-Delta"
+        },
+        {
+          "label": "Author project page",
+          "url": "https://zju-omniai.github.io/VLA-Delta/"
+        },
+        {
+          "label": "First arXiv release",
+          "url": "https://arxiv.org/abs/2610.21306"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.21306",
+      "arxiv": "2610.21306",
+      "doi": "",
+      "detailUrl": "data/details/p146.json?v=8146896c760ee39c",
+      "resultUrl": "data/paper-results/p146.ff7c7f1fa5798b45.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://zju-omniai.github.io/VLA-Delta/",
+        "code": "https://github.com/ZJU-OmniAI/VLA-Delta"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p146.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-15",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-27"
+      }
+    },
+    {
+      "id": "p145",
+      "name": "GeoMem-VLA",
+      "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+      "team": "Qinfan Zhang、Yifan Luo、Haoyuan Shi、Guanlin Liu、Han Dong、Haozhe Shan、Yong Dai、Xiangcong Ren、Xiaozhu Ju",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2610.29866v1 preprint",
+      "firstPublished": "2026-10-21",
+      "dateNote": "arXiv v1 首发为2026-10-21 UTC；2026-10-27正文/仓库核验。",
+      "collectionMonth": "2026-10",
+      "versionNote": "arXiv:2610.29866v1 full §3–4 Tables1–4 + official code README, 2026-10-27",
+      "topics": [
+        "spatial",
+        "memory",
+        "action"
+      ],
+      "tags": [
+        "GeoPlan",
+        "3D supervision",
+        "VGGT",
+        "memory banks",
+        "temporal",
+        "LIBERO",
+        "RoboTwin",
+        "flow matching"
+      ],
+      "priority": "deep",
+      "contribution": "使用冻结VGGT点图和未来末端轨迹训练GeoPlan token，再以观察与几何双记忆库持续整合任务历史；推理只用当前观测、语言、本体与因果记忆，不调用几何教师。",
+      "findings": "作者报告LIBERO四套件98.9%平均、RoboTwin 2.0 Clean91.10%/Randomized91.24%；去几何分支RoboTwin均值89.71%、去记忆90.18%。均为作者报告。",
+      "limitations": "w/o Geo是完整分支消融，不能单独归因到辅助监督；论文数值与GitHub默认20k步快速教程不一致，真机评测每任务10回合且无实机部署包；冻结教师和坐标系质量依赖外部模型。",
+      "insight": "与直接追加历史图像不同，使用独立几何摘要记忆有助于在测试时不执行几何重建的条件下利用过去3D线索，但额外训练目标和情节重置语义需严格对齐。",
+      "readingFocus": "§3.2 geometry flow targets、§3.3 memory write/read/consolidate、§4.2 50/100 trials、Tables 1–4和Appendix A、repo default vs paper training discrepancy",
+      "evidence": "checked",
+      "evidenceNote": "Original arXiv v1 HTML and author's GitHub README checked 2026-10-27; author-reported metrics; no independent run.",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "arXiv v1 original HTML",
+          "url": "https://arxiv.org/html/2610.29866v1"
+        },
+        {
+          "label": "arXiv v1 metadata",
+          "url": "https://arxiv.org/abs/2610.29866"
+        },
+        {
+          "label": "Author project",
+          "url": "https://geomem-vla.github.io/"
+        },
+        {
+          "label": "Official code",
+          "url": "https://github.com/GeoMem-VLA/GeoMem-VLA"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2610.29866",
+      "arxiv": "2610.29866",
+      "doi": "",
+      "detailUrl": "data/details/p145.json?v=15f83a96d12f1b55",
+      "resultUrl": "data/paper-results/p145.71dc6c18e13473cd.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://geomem-vla.github.io/",
+        "code": "https://github.com/GeoMem-VLA/GeoMem-VLA"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p145.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-10-21",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-10-27"
+      }
+    },
     {
       "id": "p144",
       "name": "SPAR",
