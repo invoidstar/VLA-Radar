@@ -15168,6 +15168,265 @@
         "Bottle disposal": "percent",
         "Classify objects": "percent"
       }
+    },
+    {
+      "id": "tokenworld-v1-robotwin-feature-cosine",
+      "dataset": "RoboTwin",
+      "name": "Token-World v1 · RoboTwin 50-task frozen VLM feature fidelity",
+      "version": "RoboTwin 50-task author trajectory split, arXiv 2610.00575v1",
+      "tasks": "50 tasks, 100 trajectories/task, 50 success and 50 failure per task",
+      "split": "9:1 train-validation split of 5000 action-replay trajectories",
+      "metric": "Frozen VLM feature cosine similarity",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Predicted compact-state-decoded VLM feature versus ground-truth frozen Qwen3-VL feature under fixed action replay. Different from task success rate; same 50 tasks and 9:1 split across simulators.",
+      "trainingRegime": "5000 RoboTwin trajectories: 50 success + 50 failure per task, 9:1 train-val; RGB-generating comparators are re-encoded with identical frozen VLM.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Cosine"
+      ],
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Cosine": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Cosine": "higher"
+      },
+      "columnUnits": {
+        "Cosine": "score"
+      }
+    },
+    {
+      "id": "tokenworld-v1-robotwin-action-cosine",
+      "dataset": "RoboTwin",
+      "name": "Token-World v1 · RoboTwin frozen policy action consistency",
+      "version": "RoboTwin 50-task source v1 Table I, fixed downstream policy",
+      "tasks": "50 tasks, identical reference replay trajectories",
+      "split": "9:1 train-validation, source-matched frozen-policy outputs",
+      "metric": "Fixed policy output action cosine similarity",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Frozen policy actions inferred from predicted VLM-feature representation compared with same frozen policy from ground-truth VLM features. This is a continuous similarity, not task success rate.",
+      "trainingRegime": "Same RoboTwin 5000 trajectories and reference-policy evaluation; no re-training of frozen downstream policy in the metric.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Cosine"
+      ],
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Cosine": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Cosine": "higher"
+      },
+      "columnUnits": {
+        "Cosine": "score"
+      }
+    },
+    {
+      "id": "pacevla-v1-robocasa-kitchen-rldx",
+      "dataset": "RoboCasa",
+      "name": "PaceVLA v1 · RoboCasa-Kitchen RLDX-1-IMG source table",
+      "version": "RoboCasa-Kitchen 24 tasks, arXiv 2610.25961v1 Table 1",
+      "tasks": "24 RoboCasa-Kitchen tasks",
+      "split": "PnP vs other kitchen task groups",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RLDX-1-IMG author comparison on 24 RoboCasa-Kitchen tasks with 300 demonstrations/task; PnP and Others group success separately. Reached/failed step horizon and controller tuning from original study. No official RoboCasa leaderboard claim.",
+      "trainingRegime": "RLDX-1-IMG backbone; 300 demonstrations per RoboCasa-Kitchen task; PaceVLA decoder/judge/router plus controller setup.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PnP",
+        "Others"
+      ],
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "PnP": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Others": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "PnP": "higher",
+        "Others": "higher"
+      },
+      "columnUnits": {
+        "PnP": "percent",
+        "Others": "percent"
+      }
+    },
+    {
+      "id": "pacevla-v1-libero-rldx",
+      "dataset": "LIBERO",
+      "name": "PaceVLA v1 · RLDX standard LIBERO short vs long",
+      "version": "Standard LIBERO four-suites, arXiv 2610.25961v1 Table 1",
+      "tasks": "Spatial / Object / Goal / Long suites",
+      "split": "Short is mean of Spatial, Object, Goal; Long is LIBERO-Long",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RLDX-1-IMG source paper Table 1; Short represents three suites, Long the fourth; only group averages shown. Does not reconstruct missing suite values.",
+      "trainingRegime": "RLDX-1-IMG flow matching backbone with and without PaceVLA adaptive temporal action modes; fine tuning and control as source.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Short",
+        "Long"
+      ],
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Short": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Short": "higher",
+        "Long": "higher"
+      },
+      "columnUnits": {
+        "Short": "percent",
+        "Long": "percent"
+      }
+    },
+    {
+      "id": "pacevla-v1-allex-real",
+      "dataset": "ALLEX Real",
+      "name": "PaceVLA · ALLEX humanoid conveyor package handling",
+      "version": "arXiv 2610.25961v1 Table 4",
+      "tasks": "1 humanoid 15-DoF-hand task, 10 packages in each trial",
+      "split": "Real ALLEX long-horizon conveyor package handling",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Author ALLEX single real-humanoid conveyor task; 10 packages/trial, success percentage separately from packages/min throughput. Not a standard common public leaderboard or simulated RoboCasa SR.",
+      "trainingRegime": "GR00T N1.5 base vs adapted PaceVLA, 15-DoF dexterous hands; exact training episodes not specified in this aggregated table.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "qualityKind": "case-study",
+      "columnSpecs": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
+      }
+    },
+    {
+      "id": "spar-v1-libero-four-suite",
+      "dataset": "LIBERO",
+      "name": "SPAR v1 · LIBERO 10% hidden / 10% FFN pruning and PPO recovery",
+      "version": "arXiv 2610.26487v1 Table II",
+      "tasks": "Standard LIBERO Spatial/Object/Goal/Long",
+      "split": "Original LIBERO four-suite success under shared author setup",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Four standard LIBERO suites, π₀.₅ baseline and baseline+RL versus dual structural ρhid=0.1 ρint=0.1 PAT-only/PAT+RL; baseline/PAT stages have different training and must remain explicit.",
+      "trainingRegime": "π₀.₅ 3.37B baseline or SPAR 1.12B total (0.09B LLM), PAT pruning+SFT and optional PPO RLinf rollout; record exact recipe in each result.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Spatial": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Object": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Goal": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "spar-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "SPAR v1 · LIBERO-Plus OOD same-checkpoint robustness",
+      "version": "arXiv 2610.26487v1 Table III",
+      "tasks": "LIBERO-Plus camera/robot/language/light/background/noise/layout perturbations",
+      "split": "Overall perturbation aggregate on LIBERO-Plus",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Same checkpoints as standard LIBERO, evaluated across LIBERO-Plus seven perturbation groups; Overall aggregate only entered, not inferred individual missing metrics. Separate from standard LIBERO success.",
+      "trainingRegime": "π₀.₅ original and ρhid=0.1 ρint=0.1 structured PAT pruning with or without PPO recovery; equivalent checkpoints to Table II.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Overall"
+      ],
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Overall": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Overall": "higher"
+      },
+      "columnUnits": {
+        "Overall": "percent"
+      }
     }
   ],
   "settings": [
@@ -15441,7 +15700,8 @@
         "Object",
         "Goal",
         "Long",
-        "Average"
+        "Average",
+        "Short"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
@@ -15475,7 +15735,9 @@
         "foreact3d-v1-libero-all-suites",
         "patchwam-v1-libero-standard",
         "fastvla-v1-libero",
-        "turbovla-v3-libero-main"
+        "turbovla-v3-libero-main",
+        "pacevla-v1-libero-rldx",
+        "spar-v1-libero-four-suite"
       ],
       "resultIds": [
         "r-adavla-v2-sr-b10",
@@ -15543,6 +15805,8 @@
         "r-libero-turbovla-v2-vega3d",
         "r-libero-turbovla-v2-vla-adapter",
         "r-libero-turbovla-v2-vla-jepa",
+        "r-pacevla-v1-libero-base",
+        "r-pacevla-v1-libero-ours",
         "r-patchwam-v1-libero",
         "r-proact-v1-libero-openvlaoft",
         "r-proact-v1-libero-pi05",
@@ -15552,6 +15816,10 @@
         "r-qwen-vla-v2-libero-instruct",
         "r-savla-v1-libero-groot",
         "r-savla-v1-libero-savla",
+        "r-spar-v1-libero-base-rl",
+        "r-spar-v1-libero-base",
+        "r-spar-v1-libero-pat-rl",
+        "r-spar-v1-libero-pat",
         "r-temporalflow-v1-libero-main",
         "r-thaw-v2-libero-base",
         "r-thaw-v2-libero-distilled",
@@ -15566,8 +15834,8 @@
         "r-w2vla-v1-libero-w2",
         "r-xiaomi0-v2-libero-xiaomi-robotics-0"
       ],
-      "resultCount": 87,
-      "paperCount": 24,
+      "resultCount": 93,
+      "paperCount": 26,
       "paperIds": [
         "p030",
         "p043",
@@ -15582,11 +15850,13 @@
         "p064",
         "p081",
         "p027",
+        "p143",
         "p132",
         "p122",
         "p114",
         "p113",
         "p117",
+        "p144",
         "p014",
         "p106",
         "p002",
@@ -15594,7 +15864,7 @@
         "p010",
         "p112"
       ],
-      "methodCount": 73,
+      "methodCount": 79,
       "primaryTrackId": "libero-oft-single-view",
       "trainingOptions": [
         {
@@ -15694,6 +15964,12 @@
           "count": 17
         },
         {
+          "id": "data-c4038c40e8f9",
+          "label": "Standard LIBERO four-suites under RLDX-1-IMG source training",
+          "known": true,
+          "count": 2
+        },
+        {
           "id": "data-ba65380f2aa5",
           "label": "PatchWAM source LIBERO training recipe；distinct action dimensionality and data from RoboTwin.",
           "known": true,
@@ -15720,6 +15996,24 @@
         {
           "id": "unknown-p117",
           "label": "训练数据未完整披露 · p117",
+          "known": false,
+          "count": 2
+        },
+        {
+          "id": "data-d80f01e5865c",
+          "label": "same authors' LIBERO task evaluation. PPO on original unpruned backbone.",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-487e93b81ceb",
+          "label": "same authors' LIBERO task evaluation.",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p144",
+          "label": "训练数据未完整披露 · p144",
           "known": false,
           "count": 2
         },
@@ -15832,6 +16126,8 @@
         "r-libero-turbovla-v2-vega3d": "unknown-p027",
         "r-libero-turbovla-v2-vla-adapter": "unknown-p027",
         "r-libero-turbovla-v2-vla-jepa": "unknown-p027",
+        "r-pacevla-v1-libero-base": "data-c4038c40e8f9",
+        "r-pacevla-v1-libero-ours": "data-c4038c40e8f9",
         "r-patchwam-v1-libero": "data-ba65380f2aa5",
         "r-proact-v1-libero-openvlaoft": "unknown-p122",
         "r-proact-v1-libero-pi05": "unknown-p122",
@@ -15841,6 +16137,10 @@
         "r-qwen-vla-v2-libero-instruct": "unknown-p113",
         "r-savla-v1-libero-groot": "unknown-p117",
         "r-savla-v1-libero-savla": "unknown-p117",
+        "r-spar-v1-libero-base-rl": "data-d80f01e5865c",
+        "r-spar-v1-libero-base": "data-487e93b81ceb",
+        "r-spar-v1-libero-pat-rl": "unknown-p144",
+        "r-spar-v1-libero-pat": "unknown-p144",
         "r-temporalflow-v1-libero-main": "unknown-p014",
         "r-thaw-v2-libero-base": "unknown-p106",
         "r-thaw-v2-libero-distilled": "unknown-p106",
@@ -15875,12 +16175,16 @@
         "Average": {
           "unit": "percent",
           "direction": "higher"
+        },
+        "Short": {
+          "unit": "percent",
+          "direction": "higher"
         }
       },
       "qualityKind": "benchmark",
       "primaryResultCount": 78,
       "primaryPaperCount": 24,
-      "latestReportVerifiedAt": "2026-10-22",
+      "latestReportVerifiedAt": "2026-10-26",
       "methodNames": [
         "π0.5",
         "AdaVLA",
@@ -15935,6 +16239,8 @@
         "VEGA3D",
         "VLA-Adapter",
         "VLA-JEPA",
+        "RLDX-1-IMG",
+        "RLDX-1-IMG + PaceVLA",
         "PatchWAM",
         "ProAct",
         "Qwen-RobotManip",
@@ -15942,6 +16248,10 @@
         "Qwen-VLA-Instruct",
         "GR00T N1.5",
         "SAVLA",
+        "π₀.₅ original + PPO",
+        "π₀.₅ original",
+        "SPAR 10%/10% PAT+RL",
+        "SPAR 10%/10% PAT-only",
         "TemporalFlow-VLA",
         "QwenGR00T 0.8B · no distillation",
         "THAW-VLA · QwenGR00T 0.8B distilled",
@@ -15972,7 +16282,9 @@
         "PickPlace",
         "OpenClose",
         "KnobLever",
-        "ButtonInsert"
+        "ButtonInsert",
+        "PnP",
+        "Others"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
@@ -15982,9 +16294,12 @@
         "robocasa-original-24atomic-v1",
         "robocasa24-rldx-v2",
         "seelike-v1-pretrained-robocasa",
-        "seer-v2-robocasa24-main"
+        "seer-v2-robocasa24-main",
+        "pacevla-v1-robocasa-kitchen-rldx"
       ],
       "resultIds": [
+        "r-pacevla-v1-robocasa-base",
+        "r-pacevla-v1-robocasa-ours",
         "r-robocasa-original-24atomic-v1-bc-transformer-generated-3000",
         "r-robocasa-original-24atomic-v1-bc-transformer-human-50",
         "r-robocasa24-cosmos-50demos-cosmos-policy",
@@ -16017,18 +16332,25 @@
         "r-seer-v2-robocasa24-pointvla",
         "r-seer-v2-robocasa24-seer"
       ],
-      "resultCount": 31,
-      "paperCount": 5,
+      "resultCount": 33,
+      "paperCount": 6,
       "paperIds": [
+        "p143",
         "p079",
         "p076",
         "p081",
         "p004",
         "p011"
       ],
-      "methodCount": 27,
+      "methodCount": 29,
       "primaryTrackId": "robocasa24-cosmos-50demos",
       "trainingOptions": [
+        {
+          "id": "data-528e1866616b",
+          "label": "24 RoboCasa-Kitchen tasks trained from 300 demonstrations each",
+          "known": true,
+          "count": 2
+        },
         {
           "id": "data-434c5c14aa99",
           "label": "24任务×3,000生成示范=72,000",
@@ -16103,6 +16425,8 @@
         }
       ],
       "trainingByResult": {
+        "r-pacevla-v1-robocasa-base": "data-528e1866616b",
+        "r-pacevla-v1-robocasa-ours": "data-528e1866616b",
         "r-robocasa-original-24atomic-v1-bc-transformer-generated-3000": "data-434c5c14aa99",
         "r-robocasa-original-24atomic-v1-bc-transformer-human-50": "data-21bafe1586e0",
         "r-robocasa24-cosmos-50demos-cosmos-policy": "data-daf196c7526d",
@@ -16155,13 +16479,23 @@
         "ButtonInsert": {
           "unit": "percent",
           "direction": "higher"
+        },
+        "PnP": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Others": {
+          "unit": "percent",
+          "direction": "higher"
         }
       },
       "qualityKind": "benchmark",
       "primaryResultCount": 29,
       "primaryPaperCount": 5,
-      "latestReportVerifiedAt": "2026-10-22",
+      "latestReportVerifiedAt": "2026-10-26",
       "methodNames": [
+        "RLDX-1-IMG",
+        "RLDX-1-IMG + PaceVLA",
         "BC-Transformer",
         "Cosmos Policy",
         "DP-VLA",
@@ -30198,27 +30532,33 @@
       "evalId": "auto:success-c1deb3268b-na",
       "name": "LIBERO-Plus · Success Rate · Success Rate",
       "tasks": "LIBERO-Plus out-of-domain perturbations",
-      "split": "Held-out LIBERO-Plus, full ~43 demos/task LIBERO FastWAM training",
+      "split": "多来源评测描述；详见各行 Evidence",
       "metric": "Task success rate",
       "unit": "percent",
       "direction": "higher",
       "columns": [
         "Overall"
       ],
-      "protocol": "Identical FastWAM action-head and training recipe, varying video backbone initialization only: FastWAM baseline vs FastWAM initialized from Ropedia W0 5B. Full-data row only, Overall success; not Ropedia world-model policy direct SR.",
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
-        "ropedia-w0-v1-fastwam-libero-plus"
+        "ropedia-w0-v1-fastwam-libero-plus",
+        "spar-v1-libero-plus"
       ],
       "resultIds": [
         "r-ropedia-w0-v1-libero-plus-fastwam",
-        "r-ropedia-w0-v1-libero-plus-init"
+        "r-ropedia-w0-v1-libero-plus-init",
+        "r-spar-v1-libero-plus-base-rl",
+        "r-spar-v1-libero-plus-base",
+        "r-spar-v1-libero-plus-pat-rl",
+        "r-spar-v1-libero-plus-pat"
       ],
-      "resultCount": 2,
-      "paperCount": 1,
+      "resultCount": 6,
+      "paperCount": 2,
       "paperIds": [
-        "p138"
+        "p138",
+        "p144"
       ],
-      "methodCount": 2,
+      "methodCount": 6,
       "primaryTrackId": "ropedia-w0-v1-fastwam-libero-plus",
       "trainingOptions": [
         {
@@ -30232,11 +30572,33 @@
           "label": "Identical FastWAM downstream action/training recipe with W0 pretrained 5B video backbone initialization，full ≈43 demos/task.",
           "known": true,
           "count": 1
+        },
+        {
+          "id": "data-d80f01e5865c",
+          "label": "same authors' LIBERO task evaluation. PPO on original unpruned backbone.",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "data-487e93b81ceb",
+          "label": "same authors' LIBERO task evaluation.",
+          "known": true,
+          "count": 1
+        },
+        {
+          "id": "unknown-p144",
+          "label": "训练数据未完整披露 · p144",
+          "known": false,
+          "count": 2
         }
       ],
       "trainingByResult": {
         "r-ropedia-w0-v1-libero-plus-fastwam": "data-439972867ab0",
-        "r-ropedia-w0-v1-libero-plus-init": "data-9861b9739c23"
+        "r-ropedia-w0-v1-libero-plus-init": "data-9861b9739c23",
+        "r-spar-v1-libero-plus-base-rl": "data-d80f01e5865c",
+        "r-spar-v1-libero-plus-base": "data-487e93b81ceb",
+        "r-spar-v1-libero-plus-pat-rl": "unknown-p144",
+        "r-spar-v1-libero-plus-pat": "unknown-p144"
       },
       "columnMeta": {
         "Overall": {
@@ -30250,7 +30612,11 @@
       "latestReportVerifiedAt": "2026-10-26",
       "methodNames": [
         "FastWAM",
-        "FastWAM + Ropedia W0 init"
+        "FastWAM + Ropedia W0 init",
+        "π₀.₅ original + PPO",
+        "π₀.₅ original",
+        "SPAR 10%/10% PAT+RL",
+        "SPAR 10%/10% PAT-only"
       ]
     },
     {
@@ -30487,6 +30853,177 @@
       "latestReportVerifiedAt": "2026-10-26",
       "methodNames": [
         "FastHarness"
+      ]
+    },
+    {
+      "id": "setting-robotwin-frozen-vlm-feature-cosine-similarity-ad9897a115-50-c4a2847bd1f9",
+      "dataset": "RoboTwin",
+      "evalId": "auto:frozen-vlm-feature-cosine-similarity-ad9897a115-50",
+      "name": "RoboTwin · 50 Tasks · Frozen VLM feature cosine similarity",
+      "tasks": "50 tasks, 100 trajectories/task, 50 success and 50 failure per task",
+      "split": "9:1 train-validation split of 5000 action-replay trajectories",
+      "metric": "Frozen VLM feature cosine similarity",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "Cosine"
+      ],
+      "protocol": "Predicted compact-state-decoded VLM feature versus ground-truth frozen Qwen3-VL feature under fixed action replay. Different from task success rate; same 50 tasks and 9:1 split across simulators.",
+      "trackIds": [
+        "tokenworld-v1-robotwin-feature-cosine"
+      ],
+      "resultIds": [
+        "r-tokenworld-v1-feature-ctrl",
+        "r-tokenworld-v1-feature-irasim",
+        "r-tokenworld-v1-feature-ours"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p142"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "tokenworld-v1-robotwin-feature-cosine",
+      "trainingOptions": [
+        {
+          "id": "data-5abc0e9ae9b5",
+          "label": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task)",
+          "known": true,
+          "count": 3
+        }
+      ],
+      "trainingByResult": {
+        "r-tokenworld-v1-feature-ctrl": "data-5abc0e9ae9b5",
+        "r-tokenworld-v1-feature-irasim": "data-5abc0e9ae9b5",
+        "r-tokenworld-v1-feature-ours": "data-5abc0e9ae9b5"
+      },
+      "columnMeta": {
+        "Cosine": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-26",
+      "methodNames": [
+        "Ctrl-World",
+        "IRASim",
+        "Token-World"
+      ]
+    },
+    {
+      "id": "setting-robotwin-fixed-policy-output-action-cosine-similarity-ad9897a115-50-2baa50dd46c7",
+      "dataset": "RoboTwin",
+      "evalId": "auto:fixed-policy-output-action-cosine-similarity-ad9897a115-50",
+      "name": "RoboTwin · 50 Tasks · Fixed policy output action cosine similarity",
+      "tasks": "50 tasks, identical reference replay trajectories",
+      "split": "9:1 train-validation, source-matched frozen-policy outputs",
+      "metric": "Fixed policy output action cosine similarity",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "Cosine"
+      ],
+      "protocol": "Frozen policy actions inferred from predicted VLM-feature representation compared with same frozen policy from ground-truth VLM features. This is a continuous similarity, not task success rate.",
+      "trackIds": [
+        "tokenworld-v1-robotwin-action-cosine"
+      ],
+      "resultIds": [
+        "r-tokenworld-v1-action-ctrl",
+        "r-tokenworld-v1-action-irasim",
+        "r-tokenworld-v1-action-ours"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p142"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "tokenworld-v1-robotwin-action-cosine",
+      "trainingOptions": [
+        {
+          "id": "data-5abc0e9ae9b5",
+          "label": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task)",
+          "known": true,
+          "count": 3
+        }
+      ],
+      "trainingByResult": {
+        "r-tokenworld-v1-action-ctrl": "data-5abc0e9ae9b5",
+        "r-tokenworld-v1-action-irasim": "data-5abc0e9ae9b5",
+        "r-tokenworld-v1-action-ours": "data-5abc0e9ae9b5"
+      },
+      "columnMeta": {
+        "Cosine": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-26",
+      "methodNames": [
+        "Ctrl-World",
+        "IRASim",
+        "Token-World"
+      ]
+    },
+    {
+      "id": "setting-allex-real-success-aee408847d-na-414ef9b2ad81",
+      "dataset": "ALLEX Real",
+      "evalId": "auto:success-aee408847d-na",
+      "name": "ALLEX Real · Success · Success Rate",
+      "tasks": "1 humanoid 15-DoF-hand task, 10 packages in each trial",
+      "split": "Real ALLEX long-horizon conveyor package handling",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Success"
+      ],
+      "protocol": "Author ALLEX single real-humanoid conveyor task; 10 packages/trial, success percentage separately from packages/min throughput. Not a standard common public leaderboard or simulated RoboCasa SR.",
+      "trackIds": [
+        "pacevla-v1-allex-real"
+      ],
+      "resultIds": [
+        "r-pacevla-v1-allex-base",
+        "r-pacevla-v1-allex-ours"
+      ],
+      "resultCount": 2,
+      "paperCount": 1,
+      "paperIds": [
+        "p143"
+      ],
+      "methodCount": 2,
+      "primaryTrackId": "pacevla-v1-allex-real",
+      "trainingOptions": [
+        {
+          "id": "unknown-p143",
+          "label": "训练数据未完整披露 · p143",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-pacevla-v1-allex-base": "unknown-p143",
+        "r-pacevla-v1-allex-ours": "unknown-p143"
+      },
+      "columnMeta": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "case-study",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-10-26",
+      "methodNames": [
+        "GR00T N1.5",
+        "GR00T N1.5 + PaceVLA"
       ]
     }
   ],
@@ -31014,6 +31551,15 @@
           "tabletop",
           "multi-task"
         ]
+      },
+      "ALLEX Real": {
+        "focus": "efficiency-deployment",
+        "environment": "real",
+        "tags": [
+          "latency-efficiency",
+          "long-horizon",
+          "dexterous"
+        ]
       }
     }
   },
@@ -31237,13 +31783,18 @@
         "kind": "case-study",
         "officialUrl": null,
         "auditSummary": "Echo arXiv 2610.31569 v1五项独立真实操作Task Completion Score（0–10）每任务30次，不能视为统一公共基准成功率。"
+      },
+      "ALLEX Real": {
+        "kind": "case-study",
+        "officialUrl": null,
+        "auditSummary": "PaceVLA arXiv 2610.25961v1 Table4 10-package humanoid ALLEX conveyor task; author-reported SR 86.0/94.0 is distinct from 3.6/6.3 successful packages per minute, not a standard public leaderboard or independently reproduced robot evaluation."
       }
     },
     "legacySettingTracks": {
       "setting-libero-plus-d7a11d009077": "libero-plus-rldx-v2"
     },
     "primaryResultCount": 694,
-    "archivedResultCount": 244
+    "archivedResultCount": 264
   },
   "officialBoards": {
     "RoboTwin": {
@@ -42113,6 +42664,136 @@
       "sourceClass": "cited-baseline"
     },
     {
+      "id": "r-pacevla-v1-allex-base",
+      "paperId": "p143",
+      "method": "GR00T N1.5",
+      "trackId": "pacevla-v1-allex-real",
+      "values": {
+        "Success": 86
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "sourceVersion": "arXiv 2610.25961v1",
+      "locator": "Table 4 ALLEX Conveyor Package Handling / GR00T N1.5",
+      "attribution": "reported-baseline",
+      "trainingData": "GR00T N1.5 ALLEX 15-DoF hands conveyor task with 10 packages per trial; exact training samples not given in Table 4.",
+      "evaluationNotes": "Author real-hardware task SR, reported 3.6 packages/min separately; unlike mean time on fully successful Franka/OpenArm trials.",
+      "supersedes": "",
+      "methodId": "gr00tn15",
+      "displayTier": "case-study",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-pacevla-v1-allex-ours",
+      "paperId": "p143",
+      "method": "GR00T N1.5 + PaceVLA",
+      "trackId": "pacevla-v1-allex-real",
+      "values": {
+        "Success": 94
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "sourceVersion": "arXiv 2610.25961v1",
+      "locator": "Table 4 ALLEX Conveyor Package Handling / PaceVLA",
+      "attribution": "author-reported",
+      "trainingData": "GR00T N1.5 ALLEX 15-DoF hands conveyor task with 10 packages per trial; exact training samples not given in Table 4. Adaptive action quantization and controller settings.",
+      "evaluationNotes": "Author real-hardware SR 94%, throughput 6.3 packages/min recorded in reading note only; no independent reproduction.",
+      "supersedes": "",
+      "methodId": "gr00tn15pacevla",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pacevla-v1-libero-base",
+      "paperId": "p143",
+      "method": "RLDX-1-IMG",
+      "trackId": "pacevla-v1-libero-rldx",
+      "values": {
+        "Short": 96.7,
+        "Long": 88.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "sourceVersion": "arXiv 2610.25961v1",
+      "locator": "Table 1 RLDX-1-IMG source row / LIBERO short and long",
+      "attribution": "reported-baseline",
+      "trainingData": "Standard LIBERO four-suites under RLDX-1-IMG source training; Short aggregates Spatial/Object/Goal without inventing per-suite values.",
+      "evaluationNotes": "Original source group averages, no missing suite inference; TPR/ES omitted from SR track.",
+      "supersedes": "",
+      "methodId": "rldx1img",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-pacevla-v1-libero-ours",
+      "paperId": "p143",
+      "method": "RLDX-1-IMG + PaceVLA",
+      "trackId": "pacevla-v1-libero-rldx",
+      "values": {
+        "Short": 97.7,
+        "Long": 90.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "sourceVersion": "arXiv 2610.25961v1",
+      "locator": "Table 1 + PaceVLA source row / LIBERO short and long",
+      "attribution": "author-reported",
+      "trainingData": "Standard LIBERO four-suites under RLDX-1-IMG source training; Short aggregates Spatial/Object/Goal without inventing per-suite values. Model-specific decoders and temporal quantization supervision.",
+      "evaluationNotes": "Original grouped task SR. Not a common-protocol independent robot run.",
+      "supersedes": "",
+      "methodId": "rldx1imgpacevla",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pacevla-v1-robocasa-base",
+      "paperId": "p143",
+      "method": "RLDX-1-IMG",
+      "trackId": "pacevla-v1-robocasa-kitchen-rldx",
+      "values": {
+        "PnP": 48.5,
+        "Others": 76.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "sourceVersion": "arXiv 2610.25961v1",
+      "locator": "Table 1 RLDX-1-IMG source rows / RoboCasa-Kitchen success PnP and Others",
+      "attribution": "reported-baseline",
+      "trainingData": "RLDX-1-IMG backbone; 24 RoboCasa-Kitchen tasks trained from 300 demonstrations each, source simulation controller.",
+      "evaluationNotes": "The authors report two task-group SR values. TPR and effective speedup are distinct metrics, not encoded as success.",
+      "supersedes": "",
+      "methodId": "rldx1img",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-pacevla-v1-robocasa-ours",
+      "paperId": "p143",
+      "method": "RLDX-1-IMG + PaceVLA",
+      "trackId": "pacevla-v1-robocasa-kitchen-rldx",
+      "values": {
+        "PnP": 45,
+        "Others": 76.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.25961v1",
+      "sourceVersion": "arXiv 2610.25961v1",
+      "locator": "Table 1 + PaceVLA source row / RoboCasa-Kitchen",
+      "attribution": "author-reported",
+      "trainingData": "RLDX-1-IMG backbone; 24 RoboCasa-Kitchen tasks trained from 300 demonstrations each, source simulation controller. Adaptive mode decoder/judge/router added.",
+      "evaluationNotes": "PnP 45.0 is lower than baseline 48.5; negative result retained. This is paper table, not unified RoboCasa platform rank.",
+      "supersedes": "",
+      "methodId": "rldx1imgpacevla",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
       "id": "r-patchwam-v1-libero-plus",
       "paperId": "p132",
       "method": "PatchWAM",
@@ -50651,6 +51332,190 @@
       "sourceClass": "paper-reported"
     },
     {
+      "id": "r-spar-v1-libero-base-rl",
+      "paperId": "p144",
+      "method": "π₀.₅ original + PPO",
+      "trackId": "spar-v1-libero-four-suite",
+      "values": {
+        "Spatial": 99.2,
+        "Object": 99.6,
+        "Goal": 99.2,
+        "Long": 92.8,
+        "Average": 97.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table II standard LIBERO / base-rl / ρhid=0.1 ρint=0.1 when pruned",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ original 3.37B total / 2.34B LLM; same authors' LIBERO task evaluation. PPO on original unpruned backbone.",
+      "evaluationNotes": "Original-parameter policy with PPO; not the pruned SPAR method. Author-reported SR, no independent replication.",
+      "supersedes": "",
+      "methodId": "pi05originalppo",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-spar-v1-libero-base",
+      "paperId": "p144",
+      "method": "π₀.₅ original",
+      "trackId": "spar-v1-libero-four-suite",
+      "values": {
+        "Spatial": 98.8,
+        "Object": 98.8,
+        "Goal": 97.4,
+        "Long": 92.2,
+        "Average": 96.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table II standard LIBERO / base / ρhid=0.1 ρint=0.1 when pruned",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ original 3.37B total / 2.34B LLM; same authors' LIBERO task evaluation.",
+      "evaluationNotes": "No PPO; author source original policy baseline. Author-reported SR, no independent replication.",
+      "supersedes": "",
+      "methodId": "pi05original",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-spar-v1-libero-pat-rl",
+      "paperId": "p144",
+      "method": "SPAR 10%/10% PAT+RL",
+      "trackId": "spar-v1-libero-four-suite",
+      "values": {
+        "Spatial": 97,
+        "Object": 99.2,
+        "Goal": 93,
+        "Long": 84.6,
+        "Average": 93.45
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table II standard LIBERO / pat-rl / ρhid=0.1 ρint=0.1 when pruned",
+      "attribution": "author-reported",
+      "trainingData": "SPAR dual hidden/FFN retention 10%/10%, 1.12B total and 0.09B language backbone after pruning-aware tuning and SFT; optional PPO policy recovery. PPO with sparse success rewards.",
+      "evaluationNotes": "RL restores 8.90pp LIBERO, 9.35pp LIBERO-Plus relative to matching PAT-only, but remains below original base+RL. Author-reported SR, no independent replication.",
+      "supersedes": "",
+      "methodId": "spar1010patrl",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-spar-v1-libero-pat",
+      "paperId": "p144",
+      "method": "SPAR 10%/10% PAT-only",
+      "trackId": "spar-v1-libero-four-suite",
+      "values": {
+        "Spatial": 94.2,
+        "Object": 82.8,
+        "Goal": 86.2,
+        "Long": 75,
+        "Average": 84.55
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table II standard LIBERO / pat / ρhid=0.1 ρint=0.1 when pruned",
+      "attribution": "author-reported",
+      "trainingData": "SPAR dual hidden/FFN retention 10%/10%, 1.12B total and 0.09B language backbone after pruning-aware tuning and SFT; optional PPO policy recovery.",
+      "evaluationNotes": "PAT + SFT only, without RL; same pruned architecture as PAT+RL. Author-reported SR, no independent replication.",
+      "supersedes": "",
+      "methodId": "spar1010patonly",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-spar-v1-libero-plus-base-rl",
+      "paperId": "p144",
+      "method": "π₀.₅ original + PPO",
+      "trackId": "spar-v1-libero-plus",
+      "values": {
+        "Overall": 84.45
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table III LIBERO-Plus Overall / base-rl",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ original 3.37B total / 2.34B LLM; same authors' LIBERO task evaluation. PPO on original unpruned backbone.",
+      "evaluationNotes": "Original-parameter policy with PPO; not the pruned SPAR method. Perturbation aggregate, not standard LIBERO SR.",
+      "supersedes": "",
+      "methodId": "pi05originalppo",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-spar-v1-libero-plus-base",
+      "paperId": "p144",
+      "method": "π₀.₅ original",
+      "trackId": "spar-v1-libero-plus",
+      "values": {
+        "Overall": 83.98
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table III LIBERO-Plus Overall / base",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ original 3.37B total / 2.34B LLM; same authors' LIBERO task evaluation.",
+      "evaluationNotes": "No PPO; author source original policy baseline. Perturbation aggregate, not standard LIBERO SR.",
+      "supersedes": "",
+      "methodId": "pi05original",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-spar-v1-libero-plus-pat-rl",
+      "paperId": "p144",
+      "method": "SPAR 10%/10% PAT+RL",
+      "trackId": "spar-v1-libero-plus",
+      "values": {
+        "Overall": 56.81
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table III LIBERO-Plus Overall / pat-rl",
+      "attribution": "author-reported",
+      "trainingData": "SPAR dual hidden/FFN retention 10%/10%, 1.12B total and 0.09B language backbone after pruning-aware tuning and SFT; optional PPO policy recovery. PPO with sparse success rewards.",
+      "evaluationNotes": "RL restores 8.90pp LIBERO, 9.35pp LIBERO-Plus relative to matching PAT-only, but remains below original base+RL. Perturbation aggregate, not standard LIBERO SR.",
+      "supersedes": "",
+      "methodId": "spar1010patrl",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-spar-v1-libero-plus-pat",
+      "paperId": "p144",
+      "method": "SPAR 10%/10% PAT-only",
+      "trackId": "spar-v1-libero-plus",
+      "values": {
+        "Overall": 47.46
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.26487v1",
+      "sourceVersion": "arXiv 2610.26487v1",
+      "locator": "Table III LIBERO-Plus Overall / pat",
+      "attribution": "author-reported",
+      "trainingData": "SPAR dual hidden/FFN retention 10%/10%, 1.12B total and 0.09B language backbone after pruning-aware tuning and SFT; optional PPO policy recovery.",
+      "evaluationNotes": "PAT + SFT only, without RL; same pruned architecture as PAT+RL. Perturbation aggregate, not standard LIBERO SR.",
+      "supersedes": "",
+      "methodId": "spar1010patonly",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
       "id": "r-spatialvla-v1-va-octo",
       "paperId": "p068",
       "method": "Octo-Base",
@@ -51424,6 +52289,132 @@
       "methodId": "vqvla",
       "displayTier": "sweep",
       "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-tokenworld-v1-action-ctrl",
+      "paperId": "p142",
+      "method": "Ctrl-World",
+      "trackId": "tokenworld-v1-robotwin-action-cosine",
+      "values": {
+        "Cosine": 0.9265
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "sourceVersion": "arXiv 2610.00575v1",
+      "locator": "Table I · RoboTwin 50 tasks / frozen policy action cosine / Ctrl-World",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+      "evaluationNotes": "Continuous fixed-policy action cosine similarity (score, not SR) computed after predicted VLM feature reconstruction.",
+      "supersedes": "",
+      "methodId": "ctrlworld",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-tokenworld-v1-action-irasim",
+      "paperId": "p142",
+      "method": "IRASim",
+      "trackId": "tokenworld-v1-robotwin-action-cosine",
+      "values": {
+        "Cosine": 0.926
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "sourceVersion": "arXiv 2610.00575v1",
+      "locator": "Table I · RoboTwin 50 tasks / frozen policy action cosine / IRASim",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+      "evaluationNotes": "Continuous fixed-policy action cosine similarity (score, not SR) computed after predicted VLM feature reconstruction.",
+      "supersedes": "",
+      "methodId": "irasim",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-tokenworld-v1-action-ours",
+      "paperId": "p142",
+      "method": "Token-World",
+      "trackId": "tokenworld-v1-robotwin-action-cosine",
+      "values": {
+        "Cosine": 0.9439
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "sourceVersion": "arXiv 2610.00575v1",
+      "locator": "Table I · RoboTwin 50 tasks / frozen policy action cosine / Token-World",
+      "attribution": "author-reported",
+      "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+      "evaluationNotes": "Continuous fixed-policy action cosine similarity (score, not SR) computed after predicted VLM feature reconstruction.",
+      "supersedes": "",
+      "methodId": "tokenworld",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-tokenworld-v1-feature-ctrl",
+      "paperId": "p142",
+      "method": "Ctrl-World",
+      "trackId": "tokenworld-v1-robotwin-feature-cosine",
+      "values": {
+        "Cosine": 0.7097
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "sourceVersion": "arXiv 2610.00575v1",
+      "locator": "Table I · RoboTwin 50 tasks / frozen VLM feature cosine / Ctrl-World",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+      "evaluationNotes": "Continuous frozen-VLM feature cosine similarity (score, not SR); author table using aligned source trajectory split.",
+      "supersedes": "",
+      "methodId": "ctrlworld",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-tokenworld-v1-feature-irasim",
+      "paperId": "p142",
+      "method": "IRASim",
+      "trackId": "tokenworld-v1-robotwin-feature-cosine",
+      "values": {
+        "Cosine": 0.7372
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "sourceVersion": "arXiv 2610.00575v1",
+      "locator": "Table I · RoboTwin 50 tasks / frozen VLM feature cosine / IRASim",
+      "attribution": "reported-baseline",
+      "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+      "evaluationNotes": "Continuous frozen-VLM feature cosine similarity (score, not SR); author table using aligned source trajectory split.",
+      "supersedes": "",
+      "methodId": "irasim",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-tokenworld-v1-feature-ours",
+      "paperId": "p142",
+      "method": "Token-World",
+      "trackId": "tokenworld-v1-robotwin-feature-cosine",
+      "values": {
+        "Cosine": 0.7714
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-10-26",
+      "source": "https://arxiv.org/html/2610.00575v1",
+      "sourceVersion": "arXiv 2610.00575v1",
+      "locator": "Table I · RoboTwin 50 tasks / frozen VLM feature cosine / Token-World",
+      "attribution": "author-reported",
+      "trainingData": "RoboTwin50 5000 source action-replay trajectories (50 success + 50 failure per task), 9:1 split; frozen Qwen3-VL and downstream policy.",
+      "evaluationNotes": "Continuous frozen-VLM feature cosine similarity (score, not SR); author table using aligned source trajectory split.",
+      "supersedes": "",
+      "methodId": "tokenworld",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
     },
     {
       "id": "r-track4-v1-plus-base",

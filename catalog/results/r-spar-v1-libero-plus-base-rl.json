@@ -1,0 +1,18 @@
+{
+  "id": "r-spar-v1-libero-plus-base-rl",
+  "paperId": "p144",
+  "method": "π₀.₅ original + PPO",
+  "trackId": "spar-v1-libero-plus",
+  "values": {
+    "Overall": 84.45
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.26487v1",
+  "sourceVersion": "arXiv 2610.26487v1",
+  "locator": "Table III LIBERO-Plus Overall / base-rl",
+  "attribution": "reported-baseline",
+  "trainingData": "π₀.₅ original 3.37B total / 2.34B LLM; same authors' LIBERO task evaluation. PPO on original unpruned backbone.",
+  "evaluationNotes": "Original-parameter policy with PPO; not the pruned SPAR method. Perturbation aggregate, not standard LIBERO SR.",
+  "supersedes": ""
+}

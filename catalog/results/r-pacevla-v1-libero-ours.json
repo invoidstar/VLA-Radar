@@ -1,0 +1,19 @@
+{
+  "id": "r-pacevla-v1-libero-ours",
+  "paperId": "p143",
+  "method": "RLDX-1-IMG + PaceVLA",
+  "trackId": "pacevla-v1-libero-rldx",
+  "values": {
+    "Short": 97.7,
+    "Long": 90.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.25961v1",
+  "sourceVersion": "arXiv 2610.25961v1",
+  "locator": "Table 1 + PaceVLA source row / LIBERO short and long",
+  "attribution": "author-reported",
+  "trainingData": "Standard LIBERO four-suites under RLDX-1-IMG source training; Short aggregates Spatial/Object/Goal without inventing per-suite values. Model-specific decoders and temporal quantization supervision.",
+  "evaluationNotes": "Original grouped task SR. Not a common-protocol independent robot run.",
+  "supersedes": ""
+}

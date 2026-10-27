@@ -1,0 +1,19 @@
+{
+  "id": "r-pacevla-v1-libero-base",
+  "paperId": "p143",
+  "method": "RLDX-1-IMG",
+  "trackId": "pacevla-v1-libero-rldx",
+  "values": {
+    "Short": 96.7,
+    "Long": 88.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.25961v1",
+  "sourceVersion": "arXiv 2610.25961v1",
+  "locator": "Table 1 RLDX-1-IMG source row / LIBERO short and long",
+  "attribution": "reported-baseline",
+  "trainingData": "Standard LIBERO four-suites under RLDX-1-IMG source training; Short aggregates Spatial/Object/Goal without inventing per-suite values.",
+  "evaluationNotes": "Original source group averages, no missing suite inference; TPR/ES omitted from SR track.",
+  "supersedes": ""
+}

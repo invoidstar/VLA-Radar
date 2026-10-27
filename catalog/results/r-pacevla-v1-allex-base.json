@@ -1,0 +1,18 @@
+{
+  "id": "r-pacevla-v1-allex-base",
+  "paperId": "p143",
+  "method": "GR00T N1.5",
+  "trackId": "pacevla-v1-allex-real",
+  "values": {
+    "Success": 86
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-10-26",
+  "source": "https://arxiv.org/html/2610.25961v1",
+  "sourceVersion": "arXiv 2610.25961v1",
+  "locator": "Table 4 ALLEX Conveyor Package Handling / GR00T N1.5",
+  "attribution": "reported-baseline",
+  "trainingData": "GR00T N1.5 ALLEX 15-DoF hands conveyor task with 10 packages per trial; exact training samples not given in Table 4.",
+  "evaluationNotes": "Author real-hardware task SR, reported 3.6 packages/min separately; unlike mean time on fully successful Franka/OpenArm trials.",
+  "supersedes": ""
+}

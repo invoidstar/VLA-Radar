@@ -644,6 +644,15 @@
         "tabletop",
         "multi-task"
       ]
+    },
+    "ALLEX Real": {
+      "focus": "efficiency-deployment",
+      "environment": "real",
+      "tags": [
+        "latency-efficiency",
+        "long-horizon",
+        "dexterous"
+      ]
     }
   }
 }

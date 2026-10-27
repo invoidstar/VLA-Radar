@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261019-miit-humanoid-industry-briefing",
+  "eventKey": "miit-scio-2026-oct19-humanoid-robot-briefing",
+  "title": "工信部披露人形机器人产业进展与标准计划：上半年超4万台，全年10万台仍是预测",
+  "primaryCategory": "robot",
+  "tags": [
+    "工信部",
+    "国新办",
+    "具身智能",
+    "人形机器人",
+    "industry standards",
+    "real-world training",
+    "industrial deployment"
+  ],
+  "eventDate": "2026-10-19",
+  "publishedAt": "2026-10-20",
+  "dateNote": "新闻发布会2026-10-19举行，主要一手官网记录2026-10-20刊登；10万台是当日对全年产量的预测，不是实际年终数字。",
+  "observedAt": "2026-10-26",
+  "updatedAt": "2026-10-26",
+  "stage": "reported",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "ecosystem",
+  "whatHappened": "工信部科技司负责人10月19日在国新办新闻发布会介绍具身智能与人形机器人应用进展。其报告2026年上半年国内人形机器人整机产品超过400款、产量超过4万台，预计全年超过10万台；称正推动仓储物流、餐饮零售、家庭服务等300多个重点场景测试及部署。官方还提出将发布2026版人形机器人产业标准体系建设指南、建设开源社区及开展网络与数据安全治理。",
+  "whyItMatters": "标准化、真实场景测试与设备安全是从研究模型走向持续运行机器人的外部约束，涉及动作空间、传感器、长期部署和评测定义。是产业环境与潜在基准场景的来源线索，但不等于已经产生可比较的算法成功率。",
+  "vlaRelevance": "多场景验证要求VLA/WAM满足跨本体动作表示、稳健感知、失败恢复、控制频率和安全等约束；政策性场景数量不能替代严格定义的Benchmark Evaluation Setting或独立真机复现。",
+  "limits": "所有产量数字均为工信部发言人报告，并非本站独立统计。产品型号、上半年产量、全年预测及重点场景是不同指标；超过300个场景不等于300项通过独立评测的任务。2026版产业标准指南在公告时属于拟发布计划，不当成已公开发布。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "工业和信息化部就科技赋能商品消费提质、推动人形机器人产业在消费商贸领域应用等答记者问",
+      "publisher": "中华人民共和国工业和信息化部",
+      "url": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2026/art_34e6e8e918bd424482287fc02a5cbffd.html",
+      "kind": "official",
+      "publishedAt": "2026-10-20",
+      "access": "full-page",
+      "note": "中文原始问答确认2026-10-19会议、次日官网刊发、上半年统计、全年预期及未来标准计划。"
+    },
+    {
+      "id": "s2",
+      "title": "China expects humanoid robot production to exceed 100,000 units this year",
+      "publisher": "China State Council Information Office",
+      "url": "https://english.scio.gov.cn/pressroom/2026-10/20/content_118741583.html",
+      "kind": "official",
+      "publishedAt": "2026-10-20",
+      "access": "full-page",
+      "note": "官方英文来源交叉核对同一会议的数据，不是另一件独立事件。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

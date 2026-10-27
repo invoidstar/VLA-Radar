@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-26-remaining-evidence",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-26",
+    "attemptedAt": "2026-10-26",
+    "completedAt": null
+  },
+  "scope": "A further Oct26 source-located paper full-read batch after merged PR79. Three historical deferred originals moved to p142–p144. Primary source read, two independent author project checks and publisher/title searches performed; this does NOT exhaustively enumerate all academic/curated/preprint/reverse search results from Sept20 through Oct26.",
+  "sources": [
+    {
+      "id": "original-arxiv-three-oct26",
+      "lane": "primary-preprints",
+      "provider": "arXiv original source HTML v1 and abstract pages",
+      "kind": "Three source-identified full original works from pending Oct23 queue",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-30",
+        "to": "2026-10-19"
+      },
+      "query": "https://arxiv.org/html/2610.00575v1; https://arxiv.org/html/2610.25961v1; https://arxiv.org/html/2610.26487v1 — methods, train/test protocols, original tables and limitations",
+      "resultCount": 3,
+      "note": "3 full source papers read; not exhaustive arXiv cs.RO/cs.CV listing for Sept20–Oct26."
+    },
+    {
+      "id": "openalex-oct26-attempt",
+      "lane": "academic-index",
+      "provider": "OpenAlex Works API",
+      "kind": "Attempt direct dated independent scholarly index request",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?filter=from_publication_date:2026-10-04,to_publication_date:2026-10-26 ; and query variants for vision-language-action works",
+      "resultCount": 0,
+      "note": "Public /works root returned JSON, but requests with date/query parameters were not accessible through this interface. This is not a successful date-scoped search nor evidence that zero papers exist."
+    },
+    {
+      "id": "semantic-scholar-oct26-attempt",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API",
+      "kind": "Attempt broad independent paper search",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.semanticscholar.org/graph/v1/paper/search?query=vision%20language%20action",
+      "resultCount": 0,
+      "note": "Provider search request returned 429 or access failure; no verified dated Oct04–26 index output."
+    },
+    {
+      "id": "mlsanity-oct25-carryforward",
+      "lane": "academic-index",
+      "provider": "mlsanity VLA/world-model literature map",
+      "kind": "Previous independent index record from Oct25 audit only",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-20",
+        "to": "2026-10-20"
+      },
+      "query": "https://mlsanity.com/vla/ ; https://mlsanity.com/wm/ original Oct25 evidence index visibly through Oct20",
+      "resultCount": 16,
+      "note": "Historical index exposure does not cover Oct21–26; not presented as a fresh full-period audit."
+    },
+    {
+      "id": "curated-oct25-carryforward",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily curated VLA list",
+      "kind": "Prior specialist shortlist that surfaced Oct19 papers",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-24"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html ; previous Oct25 audit retained",
+      "resultCount": 4,
+      "note": "Curated list from earlier audit, not newly exhaustive Sept20–Oct26. No full-window success checkpoint."
+    },
+    {
+      "id": "author-reverse-oct26",
+      "lane": "reverse-discovery",
+      "provider": "PaceVLA and Token-World author project pages and code-release statement",
+      "kind": "Primary project resource cross-check / reverse provenance",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-09-30",
+        "to": "2026-10-26"
+      },
+      "query": "https://pacevla.github.io/ ; https://chuyaofu.github.io/Token-World/ ; https://github.com/ChuyaoFu/Token-World README; SPAR paper no verified author repository",
+      "resultCount": 3,
+      "note": "Two verified author project pages plus one direct linked GitHub placeholder; release pending, not executable code. Not a complete lab/project/benchmark-wide reverse sweep."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation",
+      "arxiv": "2610.00575",
+      "doi": "",
+      "date": "2026-09-30",
+      "sourceIds": [
+        "original-arxiv-three-oct26",
+        "author-reverse-oct26"
+      ],
+      "status": "selected",
+      "reason": "Full source-read note, Table I separately typed RoboTwin VLM feature cosine and fixed-policy action cosine; author project source and non-code placeholder verified. No task-success percentage fabricated.",
+      "paperId": "p142",
+      "duplicateOf": null
+    },
+    {
+      "title": "PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models",
+      "arxiv": "2610.25961",
+      "doi": "",
+      "date": "2026-10-19",
+      "sourceIds": [
+        "original-arxiv-three-oct26",
+        "author-reverse-oct26"
+      ],
+      "status": "selected",
+      "reason": "Full v1 source and author project read; RoboCasa RLDX PnP negative result retained, standard LIBERO short/long and ALLEX real task isolated with TPR/ES/seconds outside SR rows.",
+      "paperId": "p143",
+      "duplicateOf": null
+    },
+    {
+      "title": "SPAR: Structural Pruning and Action Recovery for Vision-Language-Action Models",
+      "arxiv": "2610.26487",
+      "doi": "",
+      "date": "2026-10-19",
+      "sourceIds": [
+        "original-arxiv-three-oct26"
+      ],
+      "status": "selected",
+      "reason": "v1 source Table I–VI read. Explicit baseline versus PAT-only versus PAT+PPO for both LIBERO and LIBERO-Plus; Jetson TensorRT vs other hardware numbers never combined. No official code/weights invented.",
+      "paperId": "p144",
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 3,
+    "selected": 3,
+    "deferred": 0,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 2
+  },
+  "status": "partial",
+  "notes": "Incremental full-reading of 3 previously deferred candidate papers, not global completeness certification. Earlier RoboValue/FlowVLA/GeoMem/GazeAct and other deferred candidates remain in immutable preceding audits. Academic-index date-scoped lane blocked and other lanes incomplete; do NOT apply discovery_coverage.py complete gate or advance discovery lastSuccessfulSearchAt from 2026-10-04."
+}

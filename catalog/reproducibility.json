@@ -1332,6 +1332,24 @@
       "level": "baseline",
       "note": "Author-paper-linked FastHarness/fast-harness repository contains Python implementation, docs and tests; frozen pi0.5, licensed reviewer service, hardware and full replay dependencies are separate, not automatically reproducible.",
       "items": {}
+    },
+    "p142": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "Author project verified; linked GitHub ChuyaoFu/Token-World README explicitly states code is being organized and main is a placeholder, not an executable world-model implementation. No verified code, weights or datasets; keep unspecified dimensions unknown.",
+      "items": {}
+    },
+    "p143": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "PaceVLA arXiv v1 and corresponding author project website verified. Videos/method figures are public, but executable policy code, weights, original real-robot dataset and training scripts not established from first-party sources; unknown remains unknown.",
+      "items": {}
+    },
+    "p144": {
+      "verifiedAt": "2026-10-26",
+      "level": "baseline",
+      "note": "SPAR arXiv v1 fully read. Experiments explain PAT/PPO with RLinf and Jetson deployment; no matched author executable code or pretrained compressed weights confirmed, so do not infer availability from the generic RLinf project.",
+      "items": {}
     }
   }
 }

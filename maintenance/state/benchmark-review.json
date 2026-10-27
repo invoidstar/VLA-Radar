@@ -2665,6 +2665,57 @@
         "r-fastharness-v1-robodojo-four-task"
       ],
       "note": "RoboDojo four author-selected tasks 16/20/20/9 episodes, Appendix Table6 raw per-task native success only. Cross-publication GPT-as-Policy baselines intentionally NOT entered into same track. Four-task average 97.19% in note, not official RoboDojo 42-task rank."
+    },
+    "p142": {
+      "status": "extracted",
+      "trackIds": [
+        "tokenworld-v1-robotwin-feature-cosine",
+        "tokenworld-v1-robotwin-action-cosine"
+      ],
+      "resultIds": [
+        "r-tokenworld-v1-feature-irasim",
+        "r-tokenworld-v1-feature-ctrl",
+        "r-tokenworld-v1-feature-ours",
+        "r-tokenworld-v1-action-irasim",
+        "r-tokenworld-v1-action-ctrl",
+        "r-tokenworld-v1-action-ours"
+      ],
+      "note": "Source-located arXiv 2610.00575v1 Table I original frozen-VLM feature and frozen-policy action cosine similarity across RoboTwin 50 tasks. Not task success; real Franka, NMSE, simulation correlation and latency remain in body note."
+    },
+    "p143": {
+      "status": "extracted",
+      "trackIds": [
+        "pacevla-v1-robocasa-kitchen-rldx",
+        "pacevla-v1-libero-rldx",
+        "pacevla-v1-allex-real"
+      ],
+      "resultIds": [
+        "r-pacevla-v1-robocasa-base",
+        "r-pacevla-v1-robocasa-ours",
+        "r-pacevla-v1-libero-base",
+        "r-pacevla-v1-libero-ours",
+        "r-pacevla-v1-allex-base",
+        "r-pacevla-v1-allex-ours"
+      ],
+      "note": "Source-located Table 1 RLDX-1-IMG RoboCasa PnP/Others and LIBERO short/long SR; separate Table 4 ALLEX conveyor real SR. Includes PnP negative result; TPR/ES/throughput/latency are different metrics and remain in note."
+    },
+    "p144": {
+      "status": "extracted",
+      "trackIds": [
+        "spar-v1-libero-four-suite",
+        "spar-v1-libero-plus"
+      ],
+      "resultIds": [
+        "r-spar-v1-libero-base",
+        "r-spar-v1-libero-base-rl",
+        "r-spar-v1-libero-pat",
+        "r-spar-v1-libero-pat-rl",
+        "r-spar-v1-libero-plus-base",
+        "r-spar-v1-libero-plus-base-rl",
+        "r-spar-v1-libero-plus-pat",
+        "r-spar-v1-libero-plus-pat-rl"
+      ],
+      "note": "Tables II-III 10%/10% hidden and FFN retention: baseline/PAT-only/PAT+RL and base+RL separately, with standard LIBERO and OOD Plus distinct. Jetson latency, memory and AgileX real SR are not converted into LIBERO outcomes."
     }
   }
 }

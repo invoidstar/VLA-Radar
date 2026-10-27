@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requestedAt": "2026-10-26",
+  "source": "issue-76-original-source-followup",
+  "scope": "Bounded due-only HEAD/GET reachability of all current paper, result, news, author project and reproducibility URLs after p142-p144, new MIIT bilingual government news, and research original table revisions.",
+  "limitPerSweep": 100,
+  "maxRounds": 5,
+  "noPaperDeletion": true,
+  "overwriteHistoricalAudits": false,
+  "notes": "Only source reachability. Rate limits/challenges do not invalidate papers; publisher identities and full index coverage remain independently audited."
+}

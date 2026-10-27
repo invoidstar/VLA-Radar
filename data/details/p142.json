@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p142",
+    "name": "Token-World",
+    "title": "Token-World: World Modeling in Vision-Language Model Token Space for Robot Manipulation",
+    "team": "Chuyao Fu、Xiaowei Chi、Yuhan Rui、Yu-Kai Wang、Zezhong Qian、Xiaojie Zhang、Yunfan Lou、Kevin Zhang 等",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 2610.00575v1预印本",
+    "firstPublished": "2026-09-30",
+    "dateNote": "arXiv v1 UTC 2026-09-30首发；2026-10-26复核全文与作者资源。",
+    "collectionMonth": "2026-10",
+    "versionNote": "arXiv:2610.00575v1 · 2026-10-26 source-read，注意非VLA动作生成器",
+    "topics": [
+      "world",
+      "action",
+      "memory"
+    ],
+    "tags": [
+      "world model",
+      "VLM tokens",
+      "compact state",
+      "autoregressive rollout",
+      "Qwen3-VL",
+      "RoboTwin",
+      "Franka",
+      "policy simulation"
+    ],
+    "priority": "deep",
+    "contribution": "不经未来RGB重建，利用冻结VLM视觉token的语义VAE通道压缩和动作条件时空Transformer/GRU直接自回归未来世界状态，并将其解码为策略消费的表示。",
+    "findings": "作者报告RoboTwin 50任务VLM特征余弦0.7714、策略动作余弦0.9439；Ctrl-World分别0.7097/0.9265。策略成功率相关Pearson r 0.794（Ctrl-World 0.583），模拟每步0.359s；这些均不是机器人任务SR。",
+    "limitations": "语义VAE与逐步动态模型仍可能累积误差；相似度和模拟成功率相关并非直接机器人成功率；官方代码仓库截至本次阅读仍是待发布占位说明，不标成可执行复现源码。",
+    "insight": "世界模型的预测目标可以直接是下游策略使用的状态表示；评估应区分特征重建、动作一致性、世界模拟准确性与真实执行结果。",
+    "readingFocus": "§III语义VAE、动作条件Transformer/GRU、flow objective与自回归；Table I VLM与动作相似度；Fig.6 Pearson与模拟延迟；官方代码开放边界",
+    "evidence": "checked",
+    "evidenceNote": "2026-10-26依据arXiv 2610.00575v1逐节阅读全文与Table I，核对作者项目页及GitHub占位README；原文数值为作者报告。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1全文和Table I",
+        "url": "https://arxiv.org/html/2610.00575v1"
+      },
+      {
+        "label": "arXiv论文身份",
+        "url": "https://arxiv.org/abs/2610.00575"
+      },
+      {
+        "label": "作者项目网站",
+        "url": "https://chuyaofu.github.io/Token-World/"
+      },
+      {
+        "label": "作者代码声明（当前只有占位README）",
+        "url": "https://github.com/ChuyaoFu/Token-World"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.00575",
+    "arxiv": "2610.00575",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-09-30",
+    "firstArxivSource": "https://arxiv.org/abs/2610.00575v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-09-30",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-26",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-09-30",
+        "observedAt": "2026-10-26",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.00575v1",
+        "note": "首次公开日期来自原始arXiv Submission history；未发现会议出版正式记录。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-26",
+    "verifiedAt": "2026-10-26",
+    "version": "arXiv:2610.00575v1 · 2026-10-26",
+    "sections": [
+      {
+        "id": "problem",
+        "title": "研究问题：RGB世界模型的间接接口和策略视角信息损失",
+        "body": "用于机器人策略评估的世界模型通常先预测未来RGB帧，再把生成的帧输入冻结视觉语言模型，以取得策略能够消费的表示。这个往返路径既承担画面生成的昂贵计算，也可能把动作决策真正关心的物体关系混在大量外观细节中。Token-World提出直接在冻结VLM的视觉token空间建模动作条件的未来状态，从而把世界模拟器的输出接口和下游策略输入对齐。关键问题不只是让特征重建得更接近原像素，而是让同一个固定策略在预测表示和真实表示下输出一致动作。它不是直接生成机器人动作的VLA，闭环评测指的是将世界模型作为策略模拟环境，不能将仿真器质量误写为真实机器人成功率。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "svae",
+        "title": "特征压缩：保留空间token布局，只压缩每个token的通道",
+        "body": "原文冻结视觉语言模型提取每帧N个高维视觉token，并单独训练语义VAE把它们映射到紧凑高斯潜空间。主设置的token数为108，原通道2560维，压缩后每个token只有16维；空间位置数量保持不变，不在图像token间做池化或聚类。训练时损失同时包含原特征的均方误差、余弦方向差异与KL正则；导出供动力学学习使用的状态时采用后验均值，之后编码器和解码器被冻结。这个设计减少了连续未来预测的每步维度，但不能说没有信息损失，消融指出极低维度会牺牲语义保真，过高维度则使动力学建模困难。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "state",
+        "title": "动作条件状态：紧凑视觉token与机器人本体状态同时演化",
+        "body": "模型的世界状态不是单个图像潜变量，而是紧凑视觉表示与proprioception的有序组合。机器人动作通过独立投影进入时间转移模型，预测的是给定此前状态和当前动作之后的下一状态分布。空间注意力负责一帧内部token的相互作用，时间维采用因果注意力以免在预测时偷看未来观测。时空两个轴分解计算；当时间窗口有限时，另有固定大小的GRU记忆从一个窗口传到下一窗口。这个GRU并非独立的高层任务规划模块，而是转换模型内部历史摘要，真实机器人状态能否完整观测、相机标定质量以及训练动作的尺度仍限制预测。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "objective",
+        "title": "训练目标：x0参数化流匹配与shortcut forcing，不是像素扩散",
+        "body": "紧凑动力学网络采用条件流模型，在给定动作和过去紧凑状态时预测未来压缩状态。作者选择x0参数化的流目标并结合shortcut forcing，将自身生成的中间状态回送用于学习，以减少测试时多步滚动的分布偏移；这与语义VAE的压缩训练分开进行。实际世界模型保持因果历史，不能在推理使用未来真值特征。用额外RGB解码器渲染图像只是供可视化及人工检查，正文明确它不参与在线状态递推，也不作为策略输入前置步骤。因此评测必须分清语义VAE重建误差、模型预测误差、独立RGB渲染误差及策略动作一致性。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "autoregressive",
+        "title": "自回归预测：逐步生成世界状态，而非逐关节预测动作",
+        "body": "推理先用观测编码得到当前紧凑状态，接着对动作序列依次生成后续状态；每次预测又加入历史，并在窗口滑动时保留循环记忆。下一状态分布依赖已经预测的状态与相应动作，属于时间维自回归world rollout。它并不意味着语言模型逐token生成动作，也不表示每个自由度单独自回归。论文比较了长距离chunk 0/5/10/15的偏移趋势，16个动作组成一个评测chunk；随着递推变长，误差传播仍然存在，只是紧凑语义状态相较RGB重建路径表现出更慢的退化。不能拿开环每帧余弦分数替代长序列闭环结果。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "评测协议：RoboTwin与真实Franka的数据不是同一成功率排行榜",
+        "body": "作者在RoboTwin 50个操作任务采集每任务100条轨迹，其中50条成功、50条失败，总计5000条；真实Franka六类任务另采集600条成功轨迹。两个数据分别按9:1拆分训练与验证，比较IRASim、Ctrl-World和WorldGym时使用相同数据，但真实数据成功/失败构成和RoboTwin不同。开环任务固定回放真实动作，计算VLM特征余弦与NMSE、同一冻结策略输出动作的余弦与NMSE。这些是连续相似度，不是通常RoboTwin的任务成功百分比。闭环另比较模拟策略成功率与参照环境的相关程度，因此定义了不同的评价问题。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "openloop",
+        "title": "Table I：特征相似与策略动作一致性不可合并成一个分数",
+        "body": "原表在RoboTwin50任务中，Token-World的VLM feature cosine为0.7714、NMSE 0.4892；Ctrl-World对应0.7097和0.6437。固定策略动作cosine为0.9439、NMSE 0.1145；Ctrl-World对应0.9265与0.1463。在Franka六任务，Token-World feature cosine为0.7506、action cosine为0.9402。四种指标的物理意义和方向不相同，不能将0.94的动作余弦当作94%成功率，也不能直接和RoboTwin官方Clean/Randomized排行叠在一起。网站仅记录原表一致性数值并标记paper-table，所有结果是作者报告，没有现场复现。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "closedloop",
+        "title": "闭环模拟精度和效率：Pearson相关与每步模拟秒数",
+        "body": "作者在不同策略—任务组合上把模拟得到的任务成功率与参考环境成功率比较。Token-World报告Pearson r=0.794，Ctrl-World为0.583，说明预测世界模型对这组控制策略的成功率排序更接近参考值；但相关强不等于成功率绝对误差小，也不保证在全新策略或真实硬件上具有同样可靠度。每步世界模拟耗时报告0.359秒，并称比IRASim、Ctrl-World与WorldGym分别快约2.0、5.3和6.1倍。耗时针对模拟一步，不是机器人闭环控制频率；另外不能将这一GPU环境数值转为跨设备无条件速度比较。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "消融和限制：压缩率的可建模性—重建保真折中",
+        "body": "作者分别比较RGB-VAE表示与VLM紧凑表示、直接在原始VLM视觉token上建模与先压缩后建模，以及每token 8、16、32、48维的表现。16维在这组模型、数据和训练设置中取得相对稳定的动作一致性与重建质量折中，不能推广为所有冻结视觉编码器的最优维度。潜空间预测仍可能累积长期接触和遮挡错误，真实Franka训练轨迹构成相对单一；空间token保持位置并不自动获得显式几何一致性，任务相关性依赖冻结VLM和下游策略。复现时应确认Qwen3-VL视觉token定义、原始特征归一化、状态/动作维数、训练预算和冻结边界。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      },
+      {
+        "id": "resources",
+        "title": "公开资源状态：作者代码链接当前指向说明占位仓库",
+        "body": "论文给出作者项目页，也有GitHub链接；但该仓库README明确当前正在整理准备公开实现，main只有占位信息而没有训练、推理和验证代码。因此目前只能把项目主页记为已核验资源入口，不能把链接显示成已公开可执行代码，不能推断权重、数据集、完整训练、许可证与评估工具已开放。网站只保存一手论文和作者页用于阅读，报告中的仿真速度与性能来自作者论文。后续如仓库实际公开源码，需要另行验证具体commit、可执行性与许可证，再更新Reproducibility Card，不应提前标available。",
+        "sources": [
+          {
+            "label": "arXiv 2610.00575v1 章节与原表",
+            "url": "https://arxiv.org/html/2610.00575v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.00575v1"
+    },
+    "figures": [
+      {
+        "title": "Token-World原文方法总览及闭环仿真图",
+        "url": "https://arxiv.org/html/2610.00575v1",
+        "caption": "特征空间的压缩预测与策略评估是两条不同的证据链；可视化RGB只用于展示。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "Table I · RoboTwin 50任务与Franka特征/动作一致性",
+        "columns": [
+          "来源方法",
+          "RoboTwin Feature Cosine",
+          "RoboTwin Policy Action Cosine",
+          "Franka Feature Cosine"
+        ],
+        "rows": [
+          [
+            "IRASim",
+            "0.7372",
+            "0.9260",
+            "0.7061"
+          ],
+          [
+            "Ctrl-World",
+            "0.7097",
+            "0.9265",
+            "0.7213"
+          ],
+          [
+            "Token-World",
+            "0.7714",
+            "0.9439",
+            "0.7506"
+          ]
+        ],
+        "locator": "arXiv 2610.00575v1 Table I",
+        "caption": "连续余弦相似度，非任务成功率；数值归属于作者实验。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-26",
+      "note": "只提取Table I的RoboTwin 50任务冻结VLM特征与固定策略action cosine两个不同结果track；真实Franka与Pearson correlation/效率在深读说明，不转换成功率排名。"
+    }
+  }
+}

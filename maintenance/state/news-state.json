@@ -5,7 +5,7 @@
   "lastAttemptAt": "2026-10-26",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-10-26 secondary bilingual original-source scan added Google DeepMind Oct13 Gemini 4 Argon for Robotics official technical release; confirmed already published Chinese AgiBot/Tsinghua/SenseNova and Singapore/HoloMotion material as duplicates, rejected stale Genie Studio re-release inference. No exhaustive Oct11–26 bilingual labs/media/robot company date-scope crawl; last successful full news scan stays 2026-10-04.",
+  "summary": "2026-10-26 additional Chinese/English first-party government source comparison: Oct19 MIIT humanoid robotics industrial briefing from Oct20 ministry full transcript and Oct20 SCIO English report added once; 2026 H1 product units and full-year official forecast explicitly separated, and future standards guideline not described as published. Existing China/Singapore/HoloMotion/NVIDIA stories deduped. Broad Oct11–26 full window across academic/industry/media remains partial and lastSuccessfulSearchAt 2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -72,6 +72,12 @@
       "to": "2026-10-26",
       "status": "partial",
       "note": "第二轮中英文官方来源核验：新增Google DeepMind Oct13机器人应用原文1条，核对智元PhysicalReasoning/清华报告/SenseNova与10月21–24原有条目不重复；技术性能公司自报保留证据归属。国际/中文全部原始资讯频道尚未逐日穷尽，不能将局部回补当成complete。"
+    },
+    {
+      "from": "2026-10-11",
+      "to": "2026-10-26",
+      "status": "partial",
+      "note": "Oct26中英双语原始来源回补：工信部10月19日新闻发布会、10月20日官方中文记录与国新办英文报道合并为一条，区分真实上半年产量和2026全年预期、未来标准路线。只完成选择性公司/部门渠道，不构成10月11日至26日全窗口逐日穷尽检索，成功检查点保持10月4日。"
     }
   ]
 }
