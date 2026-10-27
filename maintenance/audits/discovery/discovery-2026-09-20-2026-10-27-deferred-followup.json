@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-10-27-deferred-followup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-10-27",
+    "attemptedAt": "2026-10-27",
+    "completedAt": null
+  },
+  "scope": "2026-10-27 selected-ID original full-text followup of previously deferred GeoMem-VLA, VLA-Delta and SimPT after merged Oct26 batch. Primary original method/results read fully, official author resource identity checked where published. Not an exhaustive Sept20–Oct27 full-window four-source academic discovery.",
+  "sources": [
+    {
+      "id": "primary-arxiv-deferred-oct27",
+      "lane": "primary-preprints",
+      "provider": "arXiv original dated v1 HTMLs",
+      "kind": "Original paper v1 methods, author tables, data and online information boundary",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-15",
+        "to": "2026-10-21"
+      },
+      "query": "https://arxiv.org/html/2610.29866v1 ; https://arxiv.org/html/2610.21306v1 ; https://arxiv.org/html/2610.29161v1 ; exact IDs selected from historical deferred audit, not a complete cs.RO/cs.CV period search",
+      "resultCount": 3,
+      "note": "Three complete source reads, missing primary preprint enumeration for all dates Sept20–Oct27."
+    },
+    {
+      "id": "academic-openalex-oct27",
+      "lane": "academic-index",
+      "provider": "OpenAlex date-filtered Works API",
+      "kind": "Attempted direct dated works query",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?filter=from_publication_date:2026-09-20,to_publication_date:2026-10-27&search=vision-language-action",
+      "resultCount": 0,
+      "note": "Current access route fails dated parameterized API; failed request is not zero papers."
+    },
+    {
+      "id": "academic-semanticscholar-oct27",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API",
+      "kind": "Attempted independent scholarly index",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.semanticscholar.org/graph/v1/paper/search?query=vision language action&limit=100&fields=title,year,publicationDate,externalIds",
+      "resultCount": 0,
+      "note": "No verified full-window index retrieval; do not mark lane success."
+    },
+    {
+      "id": "curated-robotics-oct27-carry",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily VLA source index",
+      "kind": "Existing Oct26 shortlist and defer queue, not complete Oct27 period scan",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-15",
+        "to": "2026-10-26"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html; prior Oct26 shortlist and original papers p145/p147",
+      "resultCount": 3,
+      "note": "Selected shortlist cross-check only, no exhaustive Sept20–Oct27 curated feed enumeration."
+    },
+    {
+      "id": "author-reverse-geomem-delta-oct27",
+      "lane": "reverse-discovery",
+      "provider": "GeoMem-VLA and ZJU-OmniAI author GitHub / project pages",
+      "kind": "Official resource identity and implemented training/evaluation scope",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-15",
+        "to": "2026-10-27"
+      },
+      "query": "https://github.com/GeoMem-VLA/GeoMem-VLA ; https://geomem-vla.github.io/ ; https://github.com/ZJU-OmniAI/VLA-Delta ; https://zju-omniai.github.io/VLA-Delta/ ; SimPT official release unverified",
+      "resultCount": 2,
+      "note": "GitHub original repos confirmed for p145/p146; limited quickstart and independent licenses retained. Does not cover all lab pages/citations in period."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+      "arxiv": "2610.29866",
+      "doi": "",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "primary-arxiv-deferred-oct27",
+        "author-reverse-geomem-delta-oct27"
+      ],
+      "status": "selected",
+      "reason": "Complete original v1 architecture/training ablations and source table LIBERO/RoboTwin. Verified author GitHub with incomplete quickstart vs full paper distinction and reproducibility baseline, admitted p145.",
+      "paperId": "p145",
+      "duplicateOf": null
+    },
+    {
+      "title": "VLA-Δ: Learning Physical State Transition for Vision-Language-Action Models",
+      "arxiv": "2610.21306",
+      "doi": "",
+      "date": "2026-10-15",
+      "sourceIds": [
+        "primary-arxiv-deferred-oct27",
+        "author-reverse-geomem-delta-oct27"
+      ],
+      "status": "selected",
+      "reason": "Complete v1 text and original supervised-transition results, explicit train-only future information and author code/weights links inspected, admitted p146.",
+      "paperId": "p146",
+      "duplicateOf": null
+    },
+    {
+      "title": "SimPT: An Automated Simulation Framework for Intervention-Based VLA Post-Training",
+      "arxiv": "2610.29161",
+      "doi": "",
+      "date": "2026-10-21",
+      "sourceIds": [
+        "primary-arxiv-deferred-oct27",
+        "curated-robotics-oct27-carry"
+      ],
+      "status": "selected",
+      "reason": "Full original seven-task ProgressGraph recovery and independent Table II task success read, 1400 holdout/method and negative FlowPRO, author code not confirmed, admitted p147.",
+      "paperId": "p147",
+      "duplicateOf": null
+    },
+    {
+      "title": "GazeAct: A Human-Gaze-Annotated Manipulation Dataset for Attention-Regularized Policies",
+      "arxiv": "2610.24507",
+      "doi": "",
+      "date": "2026-10-17",
+      "sourceIds": [
+        "curated-robotics-oct27-carry"
+      ],
+      "status": "deferred",
+      "reason": "Retained from prior audit; full annotation/resource and source table evidence not independently reviewed this pass.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 4,
+    "selected": 3,
+    "deferred": 1,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 3
+  },
+  "status": "partial",
+  "notes": "Three previously deferred papers now fully admitted; other historical deferred candidates remain in immutable preceding audits. Both four-lane scholarly discovery and bilingual news need independent complete dated search/duplicate audit. Never mark full search complete due to 3 selected papers; lastSuccessfulSearchAt remains 2026-10-04."
+}
