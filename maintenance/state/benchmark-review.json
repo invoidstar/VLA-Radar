@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-26",
+  "reviewedAt": "2026-10-27",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p001": {
@@ -2716,6 +2716,53 @@
         "r-spar-v1-libero-plus-pat-rl"
       ],
       "note": "Tables II-III 10%/10% hidden and FFN retention: baseline/PAT-only/PAT+RL and base+RL separately, with standard LIBERO and OOD Plus distinct. Jetson latency, memory and AgileX real SR are not converted into LIBERO outcomes."
+    },
+    "p145": {
+      "status": "extracted",
+      "trackIds": [
+        "geomem-v1-libero-four-suite",
+        "geomem-v1-robotwin2-clean-random"
+      ],
+      "resultIds": [
+        "r-geomem-v1-libero-full",
+        "r-geomem-v1-libero-no-geo",
+        "r-geomem-v1-libero-no-memory",
+        "r-geomem-v1-robotwin-full",
+        "r-geomem-v1-robotwin-no-geo",
+        "r-geomem-v1-robotwin-no-memory"
+      ],
+      "note": "Table3/4 same-author ablations and full results with specified 40 LIBERO tasks/50 test episodes and RoboTwin50 Clean/Random100 episodes. Source tables and benchmark protocol separate; neither is an official platform model submission."
+    },
+    "p146": {
+      "status": "extracted",
+      "trackIds": [
+        "vladelta-v1-libero-four-suite",
+        "vladelta-v1-robotwin2-clean-random"
+      ],
+      "resultIds": [
+        "r-vladelta-v1-libero-full",
+        "r-vladelta-v1-libero-zr0",
+        "r-vladelta-v1-robotwin-full",
+        "r-vladelta-v1-robotwin-zr0",
+        "r-vladelta-v1-robotwin-pi05"
+      ],
+      "note": "Table1 four-suite and Table2 original RoboTwin Clean/Random summaries. ZR-0 and pi0.5 are separately attributed paper-cited baselines and not a same-compute controlled ranking. No figure-digitized LIBERO-Plus score."
+    },
+    "p147": {
+      "status": "extracted",
+      "trackIds": [
+        "simpt-v1-robotwin7-expert-recovery",
+        "simpt-v1-robotwin7-policy-posttrain"
+      ],
+      "resultIds": [
+        "r-simpt-v1-recovery-pg-vs-naive",
+        "r-simpt-v1-policy-recap",
+        "r-simpt-v1-policy-hgdagger",
+        "r-simpt-v1-policy-dpo-sft",
+        "r-simpt-v1-policy-flowpro",
+        "r-simpt-v1-policy-recap-cf-lpf"
+      ],
+      "note": "Seven selected RoboTwin tasks only: Table I expert recovery success (failed rollout rescue) and Table II 1400-test episode posttrained policy success are different metrics. Retain negative FlowPRO -4.21pp and unknown Naive RECAP-CF-LPF baseline."
     }
   }
 }
