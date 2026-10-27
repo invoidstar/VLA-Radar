@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p145",
+    "name": "GeoMem-VLA",
+    "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+    "team": "Qinfan Zhang、Yifan Luo、Haoyuan Shi、Guanlin Liu、Han Dong、Haozhe Shan、Yong Dai、Xiangcong Ren、Xiaozhu Ju",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 2610.29866v1 preprint",
+    "firstPublished": "2026-10-21",
+    "dateNote": "arXiv v1 首发为2026-10-21 UTC；2026-10-27正文/仓库核验。",
+    "collectionMonth": "2026-10",
+    "versionNote": "arXiv:2610.29866v1 full §3–4 Tables1–4 + official code README, 2026-10-27",
+    "topics": [
+      "spatial",
+      "memory",
+      "action"
+    ],
+    "tags": [
+      "GeoPlan",
+      "3D supervision",
+      "VGGT",
+      "memory banks",
+      "temporal",
+      "LIBERO",
+      "RoboTwin",
+      "flow matching"
+    ],
+    "priority": "deep",
+    "contribution": "使用冻结VGGT点图和未来末端轨迹训练GeoPlan token，再以观察与几何双记忆库持续整合任务历史；推理只用当前观测、语言、本体与因果记忆，不调用几何教师。",
+    "findings": "作者报告LIBERO四套件98.9%平均、RoboTwin 2.0 Clean91.10%/Randomized91.24%；去几何分支RoboTwin均值89.71%、去记忆90.18%。均为作者报告。",
+    "limitations": "w/o Geo是完整分支消融，不能单独归因到辅助监督；论文数值与GitHub默认20k步快速教程不一致，真机评测每任务10回合且无实机部署包；冻结教师和坐标系质量依赖外部模型。",
+    "insight": "与直接追加历史图像不同，使用独立几何摘要记忆有助于在测试时不执行几何重建的条件下利用过去3D线索，但额外训练目标和情节重置语义需严格对齐。",
+    "readingFocus": "§3.2 geometry flow targets、§3.3 memory write/read/consolidate、§4.2 50/100 trials、Tables 1–4和Appendix A、repo default vs paper training discrepancy",
+    "evidence": "checked",
+    "evidenceNote": "Original arXiv v1 HTML and author's GitHub README checked 2026-10-27; author-reported metrics; no independent run.",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv v1 original HTML",
+        "url": "https://arxiv.org/html/2610.29866v1"
+      },
+      {
+        "label": "arXiv v1 metadata",
+        "url": "https://arxiv.org/abs/2610.29866"
+      },
+      {
+        "label": "Author project",
+        "url": "https://geomem-vla.github.io/"
+      },
+      {
+        "label": "Official code",
+        "url": "https://github.com/GeoMem-VLA/GeoMem-VLA"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.29866",
+    "arxiv": "2610.29866",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-21",
+    "firstArxivSource": "https://arxiv.org/abs/2610.29866v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-10-21",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-10-27",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-21",
+        "observedAt": "2026-10-27",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.29866v1",
+        "note": "Only original arXiv first publication verified; no accepted conference or publisher DOI asserted."
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-10-27",
+    "verifiedAt": "2026-10-27",
+    "version": "arXiv 2610.29866v1 / 2026-10-27 original HTML Tables 1–4 & official repository",
+    "sections": [
+      {
+        "id": "motivation",
+        "title": "几何特征若每帧独立产生，就难以积累操作历史",
+        "body": "传统VLA多依靠二维图像与语言预测连续动作；即使引入深度或点云，相关表示也常仅用于当前帧，无法持续保存被遮挡、转移过的对象关系。GeoMem-VLA认为机器人的动作决策不必每步构建可渲染的完整3D世界，却需要能跨时间保留、按任务选择的几何摘要。其核心是将从冻结三维教师学到的紧凑GeoPlan tokens存入情节内记忆，与普通视觉观测记忆并行维护。这个问题与长程任务阶段有关，但不能仅因加入几何标记就推断模型具有物理接触推理。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "输入、GeoPlan与动作专家的接口",
+        "body": "作者将视觉观测、语言指令以及K个可学习GeoPlan查询拼入Qwen3-VL-4B的多模态序列，提取GeoPlan位置的末层表示并映射到较小几何工作维度。原有视觉语义token仍保留给动作专家，不被VGGT教师特征直接替换。动作头是条件流匹配DiT，以当前图文表征、本体状态和取出的观测/几何历史为条件，一次生成连续动作chunk。LIBERO采用7维末端增量动作和H=8；RoboTwin使用14维关节目标和H=50，两者不能共享同一动作空间或解释为相同控制周期。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "训练时使用VGGT点图与未来EEF轨迹，测试时不用教师",
+        "body": "冻结VGGT产生当前场景point map伪标签，并带有点置信度；示范未来末端轨迹被变换进同一当前几何坐标系，二者拼接成目标，通过几何flow-matching辅助头监督GeoPlan编码。未来轨迹属于训练期可用的示范标签，不能在部署推理时读取未来真实位置。部署阶段跳过VGGT和显式三维重建，使用编码器产生的潜在GeoPlan表征，这种教师—学生蒸馏可减少在线视觉几何计算，但辅助目标对教师质量、相机标定和外参变换敏感，不能把低几何损失直接等同操作完成。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "memory",
+        "title": "双观测库加几何记忆：情节因果检索和压缩",
+        "body": "记忆不是简单串接历史所有帧。当前图文与GeoPlan分别查询对应历史bank，通过跨注意力读取，再由自适应门决定历史信息进入当前动作条件的程度；相邻相似条目在容量满时整合，以优先保留较不冗余的事件帧。研究中的可视化显示观测bank与geometry bank的保留位置不完全重合，若只展示并集会误判所有关键帧均被共同记住。模型在episode内因果更新而非读取之后的观测，并需在任务回合边界重置。记忆容量、分组采样和事件合并都会影响运行开销与长时表现。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "training",
+        "title": "同一骨干的基准适配与训练预算",
+        "body": "论文附录列出的LIBERO训练300k步、RoboTwin训练200k步，Qwen3-VL-4B和VGGT几何教师分别充当预训练语义底座和冻结辅助监督；采用不同的梯度累计、预测步长、内存容量与动作接口。训练时对当前场景point map和未来EEF位置设置独立损失权重，与动作流匹配损失共同优化。公开GitHub的20k步单任务快速示例不是论文完整300k/200k复现；RoboTwin quick-start配置说明其中EEF监督可能关闭，不能仅用默认仓库命令声称达到文章主表。该差异需要在复现实验manifest中明确固定。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "benchmarks",
+        "title": "论文主实验协议：LIBERO与RoboTwin两套独立Setting",
+        "body": "标准LIBERO分Spatial、Object、Goal、Long共40任务，各50次测试，动作空间为7维末端增量；RoboTwin 2.0为50个双臂任务，Clean和Randomized每任务各100次，动作输出为14维关节目标，结果分别给出Clean/Randomized/Average。不同模型的公开基线虽然同列在论文Table1/2，预训练、训练配方、检查点选择未必完全一致，不能据高分判断在统一训练预算上必然公平。两组论文内SR应分别保留而不是与真机任务或世界模型重建误差混为一个Benchmark。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "results",
+        "title": "主结果：98.9与91.10/91.24均是作者报告",
+        "body": "在LIBERO Table1，GeoMem-VLA的Spatial99.6%、Object99.8%、Goal99.6%、Long96.6%，四套件Average98.9%。在RoboTwin Table2，Clean91.10%、Randomized91.24%，两设置均值91.17%。作者引用的一些基线来自外部论文且数据和部署假设可能不同，本站将完整模型和同论文的Matched Ablation只放进paper-table轨道，绝不替换官方模型榜单。真实世界方面作者设计五项Astribot S1/AgileX任务，共50次尝试得到78.0%平均成功；每个任务仅10次、60条示范，统计方差和泛化边界与大型仿真不同。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "ablations",
+        "title": "模块消融：几何分支和时间记忆都有可辨别贡献",
+        "body": "原文Table3/4的同协议消融显示：LIBERO full98.9%、w/o Geo97.9%、w/o Memory98.2%；RoboTwin full91.17%、w/o Geo89.71%、w/o Memory90.18%。在LIBERO的Long子集，拿掉记忆从96.6%跌至94.2%，其它三个套件仅约0.2个百分点变化，说明时间历史更直接影响长程相关任务。注意w/o Geometry同时移除GeoPlan辅助监督、几何token、几何memory和融合机制，而非只关掉单项损失；因此它是完整几何分支的组合消融，不能把1.0个百分点增益纯归因于单个VGGT几何监督目标。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "diagnostics",
+        "title": "几何重建与记忆选择的诊断不是在线任务成绩",
+        "body": "作者对RoboTwin open_microwave和stack_blocks_three的特定轨迹进行了离线回放，用200k步checkpoint和16个因果样本绘制GeoPlan重建、未来EEF路径与两类记忆保留位置。在少量案例中，点图RMSE为0.064–0.094归一化单位，EEF预测误差为3.07–3.74毫米，不能把这些数字传播到所有任务。教师的预测点图不等于真实三维地面真值，案例也不证明端到端闭环动作增益只来自几何重建精度；需要更系统的干扰、遮挡、错误记忆与长回合测试。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      },
+      {
+        "id": "repro",
+        "title": "可复现资源与开放边界",
+        "body": "作者链接了项目页、GeoMem-VLA GitHub、模型托管页。2026-10-27检查GitHub README存在LIBERO/RoboTwin数据准备、训练、评测server与外部依赖说明；作者明确说默认20k步/单任务演示并非论文完整配置，而且真实机器人部署包未包含。当前公开源中权重、数据及仿真器分别由不同渠道提供，其许可证与版本需要逐一核对。官网仍显示一些Coming soon按钮，但不能因为官网延迟更新便宣称GitHub代码不存在；反过来也不能因为有仓库就判定论文完整实验被第三方成功复现。",
+        "sources": [
+          {
+            "label": "arXiv v1 original §3–4 and appendices",
+            "url": "https://arxiv.org/html/2610.29866v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.29866v1"
+    },
+    "figures": [
+      {
+        "title": "Figure 2/3 — geometry teacher, memory banks and action expert",
+        "url": "https://arxiv.org/html/2610.29866v1",
+        "caption": "训练期点图监督与测试期潜表示、两类记忆保持不同信息；诊断图不是闭环评价。"
+      }
+    ],
+    "tables": [
+      {
+        "title": "GeoMem-VLA original source results",
+        "columns": [
+          "Setting",
+          "Full",
+          "w/o geometry",
+          "w/o memory"
+        ],
+        "rows": [
+          [
+            "LIBERO four-suite Avg",
+            "98.9%",
+            "97.9%",
+            "98.2%"
+          ],
+          [
+            "RoboTwin Clean/Randomized Avg",
+            "91.17%",
+            "89.71%",
+            "90.18%"
+          ]
+        ],
+        "locator": "Original Table 1/3 and Table 2/4",
+        "caption": "两类Benchmark分别评估。消融是组合模块移除，所有数据由作者报告。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-10-27",
+      "note": "Extracted Table 3/4 matched same-author full vs w/o geometry vs w/o temporal memory, plus complete primary suite/split values. LIBERO and RoboTwin separate paper-table tracks; real-world 5-task evidence only in note due 10 trials/task."
+    }
+  }
+}
