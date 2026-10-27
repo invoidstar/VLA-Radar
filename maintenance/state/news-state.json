@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-26",
+  "asOf": "2026-10-27",
   "status": "partial",
-  "lastAttemptAt": "2026-10-26",
+  "lastAttemptAt": "2026-10-27",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-10-26 additional Chinese/English first-party government source comparison: Oct19 MIIT humanoid robotics industrial briefing from Oct20 ministry full transcript and Oct20 SCIO English report added once; 2026 H1 product units and full-year official forecast explicitly separated, and future standards guideline not described as published. Existing China/Singapore/HoloMotion/NVIDIA stories deduped. Broad Oct11–26 full window across academic/industry/media remains partial and lastSuccessfulSearchAt 2026-10-04.",
+  "summary": "2026-10-27 official Chinese AI WAVE dated schedule plus Oct26 English robotics report confirm vendor G2 Max announcement with attributed product specifications, no verified independent capabilities. Earlier MIIT/AGIBOT/Singapore/HoloMotion events de-duplicated. Full 14-day bilingual firm/lab/media date-window not exhaustively covered; do not advance successful checkpoint from 2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -78,6 +78,12 @@
       "to": "2026-10-26",
       "status": "partial",
       "note": "Oct26中英双语原始来源回补：工信部10月19日新闻发布会、10月20日官方中文记录与国新办英文报道合并为一条，区分真实上半年产量和2026全年预期、未来标准路线。只完成选择性公司/部门渠道，不构成10月11日至26日全窗口逐日穷尽检索，成功检查点保持10月4日。"
+    },
+    {
+      "from": "2026-10-13",
+      "to": "2026-10-27",
+      "status": "partial",
+      "note": "Oct27针对性中英文回查新增智元G2 Max 10月26日发布事件（官方10月22预告+10月26行业原报道，参数按厂商口径）；已收录的中英文政府/企业事件去重。该窗口缺少所有实验室、企业与新闻来源的完整逐日穷尽审计，lastSuccessfulSearchAt仍为10月4日。"
     }
   ]
 }
