@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-01-weekly-partial",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-01",
+    "attemptedAt": "2026-11-01",
+    "completedAt": null
+  },
+  "scope": "Nonexhaustive Nov1 follow-up: exact v1 arXiv IDs and an updated curated robotics shortlist, inaccessible dated broad academic indices, two official world-action/world-model research announcement checks. Publication-level full coverage 2026-09-20 through 2026-11-01 not achieved.",
+  "sources": [
+    {
+      "id": "primary-arxiv-nov01",
+      "lane": "primary-preprints",
+      "provider": "arXiv original v1 pages",
+      "kind": "Original preprint identity, dated abstract/method availability",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-27",
+        "to": "2026-10-29"
+      },
+      "query": "https://arxiv.org/abs/2610.38661 ; https://arxiv.org/abs/2610.38508 ; https://arxiv.org/abs/2610.37666 ; https://arxiv.org/abs/2610.37091",
+      "resultCount": 4,
+      "note": "Four exact IDs from last-week shortlist inspected; not an exhaustive original arXiv category+keyword scan from Sept20 through Nov1."
+    },
+    {
+      "id": "academic-openalex-nov01",
+      "lane": "academic-index",
+      "provider": "OpenAlex dated Works API",
+      "kind": "Attempted independent scholarly dated query",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?filter=from_publication_date:2026-09-20,to_publication_date:2026-11-01&search=vision-language-action",
+      "resultCount": 0,
+      "note": "Direct parameterized academic index retrieval inaccessible through current available browsing route; no confirmed response records. Zero means none retrieved, not zero published."
+    },
+    {
+      "id": "academic-semantic-nov01",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API",
+      "kind": "Attempted independent scholarly works search",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.semanticscholar.org/graph/v1/paper/search?query=vision%20language%20action&limit=100&fields=title,publicationDate,externalIds",
+      "resultCount": 0,
+      "note": "Attempted academic index access did not yield a verifiable full-window response; do not treat as successful lane."
+    },
+    {
+      "id": "curated-robotics-nov01",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily VLA",
+      "kind": "Curated robotics feed shortlist updated 2026-10-31",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-27",
+        "to": "2026-10-31"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html (selected Oct27–29 VLA/WAM lines)",
+      "resultCount": 4,
+      "note": "Feed visibly updated Oct31 and contained additional Oct29 papers; four candidates sampled and deduplicated below, not exhaustive Sept20–Nov1 coverage."
+    },
+    {
+      "id": "reverse-official-nov01",
+      "lane": "reverse-discovery",
+      "provider": "Google DeepMind and Dream Labs original lab announcements",
+      "kind": "Selected reverse inspection of publicly released world-model and WAM announcements",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-19",
+        "to": "2026-10-27"
+      },
+      "query": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/ ; https://dreamlabs.ai/research/dream-1/",
+      "resultCount": 2,
+      "note": "Two official lab research pages checked for access scope, not systematic lab/leaderboard/citation reverse search over entire window."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models",
+      "arxiv": "2610.38661",
+      "doi": "",
+      "date": "2026-10-28",
+      "sourceIds": [
+        "primary-arxiv-nov01",
+        "curated-robotics-nov01"
+      ],
+      "status": "deferred",
+      "reason": "New v1 text and several benchmark claims discovered; full tables, quantization budgets, code/data and protocol not yet read. Defer rather than shallow intake.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "SaiVLA-JEPA: Evaluating Future Latent Prediction in JEPA-Conditioned VLA Control",
+      "arxiv": "2610.38508",
+      "doi": "",
+      "date": "2026-10-28",
+      "sourceIds": [
+        "primary-arxiv-nov01",
+        "curated-robotics-nov01"
+      ],
+      "status": "deferred",
+      "reason": "Preprint identity and abstract found; methods, future-information boundaries and source table protocols not yet fully read.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
+      "arxiv": "2610.37666",
+      "doi": "",
+      "date": "2026-10-27",
+      "sourceIds": [
+        "primary-arxiv-nov01",
+        "curated-robotics-nov01"
+      ],
+      "status": "deferred",
+      "reason": "Candidate world-imagination work; causal training/deployment evidence and ablations require full-text check before admission.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "GAWM: A Compact Latent World-Action Model for Multi-Task Robot Manipulation",
+      "arxiv": "2610.37091",
+      "doi": "",
+      "date": "2026-10-27",
+      "sourceIds": [
+        "primary-arxiv-nov01",
+        "curated-robotics-nov01"
+      ],
+      "status": "deferred",
+      "reason": "World-action model source candidate; exact original result tables and benchmark compatibility unresolved.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 4,
+    "selected": 0,
+    "deferred": 4,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 4
+  },
+  "status": "partial",
+  "notes": "No systematic four-lane whole-window enumeration or independent academic provider successful coverage. No new papers shallowly added; avoid advancing lastSuccessfulSearchAt from 2026-10-04. Prior selected/deferred in historical audits remain durable."
+}

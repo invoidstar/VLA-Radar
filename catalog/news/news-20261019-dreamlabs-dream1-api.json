@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261019-dreamlabs-dream1-api",
+  "eventKey": "dreamlabs-dream1-public-robot-api-20261019",
+  "title": "Dream Labs 开放 Dream-1 世界动作模型云端 API，权重与完整训练资源并未宣布开源",
+  "primaryCategory": "model",
+  "tags": [
+    "Dream Labs",
+    "Dream-1",
+    "world-action model",
+    "WAM",
+    "机器人控制",
+    "公共API",
+    "跨本体迁移"
+  ],
+  "eventDate": "2026-10-19",
+  "publishedAt": "2026-10-19",
+  "dateNote": "Dream Labs原始研究页仅标October 2026；2026-10-19 SiliconANGLE原始报道、公司当天公开发帖共同确认Dream-1与Dream API推出日期，不以网页抓取日期推算。",
+  "observedAt": "2026-11-01",
+  "updatedAt": "2026-11-01",
+  "stage": "released",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "research-resource",
+  "whatHappened": "Dream Labs于10月19日推出面向开发者的Dream-1 World Action Model托管推理API及机器人接入流程。官方公开研究页介绍图像、指令与机器人状态到动作的交互形式，目标是降低新型双臂平行夹爪机器人采用通用策略的门槛；公司声称在未见过的机器人及任务上有初步迁移能力。‘已发布’仅指可申请和使用云端API，不代表模型参数和完整训练代码公开。",
+  "whyItMatters": "模型服务的公共API可为跨硬件机器人策略实测提供直接入口，但调用频率、网络故障、机器人状态映射、逆运动学与任务预算都是部署效果的组成条件；公开使用接口不同于完全开放可复现权重与训练过程。",
+  "vlaRelevance": "Dream-1以视频与动作联合预测的World Action Model定位切入VLA动作生成及跨本体迁移；其公司展示的迁移成功或伙伴案例不能直接与独立RoboDojo、LIBERO等公开评测协议混排。本期仅记录真实API发布，不将宣传数值写入Leaderboard。",
+  "limits": "当前主要针对带平行夹爪的双臂机器人；其他末端执行器与更复杂任务仍需额外适配。企业提供了研究页和API，不等于公开全部权重、预训练数据、训练配方与评测代码；研究测试与商业安全认证也不是同一概念。性能为公司陈述，本站未独立复现。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Zero-Shot to New Robots: Introducing Dream-1",
+      "publisher": "Dream Labs",
+      "url": "https://dreamlabs.ai/research/dream-1/",
+      "kind": "official",
+      "publishedAt": null,
+      "access": "full-page",
+      "note": "公司可读完整研究页仅标2026年10月，核对公共Dream API、平台适用范围及研究beta性质；不捏造官网页面的具体发布日期。"
+    },
+    {
+      "id": "s2",
+      "title": "Dream Labs raises $90M to help build more intelligent robots with simple video feeds",
+      "publisher": "SiliconANGLE / Mike Wheatley",
+      "url": "https://siliconangle.com/2026/10/19/dream-labs-raises-90m-to-help-build-more-intelligent-robots-with-simple-video-feeds/",
+      "kind": "media",
+      "publishedAt": "2026-10-19",
+      "access": "full-page",
+      "note": "原始新闻明确发表于10月19日，交叉核对API当天发布；报道的公司业务与模型能力不等于独立复现。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

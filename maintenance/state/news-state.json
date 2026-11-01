@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-27",
+  "asOf": "2026-11-01",
   "status": "partial",
-  "lastAttemptAt": "2026-10-27",
+  "lastAttemptAt": "2026-11-01",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-10-27 official Chinese AI WAVE dated schedule plus Oct26 English robotics report confirm vendor G2 Max announcement with attributed product specifications, no verified independent capabilities. Earlier MIIT/AGIBOT/Singapore/HoloMotion events de-duplicated. Full 14-day bilingual firm/lab/media date-window not exhaustively covered; do not advance successful checkpoint from 2026-10-04.",
+  "summary": "2026-11-01 cross-check of Google DeepMind 2026-10-27 Genie 4 limited research preview and Dream Labs 2026-10-19 Dream-1 hosted public API with dated original reporting. Existing 2026-10-26 AGIBOT G2 Max and other Oct19–27 records deduplicated. No complete 14-day bilingual official/media/labs scan; news lastSuccessfulSearchAt remains 2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -84,6 +84,12 @@
       "to": "2026-10-27",
       "status": "partial",
       "note": "Oct27针对性中英文回查新增智元G2 Max 10月26日发布事件（官方10月22预告+10月26行业原报道，参数按厂商口径）；已收录的中英文政府/企业事件去重。该窗口缺少所有实验室、企业与新闻来源的完整逐日穷尽审计，lastSuccessfulSearchAt仍为10月4日。"
+    },
+    {
+      "from": "2026-10-18",
+      "to": "2026-11-01",
+      "status": "partial",
+      "note": "Official English Genie4 Oct27 and Dream-1 Oct19 research pages plus Oct19 original journalist date corroboration; compared existing latest news/AGIBOT release. Broader Chinese and international companies, media, labs, conferences and code releases were not exhaustively scanned, so no complete news checkpoint."
     }
   ]
 }

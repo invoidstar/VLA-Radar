@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261027-deepmind-genie4-research-preview",
+  "eventKey": "google-deepmind-genie4-world-simulation-preview-20261027",
+  "title": "Google DeepMind 公布 Genie 4 多模态交互世界模型，当前仅向受邀测试者开放",
+  "primaryCategory": "model",
+  "tags": [
+    "Google DeepMind",
+    "Genie 4",
+    "world model",
+    "interactive simulation",
+    "Gemini Omni",
+    "robotics",
+    "研究预览"
+  ],
+  "eventDate": "2026-10-27",
+  "publishedAt": "2026-10-27",
+  "dateNote": "Google DeepMind 2026-10-27 原始新闻和Google同日官方公告；当日宣布的是受邀研究预览，后续Project Genie/API合作伙伴开放仍属于计划。",
+  "observedAt": "2026-11-01",
+  "updatedAt": "2026-11-01",
+  "stage": "preview",
+  "evidence": "official",
+  "status": "verified",
+  "featured": true,
+  "importance": "research-resource",
+  "whatHappened": "Google DeepMind在10月27日公开介绍Genie 4：可实时响应交互指令的生成式世界模型，画面与环境声音、对话同步生成。官方称结合Gemini Omni提供现实外观/行为条件、其他Gemini模型辅助场景连续性。当前仅向可信测试者逐步开放研究预览，面向Google AI Ultra用户的Project Genie与开发者API接入尚未正式普遍开放。",
+  "whyItMatters": "交互世界模型可能为机器人和智能体提供可控制、可变条件的训练环境，但训练环境的视觉逼真度、跨时间物理一致性及机器人接触动力学需要分别验证。此公告为研究方向及访问边界更新，不是经独立验证的仿真到真机有效性证明。",
+  "vlaRelevance": "对VLA/WAM而言，Genie 4展示条件驱动的世界演化与多模态交互接口潜力；官方只提出机器人训练场景的可能性，并未公布可复现的机器人控制策略、公开基准任务成功率或经验证的动作条件闭环。",
+  "limits": "来源仅证实官方模型公告与有限研究预览。权重、完整代码、训练数据、面向普通开发者的公开API、可复现机器人Benchmark或真实机器人部署均未被本次证据证明已提供。长时连贯性和精确物理交互仍受限；不可把研究预览当作开源发布或独立性能评测。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Genie 4: A new generation of world simulation",
+      "publisher": "Google DeepMind",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "kind": "official",
+      "publishedAt": "2026-10-27",
+      "access": "full-page",
+      "note": "10月27日DeepMind完整原文，核对互动多模态能力、机器人训练定位及仅受邀测试阶段；不含可公开下载权重声明。"
+    },
+    {
+      "id": "s2",
+      "title": "We're announcing Genie 4, our new world model for real-time interactive simulation",
+      "publisher": "Google",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/",
+      "kind": "official",
+      "publishedAt": "2026-10-27",
+      "access": "full-page",
+      "note": "Google同日官方核验受邀测试和未来Project Genie/API的独立阶段。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}

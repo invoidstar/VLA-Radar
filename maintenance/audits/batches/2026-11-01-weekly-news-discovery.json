@@ -1,0 +1,8 @@
+{
+  "id": "2026-11-01-weekly-news-discovery",
+  "date": "2026-11-01",
+  "summary": "Nov 1 conservative 14-day public news/discovery follow-up. Two source-verified announcements: Genie 4 research preview (Oct27) and Dream-1 public hosted API (Oct19) with clear weight/code and benchmark boundaries. Four new arXiv research candidates deferred, schema-v2 complete four-lane discovery remains partial due to inaccessible academic index and incomplete date-range coverage. News scan separately partial; successful checkpoints unchanged; no new paper, benchmark, setting, result or README counts. Canonical source-only diff, build generated data with official pipeline.",
+  "notes": [],
+  "tracks": [],
+  "results": []
+}

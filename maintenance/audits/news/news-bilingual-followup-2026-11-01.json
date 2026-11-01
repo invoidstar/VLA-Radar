@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "news-bilingual-followup-2026-11-01",
+  "checkedAt": "2026-11-01",
+  "window": {
+    "from": "2026-10-18",
+    "to": "2026-11-01"
+  },
+  "status": "partial",
+  "scope": "Two primary-source world-model/WAM events dated via Google DeepMind original Oct27 announcement and Dream Labs research with Oct19 original reporting. Existing Oct19–26 records deduplicated. No exhaustive bilingual company/lab/release/media query sweep.",
+  "sources": [
+    {
+      "provider": "Google DeepMind original release",
+      "kind": "official",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "observedWindow": "2026-10-27",
+      "status": "checked",
+      "note": "Official release text: invited research preview only, future consumer and developer access. No robot benchmark or full model weights."
+    },
+    {
+      "provider": "Dream Labs original model research",
+      "kind": "official",
+      "url": "https://dreamlabs.ai/research/dream-1/",
+      "observedWindow": "October 2026, date via Oct19 press",
+      "status": "checked",
+      "note": "Source reports public hosted Dream API and bimanual parallel-gripper limitations, research beta; public service is not open weights."
+    },
+    {
+      "provider": "SiliconANGLE original journalist report",
+      "kind": "original-reporting",
+      "url": "https://siliconangle.com/2026/10/19/dream-labs-raises-90m-to-help-build-more-intelligent-robots-with-simple-video-feeds/",
+      "observedWindow": "2026-10-19",
+      "status": "checked",
+      "note": "Contemporaneous dated report and company post corroborate Dream API release day, not company performance independent validation."
+    },
+    {
+      "provider": "Existing AGIBOT G2 Max dated primary news",
+      "kind": "existing-catalog-de-dup",
+      "url": "https://www.robothot.com/agibot-launches-heavy-duty-embodied-robot-to-combine-heavy-lifting-with-precision-handling",
+      "observedWindow": "2026-10-26",
+      "status": "checked-duplicate",
+      "note": "Previously published news-20261026-agibot-g2-max-launch; no new event."
+    }
+  ],
+  "dispositions": [
+    {
+      "event": "Google DeepMind Genie 4 research preview",
+      "status": "selected",
+      "eventDate": "2026-10-27",
+      "newsId": "news-20261027-deepmind-genie4-research-preview",
+      "reason": "Full official Oct27 source accessible; research preview boundary explicit."
+    },
+    {
+      "event": "Dream Labs Dream-1 public hosted API",
+      "status": "selected",
+      "eventDate": "2026-10-19",
+      "newsId": "news-20261019-dreamlabs-dream1-api",
+      "reason": "Company October research and separately dated Oct19 original news confirm public hosted API; weights not claimed."
+    },
+    {
+      "event": "AGIBOT G2 Max Oct26",
+      "status": "duplicate",
+      "eventDate": "2026-10-26",
+      "newsId": "news-20261026-agibot-g2-max-launch",
+      "reason": "Already in canonical public news; no duplicate event."
+    }
+  ],
+  "summary": {
+    "selected": 2,
+    "duplicate": 1,
+    "excluded": 0,
+    "deferred": 0
+  },
+  "notes": "Partial bilingual news scan. Existing news lastSuccessfulSearchAt stays 2026-10-04; limited source breadth and company self-reported performance not equivalent to paper-backed evidence."
+}
