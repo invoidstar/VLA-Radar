@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requestedAt": "2026-11-01",
+  "source": "weekly-public-source-health-nov01",
+  "scope": "Due-only bounded HEAD/GET reachability on current main-derived public paper/result/news/project/repro sources, including verified new Genie 4 and Dream-1 primary articles. HTTP 403/429/timeout only warning, not content invalidation.",
+  "limitPerSweep": 100,
+  "maxRounds": 5,
+  "noPaperDeletion": true,
+  "overwriteHistoricalAudits": false,
+  "notes": "Run only canonical repo check_sources.py with 30-day due rotation. Do not infer source completeness or publication status from link response."
+}
