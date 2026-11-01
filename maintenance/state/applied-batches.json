@@ -398,6 +398,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-01-weekly-news-discovery",
+      "sha256": "a7a77925bf6d069b14f56b6872e1604dfe55f8493013721e6a2638ac2ecb0b7d",
+      "date": "2026-11-01",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
