@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "requestedAt": "2026-11-08",
+  "baseSha": "c3e236bf42422ce3d6f3b8c4205aae041bfef0d4",
+  "purpose": "Bounded weekly public-source health rotation; no source deletion or publication promotion",
+  "requestedCommand": "python scripts/maintenance/check_sources.py --limit 100 --due-days 30 --max-seconds 80",
+  "notes": "Trigger existing source-health-sweep workflow on the release branch. Preserve all blocked/transient links as warnings and report actual dueRemaining."
+}
