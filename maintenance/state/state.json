@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-11-01",
+  "lastAttemptAt": "2026-11-08",
   "lastStatus": "partial",
-  "lastSummary": "2026-11-01 four-lane targeted Oct27–29 VLA/WAM papers and official model-news check: primary/curated/reverse only partial, dated OpenAlex and Semantic Scholar academic API blocked. Four new exact-arXiv-ID candidates deferred pending full source read and all-table protocols. The 2026-09-20 to 2026-11-01 complete discovery audit gate fails; lastSuccessfulSearchAt remains 2026-10-04.",
+  "lastSummary": "2026-11-08 targeted source check confirmed 4 new original arXiv v1 IDs (SLA, Concertina, CRONOS, NEO-VLA), curated robotics entries and one official lab listing. Academic-index APIs remained inaccessible, and required full-window primary/curated/reverse scans were not completed. All four are deferred pending full source and protocol review; checkpoint remains 2026-10-04.",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-01-weekly-partial.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-08-weekly-partial.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }
