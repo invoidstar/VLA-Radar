@@ -1,3 +1,7 @@
+## 2026-11-08 — 2026-11-08-weekly
+
+本周证据维护批次：保留四来源文献检索的真实 partial audit，新增 Concertina 2026-11-05 论文及项目/检查点开放边界新闻（不将作者分数转换为榜单结果），完成100条到期 URL 的 warning-only 来源健康检查。论文、Benchmark/Setting/Result、Relations/Repro 与 README 规模本批不改；两项独立检索 success checkpoint 均不前移。通过 canonical builder 生成 News 与公开活动索引分片并验证后提交。
+
 ## 2026-11-01 — 2026-11-01-weekly-news-discovery
 
 Nov 1 conservative 14-day public news/discovery follow-up. Two source-verified announcements: Genie 4 research preview (Oct27) and Dream-1 public hosted API (Oct19) with clear weight/code and benchmark boundaries. Four new arXiv research candidates deferred, schema-v2 complete four-lane discovery remains partial due to inaccessible academic index and incomplete date-range coverage. News scan separately partial; successful checkpoints unchanged; no new paper, benchmark, setting, result or README counts. Canonical source-only diff, build generated data with official pipeline.
