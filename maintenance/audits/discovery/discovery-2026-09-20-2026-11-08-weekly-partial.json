@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-08-weekly-partial",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-08",
+    "attemptedAt": "2026-11-08",
+    "completedAt": null
+  },
+  "scope": "Partial targeted public-paper verification covering Nov 3–5 arXiv v1s, an updated robotics curated feed (through Nov 7), an author lab reverse check, and attempted scholarly API access. This is NOT an exhaustive Sept 20–Nov 8 multi-lane discovery scan.",
+  "sources": [
+    {
+      "id": "primary-arxiv-nov08",
+      "lane": "primary-preprints",
+      "provider": "arXiv original abstract/v1",
+      "kind": "Four individually checked original preprint identity and submission histories",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-03",
+        "to": "2026-11-05"
+      },
+      "query": "https://arxiv.org/abs/2611.08373 ; https://arxiv.org/abs/2611.07513 ; https://arxiv.org/abs/2611.05080 ; https://arxiv.org/abs/2611.06918",
+      "resultCount": 4,
+      "note": "Original arXiv v1 submission histories and titles were checked. Targeted IDs only; not a date-bounded cs.RO/cs.CV search for all required concepts over the full window."
+    },
+    {
+      "id": "academic-openalex-nov08",
+      "lane": "academic-index",
+      "provider": "OpenAlex Works API",
+      "kind": "Independent broad academic-index retrieval attempted",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?search=vision-language-action",
+      "resultCount": 0,
+      "note": "API URL was inaccessible through the present public browsing path; no results were actually retrieved. Zero here means unavailable, not zero papers."
+    },
+    {
+      "id": "academic-semanticscholar-nov08",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API",
+      "kind": "Independent academic paper-index retrieval attempted",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.semanticscholar.org/graph/v1/paper/search?query=robot%20world%20model%20action&limit=10",
+      "resultCount": 0,
+      "note": "Attempted retrieval produced no accessible response; no full-window date-scope results can be certified."
+    },
+    {
+      "id": "curated-robotics-nov08",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily VLA",
+      "kind": "Published curated robotics/VLA feed current on 2026-11-07",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-03",
+        "to": "2026-11-07"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html ; rows for Concertina, SLA and CRONOS (Nov 3–5)",
+      "resultCount": 3,
+      "note": "These three named entries were visually checked in the dated feed. Feed includes many other items; not an exhaustive cross-date inventory back to 2026-09-20."
+    },
+    {
+      "id": "reverse-lab-nov08",
+      "lane": "reverse-discovery",
+      "provider": "Embodied AI lab official publications page",
+      "kind": "Author-lab reverse confirmation of new robotics benchmark paper",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-03",
+        "to": "2026-11-08"
+      },
+      "query": "https://embodiedai-ntu.github.io/ ; CRONOS original author/publications listing",
+      "resultCount": 1,
+      "note": "Official lab page lists CRONOS and authors. It is one selective lab reverse lookup, not a systematic labs/projects/benchmarks/related-work scan of the full window."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "arxiv": "2611.08373",
+      "doi": "",
+      "date": "2026-11-05",
+      "sourceIds": [
+        "primary-arxiv-nov08",
+        "curated-robotics-nov08"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v1 identity and spatial continual-pretraining abstract confirmed; full training/teacher geometry, comparisons, ablations, benchmark table protocol, and official resource audit not yet completed.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Concertina: Embodying Manipulation and Cognition in One Diffusion Vision-Language Model",
+      "arxiv": "2611.07513",
+      "doi": "",
+      "date": "2026-11-05",
+      "sourceIds": [
+        "primary-arxiv-nov08",
+        "curated-robotics-nov08"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v1 found; reported LIBERO, Plus and CALVIN figures are NOT entered as verified Result Reports before full text, evaluation profile, source table and model/code review.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "CRONOS: Benchmarking Non-Episodic Reinforcement Learning for Robotic Manipulation",
+      "arxiv": "2611.05080",
+      "doi": "",
+      "date": "2026-11-03",
+      "sourceIds": [
+        "primary-arxiv-nov08",
+        "curated-robotics-nov08",
+        "reverse-lab-nov08"
+      ],
+      "status": "deferred",
+      "reason": "Original preprint and author lab listing confirmed. Benchmark tasks, reset schedules, policy baselines and exact table values await source-level read; no empty Benchmark/Setting added.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+      "arxiv": "2611.06918",
+      "doi": "",
+      "date": "2026-11-04",
+      "sourceIds": [
+        "primary-arxiv-nov08"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v1 identity confirmed for NEO-VLA; exact controlled comparison conditions, training data and table results not yet fully audited.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 4,
+    "selected": 0,
+    "deferred": 4,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 3
+  },
+  "status": "partial",
+  "notes": "Four confirmed unique arXiv IDs only, with no shallow intake. Academic-index providers could not be retrieved; remaining mandatory lane windows incomplete. Do NOT apply a success checkpoint. Previous deferred discoveries persist in historical audits. Website content and Leaderboard are unchanged by candidates."
+}

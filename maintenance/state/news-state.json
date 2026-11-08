@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-01",
+  "asOf": "2026-11-08",
   "status": "partial",
-  "lastAttemptAt": "2026-11-01",
+  "lastAttemptAt": "2026-11-08",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-11-01 cross-check of Google DeepMind 2026-10-27 Genie 4 limited research preview and Dream Labs 2026-10-19 Dream-1 hosted public API with dated original reporting. Existing 2026-10-26 AGIBOT G2 Max and other Oct19–27 records deduplicated. No complete 14-day bilingual official/media/labs scan; news lastSuccessfulSearchAt remains 2026-10-04.",
+  "summary": "2026-11-08 targeted English+Chinese public VLA/robotics model and source release search for Oct25–Nov08; corroborated Concertina Nov05 original arXiv and public project/checkpoint documentation, checked a limited Noitom Nov05 corporate announcement (not selected without deeper research impact), and deduplicated previously recorded late-October official news. Not a complete 14-day multi-source bilingual scan; retain 2026-10-04 success checkpoint.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -90,6 +90,12 @@
       "to": "2026-11-01",
       "status": "partial",
       "note": "Official English Genie4 Oct27 and Dream-1 Oct19 research pages plus Oct19 original journalist date corroboration; compared existing latest news/AGIBOT release. Broader Chinese and international companies, media, labs, conferences and code releases were not exhaustively scanned, so no complete news checkpoint."
+    },
+    {
+      "from": "2026-10-25",
+      "to": "2026-11-08",
+      "status": "partial",
+      "note": "Targeted Nov3–7 VLA papers/repository release check, Concertina original arXiv Nov5 + GitHub/HF reproducibility boundary, Nov5 Noitom vendor announcement considered but not separately selected, compared existing Oct27 model news. Incomplete labs/company/media/Chinese day-by-day scanning, not a complete newsroom coverage audit."
     }
   ]
 }

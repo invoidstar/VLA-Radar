@@ -408,6 +408,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-08-weekly",
+      "sha256": "a14c6e6b226ea353433cf82cfebad8abe421f5ae35b33c10ccad1b7a6934d6b7",
+      "date": "2026-11-08",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
