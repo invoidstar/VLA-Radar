@@ -47,7 +47,8 @@ def test_public_asset_urls_are_stable():
         'index.html','favicon.svg','styles.css','sidebar.css','research.css','experience.css','news.css','tools.css',
         'app.js','research.js','benchmark-settings.js','dates.js','runtime.js','math.js','search-core.js','search-client.js','search-worker.js',
         'sidebar.js','experience-loader.js','experience-core.js','experience.js','news-core.js','news.js',
-        'tools-loader.js','tools-core.js','tools.js'
+        'tools-loader.js','tools-core.js','tools.js',
+        'close-reading/index.html','close-reading/p148/index.html','close-reading/reader.js','close-reading/reading.css','close-reading/list.js'
     }
     assert set(PUBLIC_FILES.values())==expected
     index=(ROOT/'site/index.html').read_text()
