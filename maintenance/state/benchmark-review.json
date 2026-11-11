@@ -2822,6 +2822,20 @@
         "r-pyrua-v2-robodojo-official-score"
       ],
       "note": "Primary PyRUA v2 Tables 2 and 5 + official author's October result note: four benchmark-scoped paired Agent code vs tool conditions; RoboDojo Sim author seed0 Score/SR kept separate from official RoboDojo team 55.26/50.35 report. No VLA policy in RoboDojo Agent, and Coder 4B 44.1% unseen tasks is not RoboDojo."
+    },
+    "p150": {
+      "status": "extracted",
+      "trackIds": [
+        "zeva-v2-robocasa365-atomic5",
+        "zeva-v2-chemlab-atomic-sr",
+        "zeva-v2-chemlab-short-sr",
+        "zeva-v2-chemlab-complex-sr",
+        "zeva-v2-chemlab-long-process-score",
+        "zeva-v2-chemlab-five-ablation-sr",
+        "zeva-v2-robocasa365-fixed-episode-csr"
+      ],
+      "resultIds": [],
+      "note": "原始Table I/II/III和Fig3按真实/仿真、成功率/部分进度/固定episode累计成功、作者对照/模块消融分别建轨；训练时是有机器人数据的Cosmos3骨干与CTE，部署冻结不代表零离线训练。公开冻结权重不代表完整PIM多尝试成绩。"
     }
   }
 }
