@@ -1368,6 +1368,18 @@
       "level": "baseline",
       "note": "ArXiv original article and simulations read. Author-source identity for executable SimPT framework and released expert recovery trajectories/checkpoints remains unverified; do not infer official code or missing weights from third-party sites.",
       "items": {}
+    },
+    "p148": {
+      "verifiedAt": "2026-11-11",
+      "level": "baseline",
+      "note": "Author project and substantive public SLA source tree verified, but full multi-source pretraining data and weights, H100 training reproduction, and all robot evaluation setup are not certified.",
+      "items": {}
+    },
+    "p149": {
+      "verifiedAt": "2026-11-11",
+      "level": "baseline",
+      "note": "Public author PyRUA-Lean source, docs, tests and integrations confirmed. GPT-6 Astra/SAM3 services and robotics simulation/hardware remain third party prerequisites; code alone does not reproduce every official result.",
+      "items": {}
     }
   }
 }

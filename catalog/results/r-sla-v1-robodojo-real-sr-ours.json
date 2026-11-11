@@ -1,0 +1,21 @@
+{
+  "id": "r-sla-v1-robodojo-real-sr-ours",
+  "paperId": "p148",
+  "method": "SLA",
+  "trackId": "sla-v1-robodojo-real-sr",
+  "values": {
+    "ARX X5": 36.7,
+    "Piper": 55,
+    "Piper X": 10,
+    "Average": 33.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2611.08373v1",
+  "sourceVersion": "arXiv 2611.08373v1",
+  "locator": "Table 5 SLA Real SR (Appendix Table14 Piper discrepancy)",
+  "attribution": "author-reported",
+  "trainingData": "SLA real robot targeted adaptation with historical frame memory; π₀.₅ baseline in paper.",
+  "evaluationNotes": "Real full-task SR, main table Piper 55.0 vs appendix equal-task mean 53.3 discrepancy preserved; not Sim 42 tasks. Paper report of 18 real robot tasks",
+  "supersedes": ""
+}

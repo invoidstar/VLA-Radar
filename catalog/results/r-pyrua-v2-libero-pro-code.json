@@ -1,0 +1,18 @@
+{
+  "id": "r-pyrua-v2-libero-pro-code",
+  "paperId": "p149",
+  "method": "PyRUA-Lean code-cell Agent",
+  "trackId": "pyrua-v2-libero-pro-40",
+  "values": {
+    "Success": 94
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2610.01939v2",
+  "sourceVersion": "arXiv 2610.01939v2",
+  "locator": "Table 2 code-cell mode",
+  "attribution": "author-reported",
+  "trainingData": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen π₀.₅ subpolicy.",
+  "evaluationNotes": "Source Table 2 robot Agent interface, not a separate trained LIBERO policy checkpoint. LIBERO-PRO author paired agent setting",
+  "supersedes": ""
+}

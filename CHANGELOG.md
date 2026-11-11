@@ -1,3 +1,7 @@
+## 2026-11-11 — 2026-11-11-sla-robodojo-paper-catchup
+
+Original full-text arXiv SLA 2611.08373v1 and PyRUA-Lean 2610.01939v2 added as p148/p149 with 23 section-level methods, training/ablations/limits and 28 exact source-scoped author or cited-baseline results over 15 paper-table protocol tracks. Separate RoboDojo Real/Sim, progress Score/SR and author-local from RoboDojo team reported Agent. Not a new fair official overall rank. Published sources and baseline reproducibility cards verified 2026-11-11; preview-only or fulltext-unverified models remain outside the paper catalog. Four-source discovery remains partial. Note section identifiers and per-paper source locators follow the strict published schema.
+
 ## 2026-11-08 — 2026-11-08-weekly
 
 本周证据维护批次：保留四来源文献检索的真实 partial audit，新增 Concertina 2026-11-05 论文及项目/检查点开放边界新闻（不将作者分数转换为榜单结果），完成100条到期 URL 的 warning-only 来源健康检查。论文、Benchmark/Setting/Result、Relations/Repro 与 README 规模本批不改；两项独立检索 success checkpoint 均不前移。通过 canonical builder 生成 News 与公开活动索引分片并验证后提交。

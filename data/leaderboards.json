@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08",
+  "updatedAt": "2026-11-11",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -15704,6 +15704,751 @@
         "Naive": "percent",
         "Progress Graph": "percent"
       }
+    },
+    {
+      "id": "sla-v1-libero-plus",
+      "dataset": "LIBERO-Plus",
+      "name": "SLA seven OOD axes — LIBERO trained",
+      "version": "2611.08373v1 Table 2",
+      "tasks": "LIBERO-Plus seven perturbation axes",
+      "split": "Original LIBERO training to heldout LIBERO-Plus",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 2 overall is weighted by test episodes, not an unweighted mean.",
+      "trainingRegime": "SLA extra multi-robot continual pretraining; compared baselines use source-specified training recipes.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Camera",
+        "Robot",
+        "Language",
+        "Light",
+        "Background",
+        "Noise",
+        "Layout",
+        "Overall"
+      ],
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Camera": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Robot": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Language": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Light": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Background": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Noise": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Layout": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Overall": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Camera": "higher",
+        "Robot": "higher",
+        "Language": "higher",
+        "Light": "higher",
+        "Background": "higher",
+        "Noise": "higher",
+        "Layout": "higher",
+        "Overall": "higher"
+      },
+      "columnUnits": {
+        "Camera": "percent",
+        "Robot": "percent",
+        "Language": "percent",
+        "Light": "percent",
+        "Background": "percent",
+        "Noise": "percent",
+        "Layout": "percent",
+        "Overall": "percent"
+      }
+    },
+    {
+      "id": "sla-v1-robotwin2-clean2500",
+      "dataset": "RoboTwin",
+      "name": "SLA Clean2500 RoboTwin 2.0",
+      "version": "2611.08373v1 Table 3",
+      "tasks": "50 manipulation tasks",
+      "split": "50 Clean demonstrations per task; Clean and Randomized evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "RoboTwin original Clean2500 control; not the mixed 27500 training setting.",
+      "trainingRegime": "SLA robot pretraining then 50 Clean demos/task posttraining; distinct from other checkpoint leaderboard identities.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Clean": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Randomized": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Clean": "higher",
+        "Randomized": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Clean": "percent",
+        "Randomized": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "sla-v1-robocasa-panda24",
+      "dataset": "RoboCasa",
+      "name": "SLA RoboCasa Panda 24 task",
+      "version": "2611.08373v1 Table 4",
+      "tasks": "Original RoboCasa Panda 24 tasks",
+      "split": "50 demonstrations per task in selected matched rows",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Panda original 24 tasks, not RoboCasa365 50 evaluated tasks or 365 full task average.",
+      "trainingRegime": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "sla-v1-robodojo-real-sr",
+      "dataset": "RoboDojo real",
+      "name": "SLA RoboDojo Real author Table 5 — SR",
+      "version": "2611.08373v1 Table 5",
+      "tasks": "18 tasks across ARX X5/Piper/Piper X",
+      "split": "Paper report of 18 real robot tasks",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Real full-task SR, main table Piper 55.0 vs appendix equal-task mean 53.3 discrepancy preserved; not Sim 42 tasks.",
+      "trainingRegime": "SLA real robot targeted adaptation with historical frame memory; π₀.₅ baseline in paper.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "ARX X5",
+        "Piper",
+        "Piper X",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "ARX X5": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Piper": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Piper X": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "ARX X5": "higher",
+        "Piper": "higher",
+        "Piper X": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "ARX X5": "percent",
+        "Piper": "percent",
+        "Piper X": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "sla-v1-robodojo-real-score",
+      "dataset": "RoboDojo real",
+      "name": "SLA RoboDojo Real author Table 5 — progress Score",
+      "version": "2611.08373v1 Table 5",
+      "tasks": "18 tasks across three real robot embodiments",
+      "split": "Paper report real tasks, author original table",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Real partial-progress Score is not full-task SR or author-local simulation Score.",
+      "trainingRegime": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "ARX X5",
+        "Piper",
+        "Piper X",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "ARX X5": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Piper": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Piper X": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "ARX X5": "higher",
+        "Piper": "higher",
+        "Piper X": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "ARX X5": "score",
+        "Piper": "score",
+        "Piper X": "score",
+        "Average": "score"
+      }
+    },
+    {
+      "id": "sla-v1-robodojo-sim-sr",
+      "dataset": "RoboDojo",
+      "name": "SLA author-local RoboDojo Sim SR",
+      "version": "2611.08373v1 Appendix Table 15",
+      "tasks": "42 simulation tasks in five ability dimensions",
+      "split": "Author local Sim run not leaderboard SLA-Preview Real submission",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Appendix Table 15 local simulation, distinct from official live leaderboard and SLA Real benchmark.",
+      "trainingRegime": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Generalization": "higher",
+        "Precision": "higher",
+        "Long-Horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Generalization": "percent",
+        "Precision": "percent",
+        "Long-Horizon": "percent",
+        "Memory": "percent",
+        "Open": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "sla-v1-robodojo-sim-score",
+      "dataset": "RoboDojo",
+      "name": "SLA author-local RoboDojo Sim progress Score",
+      "version": "2611.08373v1 Appendix Table 15",
+      "tasks": "42 simulation tasks in five ability dimensions",
+      "split": "Author local Sim run",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Appendix Table 15 progress Score is distinct from SR and RoboDojo Real benchmark.",
+      "trainingRegime": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Generalization": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Generalization": "higher",
+        "Precision": "higher",
+        "Long-Horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Generalization": "score",
+        "Precision": "score",
+        "Long-Horizon": "score",
+        "Memory": "score",
+        "Open": "score",
+        "Average": "score"
+      }
+    },
+    {
+      "id": "pyrua-v2-libero-pro-40",
+      "dataset": "LIBERO-PRO",
+      "name": "PyRUA-Lean paired code vs tool — LIBERO-PRO",
+      "version": "2610.01939v2 Table 2",
+      "tasks": "40 tasks × five seeds",
+      "split": "LIBERO-PRO author paired agent setting",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Source Table 2 robot Agent interface, not a separate trained LIBERO policy checkpoint.",
+      "trainingRegime": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen π₀.₅ subpolicy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
+      }
+    },
+    {
+      "id": "pyrua-v2-robotwin2-50",
+      "dataset": "RoboTwin",
+      "name": "PyRUA-Lean paired code vs tool — RoboTwin 50",
+      "version": "2610.01939v2 Table 2",
+      "tasks": "50 tasks × five seeds",
+      "split": "Author 50-task RoboTwin agent setup, not Clean2500 official leaderboard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Table 2 Agent policy orchestration; do not merge as RoboTwin official Clean2Random result.",
+      "trainingRegime": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen LingBot-VLA subpolicy.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
+      }
+    },
+    {
+      "id": "pyrua-v2-robocasa365-atomic",
+      "dataset": "RoboCasa365",
+      "name": "PyRUA-Lean RoboCasa365 Target50 atomic Agent",
+      "version": "2610.01939v2 Table 2",
+      "tasks": "RoboCasa365 Target50 atomic tasks",
+      "split": "Author 50 target task Agent episodes atomic subset",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Not RoboCasa365 365-task mean; atomic separate from composite.",
+      "trainingRegime": "GPT-6 Astra, SAM3, frozen RLDX-1, paired tool/code cell modes.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
+      }
+    },
+    {
+      "id": "pyrua-v2-robocasa365-composite",
+      "dataset": "RoboCasa365",
+      "name": "PyRUA-Lean RoboCasa365 Target50 composite Agent",
+      "version": "2610.01939v2 Table 2",
+      "tasks": "RoboCasa365 Target50 composite tasks",
+      "split": "Composite subset and up to 100 agent calls per episode",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Composite tasks separately reported in Table 2, not atomic or original RoboCasa.",
+      "trainingRegime": "GPT-6 Astra, SAM3, frozen RLDX-1, paired tool/code cell modes.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Success"
+      ],
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Success": "higher"
+      },
+      "columnUnits": {
+        "Success": "percent"
+      }
+    },
+    {
+      "id": "pyrua-v2-robodojo-sim-author-sr",
+      "dataset": "RoboDojo",
+      "name": "PyRUA-Lean RoboDojo author-local seed0 SR",
+      "version": "2610.01939v2 Table 5",
+      "tasks": "42 tasks, five dimensions, 2100 episodes",
+      "split": "Author seed0 local; distinct from RoboDojo team Oct21 official evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Author local SR 51.62, not official 50.35 or five-dim score.",
+      "trainingRegime": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Generalization": "higher",
+        "Precision": "higher",
+        "Long-Horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Generalization": "percent",
+        "Precision": "percent",
+        "Long-Horizon": "percent",
+        "Memory": "percent",
+        "Open": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "pyrua-v2-robodojo-sim-author-score",
+      "dataset": "RoboDojo",
+      "name": "PyRUA-Lean RoboDojo author-local seed0 progress Score",
+      "version": "2610.01939v2 Table 5",
+      "tasks": "42 tasks, five dimensions, 2100 episodes",
+      "split": "Author seed0 local run",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Author local progress Score 58.20, not official 55.26 or SR.",
+      "trainingRegime": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Generalization": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Generalization": "higher",
+        "Precision": "higher",
+        "Long-Horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Generalization": "score",
+        "Precision": "score",
+        "Long-Horizon": "score",
+        "Memory": "score",
+        "Open": "score",
+        "Average": "score"
+      }
+    },
+    {
+      "id": "pyrua-v2-robodojo-sim-official-sr",
+      "dataset": "RoboDojo",
+      "name": "PyRUA-Lean RoboDojo team-reported official SR",
+      "version": "Author Oct21 official evaluation memo",
+      "tasks": "42 official simulation tasks, five dimensions",
+      "split": "Official team test independently executed; different result run from author Table 5",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Author documentation of team-run 50.35 overall SR; don't substitute 51.62 local figure or claim independent paper reproduction.",
+      "trainingRegime": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "source": "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Generalization": "higher",
+        "Precision": "higher",
+        "Long-Horizon": "higher",
+        "Memory": "higher",
+        "Open": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Generalization": "percent",
+        "Precision": "percent",
+        "Long-Horizon": "percent",
+        "Memory": "percent",
+        "Open": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "pyrua-v2-robodojo-sim-official-score",
+      "dataset": "RoboDojo",
+      "name": "PyRUA-Lean RoboDojo team-reported official progress Score",
+      "version": "Author Oct21 official evaluation memo",
+      "tasks": "42 official simulation tasks",
+      "split": "Team report distinct from original paper local evaluation",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "protocol": "Only official overall Score55.26 is source-verifiable in this record; do not infer five subdimension Score.",
+      "trainingRegime": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Average"
+      ],
+      "source": "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "score"
+      }
     }
   ],
   "settings": [
@@ -16609,7 +17354,8 @@
         "robocasa24-rldx-v2",
         "seelike-v1-pretrained-robocasa",
         "seer-v2-robocasa24-main",
-        "pacevla-v1-robocasa-kitchen-rldx"
+        "pacevla-v1-robocasa-kitchen-rldx",
+        "sla-v1-robocasa-panda24"
       ],
       "resultIds": [
         "r-pacevla-v1-robocasa-base",
@@ -16644,19 +17390,23 @@
         "r-seelike-v1-pretrained-smolvla",
         "r-seer-v2-robocasa24-pi05-rgb",
         "r-seer-v2-robocasa24-pointvla",
-        "r-seer-v2-robocasa24-seer"
+        "r-seer-v2-robocasa24-seer",
+        "r-sla-v1-robocasa-panda-cosmos",
+        "r-sla-v1-robocasa-panda-ours",
+        "r-sla-v1-robocasa-panda-spatialforcing"
       ],
-      "resultCount": 33,
-      "paperCount": 6,
+      "resultCount": 36,
+      "paperCount": 7,
       "paperIds": [
         "p143",
         "p079",
         "p076",
         "p081",
         "p004",
-        "p011"
+        "p011",
+        "p148"
       ],
-      "methodCount": 29,
+      "methodCount": 31,
       "primaryTrackId": "robocasa24-cosmos-50demos",
       "trainingOptions": [
         {
@@ -16736,6 +17486,12 @@
           "label": "RoboCasa 24 tasks；50 human demonstrations/task",
           "known": true,
           "count": 3
+        },
+        {
+          "id": "unknown-p148",
+          "label": "训练数据未完整披露 · p148",
+          "known": false,
+          "count": 3
         }
       ],
       "trainingByResult": {
@@ -16771,7 +17527,10 @@
         "r-seelike-v1-pretrained-smolvla": "unknown-p011",
         "r-seer-v2-robocasa24-pi05-rgb": "data-7fa48042c2ba",
         "r-seer-v2-robocasa24-pointvla": "data-7fa48042c2ba",
-        "r-seer-v2-robocasa24-seer": "data-7fa48042c2ba"
+        "r-seer-v2-robocasa24-seer": "data-7fa48042c2ba",
+        "r-sla-v1-robocasa-panda-cosmos": "unknown-p148",
+        "r-sla-v1-robocasa-panda-ours": "unknown-p148",
+        "r-sla-v1-robocasa-panda-spatialforcing": "unknown-p148"
       },
       "columnMeta": {
         "Average": {
@@ -16804,9 +17563,9 @@
         }
       },
       "qualityKind": "benchmark",
-      "primaryResultCount": 29,
-      "primaryPaperCount": 5,
-      "latestReportVerifiedAt": "2026-10-26",
+      "primaryResultCount": 31,
+      "primaryPaperCount": 6,
+      "latestReportVerifiedAt": "2026-11-11",
       "methodNames": [
         "RLDX-1-IMG",
         "RLDX-1-IMG + PaceVLA",
@@ -16836,7 +17595,9 @@
         "SmolVLA + Pointmap",
         "SmolVLA",
         "π0.5 RGB-only",
-        "SeeR-VLA"
+        "SeeR-VLA",
+        "SLA",
+        "Spatial Forcing"
       ]
     },
     {
@@ -16854,30 +17615,44 @@
         "Seen composite",
         "Unseen composite",
         "Average",
-        "Total"
+        "Total",
+        "Success"
       ],
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
         "robocasa365-xiaomi-50tasks",
         "robocasa365-rldx-paper-v2",
-        "qwen-robotmanip-v2-robocasa365"
+        "qwen-robotmanip-v2-robocasa365",
+        "pyrua-v2-robocasa365-atomic",
+        "pyrua-v2-robocasa365-composite"
       ],
       "resultIds": [
+        "r-pyrua-v2-robocasa-atomic-code",
+        "r-pyrua-v2-robocasa-atomic-tool",
+        "r-pyrua-v2-robocasa-composite-code",
+        "r-pyrua-v2-robocasa-composite-tool",
         "r-qwen-robotmanip-v2-robocasa365-base",
         "r-qwen-robotmanip-v2-robocasa365-context",
         "r-robocasa365-rldx-paper-v2-rldx-1",
         "r-robocasa365-xiaomi-50tasks-xiaomi-robotics-1"
       ],
-      "resultCount": 4,
-      "paperCount": 3,
+      "resultCount": 8,
+      "paperCount": 4,
       "paperIds": [
+        "p149",
         "p114",
         "p081",
         "p004"
       ],
-      "methodCount": 4,
+      "methodCount": 6,
       "primaryTrackId": "robocasa365-xiaomi-50tasks",
       "trainingOptions": [
+        {
+          "id": "unknown-p149",
+          "label": "训练数据未完整披露 · p149",
+          "known": false,
+          "count": 4
+        },
         {
           "id": "unknown-p114",
           "label": "训练数据未完整披露 · p114",
@@ -16898,6 +17673,10 @@
         }
       ],
       "trainingByResult": {
+        "r-pyrua-v2-robocasa-atomic-code": "unknown-p149",
+        "r-pyrua-v2-robocasa-atomic-tool": "unknown-p149",
+        "r-pyrua-v2-robocasa-composite-code": "unknown-p149",
+        "r-pyrua-v2-robocasa-composite-tool": "unknown-p149",
         "r-qwen-robotmanip-v2-robocasa365-base": "unknown-p114",
         "r-qwen-robotmanip-v2-robocasa365-context": "unknown-p114",
         "r-robocasa365-rldx-paper-v2-rldx-1": "unknown-p081",
@@ -16923,13 +17702,19 @@
         "Total": {
           "unit": "percent",
           "direction": "higher"
+        },
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
         }
       },
       "qualityKind": "benchmark",
-      "primaryResultCount": 4,
-      "primaryPaperCount": 3,
-      "latestReportVerifiedAt": "2026-09-25",
+      "primaryResultCount": 8,
+      "primaryPaperCount": 4,
+      "latestReportVerifiedAt": "2026-11-11",
       "methodNames": [
+        "PyRUA-Lean code-cell Agent",
+        "Tool-calling Agent",
         "Qwen-RobotManip",
         "Qwen-RobotManip-Context",
         "RLDX-1",
@@ -18370,32 +19155,41 @@
       "evalId": "auto:score-184df936",
       "name": "RoboDojo · Score · Score",
       "tasks": "Generalization-Std/Rand, Precision, Long-Horizon, Memory, Open",
-      "split": "simulation historical snapshot",
+      "split": "多来源评测描述；详见各行 Evidence",
       "metric": "Partial-progress score",
       "unit": "score",
       "direction": "higher",
       "columns": [
         "Average"
       ],
-      "protocol": "表中部分完成Score与Success Rate分别建赛道；Average直接取作者原表，权重不自行推断；不表示2026-09-18或当前最新官方排名。",
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
-        "robodojo-20260824-score"
+        "robodojo-20260824-score",
+        "pyrua-v2-robodojo-sim-official-score"
       ],
       "resultIds": [
+        "r-pyrua-v2-robodojo-official-score",
         "r-robodojo-20260824-score-dm",
         "r-robodojo-20260824-score-g05",
         "r-robodojo-20260824-score-pi05",
         "r-robodojo-20260824-score-vlact",
         "r-robodojo-20260824-score-xiaomi"
       ],
-      "resultCount": 5,
-      "paperCount": 1,
+      "resultCount": 6,
+      "paperCount": 2,
       "paperIds": [
+        "p149",
         "p001"
       ],
-      "methodCount": 5,
+      "methodCount": 6,
       "primaryTrackId": "robodojo-20260824-score",
       "trainingOptions": [
+        {
+          "id": "unknown-p149",
+          "label": "训练数据未完整披露 · p149",
+          "known": false,
+          "count": 1
+        },
         {
           "id": "unknown-p001",
           "label": "训练数据未完整披露 · p001",
@@ -18404,6 +19198,7 @@
         }
       ],
       "trainingByResult": {
+        "r-pyrua-v2-robodojo-official-score": "unknown-p149",
         "r-robodojo-20260824-score-dm": "unknown-p001",
         "r-robodojo-20260824-score-g05": "unknown-p001",
         "r-robodojo-20260824-score-pi05": "unknown-p001",
@@ -18417,10 +19212,11 @@
         }
       },
       "qualityKind": "benchmark",
-      "primaryResultCount": 5,
-      "primaryPaperCount": 1,
-      "latestReportVerifiedAt": "2026-09-18",
+      "primaryResultCount": 6,
+      "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-11-11",
       "methodNames": [
+        "PyRUA-Lean official team reported Agent",
         "DM0.5",
         "GalaxeaVLA G0.5",
         "pi0.5",
@@ -29548,7 +30344,7 @@
       "evalId": "auto:success-7b83824e1f-na",
       "name": "LIBERO-Plus · Camera / Robot / Language / … · Success Rate",
       "tasks": "LIBERO-Plus task instances",
-      "split": "7 perturbation axes; 10,030 weighted task instances",
+      "split": "多来源评测描述；详见各行 Evidence",
       "metric": "Task success rate",
       "unit": "percent",
       "direction": "higher",
@@ -29562,21 +30358,25 @@
         "Layout",
         "Overall"
       ],
-      "protocol": "Adapt on standard LIBERO; evaluate Camera, Robot, Language, Light, Background, Noise, Layout; Overall follows official instance-weighted protocol.",
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
-        "geact-v1-libero-plus"
+        "geact-v1-libero-plus",
+        "sla-v1-libero-plus"
       ],
       "resultIds": [
         "r-geact-v1-libero-plus-ours",
         "r-geact-v1-libero-plus-pi05",
-        "r-geact-v1-libero-plus-starvla"
+        "r-geact-v1-libero-plus-starvla",
+        "r-sla-v1-libero-plus-ours",
+        "r-sla-v1-libero-plus-pi05"
       ],
-      "resultCount": 3,
-      "paperCount": 1,
+      "resultCount": 5,
+      "paperCount": 2,
       "paperIds": [
-        "p099"
+        "p099",
+        "p148"
       ],
-      "methodCount": 3,
+      "methodCount": 4,
       "primaryTrackId": "geact-v1-libero-plus",
       "trainingOptions": [
         {
@@ -29590,12 +30390,20 @@
           "label": "adapted on standard LIBERO under the table protocol.",
           "known": true,
           "count": 2
+        },
+        {
+          "id": "unknown-p148",
+          "label": "训练数据未完整披露 · p148",
+          "known": false,
+          "count": 2
         }
       ],
       "trainingByResult": {
         "r-geact-v1-libero-plus-ours": "data-f314779080a4",
         "r-geact-v1-libero-plus-pi05": "data-1607152c4c46",
-        "r-geact-v1-libero-plus-starvla": "data-1607152c4c46"
+        "r-geact-v1-libero-plus-starvla": "data-1607152c4c46",
+        "r-sla-v1-libero-plus-ours": "unknown-p148",
+        "r-sla-v1-libero-plus-pi05": "unknown-p148"
       },
       "columnMeta": {
         "Camera": {
@@ -29632,13 +30440,15 @@
         }
       },
       "qualityKind": "benchmark",
-      "primaryResultCount": 3,
-      "primaryPaperCount": 1,
-      "latestReportVerifiedAt": "2026-09-24",
+      "primaryResultCount": 4,
+      "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-11-11",
       "methodNames": [
         "GE-Act 2.0",
         "π0.5",
-        "StarVLA"
+        "StarVLA",
+        "SLA",
+        "π₀.₅"
       ]
     },
     {
@@ -31452,6 +32262,510 @@
         "RECAP",
         "SimPT expert recovery search"
       ]
+    },
+    {
+      "id": "setting-robotwin-success-437b4a91ee-na-55351d19bc8b",
+      "dataset": "RoboTwin",
+      "evalId": "auto:success-437b4a91ee-na",
+      "name": "RoboTwin · Clean / Randomized · Success Rate",
+      "tasks": "50 manipulation tasks",
+      "split": "50 Clean demonstrations per task; Clean and Randomized evaluation",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Clean",
+        "Randomized",
+        "Average"
+      ],
+      "protocol": "RoboTwin original Clean2500 control; not the mixed 27500 training setting.",
+      "trackIds": [
+        "sla-v1-robotwin2-clean2500"
+      ],
+      "resultIds": [
+        "r-sla-v1-robotwin-ours",
+        "r-sla-v1-robotwin-pi05",
+        "r-sla-v1-robotwin-spatialforcing"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p148"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "sla-v1-robotwin2-clean2500",
+      "trainingOptions": [
+        {
+          "id": "data-f5817d9a898d",
+          "label": "SLA robot pretraining then 50 Clean demos/task posttraining",
+          "known": true,
+          "count": 3
+        }
+      ],
+      "trainingByResult": {
+        "r-sla-v1-robotwin-ours": "data-f5817d9a898d",
+        "r-sla-v1-robotwin-pi05": "data-f5817d9a898d",
+        "r-sla-v1-robotwin-spatialforcing": "data-f5817d9a898d"
+      },
+      "columnMeta": {
+        "Clean": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Randomized": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 3,
+      "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "SLA",
+        "π₀.₅",
+        "Spatial Forcing"
+      ]
+    },
+    {
+      "id": "setting-robodojo-real-success-e0c786d93b-18-250fae4b52d8",
+      "dataset": "RoboDojo real",
+      "evalId": "auto:success-e0c786d93b-18",
+      "name": "RoboDojo real · 18 Tasks · Success Rate",
+      "tasks": "18 tasks across ARX X5/Piper/Piper X",
+      "split": "Paper report of 18 real robot tasks",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "ARX X5",
+        "Piper",
+        "Piper X",
+        "Average"
+      ],
+      "protocol": "Real full-task SR, main table Piper 55.0 vs appendix equal-task mean 53.3 discrepancy preserved; not Sim 42 tasks.",
+      "trackIds": [
+        "sla-v1-robodojo-real-sr"
+      ],
+      "resultIds": [
+        "r-sla-v1-robodojo-real-sr-ours",
+        "r-sla-v1-robodojo-real-sr-pi05"
+      ],
+      "resultCount": 2,
+      "paperCount": 1,
+      "paperIds": [
+        "p148"
+      ],
+      "methodCount": 2,
+      "primaryTrackId": "sla-v1-robodojo-real-sr",
+      "trainingOptions": [
+        {
+          "id": "unknown-p148",
+          "label": "训练数据未完整披露 · p148",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-sla-v1-robodojo-real-sr-ours": "unknown-p148",
+        "r-sla-v1-robodojo-real-sr-pi05": "unknown-p148"
+      },
+      "columnMeta": {
+        "ARX X5": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Piper": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Piper X": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 2,
+      "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "SLA",
+        "π₀.₅"
+      ]
+    },
+    {
+      "id": "setting-robodojo-real-score-e0c786d93b-18-4986bf497a07",
+      "dataset": "RoboDojo real",
+      "evalId": "auto:score-e0c786d93b-18",
+      "name": "RoboDojo real · 18 Tasks · Score",
+      "tasks": "18 tasks across three real robot embodiments",
+      "split": "Paper report real tasks, author original table",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "ARX X5",
+        "Piper",
+        "Piper X",
+        "Average"
+      ],
+      "protocol": "Real partial-progress Score is not full-task SR or author-local simulation Score.",
+      "trackIds": [
+        "sla-v1-robodojo-real-score"
+      ],
+      "resultIds": [
+        "r-sla-v1-robodojo-real-score-ours",
+        "r-sla-v1-robodojo-real-score-pi05"
+      ],
+      "resultCount": 2,
+      "paperCount": 1,
+      "paperIds": [
+        "p148"
+      ],
+      "methodCount": 2,
+      "primaryTrackId": "sla-v1-robodojo-real-score",
+      "trainingOptions": [
+        {
+          "id": "unknown-p148",
+          "label": "训练数据未完整披露 · p148",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-sla-v1-robodojo-real-score-ours": "unknown-p148",
+        "r-sla-v1-robodojo-real-score-pi05": "unknown-p148"
+      },
+      "columnMeta": {
+        "ARX X5": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Piper": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Piper X": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 2,
+      "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "SLA",
+        "π₀.₅"
+      ]
+    },
+    {
+      "id": "setting-robodojo-success-44f2e182-4ec714165fdd",
+      "dataset": "RoboDojo",
+      "evalId": "auto:success-44f2e182",
+      "name": "RoboDojo · Generalization / Precision / Long-Horizon / … · Success Rate",
+      "tasks": "42 simulation tasks in five ability dimensions",
+      "split": "多来源评测描述；详见各行 Evidence",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
+      "trackIds": [
+        "sla-v1-robodojo-sim-sr",
+        "pyrua-v2-robodojo-sim-author-sr",
+        "pyrua-v2-robodojo-sim-official-sr"
+      ],
+      "resultIds": [
+        "r-pyrua-v2-robodojo-author-sr",
+        "r-pyrua-v2-robodojo-official-sr",
+        "r-sla-v1-robodojo-sim-sr-ours",
+        "r-sla-v1-robodojo-sim-sr-pi05"
+      ],
+      "resultCount": 4,
+      "paperCount": 2,
+      "paperIds": [
+        "p149",
+        "p148"
+      ],
+      "methodCount": 4,
+      "primaryTrackId": "sla-v1-robodojo-sim-sr",
+      "trainingOptions": [
+        {
+          "id": "unknown-p149",
+          "label": "训练数据未完整披露 · p149",
+          "known": false,
+          "count": 2
+        },
+        {
+          "id": "unknown-p148",
+          "label": "训练数据未完整披露 · p148",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-pyrua-v2-robodojo-author-sr": "unknown-p149",
+        "r-pyrua-v2-robodojo-official-sr": "unknown-p149",
+        "r-sla-v1-robodojo-sim-sr-ours": "unknown-p148",
+        "r-sla-v1-robodojo-sim-sr-pi05": "unknown-p148"
+      },
+      "columnMeta": {
+        "Generalization": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 4,
+      "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "PyRUA-Lean author-local Agent",
+        "PyRUA-Lean official team reported Agent",
+        "SLA",
+        "π₀.₅"
+      ]
+    },
+    {
+      "id": "setting-robodojo-score-44f2e182-4588a1fc4e21",
+      "dataset": "RoboDojo",
+      "evalId": "auto:score-44f2e182",
+      "name": "RoboDojo · Generalization / Precision / Long-Horizon / … · Score",
+      "tasks": "42 simulation tasks in five ability dimensions",
+      "split": "多来源评测描述；详见各行 Evidence",
+      "metric": "Partial-progress score",
+      "unit": "score",
+      "direction": "higher",
+      "columns": [
+        "Generalization",
+        "Precision",
+        "Long-Horizon",
+        "Memory",
+        "Open",
+        "Average"
+      ],
+      "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
+      "trackIds": [
+        "sla-v1-robodojo-sim-score",
+        "pyrua-v2-robodojo-sim-author-score"
+      ],
+      "resultIds": [
+        "r-pyrua-v2-robodojo-author-score",
+        "r-sla-v1-robodojo-sim-score-ours",
+        "r-sla-v1-robodojo-sim-score-pi05"
+      ],
+      "resultCount": 3,
+      "paperCount": 2,
+      "paperIds": [
+        "p149",
+        "p148"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "sla-v1-robodojo-sim-score",
+      "trainingOptions": [
+        {
+          "id": "unknown-p149",
+          "label": "训练数据未完整披露 · p149",
+          "known": false,
+          "count": 1
+        },
+        {
+          "id": "unknown-p148",
+          "label": "训练数据未完整披露 · p148",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-pyrua-v2-robodojo-author-score": "unknown-p149",
+        "r-sla-v1-robodojo-sim-score-ours": "unknown-p148",
+        "r-sla-v1-robodojo-sim-score-pi05": "unknown-p148"
+      },
+      "columnMeta": {
+        "Generalization": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Precision": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Long-Horizon": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Memory": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Open": {
+          "unit": "score",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "score",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 3,
+      "primaryPaperCount": 2,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "PyRUA-Lean author-local Agent",
+        "SLA",
+        "π₀.₅"
+      ]
+    },
+    {
+      "id": "setting-libero-pro-success-aee408847d-40-310ee290a679",
+      "dataset": "LIBERO-PRO",
+      "evalId": "auto:success-aee408847d-40",
+      "name": "LIBERO-PRO · 40 Tasks · Success Rate",
+      "tasks": "40 tasks × five seeds",
+      "split": "LIBERO-PRO author paired agent setting",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Success"
+      ],
+      "protocol": "Source Table 2 robot Agent interface, not a separate trained LIBERO policy checkpoint.",
+      "trackIds": [
+        "pyrua-v2-libero-pro-40"
+      ],
+      "resultIds": [
+        "r-pyrua-v2-libero-pro-code",
+        "r-pyrua-v2-libero-pro-tool"
+      ],
+      "resultCount": 2,
+      "paperCount": 1,
+      "paperIds": [
+        "p149"
+      ],
+      "methodCount": 2,
+      "primaryTrackId": "pyrua-v2-libero-pro-40",
+      "trainingOptions": [
+        {
+          "id": "unknown-p149",
+          "label": "训练数据未完整披露 · p149",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-pyrua-v2-libero-pro-code": "unknown-p149",
+        "r-pyrua-v2-libero-pro-tool": "unknown-p149"
+      },
+      "columnMeta": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 2,
+      "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "PyRUA-Lean code-cell Agent",
+        "Tool-calling Agent"
+      ]
+    },
+    {
+      "id": "setting-robotwin-success-aee408847d-50-153adffbcf96",
+      "dataset": "RoboTwin",
+      "evalId": "auto:success-aee408847d-50",
+      "name": "RoboTwin · 50 Tasks · Success Rate",
+      "tasks": "50 tasks × five seeds",
+      "split": "Author 50-task RoboTwin agent setup, not Clean2500 official leaderboard",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Success"
+      ],
+      "protocol": "Table 2 Agent policy orchestration; do not merge as RoboTwin official Clean2Random result.",
+      "trackIds": [
+        "pyrua-v2-robotwin2-50"
+      ],
+      "resultIds": [
+        "r-pyrua-v2-robotwin-code",
+        "r-pyrua-v2-robotwin-tool"
+      ],
+      "resultCount": 2,
+      "paperCount": 1,
+      "paperIds": [
+        "p149"
+      ],
+      "methodCount": 2,
+      "primaryTrackId": "pyrua-v2-robotwin2-50",
+      "trainingOptions": [
+        {
+          "id": "unknown-p149",
+          "label": "训练数据未完整披露 · p149",
+          "known": false,
+          "count": 2
+        }
+      ],
+      "trainingByResult": {
+        "r-pyrua-v2-robotwin-code": "unknown-p149",
+        "r-pyrua-v2-robotwin-tool": "unknown-p149"
+      },
+      "columnMeta": {
+        "Success": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 2,
+      "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "PyRUA-Lean code-cell Agent",
+        "Tool-calling Agent"
+      ]
     }
   ],
   "taxonomy": {
@@ -32220,8 +33534,8 @@
     "legacySettingTracks": {
       "setting-libero-plus-d7a11d009077": "libero-plus-rldx-v2"
     },
-    "primaryResultCount": 694,
-    "archivedResultCount": 281
+    "primaryResultCount": 720,
+    "archivedResultCount": 283
   },
   "officialBoards": {
     "RoboTwin": {
@@ -43879,6 +45193,273 @@
       "sourceClass": "paper-reported"
     },
     {
+      "id": "r-pyrua-v2-libero-pro-code",
+      "paperId": "p149",
+      "method": "PyRUA-Lean code-cell Agent",
+      "trackId": "pyrua-v2-libero-pro-40",
+      "values": {
+        "Success": 94
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 code-cell mode",
+      "attribution": "author-reported",
+      "trainingData": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen π₀.₅ subpolicy.",
+      "evaluationNotes": "Source Table 2 robot Agent interface, not a separate trained LIBERO policy checkpoint. LIBERO-PRO author paired agent setting",
+      "supersedes": "",
+      "methodId": "pyrualeancodecellagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-libero-pro-tool",
+      "paperId": "p149",
+      "method": "Tool-calling Agent",
+      "trackId": "pyrua-v2-libero-pro-40",
+      "values": {
+        "Success": 83
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 tool-call mode",
+      "attribution": "reported-baseline",
+      "trainingData": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen π₀.₅ subpolicy.",
+      "evaluationNotes": "Source Table 2 robot Agent interface, not a separate trained LIBERO policy checkpoint. LIBERO-PRO author paired agent setting",
+      "supersedes": "",
+      "methodId": "toolcallingagent",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-pyrua-v2-robocasa-atomic-code",
+      "paperId": "p149",
+      "method": "PyRUA-Lean code-cell Agent",
+      "trackId": "pyrua-v2-robocasa365-atomic",
+      "values": {
+        "Success": 86.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 code-cell mode",
+      "attribution": "author-reported",
+      "trainingData": "GPT-6 Astra, SAM3, frozen RLDX-1, paired tool/code cell modes.",
+      "evaluationNotes": "Not RoboCasa365 365-task mean; atomic separate from composite. Author 50 target task Agent episodes atomic subset",
+      "supersedes": "",
+      "methodId": "pyrualeancodecellagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-robocasa-atomic-tool",
+      "paperId": "p149",
+      "method": "Tool-calling Agent",
+      "trackId": "pyrua-v2-robocasa365-atomic",
+      "values": {
+        "Success": 78.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 tool-call mode",
+      "attribution": "reported-baseline",
+      "trainingData": "GPT-6 Astra, SAM3, frozen RLDX-1, paired tool/code cell modes.",
+      "evaluationNotes": "Not RoboCasa365 365-task mean; atomic separate from composite. Author 50 target task Agent episodes atomic subset",
+      "supersedes": "",
+      "methodId": "toolcallingagent",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-pyrua-v2-robocasa-composite-code",
+      "paperId": "p149",
+      "method": "PyRUA-Lean code-cell Agent",
+      "trackId": "pyrua-v2-robocasa365-composite",
+      "values": {
+        "Success": 39.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 code-cell mode",
+      "attribution": "author-reported",
+      "trainingData": "GPT-6 Astra, SAM3, frozen RLDX-1, paired tool/code cell modes.",
+      "evaluationNotes": "Composite tasks separately reported in Table 2, not atomic or original RoboCasa. Composite subset and up to 100 agent calls per episode",
+      "supersedes": "",
+      "methodId": "pyrualeancodecellagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-robocasa-composite-tool",
+      "paperId": "p149",
+      "method": "Tool-calling Agent",
+      "trackId": "pyrua-v2-robocasa365-composite",
+      "values": {
+        "Success": 34.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 tool-call mode",
+      "attribution": "reported-baseline",
+      "trainingData": "GPT-6 Astra, SAM3, frozen RLDX-1, paired tool/code cell modes.",
+      "evaluationNotes": "Composite tasks separately reported in Table 2, not atomic or original RoboCasa. Composite subset and up to 100 agent calls per episode",
+      "supersedes": "",
+      "methodId": "toolcallingagent",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-pyrua-v2-robodojo-author-score",
+      "paperId": "p149",
+      "method": "PyRUA-Lean author-local Agent",
+      "trackId": "pyrua-v2-robodojo-sim-author-score",
+      "values": {
+        "Generalization": 50.65,
+        "Precision": 47.02,
+        "Long-Horizon": 63.26,
+        "Memory": 63,
+        "Open": 67.09,
+        "Average": 58.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 5 author local seed0 Score",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "evaluationNotes": "Author local progress Score 58.20, not official 55.26 or SR. Author seed0 local run",
+      "supersedes": "",
+      "methodId": "pyrualeanauthorlocalagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-robodojo-author-sr",
+      "paperId": "p149",
+      "method": "PyRUA-Lean author-local Agent",
+      "trackId": "pyrua-v2-robodojo-sim-author-sr",
+      "values": {
+        "Generalization": 45.83,
+        "Precision": 37.25,
+        "Long-Horizon": 48,
+        "Memory": 63,
+        "Open": 64,
+        "Average": 51.62
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 5 author local seed0 SR",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "evaluationNotes": "Author local SR 51.62, not official 50.35 or five-dim score. Author seed0 local; distinct from RoboDojo team Oct21 official evaluation",
+      "supersedes": "",
+      "methodId": "pyrualeanauthorlocalagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-robodojo-official-score",
+      "paperId": "p149",
+      "method": "PyRUA-Lean official team reported Agent",
+      "trackId": "pyrua-v2-robodojo-sim-official-score",
+      "values": {
+        "Average": 55.26
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/",
+      "sourceVersion": "RoboDojo team report Oct21 via author project note",
+      "locator": "Oct21 official RoboDojo team Score in author docs",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "evaluationNotes": "Different evaluation run from Table5 author-local Score58.20; partial progress, not SR.",
+      "supersedes": "",
+      "methodId": "pyrualeanofficialteamreportedagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-robodojo-official-sr",
+      "paperId": "p149",
+      "method": "PyRUA-Lean official team reported Agent",
+      "trackId": "pyrua-v2-robodojo-sim-official-sr",
+      "values": {
+        "Generalization": 43.17,
+        "Precision": 38.25,
+        "Long-Horizon": 43.75,
+        "Memory": 68.33,
+        "Open": 58.25,
+        "Average": 50.35
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/",
+      "sourceVersion": "RoboDojo team report Oct21 via author project note",
+      "locator": "Oct21 official RoboDojo team result in author docs",
+      "attribution": "author-reported",
+      "trainingData": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+      "evaluationNotes": "Separate official submission from author-local Table 5; one Agent interface not new VLA checkpoint.",
+      "supersedes": "",
+      "methodId": "pyrualeanofficialteamreportedagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-robotwin-code",
+      "paperId": "p149",
+      "method": "PyRUA-Lean code-cell Agent",
+      "trackId": "pyrua-v2-robotwin2-50",
+      "values": {
+        "Success": 69.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 code-cell mode",
+      "attribution": "author-reported",
+      "trainingData": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen LingBot-VLA subpolicy.",
+      "evaluationNotes": "Table 2 Agent policy orchestration; do not merge as RoboTwin official Clean2Random result. Author 50-task RoboTwin agent setup, not Clean2500 official leaderboard",
+      "supersedes": "",
+      "methodId": "pyrualeancodecellagent",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-pyrua-v2-robotwin-tool",
+      "paperId": "p149",
+      "method": "Tool-calling Agent",
+      "trackId": "pyrua-v2-robotwin2-50",
+      "values": {
+        "Success": 60
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2610.01939v2",
+      "sourceVersion": "arXiv 2610.01939v2",
+      "locator": "Table 2 tool-call mode",
+      "attribution": "reported-baseline",
+      "trainingData": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen LingBot-VLA subpolicy.",
+      "evaluationNotes": "Table 2 Agent policy orchestration; do not merge as RoboTwin official Clean2Random result. Author 50-task RoboTwin agent setup, not Clean2500 official leaderboard",
+      "supersedes": "",
+      "methodId": "toolcallingagent",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
       "id": "r-qwen-robotmanip-v2-libero-base",
       "paperId": "p114",
       "method": "Qwen-RobotManip",
@@ -51865,6 +53446,396 @@
       "methodId": "simptexpertrecoverysearch",
       "displayTier": "paper",
       "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-libero-plus-ours",
+      "paperId": "p148",
+      "method": "SLA",
+      "trackId": "sla-v1-libero-plus",
+      "values": {
+        "Camera": 82.2,
+        "Robot": 73.8,
+        "Language": 83.5,
+        "Light": 98.8,
+        "Background": 98,
+        "Noise": 95.4,
+        "Layout": 86.2,
+        "Overall": 87.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 2 SLA weighted Overall",
+      "attribution": "author-reported",
+      "trainingData": "SLA extra multi-robot continual pretraining; compared baselines use source-specified training recipes.",
+      "evaluationNotes": "Table 2 overall is weighted by test episodes, not an unweighted mean. Original LIBERO training to heldout LIBERO-Plus",
+      "supersedes": "",
+      "methodId": "sla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-libero-plus-pi05",
+      "paperId": "p148",
+      "method": "π₀.₅",
+      "trackId": "sla-v1-libero-plus",
+      "values": {
+        "Camera": 78.4,
+        "Robot": 73.6,
+        "Language": 80.8,
+        "Light": 96.2,
+        "Background": 94.1,
+        "Noise": 89,
+        "Layout": 84.5,
+        "Overall": 84.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 2 π0.5 baseline",
+      "attribution": "reported-baseline",
+      "trainingData": "SLA extra multi-robot continual pretraining; compared baselines use source-specified training recipes.",
+      "evaluationNotes": "Table 2 overall is weighted by test episodes, not an unweighted mean. Original LIBERO training to heldout LIBERO-Plus",
+      "supersedes": "",
+      "methodId": "pi05",
+      "displayTier": "reference",
+      "sourceClass": "cited-baseline",
+      "repeatedOf": "r-geact-v1-libero-plus-pi05"
+    },
+    {
+      "id": "r-sla-v1-robocasa-panda-cosmos",
+      "paperId": "p148",
+      "method": "Cosmos Policy",
+      "trackId": "sla-v1-robocasa-panda24",
+      "values": {
+        "Average": 67.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 4 Cosmos Policy baseline",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Panda original 24 tasks, not RoboCasa365 50 evaluated tasks or 365 full task average. 50 demonstrations per task in selected matched rows",
+      "supersedes": "",
+      "methodId": "cosmospolicy",
+      "displayTier": "reference",
+      "sourceClass": "cited-baseline",
+      "repeatedOf": "r-robocasa24-cosmos-50demos-cosmos-policy"
+    },
+    {
+      "id": "r-sla-v1-robocasa-panda-ours",
+      "paperId": "p148",
+      "method": "SLA",
+      "trackId": "sla-v1-robocasa-panda24",
+      "values": {
+        "Average": 68.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 4 50 demo SLA",
+      "attribution": "author-reported",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Panda original 24 tasks, not RoboCasa365 50 evaluated tasks or 365 full task average. 50 demonstrations per task in selected matched rows",
+      "supersedes": "",
+      "methodId": "sla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-robocasa-panda-spatialforcing",
+      "paperId": "p148",
+      "method": "Spatial Forcing",
+      "trackId": "sla-v1-robocasa-panda24",
+      "values": {
+        "Average": 67.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 4 Spatial Forcing baseline",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Panda original 24 tasks, not RoboCasa365 50 evaluated tasks or 365 full task average. 50 demonstrations per task in selected matched rows",
+      "supersedes": "",
+      "methodId": "spatialforcing",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-sla-v1-robodojo-real-score-ours",
+      "paperId": "p148",
+      "method": "SLA",
+      "trackId": "sla-v1-robodojo-real-score",
+      "values": {
+        "ARX X5": 50.3,
+        "Piper": 60.3,
+        "Piper X": 16.3,
+        "Average": 42.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 5 SLA Real Score",
+      "attribution": "author-reported",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Real partial-progress Score is not full-task SR or author-local simulation Score. Paper report real tasks, author original table",
+      "supersedes": "",
+      "methodId": "sla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-robodojo-real-score-pi05",
+      "paperId": "p148",
+      "method": "π₀.₅",
+      "trackId": "sla-v1-robodojo-real-score",
+      "values": {
+        "ARX X5": 27.7,
+        "Piper": 32,
+        "Piper X": 9.1,
+        "Average": 22.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 5 π0.5 Real Score",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Real partial-progress Score is not full-task SR or author-local simulation Score. Paper report real tasks, author original table",
+      "supersedes": "",
+      "methodId": "pi05",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-sla-v1-robodojo-real-sr-ours",
+      "paperId": "p148",
+      "method": "SLA",
+      "trackId": "sla-v1-robodojo-real-sr",
+      "values": {
+        "ARX X5": 36.7,
+        "Piper": 55,
+        "Piper X": 10,
+        "Average": 33.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 5 SLA Real SR (Appendix Table14 Piper discrepancy)",
+      "attribution": "author-reported",
+      "trainingData": "SLA real robot targeted adaptation with historical frame memory; π₀.₅ baseline in paper.",
+      "evaluationNotes": "Real full-task SR, main table Piper 55.0 vs appendix equal-task mean 53.3 discrepancy preserved; not Sim 42 tasks. Paper report of 18 real robot tasks",
+      "supersedes": "",
+      "methodId": "sla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-robodojo-real-sr-pi05",
+      "paperId": "p148",
+      "method": "π₀.₅",
+      "trackId": "sla-v1-robodojo-real-sr",
+      "values": {
+        "ARX X5": 13.3,
+        "Piper": 21.7,
+        "Piper X": 3.3,
+        "Average": 12.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 5 π0.5 Real SR",
+      "attribution": "reported-baseline",
+      "trainingData": "SLA real robot targeted adaptation with historical frame memory; π₀.₅ baseline in paper.",
+      "evaluationNotes": "Real full-task SR, main table Piper 55.0 vs appendix equal-task mean 53.3 discrepancy preserved; not Sim 42 tasks. Paper report of 18 real robot tasks",
+      "supersedes": "",
+      "methodId": "pi05",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-sla-v1-robodojo-sim-score-ours",
+      "paperId": "p148",
+      "method": "SLA",
+      "trackId": "sla-v1-robodojo-sim-score",
+      "values": {
+        "Generalization": 15.3,
+        "Precision": 16,
+        "Long-Horizon": 22.3,
+        "Memory": 26.2,
+        "Open": 2,
+        "Average": 16.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Appendix Table 15 local Sim Score",
+      "attribution": "author-reported",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Appendix Table 15 progress Score is distinct from SR and RoboDojo Real benchmark. Author local Sim run",
+      "supersedes": "",
+      "methodId": "sla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-robodojo-sim-score-pi05",
+      "paperId": "p148",
+      "method": "π₀.₅",
+      "trackId": "sla-v1-robodojo-sim-score",
+      "values": {
+        "Generalization": 13.4,
+        "Precision": 12.4,
+        "Long-Horizon": 23.5,
+        "Memory": 5.9,
+        "Open": 2,
+        "Average": 11.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Appendix Table 15 local Sim Score baseline",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Appendix Table 15 progress Score is distinct from SR and RoboDojo Real benchmark. Author local Sim run",
+      "supersedes": "",
+      "methodId": "pi05",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-sla-v1-robodojo-sim-sr-ours",
+      "paperId": "p148",
+      "method": "SLA",
+      "trackId": "sla-v1-robodojo-sim-sr",
+      "values": {
+        "Generalization": 9.4,
+        "Precision": 11.2,
+        "Long-Horizon": 11.9,
+        "Memory": 25.8,
+        "Open": 1.9,
+        "Average": 12
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Appendix Table 15 local Sim SR",
+      "attribution": "author-reported",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Appendix Table 15 local simulation, distinct from official live leaderboard and SLA Real benchmark. Author local Sim run not leaderboard SLA-Preview Real submission",
+      "supersedes": "",
+      "methodId": "sla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-robodojo-sim-sr-pi05",
+      "paperId": "p148",
+      "method": "π₀.₅",
+      "trackId": "sla-v1-robodojo-sim-sr",
+      "values": {
+        "Generalization": 8.2,
+        "Precision": 5.5,
+        "Long-Horizon": 14.7,
+        "Memory": 4.7,
+        "Open": 1.7,
+        "Average": 6.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Appendix Table 15 local Sim SR baseline",
+      "attribution": "reported-baseline",
+      "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+      "evaluationNotes": "Appendix Table 15 local simulation, distinct from official live leaderboard and SLA Real benchmark. Author local Sim run not leaderboard SLA-Preview Real submission",
+      "supersedes": "",
+      "methodId": "pi05",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-sla-v1-robotwin-ours",
+      "paperId": "p148",
+      "method": "SLA",
+      "trackId": "sla-v1-robotwin2-clean2500",
+      "values": {
+        "Clean": 86,
+        "Randomized": 72.3,
+        "Average": 79.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 3 SLA Clean2500",
+      "attribution": "author-reported",
+      "trainingData": "SLA robot pretraining then 50 Clean demos/task posttraining; distinct from other checkpoint leaderboard identities.",
+      "evaluationNotes": "RoboTwin original Clean2500 control; not the mixed 27500 training setting. 50 Clean demonstrations per task; Clean and Randomized evaluation",
+      "supersedes": "",
+      "methodId": "sla",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-sla-v1-robotwin-pi05",
+      "paperId": "p148",
+      "method": "π₀.₅",
+      "trackId": "sla-v1-robotwin2-clean2500",
+      "values": {
+        "Clean": 70.7,
+        "Randomized": 46,
+        "Average": 58.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 3 π0.5 baseline",
+      "attribution": "reported-baseline",
+      "trainingData": "SLA robot pretraining then 50 Clean demos/task posttraining; distinct from other checkpoint leaderboard identities.",
+      "evaluationNotes": "RoboTwin original Clean2500 control; not the mixed 27500 training setting. 50 Clean demonstrations per task; Clean and Randomized evaluation",
+      "supersedes": "",
+      "methodId": "pi05",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-sla-v1-robotwin-spatialforcing",
+      "paperId": "p148",
+      "method": "Spatial Forcing",
+      "trackId": "sla-v1-robotwin2-clean2500",
+      "values": {
+        "Clean": 74.7,
+        "Randomized": 62.6,
+        "Average": 68.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2611.08373v1",
+      "sourceVersion": "arXiv 2611.08373v1",
+      "locator": "Table 3 Spatial Forcing baseline",
+      "attribution": "reported-baseline",
+      "trainingData": "SLA robot pretraining then 50 Clean demos/task posttraining; distinct from other checkpoint leaderboard identities.",
+      "evaluationNotes": "RoboTwin original Clean2500 control; not the mixed 27500 training setting. 50 Clean demonstrations per task; Clean and Randomized evaluation",
+      "supersedes": "",
+      "methodId": "spatialforcing",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
     },
     {
       "id": "r-smile-v1-chain-dawn",

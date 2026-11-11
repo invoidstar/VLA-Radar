@@ -1,0 +1,23 @@
+{
+  "id": "r-pyrua-v2-robodojo-official-sr",
+  "paperId": "p149",
+  "method": "PyRUA-Lean official team reported Agent",
+  "trackId": "pyrua-v2-robodojo-sim-official-sr",
+  "values": {
+    "Generalization": 43.17,
+    "Precision": 38.25,
+    "Long-Horizon": 43.75,
+    "Memory": 68.33,
+    "Open": 58.25,
+    "Average": 50.35
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/",
+  "sourceVersion": "RoboDojo team report Oct21 via author project note",
+  "locator": "Oct21 official RoboDojo team result in author docs",
+  "attribution": "author-reported",
+  "trainingData": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+  "evaluationNotes": "Separate official submission from author-local Table 5; one Agent interface not new VLA checkpoint.",
+  "supersedes": ""
+}

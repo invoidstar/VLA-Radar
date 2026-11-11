@@ -1,0 +1,23 @@
+{
+  "id": "r-sla-v1-robodojo-sim-score-pi05",
+  "paperId": "p148",
+  "method": "π₀.₅",
+  "trackId": "sla-v1-robodojo-sim-score",
+  "values": {
+    "Generalization": 13.4,
+    "Precision": 12.4,
+    "Long-Horizon": 23.5,
+    "Memory": 5.9,
+    "Open": 2,
+    "Average": 11.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2611.08373v1",
+  "sourceVersion": "arXiv 2611.08373v1",
+  "locator": "Appendix Table 15 local Sim Score baseline",
+  "attribution": "reported-baseline",
+  "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+  "evaluationNotes": "Appendix Table 15 progress Score is distinct from SR and RoboDojo Real benchmark. Author local Sim run",
+  "supersedes": ""
+}

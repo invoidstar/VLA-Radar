@@ -1,0 +1,18 @@
+{
+  "id": "r-pyrua-v2-robotwin-code",
+  "paperId": "p149",
+  "method": "PyRUA-Lean code-cell Agent",
+  "trackId": "pyrua-v2-robotwin2-50",
+  "values": {
+    "Success": 69.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2610.01939v2",
+  "sourceVersion": "arXiv 2610.01939v2",
+  "locator": "Table 2 code-cell mode",
+  "attribution": "author-reported",
+  "trainingData": "Same GPT-6 Astra planner, SAM3 and author underlying primitives/policy. Code-cell execution versus conventional tool calling; no new low-level policy weight training. Frozen LingBot-VLA subpolicy.",
+  "evaluationNotes": "Table 2 Agent policy orchestration; do not merge as RoboTwin official Clean2Random result. Author 50-task RoboTwin agent setup, not Clean2500 official leaderboard",
+  "supersedes": ""
+}
