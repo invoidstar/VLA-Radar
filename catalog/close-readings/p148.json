@@ -171,7 +171,7 @@
       "page": 3,
       "dimension": "concept",
       "englishKeywords": "semantic reasoning · 3D physical control",
-      "interpretation": "理解语言指令不等于能够稳定控制三维环境。视觉语义识别能力强，不自动意味着物体接触、空间距离与动作轨迹都准确。",
+      "interpretation": "理解语言指令不等于能够稳定控制三维环境。视觉语义识别能力强，不自动意味着物体接触、空间距离与动作轨迹都准确。因此论证要同时考虑视觉编码、空间约束和动作执行三种能力，不能简单以语言理解指标代替控制质量。",
       "annotation": {
         "function": "研究引言",
         "role": "研究问题的起点：界定二维语义表示和三维物理控制之间的差距。",
@@ -213,7 +213,7 @@
       "page": 5,
       "dimension": "thesis",
       "englishKeywords": "transferable spatial capability · pretrained policy",
-      "interpretation": "作者希望让空间知识在基础模型阶段被反复训练，而不只是某个任务微调时的辅助技巧。基础策略仍沿用预训练动作解码路径。",
+      "interpretation": "作者希望让空间知识在基础模型阶段被反复训练，而不只是某个任务微调时的辅助技巧。基础策略仍沿用预训练动作解码路径。后文还需要展示这种阶段前移相较仅在后训练添加监督的实际收益，以及附加训练成本。",
       "annotation": {
         "function": "技术动机",
         "role": "从研究缺口过渡到方法总览：基模初始化、空间对齐、异构数据和下游检验。",
@@ -269,7 +269,7 @@
       "page": 8,
       "dimension": "concept",
       "englishKeywords": "feature-dependent layer gating",
-      "interpretation": "不同层的视觉表示携带不同粒度的几何与语义信息；把所有样本固定到同一层空间对齐可能限制多来源训练。",
+      "interpretation": "不同层的视觉表示携带不同粒度的几何与语义信息；把所有样本固定到同一层空间对齐可能限制多来源训练。同一输入中的不同视角还可能需要不同几何粒度，层级特征的选择因此成为监督设计的一部分。",
       "annotation": {
         "function": "自适应层选择",
         "role": "给自适应聚合机制建立动机：不同任务/视角可能需要不同层的表示。",
@@ -283,7 +283,7 @@
       "page": 8,
       "dimension": "method",
       "englishKeywords": "multi-layer visual tokens · adaptive gates",
-      "interpretation": "模型根据视觉特征为不同层与 token 生成融合权重，使空间监督能读取跨层表示；这套门控在训练后可移除。",
+      "interpretation": "模型根据视觉特征为不同层与 token 生成融合权重，使空间监督能读取跨层表示；这套门控在训练后可移除。权重由样本特征决定，训练目标仍然作用于 VLA 的内部表示，而不是在部署端新增一个可执行模块。",
       "annotation": {
         "function": "自适应层选择",
         "role": "方法链第二步：将跨层空间监督实现为受当前视觉内容调节的融合过程。",
@@ -297,7 +297,7 @@
       "page": 8,
       "dimension": "method",
       "englishKeywords": "state-token dropout · visual reliance",
-      "interpretation": "训练时以一定概率丢弃整段机器人状态 token，使模型不能只根据示范轨迹中的状态惯性决定动作，从而更依赖视觉场景。",
+      "interpretation": "训练时以一定概率丢弃整段机器人状态 token，使模型不能只根据示范轨迹中的状态惯性决定动作，从而更依赖视觉场景。但这类正则化也可能损失本体状态中本来有用的动力学信息，因此需要寻找恰当概率。",
       "annotation": {
         "function": "状态丢弃",
         "role": "补充降低捷径学习的条件机制，连接“学到空间特征”和“实际使用空间特征”。",
@@ -327,7 +327,7 @@
       "page": 9,
       "dimension": "method",
       "englishKeywords": "end-effector pose · action normalization",
-      "interpretation": "不同机器人关节维度、语义和运动学差异大，因此用末端执行器位姿作为主要统一控制表达，并规范状态坐标和动作增量的物理含义。",
+      "interpretation": "不同机器人关节维度、语义和运动学差异大，因此用末端执行器位姿作为主要统一控制表达，并规范状态坐标和动作增量的物理含义。这一选择便于统一训练通道，却还需要各本体自身的执行器和运动学映射把预测动作落到实际关节指令。",
       "annotation": {
         "function": "数据预处理",
         "role": "解决跨本体预训练的输入/输出兼容条件，让共享动作专家接受多数据集监督。",
@@ -422,7 +422,7 @@
       "page": 15,
       "dimension": "evidence",
       "englishKeywords": "fixed layer selection · adaptive fusion",
-      "interpretation": "多层自适应聚合优于论文选用的固定单层对齐方案，说明视觉表示层的选择确实影响空间监督效果。",
+      "interpretation": "多层自适应聚合优于论文选用的固定单层对齐方案，说明视觉表示层的选择确实影响空间监督效果。因此数据支持的是该组对照中的跨层优势，而不是所有可用融合方式中的唯一最优解。",
       "annotation": {
         "function": "关键消融",
         "role": "为自适应门控模块提供消融证据。",
@@ -452,7 +452,7 @@
       "page": 17,
       "dimension": "method",
       "englishKeywords": "bimanual manipulation · perturbation recovery",
-      "interpretation": "真实任务通过双臂连续操作、外界干扰后的恢复、跨本体少样本适配与未见场景测试来支持方法的物理可用性。",
+      "interpretation": "真实任务通过双臂连续操作、外界干扰后的恢复、跨本体少样本适配与未见场景测试来支持方法的物理可用性。作者的附加真机场景与公开 RoboDojo-Real 评测并不相同，不能在同一榜单中混用成绩。",
       "annotation": {
         "function": "真实部署",
         "role": "从仿真/标准基准过渡到面向部署场景的案例证据。",
