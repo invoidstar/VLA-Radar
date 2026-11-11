@@ -18,6 +18,7 @@ from benchmark_taxonomy import load_taxonomy
 from experience_build import outputs as experience_outputs
 from news_core import outputs as news_outputs
 from tools_build import outputs as tools_outputs
+# V3.1 close-reading public content is checked before being emitted.
 from close_readings import outputs as close_reading_outputs
 
 def compact(value):return json.dumps(value,ensure_ascii=False,separators=(',',':'))+'\n'
