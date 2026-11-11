@@ -5,6 +5,11 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 PUBLIC_FILES={
     'site/index.html':'index.html',
+    'site/close-reading/index.html':'close-reading/index.html',
+    'site/close-reading/p148/index.html':'close-reading/p148/index.html',
+    'site/close-reading/reading.css':'close-reading/reading.css',
+    'site/close-reading/reader.js':'close-reading/reader.js',
+    'site/close-reading/list.js':'close-reading/list.js',
     'site/favicon.svg':'favicon.svg',
     'site/styles/base.css':'styles.css',
     'site/styles/components/sidebar.css':'sidebar.css',
@@ -65,7 +70,9 @@ def stage(output:Path)->Path:
     for src,dst in PUBLIC_FILES.items():
         source_file=ROOT/src
         if not source_file.is_file():raise FileNotFoundError(source_file)
-        shutil.copy2(source_file,output/dst)
+        dest_file=output/dst
+        dest_file.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copy2(source_file,dest_file)
     shutil.copytree(ROOT/'data',output/'data')
     _stamp_lazy_assets(output)
     _stamp_index_assets(output)

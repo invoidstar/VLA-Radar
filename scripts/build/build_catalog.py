@@ -18,6 +18,7 @@ from benchmark_taxonomy import load_taxonomy
 from experience_build import outputs as experience_outputs
 from news_core import outputs as news_outputs
 from tools_build import outputs as tools_outputs
+from close_readings import outputs as close_reading_outputs
 
 def compact(value):return json.dumps(value,ensure_ascii=False,separators=(',',':'))+'\n'
 def hashed(prefix,obj,out):
@@ -153,6 +154,7 @@ def outputs(root):
     experience,indexurl=experience_outputs(root,records,comparison_tracks,comparison_results);out.update(experience)
     news,newsurl=news_outputs(root,records);out.update(news)
     tools,toolsurl=tools_outputs(root,records,comparison_tracks,comparison_results,experience,indexurl);out.update(tools)
+    out.update(close_reading_outputs(root))
     out['data/library.json']=compact({'schemaVersion':1,**meta,'searchUrl':searchurl,'boardIndexUrl':boardurl,'experienceUrl':indexurl,'newsUrl':newsurl,'toolsUrl':toolsurl,'papers':light})
     out['data/leaderboards.json']=dumps({'schemaVersion':1,'updatedAt':m['updatedAt'],'tracks':comparison_tracks,'settings':setting_records,'taxonomy':taxonomy,'benchmarkRegistry':benchmark_registry,'officialBoards':official_boards,'results':comparison_results})
     return out
