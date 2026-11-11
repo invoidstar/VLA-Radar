@@ -18,7 +18,7 @@
 
 <p align="center">
   <img alt="VLA-Radar CI" src="https://github.com/invoidstar/VLA-Radar/actions/workflows/site.yml/badge.svg">
-  <img alt="Version" src="https://img.shields.io/badge/VLA--Radar-V3.0-5964a8">
+  <img alt="Version" src="https://img.shields.io/badge/VLA--Radar-V3.1-5964a8">
   <img alt="Privacy" src="https://img.shields.io/badge/阅读数据-仅保存在本地-6d8b73">
 </p>
 
@@ -56,6 +56,18 @@
 - 发表与版本更新追踪
 - 官方项目主页与开源代码入口
 - 具身智能周报
+
+### 📖 论文精读 · Paper Deep Reading（V3.1）
+
+独立于现有 149 篇论文的深度笔记，新增**来源定位、论证结构与逐段批判性阅读**模块。
+
+- [SLA（p148）逐段论文精读](https://invoidstar.github.io/VLA-Radar/close-reading/p148/)：按照上传的阅读示例保留 **101 个原稿段落、16 张表与 6 幅图** 的原始位置和逐段中文论证批注。
+- 每个单元包含英文技术关键词、中文逻辑导读、段落功能、论证技巧/局限、原始 PDF 页码；关键实验表直接关联既有 Benchmark 评测赛道。
+- 可切换五色高亮、章节、搜索、中文专注模式与批注显示；提供移动端单栏、打印和阅读进度。
+- **公开版不镜像英文论文全文、逐段全文译文、原稿截图或完整 PDF。** 原稿段落/图表通过官方 PDF 链接定位阅读。只有明确得到相应再分发许可的素材，才可在后续版本考虑全文呈现。
+- 每篇论文的精读数据与样式、渲染脚本分离，只在打开精读阅读器时载入；不会拖慢文献库首页或改变原有本地阅读记录。
+
+结构规范、版权门禁与扩展流程参见 [精读维护文档](maintenance/docs/close-reading.md)。本功能是精选论文的深度阅读层，不自动将全部 149 篇文献升级成全文译注。
 
 ### 📊 Benchmark 与证据对齐
 
