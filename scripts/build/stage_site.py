@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, hashlib, re, shutil
+import argparse, hashlib, json, re, shutil
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -12,6 +12,8 @@ PUBLIC_FILES={
     'site/styles/features/experience.css':'experience.css',
     'site/styles/features/news.css':'news.css',
     'site/styles/features/tools.css':'tools.css',
+    'site/styles/features/close-reading-list.css':'close-reading-list.css',
+    'site/styles/features/close-reading-reader.css':'close-reading/reader.css',
     'site/js/features/library/app.js':'app.js',
     'site/js/features/research/research.js':'research.js',
     'site/js/features/research/benchmark-settings.js':'benchmark-settings.js',
@@ -30,6 +32,8 @@ PUBLIC_FILES={
     'site/js/features/tools/tools-loader.js':'tools-loader.js',
     'site/js/features/tools/tools-core.js':'tools-core.js',
     'site/js/features/tools/tools.js':'tools.js',
+    'site/js/features/close-reading/list.js':'close-reading-list.js',
+    'site/js/features/close-reading/reader.js':'close-reading/reader.js',
 }
 
 LAZY_REFERENCES={
@@ -65,8 +69,21 @@ def stage(output:Path)->Path:
     for src,dst in PUBLIC_FILES.items():
         source_file=ROOT/src
         if not source_file.is_file():raise FileNotFoundError(source_file)
+        (output/dst).parent.mkdir(parents=True,exist_ok=True)
         shutil.copy2(source_file,output/dst)
     shutil.copytree(ROOT/'data',output/'data')
+    # Stage dedicated paper URLs from validated generated metadata, not from raw untrusted URLs.
+    index=json.loads((output/'data/close-readings/index.json').read_text(encoding='utf-8'))
+    template=(ROOT/'site/close-reading/index.html').read_text(encoding='utf-8')
+    for edition in index['papers']:
+        pid=edition['paperId']
+        if not re.fullmatch(r'p\d{3,}',pid):raise ValueError('Unsafe close-reading paper ID')
+        html=template
+        for asset in ('reader.css','reader.js'):
+            html=_stamp(html,'../'+asset,_digest(output/'close-reading'/asset))
+        target=output/'close-reading'/pid/'index.html'
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_text(html,encoding='utf-8')
     _stamp_lazy_assets(output)
     _stamp_index_assets(output)
     (output/'.nojekyll').touch()
