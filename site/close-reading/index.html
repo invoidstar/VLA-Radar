@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="VLA-Radar 论文精读：原文来源定位、英文关键词、中文论证导读与批判性分析。">
+  <meta name="referrer" content="no-referrer">
+  <title>论文精读 · VLA-Radar</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../reader.css">
+  <script src="../reader.js" defer></script>
+</head>
+<body data-language="bilingual" id="top">
+<a class="skip" href="#reading">跳转到精读正文</a>
+<header class="head">
+  <div class="wrap">
+    <div class="topline"><a class="brand" href="../../index.html?view=close-reading">◉ VLA RADAR <span>/ PAPER DEEP READING</span></a><a class="back" href="../../index.html?view=close-reading">← 返回论文精读列表</a></div>
+    <div class="hero">
+      <div><p class="eyebrow">SOURCE-LINKED / CRITICAL READING</p><h1 id="paper-title">正在载入论文精读…</h1><p id="paper-subtitle" class="subtitle">论证结构 · 方法机制 · 原稿页码 · 证据边界</p></div>
+      <div class="hero-meta"><span id="paper-id">—</span><span id="version">—</span><span id="reading-count">—</span><a id="paper-source" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">阅读原始论文 ↗</a></div>
+    </div>
+    <div class="legend" aria-label="五类批注维度">
+      <span class="legend-title">FIVE DIMENSIONS</span>
+      <button type="button" data-dimension="thesis" aria-pressed="true"><span class="swatch thesis">T</span>核心论点</button>
+      <button type="button" data-dimension="concept" aria-pressed="true"><span class="swatch concept">K</span>关键概念</button>
+      <button type="button" data-dimension="evidence" aria-pressed="true"><span class="swatch evidence">E</span>实证证据</button>
+      <button type="button" data-dimension="concession" aria-pressed="true"><span class="swatch concession">C</span>让步与反驳</button>
+      <button type="button" data-dimension="method" aria-pressed="true"><span class="swatch method">M</span>方法论</button>
+    </div>
+  </div>
+</header>
+<div class="sticky">
+  <div class="progress"><div id="progress-bar"></div></div>
+  <div class="wrap">
+    <nav id="chapter-nav" class="chapter-nav" aria-label="论文精读章节导航"></nav>
+    <div class="toolbar">
+      <label class="search"><span aria-hidden="true">⌕</span><input id="unit-search" type="search" placeholder="检索段落编号、技术关键词、中文批注…" aria-label="搜索精读单元"></label>
+      <label class="language"><span class="sr-only">阅读显示语言</span><select id="language-mode"><option value="bilingual">关键词 + 中文批注</option><option value="zh">中文专注模式</option></select></label>
+      <label class="switch"><input id="notes-toggle" type="checkbox" checked>显示右栏批注</label>
+      <button id="print-button" class="print" type="button">打印 / PDF</button>
+      <span id="search-status" class="search-status" role="status" aria-live="polite">—</span>
+    </div>
+  </div>
+</div>
+<main id="reading" class="wrap" tabindex="-1">
+  <div id="notice" class="notice"><strong>公开版阅读说明</strong> 本页整理研究者原创论证批注、少量技术关键词和原稿 PDF 页码；不转载论文英文全文、完整译文或原稿图片。通过每个单元的 PDF 定位链接查看原文和图表。精读结构不等于独立复现，实验数值仍以原表及 VLA-Radar 的评测设置为准。</div>
+  <div id="summary" class="summary" aria-label="论证结构概览"></div>
+  <div class="column-heading"><span>LEFT · 关键词 / 中文论证导读 / PDF 定位</span><span>RIGHT · 段落功能 / 论证技巧与证据边界</span></div>
+  <p id="error" class="error" hidden role="alert"></p>
+  <div id="reading-units" aria-live="polite"><p class="loading">正在读取来源批注…</p></div>
+  <section class="overview" id="argument-map" aria-labelledby="map-title">
+    <div class="overview-head"><span class="eyebrow">ARGUMENT MAP</span><h2 id="map-title">全文论证结构总览</h2></div>
+    <div class="overview-content" id="overview-content"></div>
+  </section>
+  <footer class="footer"><span>VLA-Radar · 从公开证据出发，保持方法、指标与来源清晰。</span><a href="../../index.html?view=close-reading">返回精读列表</a></footer>
+</main>
+<a href="#top" class="top-link" aria-label="返回顶部">↑</a>
+</body>
+</html>

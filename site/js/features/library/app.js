@@ -12,7 +12,7 @@
   const priorityOrder = {deep:0,selective:1,overview:2};
   const statusText = {unread:'未读',reading:'阅读中',read:'已读'};
   const evidenceText = {checked:'已复核片段',notes:'笔记待复核',metadata:'出版 / 摘要证据'};
-  const views = {radar:'My Radar',papers:'文献库',topics:'研究方向',timeline:'时间线',reading:'我的阅读',leaderboards:'Benchmark',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',news:'具身智能周报',about:'关于与维护'};
+  const views = {radar:'My Radar',papers:'文献库','close-reading':'论文精读',topics:'研究方向',timeline:'时间线',reading:'我的阅读',leaderboards:'Benchmark',reader:'专注阅读',compare:'论文对比',updates:'更新中心',coverage:'证据地图',news:'具身智能周报',about:'关于与维护'};
   const paths = {
     library:'<path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l3-1 4 15-3 1z"/>',
     grid:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
@@ -89,11 +89,12 @@
     if(state.view!=='leaderboards')window.RadarResearch.cancelBoards();
     $('#hero').classList.toggle('hidden',state.view!=='papers');$('#stats').classList.toggle('hidden',state.view!=='papers');
     $('#library-section').classList.toggle('hidden',!['papers','reading'].includes(state.view));
-    for(const v of ['radar','topics','timeline','about','leaderboards','reader','compare','updates','coverage','news'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
+    for(const v of ['radar','topics','timeline','about','leaderboards','reader','compare','updates','coverage','news','close-reading'])$('#'+v+'-section').classList.toggle('hidden',state.view!==v);
     $('#reading-notice').classList.toggle('hidden',state.view!=='reading');
     $('#section-title').textContent=state.view==='reading'?'我的阅读清单':'论文文库';
     updateControls();if(['papers','reading'].includes(state.view))renderResults();if(state.view==='timeline')renderTimeline();if(state.view==='leaderboards')window.RadarResearch.renderBoards($('#leaderboards-content'));
     if(state.view==='radar'){window.RadarWorkspace.leave();window.RadarTools.show($('#radar-content'));}else if(['reader','compare','updates','coverage','news'].includes(state.view))window.RadarWorkspace.show(state.view);else window.RadarWorkspace.leave();
+    if(state.view==='close-reading')window.RadarCloseReading?.show($('#close-reading-content'),data.closeReadings||[],data);
     document.title=`${views[state.view]} · VLA Research Radar`;
   }
   function goView(view){state.view=view;state.page=1;if(!['papers','reading'].includes(view)){state.q='';state.topic='';state.month='';state.year='';state.week='';state.venue='';state.priority='';state.status='';}syncUrl(true);showView();closeSidebar();window.scrollTo({top:0,behavior:'smooth'});}
@@ -312,6 +313,8 @@
       <div class="source-links">${p.sources.map(s=>`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}${esc(s.label)}</a>`).join('')}</div>
       <div class="dialog-actions"><div class="action-group"><a class="btn primary" href="${esc(safeUrl(p.paperUrl))}" target="_blank" rel="noopener noreferrer">阅读原文 ${icon('external')}</a><button class="btn" data-save="${p.id}">${icon('bookmark')}${l.saved?'已收藏':'收藏'}</button><button class="btn" data-bib="${p.id}">BibTeX</button><button class="btn" data-share-paper="${p.id}">${icon('link')}分享</button></div><label class="status-label">本地进度<select class="status-select" id="detail-status" data-id="${p.id}">${Object.entries(statusText).map(([v,t])=>`<option value="${v}" ${l.status===v?'selected':''}>${t}</option>`).join('')}</select></label></div>`;
     $('#paper-detail').insertAdjacentHTML('afterbegin',`<div class="quick-note-tools"><button class="btn primary" data-focus="${p.id}">进入专注阅读 ↗</button><button class="btn" data-compare="${p.id}">＋ 加入对比</button><span>先看结论，再沿章节深入。</span></div>`);
+    const edition=(data.closeReadings||[]).find(entry=>entry.paperId===p.id);
+    if(edition)$('#paper-detail').insertAdjacentHTML('afterbegin',`<div class="quick-note-tools"><a class="btn primary" href="${esc(edition.href)}">阅读原稿逐段论证精读 ↗</a><span>${edition.units} 个来源定位单元 · ${esc(edition.sourceVersion)}</span></div>`);
     const host=$('#paper-detail');
     // Pass the already fetched note to avoid a second detail resolution.
     window.RadarResearch.enhance(p,host,detailRecord);
