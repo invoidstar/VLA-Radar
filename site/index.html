@@ -18,6 +18,8 @@
   <script src="search-client.js" defer></script>
   <script src="dates.js" defer></script>
   <link rel="stylesheet" href="research.css">
+  <link rel="stylesheet" href="close-reading-list.css">
+  <script src="close-reading-list.js" defer></script>
   <link rel="stylesheet" href="experience.css">
   <script src="experience-loader.js" defer></script>
   <script src="benchmark-settings.js" defer></script>
@@ -33,6 +35,7 @@
       <div class="side-heading" id="nav-discover">DISCOVER</div>
       <div class="nav-group-links">
         <button class="nav-link active" data-view="papers"><span data-icon="library"></span>文献库<span class="nav-count" id="nav-total">—</span></button>
+        <button class="nav-link" data-view="close-reading"><span data-icon="book"></span>论文精读<span class="local-indicator">NEW</span></button>
         <button class="nav-link" data-view="topics"><span data-icon="grid"></span>研究方向</button>
         <button class="nav-link" data-view="timeline"><span data-icon="clock"></span>时间线</button>
         <button class="nav-link" data-view="news"><span data-icon="spark"></span>具身智能周报<span class="local-indicator">WEEKLY</span></button>
@@ -120,6 +123,7 @@
       <div id="results" aria-live="polite"><div class="loading-state">正在载入文献数据…</div></div>
       <div class="pagination" id="pagination"></div>
     </section>
+    <section id="close-reading-section" class="page-section hidden" aria-label="论文精读"><div id="close-reading-content"></div></section>
     <section id="topics-section" class="page-section hidden" aria-labelledby="topics-title"><div class="eyebrow">RESEARCH AT A GLANCE</div><h1 id="topics-title">沿着方向，建立理解。</h1><p class="page-intro">同一篇论文可以跨越多个方向。这里的数量包含交叉标签，不代表互斥分类。</p><div id="topic-cards" class="topic-grid"></div></section>
     <section id="timeline-section" class="page-section hidden" aria-labelledby="timeline-title"><div class="eyebrow">PUBLICATION TIMELINE</div><h1 id="timeline-title">让时间线更准确。</h1><p class="page-intro">按首次公开时间查看技术发展。周次采用 ISO 8601，周一至周日；年末 / 年初可能归入相邻的周历年。<br>每条详情保留日期来源口径；修订、正式发表和网站收录不是同一个时间。</p><div class="timeline-toolbar"><div class="timeline-switch" role="group" aria-label="时间线粒度"><button id="timeline-week" class="active" aria-pressed="true">按周</button><button id="timeline-month" aria-pressed="false">按月</button></div><p id="timeline-mode-note"></p></div><div id="timeline"></div></section>
 <section id="leaderboards-section" class="page-section hidden" aria-labelledby="leaderboards-title"><div class="eyebrow">BENCHMARKS, WITH CONTEXT</div><h1 id="leaderboards-title">比较结果，先对齐条件。</h1><p class="page-intro">跨数据集查看可追溯的论文结果，或打开当前协议图表。<br>按 Evaluation Setting 对齐任务、split、指标与评测口径；训练数据、模型结构、recipe 与来源论文保留在结果层，不合成跨协议总榜。</p><div id="leaderboards-content"></div></section>
