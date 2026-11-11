@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-27",
+  "reviewedAt": "2026-11-11",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p001": {
@@ -2763,6 +2763,65 @@
         "r-simpt-v1-policy-recap-cf-lpf"
       ],
       "note": "Seven selected RoboTwin tasks only: Table I expert recovery success (failed rollout rescue) and Table II 1400-test episode posttrained policy success are different metrics. Retain negative FlowPRO -4.21pp and unknown Naive RECAP-CF-LPF baseline."
+    },
+    "p148": {
+      "status": "extracted",
+      "trackIds": [
+        "sla-v1-libero-plus",
+        "sla-v1-robotwin2-clean2500",
+        "sla-v1-robocasa-panda24",
+        "sla-v1-robodojo-real-sr",
+        "sla-v1-robodojo-real-score",
+        "sla-v1-robodojo-sim-sr",
+        "sla-v1-robodojo-sim-score"
+      ],
+      "resultIds": [
+        "r-sla-v1-libero-plus-ours",
+        "r-sla-v1-libero-plus-pi05",
+        "r-sla-v1-robotwin-ours",
+        "r-sla-v1-robotwin-pi05",
+        "r-sla-v1-robotwin-spatialforcing",
+        "r-sla-v1-robocasa-panda-ours",
+        "r-sla-v1-robocasa-panda-spatialforcing",
+        "r-sla-v1-robocasa-panda-cosmos",
+        "r-sla-v1-robodojo-real-sr-ours",
+        "r-sla-v1-robodojo-real-sr-pi05",
+        "r-sla-v1-robodojo-real-score-ours",
+        "r-sla-v1-robodojo-real-score-pi05",
+        "r-sla-v1-robodojo-sim-sr-ours",
+        "r-sla-v1-robodojo-sim-sr-pi05",
+        "r-sla-v1-robodojo-sim-score-ours",
+        "r-sla-v1-robodojo-sim-score-pi05"
+      ],
+      "note": "Primary SLA v1 Tables 2–5 and Appendix Table 15: seven distinct paper-table tracks for LIBERO-Plus, RoboTwin 50 Clean2500, RoboCasa Panda 24, RoboDojo Real 18 tasks Score/SR, and separately author-local RoboDojo Sim Score/SR; author baselines retained and 55.0 vs 53.3 Piper discrepancy disclosed. Real SLA-Preview official submission remains separately versioned."
+    },
+    "p149": {
+      "status": "extracted",
+      "trackIds": [
+        "pyrua-v2-libero-pro-40",
+        "pyrua-v2-robotwin2-50",
+        "pyrua-v2-robocasa365-atomic",
+        "pyrua-v2-robocasa365-composite",
+        "pyrua-v2-robodojo-sim-author-sr",
+        "pyrua-v2-robodojo-sim-author-score",
+        "pyrua-v2-robodojo-sim-official-sr",
+        "pyrua-v2-robodojo-sim-official-score"
+      ],
+      "resultIds": [
+        "r-pyrua-v2-libero-pro-code",
+        "r-pyrua-v2-libero-pro-tool",
+        "r-pyrua-v2-robotwin-code",
+        "r-pyrua-v2-robotwin-tool",
+        "r-pyrua-v2-robocasa-atomic-code",
+        "r-pyrua-v2-robocasa-atomic-tool",
+        "r-pyrua-v2-robocasa-composite-code",
+        "r-pyrua-v2-robocasa-composite-tool",
+        "r-pyrua-v2-robodojo-author-sr",
+        "r-pyrua-v2-robodojo-author-score",
+        "r-pyrua-v2-robodojo-official-sr",
+        "r-pyrua-v2-robodojo-official-score"
+      ],
+      "note": "Primary PyRUA v2 Tables 2 and 5 + official author's October result note: four benchmark-scoped paired Agent code vs tool conditions; RoboDojo Sim author seed0 Score/SR kept separate from official RoboDojo team 55.26/50.35 report. No VLA policy in RoboDojo Agent, and Coder 4B 44.1% unseen tasks is not RoboDojo."
     }
   }
 }
