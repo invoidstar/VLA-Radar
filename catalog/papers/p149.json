@@ -156,7 +156,7 @@
         ]
       },
       {
-        "id": "dojoProtocol",
+        "id": "dojo-protocol",
         "title": "RoboDojo-Sim的特殊Agent版本与官方评测协议",
         "body": "§4的RoboDojo实验与跨三基准研究使用同一个PyRUA思路，但底层原语改成作者专为ARX X5双臂站设计的几何运动、夹爪控制和基于分割的目标定位。这个版本刻意不接入任何学习型VLA子策略：它使用官方三张RGB相机和关节/末端状态、不读取特权模拟器物体坐标或深度，依靠已知机器人标定和摄像头几何估计位置。RoboDojo有42个主任务、五类能力，Generalization含标准与随机版本，单seed合计2100 episode；Score为部分进度，SR才是完成比例，平均为五个维度等权聚合。Agent每回合至多100次LLM代码单元调用，而且需要大模型API、SAM3和几何原语配套，不能视作一个纯单体权重checkpoint。",
         "sources": [
@@ -167,7 +167,7 @@
         ]
       },
       {
-        "id": "dojoResults",
+        "id": "dojo-results",
         "title": "RoboDojo成绩：论文作者本地与官方提交必须双轨保存",
         "body": "论文v2 Table5作者在seed0本地评测得到Average Score58.20、SR51.62%，五能力SR分别为Generalization45.83、Precision37.25、Long-Horizon48.00、Memory63.00、Open64.00；当时用来比较的排行榜为2026-10-09快照。之后作者官方仓库与模型文档记录RoboDojo评测团队的正式提交为Score55.26、SR50.35%，五维成功率分别43.17、38.25、43.75、68.33、58.25，和原论文本地结果不是同一次run。本站应保留2个有来源及日期的数值层，不能简单选其中较高的51.62覆盖官方50.35。到2026-11-03官方榜单已有新的Agent模型排在它前面，原论文的历史榜首声明只在其所说明的时间窗口成立。",
         "sources": [
