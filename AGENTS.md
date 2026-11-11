@@ -70,3 +70,8 @@ Read maintenance/docs/workspace.md. Before canonical content edits, preserve the
 ## 官网反向文献与基准身份
 
 读取 `maintenance/policies/benchmark-content-policy.md` 与 `maintenance/audits/benchmark/benchmark-source-audit-20260918.json`。周更将当前数据集官网/官方榜单作为发现论文的入口，按实际完成的深读小批次入库。必须将RoboCasa与RoboCasa365分别显示，并保留365的运行版本（1.0.0/1.0.1）、episode horizon、目标/预训练厨房和示范预算。不同版本或同名方法不同设置不覆盖取最大值；官方/论文同源记录不视为独立复现。未取得完整论文/身份或协议不明的条目保留候选，局部审计不推进完整文献检索检查点。
+
+
+## V3.1 论文精读（Paper Deep Reading）
+
+源数据位于 `catalog/close-readings/pNNN.json`，一篇论文仅复用已有 paperId；`data/close-readings/*` 为确定性构建产物，不直接编辑。新精读需核对原始版本、逐段 PDF 页码、中文原创论证点评、既有 Benchmark trackId 的来源及单位；新发现的结果仍须回到 canonical Result Report，而不是在精读页另开一套排名。当前公开模板不上传全文英文、全文翻译、原稿图像/截图或 PDF 的 Base64，不将 arXiv 的非独占发布许可当作第三方转载授权。没有授权证据时只展示非表达性技术关键词、原创中文逻辑导读、批判分析与原始 PDF 页码链接。保留 `vla-radar.reading.v1` 和现有论文详情。验证 `scripts/build/close_readings.py`、`tests/test_close_readings.py`、`scripts/browser/browser_close_reading.py`；PR 的实际 `quality` 全绿并经相同 main 提交 Pages smoke 后才能宣布上线。详细范围见 `maintenance/docs/close-reading.md`。
