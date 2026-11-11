@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "auditId": "robodojo-top-model-paper-identity-20261111",
+  "checkedAt": "2026-11-11",
+  "status": "partial",
+  "scope": "Public RoboDojo leaderboard top model identities and source documents; current pinned GitHub mirror dated 2026-10-09 and Nov03 public board reading cannot establish an updated immutable leaderboard snapshot. These are model/agent entry classifications, not rankings copied to VLA-Radar.",
+  "sources": [
+    "https://robodojo-benchmark.com/LeaderBoard",
+    "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
+    "https://robotwin-platform.github.io/data/robodojo_real_leaderboard.json",
+    "https://arxiv.org/abs/2611.08373",
+    "https://arxiv.org/abs/2610.01939",
+    "https://arxiv.org/abs/2610.18867"
+  ],
+  "items": [
+    {
+      "model": "VPP2",
+      "status": "existing-paper",
+      "paperId": "p125",
+      "note": "Full original source paper already p125; official leaderboard model posttraining is a particular variant."
+    },
+    {
+      "model": "InternW0-Δ",
+      "status": "existing-paper",
+      "paperId": "p126",
+      "note": "Already in catalog; do not duplicate variant or transfer scores to other InternW0 models."
+    },
+    {
+      "model": "SLA-Preview (Real)",
+      "status": "paper-method-linked-checkpoint-distinct",
+      "paperId": "p148",
+      "note": "SLA newly source-read. RealWorld public Preview submission should retain official checkpoint identity; Table5 paper-local 42.3/33.9 and preview reported 42.33/33.89 may differ in precision."
+    },
+    {
+      "model": "PyRUA-Lean (Sim Agent)",
+      "status": "paper-with-author-and-team-results",
+      "paperId": "p149",
+      "note": "Code agent no learned RoboDojo low-level VLA. Official team Score55.26/SR50.35 and paper local58.20/51.62 in different reports."
+    },
+    {
+      "model": "EmbodiedEvo (Sim Agent)",
+      "status": "full-original-unverified",
+      "paperId": null,
+      "note": "Official authors/repo and arXiv 2610.18867 exist; full original methods and numeric tables not readable to admission standard. Keep deferred, not artificially upgrade."
+    },
+    {
+      "model": "WALL-OSS-1.0-lite",
+      "status": "checkpoint-only-identity-pending",
+      "paperId": null,
+      "note": "There is a publicly documented model variant, but no exact full matched primary paper validated here; cannot repurpose prior WALL-OSS-0.5 work."
+    },
+    {
+      "model": "Q0-Preview / GO-3 Nano Preview / HexaShell-Preview / WorldScape-R²SI",
+      "status": "preview-or-model-only-unverified",
+      "paperId": null,
+      "note": "Visible newer official model/agent entries cannot be treated as full source-read published papers. Preserve unlinked model identities until exact author-title arXiv match and original methods are verified."
+    },
+    {
+      "model": "PhysicalRSI / Awomo-0.5 / Simate-beta / Rex-M1 Preview / Liber-0 Preview",
+      "status": "existing-resource-or-preview-only",
+      "paperId": null,
+      "note": "Earlier official snapshot retains model cards/adapter evidence, but none is automatically a full original paper; do not duplicate existing official board rows."
+    }
+  ],
+  "notes": "No change to canonical official pinned model JSON until a verifiable newest machine-source timestamp and Git revision can be captured, not a guessed leaderboard mirror update. Cite version and measurement protocol separately."
+}
