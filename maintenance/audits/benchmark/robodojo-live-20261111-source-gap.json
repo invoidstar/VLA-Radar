@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "id": "robodojo-live-2026-11-11-source-gap",
+  "observedAt": "2026-11-11",
+  "status": "live-page-unpinned-partial",
+  "scope": "Official RoboDojo website current visible board counts and selected leaderboard positions, compared against exact pinned RoboTwin-Platform official JSON blob; cannot replace the canonical VLA-Radar official-board records with unversioned manually reconstructed values.",
+  "sources": [
+    {
+      "name": "RoboDojo Official Sim leaderboard",
+      "url": "https://robodojo-benchmark.com/leaderboard?bench=sim",
+      "officialDataUpdatedAt": "2026-11-03",
+      "observedAt": "2026-11-11"
+    },
+    {
+      "name": "RoboDojo Official RealWorld leaderboard",
+      "url": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
+      "officialDataUpdatedAt": "2026-11-03",
+      "observedAt": "2026-11-11"
+    },
+    {
+      "name": "Pinned RoboDojo sim GitHub mirror",
+      "url": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd/data/robodojo_leaderboard.json",
+      "sha": "d4664cc087e123b813530882f54273f932723eca",
+      "entries": 57
+    },
+    {
+      "name": "Pinned RoboDojo real GitHub mirror",
+      "url": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd/data/robodojo_real_leaderboard.json",
+      "sha": "b14162faec38751f0bd6afdaaf7d83825800e421",
+      "entries": 11
+    }
+  ],
+  "liveSummary": {
+    "simEntryCount": 66,
+    "realEntryCount": 14,
+    "simUpdatedAt": "2026-11-03",
+    "realUpdatedAt": "2026-11-03",
+    "mirrorSimCount": 57,
+    "mirrorRealCount": 11,
+    "mirrorContentUnchangedThrough": "2026-11-11",
+    "unmatchedLiveAddedSim": 9,
+    "unmatchedLiveAddedReal": 3
+  },
+  "simSelectedByOfficialLiveAverage": [
+    {
+      "name": "Q0-Preview",
+      "type": "Agent",
+      "score": 74.2,
+      "sr": 68.87,
+      "paperId": null
+    },
+    {
+      "name": "GO-3 Nano Preview",
+      "type": "Agent + WAM",
+      "score": 61.9,
+      "sr": 56.42,
+      "paperId": null
+    },
+    {
+      "name": "PyRUA-Lean",
+      "type": "Agent",
+      "score": 55.26,
+      "sr": 50.35,
+      "paperId": "p149"
+    },
+    {
+      "name": "HexaShell-Preview",
+      "type": "Agent",
+      "score": 53.18,
+      "sr": 46.85,
+      "paperId": null
+    },
+    {
+      "name": "WorldScape-R²SI",
+      "type": "Agent + WAM",
+      "score": 46.58,
+      "sr": 39.35,
+      "paperId": null
+    },
+    {
+      "name": "EmbodiedEvo",
+      "type": "Agent",
+      "score": 45.08,
+      "sr": 38.95,
+      "paperId": null
+    },
+    {
+      "name": "WALL-OSS-1.0-lite",
+      "type": "VLA",
+      "score": 42.59,
+      "sr": 34.97,
+      "paperId": null
+    },
+    {
+      "name": "VPP2",
+      "type": "WAM",
+      "score": 39.26,
+      "sr": 32.26,
+      "paperId": "p125"
+    }
+  ],
+  "realTopByOfficialLiveAverage": [
+    {
+      "name": "SLA-Preview",
+      "type": "VLA",
+      "score": 42.33,
+      "sr": 33.89,
+      "paperId": "p148",
+      "identityNote": "Source paper SLA but Preview submission checkpoint version not assumed identical."
+    },
+    {
+      "name": "InternW0-Δ",
+      "type": "WAM",
+      "score": 38.9,
+      "sr": 31.7,
+      "paperId": "p126"
+    },
+    {
+      "name": "OpenWAM-α",
+      "type": "WAM",
+      "score": 37.6,
+      "sr": 24.4,
+      "paperId": null
+    },
+    {
+      "name": "MWA-Phoenix-Preview",
+      "type": "WAM",
+      "score": 35.28,
+      "sr": 26.11,
+      "paperId": null
+    }
+  ],
+  "limitations": "Only live website snapshot, not a machine-readable immutable full official export. Official Sim site separates Agent and non-Agent ranking views, so these rows are display-order comparisons not one fair global method leaderboard. Do NOT alter catalog/official-boards sourceRepoRevision/sourceBlobSha or fabricate missing per-dimension rows. Revisit when official committee publishes SHA-pinned full updates."
+}
