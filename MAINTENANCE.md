@@ -1,5 +1,11 @@
 # VLA Radar · 长期维护手册 v2
 
+## 2026-11-11 V3.1 论文精读功能（扩展阅读层，不改变现有论文库）
+
+V3.1新增独立精读列表和 p148 SLA 来源定位精读；**正式论文总数保持149篇**，长篇精读为精选子集。101 个段落、16 张表及 6 幅图原稿单元仅记录 PDF 定位、有限英文术语和中文论证原创点评；不发布原稿英文全文、逐段全文译文或内嵌原图。源记录 `catalog/close-readings/*.json`，生成分片 `data/close-readings/*.json`；脚本为 `scripts/build/close_readings.py`，详情见 `maintenance/docs/close-reading.md`。必须经同一套来源、许可、段落 ID、图表 URL、Benchmark track 校验，完整 PR exact-head quality 和 Pages production smoke 才宣布上线。
+
+
+
 仓库：https://github.com/invoidstar/VLA-Radar  
 网站：https://invoidstar.github.io/VLA-Radar/
 
