@@ -154,6 +154,7 @@ def outputs(root):
     experience,indexurl=experience_outputs(root,records,comparison_tracks,comparison_results);out.update(experience)
     news,newsurl=news_outputs(root,records);out.update(news)
     tools,toolsurl=tools_outputs(root,records,comparison_tracks,comparison_results,experience,indexurl);out.update(tools)
+    # Public close readings are validated, excerpt-limited metadata; never load or mirror full PDFs.
     readings, reading_index = close_reading_outputs(root, records, tracks)
     out.update(readings)
     out['data/library.json']=compact({'schemaVersion':1,**meta,'searchUrl':searchurl,'boardIndexUrl':boardurl,'experienceUrl':indexurl,'newsUrl':newsurl,'toolsUrl':toolsurl,'closeReadings':reading_index,'papers':light})
