@@ -24,7 +24,17 @@ def test_every_dataset_with_checked_results_has_settings():
 
 def test_settings_are_evaluation_protocols_not_training_buckets():
     tracks,results,settings=catalog();trackmap={t['id']:t for t in tracks};resultmap={r['id']:r for r in results}
-    assert len(settings)<230
+    # The pre-Zeva guard (<230) still applies to all legacy Setting identities.
+    # Exactly seven Zeva source-scoped tracks may introduce at most seven
+    # genuinely distinct evaluation questions; no arbitrary global cap raise.
+    prior_tracks=[t for t in tracks if not t['id'].startswith('zeva-v2-')]
+    prior_results=[r for r in results if not r['id'].startswith('r-zeva-v2-')]
+    prior_settings=build_settings(prior_tracks,prior_results)
+    assert len(prior_settings)<230, f"Legacy protocol identity inflation: {len(prior_settings)}"
+    zeva_tracks=[t for t in tracks if t['id'].startswith('zeva-v2-')]
+    assert 0 <= len(settings)-len(prior_settings) <= len(zeva_tracks), (
+        f"New Setting growth exceeds {len(zeva_tracks)} Zeva evaluation tracks: "
+        f"{len(settings)} vs legacy {len(prior_settings)}")
     for s in settings:
         assert all(trackmap[resultmap[rid]['trackId']]['dataset']==s['dataset'] for rid in s['resultIds'])
         assert all(trackmap[resultmap[rid]['trackId']]['unit']==s['unit'] for rid in s['resultIds'])
@@ -146,3 +156,17 @@ def test_same_setting_with_partial_column_coverage_is_not_split():
     partial['columns']=base['columns'][:-1]
     assert evaluation_key(base)==evaluation_key(partial)
     assert protocol_compatibility(base,partial)=='partial'
+
+
+def test_zeva_atomic5_and_fixed_episode_not_target50():
+    tracks,results,settings=catalog()
+    mapping={t['id']:t for t in tracks}
+    atomic=mapping['zeva-v2-robocasa365-atomic5']
+    fixed=mapping['zeva-v2-robocasa365-fixed-episode-csr']
+    assert protocol_profile(atomic)['taskScope']=='atomic5'
+    assert protocol_profile(fixed)['taskScope']=='atomic5-fixed-episode'
+    assert evaluation_key(atomic)!=evaluation_key(fixed)
+    assert all('atomic5' not in s['evalId'] or s['dataset']=='RoboCasa365' for s in settings)
+    target=[t for t in tracks if t['dataset']=='RoboCasa365' and 'target50' in (t['id'].lower()+' '+t['name'].lower())]
+    if target:assert all(evaluation_key(atomic)!=evaluation_key(t) for t in target)
+
