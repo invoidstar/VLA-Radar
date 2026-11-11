@@ -1,0 +1,18 @@
+{
+  "id": "r-pyrua-v2-robocasa-composite-code",
+  "paperId": "p149",
+  "method": "PyRUA-Lean code-cell Agent",
+  "trackId": "pyrua-v2-robocasa365-composite",
+  "values": {
+    "Success": 39.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2610.01939v2",
+  "sourceVersion": "arXiv 2610.01939v2",
+  "locator": "Table 2 code-cell mode",
+  "attribution": "author-reported",
+  "trainingData": "GPT-6 Astra, SAM3, frozen RLDX-1, paired tool/code cell modes.",
+  "evaluationNotes": "Composite tasks separately reported in Table 2, not atomic or original RoboCasa. Composite subset and up to 100 agent calls per episode",
+  "supersedes": ""
+}

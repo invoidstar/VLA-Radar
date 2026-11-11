@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-11-robodojo-paper-catchup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-11",
+    "attemptedAt": "2026-11-11",
+    "completedAt": null
+  },
+  "scope": "Scoped user-requested SLA full read and top RoboDojo model-to-paper verification; intentionally not comprehensive weekly discovery.",
+  "sources": [
+    {
+      "id": "arxiv-sla-pyrua-evo-original",
+      "lane": "primary-preprints",
+      "provider": "arXiv original paper versions",
+      "kind": "Three individually opened arXiv identities; full original HTML verified for SLA v1 and PyRUA v2, EmbodiedEvo only abstract",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-01",
+        "to": "2026-11-05"
+      },
+      "query": "https://arxiv.org/abs/2611.08373 ; https://arxiv.org/abs/2610.01939 ; https://arxiv.org/abs/2610.18867",
+      "resultCount": 3,
+      "note": "Three requested/board-driven identities, not an exhaustive date-scoped arXiv category or title-wide search. EmbodiedEvo full original PDF/HTML could not be reviewed to source-table standard; defer."
+    },
+    {
+      "id": "academic-index-history-unresolved",
+      "lane": "academic-index",
+      "provider": "OpenAlex / Semantic Scholar earlier source attempts",
+      "kind": "No successful new broad-date index search in this scoped audit",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "Historical 2026-11-08 public maintenance audit: independent academic provider date-scoped requests were inaccessible, and no independently verified full-window replacement is claimed here",
+      "resultCount": 0,
+      "note": "This is a carry-forward blocker, NOT a newly completed provider search. The academic-index discovery lane is not certified."
+    },
+    {
+      "id": "robodojo-official-leaderboard",
+      "lane": "curated-robotics",
+      "provider": "RoboDojo official public leaderboard and RoboTwin-Platform official mirrored leaderboard",
+      "kind": "Targeted top leaderboard model identity source and older pinned mirror",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-09",
+        "to": "2026-11-03"
+      },
+      "query": "https://robodojo-benchmark.com/LeaderBoard ; https://robotwin-platform.github.io/data/robodojo_leaderboard.json ; https://robotwin-platform.github.io/data/robodojo_real_leaderboard.json",
+      "resultCount": 12,
+      "note": "Official GitHub mirror JSON still says updated 2026-10-09. Live website November 3 text lists newer Agent and Real models; cannot assert those are a complete SHA-pinned source JSON refresh or paper identities."
+    },
+    {
+      "id": "authors-sla-pyrua-embodied",
+      "lane": "reverse-discovery",
+      "provider": "SLA / PyRUA-Lean / EmbodiedEvo author project repositories and lab pages",
+      "kind": "Three paper identity and resource entry points, not a field-wide reverse search",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-01",
+        "to": "2026-11-11"
+      },
+      "query": "https://sla-team.github.io/omnisf_projectpage/ ; https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA ; https://dagroup-pku.github.io/PyRUA-Lean/ ; https://github.com/DAGroup-PKU/PyRUA-Lean ; https://github.com/Einsia/EmbodiedEvo",
+      "resultCount": 3,
+      "note": "Both newly selected papers have complete full-original reads; EmbodiedEvo author code exists but paper text/original numeric tables not fully reviewed, so code alone is insufficient to admit a paper."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "arxiv": "2611.08373",
+      "doi": "",
+      "date": "2026-11-05",
+      "sourceIds": [
+        "arxiv-sla-pyrua-evo-original",
+        "robodojo-official-leaderboard",
+        "authors-sla-pyrua-embodied"
+      ],
+      "status": "selected",
+      "reason": "Complete v1 original HTML with methods, training and original Table 2–5/Appendix Table 15; new paper p148 with Real/Sim and Score/SR scoped separately. SLA-Preview official model is not assumed to share exact paper checkpoint.",
+      "paperId": "p148",
+      "duplicateOf": null
+    },
+    {
+      "title": "Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens",
+      "arxiv": "2610.01939",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "arxiv-sla-pyrua-evo-original",
+        "robodojo-official-leaderboard",
+        "authors-sla-pyrua-embodied"
+      ],
+      "status": "selected",
+      "reason": "Full v2 original method, paired tables, original author-local and separately author-documented RoboDojo official team result; paper p149. Agent framework, not new learned VLA policy.",
+      "paperId": "p149",
+      "duplicateOf": null
+    },
+    {
+      "title": "EmbodiedEvo: Self-Evolving Coding Agent For Physical Intelligence",
+      "arxiv": "2610.18867",
+      "doi": "",
+      "date": "2026-10-13",
+      "sourceIds": [
+        "arxiv-sla-pyrua-evo-original",
+        "robodojo-official-leaderboard",
+        "authors-sla-pyrua-embodied"
+      ],
+      "status": "deferred",
+      "reason": "Original abstract and author GitHub repository identity verified, but full original source HTML/PDF could not be read in this audit. Reported arXiv 44.48/37.82 vs public official entry 45.08/38.95 may reflect separate snapshot/version; do not synthesize, rank or add paper-level numeric results without reading original table and protocol.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 3,
+    "selected": 2,
+    "deferred": 1,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 3
+  },
+  "status": "partial",
+  "notes": "Only two deeply source-read original works admitted; EmbodiedEvo deferred for full-text source and table verification. Preview-only RoboDojo official models cannot be equated to complete independent papers. Source/author/local version differences and latest board JSON remain unresolved; October 4 lastSuccessfulSearchAt must not advance."
+}

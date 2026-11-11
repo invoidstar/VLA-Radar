@@ -1,0 +1,25 @@
+{
+  "id": "r-sla-v1-libero-plus-ours",
+  "paperId": "p148",
+  "method": "SLA",
+  "trackId": "sla-v1-libero-plus",
+  "values": {
+    "Camera": 82.2,
+    "Robot": 73.8,
+    "Language": 83.5,
+    "Light": 98.8,
+    "Background": 98,
+    "Noise": 95.4,
+    "Layout": 86.2,
+    "Overall": 87.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2611.08373v1",
+  "sourceVersion": "arXiv 2611.08373v1",
+  "locator": "Table 2 SLA weighted Overall",
+  "attribution": "author-reported",
+  "trainingData": "SLA extra multi-robot continual pretraining; compared baselines use source-specified training recipes.",
+  "evaluationNotes": "Table 2 overall is weighted by test episodes, not an unweighted mean. Original LIBERO training to heldout LIBERO-Plus",
+  "supersedes": ""
+}

@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p149",
+    "name": "PyRUA-Lean",
+    "title": "Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens",
+    "team": "Ruiyang Si、Jianxin Bi、Shunyu Yang、Rui Ni、Wenbo Huang、Qiang Wang、Shulong Jiang、Yintianrun Zhang、Feixiang Ruan、Kewei Zhang、Duomin Wang、Xiuyu Li、Haiwen Feng、Zhen Dong、Daquan Zhou（PKU / NUS / NVIDIA 等）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv v2 预印本；RoboDojo-Sim Agent提交另有官方核验版本",
+    "firstPublished": "2026-10-01",
+    "dateNote": "原始arXiv v1 于2026-10-01公开，v2于2026-10-13新增RoboDojo与Coder实验；作者后续官方提交需要另存。",
+    "collectionMonth": "2026-10",
+    "versionNote": "arXiv 2610.01939v2 原文全面深读，2026-11-11核对作者项目和RoboDojo官方提交",
+    "topics": [
+      "evaluation",
+      "action",
+      "efficiency"
+    ],
+    "tags": [
+      "RoboDojo",
+      "Agent+VLA",
+      "code agent",
+      "robot primitives",
+      "token efficiency",
+      "GRPO",
+      "LIBERO-PRO",
+      "RoboTwin",
+      "RoboCasa365"
+    ],
+    "priority": "deep",
+    "contribution": "用Python单元组合现有机器人原语与可选VLA策略，在单元内完成反馈检查、几何计算和局部重试，减少每步LLM工具调用与重复视觉上下文；并训练4B代码规划器。",
+    "findings": "700配对实例63.1%→71.7%成功，双方共同成功的样本输入token降低65%；RoboDojo-Sim作者本地Score58.20/SR51.62%，官方提交Score55.26/SR50.35%；4B Coder未见实例18.8%→44.1%。",
+    "limitations": "RoboDojo Agent无VLA，使用额外SAM3及几何原语与大模型API；和直接控制的系统差异多于接口单变量；精密接触任务多次为零；官方/本地数字需分离。",
+    "insight": "区别VLA动作策略模型能力和外层Agent的程序执行/观测编排；token节省以双方共同成功样本估算，不能等同全任务的平均成本和实时吞吐提升。",
+    "readingFocus": "§3 interface vs tool calling Table1–3；§4 RoboDojo protocol Table5官方/本地结果；失败Task Table6；§5 Coder GRPO Table8；作者GitHub Oct21官方数据。",
+    "evidence": "checked",
+    "evidenceNote": "2026-11-11阅读 arXiv 2610.01939v2 和作者公开仓库/文档；所有指标为原作者或RoboDojo官方报告，非本站独立运行。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "arXiv 论文完整v2",
+        "url": "https://arxiv.org/html/2610.01939v2"
+      },
+      {
+        "label": "arXiv版本与身份",
+        "url": "https://arxiv.org/abs/2610.01939"
+      },
+      {
+        "label": "作者项目页",
+        "url": "https://dagroup-pku.github.io/PyRUA-Lean/"
+      },
+      {
+        "label": "作者GitHub代码",
+        "url": "https://github.com/DAGroup-PKU/PyRUA-Lean"
+      },
+      {
+        "label": "作者公开的官方RoboDojo评测与区别说明",
+        "url": "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2610.01939",
+    "arxiv": "2610.01939",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-10-01",
+    "firstArxivSource": "https://arxiv.org/abs/2610.01939v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-10-13",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-11-11",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-10-01",
+        "observedAt": "2026-11-11",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2610.01939v1",
+        "note": "首次公开预印本；不能以10月13日v2覆盖首发日。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-10-13",
+        "observedAt": "2026-11-11",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/html/2610.01939v2",
+        "note": "v2包含RoboDojo与PyRUA-Lean Coder，后续官方榜单不等于新版arXiv。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-11-11",
+    "verifiedAt": "2026-11-11",
+    "version": "arXiv 2610.01939v2 (2026-10-13), §§3-5, Appendix source-verified 2026-11-11",
+    "sections": [
+      {
+        "id": "motivation",
+        "title": "研究问题：机器人LLM Agent的token预算和反复工具调用",
+        "body": "PyRUA-Lean研究的不是重新训练一个更强VLA动作网络，而是现有视觉语言模型作为机器人Agent时，为什么每次调用工具都要重复传回三路摄像头观测、长上下文和前序状态。作者认为一次只执行一个动作或工具会把程序化的中间验证、局部重试和几何计算交给昂贵的上层大模型，导致成功率与token成本不成比例。论文以相同规划器和同一套机器人动作原语比较传统tool calling与代码执行接口，检验能否在给定LLM调用预算下完成更多物理操作。这里应把系统级Agent贡献与冻结VLA policy本身的动作能力分开；高分不意味着训练了一个新的通用底层机器人模型。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "interface",
+        "title": "关键结构：python(code)交互与robo封装",
+        "body": "PyRUA-Lean让模型在一个Python单元内串联多个运动、抓手、视觉分割和可选VLA子策略调用。每个单元可读取中间反馈、判断抓取是否成功、调整坐标并在局部重试，模型不必在每个小动作之间都重新进行一轮完整推理。工具调用基线和代码接口使用相同的底层RPent robot primitive，区别是何时把控制交还给LLM以及怎样选择返回的观测。代码中通过robo.state、robo.done与按需robo.show访问状态和图像；动作与感知API在论文Table1可核验，包括move_to、set_gripper、segment、back_project及相关冻结VLA子策略。将一次性程序执行等同于无反馈开环控制是错误的，因为单元内部仍具有状态检查与条件控制。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "protocol700",
+        "title": "跨三基准的配对评测与归因边界",
+        "body": "论文§3用LIBERO-PRO四个扰动suite中的40任务、RoboTwin 2.0的50个双臂任务、RoboCasa365 Target50的50任务，共140个不同任务、每个5个环境种子，得到700个配对任务实例和两种Agent各700回合。两个系统都用GPT-6 Astra高推理配置、SAM3分割，保持相同冻结策略：LIBERO-PRO使用π₀.₅、RoboTwin使用LingBot-VLA、RoboCasa365使用RLDX-1。每回合限制40次LLM调用，RoboCasa复合任务为100次，并限定最长2小时；限制的是LLM调用而非单元内原语动作数。论文估算成本时只统计两Agent都成功的子集，必须与对全部700实例计算的成功率分开。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "table2",
+        "title": "主要实验：成功率提升与Token成本计算口径",
+        "body": "原文Table2：LIBERO-PRO Tool/Code为83.0/94.0，RoboTwin为60.0/69.2，RoboCasa365 atomic为78.9/86.7，composite为34.4/39.4；总体63.1提升到71.7（+8.6百分点，约相对+14%）。在双方都解决的实例上，平均LLM调用由17.0降至8.7、每回合输入token由788k降至276k、模型定价估算成本由1.63美元降至0.74美元。不能把65%减少理解为全部成功和失败episode的统一精确成本增益，也不能把2.2倍便宜称为物理执行实时速度提升；作者明确只统计共同成功子集、模型价格来自特定计费假设。这是多原语编排和上下文管理的系统效果，而不是Agent自身权重更新的结果。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "消融与负结果：图像按需返回不是唯一增益来源",
+        "body": "作者在Table3分别移除VLA子策略、操作手册或两者，PyRUA-Lean在比较范围内通常仍比工具调用更省token、成功率更高。例如RoboTwin去掉VLA时，工具调用42.8而代码模式68.8；同时去掉手册时两者是60.4与66.4。这说明Agent可以通过几何原语和分割服务完成部分任务，也说明手册并非所有接口都适合。一个值得记录的反面实验是单独把工具调用改成按需回传图像，LIBERO-PRO成功率从83.0下降至68.5，因而不能只把提升归因于减少图片。论文没有独立完全控制程序编排、提示形式、保留上下文的全部变量，这一归因限制要保留。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "dojo-protocol",
+        "title": "RoboDojo-Sim的特殊Agent版本与官方评测协议",
+        "body": "§4的RoboDojo实验与跨三基准研究使用同一个PyRUA思路，但底层原语改成作者专为ARX X5双臂站设计的几何运动、夹爪控制和基于分割的目标定位。这个版本刻意不接入任何学习型VLA子策略：它使用官方三张RGB相机和关节/末端状态、不读取特权模拟器物体坐标或深度，依靠已知机器人标定和摄像头几何估计位置。RoboDojo有42个主任务、五类能力，Generalization含标准与随机版本，单seed合计2100 episode；Score为部分进度，SR才是完成比例，平均为五个维度等权聚合。Agent每回合至多100次LLM代码单元调用，而且需要大模型API、SAM3和几何原语配套，不能视作一个纯单体权重checkpoint。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "dojo-results",
+        "title": "RoboDojo成绩：论文作者本地与官方提交必须双轨保存",
+        "body": "论文v2 Table5作者在seed0本地评测得到Average Score58.20、SR51.62%，五能力SR分别为Generalization45.83、Precision37.25、Long-Horizon48.00、Memory63.00、Open64.00；当时用来比较的排行榜为2026-10-09快照。之后作者官方仓库与模型文档记录RoboDojo评测团队的正式提交为Score55.26、SR50.35%，五维成功率分别43.17、38.25、43.75、68.33、58.25，和原论文本地结果不是同一次run。本站应保留2个有来源及日期的数值层，不能简单选其中较高的51.62覆盖官方50.35。到2026-11-03官方榜单已有新的Agent模型排在它前面，原论文的历史榜首声明只在其所说明的时间窗口成立。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "failures",
+        "title": "RoboDojo的负面任务揭示接触和精度的盲点",
+        "body": "作者Table6统计某些任务可达几乎100%成功，例如语言指定堆叠、分类、部分固定摆放，但另有多个任务成功率为0，包括insert_key、make_kong、swap_blocks、press_by_number及工具收纳。直接控制和预训练VLA在部分精细操作可能比这个Agent更强，特别是按次数按键、精密钥匙插入、复杂接触装配。作者指出这一类失败常涉及视觉分割和有限状态接口不能充分反馈的接触事件、几何拟合误差或严苛动作容差。没有完整触觉与关节力传感监督时，LLM产出的Python程序并不自动解决精密接触。论文未逐一开展所有失败episode的因果诊断，因此不要把总结为某个单一子模块故障。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "coder",
+        "title": "可学习的4B代码Agent：不是对RoboDojo榜单模型的重新训练",
+        "body": "论文§5另训练PyRUA-Lean Coder v0.1-4B，以Qwen3.5-4B初始化，用45个LIBERO-PRO实例上的GRPO奖励优化模型产出的推理和Python单元，冻结底层机器人原语和已有VLA policy。训练共30次迭代、3840回合、60次优化步，用一节点八卡约12小时；并未使用RoboTwin或RoboCasa365来训练代码规划器。Table8在655个完全未见任务实例上，Qwen3.5-4B原始18.8%、经过RL后44.1%；其中RoboTwin由14.0%升至52.4%、RoboCasa365原子任务52.2→76.7。不能把这个44.1%解释为RoboDojo官方SR，亦不能把Coder v0.1-4B的结果与使用GPT-6 Astra的RoboDojo-Agent同一项模型混为一谈。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "resources",
+        "title": "代码、模型与复现边界",
+        "body": "PyRUA-Lean的作者GitHub仓库包含src/pyrualean、docs、tests、机器人集成与XPolicyLab适配目录，提供可供开发者使用的接口框架及Apache-2.0许可证；项目文档包含RoboDojo官方与本地结果的单独对照。作者同时公开了PyRUA-Lean Coder v0.1-4B的模型卡入口，但可执行整个系统仍需要物理或仿真机器人环境、冻结策略或几何原语、视觉分割模型以及可调用的规划器API。仓库近况还列有PyRUA-RSI、DataFarm等后续派生系统，不能把它们的82%以上RoboDojo声明合并到本文PyRUA-Lean原模型结果。每项复现资源的可用性需要逐维标注；项目开源不等于底层GPT-6 Astra权重公开，也不代表作者所有机器人任务都能仅下载仓库直接复现。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "公平比较、延迟、成本和研究意义",
+        "body": "研究的最大价值是在保持规划器和动作原语不变时，验证工具调用接口如何影响机器人成功率、token用量与交互次数；这为Agent+VLA范式提供工程与实验上的可检验例子。但RoboDojo专项对比直接控制Agent时，视觉分割定位、动作空间、提示材料、推理配置与编排机制多处不同，不能把成功率差全部归给Python接口。官方50.35%是含复杂LLM调用和几何子程序的Agent系统成绩，不应无说明地与单体VLA策略视为同一速度、算力或成本条件。论文也承认物理机器人标准评测不足、精细接触失败集中以及小型Coder与前沿规划器有显著差距。读者应将它视为兼容现有VLA的高层操作Agent框架，而不是新的基础VLA预训练范式。",
+        "sources": [
+          {
+            "label": "PyRUA-Lean arXiv v2 full paper / tables",
+            "url": "https://arxiv.org/html/2610.01939v2"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2610.01939v2"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "PyRUA-Lean核心作者证据及官方复核值",
+        "columns": [
+          "协议",
+          "报告值",
+          "来源/口径"
+        ],
+        "rows": [
+          [
+            "跨三数据集700实例",
+            "Tool 63.1 / Code 71.7%",
+            "Table 2；same planner/primitives"
+          ],
+          [
+            "RoboDojo-Sim作者本地",
+            "Score58.20 / SR51.62%",
+            "Table 5；seed0，2100 episodes"
+          ],
+          [
+            "RoboDojo-Sim官方提交",
+            "Score55.26 / SR50.35%",
+            "作者文档引RoboDojo正式评测"
+          ],
+          [
+            "Coder v0.1-4B未见655实例",
+            "18.8 → 44.1%",
+            "Table8；45个LIBERO-PRO任务实例训练"
+          ]
+        ],
+        "locator": "Table 2, Table 5, Table 8 and author official-results documentation",
+        "caption": "本地与官方测试版本不合并；Agent无需单体VLA权重直接出动作，和纯VLA训练/速度条件不同。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-11-11",
+      "note": "原文v2 Table2的LIBERO-PRO、RoboTwin50、RoboCasa365 atomic/composite分别为配对工具接口实验；Table5 RoboDojo-Sim作者本地Score/SR与10月21日官方提交Score/SR独立报告。跨协议Coder未见655实例留在笔记，不改造成RoboDojo榜单数字。"
+    }
+  }
+}

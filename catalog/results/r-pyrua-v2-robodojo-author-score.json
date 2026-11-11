@@ -1,0 +1,23 @@
+{
+  "id": "r-pyrua-v2-robodojo-author-score",
+  "paperId": "p149",
+  "method": "PyRUA-Lean author-local Agent",
+  "trackId": "pyrua-v2-robodojo-sim-author-score",
+  "values": {
+    "Generalization": 50.65,
+    "Precision": 47.02,
+    "Long-Horizon": 63.26,
+    "Memory": 63,
+    "Open": 67.09,
+    "Average": 58.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2610.01939v2",
+  "sourceVersion": "arXiv 2610.01939v2",
+  "locator": "Table 5 author local seed0 Score",
+  "attribution": "author-reported",
+  "trainingData": "RoboDojo variant has no low-level learned VLA subpolicy; GPT-6 Astra+SAM3+geometric primitives; per-dimension macro aggregation.",
+  "evaluationNotes": "Author local progress Score 58.20, not official 55.26 or SR. Author seed0 local run",
+  "supersedes": ""
+}

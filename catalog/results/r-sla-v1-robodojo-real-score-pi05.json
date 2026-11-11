@@ -1,0 +1,21 @@
+{
+  "id": "r-sla-v1-robodojo-real-score-pi05",
+  "paperId": "p148",
+  "method": "π₀.₅",
+  "trackId": "sla-v1-robodojo-real-score",
+  "values": {
+    "ARX X5": 27.7,
+    "Piper": 32,
+    "Piper X": 9.1,
+    "Average": 22.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2611.08373v1",
+  "sourceVersion": "arXiv 2611.08373v1",
+  "locator": "Table 5 π0.5 Real Score",
+  "attribution": "reported-baseline",
+  "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+  "evaluationNotes": "Real partial-progress Score is not full-task SR or author-local simulation Score. Paper report real tasks, author original table",
+  "supersedes": ""
+}

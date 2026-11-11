@@ -1,0 +1,20 @@
+{
+  "id": "r-sla-v1-robotwin-pi05",
+  "paperId": "p148",
+  "method": "π₀.₅",
+  "trackId": "sla-v1-robotwin2-clean2500",
+  "values": {
+    "Clean": 70.7,
+    "Randomized": 46,
+    "Average": 58.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2611.08373v1",
+  "sourceVersion": "arXiv 2611.08373v1",
+  "locator": "Table 3 π0.5 baseline",
+  "attribution": "reported-baseline",
+  "trainingData": "SLA robot pretraining then 50 Clean demos/task posttraining; distinct from other checkpoint leaderboard identities.",
+  "evaluationNotes": "RoboTwin original Clean2500 control; not the mixed 27500 training setting. 50 Clean demonstrations per task; Clean and Randomized evaluation",
+  "supersedes": ""
+}

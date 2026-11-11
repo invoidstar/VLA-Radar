@@ -1,0 +1,18 @@
+{
+  "id": "r-sla-v1-robocasa-panda-cosmos",
+  "paperId": "p148",
+  "method": "Cosmos Policy",
+  "trackId": "sla-v1-robocasa-panda24",
+  "values": {
+    "Average": 67.1
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2611.08373v1",
+  "sourceVersion": "arXiv 2611.08373v1",
+  "locator": "Table 4 Cosmos Policy baseline",
+  "attribution": "reported-baseline",
+  "trainingData": "π₀.₅ initialized, spatial continual pretraining with frozen 3D teacher and source-specific posttraining; author comparison, not independent reproduced policy.",
+  "evaluationNotes": "Panda original 24 tasks, not RoboCasa365 50 evaluated tasks or 365 full task average. 50 demonstrations per task in selected matched rows",
+  "supersedes": ""
+}

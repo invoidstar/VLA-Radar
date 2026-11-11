@@ -417,6 +417,14 @@
     "p146": {
       "project": "https://zju-omniai.github.io/VLA-Delta/",
       "code": "https://github.com/ZJU-OmniAI/VLA-Delta"
+    },
+    "p148": {
+      "project": "https://sla-team.github.io/omnisf_projectpage/",
+      "code": "https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA"
+    },
+    "p149": {
+      "project": "https://dagroup-pku.github.io/PyRUA-Lean/",
+      "code": "https://github.com/DAGroup-PKU/PyRUA-Lean"
     }
   }
 }

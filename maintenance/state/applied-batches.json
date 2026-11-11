@@ -418,6 +418,38 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-11-sla-robodojo-paper-catchup",
+      "sha256": "2dcd47d0ba436da5abd87061dbc4630cc9f72435f7d3c2cb1dd834d02aea590f",
+      "date": "2026-11-11",
+      "notes": [],
+      "tracks": [
+        "sla-v1-libero-plus",
+        "sla-v1-robotwin2-clean2500",
+        "sla-v1-robocasa-panda24",
+        "sla-v1-robodojo-real-sr",
+        "sla-v1-robodojo-real-score",
+        "sla-v1-robodojo-sim-sr",
+        "sla-v1-robodojo-sim-score",
+        "pyrua-v2-libero-pro-40",
+        "pyrua-v2-robotwin2-50",
+        "pyrua-v2-robocasa365-atomic",
+        "pyrua-v2-robocasa365-composite",
+        "pyrua-v2-robodojo-sim-author-sr",
+        "pyrua-v2-robodojo-sim-author-score",
+        "pyrua-v2-robodojo-sim-official-sr",
+        "pyrua-v2-robodojo-sim-official-score"
+      ],
+      "results": 28,
+      "resources": [
+        "p148",
+        "p149"
+      ],
+      "reproducibility": [
+        "p148",
+        "p149"
+      ]
     }
   ]
 }
