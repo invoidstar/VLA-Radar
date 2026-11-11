@@ -1,5 +1,13 @@
 # VLA Radar · 长期维护手册 v2
 
+## 2026-11-11：Paper Deep Reading 静态阅读层（V3.1）
+
+新增精选论文深读的单独公开阅读层，不替换已有 149 篇论文内容。将每篇论文原文精读拆成独立来源版本、段落位置、原创中文分析和论证批注数据；通过 `catalog/close-readings/index.json` 与 `pNNN.json` 管理、`scripts/build/close_readings.py` 生成 `data/close-readings/`，从主站导航 `close-reading/` 进入，示例 `close-reading/p148/`。目前先以 SLA p148 公开 18 个主题章节、24 个评论单元。
+
+**版权门禁**：当前 `visibility=public-commentary-only`，只存原创分析与英文关键术语索引。不得直接公开原始 PDF、段落全文、整篇逐段翻译、未经授权裁图或 Base64 嵌图；更多详细规则见 `catalog/close-readings/README.md`。保留来源 PDF 的页码定位与现有 paper ID / 结果引用。原文内容如有单独可验证再分发许可，先维护政策审议，不通过更改字段绕过门禁。
+
+**性能/可靠性**：新站点目录和页面按需读取，首页不下载精读 JSON。独立 localStorage 键 `vla-radar.close-reading.v1`，不覆盖既有 `vla-radar.reading.v1`。离线验证 `check_close_readings.py` 检查内容、证据和版权字段，独立 `browser_close_reading.py` 在三浏览器 HTTP 页面测试搜索、开关、导航和手机布局。仍按既有 PR exact-head quality 与同 SHA Pages deploy + production smoke 发布。
+
 仓库：https://github.com/invoidstar/VLA-Radar  
 网站：https://invoidstar.github.io/VLA-Radar/
 

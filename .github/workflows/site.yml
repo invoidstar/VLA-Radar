@@ -64,6 +64,7 @@ jobs:
           python scripts/browser/browser_tools.py
           python scripts/browser/browser_leaderboard.py
           python scripts/browser/browser_official_boards.py
+          python scripts/browser/browser_close_reading.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -77,6 +78,7 @@ jobs:
             /tmp/radar-tools/
             /tmp/radar-leaderboard/
             /tmp/radar-official-boards/
+            /tmp/radar-close-reading/
           retention-days: 14
 
   stage:

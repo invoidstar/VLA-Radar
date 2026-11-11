@@ -11,6 +11,8 @@
 <p align="center">
   <a href="https://invoidstar.github.io/VLA-Radar/"><strong>🌐 在线访问</strong></a>
   ·
+  <a href="https://invoidstar.github.io/VLA-Radar/close-reading/"><strong>📖 论文精读</strong></a>
+  ·
   <a href="https://github.com/invoidstar/VLA-Radar/actions/workflows/site.yml">构建状态</a>
   ·
   <a href="CHANGELOG.md">更新记录</a>
@@ -18,7 +20,7 @@
 
 <p align="center">
   <img alt="VLA-Radar CI" src="https://github.com/invoidstar/VLA-Radar/actions/workflows/site.yml/badge.svg">
-  <img alt="Version" src="https://img.shields.io/badge/VLA--Radar-V3.0-5964a8">
+  <img alt="Version" src="https://img.shields.io/badge/VLA--Radar-V3.1-5964a8">
   <img alt="Privacy" src="https://img.shields.io/badge/阅读数据-仅保存在本地-6d8b73">
 </p>
 
@@ -56,6 +58,16 @@
 - 发表与版本更新追踪
 - 官方项目主页与开源代码入口
 - 具身智能周报
+
+### 📖 Paper Deep Reading · 双栏论文精读（V3.1）
+
+在文献库与结构化 Benchmark 之外新增可选的独立精读阅读器，提供英文概念索引、原创中文学术解读、逐单元论证批注、五色标注、全文搜索、章节导航、手机适配、打印与原文 PDF 页码定位。
+
+首篇试点为 **SLA（p148）**，公开版包含 18 个主题章节、24 个原文定位分析单元和论证结构总览。论文详情可直接进入精读页面：[阅读 SLA 精读](https://invoidstar.github.io/VLA-Radar/close-reading/p148/)。
+
+**版权边界**：用户上传的单文件双语 HTML 仅作设计和编辑参考，没有直接重发全文英文、完整译文或 PDF 裁图。公开版为原创中文分析与英文术语索引，原文请在作者 PDF 中查看。内容、样式和脚本解耦，每次精读仅在打开对应页面时加载，不影响文献库的轻量启动。
+
+[精读目录](https://invoidstar.github.io/VLA-Radar/close-reading/) · [内容数据与许可规则](catalog/close-readings/README.md)
 
 ### 📊 Benchmark 与证据对齐
 
