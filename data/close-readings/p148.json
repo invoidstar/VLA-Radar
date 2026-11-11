@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "paperId": "p148",
+  "sourceVersion": "arXiv:2611.08373v1",
+  "sourceUrl": "https://arxiv.org/pdf/2611.08373v1",
+  "analyzedSource": "User-supplied SLA bilingual annotated HTML, checked against existing paper p148 source-linked notes",
+  "visibility": "public-commentary-only",
+  "originalTextStatus": "omitted-pending-permission",
+  "language": "zh-CN",
+  "updatedAt": "2026-11-11",
+  "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+  "subtitle": "空间—语言—动作：论证链、技术机制与实验归因精读",
+  "notice": "公开版只展示原创中文分析与英文关键术语，不转载整篇论文英文段落、逐段对照译文、PDF 或原稿裁图。通过“原文定位”打开作者 PDF 对应页。",
+  "overview": {
+    "thesis": "可迁移的空间能力应在持续预训练阶段获得三维表征监督，而不应完全依赖下游任务适配。",
+    "chain": [
+      [
+        "问题",
+        "二维图文预训练不足以直接保证稳定三维控制"
+      ],
+      [
+        "方法",
+        "冻结三维教师对齐 VLA 视觉 token，并以门控和状态丢弃增强视觉学习"
+      ],
+      [
+        "证据",
+        "跨 LIBERO-Plus、RoboTwin、RoboCasa、RoboDojo 与实机实验测试"
+      ],
+      [
+        "反证与限定",
+        "额外训练规模、状态丢弃、任务长尾及 RoboDojo 历史记忆可能混入贡献"
+      ],
+      [
+        "结论",
+        "具有潜力的空间预训练路线，仍需要更严格的机制归因"
+      ]
+    ],
+    "strong": "训练阶段 × 数据比例的消融提供了比单一排行榜更有力的结构性验证。",
+    "weak": "空间教师、状态丢弃、数据管线和记忆输入可能共同决定效果，机制上的独立贡献仍未完全隔离。"
+  },
+  "sections": [
+    {
+      "id": "abstract",
+      "title": "摘要",
+      "summary": "核心问题与主张",
+      "order": 0
+    },
+    {
+      "id": "intro",
+      "title": "研究引言",
+      "summary": "为什么已有 VLA 的空间能力仍有缺口",
+      "order": 1
+    },
+    {
+      "id": "related",
+      "title": "相关工作",
+      "summary": "区分 3D 输入与空间表征监督",
+      "order": 2
+    },
+    {
+      "id": "motivation",
+      "title": "技术动机",
+      "summary": "将空间对齐前移到持续预训练",
+      "order": 3
+    },
+    {
+      "id": "architecture",
+      "title": "模型架构",
+      "summary": "动作学习与教师特征如何连接",
+      "order": 4
+    },
+    {
+      "id": "supervision",
+      "title": "外部空间监督",
+      "summary": "兼容缺失深度和标定的监督",
+      "order": 5
+    },
+    {
+      "id": "adaptive",
+      "title": "自适应层选择",
+      "summary": "多层特征与动态门控",
+      "order": 6
+    },
+    {
+      "id": "dropout",
+      "title": "状态丢弃",
+      "summary": "降低本体状态捷径",
+      "order": 7
+    },
+    {
+      "id": "data",
+      "title": "数据来源",
+      "summary": "数据规模与数据处理的边界",
+      "order": 8
+    },
+    {
+      "id": "preprocess",
+      "title": "数据预处理",
+      "summary": "统一机器人状态和动作表达",
+      "order": 9
+    },
+    {
+      "id": "setup",
+      "title": "实验设定",
+      "summary": "明确训练与测试协议",
+      "order": 10
+    },
+    {
+      "id": "baselines",
+      "title": "基准结果",
+      "summary": "检验跨域鲁棒性与成功率",
+      "order": 11
+    },
+    {
+      "id": "scaling",
+      "title": "数据规模与阶段消融",
+      "summary": "训练阶段 × 数据比例的证据链",
+      "order": 12
+    },
+    {
+      "id": "ablations",
+      "title": "关键消融",
+      "summary": "辨析门控与状态丢弃的归因",
+      "order": 13
+    },
+    {
+      "id": "real",
+      "title": "真实部署",
+      "summary": "从模拟评测到真实场景",
+      "order": 14
+    },
+    {
+      "id": "conclusion",
+      "title": "结论",
+      "summary": "回收原始科学主张",
+      "order": 15
+    },
+    {
+      "id": "appendix",
+      "title": "附录实验",
+      "summary": "从平均值返回具体任务",
+      "order": 16
+    },
+    {
+      "id": "memory",
+      "title": "记忆机制",
+      "summary": "RoboDojo 的部署输入特例",
+      "order": 17
+    }
+  ],
+  "units": [
+    {
+      "id": "P001",
+      "section": "abstract",
+      "page": 1,
+      "dimension": "thesis",
+      "englishKeywords": "spatial alignment · continual pre-training",
+      "interpretation": "把空间理解作为可迁移能力来训练：从预训练 π₀.₅ 出发，在持续预训练和任务后训练中加入空间教师对齐，不要求部署时运行教师。",
+      "annotation": {
+        "function": "摘要",
+        "role": "从二维表征与三维控制之间的能力缺口，提出双阶段监督与部署兼容的整体主张。",
+        "critique": "摘要同时承诺泛化、性能提升与推理兼容；这些是不同命题，需要分别用基准、消融与部署证据支持。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-robotwin-ours"
+      ]
+    },
+    {
+      "id": "P002",
+      "section": "intro",
+      "page": 3,
+      "dimension": "concept",
+      "englishKeywords": "semantic reasoning · 3D physical control",
+      "interpretation": "理解语言指令不等于能够稳定控制三维环境。视觉语义识别能力强，不自动意味着物体接触、空间距离与动作轨迹都准确。因此论证要同时考虑视觉编码、空间约束和动作执行三种能力，不能简单以语言理解指标代替控制质量。",
+      "annotation": {
+        "function": "研究引言",
+        "role": "研究问题的起点：界定二维语义表示和三维物理控制之间的差距。",
+        "critique": "这是合理的研究动机，但“空间表征不足造成控制失败”仍需后续机制实验支撑，不能只凭失败现象断言因果。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P003",
+      "section": "intro",
+      "page": 3,
+      "dimension": "concession",
+      "englishKeywords": "3D observations · sensor heterogeneity",
+      "interpretation": "后训练时加入深度或点云虽然能提供几何信息，却难以无条件扩展到异构机器人和大规模旧示范，因为传感器、标定和可用标注并不一致。",
+      "annotation": {
+        "function": "研究引言",
+        "role": "说明显式三维输入路线的规模化局限，为采用训练期监督而非推理期额外输入创造动机。",
+        "critique": "“难以跨数据规模化”不意味着“显式 3D 完全无效”；在深度传感可靠的机器人上，显式输入仍有合理应用。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P014",
+      "section": "related",
+      "page": 5,
+      "dimension": "concept",
+      "englishKeywords": "explicit geometry · feature fusion · representation supervision",
+      "interpretation": "相关路线可按显式点云输入、三维特征融合、空间表征监督进行区分。SLA 的差异更集中在监督阶段的前移与数据异构兼容，而非第一次使用三维特征。",
+      "annotation": {
+        "function": "相关工作",
+        "role": "把本工作定位到既有 3D VLA 路线，限定创新差异，避免将常用门控或空间教师包装为全新概念。",
+        "critique": "类似 ROCKET 的方法也讨论多层对齐；比较应明确训练阶段、门控方式和额外推理输入的差异。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P016",
+      "section": "motivation",
+      "page": 5,
+      "dimension": "thesis",
+      "englishKeywords": "transferable spatial capability · pretrained policy",
+      "interpretation": "作者希望让空间知识在基础模型阶段被反复训练，而不只是某个任务微调时的辅助技巧。基础策略仍沿用预训练动作解码路径。后文还需要展示这种阶段前移相较仅在后训练添加监督的实际收益，以及附加训练成本。",
+      "annotation": {
+        "function": "技术动机",
+        "role": "从研究缺口过渡到方法总览：基模初始化、空间对齐、异构数据和下游检验。",
+        "critique": "“保留原架构”主要是主干与动作头不改，不代表所有下游场景的历史帧或输入 token 成本完全不变。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P023",
+      "section": "architecture",
+      "page": 7,
+      "dimension": "method",
+      "englishKeywords": "frozen 3D teacher · intermediate visual embeddings",
+      "interpretation": "多视角 RGB（可附深度与标定）先进入冻结三维教师形成空间目标；VLA 中间视觉 token 经投影与重采样后与目标对齐，并同时优化原动作预测损失。",
+      "annotation": {
+        "function": "模型架构",
+        "role": "方法链第一步：规定教师输入、视觉 token 对齐对象和监督进入策略的具体位置。",
+        "critique": "重采样假定不同视觉 token 网格可以建立相对合理的空间对应；教师误差与跨视角一致性也可能被传给策略。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P031",
+      "section": "supervision",
+      "page": 7,
+      "dimension": "concession",
+      "englishKeywords": "partially available geometry · heterogeneous labels",
+      "interpretation": "不同机器人数据有完整几何标注、部分标注或只有 RGB；冻结空间教师需对这些输入组合做兼容，而不能简单要求每个数据源必须包含深度和相机参数。",
+      "annotation": {
+        "function": "外部空间监督",
+        "role": "将数据异构从工程麻烦提升为监督目标设计的约束条件。",
+        "critique": "兼容缺失标注不代表几何信号质量等价；RGB-only 的教师表征可能受训练分布和遮挡影响。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P032",
+      "section": "supervision",
+      "page": 8,
+      "dimension": "method",
+      "englishKeywords": "OmniVGGT · GeoAdapter · missing annotations",
+      "interpretation": "OmniVGGT 以帧内及跨视角关系预测空间特征，通过 GeoAdapter 使用可得的深度、内外参，并对缺失项采用对应占位机制。",
+      "annotation": {
+        "function": "外部空间监督",
+        "role": "解释为什么选择能够处理不完整输入的三维教师，而非要求统一传感器格式。",
+        "critique": "教师是否适应工业机器人图像、RGB-only 分支误差有多大，需要与具体数据及消融一起判断。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P033",
+      "section": "adaptive",
+      "page": 8,
+      "dimension": "concept",
+      "englishKeywords": "feature-dependent layer gating",
+      "interpretation": "不同层的视觉表示携带不同粒度的几何与语义信息；把所有样本固定到同一层空间对齐可能限制多来源训练。同一输入中的不同视角还可能需要不同几何粒度，层级特征的选择因此成为监督设计的一部分。",
+      "annotation": {
+        "function": "自适应层选择",
+        "role": "给自适应聚合机制建立动机：不同任务/视角可能需要不同层的表示。",
+        "critique": "要证明输入相关门控的独立贡献，还需要同静态可学习权重或无门控平均融合比较，而不只是挑选固定层。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P034",
+      "section": "adaptive",
+      "page": 8,
+      "dimension": "method",
+      "englishKeywords": "multi-layer visual tokens · adaptive gates",
+      "interpretation": "模型根据视觉特征为不同层与 token 生成融合权重，使空间监督能读取跨层表示；这套门控在训练后可移除。权重由样本特征决定，训练目标仍然作用于 VLA 的内部表示，而不是在部署端新增一个可执行模块。",
+      "annotation": {
+        "function": "自适应层选择",
+        "role": "方法链第二步：将跨层空间监督实现为受当前视觉内容调节的融合过程。",
+        "critique": "门控组件本身并非首次出现；需要将已有门控设计和新训练策略的贡献分别评价。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P037",
+      "section": "dropout",
+      "page": 8,
+      "dimension": "method",
+      "englishKeywords": "state-token dropout · visual reliance",
+      "interpretation": "训练时以一定概率丢弃整段机器人状态 token，使模型不能只根据示范轨迹中的状态惯性决定动作，从而更依赖视觉场景。但这类正则化也可能损失本体状态中本来有用的动力学信息，因此需要寻找恰当概率。",
+      "annotation": {
+        "function": "状态丢弃",
+        "role": "补充降低捷径学习的条件机制，连接“学到空间特征”和“实际使用空间特征”。",
+        "critique": "状态丢弃的消融提升很大，意味着它可能贡献了相当部分收益；空间对齐与丢弃比例应做联合消融。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-robotwin-ours"
+      ]
+    },
+    {
+      "id": "P039",
+      "section": "data",
+      "page": 8,
+      "dimension": "evidence",
+      "englishKeywords": "six sources · 1.7M episodes · 14,330 h",
+      "interpretation": "作者汇集六个公开数据源，原始统计约 171 万条 episode、14,330 小时。这是筛选和数据预处理之前的来源规模，不等同于实际训练的最终有效时长。",
+      "annotation": {
+        "function": "数据来源",
+        "role": "为持续预训练的规模化主张提供数据基础。",
+        "critique": "数据清理、坐标转换、采样密度可能单独影响成绩；数据规模本身不是空间对齐有效性的机制性证明。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P047",
+      "section": "preprocess",
+      "page": 9,
+      "dimension": "method",
+      "englishKeywords": "end-effector pose · action normalization",
+      "interpretation": "不同机器人关节维度、语义和运动学差异大，因此用末端执行器位姿作为主要统一控制表达，并规范状态坐标和动作增量的物理含义。这一选择便于统一训练通道，却还需要各本体自身的执行器和运动学映射把预测动作落到实际关节指令。",
+      "annotation": {
+        "function": "数据预处理",
+        "role": "解决跨本体预训练的输入/输出兼容条件，让共享动作专家接受多数据集监督。",
+        "critique": "统一 EEF 表达依然不能消除可达性、动力学和工具坐标偏置等差异。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P057",
+      "section": "setup",
+      "page": 11,
+      "dimension": "method",
+      "englishKeywords": "LIBERO-Plus · held-out perturbations · weighted SR",
+      "interpretation": "LIBERO-Plus 在相机、机器人、语言、光照、背景、噪声、布局七个方向施加扰动；作者在标准 LIBERO 训练，再于扰动条件下评估。整体成功率按 episode 数加权。",
+      "annotation": {
+        "function": "实验设定",
+        "role": "界定首个泛化实验的训练/评估切分，避免与标准四套 LIBERO 的结果混为一谈。",
+        "critique": "七类扰动样本数不完全一致，因此 Overall 不是七个数值的等权平均；必须读细分列。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-libero-plus-ours"
+      ]
+    },
+    {
+      "id": "P066",
+      "section": "baselines",
+      "page": 12,
+      "dimension": "evidence",
+      "englishKeywords": "LIBERO-Plus weighted success · 87.4%",
+      "interpretation": "原表在 LIBERO-Plus 报告 SLA 加权成功率 87.4%，对照 π₀.₅ 为 84.4%，Spatial Forcing 为 85.1%；细分扰动中并非每一项都领先。",
+      "annotation": {
+        "function": "基准结果",
+        "role": "从前面定义的扰动评估协议，转向检测空间持续预训练的性能证据。",
+        "critique": "部分比较差距很小，若没有方差或统计检验，不宜把少量百分点优势解释为稳定显著胜出。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-libero-plus-ours",
+        "r-sla-v1-libero-plus-pi05"
+      ]
+    },
+    {
+      "id": "P068",
+      "section": "baselines",
+      "page": 12,
+      "dimension": "evidence",
+      "englishKeywords": "RoboTwin Clean2Clean · Clean2Random",
+      "interpretation": "在 RoboTwin 2.0 的 Clean2Clean 与 Clean2Random 评价中，作者报告 SLA 为 86.0% 与 72.3%。C2R 反映在随机化视觉条件下的操作鲁棒性，但训练预算仍须单独核对。",
+      "annotation": {
+        "function": "基准结果",
+        "role": "把泛化证据从视觉扰动迁移到多任务操作成功率。",
+        "critique": "C2R 和 C2C 是两个评测条件；同名方法在官方榜和作者表之间不能仅凭分数近似就判为相同 checkpoint。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-robotwin-ours"
+      ]
+    },
+    {
+      "id": "P070",
+      "section": "scaling",
+      "page": 13,
+      "dimension": "method",
+      "englishKeywords": "training stages × data fractions · factorial ablation",
+      "interpretation": "作者在预训练数据比例与空间对齐部署阶段之间作组合实验：预训练可开关对齐，后训练也可开关，考察在不同数据量下的 RoboTwin C2R。",
+      "annotation": {
+        "function": "数据规模与阶段消融",
+        "role": "为核心命题“空间监督前移会带来更好泛化”设计更接近因果对照的实验。",
+        "critique": "实验仅针对特定 C2R 设置；不能直接外推为所有机器人/数据的普适缩放规律。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-robotwin-ours"
+      ]
+    },
+    {
+      "id": "P071",
+      "section": "scaling",
+      "page": 15,
+      "dimension": "evidence",
+      "englishKeywords": "5% → 100% data · 49.2% → 72.3% SR",
+      "interpretation": "两阶段同时启用空间对齐时，RoboTwin C2R 成功率随着使用数据比例增加，由 49.2% 提升至 72.3%；各比例设置都呈现优势。",
+      "annotation": {
+        "function": "数据规模与阶段消融",
+        "role": "连接数据规模与空间监督位置，构成论文较强的一段验证链。",
+        "critique": "尚需独立种子与算力预算控制，才可支持精确的“数据效率提升”定量外推。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-robotwin-ours"
+      ]
+    },
+    {
+      "id": "P073",
+      "section": "ablations",
+      "page": 15,
+      "dimension": "evidence",
+      "englishKeywords": "fixed layer selection · adaptive fusion",
+      "interpretation": "多层自适应聚合优于论文选用的固定单层对齐方案，说明视觉表示层的选择确实影响空间监督效果。因此数据支持的是该组对照中的跨层优势，而不是所有可用融合方式中的唯一最优解。",
+      "annotation": {
+        "function": "关键消融",
+        "role": "为自适应门控模块提供消融证据。",
+        "critique": "没有与所有可能的简单跨层融合基线逐项比较，因此不能仅凭固定层对照断言门控不可替代。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P074",
+      "section": "ablations",
+      "page": 16,
+      "dimension": "evidence",
+      "englishKeywords": "state dropout 25% · RoboTwin success",
+      "interpretation": "RoboTwin 消融中，状态 token 丢弃概率为 25% 时平均成功率最高；不丢弃时明显偏低，继续增大丢弃概率也不一定更好。",
+      "annotation": {
+        "function": "关键消融",
+        "role": "验证通过抑制状态捷径增强视觉依赖的设计。",
+        "critique": "异常显著的单模块增益要求与空间监督、数据管线做交叉对照；否则整体优势的归因仍不完全。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-robotwin-ours"
+      ]
+    },
+    {
+      "id": "P078",
+      "section": "real",
+      "page": 17,
+      "dimension": "method",
+      "englishKeywords": "bimanual manipulation · perturbation recovery",
+      "interpretation": "真实任务通过双臂连续操作、外界干扰后的恢复、跨本体少样本适配与未见场景测试来支持方法的物理可用性。作者的附加真机场景与公开 RoboDojo-Real 评测并不相同，不能在同一榜单中混用成绩。",
+      "annotation": {
+        "function": "真实部署",
+        "role": "从仿真/标准基准过渡到面向部署场景的案例证据。",
+        "critique": "跨本体设置并非全部严格零样本，例如部分 Franka 实验存在额外示范；需按实际训练数据描述结果。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P090",
+      "section": "conclusion",
+      "page": 20,
+      "dimension": "thesis",
+      "englishKeywords": "transferable spatial understanding · original inference architecture",
+      "interpretation": "论文将空间教师对齐、多机器人持续预训练、动态层选择与状态丢弃合成一套空间能力培养方法；训练辅助模块不进入原始动作网络的常规推理路径。",
+      "annotation": {
+        "function": "结论",
+        "role": "结论重新连接问题、训练方案、基准证据与部署价值。",
+        "critique": "“保持原推理结构”需要和 RoboDojo 附录中的额外历史帧输入区分；空间迁移机制仍受实验设置限制。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P092",
+      "section": "appendix",
+      "page": 27,
+      "dimension": "concession",
+      "englishKeywords": "task-level RoboTwin results · long-tail failures",
+      "interpretation": "附录逐任务展示 50 个 RoboTwin 2.0 任务的 Clean 与 Randomized 成功率：总平均成绩较高，但部分跨臂、接触和放置任务在随机化下仍有明显失效。",
+      "annotation": {
+        "function": "附录实验",
+        "role": "反向约束主表的平均优势，用任务级长尾检验模型泛化的边界。",
+        "critique": "不应只展示最优任务或总体平均而隐藏弱点；任务类别与失败机制还需更明确的归因分析。"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "P097",
+      "section": "memory",
+      "page": 29,
+      "dimension": "method",
+      "englishKeywords": "RoboDojo-Real temporal frames · deployment memory",
+      "interpretation": "在 RoboDojo-Real 的后训练/部署设置中，作者通过首帧与稀疏历史主相机图像构造记忆输入，而不是仅依赖当前帧。",
+      "annotation": {
+        "function": "记忆机制",
+        "role": "揭示一项容易被摘要的“辅助模块只用于训练”表述掩盖的部署侧差异。",
+        "critique": "历史输入会增添视觉 token 与计算开销；它不同于被移除的训练期空间教师，应在实际部署成本中单列。"
+      },
+      "evidenceRefs": [
+        "r-sla-v1-robodojo-real-sr-ours"
+      ]
+    }
+  ]
+}

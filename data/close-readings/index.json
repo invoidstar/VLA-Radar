@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-11",
+  "items": [
+    {
+      "paperId": "p148",
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "shortName": "SLA",
+      "description": "持续预训练空间对齐：19 个主题章节、机制解释、受控实验与负面结果批注。",
+      "sourceVersion": "arXiv:2611.08373v1",
+      "updatedAt": "2026-11-11",
+      "unitCount": 24,
+      "sectionCount": 18,
+      "href": "p148/",
+      "contentUrl": "../../data/close-readings/p148.json",
+      "licenseMode": "public-commentary-only"
+    }
+  ]
+}
