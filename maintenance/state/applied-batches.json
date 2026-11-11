@@ -450,6 +450,28 @@
         "p148",
         "p149"
       ]
+    },
+    {
+      "id": "2026-11-11-zeva-source-results",
+      "sha256": "b9192a77eed0210604d8e584c1144adb618344c8862d74ab5ca31a4959942455",
+      "date": "2026-11-11",
+      "notes": [],
+      "tracks": [
+        "zeva-v2-robocasa365-atomic5",
+        "zeva-v2-chemlab-atomic-sr",
+        "zeva-v2-chemlab-short-sr",
+        "zeva-v2-chemlab-complex-sr",
+        "zeva-v2-chemlab-long-process-score",
+        "zeva-v2-chemlab-five-ablation-sr",
+        "zeva-v2-robocasa365-fixed-episode-csr"
+      ],
+      "results": 31,
+      "resources": [
+        "p150"
+      ],
+      "reproducibility": [
+        "p150"
+      ]
     }
   ]
 }

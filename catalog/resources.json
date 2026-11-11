@@ -425,6 +425,10 @@
     "p149": {
       "project": "https://dagroup-pku.github.io/PyRUA-Lean/",
       "code": "https://github.com/DAGroup-PKU/PyRUA-Lean"
+    },
+    "p150": {
+      "project": "https://air-embodied-brain.github.io/Zeva",
+      "code": "https://github.com/air-embodied-brain/Zeva"
     }
   }
 }

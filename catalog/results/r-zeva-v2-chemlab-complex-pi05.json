@@ -1,0 +1,20 @@
+{
+  "id": "r-zeva-v2-chemlab-complex-pi05",
+  "paperId": "p150",
+  "method": "π₀.₅",
+  "trackId": "zeva-v2-chemlab-complex-sr",
+  "values": {
+    "BalanceWeighing": 0,
+    "Extraction": 0,
+    "Average": 0
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Table I, Level3 success π₀.₅",
+  "attribution": "reported-baseline",
+  "trainingData": "ARX + Cosmos3-Edge, source Table I.",
+  "evaluationNotes": "Full completion 5/10% for Zeva, not stage progress 47.5/67.14%; separate metric to prevent overstating success. 20 randomized real episodes per task, multi-stage",
+  "supersedes": ""
+}

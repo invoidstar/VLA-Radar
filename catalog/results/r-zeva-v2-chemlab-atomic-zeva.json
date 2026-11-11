@@ -1,0 +1,21 @@
+{
+  "id": "r-zeva-v2-chemlab-atomic-zeva",
+  "paperId": "p150",
+  "method": "Zeva",
+  "trackId": "zeva-v2-chemlab-atomic-sr",
+  "values": {
+    "PickUpTube": 100,
+    "PlaceBeaker": 70,
+    "PourWater": 80,
+    "Average": 83.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Table I, Level1 Zeva",
+  "attribution": "author-reported",
+  "trainingData": "Authors re-train matched baselines, Zeva Cosmos3-Edge with memory-conditioned offline training.",
+  "evaluationNotes": "Original Table I atomic level; strict task completion SR, not partial stage score. 20 randomized real episodes per task, ARX bimanual with Cosmos3-Edge",
+  "supersedes": ""
+}

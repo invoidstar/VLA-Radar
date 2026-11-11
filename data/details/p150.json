@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p150",
+    "name": "Zeva",
+    "title": "Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation",
+    "team": "Fu Chen、Xin Ding、Bingjia Huang、Xiangyu Li、Mingju Wang、Jiawei He、Kun Li、Wei Sun、Yunxin Liu、Hao Wu、Ting Cao（Tsinghua AIR / Z-Trans AI）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 2608.30880v2 预印本，未核验正式会议/期刊出版",
+    "firstPublished": "2026-08-31",
+    "dateNote": "arXiv v1 2026-08-31首次公开；v2于2026-09-22上传，论文收录日与版本日期不得互换。",
+    "collectionMonth": "2026-11",
+    "versionNote": "2026-11-11 阅读原始arXiv HTML v2的§I–V、Table I–III和图注，并交叉核对作者公开代码资源",
+    "topics": [
+      "memory",
+      "action",
+      "world"
+    ],
+    "tags": [
+      "Zeva",
+      "causal interaction memory",
+      "CTE",
+      "BIT",
+      "PIM",
+      "test-time adaptation",
+      "RoboCasa365 Atomic5",
+      "ChemLab-Evo",
+      "Cosmos3",
+      "flow matching",
+      "frozen deployment"
+    ],
+    "priority": "deep",
+    "contribution": "提出 In-Context Causal Learning：将机器人动作及其实际观测效果编码为阶段相关信号，组织同一次尝试的BIT与跨尝试的PIM，并将检索记忆注入冻结策略的扩散动作生成路径，在线无需梯度更新。",
+    "findings": "原作者Table II：RoboCasa365-Atomic5五任务宏平均76.8% SR；Table I：ChemLab-Evo原子83.3%、短序列70.0%、复杂长程7.5% SR；复杂任务部分进度Score57.32%；Table III支持BIT/PIM互补作用。不同指标、测试环境与checkpoint不得混榜。",
+    "limitations": "只在同一episode内跨attempt保留PIM，完整全新episode清空；复杂真机完整成功率低；线上额外CTE/检索成本没有完整测量；实验依赖本地训练骨干与真实环境；发布冻结checkpoint并不覆盖全部自进化评测协议。",
+    "insight": "记忆不只是保存视觉历史，更应编码动作后的可观测世界变化；比较时应区分固定状态多次尝试CSR、单次随机episode SR、真实长程Process Score，并审计何时重置状态。",
+    "readingFocus": "§III-A episode/attempt与动作后果定义；§III-C三目标CTE；§III-D BIT/PIM；§III-E提示注入与训练；Table I–III；§IV-E固定seed累计成功与跨任务替换。",
+    "evidence": "checked",
+    "evidenceNote": "2026-11-11原始 arXiv HTML v2 完整方法、Table I–III及图注核验，并读取作者Github README。为作者报告，非本站独立复现；公开模型权重不代表能复现全部在线自进化数字。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "Zeva 原文 HTML v2",
+        "url": "https://arxiv.org/html/2608.30880v2"
+      },
+      {
+        "label": "Zeva arXiv 元数据与首次版本",
+        "url": "https://arxiv.org/abs/2608.30880"
+      },
+      {
+        "label": "Zeva 作者项目",
+        "url": "https://air-embodied-brain.github.io/Zeva"
+      },
+      {
+        "label": "Zeva 作者公开代码",
+        "url": "https://github.com/air-embodied-brain/Zeva"
+      },
+      {
+        "label": "Zeva 已公开RoboCasa checkpoint",
+        "url": "https://huggingface.co/chen123fu/zeva-robocasa"
+      },
+      {
+        "label": "作者Atomic5复现说明",
+        "url": "https://github.com/air-embodied-brain/Zeva/blob/main/docs/reproduce.md"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2608.30880",
+    "arxiv": "2608.30880",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-08-31",
+    "firstArxivSource": "https://arxiv.org/abs/2608.30880v1",
+    "latestArxivVersion": "v2",
+    "latestArxivAt": "2026-09-22",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-11-11",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-08-31",
+        "observedAt": "2026-11-11",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2608.30880v1",
+        "note": "首次公开身份日期，非当前版本日期。"
+      },
+      {
+        "kind": "arxiv_version",
+        "date": "2026-09-22",
+        "observedAt": "2026-11-11",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/html/2608.30880v2",
+        "note": "已读取原始论文HTML v2；未确认正式会议/期刊录用。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-11-11",
+    "verifiedAt": "2026-11-11",
+    "version": "Zeva arXiv 2608.30880v2 (2026-09-22), §I–V Table I–III, official README checked 2026-11-11",
+    "sections": [
+      {
+        "id": "motivation",
+        "title": "研究动机：单次任务拟合与真实部署中的物理偏移",
+        "body": "论文关注真实机器人遇到新物体形状、接触动力学、相机视角和执行误差时，为什么即便大型 VLA/WAM 已完成广泛预训练，下一次操作仍可能重复相同失败。作者把部署期间的自我修正区分为两种：通过梯度更新模型权重，或不改变参数、仅利用刚执行动作产生的可观测后果作为上下文。Zeva选择后一条路线，主张让策略读出执行动作与环境状态变化的关系，而不仅缓存历史图像或指令。此动机并不证明所有预训练模型都缺少物理因果知识；更精确的命题是部署环境存在训练未覆盖的局部变化，需要在相同物理条件的重复尝试中适配。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §I Introduction",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "problem",
+        "title": "核心任务和时间边界：episode、attempt、action chunk",
+        "body": "作者将执行经验表示为一次动作片段前的视觉状态、实际执行动作、动作结束后的观测变化。一个episode固定任务和初始化，可包含若干attempt；每次attempt失败后环境恢复到同一初态，才可把后果用于同条件下的下一次尝试。Brief Interaction Trace（BIT）每次尝试重置，Persistent Interaction Memory（PIM）在同一episode内跨尝试保留，遇到全新episode则清空。这很重要：论文的‘持续进化’并不代表跨日期、跨真实用户或跨不同episode永久自我训练，也不等于机器人自主更新权重。正式随机episode评测与固定种子多次尝试曲线是两个不同实验，应当分别记载。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §III-A, Algorithm 1, §IV-A",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "整体架构：冻结策略之外的因果交互编码与提示注入",
+        "body": "Zeva包含 Causal Transition Encoder（CTE）、双时间尺度因果记忆及 In-Context Policy Injection。原有策略仍接收当前多视角观察、语言目标并生成连续动作；CTE从可观测视觉潜特征、此前执行的动作和相应效果生成Phase Token与Causal Interaction Signal，再把近程记忆和阶段检索结果编码为Causal Prompt。此prompt注入策略的扩散动作生成路径，从而改变同一组冻结权重在不同已知历史下的动作分布。需要区分“部署阶段权重冻结”与“训练阶段完全无需训练”：CTE、投影器和条件动作策略都经过离线优化。论文在模拟中使用 Cosmos3-Nano，在 ChemLab 真机上使用 Cosmos3-Edge，不能把两组数据视为同一未调整checkpoint。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §III-B–F, Fig. 2",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "cte",
+        "title": "CTE学习目标：动作后果、任务簇与阶段进展",
+        "body": "CTE用门控循环更新B_tau，将视觉状态s、实际控制u和状态差Δs组合编码，再产生任务阶段p与动态信号e。离线训练目标由三块组成：视觉后果预测L_effect、同任务轨迹的对比聚类L_task、轨迹阶段排序L_phase，另有动作摘要恢复、前后对齐及避免表征坍缩的辅助项。形式上Δs是视觉潜表征差而非直接测得的真实物理因果参数，所以‘因果’是一种任务相关交互表征的建模假设；相近潜空间信号反映相似物理后果，但还需要介入或反事实实验验证跨任务因果一致性。三种目标的贡献亦需结合下游消融，而不能仅以可视化聚类视为完整证明。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §III-C, Eqs. (2)–(6)",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "memory",
+        "title": "双时间尺度记忆：短程顺序与跨尝试经验",
+        "body": "BIT保留同一次attempt最近Kb个执行完成的交互信号，提供当前控制所需的即时历史；PIM记录同一episode不同attempt积累的阶段与后果向量，采用阶段相似度与效应相似度加权评分决定合并或新增。合并时对匹配项做计数加权均值并规范化，再由当前Phase Token检索TopK条相关经验。该机制既防止每次动作都堆积无界历史，也使相同任务阶段下的失败修正更容易被下一次尝试读取。不过PIM只在本episode持续，合并阈值和相似性可能误把外观相似却动力学不同的经验聚合，论文没有给出跨设备长期运行的完整容量、检索开销与错误匹配率系统评估。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §III-D, Eqs. (7)–(10)",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "conditioning",
+        "title": "策略条件化：冻结在线参数不等于零额外推理开销",
+        "body": "系统先训练并冻结CTE，随后离线联合优化历史投影、Memory Context Encoder、prompt映射和条件动作流匹配策略。推理时，用户指令、当前阶段、BIT以及从PIM检索的信号组成Causal Prompt，进入扩散路径的注意力层。只有当动作真正执行且获得新观测后才写入交互信号，这与在生成动作前窥视未来状态有严格区别。部署无需在线梯度更新，却每个动作片段都要额外计算观测编码、循环状态、相似度检索和条件提示，不能简单表述为毫无计算成本的自我提升。作者的训练流程也不是从通用VLM权重直接零机器人预训练即可完成全部系统。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §III-E, §III-F, Eq. (12)",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "robocasa-protocol",
+        "title": "RoboCasa365-Atomic5：不是365任务或Target50平均",
+        "body": "仿真实验不是标准RoboCasa365全部365个任务，也不是其他论文常见的Target50协议。作者从RoboCasa365构造五个Atomic操作：开启电热水壶、关闭烤箱门、开启微波炉、咖啡杯设置、打开搅拌机顶盖。每任务50个随机episode，分别执行两次并报告平均任务成功率；宏平均为五个任务等权。模拟策略骨干使用 Cosmos3-Nano，各个比较方法在论文内由作者用一致任务数据、观测和动作接口本地复现。Zeva五任务分别78、86、84、44、92，平均76.8%；Fast-WAM平均72.4%。但它在电热水壶任务低于Fast-WAM的88，在搅拌机顶盖低于Fast-WAM的94，因此不是逐项全面最优。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §IV-A, Table II",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "chemlab",
+        "title": "ChemLab-Evo：真实化学实验任务的三级评测",
+        "body": "真实环境使用ARX 14自由度双臂系统、双腕相机和第一视角相机，工作台约80×60厘米。三个原子任务分别是取试管、放烧杯、倒水；短序列任务是滴定和盐溶液制备；复杂任务是天平称量和萃取。每任务20个随机测试episode，结果不仅有是否完成的Success Rate，还对长程任务报告按顺序完成阶段比例的Process Score。Zeva的原子任务为100、70、80，宏平均83.3%；短序列70、70，平均70.0%；复杂任务5、10，平均7.5%。虽均胜过论文给出的本地比较方法，但复杂长程的完整成功率依然极低，平均优势不能掩盖实际部署可靠性缺口。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §IV-A, Table I",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "process",
+        "title": "长程Process Score：部分进度不能替代任务成功",
+        "body": "论文的Process Score按每个episode严格顺序完成的最长阶段前缀长度归一化；这解释了在完整成功率仅5–10%的复杂任务上仍可有较高部分进度。Balance Weighing与Extraction原表Process Score分别47.50和67.14，平均57.32；同表另有独立的任务完成Success Rate数值。Score衡量是否推进到某阶段，不代表已按规范完成全部化学操作，更不应当将其与RoboDojo的Score/SR混用：两个系统的阶段定义和任务集合不同。此处的论文表既不是RoboDojo官方成绩，也不是独立第三方复现；它是作者在指定ARX真实环境上的本地测试。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §IV-B, Table I",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "ablation",
+        "title": "记忆消融：BIT和PIM均有贡献，但即时轨迹更关键",
+        "body": "Table III在五个真实任务上，完整BIT+PIM的SR分别为100/70/80/70/70。去掉BIT保留PIM得到80/50/50/40/55；保留BIT去掉PIM为85/60/70/60/50；两者均去掉则为65/40/45/25/35。BIT去掉后若干任务下降达到15–30百分点，说明同一次尝试中的近期动作后果不能仅由跨尝试记忆替代；同时PIM也为失败后的下一次操作提供信息。这些消融直接支持双时间尺度设计，但不足以证明CTE中所有三项训练损失独立必要；附录若没有对应受控训练规模消融则需保留机制归因限制。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §IV-D, Table III",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "scaling",
+        "title": "重复尝试的学习曲线：固定episode与Evolve里程碑",
+        "body": "作者在Atomic5另取每任务20个固定配置，合计100个task-seed配对，每次尝试重置相同初始状态，让PIM在相同episode内累积，并观察累计成功率。四个选定演化里程碑的CSR为26、45、70、73%；论文特别说明Evolve1–4是过程选定的里程碑，而不必对应严格第1–4次连续尝试。真实ChemLab三个原子任务也有随时间改善的曲线，但采用独立固定实验，不可与Table I随机episode的83.3%直接做跨协议对照。随着尝试次数增加，累计成功率天然单调，因此‘逐渐升高’需配合无记忆或等预算重复基线才足以支持真实适应增益，不能仅把CSR增长本身当因果证明。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §IV-E, Figs. 3–4",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "transfer",
+        "title": "跨任务检索与演示热启动：证据范围应限定",
+        "body": "论文在ChemLab上把任务内交互信号替换成其他任务中视觉效果最相近的信号做控制检验：取试管任务成功率从100降为95，倒水任务维持80，而随机跨任务替换只得到55和45。这一受控替换表明所学信号能编码某些跨对象共通的物理效果，但不是任意复杂任务上的零样本迁移保证。此外人类遥操作一次可将其轨迹交互编码作为PIM初始记忆，在若干固定场景下改善早期成功率。该演示不是在部署时更新网络权重，也不意味着不再需要昂贵的人类示范；它是选择性初始化记忆的另一种外部信息来源。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §IV-E–F, Figs. 5–8",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "reproduce",
+        "title": "代码与模型发布：冻结checkpoint未包含全部在线自进化结果",
+        "body": "作者公开了Zeva项目页、GitHub实现、基于NVIDIA Cosmos Framework特定提交的overlay，以及RoboCasa checkpoint和复现实验文档。公开README明确提醒：当前释放的成功示范轨迹训练checkpoint在不启用跨尝试自进化的设置下测试，其SR衡量的是冻结策略的静态性能，而不是PIM逐次累积带来的全部效果。仓库另提供特定固定seed下的PIM尝试序列验证脚本，但这不等价于一键复现所有表格、跨任务检索或七项真实化学实验。代码使用OpenMDW-1.1仓库许可，外部Cosmos框架、模型权重和真实环境资源各有独立限制。应将Code、Weights、Training、Evaluation和License分维审计，不能只因为GitHub/HF有链接就给出全套可复现的结论。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 Official README, §IV-A",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      },
+      {
+        "id": "limitations",
+        "title": "研究边界与推荐阅读路线",
+        "body": "总体而言，Zeva的技术新意是将执行后果编码成显式的阶段相关记忆，并在策略参数固定的部署阶段完成连续任务内修正，而非另起一个纯规划Agent或单纯延长视觉历史。要理解这一贡献，应先读§III-A对episode/attempt的定义，再依次看CTE三损失、BIT/PIM合并规则、prompt注入和Table III记忆消融，最后比较Atomic5的相同协议结果与ChemLab长程难例。现有缺点包括复杂化学任务最终成功率偏低、长期记忆误合并未充分量化、真实设备延迟与存储成本未完整报告、所示跨任务替换只覆盖少数物理效果。作者使用‘causal’命名的是动作-效果相关的训练表征，仍需要更严格的反事实干预和跨场景验证以检验因果可迁移性。",
+        "sources": [
+          {
+            "label": "Zeva arXiv 2608.30880v2 §V Conclusion, §IV-F",
+            "url": "https://arxiv.org/html/2608.30880v2"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    "figures": [],
+    "tables": [
+      {
+        "title": "Zeva核心结果原表（不同协议，不可横向合并）",
+        "columns": [
+          "评测协议",
+          "作者主要指标",
+          "证据"
+        ],
+        "rows": [
+          [
+            "RoboCasa365-Atomic5（5任务，50随机episode，每任务两次评测）",
+            "Average SR 76.8%",
+            "Table II"
+          ],
+          [
+            "ChemLab-Evo Atomic 3 tasks",
+            "SR 83.3%",
+            "Table I"
+          ],
+          [
+            "ChemLab-Evo Short 2 tasks",
+            "SR 70.0%",
+            "Table I"
+          ],
+          [
+            "ChemLab-Evo Complex 2 tasks",
+            "SR 7.5%",
+            "Table I"
+          ],
+          [
+            "ChemLab-Evo Long Process Score",
+            "57.32% (ordered-stage progress)",
+            "Table I"
+          ],
+          [
+            "Atomic5固定episode四个演化里程碑",
+            "CSR 26→45→70→73%",
+            "Figure 3"
+          ],
+          [
+            "ChemLab-Evo五任务BIT/PIM",
+            "Full vs remove BIT/PIM",
+            "Table III"
+          ]
+        ],
+        "locator": "Table I–III, Fig.3, Section IV",
+        "caption": "真实Chemical实验的Process Score并非RoboDojo Score，固定episode累积CSR不等于单次随机episode SR；真实和模拟使用Cosmos3不同骨干。"
+      }
+    ],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-11-11",
+      "note": "Zeva原始Table II RoboCasa365-Atomic5五任务 50 random episodes/twice，与Table I ChemLab-Evo真实Atomic/Short/Complex单独 Success Rate 和 Process Score分轨；Table III BIT/PIM作为内部消融单独轨道；固定episode CSR选定Evolve里程碑与标准随机SR分轨，不混同RoboCasa365 Target50或全365任务。"
+    }
+  }
+}

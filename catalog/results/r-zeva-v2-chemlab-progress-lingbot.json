@@ -1,0 +1,20 @@
+{
+  "id": "r-zeva-v2-chemlab-progress-lingbot",
+  "paperId": "p150",
+  "method": "LingBot-VA",
+  "trackId": "zeva-v2-chemlab-long-process-score",
+  "values": {
+    "BalanceWeighing": 28.75,
+    "Extraction": 40,
+    "Average": 34.38
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Table I, Level3 Process Score LingBot-VA",
+  "attribution": "reported-baseline",
+  "trainingData": "ARX + Cosmos3-Edge; reports author local partial progress.",
+  "evaluationNotes": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score. 20 randomized real episodes per task",
+  "supersedes": ""
+}
