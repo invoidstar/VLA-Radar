@@ -64,6 +64,75 @@
   ],
   "papers": [
     {
+      "id": "p150",
+      "name": "Zeva",
+      "title": "Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation",
+      "team": "Fu Chen、Xin Ding、Bingjia Huang、Xiangyu Li、Mingju Wang、Jiawei He、Kun Li、Wei Sun、Yunxin Liu、Hao Wu、Ting Cao（Tsinghua AIR / Z-Trans AI）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2608.30880v2 预印本，未核验正式会议/期刊出版",
+      "firstPublished": "2026-08-31",
+      "dateNote": "arXiv v1 2026-08-31首次公开；v2于2026-09-22上传，论文收录日与版本日期不得互换。",
+      "collectionMonth": "2026-11",
+      "versionNote": "2026-11-11 阅读原始arXiv HTML v2的§I–V、Table I–III和图注，并交叉核对作者公开代码资源",
+      "topics": [
+        "memory",
+        "action",
+        "world"
+      ],
+      "tags": [
+        "Zeva",
+        "causal interaction memory",
+        "CTE",
+        "BIT",
+        "PIM",
+        "test-time adaptation",
+        "RoboCasa365 Atomic5",
+        "ChemLab-Evo",
+        "Cosmos3",
+        "flow matching",
+        "frozen deployment"
+      ],
+      "priority": "deep",
+      "contribution": "提出 In-Context Causal Learning：将机器人动作及其实际观测效果编码为阶段相关信号，组织同一次尝试的BIT与跨尝试的PIM，并将检索记忆注入冻结策略的扩散动作生成路径，在线无需梯度更新。",
+      "findings": "原作者Table II：RoboCasa365-Atomic5五任务宏平均76.8% SR；Table I：ChemLab-Evo原子83.3%、短序列70.0%、复杂长程7.5% SR；复杂任务部分进度Score57.32%；Table III支持BIT/PIM互补作用。不同指标、测试环境与checkpoint不得混榜。",
+      "limitations": "只在同一episode内跨attempt保留PIM，完整全新episode清空；复杂真机完整成功率低；线上额外CTE/检索成本没有完整测量；实验依赖本地训练骨干与真实环境；发布冻结checkpoint并不覆盖全部自进化评测协议。",
+      "insight": "记忆不只是保存视觉历史，更应编码动作后的可观测世界变化；比较时应区分固定状态多次尝试CSR、单次随机episode SR、真实长程Process Score，并审计何时重置状态。",
+      "readingFocus": "§III-A episode/attempt与动作后果定义；§III-C三目标CTE；§III-D BIT/PIM；§III-E提示注入与训练；Table I–III；§IV-E固定seed累计成功与跨任务替换。",
+      "evidence": "checked",
+      "evidenceNote": "2026-11-11原始 arXiv HTML v2 完整方法、Table I–III及图注核验，并读取作者Github README。为作者报告，非本站独立复现；公开模型权重不代表能复现全部在线自进化数字。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "Zeva 原文 HTML v2",
+          "url": "https://arxiv.org/html/2608.30880v2"
+        },
+        {
+          "label": "Zeva arXiv 元数据与首次版本",
+          "url": "https://arxiv.org/abs/2608.30880"
+        },
+        {
+          "label": "Zeva 作者项目",
+          "url": "https://air-embodied-brain.github.io/Zeva"
+        },
+        {
+          "label": "Zeva 作者公开代码",
+          "url": "https://github.com/air-embodied-brain/Zeva"
+        },
+        {
+          "label": "Zeva 已公开RoboCasa checkpoint",
+          "url": "https://huggingface.co/chen123fu/zeva-robocasa"
+        },
+        {
+          "label": "作者Atomic5复现说明",
+          "url": "https://github.com/air-embodied-brain/Zeva/blob/main/docs/reproduce.md"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2608.30880",
+      "arxiv": "2608.30880",
+      "doi": ""
+    },
+    {
       "id": "p149",
       "name": "PyRUA-Lean",
       "title": "Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens",

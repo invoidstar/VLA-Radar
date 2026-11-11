@@ -1,3 +1,7 @@
+## 2026-11-11 — 2026-11-11-zeva-source-results
+
+Source-read Zeva v2 2026-09-22 arXiv full HTML: original Table I/II/III and §IV-E Fig3. Adds 7 author-paper-table protocol tracks / 31 separately attributed source rows (4 distinct ChemLab metrics/scopes, 5 RoboCasa365 Atomic5 tasks, 5-task BIT/PIM ablation, fixed-episode milestone CSR). All results are authors' locally reproduced comparisons, not official benchmark model submissions or independent VLA-Radar replication. Full deployment frozen memory receives offline-trained CTE; publicly released frozen-policy checkpoint was evaluated WITHOUT cross-attempt evolution and must not be claimed to reproduce PIM improvement. Date and model resource boundary verified against official GitHub README. ChemLab-Evo is explicitly a one-paper real-robot case study, not a standardized public benchmark; negative long-horizon task SR and attribution are visible. PIM fixed-episode CSR and BIT/PIM ablation stay in canonical evidence, excluded from public method ranking.
+
 ## 2026-11-11 — V3.1 Paper Deep Reading 论文精读首版
 
 - 新增独立“论文精读”板块、SLA（p148）专属 /close-reading/p148/ 静态页面，以及从现有论文详情进入精读的入口。

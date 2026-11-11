@@ -2822,6 +2822,52 @@
         "r-pyrua-v2-robodojo-official-score"
       ],
       "note": "Primary PyRUA v2 Tables 2 and 5 + official author's October result note: four benchmark-scoped paired Agent code vs tool conditions; RoboDojo Sim author seed0 Score/SR kept separate from official RoboDojo team 55.26/50.35 report. No VLA policy in RoboDojo Agent, and Coder 4B 44.1% unseen tasks is not RoboDojo."
+    },
+    "p150": {
+      "status": "extracted",
+      "trackIds": [
+        "zeva-v2-robocasa365-atomic5",
+        "zeva-v2-chemlab-atomic-sr",
+        "zeva-v2-chemlab-short-sr",
+        "zeva-v2-chemlab-complex-sr",
+        "zeva-v2-chemlab-long-process-score",
+        "zeva-v2-chemlab-five-ablation-sr",
+        "zeva-v2-robocasa365-fixed-episode-csr"
+      ],
+      "resultIds": [
+        "r-zeva-v2-atomic5-zeva",
+        "r-zeva-v2-atomic5-lingbot",
+        "r-zeva-v2-atomic5-xiaomi",
+        "r-zeva-v2-atomic5-tauwm",
+        "r-zeva-v2-atomic5-fastwam",
+        "r-zeva-v2-atomic5-cosmos",
+        "r-zeva-v2-chemlab-atomic-zeva",
+        "r-zeva-v2-chemlab-short-zeva",
+        "r-zeva-v2-chemlab-complex-zeva",
+        "r-zeva-v2-chemlab-progress-zeva",
+        "r-zeva-v2-chemlab-atomic-lingbot",
+        "r-zeva-v2-chemlab-short-lingbot",
+        "r-zeva-v2-chemlab-complex-lingbot",
+        "r-zeva-v2-chemlab-progress-lingbot",
+        "r-zeva-v2-chemlab-atomic-fastwam",
+        "r-zeva-v2-chemlab-short-fastwam",
+        "r-zeva-v2-chemlab-complex-fastwam",
+        "r-zeva-v2-chemlab-progress-fastwam",
+        "r-zeva-v2-chemlab-atomic-pi05",
+        "r-zeva-v2-chemlab-short-pi05",
+        "r-zeva-v2-chemlab-complex-pi05",
+        "r-zeva-v2-chemlab-progress-pi05",
+        "r-zeva-v2-chemlab-atomic-cosmosedge",
+        "r-zeva-v2-chemlab-short-cosmosedge",
+        "r-zeva-v2-chemlab-complex-cosmosedge",
+        "r-zeva-v2-chemlab-progress-cosmosedge",
+        "r-zeva-v2-ablation-full",
+        "r-zeva-v2-ablation-no-bit",
+        "r-zeva-v2-ablation-no-pim",
+        "r-zeva-v2-ablation-none",
+        "r-zeva-v2-atomic5-fixed-csr"
+      ],
+      "note": "原始Table I/II/III和Fig3按真实/仿真、成功率/部分进度/固定episode累计成功、作者对照/模块消融分别建轨；训练时是有机器人数据的Cosmos3骨干与CTE，部署冻结不代表零离线训练。公开冻结权重不代表完整PIM多尝试成绩。"
     }
   }
 }

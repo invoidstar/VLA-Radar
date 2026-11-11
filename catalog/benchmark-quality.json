@@ -224,6 +224,11 @@
       "kind": "case-study",
       "officialUrl": null,
       "auditSummary": "PaceVLA arXiv 2610.25961v1 Table4 10-package humanoid ALLEX conveyor task; author-reported SR 86.0/94.0 is distinct from 3.6/6.3 successful packages per minute, not a standard public leaderboard or independently reproduced robot evaluation."
+    },
+    "ChemLab-Evo": {
+      "kind": "case-study",
+      "officialUrl": null,
+      "auditSummary": "Zeva arXiv 2608.30880v2 Table I/III 化学实验 ARX 双臂原子/短序列/复杂任务（3+2+2），为单篇论文自建真实环境验证，不是公开统一第三方排行榜。Success Rate、严格阶段前缀 Process Score 及 BIT/PIM 消融分轨存储；复杂任务完成率很低。 公开冻结权重的 Atomic5 成功率不等价于PIM跨尝试自我进化实验，需复核具体checkpoint和来源。"
     }
   },
   "datasetAliases": {

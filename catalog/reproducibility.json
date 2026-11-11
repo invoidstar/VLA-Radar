@@ -1380,6 +1380,12 @@
       "level": "baseline",
       "note": "Public author PyRUA-Lean source, docs, tests and integrations confirmed. GPT-6 Astra/SAM3 services and robotics simulation/hardware remain third party prerequisites; code alone does not reproduce every official result.",
       "items": {}
+    },
+    "p150": {
+      "verifiedAt": "2026-11-11",
+      "level": "baseline",
+      "note": "Official arxiv v2, project page and source repository verified; code/weights + locked Atomic5 eval and selected PIM fixed-seed cases are released, but NOT all real ChemLab tests or paper's full self-evolution protocol. Repository uses OpenMDW-1.1 and has separate model/data licenses; resource dimensions remain unknown until deep per-asset audit.",
+      "items": {}
     }
   }
 }

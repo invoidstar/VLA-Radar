@@ -1,0 +1,20 @@
+{
+  "id": "r-zeva-v2-chemlab-short-cosmosedge",
+  "paperId": "p150",
+  "method": "Cosmos3-Edge",
+  "trackId": "zeva-v2-chemlab-short-sr",
+  "values": {
+    "Titration": 45,
+    "SaltSolution": 60,
+    "Average": 52.5
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Table I, Level2 Cosmos3-Edge",
+  "attribution": "reported-baseline",
+  "trainingData": "ARX + Cosmos3-Edge, same baseline task data and evaluation.",
+  "evaluationNotes": "Author Table I short sequence success, not atomic or complex. Macro average over two named tasks. 20 randomized real episodes per task",
+  "supersedes": ""
+}

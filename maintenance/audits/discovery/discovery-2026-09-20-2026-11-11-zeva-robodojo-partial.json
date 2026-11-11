@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-11-zeva-robodojo-partial",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-11",
+    "attemptedAt": "2026-11-11",
+    "completedAt": null
+  },
+  "scope": "User-prioritized catch-up for Zeva, EmbodiedEvo and RoboDojo, with November new-paper spot checks; NOT full scheduled all-four-lane, full dated discovery.",
+  "sources": [
+    {
+      "id": "arxiv-selected",
+      "lane": "primary-preprints",
+      "provider": "arXiv official individual abs and original Zeva v2 HTML",
+      "kind": "Targeted eight exact arXiv version/identity checks, not a full date-scoped category search",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-08-31",
+        "to": "2026-11-09"
+      },
+      "query": "Exact arXiv paper IDs 2608.30880;2610.18867;2610.01939;2611.08373;2611.07513;2611.05080;2611.06918;2611.11854. Original Zeva v2 HTML complete; other v1/v3 identity/abstract only.",
+      "resultCount": 8,
+      "note": "Eight primary paper identity/version matches; only Zeva complete original HTML read. An arXiv selection list is not full 2026-09-20 through 2026-11-11 coverage."
+    },
+    {
+      "id": "index-blocked",
+      "lane": "academic-index",
+      "provider": "OpenAlex from/to publication_date works request",
+      "kind": "New date-scoped OpenAlex request attempted through allowed public browser",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?filter=from_publication_date%3A2026-09-20%2Cto_publication_date%3A2026-11-11&search=vision-language-action&per-page=25",
+      "resultCount": 0,
+      "note": "Public browser declared endpoint inaccessible; no successful independent date-scoped scholarly index query or cross-provider count. Do not advance complete checkpoint."
+    },
+    {
+      "id": "curated-robotics-nov10",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily, VLA curated index",
+      "kind": "Single dated Nov10 issue/page selected Nov3–10 paper entries; not complete Sep20–Nov11 sweep",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-03",
+        "to": "2026-11-10"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html ; observed 'Updated on 2026.11.10', title-matched Concertina and DASH among other visible entries",
+      "resultCount": 2,
+      "note": "Index list includes new candidate titles and assorted categories; not an exhaustive window nor an independent academic index."
+    },
+    {
+      "id": "official-robotics-reverse",
+      "lane": "reverse-discovery",
+      "provider": "RoboDojo official live leaderboard, author labs and project repositories",
+      "kind": "Targeted model-to-paper and release reverse checks",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-14",
+        "to": "2026-11-11"
+      },
+      "query": "https://robodojo-benchmark.com/leaderboard?bench=sim ; https://robodojo-benchmark.com/leaderboard?bench=realworld ; https://github.com/Einsia/EmbodiedEvo ; https://github.com/air-embodied-brain/Zeva",
+      "resultCount": 4,
+      "note": "Verified author repository identity, Zeva checkpoint release limits, official board updated Nov03 and source pin gap. Not a complete reverse discovery across all labs/projects/benchmarks."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation",
+      "arxiv": "2608.30880",
+      "doi": "",
+      "date": "2026-08-31",
+      "sourceIds": [
+        "arxiv-selected",
+        "official-robotics-reverse"
+      ],
+      "status": "selected",
+      "reason": "Original arXiv v2 full HTML (Sep22) methods, Tables I–III, Figure3 and author README source-read. Historical Aug31 paper backfill outside this scan window; admitted as p150, not a new November arXiv submission.",
+      "paperId": "p150",
+      "duplicateOf": null
+    },
+    {
+      "title": "EmbodiedEvo: Self-Evolving Coding Agent For Physical Intelligence",
+      "arxiv": "2610.18867",
+      "doi": "",
+      "date": "2026-10-13",
+      "sourceIds": [
+        "arxiv-selected",
+        "official-robotics-reverse"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv identity and abstract, complete author code/README, Oct14 official RoboDojo model entry 45.08/38.95 independently confirmed. Original full arXiv HTML disabled and PDF exceeds browser fetch limits; secondary paper mirrors exist but not treated as original-table authoritative. Original paper abstract 44.48/37.82 differs from official 45.08/38.95. Do not admit paper or transpose these snapshots as identical.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Concertina: Embodying Manipulation and Cognition in One Diffusion Vision-Language Model",
+      "arxiv": "2611.07513",
+      "doi": "",
+      "date": "2026-11-05",
+      "sourceIds": [
+        "arxiv-selected",
+        "curated-robotics-nov10"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v1 abstract, code and HF links observed; full original results/scope for LIBERO, LIBERO-Plus and CALVIN remain to be cross-checked.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "CRONOS: Benchmarking Non-Episodic Reinforcement Learning for Robotic Manipulation",
+      "arxiv": "2611.05080",
+      "doi": "",
+      "date": "2026-11-03",
+      "sourceIds": [
+        "arxiv-selected"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v1 confirms non-episodic RL reset protocol; no complete original benchmark tables read or performance values imported.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "From Pixels to Actions--Towards Native Vision-Language-Action Policies",
+      "arxiv": "2611.06918",
+      "doi": "",
+      "date": "2026-11-04",
+      "sourceIds": [
+        "arxiv-selected"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v3 now dated 2026-11-09, first v1 2026-11-04; full action-visual representation comparisons still require source read and table verification.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Decoupled Asynchronous System for Humanoids (DASH): Latency-Agnostic Scaling of Vision-Language-Action Models for Humanoid Manipulation",
+      "arxiv": "2611.11854",
+      "doi": "",
+      "date": "2026-11-09",
+      "sourceIds": [
+        "arxiv-selected",
+        "curated-robotics-nov10"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v1 identity and summary checked. Control-rate and asynchronous benchmark protocol from abstract only, no original full methods/tables extracted.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "arxiv": "2611.08373",
+      "doi": "",
+      "date": "2026-11-05",
+      "sourceIds": [
+        "arxiv-selected",
+        "official-robotics-reverse"
+      ],
+      "status": "duplicate",
+      "reason": "Already formally deep-read as p148; official SLA-Preview remains a separately versioned RoboDojo Real model entry.",
+      "paperId": null,
+      "duplicateOf": "p148"
+    },
+    {
+      "title": "Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens",
+      "arxiv": "2610.01939",
+      "doi": "",
+      "date": "2026-10-01",
+      "sourceIds": [
+        "arxiv-selected",
+        "official-robotics-reverse"
+      ],
+      "status": "duplicate",
+      "reason": "Already source-read as p149; author-local and official RoboDojo PyRUA-Lean results stay separate.",
+      "paperId": null,
+      "duplicateOf": "p149"
+    }
+  ],
+  "counts": {
+    "total": 8,
+    "selected": 1,
+    "deferred": 5,
+    "excluded": 0,
+    "duplicate": 2,
+    "crossSource": 6
+  },
+  "status": "partial",
+  "notes": "Historical literature discovered at different dates, one deep-read source-ready Zeva admitted as p150; five distinct original paper candidates remain deferred, two existing identities deduplicated. Independent scholarly academic-index lane inaccessible, original/curated/reverse dates incomplete; lastSuccessfulSearchAt remains 2026-10-04. Source status labels describe actual work done, not quality of science."
+}

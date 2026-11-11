@@ -1,0 +1,20 @@
+{
+  "id": "r-zeva-v2-chemlab-progress-cosmosedge",
+  "paperId": "p150",
+  "method": "Cosmos3-Edge",
+  "trackId": "zeva-v2-chemlab-long-process-score",
+  "values": {
+    "BalanceWeighing": 38.75,
+    "Extraction": 50.71,
+    "Average": 44.73
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Table I, Level3 Process Score Cosmos3-Edge",
+  "attribution": "reported-baseline",
+  "trainingData": "ARX + Cosmos3-Edge; reports author local partial progress.",
+  "evaluationNotes": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score. 20 randomized real episodes per task",
+  "supersedes": ""
+}

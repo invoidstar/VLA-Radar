@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-08",
+  "asOf": "2026-11-11",
   "status": "partial",
-  "lastAttemptAt": "2026-11-08",
+  "lastAttemptAt": "2026-11-11",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-11-08 targeted English+Chinese public VLA/robotics model and source release search for Oct25–Nov08; corroborated Concertina Nov05 original arXiv and public project/checkpoint documentation, checked a limited Noitom Nov05 corporate announcement (not selected without deeper research impact), and deduplicated previously recorded late-October official news. Not a complete 14-day multi-source bilingual scan; retain 2026-10-04 success checkpoint.",
+  "summary": "2026-11-11 targeted original-source news backcheck to Oct28 (Panasonic T-Rex Nov05 published, RoboDojo live Nov03 changes) plus sampled Chinese news sources. Added one source-supported English official research event; full bilingual day-by-day company/lab/release coverage not completed. Preserve lastSuccessfulSearchAt=2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -96,6 +96,12 @@
       "to": "2026-11-08",
       "status": "partial",
       "note": "Targeted Nov3–7 VLA papers/repository release check, Concertina original arXiv Nov5 + GitHub/HF reproducibility boundary, Nov5 Noitom vendor announcement considered but not separately selected, compared existing Oct27 model news. Incomplete labs/company/media/Chinese day-by-day scanning, not a complete newsroom coverage audit."
+    },
+    {
+      "from": "2026-10-28",
+      "to": "2026-11-11",
+      "status": "partial",
+      "note": "2026-11-11 sample English original-source check: Panasonic Nov05 T-Rex original corporate research announcement, RoboDojo official Oct30/Nov03 leaderboard event; Chinese robotics November news channel sampled but no adequate dated authoritative primary page for those claims in this attempt. One official research news selected; no complete chronological bilingual company/lab/media sweep, do not advance checkpoint."
     }
   ]
 }

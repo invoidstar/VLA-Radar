@@ -1,0 +1,23 @@
+{
+  "id": "r-zeva-v2-atomic5-zeva",
+  "paperId": "p150",
+  "method": "Zeva",
+  "trackId": "zeva-v2-robocasa365-atomic5",
+  "values": {
+    "ElectricKettle": 78,
+    "CloseToasterDoor": 86,
+    "TurnOnMicrowave": 84,
+    "CoffeeSetupMug": 44,
+    "OpenStandMixerHead": 92,
+    "Average": 76.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Table II, Zeva",
+  "attribution": "author-reported",
+  "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+  "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+  "supersedes": ""
+}

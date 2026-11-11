@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11",
+  "mainSha": "d03091ffc935baf80bf0a54ccd3dd93a45b490a5",
+  "mainProtected": false,
+  "rulesetCount": 0,
+  "status": "report-only",
+  "reason": "All non-main branch identities inspected. Protection is administrator-only; deletion of historical/parallel branches is delegated to safe housekeeping with six-hour recovery and exact SHA lease. No force deletions or branch rewrites performed.",
+  "reviewedBranches": [
+    {
+      "name": "feature/v3-1-paper-deep-reading",
+      "status": "behind-main-without-linked-merged-PR",
+      "action": "retain-until-owner-confirms"
+    },
+    {
+      "name": "release/batch-2026-11-11-paper-close-reading-v31",
+      "status": "PR-86-merged",
+      "action": "eligible-for-future-housekeeping-only-after-recovery-window"
+    },
+    {
+      "name": "release/batch-2026-11-11-sla-robodojo-paper-catchup",
+      "status": "PR-85-merged",
+      "action": "eligible-for-future-housekeeping-only-after-recovery-window"
+    },
+    {
+      "name": "release/batch-v31-close-reading-20261111",
+      "status": "diverged-no-PR",
+      "action": "retain-separate-unmerged-work"
+    },
+    {
+      "name": "release/v3-1-paper-close-reading-sla-20261111",
+      "status": "diverged-no-PR",
+      "action": "retain-separate-unmerged-work"
+    }
+  ],
+  "issues": [
+    "https://github.com/invoidstar/VLA-Radar/issues/75",
+    "https://github.com/invoidstar/VLA-Radar/issues/76"
+  ]
+}

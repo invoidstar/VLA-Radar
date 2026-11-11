@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "news-2026-10-28-2026-11-11-trex-targeted",
+  "window": {
+    "from": "2026-10-28",
+    "to": "2026-11-11"
+  },
+  "attemptedAt": "2026-11-11",
+  "status": "partial",
+  "selected": [
+    {
+      "eventKey": "panasonic-trex-tactile-reactive-manipulation-announcement-20261105",
+      "source": "https://news.panasonic.com/global/press/en261105-2",
+      "originalDate": "2026-11-05",
+      "status": "verified-limited-original-official-release",
+      "note": "Real task success rate authors' company statement not independent metric."
+    }
+  ],
+  "checkedNotSelected": [
+    {
+      "source": "https://robodojo-benchmark.com/leaderboard?bench=sim",
+      "reason": "Existing benchmark official update better handled in pinned/unpinned benchmark audit; not duplicate news."
+    },
+    {
+      "source": "https://www.jushenhome.com/news",
+      "reason": "Chinese media sample; selected claims require original dated company/lab primary source before admission."
+    },
+    {
+      "source": "https://efficient-embodied-ai.github.io/challenge/",
+      "reason": "Official CoRL EmbodiedX Oct30 competition launch with future Nov12 workshop; out of short-horizon unique research-news selection, candidate only."
+    }
+  ],
+  "completeBilingualCoverage": false,
+  "notes": "English and Chinese channels sampled, not exhaustive. Oct04 remains last fully completed newsroom audit; no claim of every dated vendor/lab event assessed."
+}

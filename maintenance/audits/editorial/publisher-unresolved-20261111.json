@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "publisher-unresolved-review-20261111",
+  "attemptedAt": "2026-11-11",
+  "status": "reviewed-unresolved",
+  "scope": "Exact-title official archival publisher verification for three previously accepted/workshop paper records; no metadata lifecycle upgrade without official title+author+DOI/date match.",
+  "queries": [
+    {
+      "paperId": "p015",
+      "title": "OnEvoMemory: Evolving Memory through Online Robot Rollouts for Pretrained Robot Policies",
+      "existingStatus": "ECCV 2026 EMR Workshop poster, not ECCV main conference",
+      "sourcesChecked": [
+        "https://arxiv.org/abs/2608.08749",
+        "https://emr-workshop.github.io/",
+        "https://openreview.net/forum?id=hUZLqoDdqx",
+        "https://link.springer.com/"
+      ],
+      "result": "arXiv 2026-08-09 identity and workshop poster acceptance can be verified; organizer advertises full proceedings and non-archived abstracts as distinct categories. No exact-title archived workshop full paper DOI confirmed; Springer ECCV main proceeding volumes do not suffice to upgrade this poster.",
+      "disposition": "unresolved-archival-doi",
+      "next": "Exact-title EMR workshop official proceeding or organizer title-author page, then ISBN/DOI and archival/nonarchival classification."
+    },
+    {
+      "paperId": "p030",
+      "title": "AdaVLA",
+      "existingStatus": "IROS 2026 accepted/presented corroborated by Sogang official source",
+      "sourcesChecked": [
+        "https://computing.sogang.ac.kr/ko/community/news/detail/281",
+        "https://ieeexplore.ieee.org/"
+      ],
+      "result": "Sogang acceptance and presentation unchanged; broad/exact-title IEEE Xplore public search did not yield an author/title-matched publisher DOI or published date in this review.",
+      "disposition": "unresolved-publisher-doi",
+      "next": "Check IEEE Xplore indexed full paper record by exact full title and verified authors, rather than asserting a guessed DOI."
+    },
+    {
+      "paperId": "p042",
+      "title": "VLA-InfoEntropy",
+      "existingStatus": "Author lab ICME 2026 record",
+      "sourcesChecked": [
+        "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/",
+        "https://ieeexplore.ieee.org/"
+      ],
+      "result": "Author lab official listing remains basis for ICME 2026 accepted status; no exact-title and author-matched IEEE Xplore DOI or issue publication date established in public review.",
+      "disposition": "unresolved-publisher-doi",
+      "next": "Await exact IEEE conference proceedings entry, not inferred arXiv DOI or conference attendance date."
+    }
+  ],
+  "stateBoundary": "Keep maintenance/state/publication-candidates.json existing unresolved triad; no synthetic DOI, acceptedAt or publishedAt; future recheck with real publisher result required."
+}

@@ -16449,6 +16449,72 @@
       "columnUnits": {
         "Average": "score"
       }
+    },
+    {
+      "id": "zeva-v2-robocasa365-atomic5",
+      "dataset": "RoboCasa365",
+      "name": "Zeva RoboCasa365-Atomic5 author-matched five-task study",
+      "version": "arXiv 2608.30880v2 Table II",
+      "tasks": "5 selected Atomic kitchen tasks",
+      "split": "50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines.",
+      "trainingRegime": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "ElectricKettle",
+        "CloseToasterDoor",
+        "TurnOnMicrowave",
+        "CoffeeSetupMug",
+        "OpenStandMixerHead",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "ElectricKettle": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "CloseToasterDoor": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "TurnOnMicrowave": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "CoffeeSetupMug": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "OpenStandMixerHead": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "ElectricKettle": "higher",
+        "CloseToasterDoor": "higher",
+        "TurnOnMicrowave": "higher",
+        "CoffeeSetupMug": "higher",
+        "OpenStandMixerHead": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "ElectricKettle": "percent",
+        "CloseToasterDoor": "percent",
+        "TurnOnMicrowave": "percent",
+        "CoffeeSetupMug": "percent",
+        "OpenStandMixerHead": "percent",
+        "Average": "percent"
+      }
     }
   ],
   "settings": [
@@ -32766,6 +32832,98 @@
         "PyRUA-Lean code-cell Agent",
         "Tool-calling Agent"
       ]
+    },
+    {
+      "id": "setting-robocasa365-atomic5-de01f23845be",
+      "dataset": "RoboCasa365",
+      "evalId": "auto:atomic5",
+      "name": "RoboCasa365 · ElectricKettle / CloseToasterDoor / TurnOnMicrowave / … · Success Rate",
+      "tasks": "5 selected Atomic kitchen tasks",
+      "split": "50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "ElectricKettle",
+        "CloseToasterDoor",
+        "TurnOnMicrowave",
+        "CoffeeSetupMug",
+        "OpenStandMixerHead",
+        "Average"
+      ],
+      "protocol": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines.",
+      "trackIds": [
+        "zeva-v2-robocasa365-atomic5"
+      ],
+      "resultIds": [
+        "r-zeva-v2-atomic5-cosmos",
+        "r-zeva-v2-atomic5-fastwam",
+        "r-zeva-v2-atomic5-lingbot",
+        "r-zeva-v2-atomic5-tauwm",
+        "r-zeva-v2-atomic5-xiaomi",
+        "r-zeva-v2-atomic5-zeva"
+      ],
+      "resultCount": 6,
+      "paperCount": 1,
+      "paperIds": [
+        "p150"
+      ],
+      "methodCount": 6,
+      "primaryTrackId": "zeva-v2-robocasa365-atomic5",
+      "trainingOptions": [
+        {
+          "id": "unknown-p150",
+          "label": "训练数据未完整披露 · p150",
+          "known": false,
+          "count": 6
+        }
+      ],
+      "trainingByResult": {
+        "r-zeva-v2-atomic5-cosmos": "unknown-p150",
+        "r-zeva-v2-atomic5-fastwam": "unknown-p150",
+        "r-zeva-v2-atomic5-lingbot": "unknown-p150",
+        "r-zeva-v2-atomic5-tauwm": "unknown-p150",
+        "r-zeva-v2-atomic5-xiaomi": "unknown-p150",
+        "r-zeva-v2-atomic5-zeva": "unknown-p150"
+      },
+      "columnMeta": {
+        "ElectricKettle": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "CloseToasterDoor": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "TurnOnMicrowave": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "CoffeeSetupMug": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "OpenStandMixerHead": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 6,
+      "primaryPaperCount": 1,
+      "latestReportVerifiedAt": "2026-11-11",
+      "methodNames": [
+        "Cosmos3-Nano",
+        "Fast-WAM",
+        "LingBot-VA",
+        "τ₀-WM",
+        "Xiaomi-Robotics-1",
+        "Zeva"
+      ]
     }
   ],
   "taxonomy": {
@@ -33529,12 +33687,17 @@
         "kind": "case-study",
         "officialUrl": null,
         "auditSummary": "PaceVLA arXiv 2610.25961v1 Table4 10-package humanoid ALLEX conveyor task; author-reported SR 86.0/94.0 is distinct from 3.6/6.3 successful packages per minute, not a standard public leaderboard or independently reproduced robot evaluation."
+      },
+      "ChemLab-Evo": {
+        "kind": "case-study",
+        "officialUrl": null,
+        "auditSummary": "Zeva arXiv 2608.30880v2 Table I/III 化学实验 ARX 双臂原子/短序列/复杂任务（3+2+2），为单篇论文自建真实环境验证，不是公开统一第三方排行榜。Success Rate、严格阶段前缀 Process Score 及 BIT/PIM 消融分轨存储；复杂任务完成率很低。 公开冻结权重的 Atomic5 成功率不等价于PIM跨尝试自我进化实验，需复核具体checkpoint和来源。"
       }
     },
     "legacySettingTracks": {
       "setting-libero-plus-d7a11d009077": "libero-plus-rldx-v2"
     },
-    "primaryResultCount": 720,
+    "primaryResultCount": 726,
     "archivedResultCount": 283
   },
   "officialBoards": {
@@ -57687,6 +57850,162 @@
       "evaluationNotes": "作者报告平均 SR。",
       "supersedes": "",
       "methodId": "xiaomirobotics0",
+      "displayTier": "primary",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-zeva-v2-atomic5-cosmos",
+      "paperId": "p150",
+      "method": "Cosmos3-Nano",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 76,
+        "CloseToasterDoor": 74,
+        "TurnOnMicrowave": 76,
+        "CoffeeSetupMug": 6,
+        "OpenStandMixerHead": 92,
+        "Average": 64.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Cosmos3-Nano",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": "",
+      "methodId": "cosmos3nano",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-zeva-v2-atomic5-fastwam",
+      "paperId": "p150",
+      "method": "Fast-WAM",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 88,
+        "CloseToasterDoor": 66,
+        "TurnOnMicrowave": 60,
+        "CoffeeSetupMug": 54,
+        "OpenStandMixerHead": 94,
+        "Average": 72.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Fast-WAM",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": "",
+      "methodId": "fastwam",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-zeva-v2-atomic5-lingbot",
+      "paperId": "p150",
+      "method": "LingBot-VA",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 63,
+        "CloseToasterDoor": 60,
+        "TurnOnMicrowave": 70,
+        "CoffeeSetupMug": 35,
+        "OpenStandMixerHead": 48,
+        "Average": 55.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, LingBot-VA",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": "",
+      "methodId": "lingbotva",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-zeva-v2-atomic5-tauwm",
+      "paperId": "p150",
+      "method": "τ₀-WM",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 15,
+        "CloseToasterDoor": 32,
+        "TurnOnMicrowave": 63,
+        "CoffeeSetupMug": 12,
+        "OpenStandMixerHead": 23,
+        "Average": 29
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, τ₀-WM",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": "",
+      "methodId": "0wm",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-zeva-v2-atomic5-xiaomi",
+      "paperId": "p150",
+      "method": "Xiaomi-Robotics-1",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 17,
+        "CloseToasterDoor": 16,
+        "TurnOnMicrowave": 82,
+        "CoffeeSetupMug": 6,
+        "OpenStandMixerHead": 35,
+        "Average": 31.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Xiaomi-Robotics-1",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": "",
+      "methodId": "xiaomirobotics1",
+      "displayTier": "primary",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-zeva-v2-atomic5-zeva",
+      "paperId": "p150",
+      "method": "Zeva",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 78,
+        "CloseToasterDoor": 86,
+        "TurnOnMicrowave": 84,
+        "CoffeeSetupMug": 44,
+        "OpenStandMixerHead": 92,
+        "Average": 76.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Zeva",
+      "attribution": "author-reported",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": "",
+      "methodId": "zeva",
       "displayTier": "primary",
       "sourceClass": "paper-reported"
     }

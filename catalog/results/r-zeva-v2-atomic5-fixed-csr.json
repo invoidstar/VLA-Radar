@@ -1,0 +1,21 @@
+{
+  "id": "r-zeva-v2-atomic5-fixed-csr",
+  "paperId": "p150",
+  "method": "Zeva (PIM cumulative fixed episode)",
+  "trackId": "zeva-v2-robocasa365-fixed-episode-csr",
+  "values": {
+    "Evolve1": 26,
+    "Evolve2": 45,
+    "Evolve3": 70,
+    "Evolve4": 73
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Fig. 3 / §IV-E1 Evolve 1-4 selected milestones",
+  "attribution": "author-reported",
+  "trainingData": "Zeva PIM memory accumulates within fixed episode; no online gradient update.",
+  "evaluationNotes": "100 fixed task-seed pairs; selected milestones are not consecutive attempt indexes; not the Table II randomized 50 episode/run SR.",
+  "supersedes": ""
+}

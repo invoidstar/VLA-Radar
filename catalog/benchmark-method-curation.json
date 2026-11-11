@@ -22,7 +22,9 @@
     "seelike-v1-geometry-ablation",
     "seelike-v1-view-robustness",
     "temporalflow-v1-robotwin12-ablation",
-    "vtwam-v1-ablation"
+    "vtwam-v1-ablation",
+    "zeva-v2-chemlab-five-ablation-sr",
+    "zeva-v2-robocasa365-fixed-episode-csr"
   ],
   "excludedResults": [
     "r-adavla-v2-lat-b1",
@@ -184,9 +186,10 @@
     "r-vlaflow-v2-widowx-pi-full": "MindPI"
   },
   "excludedDatasets": [
+    "ChemLab-Evo",
+    "DSWAM real sorting",
     "Deltoris hardware",
     "DreamZero real",
-    "DSWAM real sorting",
     "Dyna-2 real",
     "FAST training",
     "GF-VLA real",
@@ -197,8 +200,8 @@
     "PixMC",
     "RECAP real",
     "RoboCerebra",
-    "Track4Action real",
     "TRI-Ramen",
-    "TRI-Ramen real"
+    "TRI-Ramen real",
+    "Track4Action real"
   ]
 }

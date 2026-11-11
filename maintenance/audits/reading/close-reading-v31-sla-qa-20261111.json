@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "close-reading-v31-sla-qa-20261111",
+  "checkedAt": "2026-11-11",
+  "source": "https://github.com/invoidstar/VLA-Radar/blob/d03091ffc935baf80bf0a54ccd3dd93a45b490a5/catalog/close-readings/p148.json",
+  "paperId": "p148",
+  "observed": "main V3.1 primary public source file and published PR #86 quality passed 2026-11-11",
+  "status": "structural-pass-content-spotcheck",
+  "sections": 18,
+  "originalParagraphLocators": 101,
+  "originalTablesLocators": 16,
+  "originalFiguresLocators": 6,
+  "publicRights": {
+    "fullOriginalTextRepublished": false,
+    "fullTranslationRepublished": false,
+    "figuresMirrored": false
+  },
+  "browserCI": "https://github.com/invoidstar/VLA-Radar/actions/runs/42972767163",
+  "productionRelease": "https://github.com/invoidstar/VLA-Radar/actions/runs/42973209783",
+  "checkedScope": "Code/meta: source version v1 and 123 source-locator units, original HTML-derived Chinese notes-only policy, per-unit optional evidenceTracks, split lazy content page, mobile Chromium/Firefox/WebKit automated tests from CI. Cross-checked representative SLA p148 narrative and generated index identity; did not manually recheck every one of 101 paragraph mappings against the PDF.",
+  "nextActions": [
+    "Validate all 101 PDF-page locator pairs against original PDF independently before claiming complete source-page perfect audit.",
+    "Select next paper for reading only when full original PDF page/source location verified; do not synthesize page numbers from HTML sections.",
+    "Keep existing main startup small and the rights gate fail-closed."
+  ],
+  "limitations": "The module does not reproduce full bilingual English paragraphs and original PDF cropped tables without rights verification; site links into arXiv sources instead. A green CI is structural and browser coverage, not external source truth."
+}

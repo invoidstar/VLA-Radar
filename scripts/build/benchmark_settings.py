@@ -136,6 +136,11 @@ def dataset_scope(track):
     if ds=='RoboCasa' and kind=='success':
         if count==24 or '24' in text:return '24-main'
     if ds=='RoboCasa365' and kind=='success':
+        # Zeva's 5-task Atomic5 and fixed-episode multi-attempt curves
+        # must not silently enter the 50-task RoboCasa365 Target50 Setting.
+        # These are evaluation differences, not training-recipe differences.
+        if 'atomic5' in text:
+            return 'atomic5-fixed-episode' if ('fixed-episode' in text or 'fixed episode' in text) else 'atomic5'
         context=[x for x in ctx if x in {'target-kitchens','pretraining-kitchens'}]
         return '50-main'+(('-'+context[0]) if context else '')
     if ds=='RLBench' and kind=='success':

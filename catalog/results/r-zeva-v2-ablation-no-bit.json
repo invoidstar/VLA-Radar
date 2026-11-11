@@ -1,0 +1,22 @@
+{
+  "id": "r-zeva-v2-ablation-no-bit",
+  "paperId": "p150",
+  "method": "Zeva (PIM only, no BIT)",
+  "trackId": "zeva-v2-chemlab-five-ablation-sr",
+  "values": {
+    "PickUpTube": 80,
+    "PlaceBeaker": 50,
+    "PourWater": 50,
+    "Titration": 40,
+    "SaltSolution": 55
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-11",
+  "source": "https://arxiv.org/html/2608.30880v2",
+  "sourceVersion": "arXiv 2608.30880v2",
+  "locator": "Table III memory ablation, Zeva (PIM only, no BIT)",
+  "attribution": "author-reported",
+  "trainingData": "Cosmos3-Edge author trained variants; identical task support for matched ablations.",
+  "evaluationNotes": "BIT and PIM toggle on same author source; full and three ablations, this is component ablation, not 4 independent robot policies. 20 randomized real episodes/task per ablation condition",
+  "supersedes": ""
+}
