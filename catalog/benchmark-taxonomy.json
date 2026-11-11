@@ -653,6 +653,15 @@
         "long-horizon",
         "dexterous"
       ]
+    },
+    "ChemLab-Evo": {
+      "focus": "dexterous-contact",
+      "environment": "real",
+      "tags": [
+        "bimanual-dual-arm",
+        "contact-rich",
+        "long-horizon"
+      ]
     }
   }
 }
