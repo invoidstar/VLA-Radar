@@ -1,0 +1,823 @@
+{
+  "id": "2026-11-11-zeva-source-results",
+  "date": "2026-11-11",
+  "summary": "Source-read Zeva v2 2026-09-22 arXiv full HTML: original Table I/II/III and §IV-E Fig3. Adds 7 author-paper-table protocol tracks / 31 separately attributed source rows (4 distinct ChemLab metrics/scopes, 5 RoboCasa365 Atomic5 tasks, 5-task BIT/PIM ablation, fixed-episode milestone CSR). All results are authors' locally reproduced comparisons, not official benchmark model submissions or independent VLA-Radar replication. Full deployment frozen memory receives offline-trained CTE; publicly released frozen-policy checkpoint was evaluated WITHOUT cross-attempt evolution and must not be claimed to reproduce PIM improvement. Date and model resource boundary verified against official GitHub README.",
+  "notes": [],
+  "tracks": [
+    {
+      "id": "zeva-v2-robocasa365-atomic5",
+      "dataset": "RoboCasa365",
+      "name": "Zeva RoboCasa365-Atomic5 author-matched five-task study",
+      "version": "arXiv 2608.30880v2 Table II",
+      "tasks": "5 selected Atomic kitchen tasks",
+      "split": "50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines.",
+      "trainingRegime": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "ElectricKettle",
+        "CloseToasterDoor",
+        "TurnOnMicrowave",
+        "CoffeeSetupMug",
+        "OpenStandMixerHead",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    {
+      "id": "zeva-v2-chemlab-atomic-sr",
+      "dataset": "ChemLab-Evo",
+      "name": "Zeva ChemLab-Evo ARX real Level1 Atomic",
+      "version": "arXiv 2608.30880v2 Table I",
+      "tasks": "Three real chemical manipulation primitives",
+      "split": "20 randomized real episodes per task, ARX bimanual with Cosmos3-Edge",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Original Table I atomic level; strict task completion SR, not partial stage score.",
+      "trainingRegime": "Authors re-train matched baselines, Zeva Cosmos3-Edge with memory-conditioned offline training.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickUpTube",
+        "PlaceBeaker",
+        "PourWater",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    {
+      "id": "zeva-v2-chemlab-short-sr",
+      "dataset": "ChemLab-Evo",
+      "name": "Zeva ChemLab-Evo ARX real Level2 Short sequence",
+      "version": "arXiv 2608.30880v2 Table I",
+      "tasks": "Titration and Prepare Salt Solution",
+      "split": "20 randomized real episodes per task",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Author Table I short sequence success, not atomic or complex. Macro average over two named tasks.",
+      "trainingRegime": "ARX + Cosmos3-Edge, same baseline task data and evaluation.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Titration",
+        "SaltSolution",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    {
+      "id": "zeva-v2-chemlab-complex-sr",
+      "dataset": "ChemLab-Evo",
+      "name": "Zeva ChemLab-Evo ARX real Level3 Complex completion",
+      "version": "arXiv 2608.30880v2 Table I",
+      "tasks": "Balance Weighing and Extraction",
+      "split": "20 randomized real episodes per task, multi-stage",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Full completion 5/10% for Zeva, not stage progress 47.5/67.14%; separate metric to prevent overstating success.",
+      "trainingRegime": "ARX + Cosmos3-Edge, source Table I.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "BalanceWeighing",
+        "Extraction",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    {
+      "id": "zeva-v2-chemlab-long-process-score",
+      "dataset": "ChemLab-Evo",
+      "name": "Zeva ChemLab-Evo ARX long-horizon ordered process",
+      "version": "arXiv 2608.30880v2 Table I",
+      "tasks": "Balance Weighing and Extraction",
+      "split": "20 randomized real episodes per task",
+      "metric": "Ordered-stage process score",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score.",
+      "trainingRegime": "ARX + Cosmos3-Edge; reports author local partial progress.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "BalanceWeighing",
+        "Extraction",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    {
+      "id": "zeva-v2-chemlab-five-ablation-sr",
+      "dataset": "ChemLab-Evo",
+      "name": "Zeva BIT/PIM source-table memory ablation",
+      "version": "arXiv 2608.30880v2 Table III",
+      "tasks": "5 real tasks (3 atomic + 2 short)",
+      "split": "20 randomized real episodes/task per ablation condition",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "BIT and PIM toggle on same author source; full and three ablations, this is component ablation, not 4 independent robot policies.",
+      "trainingRegime": "Cosmos3-Edge author trained variants; identical task support for matched ablations.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "PickUpTube",
+        "PlaceBeaker",
+        "PourWater",
+        "Titration",
+        "SaltSolution"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    {
+      "id": "zeva-v2-robocasa365-fixed-episode-csr",
+      "dataset": "RoboCasa365",
+      "name": "Zeva Atomic5 fixed episode memory evolution subset",
+      "version": "arXiv 2608.30880v2 Fig.3 / §IV-E",
+      "tasks": "Atomic5 5 tasks ×20 fixed initializations (100 task-config pairs)",
+      "split": "Fixed episodes with repeat attempts, separate from Table II random episodes",
+      "metric": "Cumulative success rate at selected evolution milestones",
+      "unit": "percent",
+      "direction": "higher",
+      "protocol": "Evolve1–4 are selected trajectory milestones, NOT consecutive 1–4 attempts; CSR@milestone monotone by definition. This track is distinct from one-pass random SR.",
+      "trainingRegime": "Zeva PIM memory accumulates within fixed episode; no online gradient update.",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Evolve1",
+        "Evolve2",
+        "Evolve3",
+        "Evolve4"
+      ],
+      "source": "https://arxiv.org/html/2608.30880v2"
+    }
+  ],
+  "results": [
+    {
+      "id": "r-zeva-v2-atomic5-zeva",
+      "paperId": "p150",
+      "method": "Zeva",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 78,
+        "CloseToasterDoor": 86,
+        "TurnOnMicrowave": 84,
+        "CoffeeSetupMug": 44,
+        "OpenStandMixerHead": 92,
+        "Average": 76.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Zeva",
+      "attribution": "author-reported",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-atomic5-lingbot",
+      "paperId": "p150",
+      "method": "LingBot-VA",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 63,
+        "CloseToasterDoor": 60,
+        "TurnOnMicrowave": 70,
+        "CoffeeSetupMug": 35,
+        "OpenStandMixerHead": 48,
+        "Average": 55.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, LingBot-VA",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-atomic5-xiaomi",
+      "paperId": "p150",
+      "method": "Xiaomi-Robotics-1",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 17,
+        "CloseToasterDoor": 16,
+        "TurnOnMicrowave": 82,
+        "CoffeeSetupMug": 6,
+        "OpenStandMixerHead": 35,
+        "Average": 31.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Xiaomi-Robotics-1",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-atomic5-tauwm",
+      "paperId": "p150",
+      "method": "τ₀-WM",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 15,
+        "CloseToasterDoor": 32,
+        "TurnOnMicrowave": 63,
+        "CoffeeSetupMug": 12,
+        "OpenStandMixerHead": 23,
+        "Average": 29
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, τ₀-WM",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-atomic5-fastwam",
+      "paperId": "p150",
+      "method": "Fast-WAM",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 88,
+        "CloseToasterDoor": 66,
+        "TurnOnMicrowave": 60,
+        "CoffeeSetupMug": 54,
+        "OpenStandMixerHead": 94,
+        "Average": 72.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Fast-WAM",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-atomic5-cosmos",
+      "paperId": "p150",
+      "method": "Cosmos3-Nano",
+      "trackId": "zeva-v2-robocasa365-atomic5",
+      "values": {
+        "ElectricKettle": 76,
+        "CloseToasterDoor": 74,
+        "TurnOnMicrowave": 76,
+        "CoffeeSetupMug": 6,
+        "OpenStandMixerHead": 92,
+        "Average": 64.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table II, Cosmos3-Nano",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors locally trained all methods on task-specific dataset, same action/observation interface; Zeva + separately trained CTE, BIT/PIM and prompt policy. Public checkpoint tested without self-evolution.",
+      "evaluationNotes": "Original Table II, five tasks macro-average SR; source-specific Cosmos3-Nano backbone and locally reproduced baselines. 50 randomized episodes per task, two runs, mean success; not Target50 or full RoboCasa365",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-atomic-zeva",
+      "paperId": "p150",
+      "method": "Zeva",
+      "trackId": "zeva-v2-chemlab-atomic-sr",
+      "values": {
+        "PickUpTube": 100,
+        "PlaceBeaker": 70,
+        "PourWater": 80,
+        "Average": 83.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level1 Zeva",
+      "attribution": "author-reported",
+      "trainingData": "Authors re-train matched baselines, Zeva Cosmos3-Edge with memory-conditioned offline training.",
+      "evaluationNotes": "Original Table I atomic level; strict task completion SR, not partial stage score. 20 randomized real episodes per task, ARX bimanual with Cosmos3-Edge",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-short-zeva",
+      "paperId": "p150",
+      "method": "Zeva",
+      "trackId": "zeva-v2-chemlab-short-sr",
+      "values": {
+        "Titration": 70,
+        "SaltSolution": 70,
+        "Average": 70
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level2 Zeva",
+      "attribution": "author-reported",
+      "trainingData": "ARX + Cosmos3-Edge, same baseline task data and evaluation.",
+      "evaluationNotes": "Author Table I short sequence success, not atomic or complex. Macro average over two named tasks. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-complex-zeva",
+      "paperId": "p150",
+      "method": "Zeva",
+      "trackId": "zeva-v2-chemlab-complex-sr",
+      "values": {
+        "BalanceWeighing": 5,
+        "Extraction": 10,
+        "Average": 7.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 success Zeva",
+      "attribution": "author-reported",
+      "trainingData": "ARX + Cosmos3-Edge, source Table I.",
+      "evaluationNotes": "Full completion 5/10% for Zeva, not stage progress 47.5/67.14%; separate metric to prevent overstating success. 20 randomized real episodes per task, multi-stage",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-progress-zeva",
+      "paperId": "p150",
+      "method": "Zeva",
+      "trackId": "zeva-v2-chemlab-long-process-score",
+      "values": {
+        "BalanceWeighing": 47.5,
+        "Extraction": 67.14,
+        "Average": 57.32
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 Process Score Zeva",
+      "attribution": "author-reported",
+      "trainingData": "ARX + Cosmos3-Edge; reports author local partial progress.",
+      "evaluationNotes": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-atomic-lingbot",
+      "paperId": "p150",
+      "method": "LingBot-VA",
+      "trackId": "zeva-v2-chemlab-atomic-sr",
+      "values": {
+        "PickUpTube": 80,
+        "PlaceBeaker": 70,
+        "PourWater": 65,
+        "Average": 71.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level1 LingBot-VA",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors re-train matched baselines, Zeva Cosmos3-Edge with memory-conditioned offline training.",
+      "evaluationNotes": "Original Table I atomic level; strict task completion SR, not partial stage score. 20 randomized real episodes per task, ARX bimanual with Cosmos3-Edge",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-short-lingbot",
+      "paperId": "p150",
+      "method": "LingBot-VA",
+      "trackId": "zeva-v2-chemlab-short-sr",
+      "values": {
+        "Titration": 55,
+        "SaltSolution": 75,
+        "Average": 65
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level2 LingBot-VA",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, same baseline task data and evaluation.",
+      "evaluationNotes": "Author Table I short sequence success, not atomic or complex. Macro average over two named tasks. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-complex-lingbot",
+      "paperId": "p150",
+      "method": "LingBot-VA",
+      "trackId": "zeva-v2-chemlab-complex-sr",
+      "values": {
+        "BalanceWeighing": 5,
+        "Extraction": 0,
+        "Average": 2.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 success LingBot-VA",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, source Table I.",
+      "evaluationNotes": "Full completion 5/10% for Zeva, not stage progress 47.5/67.14%; separate metric to prevent overstating success. 20 randomized real episodes per task, multi-stage",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-progress-lingbot",
+      "paperId": "p150",
+      "method": "LingBot-VA",
+      "trackId": "zeva-v2-chemlab-long-process-score",
+      "values": {
+        "BalanceWeighing": 28.75,
+        "Extraction": 40,
+        "Average": 34.38
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 Process Score LingBot-VA",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge; reports author local partial progress.",
+      "evaluationNotes": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-atomic-fastwam",
+      "paperId": "p150",
+      "method": "Fast-WAM",
+      "trackId": "zeva-v2-chemlab-atomic-sr",
+      "values": {
+        "PickUpTube": 85,
+        "PlaceBeaker": 70,
+        "PourWater": 75,
+        "Average": 76.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level1 Fast-WAM",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors re-train matched baselines, Zeva Cosmos3-Edge with memory-conditioned offline training.",
+      "evaluationNotes": "Original Table I atomic level; strict task completion SR, not partial stage score. 20 randomized real episodes per task, ARX bimanual with Cosmos3-Edge",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-short-fastwam",
+      "paperId": "p150",
+      "method": "Fast-WAM",
+      "trackId": "zeva-v2-chemlab-short-sr",
+      "values": {
+        "Titration": 45,
+        "SaltSolution": 55,
+        "Average": 50
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level2 Fast-WAM",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, same baseline task data and evaluation.",
+      "evaluationNotes": "Author Table I short sequence success, not atomic or complex. Macro average over two named tasks. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-complex-fastwam",
+      "paperId": "p150",
+      "method": "Fast-WAM",
+      "trackId": "zeva-v2-chemlab-complex-sr",
+      "values": {
+        "BalanceWeighing": 0,
+        "Extraction": 0,
+        "Average": 0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 success Fast-WAM",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, source Table I.",
+      "evaluationNotes": "Full completion 5/10% for Zeva, not stage progress 47.5/67.14%; separate metric to prevent overstating success. 20 randomized real episodes per task, multi-stage",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-progress-fastwam",
+      "paperId": "p150",
+      "method": "Fast-WAM",
+      "trackId": "zeva-v2-chemlab-long-process-score",
+      "values": {
+        "BalanceWeighing": 22.5,
+        "Extraction": 58.57,
+        "Average": 40.54
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 Process Score Fast-WAM",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge; reports author local partial progress.",
+      "evaluationNotes": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-atomic-pi05",
+      "paperId": "p150",
+      "method": "π₀.₅",
+      "trackId": "zeva-v2-chemlab-atomic-sr",
+      "values": {
+        "PickUpTube": 95,
+        "PlaceBeaker": 60,
+        "PourWater": 65,
+        "Average": 73.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level1 π₀.₅",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors re-train matched baselines, Zeva Cosmos3-Edge with memory-conditioned offline training.",
+      "evaluationNotes": "Original Table I atomic level; strict task completion SR, not partial stage score. 20 randomized real episodes per task, ARX bimanual with Cosmos3-Edge",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-short-pi05",
+      "paperId": "p150",
+      "method": "π₀.₅",
+      "trackId": "zeva-v2-chemlab-short-sr",
+      "values": {
+        "Titration": 60,
+        "SaltSolution": 50,
+        "Average": 55
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level2 π₀.₅",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, same baseline task data and evaluation.",
+      "evaluationNotes": "Author Table I short sequence success, not atomic or complex. Macro average over two named tasks. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-complex-pi05",
+      "paperId": "p150",
+      "method": "π₀.₅",
+      "trackId": "zeva-v2-chemlab-complex-sr",
+      "values": {
+        "BalanceWeighing": 0,
+        "Extraction": 0,
+        "Average": 0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 success π₀.₅",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, source Table I.",
+      "evaluationNotes": "Full completion 5/10% for Zeva, not stage progress 47.5/67.14%; separate metric to prevent overstating success. 20 randomized real episodes per task, multi-stage",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-progress-pi05",
+      "paperId": "p150",
+      "method": "π₀.₅",
+      "trackId": "zeva-v2-chemlab-long-process-score",
+      "values": {
+        "BalanceWeighing": 33.75,
+        "Extraction": 31.43,
+        "Average": 32.59
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 Process Score π₀.₅",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge; reports author local partial progress.",
+      "evaluationNotes": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-atomic-cosmosedge",
+      "paperId": "p150",
+      "method": "Cosmos3-Edge",
+      "trackId": "zeva-v2-chemlab-atomic-sr",
+      "values": {
+        "PickUpTube": 80,
+        "PlaceBeaker": 70,
+        "PourWater": 60,
+        "Average": 70
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level1 Cosmos3-Edge",
+      "attribution": "reported-baseline",
+      "trainingData": "Authors re-train matched baselines, Zeva Cosmos3-Edge with memory-conditioned offline training.",
+      "evaluationNotes": "Original Table I atomic level; strict task completion SR, not partial stage score. 20 randomized real episodes per task, ARX bimanual with Cosmos3-Edge",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-short-cosmosedge",
+      "paperId": "p150",
+      "method": "Cosmos3-Edge",
+      "trackId": "zeva-v2-chemlab-short-sr",
+      "values": {
+        "Titration": 45,
+        "SaltSolution": 60,
+        "Average": 52.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level2 Cosmos3-Edge",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, same baseline task data and evaluation.",
+      "evaluationNotes": "Author Table I short sequence success, not atomic or complex. Macro average over two named tasks. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-complex-cosmosedge",
+      "paperId": "p150",
+      "method": "Cosmos3-Edge",
+      "trackId": "zeva-v2-chemlab-complex-sr",
+      "values": {
+        "BalanceWeighing": 0,
+        "Extraction": 0,
+        "Average": 0
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 success Cosmos3-Edge",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge, source Table I.",
+      "evaluationNotes": "Full completion 5/10% for Zeva, not stage progress 47.5/67.14%; separate metric to prevent overstating success. 20 randomized real episodes per task, multi-stage",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-chemlab-progress-cosmosedge",
+      "paperId": "p150",
+      "method": "Cosmos3-Edge",
+      "trackId": "zeva-v2-chemlab-long-process-score",
+      "values": {
+        "BalanceWeighing": 38.75,
+        "Extraction": 50.71,
+        "Average": 44.73
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table I, Level3 Process Score Cosmos3-Edge",
+      "attribution": "reported-baseline",
+      "trainingData": "ARX + Cosmos3-Edge; reports author local partial progress.",
+      "evaluationNotes": "Percent of longest consecutively completed ordered stage prefix, not full task SR; different from RoboDojo progress Score. 20 randomized real episodes per task",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-ablation-full",
+      "paperId": "p150",
+      "method": "Zeva (BIT + PIM)",
+      "trackId": "zeva-v2-chemlab-five-ablation-sr",
+      "values": {
+        "PickUpTube": 100,
+        "PlaceBeaker": 70,
+        "PourWater": 80,
+        "Titration": 70,
+        "SaltSolution": 70
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table III memory ablation, Zeva (BIT + PIM)",
+      "attribution": "author-reported",
+      "trainingData": "Cosmos3-Edge author trained variants; identical task support for matched ablations.",
+      "evaluationNotes": "BIT and PIM toggle on same author source; full and three ablations, this is component ablation, not 4 independent robot policies. 20 randomized real episodes/task per ablation condition",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-ablation-no-bit",
+      "paperId": "p150",
+      "method": "Zeva (PIM only, no BIT)",
+      "trackId": "zeva-v2-chemlab-five-ablation-sr",
+      "values": {
+        "PickUpTube": 80,
+        "PlaceBeaker": 50,
+        "PourWater": 50,
+        "Titration": 40,
+        "SaltSolution": 55
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table III memory ablation, Zeva (PIM only, no BIT)",
+      "attribution": "author-reported",
+      "trainingData": "Cosmos3-Edge author trained variants; identical task support for matched ablations.",
+      "evaluationNotes": "BIT and PIM toggle on same author source; full and three ablations, this is component ablation, not 4 independent robot policies. 20 randomized real episodes/task per ablation condition",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-ablation-no-pim",
+      "paperId": "p150",
+      "method": "Zeva (BIT only, no PIM)",
+      "trackId": "zeva-v2-chemlab-five-ablation-sr",
+      "values": {
+        "PickUpTube": 85,
+        "PlaceBeaker": 60,
+        "PourWater": 70,
+        "Titration": 60,
+        "SaltSolution": 50
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table III memory ablation, Zeva (BIT only, no PIM)",
+      "attribution": "author-reported",
+      "trainingData": "Cosmos3-Edge author trained variants; identical task support for matched ablations.",
+      "evaluationNotes": "BIT and PIM toggle on same author source; full and three ablations, this is component ablation, not 4 independent robot policies. 20 randomized real episodes/task per ablation condition",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-ablation-none",
+      "paperId": "p150",
+      "method": "Zeva (no BIT, no PIM)",
+      "trackId": "zeva-v2-chemlab-five-ablation-sr",
+      "values": {
+        "PickUpTube": 65,
+        "PlaceBeaker": 40,
+        "PourWater": 45,
+        "Titration": 25,
+        "SaltSolution": 35
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Table III memory ablation, Zeva (no BIT, no PIM)",
+      "attribution": "author-reported",
+      "trainingData": "Cosmos3-Edge author trained variants; identical task support for matched ablations.",
+      "evaluationNotes": "BIT and PIM toggle on same author source; full and three ablations, this is component ablation, not 4 independent robot policies. 20 randomized real episodes/task per ablation condition",
+      "supersedes": ""
+    },
+    {
+      "id": "r-zeva-v2-atomic5-fixed-csr",
+      "paperId": "p150",
+      "method": "Zeva (PIM cumulative fixed episode)",
+      "trackId": "zeva-v2-robocasa365-fixed-episode-csr",
+      "values": {
+        "Evolve1": 26,
+        "Evolve2": 45,
+        "Evolve3": 70,
+        "Evolve4": 73
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-11",
+      "source": "https://arxiv.org/html/2608.30880v2",
+      "sourceVersion": "arXiv 2608.30880v2",
+      "locator": "Fig. 3 / §IV-E1 Evolve 1-4 selected milestones",
+      "attribution": "author-reported",
+      "trainingData": "Zeva PIM memory accumulates within fixed episode; no online gradient update.",
+      "evaluationNotes": "100 fixed task-seed pairs; selected milestones are not consecutive attempt indexes; not the Table II randomized 50 episode/run SR.",
+      "supersedes": ""
+    }
+  ],
+  "resources": {
+    "p150": {
+      "project": "https://air-embodied-brain.github.io/Zeva",
+      "code": "https://github.com/air-embodied-brain/Zeva"
+    }
+  },
+  "reproducibility": {
+    "p150": {
+      "verifiedAt": "2026-11-11",
+      "level": "baseline",
+      "note": "Official arxiv v2, project page and source repository verified; code/weights + locked Atomic5 eval and selected PIM fixed-seed cases are released, but NOT all real ChemLab tests or paper's full self-evolution protocol. Repository uses OpenMDW-1.1 and has separate model/data licenses; resource dimensions remain unknown until deep per-asset audit.",
+      "items": {}
+    }
+  }
+}
