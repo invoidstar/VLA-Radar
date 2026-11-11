@@ -1,3 +1,10 @@
+## 2026-11-11 — V3.1 Paper Deep Reading 论文精读首版
+
+- 新增独立“论文精读”板块、SLA（p148）专属 /close-reading/p148/ 静态页面，以及从现有论文详情进入精读的入口。
+- 将用户提供的 SLA 精读 HTML 整理为 101 个原稿段落及 16 表/6 图的来源定位、中文原创论证批注和短英文技术关键词；**不公开转载原文全文、全文翻译或原稿截图**。
+- 重用五色逻辑标签、章节导航、搜索、中文专注模式、显示批注、打印与移动端双栏转单栏体验；关键原表关联现有 Benchmark Track。
+- 新增结构化精读数据/版权校验、按需加载、独立每篇 URL、三浏览器及移动视口回归；不变更 149 篇论文 ID、结果和本地阅读记录。
+
 ## 2026-11-11 — 2026-11-11-sla-robodojo-paper-catchup
 
 Original full-text arXiv SLA 2611.08373v1 and PyRUA-Lean 2610.01939v2 added as p148/p149 with 23 section-level methods, training/ablations/limits and 28 exact source-scoped author or cited-baseline results over 15 paper-table protocol tracks. Separate RoboDojo Real/Sim, progress Score/SR and author-local from RoboDojo team reported Agent. Not a new fair official overall rank. Published sources and baseline reproducibility cards verified 2026-11-11; preview-only or fulltext-unverified models remain outside the paper catalog. Four-source discovery remains partial. Note section identifiers and per-paper source locators follow the strict published schema.
