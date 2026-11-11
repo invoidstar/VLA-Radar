@@ -1,7 +1,7 @@
 {
   "id": "2026-11-11-sla-robodojo-paper-catchup",
   "date": "2026-11-11",
-  "summary": "Original full-text arXiv SLA 2611.08373v1 and PyRUA-Lean 2610.01939v2 added as p148/p149 with 23 section-level methods, training/ablations/limits and 28 exact source-scoped author or cited-baseline results over 15 paper-table protocol tracks. Separate RoboDojo Real/Sim, progress Score/SR and author-local from RoboDojo team reported Agent. Not a new fair official overall rank. Published sources and baseline reproducibility cards verified 2026-11-11; preview-only or fulltext-unverified models remain outside the paper catalog. Four-source discovery remains partial.",
+  "summary": "Original full-text arXiv SLA 2611.08373v1 and PyRUA-Lean 2610.01939v2 added as p148/p149 with 23 section-level methods, training/ablations/limits and 28 exact source-scoped author or cited-baseline results over 15 paper-table protocol tracks. Separate RoboDojo Real/Sim, progress Score/SR and author-local from RoboDojo team reported Agent. Not a new fair official overall rank. Published sources and baseline reproducibility cards verified 2026-11-11; preview-only or fulltext-unverified models remain outside the paper catalog. Four-source discovery remains partial. Note section identifiers and per-paper source locators follow the strict published schema.",
   "notes": [],
   "tracks": [
     {
