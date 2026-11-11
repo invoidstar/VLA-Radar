@@ -47,11 +47,12 @@ def test_public_asset_urls_are_stable():
         'index.html','favicon.svg','styles.css','sidebar.css','research.css','experience.css','news.css','tools.css',
         'app.js','research.js','benchmark-settings.js','dates.js','runtime.js','math.js','search-core.js','search-client.js','search-worker.js',
         'sidebar.js','experience-loader.js','experience-core.js','experience.js','news-core.js','news.js',
-        'tools-loader.js','tools-core.js','tools.js'
+        'tools-loader.js','tools-core.js','tools.js',
+        'close-reading-list.css','close-reading-list.js','close-reading/reader.css','close-reading/reader.js'
     }
     assert set(PUBLIC_FILES.values())==expected
     index=(ROOT/'site/index.html').read_text()
-    for name in ['styles.css','sidebar.css','research.css','experience.css','app.js','research.js','benchmark-settings.js','runtime.js','search-client.js','experience-loader.js','tools-loader.js']:
+    for name in ['styles.css','sidebar.css','research.css','experience.css','app.js','research.js','benchmark-settings.js','runtime.js','search-client.js','experience-loader.js','tools-loader.js','close-reading-list.css','close-reading-list.js']:
         assert name in index
     assert 'src="js/' not in index
     assert 'href="styles/' not in index
@@ -64,7 +65,7 @@ def test_staged_assets_use_content_hash_cache_busting():
     with tempfile.TemporaryDirectory() as td:
         out=stage(Path(td)/'public')
         index=(out/'index.html').read_text()
-        for name in ['styles.css','research.css','experience.css','app.js','research.js','math.js','experience-loader.js','tools-loader.js']:
+        for name in ['styles.css','research.css','experience.css','app.js','research.js','math.js','experience-loader.js','tools-loader.js','close-reading-list.css','close-reading-list.js']:
             digest=hashlib.sha256((out/name).read_bytes()).hexdigest()[:12]
             assert f'{name}?v={digest}' in index,name
         for loader,refs in {'experience-loader.js':['experience-core.js','experience.js','news.css','news-core.js','news.js'],'tools-loader.js':['tools.css','tools-core.js','tools.js']}.items():
@@ -73,3 +74,18 @@ def test_staged_assets_use_content_hash_cache_busting():
                 digest=hashlib.sha256((out/name).read_bytes()).hexdigest()[:12]
                 assert f'{name}?v={digest}' in text,(loader,name)
         assert not re.search(r'\\?v=(?:final|maintenance|leaderboard|math|settings|news)-',index)
+
+
+def test_paper_close_reading_staged_route_is_hash_pinned():
+    from scripts.build.stage_site import stage
+    with tempfile.TemporaryDirectory() as td:
+        out=stage(Path(td)/'vla-reading-site')
+        chapter=out/'close-reading'/'p148'/'index.html'
+        assert chapter.is_file()
+        html=chapter.read_text(encoding='utf-8')
+        for name in ('reader.css','reader.js'):
+            digest=hashlib.sha256((out/'close-reading'/name).read_bytes()).hexdigest()[:12]
+            assert f'../{name}?v={digest}' in html,name
+        edition=out/'data'/'close-readings'/'p148.json'
+        assert edition.is_file() and edition.stat().st_size < 300_000
+        assert (out/'data'/'close-readings'/'index.json').is_file()
