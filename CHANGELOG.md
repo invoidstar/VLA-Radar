@@ -1,3 +1,10 @@
+## 2026-11-12 — V3.1 论文原稿同屏阅读及发布后校验
+
+- 精读页增加官方原稿 PDF 同屏阅读器，按段落、表格、图片定位原始 PDF 页码，支持打开/收起、外部打开后备入口；保留中文逻辑批注、五色标签和 Benchmark 关联。
+- 原稿直接由其官方 URL 加载，公共仓库不镜像完整论文或原始图片；跨站嵌入若受限可新标签访问。
+- 扩展三浏览器自动化回归，并在 Pages 部署后验证精读页面、版本化静态资源和原始 PDF 元数据。
+- 修正精读列表中旧的 149 篇硬编码，改由公开文库数据动态给出当前论文数。
+
 ## 2026-11-11 — 2026-11-11-zeva-source-results
 
 Source-read Zeva v2 2026-09-22 arXiv full HTML: original Table I/II/III and §IV-E Fig3. Adds 7 author-paper-table protocol tracks / 31 separately attributed source rows (4 distinct ChemLab metrics/scopes, 5 RoboCasa365 Atomic5 tasks, 5-task BIT/PIM ablation, fixed-episode milestone CSR). All results are authors' locally reproduced comparisons, not official benchmark model submissions or independent VLA-Radar replication. Full deployment frozen memory receives offline-trained CTE; publicly released frozen-policy checkpoint was evaluated WITHOUT cross-attempt evolution and must not be claimed to reproduce PIM improvement. Date and model resource boundary verified against official GitHub README. ChemLab-Evo is explicitly a one-paper real-robot case study, not a standardized public benchmark; negative long-horizon task SR and attribution are visible. PIM fixed-episode CSR and BIT/PIM ablation stay in canonical evidence, excluded from public method ranking.
