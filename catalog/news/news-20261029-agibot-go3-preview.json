@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-12",
+  "updatedAt": "2026-11-12",
+  "evidence": "official",
+  "status": "verified",
+  "paperLinks": [],
+  "revisionHistory": [],
+  "id": "news-20261029-agibot-go3-preview",
+  "eventKey": "agibot-go3-preview-wram-20261029",
+  "title": "智元发布 GO-3 Preview：提出 WRAM 具身架构，公开榜单提交但权重尚待开源",
+  "primaryCategory": "model",
+  "tags": [
+    "智元",
+    "AGIBOT",
+    "GO-3 Preview",
+    "WRAM",
+    "RoboDojo",
+    "RoboTwin",
+    "robotics",
+    "agent"
+  ],
+  "eventDate": "2026-10-29",
+  "publishedAt": "2026-10-30",
+  "dateNote": "公司 2026-10-30 官方文章明确 10 月 29 日发布 GO-3 Preview；后续 2026 年底开源为企业计划，不能写成 10 月已有权重下载。RoboDojo 正式 2026-10-27 榜单新闻可独立核实其 Agent 提交，但评测类型需区分。",
+  "stage": "preview",
+  "featured": false,
+  "importance": "research-resource",
+  "whatHappened": "智元在 10 月 29 日 AI WAVE 发布 GO-3 Preview，官方定义为结合任务推理、未来预测和动作生成的 WRAM 架构，并介绍预训练、后训练、部署后学习阶段的连接。10 月 30 日官网文章将模型描述为预览版本，宣布计划于 2026 年底开源，附有 RoboDojo、RoboTwin、RoboColiseum 榜单成绩声明。",
+  "whyItMatters": "GO-3 Preview 提供了具身世界预测与动作生成耦合的产业研究线索，也凸显高分 Agent 提交、模型架构、权重可获得性需要分别记录，而不是将榜单高位直接等同于可复现的纯 VLA 基模。",
+  "vlaRelevance": "RoboDojo 网站在 10 月 27 日记录 GO-3 Nano Preview 的 Agent 赛道成绩；名称/模型变体与公司 GO-3 Preview 发布关系尚需精确版本确认。官方榜的 Score 与 SR、Agent 与纯模型不能当成相同度量；目前不为 GO-3 Preview 虚构独立全文论文 ID。",
+  "limits": "模型在本次发布属于 preview，2026 年底开源仍是预期计划；官方宣称的榜单第一并不意味着全部排行榜按同一轨道比较。公司 GO-3 Preview 与比赛页 GO-3 Nano Preview 的 checkpoint 同一性未查实，不把两种名称私自合并。报告中 WRAM 架构与性能属于公司自报。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "AI WAVE｜智元发布具身模型 GO-3 Preview",
+      "publisher": "智元创新（上海）科技股份有限公司",
+      "url": "https://www.agibot.com.cn/article/315/detail/260.html",
+      "kind": "official",
+      "publishedAt": "2026-10-30",
+      "access": "full-page",
+      "note": "一手官方发布日、WRAM 表述、RoboDojo 等成绩声明以及计划年底开源边界；不代表模型已开放。"
+    },
+    {
+      "id": "s2",
+      "title": "RoboDojo official model submission news",
+      "publisher": "RoboDojo Benchmark Committee",
+      "url": "https://robodojo-benchmark.com/",
+      "kind": "official",
+      "publishedAt": null,
+      "access": "full-page",
+      "note": "官方站点记录 2026-10-27 GO-3 Nano Preview Agent 提交，不能未经版本核实等同 GO-3 Preview 公开权重。"
+    }
+  ]
+}
