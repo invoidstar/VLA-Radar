@@ -83,3 +83,10 @@ Benchmark track 身份、文本长度以及没有 HTML/iframe/Base64 嵌入内�
 
 当前第一篇为 SLA p148，新增其他论文前先进行原稿及许可证核验，
 并沿用同一 JSON Schema 和相同阅读器，不要为每篇另写一套 CSS/JS。
+
+## 2026-11-12 原文同屏阅读
+
+- 精读页新增可折叠的官方原稿 PDF iframe，按 `sections[].units[].pdfPage` 逐单元定位页码。原稿在论文来源域名加载，不在 GitHub Pages、`data/close-readings/` 或 `catalog/close-readings/` 复制 PDF 全文、图片或全文翻译。
+- 每个单元保留官方来源链接和新标签后备阅读入口。浏览器可能拒绝跨站 PDF iframe；此时直接在新标签打开，不可将测试桩的成功误称线上嵌入已验证。
+- Chromium、Firefox、WebKit 检查初始原稿 URL、页码按钮、折叠展开、原有批注功能与移动端无横向溢出。生产烟雾测试新增精读独立深链接、版本戳、源元数据检查。
+- 目前来源段落与 PDF 页码的 101 处对应尚待独立人工逐页复核；不要因为 UI 可跳页而把结构校验升级为原稿逐页完成核验。

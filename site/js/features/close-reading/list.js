@@ -18,13 +18,13 @@
         '</article>';
     }
     host.innerHTML='<div class="close-head"><span class="eyebrow">PAPER DEEP READING</span><h1>沿着原文，<em>理解论证。</em></h1>'+
-      '<p>从论文观点到实验归因：逐段批注、英文技术关键词、中文逻辑导读，以及原稿 PDF 页码与 Benchmark 证据链接。</p></div>'+
+      '<p>从论文观点到实验归因：官方 PDF 原文同屏阅读、逐段中文批注、原稿页码定位，以及 Benchmark 证据链接。</p></div>'+
       '<div class="close-board"><div class="close-stat"><strong>'+list.length+'</strong><span>精选论文</span></div>'+
       '<div class="close-stat"><strong>'+list.reduce((n,x)=>n+x.units,0)+'</strong><span>来源定位单元</span></div>'+
       '<p>本专区采用可复用的精读结构；未经授权的论文原文和原图不镜像托管。已有的详细笔记仍在每篇论文详情页查看。</p></div>'+
       '<label class="close-search">⌕ <input id="close-filter" type="search" placeholder="检索论文名称、作者和关键研究方向…" aria-label="筛选论文精读"></label>'+
       '<div class="close-list" id="close-list"></div>'+
-      '<p class="close-note">文献库现有 149 篇论文的深度笔记与这里的逐段论证精读相互补充；本栏目不自动将所有论文标为“全文译注”。精读材料持续核对原稿版本、图表和评价条件。</p>';
+      '<p class="close-note">文献库现有 '+(library?.papers?.length||0)+' 篇论文的深度笔记与这里的逐段论证精读相互补充；可在精读页同屏打开官方 PDF，按来源页码核对批注。本栏目不会自动把所有论文标为完整精读。</p>';
     const output=host.querySelector('#close-list'),input=host.querySelector('#close-filter');
     function render(){
       const text=input.value.trim().normalize('NFKC').toLowerCase();
