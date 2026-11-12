@@ -1,5 +1,5 @@
-/* VLA-Radar V3.1 — source-linked public close-reading renderer.
-   No full PDF, embedded article images, external accounts or unsafe HTML. */
+/* VLA-Radar V3.1 — source-linked reading with optional official original-PDF viewer.
+   Embed the publisher URL without copying its PDF or article text into this repository. */
 'use strict';
 (() => {
   const $ = s => document.querySelector(s);
@@ -16,6 +16,28 @@
   let lastVisibleCount = 0;
   const allUnits = d => d.sections.reduce((n,s)=>n+s.units.length,0);
   const validUrl = u => {try{const x = new URL(u);return x.protocol==='https:'?x.href:'#'}catch{return '#'}};
+  function setSourceOpen(open) {
+    document.body.classList.toggle('source-open', Boolean(open));
+    const button=$('#source-toggle');
+    button.setAttribute('aria-pressed',String(Boolean(open)));
+    button.setAttribute('aria-expanded',String(Boolean(open)));
+    button.textContent=open?'收起原文面板':'原文同屏 · 官方 PDF';
+  }
+  function jumpPdf(page) {
+    if(!doc || !Number.isInteger(page) || page<1 || page>150)return;
+    const source=validUrl(doc.pdfUrl);
+    if(source==='#')return;
+    const target=source+'#page='+page;
+    const frame=$('#original-pdf');
+    $('#source-page').textContent='PDF p.'+page;
+    $('#source-external').href=target;
+    if(frame.dataset.page!==String(page)){
+      frame.dataset.page=String(page);
+      frame.src=target;
+    }
+    for(const item of $('#reading-units').querySelectorAll('.source-jump'))
+      item.setAttribute('aria-pressed',String(Number(item.dataset.pdfPage)===page));
+  }
 
   function textIndex(unit) {
     return [unit.id,unit.title,unit.function,unit.argumentRole,unit.criticalNote,unit.sourcePageLabel,
@@ -41,7 +63,7 @@
         '<div class="cn"><div class="kicker">中文 · 论证导读</div>'+
           '<div class="cn-box"><p>'+esc(unit.argumentRole)+'</p></div></div>'+
         (isAsset?'<div class="figure-note">原稿'+(unit.kind==='table'?'表格':'图片')+'未在本站镜像；请使用原始 PDF 页码查看内容、图注与具体数值。</div>':'')+
-        '<div class="source-button-row"><a href="'+sourceLink+'" target="_blank" rel="noopener noreferrer">查看原文第 '+unit.pdfPage+' 页 ↗</a>'+evidence+'</div>'+
+        '<div class="source-button-row"><button type="button" class="source-jump" data-pdf-page="'+Number(unit.pdfPage)+'" aria-pressed="false" aria-label="在同屏原稿查看 PDF 第 '+Number(unit.pdfPage)+' 页">同屏查看原文 p.'+Number(unit.pdfPage)+'</button><a href="'+sourceLink+'" target="_blank" rel="noopener noreferrer">新标签打开原文 p.'+Number(unit.pdfPage)+' ↗</a>'+evidence+'</div>'+
       '</div>'+
       '<aside class="annotation '+esc(unit.dimension)+'" aria-label="'+esc(unit.id)+' 中文论证批注">'+
         '<div class="annotation-top"><strong>'+esc(unit.id)+' · 批判性阅读</strong><span>'+esc(named[unit.dimension]||'论证分析')+'</span></div>'+
@@ -88,7 +110,7 @@
       '<div><strong>'+d.totals.paragraphs+'</strong><span>段落</span></div>'+
       '<div><strong>'+d.totals.tables+'</strong><span>表格</span></div>'+
       '<div><strong>'+d.totals.figures+'</strong><span>图片</span></div></div>'+
-      '<p>保留精读版逐段原文页码和原创批注；无原稿全文转存。</p></section>';
+      '<p>左侧同屏加载官方原稿 PDF，可按每条批注定位页码；不复制论文全文到本站。</p></section>';
     $('#chapter-nav').innerHTML=d.sections.map((section,i)=>
       '<a href="#chapter-'+esc(section.id)+'"><span aria-hidden="true">'+String(i+1).padStart(2,'0')+' </span>'+esc(section.title)+'</a>'
     ).join('')+'<a href="#argument-map">论证总览</a>';
@@ -121,6 +143,13 @@
       document.body.classList.toggle('no-notes',!e.target.checked);
     });
     $('#print-button').addEventListener('click',()=>window.print());
+    $('#source-toggle').addEventListener('click',()=>setSourceOpen(!document.body.classList.contains('source-open')));
+    $('#reading-units').addEventListener('click',e=>{
+      const jump=e.target.closest('.source-jump');
+      if(!jump)return;
+      setSourceOpen(true);
+      jumpPdf(Number(jump.dataset.pdfPage));
+    });
     for(const b of document.querySelectorAll('[data-dimension]'))b.addEventListener('click',()=>{
       const type=b.dataset.dimension,enabled=b.getAttribute('aria-pressed')==='true';
       b.setAttribute('aria-pressed',String(!enabled));
@@ -144,7 +173,7 @@
          data.copyright?.originalFullTextRepublished!==false || data.copyright?.figuresMirrored!==false)
         throw new Error('精读内容校验未通过。');
       doc=data;
-      renderOutline(data);renderUnits();requestProgress();
+      renderOutline(data);renderUnits();setSourceOpen(true);jumpPdf(data.sections[0]?.units[0]?.pdfPage||1);requestProgress();
       if(location.hash&&/^#(?:P\d{3}|TAB\d+|FIG\d+|chapter-[a-z0-9-]+|argument-map)$/.test(location.hash)){
         document.getElementById(location.hash.slice(1))?.scrollIntoView();
       }
