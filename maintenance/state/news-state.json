@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-11",
+  "asOf": "2026-11-12",
   "status": "partial",
-  "lastAttemptAt": "2026-11-11",
+  "lastAttemptAt": "2026-11-12",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-11-11 targeted original-source news backcheck to Oct28 (Panasonic T-Rex Nov05 published, RoboDojo live Nov03 changes) plus sampled Chinese news sources. Added one source-supported English official research event; full bilingual day-by-day company/lab/release coverage not completed. Preserve lastSuccessfulSearchAt=2026-10-04.",
+  "summary": "2026-11-12 targeted original English and Chinese November events: GR00T 2 (NVIDIA Nov09), Gemini Robotics 2.5 (DeepMind Nov10), Beijing embodied robotics 2026-28 action plan (Nov11), Agibot GO-3 Preview (Oct29 event/Oct30 official text); 4 verified official-source news. A curated VLA feed dated Nov12 and selected vendor/government original pages were checked; no exhaustive day-by-day bilingual channel scan for Oct04-Nov12. lastSuccessfulSearchAt remains 2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -102,6 +102,12 @@
       "to": "2026-11-11",
       "status": "partial",
       "note": "2026-11-11 sample English original-source check: Panasonic Nov05 T-Rex original corporate research announcement, RoboDojo official Oct30/Nov03 leaderboard event; Chinese robotics November news channel sampled but no adequate dated authoritative primary page for those claims in this attempt. One official research news selected; no complete chronological bilingual company/lab/media sweep, do not advance checkpoint."
+    },
+    {
+      "from": "2026-10-29",
+      "to": "2026-11-12",
+      "status": "partial",
+      "note": "Nov12 bilingual targeted original-source follow-up: NVIDIA CoRL/GEAR, Google DeepMind Nov10, Beijing municipal Nov11, AGIBOT GO3 Oct29 and official Robotics Paper Daily. Original official dates, previews vs weights, corporate-reported performance, policy goals checked; missing comprehensive every-date multilingual vendor/lab/media release coverage. Historical 2026-10-04 success checkpoint unchanged."
     }
   ]
 }

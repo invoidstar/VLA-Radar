@@ -269,3 +269,7 @@
 
 /* Preview-model provenance is distinct from reviewed publications. */
 .official-model-status{display:block;line-height:1.6;font-size:8px;color:#858ba7;overflow-wrap:anywhere;margin-top:3px}
+
+/* A visibly separate official live-vs-pinned provenance notice, not a merged ranking. */
+.benchmark-official .official-live-notice{margin:12px 18px;padding:10px 14px;border-left:3px solid #a9a08e;background:#f5f3ec;color:#485567;font-size:12px;line-height:1.7}
+.benchmark-official .official-live-notice a{color:#265d88;text-decoration:underline;margin-left:5px}

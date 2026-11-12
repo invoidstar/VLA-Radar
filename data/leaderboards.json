@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11",
+  "updatedAt": "2026-11-12",
   "tracks": [
     {
       "id": "robotwin2-selfwam-27500",
@@ -33763,6 +33763,13 @@
     "RoboDojo": {
       "id": "robodojo-sim",
       "benchmark": "RoboDojo",
+      "liveInfo": {
+        "count": 66,
+        "updatedAt": "2026-11-03",
+        "checkedAt": "2026-11-12",
+        "url": "https://robodojo-benchmark.com/leaderboard?bench=sim",
+        "status": "live-unpinned"
+      },
       "sourceUpdatedAt": "2026-10-09",
       "capturedAt": "2026-10-13",
       "sourceUrl": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
@@ -33861,6 +33868,13 @@
     "RoboDojo real": {
       "id": "robodojo-real",
       "benchmark": "RoboDojo real",
+      "liveInfo": {
+        "count": 14,
+        "updatedAt": "2026-11-03",
+        "checkedAt": "2026-11-12",
+        "url": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
+        "status": "live-unpinned"
+      },
       "sourceUpdatedAt": "2026-10-09",
       "capturedAt": "2026-10-13",
       "sourceUrl": "https://robotwin-platform.github.io/data/robodojo_real_leaderboard.json",

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "publisher-exact-title-review-20261112",
+  "checkedAt": "2026-11-12",
+  "status": "reviewed-three-unresolved",
+  "scope": "Exact paper title and author matching in official original sources vs publisher records; arXiv DOI is not a conference/workshop proceedings DOI.",
+  "cases": [
+    {
+      "paperId": "p015",
+      "title": "OnEvoMemory: Evolving Memory through Online Robot Rollouts for Pretrained Robot Policies",
+      "authors": [
+        "Zhongxi Chen",
+        "Shenqi Zong"
+      ],
+      "knownStatus": "ECCV 2026 EMR Workshop Poster",
+      "sourcesChecked": [
+        "https://arxiv.org/abs/2608.08749",
+        "https://chenzhongxi-sjtu.github.io/",
+        "https://emr-workshop.github.io/",
+        "https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/EMR"
+      ],
+      "publisherSearch": "Exact title and authors queried for Springer/ECCV workshop full archival paper; title-matched archived workshop proceedings DOI still not verified.",
+      "result": "Workshop poster supported by arXiv and author/organizer; organizer allows archived full-length and non-archived extended abstracts separately. No verified archival publication identity for this exact work.",
+      "resolution": "deferred-publisher-evidence",
+      "doi": null,
+      "publishedAt": null
+    },
+    {
+      "paperId": "p030",
+      "title": "AdaVLA: Adaptive Step Flow Matching for Training-free Acceleration of Vision-Language-Action Models",
+      "authors": [
+        "Sunghwan Han",
+        "Youngtae Han",
+        "Youngmin Yi"
+      ],
+      "knownStatus": "IROS 2026 accepted and presented",
+      "sourcesChecked": [
+        "https://arxiv.org/abs/2608.29208",
+        "https://computing.sogang.ac.kr/ko/community/news/detail/281",
+        "https://ieeexplore.ieee.org/"
+      ],
+      "publisherSearch": "Exact IEEE Xplore indexed title and listed authors search, including `site:ieeexplore.ieee.org/document` and DOI/ICRA/IROS match; no reliable title-authors matched official proceedings record.",
+      "result": "arXiv v2 comments independently corroborate accepted IROS2026; this does not certify IEEE Xplore publication DOI or precise publisher date.",
+      "resolution": "deferred-IEEE-exact-identity",
+      "doi": null,
+      "publishedAt": null
+    },
+    {
+      "paperId": "p042",
+      "title": "VLA-InfoEntropy: A Training-Free Vision-Attention Information Entropy Approach for Vision-Language-Action Models Inference Acceleration and Success",
+      "authors": [
+        "Chuhang Liu",
+        "Yayun He",
+        "Zuheng Kang",
+        "Xiaoyang Qu",
+        "Jianzong Wang"
+      ],
+      "knownStatus": "ICME 2026 accepted per author lab",
+      "sourcesChecked": [
+        "https://arxiv.org/abs/2604.05323",
+        "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/",
+        "https://ieeexplore.ieee.org/"
+      ],
+      "publisherSearch": "Exact title-authors indexed IEEE Xplore query, including DOI and official publication day; no matched publisher record verified.",
+      "result": "Lab and original arXiv confirm 2026 conference acceptance, but publisher-level full record/DOI and publication date remain unknown.",
+      "resolution": "deferred-IEEE-exact-identity",
+      "doi": null,
+      "publishedAt": null
+    }
+  ],
+  "next": "Retain paper publication status accepted without manufactured DOI/acceptedAt/publishedAt; re-run exact publisher verification during normal weekly metadata maintenance."
+}

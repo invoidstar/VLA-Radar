@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "news-2026-10-29-2026-11-12-bilingual-targeted",
+  "window": {
+    "from": "2026-10-29",
+    "to": "2026-11-12"
+  },
+  "attemptedAt": "2026-11-12",
+  "status": "partial",
+  "searchedChannels": [
+    {
+      "language": "en",
+      "channel": "NVIDIA Research/Blog and CoRL 2026",
+      "queries": "GR00T 2, world action model, CoRL original publisher release Nov09",
+      "status": "partial",
+      "source": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/"
+    },
+    {
+      "language": "en",
+      "channel": "Google DeepMind official robotics announcements",
+      "queries": "Gemini Robotics 2.5 original source Nov10, partner rollout, safety and industrial pilot",
+      "status": "partial",
+      "source": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+    },
+    {
+      "language": "zh",
+      "channel": "北京市经信局/市政府一手政策",
+      "queries": "北京市具身智能机器人产业行动方案 2026—2028 发布时间及正文",
+      "status": "partial",
+      "source": "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202611/t20261111_4941527.html"
+    },
+    {
+      "language": "zh",
+      "channel": "智元官方网站原始发布",
+      "queries": "GO-3 Preview 10月29日原始发布，开源计划与RoboDojo Agent口径",
+      "status": "partial",
+      "source": "https://www.agibot.com.cn/article/315/detail/260.html"
+    },
+    {
+      "language": "en/zh",
+      "channel": "Additional source spot checks: RoboDojo / Panasonic / robotics curated feed",
+      "queries": "Official leaderboard 2026-11-03, Panasonic T-Rex Nov05 already in catalog, Robotics Paper Daily Nov12 original titles",
+      "status": "partial",
+      "source": "https://robodojo-benchmark.com/leaderboard?bench=sim"
+    }
+  ],
+  "selected": [
+    {
+      "newsId": "news-20261109-nvidia-gr00t2-wam",
+      "eventDate": "2026-11-09",
+      "source": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/",
+      "note": "NVIDIA dated official release vs December prospective code, no inference of open model weights"
+    },
+    {
+      "newsId": "news-20261110-deepmind-gemini-robotics25",
+      "eventDate": "2026-11-10",
+      "source": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "note": "Robot 96% claimed corporate partner proof-of-concept not independent or standardized"
+    },
+    {
+      "newsId": "news-20261111-beijing-embodied-plan",
+      "eventDate": "2026-11-11",
+      "source": "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202611/t20261111_4941527.html",
+      "note": "2028 objectives are policy goals rather than attained metrics"
+    },
+    {
+      "newsId": "news-20261029-agibot-go3-preview",
+      "eventDate": "2026-10-29",
+      "source": "https://www.agibot.com.cn/article/315/detail/260.html",
+      "note": "GO-3 Preview still preview; company future promised open source not actual release"
+    }
+  ],
+  "checkedButNotAdded": [
+    {
+      "url": "https://news.panasonic.com/global/press/en261105-2",
+      "reason": "Existing Nov05 T-Rex news record; deduplicated"
+    },
+    {
+      "url": "https://robodojo-benchmark.com/leaderboard?bench=sim",
+      "reason": "Official model entries assessed in benchmark separate source-provenance audit, not duplicate media news"
+    },
+    {
+      "url": "https://www.agibot.com.cn/article/315/detail/267.html",
+      "reason": "Nov09 recap of Nov03 convenience-store event, selected as follow-up candidate only; field reliability stats are vendor assertions and separate publication-day evidence from actual demo date"
+    }
+  ],
+  "completeBilingualCoverage": false,
+  "lastSuccessfulSearchAt": "2026-10-04",
+  "uncovered": "No exhaustive by-day English/Chinese search across 2026-10-05 to 2026-11-12 from all labs, government agencies, model cards, major robotics vendors and reliable original reporting. Four selected source-supported events are genuine incremental curation but not comprehensive discovery coverage."
+}

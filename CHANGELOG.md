@@ -1,3 +1,16 @@
+## 2026-11-12 — 2026-11-12-p1-evidence-catchup
+
+Verified four official-source bilingual robotics news: NVIDIA GR00T 2, Google DeepMind Gemini Robotics 2.5, Beijing embodied-robotics action plan, and Agibot GO-3 Preview (Oct29 original event); all corporate performance is source-attributed and future release promises are not marked available. Partial source-verified discovery audit adds eight explicitly deferred arXiv research candidates without claiming full four-lane dated coverage. RoboDojo official machine-readable live URL identified but unavailable to pin; keep 57/11 canonical source SHA and surface current live 66/14 informational gap. Check three conference publisher DOIs and SLA p148 123 URL/page bounds without pretending independent PDF-to-text or exact DOI verified. Both discovery/news last complete checkpoints remain 2026-10-04. Main branch protection untouched.
+
+## 2026-11-12 — P1 定向证据补齐（不修改主分支保护）
+
+- 新闻：新增 NVIDIA GR00T 2（11/09）、Google DeepMind Gemini Robotics 2.5（11/10）、北京具身智能产业行动方案（11/11）、智元 GO-3 Preview（10/29 公告/10/30 官网）四条有原始日期的中英文官方来源，并显式区分 Preview、未来开源、公司自报性能和政策目标。
+- 论文发现：识别 8 篇具有可追溯 arXiv ID 的 VLA/WAM/机器人基准新候选；缺完整原表阅读则记 `deferred`，不虚构笔记、论文 ID、Benchmark 或结果；四渠道独立学术索引不足，检查点不前移。
+- RoboDojo：从 RoboTwin 平台官方镜像同步脚本确认机器可读官方数据端点 `/data/leaderboard.generated.json`；当前端点访问受限，仍保留 SHA 固定的 Sim 57 / Real 11，另向用户显示官网 2026-11-03 在线 66 / 14 的来源标识与跳转链接，禁止半截 UI 数据覆盖榜单。
+- 出版社：再次查 p015 EMR、p030 IROS、p042 ICME exact-title DOI，不能核实则保留 null；新审计记录复查范围。
+- SLA 精读：源 JSON 18 章节、101 段、16 表、6 图共123单元的 PDF #page 链接格式均匹配（1–31 页），但未独立逐段核对 PDF 原稿，不误称完整人工复核。
+- 仍保持两条检索 `lastSuccessfulSearchAt=2026-10-04`；GitHub main protection 维持原状，按用户要求本轮不执行。
+
 ## 2026-11-12 — V3.1 论文原稿同屏阅读及发布后校验
 
 - 精读页增加官方原稿 PDF 同屏阅读器，按段落、表格、图片定位原始 PDF 页码，支持打开/收起、外部打开后备入口；保留中文逻辑批注、五色标签和 Benchmark 关联。

@@ -112,11 +112,15 @@
     if(!meta)return '';
     const fmt=x=>typeof x==='number'?x.toFixed(2):x?.score!=null?Number(x.score).toFixed(2):'—';
     const leaders=(meta.topThree||[]).map(x=>esc(x.model)+' '+fmt(x.average)).join(' · ');
+    const live=meta.liveInfo;
+    const lagNotice=live&&live.status==='live-unpinned'&&live.count>meta.entryCount
+      ?'<p class="official-live-notice" role="note">当前显示的是有 Git SHA 固定的 '+esc(meta.entryCount)+' 条正式快照（'+esc(meta.sourceUpdatedAt)+'）。官网 '+esc(live.updatedAt)+' 的在线页面已有 '+esc(live.count)+' 条模型，但完整新源文件尚未固定，不会拼造 Score / SR 或混排 Agent 成绩。<a href="'+esc(safe(live.url))+'" target="_blank" rel="noopener noreferrer">查看官网当前榜单 ↗</a></p>':'';
     return '<details class="benchmark-official" data-official-board="'+esc(meta.id)+'">'+
       '<summary><span class="official-head"><strong>官方榜单快照</strong><small>'+
       esc(meta.entryCount)+' 个模型 · 官方源更新 '+esc(meta.sourceUpdatedAt)+'</small></span>'+
       '<span class="official-preview">'+leaders+'</span><span class="official-expand">展开榜单 ↘</span></summary>'+
       '<p class="official-description">官方模型提交与下方论文 Result Reports 属于不同证据层。只在该官方协议内排序；未核验独立全文的提交不会冒充已收录论文。</p>'+
+      lagNotice+
       '<div class="official-content" aria-label="官方榜单排名"><p class="research-loading">展开后载入精确来源的榜单数据。</p></div></details>';
   }
   function officialTableHtml(board,dimension='Average',measure='score',showAll=false){

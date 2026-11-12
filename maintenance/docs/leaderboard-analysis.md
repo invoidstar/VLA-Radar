@@ -37,3 +37,9 @@
 “查看全部设置”保留原平铺入口；深链接的track自动定位其来源组，lbMetric/lbOrder/lbChart/lbTime均保持，lbBrowse=all记录平铺视图。当前组与原始设置不落入私人阅读存储。完整协议默认折叠但保留版本、指标、划分摘要，展开可查看全部训练预算与来源。
 
 分组绝不合并不同指标、预算、视角、checkpoint或真机/仿真结果；排序、CSV与散点图始终针对一个精确track。无需手工给每条新结果维护一份分组表；只使用已加载目录，不因导航预取其他track或全库正文。新增来源可自然形成新组；来源为null或格式无效时不可自动归并。
+
+## 2026-11-12 RoboDojo Live 数据与 SHA 固定版分离
+
+RoboDojo 官网目前展示 Sim 66 / Real 14 条（官网数据更新 2026-11-03），而 RoboTwin Platform Github 的可固定版本仍为 Sim 57 / Real 11。上游平台公开的 `tools/sync_robodojo_data.py` 明确将官方 JSON 地址指向 `https://robodojo-benchmark.com/data/leaderboard.generated.json`，其 `sim` 与 `realworld` 各含 Score/SR 多个评测列。此地址在本次工具环境下不可获取完整内容，不能仅从屏幕上拼接数据或构造哈希。
+
+本轮在独立官方榜单面板显示 `liveInfo` 来源差异，不改 `catalog/official-boards/robodojo-*.json` 的任何得分与现存 `sourceBlobSha`。新审计文件 `maintenance/audits/benchmark/robodojo-live-20261112-source-gap.json` 绑定每个现有源 SHA；未来官方镜像更新时需重新核验全部维度，不能继续使用旧差异提示。

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-12",
+  "status": "official-live-unpinned-mirror-stale",
+  "scope": "Latest RoboDojo visible official leaderboard counts versus exact SHA-pinned RoboTwin-Platform mirror; official source JSON endpoint is identified but its current body could not be fetched in this execution environment.",
+  "dataUpdatedAt": "2026-11-03",
+  "liveSource": {
+    "simPage": "https://robodojo-benchmark.com/leaderboard?bench=sim",
+    "realPage": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
+    "jsonUrl": "https://robodojo-benchmark.com/data/leaderboard.generated.json",
+    "jsonEndpointEvidence": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/main/tools/sync_robodojo_data.py",
+    "actualDataFetched": false,
+    "reason": "Original official generated.json URL identified in RoboTwin Platform's upstream sync source; direct request from available evidence tool denied; do not assert downloaded JSON SHA."
+  },
+  "boards": {
+    "robodojo-sim": {
+      "liveCount": 66,
+      "pinnedCount": 57,
+      "pinnedSourceBlobSha": "d4664cc087e123b813530882f54273f932723eca",
+      "pinnedUpdatedAt": "2026-10-09",
+      "missingComparedToLive": 9,
+      "source": "https://robodojo-benchmark.com/leaderboard?bench=sim"
+    },
+    "robodojo-real": {
+      "liveCount": 14,
+      "pinnedCount": 11,
+      "pinnedSourceBlobSha": "b14162faec38751f0bd6afdaaf7d83825800e421",
+      "pinnedUpdatedAt": "2026-10-09",
+      "missingComparedToLive": 3,
+      "source": "https://robodojo-benchmark.com/leaderboard?bench=realworld"
+    }
+  },
+  "constraints": [
+    "Official website live data dated Nov03 does not supply an immutable complete JSON blob through available fetch. No per-model scores are reconstituted from screenshots or partial snippets.",
+    "When complete original generated JSON is accessible, record its byte hash, complete Sim/Real model set, all distinct Score/SR dimensions, and source version before canonical migration.",
+    "Existing official mirror SHA and 57/11 entries are kept untouched; live/latest counts are labeled informational and source-linked only."
+  ],
+  "nextActions": [
+    "Retry official https://robodojo-benchmark.com/data/leaderboard.generated.json via an authorized capable source/download; verify both sections contain 66/14 rows.",
+    "Provenance-pin exact official source bytes and compare per-model identity, Score and SR; maintain separate Agent/VLA/WAM and preview versus paper identities.",
+    "Apply official-board snapshot update only after full source-and-regression verification; until then expose clear stale-vs-live notice."
+  ]
+}

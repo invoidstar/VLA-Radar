@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26",
+  "updatedAt": "2026-11-12",
   "candidates": [
     {
       "paperId": "p015",
       "kind": "proceedings-unverified",
       "source": "https://openreview.net/forum?id=hUZLqoDdqx",
       "value": "Title-matched official OpenReview OnEvoMemory EMR 2026 Poster forum hUZLqoDdqx is publicly indexed; author homepage confirms ECCV 2026 EMR Workshop Poster. OpenReview live page currently has challenge gate; archival publication/DOI not verified.",
-      "note": "工作坊poster已可核验；正式归档full paper与non-archival abstract不能根据poster标签区分。仅追踪合法的归档Proceedings及DOI，不推断IEEE/主会录用。"
+      "note": "工作坊poster已可核验；正式归档full paper与non-archival abstract不能根据poster标签区分。仅追踪合法的归档Proceedings及DOI，不推断IEEE/主会录用。 2026-11-12 复核: 同题同作者出版社正式 DOI/出版日期仍未可靠确认，具体范围见 maintenance/audits/editorial/publisher-unresolved-20261112.json；不把 arXiv DOI 当作会议论文集 DOI。"
     },
     {
       "paperId": "p030",
       "kind": "proceedings-unverified",
       "source": "https://computing.sogang.ac.kr/ko/community/news/detail/281",
       "value": "Sogang University's 2026-10-06 official announcement explicitly confirms AdaVLA accepted at IROS2026 and presented; IEEE Xplore official proceedings DOI and exact publication date remain unverified.",
-      "note": "已经升级paper/publication至accepted并保留acceptedAt=null；此队列仅继续追踪出版社正式收录，不再重复核验论文是否被录用。"
+      "note": "已经升级paper/publication至accepted并保留acceptedAt=null；此队列仅继续追踪出版社正式收录，不再重复核验论文是否被录用。 2026-11-12 复核: 同题同作者出版社正式 DOI/出版日期仍未可靠确认，具体范围见 maintenance/audits/editorial/publisher-unresolved-20261112.json；不把 arXiv DOI 当作会议论文集 DOI。"
     },
     {
       "paperId": "p042",
       "kind": "proceedings-unverified",
       "source": "https://largeaudiomodel.com/publication/2026/liu2026vlainfo/",
       "value": "Author lab official publication entry confirms identical title/authors and lists 2026 IEEE International Conference on Multimedia and Expo, July 2026; publisher IEEE Xplore DOI/item/date remain unverified.",
-      "note": "2026-10-26论文生命周期仅升级到accepted，acceptedAt/publishedAt null；需出版社精确标题/作者匹配的DOI与日期才能升published。"
+      "note": "2026-10-26论文生命周期仅升级到accepted，acceptedAt/publishedAt null；需出版社精确标题/作者匹配的DOI与日期才能升published。 2026-11-12 复核: 同题同作者出版社正式 DOI/出版日期仍未可靠确认，具体范围见 maintenance/audits/editorial/publisher-unresolved-20261112.json；不把 arXiv DOI 当作会议论文集 DOI。"
     }
   ]
 }

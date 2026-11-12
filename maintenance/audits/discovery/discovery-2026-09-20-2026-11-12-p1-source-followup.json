@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-12-p1-source-followup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-12",
+    "attemptedAt": "2026-11-12",
+    "completedAt": null
+  },
+  "scope": "Selective dated primary-source and robotics-feed catch-up through Nov12, with persistent Sep20 backlog and blocked independent scholarly API; NOT a full four-lane enumerated search for every day in the window.",
+  "sources": [
+    {
+      "id": "arxiv-nov-papers",
+      "lane": "primary-preprints",
+      "provider": "arXiv official individual version/abstract pages",
+      "kind": "Exact 2026 paper-ID original pages; partial topic/date scan",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-06",
+        "to": "2026-11-10"
+      },
+      "query": "arXiv exact abstract/HTML pages: 2610.08150, 2610.37381, 2611.10894, 2611.13030, 2611.13160, 2611.13818, 2611.14048, 2611.14432. Related title/topic searches across 2026-10-06..2026-11-12; not an enumerated day-by-day arXiv cs.RO crawl.",
+      "resultCount": 8,
+      "note": "All 8 identities verified from primary arXiv source or discoverable arXiv metadata; not exhaustive earlier weeks and not full-paper/table reading."
+    },
+    {
+      "id": "index-openalex-semantic",
+      "lane": "academic-index",
+      "provider": "OpenAlex / Semantic Scholar public date-filtered works APIs",
+      "kind": "Attempt full date-scoped independent scholarly index via public web interface",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?search=vision-language-action ; https://api.semanticscholar.org/graph/v1/paper/search?query=vision-language-action&year=2026",
+      "resultCount": 0,
+      "note": "OpenAlex needs JS and API access was rejected; Semantic Scholar public date-filtered API rejected. No valid independently indexed complete-window search or result count."
+    },
+    {
+      "id": "robotics-daily-nov12",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily VLA curated feed",
+      "kind": "Dated current page spot-check; no historical full-window pagination",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-07",
+        "to": "2026-11-12"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html (Updated on 2026.11.12); exact title matching How Much of Your VLA Is kNN and One Policy for 100 Household Tasks, plus DASH and memory papers as candidates.",
+      "resultCount": 2,
+      "note": "Current curated VLA feed visibly includes at least these two exact title matches; older Sep20-Nov6 period not scanned end-to-end."
+    },
+    {
+      "id": "official-reverse-nov12",
+      "lane": "reverse-discovery",
+      "provider": "NVIDIA GEAR + Google DeepMind + RoboDojo official pages",
+      "kind": "Targeted robotics research publisher and public leaderboard reverse lookups",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-29",
+        "to": "2026-11-12"
+      },
+      "query": "https://research.nvidia.com/labs/gear/gr00t-2/ ; https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/ ; https://robodojo-benchmark.com/leaderboard?bench=sim ; https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/main/tools/sync_robodojo_data.py",
+      "resultCount": 4,
+      "note": "Primary official sources checked for new WAM/VLA announcements and RoboDojo official raw-JSON address; this is a selective reverse check, not a complete lab/project/leaderboard scan."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "ViDAL: A Visual Dynamics-Grounded Action Latent Space for Vision-Language-Action Models",
+      "arxiv": "2610.08150",
+      "doi": "",
+      "date": "2026-10-06",
+      "sourceIds": [
+        "arxiv-nov-papers"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv identity and abstract; full video-dynamics action-VAE training, table and dataset/protocol verification pending.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "arxiv": "2610.37381",
+      "doi": "",
+      "date": "2026-10-27",
+      "sourceIds": [
+        "arxiv-nov-papers"
+      ],
+      "status": "deferred",
+      "reason": "Author arXiv original research discovered; reported LIBERO/RoboTwin results not yet checked table-by-table.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "Zero-Shot VLA Adaptation with Retrieved Guidance",
+      "arxiv": "2611.10894",
+      "doi": "",
+      "date": "2026-11-07",
+      "sourceIds": [
+        "arxiv-nov-papers"
+      ],
+      "status": "deferred",
+      "reason": "Original v1 arXiv confirms RAGu retrieval-guided flow matching and project URL; full sim/real protocol and source tables pending.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "APS-VLA: Action-Guided and Future-Aware Token Pruning for Efficient Vision-Language-Action Models",
+      "arxiv": "2611.13030",
+      "doi": "",
+      "date": "2026-11-09",
+      "sourceIds": [
+        "arxiv-nov-papers"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv v1 confirms token-pruning method and OpenVLA-OFT/π0.5/XR-1 study; independently verified ablations/real task tables pending.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "How Much of Your VLA Is kNN",
+      "arxiv": "2611.13160",
+      "doi": "",
+      "date": "2026-11-09",
+      "sourceIds": [
+        "arxiv-nov-papers",
+        "robotics-daily-nov12"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv HTML and updated curated VLA feed confirm identity; 91.7% author abstract is not independently reproduced or scored as official leaderboard.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "WAM is capable in BEHAVIOR-1K: the 2nd-place solution to the 2026 BEHAVIOR Challenge",
+      "arxiv": "2611.13818",
+      "doi": "",
+      "date": "2026-11-10",
+      "sourceIds": [
+        "arxiv-nov-papers"
+      ],
+      "status": "deferred",
+      "reason": "Original full arXiv text available with distinct official private-test and self-evaluation Q/SR; task, scoring and authorship attribution to be extracted before catalog admission.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning",
+      "arxiv": "2611.14048",
+      "doi": "",
+      "date": "2026-11-10",
+      "sourceIds": [
+        "arxiv-nov-papers"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv confirms 14k+ training hours and interaction-centric latent expert; claimed RLBench/LIBERO results require table-level source scrutiny.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
+      "arxiv": "2611.14432",
+      "doi": "",
+      "date": "2026-11-10",
+      "sourceIds": [
+        "arxiv-nov-papers",
+        "robotics-daily-nov12"
+      ],
+      "status": "deferred",
+      "reason": "Original arXiv and curated feed match; single-policy and 14-task agent-assisted metrics cannot be merged into one policy-only benchmark submission.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 8,
+    "selected": 0,
+    "deferred": 8,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 2
+  },
+  "status": "partial",
+  "notes": "Candidate records are original-source identity leads, not 8 fully source-read notes. Preserve both independent full-discovery and bilingual-news success checkpoints at 2026-10-04. Use discovery_coverage.py status/queue, never apply partial as complete. Three 2026 publication DOI cases remain unresolved; no downstream metrics copied from news."
+}
