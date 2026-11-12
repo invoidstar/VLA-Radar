@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-12",
+  "updatedAt": "2026-11-12",
+  "evidence": "official",
+  "status": "verified",
+  "paperLinks": [],
+  "revisionHistory": [],
+  "id": "news-20261111-beijing-embodied-plan",
+  "eventKey": "beijing-embodied-robotics-action-plan-2026-2028-20261111",
+  "title": "北京市正式印发具身智能机器人产业行动方案（2026—2028年），提出 VLA、世界模型与安全治理路线",
+  "primaryCategory": "industry",
+  "tags": [
+    "北京",
+    "具身智能",
+    "VLA",
+    "世界模型",
+    "产业政策",
+    "机器人安全",
+    "benchmark",
+    "2026–2028"
+  ],
+  "eventDate": "2026-11-11",
+  "publishedAt": "2026-11-11",
+  "dateNote": "北京市经信局原始通知及北京市政府门户网站均标 2026-11-11 为发布日期、成文及实施日期；2028 年企业、产能和配套比例均为政策目标，而不是 2026 年已实现事实。",
+  "stage": "released",
+  "featured": false,
+  "importance": "ecosystem",
+  "whatHappened": "北京市经济和信息化局于 11 月 11 日正式发布《北京市具身智能机器人产业高质量发展行动方案（2026—2028年）》。文件明确将 VLA、世界模型、强化学习与跨本体迁移列为技术布局方向，提出高质量数据、真实场景测试认证和机器人安全治理的建设任务，并给出到 2028 年的产业目标。",
+  "whyItMatters": "政府一手政策将技术模型、数据供给、真机评测、生产部署和安全追溯纳入同一产业任务框架，反映未来公开数据、测试标准与工业应用可能产生的需求，但计划不能直接解释为科研评测结果。",
+  "vlaRelevance": "政策明确提及视觉语言动作模型、世界模型、长时记忆、本地推理和行为安全审计，与 VLA-Radar 的研究分类和证据标准有关；它不提供任何模型的标准化成功率，也不等于已发布可复现的 Benchmark。",
+  "limits": "所有 2028 年目标（企业数量、产能占比、配套率等）均属政策规划，不是现有产出统计；所谓未来测试场、认证体系是建设目标，不应记作已运营。本文是政策资讯而非技术论文或实验结果，不生成 Model/Setting/Result 记录。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "北京市经济和信息化局关于印发《北京市具身智能机器人产业高质量发展行动方案（2026-2028年）》的通知",
+      "publisher": "北京市经济和信息化局",
+      "url": "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202611/t20261111_4941527.html",
+      "kind": "official",
+      "publishedAt": "2026-11-11",
+      "access": "full-page",
+      "note": "发文日期、政策原文、VLA/WM/RL 技术路线及2028规划目标一手依据。"
+    },
+    {
+      "id": "s2",
+      "title": "北京市政府门户网站：具身智能机器人产业高质量发展行动方案",
+      "publisher": "北京市人民政府",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202611/t20261111_4942067.html",
+      "kind": "official",
+      "publishedAt": "2026-11-11",
+      "access": "full-page",
+      "note": "同一政策的政府门户发布，交叉确认事实和时间；不是第二个新闻事件。"
+    }
+  ]
+}
