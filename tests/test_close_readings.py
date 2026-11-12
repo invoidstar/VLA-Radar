@@ -35,6 +35,11 @@ class CloseReadingTests(unittest.TestCase):
         self.assertEqual(len(units),123)
         self.assertEqual(len({u["id"] for u in units}),123)
         self.assertTrue(all(u["sourceUrl"].startswith("https://arxiv.org/pdf/2611.08373v1#page=") for u in units))
+        # Source URL and claimed 31-page PDF bounds are structural checks only.
+        # They do not certify independent paragraph-to-page textual matches.
+        self.assertTrue(all(1<=u["pdfPage"]<=31 for u in units))
+        self.assertTrue(all(u["sourceUrl"].endswith("#page="+str(u["pdfPage"])) for u in units))
+
 
     def test_builder_returns_lazy_shards(self):
         files,index=outputs(ROOT,self.records,self.tracks)
