@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-12",
+  "updatedAt": "2026-11-12",
+  "evidence": "official",
+  "status": "verified",
+  "paperLinks": [],
+  "revisionHistory": [],
+  "id": "news-20261109-nvidia-gr00t2-wam",
+  "eventKey": "nvidia-corl2026-gr00t2-world-action-model-20261109",
+  "title": "NVIDIA 在 CoRL 2026 发布 GR00T 2 世界动作模型：联合预测未来视频与机器人动作",
+  "primaryCategory": "model",
+  "tags": [
+    "NVIDIA",
+    "GR00T 2",
+    "WAM",
+    "world model",
+    "CoRL 2026",
+    "robotics",
+    "dexterous manipulation",
+    "human video"
+  ],
+  "eventDate": "2026-11-09",
+  "publishedAt": "2026-11-09",
+  "dateNote": "以 NVIDIA 2026-11-09 原始 CoRL 发布博客为事件日；研究项目页只标 2026 年 11 月，不能据此认定代码/完整权重在当日已开放。",
+  "stage": "announced",
+  "featured": true,
+  "importance": "major-release",
+  "whatHappened": "NVIDIA 在 11 月 9 日 CoRL 原始公告中介绍 GR00T 2 及配套仿真/评测工具。GR00T 2 研究页描述其世界动作模型以一个扩散 Transformer 联合生成未来视频与动作块，训练涉及人类第一视角视频、手持夹爪示范及机器人遥操作；另介绍小型化 GR00T 2 Turbo 的 Unitree G1 全身操作。项目页列有多机器人测试及少样本适应案例，但这些成功率均属团队公开研究报告。官方项目页面当时标注代码计划 12 月开放，而非 11 月已完整开源。",
+  "whyItMatters": "这项发布将 WAM 的世界预测与动作规划直接耦合，并讨论跨本体迁移、少量演示适应、分层 Agent 操作以及本体推理时延。后续科研对比应将主模型、Turbo、外接推理 Agent 和真实机器人 RL 的成绩按协议分别分析。",
+  "vlaRelevance": "这是 WAM 而不只是额外的视觉编码器；未来帧与动作联合去噪会改变训练数据要求、推理计算和跨本体动作适配。官方实例中自报的 LIBERO、RoboDojo、真实机器人或特定硬件指标，不能跨不同训练数据与评测口径拼接成同一排名。",
+  "limits": "技术结果源自 NVIDIA 项目及官方发布，未见本站独立复现。网站所称 GR00T 2 代码可于 2026 年 12 月开放是未来计划，不是 11 月实际开放许可或权重可获取证明；模型规模、训练数据量、实机成功率均须以原白皮书版本和具体表格为准。此条新闻不生成论文 ID 或公共榜单成绩。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation",
+      "publisher": "NVIDIA Blog",
+      "url": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/",
+      "kind": "official",
+      "publishedAt": "2026-11-09",
+      "access": "full-page",
+      "note": "一手发布日期及 GR00T 2、Isaac Lab 3.0 和 CoRL 发布范围；并非公开训练权重的证据。"
+    },
+    {
+      "id": "s2",
+      "title": "GR00T 2: Scaling Robot Foundation Models for Generalization, Dexterity, and Adaptation",
+      "publisher": "NVIDIA Research GEAR",
+      "url": "https://research.nvidia.com/labs/gear/gr00t-2/",
+      "kind": "official",
+      "publishedAt": null,
+      "access": "full-page",
+      "note": "官方技术项目页，明确视频-动作联合建模、Turbo/Agent 研究口径，并写有代码 December 可用；项目页只标 November 2026。"
+    }
+  ]
+}
