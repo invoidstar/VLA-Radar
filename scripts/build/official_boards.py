@@ -85,12 +85,37 @@ def load_snapshots(root, paper_ids):
 def official_board_outputs(root, out, paper_ids, hash_writer):
     """Emit lazy fragments plus a tiny index with top-three preview, not all rows."""
     index = {}
+    # A newer live official board may be visible before the source committee
+    # publishes a complete, stable SHA-pin for all Score / SR columns.
+    # Surface that lag as source-attributed metadata; never merge guessed rows.
+    audit_path = Path(root) / "maintenance/audits/benchmark/robodojo-live-20261112-source-gap.json"
+    live_audit = json.loads(audit_path.read_text(encoding="utf-8")) if audit_path.exists() else None
+    if live_audit and (live_audit.get("schemaVersion") != 1 or
+                       live_audit.get("status") != "official-live-unpinned-mirror-stale"):
+        raise ValueError("Unknown RoboDojo live-source audit")
     for board in load_snapshots(root, paper_ids):
         url = hash_writer("data/official-boards/" + board["id"], board, out)
         first_three = [{"model": x["model"], "rank": x["rank"], "average": x["values"]["Average"]}
                        for x in board["entries"][:3]]
+        live_info = None
+        if live_audit and board["id"] in ("robodojo-sim", "robodojo-real"):
+            current = live_audit["boards"][board["id"]]
+            if (current["pinnedSourceBlobSha"] != board["sourceBlobSha"] or
+                current["pinnedUpdatedAt"] != board["officialUpdatedAt"] or
+                current["pinnedCount"] != len(board["entries"])):
+                raise ValueError("RoboDojo audit mismatch: pinned source changed, recertify live lag")
+            if current["liveCount"] <= current["pinnedCount"]:
+                raise ValueError("RoboDojo live lag expected to exceed pinned count")
+            live_info = {
+                "count": current["liveCount"],
+                "updatedAt": live_audit["dataUpdatedAt"],
+                "checkedAt": live_audit["observedAt"],
+                "url": current["source"],
+                "status": "live-unpinned",
+            }
         index[board["benchmark"]] = {
             "id": board["id"], "benchmark": board["benchmark"],
+            **({"liveInfo": live_info} if live_info else {}),
             "sourceUpdatedAt": board["officialUpdatedAt"], "capturedAt": board["capturedAt"],
             "sourceUrl": board["sourceUrl"], "boardUrl": board["boardUrl"],
             "sourceRepoRevision": board["sourceRepoRevision"], "sourceBlobSha": board["sourceBlobSha"],
