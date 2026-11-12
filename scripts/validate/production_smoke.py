@@ -36,7 +36,7 @@ def main(base:str):
     assert wanted in deep and 'id="reader-section"' in deep
     close=fetch(base+'close-reading/p148/')
     assert 'id="original-panel"' in close and 'id="original-pdf"' in close and 'id="source-toggle"' in close
-    assert re.search(r'reader\\.js\\?v=[0-9a-f]{12}',close), 'missing versioned original-paper reader'
+    assert re.search(r'reader\.js\?v=[0-9a-f]{12}',close), 'missing versioned original-paper reader'
     original=json.loads(fetch(base+'data/close-readings/p148.json'))
     assert original['paperId']=='p148' and original['pdfUrl'].startswith('https://arxiv.org/pdf/2611.08373v1')
     print(f'PASS production Pages smoke: {len(refs)} hashed assets; MathML, reader deep link, close-reading source and page assets.')
