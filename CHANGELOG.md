@@ -1,3 +1,7 @@
+## 2026-11-12 — 2026-11-12-p1-evidence-catchup
+
+Verified four official-source bilingual robotics news: NVIDIA GR00T 2, Google DeepMind Gemini Robotics 2.5, Beijing embodied-robotics action plan, and Agibot GO-3 Preview (Oct29 original event); all corporate performance is source-attributed and future release promises are not marked available. Partial source-verified discovery audit adds eight explicitly deferred arXiv research candidates without claiming full four-lane dated coverage. RoboDojo official machine-readable live URL identified but unavailable to pin; keep 57/11 canonical source SHA and surface current live 66/14 informational gap. Check three conference publisher DOIs and SLA p148 123 URL/page bounds without pretending independent PDF-to-text or exact DOI verified. Both discovery/news last complete checkpoints remain 2026-10-04. Main branch protection untouched.
+
 ## 2026-11-12 — P1 定向证据补齐（不修改主分支保护）
 
 - 新闻：新增 NVIDIA GR00T 2（11/09）、Google DeepMind Gemini Robotics 2.5（11/10）、北京具身智能产业行动方案（11/11）、智元 GO-3 Preview（10/29 公告/10/30 官网）四条有原始日期的中英文官方来源，并显式区分 Preview、未来开源、公司自报性能和政策目标。
