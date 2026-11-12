@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-11-11",
+  "lastAttemptAt": "2026-11-12",
   "lastStatus": "partial",
-  "lastSummary": "2026-11-11 original Zeva arXiv v2 fully read and selected as p150; RoboDojo live 66 Sim/14 Real checked against still-pinned 57/11 mirror; EmbodiedEvo, Concertina, CRONOS, NEO-VLA and DASH deferred; independent OpenAlex dated academic-index search remained inaccessible and other full-window scans incomplete. Last complete checkpoint remains 2026-10-04.",
+  "lastSummary": "2026-11-12 targeted arXiv exact-ID review for 8 deferred VLA/WAM/BEHAVIOR research candidates and Robotics Paper Daily VLA Nov12 current issue; NVIDIA/DeepMind/RoboDojo official reverse spot checks. Independent OpenAlex/Semantic Scholar date-filtered access blocked; earlier Sep20-Nov06 window not fully checked. Four-source full checkpoint stays 2026-10-04.",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-11-zeva-robodojo-partial.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-12-p1-source-followup.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }
