@@ -61,6 +61,10 @@ try:
         check('Research paper comparison remains a separate table',
             page.locator('.setting-table').count()==1)
         show(page,'RoboDojo')
+        check('New live RoboDojo source lag is disclosed rather than merged',
+            '66' in page.locator('.official-live-notice').inner_text() and
+            '57' in page.locator('.official-live-notice').inner_text() and
+            '2026-11-03' in page.locator('.official-live-notice').inner_text())
         page.locator('.benchmark-official summary').click()
         page.wait_for_selector('[data-official-model="VPP2"]')
         check('VPP2 has previously verified paper linkage',
@@ -87,6 +91,9 @@ try:
         check('All 57 official RoboDojo simulation submissions remain visible',
             page.locator('.official-table tbody tr').count()==57)
         show(page,'RoboDojo real')
+        check('Real-robot board discloses 14 live vs 11 pinned',
+            '14' in page.locator('.official-live-notice').inner_text() and
+            '11' in page.locator('.official-live-notice').inner_text())
         check('RoboDojo Real is a public standardized Benchmark, not a paper case study',
             page.locator('[data-board-kind="benchmark"]').get_attribute('aria-pressed')=='true')
         page.locator('.benchmark-official summary').click()
