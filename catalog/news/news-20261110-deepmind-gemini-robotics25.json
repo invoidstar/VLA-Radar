@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-12",
+  "updatedAt": "2026-11-12",
+  "evidence": "official",
+  "status": "verified",
+  "paperLinks": [],
+  "revisionHistory": [],
+  "id": "news-20261110-deepmind-gemini-robotics25",
+  "eventKey": "deepmind-gemini-robotics-25-partner-release-20261110",
+  "title": "Google DeepMind 公布 Gemini Robotics 2.5：扩展操作技能、工业验证与机器人安全评测",
+  "primaryCategory": "model",
+  "tags": [
+    "Google DeepMind",
+    "Gemini Robotics 2.5",
+    "VLA",
+    "industrial robotics",
+    "safety",
+    "dexterity",
+    "Apptronik"
+  ],
+  "eventDate": "2026-11-10",
+  "publishedAt": "2026-11-10",
+  "dateNote": "Google DeepMind 官方原始研究博客标注 2026-11-10；对外宣布合作伙伴逐步使用的模型，不等于开放权重或公开通用 API。",
+  "stage": "preview",
+  "featured": true,
+  "importance": "major-release",
+  "whatHappened": "Google DeepMind 在 11 月 10 日宣布 Gemini Robotics 2.5，重点展示跨 200 多项任务的技能范围和灵巧操作。官方称与 Apptronik 合作开展的 Mercedes-Benz 产线概念验证中，Apollo 2 人形机器人完成汽车零件取放的成功率为 96%，同时提出物理安全可控性和针对机器人对抗指令的新评测。官方表述为逐步向合作伙伴提供。",
+  "whyItMatters": "与只报告仿真排行榜的模型不同，这次更新涉及工业原型验证、任务覆盖和安全指标；需要同时区分实验定义、部署环境与安全测试方法，才能判断工业价值。",
+  "vlaRelevance": "Gemini Robotics 2.5 属于视觉语言动作策略相关发布，可作为通用 VLA 多任务与安全评测的近期研究线索。200 多项任务并非全部具备相同难度或同一成功率；产线 96% 属于特定原型试点，不能作为公共 RoboTwin/RoboDojo 的可比值。",
+  "limits": "该页面是一手官方发布而非独立基准论文；96% 等性能为参与方自报的概念验证结果，不能扩展为长期量产可靠性认证。暂未据此证明通用模型权重、训练数据或完整评测协议公开，也不把合作伙伴发布自动解读为所有开发者可下载。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+      "publisher": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "kind": "official",
+      "publishedAt": "2026-11-10",
+      "access": "full-page",
+      "note": "原始研究发布页明确 2026-11-10、合作伙伴推出状态、200+ 任务和产线概念验证自报成功率。"
+    }
+  ]
+}
