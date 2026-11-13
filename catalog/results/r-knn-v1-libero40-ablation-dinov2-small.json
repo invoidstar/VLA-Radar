@@ -1,0 +1,22 @@
+{
+  "id": "r-knn-v1-libero40-ablation-dinov2-small",
+  "paperId": "p151",
+  "method": "kNN multi dinov2-small",
+  "trackId": "knn-v1-libero40-ablation",
+  "values": {
+    "Spatial": 79.8,
+    "Object": 97.6,
+    "Goal": 95,
+    "Long": 61,
+    "Average": 83.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13160v1",
+  "sourceVersion": "arXiv 2611.13160v1",
+  "locator": "Appendix A.5 Table 3, dinov2-small",
+  "attribution": "author-reported",
+  "trainingData": "1,693 demo memory baseline; one retrieval component altered, all in original author LIBERO protocol.",
+  "evaluationNotes": "40 LIBERO tasks × 50 initial states, author Table 3 ablation; parameter tuning on states 40-49 overlaps official full 0-49 eval.",
+  "supersedes": ""
+}
