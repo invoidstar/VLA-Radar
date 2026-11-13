@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "aps-ragu-source-verified-20261113",
+  "checkedAt": "2026-11-13",
+  "selected": [
+    {
+      "paperId": "p152",
+      "arxiv": "2611.13030v1",
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "fullRead": [
+        "§1–5",
+        "Tables 1–6",
+        "Appendix A implementation/latency"
+      ],
+      "tracks": 7,
+      "rows": 18,
+      "protocolCaveats": [
+        "Frozen OpenVLA-OFT/π0.5/XR1 base; selector and future predictor trained",
+        "Table1 selected 512/256/128/64 token success/latency pairs",
+        "Table2 π0.5 vs XR-1 separate; APS means over 256/128 budgets, unpruned π0.5 from prior reported data",
+        "Table3 future visual prediction ablation is development set; Table6 real 5 tasks ×40 trials",
+        "Paper states code and checkpoints to be released after acceptance; no verified public implementation"
+      ]
+    },
+    {
+      "paperId": "p153",
+      "arxiv": "2611.10894v1",
+      "source": "https://arxiv.org/html/2611.10894v1",
+      "fullRead": [
+        "§I–VI",
+        "Tables I/II/III",
+        "Figure 4 and author project results"
+      ],
+      "tracks": 4,
+      "rows": 15,
+      "protocolCaveats": [
+        "Flow guidance at inference without policy weight update; DROID/MetaWorld external demos still needed",
+        "TableI EXACT 3 RoboLab tasks/25 rollouts, not 9 RoboLab tasks",
+        "TableII 5 GR-1 tasks 25 sim rollouts, original pretrained vs previously fine-tuned GR00T-N1.5 separate",
+        "Figure4 5 real Franka tasks, 10 rollouts each; only source-stated mean retained",
+        "Project public HF evaluation data page; preview errors do not prove unavailable underlying files. Full runnable algorithm code not verified"
+      ]
+    }
+  ],
+  "canonicalIdentifiers": [
+    "p152",
+    "p153"
+  ],
+  "evidencePolicy": "Only numeric table/figure values directly present in original source and consistent with a distinct protocol are promoted. Source code, independent replication, benchmark official result vs author local result separated.",
+  "unverified": "RoboDojo 2026-11-03 complete official raw JSON, APS code/weights, RAGu code and full four-lane discovery remain outstanding."
+}
