@@ -662,6 +662,33 @@
         "contact-rich",
         "long-horizon"
       ]
+    },
+    "APS Real": {
+      "focus": "efficiency-deployment",
+      "environment": "real",
+      "tags": [
+        "bimanual-dual-arm",
+        "latency-efficiency",
+        "tabletop"
+      ]
+    },
+    "RoboLab": {
+      "focus": "generalization-robustness",
+      "environment": "simulation",
+      "tags": [
+        "robustness-ood",
+        "tabletop",
+        "sim-to-real"
+      ]
+    },
+    "RAGu Real": {
+      "focus": "generalization-robustness",
+      "environment": "real",
+      "tags": [
+        "tabletop",
+        "robustness-ood",
+        "sim-to-real"
+      ]
     }
   }
 }
