@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-13-aps-ragu-partial",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-13",
+    "attemptedAt": "2026-11-13",
+    "completedAt": null
+  },
+  "scope": "Targeted original arXiv full-text/experiment tables and author-resource review for APS-VLA, RAGu, plus ActPrune original identity. Current web source and official RoboDojo spot checks only; not a full four-lane date-by-date Sept20-Nov13 discovery scan.",
+  "sources": [
+    {
+      "id": "arxiv-fulltext-aps-ragu",
+      "lane": "primary-preprints",
+      "provider": "arXiv official v1 HTML",
+      "kind": "Three exact research identities, two full original-source reads; selective Nov06-Nov09",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-06",
+        "to": "2026-11-09"
+      },
+      "query": "arxiv 2611.13030v1 APS-VLA, 2611.10894v1 RAGu, 2611.08827v1 ActPrune original HTML and paper tables for selected papers",
+      "resultCount": 3,
+      "note": "APS-VLA and RAGu full source tables and appendices selected; ActPrune identity and abstract verified but not independently full table-reviewed. Earlier discovery window not exhaustively queried."
+    },
+    {
+      "id": "independent-index-retry-pending",
+      "lane": "academic-index",
+      "provider": "OpenAlex/Semantic Scholar independent bibliographic search",
+      "kind": "Current attempt blocked by lack of complete date-filtered academic results, prior 2026-11-12 external API requests inaccessible",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "Original date-filtered full-window academic index from 2026-09-20 to 2026-11-13; outstanding, no successful provider in this follow-up",
+      "resultCount": 0,
+      "note": "Do not count paper-specific arXiv or author links as an independent academic index. The prior Nov12 OpenAlex/S2 provider requests were blocked; this focused follow-up has not restored it."
+    },
+    {
+      "id": "curated-vla-review-not-complete",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily prior 2026-11-12 targeted browse",
+      "kind": "Targeted latest curated VLA list; no whole-window historical pagination",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-07",
+        "to": "2026-11-12"
+      },
+      "query": "2026-11-12 VLA daily curated feed previously checked, with no successful complete historical pagination in 2026-11-13 follow-up",
+      "resultCount": 0,
+      "note": "No assertion of an exhaustive updated curated-list scan; existing discovery policy remains partial."
+    },
+    {
+      "id": "official-author-robodojo-checks",
+      "lane": "reverse-discovery",
+      "provider": "Official RAGu project/evaluation dataset and RoboDojo live site; upstream RoboTwin-Platform pinned mirror",
+      "kind": "Author project and benchmark identity/provenance spot check",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-03",
+        "to": "2026-11-13"
+      },
+      "query": "RAGu official project raguvla.github.io + HF dataset / RoboDojo benchmark live official 66 Sim and 14 Real, updated 2026-11-03; no complete official JSON body",
+      "resultCount": 3,
+      "note": "Author project has public evaluation files, not confirmed runnable code; RoboDojo live model counts not enough to supersede immutable canonical 57/11 pinned snapshot."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "APS-VLA: Action-Guided and Future-Aware Token Pruning for Efficient Vision-Language-Action Models",
+      "arxiv": "2611.13030",
+      "doi": "",
+      "date": "2026-11-09",
+      "sourceIds": [
+        "arxiv-fulltext-aps-ragu"
+      ],
+      "status": "selected",
+      "reason": "Source-reviewed §3–4, Tables1–6 and code-release statement; admitted p152 with 13-method sections, 7 protocol-specific tracks and 18 checked results, no unauthorized code-release assertions.",
+      "paperId": "p152",
+      "duplicateOf": null
+    },
+    {
+      "title": "Zero-Shot VLA Adaptation with Retrieved Guidance",
+      "arxiv": "2611.10894",
+      "doi": "",
+      "date": "2026-11-07",
+      "sourceIds": [
+        "arxiv-fulltext-aps-ragu",
+        "official-author-robodojo-checks"
+      ],
+      "status": "selected",
+      "reason": "Original §I–VI Tables I/II/III and Figures4/6, official project/evaluation data verified; admitted p153 with 13 full-note sections, four scoped tracks, 15 source reports. Code not verified.",
+      "paperId": "p153",
+      "duplicateOf": null
+    },
+    {
+      "title": "ActPrune: Action-Grounded Visual Token Pruning for Efficient Vision-Language-Action Models",
+      "arxiv": "2611.08827",
+      "doi": "",
+      "date": "2026-11-06",
+      "sourceIds": [
+        "arxiv-fulltext-aps-ragu"
+      ],
+      "status": "deferred",
+      "reason": "Primary arXiv v1 full HTML and original identity checked. Detailed experiment tables and reproducibility audit not completed in this batch; no paper ID or fabricated evaluation.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 3,
+    "selected": 2,
+    "deferred": 1,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 1
+  },
+  "status": "partial",
+  "notes": "This is selective original-source evidence curation. Missing complete independent academic-index scan and historical robotics-curated pagination means four-lane discovery cannot be certified complete. Preserve both discovery/news lastSuccessfulSearchAt=2026-10-04; continue Oct05–Nov13 backfill. Selected APS and RAGu are valid individual original-source papers independent of incomplete discovery."
+}
