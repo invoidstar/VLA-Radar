@@ -1,3 +1,10 @@
+## 2026-11-13 — SLA original/annotation aligned HTML reader
+
+- Restore one-to-one same-row reading for SLA p148 by allowing a user-provided annotated HTML edition to be rendered **locally in the browser**: P001–P101 plus 16 tables and 6 figures, English original + bilingual paraphrase on the left, existing critique on the right.
+- Use official arXiv HTML (with new-tab fallback) as the external source panel instead of default PDF embedding. The original PDF remains a per-unit citation link. The public catalog continues to host only short keywords, user-authored critique and original-source links; no third-party copyrighted original/translations/images are published.
+- Strict P-ID matching, DOM text sanitization, file-size bound, in-memory-only lifecycle, clear/reset. Added Chromium/Firefox/WebKit synthetic 123-unit browser pairing and publication-smoke coverage; no full-paper text in CI fixture.
+- No modifications to main protection or benchmark scores. Existing source-evidence P1 remains open and is reviewed independently.
+
 ## 2026-11-12 — 2026-11-12-p1-evidence-catchup
 
 Verified four official-source bilingual robotics news: NVIDIA GR00T 2, Google DeepMind Gemini Robotics 2.5, Beijing embodied-robotics action plan, and Agibot GO-3 Preview (Oct29 original event); all corporate performance is source-attributed and future release promises are not marked available. Partial source-verified discovery audit adds eight explicitly deferred arXiv research candidates without claiming full four-lane dated coverage. RoboDojo official machine-readable live URL identified but unavailable to pin; keep 57/11 canonical source SHA and surface current live 66/14 informational gap. Check three conference publisher DOIs and SLA p148 123 URL/page bounds without pretending independent PDF-to-text or exact DOI verified. Both discovery/news last complete checkpoints remain 2026-10-04. Main branch protection untouched.
