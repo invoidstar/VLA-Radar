@@ -17,5 +17,6 @@
   "locator": "Table VIb context grid grid1",
   "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
   "evaluationNotes": "25% visual retained, OFT baseline consistent. M×M means coarse grid of reprojected context patches; a grid of zero discards pruned patches.",
-  "supersedes": ""
+  "supersedes": "",
+  "attribution": "author-reported"
 }
