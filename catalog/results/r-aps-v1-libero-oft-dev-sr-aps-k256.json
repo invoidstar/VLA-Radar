@@ -1,0 +1,22 @@
+{
+  "id": "r-aps-v1-libero-oft-dev-sr-aps-k256",
+  "paperId": "p152",
+  "method": "APS-VLA retained 256 visual tokens",
+  "trackId": "aps-v1-libero-oft-dev-sr",
+  "values": {
+    "Spatial": 98.33,
+    "Object": 97.67,
+    "Goal": 95.33,
+    "Long": 95,
+    "Average": 96.58
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13030v1",
+  "sourceVersion": "arXiv 2611.13030v1",
+  "locator": "Original Table 1 APS-VLA retained 256 visual tokens",
+  "attribution": "author-reported",
+  "trainingData": "Authors kept pretrained policy backbone weights frozen; pretrained task-specific checkpoint differs by OpenVLA-OFT, π0.5, XR-1 and real-world task, and trained a separate DIE selector plus train-only future predictor (not zero training).",
+  "evaluationNotes": "Four-suite LIBERO source development panel, exact token budget; success rate not pooled with speed of a different pruning ratio.",
+  "supersedes": ""
+}
