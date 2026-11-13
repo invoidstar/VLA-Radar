@@ -1,0 +1,22 @@
+{
+  "id": "r-knn-v1-libero-plus-fixed420-lac",
+  "paperId": "p151",
+  "method": "kNN LAC-trained key",
+  "trackId": "knn-v1-libero-plus-fixed420",
+  "values": {
+    "Spatial": 87.6,
+    "Object": 83.8,
+    "Goal": 81,
+    "Long": 74.3,
+    "Average": 81.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13160v1",
+  "sourceVersion": "arXiv 2611.13160v1",
+  "locator": "Section 6.1 Table 1, kNN LAC-trained key",
+  "attribution": "author-reported",
+  "trainingData": "1,693 original LIBERO demonstrations for retrieval, 420 held-out fixed LIBERO-Plus variants; LAC key trained linear projection, π0.5 author third-party checkpoint.",
+  "evaluationNotes": "420 selected variants in seven perturbation categories, not entire official LIBERO-Plus; author local results only.",
+  "supersedes": ""
+}
