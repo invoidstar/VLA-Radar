@@ -2899,6 +2899,66 @@
         "r-knn-v1-libero40-ablation-without-time-step"
       ],
       "note": "2026-11-13原始arXiv v1 Table1/2/3与Appendix A-E及作者LeRobot代码源核验：LIBERO40任务2000回合、Plus固定420变体分轨；12项kNN消融单独记录，作者本地复现实验不是本站重训；LAC投影不是完全无训练；调参使用40-49官方初态与全量评测重叠。"
+    },
+    "p152": {
+      "status": "extracted",
+      "trackIds": [
+        "aps-v1-libero-oft-dev-sr",
+        "aps-v1-libero-oft-latency-s",
+        "aps-v1-robocasa365-pi05",
+        "aps-v1-robocasa365-xr1",
+        "aps-v1-libero-future-ablation",
+        "aps-v1-real-5tasks-sr",
+        "aps-v1-real-5tasks-latency-s"
+      ],
+      "resultIds": [
+        "r-aps-v1-libero-oft-dev-sr-unpruned",
+        "r-aps-v1-libero-oft-latency-s-unpruned",
+        "r-aps-v1-libero-oft-dev-sr-aps-k256",
+        "r-aps-v1-libero-oft-latency-s-aps-k256",
+        "r-aps-v1-libero-oft-dev-sr-aps-k128",
+        "r-aps-v1-libero-oft-latency-s-aps-k128",
+        "r-aps-v1-libero-oft-dev-sr-aps-k64",
+        "r-aps-v1-libero-oft-latency-s-aps-k64",
+        "r-aps-v1-robocasa365-pi05-base",
+        "r-aps-v1-robocasa365-pi05-aps",
+        "r-aps-v1-robocasa365-xr1-base",
+        "r-aps-v1-robocasa365-xr1-aps",
+        "r-aps-v1-libero-future-ablation-action-only",
+        "r-aps-v1-libero-future-ablation-action-future",
+        "r-aps-v1-real-5tasks-sr-unpruned",
+        "r-aps-v1-real-5tasks-latency-s-unpruned",
+        "r-aps-v1-real-5tasks-sr-aps",
+        "r-aps-v1-real-5tasks-latency-s-aps"
+      ],
+      "note": "原论文Table1 OFT不同token预算、policy latency；Table2 π0.5/XR1 RoboCasa三任务类别；Table3未来视觉监督；Table6五真机任务成败与latency分轨。作者原表证据非本站复现，原骨干冻结但DIE训练，代码承诺录用后开源。"
+    },
+    "p153": {
+      "status": "extracted",
+      "trackIds": [
+        "ragu-v1-robolab-3-sr",
+        "ragu-v1-robocasa-gr1-zero-ft",
+        "ragu-v1-robocasa-gr1-ft",
+        "ragu-v1-franka-real-five-macro"
+      ],
+      "resultIds": [
+        "r-ragu-v1-robolab-3-sr-groot",
+        "r-ragu-v1-robolab-3-sr-pi05",
+        "r-ragu-v1-robolab-3-sr-ricl",
+        "r-ragu-v1-robolab-3-sr-vls",
+        "r-ragu-v1-robolab-3-sr-ragu",
+        "r-ragu-v1-robocasa-gr1-zero-ft-base",
+        "r-ragu-v1-robocasa-gr1-zero-ft-one",
+        "r-ragu-v1-robocasa-gr1-zero-ft-hundred",
+        "r-ragu-v1-robocasa-gr1-ft-base",
+        "r-ragu-v1-robocasa-gr1-ft-one",
+        "r-ragu-v1-robocasa-gr1-ft-hundred",
+        "r-ragu-v1-franka-real-five-macro-pi05",
+        "r-ragu-v1-franka-real-five-macro-ricl",
+        "r-ragu-v1-franka-real-five-macro-vlm",
+        "r-ragu-v1-franka-real-five-macro-ragu"
+      ],
+      "note": "RoboLab TableI严格三任务25回合，RoboCasa GR1 TableII五任务区分预训练base与task-FT+1/100候选，Figure4单独真机五任务均值；没有把这些成绩当RoboDojo或RoboCasa365官方排名。"
     }
   }
 }
