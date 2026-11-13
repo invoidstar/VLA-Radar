@@ -59,7 +59,7 @@
 
 ### 📖 论文精读 · Paper Deep Reading（V3.1）
 
-独立于现有 153 篇论文的深度笔记，新增**来源定位、论证结构与逐段批判性阅读**模块。
+独立于现有 154 篇论文的深度笔记，新增**来源定位、论证结构与逐段批判性阅读**模块。
 
 - [SLA（p148）逐段论文精读](https://invoidstar.github.io/VLA-Radar/close-reading/p148/)：按照上传的阅读示例保留 **101 个原稿段落、16 张表与 6 幅图** 的原始位置和逐段中文论证批注。
 - 每个单元包含英文技术关键词、中文逻辑导读、段落功能、论证技巧/局限、原始 PDF 页码；关键实验表直接关联既有 Benchmark 评测赛道。
@@ -125,18 +125,20 @@ Result Report
 
 **2026-11-13 P1 文献正文与结果持续维护**：新增 **APS-VLA（p152，arXiv 2611.13030v1）** 与 **RAGu（p153，arXiv 2611.10894v1）**，两篇各含13节来源核验的中文机制、消融和局限阅读，合计11条明确协议、33条原文结果。APS-VLA 区分 OpenVLA-OFT 512/256/128/64 token 的成功率与模型推理时延，π0.5 和 XR-1 在 RoboCasa365 上的三个任务类别，未来视觉监督的独立消融，以及五项真机实验；骨干冻结但DIE仍需训练，作者代码声明录用后发布，不标为已公开。RAGu 分别记录 RoboLab 原表**三任务**、RoboCasa GR-1 预训练/微调两种策略、Franka 五项真机的平均值，保留个别任务退化，不能与 RoboDojo 官方榜或 RoboCasa365 完整榜直接混排。新加入的 RoboLab、APS Real、RAGu Real 均作为论文案例登记；ActPrune 原始身份已核查，仍留待全文实验核验。RoboDojo 官网更新数据维持 Sim/Real 66/14，固定完整快照仍为57/11；论文与新闻的完整检索检查点仍为2026-10-04。
 
+**2026-11-13 P1 新一轮原文核验与新闻补录**：新增 **ActPrune（p154，arXiv 2611.08827v1）**，14节方法、相机运动补偿、消融、失效边界与真实实验深读，并按10条实验协议保存40条原始论文核验结果。保留OpenVLA-OFT的LIBERO25%保留比例96.1% SR、1.61× policy speedup，与π0.5仅91.8% SR、1.03× speedup的差异；原作者VLABench十任务及Franka四任务均显示明显成功率退化。此方法依赖标定相机、手腕RGBD和执行动作先验，无法当作纯RGB、完全无代价的普适剪枝；未确认官方完整开源代码，且作者本地机器人策略仍具有DROID预训练和真机LoRA后训练。新增智元 **WITA-OMNI** 交互模型官方2026-10-30首次客户部署事件，区别于同场GO-3 Preview和11月后续媒体转述；没有把官方宣称的多模态交互榜单成绩并入机器人动作Benchmark。论文发现与中英文新闻仍是`partial`，完整检查点保持2026-10-04；RoboDojo实时66/14与正式SHA固定57/11仍分开展示。
+
 ## 当前覆盖
 
 | 内容 | 当前规模 |
 |---|---:|
-| 论文 | **153** |
-| Benchmark 与论文实验类别（合计） | **55** |
-| Evaluation Setting（协议与实验合计） | **200** |
+| 论文 | **154** |
+| Benchmark 与论文实验类别（合计） | **56** |
+| Evaluation Setting（协议与实验合计） | **203** |
 | 主方法比较结果记录 | **746** |
-| 对外已核验结果记录（含论文实验及重复引用） | **1062** |
-| 原始核验结果（含消融实验） | **1337** |
+| 对外已核验结果记录（含论文实验及重复引用） | **1102** |
+| 原始核验结果（含消融实验） | **1377** |
 
-Benchmark Registry 现登记 **27 个公共 Benchmark 与 28 个论文专属实验/真机案例**（其中 ChemLab-Evo 是单篇论文真实机器人案例，保留原表但不独立进入主方法导航）；主方法比较默认隐藏论文内部预算扫描和同分重复引用，完整原始报告可一键查看。
+Benchmark Registry 现登记 **27 个公共 Benchmark 与 29 个论文专属实验/真机案例**（其中 ChemLab-Evo 是单篇论文真实机器人案例，保留原表但不独立进入主方法导航）；主方法比较默认隐藏论文内部预算扫描和同分重复引用，完整原始报告可一键查看。
 
 **核心基准官方快照（独立于1009条论文报告）**：RoboTwin 2.0 27个官方模型（源更新2026-10-21，新增CloudRobo-WM、MWA-Phoenix）；RoboDojo-Sim 57个模型、RoboDojo-Real 11个模型（源更新2026-10-09）。官方模型提交不代表存在独立全文论文，Score和SR分开，源 Git 修订版固定。三篇新完成全文深读与原表结果核对的论文：**ViGAR (p131)、PatchWAM (p132)、ME-Dex 1.0 (p133)**。各自在官方RoboTwin受控快照中建立版本对应；PatchWAM的全数据96.12%与Clean-only79.14%使用不同训练预算，不能互换；ME-Dex论文四舍五入分数与官网高精度分数仍各保留原始出处。COAP / Embodied Turing Machines（p134）、PhysEvo（p135）和 Fast-VLA（p136）均已完成全文深读；Fast-VLA 的 RoboTwin Clean/Randomized、标准 LIBERO 与 LIBERO-Plus 结果分轨保存，推理时延和在线内存不与成功率混合。TurboVLA（p027）已完成arXiv v3深读，新增LIBERO 0.2B与RoboTwin 0.4B混合示范的独立结果轨道，同时保留v2历史原表；SeeR-VLA（p011）完成v2全文修订与RoboCasa/Franka分协议回补。两篇均已复核公开资源及版本差异。COAP / PhysEvo 的 RoboDojo 成功率/进度分仍为**论文作者自报**，依照各自评测口径留档，不编造成官网模型提交。PhysicalRSI、Awomo-0.5，以及 Simate-beta、Rex-M1 Preview、Liber-0 Lite 的官方项目/推理适配器来源均记录清楚，但这些预览模型暂时没有可核实的独立完整论文；Liber-0 Preview 仍只有官方提交记录，因此没有伪造论文 ID。2026-10-26进一步完成**FocusVLA（p137）**与**Ropedia W0（p138）**原文深读：前者的RoboTwin 50任务和Piper真机作为两个独立论文表格协议存档；后者仅把FastWAM采用W0初始化后的LIBERO-Plus成功率作为下游结果，不将视频预测PSNR当作动作成功率。新加坡制造业具身智能赛事和HoloMotion SuperMimic更新按一手发布时间加入新闻，比赛未来决赛及作者自报数字明确标示证据边界。VLA-InfoEntropy（p042）补充作者实验室ICME 2026收录证据，IEEE出版日期与DOI仍待核验。**完整四渠道发现与中英文新闻搜索检查点依旧停留在2026-10-04；本次有真实增量，但不将partial写成complete。**2026-10-26第二轮补齐**Echo（p139）、Progress Probes P²（p140）、FastHarness（p141）**的正文级深读和来源定位：Echo真实机器人5任务0–10完成分数、P²的VLABench故障检测AUROC、FastHarness仅四项RoboDojo仿真任务SR分别存入论文表格/案例层级；均为作者报告，与公共42任务官方榜不可混排。**OnEvoMemory（p015）**获得ECCV 2026 EMR Workshop官方Poster录用证据，非主会录用亦未确认归档出版。10月13日Google DeepMind Gemini 4 Argon机器人应用有官方来源补录；其ERQA数值不是机器人成功率。四来源及中英文全窗口覆盖继续按partial审计，并保留出版社正式DOI候选。**2026-10-26第三轮原始文献回补**：新增**Token-World（p142）**、**PaceVLA（p143）**与**SPAR（p144）**，三篇均含10节正文级阅读与明确原表定位。Token-World的特征/动作余弦是连续相似度而非机器人SR；PaceVLA按RoboCasa/LIBERO/ALLEX真机保存成功率、保留RoboCasa PnP退化的负面结果并把墙钟/吞吐与SR分离；SPAR标准LIBERO与LIBERO-Plus的剪枝前后及RL恢复轨道相互独立。原作者报告不等于本站复现，作者Token-World仓库仍只有代码将发布的占位说明，因此不标为已开源可执行实现。10月19日工信部人形机器人发布会经中文工信部与英文国新办一手证据交叉核验：当时的全年10万台为预测，非已实现产量；拟发布产业标准亦不作为正式上线。论文与新闻的全范围多来源检索仍为**partial**，不会因为这批实际补录而虚报已完成。**2026-10-27进一步完成GeoMem-VLA（p145）、VLA-Δ（p146）、SimPT（p147）全文深读及17条原表结果回补**：GeoMem几何记忆消融的LIBERO/RoboTwin、VLA-Δ物理状态转换预训练的双基准成绩、SimPT七任务专家恢复率与独立策略成功率均严格分轨。保留SimPT FlowPRO在Progress Graph数据下由76.07%降为71.86%的负面结果，七任务论文协议不冒充RoboTwin官方50任务榜；GeoMem公开20k-step教程不等于论文完整训练。10月26日智元G2 Max发布按公司预告和当日报道归档，硬件性能数字仍为厂商声明。三篇出版社正式论文集DOI未核实，完整四来源及中英文全日期检索继续按partial保留。所有 canonical 核验记录保留，以上规模会随维护与核验更新。
 
