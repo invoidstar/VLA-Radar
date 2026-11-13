@@ -2,7 +2,7 @@
 
 ## 2026-11-13 P1 论文、真机与新闻证据补齐（ActPrune / WITA-OMNI）
 
-- ActPrune p154：基于官方arXiv v1源读 14 节，Table I–VII 源定位分拆为 10 个独立研究协议与 40 条作者源报告。LIBERO OpenVLA-OFT 与π0.5、VLABench十任务、Franka四项真机以及相机/轨迹/网格消融各自独立；同时保留模型时延和SR负面结果，不用FLOPs代替时延。原始代码及权重未获得可核验链接，保持复现unknown而非误写unavailable。
+- ActPrune p154：基于官方arXiv v1完整源读并对照11月11日最新v2表格，记录出版版本历史；14节，Table I–VII 源定位分拆为 10 个独立研究协议与 40 条作者源报告。LIBERO OpenVLA-OFT 与π0.5、VLABench十任务、Franka四项真机以及相机/轨迹/网格消融各自独立；同时保留模型时延和SR负面结果，不用FLOPs代替时延。原始代码及权重未获得可核验链接，保持复现unknown而非误写unavailable。
 - 新闻：2026-10-30 智元官网WITA-OMNI交互模型与首批客户部署事件已添加，单独区别同场GO-3 Preview以及11月后续复述；企业自报能力和未来部署时间均注明为厂商声明，不据此推断公开权重。
 - 新数据类别 ActPrune Real 为单篇真机案例而非官方公共Benchmark；所有ActPrune源表与消融分别标注paper/sweep层。数据注册新增1类案例，保持公共Benchmark=27；当前可验证全库154篇、56类、203个Evaluation Setting、746条主方法、1102条可见核验与1377条canonical记录。
 - `maintenance/audits/discovery/discovery-2026-09-20-2026-11-13-actprune-source-followup.json` 与`maintenance/audits/news/news-2026-10-30-2026-11-13-wita-original-partial.json` 均为真实选择性增量，完整检索检查点`lastSuccessfulSearchAt=2026-10-04`不前移。RoboDojo官网66/14但完整官方JSON仍不可固定，仓库正式快照保持57/11；不手工拼接排行榜。
