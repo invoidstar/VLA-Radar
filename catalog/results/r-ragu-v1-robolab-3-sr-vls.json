@@ -1,0 +1,21 @@
+{
+  "id": "r-ragu-v1-robolab-3-sr-vls",
+  "paperId": "p153",
+  "method": "VLS sparse VLM waypoint steering",
+  "trackId": "ragu-v1-robolab-3-sr",
+  "values": {
+    "BananaInBowl": 12,
+    "MouseOnKeyboard": 16,
+    "MustardAboveRaisin": 8,
+    "Average": 12
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.10894v1",
+  "sourceVersion": "arXiv 2611.10894v1",
+  "locator": "Original Table I VLS sparse VLM waypoint steering",
+  "attribution": "reported-baseline",
+  "trainingData": "RAGu keeps pretrained GR00T-N1.5/π0.5 weights frozen during evaluation; source DROID demos transformed into Cartesian trajectories and guide flow action sampling without weight update. Baselines may use distinct previously finetuned checkpoints.",
+  "evaluationNotes": "Exactly three named RoboLab simulated tasks 25 episodes each; average is 3 tasks not all nine; RAGu and RICL compare 100 DROID source demos.",
+  "supersedes": ""
+}
