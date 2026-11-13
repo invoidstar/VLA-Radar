@@ -689,6 +689,15 @@
         "robustness-ood",
         "sim-to-real"
       ]
+    },
+    "ActPrune Real": {
+      "focus": "efficiency-deployment",
+      "environment": "real",
+      "tags": [
+        "latency-efficiency",
+        "tabletop",
+        "robustness-ood"
+      ]
     }
   }
 }

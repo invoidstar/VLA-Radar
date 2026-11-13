@@ -29,22 +29,33 @@ def test_settings_are_evaluation_protocols_not_training_buckets():
     # APS/RAGu source protocols made old paper identities look like uncontrolled
     # "legacy inflation". This retains the strict prior bound and caps only the
     # *increment* from each source-verified batch by the new distinct track count.
+    # Source-batch bounded additions: previous identities keep their strict
+    # pre-2026-11 cohort invariant; ActPrune can introduce at most 10 genuine
+    # protocol questions, rather than simply raising the global cap.
+    actprune_tracks=[t for t in tracks if t['id'].startswith('actprune-v1-')]
+    prior_tracks=[t for t in tracks if not t['id'].startswith('actprune-v1-')]
+    prior_results=[r for r in results if not r['id'].startswith('r-actprune-v1-')]
+    prior_settings=build_settings(prior_tracks,prior_results)
     current_prefixes=('aps-v1-', 'ragu-v1-')
-    original_tracks=[t for t in tracks if not t['id'].startswith(('zeva-v2-',)+current_prefixes)]
-    original_results=[r for r in results if not r['id'].startswith(('r-zeva-v2-','r-aps-v1-','r-ragu-v1-'))]
+    original_tracks=[t for t in prior_tracks if not t['id'].startswith(('zeva-v2-',)+current_prefixes)]
+    original_results=[r for r in prior_results if not r['id'].startswith(('r-zeva-v2-','r-aps-v1-','r-ragu-v1-'))]
     original_settings=build_settings(original_tracks,original_results)
     assert len(original_settings)<230, f"Pre-new-batch protocol identity inflation: {len(original_settings)}"
-    batch_tracks=[t for t in tracks if t['id'].startswith(current_prefixes)]
-    without_zeva_tracks=[t for t in tracks if not t['id'].startswith('zeva-v2-')]
-    without_zeva_results=[r for r in results if not r['id'].startswith('r-zeva-v2-')]
+    batch_tracks=[t for t in prior_tracks if t['id'].startswith(current_prefixes)]
+    without_zeva_tracks=[t for t in prior_tracks if not t['id'].startswith('zeva-v2-')]
+    without_zeva_results=[r for r in prior_results if not r['id'].startswith('r-zeva-v2-')]
     without_zeva_settings=build_settings(without_zeva_tracks,without_zeva_results)
     assert 0 <= len(without_zeva_settings)-len(original_settings) <= len(batch_tracks), (
-        f"APS/RAGu Setting growth exceeds {len(batch_tracks)} genuine source tracks: "
-        f"{len(without_zeva_settings)} vs original {len(original_settings)}")
-    zeva_tracks=[t for t in tracks if t['id'].startswith('zeva-v2-')]
-    assert 0 <= len(settings)-len(without_zeva_settings) <= len(zeva_tracks), (
-        f"Zeva Setting growth exceeds {len(zeva_tracks)} source tracks: "
-        f"{len(settings)} vs without Zeva {len(without_zeva_settings)}")
+        f"APS/RAGu Setting growth exceeds {len(batch_tracks)} source tracks: "
+        f"{len(without_zeva_settings)} vs {len(original_settings)}")
+    zeva_tracks=[t for t in prior_tracks if t['id'].startswith('zeva-v2-')]
+    assert 0 <= len(prior_settings)-len(without_zeva_settings) <= len(zeva_tracks), (
+        f"Zeva Setting growth exceeds {len(zeva_tracks)} tracks: "
+        f"{len(prior_settings)} vs {len(without_zeva_settings)}")
+    assert len(actprune_tracks)==10, "ActPrune must have 10 source-scoped tracks"
+    assert 0 <= len(settings)-len(prior_settings) <= len(actprune_tracks), (
+        f"ActPrune Setting growth exceeds {len(actprune_tracks)} tracks: "
+        f"{len(settings)} vs {len(prior_settings)}")
     for s in settings:
         assert all(trackmap[resultmap[rid]['trackId']]['dataset']==s['dataset'] for rid in s['resultIds'])
         assert all(trackmap[resultmap[rid]['trackId']]['unit']==s['unit'] for rid in s['resultIds'])
