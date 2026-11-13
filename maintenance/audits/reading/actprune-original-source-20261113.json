@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "actprune-original-source-20261113",
+  "checkedAt": "2026-11-13",
+  "paperId": "p154",
+  "arxiv": "2611.08827v1",
+  "firstArxivAt": "2026-11-06",
+  "sources": [
+    {
+      "type": "original-paper",
+      "url": "https://arxiv.org/html/2611.08827v1",
+      "locators": "§III–VI Tables I–VII, policy settings and real tasks"
+    },
+    {
+      "type": "original-identity",
+      "url": "https://arxiv.org/abs/2611.08827v1",
+      "locators": "arXiv v1 first public 2026-11-06"
+    }
+  ],
+  "review": {
+    "sections": 14,
+    "benchmarkTracks": 10,
+    "resultReports": 40,
+    "keyVerifiedExamples": [
+      {
+        "scope": "LIBERO OpenVLA-OFT",
+        "source": "Table I",
+        "from": "unpruned",
+        "srBefore": 96.5,
+        "tokenRetained": "25%",
+        "srAfter": 96.1,
+        "latencyMsBefore": 86.173,
+        "latencyMsAfter": 53.61,
+        "speedup": 1.61
+      },
+      {
+        "scope": "LIBERO π0.5",
+        "source": "Table II",
+        "from": "unpruned",
+        "srBefore": 96.6,
+        "tokenRetained": "25%",
+        "srAfter": 91.8,
+        "latencyMsBefore": 178.3,
+        "latencyMsAfter": 172.9,
+        "speedup": 1.03
+      },
+      {
+        "scope": "VLABench 10 fixed tasks",
+        "source": "Table III",
+        "from": "unpruned",
+        "srBefore": 42,
+        "tokenRetained": "50%",
+        "srAfter": 26.3,
+        "episodesPerTask": 50
+      },
+      {
+        "scope": "Franka four real tasks",
+        "source": "Table VII",
+        "from": "unpruned",
+        "srBefore": 60,
+        "tokenRetained": "50%",
+        "srAfter": 50,
+        "latencyMsBefore": 174.8,
+        "latencyMsAfter": 166.4,
+        "trialsPerTask": 10
+      }
+    ],
+    "limits": [
+      "No independently verified author code/weights; no independent reproduction",
+      "RGBD wrist depth, camera calibration and actual EEF pose essential",
+      "Some official full policies use robot pretraining and task-specific fine-tuning; training-free pruning does not mean VLA trained from scratch without robot data",
+      "Avoid conflating forward FLOPs reduction with whole-policy inference latency, or success at 25% with speed at another token budget",
+      "Real four-task source reports are paper case study; no public RoboDojo identity"
+    ]
+  },
+  "publicationCheck": "No confirmed peer reviewed proceedings or journal DOI; preprint only. Source code not marked unavailable without explicit author nonrelease statement."
+}

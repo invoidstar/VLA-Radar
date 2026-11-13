@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-13-actprune-source-followup",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-13",
+    "attemptedAt": "2026-11-13",
+    "completedAt": null
+  },
+  "scope": "Original arXiv full-text/Table I–VII review for exact ActPrune identity, cross-checked with curated robotics discovery and official RoboDojo/AGIBOT origin. Selective only: no full 2026-09-20–2026-11-13 four-lane academic or dated news search.",
+  "sources": [
+    {
+      "id": "arxiv-actprune-v1",
+      "lane": "primary-preprints",
+      "provider": "arXiv original version HTML and arXiv identity",
+      "kind": "Exact v1 original methods and Table I–VII, not a broad category search",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-06",
+        "to": "2026-11-13"
+      },
+      "query": "https://arxiv.org/html/2611.08827v1; original arXiv cs.RO, architecture/ablations/performance and first-public 2026-11-06",
+      "resultCount": 1,
+      "note": "Full original ActPrune read and source tables checked. One selected source identity is not full-window primary discovery."
+    },
+    {
+      "id": "academic-index-unresolved",
+      "lane": "academic-index",
+      "provider": "OpenAlex / Semantic Scholar",
+      "kind": "Full-date independent index remains unavailable; no verified successful independent search across old checkpoint",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "Date-scoped independent OpenAlex and Semantic Scholar literature scans 2026-09-20 through 2026-11-13, prior public API blocked; no independent full-window result verified this attempt.",
+      "resultCount": 0,
+      "note": "Could not complete proper independent full-window provider search. Publisher DOI exact search for 3 publication candidates likewise still unresolved."
+    },
+    {
+      "id": "robot-paper-daily-actprune",
+      "lane": "curated-robotics",
+      "provider": "Robot paper daily original GitHub curated list",
+      "kind": "One title-matched curated list entry; no historical all-dates VLA source enumeration",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-06",
+        "to": "2026-11-13"
+      },
+      "query": "https://github.com/RainbowNebula/robot-paper-daily ActPrune title match; historical index pagination from Sept20 not completed",
+      "resultCount": 1,
+      "note": "Curated source confirms ActPrune title, no guarantee all prior weeks were read."
+    },
+    {
+      "id": "official-robo-agibot-reverse",
+      "lane": "reverse-discovery",
+      "provider": "Official RoboDojo leaderboard and original AGIBOT Oct30 newsroom",
+      "kind": "Official benchmark and corporate publication targeted verification",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-10-30",
+        "to": "2026-11-13"
+      },
+      "query": "https://robodojo-benchmark.com/leaderboard?bench=sim official live66/real14 dated Nov03; https://www.agibot.com.cn/article/315/detail/261.html official WITA event Oct30",
+      "resultCount": 2,
+      "note": "Complete RoboDojo generated JSON cannot be fetched, no byte-exact new official model scores. Official WITA original date from Oct30, not Nov10 reprint."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "ActPrune: Action-Grounded Visual Token Pruning for Efficient Vision-Language-Action Models",
+      "arxiv": "2611.08827",
+      "doi": "",
+      "date": "2026-11-06",
+      "sourceIds": [
+        "arxiv-actprune-v1",
+        "robot-paper-daily-actprune"
+      ],
+      "status": "selected",
+      "reason": "Complete original source method and Tables I–VII reviewed; admitted p154 with 14 substantial sourced sections, 10 distinct protocol tracks and 40 original-source checked rows. Source-scope negative π0.5/VLABench/real data retained.",
+      "paperId": "p154",
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 1,
+    "selected": 1,
+    "deferred": 0,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 1
+  },
+  "status": "partial",
+  "notes": "This is incremental fully source-read candidate admission, NOT complete four-lane discovery. lastSuccessfulSearchAt remains 2026-10-04, no news full-scan checkpoint. Latest RoboDojo remains 66/14 versus pinned 57/11 due original raw JSON unavailable."
+}

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-12",
+  "asOf": "2026-11-13",
   "status": "partial",
-  "lastAttemptAt": "2026-11-12",
+  "lastAttemptAt": "2026-11-13",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-11-12 targeted original English and Chinese November events: GR00T 2 (NVIDIA Nov09), Gemini Robotics 2.5 (DeepMind Nov10), Beijing embodied robotics 2026-28 action plan (Nov11), Agibot GO-3 Preview (Oct29 event/Oct30 official text); 4 verified official-source news. A curated VLA feed dated Nov12 and selected vendor/government original pages were checked; no exhaustive day-by-day bilingual channel scan for Oct04-Nov12. lastSuccessfulSearchAt remains 2026-10-04.",
+  "summary": "2026-11-13 selective bilingual retrospective: original AGIBOT Oct30 WITA-OMNI first customer deployment official company source, Nov10 media re-report deduplicated; NVIDIA GR00T2/DeepMind Gemini Robotics2.5 already in catalog. Broad day-by-day bilingual search Oct05–Nov13 not completed. lastSuccessfulSearchAt remains 2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -108,6 +108,12 @@
       "to": "2026-11-12",
       "status": "partial",
       "note": "Nov12 bilingual targeted original-source follow-up: NVIDIA CoRL/GEAR, Google DeepMind Nov10, Beijing municipal Nov11, AGIBOT GO3 Oct29 and official Robotics Paper Daily. Original official dates, previews vs weights, corporate-reported performance, policy goals checked; missing comprehensive every-date multilingual vendor/lab/media release coverage. Historical 2026-10-04 success checkpoint unchanged."
+    },
+    {
+      "from": "2026-10-30",
+      "to": "2026-11-13",
+      "status": "partial",
+      "note": "Verified original Oct30 official WITA-OMNI first-customer deployment release, cross-deduplicated Nov10 re-report and Oct30 GO3 from same event. Spot-check of research news, no exhaustive day-by-day multilingual channels; checkpoint still 2026-10-04."
     }
   ]
 }

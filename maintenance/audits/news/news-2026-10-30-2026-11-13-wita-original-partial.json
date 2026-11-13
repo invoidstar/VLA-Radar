@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "news-2026-10-30-2026-11-13-wita-original-partial",
+  "window": {
+    "from": "2026-10-30",
+    "to": "2026-11-13"
+  },
+  "attemptedAt": "2026-11-13",
+  "status": "partial",
+  "searchedChannels": [
+    {
+      "language": "zh",
+      "channel": "AGIBOT official newsroom",
+      "queries": "2026-10-30 WITA-OMNI first customer release at Innovation Day; distinguish event from GO-3 and later November recap",
+      "status": "partial",
+      "source": "https://www.agibot.com.cn/article/315/detail/261.html"
+    },
+    {
+      "language": "zh",
+      "channel": "IT之家 contemporary reporting",
+      "queries": "2026-11-10 WITA-OMNI later media report, original event date and preview openness",
+      "status": "partial",
+      "source": "https://www.ithome.com/1/025/122.htm"
+    },
+    {
+      "language": "en",
+      "channel": "Google DeepMind / NVIDIA research labs",
+      "queries": "Nov09 GR00T2, Nov10 Gemini Robotics 2.5 previously included, duplicate checks not exhaustive",
+      "status": "partial",
+      "source": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+    },
+    {
+      "language": "zh/en",
+      "channel": "Official RoboDojo leaderboard",
+      "queries": "Live latest 2026-11-03 snapshot and official generated.json access attempt failed",
+      "status": "partial",
+      "source": "https://robodojo-benchmark.com/leaderboard?bench=sim"
+    }
+  ],
+  "selected": [
+    {
+      "newsId": "news-20261030-agibot-wita-omni",
+      "eventDate": "2026-10-30",
+      "source": "https://www.agibot.com.cn/article/315/detail/261.html",
+      "note": "Original source-dated WITA-OMNI model with first customer availability, not later Nov10 repackaged release and not GO-3; no open weights assertion."
+    }
+  ],
+  "checkedButNotAdded": [
+    {
+      "url": "https://www.ithome.com/1/025/122.htm",
+      "reason": "Nov10 media report of model already originally released Oct30; not a second launch."
+    },
+    {
+      "url": "https://www.agibot.com.cn/article/315/detail/261.html",
+      "reason": "Same official event also announces GO-3 Preview, already independently in catalog under its own eventKey; no duplicate GO-3."
+    }
+  ],
+  "completeBilingualCoverage": false,
+  "lastSuccessfulSearchAt": "2026-10-04",
+  "uncovered": "No comprehensive day-by-day dual-language primary original source scan from the last 2026-10-04 complete checkpoint through 2026-11-13 for all relevant labs, manufacturers, announcements, publishers and reliable reporting. Targeted November/late-October additions must remain partial."
+}
