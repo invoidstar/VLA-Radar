@@ -19,7 +19,7 @@
 .original-head strong{display:block;font-size:10px;letter-spacing:.07em}
 .original-head span{display:block;color:#d3c5a5;font-size:11px}
 .original-head a{font-size:11px;color:#fff0c8}
-#original-pdf{width:100%;flex:1;border:0;background:#fff;min-height:0}
+#original-html{width:100%;flex:1;border:0;background:#fff;min-height:0}
 .original-fallback{font-size:10px;color:#627384;margin:0;padding:6px 12px;line-height:1.5}
 .source-open .reader-notes .reading-row{display:block;padding:17px 0 20px}
 .source-open .reader-notes .annotation{position:static;margin-top:15px}
@@ -44,3 +44,34 @@
   .source-open .reader-workspace{display:block}
   .source-open .reader-notes .reading-row{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(260px,1fr)}
 }
+
+/* SLA original + annotation in the same reading row.
+   Imported third-party paper content exists only in the visiting browser's memory. */
+.source-import{position:relative;display:inline-flex;align-items:center;border:1px solid #a6b7c8;border-radius:4px;background:#e8f0f6;padding:7px 10px;color:#24445f;font-size:12px;cursor:pointer;white-space:nowrap}
+.source-import:hover{background:#dae8f2}
+.source-import:focus-within{outline:3px solid #d1a756;outline-offset:2px}
+.source-import input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;inset:auto}
+#inline-source-status{display:block;margin-top:8px;color:#455f71;font-weight:600}
+.original-block{border:1px solid #d8d4ca;border-radius:5px;background:#fffefa;margin:14px 0;padding:18px 20px}
+.source-label{font:600 10px/1.6 var(--ui);letter-spacing:.09em;color:#817b6e;margin-bottom:9px}
+.original-english{font:400 14px/1.95 var(--serif);color:#25384c;margin:0 0 16px;overflow-wrap:anywhere;white-space:normal}
+.original-english mark{padding:1px 3px;color:#25384c;border-radius:2px}
+.original-english mark.thesis{background:var(--thesis)}
+.original-english mark.concept{background:var(--concept)}
+.original-english mark.evidence{background:var(--evidence)}
+.original-english mark.concession{background:var(--concession)}
+.original-english mark.method{background:var(--method)}
+.original-translation{padding:12px 14px;background:#f2eee5;border-left:2px solid #c3b28f;color:#545248;font-size:13px;line-height:1.95}
+.original-translation p{margin:0 0 8px}
+.original-translation p:last-child{margin:0}
+.original-local-figure{margin:10px 0 16px}
+.original-local-figure img{width:100%;height:auto;display:block;border:1px solid #e1d9ca;background:#fff}
+.original-local-figure figcaption{font-size:10px;color:#817b6e;text-align:center;line-height:1.6;margin-top:4px}
+.has-inline-original .kicker.enlabel,.has-inline-original .keywords,.has-inline-original .cn{display:none}
+.has-inline-original .reading-main{min-width:0}
+.has-inline-original .annotation{top:153px}
+.hide-thesis .original-english mark.thesis,.hide-concept .original-english mark.concept,
+.hide-evidence .original-english mark.evidence,.hide-concession .original-english mark.concession,
+.hide-method .original-english mark.method{background:#f0ede6}
+@media(max-width:690px){.source-import{font-size:11px;padding:6px 9px}.original-block{padding:13px 12px}.original-english{font-size:13px}.original-translation{padding:10px 12px;font-size:12px}}
+@media print{.source-import,#clear-source{display:none!important}.original-block{break-inside:auto}.original-english{font-size:10px}.original-translation{font-size:10px}}
