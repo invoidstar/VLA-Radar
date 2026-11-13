@@ -35,11 +35,11 @@ def main(base:str):
     deep=fetch(base+'?view=reader&paper=p001')
     assert wanted in deep and 'id="reader-section"' in deep
     close=fetch(base+'close-reading/p148/')
-    assert 'id="original-panel"' in close and 'id="original-pdf"' in close and 'id="source-toggle"' in close
+    assert 'id="original-panel"' in close and 'id="original-html"' in close and 'id="original-html-file"' in close and 'id="source-toggle"' in close
     assert re.search(r'reader\.js\?v=[0-9a-f]{12}',close), 'missing versioned original-paper reader'
     original=json.loads(fetch(base+'data/close-readings/p148.json'))
     assert original['paperId']=='p148' and original['pdfUrl'].startswith('https://arxiv.org/pdf/2611.08373v1')
-    print(f'PASS production Pages smoke: {len(refs)} hashed assets; MathML, reader deep link, close-reading source and page assets.')
+    print(f'PASS production Pages smoke: {len(refs)} hashed assets; MathML, reader deep link, close-reading HTML source, in-browser import and page assets.')
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--base',required=True);args=ap.parse_args();main(args.base)
