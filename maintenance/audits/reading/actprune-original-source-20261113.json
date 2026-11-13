@@ -3,9 +3,14 @@
   "id": "actprune-original-source-20261113",
   "checkedAt": "2026-11-13",
   "paperId": "p154",
-  "arxiv": "2611.08827v1",
+  "arxiv": "2611.08827v2",
   "firstArxivAt": "2026-11-06",
   "sources": [
+    {
+      "type": "latest-primary-paper",
+      "url": "https://arxiv.org/html/2611.08827v2",
+      "locators": "Nov11 revised arXiv v2; §III–VI Tables I–VII compared with exact v1 results"
+    },
     {
       "type": "original-paper",
       "url": "https://arxiv.org/html/2611.08827v1",
@@ -73,5 +78,15 @@
       "Real four-task source reports are paper case study; no public RoboDojo identity"
     ]
   },
-  "publicationCheck": "No confirmed peer reviewed proceedings or journal DOI; preprint only. Source code not marked unavailable without explicit author nonrelease statement."
+  "publicationCheck": "No confirmed peer reviewed proceedings or journal DOI; preprint only. Source code not marked unavailable without explicit author nonrelease statement.",
+  "versionReview": {
+    "firstPublished": "2026-11-06",
+    "latestVersion": "v2",
+    "latestUploaded": "2026-11-11",
+    "reviewedAt": "2026-11-13",
+    "comparison": "Full model and Tables I–VII source reviewed; representative success/latency rows unchanged across v1/v2. Original result-row sourceVersion and URLs intentionally remain v1 for reproducible historical attribution.",
+    "siteUrl": "http://mmai.ewha.ac.kr/actprune/",
+    "siteHttpsVerified": false,
+    "fullOfficialCodeVerified": false
+  }
 }
