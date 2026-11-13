@@ -7919,6 +7919,72 @@
         "Evolve4"
       ],
       "source": "https://arxiv.org/html/2608.30880v2"
+    },
+    {
+      "version": "arXiv 2611.13160v1 Table 1",
+      "tasks": "40 LIBERO manipulation tasks (Spatial/Object/Goal/Long)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.13160v1",
+      "id": "knn-v1-libero40-author",
+      "dataset": "LIBERO",
+      "name": "kNN source-read 40-task original Table 1",
+      "split": "Each of 40 LIBERO tasks 50 evaluation episodes; 2000 rollouts. Hyperparameter tuning used states 40-49, overlap with full eval.",
+      "protocol": "Original source Table 1 author-reproduced baselines with same LIBERO 40/2000 interface, distinct checkpoints per model; not VLA-Radar reproduction.",
+      "trainingRegime": "kNN ResNet & multimodal: no policy training; LAC key: learned linear projection; π0.5 used author's LeRobot checkpoint."
+    },
+    {
+      "version": "arXiv 2611.13160v1 Table 1",
+      "tasks": "40 LIBERO manipulation tasks (Spatial/Object/Goal/Long)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.13160v1",
+      "id": "knn-v1-libero-plus-fixed420",
+      "dataset": "LIBERO-Plus",
+      "name": "kNN author 420 fixed LIBERO-Plus variants",
+      "split": "420 selected variants total, 60 per each of 7 perturbation categories, over LIBERO 40 tasks; held out from tuning.",
+      "protocol": "Original Table 1 420 fixed perturbation variants, not exhaustive official LIBERO-Plus variants or standard LIBERO control.",
+      "trainingRegime": "Base LIBERO demonstrations for memory; kNN ResNet/multimodal frozen encoders; LAC linear projection trained; nine VLA checkpoints as released."
+    },
+    {
+      "version": "arXiv 2611.13160v1 Appendix Table 3",
+      "tasks": "40 LIBERO manipulation tasks (Spatial/Object/Goal/Long)",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "comparisonScope": "paper-table",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "source": "https://arxiv.org/html/2611.13160v1",
+      "id": "knn-v1-libero40-ablation",
+      "name": "kNN multimodal retrieval ablations Table 3",
+      "dataset": "LIBERO",
+      "split": "40-task 2000 episode author evaluation of multimodal kNN component variants.",
+      "protocol": "Original Table 3: fixed multimodal retriever with one factor ablated; visual-language and demonstration memory effects, not a separate trained VLA leaderboard.",
+      "trainingRegime": "Base ImageNet ResNet-18 and CLIP features frozen; different memory budgets and retrieval input; hyperparams from Optuna."
     }
   ]
 }
