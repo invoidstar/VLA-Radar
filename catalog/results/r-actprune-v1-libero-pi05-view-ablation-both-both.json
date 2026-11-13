@@ -13,5 +13,6 @@
   "locator": "Table IV view-level ablation both-both",
   "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
   "evaluationNotes": "25% retention, π0.5 source author local experiment; success and FLOPs can trade off; full both views achieves lowest FLOPs but lower SR.",
-  "supersedes": ""
+  "supersedes": "",
+  "attribution": "author-reported"
 }
