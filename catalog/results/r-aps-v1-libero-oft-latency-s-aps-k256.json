@@ -1,0 +1,18 @@
+{
+  "id": "r-aps-v1-libero-oft-latency-s-aps-k256",
+  "paperId": "p152",
+  "method": "APS-VLA retained 256 visual tokens",
+  "trackId": "aps-v1-libero-oft-latency-s",
+  "values": {
+    "LatencySeconds": 0.08139
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13030v1",
+  "sourceVersion": "arXiv 2611.13030v1",
+  "locator": "Original Table 1 model latency APS-VLA retained 256 visual tokens",
+  "attribution": "author-reported",
+  "trainingData": "Authors kept pretrained policy backbone weights frozen; pretrained task-specific checkpoint differs by OpenVLA-OFT, π0.5, XR-1 and real-world task, and trained a separate DIE selector plus train-only future predictor (not zero training).",
+  "evaluationNotes": "Source latency in milliseconds /1000 converted to unit seconds by the catalog: 81.39 ms. End-to-end policy inference not full episode. Author source measurement.",
+  "supersedes": ""
+}
