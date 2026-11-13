@@ -1,0 +1,18 @@
+{
+  "id": "r-ragu-v1-franka-real-five-macro-vlm",
+  "paperId": "p153",
+  "method": "VLM sparse waypoint steering",
+  "trackId": "ragu-v1-franka-real-five-macro",
+  "values": {
+    "Average": 40
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.10894v1",
+  "sourceVersion": "arXiv 2611.10894v1",
+  "locator": "Original Figure 4 + official project real-world 50-rollout average: VLM sparse waypoint steering",
+  "attribution": "reported-baseline",
+  "trainingData": "Frozen DROID π0.5 checkpoint; RAGu uses external cross-domain warped trajectories at inference with no policy gradient update, compared to author RiCL or sparse VLM steering baselines.",
+  "evaluationNotes": "Real-world five Franka tasks, 10 rollouts each; paper Figure 4 and official project author reported pooled Average only, NOT RoboLab Table I. No per-task scores are inferred from figures.",
+  "supersedes": ""
+}
