@@ -1461,6 +1461,12 @@
           "source": "https://raguvla.github.io/"
         }
       }
+    },
+    "p154": {
+      "verifiedAt": "2026-11-13",
+      "level": "baseline",
+      "note": "Original arXiv HTML v1 methods, Tables I–VII and real hardware setup were source-reviewed. No independently verified runnable author code/weights link located as of 2026-11-13; no additional 'unavailable' claim without author proof. Baseline robot policy weights are third-party pretrained/finetuned artifacts, not released ActPrune models.",
+      "items": {}
     }
   }
 }

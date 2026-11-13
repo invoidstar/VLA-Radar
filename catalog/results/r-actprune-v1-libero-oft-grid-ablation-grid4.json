@@ -1,0 +1,22 @@
+{
+  "id": "r-actprune-v1-libero-oft-grid-ablation-grid4",
+  "paperId": "p154",
+  "method": "OpenVLA-OFT context grid4",
+  "trackId": "actprune-v1-libero-oft-grid-ablation",
+  "values": {
+    "Spatial": 97.6,
+    "Object": 98.6,
+    "Goal": 97,
+    "Long": 86.8,
+    "Average": 95
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.08827v1",
+  "sourceVersion": "arXiv 2611.08827v1",
+  "locator": "Table VIb context grid grid4",
+  "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+  "evaluationNotes": "25% visual retained, OFT baseline consistent. M×M means coarse grid of reprojected context patches; a grid of zero discards pruned patches.",
+  "supersedes": "",
+  "attribution": "author-reported"
+}

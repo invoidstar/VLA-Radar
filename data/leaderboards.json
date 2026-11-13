@@ -17264,6 +17264,526 @@
       "columnUnits": {
         "Average": "percent"
       }
+    },
+    {
+      "id": "actprune-v1-libero-oft-sr",
+      "dataset": "LIBERO",
+      "name": "ActPrune OFT LIBERO 4 suites · Table I",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "version": "2611.08827v1 Table I",
+      "tasks": "40 tasks / 50 episodes per task = 2000 episodes",
+      "split": "OpenVLA-OFT unchanged checkpoint, 100/50/25/12.5% visual token retention",
+      "protocol": "Author-source Table I original four-suite evaluation; original OFT baseline and ActPrune retained budget variants, no cross-backbone pooling.",
+      "trainingRegime": "Official OpenVLA-OFT pretrained and posttrained checkpoint; geometric early pruning needs no additional learned selector.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Spatial": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Object": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Goal": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "actprune-v1-libero-oft-latency",
+      "dataset": "LIBERO",
+      "name": "ActPrune OFT policy latency · Table I",
+      "metric": "Model inference latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "columns": [
+        "LatencySeconds"
+      ],
+      "version": "2611.08827v1 Table I",
+      "tasks": "OFT 40-task LIBERO policy inference",
+      "split": "Author method same GPU/protocol, policy milliseconds represented as seconds",
+      "protocol": "Table I policy inference latency including pruning overhead; do not interpret as full robot episode or compare across unrelated GPU setups.",
+      "trainingRegime": "Same OpenVLA-OFT weights without new pruning-network training.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "LatencySeconds": {
+          "unit": "seconds",
+          "direction": "lower"
+        }
+      },
+      "columnDirections": {
+        "LatencySeconds": "lower"
+      },
+      "columnUnits": {
+        "LatencySeconds": "seconds"
+      }
+    },
+    {
+      "id": "actprune-v1-libero-pi05-sr",
+      "dataset": "LIBERO",
+      "name": "ActPrune π0.5 LIBERO four suites · Table II",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "version": "2611.08827v1 Table II",
+      "tasks": "40 tasks / 50 episodes each",
+      "split": "π0.5 unchanged checkpoint; 100/50/25/12.5% visual token retention",
+      "protocol": "Table II π0.5 results independent of OFT; action expert repeated flow steps present, latency speedup much smaller.",
+      "trainingRegime": "π0.5 checkpoint with pretrained robot policy, no additional ActPrune selector training.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Spatial": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Object": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Goal": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "actprune-v1-libero-pi05-latency",
+      "dataset": "LIBERO",
+      "name": "ActPrune π0.5 policy latency · Table II",
+      "metric": "Model inference latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "columns": [
+        "LatencySeconds"
+      ],
+      "version": "2611.08827v1 Table II",
+      "tasks": "π0.5 40-task LIBERO policy inference",
+      "split": "Author millisecond source values divided by 1000 to seconds",
+      "protocol": "Full π0.5 policy inference latency with flow matching action expert, not full trajectory duration.",
+      "trainingRegime": "Unchanged π0.5 policy weights, geometric pruning at inference.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "LatencySeconds": {
+          "unit": "seconds",
+          "direction": "lower"
+        }
+      },
+      "columnDirections": {
+        "LatencySeconds": "lower"
+      },
+      "columnUnits": {
+        "LatencySeconds": "seconds"
+      }
+    },
+    {
+      "id": "actprune-v1-vlabench-pi05-sr",
+      "dataset": "VLABench",
+      "name": "ActPrune VLABench π0.5 ten primitive tasks · Table III",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Condiment",
+        "Flower",
+        "Book",
+        "ChemTube",
+        "Drink",
+        "Fruit",
+        "Mahjong",
+        "Painting",
+        "Poker",
+        "Toy",
+        "Average"
+      ],
+      "version": "2611.08827v1 Table III",
+      "tasks": "10 selected VLABench primitive tasks, 50 episodes each",
+      "split": "π0.5 official checkpoint fine-tuned on these 10 tasks, 100/50/25% token retention",
+      "protocol": "The 10-task VLABench subset is not full 100-category/2000-object benchmark; 25% retained success notably degrades to 13.7%.",
+      "trainingRegime": "π0.5 posttrained on the ten source-specific VLABench tasks before pruning, no retraining for ActPrune.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Condiment": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Flower": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Book": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "ChemTube": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Drink": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Fruit": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Mahjong": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Painting": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Poker": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Toy": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Condiment": "higher",
+        "Flower": "higher",
+        "Book": "higher",
+        "ChemTube": "higher",
+        "Drink": "higher",
+        "Fruit": "higher",
+        "Mahjong": "higher",
+        "Painting": "higher",
+        "Poker": "higher",
+        "Toy": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Condiment": "percent",
+        "Flower": "percent",
+        "Book": "percent",
+        "ChemTube": "percent",
+        "Drink": "percent",
+        "Fruit": "percent",
+        "Mahjong": "percent",
+        "Painting": "percent",
+        "Poker": "percent",
+        "Toy": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "actprune-v1-real-franka4-sr",
+      "dataset": "ActPrune Real",
+      "name": "ActPrune Franka four real task success · Table VII",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Tool",
+        "Doll",
+        "Towel",
+        "Banana",
+        "Average"
+      ],
+      "version": "2611.08827v1 Table VII",
+      "tasks": "4 real Franka Research 3 tasks",
+      "split": "Four tasks, 10 trials each; LoRA task-adapted DROID π0.5, 100/50/25/12.5% visual retained",
+      "protocol": "Paper real robot case study not RoboDojo official; 10 per task, 40 rollouts per method. Real SR degrades 60%→50% at 50% retention.",
+      "trainingRegime": "DROID pretraining π0.5 plus 20K local LoRA steps; ActPrune is inference-only geometric pruning; RealSense D435 RGBD and RTX PRO4500.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "case-study",
+      "columnSpecs": {
+        "Tool": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Doll": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Towel": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Banana": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Tool": "higher",
+        "Doll": "higher",
+        "Towel": "higher",
+        "Banana": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Tool": "percent",
+        "Doll": "percent",
+        "Towel": "percent",
+        "Banana": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "actprune-v1-real-franka4-latency",
+      "dataset": "ActPrune Real",
+      "name": "ActPrune Franka policy seconds · Table VII",
+      "metric": "Model inference latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "columns": [
+        "LatencySeconds"
+      ],
+      "version": "2611.08827v1 Table VII",
+      "tasks": "Franka four real tasks, inference on RTX PRO4500",
+      "split": "Table VII millisecond per inference converted to seconds",
+      "protocol": "Original real-robot policy inference latency, not full task execution wall clock; pair only with same retained-ratio SR track.",
+      "trainingRegime": "Same DROID-initialized π0.5 LoRA checkpoint for source real tasks, no pruning-network training.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "case-study",
+      "columnSpecs": {
+        "LatencySeconds": {
+          "unit": "seconds",
+          "direction": "lower"
+        }
+      },
+      "columnDirections": {
+        "LatencySeconds": "lower"
+      },
+      "columnUnits": {
+        "LatencySeconds": "seconds"
+      }
+    },
+    {
+      "id": "actprune-v1-libero-pi05-view-ablation",
+      "dataset": "LIBERO",
+      "name": "ActPrune fixed/wrist camera pruning contribution · Table IV",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Average"
+      ],
+      "version": "2611.08827v1 Table IV",
+      "tasks": "4 LIBERO suites, π0.5 source method ablation",
+      "split": "25% retained token ratio; enable patch/embedding pruning per camera",
+      "protocol": "Table IV variants with different view-level pruning; all-views lowest FLOPs can have lower success than one-view ablation. Not official method ranks.",
+      "trainingRegime": "Same π0.5 backbone; changes to inference pruning branches, no new policies trained.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "actprune-v1-libero-pi05-horizon-ablation",
+      "dataset": "LIBERO",
+      "name": "ActPrune trajectory history and extrapolation · Table Va",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "version": "2611.08827v1 Table Va",
+      "tasks": "Four LIBERO suites using π0.5",
+      "split": "25% retained; three (past,extrapolated) trajectory selection pairs",
+      "protocol": "Table Va original author evaluation; 5/0, 3/3, 0/5 past/future geometric points; not future observation leakage.",
+      "trainingRegime": "Only inference-time geometry projection horizon changed, VLA checkpoint constant.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Spatial": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Object": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Goal": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
+      }
+    },
+    {
+      "id": "actprune-v1-libero-oft-grid-ablation",
+      "dataset": "LIBERO",
+      "name": "ActPrune context-token grid size · Table VIb",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ],
+      "version": "2611.08827v1 Table VIb",
+      "tasks": "OpenVLA-OFT four LIBERO suites",
+      "split": "25% retained; context grid M=0/1/2/4/8 on OFT",
+      "protocol": "Table VIb context grid granularity on OpenVLA-OFT; 2x2 gives 96.1% while 8x8 degrades to 93.1%.",
+      "trainingRegime": "Only source ActPrune context merging grid choice changed; encoder weights unchanged.",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "comparisonScope": "paper-table",
+      "qualityKind": "benchmark",
+      "columnSpecs": {
+        "Spatial": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Object": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Goal": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Long": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "columnDirections": {
+        "Spatial": "higher",
+        "Object": "higher",
+        "Goal": "higher",
+        "Long": "higher",
+        "Average": "higher"
+      },
+      "columnUnits": {
+        "Spatial": "percent",
+        "Object": "percent",
+        "Goal": "percent",
+        "Long": "percent",
+        "Average": "percent"
+      }
     }
   ],
   "settings": [
@@ -17583,9 +18103,35 @@
         "knn-v1-libero40-author",
         "knn-v1-libero40-ablation",
         "aps-v1-libero-oft-dev-sr",
-        "aps-v1-libero-future-ablation"
+        "aps-v1-libero-future-ablation",
+        "actprune-v1-libero-oft-sr",
+        "actprune-v1-libero-pi05-sr",
+        "actprune-v1-libero-pi05-view-ablation",
+        "actprune-v1-libero-pi05-horizon-ablation",
+        "actprune-v1-libero-oft-grid-ablation"
       ],
       "resultIds": [
+        "r-actprune-v1-libero-oft-grid-ablation-grid0",
+        "r-actprune-v1-libero-oft-grid-ablation-grid1",
+        "r-actprune-v1-libero-oft-grid-ablation-grid2",
+        "r-actprune-v1-libero-oft-grid-ablation-grid4",
+        "r-actprune-v1-libero-oft-grid-ablation-grid8",
+        "r-actprune-v1-libero-oft-sr-eighth",
+        "r-actprune-v1-libero-oft-sr-full",
+        "r-actprune-v1-libero-oft-sr-half",
+        "r-actprune-v1-libero-oft-sr-quarter",
+        "r-actprune-v1-libero-pi05-horizon-ablation-past0-future5",
+        "r-actprune-v1-libero-pi05-horizon-ablation-past3-future3",
+        "r-actprune-v1-libero-pi05-horizon-ablation-past5-future0",
+        "r-actprune-v1-libero-pi05-sr-eighth",
+        "r-actprune-v1-libero-pi05-sr-full",
+        "r-actprune-v1-libero-pi05-sr-half",
+        "r-actprune-v1-libero-pi05-sr-quarter",
+        "r-actprune-v1-libero-pi05-view-ablation-both-both",
+        "r-actprune-v1-libero-pi05-view-ablation-third-both",
+        "r-actprune-v1-libero-pi05-view-ablation-third-patch",
+        "r-actprune-v1-libero-pi05-view-ablation-wrist-both",
+        "r-actprune-v1-libero-pi05-view-ablation-wrist-patch",
         "r-adavla-v2-sr-b10",
         "r-adavla-v2-sr-pr-adp20",
         "r-aps-v1-libero-future-ablation-action-future",
@@ -17707,9 +18253,10 @@
         "r-w2vla-v1-libero-w2",
         "r-xiaomi0-v2-libero-xiaomi-robotics-0"
       ],
-      "resultCount": 120,
-      "paperCount": 30,
+      "resultCount": 141,
+      "paperCount": 31,
       "paperIds": [
+        "p154",
         "p030",
         "p152",
         "p043",
@@ -17741,9 +18288,15 @@
         "p010",
         "p112"
       ],
-      "methodCount": 106,
+      "methodCount": 127,
       "primaryTrackId": "libero-oft-single-view",
       "trainingOptions": [
+        {
+          "id": "unknown-p154",
+          "label": "训练数据未完整披露 · p154",
+          "known": false,
+          "count": 21
+        },
         {
           "id": "unknown-p030",
           "label": "训练数据未完整披露 · p030",
@@ -17974,6 +18527,27 @@
         }
       ],
       "trainingByResult": {
+        "r-actprune-v1-libero-oft-grid-ablation-grid0": "unknown-p154",
+        "r-actprune-v1-libero-oft-grid-ablation-grid1": "unknown-p154",
+        "r-actprune-v1-libero-oft-grid-ablation-grid2": "unknown-p154",
+        "r-actprune-v1-libero-oft-grid-ablation-grid4": "unknown-p154",
+        "r-actprune-v1-libero-oft-grid-ablation-grid8": "unknown-p154",
+        "r-actprune-v1-libero-oft-sr-eighth": "unknown-p154",
+        "r-actprune-v1-libero-oft-sr-full": "unknown-p154",
+        "r-actprune-v1-libero-oft-sr-half": "unknown-p154",
+        "r-actprune-v1-libero-oft-sr-quarter": "unknown-p154",
+        "r-actprune-v1-libero-pi05-horizon-ablation-past0-future5": "unknown-p154",
+        "r-actprune-v1-libero-pi05-horizon-ablation-past3-future3": "unknown-p154",
+        "r-actprune-v1-libero-pi05-horizon-ablation-past5-future0": "unknown-p154",
+        "r-actprune-v1-libero-pi05-sr-eighth": "unknown-p154",
+        "r-actprune-v1-libero-pi05-sr-full": "unknown-p154",
+        "r-actprune-v1-libero-pi05-sr-half": "unknown-p154",
+        "r-actprune-v1-libero-pi05-sr-quarter": "unknown-p154",
+        "r-actprune-v1-libero-pi05-view-ablation-both-both": "unknown-p154",
+        "r-actprune-v1-libero-pi05-view-ablation-third-both": "unknown-p154",
+        "r-actprune-v1-libero-pi05-view-ablation-third-patch": "unknown-p154",
+        "r-actprune-v1-libero-pi05-view-ablation-wrist-both": "unknown-p154",
+        "r-actprune-v1-libero-pi05-view-ablation-wrist-patch": "unknown-p154",
         "r-adavla-v2-sr-b10": "unknown-p030",
         "r-adavla-v2-sr-pr-adp20": "unknown-p030",
         "r-aps-v1-libero-future-ablation-action-future": "unknown-p152",
@@ -18138,6 +18712,27 @@
       "primaryPaperCount": 25,
       "latestReportVerifiedAt": "2026-11-13",
       "methodNames": [
+        "OpenVLA-OFT context grid0",
+        "OpenVLA-OFT context grid1",
+        "OpenVLA-OFT context grid2",
+        "OpenVLA-OFT context grid4",
+        "OpenVLA-OFT context grid8",
+        "OpenVLA-OFT ActPrune retained 12.5%",
+        "OpenVLA-OFT unpruned 100%",
+        "OpenVLA-OFT ActPrune retained 50%",
+        "OpenVLA-OFT ActPrune retained 25%",
+        "0 past, 5 extrapolated points",
+        "3 past, 3 extrapolated points",
+        "5 past, 0 extrapolated points",
+        "π0.5 ActPrune retained 12.5%",
+        "π0.5 unpruned 100%",
+        "π0.5 ActPrune retained 50%",
+        "π0.5 ActPrune retained 25%",
+        "Both-view full pruning",
+        "Third-person patch + embedding",
+        "Third-person patch only",
+        "Wrist patch + embedding",
+        "Wrist patch only",
         "π0.5",
         "AdaVLA",
         "DIE action + future visual supervision",
@@ -26947,24 +27542,41 @@
       "protocol": "同一 Evaluation Setting；来源论文的回合数、种子或报告细节可能不同，详见各行 Evidence。",
       "trackIds": [
         "libero-actioncache-v2-pi05-head",
-        "aps-v1-libero-oft-latency-s"
+        "aps-v1-libero-oft-latency-s",
+        "actprune-v1-libero-oft-latency",
+        "actprune-v1-libero-pi05-latency"
       ],
       "resultIds": [
+        "r-actprune-v1-libero-oft-latency-eighth",
+        "r-actprune-v1-libero-oft-latency-full",
+        "r-actprune-v1-libero-oft-latency-half",
+        "r-actprune-v1-libero-oft-latency-quarter",
+        "r-actprune-v1-libero-pi05-latency-eighth",
+        "r-actprune-v1-libero-pi05-latency-full",
+        "r-actprune-v1-libero-pi05-latency-half",
+        "r-actprune-v1-libero-pi05-latency-quarter",
         "r-aps-v1-libero-oft-latency-s-aps-k128",
         "r-aps-v1-libero-oft-latency-s-aps-k256",
         "r-aps-v1-libero-oft-latency-s-aps-k64",
         "r-aps-v1-libero-oft-latency-s-unpruned",
         "r-libero-actioncache-v2-pi05-head-cache-one"
       ],
-      "resultCount": 5,
-      "paperCount": 2,
+      "resultCount": 13,
+      "paperCount": 3,
       "paperIds": [
+        "p154",
         "p152",
         "p028"
       ],
-      "methodCount": 5,
+      "methodCount": 13,
       "primaryTrackId": "libero-actioncache-v2-pi05-head",
       "trainingOptions": [
+        {
+          "id": "unknown-p154",
+          "label": "训练数据未完整披露 · p154",
+          "known": false,
+          "count": 8
+        },
         {
           "id": "unknown-p152",
           "label": "训练数据未完整披露 · p152",
@@ -26979,6 +27591,14 @@
         }
       ],
       "trainingByResult": {
+        "r-actprune-v1-libero-oft-latency-eighth": "unknown-p154",
+        "r-actprune-v1-libero-oft-latency-full": "unknown-p154",
+        "r-actprune-v1-libero-oft-latency-half": "unknown-p154",
+        "r-actprune-v1-libero-oft-latency-quarter": "unknown-p154",
+        "r-actprune-v1-libero-pi05-latency-eighth": "unknown-p154",
+        "r-actprune-v1-libero-pi05-latency-full": "unknown-p154",
+        "r-actprune-v1-libero-pi05-latency-half": "unknown-p154",
+        "r-actprune-v1-libero-pi05-latency-quarter": "unknown-p154",
         "r-aps-v1-libero-oft-latency-s-aps-k128": "unknown-p152",
         "r-aps-v1-libero-oft-latency-s-aps-k256": "unknown-p152",
         "r-aps-v1-libero-oft-latency-s-aps-k64": "unknown-p152",
@@ -27000,6 +27620,14 @@
       "primaryPaperCount": 1,
       "latestReportVerifiedAt": "2026-11-13",
       "methodNames": [
+        "OpenVLA-OFT ActPrune retained 12.5%",
+        "OpenVLA-OFT unpruned 100%",
+        "OpenVLA-OFT ActPrune retained 50%",
+        "OpenVLA-OFT ActPrune retained 25%",
+        "π0.5 ActPrune retained 12.5%",
+        "π0.5 unpruned 100%",
+        "π0.5 ActPrune retained 50%",
+        "π0.5 ActPrune retained 25%",
         "APS-VLA retained 128 visual tokens",
         "APS-VLA retained 256 visual tokens",
         "APS-VLA retained 64 visual tokens",
@@ -34392,6 +35020,256 @@
         "RiCL in-context example baseline",
         "VLM sparse waypoint steering"
       ]
+    },
+    {
+      "id": "setting-vlabench-success-reported-f70569650707",
+      "dataset": "VLABench",
+      "evalId": "auto:success-reported",
+      "name": "VLABench · Condiment / Flower / Book / … · Success Rate",
+      "tasks": "10 selected VLABench primitive tasks, 50 episodes each",
+      "split": "π0.5 official checkpoint fine-tuned on these 10 tasks, 100/50/25% token retention",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Condiment",
+        "Flower",
+        "Book",
+        "ChemTube",
+        "Drink",
+        "Fruit",
+        "Mahjong",
+        "Painting",
+        "Poker",
+        "Toy",
+        "Average"
+      ],
+      "protocol": "The 10-task VLABench subset is not full 100-category/2000-object benchmark; 25% retained success notably degrades to 13.7%.",
+      "trackIds": [
+        "actprune-v1-vlabench-pi05-sr"
+      ],
+      "resultIds": [
+        "r-actprune-v1-vlabench-pi05-sr-full",
+        "r-actprune-v1-vlabench-pi05-sr-half",
+        "r-actprune-v1-vlabench-pi05-sr-quarter"
+      ],
+      "resultCount": 3,
+      "paperCount": 1,
+      "paperIds": [
+        "p154"
+      ],
+      "methodCount": 3,
+      "primaryTrackId": "actprune-v1-vlabench-pi05-sr",
+      "trainingOptions": [
+        {
+          "id": "unknown-p154",
+          "label": "训练数据未完整披露 · p154",
+          "known": false,
+          "count": 3
+        }
+      ],
+      "trainingByResult": {
+        "r-actprune-v1-vlabench-pi05-sr-full": "unknown-p154",
+        "r-actprune-v1-vlabench-pi05-sr-half": "unknown-p154",
+        "r-actprune-v1-vlabench-pi05-sr-quarter": "unknown-p154"
+      },
+      "columnMeta": {
+        "Condiment": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Flower": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Book": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "ChemTube": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Drink": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Fruit": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Mahjong": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Painting": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Poker": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Toy": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "benchmark",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-11-13",
+      "methodNames": [
+        "π0.5 unpruned 100%",
+        "π0.5 ActPrune retained 50%",
+        "π0.5 ActPrune retained 25%"
+      ]
+    },
+    {
+      "id": "setting-actprune-real-success-42257902e8-3-838b75c0c0be",
+      "dataset": "ActPrune Real",
+      "evalId": "auto:success-42257902e8-3",
+      "name": "ActPrune Real · 3 Tasks · Success Rate",
+      "tasks": "4 real Franka Research 3 tasks",
+      "split": "Four tasks, 10 trials each; LoRA task-adapted DROID π0.5, 100/50/25/12.5% visual retained",
+      "metric": "Task success rate",
+      "unit": "percent",
+      "direction": "higher",
+      "columns": [
+        "Tool",
+        "Doll",
+        "Towel",
+        "Banana",
+        "Average"
+      ],
+      "protocol": "Paper real robot case study not RoboDojo official; 10 per task, 40 rollouts per method. Real SR degrades 60%→50% at 50% retention.",
+      "trackIds": [
+        "actprune-v1-real-franka4-sr"
+      ],
+      "resultIds": [
+        "r-actprune-v1-real-franka4-sr-eighth",
+        "r-actprune-v1-real-franka4-sr-full",
+        "r-actprune-v1-real-franka4-sr-half",
+        "r-actprune-v1-real-franka4-sr-quarter"
+      ],
+      "resultCount": 4,
+      "paperCount": 1,
+      "paperIds": [
+        "p154"
+      ],
+      "methodCount": 4,
+      "primaryTrackId": "actprune-v1-real-franka4-sr",
+      "trainingOptions": [
+        {
+          "id": "unknown-p154",
+          "label": "训练数据未完整披露 · p154",
+          "known": false,
+          "count": 4
+        }
+      ],
+      "trainingByResult": {
+        "r-actprune-v1-real-franka4-sr-eighth": "unknown-p154",
+        "r-actprune-v1-real-franka4-sr-full": "unknown-p154",
+        "r-actprune-v1-real-franka4-sr-half": "unknown-p154",
+        "r-actprune-v1-real-franka4-sr-quarter": "unknown-p154"
+      },
+      "columnMeta": {
+        "Tool": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Doll": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Towel": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Banana": {
+          "unit": "percent",
+          "direction": "higher"
+        },
+        "Average": {
+          "unit": "percent",
+          "direction": "higher"
+        }
+      },
+      "qualityKind": "case-study",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-11-13",
+      "methodNames": [
+        "Franka π0.5 ActPrune retained 12.5%",
+        "Franka π0.5 unpruned 100%",
+        "Franka π0.5 ActPrune retained 50%",
+        "Franka π0.5 ActPrune retained 25%"
+      ]
+    },
+    {
+      "id": "setting-actprune-real-latency-084467a944-na-39910b3091ff",
+      "dataset": "ActPrune Real",
+      "evalId": "auto:latency-084467a944-na",
+      "name": "ActPrune Real · LatencySeconds · Latency",
+      "tasks": "Franka four real tasks, inference on RTX PRO4500",
+      "split": "Table VII millisecond per inference converted to seconds",
+      "metric": "Model inference latency",
+      "unit": "seconds",
+      "direction": "lower",
+      "columns": [
+        "LatencySeconds"
+      ],
+      "protocol": "Original real-robot policy inference latency, not full task execution wall clock; pair only with same retained-ratio SR track.",
+      "trackIds": [
+        "actprune-v1-real-franka4-latency"
+      ],
+      "resultIds": [
+        "r-actprune-v1-real-franka4-latency-eighth",
+        "r-actprune-v1-real-franka4-latency-full",
+        "r-actprune-v1-real-franka4-latency-half",
+        "r-actprune-v1-real-franka4-latency-quarter"
+      ],
+      "resultCount": 4,
+      "paperCount": 1,
+      "paperIds": [
+        "p154"
+      ],
+      "methodCount": 4,
+      "primaryTrackId": "actprune-v1-real-franka4-latency",
+      "trainingOptions": [
+        {
+          "id": "unknown-p154",
+          "label": "训练数据未完整披露 · p154",
+          "known": false,
+          "count": 4
+        }
+      ],
+      "trainingByResult": {
+        "r-actprune-v1-real-franka4-latency-eighth": "unknown-p154",
+        "r-actprune-v1-real-franka4-latency-full": "unknown-p154",
+        "r-actprune-v1-real-franka4-latency-half": "unknown-p154",
+        "r-actprune-v1-real-franka4-latency-quarter": "unknown-p154"
+      },
+      "columnMeta": {
+        "LatencySeconds": {
+          "unit": "seconds",
+          "direction": "lower"
+        }
+      },
+      "qualityKind": "case-study",
+      "primaryResultCount": 0,
+      "primaryPaperCount": 0,
+      "latestReportVerifiedAt": "2026-11-13",
+      "methodNames": [
+        "Franka π0.5 ActPrune retained 12.5%",
+        "Franka π0.5 unpruned 100%",
+        "Franka π0.5 ActPrune retained 50%",
+        "Franka π0.5 ActPrune retained 25%"
+      ]
     }
   ],
   "taxonomy": {
@@ -34954,6 +35832,15 @@
           "robustness-ood",
           "sim-to-real"
         ]
+      },
+      "ActPrune Real": {
+        "focus": "efficiency-deployment",
+        "environment": "real",
+        "tags": [
+          "latency-efficiency",
+          "tabletop",
+          "robustness-ood"
+        ]
       }
     }
   },
@@ -35202,13 +36089,18 @@
         "kind": "case-study",
         "officialUrl": null,
         "auditSummary": "RAGu 2611.10894v1 Fig4 5 Franka real tasks 10 rollouts each. Only original author figure/project aggregated success used; not a public standardized benchmark ranking."
+      },
+      "ActPrune Real": {
+        "kind": "case-study",
+        "officialUrl": null,
+        "auditSummary": "ActPrune 2611.08827v1 Table VII original 7DoF Franka / DROID π0.5 LoRA20K four physical tasks, ten trials per task; not standardized public benchmark. Explicitly preserve SR drop 60% unpruned to 50% at 50% tokens, speed only 174.8→166.4ms."
       }
     },
     "legacySettingTracks": {
       "setting-libero-plus-d7a11d009077": "libero-plus-rldx-v2"
     },
     "primaryResultCount": 746,
-    "archivedResultCount": 316
+    "archivedResultCount": 356
   },
   "officialBoards": {
     "RoboTwin": {
@@ -35824,6 +36716,956 @@
       "supersedes": "",
       "methodId": "actioncache",
       "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-grid-ablation-grid0",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT context grid0",
+      "trackId": "actprune-v1-libero-oft-grid-ablation",
+      "values": {
+        "Spatial": 98.2,
+        "Object": 96.8,
+        "Goal": 96.6,
+        "Long": 88.2,
+        "Average": 95
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VIb context grid grid0",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% visual retained, OFT baseline consistent. M×M means coarse grid of reprojected context patches; a grid of zero discards pruned patches.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "openvlaoftcontextgrid0",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-grid-ablation-grid1",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT context grid1",
+      "trackId": "actprune-v1-libero-oft-grid-ablation",
+      "values": {
+        "Spatial": 97.6,
+        "Object": 99,
+        "Goal": 95.8,
+        "Long": 89.4,
+        "Average": 95.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VIb context grid grid1",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% visual retained, OFT baseline consistent. M×M means coarse grid of reprojected context patches; a grid of zero discards pruned patches.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "openvlaoftcontextgrid1",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-grid-ablation-grid2",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT context grid2",
+      "trackId": "actprune-v1-libero-oft-grid-ablation",
+      "values": {
+        "Spatial": 98,
+        "Object": 98.8,
+        "Goal": 97.4,
+        "Long": 90,
+        "Average": 96.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VIb context grid grid2",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% visual retained, OFT baseline consistent. M×M means coarse grid of reprojected context patches; a grid of zero discards pruned patches.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "openvlaoftcontextgrid2",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-grid-ablation-grid4",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT context grid4",
+      "trackId": "actprune-v1-libero-oft-grid-ablation",
+      "values": {
+        "Spatial": 97.6,
+        "Object": 98.6,
+        "Goal": 97,
+        "Long": 86.8,
+        "Average": 95
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VIb context grid grid4",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% visual retained, OFT baseline consistent. M×M means coarse grid of reprojected context patches; a grid of zero discards pruned patches.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "openvlaoftcontextgrid4",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-grid-ablation-grid8",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT context grid8",
+      "trackId": "actprune-v1-libero-oft-grid-ablation",
+      "values": {
+        "Spatial": 98.8,
+        "Object": 98.2,
+        "Goal": 95.4,
+        "Long": 80,
+        "Average": 93.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VIb context grid grid8",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% visual retained, OFT baseline consistent. M×M means coarse grid of reprojected context patches; a grid of zero discards pruned patches.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "openvlaoftcontextgrid8",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-latency-eighth",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT ActPrune retained 12.5%",
+      "trackId": "actprune-v1-libero-oft-latency",
+      "values": {
+        "LatencySeconds": 0.05202
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I ActPrune retained 12.5% latency",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained ActPrune retained 12.5% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "openvlaoftactpruneretained125",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-latency-full",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT unpruned 100%",
+      "trackId": "actprune-v1-libero-oft-latency",
+      "values": {
+        "LatencySeconds": 0.086173
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I unpruned 100% latency",
+      "attribution": "reported-baseline",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained unpruned 100% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "openvlaoftunpruned100",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-latency-half",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT ActPrune retained 50%",
+      "trackId": "actprune-v1-libero-oft-latency",
+      "values": {
+        "LatencySeconds": 0.06504
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I ActPrune retained 50% latency",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained ActPrune retained 50% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "openvlaoftactpruneretained50",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-latency-quarter",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT ActPrune retained 25%",
+      "trackId": "actprune-v1-libero-oft-latency",
+      "values": {
+        "LatencySeconds": 0.05361
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I ActPrune retained 25% latency",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained ActPrune retained 25% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "openvlaoftactpruneretained25",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-sr-eighth",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT ActPrune retained 12.5%",
+      "trackId": "actprune-v1-libero-oft-sr",
+      "values": {
+        "Spatial": 96,
+        "Object": 96,
+        "Goal": 91,
+        "Long": 71.2,
+        "Average": 88.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I ActPrune retained 12.5% SR",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained ActPrune retained 12.5% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "openvlaoftactpruneretained125",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-sr-full",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT unpruned 100%",
+      "trackId": "actprune-v1-libero-oft-sr",
+      "values": {
+        "Spatial": 99,
+        "Object": 97,
+        "Goal": 97.4,
+        "Long": 92.6,
+        "Average": 96.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I unpruned 100% SR",
+      "attribution": "reported-baseline",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained unpruned 100% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "openvlaoftunpruned100",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-sr-half",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT ActPrune retained 50%",
+      "trackId": "actprune-v1-libero-oft-sr",
+      "values": {
+        "Spatial": 98.6,
+        "Object": 98.4,
+        "Goal": 97.2,
+        "Long": 93.4,
+        "Average": 96.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I ActPrune retained 50% SR",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained ActPrune retained 50% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "openvlaoftactpruneretained50",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-oft-sr-quarter",
+      "paperId": "p154",
+      "method": "OpenVLA-OFT ActPrune retained 25%",
+      "trackId": "actprune-v1-libero-oft-sr",
+      "values": {
+        "Spatial": 98,
+        "Object": 98.8,
+        "Goal": 97.4,
+        "Long": 90,
+        "Average": 96.1
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table I ActPrune retained 25% SR",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table I, same OFT checkpoint, retained ActPrune retained 25% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "openvlaoftactpruneretained25",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-horizon-ablation-past0-future5",
+      "paperId": "p154",
+      "method": "0 past, 5 extrapolated points",
+      "trackId": "actprune-v1-libero-pi05-horizon-ablation",
+      "values": {
+        "Spatial": 92.2,
+        "Object": 98,
+        "Goal": 88.6,
+        "Long": 82,
+        "Average": 90.2
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table Va 0 past, 5 extrapolated points",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Four-suite LIBERO π0.5 fixed 25% retained; projected action trajectory points, not actual future observations.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "0past5extrapolatedpoints",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-horizon-ablation-past3-future3",
+      "paperId": "p154",
+      "method": "3 past, 3 extrapolated points",
+      "trackId": "actprune-v1-libero-pi05-horizon-ablation",
+      "values": {
+        "Spatial": 92,
+        "Object": 99,
+        "Goal": 91.4,
+        "Long": 84.6,
+        "Average": 91.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table Va 3 past, 3 extrapolated points",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Four-suite LIBERO π0.5 fixed 25% retained; projected action trajectory points, not actual future observations.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "3past3extrapolatedpoints",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-horizon-ablation-past5-future0",
+      "paperId": "p154",
+      "method": "5 past, 0 extrapolated points",
+      "trackId": "actprune-v1-libero-pi05-horizon-ablation",
+      "values": {
+        "Spatial": 92.8,
+        "Object": 97.6,
+        "Goal": 89.4,
+        "Long": 86,
+        "Average": 91.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table Va 5 past, 0 extrapolated points",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Four-suite LIBERO π0.5 fixed 25% retained; projected action trajectory points, not actual future observations.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "5past0extrapolatedpoints",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-latency-eighth",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 12.5%",
+      "trackId": "actprune-v1-libero-pi05-latency",
+      "values": {
+        "LatencySeconds": 0.1717
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II ActPrune retained 12.5% latency",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained ActPrune retained 12.5% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained125",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-latency-full",
+      "paperId": "p154",
+      "method": "π0.5 unpruned 100%",
+      "trackId": "actprune-v1-libero-pi05-latency",
+      "values": {
+        "LatencySeconds": 0.1783
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II unpruned 100% latency",
+      "attribution": "reported-baseline",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained unpruned 100% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "pi05unpruned100",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-latency-half",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 50%",
+      "trackId": "actprune-v1-libero-pi05-latency",
+      "values": {
+        "LatencySeconds": 0.1755
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II ActPrune retained 50% latency",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained ActPrune retained 50% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained50",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-latency-quarter",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 25%",
+      "trackId": "actprune-v1-libero-pi05-latency",
+      "values": {
+        "LatencySeconds": 0.1729
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II ActPrune retained 25% latency",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained ActPrune retained 25% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation. Paper milliseconds normalized /1000; policy inference not episode wall clock.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained25",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-sr-eighth",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 12.5%",
+      "trackId": "actprune-v1-libero-pi05-sr",
+      "values": {
+        "Spatial": 74,
+        "Object": 90.2,
+        "Goal": 72.4,
+        "Long": 59.4,
+        "Average": 74
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II ActPrune retained 12.5% SR",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained ActPrune retained 12.5% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained125",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-sr-full",
+      "paperId": "p154",
+      "method": "π0.5 unpruned 100%",
+      "trackId": "actprune-v1-libero-pi05-sr",
+      "values": {
+        "Spatial": 98,
+        "Object": 98,
+        "Goal": 99.4,
+        "Long": 90.8,
+        "Average": 96.6
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II unpruned 100% SR",
+      "attribution": "reported-baseline",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained unpruned 100% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "pi05unpruned100",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-sr-half",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 50%",
+      "trackId": "actprune-v1-libero-pi05-sr",
+      "values": {
+        "Spatial": 98,
+        "Object": 98.4,
+        "Goal": 98.4,
+        "Long": 90.6,
+        "Average": 96.4
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II ActPrune retained 50% SR",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained ActPrune retained 50% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained50",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-sr-quarter",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 25%",
+      "trackId": "actprune-v1-libero-pi05-sr",
+      "values": {
+        "Spatial": 92,
+        "Object": 99,
+        "Goal": 91.4,
+        "Long": 84.6,
+        "Average": 91.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table II ActPrune retained 25% SR",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source Table II, same π0.5 checkpoint, retained ActPrune retained 25% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained25",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-view-ablation-both-both",
+      "paperId": "p154",
+      "method": "Both-view full pruning",
+      "trackId": "actprune-v1-libero-pi05-view-ablation",
+      "values": {
+        "Average": 91.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table IV view-level ablation both-both",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% retention, π0.5 source author local experiment; success and FLOPs can trade off; full both views achieves lowest FLOPs but lower SR.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "bothviewfullpruning",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-view-ablation-third-both",
+      "paperId": "p154",
+      "method": "Third-person patch + embedding",
+      "trackId": "actprune-v1-libero-pi05-view-ablation",
+      "values": {
+        "Average": 94.8
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table IV view-level ablation third-both",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% retention, π0.5 source author local experiment; success and FLOPs can trade off; full both views achieves lowest FLOPs but lower SR.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "thirdpersonpatchembedding",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-view-ablation-third-patch",
+      "paperId": "p154",
+      "method": "Third-person patch only",
+      "trackId": "actprune-v1-libero-pi05-view-ablation",
+      "values": {
+        "Average": 93.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table IV view-level ablation third-patch",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% retention, π0.5 source author local experiment; success and FLOPs can trade off; full both views achieves lowest FLOPs but lower SR.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "thirdpersonpatchonly",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-view-ablation-wrist-both",
+      "paperId": "p154",
+      "method": "Wrist patch + embedding",
+      "trackId": "actprune-v1-libero-pi05-view-ablation",
+      "values": {
+        "Average": 96
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table IV view-level ablation wrist-both",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% retention, π0.5 source author local experiment; success and FLOPs can trade off; full both views achieves lowest FLOPs but lower SR.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "wristpatchembedding",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-libero-pi05-view-ablation-wrist-patch",
+      "paperId": "p154",
+      "method": "Wrist patch only",
+      "trackId": "actprune-v1-libero-pi05-view-ablation",
+      "values": {
+        "Average": 94.9
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table IV view-level ablation wrist-patch",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "25% retention, π0.5 source author local experiment; success and FLOPs can trade off; full both views achieves lowest FLOPs but lower SR.",
+      "supersedes": "",
+      "attribution": "author-reported",
+      "methodId": "wristpatchonly",
+      "displayTier": "sweep",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-latency-eighth",
+      "paperId": "p154",
+      "method": "Franka π0.5 ActPrune retained 12.5%",
+      "trackId": "actprune-v1-real-franka4-latency",
+      "values": {
+        "LatencySeconds": 0.1583
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real inference latency ActPrune retained 12.5%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source policy inference measured on RTX PRO4500, millisecond/1000 normalized to seconds; same retained budget as separately recorded success rate.",
+      "supersedes": "",
+      "methodId": "frankapi05actpruneretained125",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-latency-full",
+      "paperId": "p154",
+      "method": "Franka π0.5 unpruned 100%",
+      "trackId": "actprune-v1-real-franka4-latency",
+      "values": {
+        "LatencySeconds": 0.1748
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real inference latency unpruned 100%",
+      "attribution": "reported-baseline",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source policy inference measured on RTX PRO4500, millisecond/1000 normalized to seconds; same retained budget as separately recorded success rate.",
+      "supersedes": "",
+      "methodId": "frankapi05unpruned100",
+      "displayTier": "case-study",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-latency-half",
+      "paperId": "p154",
+      "method": "Franka π0.5 ActPrune retained 50%",
+      "trackId": "actprune-v1-real-franka4-latency",
+      "values": {
+        "LatencySeconds": 0.1664
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real inference latency ActPrune retained 50%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source policy inference measured on RTX PRO4500, millisecond/1000 normalized to seconds; same retained budget as separately recorded success rate.",
+      "supersedes": "",
+      "methodId": "frankapi05actpruneretained50",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-latency-quarter",
+      "paperId": "p154",
+      "method": "Franka π0.5 ActPrune retained 25%",
+      "trackId": "actprune-v1-real-franka4-latency",
+      "values": {
+        "LatencySeconds": 0.1632
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real inference latency ActPrune retained 25%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Source policy inference measured on RTX PRO4500, millisecond/1000 normalized to seconds; same retained budget as separately recorded success rate.",
+      "supersedes": "",
+      "methodId": "frankapi05actpruneretained25",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-sr-eighth",
+      "paperId": "p154",
+      "method": "Franka π0.5 ActPrune retained 12.5%",
+      "trackId": "actprune-v1-real-franka4-sr",
+      "values": {
+        "Tool": 20,
+        "Doll": 20,
+        "Towel": 10,
+        "Banana": 10,
+        "Average": 15
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real four-task ActPrune retained 12.5%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Franka Research3, DROID pretrained and LoRA 20K local fine-tuning, four real tasks 10 trials/task; source Table VII, 7DoF and RGBD.",
+      "supersedes": "",
+      "methodId": "frankapi05actpruneretained125",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-sr-full",
+      "paperId": "p154",
+      "method": "Franka π0.5 unpruned 100%",
+      "trackId": "actprune-v1-real-franka4-sr",
+      "values": {
+        "Tool": 70,
+        "Doll": 60,
+        "Towel": 60,
+        "Banana": 50,
+        "Average": 60
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real four-task unpruned 100%",
+      "attribution": "reported-baseline",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Franka Research3, DROID pretrained and LoRA 20K local fine-tuning, four real tasks 10 trials/task; source Table VII, 7DoF and RGBD.",
+      "supersedes": "",
+      "methodId": "frankapi05unpruned100",
+      "displayTier": "case-study",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-sr-half",
+      "paperId": "p154",
+      "method": "Franka π0.5 ActPrune retained 50%",
+      "trackId": "actprune-v1-real-franka4-sr",
+      "values": {
+        "Tool": 60,
+        "Doll": 60,
+        "Towel": 50,
+        "Banana": 30,
+        "Average": 50
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real four-task ActPrune retained 50%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Franka Research3, DROID pretrained and LoRA 20K local fine-tuning, four real tasks 10 trials/task; source Table VII, 7DoF and RGBD.",
+      "supersedes": "",
+      "methodId": "frankapi05actpruneretained50",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-real-franka4-sr-quarter",
+      "paperId": "p154",
+      "method": "Franka π0.5 ActPrune retained 25%",
+      "trackId": "actprune-v1-real-franka4-sr",
+      "values": {
+        "Tool": 50,
+        "Doll": 50,
+        "Towel": 40,
+        "Banana": 10,
+        "Average": 37.5
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table VII real four-task ActPrune retained 25%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "Franka Research3, DROID pretrained and LoRA 20K local fine-tuning, four real tasks 10 trials/task; source Table VII, 7DoF and RGBD.",
+      "supersedes": "",
+      "methodId": "frankapi05actpruneretained25",
+      "displayTier": "case-study",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-vlabench-pi05-sr-full",
+      "paperId": "p154",
+      "method": "π0.5 unpruned 100%",
+      "trackId": "actprune-v1-vlabench-pi05-sr",
+      "values": {
+        "Condiment": 60,
+        "Flower": 20,
+        "Book": 51,
+        "ChemTube": 57.8,
+        "Drink": 33.3,
+        "Fruit": 40,
+        "Mahjong": 60,
+        "Painting": 20,
+        "Poker": 60,
+        "Toy": 32,
+        "Average": 42
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table III VLABench unpruned 100%",
+      "attribution": "reported-baseline",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "10 selected VLABench tasks, 50 episodes/task, source checkpoint specially fine-tuned on these tasks. Not full 100 task-category aggregate.",
+      "supersedes": "",
+      "methodId": "pi05unpruned100",
+      "displayTier": "paper",
+      "sourceClass": "cited-baseline"
+    },
+    {
+      "id": "r-actprune-v1-vlabench-pi05-sr-half",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 50%",
+      "trackId": "actprune-v1-vlabench-pi05-sr",
+      "values": {
+        "Condiment": 62,
+        "Flower": 6,
+        "Book": 34,
+        "ChemTube": 23.4,
+        "Drink": 26.5,
+        "Fruit": 26,
+        "Mahjong": 22.4,
+        "Painting": 28.5,
+        "Poker": 30,
+        "Toy": 4,
+        "Average": 26.3
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table III VLABench ActPrune retained 50%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "10 selected VLABench tasks, 50 episodes/task, source checkpoint specially fine-tuned on these tasks. Not full 100 task-category aggregate.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained50",
+      "displayTier": "paper",
+      "sourceClass": "paper-reported"
+    },
+    {
+      "id": "r-actprune-v1-vlabench-pi05-sr-quarter",
+      "paperId": "p154",
+      "method": "π0.5 ActPrune retained 25%",
+      "trackId": "actprune-v1-vlabench-pi05-sr",
+      "values": {
+        "Condiment": 30,
+        "Flower": 0,
+        "Book": 25.5,
+        "ChemTube": 6.5,
+        "Drink": 14.2,
+        "Fruit": 14,
+        "Mahjong": 8.3,
+        "Painting": 38,
+        "Poker": 0,
+        "Toy": 0,
+        "Average": 13.7
+      },
+      "evidence": "checked",
+      "verifiedAt": "2026-11-13",
+      "source": "https://arxiv.org/html/2611.08827v1",
+      "sourceVersion": "arXiv 2611.08827v1",
+      "locator": "Table III VLABench ActPrune retained 25%",
+      "attribution": "author-reported",
+      "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+      "evaluationNotes": "10 selected VLABench tasks, 50 episodes/task, source checkpoint specially fine-tuned on these tasks. Not full 100 task-category aggregate.",
+      "supersedes": "",
+      "methodId": "pi05actpruneretained25",
+      "displayTier": "paper",
       "sourceClass": "paper-reported"
     },
     {

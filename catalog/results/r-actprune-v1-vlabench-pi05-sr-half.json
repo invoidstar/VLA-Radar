@@ -1,0 +1,28 @@
+{
+  "id": "r-actprune-v1-vlabench-pi05-sr-half",
+  "paperId": "p154",
+  "method": "π0.5 ActPrune retained 50%",
+  "trackId": "actprune-v1-vlabench-pi05-sr",
+  "values": {
+    "Condiment": 62,
+    "Flower": 6,
+    "Book": 34,
+    "ChemTube": 23.4,
+    "Drink": 26.5,
+    "Fruit": 26,
+    "Mahjong": 22.4,
+    "Painting": 28.5,
+    "Poker": 30,
+    "Toy": 4,
+    "Average": 26.3
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.08827v1",
+  "sourceVersion": "arXiv 2611.08827v1",
+  "locator": "Table III VLABench ActPrune retained 50%",
+  "attribution": "author-reported",
+  "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+  "evaluationNotes": "10 selected VLABench tasks, 50 episodes/task, source checkpoint specially fine-tuned on these tasks. Not full 100 task-category aggregate.",
+  "supersedes": ""
+}

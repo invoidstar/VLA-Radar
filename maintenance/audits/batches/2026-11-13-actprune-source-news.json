@@ -1,0 +1,8 @@
+{
+  "id": "2026-11-13-actprune-source-news",
+  "date": "2026-11-13",
+  "summary": "P1 source-verified ActPrune (p154, original arXiv 2611.08827v1, first public 2026-11-06), 14 original-source Chinese mechanism/ablation/limitations sections; 10 strictly separated evaluation tracks and 40 checked author/cited-baseline records across LIBERO OFT/π0.5 SR and policy latency, 10-task VLABench, four real Franka tasks and view/horizon/grid ablations. Preserve differences: OFT 25% tokens 96.1% SR / 1.61× but π0.5 only 91.8% SR /1.03×; VLABench real SR degradation, not just headline speedup. No verified official code claim. Add WITA-OMNI original AGIBOT 2026-10-30 source-dated first customer release as separate interaction-model news (not duplicate GO3 and not publicly downloadable weights); both broad news and full four-lane discovery remain partial with unchanged 2026-10-04 success checkpoints. RoboDojo live 66/14 vs SHA-pinned 57/11 still unresolved because complete official generated JSON cannot be obtained. Main branch protection untouched. All 40 canonical result records now have explicit source attribution, including 13 camera/horizon/context-grid ablation rows, and match the strict original-source result schema.",
+  "notes": [],
+  "tracks": [],
+  "results": []
+}

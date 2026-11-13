@@ -1,0 +1,22 @@
+{
+  "id": "r-actprune-v1-real-franka4-sr-half",
+  "paperId": "p154",
+  "method": "Franka π0.5 ActPrune retained 50%",
+  "trackId": "actprune-v1-real-franka4-sr",
+  "values": {
+    "Tool": 60,
+    "Doll": 60,
+    "Towel": 50,
+    "Banana": 30,
+    "Average": 50
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.08827v1",
+  "sourceVersion": "arXiv 2611.08827v1",
+  "locator": "Table VII real four-task ActPrune retained 50%",
+  "attribution": "author-reported",
+  "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+  "evaluationNotes": "Franka Research3, DROID pretrained and LoRA 20K local fine-tuning, four real tasks 10 trials/task; source Table VII, 7DoF and RGBD.",
+  "supersedes": ""
+}

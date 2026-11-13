@@ -1,0 +1,22 @@
+{
+  "id": "r-actprune-v1-libero-oft-sr-half",
+  "paperId": "p154",
+  "method": "OpenVLA-OFT ActPrune retained 50%",
+  "trackId": "actprune-v1-libero-oft-sr",
+  "values": {
+    "Spatial": 98.6,
+    "Object": 98.4,
+    "Goal": 97.2,
+    "Long": 93.4,
+    "Average": 96.9
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.08827v1",
+  "sourceVersion": "arXiv 2611.08827v1",
+  "locator": "Table I ActPrune retained 50% SR",
+  "attribution": "author-reported",
+  "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+  "evaluationNotes": "Source Table I, same OFT checkpoint, retained ActPrune retained 50% ratio; 40 LIBERO tasks each 50 episodes; author local evaluation.",
+  "supersedes": ""
+}

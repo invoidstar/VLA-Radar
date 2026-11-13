@@ -244,6 +244,11 @@
       "kind": "case-study",
       "officialUrl": null,
       "auditSummary": "RAGu 2611.10894v1 Fig4 5 Franka real tasks 10 rollouts each. Only original author figure/project aggregated success used; not a public standardized benchmark ranking."
+    },
+    "ActPrune Real": {
+      "kind": "case-study",
+      "officialUrl": null,
+      "auditSummary": "ActPrune 2611.08827v1 Table VII original 7DoF Franka / DROID π0.5 LoRA20K four physical tasks, ten trials per task; not standardized public benchmark. Explicitly preserve SR drop 60% unpruned to 50% at 50% tokens, speed only 174.8→166.4ms."
     }
   },
   "datasetAliases": {
@@ -290,7 +295,15 @@
     "aps-v1-robocasa365-xr1": "paper",
     "aps-v1-libero-future-ablation": "paper",
     "ragu-v1-robocasa-gr1-zero-ft": "paper",
-    "ragu-v1-robocasa-gr1-ft": "paper"
+    "ragu-v1-robocasa-gr1-ft": "paper",
+    "actprune-v1-libero-oft-sr": "paper",
+    "actprune-v1-libero-oft-latency": "paper",
+    "actprune-v1-libero-pi05-sr": "paper",
+    "actprune-v1-libero-pi05-latency": "paper",
+    "actprune-v1-vlabench-pi05-sr": "paper",
+    "actprune-v1-libero-pi05-view-ablation": "sweep",
+    "actprune-v1-libero-pi05-horizon-ablation": "sweep",
+    "actprune-v1-libero-oft-grid-ablation": "sweep"
   },
   "resultTiers": {
     "r-libero-infoentropy-v1-budget60-ours": "sweep",

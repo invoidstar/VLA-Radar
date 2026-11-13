@@ -1,0 +1,8 @@
+{
+  "id": "2026-11-13-actprune-v2-followup",
+  "date": "2026-11-13",
+  "summary": "Metadata follow-up (new immutable batch ID): official arXiv ActPrune 2611.08827v2 was uploaded 2026-11-11 and checked Nov13 against v1 methods and Tables I–VII. Update p154 publication.latestArxivVersion=v2 and note.source review to v2; preserve exact v1 source-version URLs and 40 original Table I–VII experimental reports without silently rewiring evidence. Verify p154 scientific negative cases, latency units, 10 source-scoped tracks and 40 per-report source attribution in new tests. Original ActPrune admission batch unchanged per applied-batches immutability; WITA-OMNI original Oct30 news and both partial discovery/news checkpoints retained.",
+  "notes": [],
+  "tracks": [],
+  "results": []
+}
