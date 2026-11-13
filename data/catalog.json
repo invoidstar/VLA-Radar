@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-13",
   "title": "VLA Research Radar",
   "collection": "2019—2026 · 关键文献与近期研究",
   "description": "结合奠基性工作与近期成果，整理公开论文的方法、量化结论和证据边界；关键文献为编辑精选，不是引用量排名。",
@@ -63,6 +63,86 @@
     }
   ],
   "papers": [
+    {
+      "id": "p151",
+      "name": "How Much of Your VLA Is kNN",
+      "title": "How Much of Your VLA is kNN",
+      "team": "Denis Grachev、Damien LaRocque、Omar Moured（Sereact / KIT）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2611.13160v1；作者注明 CoRL 2026 G2A/TAG Workshop，正式归档论文集尚未核验",
+      "firstPublished": "2026-11-09",
+      "dateNote": "arXiv v1 于2026-11-09首次公开；作者代码 README 声明 CoRL2026 G2A/TAG workshop，非正式论文集出版证据。",
+      "collectionMonth": "2026-11",
+      "versionNote": "2026-11-13 原始 arXiv HTML v1 §1–7、Appendix A–E、Tables 1–4 与作者源码 README 核验",
+      "topics": [
+        "evaluation",
+        "action",
+        "efficiency"
+      ],
+      "tags": [
+        "kNN",
+        "retrieval policy",
+        "demonstration memorization",
+        "Local Action Consistency",
+        "LAC",
+        "LIBERO",
+        "LIBERO-Plus",
+        "action chunk",
+        "ResNet-18",
+        "CLIP",
+        "ablation"
+      ],
+      "priority": "deep",
+      "contribution": "提出无需训练动作策略的kNN示范动作片段检索基线，对九类公开VLA的前后训练表征进行可用性诊断，并定义动作一致性离线指标LAC衡量表征近邻是否对应相近未来动作。",
+      "findings": "作者Table 1：多模态kNN在LIBERO40任务2000回合达到91.7% SR、固定420种LIBERO-Plus扰动上82.4%，相对下降9.3百分点；仅图像88.7/75.5；训练了LAC投影的变体93.0/81.7。Table 3：忽略语言64.6、原始像素57.2、仅10%示范77.4、最近邻k=1为78.6。",
+      "limitations": "实验以LIBERO密集示范支持和固定任务为主，无法说明跨任务/新动作轨迹的外推能力；LIBERO-Plus固定抽样420变体，不是全穷尽；超参调优使用官方评测初态40–49且原始训练集和测试环境共享任务；LAC线性投影已经训练，不能归为完全零训练；作者原始结果非本站复现。",
+      "insight": "高成功率不必然意味着模型从未见场景泛化；需要报告无梯度的演示检索下界，并对照训练前后表征及动作头，采用新初态、较少演示、新任务和动作外推设置检验真正的泛化增益。",
+      "readingFocus": "§3.1 137k示范记忆；§3.2–3.3多模态距离和同轨迹去重；§3.4 LAC；§5三种kNN变体；Table 1主结果、Table 2 VLM前后训练检索、Table 3消融；Appendix A.4调参初态、B checkpoint与协议。",
+      "evidence": "checked",
+      "evidenceNote": "2026-11-13逐节核读原文HTML 2611.13160v1、Table1-4/附录、作者代码 README，核对 Github master SHA 1a2bb47c67ec9572a4085b60b9d257c456941c23。数值为作者执行的原表评估，不是本站独立复现；LAC key为受训线性投影。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "作者原始 arXiv HTML v1",
+          "url": "https://arxiv.org/html/2611.13160v1"
+        },
+        {
+          "label": "arXiv v1 / 元数据",
+          "url": "https://arxiv.org/abs/2611.13160v1"
+        },
+        {
+          "label": "作者公开源码及协议",
+          "url": "https://github.com/sereact/lerobot_knn"
+        },
+        {
+          "label": "作者项目和rollout结果",
+          "url": "https://sereact.github.io/lerobot_knn/"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2611.13160",
+      "arxiv": "2611.13160",
+      "doi": "",
+      "detailUrl": "data/details/p151.json?v=1153e00f94bfb3e1",
+      "resultUrl": "data/paper-results/p151.d6a00286b691ddf4.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "code": "https://github.com/sereact/lerobot_knn",
+        "project": "https://sereact.github.io/lerobot_knn/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p151.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-11-09",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-11-13"
+      }
+    },
     {
       "id": "p150",
       "name": "Zeva",

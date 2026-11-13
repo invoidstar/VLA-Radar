@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-11-13-knn-original-source-admission",
+  "checkedAt": "2026-11-13",
+  "originalCandidate": {
+    "title": "How Much of Your VLA Is kNN",
+    "arxiv": "2611.13160",
+    "firstArxivAt": "2026-11-09",
+    "readVersion": "v1",
+    "previousStatus": "deferred",
+    "newStatus": "selected",
+    "catalogPaperId": "p151"
+  },
+  "sources": [
+    {
+      "type": "primary-paper",
+      "url": "https://arxiv.org/html/2611.13160v1",
+      "locator": "Methods §3–5, Tables 1–3 §6 and Appendices A–E"
+    },
+    {
+      "type": "primary-metadata",
+      "url": "https://arxiv.org/abs/2611.13160v1",
+      "locator": "First version November 9, 2026; CC BY 4.0"
+    },
+    {
+      "type": "author-code",
+      "url": "https://github.com/sereact/lerobot_knn",
+      "repoRef": "1a2bb47c67ec9572a4085b60b9d257c456941c23",
+      "locator": "README, CLI examples, LeRobot plugin, LICENSE, reproducibility configuration"
+    }
+  ],
+  "protocolLocks": [
+    "LIBERO official four 10-task suites, 50 initial states per task = 2000 closed-loop rollouts. 1693 demonstrations memory built every 2 frames (~137000 entries).",
+    "LIBERO-Plus 420 fixed selected variants, 60 per seven perturbation families. Do not claim an exhaustive official Plus leaderboard or 420 total tasks.",
+    "Image ResNet k8, multimodal ResNet+CLIP k13. LAC key is a trained linear projection and is not strictly training-free.",
+    "Hyperparam Optuna uses states 40–49 which overlap official 0–49 evaluation; reported independent untuned states 0–39 91.6% vs all 50 states 91.7%.",
+    "All values are locally reproduced/author-reported source data, not VLA-Radar independent replication.",
+    "CoRL 2026 G2A/TAG Workshop status in author README; no independent archival workshop proceedings or published DOI identity established."
+  ],
+  "evidence": {
+    "table1": [
+      {
+        "method": "kNN ResNet",
+        "liberoAverage": 88.7,
+        "plus420Average": 75.5
+      },
+      {
+        "method": "kNN multimodal",
+        "liberoAverage": 91.7,
+        "plus420Average": 82.4
+      },
+      {
+        "method": "kNN LAC trained key",
+        "liberoAverage": 93,
+        "plus420Average": 81.7
+      },
+      {
+        "method": "π0.5 author baseline",
+        "liberoAverage": 97.7,
+        "plus420Average": 85.5
+      }
+    ],
+    "table3": [
+      {
+        "variant": "No language",
+        "average": 64.6
+      },
+      {
+        "variant": "Raw pixels",
+        "average": 57.2
+      },
+      {
+        "variant": "10% demos",
+        "average": 77.4
+      },
+      {
+        "variant": "Nearest-only k1",
+        "average": 78.6
+      },
+      {
+        "variant": "DINOv2-S",
+        "average": 83.4
+      }
+    ],
+    "table2Caution": "π0 fine-tuned retrieval key degrades 86.9→17.9 on LIBERO and 56.7→2.4 on LIBERO-Plus; not universal transfer improvement."
+  },
+  "canonicalChanges": {
+    "paperId": "p151",
+    "tracks": [
+      "knn-v1-libero40-author",
+      "knn-v1-libero-plus-fixed420",
+      "knn-v1-libero40-ablation"
+    ],
+    "reportedEvidenceRows": 20,
+    "noteSections": 11
+  },
+  "discoveryScope": "Single original-paper catch-up and fully source-read selection, not comprehensive four-lane date-window discovery.",
+  "discoveryCheckpointMustRemain": "2026-10-04",
+  "pending": "Continue independent academic index 2026-10-05 onward, historical curated feed day scan, RoboDojo complete official raw JSON and three publisher exact DOI checks."
+}

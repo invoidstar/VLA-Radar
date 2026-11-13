@@ -1,0 +1,8 @@
+{
+  "id": "2026-11-13-knn-source-admission",
+  "date": "2026-11-13",
+  "summary": "P1 original-source full reading: admit How Much of Your VLA is kNN (p151, arXiv 2611.13160v1), 11 source-linked Chinese analysis sections, author code/reproducibility audit, three strictly scoped paper-table protocols (LIBERO 40×50, selected 420 LIBERO-Plus variants, LIBERO Table3 ablation) and 20 source-attributed result rows. Frozen kNN versus learned LAC linear projection, demo-budget and held-out state overlap clearly marked; no independent robotics replication or full four-lane discovery checkpoint claimed. RoboDojo and bilingual discovery remain partial; branch governance not modified. Editorial benchmark disposition now records all 20 checked result IDs for p151. Full CI remains required.",
+  "notes": [],
+  "tracks": [],
+  "results": []
+}

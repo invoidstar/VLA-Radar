@@ -1,0 +1,22 @@
+{
+  "id": "r-knn-v1-libero40-author-resnet",
+  "paperId": "p151",
+  "method": "kNN ResNet (image-only)",
+  "trackId": "knn-v1-libero40-author",
+  "values": {
+    "Spatial": 90.4,
+    "Object": 95,
+    "Goal": 95.2,
+    "Long": 74.2,
+    "Average": 88.7
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13160v1",
+  "sourceVersion": "arXiv 2611.13160v1",
+  "locator": "Section 6.1 Table 1, kNN ResNet (image-only)",
+  "attribution": "author-reported",
+  "trainingData": "1,693 LIBERO demos, 2,000 evaluation episodes; kNN frozen ResNet/CLIP variants except LAC linear trained key; π0.5 is author-reproduced LeRobot checkpoint.",
+  "evaluationNotes": "LIBERO four suites, 2,000 rollouts, author local comparison; Optuna tuned subset states 40-49, 0-39 untuned 91.6 reported separately.",
+  "supersedes": ""
+}

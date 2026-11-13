@@ -429,6 +429,10 @@
     "p150": {
       "project": "https://air-embodied-brain.github.io/Zeva",
       "code": "https://github.com/air-embodied-brain/Zeva"
+    },
+    "p151": {
+      "code": "https://github.com/sereact/lerobot_knn",
+      "project": "https://sereact.github.io/lerobot_knn/"
     }
   }
 }

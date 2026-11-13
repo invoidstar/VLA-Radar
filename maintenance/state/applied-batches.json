@@ -482,6 +482,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-13-knn-source-admission",
+      "sha256": "292fa541c4f7fd56f31f3524bf0a58c9427b8186d2dd72038a4da38a3d8ee15b",
+      "date": "2026-11-13",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

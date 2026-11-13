@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-11",
+  "reviewedAt": "2026-11-13",
   "scope": "Per-paper editorial disposition; existing checked rows preserved. Unextracted tables remain deferred, not automatically ranked.",
   "papers": {
     "p001": {
@@ -2868,6 +2868,37 @@
         "r-zeva-v2-atomic5-fixed-csr"
       ],
       "note": "原始Table I/II/III和Fig3按真实/仿真、成功率/部分进度/固定episode累计成功、作者对照/模块消融分别建轨；训练时是有机器人数据的Cosmos3骨干与CTE，部署冻结不代表零离线训练。公开冻结权重不代表完整PIM多尝试成绩。"
+    },
+    "p151": {
+      "status": "extracted",
+      "trackIds": [
+        "knn-v1-libero40-author",
+        "knn-v1-libero-plus-fixed420",
+        "knn-v1-libero40-ablation"
+      ],
+      "resultIds": [
+        "r-knn-v1-libero40-author-resnet",
+        "r-knn-v1-libero40-author-multimodal",
+        "r-knn-v1-libero40-author-lac",
+        "r-knn-v1-libero40-author-pi05",
+        "r-knn-v1-libero-plus-fixed420-resnet",
+        "r-knn-v1-libero-plus-fixed420-multimodal",
+        "r-knn-v1-libero-plus-fixed420-lac",
+        "r-knn-v1-libero-plus-fixed420-pi05",
+        "r-knn-v1-libero40-ablation-multimodal-full",
+        "r-knn-v1-libero40-ablation-without-language",
+        "r-knn-v1-libero40-ablation-raw-pixels",
+        "r-knn-v1-libero40-ablation-ten-percent-demos",
+        "r-knn-v1-libero40-ablation-one-neighbor",
+        "r-knn-v1-libero40-ablation-dinov2-small",
+        "r-knn-v1-libero40-ablation-only-agent-view",
+        "r-knn-v1-libero40-ablation-only-wrist-view",
+        "r-knn-v1-libero40-ablation-without-temporal-ensemble",
+        "r-knn-v1-libero40-ablation-without-history",
+        "r-knn-v1-libero40-ablation-without-proprioception",
+        "r-knn-v1-libero40-ablation-without-time-step"
+      ],
+      "note": "2026-11-13原始arXiv v1 Table1/2/3与Appendix A-E及作者LeRobot代码源核验：LIBERO40任务2000回合、Plus固定420变体分轨；12项kNN消融单独记录，作者本地复现实验不是本站重训；LAC投影不是完全无训练；调参使用40-49官方初态与全量评测重叠。"
     }
   }
 }
