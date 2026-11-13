@@ -1,0 +1,21 @@
+{
+  "id": "r-ragu-v1-robolab-3-sr-ragu",
+  "paperId": "p153",
+  "method": "RAGu retrieval-guided flow matching",
+  "trackId": "ragu-v1-robolab-3-sr",
+  "values": {
+    "BananaInBowl": 36,
+    "MouseOnKeyboard": 24,
+    "MustardAboveRaisin": 16,
+    "Average": 25.33
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.10894v1",
+  "sourceVersion": "arXiv 2611.10894v1",
+  "locator": "Original Table I RAGu retrieval-guided flow matching",
+  "attribution": "author-reported",
+  "trainingData": "RAGu keeps pretrained GR00T-N1.5/π0.5 weights frozen during evaluation; source DROID demos transformed into Cartesian trajectories and guide flow action sampling without weight update. Baselines may use distinct previously finetuned checkpoints.",
+  "evaluationNotes": "Exactly three named RoboLab simulated tasks 25 episodes each; average is 3 tasks not all nine; RAGu and RICL compare 100 DROID source demos.",
+  "supersedes": ""
+}
