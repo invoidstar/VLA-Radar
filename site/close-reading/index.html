@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="VLA-Radar 论文精读：官方原文 PDF 同屏、逐段来源定位、中文论证导读与批判性分析。">
+  <meta name="description" content="VLA-Radar 论文精读：官方原文 HTML 同屏、可导入个人双语原文、逐段来源定位与中文论证批注。">
   <meta name="referrer" content="no-referrer">
   <title>论文精读 · VLA-Radar</title>
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
@@ -41,25 +41,27 @@
       <label class="search"><span aria-hidden="true">⌕</span><input id="unit-search" type="search" placeholder="检索段落编号、技术关键词、中文批注…" aria-label="搜索精读单元"></label>
       <label class="language"><span class="sr-only">阅读显示语言</span><select id="language-mode"><option value="bilingual">关键词 + 中文批注</option><option value="zh">中文专注模式</option></select></label>
       <label class="switch"><input id="notes-toggle" type="checkbox" checked>显示右栏批注</label>
-      <button id="source-toggle" class="print" type="button" aria-controls="original-panel" aria-expanded="false" aria-pressed="false">原文同屏 · 官方 PDF</button>
+      <button id="source-toggle" class="print" type="button" aria-controls="original-panel" aria-expanded="false" aria-pressed="false">官方原文 HTML</button>
+      <label class="source-import" for="original-html-file">导入双语精读 HTML<input id="original-html-file" type="file" accept=".html,.htm,text/html" aria-label="导入已保存的完整双语精读 HTML（仅在本机读取）"></label>
+      <button id="clear-source" class="print" type="button" hidden>退出本地原文</button>
       <button id="print-button" class="print" type="button">打印 / PDF</button>
       <span id="search-status" class="search-status" role="status" aria-live="polite">—</span>
     </div>
   </div>
 </div>
 <main id="reading" class="wrap" tabindex="-1">
-  <div id="notice" class="notice"><strong>原文与批注同屏阅读</strong> 左侧可直接阅读论文官方 PDF，右侧为逐段中文论证导读与批注。点击各单元「同屏查看原文」可定位到原稿所在页；如果浏览器阻止嵌入，请选择「在新标签打开官方 PDF」。本站不镜像原稿。评测结论仍应以原文协议为准。</div>
+  <div id="notice" class="notice"><strong>左侧原文 · 右侧批注逐段对应</strong> 默认可查看作者在 arXiv 提供的原文 HTML；点击「导入双语精读 HTML」并选择此前保存的 SLA_Bilingual_Annotated_Full.html，即可在每个 P001–P101、表格与图片位置直接显示英文原文和中文意译，右侧批注与对应内容同排。导入内容仅在本机浏览器内读取，不上传、存储或镜像到本站。官方 HTML 若阻止嵌入，可在新标签阅读。<span id="inline-source-status" role="status" aria-live="polite">尚未导入个人原文，当前为官方 HTML + 批注索引模式。</span></div>
   <div id="summary" class="summary" aria-label="论证结构概览"></div>
   <div id="reader-workspace" class="reader-workspace">
-    <aside id="original-panel" class="original-panel" aria-label="论文官方原文 PDF">
-      <div class="original-head"><div><strong>ORIGINAL PAPER · OFFICIAL PDF</strong><span id="source-page">PDF</span></div>
-        <a id="source-external" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">在新标签打开官方 PDF ↗</a>
+    <aside id="original-panel" class="original-panel" aria-label="论文官方原文 HTML">
+      <div class="original-head"><div><strong>ORIGINAL PAPER · arXiv HTML</strong><span id="source-page">原文网页</span></div>
+        <a id="source-external" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">在新标签打开官方 HTML ↗</a>
       </div>
-      <iframe id="original-pdf" title="论文官方原始 PDF，按段落页码定位" src="about:blank" loading="lazy" referrerpolicy="no-referrer"></iframe>
-      <p class="original-fallback">官方来源如禁止嵌入或当前网络不可访问，可使用上方链接直接阅读。</p>
+      <iframe id="original-html" title="论文官方 arXiv HTML 原文（外部页面）" src="about:blank" loading="lazy" referrerpolicy="no-referrer"></iframe>
+      <p class="original-fallback">如官方站点阻止 iframe，请在新标签打开；需要逐段完整对照时可导入已有双语 HTML 文件（只在本机读取）。</p>
     </aside>
     <div class="reader-notes">
-      <div class="column-heading"><span>RESEARCH NOTES · 段落索引 / 中文导读</span><span>ANNOTATION · 论证技巧与证据边界</span></div>
+      <div class="column-heading"><span>ORIGINAL + TRANSLATION · 英文原文 / 中文意译</span><span>ANNOTATION · 同段批注 / 证据边界</span></div>
       <p id="error" class="error" hidden role="alert"></p>
       <div id="reading-units" aria-live="polite"><p class="loading">正在读取来源批注…</p></div>
     </div>
