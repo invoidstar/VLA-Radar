@@ -47,7 +47,7 @@ try:
             page.on("request",lambda req:requests.append(req.url))
             block_fonts(page)
             # CI verifies the source address and navigation, not arXiv availability.
-            page.route("https://arxiv.org/**",lambda route:route.fulfill(status=200,content_type="text/html",body="<title>Official PDF route stub</title>"))
+            page.route("https://arxiv.org/**",lambda route:route.fulfill(status=200,content_type="text/html",body="<title>Official arXiv HTML route stub</title>"))
             page.goto(base,wait_until="domcontentloaded")
             page.wait_for_selector(".paper-card",timeout=20000)
             yes(engine+" lazy initial load",not any("/data/close-readings/p148.json" in x for x in requests))
@@ -61,23 +61,44 @@ try:
             yes(engine+" 101 + 22 original locations",page.locator("article.reading-row").count()==123)
             yes(engine+" exact paper and section identity",page.locator("#P001").count()==1 and page.locator("#TAB3").count()==1 and page.locator("#FIG1").count()==1)
             yes(engine+" 18 chapters",page.locator(".paper-section").count()==18)
-            yes(engine+" official PDF panel enabled",page.locator("body.source-open #original-panel").count()==1)
-            yes(engine+" original PDF URL",page.locator("#original-pdf").get_attribute("src")=="https://arxiv.org/pdf/2611.08373v1#page=1")
-            yes(engine+" external original PDF fallback",page.locator("#source-external").get_attribute("href").startswith("https://arxiv.org/pdf/2611.08373v1#page="))
+            yes(engine+" official HTML panel enabled",page.locator("body.source-open #original-panel").count()==1)
+            yes(engine+" official HTML URL",page.locator("#original-html").get_attribute("src")=="https://arxiv.org/html/2611.08373v1#abstract")
+            yes(engine+" external official HTML fallback",page.locator("#source-external").get_attribute("href").startswith("https://arxiv.org/html/2611.08373v1#"))
             yes(engine+" 123 source jump controls",page.locator(".source-jump").count()==123)
             yes(engine+" 5 highlight dimensions",page.locator("[data-dimension]").count()==5)
             yes(engine+" no inline mirrored PDF imagery",page.locator("img[src^='data:']").count()==0 and page.locator(".reading-row img").count()==0)
             yes(engine+" source citations",page.locator("#P001 .source-link").get_attribute("href").endswith("#page=1"))
+            # Validate local HTML-to-annotation pairs in all three browser engines.
+            # The synthetic fixture does not contain copyrighted paper text.
+            source=json.loads((ROOT/"catalog/close-readings/p148.json").read_text(encoding="utf-8"))
+            fixture=['<html><head><title>SLA local fixture</title></head><body>']
+            for section in source["sections"]:
+                for unit in section["units"]:
+                    uid=unit["id"]
+                    en='<p class="en"><mark data-dim="method">Synthetic '+uid+'</mark> source paragraph</p>'
+                    zh='<div class="translation"><div class="zh-block"><p lang="zh-CN">本地测试对应 '+uid+'</p></div></div>'
+                    fixture.append('<article class="reading-row" data-unit="'+uid+'"><div class="reading-main">'+en+zh+'</div></article>')
+            fixture.append('</body></html>')
+            page.locator("#original-html-file").set_input_files({"name":"SLA_local.html","mimeType":"text/html","buffer":"".join(fixture).encode("utf-8")})
+            page.wait_for_function("document.querySelectorAll('.has-inline-original').length===123",timeout=15000)
+            yes(engine+" 123 local originals aligned",page.locator(".has-inline-original").count()==123)
+            yes(engine+" paired source and annotation",page.locator("#P001 .original-block").count()==1 and
+                page.locator("#P001 aside.annotation").count()==1 and
+                "Synthetic P001" in page.locator("#P001 .original-english").inner_text())
+            yes(engine+" 123 source/translation blocks",page.locator(".original-translation").count()==123)
+            yes(engine+" imported content inline",not page.locator("body").evaluate("e=>e.classList.contains('source-open')"))
+            page.locator("#clear-source").click()
+            yes(engine+" clear removes local content",page.locator(".original-block").count()==0)
+
             yes(engine+" canonical Benchmarks",page.locator("#TAB3 .source-button-row a[href*='view=leaderboards']").count()==1)
             if engine=="chromium":
                 page.screenshot(path=str(OUT/"desktop.png"),full_page=False)
-                target=page.locator("#TAB3 .source-jump").get_attribute("data-pdf-page")
                 page.locator("#TAB3 .source-jump").click()
-                yes("PDF jump follows table page",page.locator("#original-pdf").get_attribute("src").endswith("#page="+target))
+                yes("arXiv HTML section jump",page.locator("#original-html").get_attribute("src").endswith("#S4.SS3"))
                 page.locator("#source-toggle").click()
-                yes("PDF collapse toggle",not page.locator("body").evaluate("e=>e.classList.contains('source-open')"))
+                yes("HTML collapse toggle",not page.locator("body").evaluate("e=>e.classList.contains('source-open')"))
                 page.locator("#source-toggle").click()
-                yes("PDF expand toggle",page.locator("body").evaluate("e=>e.classList.contains('source-open')"))
+                yes("HTML expand toggle",page.locator("body").evaluate("e=>e.classList.contains('source-open')"))
                 page.locator("#unit-search").fill("RoboTwin")
                 page.wait_for_function("window.RadarCloseReadingTest.visible()>0 && window.RadarCloseReadingTest.visible()<123",timeout=12000)
                 yes("search filters source content",0<page.locator("article.reading-row").count()<123)
@@ -95,7 +116,7 @@ try:
                 m=mobile.new_page()
                 m.on("pageerror",page_errors)
                 block_fonts(m)
-                m.route("https://arxiv.org/**",lambda route:route.fulfill(status=200,content_type="text/html",body="<title>Official PDF route stub</title>"))
+                m.route("https://arxiv.org/**",lambda route:route.fulfill(status=200,content_type="text/html",body="<title>Official arXiv HTML route stub</title>"))
                 m.goto(base+"close-reading/p148/#TAB3",wait_until="domcontentloaded")
                 m.wait_for_function("window.RadarCloseReadingTest?.units===123",timeout=20000)
                 dimension=m.evaluate("({width:innerWidth,documentWidth:document.documentElement.scrollWidth})")
