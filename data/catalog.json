@@ -70,11 +70,11 @@
       "team": "Sungwon Moon、Minji Kim、Hyemin Boo、Daeun Song、Jiyoung Lee（Ewha Womans University）",
       "venue": "arXiv",
       "publicationType": "preprint",
-      "publicationStatus": "arXiv 2611.08827v1，未核验正式会议或期刊发表",
+      "publicationStatus": "arXiv 2611.08827v2 预印本（11 月 11 日更新；初稿 11 月 6 日），未核验正式发表",
       "firstPublished": "2026-11-06",
       "dateNote": "2026-11-06 arXiv 2611.08827v1 首次公开；2026-11-13 原文精读日期不作为首次发表时间。",
       "collectionMonth": "2026-11",
-      "versionNote": "2026-11-13 原始 arXiv HTML v1 全文方法 §III–VI 与 Tables I–VII 核验",
+      "versionNote": "2026-11-13 检查 arXiv v1 (2026-11-06) 与最新 v2 (2026-11-11) HTML 方法、实验 Table I–VII；v2 补充官方项目地址但没有可核验 HTTPS 可执行代码发布证据。",
       "topics": [
         "efficiency",
         "action",
@@ -105,22 +105,26 @@
       "insight": "作用时间点决定节省的是哪部分计算：ActPrune在视觉编码之前筛patch，与APS-VLA在编码后训练DIE选择器有所不同；评测应同时报告不同骨干各自的成功率、FLOPs与端到端policy latency，而不能用OpenVLA的最大加速宣传π0.5的收益。",
       "readingFocus": "§IV-A动作先验、§IV-B固定相机投影、§IV-C手腕RGBD自运动补偿、§IV-D后编码器注意力预算；Table I/II OFT vs π0.5，Table III VLABench，Tables IV–VI 消融，Table VII真机损失与时延。",
       "evidence": "checked",
-      "evidenceNote": "2026-11-13 原始arXiv 2611.08827v1 HTML核查方法公式、原表 I–VII 和4项真机协议；数值均作者报告/同文baseline，未独立进行复现。无已核实官方代码仓库。",
+      "evidenceNote": "2026-11-13 原始arXiv 2611.08827v1 HTML核查方法公式、原表 I–VII 和4项真机协议；数值均作者报告/同文baseline，未独立进行复现。无已核实官方代码仓库。 2026-11-13额外核对arXiv最新v2原文与Table I/II/III/IV/V/VI/VII，主要源表数字保持一致；原始结果文件保留v1 sourceVersion以保存原始可重放证据。",
       "hasCautionaryResult": true,
       "sources": [
         {
-          "label": "ActPrune arXiv HTML v1",
+          "label": "ActPrune 最新 arXiv HTML v2（2026-11-11）",
+          "url": "https://arxiv.org/html/2611.08827v2"
+        },
+        {
+          "label": "ActPrune 原始实验 HTML v1（2026-11-06）",
           "url": "https://arxiv.org/html/2611.08827v1"
         },
         {
-          "label": "ActPrune 首次公开 arXiv v1",
-          "url": "https://arxiv.org/abs/2611.08827v1"
+          "label": "ActPrune arXiv v2 版本历史",
+          "url": "https://arxiv.org/abs/2611.08827v2"
         }
       ],
       "paperUrl": "https://arxiv.org/abs/2611.08827",
       "arxiv": "2611.08827",
       "doi": "",
-      "detailUrl": "data/details/p154.json?v=2a0eb4abad7a6e54",
+      "detailUrl": "data/details/p154.json?v=92b695ae065f865e",
       "resultUrl": "data/paper-results/p154.9ea2dfad58603d74.json",
       "noteStatus": "expanded",
       "resources": {},
@@ -132,7 +136,7 @@
       "reproducibilityUrl": "data/reproducibility/p154.json",
       "lifecycle": {
         "firstArxivAt": "2026-11-06",
-        "latestArxivVersion": "v1",
+        "latestArxivVersion": "v2",
         "status": "preprint",
         "lastCheckedAt": "2026-11-13"
       }

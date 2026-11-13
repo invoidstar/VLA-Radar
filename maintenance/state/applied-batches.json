@@ -512,6 +512,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-13-actprune-v2-followup",
+      "sha256": "33b5f83c3f635a7613171677f318481ed62dca570406cade8e7d39377c06ec62",
+      "date": "2026-11-13",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
