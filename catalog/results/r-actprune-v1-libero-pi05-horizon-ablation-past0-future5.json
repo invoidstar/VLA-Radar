@@ -1,0 +1,21 @@
+{
+  "id": "r-actprune-v1-libero-pi05-horizon-ablation-past0-future5",
+  "paperId": "p154",
+  "method": "0 past, 5 extrapolated points",
+  "trackId": "actprune-v1-libero-pi05-horizon-ablation",
+  "values": {
+    "Spatial": 92.2,
+    "Object": 98,
+    "Goal": 88.6,
+    "Long": 82,
+    "Average": 90.2
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.08827v1",
+  "sourceVersion": "arXiv 2611.08827v1",
+  "locator": "Table Va 0 past, 5 extrapolated points",
+  "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+  "evaluationNotes": "Four-suite LIBERO π0.5 fixed 25% retained; projected action trajectory points, not actual future observations.",
+  "supersedes": ""
+}

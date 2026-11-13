@@ -1,0 +1,17 @@
+{
+  "id": "r-actprune-v1-libero-pi05-view-ablation-third-both",
+  "paperId": "p154",
+  "method": "Third-person patch + embedding",
+  "trackId": "actprune-v1-libero-pi05-view-ablation",
+  "values": {
+    "Average": 94.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.08827v1",
+  "sourceVersion": "arXiv 2611.08827v1",
+  "locator": "Table IV view-level ablation third-both",
+  "trainingData": "Original source OpenVLA-OFT/π0.5 checkpoints as track-specific; ActPrune geometric pruning needs no newly trained policy/selector, while original policies were pretrained and some source-specific tasks fine-tuned. Two cameras, calibrated geometry and wrist RGBD.",
+  "evaluationNotes": "25% retention, π0.5 source author local experiment; success and FLOPs can trade off; full both views achieves lowest FLOPs but lower SR.",
+  "supersedes": ""
+}
