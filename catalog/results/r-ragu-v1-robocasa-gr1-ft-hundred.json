@@ -1,0 +1,23 @@
+{
+  "id": "r-ragu-v1-robocasa-gr1-ft-hundred",
+  "paperId": "p153",
+  "method": "GR00T N1.5 task-FT + RAGu 100 candidates",
+  "trackId": "ragu-v1-robocasa-gr1-ft",
+  "values": {
+    "CuttingboardToPot": 8,
+    "PlacematToPlate": 72,
+    "PlateToBowl": 80,
+    "PlateToPlate": 36,
+    "TrayToPlate": 48,
+    "Average": 48.8
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.10894v1",
+  "sourceVersion": "arXiv 2611.10894v1",
+  "locator": "Original Table II GR00T N1.5 task-FT + RAGu 100 candidates",
+  "attribution": "author-reported",
+  "trainingData": "RAGu keeps pretrained GR00T-N1.5/π0.5 weights frozen during evaluation; source DROID demos transformed into Cartesian trajectories and guide flow action sampling without weight update. Baselines may use distinct previously finetuned checkpoints.",
+  "evaluationNotes": "Five GR-1 humanoid RoboCasa tabletop tasks 25 episodes each; pretrained base and task-finetuned checkpoints must not mix. Source Table II shows some negative task deltas; 1 vs 100 demonstrations separated.",
+  "supersedes": ""
+}
