@@ -1,5 +1,9 @@
 # VLA Radar · 长期维护手册 v2
 
+## 2026-11-13 SLA 原文逐段双栏模式
+
+V3.1 恢复原始 SLA 双栏逐段对照：官方 arXiv HTML 替代嵌入 PDF 的默认源面板；用户可在浏览器本机载入原始双语批注 HTML，严格按 123 个原稿 ID 把左侧英文/意译/本地图表与右侧原有批注同排呈现。原稿内容仅在本机内存生成 DOM，不写入公开源库、服务器或本地持久存储；无文件时保留公开关键词/批注与原始来源跳转。需由 PR 完整三浏览器回归与 main Pages smoke 认证。
+
 ## 2026-11-11 V3.1 论文精读功能（扩展阅读层，不改变现有论文库）
 
 V3.1新增独立精读列表和 p148 SLA 来源定位精读；**正式论文总数保持149篇**，长篇精读为精选子集。101 个段落、16 张表及 6 幅图原稿单元仅记录 PDF 定位、有限英文术语和中文论证原创点评；不发布原稿英文全文、逐段全文译文或内嵌原图。源记录 `catalog/close-readings/*.json`，生成分片 `data/close-readings/*.json`；脚本为 `scripts/build/close_readings.py`，详情见 `maintenance/docs/close-reading.md`。必须经同一套来源、许可、段落 ID、图表 URL、Benchmark track 校验，完整 PR exact-head quality 和 Pages production smoke 才宣布上线。
