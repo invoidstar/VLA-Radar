@@ -64,6 +64,158 @@
   ],
   "papers": [
     {
+      "id": "p152",
+      "name": "APS-VLA",
+      "title": "APS-VLA: Action-Guided and Future-Aware Token Pruning for Efficient Vision-Language-Action Models",
+      "team": "Xiaoyang Xing、Anthony Cohn、Chun-Mei Feng、Xiaoliang Gong、Asoke Nandi（Tongji / Leeds / A*STAR / Brunel）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2611.13030v1 预印本；尚未核实正式会议/期刊出版",
+      "firstPublished": "2026-11-09",
+      "dateNote": "原始arXiv v1首次公开日期2026-11-09，不将收录/阅读日作为首次公开日。",
+      "collectionMonth": "2026-11",
+      "versionNote": "2026-11-13读取原始arXiv HTML v1全文方法、表格、消融与实验协议",
+      "topics": [
+        "efficiency",
+        "action",
+        "pretraining"
+      ],
+      "tags": [
+        "visual token pruning",
+        "decision influence estimator",
+        "DIE",
+        "frozen VLA backbone",
+        "future visual supervision",
+        "LIBERO",
+        "RoboCasa365",
+        "OpenVLA-OFT",
+        "pi0.5",
+        "XR-1",
+        "real robotics",
+        "latency"
+      ],
+      "priority": "deep",
+      "contribution": "训练轻量Decision Influence Estimator，根据当前视觉、语言与本体状态为视觉token打分；用冻结骨干全量动作输出、示范动作及条件未来视觉预测共同监督，推理时只保留单次硬选择并继续用原动作头生成。",
+      "findings": "作者原文Table1：OpenVLA-OFT在LIBERO 512-token原版97.00%/107.95ms，保留128-token得到95.75%/68.75ms（1.57×）；Table2：在π0.5和XR-1的RoboCasa365场景中分别达到不同seen/unseen任务SR；Table3验证future视觉辅助提升1.17–1.41百分点；Table6五项真机SR60%→61%、均值延迟137.25→93.25ms。",
+      "limitations": "冻结的是原VLA骨干，DIE和预测器仍需示范监督训练，不能归类成无需训练的推理加速；Table1部分对比方法时延来自估计/归一化参考值而非完全相同的实测；真实实验平均SR仅变化1百分点且每任务40次试验；代码和检查点在作者原文中标为录用后发布，当前不宣称已开源。",
+      "insight": "未来视觉监督用于训练token重要性，但预测器不在部署路径；固定token预算仍有准确率/时延拐点。比较加速方法时须把冻结骨干、训练附加模块、实测端到端policy latency与同评测checkpoint分开。",
+      "readingFocus": "§3.1–3.4 选择器与作用于冻结策略的双损失；Table1 512→128保留预算；Table2 π0.5/XR-1和三种任务拆分；Table3/4/5 未来视觉及时序消融；Table6真机延迟与SR。",
+      "evidence": "checked",
+      "evidenceNote": "2026-11-13来源级阅读官方arXiv HTML v1、原表及作者官方项目/代码状态；未在本项目内独立训练或执行机器人评测。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "官方arXiv原文HTML v1",
+          "url": "https://arxiv.org/html/2611.13030v1"
+        },
+        {
+          "label": "原始arXiv v1时间/作者",
+          "url": "https://arxiv.org/abs/2611.13030v1"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2611.13030",
+      "arxiv": "2611.13030",
+      "doi": "",
+      "detailUrl": "data/details/p152.json?v=62a82b2a8992d60a",
+      "resultUrl": "data/paper-results/p152.5c9ded543f73440d.json",
+      "noteStatus": "expanded",
+      "resources": {},
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p152.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-11-09",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-11-13"
+      }
+    },
+    {
+      "id": "p153",
+      "name": "RAGu",
+      "title": "Zero-Shot VLA Adaptation with Retrieved Guidance",
+      "team": "Subin Kim、Anh-Quan Pham、Dinesh Jayaraman（University of Pennsylvania）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2611.10894v1 预印本；尚未核实正式会议/期刊出版",
+      "firstPublished": "2026-11-07",
+      "dateNote": "原始arXiv v1首次公开日期2026-11-07，不将收录/阅读日作为首次公开日。",
+      "collectionMonth": "2026-11",
+      "versionNote": "2026-11-13读取原始arXiv HTML v1全文方法、表格、消融与实验协议",
+      "topics": [
+        "spatial",
+        "action",
+        "evaluation"
+      ],
+      "tags": [
+        "RAGu",
+        "retrieval augmented guidance",
+        "zero-shot",
+        "DROID",
+        "flow matching",
+        "energy guidance",
+        "Cartesian warping",
+        "RoboLab",
+        "RoboCasa",
+        "GR00T N1.5",
+        "pi0.5",
+        "sim-to-real",
+        "cross-embodiment",
+        "inference steering"
+      ],
+      "priority": "deep",
+      "contribution": "通过对象语义与几何关键点把域外示范轨迹映射到目标笛卡尔空间，先用DTW筛选、再用冻结VLA的动作梯度一致性选择参考轨迹，最后在flow-matching去噪时加入轨迹代价梯度，实现无需更新原策略权重的跨域动作控制。",
+      "findings": "原文Figure4五项真机任务平均SR：冻结π0.5 20%、VLM目标引导40%、RAGu80%；TableI RoboLab三项模拟均值π0.5 5.33%、RAGu25.33%；TableII RoboCasa GR-1人形五任务非微调GR00T-N1.5 33.6→47.2%、微调版36.8→48.8%；原文也有个别任务出现负向变化。",
+      "limitations": "强依赖目标几何关键点、相机外参或可用视角，严重遮挡可能造成错误warping；在线需要轨迹库和额外检索/梯度计算，不等于零推理开销；TableI原文仅列3个RoboLab任务，不应当把RoboLab全部9任务的协议或官网曲线偷换成TableI；作者网页提供评估数据仓库但代码完整可执行实现未核实。",
+      "insight": "这是动作生成层的非参数测试时适配：既不把示范当额外VLM上下文，也不通过梯度更新VLA权重，而是修改flow-matching采样向量场。比较零样本适应时要区分初始权重、检索源数据、任务数量和作者选择的warping/二次检索机制。",
+      "readingFocus": "§III推理梯度引导；§IV语义分组/几何warping/DTW/最小梯度选路；§V Table I RoboLab、TableII GR-1 base vs FT、Table III 轨迹平滑、Figure4真机；项目公开评估数据与缺少代码的边界。",
+      "evidence": "checked",
+      "evidenceNote": "2026-11-13来源级阅读官方arXiv HTML v1、原表及作者官方项目/代码状态；未在本项目内独立训练或执行机器人评测。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "官方arXiv原文HTML v1",
+          "url": "https://arxiv.org/html/2611.10894v1"
+        },
+        {
+          "label": "原始arXiv v1时间/作者",
+          "url": "https://arxiv.org/abs/2611.10894v1"
+        },
+        {
+          "label": "作者项目及展示",
+          "url": "https://raguvla.github.io/"
+        },
+        {
+          "label": "作者公开实验数据入口",
+          "url": "https://huggingface.co/datasets/raguvla/real-world-evaluation"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2611.10894",
+      "arxiv": "2611.10894",
+      "doi": "",
+      "detailUrl": "data/details/p153.json?v=3ab9df9400c052ff",
+      "resultUrl": "data/paper-results/p153.f34df0749a462296.json",
+      "noteStatus": "expanded",
+      "resources": {
+        "project": "https://raguvla.github.io/"
+      },
+      "relations": {
+        "previous": [],
+        "followups": [],
+        "series": []
+      },
+      "reproducibilityUrl": "data/reproducibility/p153.json",
+      "lifecycle": {
+        "firstArxivAt": "2026-11-07",
+        "latestArxivVersion": "v1",
+        "status": "preprint",
+        "lastCheckedAt": "2026-11-13"
+      }
+    },
+    {
       "id": "p151",
       "name": "How Much of Your VLA Is kNN",
       "title": "How Much of Your VLA is kNN",
