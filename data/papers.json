@@ -64,6 +64,64 @@
   ],
   "papers": [
     {
+      "id": "p154",
+      "name": "ActPrune",
+      "title": "ActPrune: Action-Grounded Visual Token Pruning for Efficient Vision-Language-Action Models",
+      "team": "Sungwon Moon、Minji Kim、Hyemin Boo、Daeun Song、Jiyoung Lee（Ewha Womans University）",
+      "venue": "arXiv",
+      "publicationType": "preprint",
+      "publicationStatus": "arXiv 2611.08827v1，未核验正式会议或期刊发表",
+      "firstPublished": "2026-11-06",
+      "dateNote": "2026-11-06 arXiv 2611.08827v1 首次公开；2026-11-13 原文精读日期不作为首次发表时间。",
+      "collectionMonth": "2026-11",
+      "versionNote": "2026-11-13 原始 arXiv HTML v1 全文方法 §III–VI 与 Tables I–VII 核验",
+      "topics": [
+        "efficiency",
+        "action",
+        "spatial"
+      ],
+      "tags": [
+        "ActPrune",
+        "training-free pruning",
+        "pre-encoder patch pruning",
+        "previous action prior",
+        "wrist view",
+        "third-person view",
+        "motion compensation",
+        "semantic anchors",
+        "RGBD",
+        "LIBERO",
+        "VLABench",
+        "OpenVLA-OFT",
+        "pi0.5",
+        "FLOPs",
+        "latency",
+        "real robot"
+      ],
+      "priority": "deep",
+      "contribution": "提出无需另外训练剪枝器的动作驱动双阶段视觉裁剪：利用上一动作chunk对应的EEF预测轨迹与相机运动，在固定第三人称视角保留运动区域和首帧语义锚点，在手腕RGBD视角去除动作补偿后静止的patch，最后经编码器注意力筛选剩余token预算。",
+      "findings": "原作者Table I：OpenVLA-OFT在LIBERO保留25%视觉token时96.1%平均SR（原版96.5%）、53.61ms对86.173ms即1.61×；Table II：π0.5同预算SR 91.8%（原版96.6%），172.9ms对178.3ms仅1.03×；Table III VLABench十任务，π0.5原版42.0%，ActPrune保留50%/25%分别26.3%/13.7%；Table VII真机基线60%，保留50%/25%时50%/37.5%，存在明显精度退化。",
+      "limitations": "依赖标定的固定/手腕相机、手腕RGBD深度和当前EEF位姿；第一帧语义锚点仍需完整编码，后续使用之前预测动作假设实际运动符合预期；π0.5的action expert是主要计算瓶颈，视觉FLOPs下降未带来类似墙钟加速；四项真机每项仅10次实验，成功率随剪枝明显下降；未确认作者已发布可运行官方代码。",
+      "insight": "作用时间点决定节省的是哪部分计算：ActPrune在视觉编码之前筛patch，与APS-VLA在编码后训练DIE选择器有所不同；评测应同时报告不同骨干各自的成功率、FLOPs与端到端policy latency，而不能用OpenVLA的最大加速宣传π0.5的收益。",
+      "readingFocus": "§IV-A动作先验、§IV-B固定相机投影、§IV-C手腕RGBD自运动补偿、§IV-D后编码器注意力预算；Table I/II OFT vs π0.5，Table III VLABench，Tables IV–VI 消融，Table VII真机损失与时延。",
+      "evidence": "checked",
+      "evidenceNote": "2026-11-13 原始arXiv 2611.08827v1 HTML核查方法公式、原表 I–VII 和4项真机协议；数值均作者报告/同文baseline，未独立进行复现。无已核实官方代码仓库。",
+      "hasCautionaryResult": true,
+      "sources": [
+        {
+          "label": "ActPrune arXiv HTML v1",
+          "url": "https://arxiv.org/html/2611.08827v1"
+        },
+        {
+          "label": "ActPrune 首次公开 arXiv v1",
+          "url": "https://arxiv.org/abs/2611.08827v1"
+        }
+      ],
+      "paperUrl": "https://arxiv.org/abs/2611.08827",
+      "arxiv": "2611.08827",
+      "doi": ""
+    },
+    {
       "id": "p152",
       "name": "APS-VLA",
       "title": "APS-VLA: Action-Guided and Future-Aware Token Pruning for Efficient Vision-Language-Action Models",

@@ -502,6 +502,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-13-actprune-source-news",
+      "sha256": "f96cac86b13a43f12eb0c62b72002b0ce87b91d95f983138df9450e6a889bab7",
+      "date": "2026-11-13",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }
