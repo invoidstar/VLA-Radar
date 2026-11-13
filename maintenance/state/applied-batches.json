@@ -492,6 +492,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-13-p1-aps-ragu-source-audit",
+      "sha256": "ba267647069fdc84a51080df4099f307da86ac1f25e996349d3afaa64a33c926",
+      "date": "2026-11-13",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

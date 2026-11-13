@@ -229,6 +229,21 @@
       "kind": "case-study",
       "officialUrl": null,
       "auditSummary": "Zeva arXiv 2608.30880v2 Table I/III 化学实验 ARX 双臂原子/短序列/复杂任务（3+2+2），为单篇论文自建真实环境验证，不是公开统一第三方排行榜。Success Rate、严格阶段前缀 Process Score 及 BIT/PIM 消融分轨存储；复杂任务完成率很低。 公开冻结权重的 Atomic5 成功率不等价于PIM跨尝试自我进化实验，需复核具体checkpoint和来源。"
+    },
+    "APS Real": {
+      "kind": "case-study",
+      "officialUrl": null,
+      "auditSummary": "APS 2611.13030v1 Table6 5 physical dual-arm tasks, 40 rollouts per task per policy. Paper-only task setup rather than standardized public leaderboard; SR vs policy inference time seconds kept separate."
+    },
+    "RoboLab": {
+      "kind": "case-study",
+      "officialUrl": null,
+      "auditSummary": "RAGu 2611.10894v1 Table I THREE selected RoboLab simulation tasks, 25 rollouts each, with DROID warped demo guidance. Source-specific case protocol; does NOT certify full RoboLab 9-task official leaderboard."
+    },
+    "RAGu Real": {
+      "kind": "case-study",
+      "officialUrl": null,
+      "auditSummary": "RAGu 2611.10894v1 Fig4 5 Franka real tasks 10 rollouts each. Only original author figure/project aggregated success used; not a public standardized benchmark ranking."
     }
   },
   "datasetAliases": {
@@ -268,7 +283,14 @@
     "vladelta-v1-libero-four-suite": "paper",
     "vladelta-v1-robotwin2-clean-random": "paper",
     "simpt-v1-robotwin7-expert-recovery": "paper",
-    "simpt-v1-robotwin7-policy-posttrain": "paper"
+    "simpt-v1-robotwin7-policy-posttrain": "paper",
+    "aps-v1-libero-oft-dev-sr": "paper",
+    "aps-v1-libero-oft-latency-s": "paper",
+    "aps-v1-robocasa365-pi05": "paper",
+    "aps-v1-robocasa365-xr1": "paper",
+    "aps-v1-libero-future-ablation": "paper",
+    "ragu-v1-robocasa-gr1-zero-ft": "paper",
+    "ragu-v1-robocasa-gr1-ft": "paper"
   },
   "resultTiers": {
     "r-libero-infoentropy-v1-budget60-ours": "sweep",

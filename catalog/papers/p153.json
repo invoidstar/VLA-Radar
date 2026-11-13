@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 2,
+  "paper": {
+    "id": "p153",
+    "name": "RAGu",
+    "title": "Zero-Shot VLA Adaptation with Retrieved Guidance",
+    "team": "Subin Kim、Anh-Quan Pham、Dinesh Jayaraman（University of Pennsylvania）",
+    "venue": "arXiv",
+    "publicationType": "preprint",
+    "publicationStatus": "arXiv 2611.10894v1 预印本；尚未核实正式会议/期刊出版",
+    "firstPublished": "2026-11-07",
+    "dateNote": "原始arXiv v1首次公开日期2026-11-07，不将收录/阅读日作为首次公开日。",
+    "collectionMonth": "2026-11",
+    "versionNote": "2026-11-13读取原始arXiv HTML v1全文方法、表格、消融与实验协议",
+    "topics": [
+      "spatial",
+      "action",
+      "evaluation"
+    ],
+    "tags": [
+      "RAGu",
+      "retrieval augmented guidance",
+      "zero-shot",
+      "DROID",
+      "flow matching",
+      "energy guidance",
+      "Cartesian warping",
+      "RoboLab",
+      "RoboCasa",
+      "GR00T N1.5",
+      "pi0.5",
+      "sim-to-real",
+      "cross-embodiment",
+      "inference steering"
+    ],
+    "priority": "deep",
+    "contribution": "通过对象语义与几何关键点把域外示范轨迹映射到目标笛卡尔空间，先用DTW筛选、再用冻结VLA的动作梯度一致性选择参考轨迹，最后在flow-matching去噪时加入轨迹代价梯度，实现无需更新原策略权重的跨域动作控制。",
+    "findings": "原文Figure4五项真机任务平均SR：冻结π0.5 20%、VLM目标引导40%、RAGu80%；TableI RoboLab三项模拟均值π0.5 5.33%、RAGu25.33%；TableII RoboCasa GR-1人形五任务非微调GR00T-N1.5 33.6→47.2%、微调版36.8→48.8%；原文也有个别任务出现负向变化。",
+    "limitations": "强依赖目标几何关键点、相机外参或可用视角，严重遮挡可能造成错误warping；在线需要轨迹库和额外检索/梯度计算，不等于零推理开销；TableI原文仅列3个RoboLab任务，不应当把RoboLab全部9任务的协议或官网曲线偷换成TableI；作者网页提供评估数据仓库但代码完整可执行实现未核实。",
+    "insight": "这是动作生成层的非参数测试时适配：既不把示范当额外VLM上下文，也不通过梯度更新VLA权重，而是修改flow-matching采样向量场。比较零样本适应时要区分初始权重、检索源数据、任务数量和作者选择的warping/二次检索机制。",
+    "readingFocus": "§III推理梯度引导；§IV语义分组/几何warping/DTW/最小梯度选路；§V Table I RoboLab、TableII GR-1 base vs FT、Table III 轨迹平滑、Figure4真机；项目公开评估数据与缺少代码的边界。",
+    "evidence": "checked",
+    "evidenceNote": "2026-11-13来源级阅读官方arXiv HTML v1、原表及作者官方项目/代码状态；未在本项目内独立训练或执行机器人评测。",
+    "hasCautionaryResult": true,
+    "sources": [
+      {
+        "label": "官方arXiv原文HTML v1",
+        "url": "https://arxiv.org/html/2611.10894v1"
+      },
+      {
+        "label": "原始arXiv v1时间/作者",
+        "url": "https://arxiv.org/abs/2611.10894v1"
+      },
+      {
+        "label": "作者项目及展示",
+        "url": "https://raguvla.github.io/"
+      },
+      {
+        "label": "作者公开实验数据入口",
+        "url": "https://huggingface.co/datasets/raguvla/real-world-evaluation"
+      }
+    ],
+    "paperUrl": "https://arxiv.org/abs/2611.10894",
+    "arxiv": "2611.10894",
+    "doi": ""
+  },
+  "publication": {
+    "firstArxivAt": "2026-11-07",
+    "firstArxivSource": "https://arxiv.org/abs/2611.10894v1",
+    "latestArxivVersion": "v1",
+    "latestArxivAt": "2026-11-07",
+    "status": "preprint",
+    "venue": "arXiv",
+    "doi": "",
+    "acceptedAt": null,
+    "publishedAt": null,
+    "lastCheckedAt": "2026-11-13",
+    "history": [
+      {
+        "kind": "arxiv_first",
+        "date": "2026-11-07",
+        "observedAt": "2026-11-13",
+        "venue": "arXiv",
+        "source": "https://arxiv.org/abs/2611.10894v1",
+        "note": "作者论文v1最早公开时间；无可靠正式publisher DOI或会议录用证明。"
+      }
+    ],
+    "alerts": []
+  },
+  "note": {
+    "status": "expanded",
+    "updatedAt": "2026-11-13",
+    "verifiedAt": "2026-11-13",
+    "version": "arXiv 2611.10894v1 (first 2026-11-07), original methods/tables/ablations source-read 2026-11-13",
+    "sections": [
+      {
+        "id": "motivation",
+        "title": "动机：冻结预训练VLA遇到域外场景时如何利用数据",
+        "body": "通用VLA会把网络参数中已有的运动经验转成连续动作，但真实测试环境的相机、物体材质、目标布局甚至机器人本体常与训练数据不同。简单地往prompt塞入检索图像占用上下文窗口，且未解决物理轨迹对齐；仅按语义类别找到同类任务也不保证动作可执行。RAGu尝试在不训练新策略权重、不扩大主干输入上下文的前提下，把DROID和MetaWorld等非同域示范轨迹转换为可在当前环境直接约束动作生成的三维路径。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §I",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "background",
+        "title": "动作生成条件：flow-matching去噪中加入外部可微代价",
+        "body": "作者将冻结VLA写成从噪声动作chunk沿flow-matching向量场积分至预测动作的过程，默认原始动作由当前图像和指令决定。若存在目标轨迹能定义可微能量函数，推理中就可以从原向量场减去该能量对当前动作的梯度，并用系数γ控制引导强度。这是sampling-time steering，不改变主策略参数，不等于在测试机器人上重新进行监督微调；也不意味着额外外部信号免费计算。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §III",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "task-filter",
+        "title": "从开放机器人数据先按语义任务类别筛选",
+        "body": "原文首先利用机器人数据集原有自然语言标签，粗筛出动力学和操作类型相近的轨迹，例如多种pick-and-place，减少全数据盲搜的复杂度。这里检索的不是相同相机画面，也不是相同机器人示范；关键是假定不同域场景依然可抽象出相似的抓取与释放阶段。语义任务过滤只能保证大类操作相近，源轨迹需要后续几何校准才能用于目标机器人，因而不把普通文本近邻直接视为控制先验。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §IV",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "warping",
+        "title": "几何映射：物体关键点和笛卡尔轨迹替代直接关节重放",
+        "body": "系统基于目标场景的检测框和三维关键点，将源示范轨迹中的阶段性航点对齐到新物体和目的地，并以段间平滑变换将轨迹重新映射。机器人本体变化时，轨迹约束保持在末端执行器的Cartesian空间而不是源机器人的关节角，所以7DoF Franka示范可以指导29DoF GR-1。此法保留可迁移的路径几何，但关节冗余、接触状态和物体朝向仍需要目标模型与现有控制器自行处理。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §IV",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "coarse",
+        "title": "粗检索：DTW减少候选路径数量",
+        "body": "来自DROID或MetaWorld的多个示范先按任务语义分组并warping到目标坐标系，再用Dynamic Time Warping（DTW）一类的单调路径匹配度筛选top-N候选，以应对不同轨迹的时间伸缩和接触时长差异。它避免在线为每个原始示范重复进行完整VLA梯度计算，也允许提前离线预处理部分geometry。DTW几何相似并不能证明政策行为可行，因此作者还设置和当前动作政策相关的二次选择，区分几何最邻近与动作可兼容。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §IV",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "fine",
+        "title": "细检索：最小动作引导梯度比单纯距离更贴近策略",
+        "body": "在每次动作chunk采样的第一步，系统先由冻结VLA给出初始动作趋势，经forward kinematics得到末端执行器轨迹；对每个候选定义其与目标路径的时间序列差，再计算代价对噪声动作的梯度幅度。作者选择梯度范数最小的候选，意在挑选让当前策略不必被大幅拉离原始运动先验的参考路径。选出的候选在剩余去噪步骤固定，避免每次积分反复切换轨迹；这使得检索是否“合乎当前模型”有明确的操作化定义。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §IV; Eq.3–4",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "guidance",
+        "title": "推理引导：检索轨迹控制采样方向而不是插入VLM序列",
+        "body": "选定轨迹随后形成路径误差能量Lwarp，梯度直接加入flow-matching向量场，对动作chunk的生成方向施加外部几何约束。这样原VLA只消费原有观测与语言，长示范无需编码成额外语言或图像token。系统不在测试中更改原权重，适用的是连续动作流匹配政策；若换成一次性离散动作token解码，不能原封不动移植这套梯度引导。引导系数、路径误差定义和规划频率也直接影响实际可控性。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §III–IV",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "四种跨域迁移不是一张统一成绩表",
+        "body": "论文讨论DROID Franka真实示范指导五个真实任务、DROID到RoboLab模拟任务、MetaWorld Sawyer到真实Franka、以及DROID到Fourier GR-1人形RoboCasa任务。原文说明真机每任务10回合、模拟25回合，协议、目标机器人、底座checkpoint不同。TableI明确列出三个RoboLab子任务而不是全部九任务；TableII的GR-1实验还区分GR00T-N1.5未经微调和任务微调版。所有成绩应在明确任务集合和基础模型下分别保存，不能混成统一RoboCasa365、RoboDojo或LIBERO排行榜。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §V-A",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "robolab",
+        "title": "RoboLab三任务：检索引导与传统in-context检索分开",
+        "body": "TableI给出BananaInBowl、MouseOnKeyboard、MustardAboveRaisin三个模拟任务：冻结π0.5的成功率4/12/0，RAGu为36/24/16，平均分别5.33与25.33；基于检索内容直接增加prompt的RiCL平均1.33，VLM稀疏目标引导VLS平均12。各任务25个回合，平均是这三任务的macro mean。相对较高的RAGu分数只来自这部分有原表核验的研究协议，并非RoboLab全九任务统一平均。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · Table I; §V-B",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "humanoid",
+        "title": "RoboCasa GR-1：非微调与微调模型均能得到帮助",
+        "body": "在五个人形机械臂操作任务中，未经任务微调的GR00T-N1.5基准平均33.6%，使用100条候选轨迹引导后47.2%；任务微调版平均36.8%提升至48.8%。作者还记录只用一条轨迹时39.2与46.4%，说明扩大候选库对部分任务有益，但并非所有任务均单调改善。未微调版PlateToPlate使用单条轨迹从56降到44，微调版TrayToPlate从44降到40，这些负例必须一并保留。人形实验不是在RoboCasa365整个365任务上求平均。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · Table II; §V-C",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "retrieval-ablate",
+        "title": "二次检索消融：避免过度强调选路标准唯一最优",
+        "body": "TableIII在三个RoboLab任务上比较一条轨迹、min dist和min grad；最小梯度策略EE SPARC为-10.30、轨迹长度5.67m、速度8.37cm/s，而最小距离为-11.74、5.79m、7.09cm/s。这支持在有多候选时最小梯度可带来更平滑快速的控制，但单轨迹模式EE SPARC为-9.93，比min grad还更高，说明不能声称每一项轨迹指标都由min grad绝对最优。轨迹几何指标本身也不能替代任务成功率。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · Table III; §V-D",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "real",
+        "title": "真机平均20→80的适用范围与代价",
+        "body": "作者Figure4把五项真实Franka任务每任务10回合，共50次，汇总成功率从冻结π0.5的20%提高到RAGu的80%，稀疏VLM目标引导是40%，检索in-context基线为0%。这是同一原文评测的作者报告，强调轨迹引导的优势；但五项任务中有Wipe Table等接触任务，样本量小，结果波动和选择不同几何关键点的敏感性仍应审计。零权重更新不代表没有任务检测、空间变换、轨迹库和推理期额外代价。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · Figure 4; §V-B",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      },
+      {
+        "id": "repro",
+        "title": "公开资源与失败边界",
+        "body": "作者项目页展示测试视频、逐任务成功率以及指向Hugging Face的真实环境评估数据集；该数据集存在公开文件，但其在线表格预览出现解析错误。未找到可独立确认完整算法训练/推理代码的官方仓库，因此复现维度应记录为项目和数据入口已知、完整代码及权重发布未核验。方法依赖相机标定、可见物体关键点与有效几何匹配，严重遮挡或源域操作类型不适用时会导致warping错误；工程移植需要提供失败恢复与操作者干预机制。",
+        "sources": [
+          {
+            "label": "原始arXiv HTML v1 · §VI; Project Page",
+            "url": "https://arxiv.org/html/2611.10894v1"
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "level": "deep",
+      "scope": "primary-methods-experiments",
+      "source": "https://arxiv.org/html/2611.10894v1"
+    },
+    "figures": [],
+    "tables": [],
+    "benchmarkReview": {
+      "status": "extracted",
+      "checkedAt": "2026-11-13",
+      "note": "TableI RoboLab三任务/25回合、TableII GR-1五任务两种基础策略、Figure4五真机任务/10回合，各自独立协议。作者Figure与表格不冒充官方综合排行，负向结果保留。"
+    }
+  }
+}

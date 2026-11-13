@@ -1423,6 +1423,44 @@
           "source": "https://github.com/sereact/lerobot_knn/blob/master/LICENSE"
         }
       }
+    },
+    "p152": {
+      "verifiedAt": "2026-11-13",
+      "level": "deep",
+      "note": "Original arXiv text read. Author promises complete APS experiment code and model checkpoints upon acceptance, so no current executable author repo is claimed. Source only, not independently reproduced.",
+      "items": {
+        "code": {
+          "status": "unavailable",
+          "note": "Original paper states source code will be released upon acceptance; no confirmed implementation link as of 2026-11-13.",
+          "url": null,
+          "source": "https://arxiv.org/html/2611.13030v1"
+        },
+        "weights": {
+          "status": "unavailable",
+          "note": "Author paper promises experimental checkpoints after acceptance; no verified released APS selector checkpoint as of this audit.",
+          "url": null,
+          "source": "https://arxiv.org/html/2611.13030v1"
+        }
+      }
+    },
+    "p153": {
+      "verifiedAt": "2026-11-13",
+      "level": "deep",
+      "note": "Paper, official project and linked Hugging Face dataset verified. Project videos and real-world evaluation files publicly visible, but source code and full independently runnable pipeline not verified; HF viewer reports a JSON streaming error, not proof raw files unavailable.",
+      "items": {
+        "project": {
+          "status": "available",
+          "note": "Official RAGu method and real/sim/cross-embodiment result project page.",
+          "url": "https://raguvla.github.io/",
+          "source": "https://arxiv.org/html/2611.10894v1"
+        },
+        "dataset": {
+          "status": "partial",
+          "note": "Official project links real-world evaluation data on Hugging Face, with file listing but broken streaming preview; this is not the complete training/robot data corpus.",
+          "url": "https://huggingface.co/datasets/raguvla/real-world-evaluation",
+          "source": "https://raguvla.github.io/"
+        }
+      }
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "id": "r-aps-v1-real-5tasks-sr-aps",
+  "paperId": "p152",
+  "method": "π0.5 + APS-VLA real task",
+  "trackId": "aps-v1-real-5tasks-sr",
+  "values": {
+    "CloseDrawer": 82.5,
+    "CloseMicrowave": 72.5,
+    "RedCubeIntoBowl": 72.5,
+    "FoldClothes": 37.5,
+    "ClearToysWipe": 40,
+    "Average": 61
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13030v1",
+  "sourceVersion": "arXiv 2611.13030v1",
+  "locator": "Original Table 6 five real tasks success rate",
+  "attribution": "author-reported",
+  "trainingData": "Authors kept pretrained policy backbone weights frozen; pretrained task-specific checkpoint differs by OpenVLA-OFT, π0.5, XR-1 and real-world task, and trained a separate DIE selector plus train-only future predictor (not zero training).",
+  "evaluationNotes": "Five tasks ×40 rollouts per method across 2 real dual-arm platforms; same real post-trained π0.5 task-specific checkpoint. Source table 6, 400 combined trials.",
+  "supersedes": ""
+}

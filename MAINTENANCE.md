@@ -1,5 +1,13 @@
 # VLA Radar · 长期维护手册 v2
 
+## 2026-11-13 P1 论文发现与证据分轨增量
+
+- 通过原始arXiv HTML全文源读增加APS-VLA（p152）与RAGu（p153），每篇13节方法、训练/推理边界、原表消融与局限；新增11条独立评测轨道、33条checked来源记录。严格区分LIBERO和RoboCasa不同骨干、真机成功率与policy inference seconds、RoboLab 3项子任务与RoboCasa GR-1 5项、原作者报告与正式官方排行榜。
+- 新增真实评测案例分类：`APS Real`、`RoboLab`（此处仅论文三任务子集）、`RAGu Real`。公共基准数量仍27，论文案例28，总类别55；新论文的消融、作者引用基线在默认主方法排名中保持非primary。
+- `maintenance/audits/discovery/discovery-2026-09-20-2026-11-13-aps-ragu-partial.json` 为有来源的 targeted partial，不推进 `lastSuccessfulSearchAt=2026-10-04`；新增ActPrune为deferred。RoboDojo官网仍显示66 Sim /14 Real，与可SHA固定57/11不同；完整原始官方JSON未取得不得更新旧快照。
+- 质量门禁继续要求新增源材料触发追溯校验，并将过时的Settings数量测试改成**旧集合严格门槛＋每批新增真实track上界**，不是放宽历史范围。审核来源/实验协议及PR exact-head quality之后再合并。
+
+
 ## 2026-11-13 SLA 原文逐段双栏模式
 
 V3.1 恢复原始 SLA 双栏逐段对照：官方 arXiv HTML 替代嵌入 PDF 的默认源面板；用户可在浏览器本机载入原始双语批注 HTML，严格按 123 个原稿 ID 把左侧英文/意译/本地图表与右侧原有批注同排呈现。原稿内容仅在本机内存生成 DOM，不写入公开源库、服务器或本地持久存储；无文件时保留公开关键词/批注与原始来源跳转。需由 PR 完整三浏览器回归与 main Pages smoke 认证。

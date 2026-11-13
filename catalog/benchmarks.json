@@ -7985,6 +7985,237 @@
       "split": "40-task 2000 episode author evaluation of multimodal kNN component variants.",
       "protocol": "Original Table 3: fixed multimodal retriever with one factor ablated; visual-language and demonstration memory effects, not a separate trained VLA leaderboard.",
       "trainingRegime": "Base ImageNet ResNet-18 and CLIP features frozen; different memory budgets and retrieval input; hyperparams from Optuna."
+    },
+    {
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "aps-v1-libero-oft-dev-sr",
+      "dataset": "LIBERO",
+      "name": "APS-VLA 512→256/128/64 token · LIBERO source Table 1",
+      "version": "APS 2611.13030v1 Table 1",
+      "tasks": "Four suites Spatial/Object/Goal/Long, development-panel trials",
+      "split": "OpenVLA-OFT 7B development panel, 512-token baseline; 50/75/87.5% pruning",
+      "protocol": "Original paper Table 1 own measured OpenVLA-OFT and APS token budgets; cross-paper baseline timings include estimates or normalized references and are excluded from this self-control row.",
+      "trainingRegime": "OpenVLA-OFT checkpoint frozen; APS trains DIE and training-only future visual predictor using action/transition demonstrations. Baseline unpruned has no selector.",
+      "columns": [
+        "Spatial",
+        "Object",
+        "Goal",
+        "Long",
+        "Average"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "comparisonScope": "paper-table",
+      "direction": "lower",
+      "unit": "seconds",
+      "metric": "Model inference latency",
+      "id": "aps-v1-libero-oft-latency-s",
+      "dataset": "LIBERO",
+      "name": "APS-VLA policy inference seconds · LIBERO Table 1",
+      "version": "APS 2611.13030v1 Table 1",
+      "tasks": "OpenVLA-OFT four-suite policy call timing",
+      "split": "Single policy inference including vision encoder, token selection, packing, backbone and action head; ms converted to seconds.",
+      "protocol": "Author Table 1 latency; baseline 107.95ms and APS 256/128/64 81.39/68.75/66.21ms. Not full-episode wall clock; do not combine with latency estimates from independent cited papers.",
+      "trainingRegime": "Same checkpoint frozen; APS selector trained separately, optimized 5000 steps default.",
+      "columns": [
+        "LatencySeconds"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "aps-v1-robocasa365-pi05",
+      "dataset": "RoboCasa365",
+      "name": "APS π0.5 RoboCasa365 A-S/C-S/C-U source Table 2",
+      "version": "APS 2611.13030v1 Table 2",
+      "tasks": "RoboCasa365 seen atomic, seen composite, unseen composite task categories",
+      "split": "π0.5: author-referenced unpruned checkpoint vs APS budgets 256/128 averaged; not full 365-task average",
+      "protocol": "Table 2 author original. π0.5 unpruned performance sourced from prior reported baseline; APS success means of two pruning budgets.",
+      "trainingRegime": "π0.5 prior posttrain weights, frozen during APS training, train only selector and predictor.",
+      "columns": [
+        "AtomicSeen",
+        "CompositeSeen",
+        "CompositeUnseen"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "aps-v1-robocasa365-xr1",
+      "dataset": "RoboCasa365",
+      "name": "APS Xiaomi-Robotics-1 RoboCasa365 A-S/C-S/C-U",
+      "version": "APS 2611.13030v1 Table 2",
+      "tasks": "RoboCasa365 seen atomic, seen composite, unseen composite task categories",
+      "split": "XR-1: author-measured baseline vs APS budgets 256/128 averaged; not π0.5",
+      "protocol": "Table 2 independent backbone from π0.5; XR-1 source-specific unpruned baseline measured by authors. Separate protocol despite same three success categories.",
+      "trainingRegime": "XR-1 pretrained robot checkpoint frozen; only APS selector/predictor trained.",
+      "columns": [
+        "AtomicSeen",
+        "CompositeSeen",
+        "CompositeUnseen"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "aps-v1-libero-future-ablation",
+      "dataset": "LIBERO",
+      "name": "APS future visual supervision development success · Table 3",
+      "version": "APS 2611.13030v1 Table 3",
+      "tasks": "Four LIBERO suites pooled development success",
+      "split": "Same OpenVLA-OFT selectors at retained K=256/128/64 with or without future prediction, three seeds",
+      "protocol": "Table 3 A vs B future visual supervision; same training setting; development success (not independent hidden-test success).",
+      "trainingRegime": "Frozen OFT, train DIE; A only action distillation/expert objective; B adds demonstrated future feature prediction.",
+      "columns": [
+        "K256",
+        "K128",
+        "K64"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "aps-v1-real-5tasks-sr",
+      "dataset": "APS Real",
+      "name": "APS real dual-arm five-task completion · Table 6",
+      "version": "APS 2611.13030v1 Table 6",
+      "tasks": "5 tasks across YHRG THESEUS-S1 and dual UR5 robots",
+      "split": "40 attempts per task per method; 400 total trials; same task posttrain π0.5 checkpoint, two RTX4090",
+      "protocol": "Table 6 binary task SR; different true task groups, average equal over five 40-trial tasks.",
+      "trainingRegime": "Same task-specific π0.5 fine-tuned weights in both; APS trains selector separately; no change to underlying policy.",
+      "columns": [
+        "CloseDrawer",
+        "CloseMicrowave",
+        "RedCubeIntoBowl",
+        "FoldClothes",
+        "ClearToysWipe",
+        "Average"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.13030v1",
+      "comparisonScope": "paper-table",
+      "direction": "lower",
+      "unit": "seconds",
+      "metric": "Model inference latency",
+      "id": "aps-v1-real-5tasks-latency-s",
+      "dataset": "APS Real",
+      "name": "APS real policy inference latency seconds · Table 6",
+      "version": "APS 2611.13030v1 Table 6",
+      "tasks": "5 task-checked real hardware policy calls; two RTX4090",
+      "split": "Per-task source ms/1000 numeric seconds; equal-task mean converted from 137.25/93.25ms",
+      "protocol": "Table 6 per-task model inference latency; not time per full robot episode nor a success metric.",
+      "trainingRegime": "Same π0.5 checkpoint, APS only selector; 40 task trials per method.",
+      "columns": [
+        "CloseDrawer",
+        "CloseMicrowave",
+        "RedCubeIntoBowl",
+        "FoldClothes",
+        "ClearToysWipe",
+        "Average"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.10894v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "ragu-v1-robolab-3-sr",
+      "dataset": "RoboLab",
+      "name": "RAGu DROID→RoboLab three-task simulation · Table I",
+      "version": "RAGu 2611.10894v1 Table I",
+      "tasks": "BananaInBowl, MouseOnKeyboard, MustardAboveRaisin only",
+      "split": "25 rollouts each × 3 named tasks; RAGu/RiCL same 100 warped DROID demos; 3-task macro avg",
+      "protocol": "Source Table I only THREE RoboLab tasks, not all nine simulated scenarios. π0.5 and GR00T N1.7 frozen; VLS sparse goals; RICL in-context.",
+      "trainingRegime": "Frozen pretrained π0.5/GR00T; RAGu geometry warp+DTW+gradient guidance, no additional policy training. RICL author local baseline.",
+      "columns": [
+        "BananaInBowl",
+        "MouseOnKeyboard",
+        "MustardAboveRaisin",
+        "Average"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.10894v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "ragu-v1-robocasa-gr1-zero-ft",
+      "dataset": "RoboCasa",
+      "name": "RAGu RoboCasa GR-1 base GR00T N1.5 · Table II",
+      "version": "RAGu 2611.10894v1 Table II",
+      "tasks": "Five GR-1 tabletop transfer tasks",
+      "split": "29-DoF Fourier GR-1, pretrained GR00T-N1.5 without task fine-tuning; 25 rollouts each; DROID Franka guidance",
+      "protocol": "Original Table II un-finetuned frozen policy, one/100 warped candidates. Different setup from GR00T task-finetuned comparison.",
+      "trainingRegime": "GR00T N1.5 base pretrained weights frozen throughout test; 7-DoF DROID Franka Cartesian guidance; zero further training.",
+      "columns": [
+        "CuttingboardToPot",
+        "PlacematToPlate",
+        "PlateToBowl",
+        "PlateToPlate",
+        "TrayToPlate",
+        "Average"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.10894v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "ragu-v1-robocasa-gr1-ft",
+      "dataset": "RoboCasa",
+      "name": "RAGu RoboCasa GR-1 task-FT GR00T N1.5 · Table II",
+      "version": "RAGu 2611.10894v1 Table II",
+      "tasks": "Five GR-1 tabletop transfer tasks",
+      "split": "29-DoF Fourier GR-1, task-finetuned GR00T-N1.5 frozen for evaluation; 25 rollouts each",
+      "protocol": "Original Table II task-finetuned checkpoint, separate from pretrained base. One/100 trajectory candidate sets. Negative SR changes retained.",
+      "trainingRegime": "GR00T N1.5 task-adapted weights frozen at test time, 7-DoF DROID Franka candidate demonstration guidance.",
+      "columns": [
+        "CuttingboardToPot",
+        "PlacematToPlate",
+        "PlateToBowl",
+        "PlateToPlate",
+        "TrayToPlate",
+        "Average"
+      ]
+    },
+    {
+      "source": "https://arxiv.org/html/2611.10894v1",
+      "comparisonScope": "paper-table",
+      "direction": "higher",
+      "unit": "percent",
+      "metric": "Task success rate",
+      "id": "ragu-v1-franka-real-five-macro",
+      "dataset": "RAGu Real",
+      "name": "RAGu frozen π0.5 Franka real five-task mean · Fig 4",
+      "version": "RAGu 2611.10894v1 Figure 4 / author project real summary",
+      "tasks": "Open Drawer, Open Cabinet, Close Microwave, Towel to Plate, Wipe Table",
+      "split": "10 real rollouts per task, 50 per method; Franka; DROID out-of-domain demonstrations",
+      "protocol": "Mean across FIVE reported real manipulation tasks, from original Figure 4 and author project chart, NOT Table I simulation. No individual task values are invented from chart images.",
+      "trainingRegime": "Frozen DROID π0.5; RAGu test-time retrieval and flow guidance, no policy weight update. RiCL and VLM sparse-goal steering authors' local comparisons.",
+      "columns": [
+        "Average"
+      ]
     }
   ]
 }

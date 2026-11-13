@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-13",
+  "status": "official-live-unpinned-mirror-stale",
+  "dataUpdatedAt": "2026-11-03",
+  "scope": "Source-level recheck after the latest official RoboDojo updated page; observed live count only and no complete official dataset body. No canonical board changes.",
+  "officialSite": {
+    "sim": "https://robodojo-benchmark.com/leaderboard?bench=sim",
+    "real": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
+    "reportedModels": {
+      "sim": 66,
+      "real": 14
+    },
+    "dataDate": "2026-11-03",
+    "onlinePageCheckedAt": "2026-11-13"
+  },
+  "canonicalPinned": {
+    "sim": {
+      "count": 57,
+      "blobSha": "d4664cc087e123b813530882f54273f932723eca",
+      "date": "2026-10-09"
+    },
+    "real": {
+      "count": 11,
+      "blobSha": "b14162faec38751f0bd6afdaaf7d83825800e421",
+      "date": "2026-10-09"
+    }
+  },
+  "officialRaw": {
+    "url": "https://robodojo-benchmark.com/data/leaderboard.generated.json",
+    "downloaded": false,
+    "reason": "Direct original generated JSON URI not accessible through available web reader, upstream RoboTwin-Platform mirror last main commit 2026-10-29 and its SHA-pinned source remains stale. Do not treat scrape of score snippets as complete machine-readable official source.",
+    "syncSource": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/main/tools/sync_robodojo_data.py"
+  },
+  "pending": [
+    "Obtain byte-exact official generated.json, compute source digest and check 66 Sim and 14 Real distinct identities",
+    "Separate Agent and VLA/WAM preview vs published identities, per-capability Score versus SR; verify whole source before update",
+    "After source sync validate official board coverage and run full production smoke; do not silently overwrite 57/11 canonical rows"
+  ]
+}

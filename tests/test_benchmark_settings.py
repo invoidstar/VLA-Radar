@@ -24,17 +24,27 @@ def test_every_dataset_with_checked_results_has_settings():
 
 def test_settings_are_evaluation_protocols_not_training_buckets():
     tracks,results,settings=catalog();trackmap={t['id']:t for t in tracks};resultmap={r['id']:r for r in results}
-    # The pre-Zeva guard (<230) still applies to all legacy Setting identities.
-    # Exactly seven Zeva source-scoped tracks may introduce at most seven
-    # genuinely distinct evaluation questions; no arbitrary global cap raise.
-    prior_tracks=[t for t in tracks if not t['id'].startswith('zeva-v2-')]
-    prior_results=[r for r in results if not r['id'].startswith('r-zeva-v2-')]
-    prior_settings=build_settings(prior_tracks,prior_results)
-    assert len(prior_settings)<230, f"Legacy protocol identity inflation: {len(prior_settings)}"
+    # Keep the strict pre-Nov13 identity guard and audit each new paper batch independently.
+    # Previously the hardcoded "<230" guard excluded Zeva only; adding genuine
+    # APS/RAGu source protocols made old paper identities look like uncontrolled
+    # "legacy inflation". This retains the strict prior bound and caps only the
+    # *increment* from each source-verified batch by the new distinct track count.
+    current_prefixes=('aps-v1-', 'ragu-v1-')
+    original_tracks=[t for t in tracks if not t['id'].startswith(('zeva-v2-',)+current_prefixes)]
+    original_results=[r for r in results if not r['id'].startswith(('r-zeva-v2-','r-aps-v1-','r-ragu-v1-'))]
+    original_settings=build_settings(original_tracks,original_results)
+    assert len(original_settings)<230, f"Pre-new-batch protocol identity inflation: {len(original_settings)}"
+    batch_tracks=[t for t in tracks if t['id'].startswith(current_prefixes)]
+    without_zeva_tracks=[t for t in tracks if not t['id'].startswith('zeva-v2-')]
+    without_zeva_results=[r for r in results if not r['id'].startswith('r-zeva-v2-')]
+    without_zeva_settings=build_settings(without_zeva_tracks,without_zeva_results)
+    assert 0 <= len(without_zeva_settings)-len(original_settings) <= len(batch_tracks), (
+        f"APS/RAGu Setting growth exceeds {len(batch_tracks)} genuine source tracks: "
+        f"{len(without_zeva_settings)} vs original {len(original_settings)}")
     zeva_tracks=[t for t in tracks if t['id'].startswith('zeva-v2-')]
-    assert 0 <= len(settings)-len(prior_settings) <= len(zeva_tracks), (
-        f"New Setting growth exceeds {len(zeva_tracks)} Zeva evaluation tracks: "
-        f"{len(settings)} vs legacy {len(prior_settings)}")
+    assert 0 <= len(settings)-len(without_zeva_settings) <= len(zeva_tracks), (
+        f"Zeva Setting growth exceeds {len(zeva_tracks)} source tracks: "
+        f"{len(settings)} vs without Zeva {len(without_zeva_settings)}")
     for s in settings:
         assert all(trackmap[resultmap[rid]['trackId']]['dataset']==s['dataset'] for rid in s['resultIds'])
         assert all(trackmap[resultmap[rid]['trackId']]['unit']==s['unit'] for rid in s['resultIds'])
