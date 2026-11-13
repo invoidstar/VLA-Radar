@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "news-20261030-agibot-wita-omni",
+  "eventKey": "agibot-wita-omni-first-customer-deployment-20261030",
+  "title": "智元正式发布 WITA-OMNI 具身多模态交互模型，并启动首批客户部署",
+  "primaryCategory": "model",
+  "tags": [
+    "AGIBOT",
+    "WITA-OMNI",
+    "交互智能",
+    "多模态",
+    "具身机器人",
+    "人形机器人",
+    "音视频",
+    "本体状态"
+  ],
+  "eventDate": "2026-10-30",
+  "publishedAt": "2026-10-30",
+  "dateNote": "智元官网原始活动报道发布于 2026-10-30 17:54:19，明确发布WITA-OMNI并从当天对首批友好客户启动部署；2026-11-10以后媒体报道是对此前事件的复述，不再作为新的模型首发。",
+  "observedAt": "2026-11-13",
+  "updatedAt": "2026-11-13",
+  "stage": "partial-release",
+  "evidence": "official",
+  "status": "verified",
+  "featured": false,
+  "importance": "major-release",
+  "whatHappened": "智元在2026创新日发布WITA-OMNI交互模型，将语音、视觉、文本和表情、动作联合建模，并宣布支持音视频、文本及机器人物理交互相关输入输出。官方表示即日起向首批友好客户部署；国内范围扩大部署与海外上线被列为未来计划。该模型定位机器人交互而非传统连续动作任务的单独VLA策略。",
+  "whyItMatters": "此前RoboDojo、RoboTwin相关资讯集中在低层动作执行模型；WITA-OMNI属于人机交互与具身多模态协同，涵盖流式双工、对话时机判断和动作表达。记录此发布可帮助区分机器人交互Agent接口与可直接比较的机器人操作策略成绩。",
+  "vlaRelevance": "模型宣称把语音视觉理解与机器人动作/表情输出统一建模，是具身智能全模态交互方向的公开案例。官方强调多模态理解和交互榜单，不能把Daily-Omni、MMAU等数据等同于LIBERO、RoboTwin或RoboDojo的真实动作成功率。",
+  "limits": "厂商对于响应时延、交互榜单及已部署范围的表述尚无独立第三方验证；从‘首批友好客户部署’不能推断对普通用户开放权重或完整可复现代码。官方10月30日的未来国内/海外部署时间是计划，不是已经完成的公开发布。首轮GO-3 Preview同场发布与这条交互模型消息属于不同模型事件。",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "以全域务实创新 启具身部署新程｜智元创新日重磅发布全栈技术成果",
+      "publisher": "智元创新（上海）科技股份有限公司",
+      "url": "https://www.agibot.com.cn/article/315/detail/261.html",
+      "kind": "official",
+      "publishedAt": "2026-10-30",
+      "access": "full-page",
+      "note": "2026-10-30官方原文对WITA-OMNI、首批友好客户部署、未来国内/海外计划与原始发布时间的直接说明；未将厂商分数当独立验证。"
+    }
+  ],
+  "paperLinks": [],
+  "revisionHistory": []
+}
