@@ -119,7 +119,7 @@
     const isAsset=unit.kind!=='paragraph';
     const sourceLink=validUrl(unit.sourceUrl);
     const evidence=(unit.evidenceTracks||[]).map(t=>'<a href="'+prefix+'index.html?view=leaderboards&track='+encodeURIComponent(t)+'" title="打开相关 Benchmark 赛道">核对评测 · '+esc(t)+'</a>').join('');
-    return '<article class="reading-row" id="'+esc(unit.id)+'" data-unit="'+esc(unit.id)+'">'+
+    return '<article class="reading-row'+(inlineOriginal.has(unit.id)?' has-inline-original':'')+'" id="'+esc(unit.id)+'" data-unit="'+esc(unit.id)+'">'+
       '<div class="reading-main">'+
         '<div class="unit-meta"><a href="#'+esc(unit.id)+'" class="unit-id">'+esc(unit.id)+'</a>'+
         '<span>'+esc(unit.sourcePageLabel)+'</span><span>'+ (isAsset?'原始'+(unit.kind==='table'?'表格':'图像')+'定位':'段落级论证批注')+'</span>'+
