@@ -1,0 +1,22 @@
+{
+  "id": "r-knn-v1-libero40-ablation-without-proprioception",
+  "paperId": "p151",
+  "method": "kNN multi without-proprioception",
+  "trackId": "knn-v1-libero40-ablation",
+  "values": {
+    "Spatial": 87.6,
+    "Object": 99.6,
+    "Goal": 96.8,
+    "Long": 81.4,
+    "Average": 91.4
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13160v1",
+  "sourceVersion": "arXiv 2611.13160v1",
+  "locator": "Appendix A.5 Table 3, without-proprioception",
+  "attribution": "author-reported",
+  "trainingData": "1,693 demo memory baseline; one retrieval component altered, all in original author LIBERO protocol.",
+  "evaluationNotes": "40 LIBERO tasks × 50 initial states, author Table 3 ablation; parameter tuning on states 40-49 overlaps official full 0-49 eval.",
+  "supersedes": ""
+}
