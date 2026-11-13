@@ -12,16 +12,16 @@
     {
       "id": "arxiv-actprune-v1",
       "lane": "primary-preprints",
-      "provider": "arXiv original version HTML and arXiv identity",
-      "kind": "Exact v1 original methods and Table I–VII, not a broad category search",
+      "provider": "arXiv official v1 and updated v2 primary HTML/abs",
+      "kind": "Original v1 full methods/Tables I–VII plus v2 Nov11 same-result/version check; not broad full-window primary search",
       "status": "partial",
       "coverage": {
         "from": "2026-11-06",
         "to": "2026-11-13"
       },
-      "query": "https://arxiv.org/html/2611.08827v1; original arXiv cs.RO, architecture/ablations/performance and first-public 2026-11-06",
+      "query": "https://arxiv.org/html/2611.08827v1, https://arxiv.org/html/2611.08827v2, https://arxiv.org/abs/2611.08827v2; no complete category search",
       "resultCount": 1,
-      "note": "Full original ActPrune read and source tables checked. One selected source identity is not full-window primary discovery."
+      "note": "Full original ActPrune read and source tables checked. One selected source identity is not full-window primary discovery. Latest v2 upload 2026-11-11 is separately tracked; previous v1 original result reports remain historical source version."
     },
     {
       "id": "academic-index-unresolved",
@@ -77,7 +77,7 @@
         "robot-paper-daily-actprune"
       ],
       "status": "selected",
-      "reason": "Complete original source method and Tables I–VII reviewed; admitted p154 with 14 substantial sourced sections, 10 distinct protocol tracks and 40 original-source checked rows. Source-scope negative π0.5/VLABench/real data retained.",
+      "reason": "Complete original source method and Tables I–VII reviewed; admitted p154 with 14 substantial sourced sections, 10 distinct protocol tracks and 40 original-source checked rows. Source-scope negative π0.5/VLABench/real data retained. Latest version v2 dated Nov11 crosschecked on Nov13; first public remains Nov06.",
       "paperId": "p154",
       "duplicateOf": null
     }
