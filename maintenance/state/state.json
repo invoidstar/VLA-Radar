@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-11-12",
+  "lastAttemptAt": "2026-11-13",
   "lastStatus": "partial",
-  "lastSummary": "2026-11-12 targeted arXiv exact-ID review for 8 deferred VLA/WAM/BEHAVIOR research candidates and Robotics Paper Daily VLA Nov12 current issue; NVIDIA/DeepMind/RoboDojo official reverse spot checks. Independent OpenAlex/Semantic Scholar date-filtered access blocked; earlier Sep20-Nov06 window not fully checked. Four-source full checkpoint stays 2026-10-04.",
+  "lastSummary": "2026-11-13 full original-source reads of APS-VLA (p152) and RAGu (p153), 11 source-specific evaluation protocols and 33 checked source records; additionally deferred primary ActPrune exact identity. Not a four-lane complete window; academic index and Sept20-Nov13 curated historical pagination unavailable. Official RoboDojo live still 66/14 versus pinned 57/11; complete raw original json inaccessible. lastSuccessfulSearchAt remains 2026-10-04.",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-12-p1-source-followup.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-13-aps-ragu-partial.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }
