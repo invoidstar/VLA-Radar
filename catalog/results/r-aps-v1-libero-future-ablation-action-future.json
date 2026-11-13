@@ -1,0 +1,20 @@
+{
+  "id": "r-aps-v1-libero-future-ablation-action-future",
+  "paperId": "p152",
+  "method": "DIE action + future visual supervision",
+  "trackId": "aps-v1-libero-future-ablation",
+  "values": {
+    "K256": 96.58,
+    "K128": 95.75,
+    "K64": 93.92
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13030v1",
+  "sourceVersion": "arXiv 2611.13030v1",
+  "locator": "Original Table 3 ablation DIE action + future visual supervision",
+  "attribution": "author-reported",
+  "trainingData": "Authors kept pretrained policy backbone weights frozen; pretrained task-specific checkpoint differs by OpenVLA-OFT, π0.5, XR-1 and real-world task, and trained a separate DIE selector plus train-only future predictor (not zero training).",
+  "evaluationNotes": "Same 3-seed source development panel and OFT backbone, fixed token budgets; the future prediction head removed before deployment.",
+  "supersedes": ""
+}
