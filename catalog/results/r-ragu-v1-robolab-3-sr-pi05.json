@@ -1,0 +1,21 @@
+{
+  "id": "r-ragu-v1-robolab-3-sr-pi05",
+  "paperId": "p153",
+  "method": "π0.5 frozen DROID",
+  "trackId": "ragu-v1-robolab-3-sr",
+  "values": {
+    "BananaInBowl": 4,
+    "MouseOnKeyboard": 12,
+    "MustardAboveRaisin": 0,
+    "Average": 5.33
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.10894v1",
+  "sourceVersion": "arXiv 2611.10894v1",
+  "locator": "Original Table I π0.5 frozen DROID",
+  "attribution": "reported-baseline",
+  "trainingData": "Frozen base pretrained or previously task-finetuned policy as explicitly labeled; DROID Franka/MetaWorld Sawyer source candidate trajectories are geometrically warped and selected at inference, with no online policy weight updates.",
+  "evaluationNotes": "EXACT three RoboLab task source Table I, each 25 episodes; compare frozen π0.5/GR00T, RICL and VLS under original author tests, RAGu/RICL same 100 DROID demonstrations. Not nine-task mean.",
+  "supersedes": ""
+}
