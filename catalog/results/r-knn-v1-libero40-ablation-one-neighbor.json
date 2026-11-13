@@ -1,0 +1,22 @@
+{
+  "id": "r-knn-v1-libero40-ablation-one-neighbor",
+  "paperId": "p151",
+  "method": "kNN multi one-neighbor",
+  "trackId": "knn-v1-libero40-ablation",
+  "values": {
+    "Spatial": 77.2,
+    "Object": 90.6,
+    "Goal": 86.2,
+    "Long": 60.4,
+    "Average": 78.6
+  },
+  "evidence": "checked",
+  "verifiedAt": "2026-11-13",
+  "source": "https://arxiv.org/html/2611.13160v1",
+  "sourceVersion": "arXiv 2611.13160v1",
+  "locator": "Appendix A.5 Table 3, one-neighbor",
+  "attribution": "author-reported",
+  "trainingData": "1,693 demo memory baseline; one retrieval component altered, all in original author LIBERO protocol.",
+  "evaluationNotes": "40 LIBERO tasks × 50 initial states, author Table 3 ablation; parameter tuning on states 40-49 overlaps official full 0-49 eval.",
+  "supersedes": ""
+}
