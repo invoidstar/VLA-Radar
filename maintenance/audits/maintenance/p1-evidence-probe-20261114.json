@@ -68,7 +68,37 @@
       "Per-model identity, old-source overlap scores, optional resource/paper links and official reporting provenance need source review.",
       "Verify and migrate each Score/SR dimension; preserve split between model Preview and source-backed paper identity.",
       "Replace 57/11 canonical only in separate source-pin and regression-verified PR."
-    ]
+    ],
+    "reconciliation": {
+      "baselineFiles": [
+        "catalog/official-boards/robodojo-sim.json",
+        "catalog/official-boards/robodojo-real.json"
+      ],
+      "sourceArtifact": "https://github.com/invoidstar/VLA-Radar/actions/runs/43588631563/artifacts/14112075152",
+      "priorSimModels": 57,
+      "matchingSimIdentities": 57,
+      "priorRealModels": 11,
+      "matchingRealIdentities": 11,
+      "missingOldIdentities": 0,
+      "sameAverageScoreAndSuccessRate": {
+        "sim": 57,
+        "real": 11
+      },
+      "fullMetricComparison": {
+        "simSharedEntriesNoChange": 57,
+        "realSharedEntriesNoChange": 10,
+        "realSharedEntriesSinglePrecisionDifference": 1
+      },
+      "precisionDifference": {
+        "model": "OpenWAM-α",
+        "dimension": "Piper X",
+        "metric": "sr",
+        "prior": 13.3,
+        "current": 13.33,
+        "absoluteDelta": 0.03
+      },
+      "note": "2026-11-14 compared all 57 existing Sim and 11 Real models from the exact same Actions artifact as the 66/14 official raw JSON. One real existing model differs only at Piper-X SR rounding by 0.03. No model identity deletion or Average change. Direct official source Sim order is NOT sorted, so migration must resort and regenerate canonical ranks."
+    }
   },
   "academic": {
     "range": {
