@@ -1,5 +1,10 @@
 # VLA Radar · 长期维护手册 v2
 
+## 2026-11-14 RoboDojo 官方完整源文件的迁移
+
+官方原始JSON `https://robodojo-benchmark.com/data/leaderboard.generated.json` 已在2026-11-14通过GitHub Actions无凭据访问取得，原始内容 SHA256 `a64fec25b9c19734cc1e7785655031729090f331214108449abea2c2a902bdab`；总数Sim 66/Real14，源更新日期2026-11-03。此次使用隔离release分支执行固定SHA下载，先把完整原始字节提交到 `maintenance/source-snapshots/robodojo-generated-20261103.json`，再记录该源文件在Git的真实blob SHA及包含源文件的commit，按原官方Score独立重建模拟与真机排名。旧57/11全部模型及维度与新源核对，唯一OpenWAM-α Piper X SR的0.03精度差异已登记；保留已核实的论文/资源关联，对新模型不自动分配paperId。新版结果只有通过`official_boards.py`、全站校验、浏览器回归、PR exact-head及Pages冒烟后才宣布上线。文献发现和新闻成功检查点仍保持2026-10-04（partial），主分支保护保持暂缓。
+
+
 ## 2026-11-13 P1 论文、真机与新闻证据补齐（ActPrune / WITA-OMNI）
 
 - ActPrune p154：基于官方arXiv v1完整源读并对照11月11日最新v2表格，记录出版版本历史；14节，Table I–VII 源定位分拆为 10 个独立研究协议与 40 条作者源报告。LIBERO OpenVLA-OFT 与π0.5、VLABench十任务、Franka四项真机以及相机/轨迹/网格消融各自独立；同时保留模型时延和SR负面结果，不用FLOPs代替时延。原始代码及权重未获得可核验链接，保持复现unknown而非误写unavailable。
