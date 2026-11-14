@@ -136,6 +136,15 @@ def execute(output: Path, start: str, end: str):
     if end_day < start_day or (end_day - start_day).days > 100:
         raise ValueError("invalid bounded date window")
     output.mkdir(parents=True, exist_ok=True)
+    findings = []
+    for name, handler in (("OpenAlex", openalex_query), ("Semantic Scholar", semantic_query)):
+        for query in QUERIES:
+            try:
+                findings.append(handler(query, start, end))
+            except (ValueError, OSError, UnicodeError, json.JSONDecodeError, HTTPError, URLError) as exc:
+                findings.append({"provider": name, "query": query, "status": "blocked",
+                                 "error": short_error(exc), "candidates": []})
+    robo = probe_robodojo(output)
     # Include precisely the existing canonical baseline in the same temporary
     # audit artifact to permit byte-for-byte and per-model source reconciliation.
     # This never edits tracked files; no branch-push or public score migration.
@@ -145,19 +154,11 @@ def execute(output: Path, start: str, end: str):
         for name in ("robodojo-sim", "robodojo-real"):
             if (canonical / (name + ".json")).is_file():
                 copyfile(canonical / (name + ".json"), output / ("prior-" + name + ".json"))
-    findings = []
-    for name, handler in (("OpenAlex", openalex_query), ("Semantic Scholar", semantic_query)):
-        for query in QUERIES:
-            try:
-                findings.append(handler(query, start, end))
-            except (ValueError, OSError, UnicodeError, json.JSONDecodeError, HTTPError, URLError) as exc:
-                findings.append({"provider": name, "query": query, "status": "blocked",
-                                 "error": short_error(exc), "candidates": []})
     result = {
         "schemaVersion": 1, "generatedDate": dt.datetime.now(dt.timezone.utc).date().isoformat(),
         "window": {"from": start, "to": end},
         "scope": "READ-ONLY bounded provider connectivity and candidate identity intake, not a four-lane success audit",
-        "robodojo": probe_robodojo(output),
+        "robodojo": robo,
         "academicIndex": findings,
         "checkpointAdvanced": False,
         "publicationOrRankingUpdated": False,
