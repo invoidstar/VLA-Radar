@@ -62,10 +62,10 @@ try:
             page.locator('.setting-table').count()==1)
         show(page,'RoboDojo')
         page.locator('.benchmark-official summary').click()
-        check('New live RoboDojo source lag is disclosed rather than merged',
-            '66' in page.locator('.official-live-notice').inner_text() and
-            '57' in page.locator('.official-live-notice').inner_text() and
-            '2026-11-03' in page.locator('.official-live-notice').inner_text())
+        check('Current official source SHA-pinned without stale lag notice',
+            page.locator('.official-live-notice').count()==0)
+        check('Official RoboDojo Q0 Preview ranks first after score sorting',
+            page.locator('[data-official-model="Q0-Preview"]').count()==1)
         page.wait_for_selector('[data-official-model="VPP2"]')
         check('VPP2 has previously verified paper linkage',
             'p125' in page.locator('[data-official-model="VPP2"] .official-paper-id').inner_text())
@@ -88,20 +88,21 @@ try:
         check('RoboDojo SR is percent, never partial-progress Score',
             '32.26%' in page.locator('[data-official-model="VPP2"] .official-score').inner_text())
         page.locator('[data-official-all]').click()
-        check('All 57 official RoboDojo simulation submissions remain visible',
-            page.locator('.official-table tbody tr').count()==57)
+        check('All 66 source-pinned simulation submissions visible',
+            page.locator('.official-table tbody tr').count()==66)
         show(page,'RoboDojo real')
         page.locator('.benchmark-official summary').click()
-        check('Real-robot board discloses 14 live vs 11 pinned',
-            '14' in page.locator('.official-live-notice').inner_text() and
-            '11' in page.locator('.official-live-notice').inner_text())
+        check('Real current official 14 model source no stale warning',
+            page.locator('.official-live-notice').count()==0)
+        check('SLA-Preview leads source-pinned real board',
+            page.locator('[data-official-model="SLA-Preview"]').count()==1)
         check('RoboDojo Real is a public standardized Benchmark, not a paper case study',
             page.locator('[data-board-kind="benchmark"]').get_attribute('aria-pressed')=='true')
         page.wait_for_selector('[data-official-model="OpenWAM-α"]')
         page.locator('[data-official-all]').click()
         page.locator('[data-official-measure]').select_option('sr')
-        check('All 11 official real robot entries are retained',
-            page.locator('.official-table tbody tr').count()==11)
+        check('All 14 official real entries retained',
+            page.locator('.official-table tbody tr').count()==14)
         check('Genuine zero success is displayed as zero, not missing',
             '0.00%' in page.locator('[data-official-model="DM0"] .official-score').inner_text())
         page.set_viewport_size({'width':390,'height':850})
