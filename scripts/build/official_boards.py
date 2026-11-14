@@ -51,7 +51,7 @@ def load_snapshots(root, paper_ids):
                 raise ValueError("Unexpected official source archive path")
             raw = (root / raw_path).read_bytes()
             sha256 = hashlib.sha256(raw).hexdigest()
-            blob_sha = hashlib.sha1(f"blob {len(raw)}\\0".encode("utf-8") + raw).hexdigest()
+            blob_sha = hashlib.sha1(f"blob {len(raw)}".encode("utf-8") + bytes([0]) + raw).hexdigest()
             if sha256 != record.get("sourceContentSha256") or blob_sha != record["sourceBlobSha"]:
                 raise ValueError("Official RoboDojo source checksum mismatch")
         entries = record.get("entries")
