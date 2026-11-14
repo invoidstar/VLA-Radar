@@ -64,6 +64,7 @@ try:
         page.locator('.benchmark-official summary').click()
         check('Current official source SHA-pinned without stale lag notice',
             page.locator('.official-live-notice').count()==0)
+        page.wait_for_selector('[data-official-model="Q0-Preview"]',timeout=20000)
         check('Official RoboDojo Q0 Preview ranks first after score sorting',
             page.locator('[data-official-model="Q0-Preview"]').count()==1)
         page.wait_for_selector('[data-official-model="VPP2"]')
@@ -94,6 +95,7 @@ try:
         page.locator('.benchmark-official summary').click()
         check('Real current official 14 model source no stale warning',
             page.locator('.official-live-notice').count()==0)
+        page.wait_for_selector('[data-official-model="SLA-Preview"]',timeout=20000)
         check('SLA-Preview leads source-pinned real board',
             page.locator('[data-official-model="SLA-Preview"]').count()==1)
         check('RoboDojo Real is a public standardized Benchmark, not a paper case study',
