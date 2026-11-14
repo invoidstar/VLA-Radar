@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "id": "robodojo-real",
   "benchmark": "RoboDojo real",
-  "capturedAt": "2026-10-13",
-  "officialUpdatedAt": "2026-10-09",
-  "sourceUrl": "https://robotwin-platform.github.io/data/robodojo_real_leaderboard.json",
-  "sourceRepoUrl": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd/data/robodojo_real_leaderboard.json",
-  "sourceRepoRevision": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
-  "sourceBlobSha": "b14162faec38751f0bd6afdaaf7d83825800e421",
-  "provenance": "RoboTwin official mirror of RoboDojo real-robot leaderboard; original publisher robodojo-benchmark.com",
-  "sourceOfRecord": "RoboDojo Benchmark Committee",
-  "boardUrl": "https://robodojo-benchmark.com/LeaderBoard",
+  "capturedAt": "2026-11-14",
+  "officialUpdatedAt": "2026-11-03",
+  "sourceUrl": "https://robodojo-benchmark.com/data/leaderboard.generated.json",
+  "sourceRepoUrl": "https://github.com/invoidstar/VLA-Radar/blob/e69554dc22f6801663cceabf0ca8bfb9956f1be3/maintenance/source-snapshots/robodojo-generated-20261103.json",
+  "sourceRepoRevision": "e69554dc22f6801663cceabf0ca8bfb9956f1be3",
+  "sourceBlobSha": "ed471d53c3891c399a9f3c65b3be622fcc13c5e8",
+  "provenance": "RoboDojo Benchmark Committee official generated JSON; exact original bytes archived in VLA-Radar at sourceRepoRevision and sourceBlobSha",
+  "sourceOfRecord": "RoboDojo Benchmark Committee (official direct JSON)",
+  "boardUrl": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
   "metricSchema": "score-success",
   "ranking": "Average Score",
   "evaluation": "18 real-robot tasks; ARX X5/Piper/Piper X; Score and Success Rate separately",
@@ -20,11 +20,57 @@
     "Piper",
     "Piper X"
   ],
-  "notes": "Official entries are model submissions, not automatically distinct papers. Preview/variant rows retain identities and must not be removed as paper duplicates. Progress Score is distinct from task Success Rate.",
+  "notes": "Official entries are model submissions, not automatically distinct papers. Preview/variant rows retain identities and must not be removed as paper duplicates. Progress Score is distinct from task Success Rate. Official 2026-11-03 raw source contains 14 complete model entries; re-ranked strictly by overall Score. Original author/code identity metadata from verified earlier models is preserved; new preview/agent identities have no automatic paper link.",
   "entries": [
     {
-      "model": "OpenWAM-α",
+      "model": "SLA-Preview",
       "rank": 1,
+      "contributor": "HKUST(GZ) & OLA",
+      "values": {
+        "Average": {
+          "score": 42.33,
+          "sr": 33.89
+        },
+        "ARX X5": {
+          "score": 50.33,
+          "sr": 36.67
+        },
+        "Piper": {
+          "score": 60.33,
+          "sr": 55
+        },
+        "Piper X": {
+          "score": 16.33,
+          "sr": 10
+        }
+      }
+    },
+    {
+      "model": "InternW0-Δ",
+      "rank": 2,
+      "contributor": "Shanghai AI Lab",
+      "values": {
+        "Average": {
+          "score": 38.9,
+          "sr": 31.7
+        },
+        "ARX X5": {
+          "score": 59.7,
+          "sr": 50
+        },
+        "Piper": {
+          "score": 39.3,
+          "sr": 31.7
+        },
+        "Piper X": {
+          "score": 17.8,
+          "sr": 13.33
+        }
+      }
+    },
+    {
+      "model": "OpenWAM-α",
+      "rank": 3,
       "contributor": "OpenWAM Team",
       "values": {
         "Average": {
@@ -41,13 +87,36 @@
         },
         "Piper X": {
           "score": 27.2,
-          "sr": 13.3
+          "sr": 13.33
+        }
+      }
+    },
+    {
+      "model": "MWA-Phoenix-Preview",
+      "rank": 4,
+      "contributor": "Anyverse & OpenPhoenix",
+      "values": {
+        "Average": {
+          "score": 35.28,
+          "sr": 26.11
+        },
+        "ARX X5": {
+          "score": 29,
+          "sr": 16.67
+        },
+        "Piper": {
+          "score": 58,
+          "sr": 48.33
+        },
+        "Piper X": {
+          "score": 18.83,
+          "sr": 13.33
         }
       }
     },
     {
       "model": "Pi-05",
-      "rank": 2,
+      "rank": 5,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -70,7 +139,7 @@
     },
     {
       "model": "InternVLA-A1",
-      "rank": 3,
+      "rank": 6,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -93,7 +162,7 @@
     },
     {
       "model": "GalaxeaVLA (G0)",
-      "rank": 4,
+      "rank": 7,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -116,7 +185,7 @@
     },
     {
       "model": "Xiaomi-Robotics-0",
-      "rank": 5,
+      "rank": 8,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -139,7 +208,7 @@
     },
     {
       "model": "X-VLA",
-      "rank": 6,
+      "rank": 9,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -162,7 +231,7 @@
     },
     {
       "model": "GROOT-N1.7",
-      "rank": 7,
+      "rank": 10,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -185,7 +254,7 @@
     },
     {
       "model": "Pi-0",
-      "rank": 8,
+      "rank": 11,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -208,7 +277,7 @@
     },
     {
       "model": "StarVLA",
-      "rank": 9,
+      "rank": 12,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -231,7 +300,7 @@
     },
     {
       "model": "Spirit v1.5",
-      "rank": 10,
+      "rank": 13,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -254,7 +323,7 @@
     },
     {
       "model": "DM0",
-      "rank": 11,
+      "rank": 14,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -275,5 +344,7 @@
         }
       }
     }
-  ]
+  ],
+  "sourceRawPath": "maintenance/source-snapshots/robodojo-generated-20261103.json",
+  "sourceContentSha256": "a64fec25b9c19734cc1e7785655031729090f331214108449abea2c2a902bdab"
 }

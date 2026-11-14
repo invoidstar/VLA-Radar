@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import math
 import re
+import hashlib
 from pathlib import Path
 
 OFFICIAL_BOARD_FILES = ("robotwin2", "robodojo-sim", "robodojo-real")
@@ -42,6 +43,17 @@ def load_snapshots(root, paper_ids):
         for key in ("sourceUrl", "sourceRepoUrl", "boardUrl"):
             if not str(record.get(key, "")).startswith("https://"):
                 raise ValueError("Invalid official source URL: " + board_id)
+        raw_path = record.get("sourceRawPath")
+        if raw_path:
+            # Official direct API source is committed byte-for-byte before
+            # converting to canonical rows. Both SHA families are verified.
+            if raw_path != "maintenance/source-snapshots/robodojo-generated-20261103.json":
+                raise ValueError("Unexpected official source archive path")
+            raw = (root / raw_path).read_bytes()
+            sha256 = hashlib.sha256(raw).hexdigest()
+            blob_sha = hashlib.sha1(f"blob {len(raw)}".encode("utf-8") + bytes([0]) + raw).hexdigest()
+            if sha256 != record.get("sourceContentSha256") or blob_sha != record["sourceBlobSha"]:
+                raise ValueError("Official RoboDojo source checksum mismatch")
         entries = record.get("entries")
         if not isinstance(entries, list) or not entries:
             raise ValueError("Empty official snapshot: " + board_id)
@@ -98,7 +110,8 @@ def official_board_outputs(root, out, paper_ids, hash_writer):
         first_three = [{"model": x["model"], "rank": x["rank"], "average": x["values"]["Average"]}
                        for x in board["entries"][:3]]
         live_info = None
-        if live_audit and board["id"] in ("robodojo-sim", "robodojo-real"):
+        if (live_audit and board["id"] in ("robodojo-sim", "robodojo-real")
+                and board["officialUpdatedAt"] < live_audit["dataUpdatedAt"]):
             current = live_audit["boards"][board["id"]]
             if (current["pinnedSourceBlobSha"] != board["sourceBlobSha"] or
                 current["pinnedUpdatedAt"] != board["officialUpdatedAt"] or

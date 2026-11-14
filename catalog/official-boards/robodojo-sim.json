@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "id": "robodojo-sim",
   "benchmark": "RoboDojo",
-  "capturedAt": "2026-10-13",
-  "officialUpdatedAt": "2026-10-09",
-  "sourceUrl": "https://robotwin-platform.github.io/data/robodojo_leaderboard.json",
-  "sourceRepoUrl": "https://github.com/RoboTwin-Platform/RoboTwin-Platform.github.io/blob/0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd/data/robodojo_leaderboard.json",
-  "sourceRepoRevision": "0f1ddc6ac4f8eaa6eceae3d9eff8acf009611afd",
-  "sourceBlobSha": "d4664cc087e123b813530882f54273f932723eca",
-  "provenance": "RoboTwin official mirror of RoboDojo simulation leaderboard; original publisher robodojo-benchmark.com",
-  "sourceOfRecord": "RoboDojo Benchmark Committee",
-  "boardUrl": "https://robodojo-benchmark.com/LeaderBoard",
+  "capturedAt": "2026-11-14",
+  "officialUpdatedAt": "2026-11-03",
+  "sourceUrl": "https://robodojo-benchmark.com/data/leaderboard.generated.json",
+  "sourceRepoUrl": "https://github.com/invoidstar/VLA-Radar/blob/e69554dc22f6801663cceabf0ca8bfb9956f1be3/maintenance/source-snapshots/robodojo-generated-20261103.json",
+  "sourceRepoRevision": "e69554dc22f6801663cceabf0ca8bfb9956f1be3",
+  "sourceBlobSha": "ed471d53c3891c399a9f3c65b3be622fcc13c5e8",
+  "provenance": "RoboDojo Benchmark Committee official generated JSON; exact original bytes archived in VLA-Radar at sourceRepoRevision and sourceBlobSha",
+  "sourceOfRecord": "RoboDojo Benchmark Committee (official direct JSON)",
+  "boardUrl": "https://robodojo-benchmark.com/leaderboard?bench=sim",
   "metricSchema": "score-success",
   "ranking": "Average Score",
   "evaluation": "42 simulation tasks; independent progress Score and full-task Success Rate; five capability dimensions",
@@ -23,11 +23,256 @@
     "Memory",
     "Open"
   ],
-  "notes": "Official entries are model submissions, not automatically distinct papers. Preview/variant rows retain identities and must not be removed as paper duplicates. Progress Score is distinct from task Success Rate.",
+  "notes": "Official entries are model submissions, not automatically distinct papers. Preview/variant rows retain identities and must not be removed as paper duplicates. Progress Score is distinct from task Success Rate. Official 2026-11-03 raw source contains 66 complete model entries; re-ranked strictly by overall Score. Original author/code identity metadata from verified earlier models is preserved; new preview/agent identities have no automatic paper link.",
   "entries": [
     {
-      "model": "VPP2",
+      "model": "Q0-Preview",
       "rank": 1,
+      "contributor": "Qoo Tech",
+      "values": {
+        "Average": {
+          "score": 74.2,
+          "sr": 68.87
+        },
+        "Average no Open": {
+          "score": 73.2,
+          "sr": 67.34
+        },
+        "Generalization": {
+          "score": 64,
+          "sr": 58.67
+        },
+        "Precision": {
+          "score": 65.3,
+          "sr": 58.5
+        },
+        "Long Horizon": {
+          "score": 69.8,
+          "sr": 58.5
+        },
+        "Memory": {
+          "score": 93.68,
+          "sr": 93.67
+        },
+        "Open": {
+          "score": 78.2,
+          "sr": 75
+        }
+      }
+    },
+    {
+      "model": "GO-3 Nano Preview",
+      "rank": 2,
+      "contributor": "AGIBOT",
+      "values": {
+        "Average": {
+          "score": 61.9,
+          "sr": 56.42
+        },
+        "Average no Open": {
+          "score": 61.95,
+          "sr": 56.71
+        },
+        "Generalization": {
+          "score": 36.45,
+          "sr": 33.66
+        },
+        "Precision": {
+          "score": 78.65,
+          "sr": 76
+        },
+        "Long Horizon": {
+          "score": 68.21,
+          "sr": 53.5
+        },
+        "Memory": {
+          "score": 64.5,
+          "sr": 63.67
+        },
+        "Open": {
+          "score": 61.71,
+          "sr": 55.25
+        }
+      }
+    },
+    {
+      "model": "PyRUA-Lean",
+      "rank": 3,
+      "contributor": "PKU DAGroup",
+      "values": {
+        "Average": {
+          "score": 55.26,
+          "sr": 50.35
+        },
+        "Average no Open": {
+          "score": 53.93,
+          "sr": 48.37
+        },
+        "Generalization": {
+          "score": 48.27,
+          "sr": 43.17
+        },
+        "Precision": {
+          "score": 44.77,
+          "sr": 38.25
+        },
+        "Long Horizon": {
+          "score": 54.3,
+          "sr": 43.75
+        },
+        "Memory": {
+          "score": 68.4,
+          "sr": 68.33
+        },
+        "Open": {
+          "score": 60.56,
+          "sr": 58.25
+        }
+      }
+    },
+    {
+      "model": "HexaShell-Preview",
+      "rank": 4,
+      "contributor": "HexaFuture",
+      "values": {
+        "Average": {
+          "score": 53.18,
+          "sr": 46.85
+        },
+        "Average no Open": {
+          "score": 51.98,
+          "sr": 44.75
+        },
+        "Generalization": {
+          "score": 39.22,
+          "sr": 34.5
+        },
+        "Precision": {
+          "score": 41.25,
+          "sr": 32
+        },
+        "Long Horizon": {
+          "score": 42.91,
+          "sr": 31.5
+        },
+        "Memory": {
+          "score": 84.53,
+          "sr": 81
+        },
+        "Open": {
+          "score": 57.97,
+          "sr": 55.25
+        }
+      }
+    },
+    {
+      "model": "WorldScape-R²SI",
+      "rank": 5,
+      "contributor": "Manifold AI",
+      "values": {
+        "Average": {
+          "score": 46.58,
+          "sr": 39.35
+        },
+        "Average no Open": {
+          "score": 45.93,
+          "sr": 37.31
+        },
+        "Generalization": {
+          "score": 42.95,
+          "sr": 35.83
+        },
+        "Precision": {
+          "score": 23.51,
+          "sr": 15.5
+        },
+        "Long Horizon": {
+          "score": 51.48,
+          "sr": 34.25
+        },
+        "Memory": {
+          "score": 65.78,
+          "sr": 63.67
+        },
+        "Open": {
+          "score": 49.16,
+          "sr": 47.5
+        }
+      }
+    },
+    {
+      "model": "EmbodiedEvo",
+      "rank": 6,
+      "contributor": "Einsia.AI",
+      "values": {
+        "Average": {
+          "score": 45.08,
+          "sr": 38.95
+        },
+        "Average no Open": {
+          "score": 43.4,
+          "sr": 36.38
+        },
+        "Generalization": {
+          "score": 35.22,
+          "sr": 30.83
+        },
+        "Precision": {
+          "score": 25.15,
+          "sr": 16.25
+        },
+        "Long Horizon": {
+          "score": 33.83,
+          "sr": 21.75
+        },
+        "Memory": {
+          "score": 79.4,
+          "sr": 76.67
+        },
+        "Open": {
+          "score": 51.81,
+          "sr": 49.25
+        }
+      }
+    },
+    {
+      "model": "WALL-OSS-1.0-lite",
+      "rank": 7,
+      "contributor": "X Square Robot",
+      "values": {
+        "Average": {
+          "score": 42.59,
+          "sr": 34.97
+        },
+        "Average no Open": {
+          "score": 48.05,
+          "sr": 38.82
+        },
+        "Generalization": {
+          "score": 46.66,
+          "sr": 37.94
+        },
+        "Precision": {
+          "score": 38.16,
+          "sr": 29.08
+        },
+        "Long Horizon": {
+          "score": 49.94,
+          "sr": 32.25
+        },
+        "Memory": {
+          "score": 57.42,
+          "sr": 56
+        },
+        "Open": {
+          "score": 20.76,
+          "sr": 19.58
+        }
+      }
+    },
+    {
+      "model": "VPP2",
+      "rank": 8,
       "contributor": "RobotEra",
       "values": {
         "Average": {
@@ -66,7 +311,7 @@
     },
     {
       "model": "PhysicalRSI",
-      "rank": 2,
+      "rank": 9,
       "contributor": "HKU MMLab & KAI",
       "values": {
         "Average": {
@@ -104,7 +349,7 @@
     },
     {
       "model": "Awomo-0.5",
-      "rank": 3,
+      "rank": 10,
       "contributor": "Awomo",
       "values": {
         "Average": {
@@ -142,7 +387,7 @@
     },
     {
       "model": "Simate-beta",
-      "rank": 4,
+      "rank": 11,
       "contributor": "Simate",
       "values": {
         "Average": {
@@ -181,7 +426,7 @@
     },
     {
       "model": "Rex-M1 Preview",
-      "rank": 5,
+      "rank": 12,
       "contributor": "FT Lab & VisIncept",
       "values": {
         "Average": {
@@ -219,8 +464,43 @@
       "resourceCheckedAt": "2026-10-14"
     },
     {
+      "model": "HWM-0 Preview",
+      "rank": 13,
+      "contributor": "Horizon Robotics",
+      "values": {
+        "Average": {
+          "score": 32.81,
+          "sr": 27.17
+        },
+        "Average no Open": {
+          "score": 39.38,
+          "sr": 32.45
+        },
+        "Generalization": {
+          "score": 26.99,
+          "sr": 21.11
+        },
+        "Precision": {
+          "score": 37.6,
+          "sr": 29.92
+        },
+        "Long Horizon": {
+          "score": 46.02,
+          "sr": 32.08
+        },
+        "Memory": {
+          "score": 46.91,
+          "sr": 46.67
+        },
+        "Open": {
+          "score": 6.55,
+          "sr": 6.08
+        }
+      }
+    },
+    {
       "model": "VPP2-Preview",
-      "rank": 6,
+      "rank": 14,
       "contributor": "RobotEra",
       "values": {
         "Average": {
@@ -259,7 +539,7 @@
     },
     {
       "model": "InternW0-Δ",
-      "rank": 7,
+      "rank": 15,
       "contributor": "Shanghai AI Lab",
       "values": {
         "Average": {
@@ -298,7 +578,7 @@
     },
     {
       "model": "Liber-0 Preview",
-      "rank": 8,
+      "rank": 16,
       "contributor": "LiberAI",
       "values": {
         "Average": {
@@ -336,7 +616,7 @@
     },
     {
       "model": "Liber-0 Lite",
-      "rank": 9,
+      "rank": 17,
       "contributor": "LiberAI",
       "values": {
         "Average": {
@@ -375,7 +655,7 @@
     },
     {
       "model": "GPT-6-Astra",
-      "rank": 10,
+      "rank": 18,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -414,7 +694,7 @@
     },
     {
       "model": "DM0.5",
-      "rank": 11,
+      "rank": 19,
       "contributor": "Dexmal",
       "values": {
         "Average": {
@@ -449,7 +729,7 @@
     },
     {
       "model": "ME-Brain-1.0",
-      "rank": 12,
+      "rank": 20,
       "contributor": "Li Auto Inc.",
       "values": {
         "Average": {
@@ -484,7 +764,7 @@
     },
     {
       "model": "GalaxeaVLA (G0.5)",
-      "rank": 13,
+      "rank": 21,
       "contributor": "Galaxea AI",
       "values": {
         "Average": {
@@ -519,7 +799,7 @@
     },
     {
       "model": "Xiaomi-Robotics-1",
-      "rank": 14,
+      "rank": 22,
       "contributor": "Xiaomi Robotics",
       "values": {
         "Average": {
@@ -554,7 +834,7 @@
     },
     {
       "model": "MachEmbodied-U0",
-      "rank": 15,
+      "rank": 23,
       "contributor": "Li Auto Inc.",
       "values": {
         "Average": {
@@ -589,7 +869,7 @@
     },
     {
       "model": "OpenWAM-α",
-      "rank": 16,
+      "rank": 24,
       "contributor": "OpenWAM Team",
       "values": {
         "Average": {
@@ -623,8 +903,43 @@
       }
     },
     {
+      "model": "EWAM",
+      "rank": 25,
+      "contributor": "EWAM Team",
+      "values": {
+        "Average": {
+          "score": 15.2,
+          "sr": 9.37
+        },
+        "Average no Open": {
+          "score": 18.72,
+          "sr": 11.52
+        },
+        "Generalization": {
+          "score": 15.12,
+          "sr": 9.67
+        },
+        "Precision": {
+          "score": 22.15,
+          "sr": 12.33
+        },
+        "Long Horizon": {
+          "score": 30.23,
+          "sr": 18.08
+        },
+        "Memory": {
+          "score": 7.39,
+          "sr": 6
+        },
+        "Open": {
+          "score": 1.12,
+          "sr": 0.75
+        }
+      }
+    },
+    {
       "model": "Meituan-Robotics-0",
-      "rank": 17,
+      "rank": 26,
       "contributor": "Meituan Robotics",
       "values": {
         "Average": {
@@ -659,7 +974,7 @@
     },
     {
       "model": "HWM-CogWAM",
-      "rank": 18,
+      "rank": 27,
       "contributor": "Horizon Robotics",
       "values": {
         "Average": {
@@ -694,7 +1009,7 @@
     },
     {
       "model": "Hy-Embodied-0.5-VLA",
-      "rank": 19,
+      "rank": 28,
       "contributor": "Tencent Robotics X",
       "values": {
         "Average": {
@@ -729,7 +1044,7 @@
     },
     {
       "model": "KinRT",
-      "rank": 20,
+      "rank": 29,
       "contributor": "IIGroup",
       "values": {
         "Average": {
@@ -764,7 +1079,7 @@
     },
     {
       "model": "SimpleMemVLA",
-      "rank": 21,
+      "rank": 30,
       "contributor": "SimpleMemVLA Team",
       "values": {
         "Average": {
@@ -799,7 +1114,7 @@
     },
     {
       "model": "Spatial Forcing",
-      "rank": 22,
+      "rank": 31,
       "contributor": "OpenHelix Robotics",
       "values": {
         "Average": {
@@ -834,7 +1149,7 @@
     },
     {
       "model": "Pi-05",
-      "rank": 23,
+      "rank": 32,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -869,7 +1184,7 @@
     },
     {
       "model": "InternVLA-A1.5",
-      "rank": 24,
+      "rank": 33,
       "contributor": "InternVLA Team",
       "values": {
         "Average": {
@@ -904,7 +1219,7 @@
     },
     {
       "model": "StarVLA-PI_v3",
-      "rank": 25,
+      "rank": 34,
       "contributor": "StarVLA Team",
       "values": {
         "Average": {
@@ -939,7 +1254,7 @@
     },
     {
       "model": "VLAct",
-      "rank": 26,
+      "rank": 35,
       "contributor": "StarVLA Team",
       "values": {
         "Average": {
@@ -974,7 +1289,7 @@
     },
     {
       "model": "X-VLA",
-      "rank": 27,
+      "rank": 36,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1009,7 +1324,7 @@
     },
     {
       "model": "MolmoAct2",
-      "rank": 28,
+      "rank": 37,
       "contributor": "MolmoAct2 Team",
       "values": {
         "Average": {
@@ -1044,7 +1359,7 @@
     },
     {
       "model": "StarVLA-GR00T",
-      "rank": 29,
+      "rank": 38,
       "contributor": "StarVLA Team",
       "values": {
         "Average": {
@@ -1079,7 +1394,7 @@
     },
     {
       "model": "StarVLA-OFT",
-      "rank": 30,
+      "rank": 39,
       "contributor": "StarVLA Team",
       "values": {
         "Average": {
@@ -1114,7 +1429,7 @@
     },
     {
       "model": "X-WAM",
-      "rank": 31,
+      "rank": 40,
       "contributor": "X-WAM Team",
       "values": {
         "Average": {
@@ -1149,7 +1464,7 @@
     },
     {
       "model": "Xiaomi-Robotics-0",
-      "rank": 32,
+      "rank": 41,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1184,7 +1499,7 @@
     },
     {
       "model": "StarVLA",
-      "rank": 33,
+      "rank": 42,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1219,7 +1534,7 @@
     },
     {
       "model": "GigaWorld-Policy-0",
-      "rank": 34,
+      "rank": 43,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1254,7 +1569,7 @@
     },
     {
       "model": "GalaxeaVLA (G0)",
-      "rank": 35,
+      "rank": 44,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1289,7 +1604,7 @@
     },
     {
       "model": "LingBot-VLA",
-      "rank": 36,
+      "rank": 45,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1324,7 +1639,7 @@
     },
     {
       "model": "EventVLA",
-      "rank": 37,
+      "rank": 46,
       "contributor": "SJTU ScaleLab",
       "values": {
         "Average": {
@@ -1359,7 +1674,7 @@
     },
     {
       "model": "AHA-WAM",
-      "rank": 38,
+      "rank": 47,
       "contributor": "SJTU ScaleLab",
       "values": {
         "Average": {
@@ -1394,7 +1709,7 @@
     },
     {
       "model": "ABot-M0",
-      "rank": 39,
+      "rank": 48,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1429,7 +1744,7 @@
     },
     {
       "model": "Fast-WAM",
-      "rank": 40,
+      "rank": 49,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1464,7 +1779,7 @@
     },
     {
       "model": "Pi-0",
-      "rank": 41,
+      "rank": 50,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1499,7 +1814,7 @@
     },
     {
       "model": "DeepSeek-Flash",
-      "rank": 42,
+      "rank": 51,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1534,7 +1849,7 @@
     },
     {
       "model": "GROOT-N1.7",
-      "rank": 43,
+      "rank": 52,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1569,7 +1884,7 @@
     },
     {
       "model": "InternVLA-A1",
-      "rank": 44,
+      "rank": 53,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1604,7 +1919,7 @@
     },
     {
       "model": "SmolVLA (Single Task)",
-      "rank": 45,
+      "rank": 54,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1639,7 +1954,7 @@
     },
     {
       "model": "LDA-1B",
-      "rank": 46,
+      "rank": 55,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1674,7 +1989,7 @@
     },
     {
       "model": "GPT-5.5",
-      "rank": 47,
+      "rank": 56,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1709,7 +2024,7 @@
     },
     {
       "model": "ACT (Single Task)",
-      "rank": 48,
+      "rank": 57,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1744,7 +2059,7 @@
     },
     {
       "model": "GO-1",
-      "rank": 49,
+      "rank": 58,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1779,7 +2094,7 @@
     },
     {
       "model": "H-RDT",
-      "rank": 50,
+      "rank": 59,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1814,7 +2129,7 @@
     },
     {
       "model": "RDT",
-      "rank": 51,
+      "rank": 60,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1849,7 +2164,7 @@
     },
     {
       "model": "DM0",
-      "rank": 52,
+      "rank": 61,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1884,7 +2199,7 @@
     },
     {
       "model": "Dexora-1B",
-      "rank": 53,
+      "rank": 62,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1919,7 +2234,7 @@
     },
     {
       "model": "A1",
-      "rank": 54,
+      "rank": 63,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1954,7 +2269,7 @@
     },
     {
       "model": "Spirit v1.5",
-      "rank": 55,
+      "rank": 64,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -1989,7 +2304,7 @@
     },
     {
       "model": "TinyVLA",
-      "rank": 56,
+      "rank": 65,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -2024,7 +2339,7 @@
     },
     {
       "model": "OpenVLA-OFT",
-      "rank": 57,
+      "rank": 66,
       "contributor": "RoboDojo Team",
       "values": {
         "Average": {
@@ -2057,5 +2372,7 @@
         }
       }
     }
-  ]
+  ],
+  "sourceRawPath": "maintenance/source-snapshots/robodojo-generated-20261103.json",
+  "sourceContentSha256": "a64fec25b9c19734cc1e7785655031729090f331214108449abea2c2a902bdab"
 }

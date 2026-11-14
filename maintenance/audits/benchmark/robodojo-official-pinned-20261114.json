@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-14",
+  "status": "official-source-pinned-canonical-migrated-pending-ci",
+  "officialSourceUrl": "https://robodojo-benchmark.com/data/leaderboard.generated.json",
+  "sourceUpdatedAt": "2026-11-03",
+  "sourceRawPath": "maintenance/source-snapshots/robodojo-generated-20261103.json",
+  "sourceRepoRevision": "e69554dc22f6801663cceabf0ca8bfb9956f1be3",
+  "sourceBlobSha": "ed471d53c3891c399a9f3c65b3be622fcc13c5e8",
+  "sourceSha256": "a64fec25b9c19734cc1e7785655031729090f331214108449abea2c2a902bdab",
+  "sourceBytes": 39464,
+  "boards": {
+    "robodojo-sim": {
+      "models": 66,
+      "prior": 57,
+      "newModels": [
+        "EWAM",
+        "EmbodiedEvo",
+        "GO-3 Nano Preview",
+        "HWM-0 Preview",
+        "HexaShell-Preview",
+        "PyRUA-Lean",
+        "Q0-Preview",
+        "WALL-OSS-1.0-lite",
+        "WorldScape-R²SI"
+      ],
+      "priorModelsRemoved": 0,
+      "priorScoreChangesAboveTolerance": 0
+    },
+    "robodojo-real": {
+      "models": 14,
+      "prior": 11,
+      "newModels": [
+        "InternW0-Δ",
+        "MWA-Phoenix-Preview",
+        "SLA-Preview"
+      ],
+      "priorModelsRemoved": 0,
+      "priorScoreChangesAboveTolerance": 0
+    }
+  },
+  "explicitChecks": [
+    "Exact official bytes and date SHA256 matched probe artifact 2026-11-14.",
+    "66 Sim and 14 Real distinct named models, complete dimensions, valid Score/SR.",
+    "All prior 57 Sim/11 Real identities retained and source metric delta <=0.035; only OpenWAM-alpha Piper X SR +0.03 historical rounding.",
+    "Official raw sim array appended some entries unsorted; canonical ranking sorted by Overall Score descending.",
+    "Pre-existing paper/resource provenance preserved, no automatic paper link for 12 novel official submissions.",
+    "Research paper original Results are unchanged; independent source-backed official board only."
+  ],
+  "completeDiscovery": false
+}

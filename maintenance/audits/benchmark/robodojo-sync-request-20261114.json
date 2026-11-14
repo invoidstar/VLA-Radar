@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-14",
+  "action": "sync-only-if-exact-source-match",
+  "source": "https://robodojo-benchmark.com/data/leaderboard.generated.json",
+  "expectedSha256": "a64fec25b9c19734cc1e7785655031729090f331214108449abea2c2a902bdab",
+  "expectedUpdatedAt": "2026-11-03",
+  "expectedModels": {
+    "sim": 66,
+    "realworld": 14
+  },
+  "previousModels": {
+    "sim": 57,
+    "realworld": 11
+  },
+  "governance": {
+    "branch": "release/batch-2026-11-14-robodojo-official-sync",
+    "noDirectMain": true,
+    "verifyAllOldModelScores": true,
+    "fullCIRequired": true,
+    "afterMergeSmoke": true,
+    "doNotAdvanceDiscoveryCheckpoint": true,
+    "doNotInferPaperLinks": true
+  }
+}

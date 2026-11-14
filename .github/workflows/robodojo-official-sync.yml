@@ -1,0 +1,64 @@
+name: Pin verified RoboDojo official snapshot
+
+on:
+  push:
+    branches: ['release/batch-*']
+    paths:
+      - 'maintenance/audits/benchmark/robodojo-sync-request-*.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robodojo-official-sync-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    if: github.repository == 'invoidstar/VLA-Radar' && startsWith(github.ref, 'refs/heads/release/batch-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch exact pinned official data and commit raw source locally
+        env:
+          BASE_SHA: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          case "$BRANCH" in release/batch-*) ;; *) exit 1 ;; esac
+          python scripts/maintenance/sync_robodojo_live.py fetch
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add maintenance/source-snapshots/robodojo-generated-20261103.json
+          git commit -m 'Pin byte-exact official RoboDojo JSON 2026-11-03'
+          source_rev=$(git rev-parse HEAD)
+          echo "SOURCE_REV=$source_rev" >> "$GITHUB_ENV"
+      - name: Reconcile common models and migrate both official boards
+        run: |
+          python scripts/maintenance/sync_robodojo_live.py apply --source-revision "$SOURCE_REV"
+          python scripts/build/build_catalog.py
+          python scripts/validate/validate_all.py
+      - name: Push validated source + migrated board changes with exact remote lease
+        env:
+          BASE_SHA: ${{ github.sha }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          git add catalog/official-boards/robodojo-sim.json catalog/official-boards/robodojo-real.json
+          git add maintenance/audits/benchmark/robodojo-official-pinned-20261114.json
+          git add data/
+          git commit -m 'Migrate and validate complete RoboDojo 66 Sim / 14 Real official board'
+          remote=$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)
+          test "$remote" = "$BASE_SHA" || { echo 'Branch moved; refusing to overwrite'; exit 1; }
+          git push origin "HEAD:refs/heads/$BRANCH"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verified-robodojo-source-${{ github.run_id }}
+          path: |
+            maintenance/source-snapshots/robodojo-generated-20261103.json
+            maintenance/audits/benchmark/robodojo-official-pinned-20261114.json
+          retention-days: 30
