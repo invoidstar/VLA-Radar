@@ -136,6 +136,15 @@ def execute(output: Path, start: str, end: str):
     if end_day < start_day or (end_day - start_day).days > 100:
         raise ValueError("invalid bounded date window")
     output.mkdir(parents=True, exist_ok=True)
+    # Include precisely the existing canonical baseline in the same temporary
+    # audit artifact to permit byte-for-byte and per-model source reconciliation.
+    # This never edits tracked files; no branch-push or public score migration.
+    if (output / "robodojo-original-generated.json").exists():
+        from shutil import copyfile
+        canonical = Path(__file__).resolve().parents[2] / "catalog" / "official-boards"
+        for name in ("robodojo-sim", "robodojo-real"):
+            if (canonical / (name + ".json")).is_file():
+                copyfile(canonical / (name + ".json"), output / ("prior-" + name + ".json"))
     findings = []
     for name, handler in (("OpenAlex", openalex_query), ("Semantic Scholar", semantic_query)):
         for query in QUERIES:
