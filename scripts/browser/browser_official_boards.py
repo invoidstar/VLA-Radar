@@ -72,6 +72,9 @@ try:
             'p125' in page.locator('[data-official-model="VPP2"] .official-paper-id').inner_text())
         check('Official model without verified paper stays visible',
             page.locator('[data-official-model="PhysicalRSI"]').count()==1)
+        # Earlier top-10 view is expected to hide older source-linked preview models.
+        # Expand the complete verified 66-item catalog before provenance assertions.
+        page.locator('[data-official-all]').click()
         check('Simate-beta stays unpublished despite official eval adapter',
             page.locator('[data-official-model="Simate-beta"] .official-model-status').count()==1 and
             page.locator('[data-official-model="Simate-beta"] .official-model-resource').count()==1 and
@@ -88,7 +91,6 @@ try:
         page.locator('[data-official-measure]').select_option('sr')
         check('RoboDojo SR is percent, never partial-progress Score',
             '32.26%' in page.locator('[data-official-model="VPP2"] .official-score').inner_text())
-        page.locator('[data-official-all]').click()
         check('All 66 source-pinned simulation submissions visible',
             page.locator('.official-table tbody tr').count()==66)
         show(page,'RoboDojo real')
