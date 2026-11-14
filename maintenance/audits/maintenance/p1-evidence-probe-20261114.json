@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-14",
+  "sourceKind": "live-source-capture",
+  "executor": "GitHub Actions ubuntu-latest runner, bounded P1 evidence probe",
+  "actionRun": "https://github.com/invoidstar/VLA-Radar/actions/runs/43588136357",
+  "artifactUrl": "https://github.com/invoidstar/VLA-Radar/actions/runs/43588136357/artifacts/14110982289",
+  "status": "official-raw-captured-schema-verified-pending-canonical-migration",
+  "official": {
+    "url": "https://robodojo-benchmark.com/data/leaderboard.generated.json",
+    "sourceDataUpdatedAt": "2026-11-03T00:00:00.000Z",
+    "rawSha256": "a64fec25b9c19734cc1e7785655031729090f331214108449abea2c2a902bdab",
+    "rawBytes": 39464,
+    "rootKeys": [
+      "updatedAt",
+      "sim",
+      "realworld"
+    ],
+    "sim": {
+      "total": 66,
+      "pinned": 57,
+      "newDistinctModels": [
+        "GO-3 Nano Preview",
+        "EmbodiedEvo",
+        "WALL-OSS-1.0-lite",
+        "WorldScape-R²SI",
+        "HexaShell-Preview",
+        "EWAM",
+        "PyRUA-Lean",
+        "HWM-0 Preview",
+        "Q0-Preview"
+      ],
+      "sourceOrderSortedByScore": false
+    },
+    "realworld": {
+      "total": 14,
+      "pinned": 11,
+      "newDistinctModels": [
+        "SLA-Preview",
+        "InternW0-Δ",
+        "MWA-Phoenix-Preview"
+      ],
+      "sourceOrderSortedByScore": true
+    },
+    "validation": {
+      "duplicateModelNames": 0,
+      "missingExpectedDimensionSchema": 0,
+      "sourceSummaryScoreVsDimensionsAverageMismatch": 0,
+      "invalidOutOfRangeScoreOrSuccessRate": 0,
+      "simDimensions": [
+        "average",
+        "sft",
+        "generalization",
+        "precision",
+        "longHorizon",
+        "memory",
+        "open"
+      ],
+      "realDimensions": [
+        "average",
+        "arxX5",
+        "piper",
+        "piperX"
+      ]
+    },
+    "pending": [
+      "Sort all 66 sim entries by official overall score before presenting ranks; official JSON has appended entries out of order.",
+      "Per-model identity, old-source overlap scores, optional resource/paper links and official reporting provenance need source review.",
+      "Verify and migrate each Score/SR dimension; preserve split between model Preview and source-backed paper identity.",
+      "Replace 57/11 canonical only in separate source-pin and regression-verified PR."
+    ],
+    "reconciliation": {
+      "baselineFiles": [
+        "catalog/official-boards/robodojo-sim.json",
+        "catalog/official-boards/robodojo-real.json"
+      ],
+      "sourceArtifact": "https://github.com/invoidstar/VLA-Radar/actions/runs/43588631563/artifacts/14112075152",
+      "priorSimModels": 57,
+      "matchingSimIdentities": 57,
+      "priorRealModels": 11,
+      "matchingRealIdentities": 11,
+      "missingOldIdentities": 0,
+      "sameAverageScoreAndSuccessRate": {
+        "sim": 57,
+        "real": 11
+      },
+      "fullMetricComparison": {
+        "simSharedEntriesNoChange": 57,
+        "realSharedEntriesNoChange": 10,
+        "realSharedEntriesSinglePrecisionDifference": 1
+      },
+      "precisionDifference": {
+        "model": "OpenWAM-α",
+        "dimension": "Piper X",
+        "metric": "sr",
+        "prior": 13.3,
+        "current": 13.33,
+        "absoluteDelta": 0.03
+      },
+      "note": "2026-11-14 compared all 57 existing Sim and 11 Real models from the exact same Actions artifact as the 66/14 official raw JSON. One real existing model differs only at Piper-X SR rounding by 0.03. No model identity deletion or Average change. Direct official source Sim order is NOT sorted, so migration must resort and regenerate canonical ranks."
+    }
+  },
+  "academic": {
+    "range": {
+      "from": "2026-09-20",
+      "to": "2026-11-14"
+    },
+    "queries": [
+      "vision language action",
+      "world action model",
+      "robot manipulation"
+    ],
+    "OpenAlex": {
+      "status": "first-page-only",
+      "responded": 3,
+      "failed": 0,
+      "perPage": 100,
+      "totalReturned": 300,
+      "reportedCandidateCounts": [
+        1137,
+        2406,
+        1671
+      ],
+      "note": "OpenAlex publication dates may not be original first arXiv version dates; 3 first pages are insufficient to claim full-window discovery."
+    },
+    "SemanticScholar": {
+      "status": "rate-limited",
+      "responded": 0,
+      "failed": 3,
+      "errors": [
+        "http-429",
+        "http-429",
+        "http-429"
+      ]
+    },
+    "completeFourLaneDiscovery": false,
+    "fullCheckpointStill": "2026-10-04"
+  },
+  "editorialNotes": "Verified official bytes and structural metrics from artifact, not yet promoted to default public leaderboard. GitHub Actions probe is read-only and never updates checkpoint. No external credentials or copyrighted full paper copied."
+}

@@ -1,0 +1,34 @@
+name: Bounded P1 public evidence probe
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/maintenance/probe_p1_sources.py'
+      - 'tests/test_p1_source_probe.py'
+      - '.github/workflows/p1-evidence-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-source-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test bounded read-only parsing
+        run: python -m unittest discover -s tests -p test_p1_source_probe.py -v
+      - name: Probe official RoboDojo and independent scholarly indexes
+        run: |
+          python scripts/maintenance/probe_p1_sources.py \
+            --from 2026-09-20 --to 2026-11-14 \
+            --output /tmp/vla-radar-p1-probe
+      - name: Upload evidence for manual provenance review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bounded-p1-evidence-probe-${{ github.run_id }}
+          path: /tmp/vla-radar-p1-probe/
+          retention-days: 14
