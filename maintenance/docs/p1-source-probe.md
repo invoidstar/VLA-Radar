@@ -12,3 +12,11 @@
 
 ## 后续证据闭环
 若API成功响应，需要另行执行完整日期窗口、分页和候选来源去重（direct arXiv、independent index、curated feed、official reverse四路均覆盖2026-09-20至运行目标日期），通过`scripts/discovery/discovery_coverage.py validate`，才可申请推进完整成功检查点。中英文新闻有独立日期逐日审计，仍保持自身状态机。RoboDojo全量JSON必须先逐条核对与固定版本，保留旧快照至迁移核验通过。
+
+## 2026-11-14 首次真实运行结论
+
+- [Actions run 43588136357](https://github.com/invoidstar/VLA-Radar/actions/runs/43588136357) 的公共源探测已运行，原始数据下载为 GitHub Artifact `bounded-p1-evidence-probe-43588136357`（保留14天）。
+- 官方 `leaderboard.generated.json` **完整下载39,464字节**，内容SHA-256为 `a64fec25b9c19734cc1e7785655031729090f331214108449abea2c2a902bdab`；原始更新日期为2026-11-03。实测结构：Sim 66项、Real 14项，模型名称均未重复，7项Sim平均/维度及4项Real维度的Score/SR数值范围与内部Average一致。
+- 与此前Git SHA固定的Sim57、Real11条目相比，出现9项新Sim模型、3项新Real模型。**官方JSON的Sim数组并非按Overall Score全序排序**（部分新增模型追加在尾部）；迁移时必须重新按官方Score排序、核验新旧共同模型记录，保留各项元信息，不得按JSON序号当排行榜排名。
+- OpenAlex公开API的3个查询均返回100条第一页结果（`vision language action`、`world action model`、`robot manipulation`），但匹配总数分别为1137/2406/1671，尚未分页完成；Semantic Scholar三次返回HTTP429。论文完整四lane仍为partial，`lastSuccessfulSearchAt`不得前移。
+- 原始结果、状态和新增身份已另行保存在 [p1-evidence-probe-20261114.json](../audits/maintenance/p1-evidence-probe-20261114.json)。`fetched-unverified`表示传输成功与机器可解析，不等于来源规范迁移已经完成。当前 canonical 仍保留57/11，下一轮应基于官方原始字节进行字段和对照核验并以独立PR发布。
