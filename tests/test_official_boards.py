@@ -67,20 +67,29 @@ def test_generation_shards_are_lazy_and_do_not_leak_all_official_rows():
     assert index["RoboDojo"]["metricSchema"]=="score-success"
 
 
-def test_robodojo_newer_live_status_does_not_replace_pinned_scores():
+def test_direct_official_robodojo_source_pinned_and_complete():
     _, records, _, _ = read_catalog(ROOT)
-    ids = {r["paper"]["id"] for r in records}
+    ids={r["paper"]["id"] for r in records}
+    boards={b["id"]:b for b in load_snapshots(ROOT, ids)}
+    sim=boards["robodojo-sim"];real=boards["robodojo-real"]
+    assert len(sim["entries"])==66 and len(real["entries"])==14
+    assert sim["officialUpdatedAt"]==real["officialUpdatedAt"]=="2026-11-03"
+    assert sim["sourceContentSha256"]==real["sourceContentSha256"]
+    assert len(sim["sourceContentSha256"])==64
+    assert sim["sourceRawPath"]==real["sourceRawPath"]
+    assert sim["entries"][0]["model"]=="Q0-Preview"
+    assert real["entries"][0]["model"]=="SLA-Preview"
+    assert sim["entries"][0]["values"]["Average"]=={"score":74.2,"sr":68.87}
+    assert real["entries"][0]["values"]["Average"]=={"score":42.33,"sr":33.89}
+    assert any(x["model"]=="PyRUA-Lean" for x in sim["entries"])
+    assert all(x["rank"]==i for i,x in enumerate(sim["entries"],1))
     def writer(prefix,obj,out):
         out[prefix+".json"]=obj
         return prefix+".json"
-    emitted = {}
-    index = official_board_outputs(ROOT,emitted,ids,writer)
-    sim=index["RoboDojo"]
-    real=index["RoboDojo real"]
-    assert sim["entryCount"]==57 and sim["liveInfo"]["count"]==66
-    assert real["entryCount"]==11 and real["liveInfo"]["count"]==14
-    assert sim["liveInfo"]["status"]=="live-unpinned"
-    assert real["liveInfo"]["status"]=="live-unpinned"
+    output={}
+    index=official_board_outputs(ROOT,output,ids,writer)
+    assert index["RoboDojo"]["entryCount"]==66
+    assert index["RoboDojo real"]["entryCount"]==14
+    assert "liveInfo" not in index["RoboDojo"]
+    assert "liveInfo" not in index["RoboDojo real"]
     assert "liveInfo" not in index["RoboTwin"]
-    assert len(emitted[sim["resultUrl"]]["entries"])==57
-    assert len(emitted[real["resultUrl"]]["entries"])==11
