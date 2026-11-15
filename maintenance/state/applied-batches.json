@@ -522,6 +522,16 @@
       "results": 0,
       "resources": [],
       "reproducibility": []
+    },
+    {
+      "id": "2026-11-15-weekly-news-discovery",
+      "sha256": "3375c943f8c139d0c8529261e4840ebb083df42a9cb924bef20886a4fcfc5100",
+      "date": "2026-11-15",
+      "notes": [],
+      "tracks": [],
+      "results": 0,
+      "resources": [],
+      "reproducibility": []
     }
   ]
 }

@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "id": "discovery-2026-09-20-2026-11-15-weekly-partial",
+  "window": {
+    "from": "2026-09-20",
+    "to": "2026-11-15",
+    "attemptedAt": "2026-11-15",
+    "completedAt": null
+  },
+  "scope": "2026-11-15 targeted public VLA/WAM/robotics primary and curated discovery plus HF/DeepMind official reverse checks, with attempted academic index APIs. Historical checkpoint overlap from 2026-10-04 minus 14 days. NOT complete four-lane full-period scan.",
+  "sources": [
+    {
+      "id": "arxiv-nov-primary",
+      "lane": "primary-preprints",
+      "provider": "arXiv official abstracts",
+      "kind": "Targeted original arXiv exact-ID/keyword checks (not category-complete)",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-10",
+        "to": "2026-11-12"
+      },
+      "query": "arXiv original pages: 2611.16589, 2611.16246, 2611.14432; targeted November robotics VLA, memory, agent distillation and long-horizon manipulation only",
+      "resultCount": 3,
+      "note": "Exact identity and v1 date verified. Not an exhaustive 2026-09-20–2026-11-15 category/preprint search."
+    },
+    {
+      "id": "academic-openalex",
+      "lane": "academic-index",
+      "provider": "OpenAlex Works API",
+      "kind": "Attempted independent date-filtered scholarly index",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.openalex.org/works?filter=from_publication_date:2026-09-20,to_publication_date:2026-11-15&search=vision%20language%20action%20robot&per-page=5",
+      "resultCount": 0,
+      "note": "Date-filtered API fetch was not accessible through current public web lookup. This is tool-access blocked, not 0 papers indexed; no complete result set obtained."
+    },
+    {
+      "id": "academic-semantic-scholar",
+      "lane": "academic-index",
+      "provider": "Semantic Scholar Graph API",
+      "kind": "Attempted independent scholarly index",
+      "status": "blocked",
+      "coverage": {
+        "from": null,
+        "to": null
+      },
+      "query": "https://api.semanticscholar.org/graph/v1/paper/search?query=vision-language-action%20robot&limit=5",
+      "resultCount": 0,
+      "note": "Direct public API lookup inaccessible via current web path; no date-window search verified. Do not infer no matching papers."
+    },
+    {
+      "id": "robotics-paper-daily-nov",
+      "lane": "curated-robotics",
+      "provider": "Robotics Paper Daily",
+      "kind": "Robotics/VLA curated web index targeted November entries",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-03",
+        "to": "2026-11-14"
+      },
+      "query": "https://cold-young.github.io/robotics_paper_daily/vla.html, Updated on 2026-11-14; inspect STVLA, H2E and BEHAVIOR 2026 entries plus surrounding VLA/WAM titles",
+      "resultCount": 3,
+      "note": "Three candidate titles independently matched; viewed current curated list, not a complete retrospective pagination across the entire since-September interval."
+    },
+    {
+      "id": "official-hf-lerobot",
+      "lane": "reverse-discovery",
+      "provider": "Hugging Face LeRobot official blog and GitHub release",
+      "kind": "Official release/resource reverse lookup",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-05",
+        "to": "2026-11-15"
+      },
+      "query": "https://huggingface.co/blog/lerobot/lerobot-release-v070 ; https://github.com/huggingface/lerobot/releases/tag/v0.7.0",
+      "resultCount": 1,
+      "note": "Verified software release Nov5 and documented resource boundaries. Specific official source check, not all lab/project/leaderboard reverse-discovery."
+    },
+    {
+      "id": "official-deepmind-nov",
+      "lane": "reverse-discovery",
+      "provider": "Google DeepMind official newsroom",
+      "kind": "Official model release reverse lookup and existing catalog deduplication",
+      "status": "partial",
+      "coverage": {
+        "from": "2026-11-10",
+        "to": "2026-11-15"
+      },
+      "query": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/ ; compare existing news-20261110-deepmind-gemini-robotics25.json",
+      "resultCount": 1,
+      "note": "Nov10 Gemini Robotics 2.5 already in canonical news, not a new independent event. Targeted check only."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "STVLA: Spatial-aware and Temporal-memory forVision-Language-Action Models",
+      "arxiv": "2611.16589",
+      "doi": "",
+      "date": "2026-11-12",
+      "sourceIds": [
+        "arxiv-nov-primary",
+        "robotics-paper-daily-nov"
+      ],
+      "status": "deferred",
+      "reason": "Original abstract and title found, but full methods, memory scoring, exact tables and protocol partitions not yet read to 8-section/2000-character standard; no shallow admission.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "What Can a VLA Learn from the Agent That Calls It? Task-Level Experience Distillation for Embodied Navigation",
+      "arxiv": "2611.16246",
+      "doi": "",
+      "date": "2026-11-12",
+      "sourceIds": [
+        "arxiv-nov-primary",
+        "robotics-paper-daily-nov"
+      ],
+      "status": "deferred",
+      "reason": "Original abstract for H2E and REVERIE-CE seen; requires full original 9-table/episode, instruction mapping and ablation verification before editorial/leaderboard admission.",
+      "paperId": null,
+      "duplicateOf": null
+    },
+    {
+      "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
+      "arxiv": "2611.14432",
+      "doi": "",
+      "date": "2026-11-10",
+      "sourceIds": [
+        "arxiv-nov-primary",
+        "robotics-paper-daily-nov"
+      ],
+      "status": "deferred",
+      "reason": "Official abstract/curated identity checked but full BEHAVIOR scoring protocol, combined agent-vs-policy entries, original tables and release resources need fulltext audit; do not treat reported Q as standard success rate.",
+      "paperId": null,
+      "duplicateOf": null
+    }
+  ],
+  "counts": {
+    "total": 3,
+    "selected": 0,
+    "deferred": 3,
+    "excluded": 0,
+    "duplicate": 0,
+    "crossSource": 3
+  },
+  "status": "partial",
+  "notes": "No complete primary/index/curated/reverse coverage of entire 2026-09-20–2026-11-15. OpenAlex and Semantic Scholar API reads inaccessible. Paper candidates retained as deferred, no first-public/date locks, no fabricated benchmark or publication claims. Do not apply discovery checkpoint."
+}

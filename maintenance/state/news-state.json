@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-13",
+  "asOf": "2026-11-15",
   "status": "partial",
-  "lastAttemptAt": "2026-11-13",
+  "lastAttemptAt": "2026-11-15",
   "lastSuccessfulSearchAt": "2026-10-04",
   "lookbackDays": 14,
-  "summary": "2026-11-13 selective bilingual retrospective: original AGIBOT Oct30 WITA-OMNI first customer deployment official company source, Nov10 media re-report deduplicated; NVIDIA GR00T2/DeepMind Gemini Robotics2.5 already in catalog. Broad day-by-day bilingual search Oct05–Nov13 not completed. lastSuccessfulSearchAt remains 2026-10-04.",
+  "summary": "2026-11-15 official Hugging Face LeRobot v0.7.0 Nov05 release and GitHub tag checked; one independent open-source robotics infrastructure event added. Deduplicated Nov10 Gemini Robotics 2.5 and Nov09 NVIDIA GR00T 2 already in canonical news; selected English/Chinese general news and lab channels sampled but 2026-11-01–11-15 all-channel/day coverage incomplete. Successful news checkpoint remains 2026-10-04.",
   "coverage": [
     {
       "from": "2026-09-05",
@@ -114,6 +114,12 @@
       "to": "2026-11-13",
       "status": "partial",
       "note": "Verified original Oct30 official WITA-OMNI first-customer deployment release, cross-deduplicated Nov10 re-report and Oct30 GO3 from same event. Spot-check of research news, no exhaustive day-by-day multilingual channels; checkpoint still 2026-10-04."
+    },
+    {
+      "from": "2026-11-01",
+      "to": "2026-11-15",
+      "status": "partial",
+      "note": "2026-11-15 targeted bilingual keyword scan and first-party HF LeRobot v0.7.0 Nov05 blog plus pinned GitHub release; compared existing NVIDIA/DeepMind November news and checked selected robotics curated November papers. No exhaustive bilingual all-day companies/labs/official/media sweep. Do not advance independent success checkpoint."
     }
   ]
 }

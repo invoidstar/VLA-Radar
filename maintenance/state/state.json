@@ -4,11 +4,11 @@
   "initialBackfillFrom": "2026-09-01",
   "lookbackDays": 14,
   "lastSuccessfulSearchAt": "2026-10-04",
-  "lastAttemptAt": "2026-11-13",
+  "lastAttemptAt": "2026-11-15",
   "lastStatus": "partial",
-  "lastSummary": "2026-11-13 source-read ActPrune p154 with 14 full sections, 10 protocol-scoped tracks, 40 author/source reports. Source and literature reverse checks incomplete across full old window; independent academic index blocked; RoboDojo complete generated.json raw body unavailable. Full literature checkpoint remains 2026-10-04.",
+  "lastSummary": "2026-11-15 targeted primary arXiv, Robotics Paper Daily and HF/DeepMind original-source checks yielded three deferred November VLA candidates; independent OpenAlex/Semantic Scholar API attempts blocked; full 2026-09-20 to 2026-11-15 coverage incomplete. Successful paper-discovery checkpoint stays 2026-10-04. LeRobot v0.7 official resource release checked independently as news.",
   "discoveryPolicyVersion": 1,
-  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-13-actprune-source-followup.json",
+  "lastDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-20-2026-11-15-weekly-partial.json",
   "lastCompleteDiscoveryAudit": "maintenance/audits/discovery/discovery-2026-09-15-2026-10-04-weekly.json",
   "discoveryCoverageNote": "Multi-lane discovery coverage enforcement starts 2026-09-25. The successful-through-2026-09-24 checkpoint is retained as a legacy complete audit baseline; future checkpoint advances require a schema-v2 audit that passes all required discovery lanes."
 }

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-11-08",
+  "lastAttemptAt": "2026-11-15",
   "scope": "current paper, experiment, news, project and reproducibility link reachability only; not content or publication verification",
-  "checkedThisRun": 100,
-  "totalSources": 866,
+  "checkedThisRun": 47,
+  "totalSources": 913,
   "dueRemaining": 0,
   "sources": {
     "https://arxiv.org/abs/2109.12098": {
@@ -6066,6 +6066,335 @@
       "status": "reachable",
       "httpStatus": 200,
       "finalUrl": "https://zju-omniai.github.io/VLA-Delta/",
+      "error": ""
+    },
+    "https://air-embodied-brain.github.io/Zeva": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://air-embodied-brain.github.io/Zeva/",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2608.30880": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2608.30880",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2608.30880v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2608.30880v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.01939": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.01939",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2610.01939v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2610.01939v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.07513": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.07513",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.08373": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.08373",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.08373v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.08373v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.08827v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.08827v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.08827v2": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.08827v2",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.10894v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.10894v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.13030v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.13030v1",
+      "error": ""
+    },
+    "https://arxiv.org/abs/2611.13160v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/abs/2611.13160v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2608.30880v2": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2608.30880v2",
+      "error": ""
+    },
+    "https://arxiv.org/html/2610.01939v2": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2610.01939v2",
+      "error": ""
+    },
+    "https://arxiv.org/html/2611.08373v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2611.08373v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2611.08827v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2611.08827v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2611.08827v2": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2611.08827v2",
+      "error": ""
+    },
+    "https://arxiv.org/html/2611.10894v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2611.10894v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2611.13030v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2611.13030v1",
+      "error": ""
+    },
+    "https://arxiv.org/html/2611.13160v1": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://arxiv.org/html/2611.13160v1",
+      "error": ""
+    },
+    "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/",
+      "error": ""
+    },
+    "https://dagroup-pku.github.io/PyRUA-Lean/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://dagroup-pku.github.io/PyRUA-Lean/",
+      "error": ""
+    },
+    "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://dagroup-pku.github.io/PyRUA-Lean/docs/papers/pyrua-lean/",
+      "error": ""
+    },
+    "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "error": ""
+    },
+    "https://github.com/DAGroup-PKU/PyRUA-Lean": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/DAGroup-PKU/PyRUA-Lean",
+      "error": ""
+    },
+    "https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/OpenHelix-Team/Spatial-Forcing/tree/master/SLA",
+      "error": ""
+    },
+    "https://github.com/air-embodied-brain/Zeva": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/air-embodied-brain/Zeva",
+      "error": ""
+    },
+    "https://github.com/air-embodied-brain/Zeva/blob/main/docs/reproduce.md": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/air-embodied-brain/Zeva/blob/main/docs/reproduce.md",
+      "error": ""
+    },
+    "https://github.com/huggingface/lerobot/releases/tag/v0.7.0": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/huggingface/lerobot/releases/tag/v0.7.0",
+      "error": ""
+    },
+    "https://github.com/lose4578/Concertina": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/lose4578/Concertina",
+      "error": ""
+    },
+    "https://github.com/sereact/lerobot_knn": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/sereact/lerobot_knn",
+      "error": ""
+    },
+    "https://github.com/sereact/lerobot_knn/blob/master/LICENSE": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://github.com/sereact/lerobot_knn/blob/master/LICENSE",
+      "error": ""
+    },
+    "https://huggingface.co/blog/lerobot/lerobot-release-v070": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/blog/lerobot/lerobot-release-v070",
+      "error": ""
+    },
+    "https://huggingface.co/chen123fu/zeva-robocasa": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/chen123fu/zeva-robocasa",
+      "error": ""
+    },
+    "https://huggingface.co/collections/Traly/concertina": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/collections/Traly/concertina",
+      "error": ""
+    },
+    "https://huggingface.co/datasets/raguvla/real-world-evaluation": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://huggingface.co/datasets/raguvla/real-world-evaluation",
+      "error": ""
+    },
+    "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202611/t20261111_4941527.html": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202611/t20261111_4941527.html",
+      "error": ""
+    },
+    "https://news.panasonic.com/global/press/en261105-2": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://news.panasonic.com/global/press/en261105-2",
+      "error": ""
+    },
+    "https://raguvla.github.io/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://raguvla.github.io/",
+      "error": ""
+    },
+    "https://research.nvidia.com/labs/gear/gr00t-2/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://research.nvidia.com/labs/gear/gr00t-2/",
+      "error": ""
+    },
+    "https://robodojo-benchmark.com/leaderboard?bench=realworld": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://robodojo-benchmark.com/leaderboard?bench=realworld",
+      "error": ""
+    },
+    "https://sereact.github.io/lerobot_knn/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://sereact.github.io/lerobot_knn/",
+      "error": ""
+    },
+    "https://sla-team.github.io/omnisf_projectpage/": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://sla-team.github.io/omnisf_projectpage/",
+      "error": ""
+    },
+    "https://www.agibot.com.cn/article/315/detail/260.html": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agibot.com.cn/article/315/detail/260.html",
+      "error": ""
+    },
+    "https://www.agibot.com.cn/article/315/detail/261.html": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.agibot.com.cn/article/315/detail/261.html",
+      "error": ""
+    },
+    "https://www.beijing.gov.cn/zhengce/zhengcefagui/202611/t20261111_4942067.html": {
+      "checkedAt": "2026-11-15",
+      "status": "reachable",
+      "httpStatus": 200,
+      "finalUrl": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202611/t20261111_4942067.html",
       "error": ""
     }
   }

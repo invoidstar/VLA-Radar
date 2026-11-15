@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "requestedAt": "2026-11-15",
+  "scope": "Due-only public source reachability on canonical sources, bounded to 5 x (100 sources, 80s max per round); 403/429/timeout warning only.",
+  "reason": "Scheduled Nov 15 VLA-Radar weekly health rotation, no content/identity downgrades, no forced URL retries.",
+  "expectedBase": "ec2dafe5eb8504a41946f569ff075c9277b7c1ac"
+}
