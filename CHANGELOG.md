@@ -1,3 +1,7 @@
+## 2026-11-15 — 2026-11-15-weekly-news-discovery
+
+Stable-maintenance editorial batch: one official Hugging Face LeRobot v0.7.0 Nov05 software release, original blog and GitHub v0.7.0 tag evidence; three new Nov10–12 original-arXiv VLA/BEHAVIOR papers retained deferred until 8-section fulltext and original benchmark-table review. Four-lane discovery schema-v2 audit honestly partial (academic APIs inaccessible), neither paper nor news success checkpoint advances. Zero new paper/result/setting/relation/repro counts and README inventory unchanged; generated public data and news activity must come from canonical builder.
+
 ## 2026-11-13 — 2026-11-13-actprune-v2-followup
 
 Metadata follow-up (new immutable batch ID): official arXiv ActPrune 2611.08827v2 was uploaded 2026-11-11 and checked Nov13 against v1 methods and Tables I–VII. Update p154 publication.latestArxivVersion=v2 and note.source review to v2; preserve exact v1 source-version URLs and 40 original Table I–VII experimental reports without silently rewiring evidence. Verify p154 scientific negative cases, latency units, 10 source-scoped tracks and 40 per-report source attribution in new tests. Original ActPrune admission batch unchanged per applied-batches immutability; WITA-OMNI original Oct30 news and both partial discovery/news checkpoints retained.
